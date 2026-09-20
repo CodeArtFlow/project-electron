@@ -27,6 +27,8 @@ VALID_GRADES = ("A", "B", "C", "D", "E")
 VALID_TOPICS = ("MAT", "DEV", "LITHO", "PROC", "PKG", "MEM", "ARCH", "PHOT", "EDA", "ECON", "ALL")
 
 BOOKKEEPING = ("removed", "excluded_paywalled")
+# Harvest scope. `specialist` skips the topic filter; absent means `broad` (filter applied).
+VALID_SCOPE = ("specialist", "broad")
 
 
 def main():
@@ -59,6 +61,10 @@ def main():
                 problems.append((where, f"oa_status invalid: {oa!r}"))
             if grade is not None and grade not in VALID_GRADES:
                 problems.append((where, f"grade_default invalid: {grade!r}"))
+
+            scope = e.get("scope")
+            if scope is not None and scope not in VALID_SCOPE:
+                problems.append((where, f"scope must be one of {VALID_SCOPE}, got {scope!r}"))
 
             for t in e.get("topics", []) or []:
                 if t not in VALID_TOPICS:

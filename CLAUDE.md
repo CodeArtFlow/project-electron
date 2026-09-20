@@ -430,7 +430,7 @@ Planned roster, to be built incrementally:
 
 | Skill | Stage | Responsibility |
 |---|---|---|
-| `harvest` | 1 | Sweep registry sources, write corpus records |
+| `harvest` | 1 | Sweep registry sources (CI, daily), then read candidates into source records — **built** |
 | `triage` | 2 | Relevance filter, dedupe against existing corpus |
 | `extract-claims` | 3 | Source record → atomic claims, normalized to SI base units — **built** |
 | `assess-source` | 3 | Build/update author records, assign credibility tier |
@@ -456,6 +456,7 @@ how we diff what we claimed yesterday against today.
 .github/workflows/        CI: self-tests -> publication gate -> build -> deploy
 sources/registry.yaml     relevant open-access venues, with verification status
 reference/definitions.yaml SI canonicalization and contested terms
+corpus/candidates/        unread sweep output (NOT source records; never cited)
 corpus/papers/            immutable source records
 corpus/authors/           author track record and credibility
 ledger/claims/            CLM claims, one YAML file per topic code
@@ -493,10 +494,33 @@ it, because a gate CI can route around is not a gate.
 
 ## Current state — 2026-09-20
 
-Doctrine, a verified source registry, verification tooling, the `extract-claims` stage, and a
-deployable site with the publication gate wired into CI. No harvest yet, so no source records and
-no ledger entries exist — the machinery is built and tested but has nothing to consume until
-`harvest` lands. The site renders that empty state honestly rather than showing placeholders.
+Doctrine, a verified source registry, verification tooling, `harvest`, `extract-claims`, and a
+deployable site with the publication gate wired into CI. The daily sweep runs on a schedule and
+queues candidates; nothing has yet been READ into a source record, so there are still no source
+records, claims, or digests. The site renders that empty state honestly.
+
+### Harvest is two stages, and only one is automated
+
+`pipeline/harvest.py` is the **sweep**: it queries the verified venues, checks open access per
+article, dedupes, and writes unread candidates to `corpus/candidates/`. It runs daily in CI
+(`.github/workflows/harvest.yml`, 06:15 UTC) because it is deterministic and reads nothing.
+
+The **reading** — candidate → `corpus/papers/SRC-nnnnn.yaml` — is the `harvest` skill, run in a
+Claude session. It cannot be scheduled as a script, because a source record declares in `access`
+what was *actually read*, and in `reported`, `method_summary` and `limitations` what the paper
+says. A script filling those in would be fabricating with provenance attached.
+
+So the daily cadence currently produces a queue, not a digest. Automating the reading step would
+need a model in CI (an API key and per-run cost) — a decision, not a default.
+
+Sweep behaviour worth knowing:
+- Venues carry `scope: specialist` (every article in scope) or default `broad` (topic filter
+  applied). Default is broad because flooding the corpus is harder to undo than missing a paper.
+- A venue that fails to answer makes the run exit `2` and the commit message say
+  `INCOMPLETE SWEEP`. Partial coverage must never look like a quiet day.
+- Closed-access hits are counted as `access_blocked` in `_last_sweep.json` rather than
+  discarded — that count is how the cost of the open-access-only policy stays measurable.
+- Default look-back is 3 days: arXiv does not publish at weekends, and dedupe makes overlap free.
 
 **Registry: verified 2026-09-20.** 131 entries — 71 `true`, 47 `review`, 7 `false`. Grew from ~70
 during verification. Evidence in `pipeline/*_report.json`; reproduce with the commands below.
@@ -513,6 +537,7 @@ python pipeline/test_extract_e2e.py               # full extract path on synthet
 python pipeline/publication_gate.py               # the 8 checks; blocks publication
 python pipeline/test_publication_gate.py          # proves every gate check actually fires
 python pipeline/build_site.py                     # build _site/ (runs the gate first)
+python pipeline/harvest.py --dry-run              # preview a sweep without writing
 ```
 
 `pipeline/units.py` is built on `pint`. Never convert by hand and never write a `quantity` block

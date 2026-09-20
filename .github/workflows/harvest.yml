@@ -1,0 +1,122 @@
+name: Daily harvest sweep
+
+# Stage 1 of harvest ONLY: the deterministic sweep that finds candidates.
+#
+# This workflow never writes a source record and never publishes anything. It queries the
+# verified venues in sources/registry.yaml, checks open-access status per article, dedupes
+# against what we already have, and commits unread candidates to corpus/candidates/.
+#
+# Reading those candidates is a separate, non-automatable step - a source record states what we
+# ACTUALLY read, and a script cannot read. See .claude/skills/harvest/SKILL.md.
+#
+# This commit does NOT trigger deploy.yml: pushes made with the workflow's GITHUB_TOKEN do not
+# start other workflows (GitHub blocks it to prevent recursive runs). That is fine and intended -
+# candidates are not claims and appear nowhere in the published site. The site only needs
+# rebuilding once candidates have been read into source records and claims, which happens in a
+# normal commit that does trigger deploy.
+
+on:
+  schedule:
+    # 06:15 UTC daily. Off the hour because GitHub's scheduler is busiest then and delays
+    # cron jobs; the exact minute does not matter for a daily research sweep.
+    - cron: "15 6 * * *"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Look-back window in days"
+        required: false
+        default: "3"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: harvest
+  cancel-in-progress: false
+
+jobs:
+  sweep:
+    name: Sweep verified venues for new candidates
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r pipeline/requirements.txt
+
+      # The registry is what the sweep reads from. If it is internally inconsistent, the sweep
+      # would harvest against rules that do not hold - so check before querying anything.
+      - name: Registry is internally consistent
+        run: python pipeline/validate_registry.py
+
+      - name: Sweep
+        id: sweep
+        # exit 2 means the sweep ran but some venues did not answer: coverage is partial.
+        # That is recorded and surfaced, not silently swallowed, but it should not discard the
+        # candidates that WERE found.
+        run: |
+          set +e
+          python pipeline/harvest.py --days "${{ github.event.inputs.days || '3' }}"
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" -eq 2 ]; then
+            echo "::warning::Sweep incomplete - some venues did not answer. Coverage for this window is partial; the digest must say so."
+          elif [ "$code" -ne 0 ]; then
+            exit $code
+          fi
+
+      - name: Commit new candidates
+        run: |
+          git config user.name "project-electron-bot"
+          git config user.email "noreply@github.com"
+          git add corpus/candidates
+          if git diff --cached --quiet; then
+            echo "No new candidates. Nothing to commit."
+            exit 0
+          fi
+          n=$(git diff --cached --name-only --diff-filter=A -- 'corpus/candidates/CAND-*.yaml' | wc -l)
+          partial=""
+          if [ "${{ steps.sweep.outputs.exit_code }}" = "2" ]; then
+            partial=" (INCOMPLETE SWEEP - some venues did not answer)"
+          fi
+          git commit -m "Daily sweep: ${n} new candidates${partial}
+
+          Unread candidates from the verified venue registry. These carry metadata and a
+          verified open-access location only - nothing has read them, so they carry no
+          reported content and cannot be cited. The harvest skill promotes them to source
+          records after reading.
+
+          Automated by .github/workflows/harvest.yml"
+          # main may have moved while the sweep ran; rebase rather than fail the push.
+          # Candidate files are new and uniquely named, so a rebase cannot conflict on them.
+          git pull --rebase --quiet origin main
+          git push
+
+      - name: Report
+        if: always()
+        run: |
+          echo "### Daily harvest sweep" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f corpus/candidates/_last_sweep.json ]; then
+            python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          d = json.load(open("corpus/candidates/_last_sweep.json"))
+          print(f"- window: {d['window_days']} days ending {d['date']}")
+          print(f"- venues swept: {d['venues_swept']}")
+          print(f"- found {d['found']}, new {d['new']}, duplicates skipped {d['duplicates']}")
+          print(f"- candidates written: **{d['written']}**")
+          print(f"- access-blocked (no legal OA copy): {d['access_blocked']}")
+          if d.get("errors"):
+              print(f"- **incomplete**: {len(d['errors'])} venue(s) did not answer")
+              for e in d["errors"]:
+                  print(f"  - {e}")
+          PY
+          else
+            echo "- no sweep summary produced" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Candidates are UNREAD. Run the \`harvest\` skill to turn them into source records." >> "$GITHUB_STEP_SUMMARY"
