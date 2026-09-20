@@ -1,0 +1,393 @@
+# Project Electron — Open-Access Source Registry
+#
+# The comprehensive list of relevant open-access venues we harvest.
+#
+# VERIFIED 2026-09-20 against live authorities. Evidence: pipeline/verification_report.json,
+# pipeline/discovery_report.json, pipeline/url_probe_report.json.
+# Reproduce with:  python pipeline/verify_registry.py --section all
+#
+# verified:
+#   true    - exists, active, and OA status CONFIRMED by an authority (DOAJ for journals,
+#             successful endpoint probe for APIs). Harvestable.
+#   review  - exists and active, but OA status NOT confirmed. Harvestable ONLY with a
+#             per-article OA check (Unpaywall / author copy). Every `hybrid` venue is
+#             permanently `review` by definition — OA is an article-level property there.
+#   false   - existence or reachability could not be established. DO NOT HARVEST.
+#
+# Why three states and not two: "exists and is active, but I cannot confirm open access" is a
+# real and common outcome. Forcing it into true would assert OA we have not established;
+# forcing it into false would discard venues that are genuinely reachable. Both are lies of a
+# different kind, so the state that describes reality gets its own name.
+#
+# ISSN is the identifier of record. Title matching is a fallback: Crossref journal search is
+# punctuation-sensitive and returns nothing for '&', and generic titles ("Nature", "Science")
+# do not surface at all. Where a registry entry carries an issn, verification is deterministic.
+#
+# oa_status:  full        - everything is open access
+#             hybrid      - some articles OA; per-article check required
+#             preprint    - author manuscripts, not version of record
+#             open_spec   - freely downloadable standard/roadmap
+#             public_corp - vendor's own public technical material
+#             open_news   - freely readable journalism/analysis
+#
+# grade_default: the evidence grade a typical item starts at, per CLAUDE.md. Always overridable
+#             downward by what the specific item actually contains.
+# topics:     topic codes per CLAUDE.md (MAT DEV LITHO PROC PKG MEM ARCH PHOT EDA ECON).
+#             `ALL` is a registry-only wildcard meaning the venue spans every topic code; it is
+#             not a topic code itself and never appears on a claim ID.
+# recent:     Crossref-indexed works in the 400 days before the verification date. Evidence of
+#             activity, not of quality.
+
+schema_version: 3
+updated: 2026-09-20
+verified_on: 2026-09-20
+
+# ---------------------------------------------------------------------------
+# Aggregators and discovery APIs — the harvest backbone
+# ---------------------------------------------------------------------------
+aggregators:
+  - id: openalex
+    name: OpenAlex
+    endpoint: https://api.openalex.org
+    oa_status: full
+    access: rest_api
+    auth: none
+    verified: true
+    probe: "GET /works?per-page=1 -> 200"
+    notes: Primary discovery index. Also the backbone for author records and academic lineage.
+
+  - id: arxiv_api
+    name: arXiv API
+    endpoint: http://export.arxiv.org/api/query
+    oa_status: preprint
+    access: rest_api
+    auth: none
+    categories: [cond-mat.mtrl-sci, cond-mat.mes-hall, physics.app-ph, physics.optics, cs.AR, cs.ET, eess.SP]
+    grade_default: B
+    verified: true
+    probe: "GET cat:cond-mat.mtrl-sci -> 200"
+    notes: Highest-volume relevant preprint feed. Category list is the harvest scope.
+
+  - id: crossref
+    name: Crossref
+    endpoint: https://api.crossref.org
+    oa_status: full
+    access: rest_api
+    auth: none
+    verified: true
+    probe: "GET /works?rows=1 -> 200"
+    notes: >
+      DOI resolution, canonical metadata, ISSN authority, retraction notices. We use the public
+      pool: the polite pool wants a contact email, and the operator's address is not ours to
+      hand to third-party services.
+
+  - id: doaj
+    name: Directory of Open Access Journals
+    endpoint: https://doaj.org/api
+    oa_status: full
+    access: rest_api
+    auth: none
+    verified: true
+    probe: "GET /search/journals/issn:2041-1723 -> 200"
+    notes: >
+      THE authority for journal OA status in this registry. Listing confirms full OA.
+      Absence does NOT prove paywall — it downgrades a `full` claim to `review`, nothing more.
+
+  - id: osti
+    name: OSTI (US DOE research output)
+    endpoint: https://www.osti.gov/api/v1
+    oa_status: full
+    access: rest_api
+    grade_default: A
+    verified: true
+    probe: "GET /records?rows=1 -> 200"
+    notes: National lab output — Sandia, LBNL, Argonne, Oak Ridge.
+
+  - id: retraction_watch
+    name: Retraction Watch Database (via Crossref Labs)
+    endpoint: https://api.labs.crossref.org/data/retractionwatch
+    oa_status: full
+    access: rest_api
+    verified: true
+    probe: "GET ?rows=1 -> 200"
+    notes: Integrity flags for author credibility tiers. Checked before any `established` tier.
+
+  - id: semantic_scholar
+    name: Semantic Scholar Academic Graph
+    endpoint: https://api.semanticscholar.org/graph/v1
+    oa_status: full
+    access: rest_api
+    auth: api_key_required_in_practice
+    verified: review
+    probe: "GET /paper/search -> 429 (rate-limited without key)"
+    blocker: >
+      Unauthenticated requests are rate-limited to the point of being unusable. A free API key
+      is available on request from Semantic Scholar. Needed for citation-graph and
+      author-influence data feeding credibility tiers; OpenAlex covers the same ground and is
+      usable now, so this is an enhancement rather than a blocker.
+
+  - id: unpaywall
+    name: Unpaywall
+    endpoint: https://api.unpaywall.org/v2
+    oa_status: full
+    access: rest_api
+    auth: email_required
+    verified: false
+    blocker: >
+      The API mandates a contact email in every request. We will not send the operator's
+      personal address to a third-party service without explicit instruction. DECISION NEEDED:
+      supply a project address, authorise use of a personal one, or drop this source.
+    impact: >
+      Material. Unpaywall is how we find legitimate OA copies of paywalled work, and CLAUDE.md
+      requires that check before recording an `access-blocked` gap. Without it, `access-blocked`
+      counts will overstate what is genuinely unreachable.
+
+# ---------------------------------------------------------------------------
+# Fully open-access peer-reviewed journals — grade A reachable
+# ---------------------------------------------------------------------------
+# All DOAJ-confirmed full OA unless noted. `recent` is Crossref works in the prior 400 days.
+journals_full_oa:
+  # --- Nature Portfolio OA ---
+  - {id: nat_comms,       name: Nature Communications,               issn: "2041-1723", grade_default: A, topics: [MAT, DEV, PHOT], verified: true, recent: 25000, oa_status: full}
+  - {id: comms_mater,     name: Communications Materials,            issn: "2662-4443", grade_default: A, topics: [MAT],            verified: true, oa_status: full}
+  - {id: comms_eng,       name: Communications Engineering,          issn: "2731-3395", grade_default: A, topics: [DEV, PKG],       verified: true, oa_status: full}
+  - {id: comms_phys,      name: Communications Physics,              issn: "2399-3650", grade_default: A, topics: [MAT, DEV],       verified: true, oa_status: full}
+  - {id: sci_rep,         name: Scientific Reports,                  issn: "2045-2322", grade_default: A, topics: [MAT, DEV],       verified: true, oa_status: full, notes: High volume, variable selectivity — weight on author credibility.}
+  - {id: npj_2d,          name: npj 2D Materials and Applications,   issn: "2397-7132", grade_default: A, topics: [MAT, DEV],       verified: true, oa_status: full}
+  - {id: npj_comp_mater,  name: npj Computational Materials,         issn: "2057-3960", grade_default: A, topics: [MAT],            verified: true, oa_status: full, notes: Simulation-heavy — never record as measured.}
+  - {id: npj_flex_el,     name: npj Flexible Electronics,            issn: "2397-4621", grade_default: A, topics: [DEV],            verified: true, recent: 175, oa_status: full, added: 2026-09-20}
+  - {id: micro_nanoeng,   name: Microsystems & Nanoengineering,      issn: "2055-7434", grade_default: A, topics: [PROC, PKG],      verified: true, recent: 423, oa_status: full}
+  - {id: light_sci_appl,  name: Light Science & Applications,        issn: "2047-7538", grade_default: A, topics: [PHOT],           verified: true, recent: 508, oa_status: full, notes: "Crossref canonical title omits the colon present in common usage."}
+
+  # --- IEEE open journals ---
+  - {id: ieee_access,     name: IEEE Access,                                  issn: "2169-3536", grade_default: A, topics: [DEV, ARCH, EDA], verified: true, oa_status: full, notes: Broad scope, light selectivity — weight on author credibility.}
+  - {id: ieee_jeds,       name: IEEE Journal of the Electron Devices Society, issn: "2168-6734", grade_default: A, topics: [DEV, PROC],      verified: true, oa_status: full}
+  - {id: ieee_ojsscs,     name: IEEE Open Journal of the Solid-State Circuits Society, issn: "2644-1349", grade_default: A, topics: [ARCH, MEM], verified: true, recent: 43, oa_status: full, added: 2026-09-20}
+  - {id: ieee_ojnano,     name: IEEE Open Journal of Nanotechnology,          issn: "2644-1292", grade_default: A, topics: [MAT, DEV],       verified: true, recent: 6,  oa_status: full, added: 2026-09-20, notes: Low volume — 6 works in the activity window.}
+  - {id: ieee_ojcas,      name: IEEE Open Journal of Circuits and Systems,    issn: "2644-1225", grade_default: A, topics: [ARCH, EDA],      verified: true, recent: 43, oa_status: full, added: 2026-09-20}
+
+  # --- AIP / APS / ACS / Wiley OA ---
+  - {id: apl_materials,   name: APL Materials,              issn: "2166-532X", grade_default: A, topics: [MAT],       verified: true, oa_status: full}
+  - {id: apl_elec_dev,    name: APL Electronic Devices,     issn: "2995-8423", grade_default: A, topics: [DEV],       verified: true, recent: 134, oa_status: full, added: 2026-09-20, notes: Recent launch, directly on-scope.}
+  - {id: apl_ml,          name: APL Machine Learning,       issn: "2770-9019", grade_default: A, topics: [ARCH, MAT], verified: true, recent: 65,  oa_status: full, added: 2026-09-20}
+  - {id: aip_advances,    name: AIP Advances,               issn: "2158-3226", grade_default: A, topics: [MAT, DEV],  verified: true, oa_status: full}
+  - {id: prx,             name: Physical Review X,          issn: "2160-3308", grade_default: A, topics: [MAT, DEV],  verified: true, recent: 353, oa_status: full, added: 2026-09-20}
+  - {id: prx_quantum,     name: PRX Quantum,                issn: "2691-3399", grade_default: A, topics: [DEV, ARCH], verified: true, recent: 349, oa_status: full, added: 2026-09-20}
+  - {id: sci_adv,         name: Science Advances,           issn: "2375-2548", grade_default: A, topics: [MAT, DEV],  verified: true, recent: 3754, oa_status: full, added: 2026-09-20}
+  - {id: acs_omega,       name: ACS Omega,                  issn: "2470-1343", grade_default: A, topics: [MAT],       verified: true, oa_status: full}
+  - {id: adv_science,     name: Advanced Science,           issn: "2198-3844", grade_default: A, topics: [MAT, DEV],  verified: true, oa_status: full}
+  - {id: adv_elec_mater,  name: Advanced Electronic Materials, issn: "2199-160X", grade_default: A, topics: [MAT, DEV], verified: true, recent: 535, oa_status: full, added: 2026-09-20}
+  - {id: small_science,   name: Small Science,              issn: "2688-4046", grade_default: A, topics: [MAT],       verified: true, recent: 331, oa_status: full, added: 2026-09-20}
+  - {id: infomat,         name: InfoMat,                    issn: "2567-3165", grade_default: A, topics: [MAT, DEV],  verified: true, recent: 146, oa_status: full, added: 2026-09-20}
+  - {id: carbon_energy,   name: Carbon Energy,              issn: "2637-9368", grade_default: A, topics: [MAT],       verified: true, recent: 283, oa_status: full, added: 2026-09-20, notes: Peripheral to core scope — energy materials.}
+  - {id: mater_res_lett,  name: Materials Research Letters, issn: "2166-3831", grade_default: A, topics: [MAT],       verified: true, recent: 175, oa_status: full, added: 2026-09-20}
+
+  # --- Photonics OA ---
+  - {id: nanophotonics,   name: Nanophotonics,              issn: "2192-8614", grade_default: A, topics: [PHOT],      verified: true, recent: 493, oa_status: full, added: 2026-09-20, notes: "Activity is indexed against the electronic ISSN; the print ISSN 2192-8606 shows zero."}
+  - {id: photonix,        name: PhotoniX,                   issn: "2662-1991", grade_default: A, topics: [PHOT],      verified: true, recent: 102, oa_status: full, added: 2026-09-20}
+  - {id: elight,          name: eLight,                     issn: "2662-8643", grade_default: A, topics: [PHOT],      verified: true, recent: 41,  oa_status: full, added: 2026-09-20}
+  - {id: opto_elec_adv,   name: Opto-Electronic Advances,   issn: "2096-4579", grade_default: A, topics: [PHOT],      verified: true, recent: 77,  oa_status: full, added: 2026-09-20}
+
+  # --- IOP / other OA ---
+  - {id: jphys_materials, name: Journal of Physics Materials, issn: "2515-7639", grade_default: A, topics: [MAT],     verified: true, oa_status: full, notes: "Crossref canonical title omits the colon."}
+  - {id: chip_journal,    name: Chip,                       issn: "2709-4723", grade_default: A, topics: [ARCH, DEV], verified: true, recent: 75, oa_status: full, added: 2026-09-20, notes: Directly on-scope despite the generic name.}
+
+  # --- MDPI: OA in practice, DOAJ listing not confirmed at verification time ---
+  - {id: mdpi_micromach,  name: Micromachines,  issn: "2072-666X", grade_default: A, topics: [PROC, PKG], verified: true, oa_status: full, notes: DOAJ-confirmed. MDPI titles vary widely in rigour — credibility tier carries the weight.}
+  - {id: mdpi_nanomater,  name: Nanomaterials,  issn: "2079-4991", grade_default: A, topics: [MAT],       verified: true,   oa_status: full, notes: DOAJ-confirmed. See MDPI note above.}
+  - id: mdpi_electronics
+    name: Electronics
+    issn: "2079-9292"
+    grade_default: A
+    topics: [ARCH, EDA]
+    verified: review
+    recent: 5964
+    oa_status: full
+    notes: >
+      Active (5964 works) but NOT returned by DOAJ at verification time, so full-OA is declared
+      rather than confirmed. Per the three-state rule this is `review`, not `true`: harvest with
+      a per-article OA check until DOAJ listing is established.
+
+# ---------------------------------------------------------------------------
+# Hybrid journals — permanently `review`: OA is an article-level property here
+# ---------------------------------------------------------------------------
+# Too central to omit, but every item needs an individual OA check (author copy / repository)
+# before its content may be read and cited. Never infer content from an abstract.
+journals_hybrid:
+  - {id: nature,          name: Nature,                              issn: "0028-0836", grade_default: A, topics: [MAT, DEV],  verified: review, recent: 4809, oa_status: hybrid, notes: "Does not surface via Crossref title search; ISSN lookup required."}
+  - {id: science,         name: Science,                             issn: "0036-8075", grade_default: A, topics: [MAT, DEV],  verified: review, recent: 2239, oa_status: hybrid, notes: "As Nature — ISSN lookup required."}
+  - {id: nat_electronics, name: Nature Electronics,                  issn: "2520-1131", grade_default: A, topics: [DEV, ARCH], verified: review, recent: 275,  oa_status: hybrid, added: 2026-09-20, notes: Among the most on-scope venues in the field.}
+  - {id: nat_materials,   name: Nature Materials,                    issn: "1476-1122", grade_default: A, topics: [MAT],       verified: review, recent: 421,  oa_status: hybrid, added: 2026-09-20}
+  - {id: nat_nano,        name: Nature Nanotechnology,               issn: "1748-3387", grade_default: A, topics: [MAT, DEV],  verified: review, recent: 286,  oa_status: hybrid, added: 2026-09-20}
+  - {id: nat_photonics,   name: Nature Photonics,                    issn: "1749-4885", grade_default: A, topics: [PHOT],      verified: review, recent: 261,  oa_status: hybrid, added: 2026-09-20}
+  - {id: nat_rev_ee,      name: Nature Reviews Electrical Engineering, issn: "2948-1201", grade_default: A, topics: [ARCH, DEV], verified: review, recent: 129, oa_status: hybrid, added: 2026-09-20, notes: Review journal — secondary synthesis, not primary measurement.}
+  - {id: ieee_ted,        name: IEEE Transactions on Electron Devices, issn: "0018-9383", grade_default: A, topics: [DEV],      verified: review, oa_status: hybrid, notes: Mostly paywalled — route via author preprint.}
+  - {id: ieee_edl,        name: IEEE Electron Device Letters,        issn: "0741-3106", grade_default: A, topics: [DEV],       verified: review, recent: 853,  oa_status: hybrid, added: 2026-09-20}
+  - {id: ieee_tsm,        name: IEEE Transactions on Semiconductor Manufacturing, issn: "0894-6507", grade_default: A, topics: [PROC, ECON], verified: review, recent: 132, oa_status: hybrid, added: 2026-09-20}
+  - {id: ieee_tcpmt,      name: IEEE Transactions on Components Packaging and Manufacturing Technology, issn: "2156-3950", grade_default: A, topics: [PKG], verified: review, recent: 487, oa_status: hybrid, added: 2026-09-20}
+  - {id: ieee_tvlsi,      name: IEEE Transactions on Very Large Scale Integration (VLSI) Systems, issn: "1063-8210", grade_default: A, topics: [ARCH, EDA], verified: review, recent: 517, oa_status: hybrid, added: 2026-09-20}
+  - {id: ieee_jssc,       name: IEEE Journal of Solid-State Circuits, issn: "0018-9200", grade_default: A, topics: [ARCH, MEM], verified: review, recent: 716, oa_status: hybrid, added: 2026-09-20}
+  - {id: ieee_sscl,       name: IEEE Solid-State Circuits Letters,   issn: "2573-9603", grade_default: A, topics: [ARCH],      verified: review, recent: 68,   oa_status: hybrid, added: 2026-09-20}
+  - {id: ieee_micro,      name: IEEE Micro,                          issn: "0272-1732", grade_default: A, topics: [ARCH],      verified: review, recent: 201,  oa_status: hybrid, added: 2026-09-20}
+  - {id: sst,             name: Semiconductor Science and Technology, issn: "0268-1242", grade_default: A, topics: [DEV, PROC], verified: review, oa_status: hybrid}
+  - {id: twod_mater,      name: 2D Materials,                        issn: "2053-1583", grade_default: A, topics: [MAT],       verified: review, oa_status: hybrid}
+  - {id: nanotechnology,  name: Nanotechnology,                      issn: "0957-4484", grade_default: A, topics: [MAT, DEV],  verified: review, recent: 522,  oa_status: hybrid, added: 2026-09-20}
+  - {id: jmm,             name: Journal of Micromechanics and Microengineering, issn: "0960-1317", grade_default: A, topics: [PROC], verified: review, recent: 198, oa_status: hybrid, added: 2026-09-20}
+  - {id: jjap,            name: Japanese Journal of Applied Physics, issn: "0021-4922", grade_default: A, topics: [DEV, PROC],  verified: review, recent: 946,  oa_status: hybrid, added: 2026-09-20}
+  - {id: apl,             name: Applied Physics Letters,             issn: "0003-6951", grade_default: A, topics: [MAT, DEV],  verified: review, recent: 3199, oa_status: hybrid, added: 2026-09-20}
+  - {id: jap,             name: Journal of Applied Physics,          issn: "0021-8979", grade_default: A, topics: [MAT, DEV],  verified: review, recent: 2009, oa_status: hybrid, added: 2026-09-20}
+  - {id: apl_reviews,     name: Applied Physics Reviews,             issn: "1931-9401", grade_default: A, topics: [MAT, DEV],  verified: review, recent: 288,  oa_status: hybrid, added: 2026-09-20}
+  - {id: prapplied,       name: Physical Review Applied,             issn: "2331-7019", grade_default: A, topics: [DEV, PHOT], verified: review, recent: 1299, oa_status: hybrid, added: 2026-09-20}
+  - id: prb
+    name: Physical Review B
+    issn: "2469-9950"
+    grade_default: A
+    topics: [MAT]
+    verified: review
+    recent: 6553
+    oa_status: hybrid
+    added: 2026-09-20
+    notes: >
+      Crossref's journal record lists only the legacy ISSNs 1098-0121 / 1550-235X, which return
+      zero recent works. The current ISSN 2469-9950 is stored here and returns 6553. Verify PRB
+      by the current ISSN, never by the Crossref journal record's ISSN list.
+  - {id: acs_aem,         name: ACS Applied Electronic Materials,    issn: "2637-6113", grade_default: A, topics: [MAT, DEV],  verified: review, recent: 1097, oa_status: hybrid, added: 2026-09-20}
+  - {id: acs_nano,        name: ACS Nano,                            issn: "1936-0851", grade_default: A, topics: [MAT],       verified: review, recent: 2953, oa_status: hybrid, added: 2026-09-20}
+  - {id: nano_letters,    name: Nano Letters,                        issn: "1530-6984", grade_default: A, topics: [MAT, DEV],  verified: review, recent: 2300, oa_status: hybrid, added: 2026-09-20}
+  - {id: adv_mater,       name: Advanced Materials,                  issn: "0935-9648", grade_default: A, topics: [MAT],       verified: review, recent: 4768, oa_status: hybrid, added: 2026-09-20}
+  - {id: adv_funct_mater, name: Advanced Functional Materials,       issn: "1616-301X", grade_default: A, topics: [MAT],       verified: review, recent: 7574, oa_status: hybrid, added: 2026-09-20}
+  - {id: ecs_jsst,        name: ECS Journal of Solid State Science and Technology, issn: "2162-8769", grade_default: A, topics: [MAT, PROC], verified: review, recent: 251, oa_status: hybrid, added: 2026-09-20}
+  - {id: jvst_b,          name: Journal of Vacuum Science & Technology B Nanotechnology and Microelectronics Materials Processing Measurement and Phenomena, issn: "2166-2746", grade_default: A, topics: [PROC, LITHO], verified: review, oa_status: hybrid, added: 2026-09-20, notes: "Long formal title; short-form searches do not resolve it."}
+  - {id: solid_state_el,  name: Solid-State Electronics,             issn: "0038-1101", grade_default: A, topics: [DEV],       verified: review, recent: 209,  oa_status: hybrid, added: 2026-09-20}
+  - {id: microelec_eng,   name: Microelectronic Engineering,         issn: "0167-9317", grade_default: A, topics: [PROC, LITHO], verified: review, recent: 126, oa_status: hybrid, added: 2026-09-20}
+  - {id: j_semiconductors, name: Journal of Semiconductors,          issn: "1674-4926", grade_default: A, topics: [DEV, PROC], verified: review, recent: 175,  oa_status: hybrid, added: 2026-09-20, notes: Widely described as OA but not DOAJ-returned at verification; treat as per-article.}
+  - {id: materials_today, name: Materials Today,                     issn: "1369-7021", grade_default: A, topics: [MAT],       verified: review, recent: 528,  oa_status: hybrid, added: 2026-09-20}
+
+# Considered and NOT added:
+#   Microelectronics Journal (ISSN 0026-2692) — resolves in Crossref but returns zero works in
+#   the 400-day activity window. Not asserted dead; simply not evidenced as active, so it fails
+#   the activity check. Re-test before adding.
+
+# ---------------------------------------------------------------------------
+# Preprint servers — grade B
+# ---------------------------------------------------------------------------
+preprints:
+  - {id: zenodo,          name: Zenodo,          url: "https://zenodo.org/",          oa_status: preprint, grade_default: B, topics: [ALL],       verified: true,  probe: "200", notes: Also hosts datasets and conference slides.}
+  - {id: research_square, name: Research Square, url: "https://www.researchsquare.com/", oa_status: preprint, grade_default: B, topics: [MAT, DEV], verified: true, probe: "200"}
+  - id: techrxiv
+    name: TechRxiv (IEEE)
+    url: "https://www.techrxiv.org/"
+    oa_status: preprint
+    grade_default: B
+    topics: [DEV, ARCH, EDA]
+    verified: false
+    probe: "403"
+    blocker: >
+      Bot protection returns 403 to automated clients, including the documented API paths.
+      The content is open; our access to it is not. Needs a different route (RSS, the in-app
+      browser, or an IEEE-provided endpoint) before harvest. Not evaded.
+  - {id: chemrxiv,        name: ChemRxiv,        url: "https://chemrxiv.org/",         oa_status: preprint, grade_default: B, topics: [MAT],      verified: false, probe: "403",
+     blocker: "Bot protection returns 403, including on /engage/chemrxiv/public-api/v1/items. Same situation as TechRxiv."}
+
+# ---------------------------------------------------------------------------
+# Conferences — proceedings usually paywalled; harvest author copies and open slides
+# ---------------------------------------------------------------------------
+# Every `hybrid` conference is `review`, for the same reason hybrid journals are: the venue is
+# real and reachable, but whether any given paper is open is a per-item question. Hot Chips is
+# `true` because its slides are published openly as a matter of course, not per-paper.
+# (Caught by validate_registry.py: these were initially marked `true`, contradicting the
+# registry's own three-state rule.)
+conferences:
+  - {id: iedm,     name: IEEE IEDM,             url: "https://www.ieee-iedm.org/",          oa_status: hybrid,    grade_default: A, topics: [DEV, PROC, MEM], verified: review, probe: "200", notes: Proceedings paywalled. Route via arXiv author copies and open press materials.}
+  - {id: vlsi,     name: VLSI Symposium,        url: "https://www.vlsisymposium.org/",      oa_status: hybrid,    grade_default: A, topics: [DEV, PROC],      verified: review, probe: "200", notes: As IEDM.}
+  - {id: isscc,    name: ISSCC,                 url: "https://www.isscc.org/",              oa_status: hybrid,    grade_default: A, topics: [ARCH, MEM],      verified: review, probe: "200", notes: As IEDM.}
+  - {id: hotchips, name: Hot Chips,             url: "https://hotchips.org/",               oa_status: open_spec, grade_default: C, topics: [ARCH, PKG],      verified: true, probe: "200", notes: Slides often public. Vendor-presented — grade C, not A.}
+  - {id: isca,     name: ISCA,                  url: "https://iscaconf.org/",               oa_status: hybrid,    grade_default: A, topics: [ARCH],           verified: review, probe: "200", notes: Many author copies open.}
+  - {id: micro,    name: MICRO,                 url: "https://microarch.org/",              oa_status: hybrid,    grade_default: A, topics: [ARCH],           verified: review, probe: "200"}
+  - {id: asplos,   name: ASPLOS,                url: "https://www.asplos-conference.org/",  oa_status: hybrid,    grade_default: A, topics: [ARCH],           verified: review, probe: "200"}
+  - {id: date,     name: DATE,                  url: "https://www.date-conference.com/",    oa_status: hybrid,    grade_default: A, topics: [EDA],            verified: review, probe: "200"}
+  - {id: dac,      name: DAC,                   url: "https://www.dac.com/",                oa_status: hybrid,    grade_default: A, topics: [EDA],            verified: review, probe: "200"}
+  - {id: ecs_meet, name: ECS Meeting Abstracts, url: "https://www.electrochem.org/meetings", oa_status: hybrid,   grade_default: B, topics: [MAT, PROC],      verified: review, probe: "200"}
+
+# ---------------------------------------------------------------------------
+# Institutional and government research output
+# ---------------------------------------------------------------------------
+institutional:
+  - {id: imec,       name: imec publications,         url: "https://www.imec-int.com/en/publications",        oa_status: public_corp, grade_default: C, topics: [DEV, PROC, LITHO, PKG], verified: true, probe: "200", notes: Peer-reviewed output grades A; roadmap material grades C/D.}
+  - {id: cea_leti,   name: CEA-Leti publications,     url: "https://www.leti-cea.com/cea-tech/leti/english",  oa_status: public_corp, grade_default: C, topics: [DEV, PROC, PKG],        verified: true, probe: "200"}
+  - {id: fraunhofer, name: Fraunhofer IISB,           url: "https://www.iisb.fraunhofer.de/en.html",          oa_status: public_corp, grade_default: C, topics: [PROC, MAT],             verified: true, probe: "200"}
+  - {id: nist,       name: NIST publications,         url: "https://www.nist.gov/publications",               oa_status: full,        grade_default: A, topics: [MAT, PROC],             verified: true, probe: "200", notes: Open by US federal mandate. Strong on metrology definitions — useful for reference/definitions.yaml.}
+  - {id: hal,        name: HAL (French open archive), url: "https://hal.science/",                            oa_status: full,        grade_default: B, topics: [ALL],                   verified: true, probe: "200"}
+  - {id: cordis,     name: EU CORDIS project outputs, url: "https://cordis.europa.eu/",                       oa_status: full,        grade_default: C, topics: [ECON, PROC],            verified: true, probe: "200"}
+
+# ---------------------------------------------------------------------------
+# Open standards and roadmaps — definitional authority, not research results
+# ---------------------------------------------------------------------------
+standards:
+  - {id: irds,  name: IEEE IRDS Roadmap,     url: "https://irds.ieee.org/",                      oa_status: open_spec, grade_default: C, topics: [ALL],       verified: true, probe: "200", notes: Projections, never measurements. Valuable as a definitional authority.}
+  - {id: jedec, name: JEDEC standards,       url: "https://www.jedec.org/standards-documents",   oa_status: open_spec, grade_default: C, topics: [MEM],       verified: true, probe: "200", notes: Free with registration for many standards.}
+  - {id: ucie,  name: UCIe specification,    url: "https://www.uciexpress.org/",                 oa_status: open_spec, grade_default: C, topics: [PKG],       verified: true, probe: "200"}
+  - {id: cxl,   name: CXL specification,     url: "https://computeexpresslink.org/",             oa_status: open_spec, grade_default: C, topics: [ARCH],      verified: true, probe: "200"}
+  - {id: ocp,   name: Open Compute Project,  url: "https://www.opencompute.org/",                oa_status: open_spec, grade_default: C, topics: [ARCH, PKG], verified: true, probe: "200"}
+  - {id: riscv, name: RISC-V specifications, url: "https://riscv.org/technical/specifications/", oa_status: open_spec, grade_default: C, topics: [ARCH],      verified: true, probe: "200"}
+
+# ---------------------------------------------------------------------------
+# Vendor technical disclosure — grade C with data, D without
+# ---------------------------------------------------------------------------
+vendor:
+  - {id: tsmc,     name: TSMC technology,            url: "https://www.tsmc.com/english/dedicatedFoundry/technology", oa_status: public_corp, grade_default: C, topics: [PROC, PKG],  verified: true, probe: "200"}
+  - {id: samsung,  name: Samsung Foundry,            url: "https://semiconductor.samsung.com/foundry/",               oa_status: public_corp, grade_default: C, topics: [PROC, MEM],  verified: true, probe: "200"}
+  - {id: asml,     name: ASML technology,            url: "https://www.asml.com/en/technology",                       oa_status: public_corp, grade_default: C, topics: [LITHO],      verified: true, probe: "200"}
+  - {id: lam,      name: Lam Research,               url: "https://www.lamresearch.com/",                             oa_status: public_corp, grade_default: C, topics: [PROC],       verified: true, probe: "200"}
+  - {id: kla,      name: KLA,                        url: "https://www.kla.com/",                                     oa_status: public_corp, grade_default: C, topics: [PROC],       verified: true, probe: "200"}
+  - {id: micron,   name: Micron blog,                url: "https://www.micron.com/about/blog",                        oa_status: public_corp, grade_default: C, topics: [MEM],        verified: true, probe: "200"}
+  - {id: sk_hynix, name: SK hynix newsroom,          url: "https://news.skhynix.com/",                                oa_status: public_corp, grade_default: C, topics: [MEM],        verified: true, probe: "200"}
+  - {id: nvidia,   name: NVIDIA whitepapers,         url: "https://resources.nvidia.com/l/en-us-whitepapers",         oa_status: public_corp, grade_default: C, topics: [ARCH],       verified: true, probe: "200 (redirects to www.nvidia.com)"}
+  - {id: amd,      name: AMD developer resources,    url: "https://www.amd.com/en/developer/resources.html",          oa_status: public_corp, grade_default: C, topics: [ARCH, PKG],  verified: true, probe: "200"}
+  - {id: intel,    name: Intel research publications, url: "https://www.intel.com/content/www/us/en/research/publications.html", oa_status: public_corp, grade_default: C, topics: [PROC, ARCH], verified: false, probe: "403",
+     blocker: "Bot protection returns 403 site-wide to automated clients. Needs the in-app browser or a feed. Not evaded."}
+  - {id: amat,     name: Applied Materials,          url: "https://www.appliedmaterials.com/",                        oa_status: public_corp, grade_default: C, topics: [PROC],       verified: false, probe: "403",
+     blocker: "Bot protection returns 403 site-wide. Same situation as Intel."}
+
+# ---------------------------------------------------------------------------
+# Trade press and analysis — grade D/E, NEVER stated as fact
+# ---------------------------------------------------------------------------
+# Useful for knowing where to look and for tracking industry direction.
+# Per CLAUDE.md these may never contradict a grade A/B claim, and are always attributed.
+trade_press:
+  - {id: semiengineering, name: Semiconductor Engineering, url: "https://semiengineering.com/",        oa_status: open_news, grade_default: E, topics: [ALL],        verified: true, probe: "200", notes: Technically strongest of the trade press; still attributed, never asserted.}
+  - {id: ieee_spectrum,   name: IEEE Spectrum,             url: "https://spectrum.ieee.org/",          oa_status: open_news, grade_default: E, topics: [ALL],        verified: true, probe: "200"}
+  - {id: chipsandcheese,  name: Chips and Cheese,          url: "https://chipsandcheese.com/",         oa_status: open_news, grade_default: E, topics: [ARCH],       verified: true, probe: "200", notes: Original microbenchmark data can reach grade C when method is disclosed.}
+  - {id: chipletter,      name: The Chip Letter,           url: "https://thechipletter.substack.com/", oa_status: open_news, grade_default: E, topics: [ARCH, ECON], verified: true, probe: "200"}
+  - {id: eetimes,         name: EE Times,                  url: "https://www.eetimes.com/",            oa_status: open_news, grade_default: E, topics: [ECON, ALL],  verified: false, probe: "ReadTimeout (30s, retried at 45s)",
+     blocker: "Did not respond on two attempts. Transient or geo/bot-related — unresolved, so not harvestable. Re-test."}
+  - {id: wikichip,        name: WikiChip / WikiChip Fuse,  url: "https://en.wikichip.org/",            oa_status: open_news, grade_default: E, topics: [ARCH, PROC], verified: false, probe: "ConnectTimeout (both en.wikichip.org and fuse.wikichip.org)",
+     blocker: "No TCP connection established on two attempts. Unresolved. Re-test."}
+
+# ---------------------------------------------------------------------------
+# Removed entries — kept so the deletion is auditable
+# ---------------------------------------------------------------------------
+removed:
+  - id: ieee_ojeds
+    name: IEEE Open Journal of the Electron Devices Society
+    removed_on: 2026-09-20
+    reason: >
+      DOES NOT EXIST. No Crossref match under any query variant. The name was fabricated in the
+      registry's first draft by blending IEEE's real Open Journal series with the real IEEE
+      Journal of the Electron Devices Society (JEDS, ISSN 2168-6734, which is listed above and
+      verified). The Open Journal series is genuine — OJ-SSCS, OJ-Nano and OJ-CAS are all
+      verified and now listed — but it has no Electron Devices title.
+    lesson: >
+      This is the exact failure the verification gate exists to catch: a plausible name,
+      assembled from real components, that no authority recognises. It survived one drafting
+      pass and died on first contact with Crossref.
+
+# ---------------------------------------------------------------------------
+# Known-paywalled — recorded so we stop re-discovering them. DO NOT HARVEST.
+# ---------------------------------------------------------------------------
+excluded_paywalled:
+  - {id: techinsights,  name: TechInsights,            reason: subscription,     note: Die-shot/teardown authority. Reaches us only via others' open citation.}
+  - {id: semianalysis,  name: SemiAnalysis,            reason: partial_paywall,  note: Free tier only.}
+  - {id: semi_standards, name: SEMI Standards,         reason: paid}
+  - {id: ieee_xplore,   name: IEEE Xplore (general),   reason: subscription,     note: Route individual papers via author copies.}
+  - {id: sciencedirect, name: ScienceDirect/Elsevier,  reason: subscription}

@@ -1,0 +1,350 @@
+# Project Electron — Canonical Units and Definitions
+#
+# RULE: All calculation and comparison happens in coherent SI base units. No exceptions.
+# Presentation happens in field convention. The two are different layers and never mix.
+#
+# Resolved 2026-09-20 (user): "Use SI units for all calculations and comparison."
+# This supersedes the earlier draft, which made cm^2/(V*s) the stored canonical for mobility and
+# permitted per-quantity non-SI exceptions. That design put comparisons in non-SI units, which is
+# precisely where silent order-of-magnitude errors enter. Removed.
+#
+# WHY THREE REPRESENTATIONS PER QUANTITY:
+#   as_published  - the source's own number and unit, transcribed verbatim. Audit anchor:
+#                   `verify-citation` must be able to check us against the paper without doing
+#                   arithmetic. Never computed with.
+#   si_base       - coherent SI, derived from as_published by a recorded conversion.
+#                   AUTHORITATIVE. Every calculation and every comparison uses this and only this.
+#   display       - field convention, derived from si_base at render time. Never computed with.
+#
+# This is not three sources of truth. as_published is a transcription, si_base is the single
+# authoritative value, display is a rendering. The derivation direction is fixed and one-way:
+#   as_published --(recorded conversion)--> si_base --(display_factor/offset)--> display
+#
+# NOTE ON "SI": nm, mV and GHz are SI (prefixed units) and are fine for display. Calculation still
+# normalizes to unprefixed base units, because mismatched prefixes are their own error class.
+
+schema_version: 2
+updated: 2026-09-20
+canonical_system: SI_coherent_base
+calculation_rule: >
+  Convert to si_base on ingest. Perform every comparison, aggregation, threshold check and
+  derivation in si_base. Convert to display only at the final render. A comparison performed on
+  display values is a defect regardless of whether the result happens to be correct.
+
+# ---------------------------------------------------------------------------
+# Quantities
+# ---------------------------------------------------------------------------
+# display = si_base_value * display_factor + display_offset   (offset defaults to 0)
+units:
+
+  length_device:
+    si_base: m
+    display: nm
+    display_factor: 1.0e9
+    accept: [nm, angstrom, um, micron, mm, m]
+    note: Gate length, pitch, EOT, fin width, film thickness, bond pitch.
+
+  length_die:
+    si_base: m
+    display: mm
+    display_factor: 1.0e3
+    accept: [um, mm, cm, mil, inch]
+
+  wafer_diameter:
+    si_base: m
+    display: mm
+    display_factor: 1.0e3
+    accept: [mm, inch]
+    note: >
+      "12-inch" is a name, not a measurement — the wafer is 300 mm exactly, not 304.8 mm.
+      Map inch labels to their defined mm values; never do arithmetic on the inch label.
+
+  area_die:
+    si_base: m^2
+    display: mm^2
+    display_factor: 1.0e6
+    accept: [um^2, mm^2, cm^2]
+
+  transistor_density:
+    si_base: 1/m^2
+    display: MTr/mm^2
+    display_factor: 1.0e-12
+    accept: [MTr/mm^2, Mtr/mm2, Btr/cm^2]
+    note: Transistor count is dimensionless. Vendor figures use differing standard-cell mixes — record the mix.
+
+  voltage:
+    si_base: V
+    display: V
+    display_factor: 1.0
+    accept: [V, mV, kV]
+
+  current:
+    si_base: A
+    display: mA
+    display_factor: 1.0e3
+    accept: [A, mA, uA, nA, pA]
+
+  current_drive:
+    si_base: A/m
+    display: uA/um
+    display_factor: 1.0
+    accept: [uA/um, mA/um, A/um]
+    note: >
+      Factor is exactly 1 — A/m and uA/um are numerically identical. Convenient, and still
+      converted explicitly rather than assumed.
+      Meaningless without conditions: Ion MUST carry Vdd, Vg, the Ioff it is quoted at, and
+      temperature. An Ion with no stated Ioff is not a result and does not enter the ledger.
+
+  power:
+    si_base: W
+    display: W
+    display_factor: 1.0
+    accept: [W, mW, uW, kW, MW]
+
+  power_density:
+    si_base: W/m^2
+    display: W/mm^2
+    display_factor: 1.0e-6
+    accept: [W/mm^2, W/cm^2]
+
+  energy:
+    si_base: J
+    display: fJ
+    display_factor: 1.0e15
+    accept: [J, pJ, fJ, aJ]
+    note: State the operation and precision. pJ/bit and fJ/op are different quantities.
+
+  efficiency_compute:
+    si_base: 1/J           # operations per joule; operations are dimensionless
+    display: TOPS/W
+    display_factor: 1.0e-12
+    accept: [TOPS/W, GOPS/W, TFLOPS/W, POPS/W]
+    note: >
+      NOT comparable across numeric precisions. INT8 TOPS/W and FP16 TFLOPS/W are different
+      quantities wearing similar names. Precision is mandatory; without it the figure is unusable.
+      SI conversion does NOT make them comparable — unit normalization and semantic comparability
+      are different problems, and this is the quantity where conflating them does most damage.
+
+  frequency:
+    si_base: Hz
+    display: GHz
+    display_factor: 1.0e-9
+    accept: [Hz, kHz, MHz, GHz, THz]
+
+  time:
+    si_base: s
+    display: ns
+    display_factor: 1.0e9
+    accept: [s, ms, us, ns, ps, fs]
+
+  temperature:
+    si_base: K
+    display: degC
+    display_factor: 1.0
+    display_offset: -273.15
+    accept: [K, degC, degF]
+    note: >
+      OFFSET, not a factor — the only quantity here where a multiplicative conversion is wrong.
+      Code that assumes factor-only conversion will silently corrupt every temperature.
+      degF converts on ingest and never appears in output.
+
+  temperature_delta:
+    si_base: K
+    display: K
+    display_factor: 1.0
+    display_offset: 0.0
+    note: >
+      Deliberately separate from `temperature`. A difference of 10 degC IS 10 K, with no offset.
+      Applying the -273.15 offset to a delta is a classic error, so the two have distinct types.
+
+  pressure:
+    si_base: Pa
+    display: mTorr
+    display_factor: 7.50061682704
+    accept: [Pa, kPa, mTorr, Torr, mbar, bar, atm, psi]
+    note: >
+      Process literature is overwhelmingly mTorr/Torr. A top source of Type D conflicts in
+      deposition and etch papers. Convert on ingest, always.
+
+  mobility:
+    si_base: m^2/(V*s)
+    display: cm^2/(V*s)
+    display_factor: 1.0e4
+    accept: [cm^2/(V*s), m^2/(V*s)]
+    note: >
+      The field publishes in cm^2/(V*s); we calculate in m^2/(V*s). The 1e4 lives here, applied
+      explicitly at render, rather than implicitly inside a stored number. Always confirm which
+      unit the source used — this factor is the single most common silent 10^4 error in device
+      literature, and it is invisible in the numeral.
+
+  sheet_resistance:
+    si_base: ohm            # per square is dimensionless
+    display: ohm/sq
+    display_factor: 1.0
+    accept: [ohm/sq, ohm]
+
+  contact_resistivity:
+    si_base: ohm*m^2
+    display: ohm*um^2
+    display_factor: 1.0e12
+    accept: [ohm*um^2, ohm*cm^2, ohm*mm^2]
+
+  resistance:
+    si_base: ohm
+    display: ohm
+    display_factor: 1.0
+    accept: [ohm, mohm, kohm, Mohm]
+
+  capacitance_per_length:
+    si_base: F/m
+    display: fF/um
+    display_factor: 1.0e9
+    accept: [fF/um, aF/um, pF/mm]
+
+  thermal_conductivity:
+    si_base: W/(m*K)
+    display: W/(m*K)
+    display_factor: 1.0
+    accept: ["W/(m*K)", "W/(cm*K)"]
+
+  subthreshold_swing:
+    si_base: V              # per decade is dimensionless
+    display: mV/dec
+    display_factor: 1.0e3
+    accept: [mV/dec, V/dec]
+    note: Boltzmann limit is ~59.6 mV/dec at 300 K. Anything below requires scrutiny, not excitement.
+
+  defect_density:
+    si_base: 1/m^2
+    display: defects/cm^2
+    display_factor: 1.0e-4
+    accept: [defects/cm^2, D0, defects/mm^2]
+
+  throughput_tool:
+    si_base: 1/s
+    display: wph
+    display_factor: 3600.0
+    accept: [wph, wafers/hour, wafers/day]
+    note: State wafer size, and whether nominal or with overhead.
+
+  euv_dose:
+    si_base: J/m^2
+    display: mJ/cm^2
+    display_factor: 0.1
+    accept: ["mJ/cm^2", "J/m^2"]
+
+  numerical_aperture:
+    si_base: dimensionless
+    display: dimensionless
+    display_factor: 1.0
+    note: NA 0.33 (standard EUV) vs 0.55 (High-NA). Resolution claims require NA and k1.
+
+# ---------------------------------------------------------------------------
+# Quantities SI does not govern
+# ---------------------------------------------------------------------------
+# The SI rule covers physical quantities. These are not physical quantities, so they get their
+# own explicit canonicalization rather than an unstated exception.
+non_si_domains:
+
+  data_quantity:
+    canonical: bit
+    display: GB
+    note: >
+      The byte is not an SI unit. Canonicalize to bits for calculation.
+      TWO independent traps, routinely confused with each other:
+        1. Gb (gigabit) vs GB (gigabyte) — factor of 8. Memory density is usually quoted in Gb,
+           bandwidth in GB/s.
+        2. GB (decimal, 10^9) vs GiB (binary, 2^30) — ~7.4% apart and diverging with scale.
+      Record which convention the source used. If it cannot be determined, that is an
+      `undisclosed-method` gap, not a judgement call.
+
+  data_rate:
+    canonical: bit/s
+    display: GB/s
+    note: >
+      Gbps (bits) and GB/s (bytes) differ by 8 plus line-encoding overhead. GT/s is transfers,
+      not bits — conversion requires bus width. Always record scope: HBM figures are quoted
+      per-stack, per-package and per-system, and are routinely conflated across those scopes.
+
+  currency:
+    canonical: USD
+    note: >
+      Money is not a physical quantity and has no SI form. Record original currency, amount, and
+      date. Any FX-converted figure carries its rate date — an uncited conversion is
+      unreproducible and becomes silently wrong as rates move.
+
+  counts:
+    canonical: dimensionless
+    note: Wafers, dice, transistors, layers, masks. Integer counts; record what is being counted.
+
+  ratios_and_yields:
+    canonical: fraction        # 0.0-1.0
+    display: percent
+    display_factor: 100.0
+    note: Store fractions, display percent. Never compare a percent against a fraction.
+
+# ---------------------------------------------------------------------------
+# Terms whose definitions differ between sources — the Type D catalogue
+# ---------------------------------------------------------------------------
+# Adding an entry here IS the resolution step for a Type D conflict, so the same ambiguity is
+# never investigated twice. Unit conversion does not solve these — they are semantic, not metric.
+contested_terms:
+
+  process_node:
+    problem: >
+      "2nm", "3nm", "18A" are product names, not dimensions, and naming scales differ per foundry.
+      Cross-foundry node comparison is invalid by construction.
+    resolution: >
+      Never treat as a length — it is not a quantity and has no SI form. Store as an opaque label.
+      For real comparison use disclosed CPP (contacted poly pitch), MMP (minimum metal pitch), or
+      transistor density, and state which. A claim comparing nodes by name alone does not enter
+      the ledger.
+
+  transistor_count_density:
+    problem: Vendors compute density with different standard-cell mixes (high-density vs high-performance).
+    resolution: Record the cell mix. Without it, the claims are not comparable — mark `contested` with an `undisclosed-method` gap.
+
+  eot_vs_cet:
+    problem: EOT (equivalent oxide thickness) and CET (capacitance equivalent thickness) are used interchangeably; CET includes quantum and depletion effects.
+    resolution: Store which one the source measured. Same unit, different quantity — the SI rule will not catch this.
+
+  tops_precision:
+    problem: TOPS quoted without numeric precision, or with sparsity multipliers silently applied.
+    resolution: Require precision (INT4/INT8/FP8/FP16/BF16) and whether sparsity is assumed. Dense is canonical; sparse stored separately and labelled.
+
+  hbm_bandwidth_scope:
+    problem: Bandwidth quoted per-stack, per-package, or per-system without saying which.
+    resolution: Store scope explicitly. Per-stack canonical; others derived and labelled.
+
+  yield:
+    problem: Die yield, wafer yield and line yield are distinct; "yield" alone is ambiguous. D0 depends on the model (Poisson, Murphy, negative binomial).
+    resolution: Store which yield and, for D0, which model. Comparing D0 across models is invalid.
+
+  chiplet_vs_tile_vs_die:
+    problem: Used inconsistently across vendors and papers.
+    resolution: Store the source's own term verbatim in the corpus record; normalize only in the claim, with the mapping noted.
+
+  advanced_packaging:
+    problem: 2.5D/3D, hybrid bonding and vendor brand names (CoWoS, Foveros, SoIC, EMIB) describe overlapping things at different abstraction levels.
+    resolution: Store vendor term plus structural description (interposer type, bond pitch). Compare on bond pitch, not brand.
+
+  ai_accelerator_generation:
+    problem: Vendor generation names imply comparability they do not have.
+    resolution: Compare on measured throughput at stated precision, power and memory bandwidth — never on generation name.
+
+# ---------------------------------------------------------------------------
+# Conversion constants
+# ---------------------------------------------------------------------------
+# Exact by definition unless marked derived. Any constant that is measured rather than defined
+# gets a corpus record before use.
+constants:
+  torr_to_pa: 133.3223684210526      # exact: 101325/760
+  pa_to_mtorr: 7.50061682704         # exact: reciprocal of above, x1000
+  inch_to_m: 0.0254                  # exact
+  sqft_to_m2: 0.09290304             # exact
+  celsius_to_kelvin_offset: 273.15   # exact
+  atm_to_pa: 101325.0                # exact
+  psi_to_pa: 6894.757293168          # exact
+  bits_per_byte: 8                   # exact
+  gib_to_gb: 1.073741824             # exact: 2^30 / 10^9
+  boltzmann_limit_ss_300K_V_dec: 0.0596   # derived: (kT/q)*ln(10) at 300 K. Recompute when precision matters.
