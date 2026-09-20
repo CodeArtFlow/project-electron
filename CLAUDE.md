@@ -470,6 +470,27 @@ _site/                    generated site output (gitignored; built in CI)
 
 ---
 
+## Deployment
+
+Live at **https://codeartflow.github.io/project-electron/** — public repo, GitHub Pages, built
+and deployed by `.github/workflows/deploy.yml` on every push to `main`.
+
+The repository is public deliberately. This project's claim is that every statement traces to a
+source and a reader can check it; a private audit trail would make that claim unverifiable. The
+ledger, the conflict records, the corrections and the git history are the product as much as the
+digests are.
+
+GitHub Pages requires either a public repository or a paid plan — a private repo on the free plan
+is rejected with "Your current plan does not support GitHub Pages for this repository." If the
+repo is ever made private again, deployment must move to Cloudflare Pages, Netlify, or a
+separate public site repo.
+
+The workflow is: self-tests → publication gate → build → deploy. Pull requests build and are
+gated but never deploy. There is no `continue-on-error` and no manual override input anywhere in
+it, because a gate CI can route around is not a gate.
+
+---
+
 ## Current state — 2026-09-20
 
 Doctrine, a verified source registry, verification tooling, the `extract-claims` stage, and a
