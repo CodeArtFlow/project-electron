@@ -1,0 +1,170 @@
+# Project Electron — Artifact schemas
+#
+# The shapes that pipeline/claims.py validates. Doctrine lives in CLAUDE.md and is not repeated
+# here; this file says what the fields ARE, not why the rules exist.
+#
+# required / optional / conditional are enforced. A field marked `never_inferred` must come from
+# the source or be omitted — writing a plausible value into it is the failure mode the whole
+# project is built against.
+
+schema_version: 1
+updated: 2026-09-20
+
+# ---------------------------------------------------------------------------
+# Source record — corpus/papers/SRC-nnnnn.yaml
+# ---------------------------------------------------------------------------
+# What ONE source says, in its own terms. Immutable once written: if a source is revised, that
+# is a NEW record superseding this one, because claims already cite this one's content.
+source_record:
+  id:
+    format: "SRC-nnnnn"
+    required: true
+    notes: Sequential, stable forever, never reused.
+
+  # --- identity ---
+  title: {required: true, never_inferred: true}
+  doi: {required: false, notes: Required when one exists. Canonical identifier.}
+  arxiv_id: {required: false}
+  url: {required: true, notes: Where we actually retrieved it.}
+  venue_id: {required: true, notes: Must match an id in sources/registry.yaml.}
+  authors:
+    required: true
+    notes: List of {name, author_id, affiliation, corresponding}. author_id links corpus/authors/.
+    never_inferred: true
+
+  # --- dates ---
+  published_date:
+    required: true
+    notes: >
+      When the WORK was published. Feeds a claim's as_of. Distinct from retrieved_date, and the
+      distinction matters: a 2019 measurement read today is 2019 evidence.
+  retrieved_date: {required: true, notes: When we fetched it.}
+
+  # --- access, which bounds everything downstream ---
+  access:
+    required: true
+    enum: [full_text, full_text_figures, abstract_only, metadata_only]
+    notes: >
+      What we ACTUALLY read. abstract_only or metadata_only forbids extracting quantitative
+      claims - a number from an abstract has no method behind it.
+  oa_evidence:
+    required: true
+    notes: >
+      How we established this item was legitimately open: registry venue with oa_status full,
+      a per-article licence, an author preprint URL, or a repository copy. Never assumed.
+  license: {required: false, notes: Where stated (CC-BY etc).}
+
+  # --- what it says, in ITS terms ---
+  reported:
+    required: true
+    notes: >
+      Verbatim-faithful record of the source's own claims and numbers, BEFORE any normalization.
+      Values stay in the source's units here. This is the audit anchor: verify-citation compares
+      this against the paper without arithmetic.
+  method_summary:
+    required: true
+    notes: How the result was obtained. If the source does not disclose it, say so explicitly -
+      that absence is itself evidence, and it is what an `undisclosed-method` gap cites.
+  evidence_type:
+    required: true
+    enum: [measured, simulated, projected, announced, rumored]
+    notes: Per CLAUDE.md. Collapsing these is the most common way reporting becomes false.
+  grade:
+    required: true
+    enum: [A, B, C, D, E]
+    notes: >
+      Starts from the venue's grade_default in the registry, then adjusted DOWN by what this
+      item actually contains. A vendor page with no data is D regardless of venue default.
+  limitations:
+    required: true
+    notes: Sample size, process maturity, single-lab result, absent error bars, conflicts of
+      interest. An empty list is a claim in itself and must be deliberate.
+
+# ---------------------------------------------------------------------------
+# Claim — ledger/claims/<TOPIC>.yaml (a list under key `claims`)
+# ---------------------------------------------------------------------------
+claim:
+  id:
+    format: "CLM-<TOPIC>-nnnn"
+    required: true
+    notes: TOPIC is one of MAT DEV LITHO PROC PKG MEM ARCH PHOT EDA ECON. Never reused.
+  statement:
+    required: true
+    notes: >
+      ONE atomic, falsifiable assertion, with its measurement conditions. If it contains "and"
+      joining two testable facts, it is two claims.
+  quantity:
+    required: false
+    notes: >
+      Present whenever the claim turns on a number. Produced by pipeline/units.py, never by
+      hand: {quantity, as_published{value,unit}, si_base{value,unit}, display{value,unit},
+      conditions}.
+  conditions:
+    required: false
+    notes: >
+      Required when the quantity is meaningless without them - Vdd, Ioff, temperature, precision,
+      scope. Enforced per-quantity via `conditions_required` below.
+  sources:
+    required: true
+    notes: One or more SRC ids. A claim with no source cannot exist.
+  grade: {required: true, enum: [A, B, C, D, E], notes: Capped by the weakest load-bearing source.}
+  credibility:
+    required: true
+    enum: [established, emerging, unknown, flagged]
+    notes: From corpus/authors/. Independent axis from grade; can lower confidence, never raise
+      it above the grade ceiling.
+  evidence_type: {required: true, enum: [measured, simulated, projected, announced, rumored]}
+  status:
+    required: true
+    enum: [active, challenged, contested, superseded, retracted]
+  as_of:
+    required: true
+    notes: Date of the underlying measurement, NOT the date we read it.
+  topic: {required: true}
+  supersedes: {required: false, notes: Claim ids. Requires two independent sources.}
+  superseded_by: {required: false}
+  challenged_by: {required: false, notes: Set when a single credible source disputes this.}
+  conflicts: {required: false, notes: CFL ids touching this claim.}
+  created: {required: true}
+
+# ---------------------------------------------------------------------------
+# Quantities that are meaningless without stated conditions
+# ---------------------------------------------------------------------------
+# Enforced by pipeline/claims.py. A value in one of these quantities without its conditions is
+# rejected at extraction, not flagged later - CLAUDE.md calls such a value "a rumor with digits".
+conditions_required:
+  current_drive: [vdd, ioff, temperature]
+  efficiency_compute: [precision, sparsity]
+  bandwidth_memory: [scope]
+  subthreshold_swing: [temperature]
+  mobility: [temperature, carrier_type]
+  transistor_density: [cell_mix]
+  defect_density: [yield_model]
+  euv_dose: [resist]
+
+# ---------------------------------------------------------------------------
+# Extraction refusals
+# ---------------------------------------------------------------------------
+# Conditions under which a claim must NOT be created. Each maps to a rule in CLAUDE.md.
+refuse_extraction_when:
+  - id: abstract_only_quantitative
+    rule: Source access is abstract_only or metadata_only and the claim is quantitative.
+    because: A number without its method is not a result.
+  - id: node_name_as_dimension
+    rule: The claim treats a process node label ("2nm") as a physical length.
+    because: Node names are product names. Compare on pitch or density.
+  - id: cross_foundry_node
+    rule: The claim compares process nodes across foundries by name.
+    because: Invalid by construction - naming scales differ per foundry.
+  - id: grade_de_as_fact
+    rule: Grade is D or E and the statement asserts rather than attributes.
+    because: Low-grade material is reported as attribution, never as fact.
+  - id: missing_required_conditions
+    rule: Quantity appears in conditions_required and the conditions are absent.
+    because: The number is uninterpretable and not comparable to anything.
+  - id: unverified_venue
+    rule: "venue_id is `verified: false` in the registry, or `review` with no per-article OA check."
+    because: We have not established we may legitimately read it.
+  - id: compound_statement
+    rule: The statement joins two independently falsifiable assertions.
+    because: Claims are atomic; a compound claim cannot be superseded or contested cleanly.
