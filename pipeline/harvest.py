@@ -332,7 +332,9 @@ def main():
         print("\ndry run - nothing written")
         for c in readable[:10]:
             print(f"    {c['venue_id']:16} {(c['title'] or '')[:64]}")
-        return 0
+        # A dry run that hit partial coverage is still partial. An earlier version printed
+        # INCOMPLETE SWEEP and then exited 0, so the message and the exit code disagreed.
+        return 2 if errors else 0
 
     start = next_candidate_seq()
     written = [write_candidate(c, start + i) for i, c in enumerate(readable)]
