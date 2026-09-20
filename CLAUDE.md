@@ -110,7 +110,8 @@ Claim statuses:
 
 **Open access only, for now.** If a source is paywalled, we do not infer its content from the
 abstract or from secondary coverage — we record the access limitation and move on. Check for a
-legitimate open version (author preprint, institutional repository, Unpaywall) before giving up.
+legitimate open version before giving up: OpenAlex's `best_oa_location` is the authority here,
+plus author preprints and institutional repositories.
 
 `sources/registry.yaml` is the comprehensive list of relevant open-access venues, maintained as a
 first-class artifact. A registry compiled from assumption is exactly the failure mode rule 1
@@ -506,11 +507,6 @@ Settled: units. Coherent SI for all calculation and comparison, field convention
 non-SI exceptions are removed.
 
 Open decisions:
-- **Unpaywall needs a contact email** (the API mandates one in every request). Not supplying the
-  operator's personal address to a third-party service without instruction. This one has teeth:
-  Unpaywall is how we find legitimate OA copies of paywalled work, and the contradiction protocol
-  requires that check before recording an `access-blocked` gap. Without it, `access-blocked`
-  counts will overstate what is genuinely unreachable.
 - **Semantic Scholar** rate-limits unauthenticated requests to unusability (HTTP 429). A free key
   is available on request. OpenAlex covers the same ground, so this is an enhancement, not a blocker.
 - Jev / System One Model (TypeSafe) undocumented; credibility tiers are the authority until then.

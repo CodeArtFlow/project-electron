@@ -29,9 +29,10 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 REGISTRY = ROOT / "sources" / "registry.yaml"
 
-# No email in the User-Agent. Crossref's "polite pool" and Unpaywall both want a contact address;
-# the operator's personal address is not ours to hand to third-party services, so we run in the
-# public pool and accept the lower rate limit. See report note on unpaywall.
+# No email in the User-Agent. Crossref's "polite pool" wants a contact address; the operator's
+# personal address is not ours to hand to third-party services, so we run in the public pool and
+# accept the lower rate limit. (Unpaywall would also require one - we use OpenAlex instead,
+# which is its successor and needs no email. See the unpaywall entry in the registry.)
 UA = {"User-Agent": "ProjectElectron/0.1 (semiconductor research agent; verification)"}
 TIMEOUT = 30
 PAUSE = 0.35  # public-pool courtesy
@@ -227,7 +228,7 @@ PROBES = {
     "crossref": "https://api.crossref.org/works?rows=1",
     "doaj": "https://doaj.org/api/search/journals/issn:2041-1723",
     "osti": "https://www.osti.gov/api/v1/records?rows=1",
-    "unpaywall": None,  # requires an email parameter - see report note
+    "unpaywall": None,  # not used: superseded by OpenAlex, which needs no email. See registry.
     "retraction_watch": "https://api.labs.crossref.org/data/retractionwatch?rows=1",
 }
 
@@ -241,6 +242,23 @@ def verify_endpoint(entry):
         res["reason"] = "requires a contact email we will not supply without the operator's say-so"
         return res
     res["probe"] = probe
+    if entry.get("access") == "bulk_dataset":
+        # Reading a few bytes proves availability. A full GET pulls tens of megabytes on every
+        # verification run, which is slow and rude to the host. The previous probe passed only
+        # by managing to download the whole 66 MB inside the timeout.
+        try:
+            with requests.get(probe, headers=UA, timeout=TIMEOUT, stream=True) as rr:
+                first = next(rr.iter_content(2048), b"")
+                res["status"] = rr.status_code
+                res["probe_mode"] = "streamed first 2 KiB"
+                res["content_length"] = rr.headers.get("Content-Length")
+                res["verdict"] = "PASS" if rr.status_code == 200 and first else "FAIL"
+                if res["verdict"] == "FAIL":
+                    res["reason"] = f"HTTP {rr.status_code}"
+        except Exception as e:  # noqa: BLE001
+            res["verdict"] = "FAIL"
+            res["reason"] = f"{type(e).__name__}: {e}"
+        return res
     r, err = get(probe)
     if err:
         res["verdict"] = "FAIL"
@@ -286,7 +304,22 @@ def main():
     args = ap.parse_args()
 
     reg = yaml.safe_load(REGISTRY.read_text(encoding="utf-8"))
+
+    # MERGE into any existing report rather than replacing it. A partial run (--section
+    # aggregators) must not destroy evidence from a previous full run: the report is the audit
+    # trail the registry cites, and an hour of journal verification is not something a 20-second
+    # aggregator check gets to silently delete. Sections this run produces are replaced;
+    # sections it does not touch are preserved, each with the date it was actually gathered.
+    out_path = Path(args.out)
     report = {"run_date": date.today().isoformat(), "sections": {}}
+    if out_path.exists():
+        try:
+            previous = json.loads(out_path.read_text(encoding="utf-8"))
+            report["sections"] = previous.get("sections", {})
+            report["section_dates"] = previous.get("section_dates", {})
+        except (OSError, json.JSONDecodeError):
+            pass  # an unreadable prior report is replaced, not trusted
+    report.setdefault("section_dates", {})
 
     if args.section in ("aggregators", "all"):
         out = []
@@ -295,6 +328,7 @@ def main():
             print(f"[agg ] {r['verdict']:8} {r['name']}", flush=True)
             out.append(r)
         report["sections"]["aggregators"] = out
+        report["section_dates"]["aggregators"] = date.today().isoformat()
 
     if args.section in ("journals", "all"):
         out = []
@@ -306,6 +340,7 @@ def main():
                 print(f"[jrnl] {r['verdict']:8} {r['name']}  {extra}", flush=True)
                 out.append(r)
         report["sections"]["journals"] = out
+        report["section_dates"]["journals"] = date.today().isoformat()
 
     if args.section in ("web", "all"):
         out = []
@@ -317,10 +352,15 @@ def main():
                 print(f"[web ] {r['verdict']:8} {r['name']}", flush=True)
                 out.append(r)
         report["sections"]["web"] = out
+        report["section_dates"]["web"] = date.today().isoformat()
 
     Path(args.out).write_text(json.dumps(report, indent=2), encoding="utf-8")
 
-    print("\n--- summary ---")
+    print("\n--- summary (whole report, not only this run) ---")
+    for sec in report["sections"]:
+        when = report["section_dates"].get(sec, "unknown")
+        if when != date.today().isoformat():
+            print(f"  note: section {sec!r} carried over from {when}, not re-run today")
     for sec, rows in report["sections"].items():
         counts = {}
         for r in rows:

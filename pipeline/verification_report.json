@@ -2474,6 +2474,76 @@
         "reason": "exists and active; hybrid means per-article OA check at harvest",
         "section": "journals_hybrid"
       }
+    ],
+    "aggregators": [
+      {
+        "id": "openalex",
+        "name": "OpenAlex",
+        "probe": "https://api.openalex.org/works?per-page=1",
+        "status": 200,
+        "bytes": 17747,
+        "verdict": "PASS"
+      },
+      {
+        "id": "arxiv_api",
+        "name": "arXiv API",
+        "probe": "http://export.arxiv.org/api/query?search_query=cat:cond-mat.mtrl-sci&max_results=1",
+        "status": 200,
+        "bytes": 2183,
+        "verdict": "PASS"
+      },
+      {
+        "id": "crossref",
+        "name": "Crossref",
+        "probe": "https://api.crossref.org/works?rows=1",
+        "status": 200,
+        "bytes": 2472,
+        "verdict": "PASS"
+      },
+      {
+        "id": "doaj",
+        "name": "Directory of Open Access Journals",
+        "probe": "https://doaj.org/api/search/journals/issn:2041-1723",
+        "status": 200,
+        "bytes": 2690,
+        "verdict": "PASS"
+      },
+      {
+        "id": "osti",
+        "name": "OSTI (US DOE research output)",
+        "probe": "https://www.osti.gov/api/v1/records?rows=1",
+        "status": 200,
+        "bytes": 1108,
+        "verdict": "PASS"
+      },
+      {
+        "id": "retraction_watch",
+        "name": "Retraction Watch Database (via Crossref Labs)",
+        "probe": "https://api.labs.crossref.org/data/retractionwatch?rows=1",
+        "status": 503,
+        "probe_mode": "streamed first 2 KiB",
+        "content_length": "162",
+        "verdict": "FAIL",
+        "reason": "HTTP 503"
+      },
+      {
+        "id": "semantic_scholar",
+        "name": "Semantic Scholar Academic Graph",
+        "probe": "https://api.semanticscholar.org/graph/v1/paper/search?query=transistor&limit=1",
+        "status": 429,
+        "bytes": 174,
+        "verdict": "FAIL",
+        "reason": "HTTP 429"
+      },
+      {
+        "id": "unpaywall",
+        "name": "Unpaywall",
+        "verdict": "BLOCKED",
+        "reason": "requires a contact email we will not supply without the operator's say-so"
+      }
     ]
+  },
+  "section_dates": {
+    "aggregators": "2026-09-20"
   }
 }

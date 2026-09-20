@@ -10,7 +10,7 @@
 #   true    - exists, active, and OA status CONFIRMED by an authority (DOAJ for journals,
 #             successful endpoint probe for APIs). Harvestable.
 #   review  - exists and active, but OA status NOT confirmed. Harvestable ONLY with a
-#             per-article OA check (Unpaywall / author copy). Every `hybrid` venue is
+#             per-article OA check (OpenAlex best_oa_location / author copy). Every `hybrid` venue is
 #             permanently `review` by definition — OA is an article-level property there.
 #   false   - existence or reachability could not be established. DO NOT HARVEST.
 #
@@ -54,7 +54,12 @@ aggregators:
     auth: none
     verified: true
     probe: "GET /works?per-page=1 -> 200"
-    notes: Primary discovery index. Also the backbone for author records and academic lineage.
+    notes: >
+      Primary discovery index, and the backbone for author records and academic lineage.
+      ALSO the per-article OA authority: every work carries `open_access` (is_oa, oa_status)
+      and `best_oa_location` (host, version, license, pdf_url). This is what a `review` venue's
+      per-article check uses, and what must return `closed` before an `access-blocked` gap is
+      recorded. OpenAlex is Unpaywall's successor, from the same team and the same data.
 
   - id: arxiv_api
     name: arXiv API
@@ -107,10 +112,22 @@ aggregators:
     name: Retraction Watch Database (via Crossref Labs)
     endpoint: https://api.labs.crossref.org/data/retractionwatch
     oa_status: full
-    access: rest_api
-    verified: true
-    probe: "GET ?rows=1 -> 200"
-    notes: Integrity flags for author credibility tiers. Checked before any `established` tier.
+    access: bulk_dataset
+    verified: review
+    probe: "streamed first 2 KiB -> 503 (2026-09-20, later attempt)"
+    notes: >
+      Integrity flags for author credibility tiers. Checked before any `established` tier.
+      NOT a query API: it ignores query parameters and serves the entire CSV (~66 MB measured
+      2026-09-20). Download periodically and query locally; never fetch per-author. An earlier
+      registry entry described it as a rest_api probed with `?rows=1`, which was wrong - that
+      probe was downloading the whole dataset and passed only by finishing inside the timeout.
+    state: >
+      Observed HTTP 200 serving 66,841,610 bytes on 2026-09-20, then HTTP 503 on a later probe
+      the same day. Existence and content are evidenced; current availability is not. Marked
+      `review` rather than `true` because we cannot presently obtain a clean fetch, and not
+      `false` because we directly measured it serving the dataset. The 503 is most likely
+      self-inflicted - we pulled the full 66 MB twice in quick succession before the streamed
+      probe existed. Do not re-probe aggressively; retry on a later day.
 
   - id: semantic_scholar
     name: Semantic Scholar Academic Graph
@@ -133,14 +150,22 @@ aggregators:
     access: rest_api
     auth: email_required
     verified: false
+    status: superseded_by_openalex
     blocker: >
-      The API mandates a contact email in every request. We will not send the operator's
-      personal address to a third-party service without explicit instruction. DECISION NEEDED:
-      supply a project address, authorise use of a personal one, or drop this source.
-    impact: >
-      Material. Unpaywall is how we find legitimate OA copies of paywalled work, and CLAUDE.md
-      requires that check before recording an `access-blocked` gap. Without it, `access-blocked`
-      counts will overstate what is genuinely unreachable.
+      Not needed, and not used. Unpaywall's own API documentation states that OpenAlex is its
+      successor - same team, same data - and that every OpenAlex result carries `open_access`
+      and `best_oa_location`. The /v2/search endpoint was retired on 2026-09-18 and now returns
+      410 Gone, with that page pointing to OpenAlex. The /v2/:doi endpoint still requires a
+      contact email in every request; since OpenAlex covers the same need with no email, we do
+      not use it and no email decision is required.
+    verified_finding: >
+      Checked 2026-09-20 against api.openalex.org: a DOI lookup returns is_oa, oa_status and
+      best_oa_location (host, version, license, pdf_url), and correctly reports `closed` for
+      recent subscription-only IEEE TED articles rather than inventing a copy.
+    correction: >
+      An earlier draft of this registry recorded Unpaywall as a material blocker requiring an
+      email decision. That was asserted from assumption without checking the API, which rule 1
+      forbids. Reading the documentation dissolved the blocker entirely.
 
 # ---------------------------------------------------------------------------
 # Fully open-access peer-reviewed journals — grade A reachable
