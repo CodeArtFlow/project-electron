@@ -422,7 +422,7 @@ Planned roster, to be built incrementally:
 |---|---|---|
 | `harvest` | 1 | Sweep registry sources, write corpus records |
 | `triage` | 2 | Relevance filter, dedupe against existing corpus |
-| `extract-claims` | 3 | Source record → atomic claims, normalized to SI base units |
+| `extract-claims` | 3 | Source record → atomic claims, normalized to SI base units — **built** |
 | `assess-source` | 3 | Build/update author records, assign credibility tier |
 | `reconcile` | 4 | Run the contradiction protocol; regenerate the open contradictions register |
 | `digest` | 5 | Compose the daily digest from ledger claims only |
@@ -461,18 +461,28 @@ site/                     static site build
 
 ## Current state — 2026-09-20
 
-Doctrine, a verified source registry, and verification tooling. No skills, no harvest, no corpus,
-no ledger entries yet.
+Doctrine, a verified source registry, verification tooling, and the `extract-claims` stage.
+No harvest yet, so no source records and no ledger entries exist — `extract-claims` is built and
+tested but has nothing to consume until `harvest` lands.
 
 **Registry: verified 2026-09-20.** 131 entries — 71 `true`, 47 `review`, 7 `false`. Grew from ~70
 during verification. Evidence in `pipeline/*_report.json`; reproduce with the commands below.
 
 ```bash
-python pipeline/validate_registry.py              # internal consistency (gates harvest)
+python pipeline/validate_registry.py              # registry internal consistency (gates harvest)
 python pipeline/verify_registry.py --section all  # external re-verification
 python pipeline/discover_journals.py              # vet candidate additions
 python pipeline/probe_urls.py                     # reachability for non-journal venues
+python pipeline/units.py                          # SI engine + validates definitions.yaml
+python pipeline/claims.py --self-test             # extraction refusals + claim validation
+python pipeline/claims.py --validate              # validate the whole ledger
+python pipeline/test_extract_e2e.py               # full extract path on synthetic fixtures
 ```
+
+`pipeline/units.py` is built on `pint`. Never convert by hand and never write a `quantity` block
+manually — `UnitEngine.record()` emits `as_published`/`si_base`/`display` together so they cannot
+drift apart. `reference/schemas.yaml` defines the source-record and claim shapes, the quantities
+that require stated conditions, and the seven extraction refusals.
 
 Environment: Python 3.14.3, pip 25.3. Dependencies in `pipeline/requirements.txt`.
 
