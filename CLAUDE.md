@@ -363,6 +363,15 @@ Re-examine on a schedule rather than letting entries calcify. Age is displayed, 
 
 ### The publication gate
 
+Enforced by `pipeline/publication_gate.py` and run in CI before every deploy. Checks 3 and 8 are
+structural only — the gate verifies a claim reference resolves and that a correction exists, not
+that the prose faithfully represents the claim, which stays the `digest` skill's judgement. The
+gate names those limits rather than implying coverage it does not have.
+
+On an empty corpus every check passes trivially, and the gate says so out loud: a vacuous pass is
+not evidence it works. `pipeline/test_publication_gate.py` proves each check fires by running it
+against deliberately broken fixtures.
+
 Before any digest is published:
 
 1. **No `CFL` record is in `live:unexamined`.** This is the hard gate — unfinished reconciliation
@@ -427,7 +436,7 @@ Planned roster, to be built incrementally:
 | `assess-source` | 3 | Build/update author records, assign credibility tier |
 | `reconcile` | 4 | Run the contradiction protocol; regenerate the open contradictions register |
 | `digest` | 5 | Compose the daily digest from ledger claims only |
-| `publish` | 6 | Build and deploy the site, run the publication gate |
+| `publish` | 6 | Build and deploy the site, run the publication gate — **built** |
 | `sota` | — | Maintain living state-of-the-art reviews per topic |
 | `verify-citation` | — | Audit: does this source actually say what we claim? |
 
@@ -444,6 +453,7 @@ YAML for all research artifacts, static site for publication. Git history is loa
 how we diff what we claimed yesterday against today.
 
 ```
+.github/workflows/        CI: self-tests -> publication gate -> build -> deploy
 sources/registry.yaml     relevant open-access venues, with verification status
 reference/definitions.yaml SI canonicalization and contested terms
 corpus/papers/            immutable source records
@@ -454,7 +464,7 @@ ledger/open-contradictions.md  derived register, published to the site
 digests/                  daily published digests
 sota/                     living state-of-the-art reviews, one per topic
 pipeline/                 Python: verification tooling, then the harvest pipeline
-site/                     static site build
+_site/                    generated site output (gitignored; built in CI)
 .claude/skills/           project skills
 ```
 
@@ -462,9 +472,10 @@ site/                     static site build
 
 ## Current state — 2026-09-20
 
-Doctrine, a verified source registry, verification tooling, and the `extract-claims` stage.
-No harvest yet, so no source records and no ledger entries exist — `extract-claims` is built and
-tested but has nothing to consume until `harvest` lands.
+Doctrine, a verified source registry, verification tooling, the `extract-claims` stage, and a
+deployable site with the publication gate wired into CI. No harvest yet, so no source records and
+no ledger entries exist — the machinery is built and tested but has nothing to consume until
+`harvest` lands. The site renders that empty state honestly rather than showing placeholders.
 
 **Registry: verified 2026-09-20.** 131 entries — 71 `true`, 47 `review`, 7 `false`. Grew from ~70
 during verification. Evidence in `pipeline/*_report.json`; reproduce with the commands below.
@@ -478,6 +489,9 @@ python pipeline/units.py                          # SI engine + validates defini
 python pipeline/claims.py --self-test             # extraction refusals + claim validation
 python pipeline/claims.py --validate              # validate the whole ledger
 python pipeline/test_extract_e2e.py               # full extract path on synthetic fixtures
+python pipeline/publication_gate.py               # the 8 checks; blocks publication
+python pipeline/test_publication_gate.py          # proves every gate check actually fires
+python pipeline/build_site.py                     # build _site/ (runs the gate first)
 ```
 
 `pipeline/units.py` is built on `pint`. Never convert by hand and never write a `quantity` block

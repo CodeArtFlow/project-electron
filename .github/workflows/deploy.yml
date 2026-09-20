@@ -1,0 +1,98 @@
+name: Build and deploy site
+
+# The publication gate is the point of this workflow. Every step before `deploy` is a reason NOT
+# to publish, and any of them failing stops the deployment. A gate that CI can route around is
+# not a gate, so there is no continue-on-error anywhere in this file and no manual override input.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race. `cancel-in-progress: false` so a queued deploy finishes rather
+# than being dropped - a half-published site is worse than a slightly stale one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Self-tests and publication gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r pipeline/requirements.txt
+
+      # Each of these validates an authority file, not just code. A failure here means one of
+      # reference/definitions.yaml, reference/schemas.yaml or sources/registry.yaml is wrong.
+      - name: Registry is internally consistent
+        run: python pipeline/validate_registry.py
+
+      - name: SI engine and definitions are dimensionally consistent
+        run: python pipeline/units.py
+
+      - name: Extraction refusals fire
+        run: python pipeline/claims.py --self-test
+
+      - name: Ledger validates
+        run: python pipeline/claims.py --validate
+
+      - name: Extract path works end to end
+        run: python pipeline/test_extract_e2e.py
+
+      - name: Every publication-gate check fires
+        run: python pipeline/test_publication_gate.py
+
+      - name: Publication gate
+        run: python pipeline/publication_gate.py
+
+  build:
+    name: Build site
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r pipeline/requirements.txt
+
+      # build_site.py runs the gate again itself and refuses to write output if it fails.
+      # Belt and braces: the gate decides whether anything is publishable, not the build.
+      - name: Build
+        run: python pipeline/build_site.py --out _site
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    name: Deploy to GitHub Pages
+    # Pull requests build and are gated, but never deploy - only main publishes.
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
