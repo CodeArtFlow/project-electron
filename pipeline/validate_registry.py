@@ -23,7 +23,7 @@ REGISTRY = ROOT / "sources" / "registry.yaml"
 VALID_VERIFIED = (True, "review", False)
 VALID_OA = ("full", "hybrid", "preprint", "open_spec", "public_corp", "open_news")
 VALID_GRADES = ("A", "B", "C", "D", "E")
-# Per CLAUDE.md. `ALL` is a registry-only wildcard, not a topic code.
+# Per AGENTS.md. `ALL` is a registry-only wildcard, not a topic code.
 VALID_TOPICS = ("MAT", "DEV", "LITHO", "PROC", "PKG", "MEM", "ARCH", "PHOT", "EDA", "ECON", "ALL")
 
 BOOKKEEPING = ("removed", "excluded_paywalled")

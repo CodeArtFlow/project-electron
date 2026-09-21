@@ -100,7 +100,7 @@ def load_registry():
 
 
 def harvestable_journals(reg):
-    """Venues we may legitimately read from, per CLAUDE.md's three verification states."""
+    """Venues we may legitimately read from, per AGENTS.md's three verification states."""
     out = []
     for section in ("journals_full_oa", "journals_hybrid"):
         for e in reg.get(section, []) or []:
@@ -404,7 +404,7 @@ def main():
         new.append(c)
 
     # A closed-access hit is evidence, not noise: it is what makes the cost of the
-    # open-access-only policy measurable (CLAUDE.md, `access-blocked`).
+    # open-access-only policy measurable (AGENTS.md, `access-blocked`).
     readable = [c for c in new if c["is_oa"] and (c.get("oa_location") or {}).get("url")]
     blocked = [c for c in new if not c["is_oa"]]
 

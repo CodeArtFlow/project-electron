@@ -1,6 +1,6 @@
 """Verify every entry in sources/registry.yaml against external authorities.
 
-Per CLAUDE.md, an unverified registry entry may not be harvested from. Verification answers
+Per AGENTS.md, an unverified registry entry may not be harvested from. Verification answers
 three questions, and records the evidence for each rather than asserting a conclusion:
 
     (a) does the venue exist?            -> Crossref journals / HTTP probe

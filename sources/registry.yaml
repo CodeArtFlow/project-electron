@@ -30,9 +30,9 @@
 #             public_corp - vendor's own public technical material
 #             open_news   - freely readable journalism/analysis
 #
-# grade_default: the evidence grade a typical item starts at, per CLAUDE.md. Always overridable
+# grade_default: the evidence grade a typical item starts at, per AGENTS.md. Always overridable
 #             downward by what the specific item actually contains.
-# topics:     topic codes per CLAUDE.md (MAT DEV LITHO PROC PKG MEM ARCH PHOT EDA ECON).
+# topics:     topic codes per AGENTS.md (MAT DEV LITHO PROC PKG MEM ARCH PHOT EDA ECON).
 #             `ALL` is a registry-only wildcard meaning the venue spans every topic code; it is
 #             not a topic code itself and never appears on a claim ID.
 # recent:     Crossref-indexed works in the 400 days before the verification date. Evidence of
@@ -378,7 +378,7 @@ vendor:
 # Trade press and analysis — grade D/E, NEVER stated as fact
 # ---------------------------------------------------------------------------
 # Useful for knowing where to look and for tracking industry direction.
-# Per CLAUDE.md these may never contradict a grade A/B claim, and are always attributed.
+# Per AGENTS.md these may never contradict a grade A/B claim, and are always attributed.
 trade_press:
   - {id: semiengineering, name: Semiconductor Engineering, url: "https://semiengineering.com/",        oa_status: open_news, grade_default: E, topics: [ALL],        verified: true, probe: "200", notes: Technically strongest of the trade press; still attributed, never asserted.}
   - {id: ieee_spectrum,   name: IEEE Spectrum,             url: "https://spectrum.ieee.org/",          oa_status: open_news, grade_default: E, topics: [ALL],        verified: true, probe: "200"}

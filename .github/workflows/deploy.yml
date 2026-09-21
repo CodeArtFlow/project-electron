@@ -61,11 +61,34 @@ jobs:
       - name: Discovery loop obeys its constraints
         run: python pipeline/test_discover.py
 
+      - name: Bounds, corrections and the digest (regression tests)
+        run: python pipeline/test_bounds.py
+
+      - name: Constants match the NIST authority file
+        run: |
+          python pipeline/bounds.py --verify
+          python pipeline/test_authority_bounds.py
+
+      - name: Gold set and its evaluator
+        run: python pipeline/test_gold_eval.py
+
+      - name: The reader cannot record what a paper does not say
+        run: python pipeline/test_reader.py
+
+      - name: The site builds with an audit report present
+        run: python pipeline/test_build_site.py
+
+      - name: One copy of the doctrine (AGENTS.md; CLAUDE.md only imports it)
+        run: python pipeline/test_agent_files.py
+
       - name: TypeSafe offline tests
         run: |
           python pipeline/test_assess_quality.py
           python pipeline/test_semantic_checks.py
 
+      # Whether findings BLOCK is decided by reference/semantic_policy.yaml (a committed file, so
+      # changing it is a visible commit). There is deliberately no input, env var or
+      # continue-on-error here that alters it: a gate CI can route around is not a gate.
       - name: TypeSafe publication audit
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         env:

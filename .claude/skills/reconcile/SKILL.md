@@ -9,7 +9,7 @@ Stage 4. Input: `CFL` records in `live:unexamined`. Output: every one of them mo
 `resolved` or `live:data-absent`, and the register regenerated.
 
 Doctrine — the four types, the three states, what "resolved" means, when to escalate — is in
-`CLAUDE.md`. Read it. This file holds only the mechanics.
+`AGENTS.md`. Read it. This file holds only the mechanics.
 
 ## The split
 

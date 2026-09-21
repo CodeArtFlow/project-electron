@@ -7,7 +7,7 @@ actually been read:
     EVIDENCE  (may be condensed and cited)   corpus/papers/SRC-*.yaml, ledger/claims/*.yaml
     ROUTING   (never evidence)               corpus/candidates/CAND-*.yaml
 
-Candidates are unread - they carry a title and metadata, nothing else - and CLAUDE.md forbids
+Candidates are unread - they carry a title and metadata, nothing else - and AGENTS.md forbids
 citing from a title. So a candidate can only ever appear in the output as "read this next", in a
 section labelled as not-evidence.
 
@@ -311,7 +311,7 @@ def condense(items):
 
 
 def independent_groups(src_ids, source_meta):
-    """CLAUDE.md: independent = no shared corresponding author and no shared lead institution.
+    """AGENTS.md: independent = no shared corresponding author and no shared lead institution.
     Sources sharing either collapse into one group (union-find)."""
     parent = {s: s for s in src_ids}
 

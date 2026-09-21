@@ -12,7 +12,7 @@ Output: zero or more claims appended to `ledger/claims/<TOPIC>.yaml`.
 that produces none because its numbers lack conditions is correctly handled, not failed.
 
 Doctrine — why these rules exist, what a claim is for, how contradictions are treated — is in
-`CLAUDE.md`. Read it first. This file holds only the mechanics of the extraction step and
+`AGENTS.md`. Read it first. This file holds only the mechanics of the extraction step and
 deliberately does not restate the reasoning.
 
 ## Before starting
