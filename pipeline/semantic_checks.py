@@ -273,7 +273,7 @@ def worker_call(request,timeout):
     proc=subprocess.run([sys.executable,str(Path(__file__).resolve()),"--worker"],
         input=json.dumps(request),text=True,capture_output=True,timeout=timeout,
         encoding="utf-8")
-    if proc.returncode: raise RuntimeError("TypeSafe worker failed: "+proc.stderr.strip()[:180])
+    if proc.returncode: raise RuntimeError("TypeSafe worker failed: "+proc.stderr.strip()[:600])
     return json.loads(proc.stdout)
 
 def run(jobs,coverage,root=ROOT,live=False,max_calls=64,seconds=180,call=worker_call):
@@ -286,6 +286,7 @@ def run(jobs,coverage,root=ROOT,live=False,max_calls=64,seconds=180,call=worker_
     if live: cache_dir.mkdir(parents=True,exist_ok=True)
     for j in jobs:
         rec={k:j[k] for k in ("id","stage","required","fingerprint")}
+        rec["request"]=j["request"]
         if not j["request"]["questions"]:
             rec.update(status="unknown",missing=j["missing"])
         elif len(encoded(j["request"]))>MAX_BYTES:
@@ -315,7 +316,7 @@ def run(jobs,coverage,root=ROOT,live=False,max_calls=64,seconds=180,call=worker_
                     rec["cached"]=False
                 rec.update(route(j,response),response=response,request=j["request"])
             except (RuntimeError,ValueError,subprocess.TimeoutExpired,OSError) as exc:
-                rec.update(status="error",reason=type(exc).__name__+": "+str(exc)[:180])
+                rec.update(status="error",reason=type(exc).__name__+": "+str(exc)[:650])
         records.append(rec)
     report={"schema_version":1,"version":VERSION,"model":MODEL,"created":stamp(),
         "plan_hash":digest([j["fingerprint"] for j in jobs]),"scope_coverage":coverage,

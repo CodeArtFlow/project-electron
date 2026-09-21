@@ -129,7 +129,10 @@ def validate_response(response, request):
                 or not all(probability(v) for v in probs.values())
                 or not math.isclose(sum(probs.values()), 1, abs_tol=0.001)
                 or not probability(answer.get("confidence"))):
-            raise ValueError("Invalid typed answer or probability distribution")
+            raise ValueError(f"Invalid distribution for {key}: "
+                f"keys={sorted(probs) if isinstance(probs,dict) else 'invalid'}; "
+                f"sum={sum(probs.values()) if isinstance(probs,dict) and all(number(v) for v in probs.values()) else 'invalid'}; "
+                f"confidence={answer.get('confidence')}")
         if kind == "choice":
             chosen = answer.get("choice")
             if chosen not in options or probs[chosen] < max(probs.values()) - 1e-6:
