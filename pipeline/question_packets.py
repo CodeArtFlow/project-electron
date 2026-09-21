@@ -149,6 +149,16 @@ def claim_view(claim):
 
 
 # ------------------------------------------------------------------------- building and checking
+def current_terms(entry, claim):
+    """The unverified words in the claim's CURRENT statement. Derived at check time from the current claim
+    and the packet's verified quotes, so correcting a statement (or its conditions) cannot leave a stale
+    term question. The terms stored in the packet are the record of what was true when it was built."""
+    unit = ((claim.get("quantity") or {}).get("as_published") or {}).get("unit")
+    return distinctive_terms(claim.get("statement") or entry.get("statement"),
+                             list(entry["evidence_spans"]) + [str(v) for v in (claim.get("conditions") or {}).values()],
+                             skip=[unit])
+
+
 def build_packet(source, claims, text, spans_by_claim, reader, today):
     """A packet for one source record.
 
@@ -213,7 +223,7 @@ def build_request(packet, claims, excerpts, model, located):
     sent = {cid: claims[cid] for cid in packet["claims"] if cid in claims and located.get(cid)}
     questions = {}
     for cid, claim in sent.items():
-        questions.update(claim_questions(cid, claim, packet["claims"][cid].get("terms") or []))
+        questions.update(claim_questions(cid, claim, current_terms(packet["claims"][cid], claim)))
     state = {"about_this_state": COVERAGE_NOTE,
              "paper_excerpts": [{"id": e["id"], "position_in_paper": f"characters {e['from']:,} to {e['to']:,}",
                                  "text": e["text"]} for e in excerpts],

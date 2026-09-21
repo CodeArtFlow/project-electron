@@ -35,7 +35,7 @@ method_summary: “All proposed and baseline accelerators are implemented at the
   (RTL) in SystemVerilog and synthesized with Synopsys Design Compiler, targeting the TSMC28HPC technology
   node at a 500 MHz clock frequency.”
 limitations: No limitation statement was found in the text read.
-evidence_type: measured
+evidence_type: simulated
 grade: B
 extraction:
   method: automated-extractive
@@ -63,4 +63,10 @@ extraction:
     reason: the statement contains the number 2, which none of its quotes contain
   - statement: The 512-MAC systolic array for MiX-INT4 occupies an area of 46407 µm2 in 28nm at 500 MHz.
     reason: the statement contains the number 2, which none of its quotes contain
-corrections: []
+corrections:
+- date: '2026-09-21'
+  field: evidence_type
+  change: measured -> simulated
+  reason: The table caption in the paper reads "AREA AND POWER ARE SYNTHESIS RESULTS" (Synopsys Design
+    Compiler on RTL, TSMC28HPC). The claims inherited the wrong value from this record; see their corrections
+    entries.

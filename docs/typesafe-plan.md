@@ -1,8 +1,9 @@
 # TypeSafe integration: the plan
 
-**Status: APPROVED by the user, 2026-09-21. Phase 1 is BUILT (section 7) and has never run against
-TypeSafe; the expectations for its first live run are committed in
-`docs/typesafe-preregistration.md`. Phases 2 onward are not started.** Rules stay in
+**Status: APPROVED by the user, 2026-09-21. Phases 1 and 2 are DONE: the paper-grounded check is built
+(section 7) and ran once, live, on 9 papers, scored against expectations committed beforehand (12 of 15 on
+its main question; results and what they do and do not show are in `docs/typesafe-preregistration.md`).
+Phases 3 onward are not started.** Rules stay in
 `AGENTS.md`; how the current advisory audit works stays in `docs/typesafe.md`. This file says what we
 intend to build next and why, and it changes as decisions are made.
 
@@ -133,8 +134,8 @@ TypeSafe's provisional thresholds (0.9 and 0.1) flagged nearly everything in the
 
 ## 7. What exists today
 
-Phase 1 is built, tested offline (11 tests for excerpts, 33 for packets and the check) and **never run
-against TypeSafe**:
+Phase 1 is built and tested offline (11 tests for excerpts, 34 for packets and the check), and ran live once
+on 2026-09-21 (phase 2):
 
 - `pipeline/excerpts.py`: finds each verified quote in the raw text (through the verifier's own
   normalization), widens it with context, merges, orders and labels the excerpts, and never trims. Proven

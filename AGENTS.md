@@ -728,8 +728,11 @@ publication gate blocked the deploy, as designed. The user decided to scope them
 the reader, whose prompt `reader-v3` now asks for distinguishing conditions and whose verifier
 rejects a number that has none. Not fixed, and not checked by the verifier: statements can carry words
 that are not in their anchor quotes ("in BLG", "acoustic phonon" for the paper's "AP"). The
-paper-grounded TypeSafe check, built in phase 1 of the plan and not yet run live, is meant to test
-exactly that.
+paper-grounded TypeSafe check tests exactly that. It was built and run once on 9 papers (2026-09-21,
+about $0.003, scored against expectations committed first): it found one model-supplied word ("CMOS"),
+missed two errors a person then found by reading (synthesis results labelled `measured`, which the
+reader and TypeSafe both got wrong; three fabrication details called results), and is a smoke test, not a
+calibration (`docs/typesafe-preregistration.md`).
 
 ```bash
 python pipeline/run_pipeline.py --no-sweep        # the whole flow, timed (writes run/timings.json)

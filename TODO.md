@@ -46,6 +46,12 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
 - [ ] **D5. Reading throughput.** 25 papers a run against about 33 arXiv candidates a day
   (`AGENTS.md`); 117 arXiv candidates are unread. A second daily run would keep pace and the money
   allows it (estimate, see `AGENTS.md`). A deliberate edit of `read.yml`.
+- [ ] **D7. Do fabrication-recipe details belong in the ledger?** `CLM-DEV-0002..0004` (a deposition
+  chamber's base pressure, an ITO substrate's sheet resistance, a device area) are stated in the Methods of
+  an experimental paper. They are true of the paper, but they are procedure, not findings, and no
+  evidence-type label fits them (`simulated` is wrong; `measured` is not right either). Options: keep them
+  with a corrected label, retract them, or tell the reader not to extract procedure parameters. Nothing
+  published cites them.
 - [ ] **D6. Publisher lane.** 197 candidates are unread and mostly bot-walled (about 25% fetchable).
   Choose a legitimate full-text route, or accept human reading (`harvest` skill).
 
@@ -57,11 +63,11 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
 
 ## 3. In flight
 
-- [~] **F1. TypeSafe paper-grounded check, phase 1: built, committed, never run against TypeSafe.**
-  `excerpts.py`, `question_packets.py`, `paper_check.py`, their tests (44), 9 backfilled packets in
-  `corpus/questions/`, `paper-check.yml` (manual). Expectations are pre-registered in
-  `docs/typesafe-preregistration.md`. **Next: run it live** (`gh workflow run paper-check.yml`), settle
-  every disagreement by reading the excerpts, and record the result there. That is phase 2.
+- [x] **F1. TypeSafe paper-grounded check, phases 1 and 2: done 2026-09-21.** Built, then run live once on
+  9 papers (about $0.003) against expectations committed first: 12 of 15 on `is_result`, one real defect
+  found by TypeSafe (`CMOS`), one found only by reading (the MiX synthesis results labelled `measured` by
+  both the reader and TypeSafe), corrections applied. Results and caveats:
+  `docs/typesafe-preregistration.md`. Next is phase 3 (A1: a gold set).
 
 ## 4. Next up, in order
 
@@ -88,10 +94,17 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
 - [ ] **N8. Units are not verified against quotes.** The verifier proves a number is in its quote, not the
   unit: the MiX power figures' `mW` is in a table header, outside the quoted row. Phase 1 asks TypeSafe
   whether the excerpts show the unit; whether code should also check is open.
-- [ ] **N9. Evidence-type labels look wrong on some claims** (hypotheses, not findings): `CLM-DEV-0002..0004`
-  read as fabrication conditions but are `simulated`; `CLM-ARCH-0007..0009` are RTL synthesis results but
-  are `measured`. Settled by the phase 2 run and a reading of the excerpts; corrections go through
-  `corrections`.
+- [x] **N9. Evidence-type labels on some claims (settled by reading the excerpts).** `CLM-ARCH-0007..0009`
+  and `SRC-00005` were `measured`; the paper says the figures are synthesis results, so they are now
+  `simulated` (non-public corrections). `CLM-DEV-0002..0004` are `simulated` but are fabrication
+  conditions of an experimental paper: **not corrected, waiting on D7.**
+- [ ] **N10. Reader: evidence-type guidance.** The model called synthesis results `measured` and
+  fabrication conditions `simulated`. Make the rule explicit in the prompt (synthesis and other EDA-tool
+  results are `simulated`; a paper's fabrication recipe is not a measurement) and measure it (N4). A
+  change to the prompt is a new prompt version.
+- [ ] **N11. TypeSafe questions to sharpen before any threshold is set:** `is_result` (TypeSafe read the QLED
+  Methods conditions as reported results; part of that may be my wording) and `atomic` (flagged
+  `CLM-ARCH-0007`, which is one assertion with its conditions). Phase 3.
 
 ## 5. Assurance and calibration
 

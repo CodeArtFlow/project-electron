@@ -42,8 +42,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from assess_quality import MODEL, encoded, evaluate  # noqa: E402
 from excerpts import build_excerpts  # noqa: E402
 from fetch_text import fetch_arxiv  # noqa: E402
-from question_packets import (RUBRIC_VERSION, answers_path, build_request, load_packets,  # noqa: E402
-                              text_sha256, validate_packet)
+from question_packets import (RUBRIC_VERSION, answers_path, build_request, current_terms,  # noqa: E402
+                              load_packets, text_sha256, validate_packet)
 
 ROOT = Path(__file__).resolve().parent.parent
 for _s in (sys.stdout, sys.stderr):
@@ -119,7 +119,7 @@ def flags_for(answers, packet_claims, ledger_claims):
                            f"(p={answers[key]['noul']:.2f})")
         for key in sorted(k for k in answers if k.startswith(f"{cid}.term.")):
             n = int(key.rsplit(".", 1)[1])
-            terms = entry.get("terms") or []
+            terms = current_terms(entry, claim) if claim else (entry.get("terms") or [])
             if answers[key]["noul"] < LEAN and n <= len(terms):
                 out.append(f'the term "{terms[n - 1]}" is not established for this subject by the excerpts '
                            f"(p={answers[key]['noul']:.2f})")

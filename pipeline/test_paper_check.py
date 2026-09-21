@@ -233,6 +233,16 @@ class TheRequest(unittest.TestCase):
         for secret in ("SRC-90001", "sources", "credibility", "grade", "created", "test-key-not-real"):
             self.assertNotIn(secret, blob, secret)
 
+    def test_terms_follow_the_current_statement_so_a_correction_cannot_leave_a_stale_question(self):
+        with tempfile.TemporaryDirectory() as f:
+            root, packet = make_repo(f)                                       # built when the statement said "in BLG"
+            self.assertEqual(packet["claims"][CID]["terms"], ["BLG"])
+            fixed = {**CLAIM, "statement": CLAIM["statement"].replace(" in BLG", "")}
+            (root / "ledger" / "claims" / "ARCH.yaml").write_text(yaml.safe_dump({"claims": [fixed]}), encoding="utf-8")
+            tsafe = FakeTypeSafe()
+            run_check(root, call=tsafe)
+        self.assertFalse(any(".term." in k for k in tsafe.calls[0]["questions"]))     # BLG is gone from the statement
+
     def test_only_claims_whose_quotes_were_found_are_sent_and_the_rest_are_recorded(self):
         with tempfile.TemporaryDirectory() as f:
             root, _ = make_repo(f, claims=(CLAIM, CLAIM2), spans={CID: [QUOTE], CID2: ["A quote about nothing that is anywhere in this paper."]})

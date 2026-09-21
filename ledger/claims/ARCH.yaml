@@ -267,12 +267,12 @@ claims:
 - id: CLM-ARCH-0007
   topic: ARCH
   statement: The 1024-MAC Systolic Array component in the MiX-INT4g16 accelerator consumes 40.4 mW of
-    power in 28nm CMOS at 500 MHz.
+    power in 28nm at 500 MHz.
   sources:
   - SRC-00005
   grade: B
   credibility: unknown
-  evidence_type: measured
+  evidence_type: simulated
   status: active
   as_of: '2026-09-17'
   created: '2026-09-21'
@@ -316,6 +316,18 @@ claims:
       Table VI compares iso-throughput 512-MAC arrays), but the structured conditions did not, so the
       detector saw comparable numbers. Conditions restated from the statement. Before: {''component'':
       ''1024-MAC Systolic Array''}.'
+  - date: '2026-09-21'
+    public: false
+    fields:
+    - evidence_type
+    - statement
+    reason: '`measured` was wrong: the table caption in the paper reads "AREA AND POWER ARE SYNTHESIS
+      RESULTS" (Synopsys Design Compiler on RTL, TSMC28HPC). That is a synthesis-tool estimate, not a
+      silicon measurement, so the evidence type is `simulated`. Found by reading the excerpt after the
+      first paper-grounded TypeSafe run, which had also answered `measured` and so did not catch it (docs/typesafe-preregistration.md).
+      The statement said "28nm CMOS". The excerpts sent to TypeSafe contain no "CMOS": the word was supplied
+      by the reading model, and the paper says "TSMC28HPC". TypeSafe''s term question (p=0.18) caught
+      it, and reading the excerpt confirmed it. Removed, matching CLM-ARCH-0008/0009.'
 - id: CLM-ARCH-0008
   topic: ARCH
   statement: The 512-MAC systolic array for MiX-INT4g16 consumes 31.8 mW of power in 28nm at 500 MHz.
@@ -323,7 +335,7 @@ claims:
   - SRC-00005
   grade: B
   credibility: unknown
-  evidence_type: measured
+  evidence_type: simulated
   status: active
   as_of: '2026-09-17'
   created: '2026-09-21'
@@ -365,6 +377,14 @@ claims:
       Table VI compares iso-throughput 512-MAC arrays), but the structured conditions did not, so the
       detector saw comparable numbers. Conditions restated from the statement. Before: {''architecture'':
       ''MiX-INT4g16''}.'
+  - date: '2026-09-21'
+    public: false
+    fields:
+    - evidence_type
+    reason: '`measured` was wrong: the table caption in the paper reads "AREA AND POWER ARE SYNTHESIS
+      RESULTS" (Synopsys Design Compiler on RTL, TSMC28HPC). That is a synthesis-tool estimate, not a
+      silicon measurement, so the evidence type is `simulated`. Found by reading the excerpt after the
+      first paper-grounded TypeSafe run, which had also answered `measured` and so did not catch it (docs/typesafe-preregistration.md).'
 - id: CLM-ARCH-0009
   topic: ARCH
   statement: The 512-MAC systolic array for MiX-INT4 consumes 26.8 mW of power in 28nm at 500 MHz.
@@ -372,7 +392,7 @@ claims:
   - SRC-00005
   grade: B
   credibility: unknown
-  evidence_type: measured
+  evidence_type: simulated
   status: active
   as_of: '2026-09-17'
   created: '2026-09-21'
@@ -414,6 +434,14 @@ claims:
       Table VI compares iso-throughput 512-MAC arrays), but the structured conditions did not, so the
       detector saw comparable numbers. Conditions restated from the statement. Before: {''architecture'':
       ''MiX-INT4''}.'
+  - date: '2026-09-21'
+    public: false
+    fields:
+    - evidence_type
+    reason: '`measured` was wrong: the table caption in the paper reads "AREA AND POWER ARE SYNTHESIS
+      RESULTS" (Synopsys Design Compiler on RTL, TSMC28HPC). That is a synthesis-tool estimate, not a
+      silicon measurement, so the evidence type is `simulated`. Found by reading the excerpt after the
+      first paper-grounded TypeSafe run, which had also answered `measured` and so did not catch it (docs/typesafe-preregistration.md).'
 - id: CLM-ARCH-0010
   topic: ARCH
   statement: The proposed mapping scheme reduces energy consumption per computation by 53% compared to
