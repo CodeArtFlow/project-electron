@@ -104,8 +104,12 @@ def load_policy(path=POLICY_PATH):
         raise BudgetError("the policy prices no model, so nothing can be budgeted")
     if model not in schedules:
         raise BudgetError(f"the default model {model!r} has no price in the policy")
+    extract_model = raw.get("extract_model") or model
+    if extract_model not in schedules:
+        raise BudgetError(f"the extraction model {extract_model!r} has no price in the policy")
     generation = _generation(raw.get("generation"), schedules)
-    return {"monthly_cap_usd": cap, "model": model, "schedules": schedules, "generation": generation,
+    return {"monthly_cap_usd": cap, "model": model, "extract_model": extract_model,
+            "schedules": schedules, "generation": generation,
             "prices_retrieved": _d(prices.get("retrieved"), "prices.retrieved"),
             "prices_source": prices.get("source")}
 

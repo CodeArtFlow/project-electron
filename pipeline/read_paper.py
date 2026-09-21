@@ -215,25 +215,30 @@ class GeminiModel:
     what enters the record, from the paper's own text.
     """
 
-    def __init__(self, model, budget, client=None, sleep=time.sleep):
+    def __init__(self, model, budget, client=None, sleep=time.sleep, extract_model=None):
         from google import genai
         from google.genai import errors, types
         self._errors, self._types = errors, types
-        budget.price(model)                      # an unpriced model is refused here, before any call
+        # `model` screens (title and abstract, high volume, cheap); `extract_model` reads the whole
+        # paper, where quality matters. Absent, one model does both. An unpriced model of either
+        # kind is refused here, before any call.
+        self.extract_model = extract_model or model
+        budget.price(model)
+        budget.price(self.extract_model)
         self.model, self.budget, self._sleep = model, budget, sleep
         # The key is passed explicitly, so a GOOGLE_API_KEY in the environment can never take
         # precedence over GEMINI_API_KEY. timeout is in milliseconds.
         self.client = client or genai.Client(api_key=os.environ["GEMINI_API_KEY"],
                                              http_options=types.HttpOptions(timeout=120_000))
 
-    def _generation(self):
+    def _generation(self, model):
         """Per-model thinking and temperature, from the committed policy (reference/reader_budget.yaml).
 
         Reading is transcription, not reasoning, and thinking is billed as output, so the policy buys
         as little as each model allows: none on the 2.5 family, the lowest level on 3.x. A setting
         the policy leaves out is left at Google's default rather than guessed here.
         """
-        t, g = self._types, self.budget.policy["generation"][self.model]
+        t, g = self._types, self.budget.policy["generation"][model]
         kwargs = {}
         if "temperature" in g:
             kwargs["temperature"] = float(g["temperature"])
@@ -243,11 +248,11 @@ class GeminiModel:
             kwargs["thinking_config"] = t.ThinkingConfig(thinking_level=t.ThinkingLevel[g["thinking_level"].upper()])
         return kwargs
 
-    def _generate(self, user, config, est_in, max_out):
+    def _generate(self, model, user, config, est_in, max_out):
         import httpx
         for attempt in (1, 2):
             try:
-                return self.client.models.generate_content(model=self.model, contents=user, config=config)
+                return self.client.models.generate_content(model=model, contents=user, config=config)
             except self._errors.APIError as e:
                 if e.code in (429, 503) and attempt == 1:
                     self._sleep(RETRY_DELAY_SECONDS)
@@ -256,7 +261,7 @@ class GeminiModel:
             except httpx.HTTPError as e:
                 # A refused connection never reached the server. Anything else may have.
                 if not isinstance(e, httpx.ConnectError):
-                    self.budget.record(self.model, est_in, max_out, unknown=True)
+                    self.budget.record(model, est_in, max_out, unknown=True)
                 raise ReaderError("network", type(e).__name__) from e
 
     @staticmethod
@@ -279,18 +284,18 @@ class GeminiModel:
         out = max(out, (u.total_token_count or 0) - prompt)
         return prompt, out, True
 
-    def _call(self, system, schema, user, max_out):
+    def _call(self, model, system, schema, user, max_out):
         t = self._types
         est_in = math.ceil((len(system) + len(user)) / CHARS_PER_TOKEN) + PROMPT_OVERHEAD_TOKENS
-        self.budget.check(self.model, est_in, max_out)            # raises BudgetExhausted; no call made
+        self.budget.check(model, est_in, max_out)                  # raises BudgetExhausted; no call made
         config = t.GenerateContentConfig(
             system_instruction=system, response_mime_type="application/json",
-            response_json_schema=schema, max_output_tokens=max_out, **self._generation())
-        resp = self._generate(user, config, est_in, max_out)
+            response_json_schema=schema, max_output_tokens=max_out, **self._generation(model))
+        resp = self._generate(model, user, config, est_in, max_out)
 
         tokens_in, tokens_out, known = self._usage(resp, est_in, max_out)
-        self.budget.record(self.model, tokens_in, tokens_out, unknown=not known)   # spent either way
-        usage = {"input": tokens_in, "output": tokens_out, "model": getattr(resp, "model_version", None) or self.model}
+        self.budget.record(model, tokens_in, tokens_out, unknown=not known)        # spent either way
+        usage = {"input": tokens_in, "output": tokens_out, "model": getattr(resp, "model_version", None) or model}
 
         feedback = getattr(resp, "prompt_feedback", None)
         if feedback is not None and getattr(feedback, "block_reason", None):
@@ -314,11 +319,11 @@ class GeminiModel:
 
     def classify(self, title, head):
         user = f"<title>{title}</title>\n<paper_text>\n{head}\n</paper_text>"
-        return self._call(CLASSIFY_SYSTEM, classify_schema(), user, CLASSIFY_MAX_OUTPUT)
+        return self._call(self.model, CLASSIFY_SYSTEM, classify_schema(), user, CLASSIFY_MAX_OUTPUT)
 
     def extract(self, title, text, quantity_names):
         user = f"<title>{title}</title>\n<paper_text>\n{text}\n</paper_text>"
-        return self._call(SYSTEM, extract_schema(quantity_names), user, EXTRACT_MAX_OUTPUT)
+        return self._call(self.extract_model, SYSTEM, extract_schema(quantity_names), user, EXTRACT_MAX_OUTPUT)
 
 
 class StubModel:
@@ -709,7 +714,7 @@ def run(repo, model, limits, eng, registry, schemas, fetch=fetch_arxiv, dry=Fals
     through; the run only reads its state (to stop early) and reports it."""
     started = clock()
     summary = {"date": today or today_utc(), "model": getattr(model, "model", None),
-               "prompt_version": PROMPT_VERSION, "limits": limits, "papers": [],
+               "extract_model": getattr(model, "extract_model", None), "prompt_version": PROMPT_VERSION, "limits": limits, "papers": [],
                "counts": {}, "claims_accepted": 0, "claims_rejected": 0,
                "tokens": {"input": 0, "output": 0}, "stop_reason": "queue_exhausted"}
     fatal = None
@@ -781,8 +786,9 @@ def main():
     ap.add_argument("--max-chars", type=int)
     ap.add_argument("--seconds", type=int)
     ap.add_argument("--candidate", help="read only this candidate id")
-    ap.add_argument("--model", help="default: the model named in reference/reader_budget.yaml. "
+    ap.add_argument("--model", help="the screening model; default: the one in reference/reader_budget.yaml. "
                                     "It must have a price there, or it cannot be budgeted and is refused")
+    ap.add_argument("--extract-model", help="the extraction model; default: the one in the same file")
     ap.add_argument("--budget-usd", type=float,
                     help="spend at most this much this month. Can only LOWER the committed cap")
     ap.add_argument("--dry-run", action="store_true", help="no API calls and no writes")
@@ -822,7 +828,8 @@ def main():
             return 0
         try:
             budget = Budget.load(ROOT, cap_usd=a.budget_usd)
-            model = GeminiModel(a.model or budget.policy["model"], budget)
+            model = GeminiModel(a.model or budget.policy["model"], budget,
+                                extract_model=a.extract_model or (None if a.model else budget.policy["extract_model"]))
         except BudgetError as e:
             # Fail closed, and LOUDLY: a run that cannot tell what it may spend must not spend, and
             # a red job is how the owner finds out that the policy or the ledger needs repair.
@@ -843,7 +850,9 @@ def main():
     if not a.dry_run:
         (repo.candidates / "_last_read.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
 
-    print(f"read {len(summary['papers'])} candidate(s) in {summary['seconds']}s, model {summary['model']}")
+    models = summary["model"] + (f" (extraction: {summary['extract_model']})"
+                                 if summary.get("extract_model") not in (None, summary["model"]) else "")
+    print(f"read {len(summary['papers'])} candidate(s) in {summary['seconds']}s, model {models}")
     print(f"  decisions: {summary['counts']}")
     print(f"  claims accepted {summary['claims_accepted']}, rejected {summary['claims_rejected']}")
     print(f"  tokens in/out: {summary['tokens']['input']:,}/{summary['tokens']['output']:,}"

@@ -505,6 +505,27 @@ class ModelClient(unittest.TestCase):
             self.assertGreaterEqual(budget.spent_month(), expected - 1e-12)
             self.assertLess(budget.spent_month() - expected, 2e-6)
 
+    def test_screening_and_extraction_use_their_own_models_settings_and_prices(self):
+        m = GeminiModel(LITE, self.budget, client=self.FakeClient(response(self.OK, prompt=1000, out=100, thoughts=0)),
+                        sleep=self.slept.append, extract_model=MODEL)
+        m.classify("T", "x")
+        m.client.models.replies = [response(reading([]), prompt=20_000, out=500, thoughts=0)]
+        m.extract("T", "text", ["energy"])
+        calls = m.client.models.calls
+        self.assertEqual([c["model"] for c in calls], [LITE, MODEL])                       # screening, then extraction
+        self.assertEqual([c["config"].thinking_config.thinking_level.name for c in calls], ["MINIMAL", "LOW"])
+        self.assertSpent((1000 * 0.30 + 100 * 2.50) / 1e6 + (20_000 * 0.75 + 500 * 3.75) / 1e6)   # each at its own price
+
+    def test_with_no_extraction_model_one_model_does_both(self):
+        m = self.model(response(self.OK))
+        self.assertEqual(m.extract_model, m.model)
+
+    def test_an_unpriced_extraction_model_is_refused_before_any_call(self):
+        client = self.FakeClient(response(self.OK))
+        with self.assertRaises(BudgetError):
+            GeminiModel(LITE, self.budget, client=client, extract_model="gemini-not-priced")
+        self.assertEqual(client.models.calls, [])
+
     def test_the_extraction_schema_offers_only_quantities_defined_in_definitions(self):
         m = self.model(response(reading([])))
         m.extract("T", "text", ["mobility", "energy"])

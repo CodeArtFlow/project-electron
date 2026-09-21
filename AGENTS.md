@@ -188,9 +188,12 @@ the topics I thought of first".
 
 Reading a paper into a source record and claims is done by `pipeline/read_paper.py` for arXiv
 (daily, `.github/workflows/read.yml`) and by the `harvest` skill, in an agent session, for everything else.
-The automated reader uses Google's `gemini-3.5-flash-lite`, chosen by the user for its price at a
-high reading volume and named in `reference/reader_budget.yaml`, which also prices `gemini-3.8-flash`
-as an alternative for a quality comparison. A model is a **transcriber, not an author.** It may propose quotes and structure. It cannot influence any of the
+The automated reader uses two Google models, both named in `reference/reader_budget.yaml`:
+`gemini-3.5-flash-lite` for the screening call (title and abstract only; most arXiv is not
+semiconductor research, so this is where the volume is) and `gemini-3.6-flash` for extraction (the
+whole paper, where quality matters). The user chose the split after the first live run, in which the
+cheap model extracted nothing usable. `gemini-3.8-flash` stays priced as an alternative. A model is a
+**transcriber, not an author.** It may propose quotes and structure. It cannot influence any of the
 following, all of which are deterministic code:
 
 - **`access`** is set from what `pipeline/fetch_text.py` actually retrieved. A model never claims it read.
@@ -208,6 +211,11 @@ following, all of which are deterministic code:
 
 The model is asked for JSON that matches a schema. That fixes the *shape* of its answer and nothing
 else; whether the answer is *true of the paper* is still decided only by the checks above.
+
+A paper from which the verifier accepts **no claim is not retired.** Retiring it would delete the
+candidate and write an empty source record for what may only be a weak model's failure, which is what
+the first live run did to four papers. It stays a candidate with a `no_claims` decision, recording
+what was rejected, so it is not re-paid for every day and a stronger model or a human can take it.
 
 Precision over recall: extracting nothing is a correct answer. Rejected candidate claims (the first ten
 per paper) are recorded on the source record with their reasons, because "this venue states numbers without their
@@ -240,11 +248,12 @@ only lower it. Changing it is a visible commit.
   Standard paid-tier list prices. The free tier costs nothing but its content may be used to improve
   Google's products, and we cannot see which tier a key is on, so everything is budgeted at the paid
   price. `gemini-3.5-flash-lite` is $0.30 in / $2.50 out per million tokens with no announced change.
-  **`gemini-3.8-flash` doubles on 2027-01-01** ($0.75/$3.75 to $1.50/$7.50); the file records the step
-  so the ledger cannot under-count in the new year if that model is ever used.
+  **`gemini-3.6-flash` and `gemini-3.8-flash` double on 2027-01-01** ($0.75/$3.75 to $1.50/$7.50); the
+  file records the step, so the ledger cannot under-count in the new year. The extraction model is
+  one of them, so extraction gets twice as expensive then and the cap throttles it sooner.
 - **As little thinking as each model offers.** Thinking is billed as output and reading is
-  transcription, so the policy asks for `minimal` on 3.5 Flash-Lite and `low` on 3.8 (which cannot go
-  lower). Temperature is left at Google's default, because Google says to keep 1.0 for every Gemini 3
+  transcription, so the policy asks for `minimal` on 3.5 Flash-Lite and 3.6 Flash and `low` on 3.8
+  (which cannot go lower). If extraction stays poor, raising the 3.6 level is the first thing to try. Temperature is left at Google's default, because Google says to keep 1.0 for every Gemini 3
   model. Nothing depends on either: the verifier checks every quote.
 - **A docs page is not proof a model can be called.** Google's docs listed `gemini-2.5-flash` as stable
   with no shutdown date, and the live API refused it to this project (404, "no longer available to new
@@ -657,12 +666,13 @@ B), which is **2 of 10 layers**. 1 conflict, `CFL-0001`, resolved as `our-error`
 unread: 98 arXiv (the automated lane) and 197 publisher (manual; about 25% fetchable as full text).
 The synthesis page says plainly that this describes our corpus, not the field.
 
-**The reader is built and tested but has not yet read a paper with a real model.** Its secret
-(`GEMINI_API_KEY`) exists. What *has* been run for real is its deterministic half, on the real text
-of an arXiv paper with a simulated model that tried every kind of fabrication, and the request
-builder, which was run through the real SDK over a mock transport to see the exact request. What only
-a live call can confirm is that Google's service accepts that request: the SDK writes the thinking
-setting in snake_case inside otherwise camelCase JSON, which Google's parser should accept.
+**The reader has run live, once, and its yield is so far zero.** On 2026-09-21 it read 12 arXiv
+candidates with `gemini-3.5-flash-lite` for $0.041: 8 were judged out of scope and 4 were read in full,
+and the verifier accepted **0 claims** from them and rejected 6. Every rejection was correct (a
+magnetic field labelled as a voltage, a "25%" labelled as an area, four statements that added model
+names their quotes lack), so nothing false entered the ledger, but recall was zero. That is why
+extraction moved to `gemini-3.6-flash`, which has not been run yet. The four papers were restored to
+the queue. Google accepted the request the SDK sends, including the thinking setting.
 
 ```bash
 python pipeline/run_pipeline.py --no-sweep        # the whole flow, timed (writes run/timings.json)
@@ -687,15 +697,20 @@ Tests (all run in CI before any deploy): `validate_registry.py`, `units.py`, `bo
 - **`GEMINI_API_KEY` secret** must be added by the user (Settings → Secrets → Actions) before the
   reader runs. Never in a file or in chat. The user should also set Google's own monthly cap (see
   *Reader budget*): ours is the second line of defence.
-- **Reading cost is estimated, not measured.** The median arXiv paper fetched (measured on 14) is
-  about 59,000 characters; at an assumed 3 to 4 characters a token that is 15,000 to 20,000 input
-  tokens, plus an assumed 3,000 output tokens (thinking is minimal, not off, so it may add more). At
-  $0.30/$2.50 that is about $0.013 for a full read, and a fraction of a cent for a paper judged out of scope. The reader now
-  takes up to 25 candidates a day; if a third of them are in scope (an assumption) that is about $0.12
-  a day, or roughly $3.60 a month, well inside the cap. The cap holds either way, and the pacing
-  throttles the reader rather than exceed it. `python pipeline/budget.py` shows the real spend once
-  the reader has run; trust that over this.
-- **Throughput is now bounded by time, not money.** A run is capped at 25 papers and 15 minutes (the
+- **Reading cost is only partly measured.** Measured: 12 papers cost $0.041 on Flash-Lite, of which 4
+  were in scope, and a screening call costs about a tenth of a cent. Not measured: the extraction
+  call on `gemini-3.6-flash`. The median arXiv paper fetched (measured on 14) is about 59,000
+  characters; at an assumed 3 to 4 characters a token that is 15,000 to 20,000 input tokens, plus an
+  assumed 3,000 output tokens. At $0.75/$3.75 that is about $0.025 for a full read in 2026 and about
+  twice that after 2027-01-01. The reader takes up to 25 candidates a day. If a third are in scope
+  (this batch had 4 of 12) that is about 8 full reads, roughly $0.20 a day or $6 a month in 2026, and
+  roughly $12 a month after the price doubles, which is over the cap, so the pacing would then
+  throttle extraction. `python pipeline/budget.py` shows the real spend; trust that over this.
+- **Nothing in CI regenerates the SOTA and digest pages after reading.** The site renders the
+  committed `sota/` and `digests/`, and only `run_pipeline.py` rewrites them, so claims the reader
+  adds reach the ledger but not the site (which still says "3 source records") until someone runs it.
+  This has not been decided or built.
+- **Throughput is bounded by time as well as money.** A run is capped at 25 papers and 15 minutes (the
   workflow's timeout is 20). The first sweep queued 98 arXiv candidates over a three-day look-back,
   about 33 a day, so 25 a day does not quite keep pace with that inflow and the backlog would not
   clear. A second daily run would, and by the estimate above the money allows roughly double. That is

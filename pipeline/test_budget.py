@@ -191,6 +191,19 @@ class FailsClosed(unittest.TestCase):
         with tempfile.TemporaryDirectory() as f:
             self.assertEqual(load_ledger(Path(f) / "nope.json")["months"], {})
 
+    def test_the_extraction_model_defaults_to_the_screening_model_and_must_be_priced(self):
+        real = yaml.safe_load(POLICY_PATH.read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as f:
+            path = Path(f) / "p.yaml"
+            doc = copy.deepcopy(real)
+            doc.pop("extract_model")
+            path.write_text(yaml.safe_dump(doc), encoding="utf-8")
+            self.assertEqual(load_policy(path)["extract_model"], real["model"])      # absent: one model does both
+            doc["extract_model"] = "gemini-not-priced"
+            path.write_text(yaml.safe_dump(doc), encoding="utf-8")
+            with self.assertRaises(BudgetError):
+                load_policy(path)
+
     def test_a_malformed_policy_stops_the_reader(self):
         real = yaml.safe_load(POLICY_PATH.read_text(encoding="utf-8"))
         with tempfile.TemporaryDirectory() as f:
@@ -238,7 +251,8 @@ class TheCommittedPolicy(unittest.TestCase):
         # the live API refused their first choice. Guard against either being changed by accident:
         # raising the cap or changing the model must be a deliberate edit of this test as well.
         self.assertEqual(p["monthly_cap_usd"], 10.0)
-        self.assertEqual(p["model"], "gemini-3.5-flash-lite")
+        self.assertEqual(p["model"], "gemini-3.5-flash-lite")               # screening
+        self.assertEqual(p["extract_model"], "gemini-3.6-flash")            # extraction, chosen after the first live run
 
     def test_a_model_the_live_api_refused_is_not_a_candidate(self):
         # Google's docs listed gemini-2.5-flash as stable; the API said 404 "no longer available to
@@ -252,11 +266,14 @@ class TheCommittedPolicy(unittest.TestCase):
             self.assertEqual(now.price("gemini-3.5-flash-lite"), (0.30, 2.50))
             self.assertEqual(later.price("gemini-3.5-flash-lite"), (0.30, 2.50))    # unchanged in the new year
             self.assertEqual(later.price("gemini-3.8-flash"), (1.50, 7.50))         # doubled
-            self.assertLess(now.cost("gemini-3.5-flash-lite", 20_000, 3_000), now.cost("gemini-3.8-flash", 20_000, 3_000))
+            self.assertEqual(now.price("gemini-3.6-flash"), (0.75, 3.75))
+            self.assertEqual(later.price("gemini-3.6-flash"), (1.50, 7.50))         # the extraction model doubles too
+            self.assertLess(now.cost("gemini-3.5-flash-lite", 20_000, 3_000), now.cost("gemini-3.6-flash", 20_000, 3_000))
 
     def test_the_real_generation_settings_buy_the_least_thinking_each_model_offers(self):
         g = load_policy()["generation"]
         self.assertEqual(g["gemini-3.5-flash-lite"], {"thinking_level": "minimal"})
+        self.assertEqual(g["gemini-3.6-flash"], {"thinking_level": "minimal"})
         self.assertEqual(g["gemini-3.8-flash"], {"thinking_level": "low"})       # cannot go lower
         # Google: leave Gemini 3 temperature at its default of 1.0, so none is set.
         for settings in g.values():
@@ -274,9 +291,13 @@ class TheCommittedPolicy(unittest.TestCase):
         # (a 120,000-character paper is over-estimated at 48,000 tokens), at the 2026 price.
         with tempfile.TemporaryDirectory() as f:
             b = Budget(load_policy(), Path(f) / "s.json", "2026-09-10")
-            per_paper = b.worst_case("gemini-3.8-flash", 48_000, 12_000) + \
-                b.worst_case("gemini-3.8-flash", 2_900, 2_048)
+            per_paper = b.worst_case(b.policy["extract_model"], 48_000, 12_000) + \
+                b.worst_case(b.policy["model"], 2_900, 2_048)
             self.assertLess(per_paper, b.allowance_today())
+            # ...including after the 2027 price step, when the extraction model doubles.
+            later = Budget(load_policy(), Path(f) / "s.json", "2027-01-10")
+            self.assertLess(later.worst_case(later.policy["extract_model"], 48_000, 12_000)
+                            + later.worst_case(later.policy["model"], 2_900, 2_048), later.allowance_today())
 
 
 if __name__ == "__main__":

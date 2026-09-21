@@ -38,13 +38,26 @@ decision:
     not a candidate, and the docs page was not evidence that it could be. gemini-3.5-flash-lite is
     $0.30 in / $2.50 out with no announced price step (3.8 doubles on 2027-01-01). gemini-3.8-flash
     stays priced and configured as an alternative, so a quality comparison needs no code change.
+  extraction_model_choice: >
+    Two models, decided by the user on 2026-09-21 after the first live extraction run: 4 in-scope
+    papers read by gemini-3.5-flash-lite gave 0 accepted claims (the verifier's rejections were right:
+    a magnetic field mislabelled as a voltage, and statements adding facts their quotes lacked). So
+    the cheap model keeps the high-volume screening call and gemini-3.6-flash, Google's own suggested
+    replacement, does the extraction. It costs 2.5x the input price and doubles on 2027-01-01, so the
+    cap will throttle extraction sooner than screening. Thinking is left at minimal for it, as for
+    the others; raising it is the first thing to try if extraction is still poor.
 
+# The screening call: title and abstract only, "is this semiconductor research, and which layer".
+# Most arXiv papers are not, so this is where the volume is, and it must be cheap.
 model: gemini-3.5-flash-lite
+
+# The extraction call: the whole paper, where quality matters. Absent means the same model as above.
+extract_model: gemini-3.6-flash
 
 # How each model is called. Every priced model must have an entry, so that nothing runs unconfigured.
 #   thinking_level   3.x models. Thinking is billed as output and reading is transcription, so we buy
-#                    the least each model offers: "minimal" on 3.5 Flash-Lite, "low" on 3.8 Flash,
-#                    which cannot go lower (Google's thinking table, 2026-09-21).
+#                    the least each model offers: "minimal" on 3.5 Flash-Lite and 3.6 Flash, "low" on
+#                    3.8 Flash, which cannot go lower (Google's thinking table, 2026-09-21).
 #   thinking_budget  tokens the model may spend reasoning; 0 turns it off. For the 2.5 family, which no
 #                    priced model uses now. Never set together with thinking_level.
 #   temperature      absent means Google's default. Google's Gemini 3 guide says to keep 1.0 for every
@@ -52,6 +65,7 @@ model: gemini-3.5-flash-lite
 #                    Nothing depends on it: the verifier checks every quote.
 generation:
   gemini-3.5-flash-lite: {thinking_level: minimal}
+  gemini-3.6-flash: {thinking_level: minimal}
   gemini-3.8-flash: {thinking_level: low}
 
 # USD per 1,000,000 tokens, Standard tier, paid. Thinking tokens are billed as output tokens.
@@ -68,6 +82,9 @@ prices:
   models:
     gemini-3.5-flash-lite:
       - {from: 2026-01-01, input: 0.30, output: 2.50}     # text input; no scheduled change announced
+    gemini-3.6-flash:
+      - {from: 2026-01-01, input: 0.75, output: 3.75}     # "through December 31, 2026"
+      - {from: 2027-01-01, input: 1.50, output: 7.50}     # "starting January 1, 2027"
     gemini-3.8-flash:
       - {from: 2026-01-01, input: 0.75, output: 3.75}     # "through December 31, 2026"
       - {from: 2027-01-01, input: 1.50, output: 7.50}     # "starting January 1, 2027"
