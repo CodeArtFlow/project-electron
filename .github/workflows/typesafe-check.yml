@@ -1,0 +1,28 @@
+name: TypeSafe API check
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r pipeline/requirements.txt
+      - name: Offline adapter tests
+        run: python pipeline/test_assess_quality.py
+      - name: Authenticated synthetic check
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: python pipeline/typesafe_smoke.py
+      - name: Save connection report
+        uses: actions/upload-artifact@v4
+        with:
+          name: typesafe-connection-check
+          path: run/typesafe-smoke.json
+          retention-days: 7
