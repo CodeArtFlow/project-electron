@@ -31,7 +31,7 @@ on:
       max_papers:
         description: "Papers to read (hard ceiling 25)"
         required: false
-        default: "5"
+        default: "25"
 
 permissions:
   contents: write
@@ -76,7 +76,7 @@ jobs:
         run: |
           set +e
           python pipeline/read_paper.py \
-            --max-papers "${{ github.event.inputs.max_papers || '5' }}" \
+            --max-papers "${{ github.event.inputs.max_papers || '25' }}" \
             ${{ github.event_name == 'workflow_dispatch' && '--require-key' || '' }}
           code=$?
           echo "exit_code=$code" >> "$GITHUB_OUTPUT"

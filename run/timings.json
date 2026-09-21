@@ -1,15 +1,15 @@
 {
-  "run_started": "2026-09-20T23:11:49",
+  "run_started": "2026-09-20T23:23:23",
   "date": "2026-09-20",
-  "total_seconds": 11.99,
-  "automatic_seconds": 9.7,
+  "total_seconds": 11.4,
+  "automatic_seconds": 9.19,
   "steps": [
     {
       "stage": "validate-registry",
       "description": "registry against its own rules",
       "kind": "automatic",
       "command": "python pipeline/validate_registry.py",
-      "seconds": 0.206,
+      "seconds": 0.179,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -25,7 +25,7 @@
       "description": "SI engine vs definitions.yaml",
       "kind": "automatic",
       "command": "python pipeline/units.py",
-      "seconds": 0.745,
+      "seconds": 0.754,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -38,7 +38,7 @@
       "description": "definitions vs the NIST CODATA file",
       "kind": "automatic",
       "command": "python pipeline/bounds.py --verify",
-      "seconds": 0.196,
+      "seconds": 0.164,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -51,11 +51,11 @@
       "description": "the reader's spending policy is valid",
       "kind": "automatic",
       "command": "python pipeline/budget.py --check",
-      "seconds": 0.137,
+      "seconds": 0.126,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
-        "OK - reader budget policy is valid: $10.00/month, model gemini-3.8-flash"
+        "OK - reader budget policy is valid: $10.00/month, model gemini-2.5-flash"
       ]
     },
     {
@@ -63,7 +63,7 @@
       "description": "extraction refusals fire",
       "kind": "automatic",
       "command": "python pipeline/claims.py --self-test",
-      "seconds": 0.649,
+      "seconds": 0.579,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -76,7 +76,7 @@
       "description": "every gate check fires",
       "kind": "automatic",
       "command": "python pipeline/test_publication_gate.py",
-      "seconds": 1.384,
+      "seconds": 1.309,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -93,7 +93,7 @@
       "description": "discovery loop bounds",
       "kind": "automatic",
       "command": "python pipeline/test_discover.py",
-      "seconds": 0.34,
+      "seconds": 0.318,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -119,7 +119,7 @@
       "description": "every claim well-formed",
       "kind": "automatic",
       "command": "python pipeline/claims.py --validate",
-      "seconds": 0.536,
+      "seconds": 0.529,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -132,7 +132,7 @@
       "description": "claims outside a derived physical bound (informational)",
       "kind": "automatic",
       "command": "python pipeline/bounds.py --check-ledger",
-      "seconds": 0.212,
+      "seconds": 0.183,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -144,7 +144,7 @@
       "description": "find comparable claims that disagree",
       "kind": "automatic",
       "command": "python pipeline/reconcile.py --detect",
-      "seconds": 0.206,
+      "seconds": 0.17,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -156,7 +156,7 @@
       "description": "regenerate the open contradictions register",
       "kind": "automatic",
       "command": "python pipeline/reconcile.py --register",
-      "seconds": 0.159,
+      "seconds": 0.146,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -168,7 +168,7 @@
       "description": "every conflict record well-formed",
       "kind": "automatic",
       "command": "python pipeline/reconcile.py --check",
-      "seconds": 0.141,
+      "seconds": 0.14,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -180,7 +180,7 @@
       "description": "per-layer state of the art",
       "kind": "automatic",
       "command": "python pipeline/sota.py --sota",
-      "seconds": 0.15,
+      "seconds": 0.181,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -192,7 +192,7 @@
       "description": "cross-stack synthesis",
       "kind": "automatic",
       "command": "python pipeline/sota.py --synthesis",
-      "seconds": 1.359,
+      "seconds": 1.27,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -204,7 +204,7 @@
       "description": "daily digest from the ledger",
       "kind": "automatic",
       "command": "python pipeline/sota.py --digest",
-      "seconds": 1.336,
+      "seconds": 1.33,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -216,11 +216,11 @@
       "description": "evidence-bound semantic audit",
       "kind": "model",
       "command": "python pipeline/semantic_checks.py --scope publication",
-      "seconds": 0.431,
+      "seconds": 0.432,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
-        "typesafe-publication.json: 30 jobs; {'pending': 30}; 0 calls; 0.003s"
+        "typesafe-publication.json: 30 jobs; {'pending': 30}; 0 calls; 0.002s"
       ]
     },
     {
@@ -228,7 +228,7 @@
       "description": "the nine checks",
       "kind": "automatic",
       "command": "python pipeline/publication_gate.py",
-      "seconds": 0.618,
+      "seconds": 0.541,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -245,7 +245,7 @@
       "description": "render the static site",
       "kind": "automatic",
       "command": "python pipeline/build_site.py --out _site",
-      "seconds": 0.897,
+      "seconds": 0.839,
       "exit_code": 0,
       "ok": true,
       "output_tail": [

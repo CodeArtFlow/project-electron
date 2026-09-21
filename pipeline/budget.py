@@ -104,9 +104,39 @@ def load_policy(path=POLICY_PATH):
         raise BudgetError("the policy prices no model, so nothing can be budgeted")
     if model not in schedules:
         raise BudgetError(f"the default model {model!r} has no price in the policy")
-    return {"monthly_cap_usd": cap, "model": model, "schedules": schedules,
+    generation = _generation(raw.get("generation"), schedules)
+    return {"monthly_cap_usd": cap, "model": model, "schedules": schedules, "generation": generation,
             "prices_retrieved": _d(prices.get("retrieved"), "prices.retrieved"),
             "prices_source": prices.get("source")}
+
+
+GENERATION_KEYS = {"thinking_budget", "thinking_level", "temperature"}
+THINKING_LEVELS = ("minimal", "low", "medium", "high")
+
+
+def _generation(raw, schedules):
+    """How each priced model is called. A priced model with no entry is refused: never run unconfigured."""
+    raw = raw or {}
+    out = {}
+    for name in schedules:
+        g = raw.get(name)
+        if not isinstance(g, dict) or not g:
+            raise BudgetError(f"{name} is priced but has no generation settings")
+        extra = set(g) - GENERATION_KEYS
+        if extra:
+            raise BudgetError(f"{name}: unknown generation setting(s) {sorted(extra)}")
+        if "thinking_budget" in g and "thinking_level" in g:
+            raise BudgetError(f"{name}: thinking_budget and thinking_level cannot both be set (the API rejects it)")
+        if "thinking_budget" in g and (isinstance(g["thinking_budget"], bool) or not isinstance(g["thinking_budget"], int)
+                                       or g["thinking_budget"] < 0):
+            raise BudgetError(f"{name}.thinking_budget must be a whole number of tokens, 0 or more")
+        if "thinking_level" in g and g["thinking_level"] not in THINKING_LEVELS:
+            raise BudgetError(f"{name}.thinking_level must be one of {THINKING_LEVELS}")
+        if "temperature" in g and (isinstance(g["temperature"], bool) or not isinstance(g["temperature"], (int, float))
+                                   or not 0 <= g["temperature"] <= 2):
+            raise BudgetError(f"{name}.temperature must be a number from 0 to 2")
+        out[name] = dict(g)
+    return out
 
 
 def _empty_ledger():

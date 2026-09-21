@@ -38,7 +38,7 @@ the answer is TRUE of the paper is decided by the verifier above, exactly as it 
 
 Usage:
     python pipeline/read_paper.py --dry-run                 # fetch + size only; no API, no writes
-    python pipeline/read_paper.py --max-papers 5            # spend credits; needs GEMINI_API_KEY
+    python pipeline/read_paper.py --max-papers 25           # spend credits; needs GEMINI_API_KEY
     python pipeline/read_paper.py --max-papers 2 --budget-usd 0.25   # a first, cautious live run
     python pipeline/read_paper.py --dry-run --stub-response reading.json   # verifier on real text
 """
@@ -82,7 +82,7 @@ for _s in (sys.stdout, sys.stderr):
 PROMPT_VERSION = "reader-v2"
 # Which model, and what it may cost, is the committed file reference/reader_budget.yaml. The model
 # that actually answered is recorded on every source record from response.model_version.
-DEFAULTS = {"max_papers": 5, "max_chars": 120_000, "seconds": 600}
+DEFAULTS = {"max_papers": 25, "max_chars": 120_000, "seconds": 900}
 CEILINGS = {"max_papers": 25, "max_chars": 150_000, "seconds": 900}
 MIN_SPAN_CHARS = 25
 MAX_CLAIMS = 8
@@ -209,9 +209,10 @@ class GeminiModel:
     of a request that had been processed would be a payment we never recorded. The one retry here is
     for a 429 or 503, which are failures, not timeouts.
 
-    Temperature is NOT set. Google's Gemini 3 guide says to keep it at the default of 1.0 and warns
-    that lower values can cause looping and degraded output. Nothing depends on the model being
-    deterministic: the verifier decides what enters the record, from the paper's own text.
+    Thinking and temperature come from the policy per model (see _generation). For Gemini 3 models
+    Google says to leave temperature at its default of 1.0 (lower values can loop and degrade), so the
+    policy sets none for them. Nothing depends on the model being deterministic: the verifier decides
+    what enters the record, from the paper's own text.
     """
 
     def __init__(self, model, budget, client=None, sleep=time.sleep):
@@ -224,6 +225,23 @@ class GeminiModel:
         # precedence over GEMINI_API_KEY. timeout is in milliseconds.
         self.client = client or genai.Client(api_key=os.environ["GEMINI_API_KEY"],
                                              http_options=types.HttpOptions(timeout=120_000))
+
+    def _generation(self):
+        """Per-model thinking and temperature, from the committed policy (reference/reader_budget.yaml).
+
+        Reading is transcription, not reasoning, and thinking is billed as output, so the policy buys
+        as little as each model allows: none on the 2.5 family, the lowest level on 3.x. A setting
+        the policy leaves out is left at Google's default rather than guessed here.
+        """
+        t, g = self._types, self.budget.policy["generation"][self.model]
+        kwargs = {}
+        if "temperature" in g:
+            kwargs["temperature"] = float(g["temperature"])
+        if "thinking_budget" in g:
+            kwargs["thinking_config"] = t.ThinkingConfig(thinking_budget=g["thinking_budget"])
+        elif "thinking_level" in g:
+            kwargs["thinking_config"] = t.ThinkingConfig(thinking_level=t.ThinkingLevel[g["thinking_level"].upper()])
+        return kwargs
 
     def _generate(self, user, config, est_in, max_out):
         import httpx
@@ -267,10 +285,7 @@ class GeminiModel:
         self.budget.check(self.model, est_in, max_out)            # raises BudgetExhausted; no call made
         config = t.GenerateContentConfig(
             system_instruction=system, response_mime_type="application/json",
-            response_json_schema=schema, max_output_tokens=max_out,
-            # Reading is transcription, not reasoning. Thinking is billed as output, and 3.8 Flash
-            # cannot turn it off, so keep it at the lowest level it offers.
-            thinking_config=t.ThinkingConfig(thinking_level=t.ThinkingLevel.LOW))
+            response_json_schema=schema, max_output_tokens=max_out, **self._generation())
         resp = self._generate(user, config, est_in, max_out)
 
         tokens_in, tokens_out, known = self._usage(resp, est_in, max_out)

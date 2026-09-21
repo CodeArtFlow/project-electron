@@ -210,6 +210,13 @@ class FailsClosed(unittest.TestCase):
                 "duplicate date": lambda d: d["prices"]["models"][real["model"]].append(
                     dict(d["prices"]["models"][real["model"]][0])),
                 "empty schedule": lambda d: d["prices"]["models"].update({real["model"]: []}),
+                "priced model with no generation settings": lambda d: d["generation"].pop(real["model"]),
+                "unknown generation setting": lambda d: d["generation"][real["model"]].update(top_k=3),
+                "thinking budget AND level": lambda d: d["generation"][real["model"]].update(
+                    thinking_budget=0, thinking_level="low"),
+                "negative thinking budget": lambda d: d["generation"][real["model"]].update(thinking_budget=-1),
+                "bad thinking level": lambda d: d["generation"][real["model"]].update(thinking_level="extreme"),
+                "temperature out of range": lambda d: d["generation"][real["model"]].update(temperature=5),
             }
             for name, breaker in breakers.items():
                 doc = copy.deepcopy(real)
@@ -227,10 +234,26 @@ class FailsClosed(unittest.TestCase):
 class TheCommittedPolicy(unittest.TestCase):
     def test_the_real_policy_is_valid_and_is_what_the_user_decided(self):
         p = load_policy()
-        # The user set $10 a month and Gemini's Flash model on 2026-09-21. Guard against it being
-        # changed by accident: raising the cap must be a deliberate edit of this test as well.
+        # The user set $10 a month on 2026-09-21, and chose gemini-2.5-flash the same day "as the
+        # volumes are super high for reading". Guard against either being changed by accident:
+        # raising the cap or the model must be a deliberate edit of this test as well.
         self.assertEqual(p["monthly_cap_usd"], 10.0)
-        self.assertEqual(p["model"], "gemini-3.8-flash")
+        self.assertEqual(p["model"], "gemini-2.5-flash")
+
+    def test_2_5_flash_is_cheaper_and_has_no_announced_step_up_while_3_8_does(self):
+        with tempfile.TemporaryDirectory() as f:
+            now = Budget(load_policy(), Path(f) / "s.json", "2026-12-31")
+            later = Budget(load_policy(), Path(f) / "s.json", "2027-06-01")
+            self.assertEqual(now.price("gemini-2.5-flash"), (0.30, 2.50))
+            self.assertEqual(later.price("gemini-2.5-flash"), (0.30, 2.50))      # unchanged in the new year
+            self.assertEqual(later.price("gemini-3.8-flash"), (1.50, 7.50))      # doubled
+            self.assertLess(now.cost("gemini-2.5-flash", 20_000, 3_000), now.cost("gemini-3.8-flash", 20_000, 3_000))
+
+    def test_the_real_generation_settings_buy_no_thinking_on_2_5_and_the_lowest_on_3_8(self):
+        g = load_policy()["generation"]
+        self.assertEqual(g["gemini-2.5-flash"], {"thinking_budget": 0, "temperature": 0})
+        # Google: leave Gemini 3 temperature at its default of 1.0, so none is set for it.
+        self.assertEqual(g["gemini-3.8-flash"], {"thinking_level": "low"})
 
     def test_the_real_price_table_carries_the_announced_2027_step_up(self):
         with tempfile.TemporaryDirectory() as f:

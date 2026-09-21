@@ -188,8 +188,9 @@ the topics I thought of first".
 
 Reading a paper into a source record and claims is done by `pipeline/read_paper.py` for arXiv
 (daily, `.github/workflows/read.yml`) and by the `harvest` skill, in an agent session, for everything else.
-The automated reader uses Google's Gemini Flash model (`gemini-3.8-flash`, chosen by the user and
-named in `reference/reader_budget.yaml`). A model is a **transcriber, not an author.** It may propose quotes and structure. It cannot influence any of the
+The automated reader uses Google's `gemini-2.5-flash`, chosen by the user for its price at a high
+reading volume and named in `reference/reader_budget.yaml`, which also prices `gemini-3.8-flash` as an
+alternative for a quality comparison. A model is a **transcriber, not an author.** It may propose quotes and structure. It cannot influence any of the
 following, all of which are deterministic code:
 
 - **`access`** is set from what `pipeline/fetch_text.py` actually retrieved. A model never claims it read.
@@ -238,8 +239,13 @@ only lower it. Changing it is a visible commit.
 - **Priced or refused.** A model with no dated price in the file cannot be used. Prices are Google's
   Standard paid-tier list prices. The free tier costs nothing but its content may be used to improve
   Google's products, and we cannot see which tier a key is on, so everything is budgeted at the paid
-  price. **Google's price for this model doubles on 2027-01-01** ($0.75/$3.75 to $1.50/$7.50 per
-  million tokens in/out); the file records the step so the ledger does not under-count in the new year.
+  price. `gemini-2.5-flash` is $0.30 in / $2.50 out per million tokens with no announced change.
+  **`gemini-3.8-flash` doubles on 2027-01-01** ($0.75/$3.75 to $1.50/$7.50); the file records the step
+  so the ledger cannot under-count in the new year if that model is ever used.
+- **No thinking is bought.** Thinking is billed as output and reading is transcription, so the policy
+  sets `thinking_budget: 0` for the 2.5 model (and the lowest level, which 3.x cannot go below, for
+  3.8). Temperature is 0 for 2.5, so quotes are copied faithfully, and unset for Gemini 3, where
+  Google says to keep its default of 1.0. Nothing depends on either: the verifier checks every quote.
 - **Fails closed.** A policy or ledger that cannot be read stops the reader with a failed job. It is
   never treated as a fresh start.
 
@@ -647,19 +653,17 @@ B), which is **2 of 10 layers**. 1 conflict, `CFL-0001`, resolved as `our-error`
 unread: 98 arXiv (the automated lane) and 197 publisher (manual; about 25% fetchable as full text).
 The synthesis page says plainly that this describes our corpus, not the field.
 
-**The reader is built and tested but has not yet read a paper with a real model.** It needs a
-repository secret named `GEMINI_API_KEY`, and nothing has reached Google's servers. Until the secret
-exists a scheduled run skips with a visible warning and cannot block anything. What *has* been run
-for real is its deterministic half, on the real text of an arXiv paper with a simulated model that
-tried every kind of fabrication, and the request builder, which was run through the real SDK over a
-mock transport to see the exact request. One thing only a live call can confirm: the SDK sends the
-thinking level spelled `thinking_level` inside otherwise camelCase JSON, which Google's parser should
-accept. The first live run should be small: `--max-papers 2 --budget-usd 0.25`.
+**The reader is built and tested but has not yet read a paper with a real model.** Its secret
+(`GEMINI_API_KEY`) exists. What *has* been run for real is its deterministic half, on the real text
+of an arXiv paper with a simulated model that tried every kind of fabrication, and the request
+builder, which was run through the real SDK over a mock transport to see the exact request. What only
+a live call can confirm is that Google's service accepts that request: the SDK writes the thinking
+setting in snake_case inside otherwise camelCase JSON, which Google's parser should accept.
 
 ```bash
 python pipeline/run_pipeline.py --no-sweep        # the whole flow, timed (writes run/timings.json)
 python pipeline/read_paper.py --dry-run           # fetch and size the arXiv queue; no API, no writes
-python pipeline/read_paper.py --max-papers 5      # read (needs GEMINI_API_KEY; spends, capped at $10/month)
+python pipeline/read_paper.py --max-papers 25     # read (needs GEMINI_API_KEY; spends, capped at $10/month)
 python pipeline/budget.py                         # spend so far this month, and what today may spend
 python pipeline/gold_eval.py --status             # gold set size, and what is still missing
 python pipeline/gold_eval.py --score REPORT.json  # score an audit report against the gold labels
@@ -681,11 +685,17 @@ Tests (all run in CI before any deploy): `validate_registry.py`, `units.py`, `bo
   *Reader budget*): ours is the second line of defence.
 - **Reading cost is estimated, not measured.** The median arXiv paper fetched (measured on 14) is
   about 59,000 characters; at an assumed 3 to 4 characters a token that is 15,000 to 20,000 input
-  tokens, plus an assumed few thousand output tokens including thinking. At the 2026 price that is
-  about $0.03 a paper, so five full reads a day is about $4.50 a month, and about $9 after the price
-  doubles on 2027-01-01, which is close to the cap. Papers judged out of scope cost a fraction of a
-  cent. The cap holds either way, and the pacing throttles the reader rather than exceed it.
-  `python pipeline/budget.py` shows the real spend once the reader has run; trust that over this.
+  tokens, plus an assumed 3,000 output tokens with thinking off. At $0.30/$2.50 that is about
+  $0.013 for a full read, and a fraction of a cent for a paper judged out of scope. The reader now
+  takes up to 25 candidates a day; if a third of them are in scope (an assumption) that is about $0.12
+  a day, or roughly $3.60 a month, well inside the cap. The cap holds either way, and the pacing
+  throttles the reader rather than exceed it. `python pipeline/budget.py` shows the real spend once
+  the reader has run; trust that over this.
+- **Throughput is now bounded by time, not money.** A run is capped at 25 papers and 15 minutes (the
+  workflow's timeout is 20). The first sweep queued 98 arXiv candidates over a three-day look-back,
+  about 33 a day, so 25 a day does not quite keep pace with that inflow and the backlog would not
+  clear. A second daily run would, and by the estimate above the money allows roughly double. That is
+  a deliberate edit of `read.yml`, not something to do silently.
 - **The semantic audit is advisory and uncalibrated.** The gold set is a seed (15 cases, labelled by
   the same agent that made the extractions, no independent review, no defective *publication*
   examples), so no threshold can yet be validated. `python pipeline/gold_eval.py` shows where it
