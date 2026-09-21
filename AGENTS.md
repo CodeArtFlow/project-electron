@@ -623,6 +623,8 @@ reference/gold/           labelled cases for the semantic audit and the reader (
 reference/semantic_policy.yaml  whether the semantic audit blocks publication: advisory | blocking
 reference/reader_budget.yaml    the reader's monthly spending cap, model, and dated prices
 docs/typesafe.md          how the TypeSafe review layer works and its limits
+docs/typesafe-plan.md     the proposed next steps for TypeSafe, and the decisions they wait on
+TODO.md                   open work: blocked, in flight, next; rules and state stay in this file
 corpus/candidates/        sweep output; unread ones are queue, decided ones (read_decision) are not
 corpus/papers/            immutable source records
 corpus/authors/           author track record and credibility
@@ -667,12 +669,18 @@ it, because a gate CI can route around is not a gate.
 UTC), daily arXiv reader (`read.yml`, 06:45 UTC), reconcile, derived SOTA/synthesis/digest, the
 nine-check publication gate, and a live site. The whole deterministic pipeline runs in about 12 s.
 
-**What the corpus holds.** 6 source records (3 read by hand, 3 by the automated reader) and 17
-claims (9 ARCH, 4 DEV, 4 MAT, all grade B and active; 10 of them automated), which is **3 of 10
-layers**. 5 conflicts, all `resolved`. 272 candidates are unread: 75 arXiv (the automated lane) and
-197 publisher (manual; about 25% fetchable as full text). 17 arXiv candidates were judged out of scope
-and 3 were read with no claim accepted (`no_claims`). The site's synthesis page describes a smaller
-corpus than this until `run_pipeline.py` regenerates it (see the CI gap below).
+**What the corpus holds** (counted from the repository at the end of 2026-09-21). 12 source records
+(3 read by hand, 9 by the automated reader) and 30 claims (14 ARCH, 6 DEV, 5 MAT, 4 PHOT, 1 PROC, all
+grade B and active; 23 automated), which is **5 of 10 layers**. 11 conflicts: 5 `resolved` and **6
+`live:unexamined`, which block every deploy** until they are classified (`CFL-0006..0011`, opened by
+the first scheduled reading run; see below and `TODO.md` B1). 314 candidates are unread: 117 arXiv
+(the automated lane) and 197 publisher (manual; about 25% fetchable as full text). Of the arXiv ones
+already handled, 29 were judged out of scope, 8 were read with no claim accepted (`no_claims`) and 2
+were too long. The site's synthesis page describes a smaller corpus than this until
+`run_pipeline.py` regenerates it (see the CI gap below).
+
+Open work is tracked in **`TODO.md`**. Keep it and this section consistent: facts about the state live
+here, tasks live there.
 
 **The reader has run live, on 2026-09-21, and its first two results taught different things.**
 With `gemini-3.5-flash-lite` alone, 12 papers cost $0.041: 8 were out of scope and 4 were read in
@@ -681,7 +689,16 @@ field labelled as a voltage, a "25%" labelled as an area, statements that added 
 quotes lack), so recall was zero but nothing false entered. With `gemini-3.6-flash` extracting, 12
 papers cost $0.127 and **10 claims were accepted** from 3 papers, and 3 more papers gave none.
 
-Those 10 claims opened four conflicts, and all four were between claims of **one paper** and caused by
+The first scheduled reading run (13:21 UTC) then read 25 candidates for $0.18 (12 out of scope, 6
+read, 5 `no_claims`, 2 too long), accepted 13 claims and opened 6 conflicts that block the deploy. Five
+are between claims of *different, unrelated* papers that share only a generic quantity name (a
+computing time against an orbital lifetime, two unrelated temperatures) with no shared condition, and
+one is two different mode spacings of one device with identical structured conditions. So the
+comparability rule, not only the reader, is at fault: two claims with no shared context are treated as
+comparable. The user decided the same day to add a deterministic guard (`TODO.md` D1 and N1), and
+paused the daily reading run until it lands.
+
+Earlier the same day, 10 claims opened four conflicts, and all four were between claims of **one paper** and caused by
 our method: numbers of the same kind (the power of different arrays, the temperature of different
 calculations) carried nothing to tell them apart, and the detector saw them as comparable. The
 publication gate blocked the deploy, as designed. The user decided to scope them (they are
