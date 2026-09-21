@@ -79,7 +79,7 @@ def good_five(**over):
          "anchor_spans": [FIVE],
          "quantity": {"name": "energy_advantage_ratio", "value": 5, "unit": "x",
                       "bound": "upper_bound", "approximate": True},
-         "conditions": []}
+         "conditions": [{"key": "baseline", "value": "static CMOS", "span": FIVE}]}
     c.update(over)
     return c
 
@@ -288,7 +288,7 @@ class ReadingOnePaper(unittest.TestCase):
 
     def test_the_same_result_stated_twice_is_recorded_once(self):
         with tempfile.TemporaryDirectory() as folder:
-            model = StubModel(CLASSIFY_OK, reading([good_edp(), good_edp(conditions=[])]))
+            model = StubModel(CLASSIFY_OK, reading([good_edp(), good_edp(conditions=[{"key": "vclk", "value": "0.6 V", "span": EDP}])]))
             _, _, out = self.read(model, folder)
         self.assertEqual(len(out.claims), 1)
         self.assertEqual(out.rejected[0]["reason"], "duplicate of a claim already accepted from this paper")
@@ -416,6 +416,38 @@ def response(data=None, finish="STOP", prompt=1200, out=90, thoughts=40, total=N
     return type("R", (), {"candidates": [cand] if candidates else [], "usage_metadata": u,
                           "model_version": model_version, "prompt_feedback": feedback,
                           "text": text if text is not None else json.dumps(data)})()
+
+
+class NumbersNeedConditions(unittest.TestCase):
+    """The first extraction run: 3 papers, 10 claims, 4 false conflicts, because numbers of the same kind
+    (power of different arrays, temperature of different calculations) carried nothing to tell them apart."""
+
+    def test_a_number_with_no_conditions_is_rejected_with_the_reason(self):
+        claim, why = build_claim(good_five(conditions=[]), ctx())
+        self.assertIsNone(claim)
+        self.assertIn("at least one verified condition", why)
+
+    def test_a_condition_whose_own_quote_lacks_its_value_does_not_count(self):
+        # The condition is dropped by the per-condition quote check, leaving the number with none.
+        claim, why = build_claim(good_five(conditions=[{"key": "baseline", "value": "dynamic logic", "span": FIVE}]), ctx())
+        self.assertIsNone(claim)
+        self.assertIn("at least one verified condition", why)
+
+    def test_one_verified_condition_is_enough_and_is_recorded_in_both_places(self):
+        claim, _ = build_claim(good_five(), ctx())
+        self.assertEqual(claim["conditions"], {"baseline": "static CMOS"})
+        self.assertEqual(claim["quantity"]["conditions"], claim["conditions"])
+
+    def test_a_statement_with_no_number_needs_no_condition(self):
+        stmt = "The widget was evaluated by simulation in the TESTFAB 16nm process for its energy benefit."
+        claim, why = build_claim({"statement": stmt, "anchor_spans": [EVID], "conditions": []}, ctx())
+        self.assertIsNotNone(claim, why)
+
+    def test_the_instructions_ask_for_distinguishing_conditions_and_allow_omitting_a_quantity(self):
+        from read_paper import PROMPT_VERSION, SYSTEM
+        self.assertEqual(PROMPT_VERSION, "reader-v3")
+        self.assertIn("tells THIS number apart", SYSTEM)
+        self.assertIn("omit quantity altogether", SYSTEM)
 
 
 class ConditionsAreStatedOnce(unittest.TestCase):

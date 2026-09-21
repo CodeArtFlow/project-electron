@@ -97,7 +97,9 @@ Claims are atomic and falsifiable. "GAA transistors are promising" is not a clai
   claim turns on a number, plus `bound` (`exact` / `upper_bound` / `lower_bound`) and `approximate`.
   **A bound is not a measurement:** "up to 5.3x" is an upper bound, and storing it as 5.3x once made
   two upper bounds look like a contradiction. `reconcile` compares by interval overlap, so two
-  upper bounds can never conflict, and extraction refuses to record a qualified number as exact
+  upper bounds can never conflict, and extraction refuses to record a qualified number as exact.
+  A claim states its `conditions` twice, on the claim and inside its `quantity`; validation refuses a
+  claim whose two disagree
 - `extraction` — on claims written by the automated reader: model, prompt version, and how many
   quotes were verified verbatim against the paper (see *Reading*)
 - `corrections` — dated audit trail of changes made after the claim was written. `public: true`
@@ -207,6 +209,10 @@ following, all of which are deterministic code:
   or approximation, or the claim is rejected.
 - **Every condition** needs its own quote containing its value. A condition can never be copied
   across papers, which was a real defect in hand extraction.
+- **Every number needs a condition that says what it is a value of** (component, variant,
+  configuration, material, mechanism, calculation, benchmark). A paper reports many numbers of one
+  kind, and numbers with nothing to tell them apart look like contradictions of each other, which is
+  what happened on the first extraction run. A number with no verified condition is rejected.
 - **Units** go through `UnitEngine`, then the same extraction refusals as manual extraction.
 
 The model is asked for JSON that matches a schema. That fixes the *shape* of its answer and nothing
@@ -661,18 +667,29 @@ it, because a gate CI can route around is not a gate.
 UTC), daily arXiv reader (`read.yml`, 06:45 UTC), reconcile, derived SOTA/synthesis/digest, the
 nine-check publication gate, and a live site. The whole deterministic pipeline runs in about 12 s.
 
-**What the corpus holds.** 3 source records (all read by hand) and 7 claims (6 ARCH, 1 DEV, all grade
-B), which is **2 of 10 layers**. 1 conflict, `CFL-0001`, resolved as `our-error`. 295 candidates are
-unread: 98 arXiv (the automated lane) and 197 publisher (manual; about 25% fetchable as full text).
-The synthesis page says plainly that this describes our corpus, not the field.
+**What the corpus holds.** 6 source records (3 read by hand, 3 by the automated reader) and 17
+claims (9 ARCH, 4 DEV, 4 MAT, all grade B and active; 10 of them automated), which is **3 of 10
+layers**. 5 conflicts, all `resolved`. 272 candidates are unread: 75 arXiv (the automated lane) and
+197 publisher (manual; about 25% fetchable as full text). 17 arXiv candidates were judged out of scope
+and 3 were read with no claim accepted (`no_claims`). The site's synthesis page describes a smaller
+corpus than this until `run_pipeline.py` regenerates it (see the CI gap below).
 
-**The reader has run live, once, and its yield is so far zero.** On 2026-09-21 it read 12 arXiv
-candidates with `gemini-3.5-flash-lite` for $0.041: 8 were judged out of scope and 4 were read in full,
-and the verifier accepted **0 claims** from them and rejected 6. Every rejection was correct (a
-magnetic field labelled as a voltage, a "25%" labelled as an area, four statements that added model
-names their quotes lack), so nothing false entered the ledger, but recall was zero. That is why
-extraction moved to `gemini-3.6-flash`, which has not been run yet. The four papers were restored to
-the queue. Google accepted the request the SDK sends, including the thinking setting.
+**The reader has run live, on 2026-09-21, and its first two results taught different things.**
+With `gemini-3.5-flash-lite` alone, 12 papers cost $0.041: 8 were out of scope and 4 were read in
+full, and the verifier accepted **0 claims** and rejected 6. Every rejection was correct (a magnetic
+field labelled as a voltage, a "25%" labelled as an area, statements that added model names their
+quotes lack), so recall was zero but nothing false entered. With `gemini-3.6-flash` extracting, 12
+papers cost $0.127 and **10 claims were accepted** from 3 papers, and 3 more papers gave none.
+
+Those 10 claims opened four conflicts, and all four were between claims of **one paper** and caused by
+our method: numbers of the same kind (the power of different arrays, the temperature of different
+calculations) carried nothing to tell them apart, and the detector saw them as comparable. The
+publication gate blocked the deploy, as designed. The user decided to scope them (they are
+`CFL-0002..0005`, resolved as `scoped`, with non-public correction entries on the claims) and to fix
+the reader, whose prompt `reader-v3` now asks for distinguishing conditions and whose verifier
+rejects a number that has none. Not fixed, and not checked by the verifier: statements can carry words
+that are not in their anchor quotes ("in BLG", "acoustic phonon" for the paper's "AP"). The
+paper-grounded TypeSafe check, which is the next thing being built, is meant to test exactly that.
 
 ```bash
 python pipeline/run_pipeline.py --no-sweep        # the whole flow, timed (writes run/timings.json)
