@@ -1,6 +1,6 @@
 {
   "date": "2026-09-21",
-  "model": "gemini-2.5-flash",
+  "model": "gemini-3.5-flash-lite",
   "prompt_version": "reader-v2",
   "limits": {
     "max_papers": 3,
@@ -10,36 +10,52 @@
   "papers": [
     {
       "candidate": "CAND-20260920-0138",
-      "decision": "error",
-      "reason": "api_404: This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Int",
-      "chars": 0,
+      "decision": "out_of_scope",
+      "reason": "The paper discusses a general materials design optimization method using Bayesian optimization and LLM agents, without a specific focus on semiconductor materials or electronics.",
+      "chars": 66919,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260920-0137",
+      "decision": "out_of_scope",
+      "reason": "The paper describes a wireless distributed antenna array for microwave imaging, which is outside the scope of semiconductor research.",
+      "chars": 40152,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260920-0136",
+      "decision": "out_of_scope",
+      "reason": "The paper discusses optical beam alignment for physics experiments using atom-transport systems, which is unrelated to semiconductor manufacturing or devices.",
+      "chars": 51548,
       "claims": [],
       "rejected": []
     }
   ],
   "counts": {
-    "error": 1
+    "out_of_scope": 3
   },
   "claims_accepted": 0,
   "claims_rejected": 0,
   "tokens": {
-    "input": 0,
-    "output": 0
+    "input": 2777,
+    "output": 151
   },
-  "stop_reason": "fatal_api_error",
-  "seconds": 3.7,
-  "cost_usd": 0.0,
+  "stop_reason": "paper_cap",
+  "seconds": 15.4,
+  "cost_usd": 0.001212,
   "budget": {
     "monthly_cap_usd": 10.0,
-    "spent_month_usd": 0.0,
-    "spent_today_usd": 0.0,
+    "spent_month_usd": 0.001212,
+    "spent_today_usd": 0.001212,
     "allowance_today_usd": 1.0,
-    "remaining_today_usd": 1.0,
-    "run_usd": 0.0,
-    "run_calls": 0,
+    "remaining_today_usd": 0.998788,
+    "run_usd": 0.001212,
+    "run_calls": 3,
     "run_unknown_calls": 0,
     "price_table_retrieved": "2026-09-21",
     "price_table_age_days": 0
   },
-  "errors": 1
+  "errors": 0
 }
