@@ -71,9 +71,13 @@ class Defect1_BoundsAreNotPoints(unittest.TestCase):
         self.assertFalse(disagree(claim("A", 5.0, approx=True), b)[0])
 
     def test_detection_end_to_end(self):
-        bounded = {"A": claim("A", 5.0, "upper_bound", True), "B": claim("B", 3.83, "upper_bound")}
+        # The same cell in the same process: a shared SUBJECT, which the comparability rule now requires
+        # (reference/comparability.yaml). What this test is about is the bounds, not the subject.
+        same = {"cell": "PFAL buffer", "process": "TSMC 16nm"}
+        bounded = {"A": claim("A", 5.0, "upper_bound", True, conds=same),
+                   "B": claim("B", 3.83, "upper_bound", conds=same)}
         self.assertEqual(detect(bounded, []), [])
-        exact = {"A": claim("A", 5.0), "B": claim("B", 3.83)}
+        exact = {"A": claim("A", 5.0, conds=same), "B": claim("B", 3.83, conds=same)}
         found = detect(exact, [])
         self.assertEqual(len(found), 1)
         self.assertEqual(found[0]["bounds"]["A"], ("exact", False))

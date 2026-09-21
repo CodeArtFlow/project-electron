@@ -14,14 +14,14 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
 
 ## 0. Blocking publication right now
 
-- [ ] **B1. Six conflicts are `live:unexamined`, so every deploy is blocked** (`CFL-0006..0011`, opened by
+- [x] **B1. (Cleared 2026-09-21.) Six conflicts were `live:unexamined`, so every deploy was blocked** (`CFL-0006..0011`, opened by
   the scheduled reading run on 2026-09-21; the run's deploy failed at check 1 of the gate, and the live
   site is still the last good build, `29a08cd`). This is the doctrine working, not a bug. Read them:
   five are between claims from *different* papers that only share a generic quantity name (`time`,
   `temperature`) and no condition that says they concern the same thing; `CFL-0011` is two different
   mode spacings (Ω1, Ω2) of one photonic molecule with identical structured conditions.
-  Closing them one by one would treat the symptom, so the cause is fixed first (D1, decided: N1).
-  Done when: the gate passes and the guard is deployed.
+  The cause was fixed first (D1, N1), then all six were closed as `scoped`. Done when the guard is
+  deployed and the gate passes on `main`; see B2 for the schedule.
 - [ ] **B2. The daily reading workflow is PAUSED** (`gh workflow disable read.yml`, at the user's decision
   on 2026-09-21), so no more false conflicts accumulate. **Re-enable it when N1 has landed:**
   `gh workflow enable read.yml`. The sweep (`harvest.yml`) and deploy are untouched. Nothing is read
@@ -67,9 +67,10 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
 
 ## 4. Next up, in order
 
-- [~] **N1. Fix comparability (D1).** Deterministic guard plus a visible "not compared" log
-  (`ledger/not-compared.md`), with tests that show a real contradiction is still detected. Then
-  re-examine `CFL-0006..0011` under the new rule. Unblocks B1; re-enable the schedule (B2) after.
+- [x] **N1. Fix comparability (D1).** Done 2026-09-21: `reference/comparability.yaml`, rule 3 in
+  `reconcile.py`, the visible `ledger/not-compared.md`, 15 tests including the six real pairs and a
+  real contradiction that is still found. `CFL-0006..0011` closed as `scoped` (five by the guard, one by
+  hand-scoping `CLM-PHOT-0002/0003`). Its known limit is N3.
 - [ ] **N2. Reader: unit parsing costs recall.** Refused so far for units we could parse but do not:
   `˚A`/`Å` spellings, `mm2`, `Ω sq-1`, `me`, `TFLOP...`, and `dB` mapped onto a power quantity. Add
   aliases with tests; refuse everything else as now.

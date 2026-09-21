@@ -1,0 +1,54 @@
+# Project Electron - when two claims may be compared
+#
+# reconcile.py --detect opens a conflict only for claims that are COMPARABLE:
+#   1. the same quantity, and the same SI unit;
+#   2. no condition that both claims name has a different value (different temperatures are
+#      separate results, not a disagreement); and
+#   3. SHARED SUBJECT CONTEXT: at least one condition, named on both claims with an equal value,
+#      that says WHAT was measured.
+#
+# Rule 3 was added on 2026-09-21 (user's decision) after the first scheduled reading run. Rules 1 and 2
+# alone treat two claims with NO conditions in common as comparable, so a computing time and an orbital
+# lifetime, or two unrelated temperatures, opened conflicts and blocked publication. A number says
+# what it is a value OF only through its conditions; where two claims share none, there is no
+# basis for calling them the same measurement.
+#
+# The subject is what distinguishes a measured thing (a device, a material, a component, an
+# architecture, a process, a mechanism, a calculation). The OPERATING POINT is how it was run
+# (temperature, frequency, voltage, ...). Sharing an operating point says nothing about the subject:
+# two unrelated results at 300 K share 300 K. So keys listed below do not count as shared subject.
+# They still count under rule 2: a differing temperature still makes two claims non-comparable.
+#
+# This is NOT silent. A pair of claims that disagree numerically but share no subject is written to
+# ledger/not-compared.md on every detection run and counted on the open-contradictions register, so a
+# real disagreement hiding behind mismatched condition keys can be seen and this list corrected.
+#
+# Keys are compared case-insensitively. To treat another key as operating-point, add it here: a
+# visible commit, and one the not-compared log will show the effect of.
+
+operating_keys:
+  - temperature
+  - temp
+  - frequency
+  - clock_frequency
+  - fclk
+  - voltage
+  - supply_voltage
+  - vdd
+  - vclk
+  - vgs
+  - vds
+  - bias
+  - bias_voltage
+  - current
+  - pressure
+  - base_pressure
+  - time
+  - duration
+  - wavelength
+  - excitation_energy
+  - field
+  - magnetic_field
+  - humidity
+  - power
+  - energy

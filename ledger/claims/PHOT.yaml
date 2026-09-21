@@ -52,6 +52,7 @@ claims:
     verified_quotes: 2
   conditions:
     component: photonic molecule
+    mode_spacing: Ω1
   quantity:
     quantity: frequency
     bound: exact
@@ -67,6 +68,15 @@ claims:
       unit: GHz
     conditions:
       component: photonic molecule
+      mode_spacing: Ω1
+  corrections:
+  - date: '2026-09-21'
+    public: false
+    fields:
+    - conditions
+    reason: 'The statement names which mode spacing this is (Ω1), but the structured conditions were identical
+      to the paper''s other spacing, so the detector saw two comparable frequencies. Condition restated
+      from the statement. Before: {''component'': ''photonic molecule''}.'
 - id: CLM-PHOT-0003
   topic: PHOT
   statement: The photonic molecule spectrum exhibits a spacing Ω2 of 15.41 GHz.
@@ -85,6 +95,7 @@ claims:
     verified_quotes: 2
   conditions:
     component: photonic molecule
+    mode_spacing: Ω2
   quantity:
     quantity: frequency
     bound: exact
@@ -100,6 +111,15 @@ claims:
       unit: GHz
     conditions:
       component: photonic molecule
+      mode_spacing: Ω2
+  corrections:
+  - date: '2026-09-21'
+    public: false
+    fields:
+    - conditions
+    reason: 'The statement names which mode spacing this is (Ω2), but the structured conditions were identical
+      to the paper''s other spacing, so the detector saw two comparable frequencies. Condition restated
+      from the statement. Before: {''component'': ''photonic molecule''}.'
 - id: CLM-PHOT-0004
   topic: PHOT
   statement: The coplanar waveguide has a signal-ground electrode spacing of 7 μm.

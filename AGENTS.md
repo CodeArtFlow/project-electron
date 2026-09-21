@@ -375,6 +375,19 @@ When a new claim appears to conflict with the ledger, **classify before acting.*
 disagreement is the same defect, and the four types get four different responses. Misclassifying
 is itself an error.
 
+**What counts as "appears to conflict".** The detector compares two claims only if they measure the
+same quantity in the same SI unit, no condition they both name has a different value, **and they share
+subject context**: at least one condition, named on both with an equal value, that says *what* was
+measured (a device, material, component, architecture, process, mechanism). Operating points such as
+temperature or frequency do not count as subject: two unrelated results at 300 K share 300 K and
+nothing else. The last rule exists because claims with no condition in common were being treated as
+comparable, and a computing time and an orbital lifetime opened a conflict that blocked publication. It
+is `reference/comparability.yaml`, a committed file. **Nothing is silently dropped:** a pair that
+disagrees numerically but shares no subject is listed in `ledger/not-compared.md` on every detection
+run and counted on the open-contradictions register, so a real disagreement hiding behind mismatched
+condition keys can be seen. A comparison that cannot be made is a fact about our conditions, not a
+finding about the field.
+
 ### Type D — Definitional or unit mismatch *(check first; most apparent conflicts are this)*
 
 Sources use different units, definitions, test conditions, or normalizations.
@@ -622,6 +635,7 @@ reference/authorities/    authority files we fetched and keep, so derived number
 reference/gold/           labelled cases for the semantic audit and the reader (independent review pending)
 reference/semantic_policy.yaml  whether the semantic audit blocks publication: advisory | blocking
 reference/reader_budget.yaml    the reader's monthly spending cap, model, and dated prices
+reference/comparability.yaml    when two claims may be compared: the operating-point keys that do not count as subject
 docs/typesafe.md          how the TypeSafe review layer works and its limits
 docs/typesafe-plan.md     the proposed next steps for TypeSafe, and the decisions they wait on
 TODO.md                   open work: blocked, in flight, next; rules and state stay in this file
@@ -631,6 +645,7 @@ corpus/authors/           author track record and credibility
 ledger/claims/            CLM claims, one YAML file per topic code
 ledger/conflicts/         CFL conflict records
 ledger/open-contradictions.md  derived register, published to the site
+ledger/not-compared.md    derived: pairs that disagree numerically but share no subject, so were not compared
 discoveries/              DSC condensation briefs (derived working documents)
 digests/                  daily published digests
 sota/                     living state-of-the-art reviews, one per topic
@@ -671,9 +686,9 @@ nine-check publication gate, and a live site. The whole deterministic pipeline r
 
 **What the corpus holds** (counted from the repository at the end of 2026-09-21). 12 source records
 (3 read by hand, 9 by the automated reader) and 30 claims (14 ARCH, 6 DEV, 5 MAT, 4 PHOT, 1 PROC, all
-grade B and active; 23 automated), which is **5 of 10 layers**. 11 conflicts: 5 `resolved` and **6
-`live:unexamined`, which block every deploy** until they are classified (`CFL-0006..0011`, opened by
-the first scheduled reading run; see below and `TODO.md` B1). 314 candidates are unread: 117 arXiv
+grade B and active; 23 automated), which is **5 of 10 layers**. 11 conflicts, all `resolved` (the six
+opened by the first scheduled reading run, `CFL-0006..0011`, were closed as `scoped` once the
+comparability rule in *The contradiction protocol* was fixed). 314 candidates are unread: 117 arXiv
 (the automated lane) and 197 publisher (manual; about 25% fetchable as full text). Of the arXiv ones
 already handled, 29 were judged out of scope, 8 were read with no claim accepted (`no_claims`) and 2
 were too long. The site's synthesis page describes a smaller corpus than this until
@@ -695,8 +710,11 @@ are between claims of *different, unrelated* papers that share only a generic qu
 computing time against an orbital lifetime, two unrelated temperatures) with no shared condition, and
 one is two different mode spacings of one device with identical structured conditions. So the
 comparability rule, not only the reader, is at fault: two claims with no shared context are treated as
-comparable. The user decided the same day to add a deterministic guard (`TODO.md` D1 and N1), and
-paused the daily reading run until it lands.
+comparable. The user decided the same day to add a deterministic guard, and it has landed (rule 3 of
+*The contradiction protocol*; `reference/comparability.yaml`). Under it the five cross-paper pairs are
+no longer compared. The sixth (two different mode spacings of one device, identical conditions) is not
+separated by any guard and was scoped by hand, with the spacing symbol added as a condition. The daily
+reading run was paused while this was fixed.
 
 Earlier the same day, 10 claims opened four conflicts, and all four were between claims of **one paper** and caused by
 our method: numbers of the same kind (the power of different arrays, the temperature of different
@@ -722,8 +740,8 @@ python pipeline/harvest.py --dry-run              # preview a sweep
 Tests (all run in CI before any deploy): `validate_registry.py`, `units.py`, `bounds.py --verify`,
 `claims.py --self-test`, `test_extract_e2e.py`, `test_publication_gate.py`, `test_discover.py`,
 `test_bounds.py`, `test_authority_bounds.py`, `test_gold_eval.py`, `test_reader.py`,
-`test_build_site.py`, `test_budget.py`, `test_assess_quality.py`, `test_semantic_checks.py`,
-`test_agent_files.py`.
+`test_build_site.py`, `test_budget.py`, `test_comparability.py`, `test_assess_quality.py`,
+`test_semantic_checks.py`, `test_agent_files.py`.
 
 **Registry.** 125 active entries: 70 `true`, 48 `review`, 7 `false` (evidence in `pipeline/*_report.json`).
 

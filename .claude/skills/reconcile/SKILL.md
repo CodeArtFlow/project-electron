@@ -19,8 +19,11 @@ python pipeline/reconcile.py --register   # mechanical: regenerates the reader-f
 python pipeline/reconcile.py --check      # mechanical: validates every record's state
 ```
 
-Detection is arithmetic: same quantity, non-conflicting conditions, `si_base` values differing by
-more than 5%. Classification is not — it needs both sources read. The detector therefore opens
+Detection is arithmetic: same quantity and unit, non-conflicting conditions, **shared subject context**
+(`reference/comparability.yaml`), and `si_base` values differing by more than 5%. Pairs that disagree but
+share no subject are listed in `ledger/not-compared.md`, not opened: read that file too, since a real
+disagreement behind mismatched condition keys would be there. Classification is not arithmetic — it
+needs both sources read. The detector therefore opens
 every conflict in `live:unexamined`, **the error state**, and stops. Your job is to empty that
 state before the next digest.
 

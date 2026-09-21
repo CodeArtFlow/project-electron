@@ -81,28 +81,72 @@ def next_conflict_id():
 
 
 # ------------------------------------------------------------------ comparability
+def _conditions(claim):
+    """A claim's conditions with keys and values normalized (case and surrounding space ignored), so
+    "Cell: PFAL " and "cell: pfal" are the same condition."""
+    return {str(k).strip().lower(): str(v).strip().lower() for k, v in (claim.get("conditions") or {}).items()}
+
+
 def conditions_conflict(a, b):
     """True when two claims state DIFFERENT values for a condition they both name.
 
     Claims measured at different temperatures are not in disagreement - they are separate
     results. Only shared conditions with different values make a comparison invalid.
     """
-    ca, cb = (a.get("conditions") or {}), (b.get("conditions") or {})
-    for key in set(ca) & set(cb):
-        if str(ca[key]).strip().lower() != str(cb[key]).strip().lower():
-            return True
-    return False
+    ca, cb = _conditions(a), _conditions(b)
+    return any(ca[key] != cb[key] for key in set(ca) & set(cb))
 
 
-def comparable(a, b):
+COMPARABILITY = ROOT / "reference" / "comparability.yaml"
+_OPERATING = None
+
+
+def load_operating_keys(path=COMPARABILITY):
+    """Condition keys that describe HOW something was run, not WHAT was measured. Fails closed:
+    a comparability file that cannot be read stops detection instead of silently loosening it."""
+    try:
+        keys = yaml.safe_load(Path(path).read_text(encoding="utf-8"))["operating_keys"]
+        if not isinstance(keys, list) or not all(isinstance(k, str) and k.strip() for k in keys):
+            raise ValueError("operating_keys must be a list of non-empty strings")
+    except (OSError, KeyError, TypeError, ValueError, yaml.YAMLError) as e:
+        raise SystemExit(f"error: cannot read {path}: {e}") from e
+    return {k.strip().lower() for k in keys}
+
+
+def operating_keys():
+    global _OPERATING
+    if _OPERATING is None:
+        _OPERATING = load_operating_keys()
+    return _OPERATING
+
+
+def shared_subject(a, b, operating=None):
+    """The conditions, named on BOTH claims with an equal value, that say what was measured.
+
+    Operating-point keys (temperature, frequency, ...) never count: two unrelated results at 300 K
+    share 300 K and nothing else. Returns {key: value}; empty means no basis for calling the two
+    claims the same measurement.
+    """
+    operating = operating_keys() if operating is None else operating
+    ca, cb = _conditions(a), _conditions(b)
+    return {k: ca[k] for k in set(ca) & set(cb) if k not in operating and ca[k] == cb[k]}
+
+
+def same_measurement_kind(a, b):
+    """Same quantity and same SI unit. Necessary, and nowhere near sufficient."""
     qa, qb = a.get("quantity") or {}, b.get("quantity") or {}
     if not qa or not qb:
         return False
     if qa.get("quantity") != qb.get("quantity"):
         return False
-    if (qa.get("si_base") or {}).get("unit") != (qb.get("si_base") or {}).get("unit"):
+    return (qa.get("si_base") or {}).get("unit") == (qb.get("si_base") or {}).get("unit")
+
+
+def comparable(a, b, operating=None):
+    """May these two claims be compared at all? See reference/comparability.yaml for the three rules."""
+    if not same_measurement_kind(a, b) or conditions_conflict(a, b):
         return False
-    return not conditions_conflict(a, b)
+    return bool(shared_subject(a, b, operating))
 
 
 # Provisional: a wider trigger when either claim is itself approximate ("roughly 5x"). Like the
@@ -218,6 +262,69 @@ def detect(claims, existing):
     return found
 
 
+def not_compared(claims, existing, operating=None):
+    """Pairs that disagree numerically but share no subject context, so no conflict was opened.
+
+    Listed rather than dropped: a real disagreement hiding behind mismatched condition keys must be
+    visible. Pairs that already have a conflict record are left out (they are tracked there).
+    """
+    covered = {tuple(sorted(c.get("claims", []) or [])) for c in existing}
+    live = [c for c in claims.values() if c.get("status") in ("active", "challenged", "contested")]
+    skipped = []
+    for i, a in enumerate(live):
+        for b in live[i + 1:]:
+            pair = tuple(sorted([a["id"], b["id"]]))
+            if pair in covered or not same_measurement_kind(a, b) or conditions_conflict(a, b):
+                continue
+            if shared_subject(a, b, operating):
+                continue
+            differs, rel = disagree(a, b)
+            if differs:
+                skipped.append({"claims": list(pair), "relative_difference": round(rel, 4),
+                                "quantity": a["quantity"]["quantity"],
+                                "detail": {c["id"]: {"value": c["quantity"]["si_base"],
+                                                     "conditions": c.get("conditions") or {}} for c in (a, b)}})
+    return sorted(skipped, key=lambda s: (s["quantity"], -s["relative_difference"]))
+
+
+NOT_COMPARED = ROOT / "ledger" / "not-compared.md"
+SHOWN_PER_QUANTITY = 40
+
+
+def write_not_compared(skipped, path=None):
+    """ledger/not-compared.md: derived, regenerated on every detection run."""
+    path = Path(path or NOT_COMPARED)
+    lines = ["# Not compared", "",
+             "**Generated artifact - do not edit by hand.** Produced by `pipeline/reconcile.py --detect`.", "",
+             "Pairs of claims that measure the same quantity in the same unit and disagree numerically, but "
+             "share **no subject context**: no condition, named on both with an equal value, that says what "
+             "was measured (operating points such as temperature do not count; see "
+             "`reference/comparability.yaml`). They were not compared, so no conflict was opened. They are "
+             "listed so that is visible. A pair here is a reason to look at the two claims' conditions, "
+             "not a finding.", "",
+             f"**{len(skipped)} pair(s)** as of {date.today().isoformat()}.", ""]
+    by_quantity = {}
+    for s in skipped:
+        by_quantity.setdefault(s["quantity"], []).append(s)
+    for quantity, items in by_quantity.items():
+        lines += [f"## `{quantity}` ({len(items)} pair(s))", "",
+                  "| Claim A | Claim B | Gap | A's conditions | B's conditions |", "|---|---|---|---|---|"]
+        for s in items[:SHOWN_PER_QUANTITY]:
+            a, b = s["claims"]
+            d = s["detail"]
+            cond = lambda c: (", ".join(f"{k}={v}" for k, v in d[c]["conditions"].items()) or "_none_")  # noqa: E731
+            lines.append(f"| `{a}` = {d[a]['value']['value']:.4g} {d[a]['value']['unit']} | "
+                         f"`{b}` = {d[b]['value']['value']:.4g} {d[b]['value']['unit']} | "
+                         f"{s['relative_difference'] * 100:.0f}% | {cond(a)} | {cond(b)} |")
+        if len(items) > SHOWN_PER_QUANTITY:
+            lines.append(f"\n_and {len(items) - SHOWN_PER_QUANTITY} more_")
+        lines.append("")
+    if not skipped:
+        lines += ["_No pair was skipped._", ""]
+    path.write_text("\n".join(lines), encoding="utf-8", newline="\n")
+    return len(skipped)
+
+
 def write_conflict(finding):
     cid = next_conflict_id()
     a, b = finding["claims"]
@@ -268,7 +375,7 @@ _None yet._
 
 
 # ------------------------------------------------------------------ register
-def regenerate_register(conflicts):
+def regenerate_register(conflicts, skipped=None):
     live = [c for c in conflicts if str(c.get("state", "")).startswith("live:")]
     absent = [c for c in live if c.get("state") == "live:data-absent"]
     unexamined = [c for c in live if c.get("state") == "live:unexamined"]
@@ -286,6 +393,10 @@ def regenerate_register(conflicts):
              "A contradiction appears here if and only if the data to resolve it is absent, and "
              "that absence is named.", "", "---", "",
              f"## Status — {today.isoformat()}", ""]
+    if skipped:
+        lines += [f"> {skipped} pair(s) of claims disagree numerically but share no subject context, so "
+                  "they were **not compared** and opened no conflict (`ledger/not-compared.md`). Listed, "
+                  "not hidden: a real disagreement behind mismatched condition keys would show there.", ""]
 
     if unexamined:
         lines += [f"> **{len(unexamined)} conflict(s) in `live:unexamined`.** This is an error "
@@ -372,10 +483,15 @@ def main():
             print(f"  opened {cid}: {f['quantity']} differs by "
                   f"{f['relative_difference'] * 100:.1f}% ({', '.join(f['claims'])})")
         print(f"detect: {len(claims)} claims -> {len(findings)} new conflict(s)")
+        skipped = not_compared(claims, load_conflicts())
+        write_not_compared(skipped)
+        print(f"not compared: {len(skipped)} pair(s) disagree but share no subject context "
+              f"-> ledger/not-compared.md")
 
     if a.register or a.all:
         conflicts = load_conflicts()
-        absent, unexamined = regenerate_register(conflicts)
+        absent, unexamined = regenerate_register(
+            conflicts, len(not_compared(load_claims(), conflicts)))
         print(f"register: {absent} live:data-absent, {unexamined} live:unexamined "
               f"-> ledger/open-contradictions.md")
 
