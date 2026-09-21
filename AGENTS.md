@@ -312,9 +312,11 @@ substitute for evidence.
 
 > **TypeSafe (Jev / System One) is integrated as an advisory review layer** — see
 > `docs/typesafe.md`. It checks claims against the source records, documents against claims, and
-> conflicts against their evidence. Its signals are **uncalibrated review prompts, not verification**:
-> it sees the record, never the paper, so a record that faithfully repeats a wrong abstract cannot be
-> caught. It changes no claim, grade, credibility tier or conflict state. Whether it blocks
+> conflicts against their evidence. Its signals are **uncalibrated review prompts, not verification**.
+> That audit sees the record, never the paper, so a record that faithfully repeats a wrong abstract
+> cannot be caught; a second, **paper-grounded check** judges claims against excerpts of the paper
+> itself (`docs/typesafe-plan.md`). TypeSafe stores nothing, so what we keep of it is kept in git. It
+> changes no claim, grade, credibility tier or conflict state. Whether it blocks
 > publication is decided by a committed file, `reference/semantic_policy.yaml`, currently
 > **`advisory`** (user, 2026-09-21): against the first live run its thresholds flagged 7 of 7 claims,
 > 12 of 12 documents and 9 of 10 conflict pairs, which is no discrimination and froze the site.
@@ -637,9 +639,11 @@ reference/semantic_policy.yaml  whether the semantic audit blocks publication: a
 reference/reader_budget.yaml    the reader's monthly spending cap, model, and dated prices
 reference/comparability.yaml    when two claims may be compared: the operating-point keys that do not count as subject
 docs/typesafe.md          how the TypeSafe review layer works and its limits
-docs/typesafe-plan.md     the proposed next steps for TypeSafe, and the decisions they wait on
+docs/typesafe-plan.md     the TypeSafe integration plan: what it is for, the phases, the decisions
+docs/typesafe-preregistration.md  what we expected from the first paper-grounded run, written before it ran
 TODO.md                   open work: blocked, in flight, next; rules and state stay in this file
 corpus/candidates/        sweep output; unread ones are queue, decided ones (read_decision) are not
+corpus/questions/         TypeSafe packets (inputs, one per read paper) and answers (the exact questions and what came back)
 corpus/papers/            immutable source records
 corpus/authors/           author track record and credibility
 ledger/claims/            CLM claims, one YAML file per topic code
@@ -724,7 +728,8 @@ publication gate blocked the deploy, as designed. The user decided to scope them
 the reader, whose prompt `reader-v3` now asks for distinguishing conditions and whose verifier
 rejects a number that has none. Not fixed, and not checked by the verifier: statements can carry words
 that are not in their anchor quotes ("in BLG", "acoustic phonon" for the paper's "AP"). The
-paper-grounded TypeSafe check, which is the next thing being built, is meant to test exactly that.
+paper-grounded TypeSafe check, built in phase 1 of the plan and not yet run live, is meant to test
+exactly that.
 
 ```bash
 python pipeline/run_pipeline.py --no-sweep        # the whole flow, timed (writes run/timings.json)
@@ -740,8 +745,8 @@ python pipeline/harvest.py --dry-run              # preview a sweep
 Tests (all run in CI before any deploy): `validate_registry.py`, `units.py`, `bounds.py --verify`,
 `claims.py --self-test`, `test_extract_e2e.py`, `test_publication_gate.py`, `test_discover.py`,
 `test_bounds.py`, `test_authority_bounds.py`, `test_gold_eval.py`, `test_reader.py`,
-`test_build_site.py`, `test_budget.py`, `test_comparability.py`, `test_assess_quality.py`,
-`test_semantic_checks.py`, `test_agent_files.py`.
+`test_build_site.py`, `test_budget.py`, `test_comparability.py`, `test_excerpts.py`,
+`test_paper_check.py`, `test_assess_quality.py`, `test_semantic_checks.py`, `test_agent_files.py`.
 
 **Registry.** 125 active entries: 70 `true`, 48 `review`, 7 `false` (evidence in `pipeline/*_report.json`).
 

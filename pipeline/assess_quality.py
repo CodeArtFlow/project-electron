@@ -157,12 +157,12 @@ def validate_response(response, request):
     if any(type(usage.get(k)) is not int or usage[k] < 0 for k in ("input_tokens", "output_tokens")):
         raise ValueError("Missing or invalid token usage")
 
-def evaluate(request, key, post=requests.post, sleep=time.sleep):
+def evaluate(request, key, post=requests.post, sleep=time.sleep, timeout=(5, 20)):
     # Three attempts maximum; no redirects that could disclose the bearer credential.
     for attempt in range(3):
         try:
             response = post(ENDPOINT, json=request,
-                headers={"Authorization": "Bearer " + key}, timeout=(5, 20),
+                headers={"Authorization": "Bearer " + key}, timeout=timeout,
                 allow_redirects=False)
         except requests.RequestException:
             raise RuntimeError("TypeSafe transport failure; no assessment recorded") from None

@@ -96,6 +96,41 @@ Independent confirmation remains a deterministic requirement. Missing author/aff
 metadata cannot establish independence; a model's shared-group signal cannot establish it
 either. Neither reputation nor confidence replaces the project's evidence rules.
 
+## Paper-grounded check (claims against the paper itself)
+
+The audit above judges each claim against our source RECORD, a summary of the paper, so it cannot see a
+record that repeats a wrong abstract or words the extraction added that the paper never wrote ("in BLG").
+The paper-grounded check judges each claim against **excerpts of the paper's own text.** The design, the
+reasons and the phases are in `docs/typesafe-plan.md`; the expectations written before its first live
+run are in `docs/typesafe-preregistration.md`.
+
+    python pipeline/question_packets.py --backfill    # packets for papers read before packets existed (fetches papers)
+    python pipeline/paper_check.py                    # preview: sizes and status, nothing sent, nothing written
+    python pipeline/paper_check.py --live             # needs TYPESAFE_API_KEY; writes answers beside the packets
+    python pipeline/paper_check.py --validate         # shape-check the stored packets and answers
+
+- **What is stored, in git.** `corpus/questions/SRC-nnnnn.json` is the INPUT: each claim's verified
+  quotes and the distinctive words in its statement that those quotes lack, plus the hash of the text.
+  `SRC-nnnnn.answers.json` holds the EXACT questions asked and TypeSafe's answers, with the positions
+  (never the text) of the excerpts that were sent. The reader writes a packet whenever it reads a paper.
+- **The questions are code-owned and fixed.** Per claim: does the paper support the statement; is the
+  value a reported result and not an input, assumed or baseline value; which evidence type; is it one
+  assertion; is the unit the value's unit; is each condition stated; is each unverified term established.
+  Nothing numeric is asked of TypeSafe: its documentation says it is weak at numeric precision and
+  counting, and code already checks numbers, qualifiers and units.
+- **Excerpts, never the whole paper.** TypeSafe's documentation says to filter first. Each claim's quotes
+  are found in the raw text (`excerpts.py`), widened by context, merged, and sent in document order with
+  their positions, plus the paper's opening. They are never trimmed to fit: if a claim's own evidence
+  does not fit, the paper is recorded `too_long` and nothing is sent. Because they are excerpts, no
+  answer means "the paper is silent elsewhere", and the answers file records `coverage: excerpts`.
+- **What is not sent.** A paper whose text has changed since the packet hashed it (`stale`); a claim
+  whose quotes cannot be found (`unlocated`); a claim no longer active in the ledger.
+- **Advisory and uncalibrated.** The cut at 0.5 is provisional. Nothing here changes a claim, a grade,
+  a credibility tier or a conflict, and no threshold is set from data until the gold set exists
+  (`docs/typesafe-plan.md`, phase 3).
+- **Cost.** At the documented $0.042 per million input tokens, a paper is well under a tenth of a cent;
+  the run is capped by paper count (`paper-check.yml`), not by a budget file.
+
 ## Provider references
 
 - [Primitives](https://docs.typesafe.ai/primitives)

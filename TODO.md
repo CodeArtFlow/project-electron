@@ -22,10 +22,10 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
   mode spacings (Ω1, Ω2) of one photonic molecule with identical structured conditions.
   The cause was fixed first (D1, N1), then all six were closed as `scoped`. Done when the guard is
   deployed and the gate passes on `main`; see B2 for the schedule.
-- [ ] **B2. The daily reading workflow is PAUSED** (`gh workflow disable read.yml`, at the user's decision
-  on 2026-09-21), so no more false conflicts accumulate. **Re-enable it when N1 has landed:**
-  `gh workflow enable read.yml`. The sweep (`harvest.yml`) and deploy are untouched. Nothing is read
-  while it is off, so the queue grows (117 arXiv candidates unread).
+- [x] **B2. The daily reading workflow was paused, and is re-enabled** (paused 2026-09-21 at the user's
+  decision so no more false conflicts accumulated; re-enabled once the guard had deployed and the gate
+  passed on `main`, `3c551e5`). The next scheduled run is the first under the guard: read its result
+  (`corpus/candidates/_last_read.json`, the conflicts it opened, and `ledger/not-compared.md`).
 
 ## 1. Needs your decision
 
@@ -57,13 +57,11 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
 
 ## 3. In flight
 
-- [~] **F1. TypeSafe paper-grounded check: prototype, uncommitted, never run against TypeSafe.**
-  In the working tree: `pipeline/question_packets.py`, `pipeline/paper_check.py`,
-  `pipeline/test_paper_check.py` (19 tests pass offline), a `read.yml` step, `paper-check.yml`, a
-  `deploy.yml` step, reader prompt `reader-v4`. It sends whole papers and asks a numeric question, both
-  against TypeSafe's own documented guidance, so it needs the revisions in the plan before it is worth
-  running. A backfill for the 9 already-read papers was drafted and not applied. Do not commit or push
-  it as it stands. Plan: `docs/typesafe-plan.md`, phase 1.
+- [~] **F1. TypeSafe paper-grounded check, phase 1: built, committed, never run against TypeSafe.**
+  `excerpts.py`, `question_packets.py`, `paper_check.py`, their tests (44), 9 backfilled packets in
+  `corpus/questions/`, `paper-check.yml` (manual). Expectations are pre-registered in
+  `docs/typesafe-preregistration.md`. **Next: run it live** (`gh workflow run paper-check.yml`), settle
+  every disagreement by reading the excerpts, and record the result there. That is phase 2.
 
 ## 4. Next up, in order
 
@@ -86,7 +84,14 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
   them: a stronger model, a higher thinking level, or a human. `too_long` skips at 120,000 characters
   and never truncates.
 - [ ] **N6. Research checks page** shows the audit's markdown in a `<pre>` (`build_site.py`); render it.
-- [ ] **N7. TypeSafe plan, phases 1 to 6** (`docs/typesafe-plan.md`). Approved (D2). Phase 1 follows N1.
+- [ ] **N7. TypeSafe plan, phases 2 to 6** (`docs/typesafe-plan.md`). Approved (D2). Phase 1 is built (F1).
+- [ ] **N8. Units are not verified against quotes.** The verifier proves a number is in its quote, not the
+  unit: the MiX power figures' `mW` is in a table header, outside the quoted row. Phase 1 asks TypeSafe
+  whether the excerpts show the unit; whether code should also check is open.
+- [ ] **N9. Evidence-type labels look wrong on some claims** (hypotheses, not findings): `CLM-DEV-0002..0004`
+  read as fabrication conditions but are `simulated`; `CLM-ARCH-0007..0009` are RTL synthesis results but
+  are `measured`. Settled by the phase 2 run and a reading of the excerpts; corrections go through
+  `corrections`.
 
 ## 5. Assurance and calibration
 

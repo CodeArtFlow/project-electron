@@ -1,8 +1,8 @@
 # TypeSafe integration: the plan
 
-**Status: APPROVED by the user, 2026-09-21, with phase 1 to be built after the comparability guard
-(section 10). Nothing beyond the prototype in section 7 has been built, and the prototype is not
-committed.** Rules stay in
+**Status: APPROVED by the user, 2026-09-21. Phase 1 is BUILT (section 7) and has never run against
+TypeSafe; the expectations for its first live run are committed in
+`docs/typesafe-preregistration.md`. Phases 2 onward are not started.** Rules stay in
 `AGENTS.md`; how the current advisory audit works stays in `docs/typesafe.md`. This file says what we
 intend to build next and why, and it changes as decisions are made.
 
@@ -133,13 +133,25 @@ TypeSafe's provisional thresholds (0.9 and 0.1) flagged nearly everything in the
 
 ## 7. What exists today
 
-Uncommitted prototype in the working tree, 19 offline tests passing, **never run against TypeSafe:**
-`pipeline/question_packets.py` (packets and the rubric), `pipeline/paper_check.py` (fetch, hash,
-send, store, flag), `pipeline/test_paper_check.py`, a reader change (prompt `reader-v4`: the model may
-propose up to two statements per claim, written to the packet and never the ledger), a manual workflow
-`paper-check.yml` and a step in `read.yml`. It sends whole papers and asks the `numbers` question, so
-it needs the revisions above before it is worth running. The existing advisory audit
-(`semantic_checks.py`) is untouched and still runs.
+Phase 1 is built, tested offline (11 tests for excerpts, 33 for packets and the check) and **never run
+against TypeSafe**:
+
+- `pipeline/excerpts.py`: finds each verified quote in the raw text (through the verifier's own
+  normalization), widens it with context, merges, orders and labels the excerpts, and never trims. Proven
+  on the three real papers first read: every recorded quote was located, and the excerpts were 10 to 23%
+  of the paper (about 3.4k to 4k tokens), so the two papers that exceeded a whole-paper window fit easily.
+- `pipeline/question_packets.py`: the packet (each claim's verified quotes and the unverified words in
+  its statement), the code-owned rubric, and a backfill for papers read before packets existed.
+- `pipeline/paper_check.py`: fetch, hash, cut, send one request per paper, store the questions and
+  answers, flag. Never sends a stale, too-long or unlocated paper; a missing key is a visible skip.
+- The reader writes a packet whenever it reads a paper (13 lines; **no prompt change**, so the daily
+  extraction is unaffected). Nine packets were backfilled for the papers already read.
+- A manual workflow, `paper-check.yml`, and CI tests. It is deliberately **not** a step of the daily
+  reading workflow yet: it runs by hand until phase 2 says what it is worth.
+
+Two things from the original prototype were dropped: the model-proposed extra questions (low value, and
+they needed a prompt change to a live daily job) and the paper-level questions (they need the whole
+paper; phase 4). The existing advisory audit (`semantic_checks.py`) is untouched.
 
 ## 8. Phases
 

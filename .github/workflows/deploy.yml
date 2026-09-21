@@ -78,6 +78,13 @@ jobs:
       - name: Claims are compared only when they share a subject (and a real conflict is still found)
         run: python pipeline/test_comparability.py
 
+      - name: TypeSafe excerpts, packets and the paper-grounded check
+        run: |
+          python pipeline/test_excerpts.py
+          python pipeline/test_paper_check.py
+          python pipeline/question_packets.py --validate
+          python pipeline/paper_check.py --validate
+
       - name: The reader cannot spend past its monthly cap
         run: |
           python pipeline/budget.py --check

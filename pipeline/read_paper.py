@@ -63,6 +63,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from budget import Budget, BudgetError, BudgetExhausted, STALE_PRICES_DAYS  # noqa: E402
 from candidates import load as load_yaml_file  # noqa: E402
 from candidates import unread_candidates  # noqa: E402
+from question_packets import build_packet, save_packet  # noqa: E402
 from claims import (APPROX_RE, LOWER_RE, TOPICS, UPPER_RE, Refusal, check_refusals,  # noqa: E402
                     next_claim_id, next_source_id, validate_claim)
 from fetch_text import _DASHES, MIN_FULL_TEXT_CHARS, fetch_arxiv, normalize  # noqa: E402
@@ -510,6 +511,10 @@ class Repo:
     def claims_dir(self):
         return self.root / "ledger" / "claims"
 
+    @property
+    def questions_dir(self):
+        return self.root / "corpus" / "questions"
+
 
 @dataclass
 class Outcome:
@@ -519,6 +524,7 @@ class Outcome:
     source: dict = field(default_factory=dict)
     claims: list = field(default_factory=list)
     rejected: list = field(default_factory=list)
+    packet: dict = field(default_factory=dict)      # TypeSafe question packet inputs; written only when decision == "read"
     usage: dict = field(default_factory=lambda: {"input": 0, "output": 0})
     fetched_chars: int = 0
     model_used: str = ""
@@ -593,7 +599,7 @@ def read_candidate(path, repo, model, eng, registry, schemas, fetch=fetch_arxiv,
            "model_used": model_used, "eng": eng, "registry": registry, "schemas": schemas,
            "source_view": source_view}
 
-    reserved, accepted, spans_used, seen = [], [], [], set()
+    reserved, accepted, spans_used, seen, spans_by_claim = [], [], [], set(), {}
     if etype:
         for raw in (reading.get("claims") or [])[:MAX_CLAIMS]:
             claim, info = build_claim(raw, ctx)
@@ -617,6 +623,7 @@ def read_candidate(path, repo, model, eng, registry, schemas, fetch=fetch_arxiv,
                 continue
             reserved.append(claim["id"])
             accepted.append(claim)
+            spans_by_claim[claim["id"]] = list(info)          # the verified quotes THIS claim rests on
             spans_used += info
 
     def quotes(spans):
@@ -652,6 +659,9 @@ def read_candidate(path, repo, model, eng, registry, schemas, fetch=fetch_arxiv,
     out.claims = accepted
     if accepted:
         out.decision = "read"
+        # What each claim rests on, kept so TypeSafe can later judge it against the paper's own text.
+        out.packet = build_packet(out.source, accepted, got.text, spans_by_claim,
+                                  {"model": model_used, "prompt_version": PROMPT_VERSION}, today)
     else:
         # A paper the model was given in full but from which the verifier accepted nothing is NOT a
         # paper we have read. Retiring it would delete the candidate and write an empty source record,
@@ -696,6 +706,8 @@ def commit_outcome(out, path, repo, today=None):
             doc = (load_yaml_file(f) if f.exists() else {}) or {}
             doc["claims"] = list(doc.get("claims") or []) + cs
             dump(f, doc)
+        if out.packet:
+            save_packet(out.packet, repo.root)
         path.unlink(missing_ok=True)            # retired: the source record now holds the paper
     else:
         doc = load_yaml_file(path)

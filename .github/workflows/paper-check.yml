@@ -1,0 +1,84 @@
+name: Paper check (TypeSafe)
+
+# Judge the stored question packets' claims against the papers' own text with TypeSafe, on demand.
+# The daily reading workflow already does this for the papers it reads that day; this is for packets
+# that were backfilled, for a recheck, or for after a TypeSafe outage. Advisory: answers are stored in
+# corpus/questions/ beside the packets and change no claim, grade, credibility tier or conflict.
+#
+# Needs the repository secret TYPESAFE_API_KEY. A manual run fails loudly without it.
+# Cost: TypeSafe documents $0.042 per million input tokens (output free), so a paper is about a
+# tenth of a cent, and the run is capped at the number of papers below.
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_papers:
+        description: "Papers to check (ceiling 25)"
+        required: false
+        default: "10"
+      recheck:
+        description: "Also re-check papers that already have answers (true/false)"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+
+# Same group as the sweep and the reader, so none of them races another to push main.
+concurrency:
+  group: harvest
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: Check claims against their papers
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r pipeline/requirements.txt
+
+      - name: Tests and stored packets are valid
+        run: |
+          python pipeline/test_excerpts.py
+          python pipeline/test_paper_check.py
+          python pipeline/question_packets.py --validate
+          python pipeline/paper_check.py --validate
+
+      - name: Check
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+          MAX_PAPERS: ${{ github.event.inputs.max_papers }}
+          RECHECK: ${{ github.event.inputs.recheck }}
+        run: |
+          set +e
+          extra=""
+          if [ "$RECHECK" = "true" ]; then extra="--recheck"; fi
+          python pipeline/paper_check.py --live --require-key --max-papers "${MAX_PAPERS:-10}" $extra
+          code=$?
+          if [ "$code" -eq 2 ]; then
+            echo "::warning::Some papers could not be checked and will be retried."
+          elif [ "$code" -ne 0 ]; then
+            exit $code
+          fi
+
+      - name: Commit the answers
+        run: |
+          git config user.name "project-electron-bot"
+          git config user.email "noreply@github.com"
+          git add corpus/questions
+          if git diff --cached --quiet; then
+            echo "Nothing to commit."
+            exit 0
+          fi
+          git commit -m "Paper check: answers stored beside the question packets" \
+            -m "Judged by TypeSafe against each paper's own text. Advisory and uncalibrated: no claim, grade, credibility tier or conflict was changed. Automated by .github/workflows/paper-check.yml"
+          git pull --rebase --quiet origin main
+          git push
