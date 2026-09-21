@@ -25,6 +25,7 @@ concurrency:
 jobs:
   verify:
     name: Self-tests and publication gate
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -60,7 +61,30 @@ jobs:
       - name: Discovery loop obeys its constraints
         run: python pipeline/test_discover.py
 
+      - name: TypeSafe offline tests
+        run: |
+          python pipeline/test_assess_quality.py
+          python pipeline/test_semantic_checks.py
+
+      - name: TypeSafe publication audit
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: python pipeline/semantic_checks.py --scope publication --live --max-calls 64 --seconds 180
+
+      - name: Retain publication audit even when blocked
+        if: always() && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: typesafe-publication
+          path: |
+            run/typesafe-publication.json
+            run/typesafe-publication.md
+          if-no-files-found: error
+
       - name: Publication gate
+        env:
+          ELECTRON_TYPESAFE_REQUIRED: ${{ github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && '1' || '0' }}
         run: python pipeline/publication_gate.py
 
   build:
@@ -80,7 +104,16 @@ jobs:
 
       # build_site.py runs the gate again itself and refuses to write output if it fails.
       # Belt and braces: the gate decides whether anything is publishable, not the build.
+      - name: Retrieve current publication evidence
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/download-artifact@v4
+        with:
+          name: typesafe-publication
+          path: run
+
       - name: Build
+        env:
+          ELECTRON_TYPESAFE_REQUIRED: ${{ github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && '1' || '0' }}
         run: python pipeline/build_site.py --out _site
 
       - uses: actions/upload-pages-artifact@v3

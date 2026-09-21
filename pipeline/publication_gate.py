@@ -17,6 +17,7 @@ Usage:  python pipeline/publication_gate.py [--json]
 
 import argparse
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -203,6 +204,14 @@ def run_gate(root=None):
     check(results, 8, "corrections recorded for published claims that changed", f,
           note="Structural only. This verifies a correction exists, not that its wording is "
                "adequate.")
+
+    # Semantic signals supplement the eight deterministic checks; they cannot certify truth.
+    from semantic_checks import gate_failures
+    required = os.environ.get("ELECTRON_TYPESAFE_REQUIRED") == "1"
+    check(results, 9, "TypeSafe evidence audit has no unresolved publication flags",
+          gate_failures(root, required),
+          note="Required in production. Uncalibrated review signals, not scientific verification."
+               if required else "Optional locally; any present audit must be current and pass.")
 
     return results, {"claims": len(claims), "conflicts": len(conflicts),
                      "digests": len(list(digests_dir.glob("*.md")))}

@@ -41,7 +41,7 @@ def stage(name, description, argv, kind="automatic", allow_fail=False):
     started = time.perf_counter()
     proc = subprocess.run([sys.executable] + argv, capture_output=True, text=True, cwd=ROOT)
     elapsed = time.perf_counter() - started
-    ok = proc.returncode == 0 or allow_fail
+    ok = proc.returncode == 0
     tail = (proc.stdout or "").strip().splitlines()
     rec = {
         "stage": name, "description": description, "kind": kind,
@@ -60,6 +60,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-sweep", action="store_true")
     ap.add_argument("--days", default="7")
+    ap.add_argument("--typesafe", choices=("preview","live"), default="preview")
     a = ap.parse_args()
 
     RUN.mkdir(exist_ok=True)
@@ -113,10 +114,14 @@ def main():
     steps.append(stage("synthesis", "cross-stack synthesis", ["pipeline/sota.py", "--synthesis"]))
     steps.append(stage("digest", "daily digest from the ledger", ["pipeline/sota.py", "--digest"]))
 
+    argv = ["pipeline/semantic_checks.py", "--scope", "publication"]
+    if a.typesafe == "live": argv.append("--live")
+    steps.append(stage("typesafe", "evidence-bound semantic audit", argv, kind="model"))
+
     print("\nstage 6 - publish")
     steps.append(stage("publication-gate", "the eight checks", ["pipeline/publication_gate.py"],
                        allow_fail=True))
-    gate_ok = steps[-1]["exit_code"] == 0
+    gate_ok = all(s.get("ok") for s in steps)
     if gate_ok:
         steps.append(stage("build-site", "render the static site",
                            ["pipeline/build_site.py", "--out", "_site"]))

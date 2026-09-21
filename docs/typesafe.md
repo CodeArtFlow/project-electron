@@ -1,76 +1,106 @@
-# TypeSafe quality engine
+# TypeSafe research engine
 
-Status: adapter implemented; authenticated service validation and semiconductor-domain calibration pending.
-The official typesafe-ai skill is installed in the operator's Codex skills directory.
+The System One API is connected through the repository Actions secret
+TYPESAFE_API_KEY. The authenticated synthetic check passed on 2026-09-21
+([run](https://github.com/CodeArtFlow/project-electron/actions/runs/35556452679)).
+The model is pinned to jev-1.13.0. Semiconductor calibration is still pending.
 
-## Access required
+## Integrated decisions
 
-Create a **TypeSafe System One API key** at https://console.typesafe.ai/keys.
-Endpoint: POST https://api.typesafe.ai/v1/systemone
-Authorization: Bearer <key>
-Pinned model: jev-1.13.0 (verified in official docs on 2026-09-20).
-No OpenAI, Anthropic, or Firecrawl key is required by this adapter.
+| Stage | Primitive | Evidence and output |
+|---|---|---|
+| Triage | Choice + Score | Eight candidate metadata records per daily run: relevance, stack layer, reading priority. Does not read or promote a paper. |
+| Extraction audit | Choice + Noul | Every current claim against its cited local source summaries: support, conditions, evidence type, atomicity, numerical qualifiers. |
+| Source assessment | Noul + Score + Choice | Method availability gates disclosure score; limitations and internal access assertions are checked. |
+| Group assessment | Noul + Score + Choice | Identity, outcome history, lineage documentation, documented integrity concerns. Absent professional evidence stays unknown. |
+| Reconciliation | Choice + Noul | Same-topic claim pairs: comparability, potential contradiction, shared-group evidence and proposed discrepancy class. Also checks recorded conflict explanations. |
+| Discovery | Choice + Noul | Existing discovery briefs against supplied read records and claims; no network discovery or new scientific assertions. |
+| Publication | Choice + Noul | Digest and SOTA fidelity, overstatement, visibility of uncertainty. Existing deterministic gate remains authoritative. |
 
-For GitHub Actions, create repository secret TYPESAFE_API_KEY at:
-https://github.com/CodeArtFlow/project-electron/settings/secrets/actions
-Choose New repository secret. Paste the key there, not in chat, a source file, or a packet.
-The adapter reads TYPESAFE_API_KEY from the process environment locally.
-Installing the skill does not supply service credentials.
+These are typed review signals, not original-paper verification or automatic scientific
+adjudication. Checking a local source summary cannot establish that its author transcribed
+the original paper correctly. The discovery audit is separate from the offline discovery
+loop; only explicitly live audit runs send snapshots to TypeSafe.
 
-## Run
+## Run and limits
 
-Install existing dependencies: python -m pip install -r pipeline/requirements.txt
+    python pipeline/semantic_checks.py --scope all
+    python pipeline/semantic_checks.py --scope all --live
+    python pipeline/semantic_checks.py --scope publication --live
+    python pipeline/semantic_checks.py --scope triage --live --candidate-limit 8 --max-calls 8 --seconds 60
+    python pipeline/run_pipeline.py --no-sweep --typesafe live
 
-Preview (no API call):
-python pipeline/assess_quality.py --packet reference/typesafe-packet.example.json
+Preview makes no API calls. A preview publication audit cannot pass the gate.
+Live runs use TYPESAFE_API_KEY from the environment. Do not put the key in files or chat.
 
-Evaluate a curated packet once the key is available:
-python pipeline/assess_quality.py --packet PATH_TO_PACKET.json --live
+Defaults: 64 API evaluations, 180 seconds for evaluation, one pass. Hard allowed limits:
+100 evaluations, 300 seconds. Each evaluation runs in a subprocess killed at the smaller
+of 30 seconds and the remaining budget. Up to three HTTP attempts per evaluation, with
+backoff for 429/529. Maximum default HTTP attempts: 192. Each request is capped at 40 KB;
+oversized jobs remain pending rather than silently truncating evidence. Planning and
+report serialization are outside the evaluation deadline. Local exact-request cache
+avoids repeat calls for unchanged evidence/model/rubric. Hosted jobs start with fresh caches.
 
-There is no recurring paid workflow yet. --live explicitly sends the packet's excerpts to
-TypeSafe. Requests are capped at 40 KB locally, use 5s connect / 20s read timeouts,
-and allow at most three attempts with backoff for HTTP 429/529. Socket timeouts are not
-a hard whole-process deadline.
+Unfinished jobs and API failures are explicit. Publication requires complete selected
+coverage; triage deliberately samples only eight most-recent candidate filenames and
+reports total/selected counts. It is not an exhaustive queue ranking.
 
-## Evidence packets
+## Workflows and reports
 
-Each target is a disambiguated source or research group, not an institution-wide reputation.
-Use the example JSON; populate evidence with objects containing:
-id, dimension, record_path, field, excerpt, source_url, locator.
-record_path must point to corpus/papers or corpus/authors.
-excerpt must be verbatim within the named field, and the locator must identify the
-underlying page/section or public professional record. The adapter checks local provenance;
-a reviewer must verify the underlying source and whether it belongs to the target.
-Do not invent academic lineage or affiliations. A missing author record stays unknown.
+- typesafe-research.yml: manual full audit, 180s, including eight candidate records.
+- harvest.yml: daily metadata triage after the existing sweep, 60s, eight requests.
+- deploy.yml: live publication audit on trusted main, mandatory before deployment.
+  Pull requests run offline tests without credentials. Missing credentials on main fail.
+- typesafe-check.yml: manual synthetic credential/contract check.
 
-Dimensions: method_transparency, claim_support, independent_replication,
-group_track_record, academic_lineage, integrity_record.
-Each is evaluated separately with an explicit unknown answer. No evidence means no
-question for that dimension, rather than a zero quality score. Lineage measures documentation,
-not prestige. Integrity concerns require source verification and review before any adverse label.
+Reports under run/typesafe-*.json and .md are derived and ignored by git. Actions artifacts
+retain the requests, evidence snapshots, raw answers, model/rubric versions, fingerprints,
+token usage and per-call timing. The Actions summary surfaces flags even if deployment
+is blocked. The Research checks site page displays the passing publication audit.
+A blocked deployment leaves the prior live site unchanged; consult its failed run artifact.
 
-## Audit and policy
+The gate regenerates the current plan, checks exact coverage and evidence fingerprints,
+validates raw answers and recomputes flags. Stale, preview, missing, incomplete or invalid
+production audits fail. Required claim, document, pair and conflict-review flags also fail.
+Source/group quality signals remain proposals and do not automatically alter evidence grades
+or credibility tiers. There is no override switch or model-triggered resolution.
 
-Results go to assessments/typesafe as review proposals. They retain the full request,
-exact evidence, rubric version, resolved model, probabilities, confidence, usage, latency
-and request hash. Assessment files are not rendered to the public site automatically.
-Review them before committing: they contain the excerpts sent to the service.
+Provisional review thresholds are 0.9 for affirmative evidence/Choice confidence and
+0.1 for adverse Noul signals. They are deliberately not presented as calibrated scientific
+confidence. Score is an ordinal expected index, not probability of truth. A premise below
+0.9 suppresses its dependent score; missing evidence is not a zero score. Build a labelled
+semiconductor evaluation set before interpreting these thresholds quantitatively.
 
-The adapter never alters claims, evidence grades, source records, published material,
-or group credibility tiers. It cannot resolve a contradiction or satisfy independent
-confirmation just by returning high confidence. Missing evidence and model disagreement
-must be reviewed under AGENTS.md. Every live result initially needs review because there
-is no labelled semiconductor calibration set yet.
+## Professional provenance
 
-The existing corpus has no author records at setup time. Build documented author/group
-records before requesting track-record assessment. Neither a model's prior knowledge nor
-an institution's prestige is evidence.
+There are currently no author records. Therefore the engine cannot yet produce grounded
+group track-record or lineage assessments. Record public professional evidence first.
 
-## Verified provider references
+Automated group checks consume corpus/authors/*.yaml with id and an evidence list.
+Each item requires excerpt, source_url, locator and read_at. Excerpts must have actually
+been read and be attributable to the named person/group. Structural completeness is checked;
+a reviewer verifies identity, original-source fidelity and professional provenance.
 
-- API: https://docs.typesafe.ai/api
-- Model/version: https://docs.typesafe.ai/models
-- Credentials: https://docs.typesafe.ai/introduction/quickstart
-- Confidence meaning: https://docs.typesafe.ai/confidence
-- Separate dimensions: https://docs.typesafe.ai/patterns/composite-scoring
-- Official skill: https://github.com/typesafe-ai/skills/tree/main/skills/typesafe-ai
+For stricter excerpt-to-record checking, the existing curated packet adapter remains:
+
+    python pipeline/assess_quality.py --packet reference/typesafe-packet.example.json
+    python pipeline/assess_quality.py --packet PATH.json --live
+
+Packet evidence requires id, dimension, record_path, field, excerpt, source_url and locator.
+The excerpt must occur in the named field of a local corpus/papers or corpus/authors record.
+Results go to assessments/typesafe for review. The available dimensions are
+method_transparency, claim_support, independent_replication, group_track_record,
+academic_lineage and integrity_record. No evidence means no question.
+
+Independent confirmation remains a deterministic requirement. Missing author/affiliation
+metadata cannot establish independence; a model's shared-group signal cannot establish it
+either. Neither reputation nor confidence replaces the project's evidence rules.
+
+## Provider references
+
+- [Primitives](https://docs.typesafe.ai/primitives)
+- [API contract](https://docs.typesafe.ai/api)
+- [Models](https://docs.typesafe.ai/models)
+- [Confidence](https://docs.typesafe.ai/confidence)
+- [Composite scoring](https://docs.typesafe.ai/patterns/composite-scoring)
+- [Official skill](https://github.com/typesafe-ai/skills/tree/main/skills/typesafe-ai)

@@ -1,0 +1,32 @@
+name: TypeSafe research audit
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r pipeline/requirements.txt
+      - name: Offline semantic tests
+        run: python -m unittest discover -s pipeline -p "test_*quality.py"
+      - run: python pipeline/test_semantic_checks.py
+      - name: Audit supplied research and eight candidate metadata records
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: python pipeline/semantic_checks.py --scope all --live --max-calls 64 --seconds 180 --candidate-limit 8
+      - name: Retain complete evidence and responses
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: typesafe-research
+          path: |
+            run/typesafe-all.json
+            run/typesafe-all.md
+          if-no-files-found: error

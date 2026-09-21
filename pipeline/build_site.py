@@ -148,6 +148,7 @@ def page(title, body, active="", depth=0):
            ("The field", "synthesis.html"),
            ("Open contradictions", "contradictions.html"),
            ("Pipeline run", "run.html"),
+           ("Research checks", "checks.html"),
            ("Methodology", "methodology.html")]
     links = "".join(
         f'<a href="{up}{href}"{" aria-current=\'page\'" if label == active else ""}>{label}</a>'
@@ -475,6 +476,16 @@ block publication rather than appearing here as caveats.</p>
 """
     (out / "methodology.html").write_text(
         page("Methodology", method, active="Methodology"), encoding="utf-8")
+
+    from semantic_checks import render_summary
+    audit_path = ROOT / "run" / "typesafe-publication.json"
+    if audit_path.exists():
+        audit = json.loads(audit_path.read_text(encoding="utf-8"))
+        checks_body = "<h2>Research checks</h2><pre>" + escape(render_summary(audit)) + "</pre>"
+    else:
+        checks_body = "<h2>Research checks</h2><p>No current TypeSafe audit is available in this build.</p>"
+    (out / "checks.html").write_text(
+        page("Research checks", checks_body, active="Research checks"), encoding="utf-8")
 
     (out / ".nojekyll").write_text("", encoding="utf-8")
 

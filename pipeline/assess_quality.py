@@ -101,25 +101,49 @@ def make_request(state):
     return request
 
 def validate_response(response, request):
+    """Validate all three primitive contracts; typed output is not evidence of truth."""
     if not isinstance(response, dict) or response.get("model") != request["model"]:
         raise ValueError("Unexpected model version")
     answers = response.get("answers")
     if not isinstance(answers, dict) or set(answers) != set(request["questions"]):
         raise ValueError("Response questions do not match request")
-    for key, answer in answers.items():
-        options = set(request["questions"][key]["criteria"])
-        probs = answer.get("probabilities", {})
-        values = list(probs.values())
-        confidence = answer.get("confidence")
-        def probability(v):
-            return type(v) in (float, int) and math.isfinite(v) and 0 <= v <= 1
-        if (answer.get("type") != "choice" or answer.get("choice") not in options
-                or set(probs) != options or not all(probability(v) for v in values)
-                or not math.isclose(sum(values), 1, abs_tol=0.001)
-                or not probability(confidence)):
+    def number(v):
+        return type(v) in (float, int) and math.isfinite(v)
+    def probability(v):
+        return number(v) and 0 <= v <= 1
+    for key, question in request["questions"].items():
+        answer = answers[key]
+        kind = question["type"]
+        if not isinstance(answer, dict) or answer.get("type") != kind:
+            raise ValueError("Unexpected answer type")
+        if kind == "noul":
+            if not probability(answer.get("noul")):
+                raise ValueError("Invalid Noul probability")
+            continue
+        if kind not in ("choice", "score"):
+            raise ValueError("Unsupported primitive")
+        options = (set(question["criteria"]) if kind == "choice"
+                   else {str(i) for i in range(len(question["criteria"]))})
+        probs = answer.get("probabilities")
+        if (not isinstance(probs, dict) or set(probs) != options
+                or not all(probability(v) for v in probs.values())
+                or not math.isclose(sum(probs.values()), 1, abs_tol=0.001)
+                or not probability(answer.get("confidence"))):
             raise ValueError("Invalid typed answer or probability distribution")
-        if probs[answer["choice"]] < max(values) - 1e-6:
-            raise ValueError("Selected answer is not a maximum-probability choice")
+        if kind == "choice":
+            chosen = answer.get("choice")
+            if chosen not in options or probs[chosen] < max(probs.values()) - 1e-6:
+                raise ValueError("Invalid selected choice")
+        else:
+            value = answer.get("score")
+            legend = answer.get("legend")
+            if (not number(value) or not 0 <= value <= len(options)-1
+                    or not isinstance(legend, dict) or set(legend) != options
+                    or any(legend[str(i)] != level for i, level in enumerate(question["criteria"]))):
+                raise ValueError("Invalid Score value or legend")
+            expected = sum(int(k)*v for k,v in probs.items())
+            if not math.isclose(value, expected, abs_tol=0.025):
+                raise ValueError("Score does not match its distribution")
     usage = response.get("usage", {})
     if any(type(usage.get(k)) is not int or usage[k] < 0 for k in ("input_tokens", "output_tokens")):
         raise ValueError("Missing or invalid token usage")

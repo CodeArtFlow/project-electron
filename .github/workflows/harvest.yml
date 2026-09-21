@@ -120,3 +120,18 @@ jobs:
           fi
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "Candidates are UNREAD. Run the \`harvest\` skill to turn them into source records." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: TypeSafe reading priorities (metadata only)
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: python pipeline/semantic_checks.py --scope triage --live --candidate-limit 8 --max-calls 8 --seconds 60
+
+      - name: Retain reading priorities
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: typesafe-triage
+          path: |
+            run/typesafe-triage.json
+            run/typesafe-triage.md
+          if-no-files-found: warn

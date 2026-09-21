@@ -121,20 +121,20 @@ def independent(a, b, sources_meta):
         auth, aff = set(), set()
         for sid in claim.get("sources", []) or []:
             m = sources_meta.get(sid, {})
+            if not m.get("authors") or not m.get("affiliations"): return set(), set()
             auth |= set(m.get("authors", []))
             aff |= set(m.get("affiliations", []))
         return auth, aff
     aa, fa = meta(a)
     ab, fb = meta(b)
-    return not (aa & ab) and not (fa & fb)
+    return bool(aa and ab and fa and fb) and not (aa & ab) and not (fa & fb)
 
 
 def source_meta():
     out = {}
     for p in PAPERS.glob("SRC-*.yaml"):
         rec = yaml.safe_load(p.read_text(encoding="utf-8")) or {}
-        corr = [a for a in rec.get("authors", []) or [] if a.get("corresponding")] or \
-               (rec.get("authors") or [])[:1]
+        corr = [a for a in rec.get("authors", []) or [] if a.get("corresponding")]
         out[rec.get("id", p.stem)] = {
             "authors": [str(a.get("name", "")).strip().lower() for a in corr if a.get("name")],
             "affiliations": [str(a.get("affiliation", "")).strip().lower()
@@ -202,7 +202,7 @@ Two claims about **{finding['quantity']}** disagree by
 | `{a}` | {finding['values'][a]['value']} {finding['values'][a]['unit']} | {finding['grades'][a]} | {finding['as_of'][a]} |
 | `{b}` | {finding['values'][b]['value']} {finding['values'][b]['unit']} | {finding['grades'][b]} | {finding['as_of'][b]} |
 
-Sources are {'independent' if finding['independent'] else 'NOT independent'} (shared
+Sources are {'independent' if finding['independent'] else 'not established independent'} (shared
 corresponding author or lead institution collapses them into one source for supersession).
 
 ## State: `live:unexamined`
