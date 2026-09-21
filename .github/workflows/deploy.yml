@@ -57,6 +57,9 @@ jobs:
       - name: Every publication-gate check fires
         run: python pipeline/test_publication_gate.py
 
+      - name: Discovery loop obeys its constraints
+        run: python pipeline/test_discover.py
+
       - name: Publication gate
         run: python pipeline/publication_gate.py
 

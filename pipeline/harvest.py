@@ -23,6 +23,7 @@ Usage:
 """
 
 import argparse
+from collections import Counter
 import json
 import sys
 import time
@@ -34,6 +35,15 @@ from pathlib import Path
 import requests
 import yaml
 
+# Paper titles carry typographic characters (U+2010 hyphen, en dashes, Greek letters) that the
+# default Windows console codec cannot encode, which crashed a local --dry-run. The daily job
+# runs on Linux, but a human running this on Windows is exactly who needs the dry run to work.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except (AttributeError, ValueError):
+        pass
+
 ROOT = Path(__file__).resolve().parent.parent
 REGISTRY = ROOT / "sources" / "registry.yaml"
 CANDIDATES = ROOT / "corpus" / "candidates"
@@ -43,14 +53,30 @@ UA = {"User-Agent": "ProjectElectron/0.1 (semiconductor research agent; harvest)
 TIMEOUT = 40
 PAUSE = 0.2
 
-# Topic filter for broad venues. Generous by design - precision comes from the reading stage,
-# and a candidate costs nothing but a file.
-TOPIC_TERMS = (
-    'semiconductor OR transistor OR lithography OR chiplet OR wafer OR "thin film" OR '
-    'photonic OR memristor OR "gate-all-around" OR CMOS OR MOSFET OR "2D material" OR '
-    'interconnect OR "high-k" OR epitaxy OR "quantum dot" OR spintronic OR ferroelectric OR '
-    '"phase change memory" OR packaging OR "silicon photonics" OR nanowire OR "wide bandgap"'
-)
+# Broad venues are gated by sources/topics.yaml - a verified allowlist of OpenAlex topic IDs.
+# Keyword matching was removed: OpenAlex's own topic search returns "Memory and Neural
+# Mechanisms" for "memory" and "Meat and Animal Product Quality" for "packaging", and no keyword
+# list can separate those from DRAM and flip-chip packaging. Structured topic ids can, because
+# the work has already been classified. Specialist venues skip this filter entirely.
+TOPICS_FILE = ROOT / "sources" / "topics.yaml"
+
+
+def load_topic_allowlist(path=TOPICS_FILE):
+    """Return (all_ids_to_query, relevance_by_id).
+
+    Core and adjacent are queried together - both are harvested. The tier is stamped on each
+    candidate as `relevance`, so adjacency is visible to the reading stage rather than being
+    silently decided here.
+    """
+    doc = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
+    core = [e["id"] for e in doc.get("allow", [])]
+    adjacent = [e["id"] for e in doc.get("adjacent", [])]
+    if not core:
+        raise ValueError("topic core list is empty - refusing to sweep broad venues unfiltered")
+    relevance = {i: "core" for i in core}
+    relevance.update({i: "adjacent" for i in adjacent})
+    return core + adjacent, relevance
+
 
 # OpenAlex primary_topic.field -> our topic codes. Advisory only: the reading stage assigns the
 # real code. Recorded so a human can triage without re-deriving it.
@@ -131,53 +157,104 @@ def get(url, attempts=4):
     return None, f"{last} after {attempts} attempts"
 
 
-def sweep_openalex(venue, since, limit):
-    """Recent works from one venue, OA-checked. Returns candidate dicts."""
-    filters = [f"primary_location.source.issn:{venue['issn']}",
-               f"from_publication_date:{since}"]
-    if venue["scope"] != "specialist":
-        filters.append("title_and_abstract.search:" + urllib.parse.quote(TOPIC_TERMS))
-    url = ("https://api.openalex.org/works?filter=" + ",".join(filters)
-           + f"&per-page={min(limit, 200)}&sort=publication_date:desc")
-    r, err = get(url)
-    time.sleep(PAUSE)
-    if r is None:
-        return None, err
+def _work_to_candidate(w, venue):
+    oa = w.get("open_access") or {}
+    best = w.get("best_oa_location") or {}
+    doi = (w.get("doi") or "").replace("https://doi.org/", "") or None
+    authors = [{
+        "name": (a.get("author") or {}).get("display_name"),
+        "openalex_author_id": (a.get("author") or {}).get("id"),
+        "affiliation": (a.get("raw_affiliation_strings") or [None])[0],
+        "corresponding": bool(a.get("is_corresponding")),
+    } for a in (w.get("authorships") or [])]
+    pt = w.get("primary_topic") or {}
+    field = (pt.get("field") or {}).get("display_name")
+    return {
+        "source": "openalex",
+        "openalex_id": w.get("id"),
+        "doi": doi,
+        "title": w.get("title"),
+        "venue_id": venue["id"],
+        "venue_name": venue["name"],
+        "published_date": w.get("publication_date"),
+        "authors": authors,
+        "is_oa": bool(oa.get("is_oa")),
+        "oa_status": oa.get("oa_status"),
+        "oa_location": {
+            "host": ((best.get("source") or {}).get("display_name")),
+            "version": best.get("version"),
+            "license": best.get("license"),
+            "url": best.get("pdf_url") or best.get("landing_page_url"),
+        } if best else None,
+        "grade_default": venue["grade_default"],
+        "topic_hint": FIELD_HINT.get(field) or (venue["topics"] or ["MAT"])[0],
+        "primary_topic": pt.get("display_name"),
+        "primary_topic_id": (pt.get("id") or "").rsplit("/", 1)[-1] or None,
+    }
 
-    out = []
-    for w in r.json().get("results", [])[:limit]:
-        oa = w.get("open_access") or {}
-        best = w.get("best_oa_location") or {}
-        doi = (w.get("doi") or "").replace("https://doi.org/", "") or None
-        authors = [{
-            "name": (a.get("author") or {}).get("display_name"),
-            "openalex_author_id": (a.get("author") or {}).get("id"),
-            "affiliation": (a.get("raw_affiliation_strings") or [None])[0],
-            "corresponding": bool(a.get("is_corresponding")),
-        } for a in (w.get("authorships") or [])]
-        field = ((w.get("primary_topic") or {}).get("field") or {}).get("display_name")
-        out.append({
-            "source": "openalex",
-            "openalex_id": w.get("id"),
-            "doi": doi,
-            "title": w.get("title"),
-            "venue_id": venue["id"],
-            "venue_name": venue["name"],
-            "published_date": w.get("publication_date"),
-            "authors": authors,
-            "is_oa": bool(oa.get("is_oa")),
-            "oa_status": oa.get("oa_status"),
-            "oa_location": {
-                "host": ((best.get("source") or {}).get("display_name")),
-                "version": best.get("version"),
-                "license": best.get("license"),
-                "url": best.get("pdf_url") or best.get("landing_page_url"),
-            } if best else None,
-            "grade_default": venue["grade_default"],
-            "topic_hint": FIELD_HINT.get(field) or (venue["topics"] or ["MAT"])[0],
-            "primary_topic": (w.get("primary_topic") or {}).get("display_name"),
-        })
-    return out, None
+
+def sweep_batched(venues, since, topic_ids, relevance=None, chunk=30, per_page=200,
+                  max_pages=5, rate_floor=50):
+    """Sweep many venues in a FEW requests instead of one request per venue.
+
+    OpenAlex accepts `issn:A|B|C` as OR, so 75 per-venue calls collapse to a handful. This is
+    the structural fix for rate limiting: backoff copes with being throttled, batching avoids
+    being throttled at all. OpenAlex also reports the remaining budget in response headers, so
+    we read it rather than guess - and stop cleanly while the budget is still positive instead
+    of hammering until it refuses.
+
+    `topic_ids` gates broad venues by primary_topic; pass None for specialist venues.
+    """
+    by_issn = {v["issn"]: v for v in venues}
+    items, errors, rate = [], [], {}
+    issns = list(by_issn)
+
+    for i in range(0, len(issns), chunk):
+        group = issns[i:i + chunk]
+        filters = ["primary_location.source.issn:" + "|".join(group),
+                   f"from_publication_date:{since}"]
+        if topic_ids:
+            filters.append("primary_topic.id:" + "|".join(topic_ids))
+        cursor = "*"
+        for _ in range(max_pages):
+            url = ("https://api.openalex.org/works?filter=" + ",".join(filters)
+                   + f"&per-page={per_page}&cursor={urllib.parse.quote(cursor)}")
+            r, err = get(url)
+            time.sleep(PAUSE)
+            if r is None:
+                errors.append(f"issn-batch[{i // chunk}]: {err}")
+                break
+            remaining = r.headers.get("X-RateLimit-Remaining")
+            if remaining is not None:
+                try:
+                    rate["remaining"] = int(remaining)
+                    rate["limit"] = int(r.headers.get("X-RateLimit-Limit", 0)) or None
+                except ValueError:
+                    pass
+            payload = r.json()
+            for w in payload.get("results", []):
+                src = (w.get("primary_location") or {}).get("source") or {}
+                candidate_issns = [s for s in (src.get("issn") or []) if s]
+                if src.get("issn_l"):
+                    candidate_issns.append(src["issn_l"])
+                venue = next((by_issn[s] for s in candidate_issns if s in by_issn), None)
+                if venue is None:
+                    # Filtered by our own ISSN list, so this should not happen. Record rather
+                    # than silently drop - an unattributable work means the mapping is wrong.
+                    errors.append(f"unmappable work {w.get('id')} issns={candidate_issns}")
+                    continue
+                cand = _work_to_candidate(w, venue)
+                cand["relevance"] = (relevance.get(cand.get("primary_topic_id"), "core")
+                                     if relevance else "core")
+                items.append(cand)
+            cursor = (payload.get("meta") or {}).get("next_cursor")
+            if not cursor or not payload.get("results"):
+                break
+        if rate.get("remaining") is not None and rate["remaining"] < rate_floor:
+            errors.append(f"stopped early: rate budget low "
+                          f"({rate['remaining']}/{rate.get('limit')} remaining)")
+            break
+    return items, errors, rate
 
 
 def sweep_arxiv(categories, since, limit):
@@ -281,15 +358,30 @@ def main():
     print(f"harvest sweep - window {since} .. {date.today().isoformat()}")
     print(f"  venues: {len(journals)} journals + arXiv | already known: {len(seen)}")
 
+    topic_ids, relevance = load_topic_allowlist()
+    specialist = [v for v in journals if v["scope"] == "specialist"]
+    broad = [v for v in journals if v["scope"] != "specialist"]
+    n_core = sum(1 for v in relevance.values() if v == "core")
+    print(f"  {len(specialist)} specialist (no topic filter), {len(broad)} broad "
+          f"(gated by {n_core} core + {len(topic_ids) - n_core} adjacent topics)")
+
     found, errors = [], []
-    for v in journals:
-        items, err = sweep_openalex(v, since, args.limit_per_venue)
-        if err:
-            errors.append(f"{v['id']}: {err}")
+    rate = {}
+    for label, group, topics in (("specialist", specialist, None), ("broad", broad, topic_ids)):
+        if not group:
             continue
-        if items:
-            print(f"    {v['id']:20} {len(items):3} ({v['scope']})")
+        items, errs, r = sweep_batched(group, since, topics, relevance)
+        errors.extend(errs)
+        rate.update(r)
         found.extend(items)
+        per_venue = {}
+        for c in items:
+            per_venue[c["venue_id"]] = per_venue.get(c["venue_id"], 0) + 1
+        print(f"    {label:12} {len(items):4} items from {len(per_venue)} venue(s)")
+        for vid, n in sorted(per_venue.items(), key=lambda x: -x[1])[:6]:
+            print(f"      {vid:22} {n}")
+    if rate.get("remaining") is not None:
+        print(f"  rate budget: {rate['remaining']}/{rate.get('limit')} remaining")
 
     arx = next((a for a in reg.get("aggregators", []) if a.get("id") == "arxiv_api"), None)
     if arx and arx.get("verified") is not False:
@@ -316,7 +408,9 @@ def main():
     readable = [c for c in new if c["is_oa"] and (c.get("oa_location") or {}).get("url")]
     blocked = [c for c in new if not c["is_oa"]]
 
+    tiers = Counter(c.get("relevance", "core") for c in new)
     print(f"\n  found {len(found)} | new {len(new)} | duplicates skipped {dupes}")
+    print(f"  relevance: {dict(tiers)}")
     print(f"  readable (OA copy located): {len(readable)}")
     print(f"  access-blocked (no legal OA copy): {len(blocked)}")
     # Partial coverage is a failure, not a footnote. A venue that errored contributed zero items,

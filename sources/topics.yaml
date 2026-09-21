@@ -1,0 +1,131 @@
+# Project Electron — Topic allowlist for broad venues
+#
+# Replaces keyword matching, which was not fit for purpose. OpenAlex's own topic search shows why:
+#   "memory"    -> "Memory and Neural Mechanisms" (neuroscience)
+#   "packaging" -> "Nanocomposite Films for Food Packaging", "Meat and Animal Product Quality"
+# A keyword filter cannot tell those apart from DRAM and flip-chip packaging. Structured topic
+# IDs can, because OpenAlex has already classified the work.
+#
+# WHERE THIS APPLIES: only to venues with `scope: broad` in registry.yaml. Venues marked
+# `scope: specialist` are semiconductor-dedicated and are swept without any topic filter, so a
+# strict allowlist here cannot cost us coverage in those venues. That is what makes strictness
+# safe: photonics comes from the photonics journals, memory from the memory-heavy venues.
+#
+# STRICTNESS: precision over recall, deliberately (user, 2026-09-20: "strictly want only the
+# relevant articles"). A broad journal paper whose primary topic is not on this list is not
+# harvested. The cost is recall on interdisciplinary work; the benefit is a corpus that is
+# actually about semiconductors.
+#
+# MATCHING: `primary_topic.id`, not `topics.id`. A work's primary topic is its dominant subject;
+# matching any of its topics would readmit the noise this file exists to remove.
+#
+# Adding an entry: confirm the topic id and name against https://api.openalex.org/topics/<id>
+# before use. A topic id invented from memory is the same failure as an invented journal.
+
+# TWO INSTRUCTIONS THAT PULLED OPPOSITE WAYS, AND HOW THEY RECONCILE (2026-09-20)
+#   "be extremely specific and picky ... strictly want only the relevant articles"
+#   "those shouldn't be dropped, those are still semiconductor manufacturing;
+#    adjacent fields could still be useful"
+#
+# The first version of this file applied the first instruction to BOTH kinds of exclusion and
+# was wrong for it. Measuring it against 49 already-harvested broad-venue candidates proved it:
+# ZERO passed. It was rejecting wafer-scale metasurface optics, lithium-niobate modulators and
+# spin Hall oscillators - all of which are semiconductor fabrication - alongside food packaging
+# and neuroscience.
+#
+# The resolution: be strict about DOMAIN, not about SUB-FIELD.
+#   core      same sub-field. Unambiguously our stack.
+#   adjacent  same domain, neighbouring sub-field. Devices, fabrication or materials that end
+#             up on a wafer. Harvested, but stamped `relevance: adjacent` on the candidate so
+#             the reading stage applies a higher bar and the digest can say which is which.
+#   exclude   different domain entirely. Food science, neuroscience, psychology, medicine.
+#
+# Adjacency is recorded on the candidate rather than decided silently by a filter, so a reader
+# can see what came in as a near-miss instead of trusting that the filter got it right.
+
+schema_version: 1
+updated: 2026-09-20
+match_field: primary_topic.id
+applies_to: venues with scope 'broad'
+
+# ---------------------------------------------------------------------------
+# CORE — verified against the OpenAlex topics API on 2026-09-20
+# ---------------------------------------------------------------------------
+allow:
+  # --- devices, materials, transistor technology ---
+  - {id: T10472, name: "Semiconductor materials and devices", topics: [DEV, MAT]}
+  - {id: T10022, name: "Semiconductor Quantum Structures and Devices", topics: [DEV, MAT]}
+  - {id: T10558, name: "Advancements in Semiconductor Devices and Circuit Design", topics: [DEV, ARCH]}
+  - {id: T10623, name: "Thin-Film Transistor Technologies", topics: [DEV]}
+  - {id: T10099, name: "GaN-based semiconductor devices and materials", topics: [DEV, MAT]}
+  - {id: T10361, name: "Silicon Carbide Semiconductor Technologies", topics: [DEV, MAT]}
+  - {id: T12529, name: "Ga2O3 and related materials", topics: [MAT, DEV]}
+  - {id: T10590, name: "Chalcogenide Semiconductor Thin Films", topics: [MAT]}
+  - {id: T12808, name: "Ferroelectric and Negative Capacitance Devices", topics: [DEV, MEM]}
+
+  - {id: T10275, name: "2D Materials and Applications", topics: [MAT, DEV]}
+  - {id: T10323, name: "Analog and Mixed-Signal Circuit Design", topics: [ARCH]}
+  - {id: T11661, name: "Copper Interconnects and Reliability", topics: [PROC, PKG]}
+
+  # --- lithography and process ---
+  - {id: T11338, name: "Advancements in Photolithography Techniques", topics: [LITHO]}
+  - {id: T12224, name: "Nanofabrication and Lithography Techniques", topics: [LITHO, PROC]}
+  - {id: T14117, name: "Integrated Circuits and Semiconductor Failure Analysis", topics: [PROC]}
+
+  # --- memory ---
+  - {id: T10502, name: "Advanced Memory and Neural Computing", topics: [MEM, ARCH]}
+  - {id: T11315, name: "Phase-change materials and chalcogenides", topics: [MEM, MAT]}
+
+  # --- packaging ---
+  - {id: T10460, name: "Electronic Packaging and Soldering Technologies", topics: [PKG]}
+
+  # --- architecture, circuits, EDA ---
+  - {id: T11522, name: "VLSI and FPGA Design Techniques", topics: [ARCH, EDA]}
+  - {id: T10187, name: "Radio Frequency Integrated Circuit Design", topics: [ARCH]}
+
+  # --- photonics: semiconductor-specific only ---
+  - {id: T11429, name: "Semiconductor Lasers and Optical Devices", topics: [PHOT, DEV]}
+
+
+# ---------------------------------------------------------------------------
+# ADJACENT — harvested, stamped `relevance: adjacent`
+# ---------------------------------------------------------------------------
+# Neighbouring sub-fields of the same domain. These routinely carry results that are literally
+# semiconductor fabrication - a metasurface patterned wafer-scale, a modulator in thin-film
+# lithium niobate, a spin Hall oscillator. Higher volume and lower average relevance than core,
+# so the marking matters: it tells the reading stage to expect more misses here.
+adjacent:
+  - {id: T10245, name: "Metamaterials and Metasurfaces Applications", topics: [PHOT, PROC], why: "Wafer-scale patterning and on-chip optics."}
+  - {id: T11050, name: "Photorefractive and Nonlinear Optics", topics: [PHOT], why: "Integrated photonics - thin-film lithium niobate modulators and similar."}
+  - {id: T10299, name: "Photonic and Optical Devices", topics: [PHOT], why: "Broad, but silicon photonics lives here. Moved from exclude."}
+  - {id: T10666, name: "Photonic Crystals and Applications", topics: [PHOT], why: "On-chip photonic structures. Moved from exclude."}
+  - {id: T10247, name: "Perovskite Materials and Applications", topics: [MAT, DEV], why: "Optoelectronic devices and thin-film deposition. Moved from exclude."}
+  - {id: T10045, name: "Organic Electronics and Photovoltaics", topics: [MAT, DEV], why: "Thin-film device fabrication. Moved from exclude."}
+  - {id: T10049, name: "Magnetic properties of thin films", topics: [MEM, MAT], why: "Spintronics and MRAM stacks."}
+  - {id: T10657, name: "Topological Materials and Phenomena", topics: [MAT], why: "Candidate channel materials for future devices."}
+  - {id: T11449, name: "Mechanical and Optical Resonators", topics: [DEV], why: "MEMS/NEMS resonators, fabricated by the same processes."}
+  - {id: T10338, name: "Advanced Sensor and Energy Harvesting Materials", topics: [DEV, MAT], why: "Sensors are silicon devices; energy harvesting is the weaker half of this topic."}
+  - {id: T11523, name: "Nanomaterials and Printing Technologies", topics: [PROC, MAT], why: "Printed and flexible electronics fabrication."}
+  - {id: T12495, name: "Electrostatic Discharge in Electronics", topics: [DEV, PROC], why: "Device reliability. Moved from exclude."}
+  - {id: T11471, name: "Block Copolymer Self-Assembly", topics: [LITHO], why: "Directed self-assembly patterning. Moved from exclude."}
+  - {id: T12111, name: "Industrial Vision Systems and Defect Detection", topics: [PROC], why: "Wafer inspection and defect metrology. Moved from exclude."}
+
+# ---------------------------------------------------------------------------
+# Considered and excluded — recorded so the decision is not re-litigated
+# ---------------------------------------------------------------------------
+# Each of these surfaced in a topic search for a term in our scope. Excluding them IS the
+# strictness. Revisit only with a reason.
+exclude:
+  # Different domain entirely. Not "less relevant" - not about our subject at all.
+  - {id: T10448, name: "Memory and Neural Mechanisms", why: "Neuroscience. The clearest example of why keyword filtering failed."}
+  - {id: T10918, name: "Memory Processes and Influences", why: "Psychology."}
+  - {id: T10488, name: "Nanocomposite Films for Food Packaging", why: "Food science."}
+  - {id: T10333, name: "Meat and Animal Product Quality", why: "Surfaced by the word 'packaging'. Nothing further need be said."}
+  - {id: T10078, name: "Advanced Photocatalysis Techniques", why: "Catalysis chemistry; no device or fabrication path."}
+  - {id: T11255, name: "Microfluidic and Bio-sensing Technologies", why: "Biomedical. Shares some fabrication, but the research question is not ours."}
+  - {id: T10781, name: "Plasma Diagnostics and Applications", why: "830k works, overwhelmingly plasma physics rather than process."}
+  - {id: T10054, name: "Parallel Computing and Optimization Techniques", why: "Software parallelism, not hardware."}
+  - {id: T10074, name: "Carbon Nanotubes in Composites", why: "Structural composites, not electronics."}
+  - {id: T13104, name: "Chemical and Physical Properties of Materials", why: "Generic materials science with no device focus."}
+  - {id: T12510, name: "Magneto-Optical Properties and Applications", why: "212k works of magneto-optics; the device-relevant part is covered by T10049."}
+  - {id: T10846, name: "Photonic Crystal and Fiber Optics", why: "Fibre optics - off-wafer."}

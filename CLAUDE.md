@@ -62,7 +62,7 @@ the SOTA, or a reply to the user stated as fact. "I recall that..." is not evide
 
 ## Core data model
 
-Eight artifact types. Each has exactly one job. Never blur them.
+Nine artifact types. Each has exactly one job. Never blur them.
 
 | Artifact | Path | Job | Mutability |
 |---|---|---|---|
@@ -73,6 +73,7 @@ Eight artifact types. Each has exactly one job. Never blur them.
 | **Claim** | `ledger/claims/<TOPIC>.yaml` | An atomic assertion *we* stand behind, with provenance | Amended only via supersession |
 | **Conflict** | `ledger/conflicts/CFL-nnnn.md` | A contradiction, its state, and its named data gap | Live until resolved |
 | **Open register** | `ledger/open-contradictions.md` | Reader-facing view of every live contradiction | Derived — regenerated each cycle |
+| **Discovery brief** | `discoveries/DSC-nnnn.md` | Condensation of READ material against one gap | Derived — not a claim, never citable |
 | **Digest / SOTA** | `digests/`, `sota/` | Reader-facing prose | Derived — never a source of truth |
 
 **The derivation rule:** digests and SOTA documents may only restate claims that exist in the
@@ -143,6 +144,31 @@ verifier accepted substring matches and silently identified *NatureJobs* as *Nat
 Keep the registry comprehensive and current: when harvest encounters a relevant venue not in the
 registry, putting it through the gate and adding it is part of the task, not a follow-up.
 Removals stay recorded in the `removed:` section, with the reason, so a deletion is auditable.
+
+### Topic filtering: strict about domain, not about sub-field
+
+Broad multidisciplinary venues are gated by `sources/topics.yaml`, which uses OpenAlex topic IDs
+rather than keywords. Keywords cannot do this job: OpenAlex's own topic search returns *Memory
+and Neural Mechanisms* for "memory" and *Meat and Animal Product Quality* for "packaging".
+
+Three tiers:
+
+- **core** — unambiguously our stack. Harvested normally.
+- **adjacent** — a neighbouring sub-field of the same domain: devices, fabrication or materials
+  that end up on a wafer. Harvested and stamped `relevance: adjacent` on the candidate, so the
+  reading stage applies a higher bar and the digest can distinguish them.
+- **exclude** — a different domain entirely. Food science, neuroscience, psychology, medicine.
+
+Adjacency is **recorded on the candidate, not silently decided by the filter.** A reader can see
+what came in as a near-miss instead of trusting that the filter judged correctly.
+
+Venues marked `scope: specialist` skip this filter entirely, which is what makes strictness safe:
+photonics coverage comes from the photonics journals regardless of what the allowlist contains.
+
+A first version of this allowlist was strict in the wrong direction — it rejected wafer-scale
+metasurfaces and lithium-niobate modulators alongside food packaging. Measuring it against 49
+already-harvested candidates caught it: zero passed. Strict must mean "only relevant", not "only
+the topics I thought of first".
 
 ### Evidence grades — *what kind of evidence is this?*
 
@@ -434,6 +460,7 @@ Planned roster, to be built incrementally:
 | `triage` | 2 | Relevance filter, dedupe against existing corpus |
 | `extract-claims` | 3 | Source record → atomic claims, normalized to SI base units — **built** |
 | `assess-source` | 3 | Build/update author records, assign credibility tier |
+| `discover` | — | Condense READ material against a named gap; bounded loop, no network — **built** |
 | `reconcile` | 4 | Run the contradiction protocol; regenerate the open contradictions register |
 | `digest` | 5 | Compose the daily digest from ledger claims only |
 | `publish` | 6 | Build and deploy the site, run the publication gate — **built** |
@@ -455,6 +482,7 @@ how we diff what we claimed yesterday against today.
 ```
 .github/workflows/        CI: self-tests -> publication gate -> build -> deploy
 sources/registry.yaml     relevant open-access venues, with verification status
+sources/topics.yaml       topic tiers gating broad venues: core / adjacent / exclude
 reference/definitions.yaml SI canonicalization and contested terms
 corpus/candidates/        unread sweep output (NOT source records; never cited)
 corpus/papers/            immutable source records
@@ -462,6 +490,7 @@ corpus/authors/           author track record and credibility
 ledger/claims/            CLM claims, one YAML file per topic code
 ledger/conflicts/         CFL conflict records
 ledger/open-contradictions.md  derived register, published to the site
+discoveries/              DSC condensation briefs (derived working documents)
 digests/                  daily published digests
 sota/                     living state-of-the-art reviews, one per topic
 pipeline/                 Python: verification tooling, then the harvest pipeline
