@@ -1,6 +1,7 @@
 {
   "date": "2026-09-21",
   "model": "gemini-3.5-flash-lite",
+  "extract_model": "gemini-3.6-flash",
   "prompt_version": "reader-v2",
   "limits": {
     "max_papers": 12,
@@ -9,71 +10,10 @@
   },
   "papers": [
     {
-      "candidate": "CAND-20260920-0135",
-      "decision": "out_of_scope",
-      "reason": "The paper investigates fundamental condensed matter physics, specifically the quantum magnetism and magnetization plateaus in kagome antiferromagnets, which is out of scope for semiconductor research.",
-      "chars": 77951,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260920-0134",
-      "decision": "out_of_scope",
-      "reason": "This tutorial paper focuses on optical wave packets and free-space group velocity in optics physics, which is out of scope for semiconductor research.",
-      "chars": 71128,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260920-0133",
-      "decision": "out_of_scope",
-      "reason": "The paper is a tutorial on optical wave packets and angular dispersion in free space, which is outside the scope of semiconductor devices and materials.",
-      "chars": 61728,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260920-0132",
-      "decision": "out_of_scope",
-      "reason": "The paper investigates the high-pressure and high-temperature phase behavior and hydrogen reorganization of ammonia, which falls under high-pressure physics and planetary science rather than semiconductor research.",
-      "chars": 25188,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260920-0131",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on magnetic materials for permanent magnets rather than semiconductor devices or materials for electronics.",
-      "chars": 32150,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260920-0130",
-      "decision": "out_of_scope",
-      "reason": "This paper is about wireless communications and antenna array channel estimation, which falls outside the scope of semiconductor research.",
-      "chars": 71382,
-      "claims": [],
-      "rejected": []
-    },
-    {
       "candidate": "CAND-20260920-0129",
-      "decision": "read",
-      "reason": "",
+      "decision": "no_claims",
+      "reason": "evidence type not established by a verifiable quote (or 'mixed'); no claims extracted, a human reader is needed",
       "chars": 63280,
-      "claims": [],
-      "rejected": [
-        {
-          "statement": "Condition for a single magnetic flux quantum per unit cell in the square superlattice area is reached at a magnetic field of approximately 3.38 T.",
-          "reason": "unit conversion refused: voltage: cannot convert 3.38 T to V - Cannot convert from 'tesla' ([mass] / [time] ** 2 / [current]) to 'volt' ([mass] * [length] ** 2 / [time] ** 3 / [current]"
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20260920-0128",
-      "decision": "out_of_scope",
-      "reason": "This paper is about theoretical condensed matter physics concerning fractional quantum spin Hall crystals and hidden density-wave order, which is outside the scope of semiconductor devices, materials, and manufacturing.",
-      "chars": 72120,
       "claims": [],
       "rejected": []
     },
@@ -82,76 +22,172 @@
       "decision": "read",
       "reason": "",
       "chars": 96404,
-      "claims": [],
-      "rejected": []
+      "claims": [
+        "CLM-MAT-0001",
+        "CLM-MAT-0002",
+        "CLM-MAT-0003",
+        "CLM-MAT-0004"
+      ],
+      "rejected": [
+        {
+          "statement": "The longitudinal acoustic phonon velocity in BLG is 2.12 x 10^6 cm s^-1.",
+          "reason": "the statement contains the number 10, which none of its quotes contain"
+        },
+        {
+          "statement": "The interlayer spacing of BLG is 3.37 \u00c5.",
+          "reason": "unit conversion refused: length_device: could not parse 3.37 '\u02daA': '\u02daA' is not defined in the unit registry"
+        },
+        {
+          "statement": "The distance between the substrate and BLG is 50 \u00c5.",
+          "reason": "unit conversion refused: length_device: could not parse 50.0 '\u02daA': '\u02daA' is not defined in the unit registry"
+        },
+        {
+          "statement": "The effective mass of electrons in BLG is 0.033 me.",
+          "reason": "unit conversion refused: energy_advantage_ratio is dimensionless; unit 'me' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a "
+        }
+      ]
     },
     {
       "candidate": "CAND-20260920-0126",
       "decision": "read",
       "reason": "",
       "chars": 90908,
-      "claims": [],
+      "claims": [
+        "CLM-ARCH-0007",
+        "CLM-ARCH-0008",
+        "CLM-ARCH-0009"
+      ],
       "rejected": [
         {
-          "statement": "The MiX accelerator improves PE area efficiency by 25% over the NVFP4 baseline.",
-          "reason": "unit conversion refused: area_die: cannot convert 25.0 % to m^2 - Cannot convert from 'percent' (dimensionless) to 'meter ** 2' ([length] ** 2). A dimensional mismatch means the value w"
+          "statement": "The 1024-MAC Systolic Array component in the MiX-INT4g16 accelerator occupies an area of 130118 \u00b5m2 in 28nm CMOS at 500 MHz.",
+          "reason": "the statement contains the number 2, which none of its quotes contain"
         },
         {
-          "statement": "The MiX accelerator delivers an average 2.3x to 4.5x speedup across six VLM benchmarks on LLaVA-OneVision-7B and MiniCPM-V-2.6 compared to the state-of-the-art ",
-          "reason": "the statement contains the number 7, which none of its quotes contain"
+          "statement": "The total proposed MiX-INT4g16 28nm accelerator occupies an area of 1854580 \u00b5m2 at 500 MHz.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Total 1854580 99.795'"
         },
         {
-          "statement": "The MiX accelerator delivers an average 2.3x to 4.5x upper bound speedup across six VLM benchmarks on LLaVA-OneVision-7B and MiniCPM-V-2.6 compared to the state",
-          "reason": "the statement contains the number 7, which none of its quotes contain"
+          "statement": "The total proposed MiX-INT4g16 28nm accelerator consumes 99.795 mW of total power at 500 MHz.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Total 1854580 99.795'"
         },
         {
-          "statement": "The MiX accelerator delivers an average 1.4x to 2.9x energy reduction across six VLM benchmarks on LLaVA-OneVision-7B and MiniCPM-V-2.6 compared to the state-of",
-          "reason": "the statement contains the number 7, which none of its quotes contain"
+          "statement": "The 512-MAC systolic array for MiX-INT4g16 occupies an area of 56125 \u00b5m2 in 28nm at 500 MHz.",
+          "reason": "the statement contains the number 2, which none of its quotes contain"
         },
         {
-          "statement": "The MiX accelerator delivers an average 1.4x to 2.9x upper bound energy reduction across six VLM benchmarks on LLaVA-OneVision-7B and MiniCPM-V-2.6 compared to ",
-          "reason": "the statement contains the number 7, which none of its quotes contain"
+          "statement": "The 512-MAC systolic array for MiX-INT4 occupies an area of 46407 \u00b5m2 in 28nm at 500 MHz.",
+          "reason": "the statement contains the number 2, which none of its quotes contain"
         }
       ]
     },
     {
-      "candidate": "CAND-20260920-0125",
-      "decision": "out_of_scope",
-      "reason": "This paper is about fundamental physics research on magnon spin relaxation in antiferromagnetic insulators, which is outside the scope of semiconductor device and process technology.",
-      "chars": 54484,
+      "candidate": "CAND-20260920-0124",
+      "decision": "read",
+      "reason": "",
+      "chars": 49695,
+      "claims": [
+        "CLM-DEV-0002",
+        "CLM-DEV-0003",
+        "CLM-DEV-0004"
+      ],
+      "rejected": [
+        {
+          "statement": "The sheet resistance of ITO glass substrates used for QLED fabrication is approximately 20 \u03a9 sq-1.",
+          "reason": "unit conversion refused: sheet_resistance: could not parse 20.0 '\u03a9 sq-1': unsupported operand type(s) for -: 'ParserHelper' and 'int'"
+        },
+        {
+          "statement": "The active device area formed for the QLED is 4 mm2.",
+          "reason": "unit conversion refused: area_die: could not parse 4.0 'mm2': 'mm2' is not defined in the unit registry"
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20260920-0123",
+      "decision": "no_claims",
+      "reason": "evidence type not established by a verifiable quote (or 'mixed'); no claims extracted, a human reader is needed",
+      "chars": 66535,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20260920-0124",
-      "decision": "read",
+      "candidate": "CAND-20260920-0122",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on EEG classification and wearable signal processing for detecting human mental states, which is out of scope for semiconductor research.",
+      "chars": 75072,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260920-0121",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on pure atomic and particle physics regarding spin dynamics in pulsed laser fields rather than semiconductor research.",
+      "chars": 54065,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260920-0120",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on reconstructing optical properties in layered biological media using time-resolved reflectance measurements, which is in the domain of biomedical optics rather than semiconductor research.",
+      "chars": 63260,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260920-0119",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on aberration sensing in fluorescence microscopy using quantum correlations and photon statistics, which is outside the scope of semiconductor research.",
+      "chars": 46147,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260920-0118",
+      "decision": "out_of_scope",
+      "reason": "The paper is about turbomachine performance characteristics for aircraft engines, which is unrelated to semiconductor research.",
+      "chars": 39215,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260920-0117",
+      "decision": "no_claims",
       "reason": "evidence type not established by a verifiable quote (or 'mixed'); no claims extracted, a human reader is needed",
-      "chars": 49695,
+      "chars": 40223,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260920-0116",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on the fundamental physics and magnetic phase classification of Mn-Ni-Ga Heusler alloys rather than semiconductor devices or manufacturing processes.",
+      "chars": 59467,
       "claims": [],
       "rejected": []
     }
   ],
   "counts": {
-    "out_of_scope": 8,
-    "read": 4
+    "no_claims": 3,
+    "read": 3,
+    "out_of_scope": 6
   },
-  "claims_accepted": 0,
-  "claims_rejected": 6,
+  "claims_accepted": 10,
+  "claims_rejected": 11,
   "tokens": {
-    "input": 107865,
-    "output": 3512
+    "input": 132150,
+    "output": 8955
   },
   "stop_reason": "paper_cap",
-  "seconds": 78.0,
-  "cost_usd": 0.041146,
+  "seconds": 109.4,
+  "cost_usd": 0.126736,
   "budget": {
     "monthly_cap_usd": 10.0,
-    "spent_month_usd": 0.042358,
-    "spent_today_usd": 0.042358,
+    "spent_month_usd": 0.169094,
+    "spent_today_usd": 0.169094,
     "allowance_today_usd": 1.0,
-    "remaining_today_usd": 0.957642,
-    "run_usd": 0.041146,
-    "run_calls": 16,
+    "remaining_today_usd": 0.830906,
+    "run_usd": 0.126736,
+    "run_calls": 18,
     "run_unknown_calls": 0,
     "price_table_retrieved": "2026-09-21",
     "price_table_age_days": 0

@@ -1,8 +1,8 @@
 claims:
 - id: CLM-DEV-0001
   topic: DEV
-  statement: An N-polar GaN/AlGaN MOSHEMT was fabricated on a Si(100) substrate by
-    transferring Ga-polar epilayers using surface activated bonding.
+  statement: An N-polar GaN/AlGaN MOSHEMT was fabricated on a Si(100) substrate by transferring Ga-polar
+    epilayers using surface activated bonding.
   sources:
   - SRC-00003
   grade: B
@@ -11,3 +11,99 @@ claims:
   status: active
   as_of: '2026-09-16'
   created: '2026-09-20'
+- id: CLM-DEV-0002
+  topic: DEV
+  statement: The custom high vacuum deposition chamber reached a background pressure of approximately
+    3 × 10 -7 torr during top Al cathode deposition for QLEDs.
+  sources:
+  - SRC-00006
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-17'
+  created: '2026-09-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v2
+    verified_quotes: 2
+  conditions: &id001
+    process: high vacuum deposition
+  quantity:
+    quantity: pressure
+    bound: exact
+    approximate: true
+    as_published:
+      value: 3.0e-07
+      unit: torr
+    si_base:
+      value: 3.999671052631579e-05
+      unit: Pa
+    display:
+      value: 0.0003
+      unit: mTorr
+    conditions: *id001
+- id: CLM-DEV-0003
+  topic: DEV
+  statement: OLED glass substrates coated with indium tin oxide have a sheet resistance of approximately
+    20 Ω sq⁻¹.
+  sources:
+  - SRC-00006
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-17'
+  created: '2026-09-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v2
+    verified_quotes: 2
+  conditions: &id002
+    substrate: glass substrates coated with indium tin oxide (ITO)
+  quantity:
+    quantity: sheet_resistance
+    bound: exact
+    approximate: true
+    as_published:
+      value: 20.0
+      unit: Ω sq⁻¹
+    si_base:
+      value: 20.0
+      unit: ohm
+    display:
+      value: 20.0
+      unit: ohm/sq
+    conditions: *id002
+- id: CLM-DEV-0004
+  topic: DEV
+  statement: The high-vacuum deposition base pressure for OLED thermal evaporation was approximately 3
+    × 10⁻⁷ torr.
+  sources:
+  - SRC-00006
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-17'
+  created: '2026-09-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v2
+    verified_quotes: 1
+  quantity:
+    quantity: pressure
+    bound: exact
+    approximate: true
+    as_published:
+      value: 3.0e-07
+      unit: torr
+    si_base:
+      value: 3.999671052631579e-05
+      unit: Pa
+    display:
+      value: 0.0003
+      unit: mTorr

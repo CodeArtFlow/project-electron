@@ -1,0 +1,66 @@
+id: SRC-00005
+title: 'MiX: Micro-Inverted-Scaling for End-to-End Low-Bit Vision-Language Model Acceleration'
+doi: null
+arxiv_id: 2609.19683v1
+url: https://arxiv.org/abs/2609.19683v1
+venue_id: arxiv_api
+authors:
+- name: Yuan Liao
+  affiliation: null
+  corresponding: null
+- name: Jae-sun Seo
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-17'
+retrieved_date: '2026-09-21'
+access: full_text
+read_scope: Automated reading. The full PDF text (90,908 characters, 17 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.19683v1 on
+  2026-09-21. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“TABLE V AREA AND POWER BREAKDOWN OF THE PROPOSEDMIX-INT4 g16 28NM ACCELERATOR OPERATING AT500
+  MHZ.”
+
+  “1024-MAC Systolic Array 130118 40.4”
+
+  “TABLE VI RTLSYNTHESIS RESULTS(28NM, 500MHZ)OF THE ISO-THROUGHPUT 512-MACSYSTOLIC ARRAYS.”
+
+  “MiX-INT4g16 56125 31.8 9.1 16.1”
+
+  “MiX-INT4 46407 26.8 11.0 19.1”'
+method_summary: “All proposed and baseline accelerators are implemented at the Register Transfer Level
+  (RTL) in SystemVerilog and synthesized with Synopsys Design Compiler, targeting the TSMC28HPC technology
+  node at a 500 MHz clock frequency.”
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v2
+  tokens:
+    input: 32763
+    output: 3517
+  claims_accepted: 3
+  claims_rejected: 5
+  rejected:
+  - statement: The 1024-MAC Systolic Array component in the MiX-INT4g16 accelerator occupies an area of
+      130118 µm2 in 28nm CMOS at 500 MHz.
+    reason: the statement contains the number 2, which none of its quotes contain
+  - statement: The total proposed MiX-INT4g16 28nm accelerator occupies an area of 1854580 µm2 at 500
+      MHz.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Total 1854580
+      99.795'''
+  - statement: The total proposed MiX-INT4g16 28nm accelerator consumes 99.795 mW of total power at 500
+      MHz.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Total 1854580
+      99.795'''
+  - statement: The 512-MAC systolic array for MiX-INT4g16 occupies an area of 56125 µm2 in 28nm at 500
+      MHz.
+    reason: the statement contains the number 2, which none of its quotes contain
+  - statement: The 512-MAC systolic array for MiX-INT4 occupies an area of 46407 µm2 in 28nm at 500 MHz.
+    reason: the statement contains the number 2, which none of its quotes contain
+corrections: []

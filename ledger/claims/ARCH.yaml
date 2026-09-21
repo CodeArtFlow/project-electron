@@ -239,3 +239,100 @@ claims:
     - conditions
     reason: '''Up to 5.3x'' was stored as an exact value. The baseline is an estimate built by summing
       individually measured static CMOS gate energies, which the paper says neglects inter-gate loading.'
+- id: CLM-ARCH-0007
+  topic: ARCH
+  statement: The 1024-MAC Systolic Array component in the MiX-INT4g16 accelerator consumes 40.4 mW of
+    power in 28nm CMOS at 500 MHz.
+  sources:
+  - SRC-00005
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-17'
+  created: '2026-09-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v2
+    verified_quotes: 3
+  conditions: &id007
+    component: 1024-MAC Systolic Array
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 40.4
+      unit: mW
+    si_base:
+      value: 0.0404
+      unit: W
+    display:
+      value: 0.0404
+      unit: W
+    conditions: *id007
+- id: CLM-ARCH-0008
+  topic: ARCH
+  statement: The 512-MAC systolic array for MiX-INT4g16 consumes 31.8 mW of power in 28nm at 500 MHz.
+  sources:
+  - SRC-00005
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-17'
+  created: '2026-09-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v2
+    verified_quotes: 3
+  conditions: &id008
+    architecture: MiX-INT4g16
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 31.8
+      unit: mW
+    si_base:
+      value: 0.0318
+      unit: W
+    display:
+      value: 0.0318
+      unit: W
+    conditions: *id008
+- id: CLM-ARCH-0009
+  topic: ARCH
+  statement: The 512-MAC systolic array for MiX-INT4 consumes 26.8 mW of power in 28nm at 500 MHz.
+  sources:
+  - SRC-00005
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-17'
+  created: '2026-09-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v2
+    verified_quotes: 3
+  conditions: &id009
+    architecture: MiX-INT4
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 26.8
+      unit: mW
+    si_base:
+      value: 0.0268
+      unit: W
+    display:
+      value: 0.0268
+      unit: W
+    conditions: *id009
