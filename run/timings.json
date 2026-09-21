@@ -1,15 +1,15 @@
 {
-  "run_started": "2026-09-20T17:29:15",
+  "run_started": "2026-09-20T22:37:23",
   "date": "2026-09-20",
-  "total_seconds": 4.59,
-  "automatic_seconds": 4.58,
+  "total_seconds": 12.45,
+  "automatic_seconds": 10.04,
   "steps": [
     {
       "stage": "validate-registry",
       "description": "registry against its own rules",
       "kind": "automatic",
       "command": "python pipeline/validate_registry.py",
-      "seconds": 0.21,
+      "seconds": 0.215,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -25,12 +25,25 @@
       "description": "SI engine vs definitions.yaml",
       "kind": "automatic",
       "command": "python pipeline/units.py",
-      "seconds": 0.762,
+      "seconds": 0.727,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
-        "quantities checked: 30",
+        "quantities checked: 31",
         "OK - definitions.yaml is dimensionally consistent and traps behave"
+      ]
+    },
+    {
+      "stage": "authority",
+      "description": "definitions vs the NIST CODATA file",
+      "kind": "automatic",
+      "command": "python pipeline/bounds.py --verify",
+      "seconds": 0.19,
+      "exit_code": 0,
+      "ok": true,
+      "output_tail": [
+        "authority constants checked: 5; thermionic limit at 300 K = 59.5264 mV/dec",
+        "OK - definitions agree with the NIST authority file"
       ]
     },
     {
@@ -38,11 +51,11 @@
       "description": "extraction refusals fire",
       "kind": "automatic",
       "command": "python pipeline/claims.py --self-test",
-      "seconds": 0.273,
+      "seconds": 0.629,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
-        "refusal rules in schema: 7",
+        "refusal rules in schema: 8",
         "OK - refusals fire, well-formed claims pass, ids allocate, validation catches errors"
       ]
     },
@@ -51,7 +64,7 @@
       "description": "every gate check fires",
       "kind": "automatic",
       "command": "python pipeline/test_publication_gate.py",
-      "seconds": 1.065,
+      "seconds": 1.379,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -68,7 +81,7 @@
       "description": "discovery loop bounds",
       "kind": "automatic",
       "command": "python pipeline/test_discover.py",
-      "seconds": 0.304,
+      "seconds": 0.342,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -94,7 +107,7 @@
       "description": "every claim well-formed",
       "kind": "automatic",
       "command": "python pipeline/claims.py --validate",
-      "seconds": 0.18,
+      "seconds": 0.583,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -103,11 +116,23 @@
       ]
     },
     {
+      "stage": "bounds-scrutiny",
+      "description": "claims outside a derived physical bound (informational)",
+      "kind": "automatic",
+      "command": "python pipeline/bounds.py --check-ledger",
+      "seconds": 0.23,
+      "exit_code": 0,
+      "ok": true,
+      "output_tail": [
+        "bounds: 0 claim(s) flagged for scrutiny (informational; nothing refused)"
+      ]
+    },
+    {
       "stage": "reconcile.detect",
       "description": "find comparable claims that disagree",
       "kind": "automatic",
       "command": "python pipeline/reconcile.py --detect",
-      "seconds": 0.186,
+      "seconds": 0.199,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -119,7 +144,7 @@
       "description": "regenerate the open contradictions register",
       "kind": "automatic",
       "command": "python pipeline/reconcile.py --register",
-      "seconds": 0.148,
+      "seconds": 0.189,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -131,7 +156,7 @@
       "description": "every conflict record well-formed",
       "kind": "automatic",
       "command": "python pipeline/reconcile.py --check",
-      "seconds": 0.147,
+      "seconds": 0.181,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -143,7 +168,7 @@
       "description": "per-layer state of the art",
       "kind": "automatic",
       "command": "python pipeline/sota.py --sota",
-      "seconds": 0.177,
+      "seconds": 0.233,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -155,7 +180,7 @@
       "description": "cross-stack synthesis",
       "kind": "automatic",
       "command": "python pipeline/sota.py --synthesis",
-      "seconds": 0.181,
+      "seconds": 1.486,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
@@ -167,26 +192,38 @@
       "description": "daily digest from the ledger",
       "kind": "automatic",
       "command": "python pipeline/sota.py --digest",
-      "seconds": 0.18,
+      "seconds": 1.449,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
-        "digest: 0 new claim(s) -> digests\\2026-09-20.md"
+        "digest: 7 new claim(s) -> digests\\2026-09-21.md"
+      ]
+    },
+    {
+      "stage": "typesafe",
+      "description": "evidence-bound semantic audit",
+      "kind": "model",
+      "command": "python pipeline/semantic_checks.py --scope publication",
+      "seconds": 0.432,
+      "exit_code": 0,
+      "ok": true,
+      "output_tail": [
+        "typesafe-publication.json: 30 jobs; {'pending': 30}; 0 calls; 0.003s"
       ]
     },
     {
       "stage": "publication-gate",
-      "description": "the eight checks",
+      "description": "the nine checks",
       "kind": "automatic",
       "command": "python pipeline/publication_gate.py",
-      "seconds": 0.266,
+      "seconds": 0.616,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
-        "  [PASS] 6. quantities carry as_published and si_base",
-        "  [PASS] 7. grade D/E is attributed, never asserted",
         "  [PASS] 8. corrections recorded for published claims that changed",
         "         note: Structural only. This verifies a correction exists, not that its wording is adequate.",
+        "  [PASS] 9. TypeSafe evidence audit has no unresolved publication flags",
+        "         note: ADVISORY policy: 1 audit finding(s) reported on the Research checks page and NOT blocking. Uncalibrated signals until a gold set exists.",
         "",
         "GATE PASSED."
       ]
@@ -196,13 +233,13 @@
       "description": "render the static site",
       "kind": "automatic",
       "command": "python pipeline/build_site.py --out _site",
-      "seconds": 0.503,
+      "seconds": 0.956,
       "exit_code": 0,
       "ok": true,
       "output_tail": [
-        "publication gate passed (7 claims, 1 conflicts, 1 digests)",
-        "built 19 files -> _site",
-        "  claims 7 | live contradictions 0 | digests 1 | sota 11"
+        "publication gate passed (7 claims, 1 conflicts, 2 digests)",
+        "built 22 files -> _site",
+        "  claims 7 | live contradictions 0 | digests 2 | sota 10"
       ]
     }
   ],
@@ -218,14 +255,21 @@
     "claims_files": 2,
     "conflicts": 1,
     "sota_docs": 11,
-    "digests": 1,
-    "discoveries": 0
+    "digests": 2,
+    "discoveries": 0,
+    "candidates_unread": 295
   },
   "pending_reading_stages": [
     {
-      "stage": "harvest.read",
+      "stage": "harvest.read (automated)",
       "kind": "reading",
-      "why": "295 candidate(s) are unread. A source record states what was ACTUALLY read; a script writing one would be fabricating.",
+      "why": "98 arXiv candidate(s) are unread. They are read by pipeline/read_paper.py (daily, read.yml) once ANTHROPIC_API_KEY is configured. A model only proposes quotes; code verifies each one verbatim against the paper.",
+      "skill": "read_paper.py"
+    },
+    {
+      "stage": "harvest.read (manual)",
+      "kind": "reading",
+      "why": "197 publisher candidate(s) are unread. About a quarter of these can be fetched as full text; the rest are behind bot walls. They need a human reader (the harvest skill) or a legitimate full-text route.",
       "skill": "harvest"
     }
   ],

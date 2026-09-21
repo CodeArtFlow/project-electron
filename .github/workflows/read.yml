@@ -1,0 +1,147 @@
+name: Daily reading (arXiv)
+
+# Reads the arXiv candidates the sweep queued, with a model on a leash. The model only PROPOSES
+# quotes and structure; pipeline/read_paper.py decides what enters the record, by verifying every
+# quote verbatim against the fetched paper. See that file's docstring for the full list of what a
+# model cannot influence (access, grade, quotes, numbers, qualifiers, conditions, units).
+#
+# Needs a repository secret named ANTHROPIC_API_KEY. Until it exists a scheduled run SKIPS with a
+# visible warning and a `skipped_reason` in corpus/candidates/_last_read.json, so a missing key can
+# never freeze publication. A manual run fails loudly instead, since asking for one means wanting it.
+#
+# After reading, new claims are checked against the ledger. Any comparable claims that disagree open
+# a conflict in `live:unexamined`, and the publication gate BLOCKS the deploy until a human (the
+# `reconcile` skill) classifies it. That is the doctrine working: new evidence that contradicts old
+# evidence halts publication. The failed deploy run is the alert, and the live site stays on the last
+# good build.
+
+on:
+  schedule:
+    # 06:45 UTC: half an hour after the sweep (harvest.yml, 06:15) has queued the day's candidates.
+    - cron: "45 6 * * *"
+  workflow_dispatch:
+    inputs:
+      max_papers:
+        description: "Papers to read (hard ceiling 25)"
+        required: false
+        default: "5"
+
+permissions:
+  contents: write
+  actions: write     # to dispatch deploy.yml: pushes made with GITHUB_TOKEN do not trigger other workflows
+
+# Same group as the sweep so the two never run at once and never race to push main.
+concurrency:
+  group: harvest
+  cancel-in-progress: false
+
+jobs:
+  read:
+    name: Read arXiv candidates
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r pipeline/requirements.txt
+
+      # The authorities the reader leans on must be valid BEFORE it writes anything.
+      - name: Authorities and the reader's own safety tests
+        run: |
+          python pipeline/validate_registry.py
+          python pipeline/units.py
+          python pipeline/bounds.py --verify
+          python pipeline/claims.py --self-test
+          python pipeline/test_reader.py
+
+      - name: Read
+        id: read
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          set +e
+          python pipeline/read_paper.py \
+            --max-papers "${{ github.event.inputs.max_papers || '5' }}" \
+            ${{ github.event_name == 'workflow_dispatch' && '--require-key' || '' }}
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" -eq 2 ]; then
+            echo "::warning::Some papers hit an API or network error and were left for the next run."
+          elif [ "$code" -ne 0 ]; then
+            exit $code
+          fi
+
+      # New claims must be reconciled against the ledger BEFORE anything is published.
+      - name: Validate the ledger and detect contradictions
+        run: |
+          python pipeline/claims.py --validate
+          python pipeline/reconcile.py --detect
+          python pipeline/reconcile.py --register
+          python pipeline/reconcile.py --check
+
+      - name: Commit what was read
+        id: commit
+        run: |
+          git config user.name "project-electron-bot"
+          git config user.email "noreply@github.com"
+          git add corpus ledger
+          if git diff --cached --quiet; then
+            echo "Nothing read, nothing to commit."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          papers=$(git diff --cached --name-only --diff-filter=A -- 'corpus/papers/SRC-*.yaml' | wc -l)
+          conflicts=$(git diff --cached --name-only --diff-filter=A -- 'ledger/conflicts/CFL-*.md' | wc -l)
+          note=""
+          if [ "$conflicts" -gt 0 ]; then note=" - ${conflicts} conflict(s) opened, publication blocked until reconciled"; fi
+          git commit -m "Daily reading: ${papers} paper(s) read${note}
+
+          Read automatically by pipeline/read_paper.py. A model proposed quotes and structure;
+          every quote was verified verbatim against the fetched paper before it was recorded, and
+          access, grade and bounds were set by code. Each claim carries an \`extraction\` block
+          naming the model and the number of verified quotes.
+
+          Automated by .github/workflows/read.yml"
+          git pull --rebase --quiet origin main
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # A push made with GITHUB_TOKEN does not start deploy.yml, so start it explicitly. If the
+      # publication gate blocks (an unexamined conflict), that run fails and the site keeps the
+      # last good build. That failure is the signal that a human is needed.
+      - name: Publish
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main
+
+      - name: Report
+        if: always()
+        run: |
+          echo "### Daily reading" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f corpus/candidates/_last_read.json ]; then
+            python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          d = json.load(open("corpus/candidates/_last_read.json"))
+          if d.get("skipped_reason"):
+              print("- **skipped:** " + d["skipped_reason"])
+          else:
+              print(f"- model: `{d.get('model')}`, prompt `{d.get('prompt_version')}`")
+              print(f"- decisions: {d.get('counts')}")
+              print(f"- claims accepted **{d['claims_accepted']}**, rejected by the verifier {d['claims_rejected']}")
+              t = d.get("tokens", {})
+              print(f"- tokens in/out: {t.get('input', 0):,}/{t.get('output', 0):,}"
+                    f" (about ${d.get('estimated_cost_usd', 0):.4f} at list price, an estimate)")
+              print(f"- stopped because: `{d.get('stop_reason')}` after {d.get('seconds')}s")
+              for p in d.get("papers", []):
+                  print(f"  - {p['candidate']}: {p['decision']}" + (f" ({p['reason']})" if p.get("reason") else ""))
+          PY
+          else
+            echo "- no reading summary was produced" >> "$GITHUB_STEP_SUMMARY"
+          fi

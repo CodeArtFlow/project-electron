@@ -33,8 +33,21 @@ for _s in (sys.stdout, sys.stderr):
         pass
 
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from candidates import load as load_candidate  # noqa: E402
+from candidates import unread_candidates  # noqa: E402
+
+
 def count(pattern, root=ROOT):
     return len(list(root.glob(pattern)))
+
+
+def unread_by_lane():
+    """Unread candidates split by who can read them: the automated arXiv lane, or a human."""
+    lane = {"arxiv": 0, "other": 0}
+    for p in unread_candidates(ROOT / "corpus" / "candidates"):
+        lane["arxiv" if load_candidate(p).get("source") == "arxiv" else "other"] += 1
+    return lane
 
 
 def stage(name, description, argv, kind="automatic", allow_fail=False):
@@ -79,6 +92,7 @@ def main():
     for name, desc, argv in [
         ("validate-registry", "registry against its own rules", ["pipeline/validate_registry.py"]),
         ("units", "SI engine vs definitions.yaml", ["pipeline/units.py"]),
+        ("authority", "definitions vs the NIST CODATA file", ["pipeline/bounds.py", "--verify"]),
         ("claims-selftest", "extraction refusals fire", ["pipeline/claims.py", "--self-test"]),
         ("gate-selftest", "every gate check fires", ["pipeline/test_publication_gate.py"]),
         ("discover-selftest", "discovery loop bounds", ["pipeline/test_discover.py"]),
@@ -97,6 +111,9 @@ def main():
     print("\nstage 3 - extract (ledger validation)")
     steps.append(stage("claims-validate", "every claim well-formed",
                        ["pipeline/claims.py", "--validate"]))
+
+    steps.append(stage("bounds-scrutiny", "claims outside a derived physical bound (informational)",
+                       ["pipeline/bounds.py", "--check-ledger"]))
 
     print("\nstage 4 - reconcile")
     for name, desc, argv in [
@@ -119,7 +136,7 @@ def main():
     steps.append(stage("typesafe", "evidence-bound semantic audit", argv, kind="model"))
 
     print("\nstage 6 - publish")
-    steps.append(stage("publication-gate", "the eight checks", ["pipeline/publication_gate.py"],
+    steps.append(stage("publication-gate", "the nine checks", ["pipeline/publication_gate.py"],
                        allow_fail=True))
     gate_ok = all(s.get("ok") for s in steps)
     if gate_ok:
@@ -143,13 +160,23 @@ def main():
     }
 
     # Stages that need comprehension. Reported, never simulated.
-    unread = after["candidates"]
+    lanes = unread_by_lane()
+    after["candidates_unread"] = lanes["arxiv"] + lanes["other"]
     pending = []
-    if unread:
+    if lanes["arxiv"]:
         pending.append({
-            "stage": "harvest.read", "kind": "reading",
-            "why": f"{unread} candidate(s) are unread. A source record states what was ACTUALLY "
-                   "read; a script writing one would be fabricating.",
+            "stage": "harvest.read (automated)", "kind": "reading",
+            "why": f"{lanes['arxiv']} arXiv candidate(s) are unread. They are read by "
+                   "pipeline/read_paper.py (daily, read.yml) once ANTHROPIC_API_KEY is configured. A "
+                   "model only proposes quotes; code verifies each one verbatim against the paper.",
+            "skill": "read_paper.py",
+        })
+    if lanes["other"]:
+        pending.append({
+            "stage": "harvest.read (manual)", "kind": "reading",
+            "why": f"{lanes['other']} publisher candidate(s) are unread. About a quarter of these "
+                   "can be fetched as full text; the rest are behind bot walls. They need a human "
+                   "reader (the harvest skill) or a legitimate full-text route.",
             "skill": "harvest",
         })
     unexamined = 0
