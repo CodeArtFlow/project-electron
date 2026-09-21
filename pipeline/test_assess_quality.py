@@ -8,6 +8,11 @@ from unittest.mock import Mock
 import yaml
 from assess_quality import load_packet, make_request, validate_response, evaluate
 
+def make_request_for_choice(classes):
+    return {"model": "jev-test", "questions": {"cls": {"type": "choice", "instructions": "x",
+            "criteria": {c: c for c in classes}}}}
+
+
 class QualityTests(unittest.TestCase):
     def setUp(self):
         self.state = {"target_type":"source", "target_id":"SRC-test", "evidence":[
@@ -29,6 +34,28 @@ class QualityTests(unittest.TestCase):
             if change=="model": bad["model"]="unexpected"
             if change=="winner": bad["answers"]["claim_support"]["choice"]="strong"
             with self.assertRaises(ValueError): validate_response(bad,self.request)
+
+    def test_rounded_distribution_is_accepted_but_a_bad_sum_is_not(self):
+        # Regression: the live API rounds each probability to 2 dp. A valid 6-class classification
+        # summed to 0.99 and was rejected at the old fixed 0.001 tolerance, failing a whole run.
+        classes = ["A", "C1", "C2", "D", "none", "unknown"]
+        request = make_request_for_choice(classes)
+        def response(probs, chosen):
+            return {"model": request["model"], "usage": {"input_tokens": 1, "output_tokens": 1},
+                    "answers": {"cls": {"type": "choice", "choice": chosen, "confidence": probs[chosen],
+                                        "probabilities": probs}}}
+        rounded = {"A": 0.10, "C1": 0.60, "C2": 0.10, "D": 0.05, "none": 0.03, "unknown": 0.01}
+        self.assertAlmostEqual(sum(rounded.values()), 0.89, places=6)      # sanity: far too low
+        with self.assertRaises(ValueError): validate_response(response(rounded, "C1"), request)
+        ok = {"A": 0.10, "C1": 0.60, "C2": 0.11, "D": 0.09, "none": 0.03, "unknown": 0.06}
+        self.assertAlmostEqual(sum(ok.values()), 0.99, places=6)           # the observed failure
+        validate_response(response(ok, "C1"), request)
+        # Two classes have almost no rounding slack, so a 0.98 sum must still be rejected.
+        req2 = make_request_for_choice(["x", "y"])
+        bad2 = {"model": req2["model"], "usage": {"input_tokens": 1, "output_tokens": 1},
+                "answers": {"cls": {"type": "choice", "choice": "x", "confidence": 0.7,
+                                    "probabilities": {"x": 0.7, "y": 0.28}}}}
+        with self.assertRaises(ValueError): validate_response(bad2, req2)
 
     def test_retry_and_no_redirect(self):
         post=Mock(side_effect=[Mock(status_code=429),Mock(status_code=200,json=lambda:self.response)])

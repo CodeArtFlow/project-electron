@@ -18,9 +18,10 @@ import time
 
 import yaml
 from assess_quality import MODEL, PREFIX, encoded, evaluate, validate_response
+from candidates import unread_candidates
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "semantic-v1"
+VERSION = "semantic-v2"   # v2: the numbers question names quantity.bound and quantity.approximate
 MAX_BYTES = 40000
 TOPICS = {
     "MAT":"Materials", "DEV":"Devices", "LITHO":"Lithography", "PROC":"Process",
@@ -42,6 +43,23 @@ def score(text, levels):
     return {"type":"score","instructions":PREFIX+text,"criteria":levels}
 def stamp():
     return datetime.now(timezone.utc).isoformat()
+
+POLICY_MODES = ("advisory", "blocking")
+
+def load_policy(root=ROOT):
+    """Return the audit's relationship to the gate: 'advisory' or 'blocking'.
+
+    Reads a committed file (reference/semantic_policy.yaml), never an environment variable or CLI
+    flag: a switch that CI could flip at run time would be a way around the gate. A missing,
+    unreadable or unrecognised policy is `blocking` - the strict reading wins by default, so
+    losing the file can only tighten the gate, never loosen it.
+    """
+    path = Path(root) / "reference" / "semantic_policy.yaml"
+    try:
+        mode = (yaml.safe_load(path.read_text(encoding="utf-8")) or {}).get("mode")
+    except (OSError, yaml.YAMLError):
+        return "blocking"
+    return mode if mode in POLICY_MODES else "blocking"
 def digest(value):
     return hashlib.sha256(encoded(value)).hexdigest()
 def plain(value):
@@ -76,6 +94,40 @@ def job(key, stage, state, questions, required=False, missing=None):
     return {"id":key,"stage":stage,"request":request,"required":required,
             "missing":missing or [],"fingerprint":digest({"version":VERSION,"request":request})}
 
+def extraction_questions():
+    """The extraction audit's questions. Shared by build_jobs and the gold-set evaluator so that both ask the model EXACTLY the same things."""
+    return {
+        "support":choice("How does sources relate to claim.statement? Do not fill gaps from the claim itself.",RELATION),
+        "conditions":choice("Are ALL stated claim.conditions explicitly supported by sources? "
+            "Similar conditions in another paper do not count. No conditions is unknown.",
+            {"supported":"Every condition has support in these sources.",
+             "unsupported":"At least one condition is missing from or conflicts with the sources.",
+             "unknown":"No conditions or insufficient evidence."}),
+        "atomic":noul("Does claim.statement contain exactly one independently falsifiable assertion?"),
+        "evidence_type":choice("Which evidence type do sources establish for this specific claim?",
+            {v:v for v in ("measured","simulated","projected","announced","rumored","mixed","unknown")}),
+        "numbers":choice("Does claim.quantity (its as_published value, its bound and its approximate "
+            "flag) faithfully represent the value AND its bound, approximation or uncertainty in "
+            "sources? bound=exact means the source states an unqualified number; an upper or lower "
+            "bound, or an approximate value, must be recorded as one, and a bound must not become "
+            "an equality. Do not perform unit conversion.", {
+                "faithful":"Value and qualifiers preserved.",
+                "distorted":"Value, direction of bound, ratio meaning or uncertainty changed.",
+                "not_applicable":"No quantity in this claim.",
+                "unknown":"Insufficient source text."}),
+    }
+
+def publication_questions():
+    """The publication/discovery audit's questions (same reason as extraction_questions)."""
+    return {
+        "faithful":choice("Does document preserve the substantive meaning, conditions and uncertainty "
+            "of supplied claims/evidence? Counts and descriptions of this pipeline are not scientific claims.",RELATION),
+        "overstates":noul("Does document portray missing corpus coverage as settled knowledge of the field, "
+                          "or simulations/single-group results as independently established measurements?"),
+        "gap_visible":noul("Where supplied claims are challenged/contested or document describes a data gap, "
+            "does document clearly disclose that uncertainty? If no such claims/gaps, answer yes."),
+    }
+
 def build_jobs(root=ROOT, scope="all", candidate_limit=8):
     papers, authors, claims=read_state(root)
     jobs=[]
@@ -84,24 +136,7 @@ def build_jobs(root=ROOT, scope="all", candidate_limit=8):
         if c.get("status") not in ("active","contested","challenged"): continue
         sources={sid:source_view(papers[sid]) for sid in c.get("sources",[]) if sid in papers}
         missing=[sid for sid in c.get("sources",[]) if sid not in sources]
-        questions={
-            "support":choice("How does sources relate to claim.statement? Do not fill gaps from the claim itself.",RELATION),
-            "conditions":choice("Are ALL stated claim.conditions explicitly supported by sources? "
-                "Similar conditions in another paper do not count. No conditions is unknown.",
-                {"supported":"Every condition has support in these sources.",
-                 "unsupported":"At least one condition is missing from or conflicts with the sources.",
-                 "unknown":"No conditions or insufficient evidence."}),
-            "atomic":noul("Does claim.statement contain exactly one independently falsifiable assertion?"),
-            "evidence_type":choice("Which evidence type do sources establish for this specific claim?",
-                {v:v for v in ("measured","simulated","projected","announced","rumored","mixed","unknown")}),
-            "numbers":choice("Does claim.quantity.as_published faithfully represent the value AND its "
-                "bound, approximation or uncertainty in sources? A bound must not become an equality. "
-                "Do not perform unit conversion.", {
-                    "faithful":"Value and qualifiers preserved.",
-                    "distorted":"Value, direction of bound, ratio meaning or uncertainty changed.",
-                    "not_applicable":"No quantity in this claim.",
-                    "unknown":"Insufficient source text."}),
-        }
+        questions=extraction_questions()
         jobs.append(job("claim:"+cid,"extraction",{"claim":c,"sources":sources},questions,True,missing))
     if scope in ("all","publication"):
         for sid,s in papers.items():
@@ -184,14 +219,7 @@ def build_jobs(root=ROOT, scope="all", candidate_limit=8):
                     "candidate_count":len(list((root/"corpus/candidates").glob("CAND-*.yaml")))}}
                 if folder=="discoveries":
                     state["sources"]={sid:source_view(s) for sid,s in papers.items()}
-                questions={
-                    "faithful":choice("Does document preserve the substantive meaning, conditions and uncertainty "
-                        "of supplied claims/evidence? Counts and descriptions of this pipeline are not scientific claims.",RELATION),
-                    "overstates":noul("Does document portray missing corpus coverage as settled knowledge of the field, "
-                                      "or simulations/single-group results as independently established measurements?"),
-                    "gap_visible":noul("Where supplied claims are challenged/contested or document describes a data gap, "
-                        "does document clearly disclose that uncertainty? If no such claims/gaps, answer yes."),
-                }
+                questions=publication_questions()
                 jobs.append(job("document:"+folder+"/"+p.name,"discovery" if folder=="discoveries" else "publication",
                                 state,questions,folder!="discoveries",
                                 [cid for cid in ids if cid not in claims]))
@@ -211,9 +239,12 @@ def build_jobs(root=ROOT, scope="all", candidate_limit=8):
     coverage={"candidate_total":0,"candidate_selected":0,"author_records":len(authors),
               "author_evidence_missing":not authors}
     if scope in ("all","triage"):
-        paths=sorted((root/"corpus/candidates").glob("CAND-*.yaml"), reverse=True)
-        coverage.update(candidate_total=len(paths),candidate_selected=min(candidate_limit,len(paths)))
-        for p in paths[:candidate_limit]:
+        # Only candidates nothing has decided on: a paper the reader already judged is not queue.
+        paths=sorted(unread_candidates(root/"corpus/candidates"), reverse=True)
+        selected=select_candidates(paths,candidate_limit,date.today().toordinal())
+        coverage.update(candidate_total=len(paths),candidate_selected=len(selected),
+                        candidate_selection="venue-interleaved rotating window")
+        for p in selected:
             c=yaml_file(p)
             state={"candidate":{k:c.get(k) for k in ("id","title","primary_topic","venue_id","relevance")},
                    "limitation":"Unread metadata only: route for reading; no scientific assertions can be made."}
@@ -228,6 +259,36 @@ def build_jobs(root=ROOT, scope="all", candidate_limit=8):
             jobs.append(job("candidate:"+p.stem,"triage",state,questions))
     if scope=="triage": jobs=[j for j in jobs if j["stage"]=="triage"]
     return jobs,coverage
+
+def select_candidates(paths, limit, day):
+    """Pick the candidates to triage today: spread across venues, rotating over the queue.
+
+    The first version took the eight highest filenames. Candidates are numbered in the order the
+    sweep writes them and arXiv is swept last, so those eight were ALWAYS arXiv: journal
+    candidates were never triaged and the same eight came back every day. Now candidates are
+    interleaved round-robin across venues (one from each in turn) and the window slides with the
+    date, so a queue of N is covered in ceil(N / limit) days and no single venue can crowd the
+    others out. Deterministic for a given (queue, day), so reruns and the exact-request cache
+    still behave.
+    """
+    if limit <= 0 or not paths:
+        return []
+    groups = {}
+    for p in paths:
+        try:
+            venue = yaml_file(p).get("venue_id") or "unknown"
+        except (ValueError, OSError, yaml.YAMLError):
+            venue = "unreadable"
+        groups.setdefault(venue, []).append(p)
+    order, queues = sorted(groups), {v: list(groups[v]) for v in groups}
+    interleaved = []
+    while any(queues.values()):
+        for v in order:
+            if queues[v]:
+                interleaved.append(queues[v].pop(0))
+    start = (day * limit) % len(interleaved)
+    rotated = interleaved[start:] + interleaved[:start]
+    return rotated[:min(limit, len(rotated))]
 
 def route(j,response):
     """Provisional review signals, not calibrated truth probabilities or conflict resolutions."""
@@ -327,7 +388,17 @@ def run(jobs,coverage,root=ROOT,live=False,max_calls=64,seconds=180,call=worker_
     report["complete"]=not any(r["status"] in ("pending","error") for r in records)
     return report
 
-def gate_failures(root=ROOT,required=False):
+def gate_failures(root=ROOT,required=False,mode=None):
+    """What the publication gate must act on, after applying the committed policy.
+
+    Under `advisory` the audit still runs and is published, but nothing here blocks. Under
+    `blocking` (also the default when the policy is missing) every finding blocks.
+    """
+    mode = mode or load_policy(root)
+    return audit_findings(root, required) if mode == "blocking" else []
+
+def audit_findings(root=ROOT,required=False):
+    """Every problem the audit has found, whether or not policy lets it block."""
     path=root/"run/typesafe-publication.json"
     if not path.exists(): return ["TypeSafe publication audit is missing"] if required else []
     try:
@@ -353,7 +424,16 @@ def gate_failures(root=ROOT,required=False):
 
 
 def render_summary(report):
-    lines=["# TypeSafe research checks","",
+    policy=report.get("policy")
+    banner=[]
+    if policy=="advisory":
+        banner=["> **Advisory.** These flags do not block publication. The thresholds are "
+                "uncalibrated and flag nearly everything, so until a labelled gold set calibrates "
+                "them they are prompts for a human look, not findings.",""]
+    if report.get("skipped_reason"):
+        banner.append("> **Not run:** "+report["skipped_reason"]+".")
+        banner.append("")
+    lines=["# TypeSafe research checks","",*banner,
         "Model judgments over supplied local evidence. Not verified scientific conclusions.","",
         f"Mode: {report['mode']}; model: {report['model']}; elapsed: {report['elapsed_seconds']}s;",
         f"requests: {report['calls']}; complete within selected scope: {report['complete']}.","",
@@ -387,9 +467,19 @@ def main():
         print(json.dumps(evaluate(json.load(sys.stdin),key)))
         return 0
     if not 0<=args.candidate_limit<=100: raise ValueError("candidate-limit must be 0-100")
-    if args.live and not os.environ.get("TYPESAFE_API_KEY"): raise ValueError("Missing TYPESAFE_API_KEY")
+    policy=load_policy(ROOT)
+    skipped=None
+    if args.live and not os.environ.get("TYPESAFE_API_KEY"):
+        if policy=="blocking": raise ValueError("Missing TYPESAFE_API_KEY")
+        # Advisory: a missing credential must not freeze publication, but it must not vanish
+        # either. Fall back to a preview report that says, on its face, why nothing was checked.
+        skipped="TYPESAFE_API_KEY is not set; the audit did not run"
+        args.live=False
+        print("::warning::"+skipped)
     jobs,coverage=build_jobs(ROOT,args.scope,args.candidate_limit)
     report=run(jobs,coverage,ROOT,args.live,args.max_calls,args.seconds)
+    report["policy"]=policy
+    if skipped: report["skipped_reason"]=skipped
     folder=ROOT/"run"
     folder.mkdir(exist_ok=True)
     output=folder/("typesafe-"+args.scope+".json")
@@ -399,7 +489,10 @@ def main():
     if os.environ.get("GITHUB_STEP_SUMMARY"):
         with open(os.environ["GITHUB_STEP_SUMMARY"],"a",encoding="utf-8") as handle: handle.write(summary)
     print(f"{output.name}: {len(jobs)} jobs; {report['status_counts']}; {report['calls']} calls; {report['elapsed_seconds']}s")
-    return 2 if args.live and not report["complete"] else 0
+    if args.live and not report["complete"]:
+        if policy=="blocking": return 2
+        print("::warning::Audit incomplete ("+str(report["status_counts"])+"). Advisory policy: not blocking.")
+    return 0
 
 if __name__=="__main__":
     try: raise SystemExit(main())

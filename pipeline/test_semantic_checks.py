@@ -6,7 +6,8 @@ import tempfile
 import unittest
 import yaml
 from assess_quality import MODEL, validate_response
-from semantic_checks import job, choice, noul, score, run, route, build_jobs, gate_failures, digest
+from semantic_checks import (job, choice, noul, score, run, route, build_jobs, gate_failures,
+                             audit_findings, load_policy, select_candidates, digest)
 from reconcile import independent
 
 def answer(request):
@@ -122,6 +123,57 @@ class SemanticTests(unittest.TestCase):
             report=run(jobs,{},root,True,1,10,api)
             self.assertEqual(report["records"][0]["status"],"error")
             self.assertFalse(report["complete"])
+
+    def test_policy_defaults_to_blocking_so_losing_the_file_cannot_loosen_the_gate(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            self.assertEqual(load_policy(root),"blocking")                # no file
+            (root/"reference").mkdir()
+            f=root/"reference/semantic_policy.yaml"
+            f.write_text("mode: advisory\n");self.assertEqual(load_policy(root),"advisory")
+            f.write_text("mode: whatever\n");self.assertEqual(load_policy(root),"blocking")
+            f.write_text(": : not yaml [");self.assertEqual(load_policy(root),"blocking")
+
+    def test_advisory_never_blocks_but_the_findings_are_still_reported(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            (root/"sota").mkdir();(root/"sota/MAT.md").write_text("No read evidence.")
+            # A required audit that does not exist would block under `blocking`...
+            self.assertTrue(gate_failures(root,True,mode="blocking"))
+            # ...and is reported, but not blocking, under `advisory`.
+            self.assertEqual(gate_failures(root,True,mode="advisory"),[])
+            self.assertTrue(audit_findings(root,True))
+            # The policy file, not a flag, is what selects the mode.
+            (root/"reference").mkdir()
+            (root/"reference/semantic_policy.yaml").write_text("mode: advisory\n")
+            self.assertEqual(gate_failures(root,True),[])
+
+    def test_real_repo_policy_is_advisory_as_decided(self):
+        # The user chose advisory on 2026-09-21. Guard against it being changed by accident.
+        from semantic_checks import ROOT
+        self.assertEqual(load_policy(ROOT),"advisory")
+
+    def test_triage_is_spread_across_venues_and_rotates(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            cand=root/"corpus/candidates";cand.mkdir(parents=True)
+            # Filename order deliberately puts every arxiv candidate last, as the sweep does.
+            for i in range(1,13): (cand/f"CAND-{i:04d}.yaml").write_text(yaml.safe_dump({"id":i,"venue_id":"nat_comms" if i<=6 else "sci_rep"}))
+            for i in range(13,31): (cand/f"CAND-{i:04d}.yaml").write_text(yaml.safe_dump({"id":i,"venue_id":"arxiv_api"}))
+            paths=sorted(cand.glob("CAND-*.yaml"),reverse=True)
+            venues=lambda sel:{yaml.safe_load(p.read_text())["venue_id"] for p in sel}
+            day1=select_candidates(paths,6,1)
+            self.assertEqual(len(day1),6)
+            self.assertGreaterEqual(len(venues(day1)),3)                   # not arXiv-only
+            # The old behaviour, for contrast: the six highest filenames are all arXiv.
+            self.assertEqual(venues(paths[:6]),{"arxiv_api"})
+            # The window slides, and the whole queue is covered over ceil(N/limit) days.
+            self.assertNotEqual([p.name for p in day1],[p.name for p in select_candidates(paths,6,2)])
+            seen=set()
+            for d in range(5): seen|={p.name for p in select_candidates(paths,6,d)}
+            self.assertEqual(len(seen),30)
+            self.assertEqual(select_candidates(paths,0,1),[])
+            self.assertEqual(select_candidates([],5,1),[])
 
 if __name__=="__main__":
     unittest.main()

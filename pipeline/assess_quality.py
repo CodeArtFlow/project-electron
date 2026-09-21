@@ -125,9 +125,15 @@ def validate_response(response, request):
         options = (set(question["criteria"]) if kind == "choice"
                    else {str(i) for i in range(len(question["criteria"]))})
         probs = answer.get("probabilities")
+        # The API rounds each probability to 2 decimal places, so a distribution over n classes
+        # can be off by up to n * 0.005 through rounding alone. A fixed 0.001 tolerance rejected a
+        # valid 6-class classification (sum 0.99) and, because one error marks a required audit
+        # incomplete, that single rounding artefact failed a whole run. The tolerance now scales
+        # with the number of classes and is still tight enough to reject a genuinely bad sum.
+        tolerance = 0.005 * len(probs) + 1e-6 if isinstance(probs, dict) else 0.001
         if (not isinstance(probs, dict) or set(probs) != options
                 or not all(probability(v) for v in probs.values())
-                or not math.isclose(sum(probs.values()), 1, abs_tol=0.001)
+                or not math.isclose(sum(probs.values()), 1, abs_tol=tolerance)
                 or not probability(answer.get("confidence"))):
             raise ValueError(f"Invalid distribution for {key}: "
                 f"keys={sorted(probs) if isinstance(probs,dict) else 'invalid'}; "

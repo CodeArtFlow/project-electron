@@ -1,0 +1,334 @@
+schema_version: 1
+created: '2026-09-21'
+provenance:
+  labelled_by: Claude (the pipeline's author), from the papers' text
+  independent_review: PENDING - not yet reviewed by anyone else
+  warning: These labels were written by the same agent that made the extractions being judged. Treat them
+    as a SEED, not a validated benchmark, until a second person has checked them.
+semantics:
+  labels_are_relative_to: the evidence the audit is shown (the source RECORD), not the original paper.
+    The audit cannot see the paper; see `blind_spot`.
+  noul: atomic and gap_visible are 'yes is good' (true expected); overstates is 'yes is bad' (false expected).
+    A noul value is P(yes).
+kind: publication
+cases:
+- id: gold-pub-mat
+  stage: publication
+  audit_id: document:sota/MAT.md
+  fingerprint: fa4abea71c8b6c76607480d0bfb9997c84224e5f45aa11791c7901f7415e68f5
+  labels:
+    faithful: supports
+    overstates: false
+    gap_visible: true
+  basis: The page states '_No claims in the ledger for this layer._' and says this describes our corpus,
+    not the field. Nothing on it can overstate, and it has no claims or gaps to disclose, so the question
+    itself says to answer yes.
+  document: '# Materials — state of the art
+
+
+    Topic code `MAT`. Last reviewed 2026-09-20.
+
+
+    > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
+
+
+    ## Current position
+
+
+    _No claims in the ledger for this layer._
+
+
+    This is a statement about our corpus, not about the field. It means nothing has been read and extracted
+    for this layer yet — not that the field is quiet.
+
+
+    ## Evidence base
+
+
+    - claims: 0
+
+    - grades: none
+
+    - distinct sources: 0
+
+    '
+- id: gold-pub-litho
+  stage: publication
+  audit_id: document:sota/LITHO.md
+  fingerprint: 2c86bac19ad6b06498795daf2f574e535bddd538e5d4c188a78c7133d3235a80
+  labels:
+    faithful: supports
+    overstates: false
+    gap_visible: true
+  basis: The page states '_No claims in the ledger for this layer._' and says this describes our corpus,
+    not the field. Nothing on it can overstate, and it has no claims or gaps to disclose, so the question
+    itself says to answer yes.
+  document: '# Lithography — state of the art
+
+
+    Topic code `LITHO`. Last reviewed 2026-09-20.
+
+
+    > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
+
+
+    ## Current position
+
+
+    _No claims in the ledger for this layer._
+
+
+    This is a statement about our corpus, not about the field. It means nothing has been read and extracted
+    for this layer yet — not that the field is quiet.
+
+
+    ## Evidence base
+
+
+    - claims: 0
+
+    - grades: none
+
+    - distinct sources: 0
+
+    '
+- id: gold-pub-proc
+  stage: publication
+  audit_id: document:sota/PROC.md
+  fingerprint: 73a708511ba934efd0d5c0a533a7ff9694f032784b88cc50ec9afa039d9648f6
+  labels:
+    faithful: supports
+    overstates: false
+    gap_visible: true
+  basis: The page states '_No claims in the ledger for this layer._' and says this describes our corpus,
+    not the field. Nothing on it can overstate, and it has no claims or gaps to disclose, so the question
+    itself says to answer yes.
+  document: '# Process — state of the art
+
+
+    Topic code `PROC`. Last reviewed 2026-09-20.
+
+
+    > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
+
+
+    ## Current position
+
+
+    _No claims in the ledger for this layer._
+
+
+    This is a statement about our corpus, not about the field. It means nothing has been read and extracted
+    for this layer yet — not that the field is quiet.
+
+
+    ## Evidence base
+
+
+    - claims: 0
+
+    - grades: none
+
+    - distinct sources: 0
+
+    '
+- id: gold-pub-pkg
+  stage: publication
+  audit_id: document:sota/PKG.md
+  fingerprint: e2075099a9b1e479e3b693050eda128df91d405fb5625a11950ea0878c1f4a99
+  labels:
+    faithful: supports
+    overstates: false
+    gap_visible: true
+  basis: The page states '_No claims in the ledger for this layer._' and says this describes our corpus,
+    not the field. Nothing on it can overstate, and it has no claims or gaps to disclose, so the question
+    itself says to answer yes.
+  document: '# Packaging — state of the art
+
+
+    Topic code `PKG`. Last reviewed 2026-09-20.
+
+
+    > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
+
+
+    ## Current position
+
+
+    _No claims in the ledger for this layer._
+
+
+    This is a statement about our corpus, not about the field. It means nothing has been read and extracted
+    for this layer yet — not that the field is quiet.
+
+
+    ## Evidence base
+
+
+    - claims: 0
+
+    - grades: none
+
+    - distinct sources: 0
+
+    '
+- id: gold-pub-mem
+  stage: publication
+  audit_id: document:sota/MEM.md
+  fingerprint: ebff5352342c8755c010d277905b4effe0dd24cf05dae21690a9ee6954b893dc
+  labels:
+    faithful: supports
+    overstates: false
+    gap_visible: true
+  basis: The page states '_No claims in the ledger for this layer._' and says this describes our corpus,
+    not the field. Nothing on it can overstate, and it has no claims or gaps to disclose, so the question
+    itself says to answer yes.
+  document: '# Memory — state of the art
+
+
+    Topic code `MEM`. Last reviewed 2026-09-20.
+
+
+    > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
+
+
+    ## Current position
+
+
+    _No claims in the ledger for this layer._
+
+
+    This is a statement about our corpus, not about the field. It means nothing has been read and extracted
+    for this layer yet — not that the field is quiet.
+
+
+    ## Evidence base
+
+
+    - claims: 0
+
+    - grades: none
+
+    - distinct sources: 0
+
+    '
+- id: gold-pub-phot
+  stage: publication
+  audit_id: document:sota/PHOT.md
+  fingerprint: 90af3e7ab593fc2e547aab37442b434e3f397b8aa3ec3ba7551931bf651f5ea8
+  labels:
+    faithful: supports
+    overstates: false
+    gap_visible: true
+  basis: The page states '_No claims in the ledger for this layer._' and says this describes our corpus,
+    not the field. Nothing on it can overstate, and it has no claims or gaps to disclose, so the question
+    itself says to answer yes.
+  document: '# Photonics — state of the art
+
+
+    Topic code `PHOT`. Last reviewed 2026-09-20.
+
+
+    > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
+
+
+    ## Current position
+
+
+    _No claims in the ledger for this layer._
+
+
+    This is a statement about our corpus, not about the field. It means nothing has been read and extracted
+    for this layer yet — not that the field is quiet.
+
+
+    ## Evidence base
+
+
+    - claims: 0
+
+    - grades: none
+
+    - distinct sources: 0
+
+    '
+- id: gold-pub-eda
+  stage: publication
+  audit_id: document:sota/EDA.md
+  fingerprint: 8e339ba204529d8c81068d57e8d66df4aaa3db8cebb6488fb1e1f04818d352b0
+  labels:
+    faithful: supports
+    overstates: false
+    gap_visible: true
+  basis: The page states '_No claims in the ledger for this layer._' and says this describes our corpus,
+    not the field. Nothing on it can overstate, and it has no claims or gaps to disclose, so the question
+    itself says to answer yes.
+  document: '# EDA — state of the art
+
+
+    Topic code `EDA`. Last reviewed 2026-09-20.
+
+
+    > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
+
+
+    ## Current position
+
+
+    _No claims in the ledger for this layer._
+
+
+    This is a statement about our corpus, not about the field. It means nothing has been read and extracted
+    for this layer yet — not that the field is quiet.
+
+
+    ## Evidence base
+
+
+    - claims: 0
+
+    - grades: none
+
+    - distinct sources: 0
+
+    '
+- id: gold-pub-econ
+  stage: publication
+  audit_id: document:sota/ECON.md
+  fingerprint: 8c3f32363421f1938ed60c75c7bf2debe90b1c3e4a7d6df6d7db99faeb499ffc
+  labels:
+    faithful: supports
+    overstates: false
+    gap_visible: true
+  basis: The page states '_No claims in the ledger for this layer._' and says this describes our corpus,
+    not the field. Nothing on it can overstate, and it has no claims or gaps to disclose, so the question
+    itself says to answer yes.
+  document: '# Economics — state of the art
+
+
+    Topic code `ECON`. Last reviewed 2026-09-20.
+
+
+    > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
+
+
+    ## Current position
+
+
+    _No claims in the ledger for this layer._
+
+
+    This is a statement about our corpus, not about the field. It means nothing has been read and extracted
+    for this layer yet — not that the field is quiet.
+
+
+    ## Evidence base
+
+
+    - claims: 0
+
+    - grades: none
+
+    - distinct sources: 0
+
+    '

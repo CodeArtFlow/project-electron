@@ -1,0 +1,31 @@
+# Project Electron - semantic audit policy
+#
+# How the TypeSafe semantic audit (pipeline/semantic_checks.py) relates to the publication gate.
+# This is a COMMITTED FILE, not a runtime switch. AGENTS.md says a gate CI can route around is not
+# a gate, so there is deliberately no workflow input, environment variable or continue-on-error
+# that changes it: the only way to change the policy is a commit, visible in history and review.
+#
+#   advisory   the audit runs and is published on the site, but never blocks a deploy.
+#   blocking   the audit is a required gate check. A missing, stale, preview-only or incomplete
+#              audit fails, and so does any required record carrying a flag.
+#
+# A missing policy file is treated as `blocking`: the strict reading is the default, so losing
+# this file can never silently loosen the gate.
+
+mode: advisory
+
+decision:
+  made_by: user
+  date: 2026-09-21
+  reason: >
+    The audit's review thresholds (0.9 confidence, 0.1 adverse) are provisional and uncalibrated,
+    and against the first live run (question set semantic-v1) they flagged 12 of 12 publication
+    documents, 7 of 7 extracted claims and 9 of 10 reconciliation pairs (the tenth errored on a
+    response-validation bug since fixed). A check that flags essentially everything has no
+    discrimination and froze the live site. It also flagged empty-layer pages as hiding uncertainty when the
+    question itself says to answer yes if there are no gaps.
+  exit_condition: >
+    Move to `blocking` only after reference/gold/ is large enough to calibrate the thresholds:
+    at minimum, negative examples for every stage that can block. Today the gold set has none for
+    publication documents, so no threshold can yet be validated there. Run
+    `python pipeline/gold_eval.py` against a fresh audit report to see where it stands.
