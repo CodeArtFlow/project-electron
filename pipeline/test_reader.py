@@ -374,11 +374,16 @@ class WritingAndTheRun(unittest.TestCase):
 POLICY = {"monthly_cap_usd": 10.0, "model": "gemini-3.8-flash", "prices_retrieved": date(2026, 9, 21),
           "prices_source": "test",
           "schedules": {"gemini-3.8-flash": [{"from": date(2026, 1, 1), "input": 0.75, "output": 3.75}],
-                        "gemini-2.5-flash": [{"from": date(2026, 1, 1), "input": 0.30, "output": 2.50}]},
+                        "gemini-3.5-flash-lite": [{"from": date(2026, 1, 1), "input": 0.30, "output": 2.50}],
+                        "budgeted-test-model": [{"from": date(2026, 1, 1), "input": 0.30, "output": 2.50}]},
           "generation": {"gemini-3.8-flash": {"thinking_level": "low"},
-                         "gemini-2.5-flash": {"thinking_budget": 0, "temperature": 0}}}
-MODEL = "gemini-3.8-flash"
-FLASH_25 = "gemini-2.5-flash"
+                         "gemini-3.5-flash-lite": {"thinking_level": "minimal"},
+                         # A synthetic model that exercises the thinking_budget + temperature path (the
+                         # 2.5 family's), which no priced model uses now.
+                         "budgeted-test-model": {"thinking_budget": 0, "temperature": 0}}}
+MODEL = "gemini-3.8-flash"            # the 3.x model the mechanism tests run against
+LITE = "gemini-3.5-flash-lite"        # the model actually chosen
+BUDGETED = "budgeted-test-model"
 
 
 def response(data=None, finish="STOP", prompt=1200, out=90, thoughts=40, total=None, text=None,
@@ -454,18 +459,26 @@ class ModelClient(unittest.TestCase):
         self.assertIsNone(cfg.temperature)
         self.assertEqual(got["layer"], "ARCH")
 
-    def test_gemini_2_5_flash_is_called_with_thinking_off_and_temperature_zero(self):
-        m = GeminiModel(FLASH_25, self.budget, client=self.FakeClient(response(self.OK)), sleep=self.slept.append)
+    def test_the_chosen_model_is_called_at_minimal_thinking_with_no_temperature(self):
+        m = GeminiModel(LITE, self.budget, client=self.FakeClient(response(self.OK)), sleep=self.slept.append)
         m.classify("Title", "abstract text")
         cfg = m.client.models.calls[0]["config"]
-        self.assertEqual(m.client.models.calls[0]["model"], FLASH_25)
-        self.assertEqual(cfg.thinking_config.thinking_budget, 0)          # thinking is billed as output; we buy none
-        self.assertIsNone(cfg.thinking_config.thinking_level)              # the 2.5 family is budgeted, not levelled
-        self.assertEqual(cfg.temperature, 0.0)                             # a transcriber copies quotes faithfully
+        self.assertEqual(m.client.models.calls[0]["model"], LITE)
+        self.assertEqual(cfg.thinking_config.thinking_level.name, "MINIMAL")   # thinking is billed as output
+        self.assertIsNone(cfg.thinking_config.thinking_budget)
+        self.assertIsNone(cfg.temperature)                                      # Gemini 3: leave Google's default
         self.assertEqual(cfg.response_mime_type, "application/json")
 
+    def test_a_model_configured_with_a_thinking_budget_gets_thinking_off_and_temperature_zero(self):
+        m = GeminiModel(BUDGETED, self.budget, client=self.FakeClient(response(self.OK)), sleep=self.slept.append)
+        m.classify("Title", "abstract text")
+        cfg = m.client.models.calls[0]["config"]
+        self.assertEqual(cfg.thinking_config.thinking_budget, 0)
+        self.assertIsNone(cfg.thinking_config.thinking_level)              # never both: the API rejects that
+        self.assertEqual(cfg.temperature, 0.0)
+
     def test_the_two_models_are_priced_differently_and_the_ledger_follows_the_model_used(self):
-        for name, price in ((FLASH_25, (0.30, 2.50)), (MODEL, (0.75, 3.75))):
+        for name, price in ((LITE, (0.30, 2.50)), (MODEL, (0.75, 3.75))):
             budget = Budget(POLICY, Path(self._tmp.name) / f"{name}.json", "2026-09-30")
             GeminiModel(name, budget, client=self.FakeClient(response(self.OK, prompt=1000, out=100, thoughts=0)),
                         sleep=self.slept.append).classify("T", "x")
@@ -612,10 +625,10 @@ class ModelClient(unittest.TestCase):
         self.assertSpent((1500 * 0.75 + 280 * 3.75) / 1e6)
 
 
-class TheWireRequestFor25Flash(unittest.TestCase):
+class TheWireRequestForTheChosenModel(unittest.TestCase):
     """The model the user chose, through the REAL SDK, to see the request that would actually be sent."""
 
-    def test_thinking_is_off_temperature_is_zero_and_the_endpoint_is_the_right_model(self):
+    def test_thinking_is_minimal_no_temperature_is_sent_and_the_endpoint_is_the_right_model(self):
         from google import genai
         seen = {}
 
@@ -625,20 +638,19 @@ class TheWireRequestFor25Flash(unittest.TestCase):
                 "candidates": [{"content": {"role": "model", "parts": [{"text": json.dumps(ModelClient.OK)}]},
                                 "finishReason": "STOP", "index": 0}],
                 "usageMetadata": {"promptTokenCount": 4000, "candidatesTokenCount": 60, "totalTokenCount": 4060},
-                "modelVersion": "gemini-2.5-flash"})
+                "modelVersion": "gemini-3.5-flash-lite"})
 
         client = genai.Client(api_key="test-key-not-real", http_options=genai_types.HttpOptions(
             httpx_client=httpx.Client(transport=httpx.MockTransport(handler)), timeout=120_000))
         with tempfile.TemporaryDirectory() as folder:
             budget = Budget(POLICY, Path(folder) / "spend.json", "2026-09-30")
-            got, usage = GeminiModel(FLASH_25, budget, client=client).classify("A title", "An abstract")
-        self.assertTrue(seen["url"].endswith("/models/gemini-2.5-flash:generateContent"), seen["url"])
+            got, usage = GeminiModel(LITE, budget, client=client).classify("A title", "An abstract")
+        self.assertTrue(seen["url"].endswith("/models/gemini-3.5-flash-lite:generateContent"), seen["url"])
         gen = seen["body"]["generationConfig"]
-        self.assertEqual(gen["temperature"], 0.0)
-        thinking = gen["thinkingConfig"]
-        self.assertEqual(thinking.get("thinking_budget", thinking.get("thinkingBudget")), 0)   # either spelling
-        self.assertNotIn("level", json.dumps(thinking).lower())                                # none sent to a 2.5 model
-        self.assertEqual(usage, {"input": 4000, "output": 60, "model": "gemini-2.5-flash"})    # no thoughts reported
+        self.assertNotIn("temperature", gen)                                       # Gemini 3: Google's default
+        self.assertIn("MINIMAL", json.dumps(gen["thinkingConfig"]).upper())        # either key spelling
+        self.assertNotIn("budget", json.dumps(gen["thinkingConfig"]).lower())     # never both
+        self.assertEqual(usage, {"input": 4000, "output": 60, "model": "gemini-3.5-flash-lite"})   # no thoughts reported
         self.assertEqual(got["layer"], "ARCH")
 
 

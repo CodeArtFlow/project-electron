@@ -31,24 +31,27 @@ decision:
   reason: >
     Use Gemini's Flash model for automated reading and keep usage low, about $10 a month at most.
   model_choice: >
-    First gemini-3.8-flash, the newest stable Flash. Then the same day the user chose
-    gemini-2.5-flash "as the volumes are super high for reading". It is $0.30 in / $2.50 out against
-    3.8's $0.75 / $3.75, and Google announced no price step for it (3.8 doubles on 2027-01-01) and
-    no shutdown date (deprecations page, retrieved 2026-09-21). 3.8 stays priced and configured so a
-    quality comparison needs no code change.
+    gemini-3.5-flash-lite, chosen by the user on 2026-09-21 because reading volume is high. The user
+    first chose gemini-2.5-flash, which Google's docs list as stable with no shutdown date, and the
+    live API refused it to this project the same day (404, "no longer available to new users",
+    suggesting gemini-3.6-flash). It is therefore not priced here: a model that cannot be called is
+    not a candidate, and the docs page was not evidence that it could be. gemini-3.5-flash-lite is
+    $0.30 in / $2.50 out with no announced price step (3.8 doubles on 2027-01-01). gemini-3.8-flash
+    stays priced and configured as an alternative, so a quality comparison needs no code change.
 
-model: gemini-2.5-flash
+model: gemini-3.5-flash-lite
 
 # How each model is called. Every priced model must have an entry, so that nothing runs unconfigured.
-#   thinking_budget  tokens the model may spend reasoning; 0 turns thinking off (2.5 family). Thinking
-#                    is billed as output, and reading is transcription, so we buy none of it.
-#   thinking_level   3.x models cannot turn thinking off; this is the lowest level 3.8 Flash offers.
-#   temperature      absent means Google's default. Google's Gemini 3 guide says to keep 1.0 there
-#                    because lower values can loop and degrade; it says earlier models benefited from
-#                    tuning. At 0 the model copies quotes more faithfully, which is what a
-#                    transcriber wants. Nothing depends on it: the verifier checks every quote.
+#   thinking_level   3.x models. Thinking is billed as output and reading is transcription, so we buy
+#                    the least each model offers: "minimal" on 3.5 Flash-Lite, "low" on 3.8 Flash,
+#                    which cannot go lower (Google's thinking table, 2026-09-21).
+#   thinking_budget  tokens the model may spend reasoning; 0 turns it off. For the 2.5 family, which no
+#                    priced model uses now. Never set together with thinking_level.
+#   temperature      absent means Google's default. Google's Gemini 3 guide says to keep 1.0 for every
+#                    Gemini 3 model because lower values can loop and degrade, so none is set here.
+#                    Nothing depends on it: the verifier checks every quote.
 generation:
-  gemini-2.5-flash: {thinking_budget: 0, temperature: 0}
+  gemini-3.5-flash-lite: {thinking_level: minimal}
   gemini-3.8-flash: {thinking_level: low}
 
 # USD per 1,000,000 tokens, Standard tier, paid. Thinking tokens are billed as output tokens.
@@ -63,7 +66,7 @@ prices:
   source: https://ai.google.dev/gemini-api/docs/pricing
   retrieved: 2026-09-21
   models:
-    gemini-2.5-flash:
+    gemini-3.5-flash-lite:
       - {from: 2026-01-01, input: 0.30, output: 2.50}     # text input; no scheduled change announced
     gemini-3.8-flash:
       - {from: 2026-01-01, input: 0.75, output: 3.75}     # "through December 31, 2026"

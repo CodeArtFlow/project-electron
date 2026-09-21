@@ -188,9 +188,9 @@ the topics I thought of first".
 
 Reading a paper into a source record and claims is done by `pipeline/read_paper.py` for arXiv
 (daily, `.github/workflows/read.yml`) and by the `harvest` skill, in an agent session, for everything else.
-The automated reader uses Google's `gemini-2.5-flash`, chosen by the user for its price at a high
-reading volume and named in `reference/reader_budget.yaml`, which also prices `gemini-3.8-flash` as an
-alternative for a quality comparison. A model is a **transcriber, not an author.** It may propose quotes and structure. It cannot influence any of the
+The automated reader uses Google's `gemini-3.5-flash-lite`, chosen by the user for its price at a
+high reading volume and named in `reference/reader_budget.yaml`, which also prices `gemini-3.8-flash`
+as an alternative for a quality comparison. A model is a **transcriber, not an author.** It may propose quotes and structure. It cannot influence any of the
 following, all of which are deterministic code:
 
 - **`access`** is set from what `pipeline/fetch_text.py` actually retrieved. A model never claims it read.
@@ -239,13 +239,17 @@ only lower it. Changing it is a visible commit.
 - **Priced or refused.** A model with no dated price in the file cannot be used. Prices are Google's
   Standard paid-tier list prices. The free tier costs nothing but its content may be used to improve
   Google's products, and we cannot see which tier a key is on, so everything is budgeted at the paid
-  price. `gemini-2.5-flash` is $0.30 in / $2.50 out per million tokens with no announced change.
+  price. `gemini-3.5-flash-lite` is $0.30 in / $2.50 out per million tokens with no announced change.
   **`gemini-3.8-flash` doubles on 2027-01-01** ($0.75/$3.75 to $1.50/$7.50); the file records the step
   so the ledger cannot under-count in the new year if that model is ever used.
-- **No thinking is bought.** Thinking is billed as output and reading is transcription, so the policy
-  sets `thinking_budget: 0` for the 2.5 model (and the lowest level, which 3.x cannot go below, for
-  3.8). Temperature is 0 for 2.5, so quotes are copied faithfully, and unset for Gemini 3, where
-  Google says to keep its default of 1.0. Nothing depends on either: the verifier checks every quote.
+- **As little thinking as each model offers.** Thinking is billed as output and reading is
+  transcription, so the policy asks for `minimal` on 3.5 Flash-Lite and `low` on 3.8 (which cannot go
+  lower). Temperature is left at Google's default, because Google says to keep 1.0 for every Gemini 3
+  model. Nothing depends on either: the verifier checks every quote.
+- **A docs page is not proof a model can be called.** Google's docs listed `gemini-2.5-flash` as stable
+  with no shutdown date, and the live API refused it to this project (404, "no longer available to new
+  users"). A model is priced here only if it is one we intend to call, and the first live call is
+  small for that reason.
 - **Fails closed.** A policy or ledger that cannot be read stops the reader with a failed job. It is
   never treated as a fresh start.
 
@@ -685,8 +689,8 @@ Tests (all run in CI before any deploy): `validate_registry.py`, `units.py`, `bo
   *Reader budget*): ours is the second line of defence.
 - **Reading cost is estimated, not measured.** The median arXiv paper fetched (measured on 14) is
   about 59,000 characters; at an assumed 3 to 4 characters a token that is 15,000 to 20,000 input
-  tokens, plus an assumed 3,000 output tokens with thinking off. At $0.30/$2.50 that is about
-  $0.013 for a full read, and a fraction of a cent for a paper judged out of scope. The reader now
+  tokens, plus an assumed 3,000 output tokens (thinking is minimal, not off, so it may add more). At
+  $0.30/$2.50 that is about $0.013 for a full read, and a fraction of a cent for a paper judged out of scope. The reader now
   takes up to 25 candidates a day; if a third of them are in scope (an assumption) that is about $0.12
   a day, or roughly $3.60 a month, well inside the cap. The cap holds either way, and the pacing
   throttles the reader rather than exceed it. `python pipeline/budget.py` shows the real spend once

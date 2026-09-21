@@ -234,26 +234,33 @@ class FailsClosed(unittest.TestCase):
 class TheCommittedPolicy(unittest.TestCase):
     def test_the_real_policy_is_valid_and_is_what_the_user_decided(self):
         p = load_policy()
-        # The user set $10 a month on 2026-09-21, and chose gemini-2.5-flash the same day "as the
-        # volumes are super high for reading". Guard against either being changed by accident:
-        # raising the cap or the model must be a deliberate edit of this test as well.
+        # The user set $10 a month on 2026-09-21 and chose gemini-3.5-flash-lite the same day, after
+        # the live API refused their first choice. Guard against either being changed by accident:
+        # raising the cap or changing the model must be a deliberate edit of this test as well.
         self.assertEqual(p["monthly_cap_usd"], 10.0)
-        self.assertEqual(p["model"], "gemini-2.5-flash")
+        self.assertEqual(p["model"], "gemini-3.5-flash-lite")
 
-    def test_2_5_flash_is_cheaper_and_has_no_announced_step_up_while_3_8_does(self):
+    def test_a_model_the_live_api_refused_is_not_a_candidate(self):
+        # Google's docs listed gemini-2.5-flash as stable; the API said 404 "no longer available to
+        # new users". A docs page is not evidence a model can be called, so it must not be priced.
+        self.assertNotIn("gemini-2.5-flash", load_policy()["schedules"])
+
+    def test_3_5_flash_lite_is_cheaper_and_has_no_announced_step_up_while_3_8_does(self):
         with tempfile.TemporaryDirectory() as f:
             now = Budget(load_policy(), Path(f) / "s.json", "2026-12-31")
             later = Budget(load_policy(), Path(f) / "s.json", "2027-06-01")
-            self.assertEqual(now.price("gemini-2.5-flash"), (0.30, 2.50))
-            self.assertEqual(later.price("gemini-2.5-flash"), (0.30, 2.50))      # unchanged in the new year
-            self.assertEqual(later.price("gemini-3.8-flash"), (1.50, 7.50))      # doubled
-            self.assertLess(now.cost("gemini-2.5-flash", 20_000, 3_000), now.cost("gemini-3.8-flash", 20_000, 3_000))
+            self.assertEqual(now.price("gemini-3.5-flash-lite"), (0.30, 2.50))
+            self.assertEqual(later.price("gemini-3.5-flash-lite"), (0.30, 2.50))    # unchanged in the new year
+            self.assertEqual(later.price("gemini-3.8-flash"), (1.50, 7.50))         # doubled
+            self.assertLess(now.cost("gemini-3.5-flash-lite", 20_000, 3_000), now.cost("gemini-3.8-flash", 20_000, 3_000))
 
-    def test_the_real_generation_settings_buy_no_thinking_on_2_5_and_the_lowest_on_3_8(self):
+    def test_the_real_generation_settings_buy_the_least_thinking_each_model_offers(self):
         g = load_policy()["generation"]
-        self.assertEqual(g["gemini-2.5-flash"], {"thinking_budget": 0, "temperature": 0})
-        # Google: leave Gemini 3 temperature at its default of 1.0, so none is set for it.
-        self.assertEqual(g["gemini-3.8-flash"], {"thinking_level": "low"})
+        self.assertEqual(g["gemini-3.5-flash-lite"], {"thinking_level": "minimal"})
+        self.assertEqual(g["gemini-3.8-flash"], {"thinking_level": "low"})       # cannot go lower
+        # Google: leave Gemini 3 temperature at its default of 1.0, so none is set.
+        for settings in g.values():
+            self.assertNotIn("temperature", settings)
 
     def test_the_real_price_table_carries_the_announced_2027_step_up(self):
         with tempfile.TemporaryDirectory() as f:
