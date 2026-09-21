@@ -28,11 +28,18 @@ NO SILENT TRUNCATION. A paper longer than the character budget is skipped with a
 never cut to fit. What the model saw is exactly what `read_scope` says.
 
 The reader is bounded: papers per run, characters per paper, seconds per run, all with hard
-ceilings. A missing API key is a visible skip, not a failure that freezes the pipeline.
+ceilings, and a MONEY cap: reference/reader_budget.yaml sets a monthly limit that pipeline/budget.py
+enforces before every call, paced across the month and failing closed. A missing API key is a
+visible skip, not a failure that freezes the pipeline.
+
+The model is Gemini (reference/reader_budget.yaml names it). Gemini is called through generateContent
+with JSON-schema-constrained output. That constrains the SHAPE of the answer, nothing more: whether
+the answer is TRUE of the paper is decided by the verifier above, exactly as it was for any model.
 
 Usage:
     python pipeline/read_paper.py --dry-run                 # fetch + size only; no API, no writes
-    python pipeline/read_paper.py --max-papers 5            # spend credits; needs ANTHROPIC_API_KEY
+    python pipeline/read_paper.py --max-papers 5            # spend credits; needs GEMINI_API_KEY
+    python pipeline/read_paper.py --max-papers 2 --budget-usd 0.25   # a first, cautious live run
     python pipeline/read_paper.py --dry-run --stub-response reading.json   # verifier on real text
 """
 
@@ -53,6 +60,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from budget import Budget, BudgetError, BudgetExhausted, STALE_PRICES_DAYS  # noqa: E402
 from candidates import load as load_yaml_file  # noqa: E402
 from candidates import unread_candidates  # noqa: E402
 from claims import (APPROX_RE, LOWER_RE, TOPICS, UPPER_RE, Refusal, check_refusals,  # noqa: E402
@@ -68,25 +76,42 @@ for _s in (sys.stdout, sys.stderr):
     except (AttributeError, ValueError):
         pass
 
-PROMPT_VERSION = "reader-v1"
-# Haiku 4.5 is the cheapest current model. Pinned to the dated snapshot (documented alias:
-# claude-haiku-4-5) so that extraction behaviour cannot shift under us when an alias is re-pointed;
-# the model that actually answered is recorded on every source record from response.model.
-DEFAULT_MODEL = "claude-haiku-4-5-20251001"
+# v2: the model is Gemini, called for schema-constrained JSON instead of a forced tool call. The
+# instructions to the model (SYSTEM, CLASSIFY_SYSTEM) are unchanged from v1. No record was ever
+# written under v1, so no provenance is ambiguous; `extraction.model` says which model answered.
+PROMPT_VERSION = "reader-v2"
+# Which model, and what it may cost, is the committed file reference/reader_budget.yaml. The model
+# that actually answered is recorded on every source record from response.model_version.
 DEFAULTS = {"max_papers": 5, "max_chars": 120_000, "seconds": 600}
 CEILINGS = {"max_papers": 25, "max_chars": 150_000, "seconds": 900}
 MIN_SPAN_CHARS = 25
 MAX_CLAIMS = 8
 EVIDENCE_TYPES = ("measured", "simulated", "projected", "announced", "rumored")
-# Approximate list price in USD per million tokens for Haiku 4.5, from the API reference's cached
-# table (2026-06-24). An ESTIMATE for the run summary only; verify against current pricing.
-PRICE_PER_MTOK = {"input": 1.00, "output": 5.00}
+
+# Worst-case sizing for the budget check that happens BEFORE each call. Deliberately pessimistic:
+# scientific text with numbers, units and PDF debris tokenizes at roughly 3 characters a token, so
+# 2.5 over-counts, which is the safe direction for a spending limit.
+CHARS_PER_TOKEN = 2.5
+PROMPT_OVERHEAD_TOKENS = 2_500            # the schema and everything that is not the paper
+# max_output_tokens covers thinking AND the answer together (Gemini docs, "Token limits"), so it is
+# a true ceiling on billed output. Classification answers in a sentence; extraction in a few KB.
+CLASSIFY_MAX_OUTPUT = 2_048
+EXTRACT_MAX_OUTPUT = 12_000
+RETRY_DELAY_SECONDS = 20.0                # one retry, for a 429 or 503 only: both are unbilled failures
 
 
 class ReaderError(Exception):
-    def __init__(self, kind, message, fatal=False):
+    """A model call that produced nothing usable.
+
+    fatal      the request itself is wrong (bad key, unknown model, quota gone): every later paper
+               would fail the same way, so the run stops.
+    permanent  this paper will fail the same way tomorrow (the answer was cut off, or the model
+               declined it): record the decision so it is not re-tried and re-paid for every day.
+    """
+
+    def __init__(self, kind, message, fatal=False, permanent=False):
         super().__init__(f"{kind}: {message}")
-        self.kind, self.fatal = kind, fatal
+        self.kind, self.fatal, self.permanent = kind, fatal, permanent
 
 
 def today_utc():
@@ -129,90 +154,156 @@ LAYERS = {
 }
 
 
-def classify_tool():
-    return {"name": "classify_paper",
-            "description": "Record whether the paper is semiconductor research and which stack layer it belongs to.",
-            "input_schema": {"type": "object", "properties": {
-                "in_scope": {"type": "boolean"},
-                "layer": {"type": "string", "enum": list(LAYERS),
-                          "description": "; ".join(f"{k}={v}" for k, v in LAYERS.items())},
-                "reason": {"type": "string", "description": "One sentence."}},
-                "required": ["in_scope", "layer", "reason"]}}
+def classify_schema():
+    """What the classification call must answer: whether the paper is in scope, and which layer."""
+    return {"type": "object", "properties": {
+        "in_scope": {"type": "boolean"},
+        "layer": {"type": "string", "enum": list(LAYERS),
+                  "description": "; ".join(f"{k}={v}" for k, v in LAYERS.items())},
+        "reason": {"type": "string", "description": "One sentence."}},
+        "required": ["in_scope", "layer", "reason"]}
 
 
-def extract_tool(quantity_names):
+def extract_schema(quantity_names):
+    """What the extraction call must answer: the paper's results as verbatim quotes and claims."""
     quote = {"type": "string", "description": "An exact quote from the paper text."}
-    return {"name": "record_reading",
-            "description": "Record the paper's results as verbatim quotes and structured claims.",
-            "input_schema": {"type": "object", "properties": {
-                "evidence_type": {"type": "string", "enum": [*EVIDENCE_TYPES, "mixed"]},
-                "evidence_span": {**quote, "description": "The exact quote showing which evidence type."},
-                "method_spans": {"type": "array", "items": quote,
-                                 "description": "Exact quotes on how the results were obtained."},
-                "limitation_spans": {"type": "array", "items": quote,
-                                     "description": "Exact quotes stating limitations. Empty if none."},
-                "claims": {"type": "array", "maxItems": MAX_CLAIMS, "items": {
-                    "type": "object", "properties": {
-                        "statement": {"type": "string",
-                                      "description": "One assertion in plain words, using only facts in the anchors."},
-                        "anchor_spans": {"type": "array", "items": quote, "minItems": 1},
-                        "quantity": {"type": "object", "properties": {
-                            "name": {"type": "string", "enum": quantity_names},
-                            "value": {"type": "number"},
-                            "unit": {"type": "string", "description": "The unit exactly as the paper writes it."},
-                            "bound": {"type": "string", "enum": list(BOUNDS)},
-                            "approximate": {"type": "boolean"}},
-                            "required": ["name", "value", "unit", "bound", "approximate"]},
-                        "conditions": {"type": "array", "items": {"type": "object", "properties": {
-                            "key": {"type": "string", "description": "snake_case, e.g. vclk, fclk, process"},
-                            "value": {"type": "string"},
-                            "span": quote}, "required": ["key", "value", "span"]}}},
-                    "required": ["statement", "anchor_spans", "conditions"]}}},
-                "required": ["evidence_type", "evidence_span", "method_spans", "limitation_spans", "claims"]}}
+    return {"type": "object", "properties": {
+        "evidence_type": {"type": "string", "enum": [*EVIDENCE_TYPES, "mixed"]},
+        "evidence_span": {**quote, "description": "The exact quote showing which evidence type."},
+        "method_spans": {"type": "array", "items": quote,
+                         "description": "Exact quotes on how the results were obtained."},
+        "limitation_spans": {"type": "array", "items": quote,
+                             "description": "Exact quotes stating limitations. Empty if none."},
+        "claims": {"type": "array", "maxItems": MAX_CLAIMS, "items": {
+            "type": "object", "properties": {
+                "statement": {"type": "string",
+                              "description": "One assertion in plain words, using only facts in the anchors."},
+                "anchor_spans": {"type": "array", "items": quote, "minItems": 1},
+                "quantity": {"type": "object", "properties": {
+                    "name": {"type": "string", "enum": list(quantity_names)},
+                    "value": {"type": "number"},
+                    "unit": {"type": "string", "description": "The unit exactly as the paper writes it."},
+                    "bound": {"type": "string", "enum": list(BOUNDS)},
+                    "approximate": {"type": "boolean"}},
+                    "required": ["name", "value", "unit", "bound", "approximate"]},
+                "conditions": {"type": "array", "items": {"type": "object", "properties": {
+                    "key": {"type": "string", "description": "snake_case, e.g. vclk, fclk, process"},
+                    "value": {"type": "string"},
+                    "span": quote}, "required": ["key", "value", "span"]}}},
+            "required": ["statement", "anchor_spans", "conditions"]}}},
+        "required": ["evidence_type", "evidence_span", "method_spans", "limitation_spans", "claims"]}
 
 
 # ----------------------------------------------------------------------------------- the model
-class AnthropicModel:
-    """Calls Claude through the official SDK with a forced tool, so the output is structured."""
+class GeminiModel:
+    """Calls Gemini through the official SDK (generateContent) for schema-constrained JSON.
 
-    def __init__(self, model=DEFAULT_MODEL, client=None):
-        import anthropic
-        self._anthropic = anthropic
-        self.model = model
-        # Key comes from ANTHROPIC_API_KEY. The SDK retries 408/409/429/5xx and connection errors.
-        self.client = client or anthropic.Anthropic(timeout=120.0, max_retries=2)
+    The budget is enforced HERE, at the one place a paid call is made:
+      * before the call, the worst case must fit in what is left today (BudgetExhausted otherwise);
+      * after it, the tokens the API reports are recorded, including for an answer we then reject,
+        because the tokens were spent either way;
+      * a failure that comes back as an HTTP status (429, 5xx, 4xx) is a request that did not run:
+        nothing is charged. A timeout or a dropped connection is different: the server may have
+        finished and billed us without our seeing the usage, so it is charged at its worst case.
+    The SDK's own retrying is left OFF for the same reason: it retries timeouts, and a silent retry
+    of a request that had been processed would be a payment we never recorded. The one retry here is
+    for a 429 or 503, which are failures, not timeouts.
 
-    def _call(self, system, tool, user, max_tokens):
-        a = self._anthropic
+    Temperature is NOT set. Google's Gemini 3 guide says to keep it at the default of 1.0 and warns
+    that lower values can cause looping and degraded output. Nothing depends on the model being
+    deterministic: the verifier decides what enters the record, from the paper's own text.
+    """
+
+    def __init__(self, model, budget, client=None, sleep=time.sleep):
+        from google import genai
+        from google.genai import errors, types
+        self._errors, self._types = errors, types
+        budget.price(model)                      # an unpriced model is refused here, before any call
+        self.model, self.budget, self._sleep = model, budget, sleep
+        # The key is passed explicitly, so a GOOGLE_API_KEY in the environment can never take
+        # precedence over GEMINI_API_KEY. timeout is in milliseconds.
+        self.client = client or genai.Client(api_key=os.environ["GEMINI_API_KEY"],
+                                             http_options=types.HttpOptions(timeout=120_000))
+
+    def _generate(self, user, config, est_in, max_out):
+        import httpx
+        for attempt in (1, 2):
+            try:
+                return self.client.models.generate_content(model=self.model, contents=user, config=config)
+            except self._errors.APIError as e:
+                if e.code in (429, 503) and attempt == 1:
+                    self._sleep(RETRY_DELAY_SECONDS)
+                    continue
+                raise self._api_error(e) from e
+            except httpx.HTTPError as e:
+                # A refused connection never reached the server. Anything else may have.
+                if not isinstance(e, httpx.ConnectError):
+                    self.budget.record(self.model, est_in, max_out, unknown=True)
+                raise ReaderError("network", type(e).__name__) from e
+
+    @staticmethod
+    def _api_error(e):
+        code = getattr(e, "code", None) or 0
+        text = str(getattr(e, "message", None) or e)[:200]
+        # These mean the request itself is wrong (a bad key is a 400 here, not a 401), or the quota
+        # is gone. Every remaining paper would fail identically, so stop instead of trying them all.
+        return ReaderError("rate_limited" if code == 429 else f"api_{code}", text,
+                           fatal=code in (400, 401, 403, 404, 429))
+
+    def _usage(self, resp, est_in, max_out):
+        """(input, billed output, known). Output is billed as answer PLUS thinking tokens."""
+        u = getattr(resp, "usage_metadata", None)
+        if u is None or getattr(u, "prompt_token_count", None) is None:
+            return est_in, max_out, False        # we cannot see what it cost, so assume the worst
+        prompt = u.prompt_token_count or 0
+        out = (u.candidates_token_count or 0) + (u.thoughts_token_count or 0)
+        # total_token_count is the API's own sum. If it says more than the parts, trust the larger.
+        out = max(out, (u.total_token_count or 0) - prompt)
+        return prompt, out, True
+
+    def _call(self, system, schema, user, max_out):
+        t = self._types
+        est_in = math.ceil((len(system) + len(user)) / CHARS_PER_TOKEN) + PROMPT_OVERHEAD_TOKENS
+        self.budget.check(self.model, est_in, max_out)            # raises BudgetExhausted; no call made
+        config = t.GenerateContentConfig(
+            system_instruction=system, response_mime_type="application/json",
+            response_json_schema=schema, max_output_tokens=max_out,
+            # Reading is transcription, not reasoning. Thinking is billed as output, and 3.8 Flash
+            # cannot turn it off, so keep it at the lowest level it offers.
+            thinking_config=t.ThinkingConfig(thinking_level=t.ThinkingLevel.LOW))
+        resp = self._generate(user, config, est_in, max_out)
+
+        tokens_in, tokens_out, known = self._usage(resp, est_in, max_out)
+        self.budget.record(self.model, tokens_in, tokens_out, unknown=not known)   # spent either way
+        usage = {"input": tokens_in, "output": tokens_out, "model": getattr(resp, "model_version", None) or self.model}
+
+        feedback = getattr(resp, "prompt_feedback", None)
+        if feedback is not None and getattr(feedback, "block_reason", None):
+            raise ReaderError("blocked", f"the prompt was blocked: {feedback.block_reason}", permanent=True)
+        candidates = getattr(resp, "candidates", None) or []
+        if not candidates:
+            raise ReaderError("no_output", "the model returned no candidates")
+        reason = getattr(candidates[0].finish_reason, "name", str(candidates[0].finish_reason))
+        if reason == "MAX_TOKENS":
+            raise ReaderError("truncated", "the answer hit max_output_tokens (thinking included); "
+                                           "not used", permanent=True)
+        if reason != "STOP":
+            raise ReaderError("blocked", f"the model stopped with finish_reason={reason}", permanent=True)
         try:
-            resp = self.client.messages.create(
-                model=self.model, max_tokens=max_tokens, temperature=0, system=system,
-                tools=[tool], tool_choice={"type": "tool", "name": tool["name"]},
-                messages=[{"role": "user", "content": user}])
-        except a.RateLimitError as e:
-            raise ReaderError("rate_limited", str(e)[:200]) from e
-        except a.APIStatusError as e:
-            # 401/403 will not improve on retry and mean the whole run is pointless.
-            raise ReaderError(f"api_{e.status_code}", str(e)[:200],
-                              fatal=e.status_code in (401, 402, 403)) from e
-        except a.APIConnectionError as e:
-            raise ReaderError("network", type(e).__name__) from e
-        if resp.stop_reason == "max_tokens":
-            raise ReaderError("truncated", "the model's answer hit max_tokens; not used")
-        block = next((b for b in resp.content if b.type == "tool_use" and b.name == tool["name"]), None)
-        if block is None:
-            raise ReaderError("no_tool_output", f"stop_reason={resp.stop_reason}")
-        usage = {"input": resp.usage.input_tokens, "output": resp.usage.output_tokens,
-                 "model": resp.model}
-        return dict(block.input), usage
+            data = json.loads(resp.text)
+        except (TypeError, ValueError) as e:
+            raise ReaderError("invalid_json", "the answer was not valid JSON") from e
+        if not isinstance(data, dict):
+            raise ReaderError("invalid_json", "the answer was not a JSON object")
+        return data, usage
 
     def classify(self, title, head):
         user = f"<title>{title}</title>\n<paper_text>\n{head}\n</paper_text>"
-        return self._call(CLASSIFY_SYSTEM, classify_tool(), user, 400)
+        return self._call(CLASSIFY_SYSTEM, classify_schema(), user, CLASSIFY_MAX_OUTPUT)
 
     def extract(self, title, text, quantity_names):
         user = f"<title>{title}</title>\n<paper_text>\n{text}\n</paper_text>"
-        return self._call(SYSTEM, extract_tool(quantity_names), user, 8000)
+        return self._call(SYSTEM, extract_schema(quantity_names), user, EXTRACT_MAX_OUTPUT)
 
 
 class StubModel:
@@ -582,12 +673,10 @@ def choose(repo, limit, only=None):
     return [p for _, _, p in picked[:limit]]
 
 
-def estimate_cost(usage):
-    return (usage["input"] * PRICE_PER_MTOK["input"] + usage["output"] * PRICE_PER_MTOK["output"]) / 1e6
-
-
 def run(repo, model, limits, eng, registry, schemas, fetch=fetch_arxiv, dry=False, only=None,
-        clock=time.monotonic, sleep=time.sleep, today=None):
+        clock=time.monotonic, sleep=time.sleep, today=None, budget=None):
+    """Read up to limits["max_papers"] candidates. `budget` is the same Budget the model spends
+    through; the run only reads its state (to stop early) and reports it."""
     started = clock()
     summary = {"date": today or today_utc(), "model": getattr(model, "model", None),
                "prompt_version": PROMPT_VERSION, "limits": limits, "papers": [],
@@ -599,13 +688,31 @@ def run(repo, model, limits, eng, registry, schemas, fetch=fetch_arxiv, dry=Fals
         if clock() - started >= limits["seconds"]:
             summary["stop_reason"] = "time_budget"
             break
+        if budget is not None and not dry and budget.remaining_today() <= 0:
+            # Do not even fetch the next paper: there is nothing to read it with.
+            summary["stop_reason"] = "budget"
+            summary["budget_note"] = (f"nothing is left to spend today "
+                                      f"(${budget.spent_month():.4f} of ${budget.cap:.2f} spent this month)")
+            break
         if i:
             sleep(3.0)                          # arXiv asks for at most one request per 3 seconds
         try:
             out = read_candidate(path, repo, model, eng, registry, schemas, fetch,
                                  limits["max_chars"], today)
+        except BudgetExhausted as e:
+            # Not a failure: the limit doing its job. The candidate is untouched for a later day.
+            summary["stop_reason"] = "budget"
+            summary["budget_note"] = str(e)
+            break
         except ReaderError as e:
-            out = Outcome(load_yaml_file(path).get("id", Path(path).stem), "error", reason=str(e))
+            cid = load_yaml_file(path).get("id", Path(path).stem)
+            if e.permanent:
+                # This paper will fail the same way tomorrow. Record that, or it is re-read (and
+                # re-paid for) every day.
+                out = Outcome(cid, "unreadable", reason=f"the model could not read it: {e}",
+                              model_used=getattr(model, "model", ""))
+            else:
+                out = Outcome(cid, "error", reason=str(e))
             if e.fatal:
                 fatal = e
         if not dry and out.decision != "error":
@@ -626,7 +733,14 @@ def run(repo, model, limits, eng, registry, schemas, fetch=fetch_arxiv, dry=Fals
         if len(todo) == limits["max_papers"]:
             summary["stop_reason"] = "paper_cap"
     summary["seconds"] = round(clock() - started, 1)
-    summary["estimated_cost_usd"] = round(estimate_cost(summary["tokens"]), 4)
+    if budget is not None:
+        # The budget saw EVERY call, including ones whose answer was rejected or that timed out, so
+        # its totals, not the per-paper ones, are what was actually spent.
+        summary["tokens"] = {"input": budget.run["input_tokens"], "output": budget.run["output_tokens"]}
+        summary["cost_usd"] = budget.run["usd"]
+        summary["budget"] = budget.summary()
+    else:
+        summary["cost_usd"] = 0.0
     summary["errors"] = summary["counts"].get("error", 0)
     return summary
 
@@ -637,9 +751,12 @@ def main():
     ap.add_argument("--max-chars", type=int)
     ap.add_argument("--seconds", type=int)
     ap.add_argument("--candidate", help="read only this candidate id")
-    ap.add_argument("--model", default=os.environ.get("ELECTRON_READER_MODEL", DEFAULT_MODEL))
+    ap.add_argument("--model", help="default: the model named in reference/reader_budget.yaml. "
+                                    "It must have a price there, or it cannot be budgeted and is refused")
+    ap.add_argument("--budget-usd", type=float,
+                    help="spend at most this much this month. Can only LOWER the committed cap")
     ap.add_argument("--dry-run", action="store_true", help="no API calls and no writes")
-    ap.add_argument("--require-key", action="store_true", help="fail (not skip) without ANTHROPIC_API_KEY")
+    ap.add_argument("--require-key", action="store_true", help="fail (not skip) without GEMINI_API_KEY")
     ap.add_argument("--stub-response", metavar="FILE.json",
                     help="dry-run only: run the verifier on real text with a canned model answer")
     a = ap.parse_args()
@@ -652,6 +769,7 @@ def main():
     registry = yaml.safe_load((ROOT / "sources" / "registry.yaml").read_text(encoding="utf-8"))
     schemas = yaml.safe_load((ROOT / "reference" / "schemas.yaml").read_text(encoding="utf-8"))
 
+    budget = None
     if a.stub_response:
         if not a.dry_run:
             sys.exit("--stub-response is dry-run only: a canned answer must never write records")
@@ -661,20 +779,37 @@ def main():
         # No model at all: fetch and size the papers so the cost and coverage can be seen first.
         model = StubModel({"in_scope": False, "layer": "none", "reason": "dry run"}, None, "DRY-RUN")
     else:
-        if not os.environ.get("ANTHROPIC_API_KEY"):
-            msg = "ANTHROPIC_API_KEY is not set; nothing was read"
+        if not os.environ.get("GEMINI_API_KEY"):
+            msg = "GEMINI_API_KEY is not set; nothing was read"
             if a.require_key:
                 sys.exit("error: " + msg)
             print("::warning::" + msg)
             summary = {"date": today_utc(), "skipped_reason": msg, "papers": [], "counts": {},
                        "claims_accepted": 0, "claims_rejected": 0, "tokens": {"input": 0, "output": 0},
-                       "stop_reason": "no_api_key", "errors": 0, "limits": limits}
+                       "stop_reason": "no_api_key", "errors": 0, "limits": limits, "cost_usd": 0.0}
             (repo.candidates).mkdir(parents=True, exist_ok=True)
             (repo.candidates / "_last_read.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
             return 0
-        model = AnthropicModel(a.model)
+        try:
+            budget = Budget.load(ROOT, cap_usd=a.budget_usd)
+            model = GeminiModel(a.model or budget.policy["model"], budget)
+        except BudgetError as e:
+            # Fail closed, and LOUDLY: a run that cannot tell what it may spend must not spend, and
+            # a red job is how the owner finds out that the policy or the ledger needs repair.
+            sys.exit(f"error: {e}")
+        if budget.price_age_days() > STALE_PRICES_DAYS:
+            print(f"::warning::the price table in reference/reader_budget.yaml is {budget.price_age_days()} "
+                  f"days old; re-check it against {budget.policy['prices_source']}")
 
-    summary = run(repo, model, limits, eng, registry, schemas, dry=a.dry_run, only=a.candidate)
+    if budget is None and a.dry_run:
+        # Show the guardrail before any money moves. Read-only: a dry run never writes the ledger.
+        try:
+            budget = Budget.load(ROOT, cap_usd=a.budget_usd, persist=False)
+        except BudgetError as e:
+            print(f"warning: {e}")
+
+    summary = run(repo, model, limits, eng, registry, schemas, dry=a.dry_run, only=a.candidate,
+                  budget=budget)
     if not a.dry_run:
         (repo.candidates / "_last_read.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
 
@@ -682,7 +817,13 @@ def main():
     print(f"  decisions: {summary['counts']}")
     print(f"  claims accepted {summary['claims_accepted']}, rejected {summary['claims_rejected']}")
     print(f"  tokens in/out: {summary['tokens']['input']:,}/{summary['tokens']['output']:,}"
-          f"  (~${summary['estimated_cost_usd']:.4f} at Haiku 4.5 list price, an estimate)")
+          f"  (${summary['cost_usd']:.4f} this run at paid list price)")
+    if summary.get("budget"):
+        b = summary["budget"]
+        print(f"  budget: ${b['spent_month_usd']:.4f} of ${b['monthly_cap_usd']:.2f} spent this month; "
+              f"today's share ${b['allowance_today_usd']:.4f}, ${b['remaining_today_usd']:.4f} left")
+    if summary.get("budget_note"):
+        print(f"  budget stop: {summary['budget_note']}")
     print(f"  stopped because: {summary['stop_reason']}")
     for p in summary["papers"]:
         print(f"    {p['candidate']}: {p['decision']}" + (f" [{p['chars']:,} chars]" if p["chars"] else "")

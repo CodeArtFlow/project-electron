@@ -93,6 +93,7 @@ def main():
         ("validate-registry", "registry against its own rules", ["pipeline/validate_registry.py"]),
         ("units", "SI engine vs definitions.yaml", ["pipeline/units.py"]),
         ("authority", "definitions vs the NIST CODATA file", ["pipeline/bounds.py", "--verify"]),
+        ("reader-budget", "the reader's spending policy is valid", ["pipeline/budget.py", "--check"]),
         ("claims-selftest", "extraction refusals fire", ["pipeline/claims.py", "--self-test"]),
         ("gate-selftest", "every gate check fires", ["pipeline/test_publication_gate.py"]),
         ("discover-selftest", "discovery loop bounds", ["pipeline/test_discover.py"]),
@@ -167,7 +168,7 @@ def main():
         pending.append({
             "stage": "harvest.read (automated)", "kind": "reading",
             "why": f"{lanes['arxiv']} arXiv candidate(s) are unread. They are read by "
-                   "pipeline/read_paper.py (daily, read.yml) once ANTHROPIC_API_KEY is configured. A "
+                   "pipeline/read_paper.py (daily, read.yml, at most $10 a month) once GEMINI_API_KEY is configured. A "
                    "model only proposes quotes; code verifies each one verbatim against the paper.",
             "skill": "read_paper.py",
         })

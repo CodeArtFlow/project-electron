@@ -188,8 +188,8 @@ the topics I thought of first".
 
 Reading a paper into a source record and claims is done by `pipeline/read_paper.py` for arXiv
 (daily, `.github/workflows/read.yml`) and by the `harvest` skill, in an agent session, for everything else.
-The automated reader uses the cheapest current model (Claude Haiku 4.5). A model is a
-**transcriber, not an author.** It may propose quotes and structure. It cannot influence any of the
+The automated reader uses Google's Gemini Flash model (`gemini-3.8-flash`, chosen by the user and
+named in `reference/reader_budget.yaml`). A model is a **transcriber, not an author.** It may propose quotes and structure. It cannot influence any of the
 following, all of which are deterministic code:
 
 - **`access`** is set from what `pipeline/fetch_text.py` actually retrieved. A model never claims it read.
@@ -205,6 +205,9 @@ following, all of which are deterministic code:
   across papers, which was a real defect in hand extraction.
 - **Units** go through `UnitEngine`, then the same extraction refusals as manual extraction.
 
+The model is asked for JSON that matches a schema. That fixes the *shape* of its answer and nothing
+else; whether the answer is *true of the paper* is still decided only by the checks above.
+
 Precision over recall: extracting nothing is a correct answer. Rejected candidate claims (the first ten
 per paper) are recorded on the source record with their reasons, because "this venue states numbers without their
 conditions" is evidence about the field. A paper is never silently truncated: over the character
@@ -215,6 +218,35 @@ recorded by the reader (arXiv does not state them); they are left `null` for `as
 Only arXiv is read automatically (14 of 14 probed were fetchable). Of 36 publisher candidates
 probed, 9 could be fetched as full text; 20 returned HTTP 403 and 7 were gated or stub landing
 pages, so OpenAlex's `is_oa: true` overstates what an automated client can read. That lane needs a legitimate full-text route or a human reader.
+
+### Reader budget: a cap that refuses to spend
+
+The automated reader may spend **at most $10 a month** (user, 2026-09-21). The limit is the committed
+file `reference/reader_budget.yaml`, enforced by `pipeline/budget.py`. Like the semantic-audit policy
+it is a file and not a switch: no workflow input or environment variable raises it, and the CLI can
+only lower it. Changing it is a visible commit.
+
+- **Checked before every call.** The worst case (all the input plus the whole `max_output_tokens`,
+  which for Gemini covers thinking and answer together) must fit in what is left today, or the call
+  is never made and the run stops with `stop_reason: budget`. Nothing is read on credit.
+- **Paced.** A day may spend an even share of what is left of the month, so a backfill or a bug
+  cannot burn the month on its first day.
+- **Recorded after every call**, from the tokens the API reports (thinking is billed as output), in
+  `corpus/candidates/_reader_spend.json`, and committed even when a run fails, because the money was
+  spent either way. A timeout is charged at its worst case, since the server may have finished and
+  billed us without our seeing it. The ledger rounds up, so it can only over-count.
+- **Priced or refused.** A model with no dated price in the file cannot be used. Prices are Google's
+  Standard paid-tier list prices. The free tier costs nothing but its content may be used to improve
+  Google's products, and we cannot see which tier a key is on, so everything is budgeted at the paid
+  price. **Google's price for this model doubles on 2027-01-01** ($0.75/$3.75 to $1.50/$7.50 per
+  million tokens in/out); the file records the step so the ledger does not under-count in the new year.
+- **Fails closed.** A policy or ledger that cannot be read stops the reader with a failed job. It is
+  never treated as a fresh start.
+
+This is a *second* line of defence, only as right as our copy of the prices. The cap that cannot be
+wrong is Google's, and only the account owner can set it: AI Studio > Spend > Monthly spend cap
+(marked experimental, with about ten minutes of lag), or Prepaid billing with auto-reload off, which
+stops service the moment the balance reaches zero.
 
 ### Evidence grades — *what kind of evidence is this?*
 
@@ -564,6 +596,7 @@ reference/definitions.yaml SI canonicalization, contested terms, NIST-sourced co
 reference/authorities/    authority files we fetched and keep, so derived numbers can be audited offline
 reference/gold/           labelled cases for the semantic audit and the reader (independent review pending)
 reference/semantic_policy.yaml  whether the semantic audit blocks publication: advisory | blocking
+reference/reader_budget.yaml    the reader's monthly spending cap, model, and dated prices
 docs/typesafe.md          how the TypeSafe review layer works and its limits
 corpus/candidates/        sweep output; unread ones are queue, decided ones (read_decision) are not
 corpus/papers/            immutable source records
@@ -615,15 +648,19 @@ unread: 98 arXiv (the automated lane) and 197 publisher (manual; about 25% fetch
 The synthesis page says plainly that this describes our corpus, not the field.
 
 **The reader is built and tested but has not yet read a paper with a real model.** It needs a
-repository secret named `ANTHROPIC_API_KEY`, and it has not been run against the live API. Until the
-secret exists a scheduled run skips with a visible warning and cannot block anything. What *has* been
-run for real is its deterministic half, on the real text of an arXiv paper with a simulated model
-that tried every kind of fabrication.
+repository secret named `GEMINI_API_KEY`, and nothing has reached Google's servers. Until the secret
+exists a scheduled run skips with a visible warning and cannot block anything. What *has* been run
+for real is its deterministic half, on the real text of an arXiv paper with a simulated model that
+tried every kind of fabrication, and the request builder, which was run through the real SDK over a
+mock transport to see the exact request. One thing only a live call can confirm: the SDK sends the
+thinking level spelled `thinking_level` inside otherwise camelCase JSON, which Google's parser should
+accept. The first live run should be small: `--max-papers 2 --budget-usd 0.25`.
 
 ```bash
 python pipeline/run_pipeline.py --no-sweep        # the whole flow, timed (writes run/timings.json)
 python pipeline/read_paper.py --dry-run           # fetch and size the arXiv queue; no API, no writes
-python pipeline/read_paper.py --max-papers 5      # read (needs ANTHROPIC_API_KEY)
+python pipeline/read_paper.py --max-papers 5      # read (needs GEMINI_API_KEY; spends, capped at $10/month)
+python pipeline/budget.py                         # spend so far this month, and what today may spend
 python pipeline/gold_eval.py --status             # gold set size, and what is still missing
 python pipeline/gold_eval.py --score REPORT.json  # score an audit report against the gold labels
 python pipeline/bounds.py --verify                # definitions vs the NIST authority file
@@ -633,13 +670,22 @@ python pipeline/harvest.py --dry-run              # preview a sweep
 Tests (all run in CI before any deploy): `validate_registry.py`, `units.py`, `bounds.py --verify`,
 `claims.py --self-test`, `test_extract_e2e.py`, `test_publication_gate.py`, `test_discover.py`,
 `test_bounds.py`, `test_authority_bounds.py`, `test_gold_eval.py`, `test_reader.py`,
-`test_build_site.py`, `test_assess_quality.py`, `test_semantic_checks.py`, `test_agent_files.py`.
+`test_build_site.py`, `test_budget.py`, `test_assess_quality.py`, `test_semantic_checks.py`,
+`test_agent_files.py`.
 
 **Registry.** 125 active entries: 70 `true`, 48 `review`, 7 `false` (evidence in `pipeline/*_report.json`).
 
 **Open decisions and known gaps.**
-- **`ANTHROPIC_API_KEY` secret** must be added by the user (Settings → Secrets → Actions) before the
-  reader runs. Never in a file or in chat.
+- **`GEMINI_API_KEY` secret** must be added by the user (Settings → Secrets → Actions) before the
+  reader runs. Never in a file or in chat. The user should also set Google's own monthly cap (see
+  *Reader budget*): ours is the second line of defence.
+- **Reading cost is estimated, not measured.** The median arXiv paper fetched (measured on 14) is
+  about 59,000 characters; at an assumed 3 to 4 characters a token that is 15,000 to 20,000 input
+  tokens, plus an assumed few thousand output tokens including thinking. At the 2026 price that is
+  about $0.03 a paper, so five full reads a day is about $4.50 a month, and about $9 after the price
+  doubles on 2027-01-01, which is close to the cap. Papers judged out of scope cost a fraction of a
+  cent. The cap holds either way, and the pacing throttles the reader rather than exceed it.
+  `python pipeline/budget.py` shows the real spend once the reader has run; trust that over this.
 - **The semantic audit is advisory and uncalibrated.** The gold set is a seed (15 cases, labelled by
   the same agent that made the extractions, no independent review, no defective *publication*
   examples), so no threshold can yet be validated. `python pipeline/gold_eval.py` shows where it

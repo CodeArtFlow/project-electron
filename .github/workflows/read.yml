@@ -1,13 +1,20 @@
 name: Daily reading (arXiv)
 
-# Reads the arXiv candidates the sweep queued, with a model on a leash. The model only PROPOSES
-# quotes and structure; pipeline/read_paper.py decides what enters the record, by verifying every
-# quote verbatim against the fetched paper. See that file's docstring for the full list of what a
-# model cannot influence (access, grade, quotes, numbers, qualifiers, conditions, units).
+# Reads the arXiv candidates the sweep queued, with a model on a leash. The model (Gemini Flash,
+# named in reference/reader_budget.yaml) only PROPOSES quotes and structure; pipeline/read_paper.py
+# decides what enters the record, by verifying every quote verbatim against the fetched paper. See
+# that file's docstring for the full list of what a model cannot influence (access, grade, quotes,
+# numbers, qualifiers, conditions, units).
 #
-# Needs a repository secret named ANTHROPIC_API_KEY. Until it exists a scheduled run SKIPS with a
+# Needs a repository secret named GEMINI_API_KEY. Until it exists a scheduled run SKIPS with a
 # visible warning and a `skipped_reason` in corpus/candidates/_last_read.json, so a missing key can
 # never freeze publication. A manual run fails loudly instead, since asking for one means wanting it.
+#
+# MONEY. The reader may spend at most the monthly cap in reference/reader_budget.yaml ($10), paced so
+# that a day gets an even share of what is left. This file cannot raise it: there is no input or
+# variable for that, on purpose, because a limit that a workflow can route around is not a limit.
+# Spend is recorded after every call in corpus/candidates/_reader_spend.json, and the last step
+# commits that file even when the run fails, because the money was spent either way.
 #
 # After reading, new claims are checked against the ledger. Any comparable claims that disagree open
 # a conflict in `live:unexamined`, and the publication gate BLOCKS the deploy until a human (the
@@ -59,11 +66,13 @@ jobs:
           python pipeline/bounds.py --verify
           python pipeline/claims.py --self-test
           python pipeline/test_reader.py
+          python pipeline/budget.py --check
+          python pipeline/test_budget.py
 
       - name: Read
         id: read
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           set +e
           python pipeline/read_paper.py \
@@ -121,6 +130,23 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run deploy.yml --ref main
 
+      # The money was spent whether or not the rest of this run succeeded, and a ledger that forgets
+      # it lets the next run spend it again. So this runs on failure too, and commits ONLY the ledger.
+      - name: Record spend even if the run failed
+        if: always()
+        run: |
+          f=corpus/candidates/_reader_spend.json
+          if [ ! -f "$f" ] || [ -z "$(git status --porcelain -- "$f")" ]; then
+            echo "spend ledger unchanged or already committed"
+            exit 0
+          fi
+          git config user.name "project-electron-bot"
+          git config user.email "noreply@github.com"
+          git add "$f"
+          git commit -m "Record reader spend" -m "Automated by .github/workflows/read.yml" -- "$f"
+          git pull --rebase --autostash --quiet origin main
+          git push
+
       - name: Report
         if: always()
         run: |
@@ -137,7 +163,13 @@ jobs:
               print(f"- claims accepted **{d['claims_accepted']}**, rejected by the verifier {d['claims_rejected']}")
               t = d.get("tokens", {})
               print(f"- tokens in/out: {t.get('input', 0):,}/{t.get('output', 0):,}"
-                    f" (about ${d.get('estimated_cost_usd', 0):.4f} at list price, an estimate)")
+                    f" (${d.get('cost_usd', 0):.4f} this run, at paid list price)")
+              b = d.get("budget")
+              if b:
+                  print(f"- budget: ${b['spent_month_usd']:.4f} of ${b['monthly_cap_usd']:.2f} spent this month;"
+                        f" today's share ${b['allowance_today_usd']:.4f}, ${b['remaining_today_usd']:.4f} left")
+              if d.get("budget_note"):
+                  print("- **budget stop:** " + d["budget_note"])
               print(f"- stopped because: `{d.get('stop_reason')}` after {d.get('seconds')}s")
               for p in d.get("papers", []):
                   print(f"  - {p['candidate']}: {p['decision']}" + (f" ({p['reason']})" if p.get("reason") else ""))

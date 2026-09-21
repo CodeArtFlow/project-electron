@@ -7,22 +7,26 @@ place a real model is called.
 Usage:  python pipeline/test_reader.py
 """
 
+import json
 import sys
 import tempfile
 import unittest
+from datetime import date
 from pathlib import Path
 
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-import anthropic  # noqa: E402
-import httpx2  # noqa: E402
+import httpx  # noqa: E402
+from google.genai import errors as genai_errors  # noqa: E402
+from google.genai import types as genai_types  # noqa: E402
 
+from budget import Budget, BudgetError, BudgetExhausted  # noqa: E402
 from candidates import unread_candidates  # noqa: E402
 from claims import validate_ledger  # noqa: E402
 from fetch_text import FetchResult, fetch_arxiv, normalize  # noqa: E402
-from read_paper import (DEFAULT_MODEL, AnthropicModel, Outcome, ReaderError, Repo, StubModel,  # noqa: E402
+from read_paper import (RETRY_DELAY_SECONDS, GeminiModel, Outcome, ReaderError, Repo, StubModel,  # noqa: E402
                         build_claim, choose, commit_outcome, number_appears, qualifier_mismatch,
                         read_candidate, resolve_limits, run, span_ok, token_in)
 from units import UnitEngine  # noqa: E402
@@ -367,72 +371,299 @@ class WritingAndTheRun(unittest.TestCase):
                 self.assertEqual(summary["counts"]["error"], 1 if fatal else 2)
 
 
-class ModelClient(unittest.TestCase):
-    """The single place a real model is called. Tested with a fake SDK client, real SDK exceptions."""
+POLICY = {"monthly_cap_usd": 10.0, "model": "gemini-3.8-flash", "prices_retrieved": date(2026, 9, 21),
+          "prices_source": "test",
+          "schedules": {"gemini-3.8-flash": [{"from": date(2026, 1, 1), "input": 0.75, "output": 3.75}]}}
+MODEL = "gemini-3.8-flash"
 
-    class FakeMessages:
-        def __init__(self, reply):
-            self.reply, self.calls = reply, []
-        def create(self, **kw):
+
+def response(data=None, finish="STOP", prompt=1200, out=90, thoughts=40, total=None, text=None,
+             model_version=MODEL, feedback=None, usage=True, candidates=True):
+    """A reply shaped like the SDK's GenerateContentResponse, with only the fields the reader reads."""
+    cand = type("C", (), {"finish_reason": type("FR", (), {"name": finish})()})()
+    u = type("U", (), {"prompt_token_count": prompt, "candidates_token_count": out,
+                       "thoughts_token_count": thoughts,
+                       "total_token_count": total if total is not None else prompt + out + thoughts})() \
+        if usage else None
+    return type("R", (), {"candidates": [cand] if candidates else [], "usage_metadata": u,
+                          "model_version": model_version, "prompt_feedback": feedback,
+                          "text": text if text is not None else json.dumps(data)})()
+
+
+class ModelClient(unittest.TestCase):
+    """The single place a real model is called, and the single place money is spent.
+
+    Two ways: a fake client for the accounting and the error mapping, and the REAL SDK over a mock
+    HTTP transport for the request that would actually go on the wire and the parsing of a reply.
+    No network, no key.
+    """
+
+    class FakeModels:
+        def __init__(self, replies):
+            self.replies = replies if isinstance(replies, list) else [replies]
+            self.calls = []
+
+        def generate_content(self, **kw):
             self.calls.append(kw)
-            if isinstance(self.reply, Exception):
-                raise self.reply
-            return self.reply
+            r = self.replies.pop(0) if len(self.replies) > 1 else self.replies[0]
+            if isinstance(r, Exception):
+                raise r
+            return r
 
     class FakeClient:
-        def __init__(self, reply):
-            self.messages = ModelClient.FakeMessages(reply)
+        def __init__(self, replies):
+            self.models = ModelClient.FakeModels(replies)
 
-    @staticmethod
-    def reply(block_input=None, stop="tool_use", tool="classify_paper"):
-        blocks = []
-        if block_input is not None:
-            blocks.append(type("B", (), {"type": "tool_use", "name": tool, "input": block_input})())
-        return type("R", (), {"content": blocks, "stop_reason": stop, "model": "claude-haiku-4-5-20251001",
-                              "usage": type("U", (), {"input_tokens": 1200, "output_tokens": 90})()})()
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self._tmp.cleanup)
+        # The last day of the month, so the whole remaining cap is today's to spend.
+        self.budget = Budget(POLICY, Path(self._tmp.name) / "spend.json", "2026-09-30")
+        self.slept = []
 
-    def test_the_request_is_the_cheapest_model_with_a_forced_tool_and_no_randomness(self):
-        client = self.FakeClient(self.reply({"in_scope": True, "layer": "ARCH", "reason": "x"}))
-        got, usage = AnthropicModel(client=client).classify("Title", "abstract text")
-        call = client.messages.calls[0]
-        self.assertEqual(call["model"], DEFAULT_MODEL)
-        self.assertEqual(DEFAULT_MODEL, "claude-haiku-4-5-20251001")
-        self.assertEqual(call["tool_choice"], {"type": "tool", "name": "classify_paper"})
-        self.assertEqual(call["temperature"], 0)
-        self.assertIn("<paper_text>", call["messages"][0]["content"])         # the paper is delimited DATA
-        self.assertIn("DATA", call["system"])
-        self.assertLessEqual(call["max_tokens"], 400)
+    def model(self, replies):
+        return GeminiModel(MODEL, self.budget, client=self.FakeClient(replies), sleep=self.slept.append)
+
+    OK = {"in_scope": True, "layer": "ARCH", "reason": "circuits"}
+
+    def assertSpent(self, expected):
+        """The ledger rounds UP to a millionth of a dollar: it may over-count, never under-count."""
+        spent = self.budget.spent_month()
+        self.assertGreaterEqual(spent, expected - 1e-12)
+        self.assertLess(spent - expected, 2e-6)
+
+    # ---- the request
+    def test_the_request_is_schema_constrained_json_at_low_thinking_with_no_temperature(self):
+        m = self.model(response(self.OK))
+        got, usage = m.classify("Title", "abstract text")
+        call = m.client.models.calls[0]
+        cfg = call["config"]
+        self.assertEqual(call["model"], MODEL)
+        self.assertIn("<paper_text>", call["contents"])                  # the paper is delimited DATA
+        self.assertIn("DATA", cfg.system_instruction)
+        self.assertEqual(cfg.response_mime_type, "application/json")
+        self.assertEqual(cfg.response_json_schema["required"], ["in_scope", "layer", "reason"])
+        self.assertLessEqual(cfg.max_output_tokens, 2048)
+        self.assertEqual(cfg.thinking_config.thinking_level.name, "LOW")
+        # Google: for every Gemini 3 model keep temperature at its default of 1.0; lower values can
+        # loop or degrade. Integrity never depended on determinism: the verifier reads the paper.
+        self.assertIsNone(cfg.temperature)
         self.assertEqual(got["layer"], "ARCH")
-        self.assertEqual(usage, {"input": 1200, "output": 90, "model": "claude-haiku-4-5-20251001"})
 
-    def test_the_extraction_tool_offers_only_quantities_defined_in_definitions(self):
-        client = self.FakeClient(self.reply(reading([]), tool="record_reading"))
-        AnthropicModel(client=client).extract("T", "text", ["mobility", "energy"])
-        tool = client.messages.calls[0]["tools"][0]
-        enum = tool["input_schema"]["properties"]["claims"]["items"]["properties"]["quantity"]["properties"]["name"]["enum"]
+    def test_the_extraction_schema_offers_only_quantities_defined_in_definitions(self):
+        m = self.model(response(reading([])))
+        m.extract("T", "text", ["mobility", "energy"])
+        schema = m.client.models.calls[0]["config"].response_json_schema
+        enum = schema["properties"]["claims"]["items"]["properties"]["quantity"]["properties"]["name"]["enum"]
         self.assertEqual(enum, ["mobility", "energy"])
-        self.assertEqual(client.messages.calls[0]["tool_choice"]["name"], "record_reading")
+        self.assertEqual(schema["properties"]["claims"]["maxItems"], 8)
 
-    def test_a_truncated_or_toolless_answer_is_an_error_not_a_guess(self):
-        for r, kind in ((self.reply({"a": 1}, stop="max_tokens"), "truncated"), (self.reply(None), "no_tool_output")):
-            with self.assertRaises(ReaderError) as ctx_:
-                AnthropicModel(client=self.FakeClient(r)).classify("T", "x")
-            self.assertEqual(ctx_.exception.kind, kind)
+    def test_an_unpriced_model_cannot_be_used_at_all(self):
+        with self.assertRaises(BudgetError):
+            GeminiModel("gemini-3.1-pro-preview", self.budget, client=self.FakeClient(response(self.OK)))
 
-    def test_real_sdk_exceptions_map_to_retryable_or_fatal(self):
-        req = httpx2.Request("POST", "https://api.anthropic.com/v1/messages")
-        def status(cls, code):
-            return cls("boom", response=httpx2.Response(code, request=req), body=None)
-        cases = [(status(anthropic.RateLimitError, 429), "rate_limited", False),
-                 (status(anthropic.AuthenticationError, 401), "api_401", True),
-                 (status(anthropic.PermissionDeniedError, 403), "api_403", True),
-                 (status(anthropic.InternalServerError, 500), "api_500", False),
-                 (anthropic.APIConnectionError(request=req), "network", False),
-                 (anthropic.APITimeoutError(request=req), "network", False)]
+    # ---- the accounting
+    def test_thinking_tokens_are_billed_as_output_and_recorded_from_what_the_api_reports(self):
+        m = self.model(response(self.OK, prompt=1200, out=90, thoughts=40))
+        got, usage = m.classify("T", "x")
+        self.assertEqual(usage, {"input": 1200, "output": 130, "model": MODEL})   # 90 answer + 40 thinking
+        self.assertSpent((1200 * 0.75 + 130 * 3.75) / 1e6)
+        self.assertEqual(self.budget.run["calls"], 1)
+
+    def test_when_the_total_says_more_than_the_parts_the_larger_is_billed(self):
+        m = self.model(response(self.OK, prompt=1000, out=10, thoughts=10, total=1500))
+        _, usage = m.classify("T", "x")
+        self.assertEqual(usage["output"], 500)
+
+    def test_a_reply_with_no_usage_is_charged_at_its_worst_case_not_at_zero(self):
+        m = self.model(response(self.OK, usage=False))
+        m.classify("T", "x")
+        self.assertEqual(self.budget.run["unknown_calls"], 1)
+        self.assertGreater(self.budget.spent_month(), 2048 * 3.75 / 1e6)          # at least the output ceiling
+
+    def test_a_call_that_does_not_fit_the_budget_is_never_made(self):
+        tiny = Budget(POLICY, Path(self._tmp.name) / "tiny.json", "2026-09-30", cap_usd=0.001)
+        m = GeminiModel(MODEL, tiny, client=self.FakeClient(response(self.OK)))
+        with self.assertRaises(BudgetExhausted):
+            m.extract("T", "x" * 100_000, ["energy"])
+        self.assertEqual(m.client.models.calls, [])                                # no request left this process
+        self.assertEqual(tiny.spent_month(), 0.0)
+
+    def test_the_spend_is_written_before_the_answer_is_used(self):
+        m = self.model(response(self.OK))
+        m.classify("T", "x")
+        again = Budget(POLICY, self.budget.path, "2026-09-30")                     # what the next run sees
+        self.assertGreater(again.spent_month(), 0)
+
+    # ---- answers that are unusable are still paid for, and are classified
+    def test_an_unusable_answer_is_an_error_and_is_still_charged(self):
+        SAFETY = type("F", (), {"block_reason": "SAFETY"})()
+        cases = [
+            (response({"a": 1}, finish="MAX_TOKENS"), "truncated", True),
+            (response({"a": 1}, finish="SAFETY"), "blocked", True),
+            (response(self.OK, feedback=SAFETY), "blocked", True),
+            (response(self.OK, candidates=False), "no_output", False),
+            (response(text="not json {"), "invalid_json", False),
+            (response(text="[1, 2]"), "invalid_json", False),
+        ]
+        for reply, kind, permanent in cases:
+            before = self.budget.spent_month()
+            with self.assertRaises(ReaderError, msg=kind) as ctx_:
+                self.model(reply).classify("T", "x")
+            self.assertEqual((ctx_.exception.kind, ctx_.exception.permanent, ctx_.exception.fatal),
+                             (kind, permanent, False), kind)
+            self.assertGreater(self.budget.spent_month(), before, kind + " was not charged")
+
+    # ---- failures
+    def test_a_status_error_maps_to_fatal_or_retryable_and_is_never_charged(self):
+        body = lambda code, status: {"error": {"code": code, "message": "boom", "status": status}}   # noqa: E731
+        cases = [(genai_errors.ClientError(400, body(400, "INVALID_ARGUMENT")), "api_400", True),   # a bad KEY is a 400
+                 (genai_errors.ClientError(401, body(401, "UNAUTHENTICATED")), "api_401", True),
+                 (genai_errors.ClientError(403, body(403, "PERMISSION_DENIED")), "api_403", True),
+                 (genai_errors.ClientError(404, body(404, "NOT_FOUND")), "api_404", True),
+                 (genai_errors.ClientError(429, body(429, "RESOURCE_EXHAUSTED")), "rate_limited", True),
+                 (genai_errors.ServerError(500, body(500, "INTERNAL")), "api_500", False),
+                 (genai_errors.ServerError(503, body(503, "UNAVAILABLE")), "api_503", False)]
         for exc, kind, fatal in cases:
-            with self.assertRaises(ReaderError) as ctx_:
-                AnthropicModel(client=self.FakeClient(exc)).classify("T", "x")
+            with self.assertRaises(ReaderError, msg=kind) as ctx_:
+                self.model(exc).classify("T", "x")
             self.assertEqual((ctx_.exception.kind, ctx_.exception.fatal), (kind, fatal), kind)
+        self.assertEqual(self.budget.spent_month(), 0.0)         # none of these requests ran
+
+    def test_a_429_or_503_is_retried_once_after_a_pause_and_charged_once(self):
+        limited = genai_errors.ClientError(429, {"error": {"code": 429, "message": "slow down"}})
+        m = self.model([limited, response(self.OK)])
+        got, _ = m.classify("T", "x")
+        self.assertEqual(got["layer"], "ARCH")
+        self.assertEqual(self.slept, [RETRY_DELAY_SECONDS])
+        self.assertEqual(len(m.client.models.calls), 2)
+        self.assertEqual(self.budget.run["calls"], 1)             # one payment, for the call that ran
+
+    def test_other_errors_are_not_retried(self):
+        m = self.model(genai_errors.ClientError(400, {"error": {"code": 400, "message": "bad"}}))
+        with self.assertRaises(ReaderError):
+            m.classify("T", "x")
+        self.assertEqual((len(m.client.models.calls), self.slept), (1, []))
+
+    def test_a_timeout_may_have_been_billed_so_it_is_charged_but_a_refused_connection_was_not(self):
+        with self.assertRaises(ReaderError) as ctx_:
+            self.model(httpx.ReadTimeout("slow")).classify("T", "x")
+        self.assertEqual((ctx_.exception.kind, ctx_.exception.fatal), ("network", False))
+        self.assertEqual(self.budget.run["unknown_calls"], 1)
+        charged = self.budget.spent_month()
+        self.assertGreater(charged, 2048 * 3.75 / 1e6)            # assumed to have used its whole ceiling
+        with self.assertRaises(ReaderError):
+            self.model(httpx.ConnectError("refused")).classify("T", "x")
+        self.assertEqual(self.budget.spent_month(), charged)      # a refused connection never reached Google
+
+    # ---- the real SDK, over a mock transport
+    def test_the_real_sdk_sends_the_request_we_think_it_does_and_parses_a_reply(self):
+        from google import genai
+        seen = {}
+
+        def handler(request):
+            seen["url"], seen["key"] = str(request.url), request.headers.get("x-goog-api-key")
+            seen["body"] = json.loads(request.content)
+            return httpx.Response(200, json={
+                "candidates": [{"content": {"role": "model", "parts": [{"text": json.dumps(self.OK)}]},
+                                "finishReason": "STOP", "index": 0}],
+                "usageMetadata": {"promptTokenCount": 1500, "candidatesTokenCount": 30,
+                                  "thoughtsTokenCount": 250, "totalTokenCount": 1780},
+                "modelVersion": "gemini-3.8-flash"})
+
+        client = genai.Client(api_key="test-key-not-real", http_options=genai_types.HttpOptions(
+            httpx_client=httpx.Client(transport=httpx.MockTransport(handler)), timeout=120_000))
+        got, usage = GeminiModel(MODEL, self.budget, client=client).classify("A title", "An abstract")
+
+        self.assertTrue(seen["url"].endswith(f"/models/{MODEL}:generateContent"), seen["url"])
+        self.assertEqual(seen["key"], "test-key-not-real")
+        gen = seen["body"]["generationConfig"]
+        self.assertEqual(gen["responseMimeType"], "application/json")
+        self.assertIn("responseJsonSchema", gen)
+        self.assertNotIn("temperature", gen)                                       # left at Google's default
+        self.assertLessEqual(gen["maxOutputTokens"], 2048)
+        self.assertIn("LOW", json.dumps(gen["thinkingConfig"]).upper())
+        self.assertIn("systemInstruction", seen["body"])
+        self.assertEqual(got, self.OK)
+        self.assertEqual(usage, {"input": 1500, "output": 280, "model": "gemini-3.8-flash"})   # 30 + 250 thinking
+        self.assertSpent((1500 * 0.75 + 280 * 3.75) / 1e6)
+
+
+class ThePaidRun(unittest.TestCase):
+    """run() with a real Budget: the cap stops a run, and a paper the model cannot read is parked."""
+
+    class Scripted(StubModel):
+        """Behaves like GeminiModel where it matters: it spends through the budget."""
+        def __init__(self, budget):
+            super().__init__(CLASSIFY_OK, reading([]), MODEL)
+            self.budget = budget
+
+        def classify(self, title, head):
+            self.budget.check(MODEL, 3_000, 2_048)
+            self.budget.record(MODEL, 3_000, 200)
+            return self._c, {"input": 3_000, "output": 200, "model": MODEL}
+
+        def extract(self, title, text, names):
+            self.budget.check(MODEL, 30_000, 12_000)
+            self.budget.record(MODEL, 30_000, 3_000)
+            return self._e, {"input": 30_000, "output": 3_000, "model": MODEL}
+
+    LIMITS = {"max_papers": 5, "max_chars": 120_000, "seconds": 600}
+
+    def test_the_run_stops_with_stop_reason_budget_and_leaves_the_rest_unread(self):
+        with tempfile.TemporaryDirectory() as folder:
+            for i in range(1, 5):
+                candidate(folder, f"CAND-T-000{i}", f"2609.0000{i}v1", published_date=f"2026-09-1{i}")
+            repo = Repo(Path(folder))
+            # $0.10 for the whole (last) day: room for one paper, not four.
+            budget = Budget(POLICY, Path(folder) / "spend.json", "2026-09-30", cap_usd=0.10)
+            summary = run(repo, self.Scripted(budget), self.LIMITS, ENG, REGISTRY, SCHEMAS,
+                          fetch=fetched(), sleep=lambda s: None, today="2026-09-30", budget=budget)
+            self.assertEqual(summary["stop_reason"], "budget")
+            self.assertIn("budget_note", summary)
+            self.assertEqual(summary["counts"].get("read"), 1)
+            self.assertEqual(len(unread_candidates(repo.candidates)), 3)          # the others wait for tomorrow
+            self.assertLessEqual(budget.spent_month(), 0.10)                       # and the cap held
+            self.assertAlmostEqual(summary["cost_usd"], budget.run["usd"])
+            self.assertEqual(summary["budget"]["monthly_cap_usd"], 0.10)
+
+    def test_a_paper_the_model_cannot_read_is_recorded_so_it_is_not_paid_for_again_tomorrow(self):
+        class Refuses(StubModel):
+            def __init__(self):
+                super().__init__(tag=MODEL)
+            def classify(self, *a):
+                raise ReaderError("truncated", "cut off", permanent=True)
+        with tempfile.TemporaryDirectory() as folder:
+            repo, path = candidate(folder)
+            summary = run(repo, Refuses(), self.LIMITS, ENG, REGISTRY, SCHEMAS, fetch=fetched(),
+                          sleep=lambda s: None, today="2026-09-21")
+            self.assertEqual(summary["counts"], {"unreadable": 1})
+            self.assertEqual(unread_candidates(repo.candidates), [])               # parked, not retried
+            decision = yaml.safe_load(path.read_text(encoding="utf-8"))["read_decision"]
+            self.assertEqual((decision["decision"], decision["model"]), ("unreadable", MODEL))
+
+    def test_a_transient_failure_leaves_the_candidate_for_the_next_run(self):
+        class Flaky(StubModel):
+            def __init__(self):
+                super().__init__(tag=MODEL)
+            def classify(self, *a):
+                raise ReaderError("invalid_json", "not json")
+        with tempfile.TemporaryDirectory() as folder:
+            repo, _ = candidate(folder)
+            summary = run(repo, Flaky(), self.LIMITS, ENG, REGISTRY, SCHEMAS, fetch=fetched(),
+                          sleep=lambda s: None, today="2026-09-21")
+            self.assertEqual(summary["counts"], {"error": 1})
+            self.assertEqual(len(unread_candidates(repo.candidates)), 1)
+
+    def test_a_dry_run_never_touches_the_ledger_or_asks_the_budget(self):
+        with tempfile.TemporaryDirectory() as folder:
+            repo, _ = candidate(folder)
+            budget = Budget(POLICY, Path(folder) / "spend.json", "2026-09-21", persist=False)
+            summary = run(repo, StubModel(CLASSIFY_OK, reading([]), "DRY-RUN"), self.LIMITS, ENG, REGISTRY,
+                          SCHEMAS, fetch=fetched(), dry=True, sleep=lambda s: None, today="2026-09-21",
+                          budget=budget)
+            self.assertEqual(summary["cost_usd"], 0.0)
+            self.assertFalse((Path(folder) / "spend.json").exists())
 
 
 class Fetching(unittest.TestCase):
