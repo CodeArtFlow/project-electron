@@ -8,8 +8,13 @@ Usage:  python pipeline/test_agent_files.py
 """
 
 import sys
+import tempfile
 import unittest
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+import sync_agent_skills  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 MAX_CLAUDE_LINES = 12          # an import plus a pointer. Anything longer is rules leaking in.
@@ -41,6 +46,44 @@ class SingleSource(unittest.TestCase):
                     if "CLAUDE.md" in p.read_text(encoding="utf-8", errors="ignore"):
                         stray.append(str(p.relative_to(ROOT)))
         self.assertEqual(stray, [], "these refer to CLAUDE.md; the doctrine is in AGENTS.md")
+
+
+class SkillMirror(unittest.TestCase):
+    def test_agents_skills_mirror_the_canonical_skills(self):
+        self.assertEqual(sync_agent_skills.differences(), [],
+                         "run: python pipeline/sync_agent_skills.py")
+
+    def test_the_guard_fires_on_each_kind_of_drift(self):
+        # A guard that has never failed is not a guard: build a mirror, then break it three ways.
+        with tempfile.TemporaryDirectory() as folder:
+            canonical, mirror = Path(folder) / "c", Path(folder) / "m"
+            (canonical / "harvest").mkdir(parents=True)
+            (canonical / "harvest" / "SKILL.md").write_text("one\n", encoding="utf-8")
+            sync_agent_skills.sync(canonical, mirror)
+            self.assertEqual(sync_agent_skills.differences(canonical, mirror), [])
+
+            (mirror / "harvest" / "SKILL.md").write_text("edited by hand\n", encoding="utf-8")
+            self.assertEqual(len(sync_agent_skills.differences(canonical, mirror)), 1)   # content differs
+            sync_agent_skills.sync(canonical, mirror)
+            self.assertEqual(sync_agent_skills.differences(canonical, mirror), [])       # and is repaired
+
+            (mirror / "harvest" / "SKILL.md").unlink()
+            self.assertIn("missing from the mirror", sync_agent_skills.differences(canonical, mirror)[0])
+            sync_agent_skills.sync(canonical, mirror)
+
+            (mirror / "stray").mkdir()
+            (mirror / "stray" / "SKILL.md").write_text("x\n", encoding="utf-8")
+            self.assertIn("not canonical", sync_agent_skills.differences(canonical, mirror)[0])
+            sync_agent_skills.sync(canonical, mirror)
+            self.assertEqual(sync_agent_skills.differences(canonical, mirror), [])
+
+    def test_crlf_is_not_drift(self):
+        with tempfile.TemporaryDirectory() as folder:
+            canonical, mirror = Path(folder) / "c", Path(folder) / "m"
+            for base, eol in ((canonical, b"\n"), (mirror, b"\r\n")):
+                (base / "s").mkdir(parents=True)
+                (base / "s" / "SKILL.md").write_bytes(b"a" + eol + b"b" + eol)
+            self.assertEqual(sync_agent_skills.differences(canonical, mirror), [])
 
 
 if __name__ == "__main__":

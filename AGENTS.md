@@ -524,7 +524,10 @@ more than a padded one, and padding is how low-grade material enters the ledger.
 
 ## Skills
 
-Project skills live in `.claude/skills/`. Each is one pipeline stage with one responsibility.
+Project skills live in `.claude/skills/`, the **canonical** copy. `.agents/skills/` is a generated mirror
+for tools that read that path (Codex): edit only the canonical copy, then run
+`python pipeline/sync_agent_skills.py`. `test_agent_files.py` fails CI if the two differ.
+Each skill is one pipeline stage with one responsibility.
 Planned roster, to be built incrementally:
 
 | Skill | Stage | Responsibility |
@@ -573,7 +576,8 @@ digests/                  daily published digests
 sota/                     living state-of-the-art reviews, one per topic
 pipeline/                 Python: verification tooling, then the harvest pipeline
 _site/                    generated site output (gitignored; built in CI)
-.claude/skills/           project skills
+.claude/skills/           project skills (canonical)
+.agents/skills/           generated mirror of the above; pipeline/sync_agent_skills.py
 ```
 
 ---
