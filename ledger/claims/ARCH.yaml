@@ -1,0 +1,172 @@
+claims:
+- id: CLM-ARCH-0001
+  topic: ARCH
+  statement: Low-threshold PFAL Buffer/NOT cell reaches a minimum energy-delay product
+    of 1.23e-26 J*s in simulation.
+  sources:
+  - SRC-00001
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-17'
+  created: '2026-09-20'
+  quantity:
+    quantity: energy_delay_product
+    as_published:
+      value: 1.23e-26
+      unit: J*s
+    si_base:
+      value: 1.23e-26
+      unit: J*s
+    display:
+      value: 1.23e-26
+      unit: J*s
+    conditions: &id001
+      process: TSMC 16nm FinFET
+      cell: low-threshold Buffer/NOT
+      vclk: 0.6 V
+      fclk: 7.94 GHz
+  conditions: *id001
+- id: CLM-ARCH-0002
+  topic: ARCH
+  statement: Single-gate PFAL cells show an energy advantage over static CMOS of approximately
+    5x in simulation.
+  sources:
+  - SRC-00001
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-17'
+  created: '2026-09-20'
+  quantity:
+    quantity: energy_advantage_ratio
+    as_published:
+      value: 5.0
+      unit: dimensionless
+    si_base:
+      value: 5.0
+      unit: dimensionless
+    display:
+      value: 5.0
+      unit: dimensionless
+    conditions: &id002
+      process: TSMC 16nm FinFET
+      comparison: single-gate PFAL vs static CMOS
+      operating_point: maximum over the sweep, at reduced frequency and elevated supply
+  conditions: *id002
+- id: CLM-ARCH-0003
+  topic: ARCH
+  statement: With a quadrature-VCO power-clock, PFAL Buffer/NOT energy stays within
+    2% of the ideal sinusoidal case.
+  sources:
+  - SRC-00001
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-17'
+  created: '2026-09-20'
+  quantity:
+    quantity: energy_advantage_ratio
+    as_published:
+      value: 1.02
+      unit: dimensionless
+    si_base:
+      value: 1.02
+      unit: dimensionless
+    display:
+      value: 1.02
+      unit: dimensionless
+    conditions: &id003
+      process: TSMC 16nm FinFET
+      comparison: QVCO power-clock vs ideal sinusoid
+      fclk: 3 GHz
+  conditions: *id003
+- id: CLM-ARCH-0004
+  topic: ARCH
+  statement: Optimized single-gate PFAL cells achieve up to 3.83x lower energy than
+    equivalent static CMOS gates in simulation.
+  sources:
+  - SRC-00002
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-17'
+  created: '2026-09-20'
+  quantity:
+    quantity: energy_advantage_ratio
+    as_published:
+      value: 3.83
+      unit: dimensionless
+    si_base:
+      value: 3.83
+      unit: dimensionless
+    display:
+      value: 3.83
+      unit: dimensionless
+    conditions: &id004
+      process: TSMC 16nm FinFET
+      comparison: single-gate PFAL vs static CMOS
+      operating_point: EDP-optimal over power-clock amplitude, frequency and waveform
+  conditions: *id004
+  corrected: '2026-09-20: conditions corrected per CFL-0001. The regime "reduced frequency,
+    elevated supply" was copied from SRC-00001 during batch extraction and is not
+    stated in SRC-00002.'
+- id: CLM-ARCH-0005
+  topic: ARCH
+  statement: Sinusoidal power-clock excitation improves PFAL energy by up to 1.32x
+    over trapezoidal excitation.
+  sources:
+  - SRC-00002
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-17'
+  created: '2026-09-20'
+  quantity:
+    quantity: energy_advantage_ratio
+    as_published:
+      value: 1.32
+      unit: dimensionless
+    si_base:
+      value: 1.32
+      unit: dimensionless
+    display:
+      value: 1.32
+      unit: dimensionless
+    conditions: &id005
+      process: TSMC 16nm FinFET
+      comparison: sinusoidal vs trapezoidal power-clock
+  conditions: *id005
+- id: CLM-ARCH-0006
+  topic: ARCH
+  statement: A 4-bit Brent-Kung carry look-ahead adder in PFAL reaches up to 5.3x
+    energy gain over a static CMOS estimate.
+  sources:
+  - SRC-00002
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-17'
+  created: '2026-09-20'
+  quantity:
+    quantity: energy_advantage_ratio
+    as_published:
+      value: 5.3
+      unit: dimensionless
+    si_base:
+      value: 5.3
+      unit: dimensionless
+    display:
+      value: 5.3
+      unit: dimensionless
+    conditions: &id006
+      process: TSMC 16nm FinFET
+      comparison: 4-bit Brent-Kung CLA adder vs static CMOS estimate
+      power_clock: triangular
+  conditions: *id006

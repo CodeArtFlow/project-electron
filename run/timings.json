@@ -1,0 +1,233 @@
+{
+  "run_started": "2026-09-20T17:29:15",
+  "date": "2026-09-20",
+  "total_seconds": 4.59,
+  "automatic_seconds": 4.58,
+  "steps": [
+    {
+      "stage": "validate-registry",
+      "description": "registry against its own rules",
+      "kind": "automatic",
+      "command": "python pipeline/validate_registry.py",
+      "seconds": 0.21,
+      "exit_code": 0,
+      "ok": true,
+      "output_tail": [
+        "entries: 131",
+        "sections: {'aggregators': 8, 'journals_full_oa': 38, 'journals_hybrid': 36, 'preprints': 4, 'conferences': 10, 'institutional': 6, 'standards': 6, 'vendor': 11, 'trade_press': 6, 'removed': 1, 'excluded_paywalled': 5}",
+        "verified: {'True': 70, 'review': 48, 'False': 7}",
+        "",
+        "OK - registry is internally consistent with its own rules"
+      ]
+    },
+    {
+      "stage": "units",
+      "description": "SI engine vs definitions.yaml",
+      "kind": "automatic",
+      "command": "python pipeline/units.py",
+      "seconds": 0.762,
+      "exit_code": 0,
+      "ok": true,
+      "output_tail": [
+        "quantities checked: 30",
+        "OK - definitions.yaml is dimensionally consistent and traps behave"
+      ]
+    },
+    {
+      "stage": "claims-selftest",
+      "description": "extraction refusals fire",
+      "kind": "automatic",
+      "command": "python pipeline/claims.py --self-test",
+      "seconds": 0.273,
+      "exit_code": 0,
+      "ok": true,
+      "output_tail": [
+        "refusal rules in schema: 7",
+        "OK - refusals fire, well-formed claims pass, ids allocate, validation catches errors"
+      ]
+    },
+    {
+      "stage": "gate-selftest",
+      "description": "every gate check fires",
+      "kind": "automatic",
+      "command": "python pipeline/test_publication_gate.py",
+      "seconds": 1.065,
+      "exit_code": 0,
+      "ok": true,
+      "output_tail": [
+        "  [OK ] 5. source from a verified:false venue  (failed=[5])",
+        "  [OK ] 6. quantity missing si_base  (failed=[6])",
+        "  [OK ] 7. grade E asserted as fact  (failed=[7])",
+        "  [OK ] 8. published claim changed without a correction  (failed=[3, 8])",
+        "",
+        "OK - all 11 gate scenarios behaved correctly"
+      ]
+    },
+    {
+      "stage": "discover-selftest",
+      "description": "discovery loop bounds",
+      "kind": "automatic",
+      "command": "python pipeline/test_discover.py",
+      "seconds": 0.304,
+      "exit_code": 0,
+      "ok": true,
+      "output_tail": [
+        "  [OK ] every emitted sentence exists verbatim in the passage it cites",
+        "  [OK ] verifier rejected nothing from the extractive engine  (rejected=0)",
+        "  [OK ] residual gap reported when a sub-question finds nothing",
+        "  [OK ] empty read corpus yields zero findings, not an error",
+        "",
+        "OK - all 22 constraint checks passed"
+      ]
+    },
+    {
+      "stage": "harvest.sweep",
+      "description": "skipped",
+      "kind": "automatic",
+      "seconds": 0.0,
+      "ok": true,
+      "skipped": true,
+      "output_tail": []
+    },
+    {
+      "stage": "claims-validate",
+      "description": "every claim well-formed",
+      "kind": "automatic",
+      "command": "python pipeline/claims.py --validate",
+      "seconds": 0.18,
+      "exit_code": 0,
+      "ok": true,
+      "output_tail": [
+        "claims validated: 7",
+        "OK - ledger valid"
+      ]
+    },
+    {
+      "stage": "reconcile.detect",
+      "description": "find comparable claims that disagree",
+      "kind": "automatic",
+      "command": "python pipeline/reconcile.py --detect",
+      "seconds": 0.186,
+      "exit_code": 0,
+      "ok": true,
+      "output_tail": [
+        "detect: 7 claims -> 0 new conflict(s)"
+      ]
+    },
+    {
+      "stage": "reconcile.register",
+      "description": "regenerate the open contradictions register",
+      "kind": "automatic",
+      "command": "python pipeline/reconcile.py --register",
+      "seconds": 0.148,
+      "exit_code": 0,
+      "ok": true,
+      "output_tail": [
+        "register: 0 live:data-absent, 0 live:unexamined -> ledger/open-contradictions.md"
+      ]
+    },
+    {
+      "stage": "reconcile.check",
+      "description": "every conflict record well-formed",
+      "kind": "automatic",
+      "command": "python pipeline/reconcile.py --check",
+      "seconds": 0.147,
+      "exit_code": 0,
+      "ok": true,
+      "output_tail": [
+        "check: every conflict record is well-formed"
+      ]
+    },
+    {
+      "stage": "sota",
+      "description": "per-layer state of the art",
+      "kind": "automatic",
+      "command": "python pipeline/sota.py --sota",
+      "seconds": 0.177,
+      "exit_code": 0,
+      "ok": true,
+      "output_tail": [
+        "sota: 10 topic document(s) -> sota/"
+      ]
+    },
+    {
+      "stage": "synthesis",
+      "description": "cross-stack synthesis",
+      "kind": "automatic",
+      "command": "python pipeline/sota.py --synthesis",
+      "seconds": 0.181,
+      "exit_code": 0,
+      "ok": true,
+      "output_tail": [
+        "synthesis: 2 layer(s) with claims, 8 with none -> sota/SYNTHESIS.md"
+      ]
+    },
+    {
+      "stage": "digest",
+      "description": "daily digest from the ledger",
+      "kind": "automatic",
+      "command": "python pipeline/sota.py --digest",
+      "seconds": 0.18,
+      "exit_code": 0,
+      "ok": true,
+      "output_tail": [
+        "digest: 0 new claim(s) -> digests\\2026-09-20.md"
+      ]
+    },
+    {
+      "stage": "publication-gate",
+      "description": "the eight checks",
+      "kind": "automatic",
+      "command": "python pipeline/publication_gate.py",
+      "seconds": 0.266,
+      "exit_code": 0,
+      "ok": true,
+      "output_tail": [
+        "  [PASS] 6. quantities carry as_published and si_base",
+        "  [PASS] 7. grade D/E is attributed, never asserted",
+        "  [PASS] 8. corrections recorded for published claims that changed",
+        "         note: Structural only. This verifies a correction exists, not that its wording is adequate.",
+        "",
+        "GATE PASSED."
+      ]
+    },
+    {
+      "stage": "build-site",
+      "description": "render the static site",
+      "kind": "automatic",
+      "command": "python pipeline/build_site.py --out _site",
+      "seconds": 0.503,
+      "exit_code": 0,
+      "ok": true,
+      "output_tail": [
+        "publication gate passed (7 claims, 1 conflicts, 1 digests)",
+        "built 19 files -> _site",
+        "  claims 7 | live contradictions 0 | digests 1 | sota 11"
+      ]
+    }
+  ],
+  "before": {
+    "candidates": 295,
+    "sources": 3,
+    "claims_files": 2,
+    "conflicts": 1
+  },
+  "after": {
+    "candidates": 295,
+    "sources": 3,
+    "claims_files": 2,
+    "conflicts": 1,
+    "sota_docs": 11,
+    "digests": 1,
+    "discoveries": 0
+  },
+  "pending_reading_stages": [
+    {
+      "stage": "harvest.read",
+      "kind": "reading",
+      "why": "295 candidate(s) are unread. A source record states what was ACTUALLY read; a script writing one would be fabricating.",
+      "skill": "harvest"
+    }
+  ],
+  "all_ok": true
+}

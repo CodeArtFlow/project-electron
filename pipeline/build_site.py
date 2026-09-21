@@ -118,6 +118,25 @@ blockquote { margin: 1rem 0; padding: .1rem 0 .1rem 1rem; border-left: 3px solid
 footer.site { border-top: 1px solid var(--border); margin-top: 4rem; }
 footer.site .wrap { padding-top: 1.5rem; color: var(--muted); font-size: .84rem; }
 .empty { color: var(--muted); font-style: italic; }
+.tabs { display: flex; flex-wrap: wrap; gap: .35rem; margin: 1.25rem 0 1.5rem; }
+.tabs button {
+  font: inherit; font-size: .84rem; cursor: pointer; padding: .35rem .7rem;
+  border-radius: 999px; border: 1px solid var(--border); background: var(--surface);
+  color: var(--muted);
+}
+.tabs button[aria-selected="true"] { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+.tabs button .n { font-family: var(--mono); font-size: .76em; opacity: .75; margin-left: .35rem; }
+.panel[hidden] { display: none; }
+.panel h2:first-child { margin-top: 0; }
+.timeline { list-style: none; padding: 0; margin: 1rem 0; }
+.timeline li { display: grid; grid-template-columns: 4.2rem 1fr; gap: .6rem; padding: .45rem 0; border-bottom: 1px solid var(--border); align-items: baseline; }
+.timeline .t { font-family: var(--mono); font-size: .8rem; color: var(--accent); text-align: right; }
+.timeline .d { font-size: .88rem; }
+.timeline .sub { color: var(--muted); font-size: .8rem; }
+.bar { height: 5px; background: var(--accent); border-radius: 3px; margin-top: .3rem; min-width: 2px; }
+.badge { font-family: var(--mono); font-size: .72rem; padding: .1rem .42rem; border-radius: 4px; border: 1px solid var(--border); color: var(--muted); }
+.badge.ok { color: var(--accent); border-color: var(--accent); }
+.badge.wait { color: var(--warn-text); border-color: var(--warn-border); background: var(--warn-bg); }
 @media (max-width: 480px) { .wrap { padding-left: 16px; padding-right: 16px; } }
 """
 
@@ -126,7 +145,9 @@ def page(title, body, active="", depth=0):
     up = "../" * depth
     nav = [("Home", "index.html"), ("Digests", "digests/index.html"),
            ("State of the art", "sota/index.html"),
+           ("The field", "synthesis.html"),
            ("Open contradictions", "contradictions.html"),
+           ("Pipeline run", "run.html"),
            ("Methodology", "methodology.html")]
     links = "".join(
         f'<a href="{up}{href}"{" aria-current=\'page\'" if label == active else ""}>{label}</a>'
@@ -187,10 +208,16 @@ def digest_entries():
 def sota_entries():
     entries = []
     for p in sorted(SOTA.glob("*.md")):
+        if p.stem.upper() == "SYNTHESIS":
+            continue
         code = p.stem.upper()
         text = p.read_text(encoding="utf-8")
         entries.append({"code": code, "name": TOPICS.get(code, code),
                         "text": text, "path": p})
+    # Stack order, not alphabetical: a reader moves down the stack from materials to economics,
+    # and TOPICS is declared in that order.
+    order = list(TOPICS)
+    entries.sort(key=lambda e: order.index(e["code"]) if e["code"] in order else 99)
     return entries
 
 
@@ -282,17 +309,48 @@ blocks publication outright.</p>"""
         (out / "digests" / f"{d['slug']}.html").write_text(
             page(d["title"], md(d["text"]), active="Digests", depth=1), encoding="utf-8")
 
-    # ---------------- state of the art ----------------
+    # ---------------- state of the art: one tab per layer ----------------
+    claims_by_topic = {}
+    for c in claims.values() if isinstance(claims, dict) else claims:
+        if c.get("status") in ("active", "challenged", "contested"):
+            claims_by_topic[c.get("topic")] = claims_by_topic.get(c.get("topic"), 0) + 1
+
     if sotas:
-        items = "".join(
-            f'<li><a href="{escape(s["code"])}.html">{escape(s["name"])}</a> '
-            f'<span class="pill">{escape(s["code"])}</span></li>' for s in sotas)
-        body = f'<h2>State of the art</h2><ul class="plain">{items}</ul>'
+        tabs, panels = [], []
+        for i, s in enumerate(sotas):
+            n = claims_by_topic.get(s["code"], 0)
+            sel = "true" if i == 0 else "false"
+            tabs.append(
+                f'<button role="tab" aria-selected="{sel}" aria-controls="p-{s["code"]}" '
+                f'id="t-{s["code"]}">{escape(s["name"])}<span class="n">{n}</span></button>')
+            panels.append(
+                f'<div class="panel" role="tabpanel" id="p-{s["code"]}" '
+                f'aria-labelledby="t-{s["code"]}"{"" if i == 0 else " hidden"}>'
+                f'{md(s["text"])}</div>')
+        script = """<script>
+(function(){
+  var tl=document.querySelector('.tabs');
+  if(!tl) return;
+  tl.addEventListener('click',function(e){
+    var b=e.target.closest('button[role=tab]'); if(!b) return;
+    tl.querySelectorAll('button[role=tab]').forEach(function(x){
+      x.setAttribute('aria-selected', String(x===b));
+      var p=document.getElementById('p-'+x.id.slice(2));
+      if(p) p.hidden = (x!==b);
+    });
+  });
+})();
+</script>"""
+        body = ('<h2>State of the art, by layer</h2>'
+                '<p class="meta">One living document per layer of the stack. The number on each '
+                'tab is how many claims the ledger holds for that layer &mdash; a zero means '
+                'nothing has been read for it yet, not that the layer is quiet.</p>'
+                f'<div class="tabs" role="tablist">{"".join(tabs)}</div>'
+                f'{"".join(panels)}{script}')
     else:
         listed = "".join(f'<li>{escape(name)} <span class="pill">{code}</span></li>'
                          for code, name in TOPICS.items())
         body = (f'<h2>State of the art</h2><p class="empty">No topic reviews written yet.</p>'
-                f'<p class="meta">Planned, one living document per layer of the stack:</p>'
                 f'<ul class="plain">{listed}</ul>')
     (out / "sota" / "index.html").write_text(
         page("State of the art", body, active="State of the art", depth=1), encoding="utf-8")
@@ -300,6 +358,63 @@ blocks publication outright.</p>"""
     for s in sotas:
         (out / "sota" / f"{s['code']}.html").write_text(
             page(s["name"], md(s["text"]), active="State of the art", depth=1), encoding="utf-8")
+
+    # ---------------- cross-stack synthesis ----------------
+    syn = SOTA / "SYNTHESIS.md"
+    syn_html = md(syn.read_text(encoding="utf-8")) if syn.exists() else         "<p class='empty'>Not generated yet.</p>"
+    (out / "synthesis.html").write_text(
+        page("The field", syn_html, active="The field"), encoding="utf-8")
+
+    # ---------------- pipeline run ----------------
+    run_file = ROOT / "run" / "timings.json"
+    if run_file.exists():
+        import json as _json
+        r = _json.loads(run_file.read_text(encoding="utf-8"))
+        steps = [s for s in r.get("steps", []) if not s.get("skipped")]
+        worst = max([s.get("seconds", 0) for s in steps] or [1]) or 1
+        rows = []
+        for s in steps:
+            secs = s.get("seconds", 0)
+            state = ("ok" if s.get("ok") else "wait")
+            label = "ok" if s.get("ok") else ("blocked" if s.get("blocked") else "fail")
+            rows.append(
+                f'<li><span class="t">{secs:.2f}s</span>'
+                f'<span class="d"><strong>{escape(s["stage"])}</strong> '
+                f'<span class="badge {state}">{label}</span>'
+                f'<div class="sub">{escape(s.get("description", ""))} '
+                f'&middot; <code>{escape(s.get("command", ""))}</code></div>'
+                f'<div class="bar" style="width:{max(2, int(100 * secs / worst))}%"></div>'
+                f'</span></li>')
+        pend = r.get("pending_reading_stages", [])
+        pend_html = ""
+        if pend:
+            items = "".join(
+                f'<li><strong>{escape(p["stage"])}</strong> '
+                f'<span class="badge wait">waiting on reading</span>'
+                f'<div class="sub">{escape(p["why"])} &middot; skill: '
+                f'<code>{escape(p["skill"])}</code></div></li>' for p in pend)
+            pend_html = ('<h2>Stages waiting on reading</h2>'
+                         '<p class="meta">These require comprehension &mdash; reading a paper, '
+                         'classifying a contradiction. A script doing them would be fabricating, '
+                         'so the pipeline reports them rather than faking them.</p>'
+                         f'<ul class="plain">{items}</ul>')
+        before, after = r.get("before", {}), r.get("after", {})
+        deltas = "".join(
+            f'<tr><td>{escape(k)}</td><td>{before.get(k, 0)}</td><td>{v}</td></tr>'
+            for k, v in after.items())
+        body = (f'<h2>Pipeline run</h2>'
+                f'<p class="meta">{escape(str(r.get("run_started")))} &middot; '
+                f'{r.get("total_seconds")}s total across {len(steps)} automatic stage(s). '
+                f'Every stage below is deterministic code.</p>'
+                f'<ul class="timeline">{"".join(rows)}</ul>'
+                f'{pend_html}'
+                f'<h2>Corpus before and after</h2>'
+                f'<div class="table-wrap"><table><tr><th>Artifact</th><th>Before</th>'
+                f'<th>After</th></tr>{deltas}</table></div>')
+    else:
+        body = '<h2>Pipeline run</h2><p class="empty">No run recorded yet.</p>'
+    (out / "run.html").write_text(page("Pipeline run", body, active="Pipeline run"),
+                                  encoding="utf-8")
 
     # ---------------- methodology ----------------
     reg = yaml.safe_load(REGISTRY.read_text(encoding="utf-8"))

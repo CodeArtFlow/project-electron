@@ -55,18 +55,26 @@ def load(path):
 
 
 # --------------------------------------------------------------------------- ids
-def next_claim_id(topic, claims_dir=CLAIMS_DIR):
-    """Allocate the next id for a topic. Never reuses, even after a retraction."""
+def next_claim_id(topic, claims_dir=CLAIMS_DIR, reserved=()):
+    """Allocate the next id for a topic. Never reuses, even after a retraction.
+
+    `reserved` holds ids already handed out in this session but not yet written to disk.
+    Without it, extracting several claims in one batch allocated the SAME id to all of them,
+    because the allocator only saw the ledger on disk. Callers extracting more than one claim
+    must pass the ids they are holding.
+    """
     if topic not in TOPICS:
         raise ValueError(f"unknown topic {topic!r}; valid: {', '.join(TOPICS)}")
     path = Path(claims_dir) / f"{topic}.yaml"
     highest = 0
+    known = []
     if path.exists():
         doc = load(path) or {}
-        for c in doc.get("claims", []) or []:
-            m = CLAIM_ID_RE.match(c.get("id", ""))
-            if m and m.group(1) == topic:
-                highest = max(highest, int(m.group(2)))
+        known = [c.get("id", "") for c in doc.get("claims", []) or []]
+    for cid in list(known) + list(reserved):
+        m = CLAIM_ID_RE.match(cid or "")
+        if m and m.group(1) == topic:
+            highest = max(highest, int(m.group(2)))
     return f"CLM-{topic}-{highest + 1:04d}"
 
 
@@ -251,9 +259,19 @@ def self_test():
     except Refusal as r:
         failures.append(f"well-formed claim wrongly refused: {r}")
 
-    # id allocation
-    if next_claim_id("DEV") != "CLM-DEV-0001":
-        failures.append(f"empty ledger should allocate CLM-DEV-0001, got {next_claim_id('DEV')}")
+    # id allocation, against a temp ledger so the test does not depend on the real one.
+    # An earlier version asserted CLM-DEV-0001 against the live ledger and started failing the
+    # moment a real DEV claim existed - a test that only passed on an empty corpus.
+    import tempfile
+    with tempfile.TemporaryDirectory() as td:
+        tmp = Path(td)
+        if next_claim_id("DEV", claims_dir=tmp) != "CLM-DEV-0001":
+            failures.append("empty ledger should allocate CLM-DEV-0001")
+        # ids reserved in-session must not be handed out twice
+        got = [next_claim_id("DEV", claims_dir=tmp, reserved=r)
+               for r in ([], ["CLM-DEV-0001"], ["CLM-DEV-0001", "CLM-DEV-0002"])]
+        if got != ["CLM-DEV-0001", "CLM-DEV-0002", "CLM-DEV-0003"]:
+            failures.append(f"batch allocation collided: {got}")
 
     # validation catches a bad claim
     bad = validate_claim({"id": "CLM-XXX-1", "statement": "x"}, schemas)

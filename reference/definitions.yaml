@@ -233,6 +233,24 @@ units:
     display_factor: 0.1
     accept: ["mJ/cm^2", "J/m^2"]
 
+  energy_delay_product:
+    si_base: J*s
+    display: J*s
+    display_factor: 1.0
+    accept: ["J*s", "fJ*ns", "pJ*ns"]
+    note: >
+      Energy-delay product. Comparable only within one process node and one circuit; EDP across
+      different circuits is not a like-for-like figure.
+
+  energy_advantage_ratio:
+    si_base: dimensionless
+    display: dimensionless
+    display_factor: 1.0
+    note: >
+      Energy of a baseline divided by energy of the design under test ("3.8x lower energy").
+      Dimensionless, and meaningless without BOTH the baseline and the circuit being compared -
+      a gate-level ratio and an adder-level ratio are different quantities wearing one name.
+
   numerical_aperture:
     si_base: dimensionless
     display: dimensionless
