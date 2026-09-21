@@ -174,3 +174,41 @@ claims:
       Conditions restated from the statement. NOTE: the statement''s expansions (for example ''in BLG'',
       ''acoustic phonon'' for the paper''s ''AP'') come from the model and are not in the anchor quote,
       which is exactly what the paper-grounded TypeSafe check is meant to test. Before: None.'
+- id: CLM-MAT-0005
+  topic: MAT
+  statement: In optically excited monolayer MoS2, spin and orbital polarization decay at long times with
+    a lifetime of 6.1 ps at 300 K.
+  sources:
+  - SRC-00007
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-18'
+  created: '2026-09-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v3
+    verified_quotes: 4
+  conditions:
+    material: monolayer MoS2
+    temperature: 300 K
+    excitation_energy: 1.7 eV
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 6.1
+      unit: ps
+    si_base:
+      value: 6.0999999999999995e-12
+      unit: s
+    display:
+      value: 0.006099999999999999
+      unit: ns
+    conditions:
+      material: monolayer MoS2
+      temperature: 300 K
+      excitation_energy: 1.7 eV

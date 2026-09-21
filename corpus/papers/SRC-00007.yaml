@@ -1,0 +1,64 @@
+id: SRC-00007
+title: The Critical Role of Itinerant Contributions to Orbital Angular Momentum Relaxation and Dynamics
+doi: null
+arxiv_id: 2609.21300v1
+url: https://arxiv.org/abs/2609.21300v1
+venue_id: arxiv_api
+authors:
+- name: Andrew C. Grieder
+  affiliation: null
+  corresponding: null
+- name: Luis M. Canonico
+  affiliation: null
+  corresponding: null
+- name: Frederico Simões
+  affiliation: null
+  corresponding: null
+- name: Aron W. Cummings
+  affiliation: null
+  corresponding: null
+- name: Yuan Ping
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-18'
+retrieved_date: '2026-09-21'
+access: full_text
+read_scope: Automated reading. The full PDF text (35,132 characters, 7 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.21300v1 on
+  2026-09-21. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“At longer times the spin and orbital polarization both decay with a lifetime of6.1ps.”
+
+  “First we investigate spin and orbital relaxation in monolayer MoS2, a prototypical system with strong
+  SOC and valley-dependent orbital texture.”
+
+  “Spin and orbital relaxation at 300 K.”
+
+  “The system is initialized with a circularly-polarized pump with an excitation energy just above the
+  band gap at 1.7 eV, and the resulting dynamics of the out-of-plane (alongz) spin and OAM are shown in
+  Fig. 1.”'
+method_summary: No method quote was verified. The method is not established by this record.
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v3
+  tokens:
+    input: 11814
+    output: 1215
+  claims_accepted: 1
+  claims_rejected: 2
+  rejected:
+  - statement: In optically excited monolayer MoS2, the initial fast orbital decay has a lifetime of 0.25
+      ps at 300 K.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The initial
+      relaxation, in the gray region in Fig. 1, is similar to th'''
+  - statement: In monolayer MoS2, the ACA contribution alone gives an orbital lifetime of less than 3
+      fs.
+    reason: the statement contains the number 2, which none of its quotes contain
+corrections: []

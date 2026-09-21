@@ -1,0 +1,34 @@
+claims:
+- id: CLM-PROC-0001
+  topic: PROC
+  statement: The silicon foil in the transmission simulations was thermalized to 300 K.
+  sources:
+  - SRC-00012
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-18'
+  created: '2026-09-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v3
+    verified_quotes: 2
+  conditions:
+    thermal_model: Debye model
+  quantity:
+    quantity: temperature
+    bound: exact
+    approximate: false
+    as_published:
+      value: 300.0
+      unit: K
+    si_base:
+      value: 300.0
+      unit: K
+    display:
+      value: 26.850000000000023
+      unit: degC
+    conditions:
+      thermal_model: Debye model

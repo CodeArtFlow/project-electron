@@ -1,0 +1,65 @@
+id: SRC-00011
+title: Design Space Exploration of In-Memory Computing Implementations for Discrete Fourier Transform
+doi: null
+arxiv_id: 2609.21537v1
+url: https://arxiv.org/abs/2609.21537v1
+venue_id: arxiv_api
+authors:
+- name: Sofia Tatidis
+  affiliation: null
+  corresponding: null
+- name: Philip Nielsen
+  affiliation: null
+  corresponding: null
+- name: Liang Liu
+  affiliation: null
+  corresponding: null
+- name: Mojtaba Mahdavi
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-18'
+retrieved_date: '2026-09-21'
+access: full_text
+read_scope: Automated reading. The full PDF text (34,265 characters, 7 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.21537v1 on
+  2026-09-21. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“we propose a novel mapping scheme that reduces energy consumption per computation by 53% compared
+  with conventional mapping techniques.”
+
+  “while for the RRAM device, it achieves a 53% reduction compared with the Naive architecture.”
+
+  “For the FTJ device, the Symmetry architecture reduces energy consumption by 29% compared with the Merged
+  architecture”
+
+  “Naive 151.46 0.82 1.24 153.53”
+
+  “TABLE III LATENCY BREAKDOWN FOR THE FTJ DEVICE ACROSS ARCHITECTURES.”
+
+  “Merged 159.27 1.41 1.30 161.99”
+
+  “Symmetry 151.34 0.94 1.24 153.53”'
+method_summary: '“To evaluate the FoMs, a simulation framework is established using DNN+NeuroSim V1.5
+  [5] as the primary simulation engine.”
+
+  “To address limitations in static IR drop modeling, we augment the framework with Badcrossbar [6].”
+
+  “NeuroSim is also extended to support the evaluation of crossbar tiling.”'
+limitations: “While reprogrammability and write endurance are important considerations for neuromorphic
+  computing, they are not considered in this evaluation because the DFT coefficients remain constant.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v3
+  tokens:
+    input: 10007
+    output: 1340
+  claims_accepted: 5
+  claims_rejected: 0
+  rejected: []
+corrections: []

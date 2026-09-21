@@ -26,6 +26,32 @@ id: CAND-20260921-0045
 harvested_date: '2026-09-21'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-21'
+  reason: the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v3
+  rejected:
+  - statement: The patterned 20.8 nm SrVO3 Hall bar exhibits a longitudinal resistivity of approximately
+      32 μΩ·cm at 300 K.
+    reason: the statement contains the number 20.8, which none of its quotes contain
+  - statement: Density functional theory calculations yield an intrinsic orbital Hall conductivity of
+      390 (ħ/e) Ω⁻¹cm⁻¹ at the Fermi level for bulk SrVO3.
+    reason: the statement contains the number 3, which none of its quotes contain
+  - statement: The saturation-limit lower-bound estimate for the orbital Hall conductivity of the 20.8
+      nm SrVO3 film is 460 ± 11 (ħ/e) Ω⁻¹cm⁻¹.
+    reason: the statement contains the number 3, which none of its quotes contain
+  - statement: At 100 K and 9 T, the α-plane angle-dependent magnetoresistance amplitude for the 20.8
+      nm SVO film is 4.0 ± 0.2 × 10⁻⁵.
+    reason: the statement contains the number 100, which none of its quotes contain
+  - statement: The best estimate for the orbital relaxation time τOD in the 20.8 nm film is 0.20 ps.
+    reason: the value 0.2 does not appear in any of the claim's quotes
+  tokens:
+    input: 20567
+    output: 1993
+  fetched_chars: 64608

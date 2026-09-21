@@ -1,0 +1,58 @@
+id: SRC-00012
+title: Validation of an Ab Initio-Informed Electronic Stopping Model for Large-Scale Atomistic Simulations
+doi: null
+arxiv_id: 2609.21559v1
+url: https://arxiv.org/abs/2609.21559v1
+venue_id: arxiv_api
+authors:
+- name: Glen P. Kiely
+  affiliation: null
+  corresponding: null
+- name: Rafael Nuñez-Palacio
+  affiliation: null
+  corresponding: null
+- name: Andrea E. Sand
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-18'
+retrieved_date: '2026-09-21'
+access: full_text
+read_scope: Automated reading. The full PDF text (29,786 characters, 7 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.21559v1 on
+  2026-09-21. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The foil was thermalized to 300 K with displacements determined by the Debye model [49].”
+
+  “displacements determined by the Debye model”'
+method_summary: No method quote was verified. The method is not established by this record.
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v3
+  tokens:
+    input: 10509
+    output: 1194
+  claims_accepted: 1
+  claims_rejected: 4
+  rejected:
+  - statement: The silicon foil lattice constant used in the MDRANGE simulations was set to 5.43 Å.
+    reason: 'unit conversion refused: length_device: could not parse 5.43 ''˚A'': ''˚A'' is not defined
+      in the unit registry'
+  - statement: The detector distance downstream from the foil surfaces along the normal axis was 290 mm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+  - statement: Each transmission simulation was executed until 25 million ions passed through the silicon
+      foil.
+    reason: the value 2.5e+07 does not appear in any of the claim's quotes
+  - statement: The thickness of oxide layers included on both entry and exit foil surfaces to reproduce
+      experimental scattering was 22 Å.
+    reason: 'unit conversion refused: length_device: could not parse 22.0 ''˚A'': ''˚A'' is not defined
+      in the unit registry'
+corrections: []

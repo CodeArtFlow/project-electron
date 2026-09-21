@@ -28,7 +28,7 @@ claims:
     model: gemini-3.6-flash
     prompt_version: reader-v2
     verified_quotes: 2
-  conditions: &id001
+  conditions:
     process: high vacuum deposition
   quantity:
     quantity: pressure
@@ -43,7 +43,8 @@ claims:
     display:
       value: 0.0003
       unit: mTorr
-    conditions: *id001
+    conditions:
+      process: high vacuum deposition
 - id: CLM-DEV-0003
   topic: DEV
   statement: OLED glass substrates coated with indium tin oxide have a sheet resistance of approximately
@@ -61,7 +62,7 @@ claims:
     model: gemini-3.6-flash
     prompt_version: reader-v2
     verified_quotes: 2
-  conditions: &id002
+  conditions:
     substrate: glass substrates coated with indium tin oxide (ITO)
   quantity:
     quantity: sheet_resistance
@@ -76,7 +77,8 @@ claims:
     display:
       value: 20.0
       unit: ohm/sq
-    conditions: *id002
+    conditions:
+      substrate: glass substrates coated with indium tin oxide (ITO)
 - id: CLM-DEV-0004
   topic: DEV
   statement: The high-vacuum deposition base pressure for OLED thermal evaporation was approximately 3
@@ -107,3 +109,56 @@ claims:
     display:
       value: 0.0003
       unit: mTorr
+- id: CLM-DEV-0005
+  topic: DEV
+  statement: Data transfer over the signatureless thermoradiative channel achieved a rate of up to 92.16
+    kbps with an error rate below 10^-6.
+  sources:
+  - SRC-00008
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-18'
+  created: '2026-09-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v3
+    verified_quotes: 2
+  conditions:
+    channel_type: signatureless thermoradiative channel
+- id: CLM-DEV-0006
+  topic: DEV
+  statement: In the flat state of the nanogap metasurface, the peak gap voltage reaches approximately
+    85 V at an incident peak electric field of 150 kV/cm.
+  sources:
+  - SRC-00010
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-18'
+  created: '2026-09-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v3
+    verified_quotes: 2
+  conditions:
+    incident_peak_electric_field: 150 kV/cm
+  quantity:
+    quantity: voltage
+    bound: exact
+    approximate: true
+    as_published:
+      value: 85.0
+      unit: V
+    si_base:
+      value: 85.0
+      unit: V
+    display:
+      value: 85.0
+      unit: V
+    conditions:
+      incident_peak_electric_field: 150 kV/cm

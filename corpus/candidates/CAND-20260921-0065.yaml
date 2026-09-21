@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2609.21264v1
 doi: null
-title: 'Programming AMD XDNA NPUs with Open-source Compiler Tools: A FlashAttention
-  Case Study'
+title: 'Programming AMD XDNA NPUs with Open-source Compiler Tools: A FlashAttention Case Study'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-09-18'
@@ -28,6 +27,36 @@ id: CAND-20260921-0065
 harvested_date: '2026-09-21'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-21'
+  reason: the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v3
+  rejected:
+  - statement: On XDNA 2, the MLIR-AIR fused kernel reaches 3.62 TFLOPGEMM/s over complete end-to-end
+      execution.
+    reason: 'unit conversion refused: efficiency_compute: could not parse 3.62 ''TFLOPGEMM/s'': ''TFLOPGEMM''
+      is not defined in the unit registry'
+  - statement: At 32k sequence length, XDNA 2 achieves 6.5x improved energy efficiency relative to the
+      integrated GPU.
+    reason: the statement contains the number 6.5, which none of its quotes contain
+  - statement: At 32k sequence length, XDNA 2 achieves 31.5x improved energy efficiency relative to the
+      CPU.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+  - statement: On XDNA 2, for GPT-2 Small attention with sequence length 32768, the MLIR-AIR fused kernel
+      achieves an effective GEMM throughput of 3622 GFLOPGEMM/s.
+    reason: the statement contains the number 32768, which none of its quotes contain
+  - statement: On XDNA 2, for GPT-2 Small attention with sequence length 32768, the MLIR-AIR fused kernel
+      latency is 911.1 ms.
+    reason: the statement contains the number 32768, which none of its quotes contain
+  tokens:
+    input: 24658
+    output: 1738
+  fetched_chars: 67470

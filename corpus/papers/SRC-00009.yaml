@@ -1,0 +1,79 @@
+id: SRC-00009
+title: Topological characterization of a reconfigurable synthetic-frequency SSH lattice on an integrated
+  lithium-niobate platform
+doi: null
+arxiv_id: 2609.21440v1
+url: https://arxiv.org/abs/2609.21440v1
+venue_id: arxiv_api
+authors:
+- name: Hiep Xuan Dinh
+  affiliation: null
+  corresponding: null
+- name: Armandas Balčytis
+  affiliation: null
+  corresponding: null
+- name: Guanghui Ren
+  affiliation: null
+  corresponding: null
+- name: Mei Xian Low
+  affiliation: null
+  corresponding: null
+- name: Arnan Mitchell
+  affiliation: null
+  corresponding: null
+- name: Thach G. Nguyen
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-18'
+retrieved_date: '2026-09-21'
+access: full_text
+read_scope: Automated reading. The full PDF text (47,918 characters, 11 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.21440v1 on
+  2026-09-21. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Resonant frequency modes in the single ring cavity have a uniform FSR of Ω = 18.98 GHz throughout
+  the spectral plot.”
+
+  “Due to the formation of bonding and antibonding super -modes, the photonic molecule spectrum exhibits
+  two distinct Ω1 = 3.57 GHz and Ω2 = 15.41 GHz spacings”
+
+  “It was configured as a 2.2 mm-long coplanar waveguide (CPW) transmission line with a 7 μm signal-ground
+  electrode spacing.”'
+method_summary: '“Using the same device, t he SSH model can be reconfigured between trivial and non -trivial
+  topolog ical phases by controlling the relative strength of the modulation RF signals .”
+
+  “We extract the Zak phase using time -resolved band structure spectroscopy, and the winding number from
+  steady-state measurement -derived mean chiral displacement”
+
+  “Time-resolved measurements were performed by detecting the cavity output using a Finisar XPDV3120R
+  70 GHz -bandwidth photodetector and recording the resulting electrical signal with a Keysight DSO-Z504A
+  high-speed oscilloscope.”'
+limitations: '“Here, the SSH band gap given by Equation (3) closes, making the phase retrieval increasingly
+  sensitive to finite cavity losses. The resulting linewidth broadening causes neighboring sub-bands within
+  the same band group to partially overlap, thereby reducing the accuracy of the phase extraction.”
+
+  “Theoretical investigations have shown [38] that the accuracy of the MCD -derived winding number deteriorates
+  when the total loss rate becomes comparable to or exceeds the coupling strengths 𝐽1and 𝐾1.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v3
+  tokens:
+    input: 14575
+    output: 1990
+  claims_accepted: 4
+  claims_rejected: 2
+  rejected:
+  - statement: The photonic molecule has an extinction ratio of 15 dB.
+    reason: 'unit conversion refused: power: cannot convert 15.0 dB to W - Cannot convert from ''decibel''
+      (dimensionless) to ''watt'' ([mass] * [length] ** 2 / [time] ** 3). A dimensional mismatch mean'
+  - statement: The phase modulator CPW electrode transmission line length is 2.2 mm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+corrections: []

@@ -414,3 +414,148 @@ claims:
       Table VI compares iso-throughput 512-MAC arrays), but the structured conditions did not, so the
       detector saw comparable numbers. Conditions restated from the statement. Before: {''architecture'':
       ''MiX-INT4''}.'
+- id: CLM-ARCH-0010
+  topic: ARCH
+  statement: The proposed mapping scheme reduces energy consumption per computation by 53% compared to
+    conventional mapping techniques.
+  sources:
+  - SRC-00011
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-18'
+  created: '2026-09-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v3
+    verified_quotes: 3
+  conditions:
+    device_type: RRAM
+    architecture_baseline: Naive architecture
+- id: CLM-ARCH-0011
+  topic: ARCH
+  statement: The Symmetry architecture reduces energy consumption by 29% compared with the Merged architecture
+    for the FTJ device.
+  sources:
+  - SRC-00011
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-18'
+  created: '2026-09-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v3
+    verified_quotes: 3
+  conditions:
+    device_type: FTJ
+    architecture_baseline: Merged architecture
+- id: CLM-ARCH-0012
+  topic: ARCH
+  statement: The total latency for the FTJ device using the Naive architecture is 153.53 ns.
+  sources:
+  - SRC-00011
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-18'
+  created: '2026-09-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v3
+    verified_quotes: 3
+  conditions:
+    device_type: FTJ
+    architecture: Naive
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 153.53
+      unit: ns
+    si_base:
+      value: 1.5353e-07
+      unit: s
+    display:
+      value: 153.52999999999997
+      unit: ns
+    conditions:
+      device_type: FTJ
+      architecture: Naive
+- id: CLM-ARCH-0013
+  topic: ARCH
+  statement: The total latency for the FTJ device using the Merged architecture is 161.99 ns.
+  sources:
+  - SRC-00011
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-18'
+  created: '2026-09-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v3
+    verified_quotes: 3
+  conditions:
+    device_type: FTJ
+    architecture: Merged
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 161.99
+      unit: ns
+    si_base:
+      value: 1.6199e-07
+      unit: s
+    display:
+      value: 161.98999999999998
+      unit: ns
+    conditions:
+      device_type: FTJ
+      architecture: Merged
+- id: CLM-ARCH-0014
+  topic: ARCH
+  statement: The total latency for the FTJ device using the Symmetry architecture is 153.53 ns.
+  sources:
+  - SRC-00011
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-18'
+  created: '2026-09-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v3
+    verified_quotes: 3
+  conditions:
+    device_type: FTJ
+    architecture: Symmetry
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 153.53
+      unit: ns
+    si_base:
+      value: 1.5353e-07
+      unit: s
+    display:
+      value: 153.52999999999997
+      unit: ns
+    conditions:
+      device_type: FTJ
+      architecture: Symmetry
