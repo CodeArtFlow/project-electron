@@ -28,6 +28,22 @@ claims:
     display:
       value: 9.581016271319999e-06
       unit: fJ
+    conditions:
+      mechanism: surface polar phonon
+      substrate: SiO2
+  conditions:
+    mechanism: surface polar phonon
+    substrate: SiO2
+  corrections:
+  - date: '2026-09-21'
+    public: false
+    fields:
+    - conditions
+    reason: 'The claim''s statement names the mechanism or calculation that separates it from the paper''s
+      other parameters, but the structured conditions were empty, so the detector saw comparable numbers.
+      Conditions restated from the statement. NOTE: the statement''s expansions (for example ''in BLG'',
+      ''acoustic phonon'' for the paper''s ''AP'') come from the model and are not in the anchor quote,
+      which is exactly what the paper-grounded TypeSafe check is meant to test. Before: None.'
 - id: CLM-MAT-0002
   topic: MAT
   statement: The optical phonon energy in BLG is 200 meV.
@@ -57,6 +73,20 @@ claims:
     display:
       value: 3.2043532679999995e-05
       unit: fJ
+    conditions:
+      mechanism: optical phonon
+  conditions:
+    mechanism: optical phonon
+  corrections:
+  - date: '2026-09-21'
+    public: false
+    fields:
+    - conditions
+    reason: 'The claim''s statement names the mechanism or calculation that separates it from the paper''s
+      other parameters, but the structured conditions were empty, so the detector saw comparable numbers.
+      Conditions restated from the statement. NOTE: the statement''s expansions (for example ''in BLG'',
+      ''acoustic phonon'' for the paper''s ''AP'') come from the model and are not in the anchor quote,
+      which is exactly what the paper-grounded TypeSafe check is meant to test. Before: None.'
 - id: CLM-MAT-0003
   topic: MAT
   statement: The temperature used in the acoustic phonon scattering calculation is 150 K.
@@ -86,6 +116,20 @@ claims:
     display:
       value: -123.14999999999998
       unit: degC
+    conditions:
+      calculation: acoustic phonon scattering
+  conditions:
+    calculation: acoustic phonon scattering
+  corrections:
+  - date: '2026-09-21'
+    public: false
+    fields:
+    - conditions
+    reason: 'The claim''s statement names the mechanism or calculation that separates it from the paper''s
+      other parameters, but the structured conditions were empty, so the detector saw comparable numbers.
+      Conditions restated from the statement. NOTE: the statement''s expansions (for example ''in BLG'',
+      ''acoustic phonon'' for the paper''s ''AP'') come from the model and are not in the anchor quote,
+      which is exactly what the paper-grounded TypeSafe check is meant to test. Before: None.'
 - id: CLM-MAT-0004
   topic: MAT
   statement: The temperature used in the optical phonon and surface polar phonon scattering calculations
@@ -116,3 +160,17 @@ claims:
     display:
       value: -73.14999999999998
       unit: degC
+    conditions:
+      calculation: optical phonon and surface polar phonon scattering
+  conditions:
+    calculation: optical phonon and surface polar phonon scattering
+  corrections:
+  - date: '2026-09-21'
+    public: false
+    fields:
+    - conditions
+    reason: 'The claim''s statement names the mechanism or calculation that separates it from the paper''s
+      other parameters, but the structured conditions were empty, so the detector saw comparable numbers.
+      Conditions restated from the statement. NOTE: the statement''s expansions (for example ''in BLG'',
+      ''acoustic phonon'' for the paper''s ''AP'') come from the model and are not in the anchor quote,
+      which is exactly what the paper-grounded TypeSafe check is meant to test. Before: None.'

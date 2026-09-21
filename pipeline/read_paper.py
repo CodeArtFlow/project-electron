@@ -647,8 +647,17 @@ def read_candidate(path, repo, model, eng, registry, schemas, fetch=fetch_arxiv,
 
 
 # ----------------------------------------------------------------------------------- writing
+class _NoAliases(yaml.SafeDumper):
+    """YAML anchors and aliases (&id001 / *id001) appear whenever two keys hold the SAME dict object,
+    as a claim's conditions and its quantity's conditions do. They make the file look like it states
+    the conditions twice while secretly stating them once, and an edit to one place breaks the other."""
+
+    def ignore_aliases(self, data):
+        return True
+
+
 def dump(path, doc):
-    Path(path).write_text(yaml.safe_dump(doc, sort_keys=False, allow_unicode=True, width=100),
+    Path(path).write_text(yaml.dump(doc, Dumper=_NoAliases, sort_keys=False, allow_unicode=True, width=100),
                           encoding="utf-8")
 
 

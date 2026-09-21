@@ -8,13 +8,6 @@ A contradiction appears here if and only if the data to resolve it is absent, an
 
 ## Status — 2026-09-21
 
-> **4 conflict(s) in `live:unexamined`.** This is an error state, not a category of contradiction: it means reconciliation is unfinished. Publication is blocked until they are classified.
-
-- `CFL-0002` opened 2026-09-21 (0 day(s) ago) — CLM-ARCH-0007, CLM-ARCH-0008
-- `CFL-0003` opened 2026-09-21 (0 day(s) ago) — CLM-ARCH-0007, CLM-ARCH-0009
-- `CFL-0004` opened 2026-09-21 (0 day(s) ago) — CLM-MAT-0001, CLM-MAT-0002
-- `CFL-0005` opened 2026-09-21 (0 day(s) ago) — CLM-MAT-0003, CLM-MAT-0004
-
 **0 live contradictions with a named data gap.**
 
 ## Ageing

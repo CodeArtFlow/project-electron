@@ -22,12 +22,16 @@ claims:
     display:
       value: 1.23e-26
       unit: J*s
-    conditions: &id001
+    conditions:
       process: TSMC 16nm FinFET
       cell: low-threshold Buffer/NOT
       vclk: 0.6 V
       fclk: 7.94 GHz
-  conditions: *id001
+  conditions:
+    process: TSMC 16nm FinFET
+    cell: low-threshold Buffer/NOT
+    vclk: 0.6 V
+    fclk: 7.94 GHz
 - id: CLM-ARCH-0002
   topic: ARCH
   statement: Across the functional region of its simulated PFAL gate library, PFAL shows an energy advantage
@@ -53,13 +57,18 @@ claims:
     display:
       value: 5.0
       unit: dimensionless
-    conditions: &id002
+    conditions:
       process: TSMC 16nm FinFET
       comparison: PFAL vs static CMOS
       operating_point: most favorable operating point
       vclk: 1 V
       fclk: 100 MHz
-  conditions: *id002
+  conditions:
+    process: TSMC 16nm FinFET
+    comparison: PFAL vs static CMOS
+    operating_point: most favorable operating point
+    vclk: 1 V
+    fclk: 100 MHz
   corrections:
   - date: '2026-09-21'
     public: true
@@ -98,12 +107,16 @@ claims:
     display:
       value: 2.0
       unit: percent
-    conditions: &id003
+    conditions:
       process: TSMC 16nm FinFET
       comparison: quadrature-VCO power-clock vs ideal sinusoidal power-clock
       cell: Buffer/NOT
       fclk: 3 GHz
-  conditions: *id003
+  conditions:
+    process: TSMC 16nm FinFET
+    comparison: quadrature-VCO power-clock vs ideal sinusoidal power-clock
+    cell: Buffer/NOT
+    fclk: 3 GHz
   corrections:
   - date: '2026-09-21'
     public: true
@@ -139,12 +152,16 @@ claims:
     display:
       value: 3.83
       unit: dimensionless
-    conditions: &id004
+    conditions:
       process: TSMC 16nm FinFET
       comparison: single-gate PFAL vs static CMOS
       power_clock: trapezoidal
       operating_point: minimum-energy points of the parameter sweep (Table 2)
-  conditions: *id004
+  conditions:
+    process: TSMC 16nm FinFET
+    comparison: single-gate PFAL vs static CMOS
+    power_clock: trapezoidal
+    operating_point: minimum-energy points of the parameter sweep (Table 2)
   corrections:
   - date: '2026-09-20'
     public: false
@@ -186,13 +203,18 @@ claims:
     display:
       value: 1.32
       unit: dimensionless
-    conditions: &id005
+    conditions:
       process: TSMC 16nm FinFET
       comparison: sinusoidal vs trapezoidal power-clock
       gate_at_maximum: XOR/XNOR
       vclk_at_maximum: 0.5 V
       fclk_at_maximum: 384 MHz
-  conditions: *id005
+  conditions:
+    process: TSMC 16nm FinFET
+    comparison: sinusoidal vs trapezoidal power-clock
+    gate_at_maximum: XOR/XNOR
+    vclk_at_maximum: 0.5 V
+    fclk_at_maximum: 384 MHz
   corrections:
   - date: '2026-09-21'
     public: true
@@ -226,11 +248,14 @@ claims:
     display:
       value: 5.3
       unit: dimensionless
-    conditions: &id006
+    conditions:
       process: TSMC 16nm FinFET
       comparison: 4-bit Brent-Kung CLA adder vs architecture-matched static CMOS estimate
       power_clock: triangular
-  conditions: *id006
+  conditions:
+    process: TSMC 16nm FinFET
+    comparison: 4-bit Brent-Kung CLA adder vs architecture-matched static CMOS estimate
+    power_clock: triangular
   corrections:
   - date: '2026-09-21'
     public: true
@@ -256,8 +281,12 @@ claims:
     model: gemini-3.6-flash
     prompt_version: reader-v2
     verified_quotes: 3
-  conditions: &id007
+  conditions:
     component: 1024-MAC Systolic Array
+    architecture: MiX-INT4g16
+    array_size: 1024-MAC
+    process: 28nm
+    frequency: 500 MHz
   quantity:
     quantity: power
     bound: exact
@@ -271,7 +300,22 @@ claims:
     display:
       value: 0.0404
       unit: W
-    conditions: *id007
+    conditions:
+      component: 1024-MAC Systolic Array
+      architecture: MiX-INT4g16
+      array_size: 1024-MAC
+      process: 28nm
+      frequency: 500 MHz
+  corrections:
+  - date: '2026-09-21'
+    public: false
+    fields:
+    - conditions
+    reason: 'The claim''s statement names the array size and architecture variant that separate it from
+      the paper''s other power figures (Table V is the 1024-MAC array of the MiX-INT4g16 accelerator;
+      Table VI compares iso-throughput 512-MAC arrays), but the structured conditions did not, so the
+      detector saw comparable numbers. Conditions restated from the statement. Before: {''component'':
+      ''1024-MAC Systolic Array''}.'
 - id: CLM-ARCH-0008
   topic: ARCH
   statement: The 512-MAC systolic array for MiX-INT4g16 consumes 31.8 mW of power in 28nm at 500 MHz.
@@ -288,8 +332,11 @@ claims:
     model: gemini-3.6-flash
     prompt_version: reader-v2
     verified_quotes: 3
-  conditions: &id008
+  conditions:
     architecture: MiX-INT4g16
+    array_size: 512-MAC
+    process: 28nm
+    frequency: 500 MHz
   quantity:
     quantity: power
     bound: exact
@@ -303,7 +350,21 @@ claims:
     display:
       value: 0.0318
       unit: W
-    conditions: *id008
+    conditions:
+      architecture: MiX-INT4g16
+      array_size: 512-MAC
+      process: 28nm
+      frequency: 500 MHz
+  corrections:
+  - date: '2026-09-21'
+    public: false
+    fields:
+    - conditions
+    reason: 'The claim''s statement names the array size and architecture variant that separate it from
+      the paper''s other power figures (Table V is the 1024-MAC array of the MiX-INT4g16 accelerator;
+      Table VI compares iso-throughput 512-MAC arrays), but the structured conditions did not, so the
+      detector saw comparable numbers. Conditions restated from the statement. Before: {''architecture'':
+      ''MiX-INT4g16''}.'
 - id: CLM-ARCH-0009
   topic: ARCH
   statement: The 512-MAC systolic array for MiX-INT4 consumes 26.8 mW of power in 28nm at 500 MHz.
@@ -320,8 +381,11 @@ claims:
     model: gemini-3.6-flash
     prompt_version: reader-v2
     verified_quotes: 3
-  conditions: &id009
+  conditions:
     architecture: MiX-INT4
+    array_size: 512-MAC
+    process: 28nm
+    frequency: 500 MHz
   quantity:
     quantity: power
     bound: exact
@@ -335,4 +399,18 @@ claims:
     display:
       value: 0.0268
       unit: W
-    conditions: *id009
+    conditions:
+      architecture: MiX-INT4
+      array_size: 512-MAC
+      process: 28nm
+      frequency: 500 MHz
+  corrections:
+  - date: '2026-09-21'
+    public: false
+    fields:
+    - conditions
+    reason: 'The claim''s statement names the array size and architecture variant that separate it from
+      the paper''s other power figures (Table V is the 1024-MAC array of the MiX-INT4g16 accelerator;
+      Table VI compares iso-throughput 512-MAC arrays), but the structured conditions did not, so the
+      detector saw comparable numbers. Conditions restated from the statement. Before: {''architecture'':
+      ''MiX-INT4''}.'

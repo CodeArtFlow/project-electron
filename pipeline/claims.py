@@ -221,6 +221,11 @@ def validate_claim(claim, schemas=None):
             problems.append(f"quantity.bound {q.get('bound')!r} not in {BOUNDS}")
         if "approximate" in q and not isinstance(q["approximate"], bool):
             problems.append("quantity.approximate must be true or false")
+        # Conditions live in two places on a claim. If both are stated they must be the same dict:
+        # a claim that says two different things is an internal contradiction of our own making.
+        if q.get("conditions") and claim.get("conditions") and q["conditions"] != claim["conditions"]:
+            problems.append("quantity.conditions and conditions differ; a claim must state its conditions "
+                            "once, consistently")
 
     # A correction to a claim is an audit-trail entry, not an edit to be hidden.
     for i, corr in enumerate(claim.get("corrections", []) or []):

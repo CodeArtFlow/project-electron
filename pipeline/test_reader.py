@@ -24,10 +24,10 @@ from google.genai import types as genai_types  # noqa: E402
 
 from budget import Budget, BudgetError, BudgetExhausted  # noqa: E402
 from candidates import unread_candidates  # noqa: E402
-from claims import validate_ledger  # noqa: E402
+from claims import validate_claim, validate_ledger  # noqa: E402
 from fetch_text import FetchResult, fetch_arxiv, normalize  # noqa: E402
 from read_paper import (RETRY_DELAY_SECONDS, GeminiModel, Outcome, ReaderError, Repo, StubModel,  # noqa: E402
-                        build_claim, choose, commit_outcome, number_appears, qualifier_mismatch,
+                        build_claim, choose, commit_outcome, dump, number_appears, qualifier_mismatch,
                         read_candidate, resolve_limits, run, span_ok, token_in)
 from units import UnitEngine  # noqa: E402
 
@@ -416,6 +416,28 @@ def response(data=None, finish="STOP", prompt=1200, out=90, thoughts=40, total=N
     return type("R", (), {"candidates": [cand] if candidates else [], "usage_metadata": u,
                           "model_version": model_version, "prompt_feedback": feedback,
                           "text": text if text is not None else json.dumps(data)})()
+
+
+class ConditionsAreStatedOnce(unittest.TestCase):
+    """A claim states its conditions on the claim AND inside its quantity. Found the hard way: they were
+    YAML aliases of one dict, so a hand edit to one silently left the other saying something else."""
+
+    def test_a_claim_whose_two_condition_blocks_disagree_is_invalid(self):
+        claim, _ = build_claim(good_edp(), ctx())
+        claim["id"] = "CLM-ARCH-0001"
+        self.assertEqual(validate_claim(claim, SCHEMAS), [])                  # as built, they agree
+        claim["conditions"] = {**claim["conditions"], "vclk": "0.9 V"}        # edit only one place
+        self.assertTrue(any("differ" in p for p in validate_claim(claim, SCHEMAS)))
+
+    def test_the_reader_never_writes_yaml_aliases(self):
+        shared = {"process": "28nm"}
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "x.yaml"
+            dump(path, {"conditions": shared, "quantity": {"conditions": shared}})
+            text = path.read_text(encoding="utf-8")
+            self.assertNotIn("&id", text)
+            self.assertNotIn("*id", text)
+            self.assertEqual(text.count("28nm"), 2)                           # stated twice, explicitly
 
 
 class ModelClient(unittest.TestCase):
