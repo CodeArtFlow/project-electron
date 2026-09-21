@@ -3,56 +3,155 @@
   "model": "gemini-3.5-flash-lite",
   "prompt_version": "reader-v2",
   "limits": {
-    "max_papers": 3,
+    "max_papers": 12,
     "max_chars": 120000,
     "seconds": 900
   },
   "papers": [
     {
-      "candidate": "CAND-20260920-0138",
+      "candidate": "CAND-20260920-0135",
       "decision": "out_of_scope",
-      "reason": "The paper discusses a general materials design optimization method using Bayesian optimization and LLM agents, without a specific focus on semiconductor materials or electronics.",
-      "chars": 66919,
+      "reason": "The paper investigates fundamental condensed matter physics, specifically the quantum magnetism and magnetization plateaus in kagome antiferromagnets, which is out of scope for semiconductor research.",
+      "chars": 77951,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20260920-0137",
+      "candidate": "CAND-20260920-0134",
       "decision": "out_of_scope",
-      "reason": "The paper describes a wireless distributed antenna array for microwave imaging, which is outside the scope of semiconductor research.",
-      "chars": 40152,
+      "reason": "This tutorial paper focuses on optical wave packets and free-space group velocity in optics physics, which is out of scope for semiconductor research.",
+      "chars": 71128,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20260920-0136",
+      "candidate": "CAND-20260920-0133",
       "decision": "out_of_scope",
-      "reason": "The paper discusses optical beam alignment for physics experiments using atom-transport systems, which is unrelated to semiconductor manufacturing or devices.",
-      "chars": 51548,
+      "reason": "The paper is a tutorial on optical wave packets and angular dispersion in free space, which is outside the scope of semiconductor devices and materials.",
+      "chars": 61728,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260920-0132",
+      "decision": "out_of_scope",
+      "reason": "The paper investigates the high-pressure and high-temperature phase behavior and hydrogen reorganization of ammonia, which falls under high-pressure physics and planetary science rather than semiconductor research.",
+      "chars": 25188,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260920-0131",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on magnetic materials for permanent magnets rather than semiconductor devices or materials for electronics.",
+      "chars": 32150,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260920-0130",
+      "decision": "out_of_scope",
+      "reason": "This paper is about wireless communications and antenna array channel estimation, which falls outside the scope of semiconductor research.",
+      "chars": 71382,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260920-0129",
+      "decision": "read",
+      "reason": "",
+      "chars": 63280,
+      "claims": [],
+      "rejected": [
+        {
+          "statement": "Condition for a single magnetic flux quantum per unit cell in the square superlattice area is reached at a magnetic field of approximately 3.38 T.",
+          "reason": "unit conversion refused: voltage: cannot convert 3.38 T to V - Cannot convert from 'tesla' ([mass] / [time] ** 2 / [current]) to 'volt' ([mass] * [length] ** 2 / [time] ** 3 / [current]"
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20260920-0128",
+      "decision": "out_of_scope",
+      "reason": "This paper is about theoretical condensed matter physics concerning fractional quantum spin Hall crystals and hidden density-wave order, which is outside the scope of semiconductor devices, materials, and manufacturing.",
+      "chars": 72120,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260920-0127",
+      "decision": "read",
+      "reason": "",
+      "chars": 96404,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260920-0126",
+      "decision": "read",
+      "reason": "",
+      "chars": 90908,
+      "claims": [],
+      "rejected": [
+        {
+          "statement": "The MiX accelerator improves PE area efficiency by 25% over the NVFP4 baseline.",
+          "reason": "unit conversion refused: area_die: cannot convert 25.0 % to m^2 - Cannot convert from 'percent' (dimensionless) to 'meter ** 2' ([length] ** 2). A dimensional mismatch means the value w"
+        },
+        {
+          "statement": "The MiX accelerator delivers an average 2.3x to 4.5x speedup across six VLM benchmarks on LLaVA-OneVision-7B and MiniCPM-V-2.6 compared to the state-of-the-art ",
+          "reason": "the statement contains the number 7, which none of its quotes contain"
+        },
+        {
+          "statement": "The MiX accelerator delivers an average 2.3x to 4.5x upper bound speedup across six VLM benchmarks on LLaVA-OneVision-7B and MiniCPM-V-2.6 compared to the state",
+          "reason": "the statement contains the number 7, which none of its quotes contain"
+        },
+        {
+          "statement": "The MiX accelerator delivers an average 1.4x to 2.9x energy reduction across six VLM benchmarks on LLaVA-OneVision-7B and MiniCPM-V-2.6 compared to the state-of",
+          "reason": "the statement contains the number 7, which none of its quotes contain"
+        },
+        {
+          "statement": "The MiX accelerator delivers an average 1.4x to 2.9x upper bound energy reduction across six VLM benchmarks on LLaVA-OneVision-7B and MiniCPM-V-2.6 compared to ",
+          "reason": "the statement contains the number 7, which none of its quotes contain"
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20260920-0125",
+      "decision": "out_of_scope",
+      "reason": "This paper is about fundamental physics research on magnon spin relaxation in antiferromagnetic insulators, which is outside the scope of semiconductor device and process technology.",
+      "chars": 54484,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260920-0124",
+      "decision": "read",
+      "reason": "evidence type not established by a verifiable quote (or 'mixed'); no claims extracted, a human reader is needed",
+      "chars": 49695,
       "claims": [],
       "rejected": []
     }
   ],
   "counts": {
-    "out_of_scope": 3
+    "out_of_scope": 8,
+    "read": 4
   },
   "claims_accepted": 0,
-  "claims_rejected": 0,
+  "claims_rejected": 6,
   "tokens": {
-    "input": 2777,
-    "output": 151
+    "input": 107865,
+    "output": 3512
   },
   "stop_reason": "paper_cap",
-  "seconds": 15.4,
-  "cost_usd": 0.001212,
+  "seconds": 78.0,
+  "cost_usd": 0.041146,
   "budget": {
     "monthly_cap_usd": 10.0,
-    "spent_month_usd": 0.001212,
-    "spent_today_usd": 0.001212,
+    "spent_month_usd": 0.042358,
+    "spent_today_usd": 0.042358,
     "allowance_today_usd": 1.0,
-    "remaining_today_usd": 0.998788,
-    "run_usd": 0.001212,
-    "run_calls": 3,
+    "remaining_today_usd": 0.957642,
+    "run_usd": 0.041146,
+    "run_calls": 16,
     "run_unknown_calls": 0,
     "price_table_retrieved": "2026-09-21",
     "price_table_age_days": 0

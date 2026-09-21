@@ -1,0 +1,57 @@
+id: SRC-00006
+title: 'MiX: Micro-Inverted-Scaling for End-to-End Low-Bit Vision-Language Model Acceleration'
+doi: null
+arxiv_id: 2609.19683v1
+url: https://arxiv.org/abs/2609.19683v1
+venue_id: arxiv_api
+authors:
+- name: Yuan Liao
+  affiliation: null
+  corresponding: null
+- name: Jae-sun Seo
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-17'
+retrieved_date: '2026-09-21'
+access: full_text
+read_scope: Automated reading. The full PDF text (90,908 characters, 17 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.19683v1 on
+  2026-09-21. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: No result quotes were verified for this record.
+method_summary: “All proposed and baseline accelerators are implemented at the Register Transfer Level
+  (RTL) in SystemVerilog and synthesized with Synopsys Design Compiler, targeting the TSMC28HPC technology
+  node at a 500 MHz clock frequency. Power is reported by SAIF annotated simulation with same stimulus
+  to all accelerators.”
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.5-flash-lite
+  prompt_version: reader-v2
+  tokens:
+    input: 32763
+    output: 1609
+  claims_accepted: 0
+  claims_rejected: 5
+  rejected:
+  - statement: The MiX accelerator improves PE area efficiency by 25% over the NVFP4 baseline.
+    reason: 'unit conversion refused: area_die: cannot convert 25.0 % to m^2 - Cannot convert from ''percent''
+      (dimensionless) to ''meter ** 2'' ([length] ** 2). A dimensional mismatch means the value w'
+  - statement: 'The MiX accelerator delivers an average 2.3x to 4.5x speedup across six VLM benchmarks
+      on LLaVA-OneVision-7B and MiniCPM-V-2.6 compared to the state-of-the-art '
+    reason: the statement contains the number 7, which none of its quotes contain
+  - statement: The MiX accelerator delivers an average 2.3x to 4.5x upper bound speedup across six VLM
+      benchmarks on LLaVA-OneVision-7B and MiniCPM-V-2.6 compared to the state
+    reason: the statement contains the number 7, which none of its quotes contain
+  - statement: The MiX accelerator delivers an average 1.4x to 2.9x energy reduction across six VLM benchmarks
+      on LLaVA-OneVision-7B and MiniCPM-V-2.6 compared to the state-of
+    reason: the statement contains the number 7, which none of its quotes contain
+  - statement: 'The MiX accelerator delivers an average 1.4x to 2.9x upper bound energy reduction across
+      six VLM benchmarks on LLaVA-OneVision-7B and MiniCPM-V-2.6 compared to '
+    reason: the statement contains the number 7, which none of its quotes contain
+corrections: []
