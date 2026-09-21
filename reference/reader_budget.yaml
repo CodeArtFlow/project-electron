@@ -1,0 +1,53 @@
+# Project Electron - reader budget
+#
+# What the automated reader (pipeline/read_paper.py) may spend, and the prices it is budgeted at.
+# This is a COMMITTED FILE, not a runtime switch, for the same reason reference/semantic_policy.yaml
+# is: AGENTS.md says a gate CI can route around is not a gate. There is no workflow input or
+# environment variable that raises the cap. The CLI can only LOWER it (--budget-usd), never raise it.
+# Changing the cap is a commit, visible in history and review.
+#
+# How the cap is enforced (pipeline/budget.py):
+#   * Spend is recorded from the token counts the API reports, at the prices below, in
+#     corpus/candidates/_reader_spend.json, and committed with the run so it survives between runs.
+#   * Pacing: a day may spend at most an even share of what is left of the month, so a backfill or a
+#     mistake cannot burn the month on its first day and leave nothing for the other thirty.
+#   * Before EVERY call the worst case (the whole input, plus the full max_output_tokens, which for
+#     Gemini covers thinking and answer combined) must fit in what is left today. If it does not,
+#     the run stops with stop_reason "budget". Nothing is read on credit.
+#   * A call whose outcome is unknown (a timeout: the request may have been processed and billed
+#     without us seeing the usage) is charged at its worst case, not at zero.
+#   * If this file, or the spend ledger, is unreadable the reader refuses to run. It fails closed.
+#
+# THIS IS A SECOND LINE OF DEFENCE. Our accounting is only as good as our copy of the prices and of
+# Google's usage report. The hard cap that cannot be wrong is on Google's side, and only the account
+# owner can set it (AI Studio > Spend > Monthly spend cap, or prepaid billing with auto-reload off,
+# which stops service the moment the balance reaches zero). See AGENTS.md, "Reader budget".
+
+monthly_cap_usd: 10.00
+
+decision:
+  made_by: user
+  date: 2026-09-21
+  reason: >
+    Use Gemini's Flash model for automated reading and keep usage low, about $10 a month at most.
+  model_choice: >
+    gemini-3.8-flash is the newest stable Flash model. It is not the cheapest Gemini model
+    (gemini-3.5-flash-lite is listed at $0.30 in / $2.50 out); the user asked for Flash.
+
+model: gemini-3.8-flash
+
+# USD per 1,000,000 tokens, Standard tier, paid. Thinking tokens are billed as output tokens.
+# The free tier costs nothing but its content may be used to improve Google's products, and Google
+# decides the tier from the key's billing setup, which we cannot see, so everything is budgeted at
+# the paid price: the ledger can only over-count.
+#
+# Prices change. Each entry is effective from its `from` date (UTC), and the LAST entry whose date
+# has arrived applies. Google announced a step up on 2027-01-01, recorded here so that the ledger
+# does not silently under-count by half in the new year.
+prices:
+  source: https://ai.google.dev/gemini-api/docs/pricing
+  retrieved: 2026-09-21
+  models:
+    gemini-3.8-flash:
+      - {from: 2026-01-01, input: 0.75, output: 3.75}     # "through December 31, 2026"
+      - {from: 2027-01-01, input: 1.50, output: 7.50}     # "starting January 1, 2027"

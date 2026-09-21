@@ -75,6 +75,11 @@ jobs:
       - name: The reader cannot record what a paper does not say
         run: python pipeline/test_reader.py
 
+      - name: The reader cannot spend past its monthly cap
+        run: |
+          python pipeline/budget.py --check
+          python pipeline/test_budget.py
+
       - name: The site builds with an audit report present
         run: python pipeline/test_build_site.py
 
