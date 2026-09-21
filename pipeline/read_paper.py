@@ -490,7 +490,7 @@ class Repo:
 @dataclass
 class Outcome:
     candidate_id: str
-    decision: str                      # read | out_of_scope | unreadable | too_long | not_arxiv | error
+    decision: str                      # read | no_claims | out_of_scope | unreadable | too_long | not_arxiv | error
     reason: str = ""
     source: dict = field(default_factory=dict)
     claims: list = field(default_factory=list)
@@ -626,7 +626,18 @@ def read_candidate(path, repo, model, eng, registry, schemas, fetch=fetch_arxiv,
         "corrections": [],
     }
     out.claims = accepted
-    out.decision = "read"
+    if accepted:
+        out.decision = "read"
+    else:
+        # A paper the model was given in full but from which the verifier accepted nothing is NOT a
+        # paper we have read. Retiring it would delete the candidate and write an empty source record,
+        # permanently, for what may only be a weak model's failure. It stays a candidate, marked so
+        # that it is not re-paid for every day, for a stronger model or a human to take.
+        out.decision = "no_claims"
+        n = len(out.rejected)
+        out.reason = out.reason or (
+            ("the model proposed no claim" if not n else f"the verifier rejected all {n} claim(s) the model proposed")
+            + "; a stronger model or a human reader may do better")
     return out
 
 
@@ -657,6 +668,10 @@ def commit_outcome(out, path, repo, today=None):
         doc = load_yaml_file(path)
         doc["read_decision"] = {"decision": out.decision, "date": today, "reason": out.reason,
                                 "model": out.model_used or None, "prompt_version": PROMPT_VERSION}
+        if out.decision == "no_claims":
+            # What a human or a stronger model needs to know before taking the paper: what was tried.
+            doc["read_decision"].update(rejected=out.rejected[:10], tokens=dict(out.usage),
+                                        fetched_chars=out.fetched_chars)
         dump(path, doc)
 
 

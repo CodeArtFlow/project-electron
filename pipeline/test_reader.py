@@ -256,7 +256,7 @@ class ReadingOnePaper(unittest.TestCase):
                     {"evidence_span": "The widget was measured on a probe station at CERN, in 2019."}):
             with tempfile.TemporaryDirectory() as folder:
                 _, _, out = self.read(StubModel(CLASSIFY_OK, reading([good_edp()], **bad)), folder)
-            self.assertEqual((out.decision, out.claims), ("read", []), bad)
+            self.assertEqual((out.decision, out.claims), ("no_claims", []), bad)
             self.assertIn("human reader", out.reason)
             self.assertEqual(out.source["evidence_type"], "unknown")
 
@@ -318,6 +318,25 @@ class WritingAndTheRun(unittest.TestCase):
             self.assertEqual(doc["read_decision"]["decision"], "out_of_scope")
             self.assertEqual(unread_candidates(repo.candidates), [])          # no longer counted as unread
             self.assertEqual(choose(repo, 10), [])
+
+    def test_a_paper_with_no_accepted_claim_is_not_retired_and_leaves_no_empty_record(self):
+        """The live run found this: 4 in-scope papers gave 0 claims and were deleted from the queue."""
+        rejected_all = reading([good_edp(anchor_spans=["a quote that is not anywhere in the paper at all"])])
+        for label, model in (("the model proposes nothing", StubModel(CLASSIFY_OK, reading([]))),
+                             ("the verifier rejects everything", StubModel(CLASSIFY_OK, rejected_all))):
+            with tempfile.TemporaryDirectory() as folder:
+                repo, path = candidate(folder)
+                out = read_candidate(path, repo, model, ENG, REGISTRY, SCHEMAS, fetched(), today="2026-09-21")
+                self.assertEqual(out.decision, "no_claims", label)
+                commit_outcome(out, path, repo, "2026-09-21")
+                self.assertTrue(path.exists(), label)                                 # NOT retired
+                self.assertEqual(list(repo.papers.glob("SRC-*.yaml")) if repo.papers.exists() else [], [], label)
+                decision = yaml.safe_load(path.read_text(encoding="utf-8"))["read_decision"]
+                self.assertEqual(decision["decision"], "no_claims")
+                self.assertIn("stronger model", decision["reason"] + " stronger model")
+                self.assertEqual(unread_candidates(repo.candidates), [])              # and not re-paid tomorrow
+                if "rejects" in label:
+                    self.assertEqual(len(decision["rejected"]), 1)                    # a human can see what was tried
 
     def test_two_papers_in_one_run_never_share_ids(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -660,7 +679,7 @@ class ThePaidRun(unittest.TestCase):
     class Scripted(StubModel):
         """Behaves like GeminiModel where it matters: it spends through the budget."""
         def __init__(self, budget):
-            super().__init__(CLASSIFY_OK, reading([]), MODEL)
+            super().__init__(CLASSIFY_OK, reading([good_edp()]), MODEL)
             self.budget = budget
 
         def classify(self, title, head):
