@@ -1,7 +1,7 @@
 """Prove every publication-gate check actually fires.
 
 A gate that has only ever run against an empty corpus is not a gate - it is eight functions that
-have never returned False. This builds a deliberately broken fixture tree for each check and
+have never returned False. (Check 9, the TypeSafe audit, is tested in test_semantic_checks.py.) This builds a deliberately broken fixture tree for each check and
 asserts the gate catches it, then builds a clean tree and asserts it passes.
 
 Fixtures are written to a temporary directory, never into the project's real ledger.

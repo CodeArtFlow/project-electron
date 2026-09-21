@@ -212,7 +212,13 @@ units:
     display: mV/dec
     display_factor: 1.0e3
     accept: [mV/dec, V/dec]
-    note: Boltzmann limit is ~59.6 mV/dec at 300 K. Anything below requires scrutiny, not excitement.
+    note: >
+      The room-temperature limit of a THERMIONIC-injection FET is ln(10) * k_B * T / q =
+      59.53 mV/dec at 300 K (59.16 at 298.15 K), derived from the NIST CODATA constants in
+      `sourced_constants`. An earlier version said ~59.6 at 300 K, written from memory; that
+      is the value at about 300.4 K. A result below the limit needs scrutiny, not excitement,
+      but is not impossible for devices that are not thermionic (tunnelling, negative
+      capacitance): pipeline/bounds.py flags it for a human look and never refuses it.
 
   defect_density:
     si_base: 1/m^2
@@ -250,6 +256,17 @@ units:
       Energy of a baseline divided by energy of the design under test ("3.8x lower energy").
       Dimensionless, and meaningless without BOTH the baseline and the circuit being compared -
       a gate-level ratio and an adder-level ratio are different quantities wearing one name.
+
+  relative_deviation:
+    si_base: dimensionless
+    display: percent
+    display_factor: 100.0
+    accept: [dimensionless, fraction, percent, "%"]
+    note: >
+      A relative difference as a fraction (0.02 = 2 percent). Published as "within 2%", which is
+      an UPPER BOUND on the deviation (bound: upper_bound), not a measured 2 percent. It is not
+      an energy advantage and must not be recorded as one: an earlier extraction stored
+      "within 2% of the ideal case" as an energy_advantage_ratio of 1.02.
 
   numerical_aperture:
     si_base: dimensionless
@@ -365,4 +382,49 @@ constants:
   psi_to_pa: 6894.757293168          # exact
   bits_per_byte: 8                   # exact
   gib_to_gb: 1.073741824             # exact: 2^30 / 10^9
-  boltzmann_limit_ss_300K_V_dec: 0.0596   # derived: (kT/q)*ln(10) at 300 K. Recompute when precision matters.
+  # Derived, not typed: ln(10) * k_B * 300 K / q from the exact CODATA constants below. The value
+  # here previously read 0.0596, which is the limit at ~300.4 K. pipeline/bounds.py recomputes it
+  # and test_authority_bounds.py fails if this line ever drifts from the derivation.
+  boltzmann_limit_ss_300K_V_dec: 0.05952644
+
+# ---------------------------------------------------------------------------
+# Constants SOURCED from an authority that was fetched and read
+# ---------------------------------------------------------------------------
+# AGENTS.md rule 1: a number we stand behind traces to a source we actually read, never to
+# memory. These come from NIST's CODATA listing, kept in the repo at `source_file` so any value
+# can be audited and CI can check it offline. `pipeline/bounds.py --verify` re-parses that file
+# and fails if any value below disagrees with it.
+#
+# NOT covered, on purpose: material properties (bandgaps, carrier-mobility limits, breakdown
+# fields). No authority for them has been read yet, and writing them from recall would repeat
+# the mistake this block exists to fix. Add them only from a source that is fetched and kept.
+sourced_constants:
+  source: NIST Fundamental Physical Constants, complete listing
+  edition: 2022 CODATA adjustment
+  source_url: https://physics.nist.gov/cuu/Constants/Table/allascii.txt
+  source_file: reference/authorities/nist-codata-2022-allascii.txt
+  retrieved: 2026-09-21
+  values:
+    boltzmann_constant: {nist_name: "Boltzmann constant", value: 1.380649e-23, unit: "J/K", exact: true}
+    elementary_charge: {nist_name: "elementary charge", value: 1.602176634e-19, unit: "C", exact: true}
+    planck_constant: {nist_name: "Planck constant", value: 6.62607015e-34, unit: "J*s", exact: true}
+    speed_of_light: {nist_name: "speed of light in vacuum", value: 299792458, unit: "m/s", exact: true}
+    avogadro_constant: {nist_name: "Avogadro constant", value: 6.02214076e+23, unit: "1/mol", exact: true}
+
+# Bounds that are DERIVED from those constants and checked mechanically. A bound never refuses
+# a claim: an extraordinary result is exactly what the field wants to hear about, so it is
+# flagged for scrutiny, shown to the reader, and left in the ledger.
+sanity_bounds:
+  subthreshold_swing:
+    - id: below-thermionic-limit
+      kind: scrutiny
+      formula: ln(10) * k_B * T / q
+      derived_from: [boltzmann_constant, elementary_charge]
+      needs_condition: temperature, with a unit
+      applies_to: thermionic-injection FETs (bulk, FinFET, gate-all-around, HEMT)
+      does_not_apply_to: tunnelling FETs, negative-capacitance FETs, cold-source devices
+      tolerance: 0.01
+      reading: >
+        A value more than 1 percent below the limit at the stated temperature is flagged. The
+        flag says the claim is extraordinary unless the device is not thermionic; it does not
+        say the claim is wrong.

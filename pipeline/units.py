@@ -1,4 +1,4 @@
-"""SI conversion engine. Enforces the calculate-in-SI rule from CLAUDE.md.
+"""SI conversion engine. Enforces the calculate-in-SI rule from AGENTS.md.
 
 Every quantity that enters a claim passes through here, producing the three representations:
 
@@ -53,6 +53,17 @@ SPELLINGS = [
 ]
 
 
+# Dimensionless quantities still have UNITS. A ratio can be written as a fraction, a percentage or
+# a multiplier ("3.8x"), and 2 percent is 0.02, not 2. An earlier version returned the number
+# unchanged whatever unit it was given, so record(2, "percent", ...) stored 2.0 and
+# record(5, "joule", ...) was accepted as a dimensionless 5. Unknown units now raise.
+DIMENSIONLESS_UNITS = {"dimensionless": 1.0, "fraction": 1.0, "x": 1.0, "percent": 0.01, "%": 0.01}
+
+# How a published number relates to the quantity it reports. "up to 5.3x" is an upper bound, not a
+# measurement of 5.3x; storing it as exact made two upper bounds look like a contradiction.
+BOUNDS = ("exact", "upper_bound", "lower_bound")
+
+
 class UnitError(ValueError):
     """Raised when a conversion cannot be performed correctly. Never returns a guess."""
 
@@ -91,7 +102,12 @@ class UnitEngine:
         spec = self.quantity_spec(quantity)
         si_unit = spec["si_base"]
         if si_unit == "dimensionless":
-            return float(value), "dimensionless"
+            if unit not in DIMENSIONLESS_UNITS:
+                raise UnitError(
+                    f"{quantity} is dimensionless; unit {unit!r} is not one of "
+                    f"{sorted(DIMENSIONLESS_UNITS)}. Recording it as a bare number would hide "
+                    f"a unit error.")
+            return float(value) * DIMENSIONLESS_UNITS[unit], "dimensionless"
         try:
             q = self.Q(float(value), self._pint_str(unit))
             return float(q.to(self._pint_str(si_unit)).magnitude), si_unit
@@ -109,7 +125,8 @@ class UnitEngine:
         spec = self.quantity_spec(quantity)
         disp = spec.get("display", spec["si_base"])
         if spec["si_base"] == "dimensionless":
-            return float(si_value), "dimensionless"
+            return (float(si_value) * float(spec.get("display_factor", 1.0)),
+                    spec.get("display", "dimensionless"))
         offset = spec.get("display_offset")
         if offset is not None:
             # Temperature: pint owns the offset so we never hand-apply -273.15.
@@ -118,12 +135,21 @@ class UnitEngine:
         q = self.Q(float(si_value), self._pint_str(spec["si_base"]))
         return float(q.to(self._pint_str(disp)).magnitude), disp
 
-    def record(self, value, unit, quantity, conditions=None):
-        """Produce the full three-representation block for a claim."""
+    def record(self, value, unit, quantity, conditions=None, bound="exact", approximate=False):
+        """Produce the full three-representation block for a claim.
+
+        `bound` and `approximate` describe the PUBLISHED statement ("up to roughly 5x" is an
+        approximate upper bound) and carry through unchanged: they qualify as_published and
+        si_base alike. reconcile compares bounds by inequality, never as if they were points.
+        """
+        if bound not in BOUNDS:
+            raise UnitError(f"bound must be one of {BOUNDS}, got {bound!r}")
         si_value, si_unit = self.to_si(value, unit, quantity)
         disp_value, disp_unit = self.to_display(si_value, quantity)
         out = {
             "quantity": quantity,
+            "bound": bound,
+            "approximate": bool(approximate),
             "as_published": {"value": value, "unit": unit},
             "si_base": {"value": si_value, "unit": si_unit},
             "display": {"value": disp_value, "unit": disp_unit},
@@ -192,13 +218,36 @@ def self_test():
         pass
 
     # Round trip through display must return the original si value.
-    for quantity in ("mobility", "pressure", "temperature", "length_device", "energy"):
+    for quantity in ("mobility", "pressure", "temperature", "length_device", "energy",
+                     "relative_deviation"):
         si_in = 1.234
         d, _ = eng.to_display(si_in, quantity)
         spec = eng.units[quantity]
         back, _ = eng.to_si(d, spec["display"], quantity)
         if abs(back - si_in) > abs(si_in) * 1e-9:
             failures.append(f"{quantity}: round trip {si_in} -> {d} -> {back}")
+
+    # Dimensionless units: percent converts, and a unit that is not a unit of a ratio is refused.
+    try:
+        got, _ = eng.to_si(2, "percent", "relative_deviation")
+        if abs(got - 0.02) > 1e-12:
+            failures.append(f"2 percent -> {got}, expected 0.02")
+    except UnitError as e:
+        failures.append(f"relative_deviation percent: {e}")
+    for bad_unit in ("joule", "nonsense", "nm"):
+        try:
+            eng.to_si(5, bad_unit, "energy_advantage_ratio")
+            failures.append(f"dimensionless quantity silently accepted unit {bad_unit!r}")
+        except UnitError:
+            pass
+    rec = eng.record(5.3, "x", "energy_advantage_ratio", bound="upper_bound", approximate=True)
+    if (rec["bound"], rec["approximate"], rec["si_base"]["value"]) != ("upper_bound", True, 5.3):
+        failures.append(f"bound/approximate not carried through record(): {rec}")
+    try:
+        eng.record(1, "x", "energy_advantage_ratio", bound="roughly")
+        failures.append("an invalid bound was accepted")
+    except UnitError:
+        pass
 
     print(f"quantities checked: {len(eng.units)}")
     if failures:

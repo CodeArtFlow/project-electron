@@ -1,6 +1,5 @@
 id: SRC-00002
-title: Evaluation of Power-Clock Waveforms for Positive Feedback Adiabatic Logic in
-  16nm FinFET
+title: Evaluation of Power-Clock Waveforms for Positive Feedback Adiabatic Logic in 16nm FinFET
 arxiv_id: 2609.19998v1
 doi: 10.48550/arXiv.2609.19998
 url: https://arxiv.org/abs/2609.19998v1
@@ -8,31 +7,56 @@ venue_id: arxiv_api
 authors:
 - name: Maciej Szymon Pyrzowski
   affiliation: Eindhoven University of Technology
-  corresponding: true
+  corresponding: false
 - name: Franciszek Łukowski
   affiliation: Eindhoven University of Technology
   corresponding: false
 - name: Aida Todri-Sanial
   affiliation: Eindhoven University of Technology
-  corresponding: false
+  corresponding: true
 published_date: '2026-09-17'
 retrieved_date: '2026-09-20'
-access: full_text_figures
+access: full_text
 oa_evidence: arXiv preprint, full PDF retrieved and read (18 pages).
 license: arXiv non-exclusive license
-reported: Optimized single-gate PFAL cells achieve up to 3.83x lower energy than equivalent
-  static CMOS gates. Sinusoidal excitation improves energy by up to 1.32x compared
-  with trapezoidal excitation and extends the valid operating range. A 4-bit Brent-Kung
-  carry look-ahead adder reaches a gain of up to 5.3x compared with the static CMOS
-  energy estimate for the triangular power-clock. The power-clock sweep shows the
-  minimum-energy waveform approaches a triangular shape rather than a conventional
-  trapezoid.
-method_summary: PFAL gate library designed, verified and characterised in the TSMC
-  16 nm FinFET process by energy-delay-product optimization over power-clock amplitude,
-  frequency and waveform shape. Simulation only. The adder comparison uses a static
-  CMOS energy ESTIMATE rather than a full static CMOS simulation.
+reported: 'Optimized single-gate PFAL cells achieve up to 3.83x lower energy than equivalent static CMOS
+  gates. Sinusoidal excitation improves energy by up to 1.32x compared with trapezoidal excitation and
+  extends the valid operating range. A 4-bit Brent-Kung carry look-ahead adder reaches a gain of up to
+  5.3x compared with the static CMOS energy estimate for the triangular power-clock. The power-clock sweep
+  shows the minimum-energy waveform approaches a triangular shape rather than a conventional trapezoid.
+  [Addendum 2026-09-21, from the body] Table 2 (minimum-energy points of the trapezoidal power-clock sweep)
+  gives reductions versus CMOS of 3.65x (Buffer/NOT), 3.83x (AND/NAND) and 3.71x (XOR/XNOR). Fig. 10:
+  the strongest improvement of sinusoidal over trapezoidal excitation, 1.32x, is reached by the XOR/XNOR
+  gate at V_CLK = 0.5 V and f = 384 MHz (Buffer/NOT 1.19x, AND/NAND 1.18x). The 4-bit Brent-Kung CLA reached
+  a gain of up to 5.3x compared with the architecture-matched static CMOS energy estimate for the triangular
+  power-clock.'
+method_summary: All transistor-level simulations were performed in Cadence Virtuoso using the TSMC 16
+  nm FinFET process design kit, with transistor models based on BSIM-CMG (stated in the body). Simulation
+  only; no fabricated silicon. Single-gate baselines are simulated static CMOS gates; the adder baseline
+  is an ESTIMATE.
 evidence_type: simulated
 grade: B
-limitations: Simulation only. Same three authors and same institution as SRC-00001,
-  so the two are not independent sources. The 5.3x adder figure is against an estimated
-  rather than simulated static CMOS baseline.
+limitations: Simulation only. Same three authors and same institution as SRC-00001, so the two are not
+  independent sources. The 5.3x adder figure is against an estimated rather than simulated static CMOS
+  baseline. The paper states the static CMOS reference energy for the adders was estimated by summing
+  individually measured energies of the corresponding static CMOS gates, an approximation that neglects
+  inter-gate loading effects.
+read_scope: abstract; the body passages that state 3.83x, 1.32x and 5.3x (Table 2, Fig. 10 captions, results
+  and conclusions); the simulation-method paragraph; the note on how the static CMOS estimate was built.
+  The PDF was fetched in full but not read end to end, and no figure or table image was viewed.
+corrections:
+- date: '2026-09-21'
+  field: authors[].corresponding
+  change: Pyrzowski true -> false; Todri-Sanial false -> true
+  reason: Inferred from author order. The paper marks Aida Todri-Sanial with an asterisk and states 'Corresponding
+    author(s)'.
+- date: '2026-09-21'
+  field: access
+  change: full_text_figures -> full_text
+  reason: Only the abstract had been read when the record was written, and no figure was ever viewed.
+    The body was read for the passages behind each recorded number on 2026-09-21; they support 3.83x,
+    1.32x and 5.3x.
+- date: '2026-09-21'
+  field: reported, method_summary, limitations
+  change: body-verified detail added
+  reason: Condition and baseline detail the claims rely on was missing from the record.

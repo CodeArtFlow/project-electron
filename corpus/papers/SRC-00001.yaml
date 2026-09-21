@@ -1,6 +1,5 @@
 id: SRC-00001
-title: Evaluating Positive Feedback Adiabatic Logic in 16nm FinFET with a Realistic
-  Power-Clock
+title: Evaluating Positive Feedback Adiabatic Logic in 16nm FinFET with a Realistic Power-Clock
 arxiv_id: 2609.19999v1
 doi: 10.48550/arXiv.2609.19999
 url: https://arxiv.org/abs/2609.19999v1
@@ -8,32 +7,57 @@ venue_id: arxiv_api
 authors:
 - name: Franciszek Łukowski
   affiliation: Eindhoven University of Technology
-  corresponding: true
+  corresponding: null
 - name: Maciej Pyrzowski
   affiliation: Eindhoven University of Technology
-  corresponding: false
+  corresponding: null
 - name: Aida Todri-Sanial
   affiliation: Eindhoven University of Technology
-  corresponding: false
+  corresponding: null
 published_date: '2026-09-17'
 retrieved_date: '2026-09-20'
-access: full_text_figures
-oa_evidence: arXiv preprint, full PDF retrieved and read (11 pages). arXiv is oa_status
-  preprint in the registry; no per-article check needed.
+access: full_text
+oa_evidence: arXiv preprint, full PDF retrieved and read (11 pages). arXiv is oa_status preprint in the
+  registry; no per-article check needed.
 license: arXiv non-exclusive license
-reported: 'Minimum energy-delay product of 1.23e-26 J*s for the low-threshold PFAL
-  Buffer/NOT cell at V_CLK = 0.6 V and f_CLK = 7.94 GHz. PFAL preserves an energy
-  benefit over static CMOS of up to roughly 5x at reduced frequencies and elevated
-  supply voltages. With a parallel-coupled quadrature VCO as a non-ideal four-phase
-  power-clock generator, the Buffer/NOT energy stays within 2% of the ideal sinusoidal
-  case at 3 GHz. Three sources of non-adiabatic loss are identified: threshold-voltage-related
-  loss in the PMOS/NMOS latch, a previously unreported redundant charging of the output
-  node, and loss related to PFAL logic tree complexity.'
-method_summary: Cadence transient circuit simulation of a PFAL standard-cell library
-  in the TSMC 16 nm FinFET process. No fabricated silicon; all figures are simulated.
-  Comparison baseline is static CMOS simulated in the same process.
+reported: 'Minimum energy-delay product of 1.23e-26 J*s for the low-threshold PFAL Buffer/NOT cell at
+  V_CLK = 0.6 V and f_CLK = 7.94 GHz. PFAL preserves an energy benefit over static CMOS of up to roughly
+  5x at reduced frequencies and elevated supply voltages. With a parallel-coupled quadrature VCO as a
+  non-ideal four-phase power-clock generator, the Buffer/NOT energy stays within 2% of the ideal sinusoidal
+  case at 3 GHz. Three sources of non-adiabatic loss are identified: threshold-voltage-related loss in
+  the PMOS/NMOS latch, a previously unreported redundant charging of the output node, and loss related
+  to PFAL logic tree complexity. [Addendum 2026-09-21, from the conclusions] Across the functional region,
+  PFAL maintains an energy advantage over static CMOS of up to approximately 5x at the most favorable
+  operating points (V_CLK = 1 V and f_CLK = 100 MHz).'
+method_summary: 'Cadence transient circuit simulation of a PFAL standard-cell library in the TSMC 16 nm
+  FinFET process. No fabricated silicon; all figures are simulated. Comparison baseline is static CMOS
+  simulated in the same process. Body text: Cadence transient simulation; the static CMOS baseline is
+  simulated in the same process.'
 evidence_type: simulated
 grade: B
-limitations: Simulation only - no measured silicon. Single process (TSMC 16nm FinFET).
-  Static CMOS baseline is itself simulated rather than measured. The 'roughly 5x'
-  figure is stated approximately in the abstract without a tolerance.
+limitations: Simulation only - no measured silicon. Single process (TSMC 16nm FinFET). Static CMOS baseline
+  is itself simulated rather than measured. The 'roughly 5x' figure is stated approximately in the abstract
+  without a tolerance.
+read_scope: abstract; introduction; the simulation-method paragraph; the conclusions; figure captions
+  and the passages that state each recorded number. The PDF was fetched in full but not read end to end,
+  and no figure or table image was viewed.
+corrections:
+- date: '2026-09-21'
+  field: authors[].corresponding
+  change: true -> null for all three authors
+  reason: Inferred from author order, never stated. Neither the arXiv page nor the PDF names a corresponding
+    author.
+- date: '2026-09-21'
+  field: authors[].affiliation
+  change: verified
+  reason: 'Written from memory when the record was created. Confirmed on page 1 of the PDF: NanoComputing
+    Research Lab, Electrical Engineering Department, Eindhoven University of Technology.'
+- date: '2026-09-21'
+  field: access
+  change: full_text_figures -> full_text
+  reason: No figure or table image was viewed. Only extracted text was read.
+- date: '2026-09-21'
+  field: reported
+  change: conclusions sentence added
+  reason: CLM-ARCH-0002 rests on the operating point (V_CLK = 1 V, f_CLK = 100 MHz) stated only in the
+    conclusions, which the record did not contain.

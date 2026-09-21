@@ -1,8 +1,8 @@
 claims:
 - id: CLM-ARCH-0001
   topic: ARCH
-  statement: Low-threshold PFAL Buffer/NOT cell reaches a minimum energy-delay product
-    of 1.23e-26 J*s in simulation.
+  statement: Low-threshold PFAL Buffer/NOT cell reaches a minimum energy-delay product of 1.23e-26 J*s
+    in simulation.
   sources:
   - SRC-00001
   grade: B
@@ -30,8 +30,8 @@ claims:
   conditions: *id001
 - id: CLM-ARCH-0002
   topic: ARCH
-  statement: Single-gate PFAL cells show an energy advantage over static CMOS of approximately
-    5x in simulation.
+  statement: Across the functional region of its simulated PFAL gate library, PFAL shows an energy advantage
+    over static CMOS of up to approximately 5x at the most favorable operating point.
   sources:
   - SRC-00001
   grade: B
@@ -42,9 +42,11 @@ claims:
   created: '2026-09-20'
   quantity:
     quantity: energy_advantage_ratio
+    bound: upper_bound
+    approximate: true
     as_published:
       value: 5.0
-      unit: dimensionless
+      unit: x
     si_base:
       value: 5.0
       unit: dimensionless
@@ -53,13 +55,28 @@ claims:
       unit: dimensionless
     conditions: &id002
       process: TSMC 16nm FinFET
-      comparison: single-gate PFAL vs static CMOS
-      operating_point: maximum over the sweep, at reduced frequency and elevated supply
+      comparison: PFAL vs static CMOS
+      operating_point: most favorable operating point
+      vclk: 1 V
+      fclk: 100 MHz
   conditions: *id002
+  corrections:
+  - date: '2026-09-21'
+    public: true
+    fields:
+    - statement
+    - quantity.bound
+    - quantity.approximate
+    - conditions
+    reason: Recorded as 'single-gate PFAL cells ... approximately 5x', an exact-looking value with a scope
+      the source does not state and an operating point ('maximum over the sweep') that was my gloss. The
+      conclusions say 'up to approximately 5x at the most favorable operating points (V_CLK = 1 V and
+      f_CLK = 100 MHz)', across the functional region. Now an approximate upper bound with the stated
+      operating point.
 - id: CLM-ARCH-0003
   topic: ARCH
-  statement: With a quadrature-VCO power-clock, PFAL Buffer/NOT energy stays within
-    2% of the ideal sinusoidal case.
+  statement: With a quadrature-VCO power-clock, PFAL Buffer/NOT energy stays within 2% of the ideal sinusoidal
+    power-clock case at 3 GHz.
   sources:
   - SRC-00001
   grade: B
@@ -69,25 +86,38 @@ claims:
   as_of: '2026-09-17'
   created: '2026-09-20'
   quantity:
-    quantity: energy_advantage_ratio
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
     as_published:
-      value: 1.02
-      unit: dimensionless
+      value: 2.0
+      unit: percent
     si_base:
-      value: 1.02
+      value: 0.02
       unit: dimensionless
     display:
-      value: 1.02
-      unit: dimensionless
+      value: 2.0
+      unit: percent
     conditions: &id003
       process: TSMC 16nm FinFET
-      comparison: QVCO power-clock vs ideal sinusoid
+      comparison: quadrature-VCO power-clock vs ideal sinusoidal power-clock
+      cell: Buffer/NOT
       fclk: 3 GHz
   conditions: *id003
+  corrections:
+  - date: '2026-09-21'
+    public: true
+    fields:
+    - quantity.quantity
+    - quantity.bound
+    - conditions
+    reason: 'Recorded as an energy_advantage_ratio of 1.02, which is not what the source says: ''within
+      2%'' is an upper bound on a deviation from an ideal case, not an energy advantage over static CMOS.
+      Now a relative_deviation of at most 2 percent.'
 - id: CLM-ARCH-0004
   topic: ARCH
-  statement: Optimized single-gate PFAL cells achieve up to 3.83x lower energy than
-    equivalent static CMOS gates in simulation.
+  statement: Optimized single-gate PFAL cells achieve up to 3.83x lower energy than equivalent static
+    CMOS gates in simulation.
   sources:
   - SRC-00002
   grade: B
@@ -98,9 +128,11 @@ claims:
   created: '2026-09-20'
   quantity:
     quantity: energy_advantage_ratio
+    bound: upper_bound
+    approximate: false
     as_published:
       value: 3.83
-      unit: dimensionless
+      unit: x
     si_base:
       value: 3.83
       unit: dimensionless
@@ -110,15 +142,29 @@ claims:
     conditions: &id004
       process: TSMC 16nm FinFET
       comparison: single-gate PFAL vs static CMOS
-      operating_point: EDP-optimal over power-clock amplitude, frequency and waveform
+      power_clock: trapezoidal
+      operating_point: minimum-energy points of the parameter sweep (Table 2)
   conditions: *id004
-  corrected: '2026-09-20: conditions corrected per CFL-0001. The regime "reduced frequency,
-    elevated supply" was copied from SRC-00001 during batch extraction and is not
-    stated in SRC-00002.'
+  corrections:
+  - date: '2026-09-20'
+    public: false
+    fields:
+    - conditions
+    reason: '2026-09-20: conditions corrected per CFL-0001. The regime "reduced frequency, elevated supply"
+      was copied from SRC-00001 during batch extraction and is not stated in SRC-00002.'
+  - date: '2026-09-21'
+    public: true
+    fields:
+    - quantity.bound
+    - conditions
+    reason: '''Up to 3.83x'' was stored as an exact value. The condition ''EDP-optimal over amplitude,
+      frequency and waveform'' came from the abstract and is wrong: Table 2 reports the MINIMUM-ENERGY
+      points of the TRAPEZOIDAL power-clock sweep (3.65x Buffer/NOT, 3.83x AND/NAND, 3.71x XOR/XNOR),
+      so 3.83x is the largest of three.'
 - id: CLM-ARCH-0005
   topic: ARCH
-  statement: Sinusoidal power-clock excitation improves PFAL energy by up to 1.32x
-    over trapezoidal excitation.
+  statement: Sinusoidal power-clock excitation improves PFAL gate energy by up to 1.32x over trapezoidal
+    excitation in simulation.
   sources:
   - SRC-00002
   grade: B
@@ -129,9 +175,11 @@ claims:
   created: '2026-09-20'
   quantity:
     quantity: energy_advantage_ratio
+    bound: upper_bound
+    approximate: false
     as_published:
       value: 1.32
-      unit: dimensionless
+      unit: x
     si_base:
       value: 1.32
       unit: dimensionless
@@ -141,11 +189,22 @@ claims:
     conditions: &id005
       process: TSMC 16nm FinFET
       comparison: sinusoidal vs trapezoidal power-clock
+      gate_at_maximum: XOR/XNOR
+      vclk_at_maximum: 0.5 V
+      fclk_at_maximum: 384 MHz
   conditions: *id005
+  corrections:
+  - date: '2026-09-21'
+    public: true
+    fields:
+    - quantity.bound
+    - conditions
+    reason: '''Up to 1.32x'' was stored as an exact value. The body shows it is the maximum over the gate
+      library, reached by XOR/XNOR at V_CLK = 0.5 V and f = 384 MHz (Buffer/NOT 1.19x, AND/NAND 1.18x).'
 - id: CLM-ARCH-0006
   topic: ARCH
-  statement: A 4-bit Brent-Kung carry look-ahead adder in PFAL reaches up to 5.3x
-    energy gain over a static CMOS estimate.
+  statement: A 4-bit Brent-Kung carry look-ahead adder in PFAL reaches up to 5.3x energy gain over a static
+    CMOS estimate in simulation.
   sources:
   - SRC-00002
   grade: B
@@ -156,9 +215,11 @@ claims:
   created: '2026-09-20'
   quantity:
     quantity: energy_advantage_ratio
+    bound: upper_bound
+    approximate: false
     as_published:
       value: 5.3
-      unit: dimensionless
+      unit: x
     si_base:
       value: 5.3
       unit: dimensionless
@@ -167,6 +228,14 @@ claims:
       unit: dimensionless
     conditions: &id006
       process: TSMC 16nm FinFET
-      comparison: 4-bit Brent-Kung CLA adder vs static CMOS estimate
+      comparison: 4-bit Brent-Kung CLA adder vs architecture-matched static CMOS estimate
       power_clock: triangular
   conditions: *id006
+  corrections:
+  - date: '2026-09-21'
+    public: true
+    fields:
+    - quantity.bound
+    - conditions
+    reason: '''Up to 5.3x'' was stored as an exact value. The baseline is an estimate built by summing
+      individually measured static CMOS gate energies, which the paper says neglects inter-gate loading.'

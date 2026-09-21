@@ -7,7 +7,7 @@ directory. If the site and the ledger disagree, the ledger is right and the site
 The publication gate runs first and a failure aborts the build. Deploying a site that the gate
 rejected would make the gate advisory, and an advisory gate is not a gate.
 
-CLAUDE.md requires the open contradictions register to be a permanent top-level page linked from
+AGENTS.md requires the open contradictions register to be a permanent top-level page linked from
 the front page. That is enforced here structurally: the register page is always generated, always
 linked, and the front page shows the live count even when it is zero.
 
@@ -16,6 +16,7 @@ Usage:
 """
 
 import argparse
+import json
 import re
 import shutil
 import sys
@@ -34,6 +35,7 @@ DIGESTS = ROOT / "digests"
 SOTA = ROOT / "sota"
 REGISTER = ROOT / "ledger" / "open-contradictions.md"
 REGISTRY = ROOT / "sources" / "registry.yaml"
+AUDIT_PATH = ROOT / "run" / "typesafe-publication.json"
 
 SITE_TITLE = "Project Electron"
 SITE_TAGLINE = "Daily semiconductor research, with its contradictions on the front page"
@@ -478,7 +480,7 @@ block publication rather than appearing here as caveats.</p>
         page("Methodology", method, active="Methodology"), encoding="utf-8")
 
     from semantic_checks import render_summary
-    audit_path = ROOT / "run" / "typesafe-publication.json"
+    audit_path = AUDIT_PATH
     if audit_path.exists():
         audit = json.loads(audit_path.read_text(encoding="utf-8"))
         checks_body = "<h2>Research checks</h2><pre>" + escape(render_summary(audit)) + "</pre>"

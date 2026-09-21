@@ -1,6 +1,6 @@
 """Stages 5-6: derive the per-layer state of the art, the cross-stack synthesis, and the digest.
 
-Everything here is DERIVED. Not one sentence is composed freehand. CLAUDE.md forbids
+Everything here is DERIVED. Not one sentence is composed freehand. AGENTS.md forbids
 "connective tissue" prose that quietly introduces unsourced facts, so the safest implementation
 is one that structurally cannot: every statement below is either a claim from the ledger, a
 count of claims, or a statement about what the ledger does NOT contain.
@@ -20,12 +20,17 @@ Usage:
 """
 
 import argparse
+import re
+import subprocess
 import sys
 from collections import Counter, defaultdict
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 import yaml
+
+from bounds import scrutiny
+from candidates import unread_candidates
 
 ROOT = Path(__file__).resolve().parent.parent
 CLAIMS = ROOT / "ledger" / "claims"
@@ -80,7 +85,14 @@ def qty(c):
         return None
     v = d["value"]
     txt = f"{v:g}" if isinstance(v, (int, float)) else str(v)
-    return f"{txt} {d.get('unit', '')}".strip()
+    unit = d.get("unit", "")
+    if unit == "dimensionless":
+        unit = "\u00d7" if q.get("quantity") == "energy_advantage_ratio" else ""
+    # A published bound is rendered as one. "up to 5.3x" must never read as a measured 5.3x.
+    prefix = {"upper_bound": "\u2264 ", "lower_bound": "\u2265 "}.get(q.get("bound", "exact"), "")
+    if q.get("approximate"):
+        prefix += "\u2248"
+    return f"{prefix}{txt} {unit}".strip()
 
 
 def conds(c):
@@ -97,6 +109,14 @@ def claim_line(c, conflicts_by_claim):
         meta.insert(1, conds(c))
     out = [f"- {line}", f"  - {' · '.join(meta)}",
            f"  - sources: {', '.join(c.get('sources', []) or []) or '_none_'}"]
+    if c.get("extraction", {}).get("method") == "automated-extractive":
+        x = c["extraction"]
+        out.append(f"  - \u2699 automated extraction ({x.get('model')}; {x.get('verified_quotes')} "
+                   f"quote(s) verified verbatim against the paper)")
+    # Derived from the sourced constants at render time and never stored on the claim, so a flag
+    # cannot go stale when a definition or a bound is corrected. A prompt to look harder, not a verdict.
+    for flag in scrutiny(c):
+        out.append(f"  - \u2691 **scrutiny** ({flag['id']}): {flag['message']}")
     flags = conflicts_by_claim.get(c["id"], [])
     if flags:
         out.append(f"  - **live contradiction:** {', '.join(flags)} — see the open register")
@@ -188,7 +208,7 @@ def build_synthesis(claims, conflicts, sources):
                        if c.get("status") in ("active", "challenged", "contested"))
     grades = Counter(c.get("grade") for c in claims)
     etypes = Counter(c.get("evidence_type") for c in claims)
-    cands = len(list(CANDIDATES.glob("CAND-*.yaml")))
+    cands = len(unread_candidates(CANDIDATES))
 
     covered = [t for t in TOPICS if by_topic.get(t)]
     missing = [t for t in TOPICS if not by_topic.get(t)]
@@ -247,13 +267,87 @@ def build_synthesis(claims, conflicts, sources):
     return len(covered), len(missing)
 
 
-def build_digest(claims, conflicts, sources):
-    DIGESTS.mkdir(exist_ok=True)
-    today = date.today().isoformat()
-    prior = sorted(DIGESTS.glob("*.md"))
+DIGEST_CORRECTIONS = ROOT / "ledger" / "digest-corrections.yaml"
+
+
+def today_utc():
+    """The date used for digests: UTC, never the machine's local date.
+
+    CI runs in UTC and a developer's machine does not. On 2026-09-20 local time it was already
+    2026-09-21 in CI, so the same pipeline would have dated a digest differently depending on where
+    it ran, and a local run could have collided with (or rewritten) the digest CI produced.
+    """
+    return datetime.now(timezone.utc).date().isoformat()
+
+
+class DigestAlreadyPublished(Exception):
+    """The digest for this date is already committed, and rebuilding it would change it."""
+
+
+def published_and_different(path, content, root=ROOT):
+    """True if `path` is tracked by git (so it is OUT) and `content` would change it.
+
+    A committed digest has been published: CI deploys main. AGENTS.md says errors in a published
+    digest are corrected in the NEXT digest with a dated note, never by rewriting it. The builder
+    used to overwrite whatever was on disk. Outside a git checkout, or for a path outside `root`
+    (tests use temp directories), nothing counts as published.
+    """
+    try:
+        rel = Path(path).resolve().relative_to(Path(root).resolve()).as_posix()
+        tracked = subprocess.run(["git", "ls-files", "--error-unmatch", rel], cwd=root,
+                                 capture_output=True).returncode == 0
+        if not tracked:
+            return False
+        committed = subprocess.run(["git", "show", "HEAD:" + rel], cwd=root, capture_output=True,
+                                   text=True, encoding="utf-8").stdout
+    except (ValueError, OSError):
+        return False
+    return committed.replace("\r\n", "\n").strip() != content.replace("\r\n", "\n").strip()
+
+
+def _digest_date(path):
+    return path.stem            # digests are named YYYY-MM-DD.md, which sorts as a date
+
+
+def collect_corrections(claims, since, digest_corrections_file=DIGEST_CORRECTIONS):
+    """Corrections a reader has not yet been told about: dated after the previous digest.
+
+    Two kinds. A claim that changed AFTER it was published (`public: true`), and a digest that
+    itself was wrong. Both are stated plainly rather than edited away.
+    """
+    out = []
+    for c in claims:
+        for corr in c.get("corrections", []) or []:
+            if corr.get("public") is True and (since is None or str(corr["date"]) > since):
+                fields = ", ".join(corr.get("fields", []) or []) or "see reason"
+                out.append((str(corr["date"]), f"`{c['id']}` corrected ({fields}): {corr['reason']}"))
+    try:
+        doc = yaml.safe_load(Path(digest_corrections_file).read_text(encoding="utf-8")) or {}
+    except (OSError, yaml.YAMLError):
+        doc = {}
+    for corr in doc.get("corrections", []) or []:
+        if since is None or str(corr.get("date")) > since:
+            out.append((str(corr["date"]),
+                        f"Digest {corr.get('digest')}: {corr.get('text')}"))
+    return [text for _, text in sorted(out)]
+
+
+def build_digest(claims, conflicts, sources, digests_dir=None, candidates_dir=None, today=None,
+                 digest_corrections_file=DIGEST_CORRECTIONS):
+    digests_dir = Path(digests_dir or DIGESTS)
+    candidates_dir = Path(candidates_dir or CANDIDATES)
+    digests_dir.mkdir(exist_ok=True)
+    today = today or today_utc()
+
+    # PREVIOUS digests only: strictly before today. An earlier version read every file in the
+    # directory, so a second run on the same day counted today's own digest as history, saw every
+    # claim as "already reported", and overwrote the digest with "Nothing new" - the live
+    # 2026-09-20 digest said nothing was new while the ledger held seven claims. Excluding
+    # today's file makes a same-day rebuild produce the same digest, so it is idempotent.
+    prior = sorted(p for p in digests_dir.glob("*.md") if _digest_date(p) < today)
+    since = _digest_date(prior[-1]) if prior else None
     seen_ids = set()
     for p in prior:
-        import re
         seen_ids |= set(re.findall(r"\bCLM-[A-Z]+-\d{4}\b", p.read_text(encoding="utf-8")))
 
     new_claims = [c for c in claims if c["id"] not in seen_ids]
@@ -264,8 +358,18 @@ def build_digest(claims, conflicts, sources):
         for cid in cf.get("claims", []) or []:
             by_claim[cid].append(cf["id"])
 
-    lines = [f"# Digest — {today}", "",
+    lines = [f"# Digest \u2014 {today}", "",
              "> Every claim below is in the ledger. Nothing is asserted here that is not.", ""]
+
+    # Corrections come first: a reader should learn what we got wrong before what is new.
+    corrections = collect_corrections(claims, since, digest_corrections_file)
+    lines += ["## Corrections", ""]
+    if corrections:
+        lines += ["Errors in what we previously published, stated plainly and not edited away.", ""]
+        lines += [f"- {text}" for text in corrections]
+    else:
+        lines += ["_None since the previous digest._"]
+    lines.append("")
 
     if not new_claims:
         lines += ["## Nothing new", "",
@@ -287,25 +391,28 @@ def build_digest(claims, conflicts, sources):
         lines += [f"**{len(unexamined)} unexamined.** Reconciliation is unfinished; these block "
                   "publication until classified.", ""]
         for cf in unexamined:
-            lines.append(f"- `{cf['id']}` — {', '.join(cf.get('claims', []))}")
+            lines.append(f"- `{cf['id']}` \u2014 {', '.join(cf.get('claims', []))}")
         lines.append("")
     absent = [c for c in live if c.get("state") == "live:data-absent"]
     if absent:
         for cf in absent:
             lines.append(f"- `{cf['id']}` ({cf.get('quantity', '')}): {cf.get('gap', '')} "
-                         f"— missing: `{cf.get('missing_data')}`")
+                         f"\u2014 missing: `{cf.get('missing_data')}`")
         lines.append("")
     if not live:
         lines += ["_None._ An empty section here is a finding, not an omission.", ""]
 
-    unread = len(list(CANDIDATES.glob("CAND-*.yaml")))
+    unread = len(unread_candidates(candidates_dir))
     lines += ["## Corpus", "",
               f"- source records read: {len(sources)}",
               f"- claims in ledger: {len(claims)}",
               f"- candidates queued unread: {unread}", ""]
 
-    path = DIGESTS / f"{today}.md"
-    path.write_text("\n".join(lines), encoding="utf-8")
+    path = digests_dir / f"{today}.md"
+    content = "\n".join(lines)
+    if published_and_different(path, content, ROOT):
+        raise DigestAlreadyPublished(str(path))
+    path.write_text(content, encoding="utf-8")
     return path, len(new_claims)
 
 
@@ -328,8 +435,14 @@ def main():
         covered, missing = build_synthesis(claims, conflicts, sources)
         print(f"synthesis: {covered} layer(s) with claims, {missing} with none -> sota/SYNTHESIS.md")
     if a.digest or a.all:
-        path, n = build_digest(claims, conflicts, sources)
-        print(f"digest: {n} new claim(s) -> {path.relative_to(ROOT)}")
+        try:
+            path, n = build_digest(claims, conflicts, sources)
+            print(f"digest: {n} new claim(s) -> {path.relative_to(ROOT)}")
+        except DigestAlreadyPublished as exc:
+            # Not an error: today's digest is out and is left alone. Anything added since then is
+            # picked up by the next digest, which lists every claim no earlier digest has cited.
+            print(f"digest: {Path(str(exc)).name} is already published and would change; left "
+                  f"untouched. New claims will appear in the next digest.")
     return 0
 
 

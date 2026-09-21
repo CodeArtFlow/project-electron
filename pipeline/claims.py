@@ -1,7 +1,7 @@
 """Claim ledger: ID allocation, schema validation, and the extraction refusals.
 
 Enforces reference/schemas.yaml mechanically so the rules are not left to judgement at 2am.
-Doctrine lives in CLAUDE.md; this file is the enforcement surface for it.
+Doctrine lives in AGENTS.md; this file is the enforcement surface for it.
 
 The refusals matter more than the validation. A malformed claim is annoying; a well-formed claim
 that should never have been extracted is a falsehood with provenance attached, which is worse
@@ -21,6 +21,8 @@ from pathlib import Path
 
 import yaml
 
+from units import BOUNDS   # one vocabulary for bounds, defined where quantities are built
+
 ROOT = Path(__file__).resolve().parent.parent
 SCHEMAS = ROOT / "reference" / "schemas.yaml"
 REGISTRY = ROOT / "sources" / "registry.yaml"
@@ -38,6 +40,16 @@ ASSERTIVE_HEDGE_RE = re.compile(
 # Crude compound-statement detector. Deliberately noisy: it raises a question for a human rather
 # than deciding. Under-splitting a claim is a real defect, so a false positive is cheap.
 COMPOUND_RE = re.compile(r"\b(\d[\d.]*\s*\w+.*\band\b.*\d[\d.]*\s*\w+)", re.I)
+
+# Words that make a published number a BOUND or an APPROXIMATION rather than a measurement.
+# "up to 5.3x" is not 5.3x. These are unambiguous multi-word forms on purpose: bare "over",
+# "above" and "below" also appear in ordinary comparisons ("advantage over static CMOS") and would
+# refuse correct claims. A false positive here costs an extractor one explicit `bound` argument;
+# a false negative stores a bound as a measurement, which is how two upper bounds once looked like
+# a contradiction.
+UPPER_RE = re.compile(r"\b(up to|at most|no more than|not exceeding|less than|within)\b", re.I)
+LOWER_RE = re.compile(r"\b(at least|no less than|more than|greater than)\b", re.I)
+APPROX_RE = re.compile(r"(\b(roughly|approximately|approx\.?|about|around|nearly)\b|[~\u2248])", re.I)
 
 NODE_NAME_RE = re.compile(r"\b(\d+\s?nm|\d+A)\b.*\b(node|process|technology)\b", re.I)
 
@@ -149,6 +161,24 @@ def check_refusals(claim, source, registry=None, schemas=None):
             raise Refusal("missing_required_conditions",
                           f"{qname} requires {', '.join(required)}; missing {', '.join(missing)}")
 
+    # --- a bound must not become an equality ---
+    if q:
+        bound = q.get("bound", "exact")
+        approx = bool(q.get("approximate"))
+        says_upper, says_lower = bool(UPPER_RE.search(stmt)), bool(LOWER_RE.search(stmt))
+        problem = None
+        if bound == "exact" and (says_upper or says_lower):
+            problem = "the statement is a bound but quantity.bound is 'exact'"
+        elif bound == "upper_bound" and says_lower and not says_upper:
+            problem = "the statement says a lower bound but quantity.bound is 'upper_bound'"
+        elif bound == "lower_bound" and says_upper and not says_lower:
+            problem = "the statement says an upper bound but quantity.bound is 'lower_bound'"
+        elif not approx and APPROX_RE.search(stmt):
+            problem = "the statement says the value is approximate but quantity.approximate is false"
+        if problem:
+            raise Refusal("qualifier_dropped", problem + ". Record the qualifier the source used "
+                          "- UnitEngine.record(..., bound=..., approximate=...).")
+
     # --- atomicity ---
     if COMPOUND_RE.search(stmt):
         raise Refusal("compound_statement",
@@ -187,8 +217,18 @@ def validate_claim(claim, schemas=None):
         for part in ("as_published", "si_base", "display"):
             if part not in q:
                 problems.append(f"quantity missing {part!r} - build it with pipeline/units.py")
+        if q.get("bound", "exact") not in BOUNDS:
+            problems.append(f"quantity.bound {q.get('bound')!r} not in {BOUNDS}")
+        if "approximate" in q and not isinstance(q["approximate"], bool):
+            problems.append("quantity.approximate must be true or false")
 
-    # Supersession requires two independent sources (CLAUDE.md Type B).
+    # A correction to a claim is an audit-trail entry, not an edit to be hidden.
+    for i, corr in enumerate(claim.get("corrections", []) or []):
+        if not isinstance(corr, dict) or not corr.get("date") or not corr.get("reason") \
+                or not isinstance(corr.get("public"), bool):
+            problems.append(f"corrections[{i}] needs date, reason and public: true|false")
+
+    # Supersession requires two independent sources (AGENTS.md Type B).
     if claim.get("supersedes") and len(claim.get("sources", []) or []) < 2:
         problems.append("supersedes set with fewer than 2 sources - one source can only challenge")
 
@@ -248,6 +288,30 @@ def self_test():
     expect_refusal("unverified_venue",
                    {"statement": "X states that Y happened.", "grade": "D"},
                    {**good_source, "venue_id": "techrxiv"})
+
+    # a bound recorded as an equality is refused (the CLM-ARCH-0002/0004/0005/0006 defect)
+    exact_q = {"quantity": "energy_advantage_ratio", "bound": "exact", "approximate": False}
+    for stmt in ("PFAL reaches up to 5.3x energy gain over static CMOS in simulation.",
+                 "Energy stays within 2 percent of the ideal case in simulation.",
+                 "Gain of at least 3x over the baseline in simulation."):
+        expect_refusal("qualifier_dropped", {"statement": stmt, "grade": "B", "quantity": exact_q})
+    expect_refusal("qualifier_dropped",
+                   {"statement": "Gain is roughly 5x over static CMOS in simulation.", "grade": "B",
+                    "quantity": exact_q})
+    expect_refusal("qualifier_dropped",
+                   {"statement": "Gain of at least 3x over the baseline in simulation.", "grade": "B",
+                    "quantity": {"quantity": "energy_advantage_ratio", "bound": "upper_bound",
+                                 "approximate": False}})
+    try:      # correctly bounded, and an ordinary "over" comparison, both pass
+        check_refusals({"statement": "PFAL reaches up to roughly 5x energy gain over static CMOS in "
+                                     "simulation.", "grade": "B",
+                        "quantity": {"quantity": "energy_advantage_ratio", "bound": "upper_bound",
+                                     "approximate": True}}, good_source, registry, schemas)
+        check_refusals({"statement": "PFAL shows a 3.8x energy advantage over static CMOS in "
+                                     "simulation.", "grade": "B", "quantity": exact_q},
+                       good_source, registry, schemas)
+    except Refusal as r:
+        failures.append(f"correctly qualified claim wrongly refused: {r}")
 
     # a well-formed claim must pass
     try:

@@ -1,6 +1,6 @@
 # Project Electron — Artifact schemas
 #
-# The shapes that pipeline/claims.py validates. Doctrine lives in CLAUDE.md and is not repeated
+# The shapes that pipeline/claims.py validates. Doctrine lives in AGENTS.md and is not repeated
 # here; this file says what the fields ARE, not why the rules exist.
 #
 # required / optional / conditional are enforced. A field marked `never_inferred` must come from
@@ -53,6 +53,18 @@ source_record:
       How we established this item was legitimately open: registry venue with oa_status full,
       a per-article licence, an author preprint URL, or a repository copy. Never assumed.
   license: {required: false, notes: Where stated (CC-BY etc).}
+  read_scope:
+    required: false
+    notes: >
+      Exactly what was read and what was not ("all of the extracted text; no figure or table
+      image was seen"). Required on automated records. `access` says how much was available;
+      this says how much was actually looked at.
+  extraction:
+    required: false
+    notes: >
+      On automated records: {method, model, prompt_version, tokens, claims_accepted,
+      claims_rejected, rejected[]}. `rejected` lists the candidate claims the verifier refused and
+      why, because "numbers stated without their conditions" is evidence about the field too.
 
   # --- what it says, in ITS terms ---
   reported:
@@ -68,7 +80,7 @@ source_record:
   evidence_type:
     required: true
     enum: [measured, simulated, projected, announced, rumored]
-    notes: Per CLAUDE.md. Collapsing these is the most common way reporting becomes false.
+    notes: Per AGENTS.md. Collapsing these is the most common way reporting becomes false.
   grade:
     required: true
     enum: [A, B, C, D, E]
@@ -97,8 +109,11 @@ claim:
     required: false
     notes: >
       Present whenever the claim turns on a number. Produced by pipeline/units.py, never by
-      hand: {quantity, as_published{value,unit}, si_base{value,unit}, display{value,unit},
-      conditions}.
+      hand: {quantity, bound, approximate, as_published{value,unit}, si_base{value,unit},
+      display{value,unit}, conditions}. `bound` is exact | upper_bound | lower_bound and
+      `approximate` is true|false; both describe the PUBLISHED statement ("up to roughly 5x" is an
+      approximate upper bound). reconcile compares bounds by inequality, never as point values.
+      Absent means exact.
   conditions:
     required: false
     notes: >
@@ -126,12 +141,27 @@ claim:
   challenged_by: {required: false, notes: Set when a single credible source disputes this.}
   conflicts: {required: false, notes: CFL ids touching this claim.}
   created: {required: true}
+  extraction:
+    required: false
+    notes: >
+      Present on claims written by the automated reader (pipeline/read_paper.py): {method:
+      automated-extractive, model, prompt_version, verified_quotes}. Absent on hand-extracted
+      claims. It records HOW the claim was made so a reader can weigh it accordingly. Every quote
+      behind such a claim was verified to appear verbatim in the paper; the model proposed, code
+      decided.
+  corrections:
+    required: false
+    notes: >
+      Audit trail of changes made to a claim after it was written: a list of
+      {date, public, fields, reason}. `public: true` means the claim had already been published
+      when it changed, so the correction must appear in a digest (publication gate check 8).
+      `public: false` records a change made before first publication. Never a silent edit.
 
 # ---------------------------------------------------------------------------
 # Quantities that are meaningless without stated conditions
 # ---------------------------------------------------------------------------
 # Enforced by pipeline/claims.py. A value in one of these quantities without its conditions is
-# rejected at extraction, not flagged later - CLAUDE.md calls such a value "a rumor with digits".
+# rejected at extraction, not flagged later - AGENTS.md calls such a value "a rumor with digits".
 conditions_required:
   current_drive: [vdd, ioff, temperature]
   efficiency_compute: [precision, sparsity]
@@ -145,7 +175,7 @@ conditions_required:
 # ---------------------------------------------------------------------------
 # Extraction refusals
 # ---------------------------------------------------------------------------
-# Conditions under which a claim must NOT be created. Each maps to a rule in CLAUDE.md.
+# Conditions under which a claim must NOT be created. Each maps to a rule in AGENTS.md.
 refuse_extraction_when:
   - id: abstract_only_quantitative
     rule: Source access is abstract_only or metadata_only and the claim is quantitative.
@@ -165,6 +195,9 @@ refuse_extraction_when:
   - id: unverified_venue
     rule: "venue_id is `verified: false` in the registry, or `review` with no per-article OA check."
     because: We have not established we may legitimately read it.
+  - id: qualifier_dropped
+    rule: The statement says the number is a bound or approximate but the quantity block says exact.
+    because: A bound is not a measurement. "Up to 5.3x" stored as 5.3x made two upper bounds look like a contradiction.
   - id: compound_statement
     rule: The statement joins two independently falsifiable assertions.
     because: Claims are atomic; a compound claim cannot be superseded or contested cleanly.

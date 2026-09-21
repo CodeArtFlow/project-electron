@@ -7,7 +7,7 @@ difference (C1), an unadjudicable one (C2), a supersession (B) or our own error 
 reading both sources. So this module opens conflicts in `live:unexamined` - the error state - and
 the `reconcile` skill classifies them.
 
-A detector that also classified would be guessing, and CLAUDE.md rule 6 says guessing is the
+A detector that also classified would be guessing, and AGENTS.md rule 6 says guessing is the
 failure mode this project exists to prevent.
 
 Comparisons happen ONLY in si_base. Two claims are comparable when they share a quantity type and
@@ -105,18 +105,60 @@ def comparable(a, b):
     return not conditions_conflict(a, b)
 
 
+# Provisional: a wider trigger when either claim is itself approximate ("roughly 5x"). Like the
+# 5% default it decides only when a human looks, never what the answer is.
+APPROXIMATE_TOLERANCE = 0.20
+
+
+def bound_of(claim):
+    """(bound, approximate) as published. Absent means an exact, unqualified number."""
+    q = claim.get("quantity") or {}
+    return q.get("bound", "exact"), bool(q.get("approximate"))
+
+
+def _interval(value, bound):
+    """The set of true values a published number allows: a point, or a half-line."""
+    if bound == "upper_bound":
+        return float("-inf"), value
+    if bound == "lower_bound":
+        return value, float("inf")
+    return value, value
+
+
 def disagree(a, b, tol=RELATIVE_TOLERANCE):
+    """Do two comparable claims conflict? Returns (differs, relative_gap or None).
+
+    Each claim allows an interval of true values: "3.83" is a point, "up to 3.83" is (-inf, 3.83],
+    "at least 3" is [3, inf). Two claims conflict only if those intervals fail to overlap by more
+    than the tolerance. So two upper bounds can never contradict each other, and "up to 3" against
+    a measured 5 does. Comparing bounds as if they were points is how two upper bounds ("up to
+    roughly 5x" and "up to 3.83x") once opened a false contradiction, CFL-0001.
+    """
     va = (a["quantity"]["si_base"] or {}).get("value")
     vb = (b["quantity"]["si_base"] or {}).get("value")
     if va is None or vb is None:
         return False, None
+    (ba, appr_a), (bb, appr_b) = bound_of(a), bound_of(b)
+    if appr_a or appr_b:
+        tol = max(tol, APPROXIMATE_TOLERANCE)
+    lo_a, hi_a = _interval(va, ba)
+    lo_b, hi_b = _interval(vb, bb)
+    gap = max(lo_a, lo_b) - min(hi_a, hi_b)
     scale = max(abs(va), abs(vb)) or 1.0
-    rel = abs(va - vb) / scale
-    return rel > tol, rel
+    rel = gap / scale
+    if rel > tol:
+        return True, rel
+    return False, None
+
+
+def _describe_bound(pair):
+    bound, approximate = pair
+    word = {"upper_bound": "up to", "lower_bound": "at least"}.get(bound, "exact")
+    return word + (", approximate" if approximate else "")
 
 
 def independent(a, b, sources_meta):
-    """Per CLAUDE.md: no shared corresponding author, no shared lead institution."""
+    """Per AGENTS.md: no shared corresponding author, no shared lead institution."""
     def meta(claim):
         auth, aff = set(), set()
         for sid in claim.get("sources", []) or []:
@@ -171,6 +213,7 @@ def detect(claims, existing):
                 "independent": independent(a, b, meta),
                 "grades": {a["id"]: a.get("grade"), b["id"]: b.get("grade")},
                 "as_of": {a["id"]: str(a.get("as_of")), b["id"]: str(b.get("as_of"))},
+                "bounds": {a["id"]: bound_of(a), b["id"]: bound_of(b)},
             })
     return found
 
@@ -197,10 +240,10 @@ def write_conflict(finding):
 Two claims about **{finding['quantity']}** disagree by
 {finding['relative_difference'] * 100:.1f}% in `si_base`, under conditions that do not conflict.
 
-| Claim | si_base | grade | as_of |
-|---|---|---|---|
-| `{a}` | {finding['values'][a]['value']} {finding['values'][a]['unit']} | {finding['grades'][a]} | {finding['as_of'][a]} |
-| `{b}` | {finding['values'][b]['value']} {finding['values'][b]['unit']} | {finding['grades'][b]} | {finding['as_of'][b]} |
+| Claim | si_base | as published | grade | as_of |
+|---|---|---|---|---|
+| `{a}` | {finding['values'][a]['value']} {finding['values'][a]['unit']} | {_describe_bound(finding['bounds'][a])} | {finding['grades'][a]} | {finding['as_of'][a]} |
+| `{b}` | {finding['values'][b]['value']} {finding['values'][b]['unit']} | {_describe_bound(finding['bounds'][b])} | {finding['grades'][b]} | {finding['as_of'][b]} |
 
 Sources are {'independent' if finding['independent'] else 'not established independent'} (shared
 corresponding author or lead institution collapses them into one source for supersession).

@@ -1,12 +1,14 @@
-"""The publication gate from CLAUDE.md. Nothing ships unless this passes.
+"""The publication gate from AGENTS.md. Nothing ships unless this passes.
 
-Runs the eight checks that stand between the ledger and a published digest. Exits non-zero on
-any failure, so CI cannot deploy around it.
+Runs the nine checks that stand between the ledger and a published digest. Exits non-zero on
+any failure, so CI cannot deploy around it. Eight are deterministic; the ninth (the TypeSafe
+audit) is governed by the committed policy file reference/semantic_policy.yaml.
 
-Two of the eight cannot be fully mechanised, and this file says so rather than pretending:
+Two of the checks cannot be fully mechanised, and this file says so rather than pretending:
 check 3 (every digest sentence traces to a claim) is verified structurally - every claim id a
 digest cites must exist and be citable - but whether a sentence faithfully represents its claim
-is a judgement the `digest` skill makes. Check 8 (corrections stated plainly) is likewise
+is not decided here (sota.py renders the digest from ledger fields, which keeps it faithful by
+construction, but nothing in this gate checks that independently). Check 8 (corrections stated plainly) is likewise
 structural: it verifies that a retracted or superseded claim previously published has a
 correction entry, not that the prose is adequate.
 
@@ -79,7 +81,7 @@ def check(results, number, name, failures, note=None):
 
 
 def run_gate(root=None):
-    """Run all eight checks. `root` lets tests point the gate at fixture trees."""
+    """Run all nine checks. `root` lets tests point the gate at fixture trees."""
     root = Path(root) if root else ROOT
     claims_dir = root / "ledger" / "claims"
     conflicts_dir = root / "ledger" / "conflicts"
@@ -133,8 +135,8 @@ def run_gate(root=None):
                 f.append(f"{path.name} cites {ref} with status "
                          f"{claims[ref].get('status')!r} (citable: {sorted(citable)})")
     check(results, 3, "digest claim references resolve and are citable", f,
-          note="Structural only. Whether a sentence faithfully represents its claim is the "
-               "digest skill's judgement, not something this gate can decide.")
+          note="Structural only. Whether a sentence faithfully represents its claim is not "
+               "something this gate can decide; the digest is rendered from ledger fields.")
 
     # --- 4. claims under a live contradiction carry their flag wherever they appear ---
     live_claim_ids = set()
@@ -201,17 +203,44 @@ def run_gate(root=None):
             if not c.get("correction_published_in"):
                 f.append(f"{cid} is {c.get('status')} and was published, but no "
                          f"correction_published_in is recorded")
+    # A claim that changed after publication must say so in a digest. `public: true` on a
+    # correction means readers had already seen the claim, so the change is reported under
+    # "## Corrections" in a digest dated on or after it - never edited away silently.
+    def corrections_section(text):
+        m = re.search(r"^## Corrections\s*$(.*?)(?=^## |\Z)", text, re.M | re.S)
+        return m.group(1) if m else ""
+
+    reported = {p.stem: corrections_section(p.read_text(encoding="utf-8"))
+                for p in digests_dir.glob("*.md")}
+    for cid, c in claims.items():
+        for corr in c.get("corrections", []) or []:
+            if corr.get("public") is not True:
+                continue
+            when = str(corr.get("date"))
+            if not any(stem >= when and cid in section for stem, section in reported.items()):
+                f.append(f"{cid} has a public correction dated {when} that no digest on or after "
+                         f"that date reports under '## Corrections'")
     check(results, 8, "corrections recorded for published claims that changed", f,
           note="Structural only. This verifies a correction exists, not that its wording is "
                "adequate.")
 
-    # Semantic signals supplement the eight deterministic checks; they cannot certify truth.
-    from semantic_checks import gate_failures
+    # Semantic signals supplement the deterministic checks; they cannot certify truth.
+    from semantic_checks import audit_findings, gate_failures, load_policy
     required = os.environ.get("ELECTRON_TYPESAFE_REQUIRED") == "1"
+    policy = load_policy(root)
+    findings = audit_findings(root, required)
+    if policy == "advisory":
+        # The policy is a committed file (reference/semantic_policy.yaml), not a switch CI can
+        # flip, so this is not a way around the gate. The check passes, and says so out loud.
+        note = (f"ADVISORY policy: {len(findings)} audit finding(s) reported on the Research "
+                f"checks page and NOT blocking. Uncalibrated signals until a gold set exists."
+                if findings else
+                "ADVISORY policy: no audit findings. Uncalibrated signals, not verification.")
+    else:
+        note = ("Required in production. Uncalibrated review signals, not scientific verification."
+                if required else "Optional locally; any present audit must be current and pass.")
     check(results, 9, "TypeSafe evidence audit has no unresolved publication flags",
-          gate_failures(root, required),
-          note="Required in production. Uncalibrated review signals, not scientific verification."
-               if required else "Optional locally; any present audit must be current and pass.")
+          gate_failures(root, required), note=note)
 
     return results, {"claims": len(claims), "conflicts": len(conflicts),
                      "digests": len(list(digests_dir.glob("*.md")))}
