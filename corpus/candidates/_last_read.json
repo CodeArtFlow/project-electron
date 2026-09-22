@@ -1,337 +1,601 @@
 {
-  "date": "2026-09-21",
+  "date": "2026-09-22",
   "model": "gemini-3.5-flash-lite",
   "extract_model": "gemini-3.6-flash",
-  "prompt_version": "reader-v3",
+  "prompt_version": "reader-v4",
   "limits": {
-    "max_papers": 25,
+    "max_papers": 40,
     "max_chars": 120000,
-    "seconds": 900
+    "seconds": 1440
   },
   "papers": [
     {
-      "candidate": "CAND-20260921-0067",
+      "candidate": "CAND-20260922-0131",
       "decision": "out_of_scope",
-      "reason": "The paper focuses on wireless communications and beamforming algorithms using multimodal sensing, which is outside semiconductor device or fabrication research.",
-      "chars": 92761,
+      "reason": "The paper discusses autonomous materials discovery using metal-organic frameworks for methane storage, which is general chemical and materials science research rather than semiconductor materials or electronics.",
+      "chars": 57609,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20260921-0066",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on adaptive mesh coarsening and refinement for phase-field fracture simulations in structural and civil engineering materials, which is unrelated to semiconductor research.",
-      "chars": 87037,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260921-0065",
-      "decision": "no_claims",
-      "reason": "the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 67470,
-      "claims": [],
-      "rejected": [
-        {
-          "statement": "On XDNA 2, the MLIR-AIR fused kernel reaches 3.62 TFLOPGEMM/s over complete end-to-end execution.",
-          "reason": "unit conversion refused: efficiency_compute: could not parse 3.62 'TFLOPGEMM/s': 'TFLOPGEMM' is not defined in the unit registry"
-        },
-        {
-          "statement": "At 32k sequence length, XDNA 2 achieves 6.5x improved energy efficiency relative to the integrated GPU.",
-          "reason": "the statement contains the number 6.5, which none of its quotes contain"
-        },
-        {
-          "statement": "At 32k sequence length, XDNA 2 achieves 31.5x improved energy efficiency relative to the CPU.",
-          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value"
-        },
-        {
-          "statement": "On XDNA 2, for GPT-2 Small attention with sequence length 32768, the MLIR-AIR fused kernel achieves an effective GEMM throughput of 3622 GFLOPGEMM/s.",
-          "reason": "the statement contains the number 32768, which none of its quotes contain"
-        },
-        {
-          "statement": "On XDNA 2, for GPT-2 Small attention with sequence length 32768, the MLIR-AIR fused kernel latency is 911.1 ms.",
-          "reason": "the statement contains the number 32768, which none of its quotes contain"
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20260921-0064",
-      "decision": "out_of_scope",
-      "reason": "The paper is about wireless communications and Cloud-RAN fronthaul compression, which is out of scope for semiconductor research.",
-      "chars": 84200,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260921-0063",
-      "decision": "too_long",
-      "reason": "124,603 characters exceeds the 120,000 budget; not truncated",
-      "chars": 124603,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260921-0062",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on mobile communication systems and agentic AI for network resource optimization, which is out of scope for semiconductor research.",
-      "chars": 63634,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260921-0061",
-      "decision": "read",
-      "reason": "",
-      "chars": 35132,
-      "claims": [
-        "CLM-MAT-0005"
-      ],
-      "rejected": [
-        {
-          "statement": "In optically excited monolayer MoS2, the initial fast orbital decay has a lifetime of 0.25 ps at 300 K.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'The initial relaxation, in the gray region in Fig. 1, is similar to th'"
-        },
-        {
-          "statement": "In monolayer MoS2, the ACA contribution alone gives an orbital lifetime of less than 3 fs.",
-          "reason": "the statement contains the number 2, which none of its quotes contain"
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20260921-0060",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on group testing algorithms for pandemic screening and public health, which is out of scope for semiconductor research.",
-      "chars": 63073,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260921-0059",
+      "candidate": "CAND-20260922-0130",
       "decision": "no_claims",
       "reason": "evidence type not established by a verifiable quote (or 'mixed'); no claims extracted, a human reader is needed",
-      "chars": 56237,
+      "chars": 75970,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20260921-0058",
+      "candidate": "CAND-20260922-0129",
       "decision": "out_of_scope",
-      "reason": "The paper focuses on wireless communication jamming detection and reinforcement learning attacks, which is out of scope for semiconductor research.",
-      "chars": 31227,
+      "reason": "The paper focuses on multi-UAV deployment and trajectory optimization for wireless communications, which is out of scope for semiconductor research.",
+      "chars": 83033,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20260921-0057",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on the fundamental physics and material properties of multiferroic hexaferrite thin films rather than semiconductor devices or electronics fabrication.",
-      "chars": 58751,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260921-0056",
-      "decision": "read",
-      "reason": "",
-      "chars": 31346,
-      "claims": [
-        "CLM-DEV-0005"
-      ],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260921-0055",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on signal processing, specifically the mathematical analysis of the RLS algorithm using the Cauchy Interlace Theorem, which is outside semiconductor research.",
-      "chars": 20868,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260921-0054",
-      "decision": "no_claims",
-      "reason": "the model proposed no claim; a stronger model or a human reader may do better",
-      "chars": 73765,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260921-0053",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on geomechanics and the chemical damage of cemented granular materials in underground reservoirs, which is outside semiconductor research.",
-      "chars": 99912,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260921-0052",
-      "decision": "read",
-      "reason": "",
-      "chars": 47918,
-      "claims": [
-        "CLM-PHOT-0001",
-        "CLM-PHOT-0002",
-        "CLM-PHOT-0003",
-        "CLM-PHOT-0004"
-      ],
-      "rejected": [
-        {
-          "statement": "The photonic molecule has an extinction ratio of 15 dB.",
-          "reason": "unit conversion refused: power: cannot convert 15.0 dB to W - Cannot convert from 'decibel' (dimensionless) to 'watt' ([mass] * [length] ** 2 / [time] ** 3). A dimensional mismatch mean"
-        },
-        {
-          "statement": "The phase modulator CPW electrode transmission line length is 2.2 mm.",
-          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value"
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20260921-0051",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on pure physics of Rydberg excitons in core-shell nanostructures rather than semiconductor devices, materials for electronics, or fabrication processes.",
-      "chars": 45495,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260921-0050",
-      "decision": "read",
-      "reason": "",
-      "chars": 34956,
-      "claims": [
-        "CLM-DEV-0006"
-      ],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260921-0049",
-      "decision": "too_long",
-      "reason": "126,724 characters exceeds the 120,000 budget; not truncated",
-      "chars": 126724,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260921-0048",
-      "decision": "out_of_scope",
-      "reason": "This paper focuses on WiFi-based human activity recognition using channel state information, which is out of scope for semiconductor research.",
-      "chars": 56874,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260921-0047",
-      "decision": "read",
-      "reason": "",
-      "chars": 34265,
-      "claims": [
-        "CLM-ARCH-0010",
-        "CLM-ARCH-0011",
-        "CLM-ARCH-0012",
-        "CLM-ARCH-0013",
-        "CLM-ARCH-0014"
-      ],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20260921-0046",
+      "candidate": "CAND-20260922-0128",
       "decision": "no_claims",
       "reason": "evidence type not established by a verifiable quote (or 'mixed'); no claims extracted, a human reader is needed",
-      "chars": 77703,
+      "chars": 56520,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20260921-0045",
+      "candidate": "CAND-20260922-0127",
+      "decision": "out_of_scope",
+      "reason": "The paper discusses non-Hermitian physical systems, exceptional points, and tight-binding models in the context of fundamental physics, which is out of scope for semiconductor research.",
+      "chars": 24732,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0126",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on nanoscale light-driven mechanical motion using optical forces and nanomachines, which is outside the scope of semiconductor research.",
+      "chars": 104624,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0125",
+      "decision": "out_of_scope",
+      "reason": "This paper focuses on single-ion magnets and lanthanide complexes for molecular magnetism, which is outside the scope of semiconductor devices and materials.",
+      "chars": 51774,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0124",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on general optical imaging and microscopy techniques rather than semiconductor devices, materials, or manufacturing processes.",
+      "chars": 22554,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0123",
+      "decision": "out_of_scope",
+      "reason": "The paper discusses nonlinear optics, femtosecond laser pulses, and fiber optics, which are out of scope for semiconductor research.",
+      "chars": 66232,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0122",
+      "decision": "out_of_scope",
+      "reason": "The paper deals with fundamental statistical physics of nonlinear wave and lattice systems, which is out of scope for semiconductor research.",
+      "chars": 108946,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0121",
       "decision": "no_claims",
-      "reason": "the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 64608,
+      "reason": "the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader may do better",
+      "chars": 41523,
       "claims": [],
       "rejected": [
         {
-          "statement": "The patterned 20.8 nm SrVO3 Hall bar exhibits a longitudinal resistivity of approximately 32 \u03bc\u03a9\u00b7cm at 300 K.",
-          "reason": "the statement contains the number 20.8, which none of its quotes contain"
+          "statement": "An optimized optical waveguide MEMS microphone design achieves a 78-dB SNR.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'An optical waveguide MEMS microphone can reach a 78 -\ud835\udc51\ud835\udc35 SNR and a 124-'",
+          "quotes": [
+            "An optical waveguide MEMS microphone can reach a 78 -\ud835\udc51\ud835\udc35 SNR and a 124-\ud835\udc51\ud835\udc35 AOP.",
+            "Consider a silicon membrane with a 1 \ud835\udc5a\ud835\udc5a diameter, 1 \ud835\udf07\ud835\udc5a thickness, and 0 \ud835\udc40\ud835\udc43\ud835\udc4e intrinsic stress.",
+            "Assume a modulation efficiency of 100%."
+          ]
         },
         {
-          "statement": "Density functional theory calculations yield an intrinsic orbital Hall conductivity of 390 (\u0127/e) \u03a9\u207b\u00b9cm\u207b\u00b9 at the Fermi level for bulk SrVO3.",
-          "reason": "the statement contains the number 3, which none of its quotes contain"
-        },
-        {
-          "statement": "The saturation-limit lower-bound estimate for the orbital Hall conductivity of the 20.8 nm SrVO3 film is 460 \u00b1 11 (\u0127/e) \u03a9\u207b\u00b9cm\u207b\u00b9.",
-          "reason": "the statement contains the number 3, which none of its quotes contain"
-        },
-        {
-          "statement": "At 100 K and 9 T, the \u03b1-plane angle-dependent magnetoresistance amplitude for the 20.8 nm SVO film is 4.0 \u00b1 0.2 \u00d7 10\u207b\u2075.",
-          "reason": "the statement contains the number 100, which none of its quotes contain"
-        },
-        {
-          "statement": "The best estimate for the orbital relaxation time \u03c4OD in the 20.8 nm film is 0.20 ps.",
-          "reason": "the value 0.2 does not appear in any of the claim's quotes"
+          "statement": "An optimized optical waveguide MEMS microphone design achieves an acoustic overload pressure of 124 dB.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'An optical waveguide MEMS microphone can reach a 78 -\ud835\udc51\ud835\udc35 SNR and a 124-'",
+          "quotes": [
+            "An optical waveguide MEMS microphone can reach a 78 -\ud835\udc51\ud835\udc35 SNR and a 124-\ud835\udc51\ud835\udc35 AOP.",
+            "Consider a silicon membrane with a 1 \ud835\udc5a\ud835\udc5a diameter, 1 \ud835\udf07\ud835\udc5a thickness, and 0 \ud835\udc40\ud835\udc43\ud835\udc4e intrinsic stress.",
+            "Assume a modulation efficiency of 100%."
+          ]
         }
       ]
     },
     {
-      "candidate": "CAND-20260921-0044",
+      "candidate": "CAND-20260922-0120",
       "decision": "read",
       "reason": "",
-      "chars": 29786,
+      "chars": 43099,
       "claims": [
-        "CLM-PROC-0001"
+        "CLM-MAT-0006"
+      ],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0119",
+      "decision": "out_of_scope",
+      "reason": "The paper investigates fundamental polar vibrational excitations and glass-like thermal and dielectric responses in bulk relaxor ferroelectric materials, which is basic condensed matter physics rather than semiconductor research.",
+      "chars": 85015,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0118",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on radio resource allocation and scheduling algorithms for 6G wireless communication networks, which is out of scope for semiconductor research.",
+      "chars": 30572,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0117",
+      "decision": "read",
+      "reason": "",
+      "chars": 74573,
+      "claims": [
+        "CLM-PHOT-0005",
+        "CLM-PHOT-0006"
+      ],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0116",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on spectrum cartography and resource management for low-altitude wireless networks using UAVs and UGVs, which is outside the scope of semiconductor research.",
+      "chars": 64741,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0115",
+      "decision": "out_of_scope",
+      "reason": "This paper focuses on wireless communications and resource allocation algorithms for OTFS-RSMA, which is outside the scope of semiconductor devices, fabrication, or hardware.",
+      "chars": 66847,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0114",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on the theoretical derivation of the Thiele equation for magnetic skyrmions using the Mori-Zwanzig formalism, which belongs to fundamental magnetism and physics rather than semiconductor research.",
+      "chars": 34938,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0113",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on optical metalenses for wavefront engineering and zoom capability, which falls under classical optics rather than semiconductor research.",
+      "chars": 29585,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0112",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on Wi-Fi-based human activity recognition and adversarial attacks for privacy protection, which is outside the scope of semiconductor research.",
+      "chars": 77948,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0111",
+      "decision": "no_claims",
+      "reason": "evidence type not established by a verifiable quote (or 'mixed'); no claims extracted, a human reader is needed",
+      "chars": 74149,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0110",
+      "decision": "read",
+      "reason": "",
+      "chars": 19769,
+      "claims": [
+        "CLM-MAT-0007"
+      ],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0109",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on radio frequency fingerprint identification and device charting for wireless communication systems using commercial smartphones, which is out of scope for semiconductor research.",
+      "chars": 23312,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0108",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on wireless communication networks, power control, and 6G subnetworks, which are out of scope for semiconductor research.",
+      "chars": 24444,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0107",
+      "decision": "read",
+      "reason": "",
+      "chars": 90224,
+      "claims": [
+        "CLM-ARCH-0015",
+        "CLM-ARCH-0016"
       ],
       "rejected": [
         {
-          "statement": "The silicon foil lattice constant used in the MDRANGE simulations was set to 5.43 \u00c5.",
-          "reason": "unit conversion refused: length_device: could not parse 5.43 '\u02daA': '\u02daA' is not defined in the unit registry"
+          "statement": "On H200, the local HBM access latency is approximately 490 cycles and remote HBM access latency is approximately 655 cycles.",
+          "reason": "unit conversion refused: time: cannot convert 490.0 cycles to s - Cannot convert from 'turn' (dimensionless) to 'second' ([time]). A dimensional mismatch means the value was recorded ag",
+          "quotes": [
+            "Remote HBM accesses incur approximately 34% higher latency than local accesses on H200 (\u223c490\u2192\u223c655 cycles) and 67% on B200 (\u223c552\u2192\u223c920 cycles)."
+          ]
         },
         {
-          "statement": "The detector distance downstream from the foil surfaces along the normal axis was 290 mm.",
-          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value"
+          "statement": "On B200, local HBM access latency is approximately 552 cycles and remote HBM access latency is approximately 920 cycles.",
+          "reason": "unit conversion refused: time: cannot convert 920.0 cycles to s - Cannot convert from 'turn' (dimensionless) to 'second' ([time]). A dimensional mismatch means the value was recorded ag",
+          "quotes": [
+            "Remote HBM accesses incur approximately 34% higher latency than local accesses on H200 (\u223c490\u2192\u223c655 cycles) and 67% on B200 (\u223c552\u2192\u223c920 cycles)."
+          ]
         },
         {
-          "statement": "Each transmission simulation was executed until 25 million ions passed through the silicon foil.",
-          "reason": "the value 2.5e+07 does not appear in any of the claim's quotes"
+          "statement": "On H200, local L2 latency is about 309 cycles and remote L2 latency is about 466 cycles.",
+          "reason": "unit conversion refused: time: cannot convert 466.0 cycles to s - Cannot convert from 'turn' (dimensionless) to 'second' ([time]). A dimensional mismatch means the value was recorded ag",
+          "quotes": [
+            "Remote L2 latency is about 51% higher than local latency on H200 (\u223c309\u2192\u223c466 cycles) and nearly twice as high on B200 (\u223c364\u2192\u223c725 cy- cles)."
+          ]
         },
         {
-          "statement": "The thickness of oxide layers included on both entry and exit foil surfaces to reproduce experimental scattering was 22 \u00c5.",
-          "reason": "unit conversion refused: length_device: could not parse 22.0 '\u02daA': '\u02daA' is not defined in the unit registry"
+          "statement": "Topology-oblivious SM allocation causes up to 1.33x performance variation.",
+          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
+          "quotes": [
+            "Topology-oblivious compute unit allocation can lead to up to 1.33\u00d7 performance variation",
+            "and avoids up to 1.33\u00d7performance variation."
+          ]
         }
       ]
     },
     {
-      "candidate": "CAND-20260921-0043",
+      "candidate": "CAND-20260922-0106",
       "decision": "out_of_scope",
-      "reason": "This paper discusses frequency-swept Brillouin spectroscopy primarily for biomedical and material viscoelasticity applications, which is out of scope for semiconductor research.",
-      "chars": 20539,
+      "reason": "The paper studies high-pressure phase transitions in iron oxides relevant to planetary science and condensed-matter physics, which is out of scope for semiconductor research.",
+      "chars": 39597,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0105",
+      "decision": "no_claims",
+      "reason": "evidence type not established by a verifiable quote (or 'mixed'); no claims extracted, a human reader is needed",
+      "chars": 21390,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0104",
+      "decision": "read",
+      "reason": "",
+      "chars": 43587,
+      "claims": [
+        "CLM-MAT-0008",
+        "CLM-MAT-0009",
+        "CLM-MAT-0010",
+        "CLM-MAT-0011",
+        "CLM-MAT-0012"
+      ],
+      "rejected": [
+        {
+          "statement": "For the SiO2-V O system, the RMSD of the 323-atom supercell is 0.033 \u00c5.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'A similar trend is observed for SiO 2 \u2212V O, where the RMSD of the 323-'",
+          "quotes": [
+            "A similar trend is observed for SiO 2 \u2212V O, where the RMSD of the 323-atom supercell decreases from 0.033 \u02daA to 0.011 \u02daA.",
+            "SiO 2 \u2212V O",
+            "323-atom supercell"
+          ]
+        },
+        {
+          "statement": "For the GaN-V + N system in the Defect-Only Scheme, expanding the training set to 15, 31, 63, and 95 atoms reduces the total-energy prediction error for the 127",
+          "reason": "[compound_statement] statement appears to join two falsifiable assertions - split it",
+          "quotes": [
+            "For the GaN\u2212V + N system, when the training set is expanded from only 15-atom defect supercells to defect configurations containing 15, 31, 63, and 95 atoms, the total-energy prediction error of the model for the 127-atom test supercell dec",
+            "GaN\u2212V + N",
+            "Defect-Only Scheme",
+            "15, 31, 63, and 95 atoms"
+          ]
+        },
+        {
+          "statement": "In the GaN-V + N system under the Defect+Host Scheme with only 15-atom defect configurations, the total-energy prediction error for the 255-atom test supercell ",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'For the GaN\u2212V + N system, even when the training set contains only 15-'",
+          "quotes": [
+            "For the GaN\u2212V + N system, even when the training set contains only 15-atom charged-defect configurations, the energy errors of the Defect+Host Scheme for the 127-atom and 255-atom test supercells are reduced to 0.339 eV and 0.328 eV, respec",
+            "GaN\u2212V + N",
+            "Defect+Host Scheme",
+            "15-atom charged-defect configurations"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20260922-0103",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on quantum information and spin qubits in diamond, which falls under quantum computing hardware rather than semiconductor research.",
+      "chars": 66724,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0102",
+      "decision": "read",
+      "reason": "",
+      "chars": 23014,
+      "claims": [
+        "CLM-PHOT-0007",
+        "CLM-PHOT-0008",
+        "CLM-PHOT-0009",
+        "CLM-PHOT-0010"
+      ],
+      "rejected": [
+        {
+          "statement": "The deposition rate was approximately 0.3 nm/s for the MoSx film.",
+          "reason": "unit conversion refused: throughput_tool: cannot convert 0.3 nm/s to 1/s - Cannot convert from 'nanometer / second' ([length] / [time]) to '1 / second' (1 / [time]). A dimensional misma",
+          "quotes": [
+            "The deposition rate of \u22480.3 nm/s was determined from ex-situ atomic force microscopy (AFM) thickness measurements.",
+            "Film deposition was carried out using a DC magnetron installed in a home-built vacuum chamber (Fig. 1) in an argon atmosphere at a pressure of (6\u20137)\u00d710 \u22122 mbar.",
+            "discharge power was \u2248100 W."
+          ]
+        },
+        {
+          "statement": "The sheet resistance of a 30 nm thick MoSx film exceeds 200 M\u2126/\u25a1 at room temperature.",
+          "reason": "unit conversion refused: sheet_resistance: could not parse 200.0 'M\u2126/\u25a1': '\u25a1' is not defined in the unit registry",
+          "quotes": [
+            "Electrical measurements revealed sheet resistances exceeding 200 M\u2126/\u25a1 for 30 nm thick film at room temperature.",
+            "30 nm thick film",
+            "at room temperature."
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20260922-0101",
+      "decision": "out_of_scope",
+      "reason": "The paper investigates fundamental wave physics in non-Hermitian photonic time quasicrystals rather than semiconductor devices, materials, or integrated circuits.",
+      "chars": 102932,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0100",
+      "decision": "too_long",
+      "reason": "127,606 characters exceeds the 120,000 budget; not truncated",
+      "chars": 127606,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0099",
+      "decision": "no_claims",
+      "reason": "the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader may do better",
+      "chars": 17455,
+      "claims": [],
+      "rejected": [
+        {
+          "statement": "The HBM-on-GPU reference baseline reaches a peak temperature of 121.7 \u00b0C under the realistic reticle-scale non-uniform GPU power map.",
+          "reason": "unit conversion refused: temperature: could not parse 121.7 '\u25e6C': '\u25e6C' is not defined in the unit registry",
+          "quotes": [
+            "Under the realistic reticle-scale non-uniform GPU power map, the HBM-on-GPU baseline reaches a peak temperature of 121.7 \u25e6C, as shown in Fig. 5.",
+            "HBM-on-GPU baseline reaches a peak temperature of 121.7 \u25e6C",
+            "Under the realistic reticle-scale non-uniform GPU power map"
+          ]
+        },
+        {
+          "statement": "The 1D1CC 3 mm volumetric DRAM-on-GPU case with a silicon cavity reaches a peak temperature of 103.4 \u00b0C under the realistic reticle-scale non-uniform GPU power ",
+          "reason": "unit conversion refused: temperature: could not parse 103.4 '\u25e6C': '\u25e6C' is not defined in the unit registry",
+          "quotes": [
+            "Under the default 1D1CC organization, even the 3 mm silicon-cavity case reduces the peak temperature from 121.7 \u25e6C to 103.4 \u25e6C while preserving the same memory capacity, establishing an immediate thermal advantage in an iso-capacity compari",
+            "Under the default 1D1CC organization",
+            "3 mm silicon-cavity case"
+          ]
+        },
+        {
+          "statement": "For the 1D1CC organization at a 5 mm stack height with copper cavities, peak temperature is 100.2 \u00b0C.",
+          "reason": "unit conversion refused: temperature: could not parse 100.2 '\u25e6C': '\u25e6C' is not defined in the unit registry",
+          "quotes": [
+            "For example, at 5 mm with copper cavities, moving from 1D1CC to 2D1CC and 2ThinnerD1CC increases memory capacity from 337 GB to 506 GB and 674 GB, while peak temperature rises from 100.2 \u25e6C to 112.7 \u25e6C and 118.7 \u25e6C.",
+            "moving from 1D1CC to 2D1CC and 2ThinnerD1CC",
+            "at 5 mm with copper cavities"
+          ]
+        },
+        {
+          "statement": "For the 2D1CC organization at a 5 mm stack height with copper cavities, peak temperature is 112.7 \u00b0C.",
+          "reason": "unit conversion refused: temperature: could not parse 112.7 '\u25e6C': '\u25e6C' is not defined in the unit registry",
+          "quotes": [
+            "For example, at 5 mm with copper cavities, moving from 1D1CC to 2D1CC and 2ThinnerD1CC increases memory capacity from 337 GB to 506 GB and 674 GB, while peak temperature rises from 100.2 \u25e6C to 112.7 \u25e6C and 118.7 \u25e6C.",
+            "moving from 1D1CC to 2D1CC and 2ThinnerD1CC",
+            "at 5 mm with copper cavities"
+          ]
+        },
+        {
+          "statement": "For the 2ThinnerD1CC organization at a 5 mm stack height with copper cavities, peak temperature is 118.7 \u00b0C.",
+          "reason": "unit conversion refused: temperature: could not parse 118.7 '\u25e6C': '\u25e6C' is not defined in the unit registry",
+          "quotes": [
+            "For example, at 5 mm with copper cavities, moving from 1D1CC to 2D1CC and 2ThinnerD1CC increases memory capacity from 337 GB to 506 GB and 674 GB, while peak temperature rises from 100.2 \u25e6C to 112.7 \u25e6C and 118.7 \u25e6C.",
+            "moving from 1D1CC to 2D1CC and 2ThinnerD1CC",
+            "at 5 mm with copper cavities"
+          ]
+        },
+        {
+          "statement": "For a big-DRAM-die floorplan in a 1D1CC 5 mm diamond-cavity case, peak temperature is 86.9 \u00b0C.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Compared with the big-DRAM-die floorplan, the small-DRAM-die floorplan'",
+          "quotes": [
+            "Compared with the big-DRAM-die floorplan, the small-DRAM-die floorplan raises peak temperature from 86.9 \u25e6C to 91.5 \u25e6C and shifts the hotspot toward the mold-dominated central region.",
+            "Compared with the big-DRAM-die floorplan",
+            "Fig. 7 shows a representative 1D1CC- 5 mm-Diamond case"
+          ]
+        },
+        {
+          "statement": "For a small-DRAM-die floorplan in a 1D1CC 5 mm diamond-cavity case, peak temperature is 91.5 \u00b0C.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Compared with the big-DRAM-die floorplan, the small-DRAM-die floorplan'",
+          "quotes": [
+            "Compared with the big-DRAM-die floorplan, the small-DRAM-die floorplan raises peak temperature from 86.9 \u25e6C to 91.5 \u25e6C and shifts the hotspot toward the mold-dominated central region.",
+            "the small-DRAM-die floorplan raises peak temperature from 86.9 \u25e6C to 91.5 \u25e6C",
+            "Fig. 7 shows a representative 1D1CC- 5 mm-Diamond case"
+          ]
+        },
+        {
+          "statement": "Adding an MC/NoC tier under a 2ThinnerD1CC 5 mm copper case stacked along the GPU long edge without DRAM die partitioning increases peak temperature to 122.63 \u00b0",
+          "reason": "unit conversion refused: temperature: could not parse 122.63 '\u25e6C': '\u25e6C' is not defined in the unit registry",
+          "quotes": [
+            "For a representative 2ThinnerD1CC- 5 mm-Copper case stacked along the GPU long edge and without DRAM die partitioning, adding the MC/NoC tier increases peak temperature from 118.72 \u25e6C to 122.63 \u25e6C, corresponding to an additional penalty of ",
+            "2ThinnerD1CC- 5 mm-Copper case",
+            "stacked along the GPU long edge",
+            "without DRAM die partitioning"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20260922-0098",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on nuclear fusion reactors and medical isotope production, which is outside the scope of semiconductor research.",
+      "chars": 81008,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0097",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on quantum machine learning and quantum reservoir computing using integrated photonics, which falls under quantum computing hardware and quantum information theory rather than standard semiconductor research.",
+      "chars": 49865,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0096",
+      "decision": "out_of_scope",
+      "reason": "The paper is about crystallographic analysis of structural heterogeneity and domain walls in hybrid improper ferroelectric bulk oxides, which belongs to materials physics and chemistry rather than semiconductor research.",
+      "chars": 40358,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0095",
+      "decision": "out_of_scope",
+      "reason": "The paper is about software compilation techniques and runtime optimization for the Ethereum Virtual Machine (smart contracts), which is out of scope for semiconductor research.",
+      "chars": 81588,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20260922-0094",
+      "decision": "no_claims",
+      "reason": "the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader may do better",
+      "chars": 105393,
+      "claims": [],
+      "rejected": [
+        {
+          "statement": "For p-type Sn0.914Zn0.08Te, the calculated Seebeck coefficient reaches 250 \u00b5VK^-1 at a hole concentration of 10^20 cm^-3 and a temperature of 800 K.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Finally, Sn 0.914Zn0.08Te surpasses in terms of Seebeck coefficient al'",
+          "quotes": [
+            "Finally, Sn 0.914Zn0.08Te surpasses in terms of Seebeck coefficient all remaining variants in the majority of the carrier concentration range [Fig. 12(d-g)], achieving over 250\u00b5VK \u22121 for 1020 cm\u22123 at 800 K.",
+            "Sn 0.914Zn0.08Te",
+            "p-type",
+            "1020 cm\u22123"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20260922-0093",
+      "decision": "no_claims",
+      "reason": "the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader may do better",
+      "chars": 67261,
+      "claims": [],
+      "rejected": [
+        {
+          "statement": "The ScaleMPA accelerator implemented in 28 nm CMOS achieves an average planning latency of 3.3 ms while consuming 89.09 mW of power.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'The ScaleMPA hardware prototype integrates 486 16-bit multipliers, 562'",
+          "quotes": [
+            "Implemented in 28 nm CMOS, ScaleMPA achieves millisecond-level planning latency and delivers 4.7\u00d7\u201344.4\u00d7speedup over state-of-the-art motion-planning accelerators.",
+            "The ScaleMPA hardware prototype integrates 486 16-bit multipliers, 562 16-bit adders, and 202 KB of on-chip SRAM, using the same numerical precision as MOPED [24]. It uses a 28 nm CMOS process and achieves an average planning latency of 3.3",
+            "28 nm CMOS process",
+            "0.72 V"
+          ]
+        },
+        {
+          "statement": "ScaleMPA operates at a clock frequency of 500 MHz.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'It uses a 28 nm CMOS process and achieves an average planning latency '",
+          "quotes": [
+            "It uses a 28 nm CMOS process and achieves an average planning latency of 3.3 ms across all settings, operating at 0.72 V with 89.09 mW power consumption under a 500 MHz clock frequency.",
+            "28 nm CMOS process",
+            "0.72 V"
+          ]
+        },
+        {
+          "statement": "The total die area of the ScaleMPA chip is 0.88 mm2.",
+          "reason": "unit conversion refused: area_die: could not parse 0.88 'mm 2': Unit expression cannot have a scaling factor.",
+          "quotes": [
+            "The total chip area is 0.88 mm 2, with compute logic and on-chip buffers accounting for 33.09% and 66.91% of the area, respectively (Fig. 14).",
+            "28 nm CMOS process"
+          ]
+        },
+        {
+          "statement": "ScaleMPA operates at a supply voltage of 0.72 V.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'It uses a 28 nm CMOS process and achieves an average planning latency '",
+          "quotes": [
+            "It uses a 28 nm CMOS process and achieves an average planning latency of 3.3 ms across all settings, operating at 0.72 V with 89.09 mW power consumption under a 500 MHz clock frequency.",
+            "28 nm CMOS process"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20260922-0092",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on theoretical condensed matter physics concerning spin helices and Luttinger liquids rather than semiconductor devices, materials, or manufacturing processes.",
+      "chars": 119660,
       "claims": [],
       "rejected": []
     }
   ],
   "counts": {
-    "out_of_scope": 12,
-    "no_claims": 5,
-    "too_long": 2,
-    "read": 6
+    "out_of_scope": 25,
+    "no_claims": 8,
+    "read": 6,
+    "too_long": 1
   },
-  "claims_accepted": 13,
-  "claims_rejected": 18,
+  "claims_accepted": 15,
+  "claims_rejected": 24,
   "tokens": {
-    "input": 191200,
-    "output": 13193
+    "input": 278876,
+    "output": 21649
   },
   "stop_reason": "paper_cap",
-  "seconds": 206.8,
-  "cost_usd": 0.181466,
+  "seconds": 347.6,
+  "cost_usd": 0.270631,
   "budget": {
     "monthly_cap_usd": 10.0,
-    "spent_month_usd": 0.35056,
-    "spent_today_usd": 0.35056,
-    "allowance_today_usd": 1.0,
-    "remaining_today_usd": 0.64944,
-    "run_usd": 0.181466,
-    "run_calls": 34,
+    "spent_month_usd": 0.621191,
+    "spent_today_usd": 0.270631,
+    "allowance_today_usd": 1.07216,
+    "remaining_today_usd": 0.801529,
+    "run_usd": 0.270631,
+    "run_calls": 53,
     "run_unknown_calls": 0,
     "price_table_retrieved": "2026-09-21",
-    "price_table_age_days": 0
+    "price_table_age_days": 1
   },
   "errors": 0
 }

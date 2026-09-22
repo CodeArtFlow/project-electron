@@ -212,3 +212,163 @@ claims:
       material: monolayer MoS2
       temperature: 300 K
       excitation_energy: 1.7 eV
+- id: CLM-MAT-0006
+  topic: MAT
+  statement: The measured cross-plane thermal conductivity of the (010) 𝛽-Ga2O3 substrate is 22 ± 2 W
+    m-1 K-1.
+  sources:
+  - SRC-00013
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-21'
+  created: '2026-09-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v4
+    verified_quotes: 4
+  conditions:
+    material: 𝛽-Ga2O3 substrate
+    orientation: (010)
+    direction: cross-plane
+  quantity:
+    quantity: thermal_conductivity
+    bound: exact
+    approximate: false
+    as_published:
+      value: 22.0
+      unit: W m-1 K-1
+    si_base:
+      value: 22.0
+      unit: W/(m*K)
+    display:
+      value: 22.0
+      unit: W/(m*K)
+    conditions:
+      material: 𝛽-Ga2O3 substrate
+      orientation: (010)
+      direction: cross-plane
+- id: CLM-MAT-0007
+  topic: MAT
+  statement: The extracted room-temperature thermal conductivity of the isotopically purified single-crystal
+    diamond sample is approximately 3100 W m-1 K-1.
+  sources:
+  - SRC-00015
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-21'
+  created: '2026-09-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v4
+    verified_quotes: 3
+  conditions:
+    temperature: room-temperature
+    sample_13c_concentration: ~0.00024%
+  quantity:
+    quantity: thermal_conductivity
+    bound: exact
+    approximate: true
+    as_published:
+      value: 3100.0
+      unit: W m-1 K-1
+    si_base:
+      value: 3100.0
+      unit: W/(m*K)
+    display:
+      value: 3100.0
+      unit: W/(m*K)
+    conditions:
+      temperature: room-temperature
+      sample_13c_concentration: ~0.00024%
+- id: CLM-MAT-0008
+  topic: MAT
+  statement: For the GaN-V N system using Training-set I, the RMSD of the 255-atom test supercell is 0.037
+    Å.
+  sources:
+  - SRC-00017
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-21'
+  created: '2026-09-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v4
+    verified_quotes: 1
+- id: CLM-MAT-0009
+  topic: MAT
+  statement: For SiO2-V O, increasing the number of small-supercell defect configurations reduces the
+    energy error in the 323-atom test supercell from 0.184 eV for Training-set I to 0.023 eV for Training-set
+    III.
+  sources:
+  - SRC-00017
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-21'
+  created: '2026-09-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v4
+    verified_quotes: 1
+- id: CLM-MAT-0010
+  topic: MAT
+  statement: When training on 16-atom defect supercells in the Cu2ZnSnS4-Cu-Zn system under the Defect-Only
+    Scheme, the total-energy prediction error for the 128-atom test supercell is 21.231 eV.
+  sources:
+  - SRC-00017
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-21'
+  created: '2026-09-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v4
+    verified_quotes: 1
+- id: CLM-MAT-0011
+  topic: MAT
+  statement: When training on 16-atom defect supercells in the Cu2ZnSnS4-Cu-Zn system under the Defect-Only
+    Scheme, the total-energy prediction error for the 288-atom test supercell is 51.484 eV.
+  sources:
+  - SRC-00017
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-21'
+  created: '2026-09-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v4
+    verified_quotes: 1
+- id: CLM-MAT-0012
+  topic: MAT
+  statement: For the SiO2-V 2+ O system in the Defect-Only Scheme with 17-atom defect supercells, the
+    total-energy prediction error for the 323-atom test supercell reaches 46.080 eV.
+  sources:
+  - SRC-00017
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-21'
+  created: '2026-09-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v4
+    verified_quotes: 1

@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2609.24459v1
 doi: null
-title: 'On the dual character of Zn impurity in SnTe: Tuning thermoelectric and topological
-  properties'
+title: 'On the dual character of Zn impurity in SnTe: Tuning thermoelectric and topological properties'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-09-21'
@@ -23,6 +22,29 @@ id: CAND-20260922-0094
 harvested_date: '2026-09-22'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-22'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v4
+  rejected:
+  - statement: For p-type Sn0.914Zn0.08Te, the calculated Seebeck coefficient reaches 250 µVK^-1 at a
+      hole concentration of 10^20 cm^-3 and a temperature of 800 K.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Finally,
+      Sn 0.914Zn0.08Te surpasses in terms of Seebeck coefficient al'''
+    quotes:
+    - Finally, Sn 0.914Zn0.08Te surpasses in terms of Seebeck coefficient all remaining variants in the
+      majority of the carrier concentration range [Fig. 12(d-g)], achieving over 250µVK −1 for 1020 cm−3
+      at 800 K.
+    - Sn 0.914Zn0.08Te
+    - p-type
+    - 1020 cm−3
+  tokens:
+    input: 36345
+    output: 711
+  fetched_chars: 105393

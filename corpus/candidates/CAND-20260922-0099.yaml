@@ -35,6 +35,96 @@ id: CAND-20260922-0099
 harvested_date: '2026-09-22'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-22'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v4
+  rejected:
+  - statement: The HBM-on-GPU reference baseline reaches a peak temperature of 121.7 °C under the realistic
+      reticle-scale non-uniform GPU power map.
+    reason: 'unit conversion refused: temperature: could not parse 121.7 ''◦C'': ''◦C'' is not defined
+      in the unit registry'
+    quotes:
+    - Under the realistic reticle-scale non-uniform GPU power map, the HBM-on-GPU baseline reaches a peak
+      temperature of 121.7 ◦C, as shown in Fig. 5.
+    - HBM-on-GPU baseline reaches a peak temperature of 121.7 ◦C
+    - Under the realistic reticle-scale non-uniform GPU power map
+  - statement: 'The 1D1CC 3 mm volumetric DRAM-on-GPU case with a silicon cavity reaches a peak temperature
+      of 103.4 °C under the realistic reticle-scale non-uniform GPU power '
+    reason: 'unit conversion refused: temperature: could not parse 103.4 ''◦C'': ''◦C'' is not defined
+      in the unit registry'
+    quotes:
+    - Under the default 1D1CC organization, even the 3 mm silicon-cavity case reduces the peak temperature
+      from 121.7 ◦C to 103.4 ◦C while preserving the same memory capacity, establishing an immediate thermal
+      advantage in an iso-capacity compari
+    - Under the default 1D1CC organization
+    - 3 mm silicon-cavity case
+  - statement: For the 1D1CC organization at a 5 mm stack height with copper cavities, peak temperature
+      is 100.2 °C.
+    reason: 'unit conversion refused: temperature: could not parse 100.2 ''◦C'': ''◦C'' is not defined
+      in the unit registry'
+    quotes:
+    - For example, at 5 mm with copper cavities, moving from 1D1CC to 2D1CC and 2ThinnerD1CC increases
+      memory capacity from 337 GB to 506 GB and 674 GB, while peak temperature rises from 100.2 ◦C to
+      112.7 ◦C and 118.7 ◦C.
+    - moving from 1D1CC to 2D1CC and 2ThinnerD1CC
+    - at 5 mm with copper cavities
+  - statement: For the 2D1CC organization at a 5 mm stack height with copper cavities, peak temperature
+      is 112.7 °C.
+    reason: 'unit conversion refused: temperature: could not parse 112.7 ''◦C'': ''◦C'' is not defined
+      in the unit registry'
+    quotes:
+    - For example, at 5 mm with copper cavities, moving from 1D1CC to 2D1CC and 2ThinnerD1CC increases
+      memory capacity from 337 GB to 506 GB and 674 GB, while peak temperature rises from 100.2 ◦C to
+      112.7 ◦C and 118.7 ◦C.
+    - moving from 1D1CC to 2D1CC and 2ThinnerD1CC
+    - at 5 mm with copper cavities
+  - statement: For the 2ThinnerD1CC organization at a 5 mm stack height with copper cavities, peak temperature
+      is 118.7 °C.
+    reason: 'unit conversion refused: temperature: could not parse 118.7 ''◦C'': ''◦C'' is not defined
+      in the unit registry'
+    quotes:
+    - For example, at 5 mm with copper cavities, moving from 1D1CC to 2D1CC and 2ThinnerD1CC increases
+      memory capacity from 337 GB to 506 GB and 674 GB, while peak temperature rises from 100.2 ◦C to
+      112.7 ◦C and 118.7 ◦C.
+    - moving from 1D1CC to 2D1CC and 2ThinnerD1CC
+    - at 5 mm with copper cavities
+  - statement: For a big-DRAM-die floorplan in a 1D1CC 5 mm diamond-cavity case, peak temperature is 86.9
+      °C.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Compared
+      with the big-DRAM-die floorplan, the small-DRAM-die floorplan'''
+    quotes:
+    - Compared with the big-DRAM-die floorplan, the small-DRAM-die floorplan raises peak temperature from
+      86.9 ◦C to 91.5 ◦C and shifts the hotspot toward the mold-dominated central region.
+    - Compared with the big-DRAM-die floorplan
+    - Fig. 7 shows a representative 1D1CC- 5 mm-Diamond case
+  - statement: For a small-DRAM-die floorplan in a 1D1CC 5 mm diamond-cavity case, peak temperature is
+      91.5 °C.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Compared
+      with the big-DRAM-die floorplan, the small-DRAM-die floorplan'''
+    quotes:
+    - Compared with the big-DRAM-die floorplan, the small-DRAM-die floorplan raises peak temperature from
+      86.9 ◦C to 91.5 ◦C and shifts the hotspot toward the mold-dominated central region.
+    - the small-DRAM-die floorplan raises peak temperature from 86.9 ◦C to 91.5 ◦C
+    - Fig. 7 shows a representative 1D1CC- 5 mm-Diamond case
+  - statement: Adding an MC/NoC tier under a 2ThinnerD1CC 5 mm copper case stacked along the GPU long
+      edge without DRAM die partitioning increases peak temperature to 122.63 °
+    reason: 'unit conversion refused: temperature: could not parse 122.63 ''◦C'': ''◦C'' is not defined
+      in the unit registry'
+    quotes:
+    - 'For a representative 2ThinnerD1CC- 5 mm-Copper case stacked along the GPU long edge and without
+      DRAM die partitioning, adding the MC/NoC tier increases peak temperature from 118.72 ◦C to 122.63
+      ◦C, corresponding to an additional penalty of '
+    - 2ThinnerD1CC- 5 mm-Copper case
+    - stacked along the GPU long edge
+    - without DRAM die partitioning
+  tokens:
+    input: 6208
+    output: 2842
+  fetched_chars: 17455
