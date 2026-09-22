@@ -94,7 +94,9 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
   (Ω1, Ω2). The verifier cannot tell whether a condition distinguishes. Candidates: ask for the symbol or
   label as a condition; TypeSafe question per claim (plan, family B). Bundled into `reader-v4` with
   N10/N12: prompt rule 4 now asks for the paper's own symbol/label. Code and
-  `docs/reader-v4-preregistration.md` done 2026-09-22; live run held for approval (**BLOCKED**).
+  `docs/reader-v4-preregistration.md` done and pushed 2026-09-22; scored against the next scheduled
+  read (06:45 UTC), not a hand-run small batch — the user chose to push and let it run rather than
+  pause the schedule first.
 - [x] **N4. Reader: measure it.** Done 2026-09-22. Every run appends a compact record to
   `corpus/candidates/_read_runs.jsonl` (the five earlier runs were backfilled from git), and
   `python pipeline/read_report.py` groups them by screening model, extraction model and prompt version and
@@ -111,9 +113,8 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
   statement that names something no quote contains. Rule 4 asks for a quote per condition, but nothing says
   the statement itself may only use words and numbers that its quotes (or a condition's quote) contain.
   Bundled into `reader-v4` with N3/N10: new rule 12 says so explicitly. Code and
-  `docs/reader-v4-preregistration.md` done 2026-09-22; live run held for approval (**BLOCKED** — needs
-  your go-ahead to spend from the reader budget: `python pipeline/read_paper.py --max-papers 2
-  --budget-usd 0.25` is the suggested first call).
+  `docs/reader-v4-preregistration.md` done and pushed 2026-09-22; scored against the next scheduled
+  read rather than a hand-run small batch (see N3).
 - [ ] **N5. `no_claims` papers (8) and `too_long` papers (2) are parked, not lost.** Decide who takes
   them: a stronger model, a higher thinking level, or a human. `too_long` skips at 120,000 characters
   and never truncates.
@@ -133,8 +134,8 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
   freestanding claim with no result to condition). Made explicit in `reader-v4`'s prompt: rule 6
   (synthesis/EDA-tool output is `simulated`) and rule 11 (a fabrication/process parameter is a
   `conditions` entry on a result claim, never a claim by itself). Code and
-  `docs/reader-v4-preregistration.md` done 2026-09-22; measuring it (N4) needs the held live run
-  (**BLOCKED**).
+  `docs/reader-v4-preregistration.md` done and pushed 2026-09-22; measuring it (N4) happens against
+  the next scheduled read (see N3).
 - [ ] **N11. TypeSafe questions to sharpen before any threshold is set:** `is_result` (TypeSafe read the QLED
   Methods conditions as reported results; part of that may be my wording) and `atomic` (flagged
   `CLM-ARCH-0007`, which is one assertion with its conditions). Phase 3.

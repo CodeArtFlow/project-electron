@@ -37,7 +37,7 @@ rule about corrections applies to its own chat log).
 | Fabrication-recipe claims (`CLM-DEV-0002..0004`) | Retracted, not relabelled: they're conditions with no claim to attach to (D7, 2026-09-22) | this session |
 | CI regenerating SOTA/digest after reading | Yes, fully automatic — `read.yml` runs it right after reconciling (D4, 2026-09-22) | this session |
 | Independence for arXiv-only sources | Wait for author records (A3), no fallback rule for now (D3, 2026-09-22) | this session |
-| `reader-v4` (N3/N10/N12 prompt fixes) | Build + pre-register now; hold the live run for a separate go-ahead (2026-09-22) | this session |
+| `reader-v4` (N3/N10/N12 prompt fixes) | Build + pre-register now; then, asked whether to push, chose to push and let the live run happen on the next daily schedule rather than pause it (2026-09-22) | this session |
 
 ---
 
@@ -263,19 +263,34 @@ possible, and ask for any input or key decision through the Q&A interface rather
 3. **D3 (arXiv independence).** Wait for author records (A3); no fallback rule adopted. Recorded as
    decided, not left open — a real answer, even though the answer is "not yet."
 4. **Reader v4 (N3/N10/N12).** Build the prompt/verifier changes and write the expectations doc now;
-   hold the live run for a separate go-ahead. `docs/reader-v4-preregistration.md` was written before
-   any `reader-v4` call, following the same discipline as `docs/typesafe-preregistration.md`: a
-   falsifiable expectation per fix, scored against a measured `reader-v3` baseline (not a remembered
-   one — `read_report.py` was run fresh), with a suggested small first live call
-   (`--max-papers 2 --budget-usd 0.25`) that this session did not place.
+   hold the live run for a separate go-ahead, initially. `docs/reader-v4-preregistration.md` was
+   written before any `reader-v4` call, following the same discipline as
+   `docs/typesafe-preregistration.md`: a falsifiable expectation per fix, scored against a measured
+   `reader-v3` baseline (not a remembered one — `read_report.py` was run fresh), with a suggested
+   small first live call (`--max-papers 2 --budget-usd 0.25`).
 
-**Not yet asked:** D5 (a second daily reading run) and D6 (the publisher lane's full-text route) are
-still open; they did not block anything built this session, so they were left for a follow-up
-question rather than bundled into the four above.
+**Follow-up (after the four commits were made, before pushing):**
+5. **D5 (reading throughput).** Raise the per-run cap, not a second daily run — every run so far hit
+   the 25-paper cap in well under its time budget, so time wasn't the constraint. `read_paper.py`'s
+   ceilings raised 25/900s to 40/1440s; `read.yml`'s default and workflow timeout raised to match.
+6. **D6 (publisher lane).** Retry Europe PMC and other legitimate full-text APIs before accepting
+   human reading as final. Retried live: Europe PMC now answers but has zero coverage of this
+   corpus's domain (materials/photonics, not biomedical); a direct landing-page fetch and Crossref's
+   link metadata both confirm no full text is reachable without JS rendering. No route found; the
+   `harvest` skill stays the primary lane. Recorded as decided (with a negative result), not left
+   open.
 
-**Result:** ledger, `AGENTS.md` Current state, `TODO.md`, six workflow files, `sota.py`,
-`build_site.py`, `harvest.py`, `read_paper.py`, and this file, all in one working session, not yet
-committed as of this entry.
+**The push decision.** With everything committed locally, pushing to `main` meant two things at
+once: the urgent Node 24 bump (GitHub removes Node 20 from Actions runners 2026-09-23, one day
+out) ships immediately, but so does `reader-v4`'s `PROMPT_VERSION` inside `read.yml`, meaning the
+next scheduled 06:45 UTC read would run it live automatically — the exact live run item 4 above
+said to hold. Asked directly (push-and-pause-the-schedule vs. push-and-let-it-run vs. don't-push-
+yet): the user chose **push now, let reader-v4 run on the next schedule**, treating the push
+decision itself as the go-ahead rather than pausing to test it by hand first.
+
+**Result:** four commits on `main` (`5f7f283`, `093ea0f`, `0ee8da7`, `9d7d42b`), pushed. Everything
+built this session — the ledger retraction, `AGENTS.md` Current state, `TODO.md`, six workflow
+files, `sota.py`, `build_site.py`, `harvest.py`, `read_paper.py`, and this file — is on `main`.
 
 ## Where to look for more
 

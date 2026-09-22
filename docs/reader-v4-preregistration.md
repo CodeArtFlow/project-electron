@@ -5,13 +5,14 @@ Addresses TODO `N3`, `N10`, `N12` and the reader-guidance half of `D7`. Written 
 change (and our reading of it) rather than confirming whatever we already believe. Same practice
 as `docs/typesafe-preregistration.md`: written first, corrected in place afterward if wrong.
 
-**The live run is deliberately not run as part of this commit.** The user approved building the
-code and writing this file, but held the live spend for a separate go-ahead (`TODO.md` "Reader
-v4" decision, 2026-09-22) — the same standing preference that gated the TypeSafe integration:
-plan in `docs/`, pre-register, then ask before the first live call. `PROMPT_VERSION` is already
-`reader-v4` and every existing test passes against it (`test_reader.py`,
-`pipeline/read_paper.py --dry-run` fetches and sizes candidates with no API call), so the change
-is inert until someone runs `read_paper.py` without `--dry-run`.
+**Update, 2026-09-22, same day:** the user initially asked to hold the live spend for a separate
+go-ahead, then, asked directly whether to push this to `main` given the code and the daily
+schedule are in the same file (`read.yml`), chose to push and let `reader-v4` run on the next
+scheduled 06:45 UTC read rather than pause the schedule first. So the "suggested first live call"
+below was **not** run by hand as a small cautious test before the scheduled run reads live with
+it — the first live data on `reader-v4` will be that scheduled run. Score it against the baseline
+and expectations below exactly as planned; nothing about the expectations or scoring changes,
+only that the first data point comes from the daily schedule instead of a hand-run small batch.
 
 ## What changed, and the defect each change targets
 
