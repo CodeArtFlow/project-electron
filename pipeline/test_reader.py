@@ -355,7 +355,7 @@ class WritingAndTheRun(unittest.TestCase):
 
     def test_the_run_is_bounded_and_says_why_it_stopped(self):
         limits, warns = resolve_limits(max_papers=999, max_chars=10**9, seconds=99999)
-        self.assertEqual((limits["max_papers"], limits["max_chars"], limits["seconds"]), (25, 150_000, 900))
+        self.assertEqual((limits["max_papers"], limits["max_chars"], limits["seconds"]), (40, 150_000, 1440))
         self.assertEqual(len(warns), 3)
         with self.assertRaises(ValueError):
             resolve_limits(max_papers=0)
@@ -446,9 +446,32 @@ class NumbersNeedConditions(unittest.TestCase):
 
     def test_the_instructions_ask_for_distinguishing_conditions_and_allow_omitting_a_quantity(self):
         from read_paper import PROMPT_VERSION, SYSTEM
-        self.assertEqual(PROMPT_VERSION, "reader-v3")
+        self.assertEqual(PROMPT_VERSION, "reader-v4")
         self.assertIn("tells THIS number apart", SYSTEM)
         self.assertIn("omit quantity altogether", SYSTEM)
+
+    def test_v4_asks_for_the_papers_own_symbol_when_conditions_share_a_category(self):
+        # N3: CLM-PHOT-0002/0003 shared a condition CATEGORY ("mode spacing") for two different
+        # values (Omega1, Omega2), which satisfied reader-v3's rule 4 without distinguishing them.
+        from read_paper import SYSTEM
+        self.assertIn("symbol or label", SYSTEM)
+
+    def test_v4_names_synthesis_and_eda_output_as_simulated(self):
+        # N10: CLM-ARCH-0007..0009 were extracted as `measured` from an RTL-synthesis table.
+        from read_paper import SYSTEM
+        self.assertIn("synthesis", SYSTEM.lower())
+        self.assertIn("simulated", SYSTEM)
+
+    def test_v4_says_a_fabrication_value_is_a_condition_not_a_claim(self):
+        # D7: CLM-DEV-0002..0004 were fabrication values extracted as freestanding claims with no
+        # result to attach to, and were retracted for it.
+        from read_paper import SYSTEM
+        self.assertIn("never a claim by itself", SYSTEM)
+
+    def test_v4_tells_the_model_its_own_statement_is_checked(self):
+        # N12: the largest rejection class is a statement naming something no quote contains.
+        from read_paper import SYSTEM
+        self.assertIn("statement itself is checked", SYSTEM)
 
 
 class ConditionsAreStatedOnce(unittest.TestCase):
