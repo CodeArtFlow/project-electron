@@ -10,19 +10,19 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
-| `CLM-PHOT-0004` = 7e-06 m | `CLM-PHOT-0007` = 2.3e-10 m | 100% | parameter=signal-ground electrode spacing | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) |
-| `CLM-PHOT-0004` = 7e-06 m | `CLM-PHOT-0008` = 3.3e-10 m | 100% | parameter=signal-ground electrode spacing | sample=bare silicon substrate, roughness_type=root mean square roughness (Sq) |
-| `CLM-PHOT-0004` = 7e-06 m | `CLM-PHOT-0009` = 1.7e-09 m | 100% | parameter=signal-ground electrode spacing | roughness_type=arithmetic average roughness (Sa) |
-| `CLM-PHOT-0004` = 7e-06 m | `CLM-PHOT-0010` = 2.1e-09 m | 100% | parameter=signal-ground electrode spacing | roughness_type=root mean square roughness (Sq) |
+| `CLM-PHOT-0004` = 7 um | `CLM-PHOT-0007` = 0.00023 um | 100% | parameter=signal-ground electrode spacing | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) |
+| `CLM-PHOT-0004` = 7 um | `CLM-PHOT-0008` = 0.00033 um | 100% | parameter=signal-ground electrode spacing | sample=bare silicon substrate, roughness_type=root mean square roughness (Sq) |
+| `CLM-PHOT-0004` = 7 um | `CLM-PHOT-0009` = 0.0017 um | 100% | parameter=signal-ground electrode spacing | roughness_type=arithmetic average roughness (Sa) |
+| `CLM-PHOT-0004` = 7 um | `CLM-PHOT-0010` = 0.0021 um | 100% | parameter=signal-ground electrode spacing | roughness_type=root mean square roughness (Sq) |
 
 ## `relative_deviation` (4 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
-| `CLM-ARCH-0003` = 0.02 dimensionless | `CLM-PHOT-0006` = 0.88 dimensionless | 98% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | dataset=MNIST, setup=experimental system |
-| `CLM-ARCH-0003` = 0.02 dimensionless | `CLM-PHOT-0005` = 0.85 dimensionless | 98% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | dataset=Iris test set |
-| `CLM-ARCH-0015` = 0.143 dimensionless | `CLM-PHOT-0006` = 0.88 dimensionless | 84% | device=H200, baseline=CA Overlap, variant=AN Overlap | dataset=MNIST, setup=experimental system |
-| `CLM-ARCH-0015` = 0.143 dimensionless | `CLM-PHOT-0005` = 0.85 dimensionless | 83% | device=H200, baseline=CA Overlap, variant=AN Overlap | dataset=Iris test set |
+| `CLM-ARCH-0003` = 2 percent | `CLM-PHOT-0006` = 88 percent | 98% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | dataset=MNIST, setup=experimental system |
+| `CLM-ARCH-0003` = 2 percent | `CLM-PHOT-0005` = 85 percent | 98% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | dataset=Iris test set |
+| `CLM-ARCH-0015` = 14.3 percent | `CLM-PHOT-0006` = 88 percent | 84% | device=H200, baseline=CA Overlap, variant=AN Overlap | dataset=MNIST, setup=experimental system |
+| `CLM-ARCH-0015` = 14.3 percent | `CLM-PHOT-0005` = 85 percent | 83% | device=H200, baseline=CA Overlap, variant=AN Overlap | dataset=Iris test set |
 
 ## `thermal_conductivity` (1 pair(s))
 

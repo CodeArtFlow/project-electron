@@ -113,6 +113,19 @@ def main():
         (r / "digests/2026-09-20.md").write_text("Cites CLM-DEV-0001.\n", encoding="utf-8")
     results.append(case("3. digest citing a retracted claim", c3b, 3))
 
+    # 3c - the SAME mistake, but a later digest's '## Corrections' section names the claim. A
+    # published digest is never rewritten (AGENTS.md), so this is how a citation mistake already
+    # committed gets to stop blocking every future gate run forever.
+    def c3c(r):
+        write_source(r)
+        write_claim(r, status="retracted", correction_published_in="2026-09-21")
+        (r / "digests/2026-09-20.md").write_text("Cites CLM-DEV-0001.\n", encoding="utf-8")
+        (r / "digests/2026-09-21.md").write_text(
+            "# Digest\n\n## Corrections\n\n- `CLM-DEV-0001` was retracted before this digest; "
+            "the 2026-09-20 digest should not have cited it.\n\n## Open contradictions\n\n_None._\n",
+            encoding="utf-8")
+    results.append(case("3. a retracted-claim citation is resolved once a later digest corrects it", c3c, None))
+
     # 4 - claim under a live contradiction cited without its flag
     def c4(r):
         write_source(r)

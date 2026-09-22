@@ -321,10 +321,18 @@ def collect_corrections(claims, since, digest_corrections_file=DIGEST_CORRECTION
             if corr.get("public") is True and (since is None or str(corr["date"]) > since):
                 fields = ", ".join(corr.get("fields", []) or []) or "see reason"
                 out.append((str(corr["date"]), f"`{c['id']}` corrected ({fields}): {corr['reason']}"))
-    try:
-        doc = yaml.safe_load(Path(digest_corrections_file).read_text(encoding="utf-8")) or {}
-    except (OSError, yaml.YAMLError):
+    # Fails closed on a file that EXISTS but is malformed (matches load_operating_keys in
+    # reconcile.py): a correction that silently failed to parse is a correction nobody sees,
+    # exactly the failure mode this function exists to prevent. A missing file is a legitimate
+    # "no corrections recorded yet" state and is the only case treated as empty.
+    dcf = Path(digest_corrections_file)
+    if not dcf.exists():
         doc = {}
+    else:
+        try:
+            doc = yaml.safe_load(dcf.read_text(encoding="utf-8")) or {}
+        except yaml.YAMLError as e:
+            raise SystemExit(f"error: {dcf} exists but is not valid YAML: {e}") from e
     for corr in doc.get("corrections", []) or []:
         if since is None or str(corr.get("date")) > since:
             out.append((str(corr["date"]),
@@ -350,7 +358,16 @@ def build_digest(claims, conflicts, sources, digests_dir=None, candidates_dir=No
     for p in prior:
         seen_ids |= set(re.findall(r"\bCLM-[A-Z]+-\d{4}\b", p.read_text(encoding="utf-8")))
 
-    new_claims = [c for c in claims if c["id"] not in seen_ids]
+    # A claim never previously cited AND already retracted/superseded by the time this digest is
+    # built has no business appearing as a "new" finding - it was never a live result a reader
+    # should see. (Found 2026-09-22: CLM-DEV-0002..0004 were retracted the same day they were
+    # extracted, before any digest had cited them, then still showed up as "new claims" in that
+    # day's digest because this filter only checked "not seen before," not "citable now."
+    # Publication-gate check 3 exists precisely to catch a digest citing a non-citable claim, and
+    # it caught this - AGENTS.md's own claim statuses (`AGENTS.md`, claim anatomy) make citable a
+    # fact about the claim, not the digest, so the filter belongs here alongside "not seen before.")
+    CITABLE = {"active", "challenged", "contested"}
+    new_claims = [c for c in claims if c["id"] not in seen_ids and c.get("status") in CITABLE]
     live = [c for c in conflicts if str(c.get("state", "")).startswith("live:")]
     unexamined = [c for c in live if c.get("state") == "live:unexamined"]
     by_claim = defaultdict(list)

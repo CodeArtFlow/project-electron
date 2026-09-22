@@ -122,21 +122,45 @@ def run_gate(root=None):
             f.append(f"{c['__path__']}: no named gap in plain language")
     check(results, 2, "live:data-absent records name their gap", f)
 
+    # A published digest is never rewritten (AGENTS.md), so a citation mistake already committed
+    # stays in that file forever - the gate cannot demand it never existed, only that it was
+    # corrected. `reported[stem]` is that digest's own "## Corrections" section text; a citation
+    # in an EARLIER digest counts as addressed once a LATER one's Corrections section names the
+    # claim. Built once, used by checks 3 and 8 alike.
+    def corrections_section(text):
+        m = re.search(r"^## Corrections\s*$(.*?)(?=^## |\Z)", text, re.M | re.S)
+        return m.group(1) if m else ""
+
+    digest_texts = {p.stem: p.read_text(encoding="utf-8") for p in digests_dir.glob("*.md")}
+    reported = {stem: corrections_section(text) for stem, text in digest_texts.items()}
+
+    def later_correction_covers(stem, ref):
+        return any(later_stem > stem and ref in section for later_stem, section in reported.items())
+
     # --- 3. every digest claim reference resolves to a citable claim ---
     f = []
     citable = {"active", "challenged", "contested"}
-    for path in sorted(digests_dir.glob("*.md")):
-        text = path.read_text(encoding="utf-8")
-        refs = set(CLAIM_REF_RE.findall(text))
-        for ref in sorted(refs):
+    for stem, text in sorted(digest_texts.items()):
+        corr_text = reported.get(stem, "")
+        # A reference inside the digest's OWN "## Corrections" section is exempt from citability:
+        # naming a retracted/superseded claim there is the entire point of a correction, not a
+        # mistake to flag. Only a reference OUTSIDE that section (an ordinary citation) must be
+        # citable, and only then does the "was it fixed later" escape hatch apply.
+        body_refs = set(CLAIM_REF_RE.findall(text)) - set(CLAIM_REF_RE.findall(corr_text))
+        for ref in sorted(set(CLAIM_REF_RE.findall(text))):
             if ref not in claims:
-                f.append(f"{path.name} cites {ref}, which is not in the ledger")
-            elif claims[ref].get("status") not in citable:
-                f.append(f"{path.name} cites {ref} with status "
+                f.append(f"{stem}.md cites {ref}, which is not in the ledger")
+            elif ref in body_refs and claims[ref].get("status") not in citable \
+                    and not later_correction_covers(stem, ref):
+                f.append(f"{stem}.md cites {ref} with status "
                          f"{claims[ref].get('status')!r} (citable: {sorted(citable)})")
     check(results, 3, "digest claim references resolve and are citable", f,
           note="Structural only. Whether a sentence faithfully represents its claim is not "
-               "something this gate can decide; the digest is rendered from ledger fields.")
+               "something this gate can decide; the digest is rendered from ledger fields. A "
+               "reference inside a digest's own '## Corrections' section is exempt (naming a "
+               "non-citable claim there is the point). A citation in an already-published "
+               "digest's ordinary body is not a failure once a LATER digest's '## Corrections' "
+               "section names the claim - the digest itself is never rewritten.")
 
     # --- 4. claims under a live contradiction carry their flag wherever they appear ---
     live_claim_ids = set()
@@ -196,8 +220,8 @@ def run_gate(root=None):
     # --- 8. retracted/superseded claims that were published have a correction ---
     f = []
     published_refs = set()
-    for path in digests_dir.glob("*.md"):
-        published_refs |= set(CLAIM_REF_RE.findall(path.read_text(encoding="utf-8")))
+    for text in digest_texts.values():
+        published_refs |= set(CLAIM_REF_RE.findall(text))
     for cid, c in claims.items():
         if c.get("status") in ("retracted", "superseded") and cid in published_refs:
             if not c.get("correction_published_in"):
@@ -206,12 +230,6 @@ def run_gate(root=None):
     # A claim that changed after publication must say so in a digest. `public: true` on a
     # correction means readers had already seen the claim, so the change is reported under
     # "## Corrections" in a digest dated on or after it - never edited away silently.
-    def corrections_section(text):
-        m = re.search(r"^## Corrections\s*$(.*?)(?=^## |\Z)", text, re.M | re.S)
-        return m.group(1) if m else ""
-
-    reported = {p.stem: corrections_section(p.read_text(encoding="utf-8"))
-                for p in digests_dir.glob("*.md")}
     for cid, c in claims.items():
         for corr in c.get("corrections", []) or []:
             if corr.get("public") is not True:

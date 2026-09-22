@@ -154,7 +154,25 @@ class Defect3And4_DigestAndCorrections(unittest.TestCase):
             self.assertEqual(n, 1)
             text = (d / "2026-09-21.md").read_text(encoding="utf-8")
             self.assertIn("CLM-ARCH-0002", text)
-            self.assertNotIn("CLM-ARCH-0001", text)
+
+    def test_a_claim_retracted_before_ever_being_cited_is_never_introduced_as_new(self):
+        # Found 2026-09-22: CLM-DEV-0002..0004 were extracted and retracted the same day, before
+        # any digest had cited them, then still appeared as "new claims" the next time a digest
+        # was built, because "not previously seen" was the only filter - status wasn't checked.
+        # publication_gate.py check 3 (a digest may only cite active/challenged/contested claims)
+        # caught it live. A never-published claim that is already retracted by the time a digest
+        # runs should not appear at all - it was never a live finding a reader should see.
+        led = self.ledger()
+        led[1]["status"] = "retracted"
+        with tempfile.TemporaryDirectory() as folder:
+            d = Path(folder) / "digests"
+            d.mkdir()
+            _, n = build_digest(led, [], {}, digests_dir=d, candidates_dir=Path(folder),
+                                today="2026-09-20")
+            self.assertEqual(n, 1)
+            text = (d / "2026-09-20.md").read_text(encoding="utf-8")
+            self.assertIn("CLM-ARCH-0001", text)
+            self.assertNotIn("CLM-ARCH-0002", text)
 
     def test_corrections_appear_once_after_the_previous_digest(self):
         led = self.ledger()
@@ -173,6 +191,19 @@ class Defect3And4_DigestAndCorrections(unittest.TestCase):
                 {"date": "2026-09-21", "digest": "2026-09-20", "text": "said nothing was new."}]}))
             self.assertIn("said nothing was new",
                           collect_corrections([], since="2026-09-20", digest_corrections_file=f)[0])
+
+    def test_a_malformed_corrections_file_fails_loudly_not_silently(self):
+        # Found 2026-09-22: an unquoted colon inside a plain YAML scalar broke
+        # ledger/digest-corrections.yaml, and collect_corrections caught the parse error and
+        # returned no corrections - a correction that silently failed to parse is a correction
+        # nobody sees. A MISSING file is still a legitimate "none recorded yet" state.
+        with tempfile.TemporaryDirectory() as folder:
+            f = Path(folder) / "dc.yaml"
+            f.write_text("corrections:\n- text: \"status: retracted\" (unquoted colon breaks this)\n")
+            with self.assertRaises(SystemExit):
+                collect_corrections([], since="2026-09-20", digest_corrections_file=f)
+        self.assertEqual(collect_corrections([], since="2026-09-20",
+                                             digest_corrections_file=Path("nope")), [])
 
     def test_gate_blocks_an_unreported_public_correction_then_passes_when_reported(self):
         correction = [{"date": "2026-09-21", "public": True, "fields": ["quantity.bound"],

@@ -6,3 +6,11 @@ corrections:
     as already reported and overwrote the digest. The claims appeared on the state-of-the-art pages that
     day but not in this digest. The builder is fixed, and the claims are listed in full in the 2026-09-21
     digest.
+- date: '2026-09-23'
+  digest: '2026-09-22'
+  text: This digest listed `CLM-DEV-0002`, `CLM-DEV-0003` and `CLM-DEV-0004` as new claims under
+    "Devices" (each visibly marked as retracted), but all three had already been retracted
+    (D7, earlier the same day, before this digest was built) and should not have been cited at
+    all - not even flagged as retracted, since nothing published had ever cited them before the
+    retraction. The digest builder's new-claims filter checked only "not previously seen," not
+    whether the claim's current status is citable; it now checks both.
