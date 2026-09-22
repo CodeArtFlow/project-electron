@@ -20,7 +20,7 @@ import json
 import re
 import shutil
 import sys
-from datetime import date, datetime
+from datetime import datetime, timezone
 from html import escape
 from pathlib import Path
 
@@ -174,7 +174,7 @@ def page(title, body, active="", depth=0):
 {body}
 </main>
 <footer class="site"><div class="wrap">
-<p>Every statement here traces to a claim in the ledger. Built {date.today().isoformat()}
+<p>Every statement here traces to a claim in the ledger. Built {datetime.now(timezone.utc).date().isoformat()}
 from the repository state at that time. The ledger is the source of truth; if this page and the
 ledger disagree, this page is stale.</p>
 </div></footer>
@@ -483,7 +483,7 @@ block publication rather than appearing here as caveats.</p>
     audit_path = AUDIT_PATH
     if audit_path.exists():
         audit = json.loads(audit_path.read_text(encoding="utf-8"))
-        checks_body = "<h2>Research checks</h2><pre>" + escape(render_summary(audit)) + "</pre>"
+        checks_body = md(render_summary(audit))
     else:
         checks_body = "<h2>Research checks</h2><p>No current TypeSafe audit is available in this build.</p>"
     (out / "checks.html").write_text(

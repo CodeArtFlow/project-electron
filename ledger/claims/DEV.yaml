@@ -20,7 +20,7 @@ claims:
   grade: B
   credibility: unknown
   evidence_type: simulated
-  status: active
+  status: retracted
   as_of: '2026-09-17'
   created: '2026-09-21'
   extraction:
@@ -45,6 +45,16 @@ claims:
       unit: mTorr
     conditions:
       process: high vacuum deposition
+  corrections:
+  - date: '2026-09-22'
+    public: false
+    fields:
+    - status
+    reason: 'Retracted (D7, TODO.md). This is the fabrication environment SRC-00006''s device was
+      made under, not a finding the paper stands behind - the doctrine''s claim anatomy already has
+      a place for that (`conditions`, carried on the claim it conditions). No result claim was
+      extracted from SRC-00006 for this to be a condition OF, so it does not belong in the ledger as
+      a claim of its own. Nothing published cites it. See SRC-00006 for the same fact in context.'
 - id: CLM-DEV-0003
   topic: DEV
   statement: OLED glass substrates coated with indium tin oxide have a sheet resistance of approximately
@@ -54,7 +64,7 @@ claims:
   grade: B
   credibility: unknown
   evidence_type: simulated
-  status: active
+  status: retracted
   as_of: '2026-09-17'
   created: '2026-09-21'
   extraction:
@@ -79,6 +89,14 @@ claims:
       unit: ohm/sq
     conditions:
       substrate: glass substrates coated with indium tin oxide (ITO)
+  corrections:
+  - date: '2026-09-22'
+    public: false
+    fields:
+    - status
+    reason: 'Retracted (D7, TODO.md), same reasoning as CLM-DEV-0002: a substrate spec from
+      SRC-00006''s fabrication section, not a finding, and no result claim from that source exists
+      for it to condition. Nothing published cites it.'
 - id: CLM-DEV-0004
   topic: DEV
   statement: The high-vacuum deposition base pressure for OLED thermal evaporation was approximately 3
@@ -88,7 +106,7 @@ claims:
   grade: B
   credibility: unknown
   evidence_type: simulated
-  status: active
+  status: retracted
   as_of: '2026-09-17'
   created: '2026-09-21'
   extraction:
@@ -109,6 +127,15 @@ claims:
     display:
       value: 0.0003
       unit: mTorr
+  corrections:
+  - date: '2026-09-22'
+    public: false
+    fields:
+    - status
+    reason: 'Retracted (D7, TODO.md), same reasoning as CLM-DEV-0002: a second statement of the same
+      OLED-line base pressure, restated from a different paragraph of SRC-00006''s fabrication
+      section - not a finding, and no result claim from that source exists for it to condition.
+      Nothing published cites it.'
 - id: CLM-DEV-0005
   topic: DEV
   statement: Data transfer over the signatureless thermoradiative channel achieved a rate of up to 92.16

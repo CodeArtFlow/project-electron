@@ -24,7 +24,7 @@ import re
 import subprocess
 import sys
 from collections import Counter, defaultdict
-from datetime import date, datetime, timezone
+from datetime import datetime, timezone
 from pathlib import Path
 
 import yaml
@@ -143,7 +143,7 @@ def build_sota(claims, conflicts):
                         if c.get("status") in ("active", "challenged", "contested")]
         superseded = [c for c in by_topic.get(code, []) if c.get("status") == "superseded"]
         lines = [f"# {name} — state of the art", "",
-                 f"Topic code `{code}`. Last reviewed {date.today().isoformat()}.", "",
+                 f"Topic code `{code}`. Last reviewed {today_utc()}.", "",
                  "> Derived from the claim ledger. Every statement traces to a claim; nothing "
                  "here is composed freehand.", ""]
 
@@ -214,7 +214,7 @@ def build_synthesis(claims, conflicts, sources):
     missing = [t for t in TOPICS if not by_topic.get(t)]
 
     lines = ["# The field, as our corpus knows it", "",
-             f"Generated {date.today().isoformat()} from the claim ledger.", "",
+             f"Generated {today_utc()} from the claim ledger.", "",
              "> **Read this as a description of our corpus, not of the field.** Every number "
              "below counts what we have read and extracted. A layer with no claims means we "
              "have not read anything for it — never that nothing is happening there.", "",

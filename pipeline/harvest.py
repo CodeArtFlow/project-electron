@@ -29,7 +29,7 @@ import sys
 import time
 import urllib.parse
 import xml.etree.ElementTree as ET
-from datetime import date, datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
@@ -299,6 +299,13 @@ def sweep_arxiv(categories, since, limit):
     return out, None
 
 
+def today_utc():
+    """UTC, never the machine's local date - digests are dated in UTC (sota.py), and a candidate
+    id or harvested_date in local time would disagree with them on exactly the days that matter.
+    """
+    return datetime.now(timezone.utc).date()
+
+
 def next_candidate_seq():
     """Continue today's numbering rather than restarting at 1.
 
@@ -307,7 +314,7 @@ def next_candidate_seq():
     run's candidate with a different paper. Numbering now continues from the highest existing
     file for today, so every candidate filename is unique across runs.
     """
-    prefix = f"CAND-{date.today():%Y%m%d}-"
+    prefix = f"CAND-{today_utc():%Y%m%d}-"
     highest = 0
     for p in CANDIDATES.glob(f"{prefix}*.yaml"):
         try:
@@ -319,7 +326,7 @@ def next_candidate_seq():
 
 def write_candidate(cand, seq):
     """Write a candidate. Explicitly NOT a source record - see module docstring."""
-    cid = f"CAND-{date.today():%Y%m%d}-{seq:04d}"
+    cid = f"CAND-{today_utc():%Y%m%d}-{seq:04d}"
     path = CANDIDATES / f"{cid}.yaml"
     if path.exists():
         # Refuse rather than overwrite. Reaching this means the numbering logic is broken, and
@@ -327,7 +334,7 @@ def write_candidate(cand, seq):
         raise FileExistsError(f"{path.name} already exists - refusing to overwrite")
     doc = dict(cand)
     doc["id"] = cid
-    doc["harvested_date"] = date.today().isoformat()
+    doc["harvested_date"] = today_utc().isoformat()
     doc["status"] = "unread"
     doc["access"] = "metadata_only"
     doc["_note"] = (
@@ -350,12 +357,12 @@ def main():
     args = ap.parse_args()
 
     CANDIDATES.mkdir(parents=True, exist_ok=True)
-    since = (date.today() - timedelta(days=args.days)).isoformat()
+    since = (today_utc() - timedelta(days=args.days)).isoformat()
     reg = load_registry()
     journals = harvestable_journals(reg)
     seen = existing_ids()
 
-    print(f"harvest sweep - window {since} .. {date.today().isoformat()}")
+    print(f"harvest sweep - window {since} .. {today_utc().isoformat()}")
     print(f"  venues: {len(journals)} journals + arXiv | already known: {len(seen)}")
 
     topic_ids, relevance = load_topic_allowlist()
@@ -434,7 +441,7 @@ def main():
     written = [write_candidate(c, start + i) for i, c in enumerate(readable)]
 
     summary = {
-        "date": date.today().isoformat(), "window_days": args.days,
+        "date": today_utc().isoformat(), "window_days": args.days,
         "venues_swept": len(journals) + 1, "found": len(found), "new": len(new),
         "duplicates": dupes, "written": len(written),
         "access_blocked": len(blocked), "errors": errors,

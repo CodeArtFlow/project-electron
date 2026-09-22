@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-09-20.
+Topic code `ARCH`. Last reviewed 2026-09-22.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -27,11 +27,52 @@ Topic code `ARCH`. Last reviewed 2026-09-20.
   - `CLM-ARCH-0001` · process TSMC 16nm FinFET, cell low-threshold Buffer/NOT, vclk 0.6 V, fclk 7.94 GHz · grade B · credibility unknown · simulated · as of 2026-09-17
   - sources: SRC-00001
 
+### power
+
+- **0.0404 W** — The 1024-MAC Systolic Array component in the MiX-INT4g16 accelerator consumes 40.4 mW of power in 28nm at 500 MHz.
+  - `CLM-ARCH-0007` · component 1024-MAC Systolic Array, architecture MiX-INT4g16, array_size 1024-MAC, process 28nm, frequency 500 MHz · grade B · credibility unknown · simulated · as of 2026-09-17
+  - sources: SRC-00005
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.0318 W** — The 512-MAC systolic array for MiX-INT4g16 consumes 31.8 mW of power in 28nm at 500 MHz.
+  - `CLM-ARCH-0008` · architecture MiX-INT4g16, array_size 512-MAC, process 28nm, frequency 500 MHz · grade B · credibility unknown · simulated · as of 2026-09-17
+  - sources: SRC-00005
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.0268 W** — The 512-MAC systolic array for MiX-INT4 consumes 26.8 mW of power in 28nm at 500 MHz.
+  - `CLM-ARCH-0009` · architecture MiX-INT4, array_size 512-MAC, process 28nm, frequency 500 MHz · grade B · credibility unknown · simulated · as of 2026-09-17
+  - sources: SRC-00005
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+
+### qualitative
+
+- The proposed mapping scheme reduces energy consumption per computation by 53% compared to conventional mapping techniques.
+  - `CLM-ARCH-0010` · device_type RRAM, architecture_baseline Naive architecture · grade B · credibility unknown · simulated · as of 2026-09-18
+  - sources: SRC-00011
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The Symmetry architecture reduces energy consumption by 29% compared with the Merged architecture for the FTJ device.
+  - `CLM-ARCH-0011` · device_type FTJ, architecture_baseline Merged architecture · grade B · credibility unknown · simulated · as of 2026-09-18
+  - sources: SRC-00011
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+
 ### relative deviation
 
 - **≤ 2 percent** — With a quadrature-VCO power-clock, PFAL Buffer/NOT energy stays within 2% of the ideal sinusoidal power-clock case at 3 GHz.
   - `CLM-ARCH-0003` · process TSMC 16nm FinFET, comparison quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell Buffer/NOT, fclk 3 GHz · grade B · credibility unknown · simulated · as of 2026-09-17
   - sources: SRC-00001
+
+### time
+
+- **153.53 ns** — The total latency for the FTJ device using the Naive architecture is 153.53 ns.
+  - `CLM-ARCH-0012` · device_type FTJ, architecture Naive · grade B · credibility unknown · simulated · as of 2026-09-18
+  - sources: SRC-00011
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **161.99 ns** — The total latency for the FTJ device using the Merged architecture is 161.99 ns.
+  - `CLM-ARCH-0013` · device_type FTJ, architecture Merged · grade B · credibility unknown · simulated · as of 2026-09-18
+  - sources: SRC-00011
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **153.53 ns** — The total latency for the FTJ device using the Symmetry architecture is 153.53 ns.
+  - `CLM-ARCH-0014` · device_type FTJ, architecture Symmetry · grade B · credibility unknown · simulated · as of 2026-09-18
+  - sources: SRC-00011
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -39,6 +80,6 @@ _None._
 
 ## Evidence base
 
-- claims: 6
-- grades: {'B': 6}
-- distinct sources: 2
+- claims: 14
+- grades: {'B': 14}
+- distinct sources: 4
