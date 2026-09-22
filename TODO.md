@@ -182,6 +182,9 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
   as the counts moved.
 - [ ] **H7. Registry:** four venues block automated access (TechRxiv, ChemRxiv, Intel, Applied
   Materials) and two never answered. Not evaded. Need a legitimate route.
+- [ ] **H8. `ubuntu-latest` migrates to Ubuntu 26 on 2026-10-19** (seen live in a workflow run's
+  annotations, 2026-09-22). No action needed yet; re-check the pipeline still runs clean on the new
+  image once it switches, the way H4 was checked live rather than assumed.
 
 ## 7. Done recently (2026-09-21)
 
