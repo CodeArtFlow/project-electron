@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: pip
@@ -23,7 +23,7 @@ jobs:
         run: python pipeline/semantic_checks.py --scope all --live --max-calls 64 --seconds 180 --candidate-limit 8
       - name: Retain complete evidence and responses
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: typesafe-research
           path: |
