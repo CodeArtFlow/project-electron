@@ -683,21 +683,27 @@ it, because a gate CI can route around is not a gate.
 
 ---
 
-## Current state — 2026-09-21
+## Current state — 2026-09-22
 
 **What exists and runs.** The full pipeline: verified registry, daily sweep (`harvest.yml`, 06:15
 UTC), daily arXiv reader (`read.yml`, 06:45 UTC), reconcile, derived SOTA/synthesis/digest, the
 nine-check publication gate, and a live site. The whole deterministic pipeline runs in about 12 s.
+`read.yml` now regenerates SOTA, synthesis and the digest from the ledger and commits them itself
+right after reading (D4, decided 2026-09-22), so the site no longer waits on someone running
+`run_pipeline.py` by hand.
 
-**What the corpus holds** (counted from the repository at the end of 2026-09-21). 12 source records
-(3 read by hand, 9 by the automated reader) and 30 claims (14 ARCH, 6 DEV, 5 MAT, 4 PHOT, 1 PROC, all
-grade B and active; 23 automated), which is **5 of 10 layers**. 11 conflicts, all `resolved` (the six
-opened by the first scheduled reading run, `CFL-0006..0011`, were closed as `scoped` once the
-comparability rule in *The contradiction protocol* was fixed). 314 candidates are unread: 117 arXiv
-(the automated lane) and 197 publisher (manual; about 25% fetchable as full text). Of the arXiv ones
-already handled, 29 were judged out of scope, 8 were read with no claim accepted (`no_claims`) and 2
-were too long. The site's synthesis page describes a smaller corpus than this until
-`run_pipeline.py` regenerates it (see the CI gap below).
+**What the corpus holds** (counted from the repository on 2026-09-22). 12 source records (3 read by
+hand, 9 by the automated reader) and 27 active claims (14 ARCH, 3 DEV, 5 MAT, 4 PHOT, 1 PROC, all
+grade B; 20 automated), which is **5 of 10 layers**. Three further DEV claims
+(`CLM-DEV-0002..0004`) were retracted 2026-09-22 (D7): they were fabrication-environment details
+(a deposition chamber's base pressure, an ITO substrate's sheet resistance) extracted as
+freestanding claims from a paper that yielded no result claim for them to be a `conditions` entry
+on, so they had no claim to condition and did not belong in the ledger on their own. 11 conflicts,
+all `resolved` (the six opened by the first scheduled reading run, `CFL-0006..0011`, were closed as
+`scoped` once the comparability rule in *The contradiction protocol* was fixed). 314 candidates are
+unread: 117 arXiv (the automated lane) and 197 publisher (manual; about 25% fetchable as full
+text). Of the arXiv ones already handled, 29 were judged out of scope, 8 were read with no claim
+accepted (`no_claims`) and 2 were too long.
 
 Open work is tracked in **`TODO.md`**. Keep it and this section consistent: facts about the state live
 here, tasks live there.
@@ -763,19 +769,23 @@ Tests (all run in CI before any deploy): `validate_registry.py`, `units.py`, `bo
   call on `gemini-3.6-flash`. The median arXiv paper fetched (measured on 14) is about 59,000
   characters; at an assumed 3 to 4 characters a token that is 15,000 to 20,000 input tokens, plus an
   assumed 3,000 output tokens. At $0.75/$3.75 that is about $0.025 for a full read in 2026 and about
-  twice that after 2027-01-01. The reader takes up to 25 candidates a day. If a third are in scope
-  (this batch had 4 of 12) that is about 8 full reads, roughly $0.20 a day or $6 a month in 2026, and
-  roughly $12 a month after the price doubles, which is over the cap, so the pacing would then
-  throttle extraction. `python pipeline/budget.py` shows the real spend; trust that over this.
-- **Nothing in CI regenerates the SOTA and digest pages after reading.** The site renders the
-  committed `sota/` and `digests/`, and only `run_pipeline.py` rewrites them, so claims the reader
-  adds reach the ledger but not the site (which still says "3 source records") until someone runs it.
-  This has not been decided or built.
-- **Throughput is bounded by time as well as money.** A run is capped at 25 papers and 15 minutes (the
-  workflow's timeout is 20). The first sweep queued 98 arXiv candidates over a three-day look-back,
-  about 33 a day, so 25 a day does not quite keep pace with that inflow and the backlog would not
-  clear. A second daily run would, and by the estimate above the money allows roughly double. That is
-  a deliberate edit of `read.yml`, not something to do silently.
+  twice that after 2027-01-01. The reader takes up to 40 candidates a day (raised from 25, D5,
+  2026-09-22). If a third are in scope (this batch had 4 of 12) that is about 13 full reads, roughly
+  $0.33 a day or $10 a month in 2026 - at the cap - and over it after the price doubles, which is
+  when the pacing throttles extraction rather than overspending. `python pipeline/budget.py` shows
+  the real spend; trust that over this.
+- **CI now regenerates the SOTA and digest pages after reading (D4, 2026-09-22).** `read.yml` runs
+  `sota.py --sota`, `--synthesis` and `--digest` right after reconciling, and commits `sota/` and
+  `digests/` alongside `corpus/` and `ledger/`. Deploy still decides whether any of it reaches
+  readers: the publication gate runs at deploy time regardless of what got committed here, so an
+  unexamined conflict still blocks the site on the last good build.
+- **Throughput (D5, decided 2026-09-22: raise the cap, not a second daily run).** The first sweep
+  queued 98 arXiv candidates over a three-day look-back, about 33 a day, and every run so far has
+  hit the paper cap in well under its time budget (25 papers took 78s against a 900s budget on the
+  biggest run yet) - the bottleneck was the paper count, not time. Raised proportionally instead of
+  adding a second scheduled run: a run is now capped at 40 papers and 1440s (the workflow's timeout
+  is 30 minutes), keeping the same one-run-a-day shape while covering the ~33/day inflow with
+  headroom. The cost estimate above already reflects this.
 - **The semantic audit is advisory and uncalibrated.** The gold set is a seed (15 cases, labelled by
   the same agent that made the extractions, no independent review, no defective *publication*
   examples), so no threshold can yet be validated. `python pipeline/gold_eval.py` shows where it
@@ -785,11 +795,23 @@ Tests (all run in CI before any deploy): `validate_registry.py`, `units.py`, `bo
   about where a threshold might sit, not a validation of one, and it predates the semantic-v2 questions.
 - **The audit cannot see the paper.** The wrong "EDP-optimal" condition on `CLM-ARCH-0004` was
   invisible to it because the record repeated the abstract's error. Only reading the paper found it.
-- **Independence for arXiv sources.** arXiv states no corresponding author, and `reconcile` correctly
-  treats missing metadata as not-independent, so two arXiv papers can currently never be established
-  independent of each other and no arXiv-only supersession is possible until author records exist.
-  Falling back to "no shared author or affiliation of any position" is a decision for the user.
-- **Publisher lane**: needs a legitimate full-text route (Europe PMC returned 503 and is untested).
+- **Independence for arXiv sources (D3, decided 2026-09-22: wait for author records).** arXiv states
+  no corresponding author, and `reconcile` correctly treats missing metadata as not-independent, so
+  two arXiv papers can currently never be established independent of each other and no arXiv-only
+  supersession is possible. The user chose to leave this as-is rather than adopt a fallback rule now:
+  arXiv-only supersession stays impossible until `assess-source` (A3) builds real author records.
+- **Publisher lane (D6, retried 2026-09-22): still no automated route.** Europe PMC's 503 was not
+  the real problem: retried live on three unread Nature Communications DOIs, it now answers (200)
+  but reports **zero hits** for all three (`hitCount: 0`) - Europe PMC indexes biomedical/MEDLINE
+  literature, not materials science or photonics, so it is the wrong tool for most of this corpus
+  regardless of uptime. Also checked whether the landing page itself carries full text: a plain GET
+  on the DOI resolver for the same paper returns HTTP 200 (not blocked) but only the page shell -
+  navigation, notices, CSS - with the actual article body absent from the initial HTML, and
+  Crossref's `link` metadata for the same DOI points at that identical landing-page URL, not a
+  separate XML/PDF endpoint. Confirms rather than overturns the existing finding (9 of 36 publisher
+  candidates fetchable, most gated or JS-rendered): no legitimate full-text API was found this
+  session. `harvest` skill (human reading) stays the primary route; a further candidate (CORE,
+  which needs a registered API key) is unexplored.
 - **Semantic Scholar** rate-limits unauthenticated requests. A free key is an enhancement, not a blocker.
 
 **Verification findings worth carrying forward.**

@@ -34,8 +34,10 @@ rule about corrections applies to its own chat log).
 | TypeSafe integration order | Claims-against-the-paper (phase 1–2) built before anything else in the plan | `968421d` |
 | TypeSafe's role | Advisory only (`reference/semantic_policy.yaml`); never changes a claim, grade, credibility or conflict state | `d9fc82c` |
 | Daily reading schedule | Paused twice for false-conflict fixes, resumed each time once the fix deployed; currently **running** | `3c551e5` |
-| Fabrication-recipe claims (`CLM-DEV-0002..0004`) | **Undecided** — TODO D7 |
-| CI regenerating SOTA/digest after reading | **Undecided** — TODO D4 |
+| Fabrication-recipe claims (`CLM-DEV-0002..0004`) | Retracted, not relabelled: they're conditions with no claim to attach to (D7, 2026-09-22) | this session |
+| CI regenerating SOTA/digest after reading | Yes, fully automatic — `read.yml` runs it right after reconciling (D4, 2026-09-22) | this session |
+| Independence for arXiv-only sources | Wait for author records (A3), no fallback rule for now (D3, 2026-09-22) | this session |
+| `reader-v4` (N3/N10/N12 prompt fixes) | Build + pre-register now; hold the live run for a separate go-ahead (2026-09-22) | this session |
 
 ---
 
@@ -231,6 +233,49 @@ then ran the check live on 9 papers for about $0.003 (`00602fc`). Scored against
   re-reading the whole transcript.
 
 ---
+
+## This session (2026-09-22, continued): TODO cleanup and four decisions
+
+**Prompt (paraphrased):** use `project-chat.md` as context, knock off as many `TODO.md` items as
+possible, and ask for any input or key decision through the Q&A interface rather than guessing.
+
+**Done without a decision (facts, not judgment calls):**
+- **N6** — the Research checks page rendered the audit as raw Markdown inside a `<pre>` tag instead
+  of through the site's own `md()` renderer. One-line fix.
+- **H4** — checked live (`gh api repos/actions/<name>/releases/latest`) rather than assuming: GitHub
+  removes Node 20 from Actions runners on 2026-09-23, one day out, so this had become urgent, not
+  just hygiene. Bumped every workflow to the current Node 24 majors.
+- **H5** — `harvest.py` named candidate ids and `harvested_date` from the machine's local date while
+  digests are dated in UTC, exactly the divergence `AGENTS.md` already warns about for digests. Fixed,
+  and the same audit found the identical bug already present in `sota.py` (the `Last reviewed` /
+  `Generated` stamps) and `build_site.py` (the footer stamp) — three more places nobody had checked.
+
+**Decided (AskUserQuestion, four questions, then one follow-up to nail down D7's mechanics):**
+1. **D7 (fabrication-recipe claims).** The user's framing reset how this was understood: these
+   values are *conditions*, not claims — `AGENTS.md`'s own claim anatomy already has a place for
+   "what environment was this validated under" (`conditions`, carried on the claim it conditions).
+   `CLM-DEV-0002..0004` had no result claim from `SRC-00006` to attach to, so on confirmation they
+   were retracted (status only, non-public correction), not relabelled to a new evidence type.
+2. **D4 (CI regeneration).** Yes, fully automatic. `read.yml` now runs `sota.py --sota`/`--synthesis`/
+   `--digest` right after reconciling, before committing, so a claim the reader adds reaches the site
+   the same day rather than waiting on a manual `run_pipeline.py`. The publication gate is unchanged
+   and still runs at deploy time regardless of what got committed here.
+3. **D3 (arXiv independence).** Wait for author records (A3); no fallback rule adopted. Recorded as
+   decided, not left open — a real answer, even though the answer is "not yet."
+4. **Reader v4 (N3/N10/N12).** Build the prompt/verifier changes and write the expectations doc now;
+   hold the live run for a separate go-ahead. `docs/reader-v4-preregistration.md` was written before
+   any `reader-v4` call, following the same discipline as `docs/typesafe-preregistration.md`: a
+   falsifiable expectation per fix, scored against a measured `reader-v3` baseline (not a remembered
+   one — `read_report.py` was run fresh), with a suggested small first live call
+   (`--max-papers 2 --budget-usd 0.25`) that this session did not place.
+
+**Not yet asked:** D5 (a second daily reading run) and D6 (the publisher lane's full-text route) are
+still open; they did not block anything built this session, so they were left for a follow-up
+question rather than bundled into the four above.
+
+**Result:** ledger, `AGENTS.md` Current state, `TODO.md`, six workflow files, `sota.py`,
+`build_site.py`, `harvest.py`, `read_paper.py`, and this file, all in one working session, not yet
+committed as of this entry.
 
 ## Where to look for more
 

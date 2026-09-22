@@ -1,6 +1,6 @@
 # TODO — Project Electron
 
-Last updated: 2026-09-21 (UTC), from the repository as it then stood.
+Last updated: 2026-09-22 (UTC), from the repository as it then stood.
 
 **What this file is.** The tracker for *work*: what is blocked, what is in flight, what is next, and
 what could bite us. **Rules** live in `AGENTS.md`. **Facts about the current state** (counts, measured
@@ -36,24 +36,32 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
   The reading schedule is paused meanwhile (B2).
 - [x] **D2. The TypeSafe plan** (`docs/typesafe-plan.md`) is approved, filtered excerpts and numeric
   checks kept in code. **Claims against the paper are built first** (phase 1), after N1.
-- [ ] **D3. Independence for arXiv-only sources.** arXiv states no corresponding author, and `reconcile`
-  correctly treats missing metadata as not-independent, so no arXiv-only supersession can ever happen
-  (`AGENTS.md`, open decisions). Choose a fallback rule, or wait for author records (A3).
-- [ ] **D4. Should CI regenerate the SOTA, synthesis and digest after reading?** Today only
-  `run_pipeline.py` does, so claims reach the ledger but the site's pages lag (they still say
-  "3 source records"). Build it, or keep it a manual step? If built: who may publish a daily digest,
-  given that a published digest is never rewritten?
-- [ ] **D5. Reading throughput.** 25 papers a run against about 33 arXiv candidates a day
-  (`AGENTS.md`); 117 arXiv candidates are unread. A second daily run would keep pace and the money
-  allows it (estimate, see `AGENTS.md`). A deliberate edit of `read.yml`.
-- [ ] **D7. Do fabrication-recipe details belong in the ledger?** `CLM-DEV-0002..0004` (a deposition
-  chamber's base pressure, an ITO substrate's sheet resistance, a device area) are stated in the Methods of
-  an experimental paper. They are true of the paper, but they are procedure, not findings, and no
-  evidence-type label fits them (`simulated` is wrong; `measured` is not right either). Options: keep them
-  with a corrected label, retract them, or tell the reader not to extract procedure parameters. Nothing
-  published cites them.
-- [ ] **D6. Publisher lane.** 197 candidates are unread and mostly bot-walled (about 25% fetchable).
-  Choose a legitimate full-text route, or accept human reading (`harvest` skill).
+- [x] **D3. Independence for arXiv-only sources.** Decided 2026-09-22: **wait for author records
+  (A3)**, not a fallback rule. arXiv-only supersession stays impossible until `assess-source` builds
+  real author/affiliation records (`AGENTS.md`, open decisions).
+- [x] **D4. Should CI regenerate the SOTA, synthesis and digest after reading?** Decided 2026-09-22:
+  **yes, fully automatic.** `read.yml` now runs `sota.py --sota`/`--synthesis`/`--digest` right after
+  reconciling and commits `sota/`+`digests/` alongside `corpus/`+`ledger/`. The publication gate still
+  runs at deploy time regardless, so an unexamined conflict still blocks the site on the last good
+  build; nothing about the gate changed.
+- [x] **D5. Reading throughput.** Decided 2026-09-22: **raise the per-run cap, not a second daily
+  run.** Every run so far hit the 25-paper cap in well under its time budget, so time wasn't the
+  constraint. `read_paper.py`'s `max_papers`/`seconds` ceilings raised 25/900 → 40/1440, `read.yml`'s
+  default and workflow `timeout-minutes` raised to match (20 → 30). Covers the ~33/day arXiv inflow
+  with headroom, at roughly the same monthly cost a second run would have cost (`AGENTS.md`).
+- [x] **D7. Do fabrication-recipe details belong in the ledger?** Decided 2026-09-22: they are
+  **conditions, not claims** — the doctrine's claim anatomy already has a place for "what environment
+  was this validated under" (`conditions`, carried on the claim it conditions), and a value with no
+  claim to condition does not belong in the ledger on its own. `CLM-DEV-0002..0004` had no result
+  claim from `SRC-00006` to attach to, so they were **retracted** (status only, correction recorded,
+  non-public — nothing published cited them). Reader guidance to stop extracting bare fabrication
+  parameters as freestanding claims is folded into `reader-v4` (N3/N10/N12).
+- [~] **D6. Publisher lane.** 197 candidates are unread and mostly bot-walled (about 25% fetchable).
+  Retried 2026-09-22 (decision: try Europe PMC and other APIs before accepting human reading):
+  Europe PMC now answers but has **zero coverage** of this corpus (it indexes biomedical
+  literature, not materials/photonics), and a plain landing-page fetch + Crossref's link metadata
+  both confirmed no full text is available without JS rendering. No route found; `harvest` skill
+  (human reading) stays primary. Still open: CORE (needs a registered API key, not tried).
 
 ## 2. Your actions (I cannot do these)
 
@@ -81,10 +89,12 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
   the letters before the exponent are a unit on their own. Refused as before, deliberately, with tests that
   fail if that changes: `TFLOPGEMM/s` (invented), `dB` for a power, `T` for a voltage, `%` for an area,
   `mm2` for a length, `me`. Nothing already accepted changes.
-- [ ] **N3. Reader: a distinguishing condition is required, not enforced.** `reader-v3` demands at least
+- [~] **N3. Reader: a distinguishing condition is required, not enforced.** `reader-v3` demands at least
   one verified condition, but `CLM-PHOT-0002/0003` carry identical conditions for different spacings
   (Ω1, Ω2). The verifier cannot tell whether a condition distinguishes. Candidates: ask for the symbol or
-  label as a condition; TypeSafe question per claim (plan, family B).
+  label as a condition; TypeSafe question per claim (plan, family B). Bundled into `reader-v4` with
+  N10/N12: prompt rule 4 now asks for the paper's own symbol/label. Code and
+  `docs/reader-v4-preregistration.md` done 2026-09-22; live run held for approval (**BLOCKED**).
 - [x] **N4. Reader: measure it.** Done 2026-09-22. Every run appends a compact record to
   `corpus/candidates/_read_runs.jsonl` (the five earlier runs were backfilled from git), and
   `python pipeline/read_report.py` groups them by screening model, extraction model and prompt version and
@@ -97,27 +107,34 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
   doing its job, and the prompt never tells the model that the statement is checked (N12).
   Acceptance was 48% on `reader-v2` and 42% on `reader-v3` (n=6 and n=11 papers read in full: no
   difference this small means anything).
-- [ ] **N12. Reader: tell the model that the statement is checked.** The largest rejection class (N4) is a
+- [~] **N12. Reader: tell the model that the statement is checked.** The largest rejection class (N4) is a
   statement that names something no quote contains. Rule 4 asks for a quote per condition, but nothing says
   the statement itself may only use words and numbers that its quotes (or a condition's quote) contain.
-  Proposed for `reader-v4` together with N3 and the synthesis half of N10; expectations to be written
-  before it runs.
+  Bundled into `reader-v4` with N3/N10: new rule 12 says so explicitly. Code and
+  `docs/reader-v4-preregistration.md` done 2026-09-22; live run held for approval (**BLOCKED** — needs
+  your go-ahead to spend from the reader budget: `python pipeline/read_paper.py --max-papers 2
+  --budget-usd 0.25` is the suggested first call).
 - [ ] **N5. `no_claims` papers (8) and `too_long` papers (2) are parked, not lost.** Decide who takes
   them: a stronger model, a higher thinking level, or a human. `too_long` skips at 120,000 characters
   and never truncates.
-- [ ] **N6. Research checks page** shows the audit's markdown in a `<pre>` (`build_site.py`); render it.
+- [x] **N6. Research checks page** shows the audit's markdown in a `<pre>` (`build_site.py`); render it.
+  Done 2026-09-22: uses the existing `md()` renderer, same as every other page.
 - [ ] **N7. TypeSafe plan, phases 2 to 6** (`docs/typesafe-plan.md`). Approved (D2). Phase 1 is built (F1).
 - [ ] **N8. Units are not verified against quotes.** The verifier proves a number is in its quote, not the
   unit: the MiX power figures' `mW` is in a table header, outside the quoted row. Phase 1 asks TypeSafe
   whether the excerpts show the unit; whether code should also check is open.
 - [x] **N9. Evidence-type labels on some claims (settled by reading the excerpts).** `CLM-ARCH-0007..0009`
   and `SRC-00005` were `measured`; the paper says the figures are synthesis results, so they are now
-  `simulated` (non-public corrections). `CLM-DEV-0002..0004` are `simulated` but are fabrication
-  conditions of an experimental paper: **not corrected, waiting on D7.**
-- [ ] **N10. Reader: evidence-type guidance.** The model called synthesis results `measured` and
-  fabrication conditions `simulated`. Make the rule explicit in the prompt (synthesis and other EDA-tool
-  results are `simulated`; a paper's fabrication recipe is not a measurement) and measure it (N4). A
-  change to the prompt is a new prompt version.
+  `simulated` (non-public corrections). `CLM-DEV-0002..0004` were `simulated` fabrication conditions of
+  an experimental paper: **resolved by D7** (2026-09-22) — retracted, not relabelled; they were
+  conditions with no claim to attach to, not claims of their own.
+- [~] **N10. Reader: evidence-type guidance.** The model called synthesis results `measured` and
+  fabrication conditions `simulated` (and, per D7, extracted a bare fabrication parameter as a
+  freestanding claim with no result to condition). Made explicit in `reader-v4`'s prompt: rule 6
+  (synthesis/EDA-tool output is `simulated`) and rule 11 (a fabrication/process parameter is a
+  `conditions` entry on a result claim, never a claim by itself). Code and
+  `docs/reader-v4-preregistration.md` done 2026-09-22; measuring it (N4) needs the held live run
+  (**BLOCKED**).
 - [ ] **N11. TypeSafe questions to sharpen before any threshold is set:** `is_result` (TypeSafe read the QLED
   Methods conditions as reported results; part of that may be my wording) and `atomic` (flagged
   `CLM-ARCH-0007`, which is one assertion with its conditions). Phase 3.
@@ -130,7 +147,10 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
   (`reference/semantic_policy.yaml`).
 - [ ] **A2. Statements can carry words the anchor quotes lack** ("in BLG"; "acoustic phonon" for the
   paper's "AP"). The verifier checks numbers and quotes, not every word. Noted in the corrections of
-  `CLM-MAT-0001..0004`. Test with the TypeSafe check (plan) or a deterministic content-word overlap.
+  `CLM-MAT-0001..0004`. `reader-v4`'s rule 12 (N12) is a first, prompt-only attempt at this — telling
+  the model, not a new deterministic check. `docs/reader-v4-preregistration.md` expectation 2 measures
+  whether it helps; if it doesn't, a deterministic content-word overlap check (or the TypeSafe check,
+  plan) is the fallback.
 - [ ] **A3. `assess-source` skill and author records.** Needed for credibility tiers and for
   independence (D3). Every claim is `credibility: unknown` today.
 - [ ] **A4. `verify-citation` skill** (audit: does a source say what we claim?). Not built.
@@ -146,9 +166,17 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
 - [ ] **H2. Price table freshness.** `budget.py` warns after 180 days. Re-verify against Google's page.
 - [ ] **H3. Google's docs are not proof a model can be called** (`gemini-2.5-flash`, "stable", was refused
   to this project). Any new model gets a small live run first.
-- [ ] **H4. Node 20 deprecation warnings** on Actions (`checkout@v4`, `setup-python@v5`, and others).
-  Check what current versions exist before changing any.
-- [ ] **H5. Harvest sweep names candidate ids with the local date**, the digests use UTC.
+- [x] **H4. Node 20 deprecation warnings** on Actions. Done 2026-09-22, urgently: Node 20 is removed
+  from GitHub-hosted runners on 2026-09-23 (one day out). Checked current major versions live
+  (`gh api repos/actions/<name>/releases/latest`) rather than guessing, and bumped every workflow to
+  the Node 24 majors: `checkout@v7`, `setup-python@v7`, `upload-artifact@v7`, `download-artifact@v8`,
+  `upload-pages-artifact@v5`, `deploy-pages@v5`.
+- [x] **H5. Harvest sweep names candidate ids with the local date**, the digests use UTC. Done
+  2026-09-22: `harvest.py` now has its own `today_utc()` (mirroring `sota.py`'s) and uses it for
+  candidate ids, `harvested_date`, and the sweep window. Also found and fixed the same bug in
+  `sota.py` itself (`Last reviewed`/`Generated` stamps used local `date.today()`) and in
+  `build_site.py`'s footer stamp — same class of bug the doctrine already names, just missed in three
+  more places.
 - [ ] **H6. Keep `AGENTS.md` "Current state" true** whenever a stage lands. It has gone stale repeatedly
   as the counts moved.
 - [ ] **H7. Registry:** four venues block automated access (TechRxiv, ChemRxiv, Intel, Applied
