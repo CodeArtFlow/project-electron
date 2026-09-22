@@ -64,6 +64,7 @@ from budget import Budget, BudgetError, BudgetExhausted, STALE_PRICES_DAYS  # no
 from candidates import load as load_yaml_file  # noqa: E402
 from candidates import unread_candidates  # noqa: E402
 from question_packets import build_packet, save_packet  # noqa: E402
+from read_report import append_run  # noqa: E402
 from claims import (APPROX_RE, LOWER_RE, TOPICS, UPPER_RE, Refusal, check_refusals,  # noqa: E402
                     next_claim_id, next_source_id, validate_claim)
 from fetch_text import _DASHES, MIN_FULL_TEXT_CHARS, fetch_arxiv, normalize  # noqa: E402
@@ -417,6 +418,18 @@ def qualifier_mismatch(anchor_spans, value, bound, approximate):
     return None
 
 
+def proposed_quotes(raw, limit=4, width=240):
+    """The quotes a rejected claim offered, kept with the rejection so a person can judge later whether
+    the verifier was right. They are the MODEL'S proposals: some may not be in the paper at all, which
+    is often why the claim was refused. Without them a rejection cannot be audited, and a verifier that
+    cannot be audited cannot be tuned (TODO N4)."""
+    anchors, conditions = raw.get("anchor_spans"), raw.get("conditions")
+    spans = [s for s in anchors if isinstance(s, str)] if isinstance(anchors, list) else []
+    if isinstance(conditions, list):
+        spans += [c["span"] for c in conditions if isinstance(c, dict) and isinstance(c.get("span"), str)]
+    return [" ".join(s.split())[:width] for s in dict.fromkeys(spans)][:limit]
+
+
 def clean_key(key):
     k = re.sub(r"[^a-z0-9]+", "_", str(key).lower()).strip("_")
     return k if re.match(r"^[a-z][a-z0-9_]{0,39}$", k) else None
@@ -604,7 +617,8 @@ def read_candidate(path, repo, model, eng, registry, schemas, fetch=fetch_arxiv,
         for raw in (reading.get("claims") or [])[:MAX_CLAIMS]:
             claim, info = build_claim(raw, ctx)
             if claim is None:
-                out.rejected.append({"statement": str(raw.get("statement", ""))[:160], "reason": info})
+                out.rejected.append({"statement": str(raw.get("statement", ""))[:160], "reason": info,
+                                     "quotes": proposed_quotes(raw)})
                 continue
             # A model asked for claims sometimes states one result twice, once with fewer
             # conditions. The ledger must hold each assertion once.
@@ -889,6 +903,7 @@ def main():
                   budget=budget)
     if not a.dry_run:
         (repo.candidates / "_last_read.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+        append_run(repo.candidates, summary)      # the permanent, compact record (read_report.py)
 
     models = summary["model"] + (f" (extraction: {summary['extract_model']})"
                                  if summary.get("extract_model") not in (None, summary["model"]) else "")

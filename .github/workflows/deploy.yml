@@ -73,7 +73,9 @@ jobs:
         run: python pipeline/test_gold_eval.py
 
       - name: The reader cannot record what a paper does not say
-        run: python pipeline/test_reader.py
+        run: |
+          python pipeline/test_reader.py
+          python pipeline/test_read_report.py
 
       - name: Claims are compared only when they share a subject (and a real conflict is still found)
         run: python pipeline/test_comparability.py

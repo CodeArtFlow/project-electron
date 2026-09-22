@@ -82,10 +82,23 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
   one verified condition, but `CLM-PHOT-0002/0003` carry identical conditions for different spacings
   (Ω1, Ω2). The verifier cannot tell whether a condition distinguishes. Candidates: ask for the symbol or
   label as a condition; TypeSafe question per claim (plan, family B).
-- [ ] **N4. Reader: measure it.** Keep a per-run record of accepted and rejected counts and reasons by
-  model and prompt version (the numbers are in `_last_read.json` history) so a change to a model, thinking
-  level or prompt is judged on data. First reading: 12 of 25 out of scope, 5 `no_claims`, 2 `too_long`,
-  6 read, 13 accepted, 18 rejected.
+- [x] **N4. Reader: measure it.** Done 2026-09-22. Every run appends a compact record to
+  `corpus/candidates/_read_runs.jsonl` (the five earlier runs were backfilled from git), and
+  `python pipeline/read_report.py` groups them by screening model, extraction model and prompt version and
+  buckets every rejection by why the verifier refused it. Rejections now keep the quotes the model offered,
+  so a person can audit them. **What it showed (35 rejections over 5 runs):** 16 (46%) are "the statement
+  has a number none of its quotes contain"; 11 are units (6 are spellings we could parse, see N2; 4 are
+  the model pairing a unit with the wrong quantity; 1 is a unit it invented); 3 are a missing condition,
+  3 a quote not in the paper, 2 a value in none of the quotes. Reading those 16 statements: they name a material, model or
+  thickness (`MoS2`, `SrVO3`, `LLaVA-OneVision-7B`, `20.8 nm`) that no quote contains, so the check is
+  doing its job, and the prompt never tells the model that the statement is checked (N12).
+  Acceptance was 48% on `reader-v2` and 42% on `reader-v3` (n=6 and n=11 papers read in full: no
+  difference this small means anything).
+- [ ] **N12. Reader: tell the model that the statement is checked.** The largest rejection class (N4) is a
+  statement that names something no quote contains. Rule 4 asks for a quote per condition, but nothing says
+  the statement itself may only use words and numbers that its quotes (or a condition's quote) contain.
+  Proposed for `reader-v4` together with N3 and the synthesis half of N10; expectations to be written
+  before it runs.
 - [ ] **N5. `no_claims` papers (8) and `too_long` papers (2) are parked, not lost.** Decide who takes
   them: a stronger model, a higher thinking level, or a human. `too_long` skips at 120,000 characters
   and never truncates.

@@ -27,7 +27,8 @@ from candidates import unread_candidates  # noqa: E402
 from claims import validate_claim, validate_ledger  # noqa: E402
 from fetch_text import FetchResult, fetch_arxiv, normalize  # noqa: E402
 from read_paper import (RETRY_DELAY_SECONDS, GeminiModel, Outcome, ReaderError, Repo, StubModel,  # noqa: E402
-                        build_claim, choose, commit_outcome, dump, number_appears, qualifier_mismatch,
+                        build_claim, choose, commit_outcome, dump, number_appears, proposed_quotes,
+                        qualifier_mismatch,
                         read_candidate, resolve_limits, run, span_ok, token_in)
 from units import UnitEngine  # noqa: E402
 
@@ -823,6 +824,34 @@ class ThePaidRun(unittest.TestCase):
                           budget=budget)
             self.assertEqual(summary["cost_usd"], 0.0)
             self.assertFalse((Path(folder) / "spend.json").exists())
+
+
+class RejectionsCanBeAudited(unittest.TestCase):
+    """A verifier that cannot be audited cannot be tuned (TODO N4): a rejection keeps what was proposed."""
+
+    def test_a_rejected_claim_keeps_the_quotes_it_offered_including_the_ones_not_in_the_paper(self):
+        invented = "a quote that is not anywhere in the paper at all, offered for a number"
+        raw = good_edp(anchor_spans=[EDP, invented, EDP])
+        with tempfile.TemporaryDirectory() as folder:
+            repo, path = candidate(folder)
+            out = read_candidate(path, repo, StubModel(CLASSIFY_OK, reading([raw])), ENG, REGISTRY, SCHEMAS,
+                                 fetched(), today="2026-09-21")
+            self.assertEqual(out.decision, "no_claims")
+            quotes = out.rejected[0]["quotes"]
+            self.assertEqual(quotes, [EDP, invented])                 # in order, without the repeat
+            commit_outcome(out, path, repo, "2026-09-21")
+            kept = yaml.safe_load(path.read_text(encoding="utf-8"))["read_decision"]["rejected"][0]
+            self.assertEqual(kept["quotes"], [EDP, invented])         # and on the record a person will open
+
+    def test_the_quotes_are_bounded_and_odd_shapes_do_not_break_the_run(self):
+        long = "x" * 900
+        raw = {"anchor_spans": [long, 7, None, "b " * 200] + [f"quote number {i} " * 3 for i in range(9)],
+               "conditions": [{"span": "condition quote " * 3}, "not a dict", {"span": 5}]}
+        quotes = proposed_quotes(raw)
+        self.assertEqual(len(quotes), 4)
+        self.assertTrue(all(len(q) <= 240 for q in quotes))
+        self.assertEqual(proposed_quotes({}), [])
+        self.assertEqual(proposed_quotes({"anchor_spans": "not a list", "conditions": None}), [])
 
 
 class Fetching(unittest.TestCase):
