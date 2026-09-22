@@ -17,6 +17,8 @@ pint is the mechanism, not the policy.
 Self-test:  python pipeline/units.py
 """
 
+import re
+import unicodedata
 from pathlib import Path
 
 import pint
@@ -51,6 +53,17 @@ SPELLINGS = [
     ("POPS", "petaoperation/second"),
     ("wph", "wafer/hour"),
 ]
+
+
+# How authors and PDF extraction write a unit that pint parses once it is rewritten. Kept ASCII with
+# escapes so the file stays ASCII. These are SPELLINGS, never guesses about meaning, and the rewrite
+# is used for conversion only: as_published keeps the unit exactly as the paper wrote it.
+#   RING_A         U+02DA + "A", the paper's angstrom. NFKC would split it into a space and a combining ring.
+#   ATTACHED_EXP   an exponent written straight after a unit symbol, its superscript lost: mm2, cm-2,
+#                  "ohm sq-1", "mV dec-1". Rewritten only when the letters before it are a unit on their own.
+RING_A = "\u02daA"
+ANGSTROM = "\u00c5"
+ATTACHED_EXP = re.compile(r"(?<![\w*^.])([^\W\d_]+)(-?\d)(?![\d.])")
 
 
 # Dimensionless quantities still have UNITS. A ratio can be written as a fraction, a percentage or
@@ -88,6 +101,24 @@ class UnitEngine:
             s = s.replace(src, dst)
         return s
 
+    def published_unit(self, unit):
+        """A unit as a paper wrote it -> a spelling pint can parse. Conversion only; never stored.
+
+        Refuses nothing itself: whatever it cannot rewrite it returns unchanged, and to_si then fails
+        exactly as before. It never chooses a unit for the caller, so "TFLOPGEMM/s" and "dB" stay refused.
+        """
+        s = unicodedata.normalize("NFKC", str(unit).replace(RING_A, ANGSTROM))
+
+        def attach(m):
+            symbol, exponent = m.group(1), m.group(2)
+            try:
+                self.ureg.parse_units(self._pint_str(symbol))
+            except Exception:  # noqa: BLE001 - not a unit on its own: leave the text alone
+                return m.group(0)
+            return f"{symbol}**{exponent}"
+
+        return ATTACHED_EXP.sub(attach, s)
+
     def quantity_spec(self, quantity):
         if quantity not in self.units:
             raise UnitError(
@@ -109,7 +140,7 @@ class UnitEngine:
                     f"a unit error.")
             return float(value) * DIMENSIONLESS_UNITS[unit], "dimensionless"
         try:
-            q = self.Q(float(value), self._pint_str(unit))
+            q = self.Q(float(value), self._pint_str(self.published_unit(unit)))
             return float(q.to(self._pint_str(si_unit)).magnitude), si_unit
         except pint.DimensionalityError as e:
             raise UnitError(
@@ -216,6 +247,47 @@ def self_test():
         failures.append("dimensional guard did NOT fire for nm -> time")
     except UnitError:
         pass
+
+    # Spellings a PDF or an author produces (TODO N2). All of these were refused on live papers.
+    spellings = [
+        (4, "\u02daA", "length_device", 4e-10),                  # ring-above + A: the angstrom
+        (1.5, "mm2", "area_die", 1.5e-6),
+        (25, "\u00b5m2", "area_die", 25e-12),                    # micro sign
+        (25, "\u03bcm2", "area_die", 25e-12),                    # Greek mu
+        (3, "cm\u00b2", "area_die", 3e-4),                       # a real superscript
+        (20, "\u03a9 sq-1", "sheet_resistance", 20.0),           # ohm per square
+        (20, "\u03a9/sq", "sheet_resistance", 20.0),             # already fine: must stay fine
+        (60, "mV dec-1", "subthreshold_swing", 0.06),
+        (1000, "cm2/(V*s)", "mobility", 0.1),
+    ]
+    for value, unit, quantity, expected in spellings:
+        try:
+            got, _ = eng.to_si(value, unit, quantity)
+            if abs(got - expected) > abs(expected) * 1e-9:
+                failures.append(f"{quantity}: {value} {unit!r} -> {got}, expected {expected}")
+        except UnitError as e:
+            failures.append(f"{quantity}: {unit!r} was refused: {e}")
+    if eng.record(20, "\u03a9 sq-1", "sheet_resistance")["as_published"]["unit"] != "\u03a9 sq-1":
+        failures.append("as_published must keep the unit exactly as the paper wrote it")
+
+    # Rewriting a spelling must never launder a wrong unit: each of these was, or could be, an error.
+    still_refused = [
+        (3.6, "TFLOPGEMM/s", "efficiency_compute"),   # a unit the model invented
+        (3, "dB", "power"),                            # dB is not a power without a reference
+        (3, "T", "voltage"),                           # tesla is not volt
+        (20, "%", "area_die"),                         # a percentage is not an area
+        (1.5, "mm2", "length_device"),                 # an area recorded against a length
+        (5, "INT8", "length_device"),                  # not a unit at all
+        (5, "m2", "time"),
+    ]
+    for value, unit, quantity in still_refused:
+        try:
+            eng.to_si(value, unit, quantity)
+            failures.append(f"{quantity}: {unit!r} was ACCEPTED and must be refused")
+        except UnitError:
+            pass
+    if eng.published_unit("INT8") != "INT8" or eng.published_unit("x86-64") != "x86-64":
+        failures.append("published_unit rewrote something that is not a unit")
 
     # Round trip through display must return the original si value.
     for quantity in ("mobility", "pressure", "temperature", "length_device", "energy",

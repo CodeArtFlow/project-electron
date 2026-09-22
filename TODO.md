@@ -75,9 +75,12 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
   `reconcile.py`, the visible `ledger/not-compared.md`, 15 tests including the six real pairs and a
   real contradiction that is still found. `CFL-0006..0011` closed as `scoped` (five by the guard, one by
   hand-scoping `CLM-PHOT-0002/0003`). Its known limit is N3.
-- [ ] **N2. Reader: unit parsing costs recall.** Refused so far for units we could parse but do not:
-  `˚A`/`Å` spellings, `mm2`, `Ω sq-1`, `me`, `TFLOP...`, and `dB` mapped onto a power quantity. Add
-  aliases with tests; refuse everything else as now.
+- [x] **N2. Reader: unit parsing costs recall.** Done 2026-09-22 (`units.py`, `published_unit`). Units a
+  paper writes with a lost superscript (`mm2`, `cm-2`, `Ω sq-1`, `mV dec-1`) and the ring-above angstrom
+  (`˚A`) are now rewritten for conversion only (`as_published` keeps the paper's spelling), and only when
+  the letters before the exponent are a unit on their own. Refused as before, deliberately, with tests that
+  fail if that changes: `TFLOPGEMM/s` (invented), `dB` for a power, `T` for a voltage, `%` for an area,
+  `mm2` for a length, `me`. Nothing already accepted changes.
 - [ ] **N3. Reader: a distinguishing condition is required, not enforced.** `reader-v3` demands at least
   one verified condition, but `CLM-PHOT-0002/0003` carry identical conditions for different spacings
   (Ω1, Ω2). The verifier cannot tell whether a condition distinguishes. Candidates: ask for the symbol or
