@@ -94,9 +94,10 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
   (Ω1, Ω2). The verifier cannot tell whether a condition distinguishes. Candidates: ask for the symbol or
   label as a condition; TypeSafe question per claim (plan, family B). Bundled into `reader-v4` with
   N10/N12: prompt rule 4 now asks for the paper's own symbol/label. Code and
-  `docs/reader-v4-preregistration.md` done and pushed 2026-09-22; scored against the next scheduled
-  read (06:45 UTC), not a hand-run small batch — the user chose to push and let it run rather than
-  pause the schedule first.
+  `docs/reader-v4-preregistration.md` done and pushed 2026-09-22. Its first live data (2026-09-22) was
+  a targeted single-candidate run (`--candidate CAND-20260921-0042`), not the scheduled 06:45 UTC read
+  as planned — the paper never reached the point of proposing several same-kind numbers, so rule 4 is
+  still effectively untested; the run instead surfaced two unrelated defects, N13 and N14.
 - [x] **N4. Reader: measure it.** Done 2026-09-22. Every run appends a compact record to
   `corpus/candidates/_read_runs.jsonl` (the five earlier runs were backfilled from git), and
   `python pipeline/read_report.py` groups them by screening model, extraction model and prompt version and
@@ -113,8 +114,47 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
   statement that names something no quote contains. Rule 4 asks for a quote per condition, but nothing says
   the statement itself may only use words and numbers that its quotes (or a condition's quote) contain.
   Bundled into `reader-v4` with N3/N10: new rule 12 says so explicitly. Code and
-  `docs/reader-v4-preregistration.md` done and pushed 2026-09-22; scored against the next scheduled
-  read rather than a hand-run small batch (see N3).
+  `docs/reader-v4-preregistration.md` done and pushed 2026-09-22. First live data (see N3) rejected the
+  one claim proposed for a number-naming reason, but it was a NEW defect (N13, a formula-subscript
+  digit), not the class rule 12 targets — still no live evidence either way on rule 12 itself.
+- [~] **N13. Reader: a chemical-formula digit was treated as an unverified number.** Found 2026-09-22
+  by comparing `reader-v4`'s only live output against an independent hand-extraction of the same
+  candidate: the model's one proposed claim was rejected with "the statement contains the number 3,
+  which none of its quotes contain" — the "3" in `CsPbBr3`, not a measurement. Same failure class as
+  N4's largest rejection bucket (`MoS2`, `SrVO3` were N4's own examples). `build_claim`'s statement-side
+  numeral check (`re.findall(r"\d+(?:\.\d+)?", stmt)`) had no standalone-token discipline, unlike
+  `token_in()` which already has it when searching quotes. Fixed in `reader-v5`: `STATEMENT_NUMBER_RE`
+  skips a digit run immediately preceded by a letter with no space. Code and
+  `docs/reader-v5-preregistration.md` done 2026-09-22; not yet scored live.
+- [~] **N14. Reader: evidence_type could only be set once per paper.** Same discovery as N13. The
+  candidate mixes measured and simulated results, which rule 6 already told the model to distinguish,
+  but the paper-level `evidence_type` field could hold only one answer; `extract_schema` already
+  allowed `"mixed"` there, but the code's `EVIDENCE_TYPES` check did not recognise it, so a `"mixed"`
+  answer silently produced zero claims regardless of what the model proposed. Fixed in `reader-v5`:
+  `evidence_type`/`evidence_span` moved to per-claim, verified independently for each one; the source
+  record records the majority type among its accepted claims and flags when they are not all one type.
+  Code and `docs/reader-v5-preregistration.md` done 2026-09-22; not yet scored live.
+- [x] **N15. Measured ranges ("4.9-5.2%") looked like a schema gap.** Investigated 2026-09-22 as part
+  of the N13/N14 fix: turned out not to need a code change. A claim with no `quantity` block already
+  skips the "no_condition" refusal and any per-number unit/bound check in `build_claim`, verified purely
+  by literal number-token presence in its quotes, so a range already passes as an unstructured
+  statement — the live rejection on this exact case was entirely explained by N13 (the formula digit),
+  not the range. Locked in as a regression test, `test_a_measured_range_is_accepted_without_a_structured_quantity`.
+- [x] **N16. Comparison moved from always-si_base to per-topic conventional units.** User decision,
+  2026-09-22, reversing the project's earlier "No exceptions" SI-only-comparison position.
+  `reference/definitions.yaml`'s new `topic_units` table (built only from units already in the
+  ledger, per topic) is now what `pipeline/reconcile.py`'s tolerance arithmetic (and every reader-
+  facing rendering of a comparison — CFL records, `ledger/not-compared.md`) runs in, falling back
+  to a quantity's own `display` unit when the table has no entry for that topic. Safe for a pure
+  multiplicative unit (GHz vs Hz can never flip a verdict); genuinely changes the tolerance
+  threshold for an offset unit (temperature: K vs degC) — accepted deliberately for temperature,
+  proven with a live-verdict-flip test rather than left theoretical
+  (`test_temperatures_that_agree_in_kelvin_can_disagree_in_the_display_fallback_celsius`). What
+  stayed untouched, on purpose: `same_measurement_kind`'s dimensional check (still si_base,
+  unconditionally) and every formula combining temperature with another quantity
+  (`pipeline/bounds.py`'s `thermal_voltage`, still absolute si_base/K throughout). `AGENTS.md`
+  *Units and definitions* rewritten to match; `reference/schemas.yaml`'s claim shape is
+  unchanged — the topic-unit value is derived on demand, never persisted on a claim.
 - [ ] **N5. `no_claims` papers (8) and `too_long` papers (2) are parked, not lost.** Decide who takes
   them: a stronger model, a higher thinking level, or a human. `too_long` skips at 120,000 characters
   and never truncates.
@@ -134,8 +174,11 @@ Legend: `[ ]` open · `[~]` in progress · `[x]` done · **BLOCKED** = waiting o
   freestanding claim with no result to condition). Made explicit in `reader-v4`'s prompt: rule 6
   (synthesis/EDA-tool output is `simulated`) and rule 11 (a fabrication/process parameter is a
   `conditions` entry on a result claim, never a claim by itself). Code and
-  `docs/reader-v4-preregistration.md` done and pushed 2026-09-22; measuring it (N4) happens against
-  the next scheduled read (see N3).
+  `docs/reader-v4-preregistration.md` done and pushed 2026-09-22. Its first live candidate (see N3) was
+  itself a mixed-evidence paper (measured CPL/HRTEM, simulated DFT/COMSOL) and exposed a DIFFERENT
+  defect in the same area: **N14**, the architecture could only hold one evidence_type for the whole
+  paper, so a genuinely mixed paper risked losing claims of whichever type it did not pick. Fixed in
+  `reader-v5` by moving evidence_type to per-claim.
 - [ ] **N11. TypeSafe questions to sharpen before any threshold is set:** `is_result` (TypeSafe read the QLED
   Methods conditions as reported results; part of that may be my wording) and `atomic` (flagged
   `CLM-ARCH-0007`, which is one assertion with its conditions). Phase 3.

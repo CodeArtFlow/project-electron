@@ -29,7 +29,7 @@ from fetch_text import FetchResult, fetch_arxiv, normalize  # noqa: E402
 from read_paper import (RETRY_DELAY_SECONDS, GeminiModel, Outcome, ReaderError, Repo, StubModel,  # noqa: E402
                         build_claim, choose, commit_outcome, dump, number_appears, proposed_quotes,
                         qualifier_mismatch,
-                        read_candidate, resolve_limits, run, span_ok, token_in)
+                        read_candidate, resolve_limits, run, source_evidence_type, span_ok, token_in)
 from units import UnitEngine  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -67,6 +67,7 @@ def ctx(**over):
 def good_edp(**over):
     c = {"statement": "The best cell reaches a minimum energy-delay product of 1.23e-26 J*s in simulation.",
          "anchor_spans": [EDP],
+         "evidence_type": "simulated", "evidence_span": EVID,
          "quantity": {"name": "energy_delay_product", "value": 1.23e-26, "unit": "J*s",
                       "bound": "exact", "approximate": False},
          "conditions": [{"key": "vclk", "value": "0.6 V", "span": EDP},
@@ -78,6 +79,7 @@ def good_edp(**over):
 def good_five(**over):
     c = {"statement": "The energy benefit over static CMOS reaches up to roughly 5x at reduced frequencies in simulation.",
          "anchor_spans": [FIVE],
+         "evidence_type": "simulated", "evidence_span": EVID,
          "quantity": {"name": "energy_advantage_ratio", "value": 5, "unit": "x",
                       "bound": "upper_bound", "approximate": True},
          "conditions": [{"key": "baseline", "value": "static CMOS", "span": FIVE}]}
@@ -175,7 +177,7 @@ class BuildClaim(unittest.TestCase):
         self.assertEqual(claim["quantity"]["bound"], "exact")
         self.assertAlmostEqual(claim["quantity"]["si_base"]["value"], 1.23e-26)
         self.assertEqual(claim["extraction"]["method"], "automated-extractive")
-        self.assertEqual(claim["extraction"]["verified_quotes"], 3)
+        self.assertEqual(claim["extraction"]["verified_quotes"], 4)   # 1 anchor + 2 conditions + 1 evidence_span
 
     def test_up_to_roughly_five_is_accepted_only_as_an_approximate_upper_bound(self):
         claim, _ = build_claim(good_five(), ctx())
@@ -198,6 +200,21 @@ class BuildClaim(unittest.TestCase):
         self.reject(good_edp(anchor_spans=[]), "no anchor quote")
         self.reject(good_edp(statement="Too short."), "30 and 400 characters")
 
+    def test_a_formula_subscript_digit_is_not_treated_as_an_unverified_number(self):
+        # TODO N13: CsPbBr3's "3" (a chemical-formula subscript, not a measurement) sank a live claim
+        # with "the statement contains the number 3, which none of its quotes contain". MoS2's "2"
+        # here is the same shape and must not need its own quote.
+        claim, why = build_claim(good_edp(
+            statement="The MoS2-based best cell reaches a minimum energy-delay product of 1.23e-26 J*s in simulation."),
+            ctx())
+        self.assertIsNotNone(claim, why)
+
+    def test_a_number_glued_to_its_unit_the_other_way_round_is_still_checked(self):
+        # The exemption only excludes a digit PRECEDED by a letter (a formula subscript). A real value
+        # with its unit glued on afterwards (9.9x, not x9.9) is unaffected and still needs a quote.
+        self.reject(good_edp(statement="The best cell reaches a minimum EDP of 1.23e-26 J*s and a bogus 9.9x figure in simulation."),
+                    "contains the number 9.9")
+
     def test_a_condition_the_paper_does_not_state_is_dropped_never_carried_over(self):
         # The defect from the first live run: a condition copied across from a different paper.
         raw = good_edp(conditions=good_edp()["conditions"] + [
@@ -210,6 +227,7 @@ class BuildClaim(unittest.TestCase):
     def test_a_number_that_is_uninterpretable_without_its_conditions_is_refused(self):
         raw = {"statement": "The widget reaches a drive current of 7.94 uA/um in simulation.",
                "anchor_spans": [EDP],
+               "evidence_type": "simulated", "evidence_span": EVID,
                "quantity": {"name": "current_drive", "value": 7.94, "unit": "uA/um", "bound": "exact",
                             "approximate": False},
                "conditions": []}
@@ -253,13 +271,46 @@ class ReadingOnePaper(unittest.TestCase):
         self.assertIn("quantum", out.reason)
 
     def test_a_paper_with_no_verifiable_evidence_type_yields_no_claims_and_says_why(self):
-        for bad in ({"evidence_type": "mixed"},
+        # A genuinely unrecognised paper-level type, and a definite (non-"mixed") type whose own
+        # evidence_span cannot be verified, both still block extraction as before. "mixed" no longer
+        # does - see test_a_mixed_paper_yields_claims_of_more_than_one_type below (TODO N14).
+        for bad in ({"evidence_type": "not_a_real_type"},
                     {"evidence_span": "The widget was measured on a probe station at CERN, in 2019."}):
             with tempfile.TemporaryDirectory() as folder:
                 _, _, out = self.read(StubModel(CLASSIFY_OK, reading([good_edp()], **bad)), folder)
             self.assertEqual((out.decision, out.claims), ("no_claims", []), bad)
             self.assertIn("human reader", out.reason)
             self.assertEqual(out.source["evidence_type"], "unknown")
+
+    def test_a_mixed_paper_yields_claims_of_more_than_one_type(self):
+        # TODO N14: reader-v4 asked for evidence_type ONCE per paper and copied it onto every claim, so
+        # a paper mixing measured and simulated results either had to force one type onto both (wrong
+        # for whichever claim it did not describe) or answer "mixed", which the code did not recognise
+        # and silently produced zero claims - the exact live failure on CAND-20260921-0042. Each claim
+        # now carries and verifies its OWN evidence_type/evidence_span, independent of the paper-level
+        # field, which may legitimately be "mixed".
+        measured_claim = good_edp(evidence_type="measured",
+                                  evidence_span="Compared with a conventional design the widget keeps a subthreshold swing")
+        simulated_claim = good_five(evidence_type="simulated", evidence_span=EVID)
+        with tempfile.TemporaryDirectory() as folder:
+            model = StubModel(CLASSIFY_OK, reading([measured_claim, simulated_claim], evidence_type="mixed"))
+            _, _, out = self.read(model, folder)
+        self.assertEqual(len(out.claims), 2)
+        types = {c["evidence_type"] for c in out.claims}
+        self.assertEqual(types, {"measured", "simulated"})
+        # The source record cannot itself say "mixed" (not a value the schema allows there): it
+        # records the majority and says so explicitly, rather than picking one type silently.
+        self.assertIn(out.source["evidence_type"], types)
+        self.assertIn("not all one evidence type", out.source["evidence_type_note"])
+
+    def test_one_claims_bad_evidence_type_does_not_sink_the_others_in_the_same_paper(self):
+        good = good_edp()
+        bad = good_five(evidence_type="measured", evidence_span="a quote that is nowhere in the paper")
+        with tempfile.TemporaryDirectory() as folder:
+            _, _, out = self.read(StubModel(CLASSIFY_OK, reading([good, bad])), folder)
+        self.assertEqual(len(out.claims), 1)
+        self.assertEqual(out.rejected[0]["reason"],
+                         "this claim's own evidence_type was not established by a verifiable quote (got 'measured')")
 
     def test_unreadable_too_long_and_not_arxiv_are_decisions_but_a_transient_failure_is_not(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -441,12 +492,29 @@ class NumbersNeedConditions(unittest.TestCase):
 
     def test_a_statement_with_no_number_needs_no_condition(self):
         stmt = "The widget was evaluated by simulation in the TESTFAB 16nm process for its energy benefit."
-        claim, why = build_claim({"statement": stmt, "anchor_spans": [EVID], "conditions": []}, ctx())
+        raw = {"statement": stmt, "anchor_spans": [EVID], "evidence_type": "simulated",
+               "evidence_span": EVID, "conditions": []}
+        claim, why = build_claim(raw, ctx())
         self.assertIsNotNone(claim, why)
+
+    def test_a_measured_range_is_accepted_without_a_structured_quantity(self):
+        # TODO N15: a measured RANGE ("4.9-5.2%") has no schema representation (quantity.value is one
+        # float). Re-reading build_claim shows this needs no code change: a claim with no `quantity`
+        # block skips both the "no_condition" refusal (which only fires `if claim.get("quantity")`)
+        # and any per-number unit/bound check, so both endpoints of a range pass as long as they are
+        # literal tokens in a verified quote - exactly the case that failed live only because of N13's
+        # formula-digit bug (CsPbBr3's "3"), not because of the range itself.
+        span = "the spacing in the core region being 4.9-5.2% larger than the shell-like region"
+        stmt = "The core-shell nanocrystal's interplanar spacing is 4.9-5.2% larger in the core than in the shell."
+        raw = {"statement": stmt, "anchor_spans": [span], "evidence_type": "measured",
+               "evidence_span": EVID, "conditions": []}
+        claim, why = build_claim(raw, ctx(text_norm=normalize(PAPER + " " + span)))
+        self.assertIsNotNone(claim, why)
+        self.assertNotIn("quantity", claim)
 
     def test_the_instructions_ask_for_distinguishing_conditions_and_allow_omitting_a_quantity(self):
         from read_paper import PROMPT_VERSION, SYSTEM
-        self.assertEqual(PROMPT_VERSION, "reader-v4")
+        self.assertEqual(PROMPT_VERSION, "reader-v5")
         self.assertIn("tells THIS number apart", SYSTEM)
         self.assertIn("omit quantity altogether", SYSTEM)
 
@@ -861,10 +929,10 @@ class RejectionsCanBeAudited(unittest.TestCase):
                                  fetched(), today="2026-09-21")
             self.assertEqual(out.decision, "no_claims")
             quotes = out.rejected[0]["quotes"]
-            self.assertEqual(quotes, [EDP, invented])                 # in order, without the repeat
+            self.assertEqual(quotes, [EDP, invented, EVID])           # in order, without the repeat
             commit_outcome(out, path, repo, "2026-09-21")
             kept = yaml.safe_load(path.read_text(encoding="utf-8"))["read_decision"]["rejected"][0]
-            self.assertEqual(kept["quotes"], [EDP, invented])         # and on the record a person will open
+            self.assertEqual(kept["quotes"], [EDP, invented, EVID])   # and on the record a person will open
 
     def test_the_quotes_are_bounded_and_odd_shapes_do_not_break_the_run(self):
         long = "x" * 900

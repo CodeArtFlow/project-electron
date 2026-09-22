@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2609.21575v1
 doi: null
-title: Programmable Strain-Induced Intrinsic Circularly Polarized Emission from All-Inorganic
-  Perovskite Nanocrystal Glass
+title: Programmable Strain-Induced Intrinsic Circularly Polarized Emission from All-Inorganic Perovskite
+  Nanocrystal Glass
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-09-18'
@@ -35,6 +35,28 @@ id: CAND-20260921-0042
 harvested_date: '2026-09-21'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-22'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v4
+  rejected:
+  - statement: The apparent interplanar spacing in the core region of the core-shell-like CsPbBr3 nanocrystal
+      is 4.9% to 5.2% larger than in the surrounding shell-like region.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - Quantitative analysis of the lattice fringes shows a systematic difference in the apparent interplanar
+      spacing across these interfaces, with the spacing in the core region being 4.9-5.2% larger than
+      that in the surrounding shell-like region
+    - crystallization of all-inorganic CsPbBr 3 nanocrystals within a rigid glass matrix
+    - synthesized by direct laser writing at a power density of 63.4 TW/cm2
+    - the spacing in the core region being 4.9-5.2% larger than that in the surrounding shell-like region
+  tokens:
+    input: 20760
+    output: 546
+  fetched_chars: 70468

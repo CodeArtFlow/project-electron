@@ -326,27 +326,59 @@ substitute for evidence.
 
 ## Units and definitions
 
-**All calculation and comparison happens in coherent SI base units. No exceptions.** Presentation
-happens in field convention. These are two layers and they never mix.
-`reference/definitions.yaml` is the single authority for both, and for terms whose definitions
-vary between sources (EOT, drive current conditions, TOPS/W precision, node labels).
+**Every physical formula, and every dimensional check, runs in coherent SI base units. No
+exceptions.** A formula that combines several quantities — `thermal_voltage`'s `kT/q` in
+`pipeline/bounds.py`, or any future one shaped like it — computes every quantity it touches in
+si_base throughout, never a mix of si_base and a field-convention unit partway through one
+calculation. `reference/definitions.yaml` is the single authority for this, and for terms whose
+definitions vary between sources (EOT, drive current conditions, TOPS/W precision, node labels).
 
 The rule is not "record the units" — it is **convert first, then reason**. Comparing two numbers
 in different units is how a false claim gets made with everyone acting in good faith.
 
-Every quantity carries three representations, with a fixed one-way derivation:
+Every quantity carries three PERSISTED representations, with a fixed one-way derivation:
 
 `as_published` → *(recorded conversion)* → `si_base` → *(display factor/offset)* → `display`
 
 - **`as_published`** — the source's own number and unit, transcribed verbatim. The audit anchor:
   `verify-citation` must be able to check us against the paper without doing arithmetic.
   Never computed with.
-- **`si_base`** — coherent SI. **Authoritative.** Every comparison, aggregation, threshold and
-  derivation uses this and nothing else.
+- **`si_base`** — coherent SI. Authoritative for dimensional correctness (is this even the same
+  kind of quantity?) and for any multi-quantity formula. Never itself converted by hand.
 - **`display`** — field convention, rendered at the last moment. Never computed with.
 
 This is not three sources of truth: a transcription, an authoritative value, and a rendering.
-A comparison performed on `display` values is a defect even when the answer comes out right.
+
+### What decides whether two claims disagree
+
+`pipeline/reconcile.py`'s tolerance arithmetic — is claim A's value close enough to claim B's to
+agree? — is a fourth, DERIVED thing, computed on demand rather than persisted on the claim: the
+unit a topic conventionally uses for a quantity, from `reference/definitions.yaml`'s
+`topic_units` table (falling back to that quantity's own `display` unit when the table has no
+entry), never invented — built only from units the corpus has actually published under that
+topic. User decision, 2026-09-22, reversing the project's earlier position that comparison must
+always run in `si_base`.
+
+This is safe for the overwhelming majority of quantities, because the tolerance check is a
+*relative* gap (`gap / max(|a|, |b|)`), and that ratio is scale-invariant under any pure
+multiplicative unit change: GHz vs Hz, μm vs m, meV vs J can never flip a verdict, whichever one
+the arithmetic happens to run in. It is **not** safe, and was not chosen blindly, for a quantity
+with a unit **offset** rather than a pure factor — today only `temperature` (K → °C subtracts
+273.15) — because `abs(693)` and `abs(419.85)` are different denominators for the identical
+physical gap, so the *threshold* a temperature contradiction is judged against can genuinely
+depend on which unit was chosen. The user chose to accept this for temperature specifically,
+converting strictly through the absolute reference (si_base/K is the pivot pint converts through,
+never a shortcut formula between two non-absolute scales); `pipeline/test_comparability.py`
+proves the resulting verdict really can differ (300 K vs 315 K agree; 26.85 °C vs 41.85 °C, the
+same two temperatures, do not) so the consequence stays visible rather than theoretical.
+
+Two things this table is never allowed to touch, and does not: `same_measurement_kind` (are these
+even the same dimension) is a structural check and stays on si_base, unconditionally; and any
+formula combining temperature with another quantity — `pipeline/bounds.py`'s `thermal_voltage`
+above all — takes and returns absolute si_base/K throughout, regardless of what topic-unit
+conversion is happening anywhere else in the same run. A comparison performed on raw `display`
+values (as opposed to the topic-aware conversion above) remains a defect even when the answer
+comes out right — `display` is still cosmetic, never itself the thing compared.
 
 ### SI normalization is not semantic comparability
 
@@ -529,7 +561,8 @@ Before any digest is published:
 3. Every digest sentence traces to an `active`, `challenged`, or `contested` ledger claim
 4. Every claim under a live contradiction carries its flag wherever it appears
 5. Every cited source has a corpus record, and its venue is a `verified` registry entry
-6. Every quantity carries `as_published` and `si_base`, and every comparison was performed in `si_base`
+6. Every quantity carries `as_published` and `si_base` (structural only — it does not re-derive which
+   unit `reconcile.py` actually compared in; see *Units and definitions*)
 7. No grade D/E material is phrased as fact
 8. Any correction to a prior digest, and any change to a claim that had already been published, is
    stated plainly under `## Corrections` in a digest dated on or after it — never a silent edit.
@@ -692,18 +725,30 @@ nine-check publication gate, and a live site. The whole deterministic pipeline r
 right after reading (D4, decided 2026-09-22), so the site no longer waits on someone running
 `run_pipeline.py` by hand.
 
-**What the corpus holds** (counted from the repository on 2026-09-22). 12 source records (3 read by
-hand, 9 by the automated reader) and 27 active claims (14 ARCH, 3 DEV, 5 MAT, 4 PHOT, 1 PROC, all
-grade B; 20 automated), which is **5 of 10 layers**. Three further DEV claims
+**What the corpus holds** (counted from the repository on 2026-09-22). 13 source records (4 read by
+hand, 9 by the automated reader) and 34 active claims (14 ARCH, 3 DEV, 5 MAT, 11 PHOT, 1 PROC; 27
+grade B, 7 grade A; 20 automated, 7 manual), which is **5 of 10 layers**. Three further DEV claims
 (`CLM-DEV-0002..0004`) were retracted 2026-09-22 (D7): they were fabrication-environment details
 (a deposition chamber's base pressure, an ITO substrate's sheet resistance) extracted as
 freestanding claims from a paper that yielded no result claim for them to be a `conditions` entry
 on, so they had no claim to condition and did not belong in the ledger on their own. 11 conflicts,
 all `resolved` (the six opened by the first scheduled reading run, `CFL-0006..0011`, were closed as
-`scoped` once the comparability rule in *The contradiction protocol* was fixed). 314 candidates are
-unread: 117 arXiv (the automated lane) and 197 publisher (manual; about 25% fetchable as full
-text). Of the arXiv ones already handled, 29 were judged out of scope, 8 were read with no claim
-accepted (`no_claims`) and 2 were too long.
+`scoped` once the comparability rule in *The contradiction protocol* was fixed). Candidates are
+unread in the low hundreds across both lanes (arXiv, automated; publisher, manual; about 25%
+fetchable as full text) — the exact count moves daily with the sweep and is not re-derived on
+every edit here (see `TODO.md` H6, keeping this section honest as the pipeline moves).
+
+**The 7 manual claims are the first live test of the `harvest`/`extract-claims` skills end to end
+on a real, previously-untouched candidate** (`SRC-00013`, a gold-OA Wiley/*Nanophotonics* paper,
+2026-09-22): the automated fetcher hit a Cloudflare 403 on the publisher page, so the user pasted
+the rendered article text directly and it was read and extracted by hand under the normal rules
+(every quote checked against the pasted text, TiN thickness and sample diameter recorded as
+`conditions` on result claims rather than claims of their own per D7, evidence_type set per claim
+rather than per paper). Doing this by hand surfaced two missing quantities that are now in
+`reference/definitions.yaml` — `wavelength` (distinct from `length_device`: same dimension,
+different physical quantity) and `sensitivity_advantage_ratio` (distinct from
+`energy_advantage_ratio` for the same reason) — which any future PHOT/DEV paper reporting an
+optical wavelength or a non-energy performance-improvement ratio can now use.
 
 Open work is tracked in **`TODO.md`**. Keep it and this section consistent: facts about the state live
 here, tasks live there.
@@ -740,6 +785,21 @@ about $0.003, scored against expectations committed first): it found one model-s
 missed two errors a person then found by reading (synthesis results labelled `measured`, which the
 reader and TypeSafe both got wrong; three fabrication details called results), and is a smoke test, not a
 calibration (`docs/typesafe-preregistration.md`).
+
+**`reader-v4`'s only live call (2026-09-22, a targeted single-candidate run, not the daily
+schedule) taught two more defects, fixed the same day as `reader-v5`.** Comparing its output
+against an independent hand-extraction of the same candidate (`CAND-20260921-0042`) found reader-v4
+had proposed 1 claim for a paper with 10+ verbatim-quotable results, and the verifier rejected even
+that one — net 0 claims, against 6 hand-drafted. The rejection was the digit in `CsPbBr3` (a
+chemical-formula subscript) failing the statement's own number-verification check, the same failure
+class N4 already named as its largest rejection bucket (`MoS2`, `SrVO3`). Separately, the paper
+mixes measured and simulated results, which `evidence_type` could only record once for the whole
+paper — `extract_schema` already allowed `"mixed"` there but the code did not recognise it, so a
+`"mixed"` answer silently produced zero claims regardless of what the model proposed.
+`reader-v5` (`docs/reader-v5-preregistration.md`) fixes both: the statement-number check now
+exempts a digit preceded by a letter with no space, and `evidence_type`/`evidence_span` are asked
+for and verified per claim rather than once per paper, with the source record recording the
+majority type and flagging when its claims are not all one type. Not yet run live.
 
 ```bash
 python pipeline/run_pipeline.py --no-sweep        # the whole flow, timed (writes run/timings.json)

@@ -89,6 +89,7 @@ class UnitEngine:
             self.ureg.define(d)
         self.Q = self.ureg.Quantity
         self.units = self.defs["units"]
+        self.topic_units = self.defs.get("topic_units") or {}
 
     # ------------------------------------------------------------------ helpers
     @staticmethod
@@ -165,6 +166,29 @@ class UnitEngine:
             return float(q.to(self._pint_str(disp)).magnitude), disp
         q = self.Q(float(si_value), self._pint_str(spec["si_base"]))
         return float(q.to(self._pint_str(disp)).magnitude), disp
+
+    def to_topic(self, si_value, quantity, topic):
+        """si_base -> the unit reference/definitions.yaml's `topic_units` table says THIS topic
+        conventionally uses for THIS quantity. Falls back to the quantity's own `display` unit
+        (today's global behaviour) when the table has no entry for (quantity, topic).
+
+        Used for TWO things, both deliberate (user decision, 2026-09-22): rendering a comparison
+        for a reader, and pipeline/reconcile.py's actual tolerance arithmetic. Goes through the
+        exact same pint conversion `to_display` uses - never a hand-rolled multiply - so an offset
+        unit (temperature: K -> degC) converts correctly. What this does NOT touch: `to_si`,
+        `record`, or any formula that combines temperature with another quantity (thermal_voltage
+        in pipeline/bounds.py runs on absolute si_base/K unconditionally, regardless of this).
+        """
+        spec = self.quantity_spec(quantity)
+        override = (self.topic_units.get(quantity) or {}).get(topic)
+        if spec["si_base"] == "dimensionless":
+            if override:
+                return float(si_value) * float(override.get("factor", 1.0)), override["unit"]
+            return self.to_display(si_value, quantity)
+        if not override:
+            return self.to_display(si_value, quantity)
+        q = self.Q(float(si_value), self._pint_str(spec["si_base"]))
+        return float(q.to(self._pint_str(override["unit"])).magnitude), override["unit"]
 
     def record(self, value, unit, quantity, conditions=None, bound="exact", approximate=False):
         """Produce the full three-representation block for a claim.
@@ -320,6 +344,31 @@ def self_test():
         failures.append("an invalid bound was accepted")
     except UnitError:
         pass
+
+    # topic_units: a real override converts via pint (never a hand-multiply); an absent (quantity,
+    # topic) pair falls back to display unchanged; an offset quantity (temperature) still goes
+    # through pint's own offset handling when a topic override exists.
+    topic_cases = [
+        # (si_value, quantity, topic, expected_value, expected_unit, tol)
+        (18_980_000_000.0, "frequency", "PHOT", 18.98, "GHz", 1e-9),
+        (3.26e-6, "wavelength", "PHOT", 3.26, "um", 1e-9),
+        (693.0, "temperature", "PHOT", 693.0, "K", 1e-9),        # override exists: K, not degC
+        (693.0, "temperature", "ARCH", 419.85, "degC", 1e-9),    # no override: falls back to display
+        (3.8, "energy_advantage_ratio", "ARCH", 3.8, "x", 1e-9),  # dimensionless override + factor
+    ]
+    for si_value, quantity, topic, exp_value, exp_unit, tol in topic_cases:
+        got_value, got_unit = eng.to_topic(si_value, quantity, topic)
+        if got_unit != exp_unit or abs(got_value - exp_value) > tol:
+            failures.append(f"to_topic({si_value}, {quantity!r}, {topic!r}) -> "
+                            f"{got_value} {got_unit!r}, expected {exp_value} {exp_unit!r}")
+    # The offset case that motivated keeping this narrow: the SAME si_base temperature compared in
+    # K vs degC is not just a relabelling - abs(693) and abs(419.85) are different denominators for
+    # a relative-tolerance ratio. Proven here as a fact about the conversion, not about reconcile.py
+    # (see pipeline/test_comparability.py for the effect on an actual contradiction verdict).
+    k_val, _ = eng.to_topic(693.0, "temperature", "PHOT")
+    c_val, _ = eng.to_topic(693.0, "temperature", "ARCH")
+    if k_val == c_val:
+        failures.append("temperature: K and degC gave the same magnitude - the offset was lost")
 
     print(f"quantities checked: {len(eng.units)}")
     if failures:

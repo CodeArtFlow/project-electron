@@ -65,6 +65,17 @@ units:
     display_factor: 1.0e6
     accept: [um^2, mm^2, cm^2]
 
+  wavelength:
+    si_base: m
+    display: um
+    display_factor: 1.0e6
+    accept: [nm, um, micron, mm, m]
+    note: >
+      An optical/infrared emission, absorption or resonance wavelength (e.g. a thermal emitter's
+      peak, a laser line, a gas absorption band). Dimensionally a length like length_device, but a
+      different quantity: never compare a device's physical dimension (gate length, film thickness)
+      against a wavelength just because both reduce to metres.
+
   transistor_density:
     si_base: 1/m^2
     display: MTr/mm^2
@@ -257,6 +268,18 @@ units:
       Dimensionless, and meaningless without BOTH the baseline and the circuit being compared -
       a gate-level ratio and an adder-level ratio are different quantities wearing one name.
 
+  sensitivity_advantage_ratio:
+    si_base: dimensionless
+    display: dimensionless
+    display_factor: 1.0
+    note: >
+      Relative sensitivity (or another detection-performance metric) of a device under test divided
+      by that of a reference source, for ONE target analyte ("12.2-fold improvement in CH4
+      sensitivity vs. a blackbody source"). Dimensionless, and meaningless without stating BOTH the
+      baseline being compared against and the specific target (gas species, wavelength band) - a
+      CH4 ratio and an NO2 ratio for the same device are different quantities wearing one name, the
+      same trap energy_advantage_ratio's note already documents for gate-level vs. adder-level.
+
   relative_deviation:
     si_base: dimensionless
     display: percent
@@ -273,6 +296,72 @@ units:
     display: dimensionless
     display_factor: 1.0
     note: NA 0.33 (standard EUV) vs 0.55 (High-NA). Resolution claims require NA and k1.
+
+# ---------------------------------------------------------------------------
+# Per-topic conventional units
+# ---------------------------------------------------------------------------
+# si_base remains the authority for EVERY dimensional check (is this even the same kind of
+# quantity?) and for every formula that combines temperature with another quantity (thermal
+# voltage, kT/q and similar in pipeline/bounds.py) - those still run on absolute si_base/K,
+# unconditionally, regardless of anything here. What changes: pipeline/reconcile.py's actual
+# tolerance arithmetic (is claim A's value close enough to claim B's to agree?) and every
+# reader-facing rendering of a comparison (CFL records, ledger/not-compared.md,
+# ledger/open-contradictions.md) now run in the unit a topic actually uses, not always si_base.
+#
+# Built from what is ALREADY IN THE LEDGER (grep the ledger's as_published units per topic),
+# never invented: precision over recall applies here exactly as it does to extraction. A
+# (quantity, topic) pair absent from this table falls back to that quantity's own `display`
+# entry above, unchanged from before this table existed.
+#
+# `factor` exists ONLY for a dimensionless quantity's cosmetic relabelling (x, percent, ...),
+# mirroring `display_factor` above - the underlying UnitEngine.to_topic() conversion for every
+# other quantity goes through pint's own unit algebra, the same mechanism to_display() already
+# uses, so an offset unit (temperature: K -> degC) converts correctly and is never hand-multiplied.
+#
+# The comparison consequence of putting temperature here is real and deliberate (user decision,
+# 2026-09-22): the tolerance check's relative-gap ratio is scale-invariant under a pure factor
+# change (GHz vs Hz can never flip a verdict) but NOT under an offset change (K vs degC can, since
+# abs(693) and abs(419.85) are different denominators for the same physical gap). Every topic
+# below that reports temperature happens to already use K (matching si_base exactly), so this is
+# not live today - but the code path is real, so a future PROC claim reporting an anneal in degC
+# (a common fabrication convention) would start mattering here, not hypothetically.
+topic_units:
+
+  energy:
+    MAT: {unit: meV}
+
+  energy_advantage_ratio:
+    ARCH: {unit: x, factor: 1.0}
+
+  frequency:
+    PHOT: {unit: GHz}
+
+  length_device:
+    PHOT: {unit: um}
+
+  power:
+    ARCH: {unit: mW}
+
+  pressure:
+    DEV: {unit: torr}
+
+  sensitivity_advantage_ratio:
+    PHOT: {unit: x, factor: 1.0}
+
+  sheet_resistance:
+    DEV: {unit: ohm/sq}
+
+  temperature:
+    MAT: {unit: K}
+    PHOT: {unit: K}
+    PROC: {unit: K}
+
+  time:
+    ARCH: {unit: ns}
+    MAT: {unit: ps}
+
+  wavelength:
+    PHOT: {unit: um}
 
 # ---------------------------------------------------------------------------
 # Quantities SI does not govern

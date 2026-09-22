@@ -446,7 +446,7 @@ class TheReaderWritesPackets(unittest.TestCase):
     """The reader keeps what each claim rests on, at the moment it is read. No prompt change."""
 
     def test_the_reader_prompt_is_unchanged_by_this_feature(self):
-        self.assertEqual(PROMPT_VERSION, "reader-v4")
+        self.assertEqual(PROMPT_VERSION, "reader-v5")
 
     def test_a_read_paper_yields_a_valid_packet_with_each_claims_own_verified_quotes_written_beside_the_claims(self):
         with tempfile.TemporaryDirectory() as folder:

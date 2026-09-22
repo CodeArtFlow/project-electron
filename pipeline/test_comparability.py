@@ -17,16 +17,17 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from reconcile import (COMPARABILITY, comparable, detect, load_operating_keys, not_compared,  # noqa: E402
-                       shared_subject, write_not_compared)
+from reconcile import (COMPARABILITY, comparable, compared_values, detect, disagree,  # noqa: E402
+                       load_operating_keys, not_compared, shared_subject, write_not_compared)
 from units import UnitEngine  # noqa: E402
 
 ENG = UnitEngine()
 OPERATING = load_operating_keys()
 
 
-def claim(cid, value, unit, quantity, conds=None, status="active", **kw):
-    return {"id": cid, "status": status, "sources": ["SRC-90001"], "conditions": conds or {},
+def claim(cid, value, unit, quantity, conds=None, status="active", topic=None, **kw):
+    return {"id": cid, "status": status, "topic": topic, "sources": ["SRC-90001"],
+            "conditions": conds or {},
             "quantity": ENG.record(value, unit, quantity, conditions=conds or None, **kw)}
 
 
@@ -133,6 +134,48 @@ class TheLog(unittest.TestCase):
             self.assertIn("thermal_model=Debye model", text)
             self.assertEqual(write_not_compared([], path), 0)
             self.assertIn("No pair was skipped", path.read_text(encoding="utf-8"))
+
+
+class TopicUnitComparison(unittest.TestCase):
+    """User decision, 2026-09-22: reconcile's actual tolerance arithmetic runs in the unit a
+    topic conventionally uses (reference/definitions.yaml `topic_units`), not always si_base."""
+
+    def test_a_non_offset_quantity_gives_the_same_verdict_whatever_unit_its_compared_in(self):
+        # frequency: PHOT's override (GHz) is a pure factor change from si_base (Hz). Scale-
+        # invariant, so the verdict cannot depend on which one the arithmetic runs in.
+        a = claim("CLM-PHOT-9001", 18.0, "GHz", "frequency", {"component": "ring"}, topic="PHOT")
+        b = claim("CLM-PHOT-9002", 19.5, "GHz", "frequency", {"component": "ring"}, topic="PHOT")
+        differs, _ = disagree(a, b)
+        self.assertTrue(differs)      # ~8% apart either way, over the 5% tolerance
+        a_noeng, b_noeng = dict(a, topic=None), dict(b, topic=None)   # falls back to display (GHz too)
+        self.assertEqual(disagree(a_noeng, b_noeng)[0], differs)
+
+    def test_temperatures_that_agree_in_kelvin_can_disagree_in_the_display_fallback_celsius(self):
+        # The exact consequence documented beside `topic_units` in reference/definitions.yaml: the
+        # SAME two si_base values, compared in K (300 vs 315, ~4.8% apart, within tolerance) vs
+        # degC (26.85 vs 41.85, ~35.8% apart, over it). PHOT has a topic_units override to K;
+        # ARCH has none, so it falls back to `display`, which is degC.
+        k_a = claim("CLM-PHOT-9003", 300.0, "K", "temperature", {"device": "chip"}, topic="PHOT")
+        k_b = claim("CLM-PHOT-9004", 315.0, "K", "temperature", {"device": "chip"}, topic="PHOT")
+        differs_k, rel_k = disagree(k_a, k_b)
+        self.assertFalse(differs_k, rel_k)
+
+        c_a = claim("CLM-ARCH-9003", 300.0, "K", "temperature", {"device": "chip"}, topic="ARCH")
+        c_b = claim("CLM-ARCH-9004", 315.0, "K", "temperature", {"device": "chip"}, topic="ARCH")
+        differs_c, rel_c = disagree(c_a, c_b)
+        self.assertTrue(differs_c, rel_c)
+
+    def test_a_cross_topic_pair_compares_in_the_lexicographically_earlier_claim_id_s_topic(self):
+        # Deterministic and order-independent: "the first claim's topic" (user decision) is made
+        # concrete as the lower claim id, not whichever claim happened to be `a` in a loop.
+        earlier = claim("CLM-ARCH-0001", 300.0, "K", "temperature", {"device": "chip"}, topic="ARCH")
+        later = claim("CLM-PHOT-0001", 315.0, "K", "temperature", {"device": "chip"}, topic="PHOT")
+        va, vb, unit = compared_values(later, earlier)     # passed in reverse order on purpose
+        self.assertEqual(unit, "degC")                     # ARCH has no override -> falls back to display
+        by_id = {later["id"]: va, earlier["id"]: vb}
+        va2, vb2, unit2 = compared_values(earlier, later)  # natural order
+        by_id2 = {earlier["id"]: va2, later["id"]: vb2}
+        self.assertEqual((unit2, by_id2), (unit, by_id))    # same result regardless of argument order
 
 
 class TheCommittedFile(unittest.TestCase):

@@ -20,7 +20,9 @@ python pipeline/reconcile.py --check      # mechanical: validates every record's
 ```
 
 Detection is arithmetic: same quantity and unit, non-conflicting conditions, **shared subject context**
-(`reference/comparability.yaml`), and `si_base` values differing by more than 5%. Pairs that disagree but
+(`reference/comparability.yaml`), and values — compared in the unit a topic conventionally uses
+(`reference/definitions.yaml`'s `topic_units`, falling back to si_base's own display unit; see
+`AGENTS.md`, *Units and definitions*) — differing by more than 5%. Pairs that disagree but
 share no subject are listed in `ledger/not-compared.md`, not opened: read that file too, since a real
 disagreement behind mismatched condition keys would be there. Classification is not arithmetic — it
 needs both sources read. The detector therefore opens

@@ -10,9 +10,17 @@ the `reconcile` skill classifies them.
 A detector that also classified would be guessing, and AGENTS.md rule 6 says guessing is the
 failure mode this project exists to prevent.
 
-Comparisons happen ONLY in si_base. Two claims are comparable when they share a quantity type and
-their stated conditions do not conflict; claims measured under different conditions are not in
-disagreement, they are about different things.
+Two claims are comparable when they share a quantity type and their stated conditions do not
+conflict; claims measured under different conditions are not in disagreement, they are about
+different things. Comparable-ness (same quantity, same si_base dimension) is always decided in
+si_base - that never changes, it's a dimensional fact. The tolerance arithmetic that decides
+whether two comparable claims actually DISAGREE now runs in the unit reference/definitions.yaml's
+`topic_units` table says the first claim's topic conventionally uses (falling back to si_base's
+own `display` unit when the table has no entry) - not always si_base, by deliberate decision
+(2026-09-22). This is safe for a pure multiplicative unit (GHz vs Hz can never flip a verdict,
+since the relative-tolerance ratio is scale-invariant under a factor change) but genuinely changes
+the verdict's threshold for an OFFSET unit (temperature: K vs degC) - see the note beside
+`topic_units` in reference/definitions.yaml for why that's accepted anyway.
 
 Usage:
     python pipeline/reconcile.py --detect      # open CFL records for new contradictions
@@ -27,6 +35,9 @@ from datetime import date, datetime
 from pathlib import Path
 
 import yaml
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from units import UnitEngine  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 CLAIMS = ROOT / "ledger" / "claims"
@@ -169,7 +180,33 @@ def _interval(value, bound):
     return value, value
 
 
-def disagree(a, b, tol=RELATIVE_TOLERANCE):
+def compared_unit_topic(a, b):
+    """Which claim's topic sets the unit two claims are compared in, when they differ.
+
+    Deterministic and order-independent (does not depend on which claim happened to be `a` in a
+    loop): the claim with the lexicographically lower id, by decision (2026-09-22) - "always the
+    first claim's topic," made concrete and stable rather than an accident of iteration order.
+    """
+    return a if a["id"] < b["id"] else b
+
+
+def compared_values(a, b, eng=None):
+    """Both claims' quantity, expressed in whichever claim's topic (see compared_unit_topic)
+    conventionally reports it - what reconcile's tolerance check actually runs on. (None, None,
+    None) if either claim has no si_base value to convert.
+    """
+    eng = eng or UnitEngine()
+    sa, sb = (a["quantity"] or {}).get("si_base"), (b["quantity"] or {}).get("si_base")
+    if not sa or not sb or sa.get("value") is None or sb.get("value") is None:
+        return None, None, None
+    lead = compared_unit_topic(a, b)
+    qname = a["quantity"]["quantity"]
+    va, unit = eng.to_topic(sa["value"], qname, lead.get("topic"))
+    vb, _ = eng.to_topic(sb["value"], qname, lead.get("topic"))
+    return va, vb, unit
+
+
+def disagree(a, b, eng=None, tol=RELATIVE_TOLERANCE):
     """Do two comparable claims conflict? Returns (differs, relative_gap or None).
 
     Each claim allows an interval of true values: "3.83" is a point, "up to 3.83" is (-inf, 3.83],
@@ -177,9 +214,11 @@ def disagree(a, b, tol=RELATIVE_TOLERANCE):
     than the tolerance. So two upper bounds can never contradict each other, and "up to 3" against
     a measured 5 does. Comparing bounds as if they were points is how two upper bounds ("up to
     roughly 5x" and "up to 3.83x") once opened a false contradiction, CFL-0001.
+
+    va/vb are in the COMPARED unit (see compared_values), not always si_base - see this module's
+    docstring for what that means for an offset quantity like temperature.
     """
-    va = (a["quantity"]["si_base"] or {}).get("value")
-    vb = (b["quantity"]["si_base"] or {}).get("value")
+    va, vb, _ = compared_values(a, b, eng)
     if va is None or vb is None:
         return False, None
     (ba, appr_a), (bb, appr_b) = bound_of(a), bound_of(b)
@@ -230,8 +269,9 @@ def source_meta():
 
 
 # ------------------------------------------------------------------ detection
-def detect(claims, existing):
+def detect(claims, existing, eng=None):
     """Open a CFL for every comparable, disagreeing pair not already tracked."""
+    eng = eng or UnitEngine()
     covered = set()
     for c in existing:
         ids = tuple(sorted(c.get("claims", []) or []))
@@ -247,13 +287,15 @@ def detect(claims, existing):
             pair = tuple(sorted([a["id"], b["id"]]))
             if pair in covered or not comparable(a, b):
                 continue
-            differs, rel = disagree(a, b)
+            differs, rel = disagree(a, b, eng)
             if not differs:
                 continue
+            va, vb, unit = compared_values(a, b, eng)
             found.append({
                 "claims": list(pair), "relative_difference": round(rel, 4),
                 "quantity": a["quantity"]["quantity"],
-                "values": {a["id"]: a["quantity"]["si_base"], b["id"]: b["quantity"]["si_base"]},
+                "values": {a["id"]: {"value": va, "unit": unit}, b["id"]: {"value": vb, "unit": unit}},
+                "si_base": {a["id"]: a["quantity"]["si_base"], b["id"]: b["quantity"]["si_base"]},
                 "independent": independent(a, b, meta),
                 "grades": {a["id"]: a.get("grade"), b["id"]: b.get("grade")},
                 "as_of": {a["id"]: str(a.get("as_of")), b["id"]: str(b.get("as_of"))},
@@ -262,12 +304,13 @@ def detect(claims, existing):
     return found
 
 
-def not_compared(claims, existing, operating=None):
+def not_compared(claims, existing, operating=None, eng=None):
     """Pairs that disagree numerically but share no subject context, so no conflict was opened.
 
     Listed rather than dropped: a real disagreement hiding behind mismatched condition keys must be
     visible. Pairs that already have a conflict record are left out (they are tracked there).
     """
+    eng = eng or UnitEngine()
     covered = {tuple(sorted(c.get("claims", []) or [])) for c in existing}
     live = [c for c in claims.values() if c.get("status") in ("active", "challenged", "contested")]
     skipped = []
@@ -278,11 +321,13 @@ def not_compared(claims, existing, operating=None):
                 continue
             if shared_subject(a, b, operating):
                 continue
-            differs, rel = disagree(a, b)
+            differs, rel = disagree(a, b, eng)
             if differs:
+                va, vb, unit = compared_values(a, b, eng)
+                values = {a["id"]: va, b["id"]: vb}
                 skipped.append({"claims": list(pair), "relative_difference": round(rel, 4),
                                 "quantity": a["quantity"]["quantity"],
-                                "detail": {c["id"]: {"value": c["quantity"]["si_base"],
+                                "detail": {c["id"]: {"value": {"value": values[c["id"]], "unit": unit},
                                                      "conditions": c.get("conditions") or {}} for c in (a, b)}})
     return sorted(skipped, key=lambda s: (s["quantity"], -s["relative_difference"]))
 
@@ -345,12 +390,14 @@ def write_conflict(finding):
 # {cid}
 
 Two claims about **{finding['quantity']}** disagree by
-{finding['relative_difference'] * 100:.1f}% in `si_base`, under conditions that do not conflict.
+{finding['relative_difference'] * 100:.1f}% as compared, in `{finding['values'][a]['unit']}`
+(`reference/definitions.yaml`'s `topic_units` entry for this quantity/topic, or its `display`
+unit if none), under conditions that do not conflict.
 
-| Claim | si_base | as published | grade | as_of |
-|---|---|---|---|---|
-| `{a}` | {finding['values'][a]['value']} {finding['values'][a]['unit']} | {_describe_bound(finding['bounds'][a])} | {finding['grades'][a]} | {finding['as_of'][a]} |
-| `{b}` | {finding['values'][b]['value']} {finding['values'][b]['unit']} | {_describe_bound(finding['bounds'][b])} | {finding['grades'][b]} | {finding['as_of'][b]} |
+| Claim | compared as | si_base | as published | grade | as_of |
+|---|---|---|---|---|---|
+| `{a}` | {finding['values'][a]['value']:.4g} {finding['values'][a]['unit']} | {finding['si_base'][a]['value']:.6g} {finding['si_base'][a]['unit']} | {_describe_bound(finding['bounds'][a])} | {finding['grades'][a]} | {finding['as_of'][a]} |
+| `{b}` | {finding['values'][b]['value']:.4g} {finding['values'][b]['unit']} | {finding['si_base'][b]['value']:.6g} {finding['si_base'][b]['unit']} | {_describe_bound(finding['bounds'][b])} | {finding['grades'][b]} | {finding['as_of'][b]} |
 
 Sources are {'independent' if finding['independent'] else 'not established independent'} (shared
 corresponding author or lead institution collapses them into one source for supersession).
@@ -475,15 +522,16 @@ def main():
     rc = 0
 
     if a.detect or a.all:
+        eng = UnitEngine()
         claims = load_claims()
         existing = load_conflicts()
-        findings = detect(claims, existing)
+        findings = detect(claims, existing, eng)
         for f in findings:
             cid = write_conflict(f)
             print(f"  opened {cid}: {f['quantity']} differs by "
                   f"{f['relative_difference'] * 100:.1f}% ({', '.join(f['claims'])})")
         print(f"detect: {len(claims)} claims -> {len(findings)} new conflict(s)")
-        skipped = not_compared(claims, load_conflicts())
+        skipped = not_compared(claims, load_conflicts(), eng=eng)
         write_not_compared(skipped)
         print(f"not compared: {len(skipped)} pair(s) disagree but share no subject context "
               f"-> ledger/not-compared.md")
@@ -491,7 +539,7 @@ def main():
     if a.register or a.all:
         conflicts = load_conflicts()
         absent, unexamined = regenerate_register(
-            conflicts, len(not_compared(load_claims(), conflicts)))
+            conflicts, len(not_compared(load_claims(), conflicts, eng=UnitEngine())))
         print(f"register: {absent} live:data-absent, {unexamined} live:unexamined "
               f"-> ledger/open-contradictions.md")
 
