@@ -8,6 +8,13 @@ A contradiction appears here if and only if the data to resolve it is absent, an
 
 ## Status — 2026-09-22
 
+> 9 pair(s) of claims disagree numerically but share no subject context, so they were **not compared** and opened no conflict (`ledger/not-compared.md`). Listed, not hidden: a real disagreement behind mismatched condition keys would show there.
+
+> **2 conflict(s) in `live:unexamined`.** This is an error state, not a category of contradiction: it means reconciliation is unfinished. Publication is blocked until they are classified.
+
+- `CFL-0012` opened 2026-09-22 (0 day(s) ago) — CLM-PHOT-0007, CLM-PHOT-0009
+- `CFL-0013` opened 2026-09-22 (0 day(s) ago) — CLM-PHOT-0008, CLM-PHOT-0010
+
 **0 live contradictions with a named data gap.**
 
 ## Ageing

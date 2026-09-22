@@ -1,0 +1,93 @@
+id: SRC-00017
+title: Small-supercell and Small-dataset Training Strategy of Machine Learning Interatomic Potentials
+  for Point Defects
+doi: null
+arxiv_id: 2609.24293v1
+url: https://arxiv.org/abs/2609.24293v1
+venue_id: arxiv_api
+authors:
+- name: Zhenxing Dai
+  affiliation: null
+  corresponding: null
+- name: Mingjue Ni
+  affiliation: null
+  corresponding: null
+- name: Xinpeng Li
+  affiliation: null
+  corresponding: null
+- name: Menglin Huang
+  affiliation: null
+  corresponding: null
+- name: Anderson Janotti
+  affiliation: null
+  corresponding: null
+- name: Shiyou Chen
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-21'
+retrieved_date: '2026-09-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (43,587 characters, 12 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.24293v1 on
+  2026-09-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“For GaN−V N, the RMSD of the 255-atom test supercell decreases from 0.037 ˚A for Training-set
+  I to about 0.01 ˚A after including additional small-supercell data.”
+
+  “For SiO 2 −V O, increasing the number of small-supercell defect configurations leads to a clear reduction
+  of the energy error in the 323-atom test supercell, from 0.184 eV for Training-set I to 0.023 eV for
+  Training-set III.”
+
+  “Taking the Cu 2ZnSnS4 −Cu− Zn system as an example, when the training set consists only of 16-atom
+  defect supercells, the total-energy prediction errors of the model for the 128-atom and 288-atom test
+  supercells reach 21.231 eV and 51.484 eV, respectively.”
+
+  “For the SiO2 −V 2+ O system, when only 17-atom defect supercells are used for training, the error of
+  the model for the 323-atom test supercell also reaches 46.080 eV.”'
+method_summary: “We use Allegro package [7, 8] to train the MLIP model.”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v4
+  tokens:
+    input: 14424
+    output: 2742
+  claims_accepted: 5
+  claims_rejected: 3
+  rejected:
+  - statement: For the SiO2-V O system, the RMSD of the 323-atom supercell is 0.033 Å.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''A similar
+      trend is observed for SiO 2 −V O, where the RMSD of the 323-'''
+    quotes:
+    - A similar trend is observed for SiO 2 −V O, where the RMSD of the 323-atom supercell decreases from
+      0.033 ˚A to 0.011 ˚A.
+    - SiO 2 −V O
+    - 323-atom supercell
+  - statement: For the GaN-V + N system in the Defect-Only Scheme, expanding the training set to 15, 31,
+      63, and 95 atoms reduces the total-energy prediction error for the 127
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - For the GaN−V + N system, when the training set is expanded from only 15-atom defect supercells
+      to defect configurations containing 15, 31, 63, and 95 atoms, the total-energy prediction error
+      of the model for the 127-atom test supercell dec
+    - GaN−V + N
+    - Defect-Only Scheme
+    - 15, 31, 63, and 95 atoms
+  - statement: 'In the GaN-V + N system under the Defect+Host Scheme with only 15-atom defect configurations,
+      the total-energy prediction error for the 255-atom test supercell '
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''For the GaN−V
+      + N system, even when the training set contains only 15-'''
+    quotes:
+    - For the GaN−V + N system, even when the training set contains only 15-atom charged-defect configurations,
+      the energy errors of the Defect+Host Scheme for the 127-atom and 255-atom test supercells are reduced
+      to 0.339 eV and 0.328 eV, respec
+    - GaN−V + N
+    - Defect+Host Scheme
+    - 15-atom charged-defect configurations
+corrections: []

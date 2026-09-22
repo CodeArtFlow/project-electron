@@ -1,0 +1,47 @@
+{
+  "arxiv_id": "2609.24270v1",
+  "claims": {
+    "CLM-ARCH-0015": {
+      "evidence_spans": [
+        "AN Overlap improves decode throughput over CA Overlap by 14.3% on H200 and 10.4% on B200.",
+        "multiplexed LLM inference by up to 14.3%",
+        "AN Overlap improves decode throughput over CA Overlap by 14.3% on H200 and 10.4% on B200.",
+        "AN Overlap improves decode throughput over CA Overlap by 14.3% on H200 and 10.4% on B200.",
+        "AN Overlap improves decode throughput over CA Overlap by 14.3% on H200 and 10.4% on B200."
+      ],
+      "statement": "Adaptive-NUMA Overlap improves decode throughput over Cluster-Aware Overlap by up to 14.3% on H200.",
+      "terms": [
+        "Adaptive-NUMA",
+        "Cluster-Aware"
+      ]
+    },
+    "CLM-ARCH-0016": {
+      "evidence_spans": [
+        "with GroupGEMM on B200 achieving up to 1.22× speedup.",
+        "asymmetry-aware scheduling improves mainstream kernels by up to 1.22×",
+        "with GroupGEMM on B200 achieving up to 1.22× speedup.",
+        "with GroupGEMM on B200 achieving up to 1.22× speedup."
+      ],
+      "statement": "GroupGEMM on B200 achieves up to 1.22x speedup with NUMA-aware execution.",
+      "terms": [
+        "NUMA-aware"
+      ]
+    }
+  },
+  "extra_quotes": [
+    "To get the L2 bandwidth, we use a kernel that repeatedly reads a buffer sized to exceed L1 but fit within L2, forcing all accesses to hit the L2 cache.",
+    "We uncover the exact bit positions by flipping each bit individually and observing whether the address switches partitions, measured via latency.",
+    "For small workloads, this overhead outweighs the gains from NUMA awareness, resulting in worse performance.",
+    "This overhead is much larger for GroupGEMM than for MHA, outweighing GroupGEMM’s gains from NUMA awareness."
+  ],
+  "generated": "2026-09-22",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v4"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00016",
+  "text_chars": 90224,
+  "text_sha256": "2758876a1736da47273a9fbac9a7b2779a46dfce29835e5c4e9e3e2191fe610d"
+}

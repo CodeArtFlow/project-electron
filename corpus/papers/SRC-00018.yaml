@@ -1,0 +1,80 @@
+id: SRC-00018
+title: Amorphous insulating MoS$_x$ films deposited by magnetron sputtering as a low-index optical coating
+doi: null
+arxiv_id: 2609.24326v1
+url: https://arxiv.org/abs/2609.24326v1
+venue_id: arxiv_api
+authors:
+- name: S. G. Martanov
+  affiliation: null
+  corresponding: null
+- name: E. V. Tarkaeva
+  affiliation: null
+  corresponding: null
+- name: A. V. Muratov
+  affiliation: null
+  corresponding: null
+- name: A. V. Lubenchenko
+  affiliation: null
+  corresponding: null
+- name: O. N. Pavlov
+  affiliation: null
+  corresponding: null
+- name: A. G. Vitukhnovsky
+  affiliation: null
+  corresponding: null
+- name: A. Yu. Kuntsevich
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-21'
+retrieved_date: '2026-09-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (23,014 characters, 6 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.24326v1 on
+  2026-09-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The bare silicon substrate exhibited S a =0.23 nm and S q =0.33 nm.”
+
+  “Surface roughness was characterized by the arithmetic average roughness (S a)”
+
+  “root mean square roughness (S q).”
+
+  “After deposition, the roughness increased to S a =1.7 nm and S q =2.1 nm.”'
+method_summary: '“The deposition rate of ≈0.3 nm/s was determined from ex-situ atomic force microscopy
+  (AFM) thickness measurements.”
+
+  “Electrical measurements were performed using a Keithley 6514 electrometer in a two-point probe configuration.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v4
+  tokens:
+    input: 9040
+    output: 1630
+  claims_accepted: 4
+  claims_rejected: 2
+  rejected:
+  - statement: The deposition rate was approximately 0.3 nm/s for the MoSx film.
+    reason: 'unit conversion refused: throughput_tool: cannot convert 0.3 nm/s to 1/s - Cannot convert
+      from ''nanometer / second'' ([length] / [time]) to ''1 / second'' (1 / [time]). A dimensional misma'
+    quotes:
+    - The deposition rate of ≈0.3 nm/s was determined from ex-situ atomic force microscopy (AFM) thickness
+      measurements.
+    - Film deposition was carried out using a DC magnetron installed in a home-built vacuum chamber (Fig.
+      1) in an argon atmosphere at a pressure of (6–7)×10 −2 mbar.
+    - discharge power was ≈100 W.
+  - statement: The sheet resistance of a 30 nm thick MoSx film exceeds 200 MΩ/□ at room temperature.
+    reason: 'unit conversion refused: sheet_resistance: could not parse 200.0 ''MΩ/□'': ''□'' is not defined
+      in the unit registry'
+    quotes:
+    - Electrical measurements revealed sheet resistances exceeding 200 MΩ/□ for 30 nm thick film at room
+      temperature.
+    - 30 nm thick film
+    - at room temperature.
+corrections: []

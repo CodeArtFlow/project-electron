@@ -1,0 +1,106 @@
+id: SRC-00016
+title: Dissecting How Die Scaling Breaks GPU Fine-grained Scheduling
+doi: null
+arxiv_id: 2609.24270v1
+url: https://arxiv.org/abs/2609.24270v1
+venue_id: arxiv_api
+authors:
+- name: Xiaoze Fan
+  affiliation: null
+  corresponding: null
+- name: Jianhao Wang
+  affiliation: null
+  corresponding: null
+- name: Weihao Cui
+  affiliation: null
+  corresponding: null
+- name: Han Zhao
+  affiliation: null
+  corresponding: null
+- name: Zhuobin Huang
+  affiliation: null
+  corresponding: null
+- name: Yangjie Zhou
+  affiliation: null
+  corresponding: null
+- name: Yuxian Qiu
+  affiliation: null
+  corresponding: null
+- name: Shixuan Sun
+  affiliation: null
+  corresponding: null
+- name: Bingsheng He
+  affiliation: null
+  corresponding: null
+- name: Quan Chen
+  affiliation: null
+  corresponding: null
+- name: Minyi Guo
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-21'
+retrieved_date: '2026-09-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (90,224 characters, 16 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.24270v1 on
+  2026-09-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“AN Overlap improves decode throughput over CA Overlap by 14.3% on H200 and 10.4% on B200.”
+
+  “multiplexed LLM inference by up to 14.3%”
+
+  “with GroupGEMM on B200 achieving up to 1.22× speedup.”
+
+  “asymmetry-aware scheduling improves mainstream kernels by up to 1.22×”'
+method_summary: '“To get the L2 bandwidth, we use a kernel that repeatedly reads a buffer sized to exceed
+  L1 but fit within L2, forcing all accesses to hit the L2 cache.”
+
+  “We uncover the exact bit positions by flipping each bit individually and observing whether the address
+  switches partitions, measured via latency.”'
+limitations: '“For small workloads, this overhead outweighs the gains from NUMA awareness, resulting in
+  worse performance.”
+
+  “This overhead is much larger for GroupGEMM than for MHA, outweighing GroupGEMM’s gains from NUMA awareness.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v4
+  tokens:
+    input: 35585
+    output: 2166
+  claims_accepted: 2
+  claims_rejected: 4
+  rejected:
+  - statement: On H200, the local HBM access latency is approximately 490 cycles and remote HBM access
+      latency is approximately 655 cycles.
+    reason: 'unit conversion refused: time: cannot convert 490.0 cycles to s - Cannot convert from ''turn''
+      (dimensionless) to ''second'' ([time]). A dimensional mismatch means the value was recorded ag'
+    quotes:
+    - Remote HBM accesses incur approximately 34% higher latency than local accesses on H200 (∼490→∼655
+      cycles) and 67% on B200 (∼552→∼920 cycles).
+  - statement: On B200, local HBM access latency is approximately 552 cycles and remote HBM access latency
+      is approximately 920 cycles.
+    reason: 'unit conversion refused: time: cannot convert 920.0 cycles to s - Cannot convert from ''turn''
+      (dimensionless) to ''second'' ([time]). A dimensional mismatch means the value was recorded ag'
+    quotes:
+    - Remote HBM accesses incur approximately 34% higher latency than local accesses on H200 (∼490→∼655
+      cycles) and 67% on B200 (∼552→∼920 cycles).
+  - statement: On H200, local L2 latency is about 309 cycles and remote L2 latency is about 466 cycles.
+    reason: 'unit conversion refused: time: cannot convert 466.0 cycles to s - Cannot convert from ''turn''
+      (dimensionless) to ''second'' ([time]). A dimensional mismatch means the value was recorded ag'
+    quotes:
+    - Remote L2 latency is about 51% higher than local latency on H200 (∼309→∼466 cycles) and nearly twice
+      as high on B200 (∼364→∼725 cy- cles).
+  - statement: Topology-oblivious SM allocation causes up to 1.33x performance variation.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Topology-oblivious compute unit allocation can lead to up to 1.33× performance variation
+    - and avoids up to 1.33×performance variation.
+corrections: []

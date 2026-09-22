@@ -20,6 +20,10 @@ Topic code `ARCH`. Last reviewed 2026-09-22.
 - **≤ 5.3 ×** — A 4-bit Brent-Kung carry look-ahead adder in PFAL reaches up to 5.3x energy gain over a static CMOS estimate in simulation.
   - `CLM-ARCH-0006` · process TSMC 16nm FinFET, comparison 4-bit Brent-Kung CLA adder vs architecture-matched static CMOS estimate, power_clock triangular · grade B · credibility unknown · simulated · as of 2026-09-17
   - sources: SRC-00002
+- **≤ 1.22 ×** — GroupGEMM on B200 achieves up to 1.22x speedup with NUMA-aware execution.
+  - `CLM-ARCH-0016` · device B200, benchmark GroupGEMM · grade B · credibility unknown · measured · as of 2026-09-21
+  - sources: SRC-00016
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### energy delay product
 
@@ -58,6 +62,10 @@ Topic code `ARCH`. Last reviewed 2026-09-22.
 - **≤ 2 percent** — With a quadrature-VCO power-clock, PFAL Buffer/NOT energy stays within 2% of the ideal sinusoidal power-clock case at 3 GHz.
   - `CLM-ARCH-0003` · process TSMC 16nm FinFET, comparison quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell Buffer/NOT, fclk 3 GHz · grade B · credibility unknown · simulated · as of 2026-09-17
   - sources: SRC-00001
+- **≤ 14.3 percent** — Adaptive-NUMA Overlap improves decode throughput over Cluster-Aware Overlap by up to 14.3% on H200.
+  - `CLM-ARCH-0015` · device H200, baseline CA Overlap, variant AN Overlap · grade B · credibility unknown · measured · as of 2026-09-21
+  - sources: SRC-00016
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -80,6 +88,6 @@ _None._
 
 ## Evidence base
 
-- claims: 14
-- grades: {'B': 14}
-- distinct sources: 4
+- claims: 16
+- grades: {'B': 16}
+- distinct sources: 5

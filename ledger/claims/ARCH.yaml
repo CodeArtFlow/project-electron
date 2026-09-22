@@ -587,3 +587,76 @@ claims:
     conditions:
       device_type: FTJ
       architecture: Symmetry
+- id: CLM-ARCH-0015
+  topic: ARCH
+  statement: Adaptive-NUMA Overlap improves decode throughput over Cluster-Aware Overlap by up to 14.3%
+    on H200.
+  sources:
+  - SRC-00016
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-21'
+  created: '2026-09-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v4
+    verified_quotes: 5
+  conditions:
+    device: H200
+    baseline: CA Overlap
+    variant: AN Overlap
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 14.3
+      unit: '%'
+    si_base:
+      value: 0.14300000000000002
+      unit: dimensionless
+    display:
+      value: 14.3
+      unit: percent
+    conditions:
+      device: H200
+      baseline: CA Overlap
+      variant: AN Overlap
+- id: CLM-ARCH-0016
+  topic: ARCH
+  statement: GroupGEMM on B200 achieves up to 1.22x speedup with NUMA-aware execution.
+  sources:
+  - SRC-00016
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-21'
+  created: '2026-09-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v4
+    verified_quotes: 4
+  conditions:
+    device: B200
+    benchmark: GroupGEMM
+  quantity:
+    quantity: energy_advantage_ratio
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 1.22
+      unit: x
+    si_base:
+      value: 1.22
+      unit: dimensionless
+    display:
+      value: 1.22
+      unit: dimensionless
+    conditions:
+      device: B200
+      benchmark: GroupGEMM

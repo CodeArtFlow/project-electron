@@ -1,0 +1,76 @@
+source: arxiv
+arxiv_id: 2609.24497v1
+doi: null
+title: 'ScaleMPA: Rethinking Scalable RRT* Acceleration With a Grid-Native Representation'
+venue_id: arxiv_api
+venue_name: arXiv
+published_date: '2026-09-21'
+authors:
+- name: Zilong Wang
+- name: Yuzhou Chen
+- name: Xinyue He
+- name: Chen Zhang
+- name: Guanghui He
+is_oa: true
+oa_status: green
+oa_location:
+  host: arXiv
+  version: submittedVersion
+  license: null
+  url: https://arxiv.org/abs/2609.24497v1
+grade_default: B
+topic_hint: ARCH
+primary_topic: cs.AR
+id: CAND-20260922-0093
+harvested_date: '2026-09-22'
+status: unread
+access: metadata_only
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-22'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v4
+  rejected:
+  - statement: The ScaleMPA accelerator implemented in 28 nm CMOS achieves an average planning latency
+      of 3.3 ms while consuming 89.09 mW of power.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The ScaleMPA
+      hardware prototype integrates 486 16-bit multipliers, 562'''
+    quotes:
+    - Implemented in 28 nm CMOS, ScaleMPA achieves millisecond-level planning latency and delivers 4.7×–44.4×speedup
+      over state-of-the-art motion-planning accelerators.
+    - The ScaleMPA hardware prototype integrates 486 16-bit multipliers, 562 16-bit adders, and 202 KB
+      of on-chip SRAM, using the same numerical precision as MOPED [24]. It uses a 28 nm CMOS process
+      and achieves an average planning latency of 3.3
+    - 28 nm CMOS process
+    - 0.72 V
+  - statement: ScaleMPA operates at a clock frequency of 500 MHz.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''It uses a
+      28 nm CMOS process and achieves an average planning latency '''
+    quotes:
+    - It uses a 28 nm CMOS process and achieves an average planning latency of 3.3 ms across all settings,
+      operating at 0.72 V with 89.09 mW power consumption under a 500 MHz clock frequency.
+    - 28 nm CMOS process
+    - 0.72 V
+  - statement: The total die area of the ScaleMPA chip is 0.88 mm2.
+    reason: 'unit conversion refused: area_die: could not parse 0.88 ''mm 2'': Unit expression cannot
+      have a scaling factor.'
+    quotes:
+    - The total chip area is 0.88 mm 2, with compute logic and on-chip buffers accounting for 33.09% and
+      66.91% of the area, respectively (Fig. 14).
+    - 28 nm CMOS process
+  - statement: ScaleMPA operates at a supply voltage of 0.72 V.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''It uses a
+      28 nm CMOS process and achieves an average planning latency '''
+    quotes:
+    - It uses a 28 nm CMOS process and achieves an average planning latency of 3.3 ms across all settings,
+      operating at 0.72 V with 89.09 mW power consumption under a 500 MHz clock frequency.
+    - 28 nm CMOS process
+  tokens:
+    input: 18456
+    output: 1208
+  fetched_chars: 67261
