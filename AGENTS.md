@@ -642,6 +642,7 @@ docs/typesafe.md          how the TypeSafe review layer works and its limits
 docs/typesafe-plan.md     the TypeSafe integration plan: what it is for, the phases, the decisions
 docs/typesafe-preregistration.md  what we expected from the first paper-grounded run, written before it ran
 TODO.md                   open work: blocked, in flight, next; rules and state stay in this file
+project-chat.md            the human decision trail: what was asked, decided, and which commit it produced
 corpus/candidates/        sweep output; unread ones are queue, decided ones (read_decision) are not
 corpus/questions/         TypeSafe packets (inputs, one per read paper) and answers (the exact questions and what came back)
 corpus/papers/            immutable source records
