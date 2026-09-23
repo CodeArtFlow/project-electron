@@ -24,6 +24,75 @@ id: CAND-20260923-0091
 harvested_date: '2026-09-23'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-23'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Tessera achieves up to 6.79x BSA request speedup over baseline systems in the evaluated
+      video diffusion models.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''×'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - Tesseraachieves up to 6.79× BSA request speedup over baseline systems in the evaluated video diffusion
+      models.
+    - Evaluated on 2,315 real attention masks and industrial video diffusion models,Tesseraachieves up
+      to 6.79× BSA request speedup over baseline systems in the evaluated video diffusion models.
+  - statement: Tessera achieves approximately 1.38x geometric-mean kernel speedup over the fixed Direct
+      baseline in H100 experiments.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''In our H100
+      experiments, the physical plans selected byTesseraachieve '''
+    quotes:
+    - In our H100 experiments, the physical plans selected byTesseraachieve approximately1 .38× geometric-mean
+      kernel speedup over the fixed Direct baseline.
+  - statement: Optimizing task organization yields a 1.105x geometric-mean speedup on H100 at a fixed
+      physical mapping.
+    reason: the statement contains the number 1.105, which none of its quotes contain
+    quotes:
+    - Given the same physical mapping, optimizing task organization yields a1 .105× geometric-mean speedup
+      on H100 in our experiments.
+  - statement: Exhaustive online search incurs a cold-request latency 12.52x that of the Direct baseline
+      on H100.
+    reason: the statement contains the number 00, which none of its quotes contain
+    quotes:
+    - in our H100 experiment, this online search incurs a cold-request latency 12.52× that of the Direct
+      baseline (Figure 2b).
+  - statement: Tessera serves cold requests 14.67x faster than exhaustive online search.
+    reason: the statement contains the number 14.67, which none of its quotes contain
+    quotes:
+    - This approach serves cold requests14 .67× faster than ex- haustive online search while achieving
+      similar kernel per- formance, as shown in Figure 2b.
+  - statement: Tessera achieves a kernel-only geometric-mean speedup of 4.22x over the flex-block-attn
+      library on H100 across four supported workload families.
+    reason: the statement contains the number 4.22, which none of its quotes contain
+    quotes:
+    - 3.96× over theflex-block-attnlibrary across the four workload families thatflex-block-attnsup- ports
+      on H100.
+    - Tesseraachieves geometric- mean speedups of1.85–5.11× over FlashInfer,1.62–33.73× over FlexAttention,
+      and3.96× over theflex-block-attnlibrary across the four workload families thatflex-block-attnsup-
+      ports on H100.
+  - statement: Tessera accelerates the full 50-step diffusion loop by 1.22x to 2.08x within 720p Wan2.1
+      and HunyuanVideo-1.5 inference on H100.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - We further evaluateTesserawithin 720p Wan2.1 and HunyuanVideo-1.5 inference on H100, where it accelerates
+      attention by2 .95–6.79× and the full 50-step diffusion loop by1.22–2.08×.
+  - statement: Generating a five-second 720p clip with HunyuanVideo on a single H100 GPU takes approximately
+      16 minutes.
+    reason: the statement contains the number 00, which none of its quotes contain
+    quotes:
+    - For example, generating a five-second 720p clip with HunyuanVideo on a single H100 GPU takes approximately
+      16 minutes [ 90], equivalent to 3.15 GPU-minutes per second of generated video.
+    - generating a five-second 720p clip with HunyuanVideo on a single H100 GPU takes approximately 16
+      minutes [ 90], equivalent to 3.15 GPU-minutes per second of generated video.
+  tokens:
+    input: 26258
+    output: 3363
+  fetched_chars: 79501

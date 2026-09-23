@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-09-22.
+Topic code `ARCH`. Last reviewed 2026-09-23.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -56,6 +56,10 @@ Topic code `ARCH`. Last reviewed 2026-09-22.
   - `CLM-ARCH-0011` · device_type FTJ, architecture_baseline Merged architecture · grade B · credibility unknown · simulated · as of 2026-09-18
   - sources: SRC-00011
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The proposed solution runs 1.17 to 3.1x faster end-to-end than the state-of-the-art solution.
+  - `CLM-ARCH-0017` · comparison_baseline state-of-the-art solution · grade B · credibility unknown · measured · as of 2026-09-22
+  - sources: SRC-00021
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -66,6 +70,10 @@ Topic code `ARCH`. Last reviewed 2026-09-22.
   - `CLM-ARCH-0015` · device H200, baseline CA Overlap, variant AN Overlap · grade B · credibility unknown · measured · as of 2026-09-21
   - sources: SRC-00016
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **≈98 percent** — At Na = 48, the hot set draws 98% of read traffic while occupying 3% of resident capacity.
+  - `CLM-ARCH-0018` · concurrency_n_a 48, set_type hot set · grade B · credibility unknown · simulated · as of 2026-09-22
+  - sources: SRC-00025
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -81,13 +89,31 @@ Topic code `ARCH`. Last reviewed 2026-09-22.
   - `CLM-ARCH-0014` · device_type FTJ, architecture Symmetry · grade B · credibility unknown · simulated · as of 2026-09-18
   - sources: SRC-00011
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **84000 ns** — At Na = 48, the proposed hot-cold tiering design adds 0.084 ms of resume latency overhead.
+  - `CLM-ARCH-0019` · concurrency_n_a 48, memory_tier HBF · grade B · credibility unknown · simulated · as of 2026-09-22
+  - sources: SRC-00025
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0014 — see the open register
+- **1.4e+07 ns** — At Na = 48, the proposed design achieves a time-between-tokens (TBT) of 14 ms per token.
+  - `CLM-ARCH-0020` · concurrency_n_a 48, design our design with tiering · grade B · credibility unknown · simulated · as of 2026-09-22
+  - sources: SRC-00025
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0014 — see the open register
+- **2.7e+07 ns** — At Na = 128, the proposed design achieves a time-between-tokens (TBT) of 27 ms per token.
+  - `CLM-ARCH-0021` · concurrency_n_a 128, design our design with tiering · grade B · credibility unknown · simulated · as of 2026-09-22
+  - sources: SRC-00025
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
-_None._
+Shown here, not in an appendix: a reader of this page must see the disagreement without navigating elsewhere.
+
+- `CFL-0014` — time: _unexamined; classification pending_
+  - claims: CLM-ARCH-0019, CLM-ARCH-0020
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 16
-- grades: {'B': 16}
-- distinct sources: 5
+- claims: 21
+- grades: {'B': 21}
+- distinct sources: 7

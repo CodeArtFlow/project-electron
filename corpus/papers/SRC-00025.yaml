@@ -1,0 +1,80 @@
+id: SRC-00025
+title: Hot-Cold Tiering of HBM and High Bandwidth Flash for Agentic LLM Serving
+doi: null
+arxiv_id: 2609.25782v1
+url: https://arxiv.org/abs/2609.25782v1
+venue_id: arxiv_api
+authors:
+- name: Jongjin Baek
+  affiliation: null
+  corresponding: null
+- name: Won Ji
+  affiliation: null
+  corresponding: null
+- name: Seungjae Yoo
+  affiliation: null
+  corresponding: null
+- name: Joo-Young Kim
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-22'
+retrieved_date: '2026-09-23'
+access: full_text
+read_scope: Automated reading. The full PDF text (26,187 characters, 4 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.25782v1 on
+  2026-09-23. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“AtN a = 48the hot set is about 96 GiB, fitting in HBM with headroom, yet it draws about 98%
+  of read traffic while occupying 3% of KV capacity.”
+
+  “We simulate this workload in an in-house, trace-driven simulator with analytical latency and power
+  models.”
+
+  “AtN a = 48, HBF adds 0.084 ms of overhead while NVLink-C2C adds 1.0 ms and PCIe adds 7 ms.”
+
+  “In contrast, our design with tiering reports 14 ms per token atN a = 48 (72 tok/s) and 27 ms atN a
+  = 128(37 tok/s) per agent, both safely within the 50 ms SLO.”'
+method_summary: “We simulate this workload in an in-house, trace-driven simulator with analytical latency
+  and power models.”
+limitations: “Due to scarce public agent traces, we scaled the workload to thousands of concurrent sessions
+  to fully utilize HBF capacity by replaying measured trajectories with independent arrival phases and
+  idle gaps.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 9680
+    output: 2992
+  claims_accepted: 4
+  claims_rejected: 3
+  rejected:
+  - statement: The evaluated HBF tier stack achieves a read bandwidth of about 1,638 GB/s.
+    reason: the value 1638 does not appear in any of the claim's quotes
+    quotes:
+    - A single stack achieves read bandwidth of about1,638GB/s, comparable to that of an HBM4 stack [12].
+  - statement: Under an assumed HBF energy of 20 pJ/bit and Na = 48, write-on-evict policy saves about
+      950 W of read power per device.
+    reason: the statement contains the number 48, which none of its quotes contain
+    quotes:
+    - Assuming an HBF energy of 20 pJ/bit based on the power budget in [8], awrite-on-evict policy saves
+      about 950 W per device, or 7.6 kW across an 8-GPU node.
+    - We simulate this workload in an in-house, trace-driven simulator with analytical latency and power
+      models.
+    - Fig. 5(d) highlights the power difference betweenall-KV-to-flashandwrite-on-evict policies. Assuming
+      an HBF energy of 20 pJ/bit based on the power budget in [8], awrite-on-evict policy saves about
+      950 W per device, or 7.6 kW across an 8-GPU
+  - statement: Under an assumed HBF energy of 20 pJ/bit and Na = 48, write-on-evict policy cuts memory-read
+      power by 7.6 kW across an 8-GPU node.
+    reason: the statement contains the number 48, which none of its quotes contain
+    quotes:
+    - Assuming an HBF energy of 20 pJ/bit based on the power budget in [8], awrite-on-evict policy saves
+      about 950 W per device, or 7.6 kW across an 8-GPU node.
+    - We simulate this workload in an in-house, trace-driven simulator with analytical latency and power
+      models.
+corrections: []

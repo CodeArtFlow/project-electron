@@ -1,0 +1,63 @@
+{
+  "arxiv_id": "2609.25782v1",
+  "claims": {
+    "CLM-ARCH-0018": {
+      "evidence_spans": [
+        "AtN a = 48the hot set is about 96 GiB, fitting in HBM with headroom, yet it draws about 98% of read traffic while occupying 3% of KV capacity.",
+        "AtN a = 48the hot set is about 96 GiB, fitting in HBM with headroom, yet it draws about 98% of read traffic while occupying 3% of KV capacity.",
+        "AtN a = 48the hot set is about 96 GiB, fitting in HBM with headroom, yet it draws about 98% of read traffic while occupying 3% of KV capacity.",
+        "We simulate this workload in an in-house, trace-driven simulator with analytical latency and power models."
+      ],
+      "statement": "At Na = 48, the hot set draws 98% of read traffic while occupying 3% of resident capacity.",
+      "terms": []
+    },
+    "CLM-ARCH-0019": {
+      "evidence_spans": [
+        "AtN a = 48, HBF adds 0.084 ms of overhead while NVLink-C2C adds 1.0 ms and PCIe adds 7 ms.",
+        "AtN a = 48, HBF adds 0.084 ms of overhead while NVLink-C2C adds 1.0 ms and PCIe adds 7 ms.",
+        "AtN a = 48, HBF adds 0.084 ms of overhead while NVLink-C2C adds 1.0 ms and PCIe adds 7 ms.",
+        "We simulate this workload in an in-house, trace-driven simulator with analytical latency and power models."
+      ],
+      "statement": "At Na = 48, the proposed hot-cold tiering design adds 0.084 ms of resume latency overhead.",
+      "terms": []
+    },
+    "CLM-ARCH-0020": {
+      "evidence_spans": [
+        "In contrast, our design with tiering reports 14 ms per token atN a = 48 (72 tok/s) and 27 ms atN a = 128(37 tok/s) per agent, both safely within the 50 ms SLO.",
+        "In contrast, our design with tiering reports 14 ms per token atN a = 48 (72 tok/s) and 27 ms atN a = 128(37 tok/s) per agent, both safely within the 50 ms SLO.",
+        "In contrast, our design with tiering reports 14 ms per token atN a = 48 (72 tok/s) and 27 ms atN a = 128(37 tok/s) per agent, both safely within the 50 ms SLO.",
+        "We simulate this workload in an in-house, trace-driven simulator with analytical latency and power models."
+      ],
+      "statement": "At Na = 48, the proposed design achieves a time-between-tokens (TBT) of 14 ms per token.",
+      "terms": [
+        "TBT"
+      ]
+    },
+    "CLM-ARCH-0021": {
+      "evidence_spans": [
+        "In contrast, our design with tiering reports 14 ms per token atN a = 48 (72 tok/s) and 27 ms atN a = 128(37 tok/s) per agent, both safely within the 50 ms SLO.",
+        "In contrast, our design with tiering reports 14 ms per token atN a = 48 (72 tok/s) and 27 ms atN a = 128(37 tok/s) per agent, both safely within the 50 ms SLO.",
+        "In contrast, our design with tiering reports 14 ms per token atN a = 48 (72 tok/s) and 27 ms atN a = 128(37 tok/s) per agent, both safely within the 50 ms SLO.",
+        "We simulate this workload in an in-house, trace-driven simulator with analytical latency and power models."
+      ],
+      "statement": "At Na = 128, the proposed design achieves a time-between-tokens (TBT) of 27 ms per token.",
+      "terms": [
+        "TBT"
+      ]
+    }
+  },
+  "extra_quotes": [
+    "We simulate this workload in an in-house, trace-driven simulator with analytical latency and power models.",
+    "Due to scarce public agent traces, we scaled the workload to thousands of concurrent sessions to fully utilize HBF capacity by replaying measured trajectories with independent arrival phases and idle gaps."
+  ],
+  "generated": "2026-09-23",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00025",
+  "text_chars": 26187,
+  "text_sha256": "1ed626744cc4a59ffac754a848b533946e56311004be37bef5ffa6cfe9cf891c"
+}

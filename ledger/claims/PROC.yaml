@@ -32,3 +32,106 @@ claims:
       unit: degC
     conditions:
       thermal_model: Debye model
+- id: CLM-PROC-0002
+  topic: PROC
+  statement: The workflow achieves an online latency of approximately 0.27 ms per probe position.
+  sources:
+  - SRC-00023
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-22'
+  created: '2026-09-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    hardware: NVIDIA Tesla T4 GPU
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: true
+    as_published:
+      value: 0.27
+      unit: ms
+    si_base:
+      value: 0.00027
+      unit: s
+    display:
+      value: 270000.0
+      unit: ns
+    conditions:
+      hardware: NVIDIA Tesla T4 GPU
+- id: CLM-PROC-0003
+  topic: PROC
+  statement: FRC analysis between AI inference and the ePIE reference in the held-out AuPd representative
+    region yields a cutoff of 0.68 Å.
+  sources:
+  - SRC-00023
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-22'
+  created: '2026-09-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    defocus: 30 nm
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.68
+      unit: Å
+    si_base:
+      value: 6.800000000000001e-11
+      unit: m
+    display:
+      value: 0.068
+      unit: nm
+    conditions:
+      defocus: 30 nm
+- id: CLM-PROC-0004
+  topic: PROC
+  statement: At 0 nm defocus on HEA-NP, FRC analysis relative to the ePIE reference yields a cutoff of
+    0.77 Å.
+  sources:
+  - SRC-00023
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-22'
+  created: '2026-09-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: HEA-NP
+    defocus: 0 nm
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.77
+      unit: Å
+    si_base:
+      value: 7.7e-11
+      unit: m
+    display:
+      value: 0.077
+      unit: nm
+    conditions:
+      material: HEA-NP
+      defocus: 0 nm

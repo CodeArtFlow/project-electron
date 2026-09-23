@@ -1,0 +1,85 @@
+id: SRC-00021
+title: Accelerating the Mitigation of LLM Inference Nondeterminism Across GPU Architectures
+doi: null
+arxiv_id: 2609.25624v1
+url: https://arxiv.org/abs/2609.25624v1
+venue_id: arxiv_api
+authors:
+- name: Liam Cooper
+  affiliation: null
+  corresponding: null
+- name: Shinnung Jeong
+  affiliation: null
+  corresponding: null
+- name: Hyeran Jeon
+  affiliation: null
+  corresponding: null
+- name: Jeffrey Young
+  affiliation: null
+  corresponding: null
+- name: Hyesoon Kim
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-22'
+retrieved_date: '2026-09-23'
+access: full_text
+read_scope: Automated reading. The full PDF text (63,126 characters, 14 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.25624v1 on
+  2026-09-23. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“while running1.17to3.1×faster end-to-end than the state-of-the-art solution”
+
+  “the state-of-the-art solution”
+
+  “We confirm our solution’s linear-layer outputs are bitwise identical across NVIDIA Ampere, Ada, and
+  Hopper GPUs, while running1.17to3.1×faster end-to-end than the state-of-the-art solution and cutting
+  weight-memory traffic in half.”'
+method_summary: No method quote was verified. The method is not established by this record.
+limitations: “The inversionisspecifictothelow-intensity,low-occupancy regimeofsmall-batchdecode.Asthebatchgrows,thearith-
+  meticintensityMrises,thenumberofoutputtilesincreases, and the H100 SM array fills.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 21272
+    output: 1459
+  claims_accepted: 1
+  claims_rejected: 4
+  rejected:
+  - statement: The proposed solution runs 1.17 to 1.43x faster end-to-end than the state-of-the-art baseline
+      on NVIDIA A100 GPUs.
+    reason: the statement contains the number 00, which none of its quotes contain
+    quotes:
+    - by1.17–1.43×on A100 and H100
+    - is faster than in all 36 configurations, by1.17–1.43×on A100 and H100 and by1.6– 3.1×on L40S.
+    - A100
+  - statement: The proposed solution achieves 1.6 to 3.1x speedup end-to-end over the baseline on NVIDIA
+      L40S GPUs.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''and by1.6–
+      3.1×on L40S.'''
+    quotes:
+    - and by1.6– 3.1×on L40S.
+    - is faster than in all 36 configurations, by1.17–1.43×on A100 and H100 and by1.6– 3.1×on L40S.
+    - L40S
+  - statement: Resident parameter bytes for DeepSeek-R1-Distill-Llama-8B are 15.94 GiB with the proposed
+      method.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''15.94 0.051
+      74,912'''
+    quotes:
+    - 15.94 0.051 74,912
+    - 'Table 2: Memory profile configured with vLLM’s gpu_memory_utilization= 0.9on models with untiedembeddings.'
+    - DeepSeek-R1-Distill-Llama-8B
+  - statement: Resident parameter bytes for Qwen3-14B are 28.96 GiB with the proposed method.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''28.96 0.060
+      133,536'''
+    quotes:
+    - 28.96 0.060 133,536
+    - 'Table 2: Memory profile configured with vLLM’s gpu_memory_utilization= 0.9on models with untiedembeddings.'
+    - Qwen3-14B
+corrections: []

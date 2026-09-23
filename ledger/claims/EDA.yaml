@@ -1,0 +1,146 @@
+claims:
+- id: CLM-EDA-0001
+  topic: EDA
+  statement: SLED-IFV achieves approximately 603x solver-only speedup on the otbn_sec_add benchmark compared
+    to the baseline.
+  sources:
+  - SRC-00022
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-22'
+  created: '2026-09-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    benchmark: otbn_sec_add
+    form: F
+    baseline_time: 1224 s
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: true
+    as_published:
+      value: 603.0
+      unit: x
+    si_base:
+      value: 603.0
+      unit: dimensionless
+    display:
+      value: 60300.0
+      unit: percent
+    conditions:
+      benchmark: otbn_sec_add
+      form: F
+      baseline_time: 1224 s
+- id: CLM-EDA-0002
+  topic: EDA
+  statement: On the bandgap reference (BGR) circuit benchmark, AgenticSizing achieved a power consumption
+    of 0.106 µW in one of its successful runs.
+  sources:
+  - SRC-00027
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-22'
+  created: '2026-09-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    benchmark_circuit: BGR
+    framework: AgenticSizing
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.106
+      unit: µW
+    si_base:
+      value: 1.06e-07
+      unit: W
+    display:
+      value: 1.06e-07
+      unit: W
+    conditions:
+      benchmark_circuit: BGR
+      framework: AgenticSizing
+- id: CLM-EDA-0003
+  topic: EDA
+  statement: For the LDO benchmark, AgenticSizing achieved a 60% success rate with an average of 83 iterations.
+  sources:
+  - SRC-00027
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-22'
+  created: '2026-09-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    benchmark_circuit: LDO benchmark
+    framework: proposed method
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 60.0
+      unit: '%'
+    si_base:
+      value: 0.6
+      unit: dimensionless
+    display:
+      value: 60.0
+      unit: percent
+    conditions:
+      benchmark_circuit: LDO benchmark
+      framework: proposed method
+- id: CLM-EDA-0004
+  topic: EDA
+  statement: For the full LDO benchmark, AgenticSizing achieved a success rate of 60% with an average
+    of 89.7 simulation evaluations.
+  sources:
+  - SRC-00027
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-22'
+  created: '2026-09-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    circuit: most complex circuit
+    framework: proposed framework
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 60.0
+      unit: '%'
+    si_base:
+      value: 0.6
+      unit: dimensionless
+    display:
+      value: 60.0
+      unit: percent
+    conditions:
+      circuit: most complex circuit
+      framework: proposed framework

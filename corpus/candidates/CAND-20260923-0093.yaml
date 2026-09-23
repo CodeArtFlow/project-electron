@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2609.25851v1
 doi: null
-title: Cryogenic Voltage Control of Magnetism in Silicon-Integrated \newline SrTiO$_3$/Fe
-  Heterostructures
+title: Cryogenic Voltage Control of Magnetism in Silicon-Integrated \newline SrTiO$_3$/Fe Heterostructures
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-09-22'
@@ -36,6 +35,81 @@ id: CAND-20260923-0093
 harvested_date: '2026-09-23'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-23'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The total interface anisotropy extrapolated for the Fe/SrTiO3 heterostructure at room temperature
+      is 1.4 mJ/m².
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''mJ/m 2'' is not one
+      of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a '
+    quotes:
+    - The Keff·t-intercept represents the total interface anisotropy K int = K s,Fe/SrTiO 3 + K s,top
+      and the extrapolated value is 1.4±0.1 mJ/m 2.
+    - Figure 2a displays a graph of the areal anisotropy density K eff·t Fe , obtained from SQUID-VSM
+      magnetometry measurements at room temperature, as a function of Fe thickness.
+    - obtained from SQUID-VSM magnetometry measurements at room temperature
+    - total interface anisotropy K int
+  - statement: The saturation magnetization Ms at 300 K for the Fe film is estimated within 1700 kA/m.
+    reason: the statement contains the number 300, which none of its quotes contain
+    quotes:
+    - Clear ferromagnetic switching and estimated M s-values within 1700±170 kA/m indicate robust ferromagnetism
+      down to sub-nm thickness.
+    - obtained from SQUID-VSM magnetometry measurements at room temperature
+  - statement: The Spin Reorientation Transition occurs at an Fe thickness of 0.7 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - We estimate t SRT = 0.7 nm from the intersection of the linear trend with the horizontal t-axis.
+    - obtained from SQUID-VSM magnetometry measurements at room temperature
+    - We estimate t SRT = 0.7 nm
+  - statement: The interface anisotropy derived from FMR at 300 K for an Fe thickness of 0.8 nm is 1.3
+      mJ/m².
+    reason: the statement contains the number 300, which none of its quotes contain
+    quotes:
+    - The resonance line in Figure 2e was fitted by the modified Kittel equation, yielding an estimated
+      interface anisotropy of K int = 1.3±0.2 mJ/m 2 (Supplementary Figure S3f).
+    - FMR resonance spectra for t Fe = 0.8 nm were recorded at T = (e) 300 K and (f) 5 K.
+    - T = (e) 300 K
+    - t Fe = 0.8 nm
+  - statement: The applied bias current during magnetotransport characterization at 6 K is 500 µA.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - 'The longitudinal (R xx) and transverse (R xy) magnetoresistance were measured at a temperature
+      of T = 6 K, well within the expected high-permittivity temperature regime of SrTiO 3 [68], under
+      an out-of-plane magnetic field and bias current '
+    - Magnetotransport measurements of the Fe/Ag system at T = 6 K
+    - T = 6 K
+  - statement: The thickness of the deposited Ag capping layer is 4 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - A 4 nm Ag capping layer was deposited at room temperature to promote perpendicular magnetic anisotropy
+      (PMA) at the top Fe interface [60].
+    - SrTiO3(100 nm)/Fe(tFe )/Ag(4 nm) heterostructures were grown by Molecular Beam Epitaxy (MBE)
+    - 4 nm Ag capping layer
+  - statement: The thickness of the deposited SrTiO3 thin film is 100 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - SrTiO3(100 nm)/Fe(tFe )/Ag(4 nm) heterostructures were grown by Molecular Beam Epitaxy (MBE) on
+      a low-resistive, (001)-oriented silicon substrate (ρ<0.010 Ω·cm).
+    - SrTiO3(100 nm)/Fe(tFe )/Ag(4 nm) heterostructures were grown by Molecular Beam Epitaxy (MBE)
+    - SrTiO3(100 nm)
+  tokens:
+    input: 25219
+    output: 2005
+  fetched_chars: 89811

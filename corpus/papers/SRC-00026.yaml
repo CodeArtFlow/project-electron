@@ -1,0 +1,112 @@
+id: SRC-00026
+title: Meta-Optics-Based Diffractive Learning Machine for Angle-Multiplexed Multi-Task Processing
+doi: null
+arxiv_id: 2609.25792v1
+url: https://arxiv.org/abs/2609.25792v1
+venue_id: arxiv_api
+authors:
+- name: Mingcheng Luo
+  affiliation: null
+  corresponding: null
+- name: Jianmin Xiong
+  affiliation: null
+  corresponding: null
+- name: Jiayong Peng
+  affiliation: null
+  corresponding: null
+- name: Jingtian Hu
+  affiliation: null
+  corresponding: null
+- name: Hongwei Chen
+  affiliation: null
+  corresponding: null
+- name: Chester Shu
+  affiliation: null
+  corresponding: null
+- name: Chaoran Huang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-22'
+retrieved_date: '2026-09-23'
+access: full_text
+read_scope: Automated reading. The full PDF text (62,607 characters, 31 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.25792v1 on
+  2026-09-23. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“By integrating this large-scale, untrained DNN with a lightweight, trainable digital backend
+  containing only 7,680 parameters, our system experimentally achieves an accuracy of 95.3% on the standard
+  full-scale CIFAR-10 dataset”
+
+  “standard full-scale CIFAR-10 dataset”
+
+  “lightweight, trainable digital backend containing only 7,680 parameters”
+
+  “our system experimentally achieves an accuracy of 95.3% on the standard full-scale CIFAR-10 dataset”
+
+  “As a result, we experimentally achieve a consistent MNIST accuracy of 98.5% over 11 parallel channels”
+
+  “As shown in Figures 3f and 3g, the average root mean square error (RMSE) between the ground truth and
+  predicted coordinates is as low as 2.64 under parallel multi-task conditions, showing little difference
+  from the single-task RMSE of 2.62.”
+
+  “parallel multi-task conditions”
+
+  “As shown in Figures 3f and 3g, the average root mean square error (RMSE) between the ground truth and
+  predicted coordinates is as low as 2.64 under parallel multi-task conditions”
+
+  “Therefore, the maximum range of the incident angle (𝜃 𝑖,𝑚𝑎𝑥 ) is experimentally measured as 60◦.”
+
+  “with the minimum angle difference (Δ𝜃 𝑚𝑖𝑛) measured as 2.3◦.”'
+method_summary: “For the three benchmarking classification tasks, the experimentally captured image is
+  downsampled from 720×960 to 24×32 pixels using pixel binning. The downsampled image is then flattened
+  into a vector of 1×768 and fed into a fully connected digital NN.”
+limitations: '“In practice, the achievable number of channels is expected to be lower because of constraints
+  such as the detector field of view and the angular response of the metasurface.”
+
+  “In the current implementation, further miniaturization of the Meta-DLM is constrained by the bulky
+  optical components—the converging lens and reflection mirror—required to generate the various incident
+  angles.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 17804
+    output: 2275
+  claims_accepted: 5
+  claims_rejected: 3
+  rejected:
+  - statement: The five-layer untrained optical DNN in the metasurface-based reflection cavity occupies
+      a compact volume of 216 mm3.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Our system
+      employs a metasurface-based reflection cavity to realize a '''
+    quotes:
+    - Our system employs a metasurface-based reflection cavity to realize a five-layer DNN comprising
+      115 million fixed, untrained diffractive nodes within a compact volume of 216 mm3.
+    - Our system employs a metasurface-based reflection cavity to realize a five-layer DNN
+  - statement: Under single-task operation with a five-layer metasurface and a Fourier transform optical
+      lens, Meta-DLM achieves an experimental CIFAR-10 classification accura
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Moreover,
+      incorporating an optical lens that performs a Fourier transf'''
+    quotes:
+    - Moreover, incorporating an optical lens that performs a Fourier transform further increases the
+      experimental five-layer accuracy to 99.3%. This is because the Fourier lens enables the extraction
+      of high-frequency Fourier features from the f
+    - incorporating an optical lens that performs a Fourier transform further increases the experimental
+      five-layer accuracy to 99.3%.
+    - small-scale CIFAR-10 dataset containing 10,000 images
+    - experimental five-layer accuracy
+  - statement: Without the optical lens, Meta-DLM experimentally achieves a CIFAR-10 accuracy of 79.8%
+      with five metasurface layers on the 10,000-image dataset.
+    reason: the statement contains the number 000, which none of its quotes contain
+    quotes:
+    - Consequently, the experimental CIFAR-10 accuracy reaches 79.8% with five layers.
+    - and the CIFAR-10 accuracy from 27.6% to 79.8%.
+    - small-scale CIFAR-10 dataset containing 10,000 images
+    - five layers
+corrections: []

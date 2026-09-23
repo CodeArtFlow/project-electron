@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-09-22.
+Topic code `PHOT`. Last reviewed 2026-09-23.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -20,6 +20,10 @@ Topic code `PHOT`. Last reviewed 2026-09-22.
   - `CLM-PHOT-0003` · component photonic molecule, mode_spacing Ω2 · grade B · credibility unknown · measured · as of 2026-09-18
   - sources: SRC-00009
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- **≈0.03 GHz** — The measured maximum resonance shift is approximately 0.03 GHz across the entire oblique incidence range from 0° to 30°.
+  - `CLM-PHOT-0024` · angle_of_incidence 0° to 30°, rotation_angle 90° · grade B · credibility unknown · measured · as of 2026-09-22
+  - sources: SRC-00028
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### length device
 
@@ -48,6 +52,33 @@ Topic code `PHOT`. Last reviewed 2026-09-22.
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0013 — see the open register
 
+### qualitative
+
+- The dual-harmonic acousto-optic modulator demonstrates 50% conversion efficiency to one sideband at 730 nm wavelength.
+  - `CLM-PHOT-0018` · grade B · credibility unknown · measured · as of 2026-09-22
+  - sources: SRC-00020
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The hybrid optical-digital Meta-DLM system experimentally achieves a classification accuracy of 95.3% on the full-scale CIFAR-10 dataset using 7,680 trainable digital parameters.
+  - `CLM-PHOT-0019` · dataset standard full-scale CIFAR-10 dataset, digital_parameters 7,680 · grade B · credibility unknown · measured · as of 2026-09-22
+  - sources: SRC-00026
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The Meta-DLM system achieves an experimental MNIST classification accuracy of 98.5% across 11 parallel task channels.
+  - `CLM-PHOT-0020` · grade B · credibility unknown · measured · as of 2026-09-22
+  - sources: SRC-00026
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Under multi-task operation, Meta-DLM experimentally achieves a facial keypoint detection root mean square error of 2.64.
+  - `CLM-PHOT-0021` · operation_mode parallel multi-task · grade B · credibility unknown · measured · as of 2026-09-22
+  - sources: SRC-00026
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The maximum incident-angle range theta_i,max supported by the Meta-DLM experimental setup is measured to be 60 degrees.
+  - `CLM-PHOT-0022` · grade B · credibility unknown · measured · as of 2026-09-22
+  - sources: SRC-00026
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The minimum incident angle difference delta_theta_min between adjacent channels in Meta-DLM is measured to be 2.3 degrees.
+  - `CLM-PHOT-0023` · grade B · credibility unknown · measured · as of 2026-09-22
+  - sources: SRC-00026
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+
 ### relative deviation
 
 - **85 percent** — The optical hyperdimensional computing system achieved 85% classification accuracy on the Iris test set.
@@ -58,6 +89,36 @@ Topic code `PHOT`. Last reviewed 2026-09-22.
   - `CLM-PHOT-0006` · dataset MNIST, setup experimental system · grade B · credibility unknown · measured · as of 2026-09-21
   - sources: SRC-00014
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+
+### sensitivity advantage ratio
+
+- **≈12.2** — The fabricated dual-narrowband thermal emitter achieves an approximate 12.2-fold improvement in relative sensitivity for CH4 gas detection compared with a conventional blackbody source.
+  - `CLM-PHOT-0016` · target_gas CH4, comparison dual-narrowband thermal emitter vs conventional blackbody source · grade A · credibility unknown · measured · as of 2026-09-18
+  - sources: SRC-00019
+- **13.5** — The fabricated dual-narrowband thermal emitter achieves a 13.5-fold improvement in relative sensitivity for NO2 gas detection compared with a conventional blackbody source.
+  - `CLM-PHOT-0017` · target_gas NO2, comparison dual-narrowband thermal emitter vs conventional blackbody source · grade A · credibility unknown · measured · as of 2026-09-18
+  - sources: SRC-00019
+
+### temperature
+
+- **≤ 419.85 degC** — The fabricated dual-narrowband thermal emitter maintains its dual-narrowband spectral response for temperatures up to 693 K.
+  - `CLM-PHOT-0015` · structure fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter · grade A · credibility unknown · measured · as of 2026-09-18
+  - sources: SRC-00019
+
+### wavelength
+
+- **3.26 um** — A multi-objective-optimized aperiodic dielectric-multilayer-on-TiN thermal emitter design has a calculated emission peak at 3.26 micrometers for CH4 gas sensing.
+  - `CLM-PHOT-0011` · target_gas CH4, method TMM/FDTD inverse design (MOPSO) · grade A · credibility unknown · simulated · as of 2026-09-18
+  - sources: SRC-00019
+- **6.3 um** — A multi-objective-optimized aperiodic dielectric-multilayer-on-TiN thermal emitter design has a calculated emission peak at 6.30 micrometers for NO2 gas sensing.
+  - `CLM-PHOT-0012` · target_gas NO2, method TMM/FDTD inverse design (MOPSO) · grade A · credibility unknown · simulated · as of 2026-09-18
+  - sources: SRC-00019
+- **3.26 um** — The fabricated aperiodic Si/SiO2-on-TiN thermal emitter sample has a measured emission peak at 3.26 micrometers for CH4 gas sensing.
+  - `CLM-PHOT-0013` · target_gas CH4, structure fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter · grade A · credibility unknown · measured · as of 2026-09-18
+  - sources: SRC-00019
+- **6.3 um** — The fabricated aperiodic Si/SiO2-on-TiN thermal emitter sample has a measured emission peak at 6.30 micrometers for NO2 gas sensing.
+  - `CLM-PHOT-0014` · target_gas NO2, structure fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter · grade A · credibility unknown · measured · as of 2026-09-18
+  - sources: SRC-00019
 
 ## Live contradictions in this layer
 
@@ -72,6 +133,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 10
-- grades: {'B': 10}
-- distinct sources: 3
+- claims: 24
+- grades: {'B': 17, 'A': 7}
+- distinct sources: 7

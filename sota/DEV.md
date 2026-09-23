@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-09-22.
+Topic code `DEV`. Last reviewed 2026-09-23.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -15,6 +15,26 @@ Topic code `DEV`. Last reviewed 2026-09-22.
   - `CLM-DEV-0005` · channel_type signatureless thermoradiative channel · grade B · credibility unknown · measured · as of 2026-09-18
   - sources: SRC-00008
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- In a 6.7-nm-wide ribbon, the edge spectral suppression is approximately 19 meV.
+  - `CLM-DEV-0007` · grade B · credibility unknown · measured · as of 2026-09-22
+  - sources: SRC-00024
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- In a 23-nm-wide ribbon, the edge spectral suppression is approximately 10 meV.
+  - `CLM-DEV-0008` · grade B · credibility unknown · measured · as of 2026-09-22
+  - sources: SRC-00024
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- In a ribbon model without periodic spin-orbit coupling modulation, the calculated central gap decreases from approximately 19.5 meV at a ribbon width of 5.52 nm.
+  - `CLM-DEV-0009` · grade B · credibility unknown · simulated · as of 2026-09-22
+  - sources: SRC-00024
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- In a ribbon model without periodic spin-orbit coupling modulation, the calculated central gap decreases to approximately 0.3 meV at a ribbon width of 17.94 nm.
+  - `CLM-DEV-0010` · grade B · credibility unknown · simulated · as of 2026-09-22
+  - sources: SRC-00024
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- With periodic spin-orbit coupling modulation, the calculated central spectral scale remains approximately 9.4 meV for ribbon widths above approximately 11 nm.
+  - `CLM-DEV-0011` · model periodic SOC modulation, ribbon_width above approximately 11 nm · grade B · credibility unknown · simulated · as of 2026-09-22
+  - sources: SRC-00024
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -29,6 +49,6 @@ _None._
 
 ## Evidence base
 
-- claims: 3
-- grades: {'B': 3}
-- distinct sources: 3
+- claims: 8
+- grades: {'B': 8}
+- distinct sources: 4

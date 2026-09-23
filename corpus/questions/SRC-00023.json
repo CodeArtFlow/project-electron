@@ -1,0 +1,53 @@
+{
+  "arxiv_id": "2609.25684v1",
+  "claims": {
+    "CLM-PROC-0002": {
+      "evidence_spans": [
+        "The workflow reaches an online latency of about 0.27 ms per probe position and a throughput of about 20,000 positions per second",
+        "The proposed neural model was evaluated on a lightweight cloud instance equipped with an Intel Xeon CPU with 2 virtual cores and an NVIDIA Tesla T4 GPU with 15 GB memory.",
+        "Under this setting, preprocessing, inference, and stitching gave a total latency of approximately 0.27 ms per frame, which approaches the 0.22 ms detector dwell time and remains below the effective 0.50 ms sampling interval including I/O."
+      ],
+      "statement": "The workflow achieves an online latency of approximately 0.27 ms per probe position.",
+      "terms": []
+    },
+    "CLM-PROC-0003": {
+      "evidence_spans": [
+        "FRC analysis between AI inference and the ePIE reference yields a cutoff of 0.68 Å for the representative region (Fig. 2e)",
+        "The model was trained on experimental AuPd acquired at spot size 9 and df = 30 nm",
+        "FRC analysis between AI inference and the ePIE reference yields a cutoff of 0.68 Å for the representative region (Fig. 2e)"
+      ],
+      "statement": "FRC analysis between AI inference and the ePIE reference in the held-out AuPd representative region yields a cutoff of 0.68 Å.",
+      "terms": []
+    },
+    "CLM-PROC-0004": {
+      "evidence_spans": [
+        "FRC analysis at df = 0 nm yields a cutoff of 0.77 Å relative to the ePIE reference (Fig. 4d), supporting structural consistency under the strongest tested defocus shift.",
+        "using a defocus series of high-entropy alloy nanoparticles (HEA-NP) (Fig. 4).",
+        "FRC analysis at df = 0 nm yields a cutoff of 0.77 Å relative to the ePIE reference (Fig. 4d), supporting structural consistency under the strongest tested defocus shift.",
+        "FRC analysis at df = 0 nm yields a cutoff of 0.77 Å relative to the ePIE reference (Fig. 4d), supporting structural consistency under the strongest tested defocus shift."
+      ],
+      "statement": "At 0 nm defocus on HEA-NP, FRC analysis relative to the ePIE reference yields a cutoff of 0.77 Å.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "The AuPd training dataset was acquired using a Thermo Fisher Titan G2 80-200 ChemiSTEM operated at 200 kV with a Gatan STELA detector.",
+    "The neural model was trained using ePIE -derived reference phase patches rather than independent experimental ground truth.",
+    "The model was trained using the Adam optimizer with learning rate 1 × 10⁻⁴, β₁ = 0.9, and β₂ = 0.999.",
+    "First, the method is supervised by ePIE-derived reference phases. These references are physics -constrained, but they are not independent experimental ground truth.",
+    "Second, the current model is validated mainly in thin-sample and weak-to-moderate scattering regimes.",
+    "In regimes dominated by strong multiple scattering, such as thicker zone-axis crystals, the projection-like local phase model may no longer be adequate.",
+    "Although the model shows tolerance to probe, defocus, and instrument changes within the tested range, it is not fully probe-independent in an unrestricted sense.",
+    "The AuPd-trained model remains structurally stable from the measured WS₂ input down to α = 10-5, but degrades sharply at α = 10-6, where the high-frequency diffraction information is dominated by counting noise."
+  ],
+  "generated": "2026-09-23",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00023",
+  "text_chars": 63634,
+  "text_sha256": "574e619140d68c8bf13fa6e20201362bc00770972809bee32baa18a03f363583"
+}

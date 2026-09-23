@@ -574,3 +574,146 @@ claims:
     conditions:
       target_gas: NO2
       comparison: dual-narrowband thermal emitter vs conventional blackbody source
+- id: CLM-PHOT-0018
+  topic: PHOT
+  statement: The dual-harmonic acousto-optic modulator demonstrates 50% conversion efficiency to one sideband
+    at 730 nm wavelength.
+  sources:
+  - SRC-00020
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-22'
+  created: '2026-09-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-PHOT-0019
+  topic: PHOT
+  statement: The hybrid optical-digital Meta-DLM system experimentally achieves a classification accuracy
+    of 95.3% on the full-scale CIFAR-10 dataset using 7,680 trainable digital parameters.
+  sources:
+  - SRC-00026
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-22'
+  created: '2026-09-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    dataset: standard full-scale CIFAR-10 dataset
+    digital_parameters: 7,680
+- id: CLM-PHOT-0020
+  topic: PHOT
+  statement: The Meta-DLM system achieves an experimental MNIST classification accuracy of 98.5% across
+    11 parallel task channels.
+  sources:
+  - SRC-00026
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-22'
+  created: '2026-09-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-PHOT-0021
+  topic: PHOT
+  statement: Under multi-task operation, Meta-DLM experimentally achieves a facial keypoint detection
+    root mean square error of 2.64.
+  sources:
+  - SRC-00026
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-22'
+  created: '2026-09-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    operation_mode: parallel multi-task
+- id: CLM-PHOT-0022
+  topic: PHOT
+  statement: The maximum incident-angle range theta_i,max supported by the Meta-DLM experimental setup
+    is measured to be 60 degrees.
+  sources:
+  - SRC-00026
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-22'
+  created: '2026-09-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-PHOT-0023
+  topic: PHOT
+  statement: The minimum incident angle difference delta_theta_min between adjacent channels in Meta-DLM
+    is measured to be 2.3 degrees.
+  sources:
+  - SRC-00026
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-22'
+  created: '2026-09-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-PHOT-0024
+  topic: PHOT
+  statement: The measured maximum resonance shift is approximately 0.03 GHz across the entire oblique
+    incidence range from 0° to 30°.
+  sources:
+  - SRC-00028
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-22'
+  created: '2026-09-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    angle_of_incidence: 0° to 30°
+    rotation_angle: 90°
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: true
+    as_published:
+      value: 0.03
+      unit: GHz
+    si_base:
+      value: 30000000.0
+      unit: Hz
+    display:
+      value: 0.030000000000000002
+      unit: GHz
+    conditions:
+      angle_of_incidence: 0° to 30°
+      rotation_angle: 90°

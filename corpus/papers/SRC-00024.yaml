@@ -1,0 +1,130 @@
+id: SRC-00024
+title: Realization of quantum spin Hall insulator superlattice with emergent multigap-like helical edge
+  states
+doi: null
+arxiv_id: 2609.25732v1
+url: https://arxiv.org/abs/2609.25732v1
+venue_id: arxiv_api
+authors:
+- name: Hui Guo
+  affiliation: null
+  corresponding: null
+- name: Xianghe Han
+  affiliation: null
+  corresponding: null
+- name: Fang Qin
+  affiliation: null
+  corresponding: null
+- name: Xiaoshuai Fu
+  affiliation: null
+  corresponding: null
+- name: Hao Peng
+  affiliation: null
+  corresponding: null
+- name: Hongqin Xiao
+  affiliation: null
+  corresponding: null
+- name: Hengxin Tan
+  affiliation: null
+  corresponding: null
+- name: Chen Liu
+  affiliation: null
+  corresponding: null
+- name: Zihao Huang
+  affiliation: null
+  corresponding: null
+- name: Jiayi Wang
+  affiliation: null
+  corresponding: null
+- name: Qian Fang
+  affiliation: null
+  corresponding: null
+- name: Rui Chen
+  affiliation: null
+  corresponding: null
+- name: Haitao Yang
+  affiliation: null
+  corresponding: null
+- name: Wang Yao
+  affiliation: null
+  corresponding: null
+- name: Li Huang
+  affiliation: null
+  corresponding: null
+- name: Hai-Zhou Lu
+  affiliation: null
+  corresponding: null
+- name: Hui Chen
+  affiliation: null
+  corresponding: null
+- name: Hong-Jun Gao
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-22'
+retrieved_date: '2026-09-23'
+access: full_text
+read_scope: Automated reading. The full PDF text (50,646 characters, 24 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.25732v1 on
+  2026-09-23. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“As shown in Figure S12, t he characteristic central suppression decreases from approximately
+  19 meV in a 6.7-nm-wide ribbon to approximately 10 meV in a 23-nm-wide ribbon”
+
+  “Without periodic SOC modulation, the finite-ribbon calculation produces predominantly a single central
+  suppression (Figure S14). Its characteristic energy scale decreases rapidly with increasing ribbon width,
+  from approximately 19.5 meV at 5.52 nm to approximately 0.3 meV at 17.94 nm, and becomes negligible
+  at 20.70 nm.”
+
+  “the central spectral scale remains approximately 9.4 meV for ribbon widths above approximately 11 nm”
+
+  “when the periodic SOC modulation is introduced”
+
+  “ribbon widths above approximately 11 nm”'
+method_summary: “High-quality monolayer HfTe 5 nano-ribbons were epitaxially grown on bilayer graphene/SiC(0001)
+  substrates by molecular beam epitaxy (MBE) under ultra -high vacuum conditions (UHV, base pressure ~5×
+  10-10 mbar).”
+limitations: “The effective model is not intended to quantitatively reproduce the complete STS spectrum
+  of realistic H fTe5 nanoribbons, but rather to provide a physically plausible mechanism for the experimentally
+  observed unconventional edge-state reconstruction.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 18910
+    output: 2400
+  claims_accepted: 5
+  claims_rejected: 3
+  rejected:
+  - statement: Monolayer HfTe5 on graphene substrate forms a 2x1 superlattice with a periodicity of approximately
+      27.3 Å along the c direction.
+    reason: the quote says 'up to'/'within'/'at most' before the number but bound is not upper_bound
+    quotes:
+    - Zoom-in STM image of the HfTe5 exhibits four distinct stripes within each unit cell, with a periodicity
+      of 27.3 Å along c direction, twice that of the pristine lattice (Figure 2a).
+    - demonstrating the formation a 2×1 superlattice (Figure 2b, c, S3, S4).
+    - monolayer HfTe5
+    - along c direction
+  - statement: The bulk gap of monolayer 2x1 HfTe5 yields representative values of approximately 70-110
+      meV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The gap values
+      exhibit sample - and position -dependent variation, wit'''
+    quotes:
+    - The gap values exhibit sample - and position -dependent variation, with representative spectra yielding
+      gap values of approximately 70-110 meV.
+    - monolayer 2×1 HfTe 5
+  - statement: The edge states of monolayer 2x1 HfTe5 nanoribbons exhibit decay lengths of approximately
+      0.6-0.8 nm.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - The profiles were fitted to an exponential decay toward the bulk conductance level, yielding decay
+      lengths of approximately 0.6-0.8 nm.
+    - monolayer 2×1 HfTe 5
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (measured: 2, simulated:
+  3). This field records the majority (simulated); trust each claim''s own evidence_type over this one.'

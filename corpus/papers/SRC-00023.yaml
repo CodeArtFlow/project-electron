@@ -1,0 +1,127 @@
+id: SRC-00023
+title: Real-Time Atomic-Resolution Electron Phase Imaging without Probe Calibration via Ptychography-Supervised
+  Learning
+doi: null
+arxiv_id: 2609.25684v1
+url: https://arxiv.org/abs/2609.25684v1
+venue_id: arxiv_api
+authors:
+- name: H. Yue
+  affiliation: null
+  corresponding: null
+- name: C. -C. Chen
+  affiliation: null
+  corresponding: null
+- name: C. -N. Hsiao
+  affiliation: null
+  corresponding: null
+- name: J. Cheng
+  affiliation: null
+  corresponding: null
+- name: Y. Liu
+  affiliation: null
+  corresponding: null
+- name: X. Z. Liao
+  affiliation: null
+  corresponding: null
+- name: Steve F. Shu
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-22'
+retrieved_date: '2026-09-23'
+access: full_text
+read_scope: Automated reading. The full PDF text (63,634 characters, 35 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.25684v1 on
+  2026-09-23. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The workflow reaches an online latency of about 0.27 ms per probe position and a throughput
+  of about 20,000 positions per second”
+
+  “The proposed neural model was evaluated on a lightweight cloud instance equipped with an Intel Xeon
+  CPU with 2 virtual cores and an NVIDIA Tesla T4 GPU with 15 GB memory.”
+
+  “Under this setting, preprocessing, inference, and stitching gave a total latency of approximately 0.27
+  ms per frame, which approaches the 0.22 ms detector dwell time and remains below the effective 0.50
+  ms sampling interval including I/O.”
+
+  “FRC analysis between AI inference and the ePIE reference yields a cutoff of 0.68 Å for the representative
+  region (Fig. 2e)”
+
+  “The model was trained on experimental AuPd acquired at spot size 9 and df = 30 nm”
+
+  “FRC analysis at df = 0 nm yields a cutoff of 0.77 Å relative to the ePIE reference (Fig. 4d), supporting
+  structural consistency under the strongest tested defocus shift.”
+
+  “using a defocus series of high-entropy alloy nanoparticles (HEA-NP) (Fig. 4).”'
+method_summary: '“The AuPd training dataset was acquired using a Thermo Fisher Titan G2 80-200 ChemiSTEM
+  operated at 200 kV with a Gatan STELA detector.”
+
+  “The neural model was trained using ePIE -derived reference phase patches rather than independent experimental
+  ground truth.”
+
+  “The model was trained using the Adam optimizer with learning rate 1 × 10⁻⁴, β₁ = 0.9, and β₂ = 0.999.”'
+limitations: '“First, the method is supervised by ePIE-derived reference phases. These references are
+  physics -constrained, but they are not independent experimental ground truth.”
+
+  “Second, the current model is validated mainly in thin-sample and weak-to-moderate scattering regimes.”
+
+  “In regimes dominated by strong multiple scattering, such as thicker zone-axis crystals, the projection-like
+  local phase model may no longer be adequate.”
+
+  “Although the model shows tolerance to probe, defocus, and instrument changes within the tested range,
+  it is not fully probe-independent in an unrestricted sense.”
+
+  “The AuPd-trained model remains structurally stable from the measured WS₂ input down to α = 10-5, but
+  degrades sharply at α = 10-6, where the high-frequency diffraction information is dominated by counting
+  noise.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 17107
+    output: 2851
+  claims_accepted: 3
+  claims_rejected: 4
+  rejected:
+  - statement: In batched processing mode, the workflow reaches a throughput of approximately 20,000 probe
+      positions per second.
+    reason: the value 20000 does not appear in any of the claim's quotes
+    quotes:
+    - Benchmarking across scan grids from 50 × 50 to 700 × 700 positions shows stable high-throughput
+      processing at ~20,000 probe positions per second.
+    - This reduced inference latency to approximately 0.049 ms per frame, corresponding to about 20,000
+      probe positions per second.
+    - To estimate the intrinsic algorithmic upper bound, offline throughput was measured using XLA compilation
+      and pre-allocated GPU memory with a saturated batch size of 1,024.
+  - statement: In batched mode, the per-frame inference latency is reduced to approximately 0.049 ms.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - For offline processing of large 4D-STEM datasets, optimized batched inference further reduces the
+      per-frame inference latency to ~0.049 ms (Fig. 1e).
+    - This reduced inference latency to approximately 0.049 ms per frame, corresponding to about 20,000
+      probe positions per second.
+    - To estimate the intrinsic algorithmic upper bound, offline throughput was measured using XLA compilation
+      and pre-allocated GPU memory with a saturated batch size of 1,024.
+  - statement: The proposed workflow achieves an approximately 1090-fold speedup over GPU-accelerated
+      ePIE benchmarked at 15 iterations.
+    reason: the statement contains the number 1090, which none of its quotes contain
+    quotes:
+    - Relative to GPU-accelerated ePIE benchmarked at 15 iterations, totaling ~53.6 ms per frame based
+      on ~3.57 ms per frame per iteration, this corresponds to an approximately 1,090-fold speedup.
+  - statement: For the zero-shot transfer test on WS2, FRC analysis yields a cutoff of 0.67 Å for the
+      TOP region.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - FRC analysis further confirms high-frequency agreement with the ptychographic reference, with cutoffs
+      of 0.67 Å and 0.72 Å for the TOP and BOTTOM regions, respectively (Fig. 3d).
+corrections: []
