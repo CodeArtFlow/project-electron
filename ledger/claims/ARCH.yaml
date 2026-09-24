@@ -732,6 +732,20 @@ claims:
   conditions:
     concurrency_n_a: '48'
     memory_tier: HBF
+    component: HBF tiering resume/access latency overhead
+  corrections:
+  - date: '2026-09-23'
+    public: false
+    fields:
+    - conditions
+    reason: 'CFL-0014: conditions lacked anything identifying which quantity this time value is a
+      value OF, so it shared subject (concurrency_n_a=48) with CLM-ARCH-0020''s unrelated
+      time-between-tokens metric from the same paper (SRC-00025) and opened a false conflict - a
+      tiering overhead component and an end-to-end per-token latency are not the same measurement
+      just because both ran at Na=48. component added to both claims to distinguish them; Na=48 is
+      the workload operating point, not the subject. Digest 2026-09-23 cited the unscoped
+      conditions and the resulting conflict, but never reached readers - the gate blocked that
+      day''s deploy on this conflict, so the site stayed on the prior build.'
   quantity:
     quantity: time
     bound: exact
@@ -748,6 +762,7 @@ claims:
     conditions:
       concurrency_n_a: '48'
       memory_tier: HBF
+      component: HBF tiering resume/access latency overhead
 - id: CLM-ARCH-0020
   topic: ARCH
   statement: At Na = 48, the proposed design achieves a time-between-tokens (TBT) of 14 ms per token.
@@ -767,6 +782,20 @@ claims:
   conditions:
     concurrency_n_a: '48'
     design: our design with tiering
+    component: end-to-end time-between-tokens (TBT)
+  corrections:
+  - date: '2026-09-23'
+    public: false
+    fields:
+    - conditions
+    reason: 'CFL-0014: conditions lacked anything identifying which quantity this time value is a
+      value OF, so it shared subject (concurrency_n_a=48) with CLM-ARCH-0019''s unrelated HBF
+      tiering overhead from the same paper (SRC-00025) and opened a false conflict - an end-to-end
+      per-token latency and a memory-tier overhead component are not the same measurement just
+      because both ran at Na=48. component added to both claims to distinguish them; Na=48 is the
+      workload operating point, not the subject. Digest 2026-09-23 cited the unscoped conditions
+      and the resulting conflict, but never reached readers - the gate blocked that day''s deploy
+      on this conflict, so the site stayed on the prior build.'
   quantity:
     quantity: time
     bound: exact
@@ -783,6 +812,7 @@ claims:
     conditions:
       concurrency_n_a: '48'
       design: our design with tiering
+      component: end-to-end time-between-tokens (TBT)
 - id: CLM-ARCH-0021
   topic: ARCH
   statement: At Na = 128, the proposed design achieves a time-between-tokens (TBT) of 27 ms per token.

@@ -35,22 +35,18 @@ Topic code `PHOT`. Last reviewed 2026-09-24.
   - `CLM-PHOT-0007` · sample bare silicon substrate, roughness_type arithmetic average roughness (Sa) · grade B · credibility unknown · measured · as of 2026-09-21
   - sources: SRC-00018
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
-  - **live contradiction:** CFL-0012 — see the open register
 - **0.33 nm** — The bare silicon substrate exhibited a root mean square roughness Sq of 0.33 nm.
   - `CLM-PHOT-0008` · sample bare silicon substrate, roughness_type root mean square roughness (Sq) · grade B · credibility unknown · measured · as of 2026-09-21
   - sources: SRC-00018
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
-  - **live contradiction:** CFL-0013 — see the open register
 - **1.7 nm** — After deposition of the MoSx film, the surface arithmetic average roughness Sa increased to 1.7 nm.
-  - `CLM-PHOT-0009` · roughness_type arithmetic average roughness (Sa) · grade B · credibility unknown · measured · as of 2026-09-21
+  - `CLM-PHOT-0009` · roughness_type arithmetic average roughness (Sa), sample after MoSx film deposition · grade B · credibility unknown · measured · as of 2026-09-21
   - sources: SRC-00018
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
-  - **live contradiction:** CFL-0012 — see the open register
 - **2.1 nm** — After deposition of the MoSx film, the root mean square roughness Sq increased to 2.1 nm.
-  - `CLM-PHOT-0010` · roughness_type root mean square roughness (Sq) · grade B · credibility unknown · measured · as of 2026-09-21
+  - `CLM-PHOT-0010` · roughness_type root mean square roughness (Sq), sample after MoSx film deposition · grade B · credibility unknown · measured · as of 2026-09-21
   - sources: SRC-00018
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
-  - **live contradiction:** CFL-0013 — see the open register
 - **850 nm** — In the MO-PhC slab simulation, the periodicity is 850 nm.
   - `CLM-PHOT-0026` · component MO-PhC slab · grade B · credibility unknown · simulated · as of 2026-09-23
   - sources: SRC-00031
@@ -148,14 +144,7 @@ Topic code `PHOT`. Last reviewed 2026-09-24.
 
 ## Live contradictions in this layer
 
-Shown here, not in an appendix: a reader of this page must see the disagreement without navigating elsewhere.
-
-- `CFL-0012` — length_device: _unexamined; classification pending_
-  - claims: CLM-PHOT-0007, CLM-PHOT-0009
-  - missing data: `not yet named`
-- `CFL-0013` — length_device: _unexamined; classification pending_
-  - claims: CLM-PHOT-0008, CLM-PHOT-0010
-  - missing data: `not yet named`
+_None._
 
 ## Evidence base
 

@@ -39,7 +39,7 @@ Generated 2026-09-24 from the claim ledger.
 
 ## Where the corpus disagrees with itself
 
-**3 conflict(s) are unexamined.** Reconciliation is unfinished, so the picture below is provisional and publication is blocked.
+No live contradictions. With a corpus this small that is unremarkable: contradictions need overlapping claims, and there are few claims to overlap.
 
 ## What we cannot yet say
 

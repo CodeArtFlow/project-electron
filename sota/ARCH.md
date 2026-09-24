@@ -102,15 +102,13 @@ Topic code `ARCH`. Last reviewed 2026-09-24.
   - sources: SRC-00011
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 - **84000 ns** — At Na = 48, the proposed hot-cold tiering design adds 0.084 ms of resume latency overhead.
-  - `CLM-ARCH-0019` · concurrency_n_a 48, memory_tier HBF · grade B · credibility unknown · simulated · as of 2026-09-22
+  - `CLM-ARCH-0019` · concurrency_n_a 48, memory_tier HBF, component HBF tiering resume/access latency overhead · grade B · credibility unknown · simulated · as of 2026-09-22
   - sources: SRC-00025
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
-  - **live contradiction:** CFL-0014 — see the open register
 - **1.4e+07 ns** — At Na = 48, the proposed design achieves a time-between-tokens (TBT) of 14 ms per token.
-  - `CLM-ARCH-0020` · concurrency_n_a 48, design our design with tiering · grade B · credibility unknown · simulated · as of 2026-09-22
+  - `CLM-ARCH-0020` · concurrency_n_a 48, design our design with tiering, component end-to-end time-between-tokens (TBT) · grade B · credibility unknown · simulated · as of 2026-09-22
   - sources: SRC-00025
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
-  - **live contradiction:** CFL-0014 — see the open register
 - **2.7e+07 ns** — At Na = 128, the proposed design achieves a time-between-tokens (TBT) of 27 ms per token.
   - `CLM-ARCH-0021` · concurrency_n_a 128, design our design with tiering · grade B · credibility unknown · simulated · as of 2026-09-22
   - sources: SRC-00025
@@ -118,11 +116,7 @@ Topic code `ARCH`. Last reviewed 2026-09-24.
 
 ## Live contradictions in this layer
 
-Shown here, not in an appendix: a reader of this page must see the disagreement without navigating elsewhere.
-
-- `CFL-0014` — time: _unexamined; classification pending_
-  - claims: CLM-ARCH-0019, CLM-ARCH-0020
-  - missing data: `not yet named`
+_None._
 
 ## Evidence base
 
