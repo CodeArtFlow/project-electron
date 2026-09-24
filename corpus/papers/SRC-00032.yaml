@@ -1,0 +1,149 @@
+id: SRC-00032
+title: Programmable and scalable on-chip WDM processing platform enabled by cascaded FSR-free resonators
+doi: null
+arxiv_id: 2609.27545v1
+url: https://arxiv.org/abs/2609.27545v1
+venue_id: arxiv_api
+authors:
+- name: Boshu Sun
+  affiliation: null
+  corresponding: null
+- name: Haojie Zhu
+  affiliation: null
+  corresponding: null
+- name: Ying Sun
+  affiliation: null
+  corresponding: null
+- name: Kunhao Lei
+  affiliation: null
+  corresponding: null
+- name: Zijia Wang
+  affiliation: null
+  corresponding: null
+- name: Kangjian Bao
+  affiliation: null
+  corresponding: null
+- name: Weiqi Lu
+  affiliation: null
+  corresponding: null
+- name: Yuhao Fang
+  affiliation: null
+  corresponding: null
+- name: Yuting Ye
+  affiliation: null
+  corresponding: null
+- name: Danyang Hao
+  affiliation: null
+  corresponding: null
+- name: Qingyan Deng
+  affiliation: null
+  corresponding: null
+- name: Zequn Chen
+  affiliation: null
+  corresponding: null
+- name: Yingchun Wu
+  affiliation: null
+  corresponding: null
+- name: Maoliang Wei
+  affiliation: null
+  corresponding: null
+- name: Wei Cao
+  affiliation: null
+  corresponding: null
+- name: Xu Sun
+  affiliation: null
+  corresponding: null
+- name: Qicheng Zhang
+  affiliation: null
+  corresponding: null
+- name: Hongtao Lin
+  affiliation: null
+  corresponding: null
+- name: William Shieh
+  affiliation: null
+  corresponding: null
+- name: Lan Li
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-23'
+retrieved_date: '2026-09-24'
+access: full_text
+read_scope: Automated reading. The full PDF text (52,728 characters, 17 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.27545v1 on
+  2026-09-24. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“a high -capacity on-chip WDM communication fabric (2.4-Tbps single-link WDM transmission and
+  O-to-C-band multi-subband (de)triplexing)”
+
+  “Furthermore, each 60-Gbaud PAM4 signal transmission channel maintains a bit error rate (BER) below
+  the 20% soft-decision FEC (SD-FEC) threshold at a ROP of -2 dBm”
+
+  “The system achieves total data rates of 1.44 Tbps and 2.4 Tbps in an intensity modulation and direct
+  detection link.”
+
+  “An integrated microheater enables dynamic modulation, achieving 16.7 nm (tuning efficiency = 0.07 nm/mW)
+  of continuous wavelength tuning and intensity modulation of a single resonance with over 20 dB drop-port
+  power reduction, as shown in Figs. 2h and 2i.”
+
+  “An integrated microheater enables dynamic modulation, achieving 16.7 nm (tuning efficiency = 0.07 nm/mW)
+  of continuous wavelength tuning”
+
+  “Expanding on this, we integrat e WDM within each service band to create a 9 -channel ultra-broadband
+  WDM DETRX with a total O-to-C band coverage exceeding 300 nm.”'
+method_summary: '“High-resolution patterning is achieved using 100 kV electron-beam lithography (EBL)
+  and subsequent development. The pattern is then transferred into the silicon device layer by inductively
+  coupled plasma reactive ion etching (ICP-RIE) (Oxford PlasmaPro 100 Cobra), with an etch depth of 150
+  nm.”
+
+  “Using the measured 3 -dB (approximately 36 GHz) and 6-dB (approximately 60 GHz) bandwidths of the DEMUX
+  channel, we have successfully demonstrated parallel transmission of 36-Gbaud PAM4 signals.”
+
+  “Each output channel is detected by a high -speed photodetector (O -E conversion) and recorded by a
+  real-time high-speed oscilloscope.”'
+limitations: '“The performance degradation observed at shorter wavelengths is primarily attributed to
+  the deviation from the central wavelength of the grating coupler and the semiconductor optical amplifier
+  ’s gain spectrum , as verified in subsequent back -to-back (BtB) tests without DEMUX.”
+
+  “Owing to variations in coupling-grating bandwidths and fabrication inconsistencies, the spectral intensities
+  across channels were non-uniform.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 17644
+    output: 2527
+  claims_accepted: 3
+  claims_rejected: 4
+  rejected:
+  - statement: The DC-FPR filter achieves an FSR-free bandwidth exceeding 300 nm.
+    reason: 'unit conversion refused: frequency: cannot convert 300.0 nm to Hz - Cannot convert from ''nanometer''
+      ([length]) to ''hertz'' (1 / [time]). A dimensional mismatch means the value was record'
+    quotes:
+    - This unit achieves a record-large FSR-free bandwidth (>300 nm) and low insertion loss (< 0.5 dB)
+  - statement: The DC-FPR filter unit exhibits an insertion loss under 0.5 dB.
+    reason: 'unit conversion refused: power: cannot convert 0.5 dB to W - Cannot convert from ''decibel''
+      (dimensionless) to ''watt'' ([mass] * [length] ** 2 / [time] ** 3). A dimensional mismatch means'
+    quotes:
+    - This unit achieves a record-large FSR-free bandwidth (>300 nm) and low insertion loss (< 0.5 dB)
+  - statement: The 20-channel DEMUX array achieves insertion loss below 2.5 dB across all ports.
+    reason: 'unit conversion refused: power: cannot convert 2.5 dB to W - Cannot convert from ''decibel''
+      (dimensionless) to ''watt'' ([mass] * [length] ** 2 / [time] ** 3). A dimensional mismatch means'
+    quotes:
+    - The fabricated array exhibits insertion losses below 2.5 dB and channel crosstalk below -25 dB across
+      all ports (Fig. 3b).
+    - we constructed a 20-channel DEMUX as plotted in Fig. 3a.
+  - statement: The optical convolution core projected computational throughput is 1.28 TOPS.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''the parallel
+      computing accelerator ( theoretically capable of 1.28-TOP'''
+    quotes:
+    - the parallel computing accelerator ( theoretically capable of 1.28-TOPS convolution operations,
+      16 -channel modulation).
+    - With a sustained symbol rate of 40 Gbaud per channel, compatible with standard SOI MPW modulators43
+      , the architecture supports a theoretical computational throughput of 1.28 TOPS.
+corrections: []

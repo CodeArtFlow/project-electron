@@ -1,10 +1,21 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-09-23.
+Topic code `DEV`. Last reviewed 2026-09-24.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
 ## Current position
+
+### frequency
+
+- **370 GHz** — For square patch arrays, a minimum mode separation of 0.37 THz for Ω R/π is measured at the anti-crossing point.
+  - `CLM-DEV-0012` · magnetic_field 8.1 T, frequency 1.9 THz · grade B · credibility unknown · measured · as of 2026-09-23
+  - sources: SRC-00033
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **180 GHz** — For rectangular patch arrays, a Rabi frequency Ω R/π of 0.18 THz is measured at the anti-crossing point.
+  - `CLM-DEV-0013` · magnetic_field 7.5 T, frequency 2.2 THz · grade B · credibility unknown · measured · as of 2026-09-23
+  - sources: SRC-00033
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### qualitative
 
@@ -49,6 +60,6 @@ _None._
 
 ## Evidence base
 
-- claims: 8
-- grades: {'B': 8}
-- distinct sources: 4
+- claims: 10
+- grades: {'B': 10}
+- distinct sources: 5

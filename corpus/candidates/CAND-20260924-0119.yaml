@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2609.27302v1
 doi: null
-title: Unmodeled states and uncertain action outcomes in agentic scanning tunneling
-  microscopy
+title: Unmodeled states and uncertain action outcomes in agentic scanning tunneling microscopy
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-09-23'
@@ -25,6 +24,73 @@ id: CAND-20260924-0119
 harvested_date: '2026-09-24'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-24'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The first launch-only tip-conditioning run finished in 70.8 minutes.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The first launch-only run finished in 70.8 minutes.
+  - statement: The BraggZ score of the delivered state in Launch-only run 1 was 295.4.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - The BraggZ scores are 20.7 in a and 295.4 in d.
+    - Launch-only run 1
+    - V sample = 100 mV
+    - I set = 200 pA
+  - statement: The initial state before Launch-only run 1 had a BraggZ score of 20.7.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - The BraggZ scores are 20.7 in a and 295.4 in d.
+    - Launch-only run 1
+    - V sample = 1000 mV
+    - I set = 10 pA
+  - statement: The claude-opus-5 agent delivered the desired tip endpoint in 116 min of active operation
+      during the launch-only run under a piezo walker jam.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Launched with a prompt that disclosed the jam, claude-opus-5 delivered the desired tip endpoint
+      in 116 min of active operation (Fig. 3b).
+    - claude-opus-5
+    - Launched with a prompt that disclosed the jam
+  - statement: The delivered topograph from Launch-only run 2 achieved a BraggZ score of 79.5.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Delivered topograph and corresponding FFT from Launch-only run 2, with a BraggZ score of 79.5.
+    - Launch-only run 2
+    - V sample = 100 mV
+    - I set = 200 pA
+  - statement: The temperature of the experimental STM tip conditioning environment was 4 K.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Here we report end-to-end LLM tip conditioning autonomy on a low-temperature STM, using tungsten
+      tips on FeTe at 4 K.
+    - tungsten tips on FeTe at 4 K
+  - statement: A total command of 6,000 coarse-walker steps along +Y resulted in a measured physical displacement
+      of 6.51 nm.
+    reason: the statement contains the number 6.51, which none of its quotes contain
+    quotes:
+    - Later analysis of the impurities across the live-scan images showed a displacement of only about
+      6.5 nm along Y (Fig. 4b), confirming the jam.
+    - commands for a total of 6,000 coarse-walker steps along +Y
+    - confirming the jam
+  tokens:
+    input: 13042
+    output: 2225
+  fetched_chars: 45489

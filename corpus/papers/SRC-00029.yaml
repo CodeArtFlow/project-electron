@@ -1,0 +1,71 @@
+id: SRC-00029
+title: 'DNNsolver: Accurate and Efficient Deep Learning Modeling of Polarization-Sensitive Diffractive
+  Neural Networks'
+doi: null
+arxiv_id: 2609.27323v1
+url: https://arxiv.org/abs/2609.27323v1
+venue_id: arxiv_api
+authors:
+- name: Shuyi Wang
+  affiliation: null
+  corresponding: null
+- name: Hong-Bo Sun
+  affiliation: null
+  corresponding: null
+- name: Linhan Lin
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-23'
+retrieved_date: '2026-09-24'
+access: full_text
+read_scope: Automated reading. The full PDF text (30,870 characters, 17 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.27323v1 on
+  2026-09-24. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The output of the trilayer DNN under a H-polarized random speckle illumination at a wavelength
+  of 1550 nm is predicted by DNNsolver.”
+
+  “Meanwhile, the prediction only takes about 4 ms, achieving about 450,000-fold speedup compared with
+  30 min taken by FDTD simulations.”
+
+  “random speckle illumination”'
+method_summary: “By learning local scattering within a small region and combining a sliding-window strategy
+  with layer cascading, DNNsolver efficiently constructs the scattering response of arbitrarily sized
+  multilayer DNNs while greatly reducing the burden of dataset generation and training.”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 10834
+    output: 1192
+  claims_accepted: 1
+  claims_rejected: 2
+  rejected:
+  - statement: For a single diffractive layer under random speckle illumination, DNNsolver achieves an
+      average mean squared error (MSE) of 0.0095 compared with FDTD simulation
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''MSE'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a uni'
+    quotes:
+    - For single diffractive layer under random speckle illumination, DNNsolver achieves an average mean
+      squared error (MSE) of 0.0095 and about 106-fold speedup compared with FDTD simulations.
+    - random speckle illumination
+    - single diffractive layer
+    - FDTD simulations
+  - statement: DNNsolver achieves an average inference time of 0.7 ms on the test set.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Furthermore, the average inference time of DNNsolver on the test set is 0.7 ms, compared with approximately
+      15 min for FDTD simulation.
+    - test set
+    - DNNsolver
+corrections: []

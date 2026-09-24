@@ -1,0 +1,105 @@
+id: SRC-00030
+title: Energy-Oriented CGLA Mapping of a Memory-Polynomial Digital Predistortion Kernel
+doi: null
+arxiv_id: 2609.27438v1
+url: https://arxiv.org/abs/2609.27438v1
+venue_id: arxiv_api
+authors:
+- name: Takuto Ando
+  affiliation: null
+  corresponding: null
+- name: Yasuhiko Nakashima
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-23'
+retrieved_date: '2026-09-24'
+access: full_text
+read_scope: Automated reading. The full PDF text (24,885 characters, 5 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.27438v1 on
+  2026-09-24. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Under model-based platform power accounting and the stated power assumptions, the projected
+  IMAX configuration gives 169.1 × smaller modeled end-to-end energy per batch than the RTX 4090 baseline.”
+
+  “projected IMAX configuration”
+
+  “modeled end-to-end energy per batch”
+
+  “A controlled synthetic PA-model validation checks that the same 15-term form improves test-set NMSE
+  by 26.1 dB and ACLR by 26.0 dB.”
+
+  “controlled synthetic PA-model validation”'
+method_summary: “The evaluation measures kernel latency and modeled energy. All measured paths use the
+  same single-precision complex workload of 32 sequences, each with 2048 complex samples, across an IMAX
+  FPGA prototype, a CUDA implementation on an RTX 4090 system, and an ARM- NEON implementation on Jetson
+  AGX Orin.”
+limitations: “This value uses platform power assumptions rather than workload-dependent runtime power
+  or a direct silicon power measurement.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 9452
+    output: 2780
+  claims_accepted: 3
+  claims_rejected: 5
+  rejected:
+  - statement: The IMAX FPGA prototype achieves an end-to-end latency of 20.201 ms for the 1024-sample
+      tile configuration.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''With this
+      1024-sample tile configuration, the IMAX FPGA prototype repo'''
+    quotes:
+    - With this 1024-sample tile configuration, the IMAX FPGA prototype reports 20.201 ms end-to-end latency
+      and 1.948 ms kernel-only latency.
+    - The FPGA, RTX 4090, and Jetson AGX Orin rows are measured, whereas the IMAX ASIC row is a 28 nm
+      projection.
+    - IMAX FPGA prototype
+    - 1024-sample tile configuration
+  - statement: The IMAX FPGA prototype achieves a kernel-only latency of 1.948 ms for the 1024-sample
+      tile configuration.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''With this
+      1024-sample tile configuration, the IMAX FPGA prototype repo'''
+    quotes:
+    - With this 1024-sample tile configuration, the IMAX FPGA prototype reports 20.201 ms end-to-end latency
+      and 1.948 ms kernel-only latency.
+    - The FPGA, RTX 4090, and Jetson AGX Orin rows are measured, whereas the IMAX ASIC row is a 28 nm
+      projection.
+    - IMAX FPGA prototype
+    - 1024-sample tile configuration
+  - statement: The projected 28 nm IMAX configuration achieves an end-to-end latency of 3.14 ms.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Using the
+      previously reported 28 nm IMAX frequency and power model, th'''
+    quotes:
+    - Using the previously reported 28 nm IMAX frequency and power model, the projected IMAX configuration
+      gives 3.14 ms end-to-end latency and 0.34 ms kernel-only latency.
+    - 28 nm IMAX frequency and power model
+    - projected IMAX configuration
+    - end-to-end latency
+  - statement: The projected 28 nm IMAX configuration achieves a kernel-only latency of 0.34 ms.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Using the
+      previously reported 28 nm IMAX frequency and power model, th'''
+    quotes:
+    - Using the previously reported 28 nm IMAX frequency and power model, the projected IMAX configuration
+      gives 3.14 ms end-to-end latency and 0.34 ms kernel-only latency.
+    - 28 nm IMAX frequency and power model
+    - projected IMAX configuration
+    - kernel-only latency
+  - statement: The RTX 4090 baseline achieves an end-to-end latency of 0.484 ms.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The RTX 4090 baseline has the lowest end-to-end latency at 0.484 ms.
+    - The FPGA, RTX 4090, and Jetson AGX Orin rows are measured, whereas the IMAX ASIC row is a 28 nm
+      projection.
+    - RTX 4090 baseline
+    - end-to-end latency
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (projected: 1, simulated:
+  2). This field records the majority (simulated); trust each claim''s own evidence_type over this one.'

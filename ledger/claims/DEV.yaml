@@ -277,3 +277,75 @@ claims:
   conditions:
     model: periodic SOC modulation
     ribbon_width: above approximately 11 nm
+- id: CLM-DEV-0012
+  topic: DEV
+  statement: For square patch arrays, a minimum mode separation of 0.37 THz for Ω R/π is measured at the
+    anti-crossing point.
+  sources:
+  - SRC-00033
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-23'
+  created: '2026-09-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    magnetic_field: 8.1 T
+    frequency: 1.9 THz
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.37
+      unit: THz
+    si_base:
+      value: 370000000000.0
+      unit: Hz
+    display:
+      value: 370.0
+      unit: GHz
+    conditions:
+      magnetic_field: 8.1 T
+      frequency: 1.9 THz
+- id: CLM-DEV-0013
+  topic: DEV
+  statement: For rectangular patch arrays, a Rabi frequency Ω R/π of 0.18 THz is measured at the anti-crossing
+    point.
+  sources:
+  - SRC-00033
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-23'
+  created: '2026-09-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    magnetic_field: 7.5 T
+    frequency: 2.2 THz
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.18
+      unit: THz
+    si_base:
+      value: 180000000000.0
+      unit: Hz
+    display:
+      value: 180.0
+      unit: GHz
+    conditions:
+      magnetic_field: 7.5 T
+      frequency: 2.2 THz

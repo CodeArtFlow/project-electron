@@ -22,6 +22,46 @@ id: CAND-20260924-0107
 harvested_date: '2026-09-24'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-24'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: On the IMAX FPGA prototype at 145 MHz, in-proj projection GEMM achieves an EXEC time of
+      37.8 ms and a DMA-inclusive total time of 1.17 s.
+    reason: the statement contains the number 145, which none of its quotes contain
+    quotes:
+    - For in-proj, the IMAX run records 37.8 ms EXEC and 1.17 s DMA-inclusive total time
+    - IMAX latency and correctness are measured on the FPGA prototype.
+    - For in-proj, the IMAX run records 37.8 ms EXEC
+    - IMAX FPGA prototype
+  - statement: On the IMAX FPGA prototype, Mamba-130M autoregressive decoding token generation reaches
+      a throughput of 0.345 tokens/s over 200 tokens.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Throughput
+      reaches 0.345 tokens/s for the 200-token generation run'''
+    quotes:
+    - Throughput reaches 0.345 tokens/s for the 200-token generation run
+    - IMAX latency and correctness are measured on the FPGA prototype.
+    - Mamba-130M autoregressive decoding program
+    - IMAX FPGA platform
+  - statement: The synthesized IMAX CGLA core model achieves a maximum clock frequency of 840 MHz in a
+      28 nm standard-cell process.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The ASIC
+      context in Table IV comes from synthesis of the CGLA core wit'''
+    quotes:
+    - The ASIC context in Table IV comes from synthesis of the CGLA core with Synopsys Design Compiler
+      and a 28 nm standard-cell flow, with a reported maximum clock of 840 MHz
+    - The ASIC context in Table IV comes from synthesis of the CGLA core with Synopsys Design Compiler
+      and a 28 nm standard-cell flow
+    - synthesis of the CGLA core
+    - 28 nm standard-cell flow
+  tokens:
+    input: 9843
+    output: 1278
+  fetched_chars: 26950

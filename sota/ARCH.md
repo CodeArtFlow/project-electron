@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-09-23.
+Topic code `ARCH`. Last reviewed 2026-09-24.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -23,6 +23,10 @@ Topic code `ARCH`. Last reviewed 2026-09-23.
 - **≤ 1.22 ×** — GroupGEMM on B200 achieves up to 1.22x speedup with NUMA-aware execution.
   - `CLM-ARCH-0016` · device B200, benchmark GroupGEMM · grade B · credibility unknown · measured · as of 2026-09-21
   - sources: SRC-00016
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **169.1 ×** — The projected IMAX configuration achieves a 169.1x smaller modeled end-to-end energy per batch compared to the RTX 4090 baseline.
+  - `CLM-ARCH-0022` · platform projected IMAX configuration, metric_scope modeled end-to-end energy per batch · grade B · credibility unknown · projected · as of 2026-09-23
+  - sources: SRC-00030
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### energy delay product
@@ -59,6 +63,14 @@ Topic code `ARCH`. Last reviewed 2026-09-23.
 - The proposed solution runs 1.17 to 3.1x faster end-to-end than the state-of-the-art solution.
   - `CLM-ARCH-0017` · comparison_baseline state-of-the-art solution · grade B · credibility unknown · measured · as of 2026-09-22
   - sources: SRC-00021
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The 15-term DPD correction form improves test-set NMSE by 26.1 dB.
+  - `CLM-ARCH-0023` · test_type synthetic PA-model validation · grade B · credibility unknown · simulated · as of 2026-09-23
+  - sources: SRC-00030
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The 15-term DPD correction form improves test-set ACLR by 26.0 dB.
+  - `CLM-ARCH-0024` · test_type synthetic PA-model validation · grade B · credibility unknown · simulated · as of 2026-09-23
+  - sources: SRC-00030
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
@@ -114,6 +126,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 21
-- grades: {'B': 21}
-- distinct sources: 7
+- claims: 24
+- grades: {'B': 24}
+- distinct sources: 8

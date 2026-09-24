@@ -717,3 +717,173 @@ claims:
     conditions:
       angle_of_incidence: 0° to 30°
       rotation_angle: 90°
+- id: CLM-PHOT-0025
+  topic: PHOT
+  statement: For a randomly generated trilayer DNN under H-polarized random speckle illumination at a
+    wavelength of 1550 nm, the prediction by DNNsolver takes about 4 ms.
+  sources:
+  - SRC-00029
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-23'
+  created: '2026-09-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    illumination: random speckle illumination
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: true
+    as_published:
+      value: 4.0
+      unit: ms
+    si_base:
+      value: 0.004
+      unit: s
+    display:
+      value: 3999999.9999999995
+      unit: ns
+    conditions:
+      illumination: random speckle illumination
+- id: CLM-PHOT-0026
+  topic: PHOT
+  statement: In the MO-PhC slab simulation, the periodicity is 850 nm.
+  sources:
+  - SRC-00031
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-23'
+  created: '2026-09-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    component: MO-PhC slab
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 850.0
+      unit: nm
+    si_base:
+      value: 8.5e-07
+      unit: m
+    display:
+      value: 849.9999999999999
+      unit: nm
+    conditions:
+      component: MO-PhC slab
+- id: CLM-PHOT-0027
+  topic: PHOT
+  statement: The single-link WDM transmission fabric achieves a aggregate data rate of 2.4 Tbps.
+  sources:
+  - SRC-00032
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-23'
+  created: '2026-09-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    modulation_format: 60-Gbaud PAM4
+    link_type: single-link WDM transmission
+  quantity:
+    quantity: throughput_tool
+    bound: exact
+    approximate: false
+    as_published:
+      value: 2.4
+      unit: Tbps
+    si_base:
+      value: 2400000000000.0
+      unit: 1/s
+    display:
+      value: 8640000000000000.0
+      unit: wph
+    conditions:
+      modulation_format: 60-Gbaud PAM4
+      link_type: single-link WDM transmission
+- id: CLM-PHOT-0028
+  topic: PHOT
+  statement: Continuous wavelength tuning of 16.7 nm is demonstrated using the integrated microheater.
+  sources:
+  - SRC-00032
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-23'
+  created: '2026-09-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    component: integrated microheater
+  quantity:
+    quantity: wavelength
+    bound: exact
+    approximate: false
+    as_published:
+      value: 16.7
+      unit: nm
+    si_base:
+      value: 1.67e-08
+      unit: m
+    display:
+      value: 0.0167
+      unit: um
+    conditions:
+      component: integrated microheater
+- id: CLM-PHOT-0029
+  topic: PHOT
+  statement: The 9-channel ultra-broadband WDM DETRX achieves total spectral coverage exceeding 300 nm.
+  sources:
+  - SRC-00032
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-23'
+  created: '2026-09-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    component: 9-channel ultra-broadband WDM DETRX
+    spectral_range: O-to-C band
+  quantity:
+    quantity: wavelength
+    bound: lower_bound
+    approximate: false
+    as_published:
+      value: 300.0
+      unit: nm
+    si_base:
+      value: 3.0000000000000004e-07
+      unit: m
+    display:
+      value: 0.30000000000000004
+      unit: um
+    conditions:
+      component: 9-channel ultra-broadband WDM DETRX
+      spectral_range: O-to-C band

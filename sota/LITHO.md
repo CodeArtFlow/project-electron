@@ -1,6 +1,6 @@
 # Lithography — state of the art
 
-Topic code `LITHO`. Last reviewed 2026-09-23.
+Topic code `LITHO`. Last reviewed 2026-09-24.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 

@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-09-23.
+Topic code `PHOT`. Last reviewed 2026-09-24.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -51,6 +51,10 @@ Topic code `PHOT`. Last reviewed 2026-09-23.
   - sources: SRC-00018
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0013 — see the open register
+- **850 nm** — In the MO-PhC slab simulation, the periodicity is 850 nm.
+  - `CLM-PHOT-0026` · component MO-PhC slab · grade B · credibility unknown · simulated · as of 2026-09-23
+  - sources: SRC-00031
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### qualitative
 
@@ -105,6 +109,20 @@ Topic code `PHOT`. Last reviewed 2026-09-23.
   - `CLM-PHOT-0015` · structure fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter · grade A · credibility unknown · measured · as of 2026-09-18
   - sources: SRC-00019
 
+### throughput tool
+
+- **8.64e+15 wph** — The single-link WDM transmission fabric achieves a aggregate data rate of 2.4 Tbps.
+  - `CLM-PHOT-0027` · modulation_format 60-Gbaud PAM4, link_type single-link WDM transmission · grade B · credibility unknown · measured · as of 2026-09-23
+  - sources: SRC-00032
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+
+### time
+
+- **≈4e+06 ns** — For a randomly generated trilayer DNN under H-polarized random speckle illumination at a wavelength of 1550 nm, the prediction by DNNsolver takes about 4 ms.
+  - `CLM-PHOT-0025` · illumination random speckle illumination · grade B · credibility unknown · simulated · as of 2026-09-23
+  - sources: SRC-00029
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+
 ### wavelength
 
 - **3.26 um** — A multi-objective-optimized aperiodic dielectric-multilayer-on-TiN thermal emitter design has a calculated emission peak at 3.26 micrometers for CH4 gas sensing.
@@ -119,6 +137,14 @@ Topic code `PHOT`. Last reviewed 2026-09-23.
 - **6.3 um** — The fabricated aperiodic Si/SiO2-on-TiN thermal emitter sample has a measured emission peak at 6.30 micrometers for NO2 gas sensing.
   - `CLM-PHOT-0014` · target_gas NO2, structure fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter · grade A · credibility unknown · measured · as of 2026-09-18
   - sources: SRC-00019
+- **0.0167 um** — Continuous wavelength tuning of 16.7 nm is demonstrated using the integrated microheater.
+  - `CLM-PHOT-0028` · component integrated microheater · grade B · credibility unknown · measured · as of 2026-09-23
+  - sources: SRC-00032
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≥ 0.3 um** — The 9-channel ultra-broadband WDM DETRX achieves total spectral coverage exceeding 300 nm.
+  - `CLM-PHOT-0029` · component 9-channel ultra-broadband WDM DETRX, spectral_range O-to-C band · grade B · credibility unknown · measured · as of 2026-09-23
+  - sources: SRC-00032
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -133,6 +159,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 24
-- grades: {'B': 17, 'A': 7}
-- distinct sources: 7
+- claims: 29
+- grades: {'B': 22, 'A': 7}
+- distinct sources: 10

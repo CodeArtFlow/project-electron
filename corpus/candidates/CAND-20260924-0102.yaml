@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2609.27453v1
 doi: null
-title: Implementation and Evaluation of BitNet Inference on a CGLA by Signed-Int4
-  Instructions
+title: Implementation and Evaluation of BitNet Inference on a CGLA by Signed-Int4 Instructions
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-09-23'
@@ -23,6 +22,85 @@ id: CAND-20260924-0102
 harvested_date: '2026-09-24'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-24'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At 32768 loaded 32-bit words, the signed-int4 product cost measures 2.26 ns on the FPGA
+      prototype.
+    reason: the statement contains the number 32, which none of its quotes contain
+    quotes:
+    - At W = 32768, the measured cost is 2.26 ns per signed-int4 product.
+    - Instruction and mapping timing is measured on the 145 MHz FPGA prototype.
+    - At W = 32768
+    - 145 MHz FPGA prototype
+  - statement: Scaling the clock from 145 MHz to 840 MHz projects a signed-int4 product cost of 0.390
+      ns for the 28 nm model at 32768 loaded 32-bit words.
+    reason: the statement contains the number 32768, which none of its quotes contain
+    quotes:
+    - Scaling only the clock from 145 to 840 MHz gives a projected cost of 0.390 ns per product for the
+      28 nm CGLA model.
+    - gives a projected cost of 0.390 ns per product for the 28 nm CGLA model.
+    - Scaling only the clock from 145 to 840 MHz
+    - At W = 32768
+  - statement: BitNet C++ decode throughput with one offloaded call measures 2.52 tokens/s.
+    reason: 'unit conversion refused: frequency: could not parse 2.52 ''tokens/s'': ''tokens'' is not
+      defined in the unit registry'
+    quotes:
+    - BitNet C++ decode with one offloaded call measures 2.52 tokens/s
+    - BitNet C++ decode
+    - with one offloaded call
+  - statement: For 19 generated tokens, serial-row execution on BitNet C++ has a median elapsed time of
+      7.53 s.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Serial-row execution has a median elapsed time of 7.53 s for 19 generated tokens, or 2.52 tokens/s.
+    - Serial-row execution has a median elapsed time of 7.53 s for 19 generated tokens
+    - 19 generated tokens
+    - Serial-row execution
+  - statement: The offload interval inside the 19-token decode run measures 16.3 ms.
+    reason: the statement contains the number 19, which none of its quotes contain
+    quotes:
+    - The five-run summary for this configuration reports 8.88 ms of input staging, 5.82 ms of execution,
+      and 1.64 ms of output drain. These phases form the 16.3 ms offload interval
+    - 19-token decode
+    - 16.3 ms offload interval
+  - statement: The 28 nm CGLA model operating frequency is 840 MHz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Frequency scaling of the 145 MHz FPGA measurement to an 840 MHz 28 nm model
+    - Only frequency-scaled timing and synthesis-power context use the 28 nm CGLA row.
+    - 28 nm model
+    - 28 nm CGLA model
+  - statement: The CGLA 28 nm model has a power consumption of 1.82 W.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - CGLA 28 nm model c – 64 PEs a 28 nm 840 MHz 32 KiB LMM b 1.82
+    - Only frequency-scaled timing and synthesis-power context use the 28 nm CGLA row.
+    - 28 nm model
+    - 840 MHz
+  - statement: The projected energy consumption for BitNet decode on the fused CGLA 28 nm model is 0.258
+      J/token.
+    reason: the statement contains the number 28, which none of its quotes contain
+    quotes:
+    - Fig. 4 reports a fused CGLA median of 2.52 tokens/s and 0.258 J/token over five runs.
+    - The CGLA row uses the fused five-run median and the 28 nm CGLA projection.
+    - BitNet b1.58 2B-4T decode
+    - 28 nm CGLA projection
+  tokens:
+    input: 11701
+    output: 2631
+  fetched_chars: 34182

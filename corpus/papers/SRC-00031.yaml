@@ -1,0 +1,106 @@
+id: SRC-00031
+title: Magnetic Lifting of BIC Symmetry Protection Enables Nonreciprocal Beam Steering and Angular Information
+  Encoding
+doi: null
+arxiv_id: 2609.27525v1
+url: https://arxiv.org/abs/2609.27525v1
+venue_id: arxiv_api
+authors:
+- name: Chengrui Zhang
+  affiliation: null
+  corresponding: null
+- name: Zijing Xianyu
+  affiliation: null
+  corresponding: null
+- name: Chufan Zhou
+  affiliation: null
+  corresponding: null
+- name: Qi Jiang
+  affiliation: null
+  corresponding: null
+- name: Shengxuan Si
+  affiliation: null
+  corresponding: null
+- name: Wanli Xue
+  affiliation: null
+  corresponding: null
+- name: Ji Wu
+  affiliation: null
+  corresponding: null
+- name: Haoming Zhong
+  affiliation: null
+  corresponding: null
+- name: Jiaqi Zhang
+  affiliation: null
+  corresponding: null
+- name: Hanqi He
+  affiliation: null
+  corresponding: null
+- name: Edoardo Charbon
+  affiliation: null
+  corresponding: null
+- name: Zhiyu Wang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-23'
+retrieved_date: '2026-09-24'
+access: full_text
+read_scope: Automated reading. The full PDF text (45,525 characters, 31 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.27525v1 on
+  2026-09-24. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The MO-PhC slab features a periodicity of a = 850 nm, a thickness of t = 200 nm, and a square-hole
+  side length of L = 460 nm, with cladding and substrate indices n1 and n2, as shown in Fig. 2A.”
+
+  “The MO-PhC slab features a periodicity of a = 850 nm”
+
+  “All numerical simulations were performed using COMSOL Multiphysics.”'
+method_summary: “All numerical simulations were performed using COMSOL Multiphysics. A single unit cell
+  of the magneto-optical photonic crystal slab was modeled with Bloch periodic boundary conditions along
+  the x and y directions and perfectly matched layers along the z direction.”
+limitations: “Material absorption was neglected throughout the simulations.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16063
+    output: 1363
+  claims_accepted: 1
+  claims_rejected: 3
+  rejected:
+  - statement: In the MO-PhC slab simulation, the thickness is 200 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The MO-PhC
+      slab features a periodicity of a = 850\u2009nm, a thickness of t'''
+    quotes:
+    - The MO-PhC slab features a periodicity of a = 850 nm, a thickness of t = 200 nm, and a square-hole
+      side length of L = 460 nm, with cladding and substrate indices n1 and n2, as shown in Fig.≉2A.
+    - All numerical simulations were performed using COMSOL Multiphysics.
+    - a thickness of t = 200 nm
+    - The MO-PhC slab features a periodicity of a = 850 nm
+  - statement: In the MO-PhC slab simulation, the square-hole side length is 460 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The MO-PhC
+      slab features a periodicity of a = 850\u2009nm, a thickness of t'''
+    quotes:
+    - The MO-PhC slab features a periodicity of a = 850 nm, a thickness of t = 200 nm, and a square-hole
+      side length of L = 460 nm, with cladding and substrate indices n1 and n2, as shown in Fig.≉2A.
+    - All numerical simulations were performed using COMSOL Multiphysics.
+    - square-hole side length of L = 460 nm
+    - The MO-PhC slab features a periodicity of a = 850 nm
+  - statement: The intrinsic elevation-angle tuning demonstrated in the simulated system spans from 0
+      to 4.5°.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''°'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - Although the intrinsic elevation-angle tuning demonstrated here spans 0-4.5°, the system-level angular
+      range could be extended to tens of degrees using suitably designed external angular-magnification
+      or metasurface-assisted optics (36,37).
+    - All numerical simulations were performed using COMSOL Multiphysics.
+    - intrinsic elevation-angle tuning demonstrated here spans 0-4.5°
+corrections: []
