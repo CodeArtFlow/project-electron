@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2609.29074v1
 doi: null
-title: Topology of bound states in the continuum from the angular structure of leading
-  radiation
+title: Topology of bound states in the continuum from the angular structure of leading radiation
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-09-24'
@@ -23,6 +22,38 @@ id: CAND-20260925-0128
 harvested_date: '2026-09-25'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-25'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: 'In a dielectric slab patterned with a triangular lattice of circular air holes in a C6v
+      symmetry group, a bound state in the continuum in the A1 representation '
+    reason: the statement contains the number 0.707, which none of its quotes contain
+    quotes:
+    - We ﬁnd a BIC in the A1 representation with µ = 5 at r = 0 .191L, h = 0 .991L and ω∗L/2π = 0 .707,
+      where r and h are the radius of the holes and the height of the slab, respectively.
+    - Consider a C6v BIC in an A representation, for which τ = 1.
+    - We consider a dielectric slab with refractive index 3 .5, patterned by a triangular lattice of circular
+      air holes with lattice constant L.
+  - statement: In a C4v square lattice of dielectric rods, a critical bound state in the continuum in
+      the A2 representation occurs at a normalized frequency ω*L / 2π of 0.466.
+    reason: 'unit conversion refused: frequency: could not parse 0.466 ''2πc/L'': Unit expression cannot
+      have a scaling factor.'
+    quotes:
+    - We identify a critical BIC at r = 0.263L, h = 0.856L, and ω∗L/2π = 0.466, where r and h are the
+      radius and height of the rods, and compute the family of µ = 3 super-BICs for 0 .2 < r/L < 0.4.
+    - Finally, we use a C4v structure to study a topological-charge transition of at-Γ BICs and its relation
+      to the bifurcation of oﬀ-Γ BICs.
+    - Consider a nondegenerate at-Γ BIC in the A2 representation, for which τ = 1.
+    - The refractive index of the rods is 3.5.
+  tokens:
+    input: 13459
+    output: 1634
+  fetched_chars: 36429

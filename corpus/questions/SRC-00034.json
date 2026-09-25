@@ -1,0 +1,46 @@
+{
+  "arxiv_id": "2609.29246v1",
+  "claims": {
+    "CLM-PKG-0001": {
+      "evidence_spans": [
+        "Our evaluation shows that array-service bandwidth increases from 8.738 to 139.285 GB/s (15.94 ×), with 99.6– 99.99% media occupancy (Figure 6).",
+        "We retain GPU backpressure and scale from 1 to 16 channels, with 32 subarrays and active slots per channel, 4,096 admission entries and default media timings.",
+        "We retain GPU backpressure and scale from 1 to 16 channels, with 32 subarrays and active slots per channel, 4,096 admission entries and default media timings.",
+        "Figure 6:Media scaling with 32 subarrays and active slots per channel at 15 µs reads.",
+        "Our evaluation shows that array-service bandwidth increases from 8.738 to 139.285 GB/s (15.94 ×), with 99.6– 99.99% media occupancy (Figure 6)."
+      ],
+      "statement": "HBF-Sim achieves 139.285 GB/s of array-service bandwidth when scaled to 16 channels.",
+      "terms": [
+        "HBF-Sim"
+      ]
+    },
+    "CLM-PKG-0002": {
+      "evidence_spans": [
+        "The sequence takes 352,434,530 GPU cycles (249.95 ms).",
+        "We use Qwen3-1.7B [26] to exercise the GPU–HBF path with a real pretrained language model.",
+        "One HBF stack provides 16 channels, 512 total subarrays, 512 active-operation slots and 4,096 admission entries.",
+        "READ/PROGRAM/ERASE timings are 15/200/2000µs.",
+        "The sequence takes 352,434,530 GPU cycles (249.95 ms)."
+      ],
+      "statement": "The captured Qwen3-1.7B decode sequence completes in 249.95 ms during execution in HBF-Sim.",
+      "terms": [
+        "HBF-Sim"
+      ]
+    }
+  },
+  "extra_quotes": [
+    "We present HBF-Sim, an extensible, reusable, and faithful HBF simulator integrated with simulated GPUs.",
+    "Unless otherwise specified, we use Accel-Sim with a 1.132 GHz GPU core clock and an 850 MHz DRAM clock.",
+    "ECC, read retry, refresh, and thermal effects are not modeled in the current version."
+  ],
+  "generated": "2026-09-25",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00034",
+  "text_chars": 65254,
+  "text_sha256": "f56cdb182fb295aae9cdffc13a1f97cd4863f44dc90ced926942c5101f3a5286"
+}

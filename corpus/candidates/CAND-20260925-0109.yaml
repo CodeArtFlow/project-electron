@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2609.29255v1
 doi: null
-title: Rational Design of Low-Dimensional Hybrid Organic/Inorganic Interfaces for
-  Enhanced Second-Harmonic Generation
+title: Rational Design of Low-Dimensional Hybrid Organic/Inorganic Interfaces for Enhanced Second-Harmonic
+  Generation
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-09-24'
@@ -24,6 +24,46 @@ id: CAND-20260925-0109
 harvested_date: '2026-09-25'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-25'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The LA-F4 perylene isomer has a permanent dipole magnitude of 3.01 D.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - LA-F4 perylene 3.01 0.033 0.056 0.058
+    - Density-functional theory (DFT) [45, 46] calculations were carried out in a spin-unpolarized framework
+      within the local-density approximation (LDA) for the exchange-correlation functional [47] as implemented
+      in HGH-LDA pseudopotentials [48]
+  - statement: The SA-F4 perylene isomer has a permanent dipole magnitude of 4.77 D.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - SA-F4 perylene 4.77 0.086 0.233 0.237
+    - Density-functional theory (DFT) [45, 46] calculations were carried out in a spin-unpolarized framework
+      within the local-density approximation (LDA) for the exchange-correlation functional [47] as implemented
+      in HGH-LDA pseudopotentials [48]
+  - statement: The LA-F6 perylene isomer has a permanent dipole magnitude of 4.96 D.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - LA-F6 perylene 4.96 0.084 0.597 0.602
+    - Density-functional theory (DFT) [45, 46] calculations were carried out in a spin-unpolarized framework
+      within the local-density approximation (LDA) for the exchange-correlation functional [47] as implemented
+      in HGH-LDA pseudopotentials [48]
+  - statement: The SA-F6 perylene isomer has a permanent dipole magnitude of 5.77 D.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - SA-F6 perylene 5.77 0.118 0.157 0.163
+    - Density-functional theory (DFT) [45, 46] calculations were carried out in a spin-unpolarized framework
+      within the local-density approximation (LDA) for the exchange-correlation functional [47] as implemented
+      in HGH-LDA pseudopotentials [48]
+  tokens:
+    input: 16952
+    output: 1403
+  fetched_chars: 56094

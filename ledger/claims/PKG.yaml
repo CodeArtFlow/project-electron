@@ -1,0 +1,58 @@
+claims:
+- id: CLM-PKG-0001
+  topic: PKG
+  statement: HBF-Sim achieves 139.285 GB/s of array-service bandwidth when scaled to 16 channels.
+  sources:
+  - SRC-00034
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-24'
+  created: '2026-09-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    channel_count: 16 channels
+    subarrays_per_channel: 32 subarrays
+    read_latency: 15 µs
+- id: CLM-PKG-0002
+  topic: PKG
+  statement: The captured Qwen3-1.7B decode sequence completes in 249.95 ms during execution in HBF-Sim.
+  sources:
+  - SRC-00034
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-24'
+  created: '2026-09-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    model: Qwen3-1.7B
+    channels: 16 channels
+    erase_latency: 2000 µs
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 249.95
+      unit: ms
+    si_base:
+      value: 0.24995
+      unit: s
+    display:
+      value: 249949999.99999997
+      unit: ns
+    conditions:
+      model: Qwen3-1.7B
+      channels: 16 channels
+      erase_latency: 2000 µs

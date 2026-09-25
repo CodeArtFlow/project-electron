@@ -6,9 +6,9 @@ A contradiction appears here if and only if the data to resolve it is absent, an
 
 ---
 
-## Status — 2026-09-24
+## Status — 2026-09-25
 
-> 88 pair(s) of claims disagree numerically but share no subject context, so they were **not compared** and opened no conflict (`ledger/not-compared.md`). Listed, not hidden: a real disagreement behind mismatched condition keys would show there.
+> 97 pair(s) of claims disagree numerically but share no subject context, so they were **not compared** and opened no conflict (`ledger/not-compared.md`). Listed, not hidden: a real disagreement behind mismatched condition keys would show there.
 
 **0 live contradictions with a named data gap.**
 

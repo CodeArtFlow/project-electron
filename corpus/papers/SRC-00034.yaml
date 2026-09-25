@@ -1,0 +1,72 @@
+id: SRC-00034
+title: 'HBF-Sim: An Extensible HBF Simulator for Large-scale GPU Memory Systems'
+doi: null
+arxiv_id: 2609.29246v1
+url: https://arxiv.org/abs/2609.29246v1
+venue_id: arxiv_api
+authors:
+- name: Yaqi Li
+  affiliation: null
+  corresponding: null
+- name: Jing Wang
+  affiliation: null
+  corresponding: null
+- name: Junfeng Wang
+  affiliation: null
+  corresponding: null
+- name: Long Yang
+  affiliation: null
+  corresponding: null
+- name: Han Yan
+  affiliation: null
+  corresponding: null
+- name: Xiaohu Chai
+  affiliation: null
+  corresponding: null
+- name: Liang Shi
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-24'
+retrieved_date: '2026-09-25'
+access: full_text
+read_scope: Automated reading. The full PDF text (65,254 characters, 14 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.29246v1 on
+  2026-09-25. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Our evaluation shows that array-service bandwidth increases from 8.738 to 139.285 GB/s (15.94
+  ×), with 99.6– 99.99% media occupancy (Figure 6).”
+
+  “We retain GPU backpressure and scale from 1 to 16 channels, with 32 subarrays and active slots per
+  channel, 4,096 admission entries and default media timings.”
+
+  “Figure 6:Media scaling with 32 subarrays and active slots per channel at 15 µs reads.”
+
+  “The sequence takes 352,434,530 GPU cycles (249.95 ms).”
+
+  “We use Qwen3-1.7B [26] to exercise the GPU–HBF path with a real pretrained language model.”
+
+  “One HBF stack provides 16 channels, 512 total subarrays, 512 active-operation slots and 4,096 admission
+  entries.”
+
+  “READ/PROGRAM/ERASE timings are 15/200/2000µs.”'
+method_summary: '“We present HBF-Sim, an extensible, reusable, and faithful HBF simulator integrated with
+  simulated GPUs.”
+
+  “Unless otherwise specified, we use Accel-Sim with a 1.132 GHz GPU core clock and an 850 MHz DRAM clock.”'
+limitations: “ECC, read retry, refresh, and thermal effects are not modeled in the current version.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 19908
+    output: 1185
+  claims_accepted: 2
+  claims_rejected: 0
+  rejected: []
+corrections: []

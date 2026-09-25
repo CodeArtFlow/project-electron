@@ -26,6 +26,18 @@ id: CAND-20260925-0124
 harvested_date: '2026-09-25'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-25'
+  reason: evidence type not established by a verifiable quote (or 'mixed'); no claims extracted, a human
+    reader is needed
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected: []
+  tokens:
+    input: 19244
+    output: 1725
+  fetched_chars: 54341

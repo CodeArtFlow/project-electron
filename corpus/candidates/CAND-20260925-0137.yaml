@@ -23,6 +23,48 @@ id: CAND-20260925-0137
 harvested_date: '2026-09-25'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-25'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For the C2v realization of the α-process, the off-Γ roots reach Γ separately at L = 0.5400P
+      and 0.5225P.
+    reason: the value 0.54 does not appear in any of the claim's quotes
+    quotes:
+    - The Y and X roots reach Γ separately at L≃ 0.5400P and 0.5225P (stars).
+    - Calculated logQ in the (k,L ) plane along Y→ Γ→X .
+    - C2v,A 1,2 grating-on-cavity geometry
+    - α-process schematic.
+  - statement: At Hc = 0.4580P and Lc = 0.5430P, the selected branch follows a Q ~ k^-10 scaling.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''At Hc = 0.4580P
+      and Lc = 0.5430P, shown on linear and logarithmic axes'''
+    quotes:
+    - The selected branch follows k−10 and the reference branch k−6
+    - At Hc = 0.4580P and Lc = 0.5430P, shown on linear and logarithmic axes.
+    - Q(k) at Hc = 0.4580P and Lc = 0.5430P, shown on linear and logarithmic axes.
+    - Hc = 0.4580P
+  - statement: For degenerate modes, the critical geometry (Hc, Lc, R) for C4v,E single-branch criticality
+      is (0.3520, 0.7055, 0.25)P.
+    reason: the value 0.352 does not appear in any of the claim's quotes
+    quotes:
+    - The critical geometry is ( Hc,L c,R ) = (0.3520, 0.7055, 0.25)P .
+    - Top row, C4v,E single-branch criticality
+    - ( Hc,L c,R ) = (0.3520, 0.7055, 0.25)P
+  - statement: For degenerate modes, the critical geometry (Hc, Lc, R) for C6v,E1 band-paired criticality
+      is (0.3750, 0.73534, 0.25)P.
+    reason: the value 0.375 does not appear in any of the claim's quotes
+    quotes:
+    - Here (Hc,L c,R) = (0.3750,0.73534,0.25)P.
+    - Bottom row, C6v,E 1 band-paired criticality
+    - (Hc,L c,R) = (0.3750,0.73534,0.25)P
+  tokens:
+    input: 11206
+    output: 1588
+  fetched_chars: 30560
