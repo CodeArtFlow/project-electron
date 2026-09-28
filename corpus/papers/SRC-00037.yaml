@@ -1,0 +1,132 @@
+id: SRC-00037
+title: Universal Drift Correction for Multidimensional Scanning Microscopy
+doi: null
+arxiv_id: 2609.30866v1
+url: https://arxiv.org/abs/2609.30866v1
+venue_id: arxiv_api
+authors:
+- name: Sangjoon Lee
+  affiliation: null
+  corresponding: null
+- name: William Millsaps
+  affiliation: null
+  corresponding: null
+- name: Dasol Yoon
+  affiliation: null
+  corresponding: null
+- name: Caitlyn Obrero
+  affiliation: null
+  corresponding: null
+- name: Guoliang Hu
+  affiliation: null
+  corresponding: null
+- name: Corrie Barnes
+  affiliation: null
+  corresponding: null
+- name: Cedric Lim
+  affiliation: null
+  corresponding: null
+- name: Andrew Barnum
+  affiliation: null
+  corresponding: null
+- name: Arthur R. C. McCray
+  affiliation: null
+  corresponding: null
+- name: Colin Ophus
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-25'
+retrieved_date: '2026-09-28'
+access: full_text
+read_scope: Automated reading. The full PDF text (47,656 characters, 18 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.30866v1 on
+  2026-09-28. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“For the 2048 × 2048 silicon scan pair shown in Figure 2, the full-resolution implementation
+  required 5.79 s on an NVIDIA RTX PRO 6000 Blackwell GPU, compared with 2440 s for the previous CPU implementation
+  on the same workstation.”
+
+  “NVIDIA RTX PRO 6000 Blackwell GPU”
+
+  “full-resolution implementation”'
+method_summary: '“We therefore implemented batched FFT-based cross-correlation and image resampling on
+  the GPU.”
+
+  “The affine drift rate was found by searching an 11 × 11 grid of row and column rates spaced 0.015 pixels
+  per scan line, then refined on a second pass at 0.003 pixels per scan line, minimizing the mean absolute
+  error between the two frames after low-pass-filtered translation alignment with a softened edge.”'
+limitations: “Weak contrast, low signal-to-noise ratio, or repetitive structures may produce ambiguous
+  alignments even when the optimization converges.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14666
+    output: 2702
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: The CPU implementation of the drift search required 2440 s for the 2048 x 2048 silicon
+      scan pair.
+    reason: the statement contains the number 2048, which none of its quotes contain
+    quotes:
+    - compared with 2440 s for the previous CPU implementation on the same workstation.
+    - 2048 × 2048 silicon scan pair
+    - previous CPU implementation
+  - statement: The multiresolution strategy reduced the drift search execution time to 0.441 s for the
+      2048 x 2048 silicon scan pair on the GPU.
+    reason: the statement contains the number 2048, which none of its quotes contain
+    quotes:
+    - This strategy reduced the correction time from 5.79 s to 0.441 s, more than an order of magnitude
+      faster than the full-resolution GPU search, while recovering the drift rates within 6 .5 × 10−4
+      pixels per scan line.
+    - 2048 × 2048 silicon scan pair
+    - multiresolution strategy
+  - statement: The multiresolution strategy recovered the drift rates within 0.00065 pixels per scan line
+      of the full-resolution search.
+    reason: the statement contains the number 0.00065, which none of its quotes contain
+    quotes:
+    - while recovering the drift rates within 6 .5 × 10−4 pixels per scan line.
+    - multiresolution strategy
+  - statement: The silicon scan pair was acquired over a field of view of 6.74 nm.
+    reason: the statement contains the number 6.74, which none of its quotes contain
+    quotes:
+    - For the 2048 × 2048 silicon scans in Figure 2, acquired over a 6 .74 nm field of view,
+    - 2048 × 2048 silicon scans
+  - statement: The normalized cross-correlation between the fixed structural reference and XEDS HAADF
+      image was -0.012 before drift correction.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Within this mask, the normalized cross-correlation increased from −0.012 before correction to 0.693
+      after affine correction and 0.854 after strip correction.
+    - before correction
+    - XEDS HAADF image
+  - statement: The normalized cross-correlation increased to 0.693 after affine correction for the XEDS
+      HAADF image.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Within this mask, the normalized cross-correlation increased from −0.012 before correction to 0.693
+      after affine correction and 0.854 after strip correction.
+    - after affine correction
+    - XEDS HAADF image
+  - statement: The normalized cross-correlation reached 0.854 after strip correction for the XEDS HAADF
+      image.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Within this mask, the normalized cross-correlation increased from −0.012 before correction to 0.693
+      after affine correction and 0.854 after strip correction.
+    - after strip correction
+    - XEDS HAADF image
+corrections: []

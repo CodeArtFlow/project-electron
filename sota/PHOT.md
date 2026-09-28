@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-09-25.
+Topic code `PHOT`. Last reviewed 2026-09-28.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -78,6 +78,14 @@ Topic code `PHOT`. Last reviewed 2026-09-25.
   - `CLM-PHOT-0023` · grade B · credibility unknown · measured · as of 2026-09-22
   - sources: SRC-00026
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The average measured propagation loss on a processed lithium niobate wafer is 0.27 dB/cm.
+  - `CLM-PHOT-0030` · material LN · grade B · credibility unknown · measured · as of 2026-09-25
+  - sources: SRC-00035
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The lowest measured optical propagation loss on micro-ring resonators near the center of the wafer is 0.21 dB/cm.
+  - `CLM-PHOT-0031` · device_type micro-ring resonators, intrinsic_quality_factor 1.8 million · grade B · credibility unknown · measured · as of 2026-09-25
+  - sources: SRC-00035
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -148,6 +156,6 @@ _None._
 
 ## Evidence base
 
-- claims: 29
-- grades: {'B': 22, 'A': 7}
-- distinct sources: 10
+- claims: 31
+- grades: {'B': 24, 'A': 7}
+- distinct sources: 11

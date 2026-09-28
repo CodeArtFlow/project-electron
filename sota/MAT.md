@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-09-25.
+Topic code `MAT`. Last reviewed 2026-09-28.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -16,6 +16,39 @@ Topic code `MAT`. Last reviewed 2026-09-25.
   - `CLM-MAT-0002` · mechanism optical phonon · grade B · credibility unknown · simulated · as of 2026-09-17
   - sources: SRC-00004
   - ⚙ automated extraction (gemini-3.6-flash; 1 quote(s) verified verbatim against the paper)
+- **0.000214692 fJ** — The calculated defect formation energy for Cr4+ substituting Al in w-AlN under nitrogen-rich conditions is 1.34 eV.
+  - `CLM-MAT-0013` · synthesis_condition Nitrogen-rich · grade B · credibility unknown · simulated · as of 2026-09-25
+  - sources: SRC-00036
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0015, CFL-0016, CFL-0017 — see the open register
+- **0.000310822 fJ** — The calculated defect formation energy for Ru4+ substituting Al in w-AlN under nitrogen-rich conditions is 1.94 eV.
+  - `CLM-MAT-0014` · synthesis_condition Nitrogen-rich · grade B · credibility unknown · simulated · as of 2026-09-25
+  - sources: SRC-00036
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0015 — see the open register
+- **0.000317231 fJ** — The calculated defect formation energy for Rh3+ substituting Al in w-AlN under nitrogen-rich conditions is 1.98 eV.
+  - `CLM-MAT-0015` · synthesis_condition Nitrogen-rich · grade B · credibility unknown · simulated · as of 2026-09-25
+  - sources: SRC-00036
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0016 — see the open register
+- **0.00032364 fJ** — The calculated defect formation energy for Rh2+ substituting Al in w-AlN under nitrogen-rich conditions is 2.02 eV.
+  - `CLM-MAT-0016` · synthesis_condition Nitrogen-rich · grade B · credibility unknown · simulated · as of 2026-09-25
+  - sources: SRC-00036
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0017 — see the open register
+
+### length device
+
+- **0.284 nm** — Statistical analysis of the STM images yields an average bond length 'a' of 2.84 Å in the kagome lattice.
+  - `CLM-MAT-0017` · material Sb monolayer on SiC(0001) · grade B · credibility unknown · measured · as of 2026-09-25
+  - sources: SRC-00038
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0018 — see the open register
+- **0.327 nm** — Statistical analysis of the STM images yields an average bond length 'b' of 3.27 Å in the kagome lattice.
+  - `CLM-MAT-0018` · material Sb monolayer on SiC(0001) · grade B · credibility unknown · measured · as of 2026-09-25
+  - sources: SRC-00038
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0018 — see the open register
 
 ### qualitative
 
@@ -39,6 +72,10 @@ Topic code `MAT`. Last reviewed 2026-09-25.
   - `CLM-MAT-0012` · grade B · credibility unknown · simulated · as of 2026-09-21
   - sources: SRC-00017
   - ⚙ automated extraction (gemini-3.6-flash; 1 quote(s) verified verbatim against the paper)
+- ARPES measurements determine that the valence-band maximum is located approximately 0.75 eV below the Fermi level.
+  - `CLM-MAT-0019` · measurement_method ARPES, material Sb monolayer on SiC(0001) · grade B · credibility unknown · measured · as of 2026-09-25
+  - sources: SRC-00038
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -71,10 +108,23 @@ Topic code `MAT`. Last reviewed 2026-09-25.
 
 ## Live contradictions in this layer
 
-_None._
+Shown here, not in an appendix: a reader of this page must see the disagreement without navigating elsewhere.
+
+- `CFL-0015` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0013, CLM-MAT-0014
+  - missing data: `not yet named`
+- `CFL-0016` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0013, CLM-MAT-0015
+  - missing data: `not yet named`
+- `CFL-0017` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0013, CLM-MAT-0016
+  - missing data: `not yet named`
+- `CFL-0018` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0017, CLM-MAT-0018
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 12
-- grades: {'B': 12}
-- distinct sources: 5
+- claims: 19
+- grades: {'B': 19}
+- distinct sources: 7

@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-09-25.
+Topic code `PROC`. Last reviewed 2026-09-28.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -30,6 +30,10 @@ Topic code `PROC`. Last reviewed 2026-09-25.
   - `CLM-PROC-0002` · hardware NVIDIA Tesla T4 GPU · grade B · credibility unknown · measured · as of 2026-09-22
   - sources: SRC-00023
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **5.79e+09 ns** — The full-resolution GPU implementation of drift search took 5.79 s on an NVIDIA RTX PRO 6000 Blackwell GPU for a 2048 x 2048 silicon scan pair.
+  - `CLM-PROC-0005` · hardware NVIDIA RTX PRO 6000 Blackwell GPU, implementation_type full-resolution implementation · grade B · credibility unknown · measured · as of 2026-09-25
+  - sources: SRC-00037
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -37,6 +41,6 @@ _None._
 
 ## Evidence base
 
-- claims: 4
-- grades: {'B': 4}
-- distinct sources: 2
+- claims: 5
+- grades: {'B': 5}
+- distinct sources: 3

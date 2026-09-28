@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2609.30672v1
 doi: null
-title: Highly Scalable Selectorless Cryogenic Memory Array Using Ferroelectric Josephson
-  Field-Effect Transistors
+title: Highly Scalable Selectorless Cryogenic Memory Array Using Ferroelectric Josephson Field-Effect
+  Transistors
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-09-25'
@@ -23,6 +23,42 @@ id: CAND-20260928-0124
 harvested_date: '2026-09-28'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-28'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The experimental Fe-JoFET device with a 5 µm width and 600 nm length operates at a temperature
+      of 50 mK.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - The experimental data used for validation are obtained from Ref.20 using a Fe–JoFET device with
+      a width of 5 µm and a length of 600 nm at an operating temperature of 50 mK.
+    - with a width of 5 µm
+    - a length of 600 nm
+  - statement: The simulated read power per cell for the proposed nonvolatile Fe-JoFET memory array is
+      approximately 10.55 fW at 50 mK.
+    reason: the statement contains the number 10.55, which none of its quotes contain
+    quotes:
+    - 'This work nonvolatile Yes ∼ 3 Read: 10 .55 fW; Write: No power Yes No No 50 mK'
+    - Using the developed compact model (discussed in Section IIIA), we simulate the write and read operations
+      in HSPICE to verify the functionality of the proposed memory array.
+    - 'Read: 10 .55 fW'
+    - 50 mK
+  - statement: The cell area of the proposed nonvolatile Fe-JoFET memory array is approximately 3 µm2.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - 'This work nonvolatile Yes ∼ 3 Read: 10 .55 fW; Write: No power Yes No No 50 mK'
+    - This work nonvolatile
+  tokens:
+    input: 10893
+    output: 1075
+  fetched_chars: 32959

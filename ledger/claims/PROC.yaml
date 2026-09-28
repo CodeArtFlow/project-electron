@@ -135,3 +135,39 @@ claims:
     conditions:
       material: HEA-NP
       defocus: 0 nm
+- id: CLM-PROC-0005
+  topic: PROC
+  statement: The full-resolution GPU implementation of drift search took 5.79 s on an NVIDIA RTX PRO 6000
+    Blackwell GPU for a 2048 x 2048 silicon scan pair.
+  sources:
+  - SRC-00037
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-25'
+  created: '2026-09-28'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    hardware: NVIDIA RTX PRO 6000 Blackwell GPU
+    implementation_type: full-resolution implementation
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 5.79
+      unit: s
+    si_base:
+      value: 5.79
+      unit: s
+    display:
+      value: 5789999999.999999
+      unit: ns
+    conditions:
+      hardware: NVIDIA RTX PRO 6000 Blackwell GPU
+      implementation_type: full-resolution implementation
