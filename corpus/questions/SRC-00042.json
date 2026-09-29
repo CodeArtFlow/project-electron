@@ -1,0 +1,77 @@
+{
+  "arxiv_id": "2609.34351v1",
+  "claims": {
+    "CLM-ARCH-0031": {
+      "evidence_spans": [
+        "Experimental results show that PolyCIM delivers up to4× improvement in macro utilization and3.2× speedup, effectively bridging the gap between modern DNN operators and CIM architectures.",
+        "Experimental results show that PolyCIM delivers up to4× improvement in macro utilization and3.2× speedup, effectively bridging the gap between modern DNN operators and CIM architectures.",
+        "We measure both macro utilization and execution speedup through cycle-accurate simulation."
+      ],
+      "statement": "PolyCIM delivers up to 4x improvement in macro utilization.",
+      "terms": []
+    },
+    "CLM-ARCH-0032": {
+      "evidence_spans": [
+        "Experimental results show that PolyCIM delivers up to4× improvement in macro utilization and3.2× speedup, effectively bridging the gap between modern DNN operators and CIM architectures.",
+        "Experimental results show that PolyCIM delivers up to4× improvement in macro utilization and3.2× speedup, effectively bridging the gap between modern DNN operators and CIM architectures.",
+        "We measure both macro utilization and execution speedup through cycle-accurate simulation."
+      ],
+      "statement": "PolyCIM achieves up to 3.2x speedup.",
+      "terms": []
+    },
+    "CLM-ARCH-0033": {
+      "evidence_spans": [
+        "PolyCIM achieves an average speedup of 2.1× across all three models, with the primary acceleration stemming from optimized DWConv operations.",
+        "PolyCIM achieves an average speedup of 2.1× across all three models, with the primary acceleration stemming from optimized DWConv operations.",
+        "To evaluate the end-to-end performance benefits, we also perform experiments on three complete DNN models with modern operators, including ConvNeXt-Tiny (CT), EfficientNet-B0 (EF), and MobileNetV2 (MN).",
+        "We measure both macro utilization and execution speedup through cycle-accurate simulation."
+      ],
+      "statement": "PolyCIM achieves an average speedup of 2.1x across three evaluated DNN models.",
+      "terms": []
+    },
+    "CLM-ARCH-0034": {
+      "evidence_spans": [
+        "PolyCIM achieves speedups ranging from1 .9× to8 .2×, with an average speedup of4.9×.",
+        "We measure both macro utilization and execution speedup through cycle-accurate simulation."
+      ],
+      "statement": "PolyCIM achieves an average speedup of 4.9x across evaluated convolution operators.",
+      "terms": []
+    },
+    "CLM-ARCH-0035": {
+      "evidence_spans": [
+        "Without affine scheduling, latency degrades by 9.7× as non-axial reuse patterns remain hidden, validating our core insight that these patterns are fundamental to modern operator efficiency.",
+        "To quantify the contribution of each optimization component, we conduct an ablation study with the C1 operator by selectively disabling individual techniques.",
+        "Without affine scheduling, latency degrades by 9.7× as non-axial reuse patterns remain hidden, validating our core insight that these patterns are fundamental to modern operator efficiency.",
+        "We measure both macro utilization and execution speedup through cycle-accurate simulation."
+      ],
+      "statement": "Without affine scheduling, latency degrades by 9.7x on the C1 operator.",
+      "terms": []
+    },
+    "CLM-ARCH-0036": {
+      "evidence_spans": [
+        "Disabling pre-tiling causes a6.2× slowdown due to uncontrolled iteration space expansion after affine transformation.",
+        "To quantify the contribution of each optimization component, we conduct an ablation study with the C1 operator by selectively disabling individual techniques.",
+        "Disabling pre-tiling causes a6.2× slowdown due to uncontrolled iteration space expansion after affine transformation.",
+        "We measure both macro utilization and execution speedup through cycle-accurate simulation."
+      ],
+      "statement": "Disabling pre-tiling causes a 6.2x slowdown on the C1 operator.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "We implement PolyCIM in Python using ISL for polyhedral optimization and the Gurobi solver for mixed-integer optimization.",
+    "While PolyCIM is architecture-agnostic and can target various CIM backends, we validate our approach by generating domain-specific language IRs for the CIMFlow [16] framework, a CIM compilation and simulation infrastructure with complete instruction set architecture support.",
+    "We measure both macro utilization and execution speedup through cycle-accurate simulation.",
+    "The absolute utilization ceilings fall slightly on this larger macro, most visibly for C4 which drops from 75% to 66%, likely because the additional rows are harder to fill productively once the operator dimensions no longer evenly divide them."
+  ],
+  "generated": "2026-09-29",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00042",
+  "text_chars": 50999,
+  "text_sha256": "f9dcef8ad5189d6ba47cadc3fa47c72c010849ba878f7918c7897dd5b7d98738"
+}

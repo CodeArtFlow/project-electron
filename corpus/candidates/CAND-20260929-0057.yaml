@@ -29,6 +29,90 @@ id: CAND-20260929-0057
 harvested_date: '2026-09-29'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-29'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Over CPU-only execution, Torch-PIM achieves up to 8.6x speedup on tensor operators across
+      PIM configurations of 32 to 128 cores.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Across PIM
+      configurations of 32 to 128 cores, Torch-PIM’s offloading d'''
+    quotes:
+    - Across PIM configurations of 32 to 128 cores, Torch-PIM’s offloading decisions yield speedups of
+      up to8.6× on tensor operators,2.9× on MLP,4.4× on Attention,5.1× on GPT-J-6B, and3.6×on LLaMA-7B
+      over CPU-only execution.
+    - The CPU side is a real Ice Lake machine, a high-performance server processor, and all host-side
+      times are measured on it bare-metal. The PIM performance is measured on the PIMProf [39] simulator,
+      which is on the Sniper simulator [4].
+    - up to8.6× on tensor operators
+    - over CPU-only execution.
+  - statement: Over CPU-only execution, Torch-PIM yields a 2.9x speedup on MLP across PIM configurations
+      of 32 to 128 cores.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Across PIM
+      configurations of 32 to 128 cores, Torch-PIM’s offloading d'''
+    quotes:
+    - Across PIM configurations of 32 to 128 cores, Torch-PIM’s offloading decisions yield speedups of
+      up to8.6× on tensor operators,2.9× on MLP,4.4× on Attention,5.1× on GPT-J-6B, and3.6×on LLaMA-7B
+      over CPU-only execution.
+    - The CPU side is a real Ice Lake machine, a high-performance server processor, and all host-side
+      times are measured on it bare-metal. The PIM performance is measured on the PIMProf [39] simulator,
+      which is on the Sniper simulator [4].
+    - 2.9× on MLP
+    - over CPU-only execution.
+  - statement: Over CPU-only execution, Torch-PIM achieves a 4.4x speedup on Attention across PIM configurations
+      of 32 to 128 cores.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Across PIM
+      configurations of 32 to 128 cores, Torch-PIM’s offloading d'''
+    quotes:
+    - Across PIM configurations of 32 to 128 cores, Torch-PIM’s offloading decisions yield speedups of
+      up to8.6× on tensor operators,2.9× on MLP,4.4× on Attention,5.1× on GPT-J-6B, and3.6×on LLaMA-7B
+      over CPU-only execution.
+    - The CPU side is a real Ice Lake machine, a high-performance server processor, and all host-side
+      times are measured on it bare-metal. The PIM performance is measured on the PIMProf [39] simulator,
+      which is on the Sniper simulator [4].
+    - 4.4× on Attention
+    - over CPU-only execution.
+  - statement: Over CPU-only execution, Torch-PIM yields a 5.1x speedup on GPT-J-6B across PIM configurations
+      of 32 to 128 cores.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Across PIM
+      configurations of 32 to 128 cores, Torch-PIM’s offloading d'''
+    quotes:
+    - Across PIM configurations of 32 to 128 cores, Torch-PIM’s offloading decisions yield speedups of
+      up to8.6× on tensor operators,2.9× on MLP,4.4× on Attention,5.1× on GPT-J-6B, and3.6×on LLaMA-7B
+      over CPU-only execution.
+    - The CPU side is a real Ice Lake machine, a high-performance server processor, and all host-side
+      times are measured on it bare-metal. The PIM performance is measured on the PIMProf [39] simulator,
+      which is on the Sniper simulator [4].
+    - 5.1× on GPT-J-6B
+    - over CPU-only execution.
+  - statement: Over CPU-only execution, Torch-PIM yields a 3.6x speedup on LLaMA-7B across PIM configurations
+      of 32 to 128 cores.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Across PIM
+      configurations of 32 to 128 cores, Torch-PIM’s offloading d'''
+    quotes:
+    - Across PIM configurations of 32 to 128 cores, Torch-PIM’s offloading decisions yield speedups of
+      up to8.6× on tensor operators,2.9× on MLP,4.4× on Attention,5.1× on GPT-J-6B, and3.6×on LLaMA-7B
+      over CPU-only execution.
+    - The CPU side is a real Ice Lake machine, a high-performance server processor, and all host-side
+      times are measured on it bare-metal. The PIM performance is measured on the PIMProf [39] simulator,
+      which is on the Sniper simulator [4].
+    - 3.6×on LLaMA-7B
+    - over CPU-only execution.
+  - statement: The in-order PIM compute unit operates at a clock frequency of 350 MHz.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The compute
+      unit of a commercial PIM device is an in-order 32-bit RISC'''
+    quotes:
+    - The compute unit of a commercial PIM device is an in-order 32-bit RISC core running at350 MHz that
+      requires eleven hardware threads to fill its pipeline.
+    - The compute unit of a commercial PIM device is an in-order 32-bit RISC core running at350 MHz
+  tokens:
+    input: 20059
+    output: 2401
+  fetched_chars: 60404

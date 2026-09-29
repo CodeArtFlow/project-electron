@@ -26,6 +26,67 @@ id: CAND-20260929-0071
 harvested_date: '2026-09-29'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-29'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: On the ISPD2005 benchmark, C2FPlace reduces HPWL by an average of 17.82% compared to EGPlace.
+    reason: the statement contains the number 005, which none of its quotes contain
+    quotes:
+    - Experiments on the ISPD2005 benchmark show that C2FPlace reduces HPWL by 17.82% over EGPlace and
+      17.86% over RollPlace on average.
+  - statement: On the ISPD2005 benchmark, C2FPlace reduces HPWL by an average of 17.86% compared to RollPlace.
+    reason: the statement contains the number 005, which none of its quotes contain
+    quotes:
+    - Experiments on the ISPD2005 benchmark show that C2FPlace reduces HPWL by 17.82% over EGPlace and
+      17.86% over RollPlace on average.
+  - statement: For the adaptec1 benchmark, C2FPlace with critical macro tuning achieves a mean HPWL of
+      5.60 x 10^5.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - C2FPlace w/ 5.60±0.17 29.06±1.90 51.06±2.05 43.39±1.22 2.04±0.01 7.43±0.27 37.90±4.34 56.18±1.29
+    - 'Table 2: HPWL (×105) comparison of different macro placement methods on the ISPD2005 benchmark.'
+    - Method adaptec1 adaptec2 adaptec3 adaptec4 bigblue1 bigblue2 bigblue3 bigblue4
+    - “w/” and “w/o” denote the settings with and without Stage 3 critical macro tuning.
+  - statement: For the adaptec2 benchmark, C2FPlace with critical macro tuning achieves a mean HPWL of
+      29.06 x 10^5.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - C2FPlace w/ 5.60±0.17 29.06±1.90 51.06±2.05 43.39±1.22 2.04±0.01 7.43±0.27 37.90±4.34 56.18±1.29
+    - 'Table 2: HPWL (×105) comparison of different macro placement methods on the ISPD2005 benchmark.'
+    - Method adaptec1 adaptec2 adaptec3 adaptec4 bigblue1 bigblue2 bigblue3 bigblue4
+    - “w/” and “w/o” denote the settings with and without Stage 3 critical macro tuning.
+  - statement: On the ICCAD2025 benchmark, Stage 3 critical macro tuning brings an average per-circuit
+      placement HPWL reduction of 2.11%.
+    reason: the statement contains the number 025, which none of its quotes contain
+    quotes:
+    - Compared with C2FPlace without Stage 3, it reduces placement HPWL by 2.11% on average, and the corresponding
+      average reduction after detailed placement is 1.62%.
+    - To assess the scalability and downstream physical design quality of C2FPlace, we further evaluate
+      it on the ICCAD2025 benchmark.
+  - statement: On the ICCAD2025 benchmark, Stage 3 critical macro tuning reduces average detailed placement
+      HPWL by 1.62%.
+    reason: the statement contains the number 025, which none of its quotes contain
+    quotes:
+    - Compared with C2FPlace without Stage 3, it reduces placement HPWL by 2.11% on average, and the corresponding
+      average reduction after detailed placement is 1.62%.
+    - To assess the scalability and downstream physical design quality of C2FPlace, we further evaluate
+      it on the ICCAD2025 benchmark.
+  - statement: On average across the ISPD2005 benchmarks, Stage 3 brings a 0.31% HPWL reduction compared
+      to without Stage 3.
+    reason: the statement contains the number 005, which none of its quotes contain
+    quotes:
+    - On average, Stage 3 brings a 0.31% HPWL reduction compared to without Stage 3.
+    - Furthermore, we perform ablation experiments to evaluate the contribution of Stage 3. On average,
+      Stage 3 brings a 0.31% HPWL reduction compared to without Stage 3.
+  tokens:
+    input: 22858
+    output: 2853
+  fetched_chars: 61100

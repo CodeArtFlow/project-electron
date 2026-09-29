@@ -738,14 +738,14 @@ claims:
     public: false
     fields:
     - conditions
-    reason: 'CFL-0014: conditions lacked anything identifying which quantity this time value is a
-      value OF, so it shared subject (concurrency_n_a=48) with CLM-ARCH-0020''s unrelated
-      time-between-tokens metric from the same paper (SRC-00025) and opened a false conflict - a
-      tiering overhead component and an end-to-end per-token latency are not the same measurement
-      just because both ran at Na=48. component added to both claims to distinguish them; Na=48 is
-      the workload operating point, not the subject. Digest 2026-09-23 cited the unscoped
-      conditions and the resulting conflict, but never reached readers - the gate blocked that
-      day''s deploy on this conflict, so the site stayed on the prior build.'
+    reason: 'CFL-0014: conditions lacked anything identifying which quantity this time value is a value
+      OF, so it shared subject (concurrency_n_a=48) with CLM-ARCH-0020''s unrelated time-between-tokens
+      metric from the same paper (SRC-00025) and opened a false conflict - a tiering overhead component
+      and an end-to-end per-token latency are not the same measurement just because both ran at Na=48.
+      component added to both claims to distinguish them; Na=48 is the workload operating point, not the
+      subject. Digest 2026-09-23 cited the unscoped conditions and the resulting conflict, but never reached
+      readers - the gate blocked that day''s deploy on this conflict, so the site stayed on the prior
+      build.'
   quantity:
     quantity: time
     bound: exact
@@ -788,14 +788,13 @@ claims:
     public: false
     fields:
     - conditions
-    reason: 'CFL-0014: conditions lacked anything identifying which quantity this time value is a
-      value OF, so it shared subject (concurrency_n_a=48) with CLM-ARCH-0019''s unrelated HBF
-      tiering overhead from the same paper (SRC-00025) and opened a false conflict - an end-to-end
-      per-token latency and a memory-tier overhead component are not the same measurement just
-      because both ran at Na=48. component added to both claims to distinguish them; Na=48 is the
-      workload operating point, not the subject. Digest 2026-09-23 cited the unscoped conditions
-      and the resulting conflict, but never reached readers - the gate blocked that day''s deploy
-      on this conflict, so the site stayed on the prior build.'
+    reason: 'CFL-0014: conditions lacked anything identifying which quantity this time value is a value
+      OF, so it shared subject (concurrency_n_a=48) with CLM-ARCH-0019''s unrelated HBF tiering overhead
+      from the same paper (SRC-00025) and opened a false conflict - an end-to-end per-token latency and
+      a memory-tier overhead component are not the same measurement just because both ran at Na=48. component
+      added to both claims to distinguish them; Na=48 is the workload operating point, not the subject.
+      Digest 2026-09-23 cited the unscoped conditions and the resulting conflict, but never reached readers
+      - the gate blocked that day''s deploy on this conflict, so the site stayed on the prior build.'
   quantity:
     quantity: time
     bound: exact
@@ -920,3 +919,321 @@ claims:
     verified_quotes: 3
   conditions:
     test_type: synthetic PA-model validation
+- id: CLM-ARCH-0025
+  topic: ARCH
+  statement: On 15 CPython server workloads, replacing a 16 KBITTAGE baseline with a 14 KBITTAGE augmented
+    with a 1.3 KB lookahead engine reduces bytecode jump MPKI by 73.7%.
+  sources:
+  - SRC-00040
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-28'
+  created: '2026-09-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    benchmark_suite: 15 CPython server workloads
+    baseline_predictor: 16 KBITTAGE
+    proposed_predictor: 14 KBITTAGE augmented with the engine
+    engine_size: 1.3 KB
+- id: CLM-ARCH-0026
+  topic: ARCH
+  statement: On 15 CPython server workloads, replacing a 16 KBITTAGE baseline with a 14 KBITTAGE augmented
+    with a 1.3 KB lookahead engine yields a 3.2% harmonic-mean IPC speedup.
+  sources:
+  - SRC-00040
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-28'
+  created: '2026-09-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    benchmark_suite: 15 CPython server workloads
+    baseline_predictor: 16 KBITTAGE
+    proposed_predictor: 14 KBITTAGE augmented with the engine
+    engine_size: 1.3 KB
+- id: CLM-ARCH-0027
+  topic: ARCH
+  statement: In gem5, scaling a 16 KB ITTAGE to 64 KB yields a harmonic-mean IPC improvement of 5.1% for
+    the CPython workloads.
+  sources:
+  - SRC-00040
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-28'
+  created: '2026-09-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    simulator: gem5
+    baseline_predictor: 3,392-entry 16 KB ITTAGE
+- id: CLM-ARCH-0028
+  topic: ARCH
+  statement: In gem5, scaling a 16 KB ITTAGE to 64 KB yields an IPC improvement of up to 11.2% for the
+    CPython workloads.
+  sources:
+  - SRC-00040
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-28'
+  created: '2026-09-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    simulator: gem5
+    baseline_predictor: 3,392-entry 16 KB ITTAGE
+- id: CLM-ARCH-0029
+  topic: ARCH
+  statement: Under an iso-storage comparison, replacing 2 KB of a 16 KB ITTAGE baseline with the lookahead
+    engine improves harmonic-mean IPC by up to 7.8%.
+  sources:
+  - SRC-00040
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-28'
+  created: '2026-09-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    baseline_predictor: 16 KB ITTAGE
+    replaced_capacity: 2 KB
+- id: CLM-ARCH-0030
+  topic: ARCH
+  statement: The proposed lookahead engine reduces overall branch MPKI by 23.3% relative to the baseline.
+  sources:
+  - SRC-00040
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-28'
+  created: '2026-09-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    proposed_predictor: 14 KBITTAGE + 1.3 KB lookahead engine
+- id: CLM-ARCH-0031
+  topic: ARCH
+  statement: PolyCIM delivers up to 4x improvement in macro utilization.
+  sources:
+  - SRC-00042
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-28'
+  created: '2026-09-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    framework: PolyCIM
+- id: CLM-ARCH-0032
+  topic: ARCH
+  statement: PolyCIM achieves up to 3.2x speedup.
+  sources:
+  - SRC-00042
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-28'
+  created: '2026-09-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    framework: PolyCIM
+- id: CLM-ARCH-0033
+  topic: ARCH
+  statement: PolyCIM achieves an average speedup of 2.1x across three evaluated DNN models.
+  sources:
+  - SRC-00042
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-28'
+  created: '2026-09-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    framework: PolyCIM
+    evaluated_models: three complete DNN models with modern operators, including ConvNeXt-Tiny (CT), EfficientNet-B0
+      (EF), and MobileNetV2 (MN)
+- id: CLM-ARCH-0034
+  topic: ARCH
+  statement: PolyCIM achieves an average speedup of 4.9x across evaluated convolution operators.
+  sources:
+  - SRC-00042
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-28'
+  created: '2026-09-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-ARCH-0035
+  topic: ARCH
+  statement: Without affine scheduling, latency degrades by 9.7x on the C1 operator.
+  sources:
+  - SRC-00042
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-28'
+  created: '2026-09-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    operator: C1
+    ablation_setting: Without affine scheduling
+- id: CLM-ARCH-0036
+  topic: ARCH
+  statement: Disabling pre-tiling causes a 6.2x slowdown on the C1 operator.
+  sources:
+  - SRC-00042
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-28'
+  created: '2026-09-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    operator: C1
+    ablation_setting: Disabling pre-tiling
+- id: CLM-ARCH-0037
+  topic: ARCH
+  statement: The synthesized SRAM-PIM subsystem consumes 0.787 W of power.
+  sources:
+  - SRC-00044
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-28'
+  created: '2026-09-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    component: synthesized SRAM-PIM subsystem
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.787
+      unit: W
+    si_base:
+      value: 0.787
+      unit: W
+    display:
+      value: 0.787
+      unit: W
+    conditions:
+      component: synthesized SRAM-PIM subsystem
+- id: CLM-ARCH-0038
+  topic: ARCH
+  statement: The added compute and buffer logic in HBM-PIM consumes 9.599 W of power.
+  sources:
+  - SRC-00044
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-28'
+  created: '2026-09-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    component: added compute and buffer logic in HBM-PIM
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 9.599
+      unit: W
+    si_base:
+      value: 9.599
+      unit: W
+    display:
+      value: 9.599
+      unit: W
+    conditions:
+      component: added compute and buffer logic in HBM-PIM
+- id: CLM-ARCH-0039
+  topic: ARCH
+  statement: The optimized two-phase TP+EP expert mapping strategy achieves a 1.89x speedup over the EP
+    baseline.
+  sources:
+  - SRC-00044
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-28'
+  created: '2026-09-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    mapping_strategy: optimized two-phase TP+EP mapping
+    baseline: EP baseline

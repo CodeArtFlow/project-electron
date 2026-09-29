@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-09-28.
+Topic code `DEV`. Last reviewed 2026-09-29.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -46,6 +46,18 @@ Topic code `DEV`. Last reviewed 2026-09-28.
   - `CLM-DEV-0011` · model periodic SOC modulation, ribbon_width above approximately 11 nm · grade B · credibility unknown · simulated · as of 2026-09-22
   - sources: SRC-00024
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The phase-only SIM-D 2NN with phase uncertainty standard deviation sigma_p = 0.05 rad achieves a simulated accuracy of 87.58% +/- 0.7% in the binary task.
+  - `CLM-DEV-0014` · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00041
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The phase-only SIM-D 2NN with phase uncertainty standard deviation sigma_p = 0.1 rad achieves a simulated accuracy of 86.32% +/- 1.2% in the binary task.
+  - `CLM-DEV-0015` · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00041
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- A phase and amplitude SIM-D 2NN variant achieves 90.70% accuracy on the binary terrain classification task.
+  - `CLM-DEV-0016` · model SIM-D2NN(Phase & Amplitude) · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00041
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -60,6 +72,6 @@ _None._
 
 ## Evidence base
 
-- claims: 10
-- grades: {'B': 10}
-- distinct sources: 5
+- claims: 13
+- grades: {'B': 13}
+- distinct sources: 6

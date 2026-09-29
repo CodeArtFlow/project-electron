@@ -1,0 +1,131 @@
+id: SRC-00044
+title: 'SPIMOE: Exploiting Hybrid Sparsity for Reasoning MoE Inference on Heterogeneous PIM Architectures'
+doi: null
+arxiv_id: 2609.34612v1
+url: https://arxiv.org/abs/2609.34612v1
+venue_id: arxiv_api
+authors:
+- name: Rubing Yang
+  affiliation: null
+  corresponding: null
+- name: Cenlin Duan
+  affiliation: null
+  corresponding: null
+- name: Yingjie Qi
+  affiliation: null
+  corresponding: null
+- name: Xiaolin He
+  affiliation: null
+  corresponding: null
+- name: Xiao Ma
+  affiliation: null
+  corresponding: null
+- name: Jianlei Yang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-28'
+retrieved_date: '2026-09-29'
+access: full_text
+read_scope: Automated reading. The full PDF text (52,991 characters, 9 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.34612v1 on
+  2026-09-29. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The synthesized SRAM-PIM subsystem occupies 183.2 mm2 and consumes 0.787 W, while the added
+  compute and buffer logic in HBM-PIM occupies 0.268 mm 2 area and consumes 9.599 W.”
+
+  “synthesized SRAM-PIM subsystem”
+
+  “The SRAM-PIM subsystem is modeled using our in-house CIMFlow framework [37], with digital modules implemented
+  in Verilog HDL and synthesized using Synopsys Design Compiler at 12 nm for area and power estimation.”
+
+  “added compute and buffer logic in HBM-PIM”
+
+  “its PUs and global buffers are also synthesized at 12 nm.”
+
+  “The optimized two-phase TP+EP mapping achieves 1.89× speedup.”
+
+  “optimized two-phase TP+EP mapping”
+
+  “normalized to the EP baseline”
+
+  “Our simulation infrastructure builds upon the framework developed for our prior heterogeneous PIM work,
+  HPIM [36], and is extended to model SPIMOE-specific mechanisms.”'
+method_summary: '“Our simulation infrastructure builds upon the framework developed for our prior heterogeneous
+  PIM work, HPIM [36], and is extended to model SPIMOE-specific mechanisms.”
+
+  “The SRAM-PIM subsystem is modeled using our in-house CIMFlow framework [37], with digital modules implemented
+  in Verilog HDL and synthesized using Synopsys Design Compiler at 12 nm for area and power estimation.”
+
+  “The HBM-PIM subsystem follows the bank-level PIM organization of Newton [ 30] and is modeled using
+  an extended DRAMsim3 [38] under the HBM3 specification [39]; its PUs and global buffers are also synthesized
+  at 12 nm.”
+
+  “The 4 × 8 mesh NoC is modeled using an extended Noxim [40].”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 18060
+    output: 2824
+  claims_accepted: 3
+  claims_rejected: 5
+  rejected:
+  - statement: SPIMOE achieves an end-to-end speedup of up to 8.35x over an NVIDIA A100 GPU.
+    reason: the statement contains the number 8.35, which none of its quotes contain
+    quotes:
+    - Evaluations show that SPIMOE achieves up to 8 .35× end-to-end speedup over an NVIDIA A100 GPU and
+      3 .33× speedup in MoE FFN execution over PIMoE, while preserving reasoning accuracy comparable to
+      full-attention baselines.
+    - Our simulation infrastructure builds upon the framework developed for our prior heterogeneous PIM
+      work, HPIM [36], and is extended to model SPIMOE-specific mechanisms.
+    - NVIDIA A100 GPU
+  - statement: SPIMOE achieves up to a 3.33x speedup in MoE FFN execution compared to PIMoE.
+    reason: the statement contains the number 3.33, which none of its quotes contain
+    quotes:
+    - Evaluations show that SPIMOE achieves up to 8 .35× end-to-end speedup over an NVIDIA A100 GPU and
+      3 .33× speedup in MoE FFN execution over PIMoE, while preserving reasoning accuracy comparable to
+      full-attention baselines.
+    - Our simulation infrastructure builds upon the framework developed for our prior heterogeneous PIM
+      work, HPIM [36], and is extended to model SPIMOE-specific mechanisms.
+    - over PIMoE
+    - MoE FFN execution
+  - statement: For the Qwen3-30B-A3B model at batch size 8 and sequence length 256, SPIMOE achieves an
+      8.35x speedup over the NVIDIA A100 baseline.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''at batch
+      size 8 with sequence length 256, Qwen3-30B-A3B achieves 8.35×'''
+    quotes:
+    - at batch size 8 with sequence length 256, Qwen3-30B-A3B achieves 8.35× speedup, and Phi-mini-MoE-instruct
+      achieves 7.08× speedup over the A100 baseline.
+    - Our simulation infrastructure builds upon the framework developed for our prior heterogeneous PIM
+      work, HPIM [36], and is extended to model SPIMOE-specific mechanisms.
+    - Qwen3-30B-A3B
+    - batch size 8
+  - statement: For the Phi-mini-MoE-instruct model at batch size 8 and sequence length 256, SPIMOE achieves
+      a 7.08x speedup over the A100 baseline.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''at batch
+      size 8 with sequence length 256, Qwen3-30B-A3B achieves 8.35×'''
+    quotes:
+    - at batch size 8 with sequence length 256, Qwen3-30B-A3B achieves 8.35× speedup, and Phi-mini-MoE-instruct
+      achieves 7.08× speedup over the A100 baseline.
+    - Our simulation infrastructure builds upon the framework developed for our prior heterogeneous PIM
+      work, HPIM [36], and is extended to model SPIMOE-specific mechanisms.
+    - Phi-mini-MoE-instruct
+    - batch size 8
+  - statement: During GEMV execution, the steady-state HBM-PIM temperature is approximately 46.7 °C.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Thermal analysis
+      shows a steady-state HBM-PIM temperature of approxima'''
+    quotes:
+    - Thermal analysis shows a steady-state HBM-PIM temperature of approximately 46.7 ◦C during GEMV execution.
+    - The HBM-PIM subsystem follows the bank-level PIM organization of Newton [ 30] and is modeled using
+      an extended DRAMsim3 [38] under the HBM3 specification [39]; its PUs and global buffers are also
+      synthesized at 12 nm.
+    - GEMV execution
+    - HBM-PIM
+corrections: []

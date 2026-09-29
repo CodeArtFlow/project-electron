@@ -1,0 +1,97 @@
+id: SRC-00042
+title: 'PolyCIM: Improving Data Reuse in Digital CIM Accelerators with Polyhedral-Based Compilation'
+doi: null
+arxiv_id: 2609.34351v1
+url: https://arxiv.org/abs/2609.34351v1
+venue_id: arxiv_api
+authors:
+- name: Yingjie Qi
+  affiliation: null
+  corresponding: null
+- name: Cenlin Duan
+  affiliation: null
+  corresponding: null
+- name: Yiou Wang
+  affiliation: null
+  corresponding: null
+- name: Yikun Wang
+  affiliation: null
+  corresponding: null
+- name: Xiaolin He
+  affiliation: null
+  corresponding: null
+- name: Weisheng Zhao
+  affiliation: null
+  corresponding: null
+- name: Jianlei Yang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-28'
+retrieved_date: '2026-09-29'
+access: full_text
+read_scope: Automated reading. The full PDF text (50,999 characters, 9 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.34351v1 on
+  2026-09-29. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Experimental results show that PolyCIM delivers up to4× improvement in macro utilization and3.2×
+  speedup, effectively bridging the gap between modern DNN operators and CIM architectures.”
+
+  “We measure both macro utilization and execution speedup through cycle-accurate simulation.”
+
+  “PolyCIM achieves an average speedup of 2.1× across all three models, with the primary acceleration
+  stemming from optimized DWConv operations.”
+
+  “To evaluate the end-to-end performance benefits, we also perform experiments on three complete DNN
+  models with modern operators, including ConvNeXt-Tiny (CT), EfficientNet-B0 (EF), and MobileNetV2 (MN).”
+
+  “PolyCIM achieves speedups ranging from1 .9× to8 .2×, with an average speedup of4.9×.”
+
+  “Without affine scheduling, latency degrades by 9.7× as non-axial reuse patterns remain hidden, validating
+  our core insight that these patterns are fundamental to modern operator efficiency.”
+
+  “To quantify the contribution of each optimization component, we conduct an ablation study with the
+  C1 operator by selectively disabling individual techniques.”
+
+  “Disabling pre-tiling causes a6.2× slowdown due to uncontrolled iteration space expansion after affine
+  transformation.”'
+method_summary: '“We implement PolyCIM in Python using ISL for polyhedral optimization and the Gurobi
+  solver for mixed-integer optimization.”
+
+  “While PolyCIM is architecture-agnostic and can target various CIM backends, we validate our approach
+  by generating domain-specific language IRs for the CIMFlow [16] framework, a CIM compilation and simulation
+  infrastructure with complete instruction set architecture support.”
+
+  “We measure both macro utilization and execution speedup through cycle-accurate simulation.”'
+limitations: “The absolute utilization ceilings fall slightly on this larger macro, most visibly for C4
+  which drops from 75% to 66%, likely because the additional rows are harder to fill productively once
+  the operator dimensions no longer evenly divide them.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 15860
+    output: 2297
+  claims_accepted: 6
+  claims_rejected: 2
+  rejected:
+  - statement: ConvNeXt-Tiny achieves a speedup of 3.2x with PolyCIM.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''ConvNeXt-Tiny
+      exhibits the highest speedup at3 .2×, due to its larger '''
+    quotes:
+    - ConvNeXt-Tiny exhibits the highest speedup at3 .2×, due to its larger proportion of DW-Conv computations.
+    - We measure both macro utilization and execution speedup through cycle-accurate simulation.
+    - PolyCIM achieves an average speedup of 2.1× across all three models, with the primary acceleration
+      stemming from optimized DWConv operations.
+  - statement: PolyCIM achieves a speedup of 8.2x on operator C2 with PMAC configuration of 64x64.
+    reason: the statement contains the number 8.2, which none of its quotes contain
+    quotes:
+    - The same consistency carries over to the64× 64configuration, where PolyCIM still improves on the
+      im2col baseline for every operator and delivers the single highest speedup of8 .2× on C2.
+    - We measure both macro utilization and execution speedup through cycle-accurate simulation.
+corrections: []

@@ -22,6 +22,79 @@ id: CAND-20260929-0084
 harvested_date: '2026-09-29'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-29'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: In a suspended X-cut LN waveguide with a TE00 optical mode at a wavelength of 1500 nm,
+      the peak normalized backward Brillouin gain for an electromechanical mode
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - The spectrum is confirmed to be highly angle dependent, with a peak gain ofG B/Qm = 0.56W−1 m−1.
+    - Lithium Niobate (LN) is a ferroelectric material with large linear electro-optic and piezoelectric
+      coefficients.
+    - We set up a rectangular X-cut waveguide that hosts a strongly confined TE00 mode (Fig. 3a).
+    - We perform all optical simulations at 1500 nm optical wavelength, and include details on the material
+      coefficients in the supplement.
+  - statement: For the highest gain backward SBS mode in a suspended X-cut TE00 LN waveguide at a rotation
+      angle θX = 46°, including the electro-optic contribution reduces the
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - The EO contribution reduces the gain by∼42%.
+    - We set up a rectangular X-cut waveguide that hosts a strongly confined TE00 mode (Fig. 3a).
+    - Highest gain mode (θ௑ = 46∘)
+    - 'Figure 3: Suspended X-cut waveguide, TE-TE BSBS'
+  - statement: The peak normalized forward SBS Brillouin gain in a suspended X-cut LN TE-TE waveguide
+      is simulated to be 0.81 W^-1m^-1.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''0.81'''
+    quotes:
+    - '0.81'
+    - 'Figure 4: Suspended X-cut waveguide, TE-TE FSBS'
+  - statement: In a suspended X-cut LN TE-TE FSBS waveguide, the strongest pure stimulated electro-optic
+      scattering mode exhibits a normalized Brillouin gain of 0.6 W^-1m^-1.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''In contrast
+      with the BSBS case of pure SES (Fig. 3d), several of these'''
+    quotes:
+    - In contrast with the BSBS case of pure SES (Fig. 3d), several of these SES modes have large Brillouin
+      gains relative to the rest of the spectrum, with the strongest pure SES mode exhibitingG B/Qm =
+      0.6 W−1m−1.
+    - 'Figure 4: Suspended X-cut waveguide, TE-TE FSBS'
+    - with the strongest pure SES mode exhibitingG B/Qm = 0.6 W−1m−1.
+  - statement: The peak normalized backward SBS Brillouin gain in a suspended Z-cut LN TM-TM waveguide
+      is simulated to be 0.36 W^-1m^-1.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''0.36'''
+    quotes:
+    - '0.36'
+    - 'Figure 5: Suspended Z-cut waveguide, TM-TM BSBS'
+  - statement: 'In a suspended Z-cut LN waveguide for TM-TM backward SBS at θZ = 90°, the electro-optic
+      contribution reduces the gain of the highest gain mode by approximately '
+    reason: the statement contains the number 90, which none of its quotes contain
+    quotes:
+    - The EO contribution reduces the gain by∼42%.
+    - 'Figure 5: Suspended Z-cut waveguide, TM-TM BSBS'
+    - Highest gain mode (θ௓ = 90∘)
+  - statement: The peak normalized forward SBS Brillouin gain in a suspended Z-cut LN TM-TM waveguide
+      is simulated to be 0.780 W^-1m^-1.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''0.780'''
+    quotes:
+    - '0.780'
+    - 'Figure 6: Suspended Z-cut waveguide, TM-TM FSBS'
+  - statement: In an X-cut LN strip waveguide with an SiO2 substrate, the peak normalized forward SBS
+      gain is simulated to be 0.29 W^-1m^-1.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''0.29'''
+    quotes:
+    - '0.29'
+    - 'Figure 9: X-cut suspended ridge waveguide, TE-TE FSBS'
+    - X-cut suspended ridge waveguide
+    - TE-TE FSBS Spectrum
+  tokens:
+    input: 20601
+    output: 2887
+  fetched_chars: 61223

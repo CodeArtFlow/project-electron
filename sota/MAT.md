@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-09-28.
+Topic code `MAT`. Last reviewed 2026-09-29.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -49,6 +49,20 @@ Topic code `MAT`. Last reviewed 2026-09-28.
   - sources: SRC-00038
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0018 — see the open register
+- **6.4 nm** — In a partially-reconstructed WS2/WSe2 heterobilayer, the moiré periodicity estimated from experimental ADF-STEM images is 6.4 nm ± 0.05 nm.
+  - `CLM-MAT-0020` · regime partially-reconstructed · grade B · credibility unknown · measured · as of 2026-09-28
+  - sources: SRC-00039
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈3.5 nm** — In GW-BSE calculations, the real-space exciton wavefunction radius of the X2sA state is ~3.5 nm for the freestanding calculation.
+  - `CLM-MAT-0023` · state X2sA · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00043
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0019 — see the open register
+- **≈6.4 nm** — In GW-BSE calculations, the real-space exciton wavefunction radius of the X2sA state is ~6.4 nm at a screening strength of k0 = 1 Angstrom^-1.
+  - `CLM-MAT-0024` · state X2sA · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00043
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0019 — see the open register
 
 ### qualitative
 
@@ -76,6 +90,17 @@ Topic code `MAT`. Last reviewed 2026-09-28.
   - `CLM-MAT-0019` · measurement_method ARPES, material Sb monolayer on SiC(0001) · grade B · credibility unknown · measured · as of 2026-09-25
   - sources: SRC-00038
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+
+### relative deviation
+
+- **1 percent** — The external strain on the WSe2 layer in the heterostructure is estimated to be 1 ± 0.5 %.
+  - `CLM-MAT-0021` · layer WSe2 · grade B · credibility unknown · measured · as of 2026-09-28
+  - sources: SRC-00039
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **2 percent** — The external strain on the WS2 layer in the heterostructure is estimated to be 2 ± 0.25 %.
+  - `CLM-MAT-0022` · layer WS2 · grade B · credibility unknown · measured · as of 2026-09-28
+  - sources: SRC-00039
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -122,9 +147,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0018` — length_device: _unexamined; classification pending_
   - claims: CLM-MAT-0017, CLM-MAT-0018
   - missing data: `not yet named`
+- `CFL-0019` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0023, CLM-MAT-0024
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 19
-- grades: {'B': 19}
-- distinct sources: 7
+- claims: 24
+- grades: {'B': 24}
+- distinct sources: 9

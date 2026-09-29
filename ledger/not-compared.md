@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**127 pair(s)** as of 2026-09-28.
+**174 pair(s)** as of 2026-09-29.
 
 ## `energy` (8 pair(s))
 
@@ -45,7 +45,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0003` = 15.41 GHz | 91% | magnetic_field=7.5 T, frequency=2.2 THz | component=photonic molecule, mode_spacing=Ω2 |
 | `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0001` = 18.98 GHz | 89% | magnetic_field=7.5 T, frequency=2.2 THz | component=single ring cavity, parameter=FSR |
 
-## `length_device` (34 pair(s))
+## `length_device` (65 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -63,44 +63,68 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-PHOT-0007` = 0.00023 um | `CLM-PHOT-0026` = 0.85 um | 100% | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) | component=MO-PhC slab |
 | `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0026` = 850 nm | 100% | material=Sb monolayer on SiC(0001) | component=MO-PhC slab |
 | `CLM-PHOT-0008` = 0.00033 um | `CLM-PHOT-0026` = 0.85 um | 100% | sample=bare silicon substrate, roughness_type=root mean square roughness (Sq) | component=MO-PhC slab |
+| `CLM-MAT-0023` = 3.5 nm | `CLM-PHOT-0004` = 7000 nm | 100% | state=X2sA | parameter=signal-ground electrode spacing |
+| `CLM-MAT-0020` = 6.4 nm | `CLM-PHOT-0004` = 7000 nm | 100% | regime=partially-reconstructed | parameter=signal-ground electrode spacing |
+| `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0004` = 7000 nm | 100% | state=X2sA | parameter=signal-ground electrode spacing |
 | `CLM-PHOT-0009` = 0.0017 um | `CLM-PHOT-0026` = 0.85 um | 100% | roughness_type=arithmetic average roughness (Sa), sample=after MoSx film deposition | component=MO-PhC slab |
 | `CLM-PHOT-0010` = 0.0021 um | `CLM-PHOT-0026` = 0.85 um | 100% | roughness_type=root mean square roughness (Sq), sample=after MoSx film deposition | component=MO-PhC slab |
+| `CLM-MAT-0023` = 3.5 nm | `CLM-PHOT-0026` = 850 nm | 100% | state=X2sA | component=MO-PhC slab |
+| `CLM-MAT-0020` = 6.4 nm | `CLM-PHOT-0026` = 850 nm | 99% | regime=partially-reconstructed | component=MO-PhC slab |
+| `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0026` = 850 nm | 99% | state=X2sA | component=MO-PhC slab |
+| `CLM-MAT-0020` = 6.4 nm | `CLM-PROC-0003` = 0.068 nm | 99% | regime=partially-reconstructed | defocus=30 nm |
+| `CLM-MAT-0024` = 6.4 nm | `CLM-PROC-0003` = 0.068 nm | 99% | state=X2sA | defocus=30 nm |
+| `CLM-MAT-0020` = 6.4 nm | `CLM-PROC-0004` = 0.077 nm | 99% | regime=partially-reconstructed | material=HEA-NP, defocus=0 nm |
+| `CLM-MAT-0024` = 6.4 nm | `CLM-PROC-0004` = 0.077 nm | 99% | state=X2sA | material=HEA-NP, defocus=0 nm |
+| `CLM-MAT-0023` = 3.5 nm | `CLM-PROC-0003` = 0.068 nm | 98% | state=X2sA | defocus=30 nm |
+| `CLM-MAT-0023` = 3.5 nm | `CLM-PROC-0004` = 0.077 nm | 98% | state=X2sA | material=HEA-NP, defocus=0 nm |
 | `CLM-PHOT-0010` = 0.0021 um | `CLM-PROC-0003` = 6.8e-05 um | 97% | roughness_type=root mean square roughness (Sq), sample=after MoSx film deposition | defocus=30 nm |
+| `CLM-MAT-0020` = 6.4 nm | `CLM-PHOT-0007` = 0.23 nm | 96% | regime=partially-reconstructed | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) |
+| `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0007` = 0.23 nm | 96% | state=X2sA | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) |
 | `CLM-PHOT-0010` = 0.0021 um | `CLM-PROC-0004` = 7.7e-05 um | 96% | roughness_type=root mean square roughness (Sq), sample=after MoSx film deposition | material=HEA-NP, defocus=0 nm |
 | `CLM-PHOT-0009` = 0.0017 um | `CLM-PROC-0003` = 6.8e-05 um | 96% | roughness_type=arithmetic average roughness (Sa), sample=after MoSx film deposition | defocus=30 nm |
+| `CLM-MAT-0017` = 0.284 nm | `CLM-MAT-0020` = 6.4 nm | 96% | material=Sb monolayer on SiC(0001) | regime=partially-reconstructed |
+| `CLM-MAT-0017` = 0.284 nm | `CLM-MAT-0024` = 6.4 nm | 96% | material=Sb monolayer on SiC(0001) | state=X2sA |
 | `CLM-PHOT-0009` = 0.0017 um | `CLM-PROC-0004` = 7.7e-05 um | 95% | roughness_type=arithmetic average roughness (Sa), sample=after MoSx film deposition | material=HEA-NP, defocus=0 nm |
-| `CLM-PHOT-0004` = 7 um | `CLM-PHOT-0026` = 0.85 um | 88% | parameter=signal-ground electrode spacing | component=MO-PhC slab |
-| `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0010` = 2.1 nm | 86% | material=Sb monolayer on SiC(0001) | roughness_type=root mean square roughness (Sq), sample=after MoSx film deposition |
-| `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0010` = 2.1 nm | 84% | material=Sb monolayer on SiC(0001) | roughness_type=root mean square roughness (Sq), sample=after MoSx film deposition |
-| `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0009` = 1.7 nm | 83% | material=Sb monolayer on SiC(0001) | roughness_type=arithmetic average roughness (Sa), sample=after MoSx film deposition |
-| `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0009` = 1.7 nm | 81% | material=Sb monolayer on SiC(0001) | roughness_type=arithmetic average roughness (Sa), sample=after MoSx film deposition |
-| `CLM-PHOT-0008` = 0.00033 um | `CLM-PROC-0003` = 6.8e-05 um | 79% | sample=bare silicon substrate, roughness_type=root mean square roughness (Sq) | defocus=30 nm |
-| `CLM-MAT-0018` = 0.327 nm | `CLM-PROC-0003` = 0.068 nm | 79% | material=Sb monolayer on SiC(0001) | defocus=30 nm |
-| `CLM-PHOT-0008` = 0.00033 um | `CLM-PROC-0004` = 7.7e-05 um | 77% | sample=bare silicon substrate, roughness_type=root mean square roughness (Sq) | material=HEA-NP, defocus=0 nm |
-| `CLM-MAT-0017` = 0.284 nm | `CLM-PROC-0003` = 0.068 nm | 76% | material=Sb monolayer on SiC(0001) | defocus=30 nm |
-| `CLM-PHOT-0007` = 0.00023 um | `CLM-PROC-0003` = 6.8e-05 um | 70% | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) | defocus=30 nm |
-| `CLM-PHOT-0007` = 0.00023 um | `CLM-PROC-0004` = 7.7e-05 um | 67% | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) | material=HEA-NP, defocus=0 nm |
-| `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0007` = 0.23 nm | 30% | material=Sb monolayer on SiC(0001) | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) |
-| `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0007` = 0.23 nm | 19% | material=Sb monolayer on SiC(0001) | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) |
-| `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0008` = 0.33 nm | 14% | material=Sb monolayer on SiC(0001) | sample=bare silicon substrate, roughness_type=root mean square roughness (Sq) |
+| `CLM-MAT-0018` = 0.327 nm | `CLM-MAT-0020` = 6.4 nm | 95% | material=Sb monolayer on SiC(0001) | regime=partially-reconstructed |
+| `CLM-MAT-0018` = 0.327 nm | `CLM-MAT-0024` = 6.4 nm | 95% | material=Sb monolayer on SiC(0001) | state=X2sA |
+| `CLM-MAT-0020` = 6.4 nm | `CLM-PHOT-0008` = 0.33 nm | 95% | regime=partially-reconstructed | sample=bare silicon substrate, roughness_type=root mean square roughness (Sq) |
+| `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0008` = 0.33 nm | 95% | state=X2sA | sample=bare silicon substrate, roughness_type=root mean square roughness (Sq) |
 
-## `power` (3 pair(s))
+_and 25 more_
+
+## `power` (9 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-ARCH-0007` = 40.4 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | component=1024-MAC Systolic Array, architecture=MiX-INT4g16, array_size=1024-MAC, process=28nm, frequency=500 MHz | benchmark_circuit=BGR, framework=AgenticSizing |
 | `CLM-ARCH-0008` = 31.8 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | architecture=MiX-INT4g16, array_size=512-MAC, process=28nm, frequency=500 MHz | benchmark_circuit=BGR, framework=AgenticSizing |
 | `CLM-ARCH-0009` = 26.8 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | architecture=MiX-INT4, array_size=512-MAC, process=28nm, frequency=500 MHz | benchmark_circuit=BGR, framework=AgenticSizing |
+| `CLM-ARCH-0037` = 787 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | component=synthesized SRAM-PIM subsystem | benchmark_circuit=BGR, framework=AgenticSizing |
+| `CLM-ARCH-0038` = 9599 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | component=added compute and buffer logic in HBM-PIM | benchmark_circuit=BGR, framework=AgenticSizing |
+| `CLM-ARCH-0009` = 26.8 mW | `CLM-ARCH-0038` = 9599 mW | 100% | architecture=MiX-INT4, array_size=512-MAC, process=28nm, frequency=500 MHz | component=added compute and buffer logic in HBM-PIM |
+| `CLM-ARCH-0008` = 31.8 mW | `CLM-ARCH-0038` = 9599 mW | 100% | architecture=MiX-INT4g16, array_size=512-MAC, process=28nm, frequency=500 MHz | component=added compute and buffer logic in HBM-PIM |
+| `CLM-ARCH-0009` = 26.8 mW | `CLM-ARCH-0037` = 787 mW | 97% | architecture=MiX-INT4, array_size=512-MAC, process=28nm, frequency=500 MHz | component=synthesized SRAM-PIM subsystem |
+| `CLM-ARCH-0008` = 31.8 mW | `CLM-ARCH-0037` = 787 mW | 96% | architecture=MiX-INT4g16, array_size=512-MAC, process=28nm, frequency=500 MHz | component=synthesized SRAM-PIM subsystem |
 
-## `relative_deviation` (16 pair(s))
+## `relative_deviation` (26 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-ARCH-0018` = 98 percent | `CLM-MAT-0021` = 1 percent | 99% | concurrency_n_a=48, set_type=hot set | layer=WSe2 |
+| `CLM-MAT-0021` = 1 percent | `CLM-PHOT-0006` = 88 percent | 99% | layer=WSe2 | dataset=MNIST, setup=experimental system |
+| `CLM-MAT-0021` = 1 percent | `CLM-PHOT-0005` = 85 percent | 99% | layer=WSe2 | dataset=Iris test set |
+| `CLM-EDA-0003` = 60 percent | `CLM-MAT-0021` = 1 percent | 98% | benchmark_circuit=LDO benchmark, framework=proposed method | layer=WSe2 |
+| `CLM-EDA-0004` = 60 percent | `CLM-MAT-0021` = 1 percent | 98% | circuit=most complex circuit, framework=proposed framework | layer=WSe2 |
 | `CLM-ARCH-0003` = 2 percent | `CLM-ARCH-0018` = 98 percent | 98% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | concurrency_n_a=48, set_type=hot set |
+| `CLM-ARCH-0018` = 98 percent | `CLM-MAT-0022` = 2 percent | 98% | concurrency_n_a=48, set_type=hot set | layer=WS2 |
 | `CLM-ARCH-0003` = 2 percent | `CLM-PHOT-0006` = 88 percent | 98% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | dataset=MNIST, setup=experimental system |
+| `CLM-MAT-0022` = 2 percent | `CLM-PHOT-0006` = 88 percent | 98% | layer=WS2 | dataset=MNIST, setup=experimental system |
 | `CLM-ARCH-0003` = 2 percent | `CLM-PHOT-0005` = 85 percent | 98% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | dataset=Iris test set |
+| `CLM-MAT-0022` = 2 percent | `CLM-PHOT-0005` = 85 percent | 98% | layer=WS2 | dataset=Iris test set |
 | `CLM-ARCH-0003` = 2 percent | `CLM-EDA-0003` = 60 percent | 97% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | benchmark_circuit=LDO benchmark, framework=proposed method |
 | `CLM-ARCH-0003` = 2 percent | `CLM-EDA-0004` = 60 percent | 97% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | circuit=most complex circuit, framework=proposed framework |
+| `CLM-EDA-0003` = 60 percent | `CLM-MAT-0022` = 2 percent | 97% | benchmark_circuit=LDO benchmark, framework=proposed method | layer=WS2 |
+| `CLM-EDA-0004` = 60 percent | `CLM-MAT-0022` = 2 percent | 97% | circuit=most complex circuit, framework=proposed framework | layer=WS2 |
 | `CLM-ARCH-0015` = 14.3 percent | `CLM-ARCH-0018` = 98 percent | 85% | device=H200, baseline=CA Overlap, variant=AN Overlap | concurrency_n_a=48, set_type=hot set |
 | `CLM-ARCH-0015` = 14.3 percent | `CLM-PHOT-0006` = 88 percent | 84% | device=H200, baseline=CA Overlap, variant=AN Overlap | dataset=MNIST, setup=experimental system |
 | `CLM-ARCH-0015` = 14.3 percent | `CLM-PHOT-0005` = 85 percent | 83% | device=H200, baseline=CA Overlap, variant=AN Overlap | dataset=Iris test set |

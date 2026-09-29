@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-09-28.
+Topic code `ARCH`. Last reviewed 2026-09-29.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -49,6 +49,14 @@ Topic code `ARCH`. Last reviewed 2026-09-28.
   - `CLM-ARCH-0009` · architecture MiX-INT4, array_size 512-MAC, process 28nm, frequency 500 MHz · grade B · credibility unknown · simulated · as of 2026-09-17
   - sources: SRC-00005
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.787 W** — The synthesized SRAM-PIM subsystem consumes 0.787 W of power.
+  - `CLM-ARCH-0037` · component synthesized SRAM-PIM subsystem · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00044
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **9.599 W** — The added compute and buffer logic in HBM-PIM consumes 9.599 W of power.
+  - `CLM-ARCH-0038` · component added compute and buffer logic in HBM-PIM · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00044
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### qualitative
 
@@ -72,6 +80,58 @@ Topic code `ARCH`. Last reviewed 2026-09-28.
   - `CLM-ARCH-0024` · test_type synthetic PA-model validation · grade B · credibility unknown · simulated · as of 2026-09-23
   - sources: SRC-00030
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- On 15 CPython server workloads, replacing a 16 KBITTAGE baseline with a 14 KBITTAGE augmented with a 1.3 KB lookahead engine reduces bytecode jump MPKI by 73.7%.
+  - `CLM-ARCH-0025` · benchmark_suite 15 CPython server workloads, baseline_predictor 16 KBITTAGE, proposed_predictor 14 KBITTAGE augmented with the engine, engine_size 1.3 KB · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00040
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- On 15 CPython server workloads, replacing a 16 KBITTAGE baseline with a 14 KBITTAGE augmented with a 1.3 KB lookahead engine yields a 3.2% harmonic-mean IPC speedup.
+  - `CLM-ARCH-0026` · benchmark_suite 15 CPython server workloads, baseline_predictor 16 KBITTAGE, proposed_predictor 14 KBITTAGE augmented with the engine, engine_size 1.3 KB · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00040
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- In gem5, scaling a 16 KB ITTAGE to 64 KB yields a harmonic-mean IPC improvement of 5.1% for the CPython workloads.
+  - `CLM-ARCH-0027` · simulator gem5, baseline_predictor 3,392-entry 16 KB ITTAGE · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00040
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- In gem5, scaling a 16 KB ITTAGE to 64 KB yields an IPC improvement of up to 11.2% for the CPython workloads.
+  - `CLM-ARCH-0028` · simulator gem5, baseline_predictor 3,392-entry 16 KB ITTAGE · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00040
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Under an iso-storage comparison, replacing 2 KB of a 16 KB ITTAGE baseline with the lookahead engine improves harmonic-mean IPC by up to 7.8%.
+  - `CLM-ARCH-0029` · baseline_predictor 16 KB ITTAGE, replaced_capacity 2 KB · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00040
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The proposed lookahead engine reduces overall branch MPKI by 23.3% relative to the baseline.
+  - `CLM-ARCH-0030` · proposed_predictor 14 KBITTAGE + 1.3 KB lookahead engine · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00040
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- PolyCIM delivers up to 4x improvement in macro utilization.
+  - `CLM-ARCH-0031` · framework PolyCIM · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00042
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- PolyCIM achieves up to 3.2x speedup.
+  - `CLM-ARCH-0032` · framework PolyCIM · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00042
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- PolyCIM achieves an average speedup of 2.1x across three evaluated DNN models.
+  - `CLM-ARCH-0033` · framework PolyCIM, evaluated_models three complete DNN models with modern operators, including ConvNeXt-Tiny (CT), EfficientNet-B0 (EF), and MobileNetV2 (MN) · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00042
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- PolyCIM achieves an average speedup of 4.9x across evaluated convolution operators.
+  - `CLM-ARCH-0034` · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00042
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Without affine scheduling, latency degrades by 9.7x on the C1 operator.
+  - `CLM-ARCH-0035` · operator C1, ablation_setting Without affine scheduling · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00042
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Disabling pre-tiling causes a 6.2x slowdown on the C1 operator.
+  - `CLM-ARCH-0036` · operator C1, ablation_setting Disabling pre-tiling · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00042
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The optimized two-phase TP+EP expert mapping strategy achieves a 1.89x speedup over the EP baseline.
+  - `CLM-ARCH-0039` · mapping_strategy optimized two-phase TP+EP mapping, baseline EP baseline · grade B · credibility unknown · simulated · as of 2026-09-28
+  - sources: SRC-00044
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -120,6 +180,6 @@ _None._
 
 ## Evidence base
 
-- claims: 24
-- grades: {'B': 24}
-- distinct sources: 8
+- claims: 39
+- grades: {'B': 39}
+- distinct sources: 11

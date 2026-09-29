@@ -1,0 +1,106 @@
+id: SRC-00041
+title: Stacked Intelligent Metasurface-Diffractive Deep Neural Networks for Onboard Terrain Classification
+  from SAR Level-0 Raw Data
+doi: null
+arxiv_id: 2609.34333v1
+url: https://arxiv.org/abs/2609.34333v1
+venue_id: arxiv_api
+authors:
+- name: Mengbing Liu
+  affiliation: null
+  corresponding: null
+- name: Xin Li
+  affiliation: null
+  corresponding: null
+- name: Jiancheng An
+  affiliation: null
+  corresponding: null
+- name: Chau Yuen
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-28'
+retrieved_date: '2026-09-29'
+access: full_text
+read_scope: Automated reading. The full PDF text (75,936 characters, 15 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.34333v1 on
+  2026-09-29. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Proposed SIM-D 2NN (σ p = 0.05) M·L= 8,192 ≈0 ∼ps-ns Very high 87.58%±0.7%”
+
+  “Section V reports simulation results on raw SAR data and demonstrates the generalizability of the SIM-D2NN
+  on high-level SAR products.”
+
+  “Proposed SIM-D 2NN (σ p = 0.1) M·L= 8,192 ≈0 ∼ps-ns Very high 86.32%±1.2%”
+
+  “SIM-D2NN(Phase & Amplitude) 2M·L= 16,384 ≈0 ∼ps-ns Very high 90.70%”
+
+  “SIM-D2NN(Phase & Amplitude)”'
+method_summary: '“By applying the Rayleigh-Sommerfeld diffraction principles defined in Eqs. (2)-(5),
+  the network backpropagates the gradients directly to the physical phase shiftsθ, as summarized in Algorithm
+  1.”
+
+  “The model is trained using the AdamW optimizer with a CE loss criterion, and the model training is
+  conducted with a batch size of 64, an initial learning rate of 0.01, and 60 epochs.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 23017
+    output: 3130
+  claims_accepted: 3
+  claims_rejected: 5
+  rejected:
+  - statement: The phase-only SIM-D 2NN with 4 layers and M=2048 meta-atoms per layer achieves 89.51%
+      classification accuracy in the binary terrain classification task under t
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - Proposed Baseline 89.51% 88.05% 92.65% 90.29% 75.27% 75.20% 75.23% 75.21% 63.22% 64.47% 64.31% 64.33%
+    - Section V reports simulation results on raw SAR data and demonstrates the generalizability of the
+      SIM-D2NN on high-level SAR products.
+    - Binary Terrain Classification
+    - sampling rate S = 10% data
+  - statement: The SIM-D 2NN with 8 layers achieves a classification accuracy of 93.10% on the 14-class
+      L-band AIRSAR Flevoland benchmark dataset.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - As network depth increases, the model exhibits accuracy gains, rising from 42.43% to 76.19% and
+      93.10% forL= 1,4,8, respectively.
+    - Section V reports simulation results on raw SAR data and demonstrates the generalizability of the
+      SIM-D2NN on high-level SAR products.
+    - Benchmark Testing on L-band AIRSAR Flevoland Dataset
+    - preprocessed 14-class dataset
+  - statement: Without phase rotation (theta_rot = 0 degrees), the SIM-D 2NN accuracy in the binary classification
+      task is 53.90%.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - θrot = 0 ◦ 53.90% 56.30% 87.25% 68.43% 52.40% 57.68% 57.89% 56.82% 43.19% 45.66% 45.44% 45.29%
+    - Section V reports simulation results on raw SAR data and demonstrates the generalizability of the
+      SIM-D2NN on high-level SAR products.
+    - Binary Terrain Classification
+    - θrot = 0 ◦
+  - statement: The four-layer SIM-D 2NN achieves a 63.22% accuracy in the four-class terrain classification
+      task.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - L= 4 89.51% 88.05% 92.65%90.29% 75.27% 75.20% 75.23% 75.21% 63.22% 64.47% 64.31% 64.33%
+    - Section V reports simulation results on raw SAR data and demonstrates the generalizability of the
+      SIM-D2NN on high-level SAR products.
+    - Four-Class Terrain Classification
+    - L= 4
+  - statement: The single-layer SIM-D 2NN achieves a 50.53% accuracy in the four-class terrain classification
+      task.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - L= 1 85.24% 86.54% 91.86% 89.12% 65.90% 65.44% 65.38% 65.40% 50.53% 50.42% 50.37% 50.38%
+    - Section V reports simulation results on raw SAR data and demonstrates the generalizability of the
+      SIM-D2NN on high-level SAR products.
+    - Four-Class Terrain Classification
+    - L= 1
+corrections: []
