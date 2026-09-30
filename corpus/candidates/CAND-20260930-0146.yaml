@@ -22,6 +22,26 @@ id: CAND-20260930-0146
 harvested_date: '2026-09-30'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-30'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For a LiNbO3 film at 300 K with a theta angle of 54.7 degrees between the polar axis and
+      the growth direction, the energy density minimum is 0 meV/A^3.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''= 54.7'''
+    quotes:
+    - FIG. 2. Trans-switching in LiNbO 3 films.
+    - = 54.7
+    - 10 2
+    - Energy Density (meV/Å3)
+  tokens:
+    input: 11620
+    output: 665
+  fetched_chars: 31335

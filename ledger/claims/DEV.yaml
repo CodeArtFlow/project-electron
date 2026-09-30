@@ -402,3 +402,98 @@ claims:
     verified_quotes: 3
   conditions:
     model: SIM-D2NN(Phase & Amplitude)
+- id: CLM-DEV-0017
+  topic: DEV
+  statement: All experiments were performed at a temperature of 298.5 K.
+  sources:
+  - SRC-00046
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-29'
+  created: '2026-09-30'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    temperature_control_system: VAHEAT system
+  quantity:
+    quantity: temperature
+    bound: exact
+    approximate: false
+    as_published:
+      value: 298.5
+      unit: K
+    si_base:
+      value: 298.5
+      unit: K
+    display:
+      value: 25.350000000000023
+      unit: degC
+    conditions:
+      temperature_control_system: VAHEAT system
+- id: CLM-DEV-0018
+  topic: DEV
+  statement: For devices containing 320 to 480 atoms, HamGNN-NEGF achieves speedups of approximately 1,000-fold
+    to 2,000-fold over conventional Full-NEGF.
+  sources:
+  - SRC-00049
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-29'
+  created: '2026-09-30'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    framework: HamGNN-NEGF
+    baseline: Full-NEGF
+- id: CLM-DEV-0019
+  topic: DEV
+  statement: Relative to the Full-NEGF baseline, DFTH-NEGF reduces total computational time by 18.3% for
+    the Au-benzenedithiol-Au junction.
+  sources:
+  - SRC-00049
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-29'
+  created: '2026-09-30'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    method: DFTH-NEGF
+    baseline: Full-NEGF
+    device: Au–benzenedithiol–Au junction
+- id: CLM-DEV-0020
+  topic: DEV
+  statement: Relative to the Full-NEGF baseline, DFTH-NEGF reduces total computational time by 27.4% for
+    the carbon nanotube.
+  sources:
+  - SRC-00049
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-29'
+  created: '2026-09-30'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    method: DFTH-NEGF
+    baseline: Full-NEGF
+    device: carbon nanotube

@@ -953,3 +953,186 @@ claims:
   conditions:
     device_type: micro-ring resonators
     intrinsic_quality_factor: 1.8 million
+- id: CLM-PHOT-0032
+  topic: PHOT
+  statement: With 10 mW of 20 kHz-modulated green light, an infrared modulation depth of approximately
+    45% of the available reflection contrast is achieved.
+  sources:
+  - SRC-00051
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-29'
+  created: '2026-09-30'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    excitation_wavelength: 532 nm
+    modulation_frequency: 20 kHz
+    excitation_power: 10 mW
+- id: CLM-PHOT-0033
+  topic: PHOT
+  statement: Green illumination produces photo-refractive resonance blue-shifts with a maximum observed
+    tuning of 3.15 nm (0.87 THz).
+  sources:
+  - SRC-00051
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-29'
+  created: '2026-09-30'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    excitation_wavelength: 532 nm
+    cumulative_exposure_time: 5 h
+  quantity:
+    quantity: wavelength
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 3.15
+      unit: nm
+    si_base:
+      value: 3.15e-09
+      unit: m
+    display:
+      value: 0.00315
+      unit: um
+    conditions:
+      excitation_wavelength: 532 nm
+      cumulative_exposure_time: 5 h
+- id: CLM-PHOT-0034
+  topic: PHOT
+  statement: The manufactured diamond used for device fabrication features an NV concentration of 4 ppm.
+  sources:
+  - SRC-00051
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-29'
+  created: '2026-09-30'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    material: single-crystal diamond
+- id: CLM-PHOT-0035
+  topic: PHOT
+  statement: Across 22 measured cavity devices, the mean finesse was F = 12.2 ± 3.6.
+  sources:
+  - SRC-00051
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-29'
+  created: '2026-09-30'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    sample_size: 22 measured devices
+- id: CLM-PHOT-0036
+  topic: PHOT
+  statement: Across 22 measured devices, the mean linewidth ∆ν was 121 ± 58 GHz.
+  sources:
+  - SRC-00051
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-29'
+  created: '2026-09-30'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    sample_size: 22 measured devices
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 121.0
+      unit: GHz
+    si_base:
+      value: 121000000000.0
+      unit: Hz
+    display:
+      value: 121.00000000000001
+      unit: GHz
+    conditions:
+      sample_size: 22 measured devices
+- id: CLM-PHOT-0037
+  topic: PHOT
+  statement: Under a circular green-beam excitation of 1.09 mW incident power, the mode-averaged temperature
+    increase in a 20 µm cavity is approximately 0.11 K.
+  sources:
+  - SRC-00051
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-29'
+  created: '2026-09-30'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    cavity_length: 20 µm
+    beam_shape: circular
+    incident_power: 1.09 mW
+  quantity:
+    quantity: temperature_delta
+    bound: exact
+    approximate: true
+    as_published:
+      value: 0.11
+      unit: K
+    si_base:
+      value: 0.11
+      unit: K
+    display:
+      value: 0.11
+      unit: K
+    conditions:
+      cavity_length: 20 µm
+      beam_shape: circular
+      incident_power: 1.09 mW
+- id: CLM-PHOT-0038
+  topic: PHOT
+  statement: Waveguide-coupled excitation of the device cavity resonance yields a peak modulation depth
+    Mpeak of approximately 45% at an incident power of 9.6 mW.
+  sources:
+  - SRC-00051
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-29'
+  created: '2026-09-30'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    excitation_type: waveguide-coupled excitation

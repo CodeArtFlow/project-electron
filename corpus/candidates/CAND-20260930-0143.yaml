@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2609.36919v1
 doi: null
-title: Tuning the secondary electron yield and electronic conductivity of MgZnO multilayers
-  synthesized by Atomic layer deposition
+title: Tuning the secondary electron yield and electronic conductivity of MgZnO multilayers synthesized
+  by Atomic layer deposition
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-09-29'
@@ -28,6 +28,68 @@ id: CAND-20260930-0143
 harvested_date: '2026-09-30'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-30'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The pure ZnO coating exhibits an electrical conductivity of 1.5 x 10^4 Ohm^-1 m^-1.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Notably,
+      pure ZnO coatings display a conductivity of 1.5 × 10⁴ Ω⁻¹\u2009m⁻¹'''
+    quotes:
+    - Notably, pure ZnO coatings display a conductivity of 1.5 × 10⁴ Ω⁻¹ m⁻¹, approximately twice that
+      reported for comparable ALD-grown films under similar conditions (DEZ/H₂O, 150 °C, thickness 30–100≉nm).
+    - The electrical conductivity of heterostructures was measured using the 4 -point method at room temperature
+      and in ambient atmosphere.
+  - statement: The 16*/16 coating exhibits an electrical conductivity of 178 Ohm^-1 m^-1.
+    reason: 'unit conversion refused: sheet_resistance: could not parse 178.0 ''Ω⁻¹\u2009m⁻¹'': ''Ω−1''
+      is not defined in the unit registry'
+    quotes:
+    - The conductivities of the 16*/16, 16/16*, 8*/8 and 8/8* coatings are 178, 86, 18 and 15 Ω⁻¹ m⁻¹,
+      respectively.
+    - The electrical conductivity of heterostructures was measured using the 4 -point method at room temperature
+      and in ambient atmosphere.
+  - statement: The 16/16* coating exhibits an electrical conductivity of 86 Ohm^-1 m^-1.
+    reason: 'unit conversion refused: sheet_resistance: could not parse 86.0 ''Ω⁻¹\u2009m⁻¹'': ''Ω−1''
+      is not defined in the unit registry'
+    quotes:
+    - The conductivities of the 16*/16, 16/16*, 8*/8 and 8/8* coatings are 178, 86, 18 and 15 Ω⁻¹ m⁻¹,
+      respectively.
+    - The electrical conductivity of heterostructures was measured using the 4 -point method at room temperature
+      and in ambient atmosphere.
+  - statement: The 8*/8 coating exhibits an electrical conductivity of 18 Ohm^-1 m^-1.
+    reason: 'unit conversion refused: sheet_resistance: could not parse 18.0 ''Ω⁻¹\u2009m⁻¹'': ''Ω−1''
+      is not defined in the unit registry'
+    quotes:
+    - The conductivities of the 16*/16, 16/16*, 8*/8 and 8/8* coatings are 178, 86, 18 and 15 Ω⁻¹ m⁻¹,
+      respectively.
+    - The electrical conductivity of heterostructures was measured using the 4 -point method at room temperature
+      and in ambient atmosphere.
+  - statement: The 8/8* coating exhibits an electrical conductivity of 15 Ohm^-1 m^-1.
+    reason: 'unit conversion refused: sheet_resistance: could not parse 15.0 ''Ω⁻¹\u2009m⁻¹'': ''Ω−1''
+      is not defined in the unit registry'
+    quotes:
+    - The conductivities of the 16*/16, 16/16*, 8*/8 and 8/8* coatings are 178, 86, 18 and 15 Ω⁻¹ m⁻¹,
+      respectively.
+    - The electrical conductivity of heterostructures was measured using the 4 -point method at room temperature
+      and in ambient atmosphere.
+  - statement: The 1/1* and 1*/1 heterostructures with 50% Zn ratio exhibit an electrical conductivity
+      of approximately 0.06 Ohm^-1 m^-1.
+    reason: the statement contains the number 0.06, which none of its quotes contain
+    quotes:
+    - Notably, for the 1/1* and 1*/1 heterostructures (50% Zn), the maximum TEEY remains relatively low
+      (~3.8), despite an electrical conductivity of ~0.0 6 Ω⁻¹ m⁻¹ (Fig. 8).
+    - The electrical conductivity of heterostructures was measured using the 4 -point method at room temperature
+      and in ambient atmosphere.
+    - for the 1/1* and 1*/1 heterostructures (50% Zn), the maximum TEEY remains relatively low (~3.8),
+      despite an electrical conductivity of ~0.0 6 Ω⁻¹ m⁻¹ (Fig. 8).
+  tokens:
+    input: 14996
+    output: 2295
+  fetched_chars: 49803

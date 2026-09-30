@@ -1,0 +1,124 @@
+id: SRC-00052
+title: Engineering Synaptic Dynamics in Ag-Modified TaO$_x$ Memristive Devices
+doi: null
+arxiv_id: 2609.37204v1
+url: https://arxiv.org/abs/2609.37204v1
+venue_id: arxiv_api
+authors:
+- name: R. Leal Martir
+  affiliation: null
+  corresponding: null
+- name: W. Quiñonez
+  affiliation: null
+  corresponding: null
+- name: A. J. T. van der Ree
+  affiliation: null
+  corresponding: null
+- name: M. H. Aguirre
+  affiliation: null
+  corresponding: null
+- name: G. Palasantzas
+  affiliation: null
+  corresponding: null
+- name: M. J. Sánchez
+  affiliation: null
+  corresponding: null
+- name: D. Rubi
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-29'
+retrieved_date: '2026-09-30'
+access: full_text
+read_scope: Automated reading. The full PDF text (60,670 characters, 27 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.37204v1 on
+  2026-09-30. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The low- and high-resistance states are approximately 40Ωand 900Ω, respectively, and the correspondingI–Vcharacteristics
+  display the known pinched hysteresis typical of memristive devices.”
+
+  “The low- and high-resistance states are approximately 40Ωand 900Ω, respectively”
+
+  “The electroformed devices (FIG. 2(a)) exhibit a counter-clockwise (CCW) hysteresis switching loop,
+  characteristic of bipolar resistive switching dominated by a single active metal-oxide interface.”
+
+  “For MNIST classification, the abrupt, sigmoidal, and slowly evolving responses yield accuracies of≈50%,
+  85%, and 88%, respectively, while the gradual regime reaches≈72% for Fashion-MNIST.”
+
+  “For MNIST classification, the abrupt, sigmoidal, and slowly evolving responses yield accuracies of≈50%,
+  85%, and 88%, respectively”
+
+  “To assess the functional implications of the electrically tunable depression dynamics, we incorporated
+  the different conductance trajectories into a memristor-based neural-network simulation.”
+
+  “the abrupt, sigmoidal, and slowly evolving responses yield accuracies of≈50%, 85%, and 88%, respectively”'
+method_summary: '“The electrical response was characterized using a pulse-based measurement protocol.”
+
+  “Immediately after every programming pulse, a non-interfering read pulse ofV read =100 mV was applied
+  and the remanent resistance (RREM) was calculated asR REM = Vread Iread ,whereI read is the current
+  measured during the read pulse.”'
+limitations: '“The device yield was 75% (12 out of 16 devices) for the reference structures and 33% (5
+  out of 15 devices) for devices incorporating AgNPs.”
+
+  “The lower yield of the Ag-modified structures was primarily associated with short-circuited devices,
+  indicating that incorporation of the metallic nanoparticles introduces additional fabrication constraints.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 15866
+    output: 2787
+  claims_accepted: 4
+  claims_rejected: 4
+  rejected:
+  - statement: In reference devices without AgNPs, electroformed devices show a low-resistance state of
+      approximately 40 Ω.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The low- and high-resistance states are approximately 40Ωand 900Ω, respectively, and the correspondingI–Vcharacteristics
+      display the known pinched hysteresis typical of memristive devices.
+    - The electroformed devices (FIG. 2(a)) exhibit a counter-clockwise (CCW) hysteresis switching loop,
+      characteristic of bipolar resistive switching dominated by a single active metal-oxide interface.
+    - 'FIG. 2: Electrical characterization of reference TaO x memristive devices without AgNPs.'
+    - The low- and high-resistance states are approximately 40Ωand 900Ω, respectively
+  - statement: In Ag-modified devices, electrical stressing decreases the high-resistance state to approximately
+      300 Ω.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''This process
+      is accompanied by a pronounced overall reduction in devic'''
+    quotes:
+    - This process is accompanied by a pronounced overall reduction in device resistance, with the high-resistance
+      state decreasing to approximately 300Ωwhile the low-resistance state remains close to 40Ω.
+    - The evolution observed upon electrical stressing of the AgNPs-decorated devices is consistent with
+      the incorporation of Ag-related species from the surface nanoparticles into the oxide.
+    - with the high-resistance state decreasing to approximately 300Ωwhile the low-resistance state remains
+      close to 40Ω.
+  - statement: In Ag-modified devices, the low-resistance state after electrical stressing remains close
+      to 40 Ω.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''This process
+      is accompanied by a pronounced overall reduction in devic'''
+    quotes:
+    - This process is accompanied by a pronounced overall reduction in device resistance, with the high-resistance
+      state decreasing to approximately 300Ωwhile the low-resistance state remains close to 40Ω.
+    - The evolution observed upon electrical stressing of the AgNPs-decorated devices is consistent with
+      the incorporation of Ag-related species from the surface nanoparticles into the oxide.
+    - while the low-resistance state remains close to 40Ω.
+  - statement: For Ag-modified devices, the characteristic pulse number N50 decreases to approximately
+      1 pulse at |VP| = 1.5 V.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - As shown in FIG. 5(b),N 50 decreases from approximately 25 pulses at|V P|≃1.3 V to approximately
+      one pulse at|V P|=1.5 V , and subsequently increases again to approximately 30 pulses for the highest
+      programming amplitudes.
+    - 'FIG. 5: Quantitative characterization of the stimulus-dependent depression dynamics in Ag-modified
+      TaOx devices.'
+    - at|V P|=1.5 V
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (measured: 1, simulated:
+  3). This field records the majority (simulated); trust each claim''s own evidence_type over this one.'

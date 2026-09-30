@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-09-29.
+Topic code `MAT`. Last reviewed 2026-09-30.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -64,6 +64,13 @@ Topic code `MAT`. Last reviewed 2026-09-29.
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0019 — see the open register
 
+### power density
+
+- **4.8e-07 W/mm^2** — The 2-inch-round tunable coating generates a power density of 0.48 W/m2 at noon time in ambient condition.
+  - `CLM-MAT-0026` · environment ambient · grade B · credibility unknown · measured · as of 2026-09-29
+  - sources: SRC-00048
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+
 ### qualitative
 
 - For the GaN-V N system using Training-set I, the RMSD of the 255-atom test supercell is 0.037 Å.
@@ -90,6 +97,18 @@ Topic code `MAT`. Last reviewed 2026-09-29.
   - `CLM-MAT-0019` · measurement_method ARPES, material Sb monolayer on SiC(0001) · grade B · credibility unknown · measured · as of 2026-09-25
   - sources: SRC-00038
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- For a randomly displaced 6x6x6 GaP supercell, the DeepH-GW model achieves a mean absolute error of 9.7 meV over the 40 bands closest to the Fermi level.
+  - `CLM-MAT-0025` · material GaP, supercell_size 6×6×6, band_count 40 closest bands · grade B · credibility unknown · simulated · as of 2026-09-29
+  - sources: SRC-00047
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The calculated band gap of defect-free bilayer CrN is 0.38 eV.
+  - `CLM-MAT-0027` · method DFT · grade B · credibility unknown · simulated · as of 2026-09-29
+  - sources: SRC-00050
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The calculated band gap of bilayer CrN1-x is 0.07 eV.
+  - `CLM-MAT-0028` · method DFT · grade B · credibility unknown · simulated · as of 2026-09-29
+  - sources: SRC-00050
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -153,6 +172,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 24
-- grades: {'B': 24}
-- distinct sources: 9
+- claims: 28
+- grades: {'B': 28}
+- distinct sources: 12

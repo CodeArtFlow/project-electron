@@ -1,0 +1,117 @@
+id: SRC-00048
+title: 24-hr Solid-State Power Generation with Self-Adaptive Tunable Radiative Coatings
+doi: null
+arxiv_id: 2609.36983v1
+url: https://arxiv.org/abs/2609.36983v1
+venue_id: arxiv_api
+authors:
+- name: Ken Araki
+  affiliation: null
+  corresponding: null
+- name: Liping Wang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-29'
+retrieved_date: '2026-09-30'
+access: full_text
+read_scope: Automated reading. The full PDF text (44,931 characters, 21 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.36983v1 on
+  2026-09-30. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Even exposed the ambient with convective loss, the 2-inch-round tunable coating generates
+  power of 0.48 W/m2 at noon time, 14% more than the black absorber of the same size.”
+
+  “exposed the ambient with convective loss”'
+method_summary: '“At night, it produces 26 mW/m2 power in vacuum, outperforming the black emitter by 63%.”
+
+  “Even exposed the ambient with convective loss, the 2-inch-round tunable coating generates power of
+  0.48 W/m2 at noon time, 14% more than the black absorber of the same size.”
+
+  “The tunable radiative coating covered thermoelectric modules produces open circuit voltages from 433
+  mV to -62 mV in vacuum and from 300 mV to -51 mV in ambient through 24-hr continuous outdoor tests.”'
+limitations: “Clearly, the daytime TEG power generation can be significantly degraded by the convection
+  heat loss as well as higher ambient temperature that decreases the temperature differential across the
+  TEG stack.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14883
+    output: 3034
+  claims_accepted: 1
+  claims_rejected: 6
+  rejected:
+  - statement: The 35-mm squared tunable radiative coating achieves a peak power density of 1.64 W/m2
+      around noon in vacuum during daytime outdoor tests.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''From outdoor
+      tests in a high vacuum apparatus, the tunable radiative c'''
+    quotes:
+    - From outdoor tests in a high vacuum apparatus, the tunable radiative coating in 35-mm squared size
+      achieves 1.64 W/m2 power generation around noon time from a stack of commercial thermoelectric modules
+      of 15 mm squared, which is 28% more fr
+    - the peak power generation is found around noon to be 1.64 W/m2 with the 35-mm VO2TRC sample
+    - the tunable radiative coating in 35-mm squared size
+    - in a high vacuum apparatus
+  - statement: At night in vacuum, the 35-mm squared tunable radiative coating produces 26 mW/m2 power
+      density.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - At night, it produces 26 mW/m2 power in vacuum, outperforming the black emitter by 63%.
+    - the 35-mm VO2TRC turns out to produce peak power density of 26 mW/m2 from the TEG stack
+    - 35-mm VO2TRC
+    - in vacuum
+  - statement: In 24-hr continuous vacuum tests with the 35-mm sample, the maximum open circuit voltage
+      reaches 433 mV.
+    reason: the statement contains the number 35, which none of its quotes contain
+    quotes:
+    - The tunable radiative coating covered thermoelectric modules produces open circuit voltages from
+      433 mV to -62 mV in vacuum and from 300 mV to -51 mV in ambient through 24-hr continuous outdoor
+      tests.
+    - reaches a maximal Voc of 433 mV with highest TEG top side temperature ~110°C and largest DT of 74
+      K under peak solar irradiance 920 W/m2 around noon.
+    - the 35-mm VO2TRC sample
+    - in vacuum
+  - statement: In 24-hr continuous vacuum tests with the 35-mm sample, the open circuit voltage reaches
+      -62 mV at night.
+    reason: the statement contains the number 35, which none of its quotes contain
+    quotes:
+    - The tunable radiative coating covered thermoelectric modules produces open circuit voltages from
+      433 mV to -62 mV in vacuum and from 300 mV to -51 mV in ambient through 24-hr continuous outdoor
+      tests.
+    - After sunset around 5:30pm, negative Voc is produced with -62 mV and negative temperature differential
+      ΔT of -10.4 K for most of the nighttime.
+    - the 35-mm VO2TRC sample
+    - in vacuum
+  - statement: In 24-hr continuous ambient tests with the 2-inch sample, the maximum open circuit voltage
+      reaches 300 mV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The tunable radiative coating covered thermoelectric modules produces open circuit voltages from
+      433 mV to -62 mV in vacuum and from 300 mV to -51 mV in ambient through 24-hr continuous outdoor
+      tests.
+    - reaches a smaller maximal Voc of 300 mV with highest TEG top side temperature 86°C and DT of 37
+      K under peak solar irradiance 947 W/m2 around noon.
+    - the 2-inch VO2TRC sample
+    - in ambient
+  - statement: In 24-hr continuous ambient tests with the 2-inch sample, the open circuit voltage reaches
+      -51 mV at night.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - The tunable radiative coating covered thermoelectric modules produces open circuit voltages from
+      433 mV to -62 mV in vacuum and from 300 mV to -51 mV in ambient through 24-hr continuous outdoor
+      tests.
+    - Around 6:30pm before the sunset, negative Voc is generated with -51 mV and negative temperature
+      differential ΔT of -6 K for most of the nighttime.
+    - the 2-inch VO2TRC sample
+    - in ambient
+corrections: []

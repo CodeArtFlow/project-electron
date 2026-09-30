@@ -1,0 +1,99 @@
+id: SRC-00049
+title: Linear-Scaling Quantum Transport from Machine-Learning Density Functional Theory Hamiltonians
+doi: null
+arxiv_id: 2609.37058v1
+url: https://arxiv.org/abs/2609.37058v1
+venue_id: arxiv_api
+authors:
+- name: Bang Liu
+  affiliation: null
+  corresponding: null
+- name: Yang Zhong
+  affiliation: null
+  corresponding: null
+- name: Zhi-Xin Guo
+  affiliation: null
+  corresponding: null
+- name: Xin-Gao Gong
+  affiliation: null
+  corresponding: null
+- name: Hongjun Xiang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-29'
+retrieved_date: '2026-09-30'
+access: full_text
+read_scope: Automated reading. The full PDF text (44,708 characters, 22 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.37058v1 on
+  2026-09-30. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“For devices containing 320 -480 atoms, HamGN N-NEGF achieves speedups of approximately 1,000
+  -2,000-fold over conventional Full-NEGF, with the advantage increasing further with system size .”
+
+  “HamGN N-NEGF achieves speedups of approximately 1,000 -2,000-fold over conventional Full-NEGF”
+
+  “relative to the Full-NEGF baseline, DFTH-NEGF reduces the total computational time by 18.3% for the
+  Au –benzenedithiol–Au junction and 27.4% for the carbon nanotube.”
+
+  “relative to the Full-NEGF baseline, DFTH-NEGF reduces the total computational time by 18.3%”
+
+  “18.3% for the Au –benzenedithiol–Au junction”
+
+  “27.4% for the carbon nanotube.”'
+method_summary: '“An E(3) -equivariant graph neural network trained on conventional DFT Hamiltonians of
+  small structures predicts Hamiltonians for large devices, avoiding costly DFT-NEGF training data.”
+
+  “The main DFT datasets were generated at the generalized-gradient approximation (GGA) level using the
+  Perdew -Burke-Ernzerhof (PBE) exchange -correlation functional40, as implemented in the SIESTA package
+  18.”
+
+  “Additional hybrid HSE06 functional calculations were carried out using the HONPAS package46,47 to assess
+  the transferability of the Hamiltonian-learning strategy beyond the PBE level.”'
+limitations: “Although the H0 approximation is expected to break down in strongly nonlinear regimes such
+  as those exhibiting negative differential resistance (NDR), these results establish HamGNN -NEGF as
+  a reliable and computationally efficient alternative for simulating finite-bias transport in weakly
+  nonlinear devices.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 13702
+    output: 2501
+  claims_accepted: 3
+  claims_rejected: 3
+  rejected:
+  - statement: The HamGNN-predicted Hamiltonian for the Pt-Si-Pt device achieves a test-set matrix-element
+      mean absolute error of 0.020 meV.
+    reason: the value 0.02 does not appear in any of the claim's quotes
+    quotes:
+    - predicts DFT -level Hamiltonian blocks for larger scattering regions directly from atomic structure,
+      with a test -set matrix-element mean absolute error (MAE) of 0.020 meV (Supplementary Fig. 4(a)
+      ).
+    - We begin with the pristine Pt –Si–Pt device.
+    - HamGNN predicts DFT -level Hamiltonian blocks for larger scattering regions
+  - statement: The HamGNN-predicted Hamiltonian matrix elements for the defective graphene device achieve
+      a mean absolute error of 0.075 meV on the test set at the HSE06 level
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - the HamGNN -predicted Hamiltonian matrix elements are in close agreement with the HSE06 reference,
+      yielding an MAE of 0.075 meV on the test set.
+    - defective graphene transport device (Supplementary Fig. 11).
+    - HSE06 reference, yielding an MAE of 0.075 meV
+    - HamGNN -predicted Hamiltonian matrix elements
+  - statement: Applying the protocol at the PBE level for the defective graphene device yields a Hamiltonian
+      matrix element mean absolute error of 0.04 meV.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''meV'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a uni'
+    quotes:
+    - Applying the identical protocol at the PBE level yields a Hamiltonian MAE of 0.04 meV and transmission
+      MAEs of 0.41%, 0.34% and 0.37% for four -, six - and eight -vacancy devices
+    - defective graphene transport device
+    - Applying the identical protocol at the PBE level yields a Hamiltonian MAE of 0.04 meV
+corrections: []

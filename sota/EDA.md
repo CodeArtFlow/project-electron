@@ -1,6 +1,6 @@
 # EDA — state of the art
 
-Topic code `EDA`. Last reviewed 2026-09-29.
+Topic code `EDA`. Last reviewed 2026-09-30.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -27,6 +27,18 @@ Topic code `EDA`. Last reviewed 2026-09-29.
   - `CLM-EDA-0004` · circuit most complex circuit, framework proposed framework · grade B · credibility unknown · simulated · as of 2026-09-22
   - sources: SRC-00027
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **86.4 percent** — The cyclic edge prediction model generated 86.4% valid circuits.
+  - `CLM-EDA-0005` · model Cyclic Edge prediction model · grade B · credibility unknown · simulated · as of 2026-09-29
+  - sources: SRC-00045
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **89.6 percent** — The non-cyclic edge prediction model generated 89.6% valid circuits.
+  - `CLM-EDA-0006` · model Non-cyclic Edge prediction model · grade B · credibility unknown · simulated · as of 2026-09-29
+  - sources: SRC-00045
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **76 percent** — The combined non-cyclic and node prediction model generated 76.0% valid circuits.
+  - `CLM-EDA-0007` · model Non-cyclic + Node prediction model · grade B · credibility unknown · simulated · as of 2026-09-29
+  - sources: SRC-00045
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -34,6 +46,6 @@ _None._
 
 ## Evidence base
 
-- claims: 4
-- grades: {'B': 4}
-- distinct sources: 2
+- claims: 7
+- grades: {'B': 7}
+- distinct sources: 3

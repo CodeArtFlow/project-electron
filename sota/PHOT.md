@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-09-29.
+Topic code `PHOT`. Last reviewed 2026-09-30.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -24,6 +24,10 @@ Topic code `PHOT`. Last reviewed 2026-09-29.
   - `CLM-PHOT-0024` · angle_of_incidence 0° to 30°, rotation_angle 90° · grade B · credibility unknown · measured · as of 2026-09-22
   - sources: SRC-00028
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **121 GHz** — Across 22 measured devices, the mean linewidth ∆ν was 121 ± 58 GHz.
+  - `CLM-PHOT-0036` · sample_size 22 measured devices · grade B · credibility unknown · measured · as of 2026-09-29
+  - sources: SRC-00051
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### length device
 
@@ -86,6 +90,22 @@ Topic code `PHOT`. Last reviewed 2026-09-29.
   - `CLM-PHOT-0031` · device_type micro-ring resonators, intrinsic_quality_factor 1.8 million · grade B · credibility unknown · measured · as of 2026-09-25
   - sources: SRC-00035
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- With 10 mW of 20 kHz-modulated green light, an infrared modulation depth of approximately 45% of the available reflection contrast is achieved.
+  - `CLM-PHOT-0032` · excitation_wavelength 532 nm, modulation_frequency 20 kHz, excitation_power 10 mW · grade B · credibility unknown · measured · as of 2026-09-29
+  - sources: SRC-00051
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The manufactured diamond used for device fabrication features an NV concentration of 4 ppm.
+  - `CLM-PHOT-0034` · material single-crystal diamond · grade B · credibility unknown · measured · as of 2026-09-29
+  - sources: SRC-00051
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Across 22 measured cavity devices, the mean finesse was F = 12.2 ± 3.6.
+  - `CLM-PHOT-0035` · sample_size 22 measured devices · grade B · credibility unknown · measured · as of 2026-09-29
+  - sources: SRC-00051
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Waveguide-coupled excitation of the device cavity resonance yields a peak modulation depth Mpeak of approximately 45% at an incident power of 9.6 mW.
+  - `CLM-PHOT-0038` · excitation_type waveguide-coupled excitation · grade B · credibility unknown · measured · as of 2026-09-29
+  - sources: SRC-00051
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -112,6 +132,13 @@ Topic code `PHOT`. Last reviewed 2026-09-29.
 - **≤ 419.85 degC** — The fabricated dual-narrowband thermal emitter maintains its dual-narrowband spectral response for temperatures up to 693 K.
   - `CLM-PHOT-0015` · structure fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter · grade A · credibility unknown · measured · as of 2026-09-18
   - sources: SRC-00019
+
+### temperature delta
+
+- **≈0.11 K** — Under a circular green-beam excitation of 1.09 mW incident power, the mode-averaged temperature increase in a 20 µm cavity is approximately 0.11 K.
+  - `CLM-PHOT-0037` · cavity_length 20 µm, beam_shape circular, incident_power 1.09 mW · grade B · credibility unknown · measured · as of 2026-09-29
+  - sources: SRC-00051
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### throughput tool
 
@@ -149,6 +176,10 @@ Topic code `PHOT`. Last reviewed 2026-09-29.
   - `CLM-PHOT-0029` · component 9-channel ultra-broadband WDM DETRX, spectral_range O-to-C band · grade B · credibility unknown · measured · as of 2026-09-23
   - sources: SRC-00032
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≤ 0.00315 um** — Green illumination produces photo-refractive resonance blue-shifts with a maximum observed tuning of 3.15 nm (0.87 THz).
+  - `CLM-PHOT-0033` · excitation_wavelength 532 nm, cumulative_exposure_time 5 h · grade B · credibility unknown · measured · as of 2026-09-29
+  - sources: SRC-00051
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -156,6 +187,6 @@ _None._
 
 ## Evidence base
 
-- claims: 31
-- grades: {'B': 24, 'A': 7}
-- distinct sources: 11
+- claims: 38
+- grades: {'B': 31, 'A': 7}
+- distinct sources: 12

@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**174 pair(s)** as of 2026-09-29.
+**211 pair(s)** as of 2026-09-30.
 
 ## `energy` (8 pair(s))
 
@@ -29,21 +29,27 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-ARCH-0002` = 5 x | `CLM-ARCH-0022` = 169.1 x | 97% | process=TSMC 16nm FinFET, comparison=PFAL vs static CMOS, operating_point=most favorable operating point, vclk=1 V, fclk=100 MHz | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch |
 | `CLM-ARCH-0006` = 5.3 x | `CLM-ARCH-0022` = 169.1 x | 97% | process=TSMC 16nm FinFET, comparison=4-bit Brent-Kung CLA adder vs architecture-matched static CMOS estimate, power_clock=triangular | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch |
 
-## `frequency` (11 pair(s))
+## `frequency` (17 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | magnetic_field=8.1 T, frequency=1.9 THz | angle_of_incidence=0° to 30°, rotation_angle=90° |
 | `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | magnetic_field=7.5 T, frequency=2.2 THz | angle_of_incidence=0° to 30°, rotation_angle=90° |
+| `CLM-PHOT-0024` = 0.03 GHz | `CLM-PHOT-0036` = 121 GHz | 100% | angle_of_incidence=0° to 30°, rotation_angle=90° | sample_size=22 measured devices |
 | `CLM-PHOT-0001` = 18.98 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | component=single ring cavity, parameter=FSR | angle_of_incidence=0° to 30°, rotation_angle=90° |
 | `CLM-PHOT-0003` = 15.41 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | component=photonic molecule, mode_spacing=Ω2 | angle_of_incidence=0° to 30°, rotation_angle=90° |
 | `CLM-PHOT-0002` = 3.57 GHz | `CLM-PHOT-0024` = 0.03 GHz | 99% | component=photonic molecule, mode_spacing=Ω1 | angle_of_incidence=0° to 30°, rotation_angle=90° |
 | `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0002` = 3.57 GHz | 99% | magnetic_field=8.1 T, frequency=1.9 THz | component=photonic molecule, mode_spacing=Ω1 |
 | `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0002` = 3.57 GHz | 98% | magnetic_field=7.5 T, frequency=2.2 THz | component=photonic molecule, mode_spacing=Ω1 |
+| `CLM-PHOT-0002` = 3.57 GHz | `CLM-PHOT-0036` = 121 GHz | 97% | component=photonic molecule, mode_spacing=Ω1 | sample_size=22 measured devices |
 | `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0003` = 15.41 GHz | 96% | magnetic_field=8.1 T, frequency=1.9 THz | component=photonic molecule, mode_spacing=Ω2 |
 | `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0001` = 18.98 GHz | 95% | magnetic_field=8.1 T, frequency=1.9 THz | component=single ring cavity, parameter=FSR |
 | `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0003` = 15.41 GHz | 91% | magnetic_field=7.5 T, frequency=2.2 THz | component=photonic molecule, mode_spacing=Ω2 |
 | `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0001` = 18.98 GHz | 89% | magnetic_field=7.5 T, frequency=2.2 THz | component=single ring cavity, parameter=FSR |
+| `CLM-PHOT-0003` = 15.41 GHz | `CLM-PHOT-0036` = 121 GHz | 87% | component=photonic molecule, mode_spacing=Ω2 | sample_size=22 measured devices |
+| `CLM-PHOT-0001` = 18.98 GHz | `CLM-PHOT-0036` = 121 GHz | 84% | component=single ring cavity, parameter=FSR | sample_size=22 measured devices |
+| `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0036` = 121 GHz | 67% | magnetic_field=8.1 T, frequency=1.9 THz | sample_size=22 measured devices |
+| `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0036` = 121 GHz | 33% | magnetic_field=7.5 T, frequency=2.2 THz | sample_size=22 measured devices |
 
 ## `length_device` (65 pair(s))
 
@@ -106,36 +112,60 @@ _and 25 more_
 | `CLM-ARCH-0009` = 26.8 mW | `CLM-ARCH-0037` = 787 mW | 97% | architecture=MiX-INT4, array_size=512-MAC, process=28nm, frequency=500 MHz | component=synthesized SRAM-PIM subsystem |
 | `CLM-ARCH-0008` = 31.8 mW | `CLM-ARCH-0037` = 787 mW | 96% | architecture=MiX-INT4g16, array_size=512-MAC, process=28nm, frequency=500 MHz | component=synthesized SRAM-PIM subsystem |
 
-## `relative_deviation` (26 pair(s))
+## `relative_deviation` (48 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-ARCH-0018` = 98 percent | `CLM-MAT-0021` = 1 percent | 99% | concurrency_n_a=48, set_type=hot set | layer=WSe2 |
+| `CLM-EDA-0006` = 89.6 percent | `CLM-MAT-0021` = 1 percent | 99% | model=Non-cyclic Edge prediction model | layer=WSe2 |
 | `CLM-MAT-0021` = 1 percent | `CLM-PHOT-0006` = 88 percent | 99% | layer=WSe2 | dataset=MNIST, setup=experimental system |
+| `CLM-EDA-0005` = 86.4 percent | `CLM-MAT-0021` = 1 percent | 99% | model=Cyclic Edge prediction model | layer=WSe2 |
 | `CLM-MAT-0021` = 1 percent | `CLM-PHOT-0005` = 85 percent | 99% | layer=WSe2 | dataset=Iris test set |
+| `CLM-EDA-0007` = 76 percent | `CLM-MAT-0021` = 1 percent | 99% | model=Non-cyclic + Node prediction model | layer=WSe2 |
 | `CLM-EDA-0003` = 60 percent | `CLM-MAT-0021` = 1 percent | 98% | benchmark_circuit=LDO benchmark, framework=proposed method | layer=WSe2 |
 | `CLM-EDA-0004` = 60 percent | `CLM-MAT-0021` = 1 percent | 98% | circuit=most complex circuit, framework=proposed framework | layer=WSe2 |
 | `CLM-ARCH-0003` = 2 percent | `CLM-ARCH-0018` = 98 percent | 98% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | concurrency_n_a=48, set_type=hot set |
 | `CLM-ARCH-0018` = 98 percent | `CLM-MAT-0022` = 2 percent | 98% | concurrency_n_a=48, set_type=hot set | layer=WS2 |
+| `CLM-ARCH-0003` = 2 percent | `CLM-EDA-0006` = 89.6 percent | 98% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | model=Non-cyclic Edge prediction model |
+| `CLM-EDA-0006` = 89.6 percent | `CLM-MAT-0022` = 2 percent | 98% | model=Non-cyclic Edge prediction model | layer=WS2 |
 | `CLM-ARCH-0003` = 2 percent | `CLM-PHOT-0006` = 88 percent | 98% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | dataset=MNIST, setup=experimental system |
 | `CLM-MAT-0022` = 2 percent | `CLM-PHOT-0006` = 88 percent | 98% | layer=WS2 | dataset=MNIST, setup=experimental system |
+| `CLM-ARCH-0003` = 2 percent | `CLM-EDA-0005` = 86.4 percent | 98% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | model=Cyclic Edge prediction model |
+| `CLM-EDA-0005` = 86.4 percent | `CLM-MAT-0022` = 2 percent | 98% | model=Cyclic Edge prediction model | layer=WS2 |
 | `CLM-ARCH-0003` = 2 percent | `CLM-PHOT-0005` = 85 percent | 98% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | dataset=Iris test set |
 | `CLM-MAT-0022` = 2 percent | `CLM-PHOT-0005` = 85 percent | 98% | layer=WS2 | dataset=Iris test set |
+| `CLM-ARCH-0003` = 2 percent | `CLM-EDA-0007` = 76 percent | 97% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | model=Non-cyclic + Node prediction model |
+| `CLM-EDA-0007` = 76 percent | `CLM-MAT-0022` = 2 percent | 97% | model=Non-cyclic + Node prediction model | layer=WS2 |
 | `CLM-ARCH-0003` = 2 percent | `CLM-EDA-0003` = 60 percent | 97% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | benchmark_circuit=LDO benchmark, framework=proposed method |
 | `CLM-ARCH-0003` = 2 percent | `CLM-EDA-0004` = 60 percent | 97% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | circuit=most complex circuit, framework=proposed framework |
 | `CLM-EDA-0003` = 60 percent | `CLM-MAT-0022` = 2 percent | 97% | benchmark_circuit=LDO benchmark, framework=proposed method | layer=WS2 |
 | `CLM-EDA-0004` = 60 percent | `CLM-MAT-0022` = 2 percent | 97% | circuit=most complex circuit, framework=proposed framework | layer=WS2 |
 | `CLM-ARCH-0015` = 14.3 percent | `CLM-ARCH-0018` = 98 percent | 85% | device=H200, baseline=CA Overlap, variant=AN Overlap | concurrency_n_a=48, set_type=hot set |
+| `CLM-ARCH-0015` = 14.3 percent | `CLM-EDA-0006` = 89.6 percent | 84% | device=H200, baseline=CA Overlap, variant=AN Overlap | model=Non-cyclic Edge prediction model |
 | `CLM-ARCH-0015` = 14.3 percent | `CLM-PHOT-0006` = 88 percent | 84% | device=H200, baseline=CA Overlap, variant=AN Overlap | dataset=MNIST, setup=experimental system |
+| `CLM-ARCH-0015` = 14.3 percent | `CLM-EDA-0005` = 86.4 percent | 83% | device=H200, baseline=CA Overlap, variant=AN Overlap | model=Cyclic Edge prediction model |
 | `CLM-ARCH-0015` = 14.3 percent | `CLM-PHOT-0005` = 85 percent | 83% | device=H200, baseline=CA Overlap, variant=AN Overlap | dataset=Iris test set |
+| `CLM-ARCH-0015` = 14.3 percent | `CLM-EDA-0007` = 76 percent | 81% | device=H200, baseline=CA Overlap, variant=AN Overlap | model=Non-cyclic + Node prediction model |
 | `CLM-ARCH-0015` = 14.3 percent | `CLM-EDA-0003` = 60 percent | 76% | device=H200, baseline=CA Overlap, variant=AN Overlap | benchmark_circuit=LDO benchmark, framework=proposed method |
 | `CLM-ARCH-0015` = 14.3 percent | `CLM-EDA-0004` = 60 percent | 76% | device=H200, baseline=CA Overlap, variant=AN Overlap | circuit=most complex circuit, framework=proposed framework |
 | `CLM-ARCH-0018` = 98 percent | `CLM-EDA-0003` = 60 percent | 39% | concurrency_n_a=48, set_type=hot set | benchmark_circuit=LDO benchmark, framework=proposed method |
 | `CLM-ARCH-0018` = 98 percent | `CLM-EDA-0004` = 60 percent | 39% | concurrency_n_a=48, set_type=hot set | circuit=most complex circuit, framework=proposed framework |
+| `CLM-EDA-0003` = 60 percent | `CLM-EDA-0006` = 89.6 percent | 33% | benchmark_circuit=LDO benchmark, framework=proposed method | model=Non-cyclic Edge prediction model |
+| `CLM-EDA-0004` = 60 percent | `CLM-EDA-0006` = 89.6 percent | 33% | circuit=most complex circuit, framework=proposed framework | model=Non-cyclic Edge prediction model |
 | `CLM-EDA-0003` = 60 percent | `CLM-PHOT-0006` = 88 percent | 32% | benchmark_circuit=LDO benchmark, framework=proposed method | dataset=MNIST, setup=experimental system |
 | `CLM-EDA-0004` = 60 percent | `CLM-PHOT-0006` = 88 percent | 32% | circuit=most complex circuit, framework=proposed framework | dataset=MNIST, setup=experimental system |
-| `CLM-EDA-0003` = 60 percent | `CLM-PHOT-0005` = 85 percent | 29% | benchmark_circuit=LDO benchmark, framework=proposed method | dataset=Iris test set |
-| `CLM-EDA-0004` = 60 percent | `CLM-PHOT-0005` = 85 percent | 29% | circuit=most complex circuit, framework=proposed framework | dataset=Iris test set |
+| `CLM-EDA-0003` = 60 percent | `CLM-EDA-0005` = 86.4 percent | 31% | benchmark_circuit=LDO benchmark, framework=proposed method | model=Cyclic Edge prediction model |
+| `CLM-EDA-0004` = 60 percent | `CLM-EDA-0005` = 86.4 percent | 31% | circuit=most complex circuit, framework=proposed framework | model=Cyclic Edge prediction model |
+
+_and 8 more_
+
+## `temperature` (3 pair(s))
+
+| Claim A | Claim B | Gap | A's conditions | B's conditions |
+|---|---|---|---|---|
+| `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0004` = -73.15 degC | 135% | temperature_control_system=VAHEAT system | calculation=optical phonon and surface polar phonon scattering |
+| `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0003` = -123.1 degC | 121% | temperature_control_system=VAHEAT system | calculation=acoustic phonon scattering |
+| `CLM-DEV-0017` = 25.35 degC | `CLM-PROC-0001` = 26.85 degC | 6% | temperature_control_system=VAHEAT system | thermal_model=Debye model |
 
 ## `thermal_conductivity` (1 pair(s))
 
@@ -190,11 +220,17 @@ _and 25 more_
 
 _and 5 more_
 
-## `wavelength` (4 pair(s))
+## `wavelength` (10 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-PHOT-0012` = 6.3 um | `CLM-PHOT-0033` = 0.00315 um | 100% | target_gas=NO2, method=TMM/FDTD inverse design (MOPSO) | excitation_wavelength=532 nm, cumulative_exposure_time=5 h |
+| `CLM-PHOT-0014` = 6.3 um | `CLM-PHOT-0033` = 0.00315 um | 100% | target_gas=NO2, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | excitation_wavelength=532 nm, cumulative_exposure_time=5 h |
+| `CLM-PHOT-0011` = 3.26 um | `CLM-PHOT-0033` = 0.00315 um | 100% | target_gas=CH4, method=TMM/FDTD inverse design (MOPSO) | excitation_wavelength=532 nm, cumulative_exposure_time=5 h |
+| `CLM-PHOT-0013` = 3.26 um | `CLM-PHOT-0033` = 0.00315 um | 100% | target_gas=CH4, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | excitation_wavelength=532 nm, cumulative_exposure_time=5 h |
 | `CLM-PHOT-0012` = 6.3 um | `CLM-PHOT-0028` = 0.0167 um | 100% | target_gas=NO2, method=TMM/FDTD inverse design (MOPSO) | component=integrated microheater |
 | `CLM-PHOT-0014` = 6.3 um | `CLM-PHOT-0028` = 0.0167 um | 100% | target_gas=NO2, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | component=integrated microheater |
 | `CLM-PHOT-0011` = 3.26 um | `CLM-PHOT-0028` = 0.0167 um | 99% | target_gas=CH4, method=TMM/FDTD inverse design (MOPSO) | component=integrated microheater |
 | `CLM-PHOT-0013` = 3.26 um | `CLM-PHOT-0028` = 0.0167 um | 99% | target_gas=CH4, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | component=integrated microheater |
+| `CLM-PHOT-0029` = 0.3 um | `CLM-PHOT-0033` = 0.00315 um | 99% | component=9-channel ultra-broadband WDM DETRX, spectral_range=O-to-C band | excitation_wavelength=532 nm, cumulative_exposure_time=5 h |
+| `CLM-PHOT-0028` = 0.0167 um | `CLM-PHOT-0033` = 0.00315 um | 81% | component=integrated microheater | excitation_wavelength=532 nm, cumulative_exposure_time=5 h |

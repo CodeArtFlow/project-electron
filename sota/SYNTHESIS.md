@@ -1,6 +1,6 @@
 # The field, as our corpus knows it
 
-Generated 2026-09-29 from the claim ledger.
+Generated 2026-09-30 from the claim ledger.
 
 > **Read this as a description of our corpus, not of the field.** Every number below counts what we have read and extracted. A layer with no claims means we have not read anything for it — never that nothing is happening there.
 
@@ -8,33 +8,33 @@ Generated 2026-09-29 from the claim ledger.
 
 | Layer | Claims | Read |
 |---|---|---|
-| Materials (`MAT`) | 24 | yes |
-| Devices (`DEV`) | 13 | yes |
+| Materials (`MAT`) | 28 | yes |
+| Devices (`DEV`) | 17 | yes |
 | Lithography (`LITHO`) | 0 | **nothing yet** |
 | Process (`PROC`) | 5 | yes |
 | Packaging (`PKG`) | 2 | yes |
-| Memory (`MEM`) | 0 | **nothing yet** |
+| Memory (`MEM`) | 4 | yes |
 | Architecture (`ARCH`) | 39 | yes |
-| Photonics (`PHOT`) | 31 | yes |
-| EDA (`EDA`) | 4 | yes |
+| Photonics (`PHOT`) | 38 | yes |
+| EDA (`EDA`) | 7 | yes |
 | Economics (`ECON`) | 0 | **nothing yet** |
 
-7 of 10 layers have any claim at all. 44 source record(s) read; 868 candidate(s) queued unread.
+8 of 10 layers have any claim at all. 52 source record(s) read; 989 candidate(s) queued unread.
 
 ## Evidence quality
 
 | Grade | Claims |
 |---|---|
 | A | 7 |
-| B | 114 |
+| B | 136 |
 | C | 0 |
 | D | 0 |
 | E | 0 |
 
 | Evidence type | Claims |
 |---|---|
-| simulated | 70 |
-| measured | 50 |
+| simulated | 82 |
+| measured | 60 |
 | projected | 1 |
 
 ## Where the corpus disagrees with itself
@@ -43,8 +43,8 @@ Generated 2026-09-29 from the claim ledger.
 
 ## What we cannot yet say
 
-- Nothing about **Lithography, Memory, Economics** — no claims extracted for those layers.
+- Nothing about **Lithography, Economics** — no claims extracted for those layers.
 
-- 868 candidate(s) sit unread. Until they are read, absence of a claim here is absence of reading, not absence of evidence.
+- 989 candidate(s) sit unread. Until they are read, absence of a claim here is absence of reading, not absence of evidence.
 
 - Nothing about any paper with no legal open-access copy. That exclusion is a property of our access policy, and it is tracked as `access-blocked`.

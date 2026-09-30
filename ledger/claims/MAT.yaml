@@ -764,3 +764,94 @@ claims:
       unit: nm
     conditions:
       state: X2sA
+- id: CLM-MAT-0025
+  topic: MAT
+  statement: For a randomly displaced 6x6x6 GaP supercell, the DeepH-GW model achieves a mean absolute
+    error of 9.7 meV over the 40 bands closest to the Fermi level.
+  sources:
+  - SRC-00047
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-29'
+  created: '2026-09-30'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    material: GaP
+    supercell_size: 6×6×6
+    band_count: 40 closest bands
+- id: CLM-MAT-0026
+  topic: MAT
+  statement: The 2-inch-round tunable coating generates a power density of 0.48 W/m2 at noon time in ambient
+    condition.
+  sources:
+  - SRC-00048
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-29'
+  created: '2026-09-30'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    environment: ambient
+  quantity:
+    quantity: power_density
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.48
+      unit: W/m2
+    si_base:
+      value: 0.48
+      unit: W/m^2
+    display:
+      value: 4.8e-07
+      unit: W/mm^2
+    conditions:
+      environment: ambient
+- id: CLM-MAT-0027
+  topic: MAT
+  statement: The calculated band gap of defect-free bilayer CrN is 0.38 eV.
+  sources:
+  - SRC-00050
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-29'
+  created: '2026-09-30'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    method: DFT
+- id: CLM-MAT-0028
+  topic: MAT
+  statement: The calculated band gap of bilayer CrN1-x is 0.07 eV.
+  sources:
+  - SRC-00050
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-29'
+  created: '2026-09-30'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    method: DFT

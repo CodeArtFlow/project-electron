@@ -144,3 +144,102 @@ claims:
     conditions:
       circuit: most complex circuit
       framework: proposed framework
+- id: CLM-EDA-0005
+  topic: EDA
+  statement: The cyclic edge prediction model generated 86.4% valid circuits.
+  sources:
+  - SRC-00045
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-29'
+  created: '2026-09-30'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    model: Cyclic Edge prediction model
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 86.4
+      unit: '%'
+    si_base:
+      value: 0.8640000000000001
+      unit: dimensionless
+    display:
+      value: 86.4
+      unit: percent
+    conditions:
+      model: Cyclic Edge prediction model
+- id: CLM-EDA-0006
+  topic: EDA
+  statement: The non-cyclic edge prediction model generated 89.6% valid circuits.
+  sources:
+  - SRC-00045
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-29'
+  created: '2026-09-30'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    model: Non-cyclic Edge prediction model
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 89.6
+      unit: '%'
+    si_base:
+      value: 0.8959999999999999
+      unit: dimensionless
+    display:
+      value: 89.6
+      unit: percent
+    conditions:
+      model: Non-cyclic Edge prediction model
+- id: CLM-EDA-0007
+  topic: EDA
+  statement: The combined non-cyclic and node prediction model generated 76.0% valid circuits.
+  sources:
+  - SRC-00045
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-29'
+  created: '2026-09-30'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    model: Non-cyclic + Node prediction model
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 76.0
+      unit: '%'
+    si_base:
+      value: 0.76
+      unit: dimensionless
+    display:
+      value: 76.0
+      unit: percent
+    conditions:
+      model: Non-cyclic + Node prediction model

@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-09-29.
+Topic code `DEV`. Last reviewed 2026-09-30.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -58,6 +58,25 @@ Topic code `DEV`. Last reviewed 2026-09-29.
   - `CLM-DEV-0016` · model SIM-D2NN(Phase & Amplitude) · grade B · credibility unknown · simulated · as of 2026-09-28
   - sources: SRC-00041
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- For devices containing 320 to 480 atoms, HamGNN-NEGF achieves speedups of approximately 1,000-fold to 2,000-fold over conventional Full-NEGF.
+  - `CLM-DEV-0018` · framework HamGNN-NEGF, baseline Full-NEGF · grade B · credibility unknown · simulated · as of 2026-09-29
+  - sources: SRC-00049
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Relative to the Full-NEGF baseline, DFTH-NEGF reduces total computational time by 18.3% for the Au-benzenedithiol-Au junction.
+  - `CLM-DEV-0019` · method DFTH-NEGF, baseline Full-NEGF, device Au–benzenedithiol–Au junction · grade B · credibility unknown · simulated · as of 2026-09-29
+  - sources: SRC-00049
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- Relative to the Full-NEGF baseline, DFTH-NEGF reduces total computational time by 27.4% for the carbon nanotube.
+  - `CLM-DEV-0020` · method DFTH-NEGF, baseline Full-NEGF, device carbon nanotube · grade B · credibility unknown · simulated · as of 2026-09-29
+  - sources: SRC-00049
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+
+### temperature
+
+- **25.35 degC** — All experiments were performed at a temperature of 298.5 K.
+  - `CLM-DEV-0017` · temperature_control_system VAHEAT system · grade B · credibility unknown · measured · as of 2026-09-29
+  - sources: SRC-00046
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -72,6 +91,6 @@ _None._
 
 ## Evidence base
 
-- claims: 13
-- grades: {'B': 13}
-- distinct sources: 6
+- claims: 17
+- grades: {'B': 17}
+- distinct sources: 8

@@ -1,0 +1,89 @@
+id: SRC-00047
+title: Deep Learning GW Quasiparticle Hamiltonians for Many-Body Excited-State Electronic Structure at
+  Scale
+doi: null
+arxiv_id: 2609.36962v1
+url: https://arxiv.org/abs/2609.36962v1
+venue_id: arxiv_api
+authors:
+- name: Xiaoxun Gong
+  affiliation: null
+  corresponding: null
+- name: Zechen Tang
+  affiliation: null
+  corresponding: null
+- name: Woochang Kim
+  affiliation: null
+  corresponding: null
+- name: Yang Li
+  affiliation: null
+  corresponding: null
+- name: Wenhui Duan
+  affiliation: null
+  corresponding: null
+- name: Yong Xu
+  affiliation: null
+  corresponding: null
+- name: Steven G. Louie
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-29'
+retrieved_date: '2026-09-30'
+access: full_text
+read_scope: Automated reading. The full PDF text (46,894 characters, 15 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.36962v1 on
+  2026-09-30. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“For GaP , the corresponding error over the 40 closest bands is 9.7 meV.”
+
+  “applying the same models, trained exclusively on 3×3×3 supercells, to randomly displaced 6×6×6 supercells.”
+
+  “the corresponding error over the 40 closest bands is 9.7 meV.”'
+method_summary: “The effective AO GW Hamiltonian of each configuration is predicted using the model trained
+  only on 3×3×3 diamond supercells.”
+limitations: '“The slightly larger error for GaP is physically plausible because GaP is a polar insulator.
+  Atomic displacements in a polar crystal can generate long-range dipolar potentials through nonzero Born
+  effective charges, introducing contributions that cannot be fully captured by a strictly local model.”
+
+  “Systems containing slowly decaying electrostatic interactions or metallic responses may require explicit
+  long-range corrections in addition to local message passing.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 13888
+    output: 1504
+  claims_accepted: 1
+  claims_rejected: 3
+  rejected:
+  - statement: For a randomly displaced 6x6x6 diamond supercell, the DeepH-GW model trained only on 3x3x3
+      structures achieves a mean absolute error of 5.9 meV over the 20 band
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''For diamond,
+      the mean absolute error over the 20 bands closest to the '''
+    quotes:
+    - For diamond, the mean absolute error over the 20 bands closest to the Fermi level is 5.9 meV .
+    - applying the same models, trained exclusively on 3×3×3 supercells, to randomly displaced 6×6×6 supercells.
+    - the mean absolute error over the 20 bands closest to the Fermi level is 5.9 meV .
+  - statement: Neural-network inference in the DeepH-GW framework requires approximately 5 CPU-hours per
+      structure for diamond supercells containing thermal displacements.
+    reason: 'unit conversion refused: time: could not parse 5.0 ''CPU-hours'': unsupported operand type(s)
+      for -: ''ParserHelper'' and ''ParserHelper'''
+    quotes:
+    - neural-network inference requires approximately 5 CPU-hours per structure
+    - The effective AO GW Hamiltonian of each configuration is predicted using the model trained only
+      on 3×3×3 diamond supercells.
+  - statement: Sparse diagonalization of the AO Hamiltonian requires approximately 14 CPU-hours per k
+      point to obtain 128 eigenstates around the Fermi level.
+    reason: 'unit conversion refused: time: could not parse 14.0 ''CPU-hours'': unsupported operand type(s)
+      for -: ''ParserHelper'' and ''ParserHelper'''
+    quotes:
+    - sparse diagonalization of the AO Hamiltonian requires approximately 14 CPU-hours per 𝒌 point to
+      obtain 128 eigenstates around the Fermi level.
+    - to obtain 128 eigenstates around the Fermi level.
+corrections: []

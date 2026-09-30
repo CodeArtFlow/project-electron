@@ -33,6 +33,82 @@ id: CAND-20260930-0156
 harvested_date: '2026-09-30'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-30'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: An inter-library function call on Morello takes 10 cycles with compartmentalization disabled.
+    reason: 'unit conversion refused: time: cannot convert 10.0 cycles to s - Cannot convert from ''turn''
+      (dimensionless) to ''second'' ([time]). A dimensional mismatch means the value was recorded aga'
+    quotes:
+    - 'Table 2: Cycle Count of an Inter-library Function Call under Different Compartmentalization Settings'
+    - Morello Armv8-A Yes 10 60 6.0×
+    - We use performance counters to analyze the best-case overhead of a compartment transition.
+    - Disabled Enabled Overhead
+  - statement: An inter-library function call on Morello takes 60 cycles with compartmentalization enabled.
+    reason: 'unit conversion refused: time: cannot convert 60.0 cycles to s - Cannot convert from ''turn''
+      (dimensionless) to ''second'' ([time]). A dimensional mismatch means the value was recorded aga'
+    quotes:
+    - 'Table 2: Cycle Count of an Inter-library Function Call under Different Compartmentalization Settings'
+    - Morello Armv8-A Yes 10 60 6.0×
+    - We use performance counters to analyze the best-case overhead of a compartment transition.
+    - Disabled Enabled Overhead
+  - statement: An inter-library function call on Toooba takes 8 cycles with compartmentalization disabled.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Toooba RISC-V
+      Yes 8 96 12.0×'''
+    quotes:
+    - 'Table 2: Cycle Count of an Inter-library Function Call under Different Compartmentalization Settings'
+    - Toooba RISC-V Yes 8 96 12.0×
+    - We use performance counters to analyze the best-case overhead of a compartment transition.
+    - Disabled Enabled Overhead
+  - statement: An inter-library function call on Toooba takes 96 cycles with compartmentalization enabled.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Toooba RISC-V
+      Yes 8 96 12.0×'''
+    quotes:
+    - 'Table 2: Cycle Count of an Inter-library Function Call under Different Compartmentalization Settings'
+    - Toooba RISC-V Yes 8 96 12.0×
+    - We use performance counters to analyze the best-case overhead of a compartment transition.
+    - Disabled Enabled Overhead
+  - statement: An inter-library function call on X730 takes 10 cycles with compartmentalization disabled.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''X730 RISC-V
+      No 10 121 12.1×'''
+    quotes:
+    - 'Table 2: Cycle Count of an Inter-library Function Call under Different Compartmentalization Settings'
+    - X730 RISC-V No 10 121 12.1×
+    - We use performance counters to analyze the best-case overhead of a compartment transition.
+    - Disabled Enabled Overhead
+  - statement: An inter-library function call on X730 takes 121 cycles with compartmentalization enabled.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''X730 RISC-V
+      No 10 121 12.1×'''
+    quotes:
+    - 'Table 2: Cycle Count of an Inter-library Function Call under Different Compartmentalization Settings'
+    - X730 RISC-V No 10 121 12.1×
+    - We use performance counters to analyze the best-case overhead of a compartment transition.
+    - Disabled Enabled Overhead
+  - statement: An inter-library function call on CVA6 takes 20 cycles with compartmentalization disabled.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''CVA6 RISC-V
+      No 20 155 7.8×'''
+    quotes:
+    - 'Table 2: Cycle Count of an Inter-library Function Call under Different Compartmentalization Settings'
+    - CVA6 RISC-V No 20 155 7.8×
+    - We use performance counters to analyze the best-case overhead of a compartment transition.
+    - Disabled Enabled Overhead
+  - statement: An inter-library function call on CVA6 takes 155 cycles with compartmentalization enabled.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''CVA6 RISC-V
+      No 20 155 7.8×'''
+    quotes:
+    - 'Table 2: Cycle Count of an Inter-library Function Call under Different Compartmentalization Settings'
+    - CVA6 RISC-V No 20 155 7.8×
+    - We use performance counters to analyze the best-case overhead of a compartment transition.
+    - Disabled Enabled Overhead
+  tokens:
+    input: 27052
+    output: 2930
+  fetched_chars: 96502

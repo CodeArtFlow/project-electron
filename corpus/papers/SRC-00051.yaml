@@ -1,0 +1,95 @@
+id: SRC-00051
+title: Optically-Induced Modulation and Programming of Diamond Photonic Cavities
+doi: null
+arxiv_id: 2609.37163v1
+url: https://arxiv.org/abs/2609.37163v1
+venue_id: arxiv_api
+authors:
+- name: Yuchun Zhu
+  affiliation: null
+  corresponding: null
+- name: Amirali Arabmoheghi
+  affiliation: null
+  corresponding: null
+- name: Nicolas Le Thomas
+  affiliation: null
+  corresponding: null
+- name: Niels Quack
+  affiliation: null
+  corresponding: null
+- name: Valentin Goblot
+  affiliation: null
+  corresponding: null
+- name: Christophe Galland
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-29'
+retrieved_date: '2026-09-30'
+access: full_text
+read_scope: Automated reading. The full PDF text (85,074 characters, 28 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.37163v1 on
+  2026-09-30. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“With 10 mW of 20 kHz-modulated green light, we achieve an infrared modulation depth of approximately
+  45% of the available reflection contrast.”
+
+  “Under 532 nm illumination, the infrared (1000 to 1100 nm) cavity response is governed by two competing
+  contributions”
+
+  “Green illumination also produces quasi-permanent photo-refractive resonance blue-shifts, with a maximum
+  observed tuning of 3.15 nm (0.87 THz), without measurable degradation of the cavity linewidth or contrast.”
+
+  “The maximum blue shift relative to the initial resonance reaches ∆λ max =−3.15 nm after approximately
+  5 h of cumulative green illumination distributed over four days.”
+
+  “The devices were fabricated in single-crystal diamond with a manufacturer-specified NV concentration
+  of 4 ppm (Element Six) [38].”
+
+  “Across 22 measured devices, the mean finesse was F= 12.2±3.6 and the mean linewidth ∆ν= 121±58 GHz.”
+
+  “For a typical 20µm cavity measured under circular green-beam excitation, the magnitude of the resonance
+  shift corresponds to a mode-averaged temperature increase of approximately 0.11 K for 1.09 mW of incident
+  green power at the sample plane.”
+
+  “For a typical 20µm cavity measured under circular green-beam excitation”
+
+  “for 1.09 mW of incident green power at the sample plane.”
+
+  “For waveguide-coupled excitation of the same device and cavity resonance,M peak reaches approximately
+  45% atP in = 9.6 mW, representing the largest modulation observed in this study.”
+
+  “For waveguide-coupled excitation of the same device and cavity resonance,M peak reaches approximately
+  45% atP in = 9.6 mW”'
+method_summary: “Light from a continuous-wave tunable IR laser (Toptica) is coupled into the suspended
+  diamond nanobeam using an etched optical fibre taper aligned with the inverse taper of the diamond device.
+  Reflection from the cavity is collected through the same fibre and directed to a photodetector through
+  a beam-splitter. A 532 nm laser beam (Cobolt) was delivered from free space through a microscope objective
+  with a numerical aperture of 0.5 (Mitutoyo) and focused onto the tested device.”
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 25491
+    output: 2795
+  claims_accepted: 7
+  claims_rejected: 1
+  rejected:
+  - statement: Reproducing a 3.15 nm blue spectral shift in a lithium-niobate waveguide electro-optic
+      modulator requires 220 V across a 5 µm electrode gap, assuming ideal elec
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''For comparison,
+      reproducing the largest observed long-lived blue spect'''
+    quotes:
+    - 'For comparison, reproducing the largest observed long-lived blue spectral shift of 3.15 nm through
+      the Pockels effect in a lithium-niobate waveguide electro-optic modulator would require approximately
+      220 V across a 5µm electrode gap, even '
+    - lithium-niobate waveguide electro-optic modulator
+    - reproducing the largest observed long-lived blue spectral shift of 3.15 nm
+    - across a 5µm electrode gap
+corrections: []

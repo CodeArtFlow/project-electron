@@ -28,6 +28,76 @@ id: CAND-20260930-0160
 harvested_date: '2026-09-30'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-09-30'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: In the 0-hBN device, the fitted capacitance value CG is 0.055 F/m^2.
+    reason: 'unit conversion refused: capacitance_per_length: could not parse 0.055 ''F/m 2'': Unit expression
+      cannot have a scaling factor.'
+    quotes:
+    - is achieved with fitted capacitance values of CG = 0.055 F/m 2 (0-hBN), 0.028 F/m 2 (1-hBN), and
+      0.020 F/m 2 (2-hBN)
+    - To quantitatively match the experimental crossing positions, the capacitance model is used to account
+      for screening effects
+    - 0-hBN
+  - statement: In the 1-hBN device, the fitted capacitance value CG is 0.028 F/m^2.
+    reason: 'unit conversion refused: capacitance_per_length: could not parse 0.028 ''F/m 2'': Unit expression
+      cannot have a scaling factor.'
+    quotes:
+    - is achieved with fitted capacitance values of CG = 0.055 F/m 2 (0-hBN), 0.028 F/m 2 (1-hBN), and
+      0.020 F/m 2 (2-hBN)
+    - To quantitatively match the experimental crossing positions, the capacitance model is used to account
+      for screening effects
+    - 1-hBN
+  - statement: In the 2-hBN device, the fitted capacitance value CG is 0.020 F/m^2.
+    reason: the value 0.02 does not appear in any of the claim's quotes
+    quotes:
+    - is achieved with fitted capacitance values of CG = 0.055 F/m 2 (0-hBN), 0.028 F/m 2 (1-hBN), and
+      0.020 F/m 2 (2-hBN)
+    - To quantitatively match the experimental crossing positions, the capacitance model is used to account
+      for screening effects
+    - 2-hBN
+  - statement: In the 0-hBN device, the geometric capacitance is 0.026 F/m^2.
+    reason: 'unit conversion refused: capacitance_per_length: could not parse 0.026 ''F/m 2'': Unit expression
+      cannot have a scaling factor.'
+    quotes:
+    - In comparison, the geometric capacitance of TBG and of two graphene layers separated by mono and
+      bilayer hBN is 0.026 F/m 2 (0-hBN), 0.021 F/m2 (1-hBN), and 0.017 F/m2 (2-hBN), respectively
+    - 0-hBN
+  - statement: In the 1-hBN device, the geometric capacitance is 0.021 F/m^2.
+    reason: 'unit conversion refused: capacitance_per_length: cannot convert 0.021 F/m2 to F/m - Cannot
+      convert from ''farad / meter ** 2'' ([current] ** 2 * [time] ** 4 / [mass] / [length] ** 4) to '''
+    quotes:
+    - In comparison, the geometric capacitance of TBG and of two graphene layers separated by mono and
+      bilayer hBN is 0.026 F/m 2 (0-hBN), 0.021 F/m2 (1-hBN), and 0.017 F/m2 (2-hBN), respectively
+    - 1-hBN
+  - statement: In the 2-hBN device, the geometric capacitance is 0.017 F/m^2.
+    reason: 'unit conversion refused: capacitance_per_length: cannot convert 0.017 F/m2 to F/m - Cannot
+      convert from ''farad / meter ** 2'' ([current] ** 2 * [time] ** 4 / [mass] / [length] ** 4) to '''
+    quotes:
+    - In comparison, the geometric capacitance of TBG and of two graphene layers separated by mono and
+      bilayer hBN is 0.026 F/m 2 (0-hBN), 0.021 F/m2 (1-hBN), and 0.017 F/m2 (2-hBN), respectively
+    - 2-hBN
+  - statement: For the 1-hBN* device at n = 0, the thermal activation gap Δ mp is 180 K.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''the thermal
+      activation gap (∆ mp = 180 K, right inset of Fig. 4(c)) at'''
+    quotes:
+    - the thermal activation gap (∆ mp = 180 K, right inset of Fig. 4(c)) atn= 0 is much smaller than
+      expected for graphene-hBN moir! e [48].
+    - Temperature-dependentR xx of 1-hBN ∗ device measured atD= 0 V/nm. The insets present the Arrhenius
+      plots, where the dotted line denotes the Arrhenius fitting and ∆ is the extracted gap of the side
+      peak (left) and the main peak (right).
+    - 1-hBN ∗ device
+    - n= 0
+  tokens:
+    input: 16425
+    output: 2449
+  fetched_chars: 50353

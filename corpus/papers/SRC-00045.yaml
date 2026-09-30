@@ -1,0 +1,89 @@
+id: SRC-00045
+title: 'cktFormer: Transformer-Based Approach for Automated Analog Circuit Design'
+doi: null
+arxiv_id: 2609.36752v1
+url: https://arxiv.org/abs/2609.36752v1
+venue_id: arxiv_api
+authors:
+- name: Pasindu Dodampegama
+  affiliation: null
+  corresponding: null
+- name: Praveen Wijesinghe
+  affiliation: null
+  corresponding: null
+- name: Naveen Basnayake
+  affiliation: null
+  corresponding: null
+- name: Keshawa Jayasundara
+  affiliation: null
+  corresponding: null
+- name: Tharindu Bandaragoda
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-29'
+retrieved_date: '2026-09-30'
+access: full_text
+read_scope: Automated reading. The full PDF text (30,988 characters, 6 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.36752v1 on
+  2026-09-30. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Cyclic Edge prediction model 86.4”
+
+  “Cyclic Edge prediction model”
+
+  “TABLE II: Comparison models based on the percentage of valid circuits generated.”
+
+  “Non-cyclic Edge prediction model 89.6”
+
+  “Non-cyclic Edge prediction model”
+
+  “Non-cyclic + Node prediction model 76.0”
+
+  “Non-cyclic + Node prediction model”'
+method_summary: '“We utilize the AnalogGenie dataset as our benchmark, which includes components such
+  as resistors, capacitors, inductors, and transistors, along with graphical and netlist representations
+  of circuits.”
+
+  “We compare our model with several state-of-the-art analog circuit generation methods, including CktGNN
+  [14] (V AE-based graph generation), LaMAGIC [9] (masked graph model), AnalogCoder [17] (code-generation
+  approach), and AnalogGenie (autoregressive graph modeling).”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 9004
+    output: 1599
+  claims_accepted: 3
+  claims_rejected: 3
+  rejected:
+  - statement: The non-cyclic edge prediction model achieved a test accuracy of 0.9916.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Non-Cyclic
+      Model 0.9916'''
+    quotes:
+    - Non-Cyclic Model 0.9916
+    - TABLE I:Comparison of Edge Prediction Models
+    - Non-Cyclic Model
+    - Test Accuracy
+  - statement: The cyclic edge prediction model achieved a test accuracy of 0.9675.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Cyclic Model
+      0.9675'''
+    quotes:
+    - Cyclic Model 0.9675
+    - TABLE I:Comparison of Edge Prediction Models
+    - Cyclic Model
+    - Test Accuracy
+  - statement: The cktGNN baseline model generated 67.5% valid circuits.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''CktGNN 67.5'''
+    quotes:
+    - CktGNN 67.5
+    - 'TABLE II: Comparison models based on the percentage of valid circuits generated.'
+    - CktGNN
+    - Valid circuits (%)
+corrections: []
