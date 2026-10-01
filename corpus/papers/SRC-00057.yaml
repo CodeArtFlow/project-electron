@@ -1,0 +1,115 @@
+id: SRC-00057
+title: 'Operando Charge Carrier Dynamics by Intensity-Modulated Photoluminescence: From Perovskite Thin
+  Films to Solar Cells'
+doi: null
+arxiv_id: 2609.39073v1
+url: https://arxiv.org/abs/2609.39073v1
+venue_id: arxiv_api
+authors:
+- name: Constantin Bach
+  affiliation: null
+  corresponding: null
+- name: Dong Won Kim
+  affiliation: null
+  corresponding: null
+- name: Yitian Du
+  affiliation: null
+  corresponding: null
+- name: Yana Vaynzof
+  affiliation: null
+  corresponding: null
+- name: Carsten Deibel
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-30'
+retrieved_date: '2026-10-01'
+access: full_text
+read_scope: Automated reading. The full PDF text (77,234 characters, 26 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.39073v1 on
+  2026-10-01. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Solving the system numerically with the fit values from the bilayers, assuming a generation
+  rate equivalent to one sun and neglecting bulk recombination, we arrive at upper limits for interface-dominated
+  recombination lifetimes: 200 ns (control) and 750 ns (OAI-treated).”
+
+  “assuming a generation rate equivalent to one sun”
+
+  “arrive at upper limits for interface-dominated recombination lifetimes: 200 ns (control) and 750 ns
+  (OAI-treated).”'
+method_summary: '“IMPLS measurements were conducted with the sample placed in nitrogen atmosphere inside
+  a Cryovac cryostat.”
+
+  “IMVS and IMPLS were measured simultaneously.”'
+limitations: “As a zero-dimensional approximation, the kinetic model neglects the influence of spatial
+  transport, nonuniform generation, doping in the TLs, and possible band bending at the interface.”
+evidence_type: projected
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 29396
+    output: 2388
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: The SnO2/FAPbI3 bilayer exhibits a charge-transfer time of 310 ns.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - We extract a charge-transfer time of 310 ns compared with only 10 ns for the FAPbI 3/spiro bilayers.
+    - interfacial parameters of the different perovskite/TL stacks obtained from a fit of the kinetic
+      model to the IMPLS data.
+    - SnO2/FAPbI3
+    - charge-transfer time of 310 ns
+  - statement: The FAPbI3/spiro bilayer exhibits a charge-transfer time of 10 ns.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - We extract a charge-transfer time of 310 ns compared with only 10 ns for the FAPbI 3/spiro bilayers.
+    - interfacial parameters of the different perovskite/TL stacks obtained from a fit of the kinetic
+      model to the IMPLS data.
+    - FAPbI 3/spiro
+    - charge-transfer time
+  - statement: The FAPbI3/OAI/spiro bilayer exhibits a charge-transfer time of 8 ns.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''τtr [ns]
+      310 10 8'''
+    quotes:
+    - 'Table 1: Interfacial parameters of the different perovskite/TL stacks obtained from a fit of the
+      kinetic model to the IMPLS data.'
+    - τtr [ns] 310 10 8
+    - interfacial parameters of the different perovskite/TL stacks obtained from a fit of the kinetic
+      model to the IMPLS data.
+    - FAPbI 3/OAI/spiro
+  - statement: At one sun, the effective charge-carrier lifetime of the OAI-treated solar cell is 470
+      ns.
+    reason: the quote says the number is approximate but approximate is false
+    quotes:
+    - The effective recombination lifetime decreases from about 760 ns at 0.06 suns to about 370 ns at
+      two suns with 470 ns at one sun.
+    - Figure 4 c) displays the extracted time constants from IMVS and IMPLS for different light intensities.
+    - 470 ns at one sun
+    - SnO 2/FAPbI3/OAI/spiro solar cell
+  - statement: At one sun, the corrected recombination lifetime of the OAI-treated cell is approximately
+      560 ns.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - When corrected for the recombination order, the OAI-treated cell showsτ rec≈560 ns at one sun –
+      below the predicted limit of 750 ns.
+    - When corrected for the recombination order, the OAI-treated cell showsτ rec≈560 ns at one sun
+    - at one sun
+    - OAI-treated cell
+  - statement: For the control device, the effective lifetime is approximately 190 ns at all investigated
+      light intensities.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - For the control device,τ eff ≈190 ns – almost identical to the predicted limit – at all investigated
+      light intensities
+    - control device
+corrections: []

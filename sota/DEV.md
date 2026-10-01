@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-09-30.
+Topic code `DEV`. Last reviewed 2026-10-01.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -16,6 +16,13 @@ Topic code `DEV`. Last reviewed 2026-09-30.
   - `CLM-DEV-0013` · magnetic_field 7.5 T, frequency 2.2 THz · grade B · credibility unknown · measured · as of 2026-09-23
   - sources: SRC-00033
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+
+### power
+
+- **1 W** — For a gate drive EMF of 1.50 V, the simulated output power is 30.0 dBm.
+  - `CLM-DEV-0025` · gate_bias_vgs -2.7 V · grade B · credibility unknown · simulated · as of 2026-09-30
+  - sources: SRC-00054
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### qualitative
 
@@ -78,6 +85,28 @@ Topic code `DEV`. Last reviewed 2026-09-30.
   - sources: SRC-00046
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
+### temperature delta
+
+- **30.4 K** — At a gate drive EMF of 1.50 V, the memory-on ASM-HEMT simulation yields a junction temperature rise of 30.4 K.
+  - `CLM-DEV-0024` · gate_bias_vgs -2.7 V · grade B · credibility unknown · simulated · as of 2026-09-30
+  - sources: SRC-00054
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+
+### time
+
+- **1.504e+06 ns** — Under the memory-on ASM-HEMT simulation, mode 1 has a time constant of 1504 µs.
+  - `CLM-DEV-0021` · mode 1, character thermal (mount), operating_point Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V · grade B · credibility unknown · simulated · as of 2026-09-30
+  - sources: SRC-00054
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **14600 ns** — In the memory-on ASM-HEMT model simulation at gate drive 1.5 V, mode 3 (the linearized trap mode) has a time constant of 14.6 µs.
+  - `CLM-DEV-0022` · mode 3, character trap, linearized, operating_point Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V · grade B · credibility unknown · simulated · as of 2026-09-30
+  - sources: SRC-00054
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **6010 ns** — For the memory-on ASM-HEMT simulation, the channel thermal mode (mode 4) has a time constant of 6.01 µs.
+  - `CLM-DEV-0023` · mode 4, character thermal (channel), operating_point Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V · grade B · credibility unknown · simulated · as of 2026-09-30
+  - sources: SRC-00054
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+
 ### voltage
 
 - **≈85 V** — In the flat state of the nanogap metasurface, the peak gap voltage reaches approximately 85 V at an incident peak electric field of 150 kV/cm.
@@ -91,6 +120,6 @@ _None._
 
 ## Evidence base
 
-- claims: 17
-- grades: {'B': 17}
-- distinct sources: 8
+- claims: 22
+- grades: {'B': 22}
+- distinct sources: 9

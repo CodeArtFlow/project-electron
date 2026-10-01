@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-09-30.
+Topic code `PHOT`. Last reviewed 2026-10-01.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -106,6 +106,10 @@ Topic code `PHOT`. Last reviewed 2026-09-30.
   - `CLM-PHOT-0038` · excitation_type waveguide-coupled excitation · grade B · credibility unknown · measured · as of 2026-09-29
   - sources: SRC-00051
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- An all-dielectric metasurface demonstrated fifth-harmonic generation enhancement in argon with a reported enhancement factor of up to 45.
+  - `CLM-PHOT-0039` · harmonic_order fifth-harmonic generation, platform all-dielectric metasurface · grade B · credibility unknown · measured · as of 2026-09-30
+  - sources: SRC-00053
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -187,6 +191,6 @@ _None._
 
 ## Evidence base
 
-- claims: 38
-- grades: {'B': 31, 'A': 7}
-- distinct sources: 12
+- claims: 39
+- grades: {'B': 32, 'A': 7}
+- distinct sources: 13

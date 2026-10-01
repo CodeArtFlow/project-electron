@@ -1237,3 +1237,73 @@ claims:
   conditions:
     mapping_strategy: optimized two-phase TP+EP mapping
     baseline: EP baseline
+- id: CLM-ARCH-0040
+  topic: ARCH
+  statement: The directional coupler with a graded magnetic spacer transfers approximately 97.93% of the
+    normalized output power to the adjacent waveguide.
+  sources:
+  - SRC-00058
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-30'
+  created: '2026-10-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    frequency: 7 GHz
+    component: graded magnetic spacer
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: true
+    as_published:
+      value: 97.93
+      unit: '%'
+    si_base:
+      value: 0.9793000000000001
+      unit: dimensionless
+    display:
+      value: 97.93
+      unit: percent
+    conditions:
+      frequency: 7 GHz
+      component: graded magnetic spacer
+- id: CLM-ARCH-0041
+  topic: ARCH
+  statement: In the air-gap structure without a magnetic spacer, 93.08% of the normalized output power
+    remains in the input waveguide.
+  sources:
+  - SRC-00058
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-30'
+  created: '2026-10-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    frequency: 7 GHz
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 93.08
+      unit: '%'
+    si_base:
+      value: 0.9308
+      unit: dimensionless
+    display:
+      value: 93.08
+      unit: percent
+    conditions:
+      frequency: 7 GHz

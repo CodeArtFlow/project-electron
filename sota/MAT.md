@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-09-30.
+Topic code `MAT`. Last reviewed 2026-10-01.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -63,6 +63,10 @@ Topic code `MAT`. Last reviewed 2026-09-30.
   - sources: SRC-00043
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0019 — see the open register
+- **0.5291 nm** — The optimized bulk CeN lattice parameter a was calculated to be 5.291 Å.
+  - `CLM-MAT-0029` · material bulk CeN · grade B · credibility unknown · simulated · as of 2026-09-30
+  - sources: SRC-00055
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power density
 
@@ -109,6 +113,26 @@ Topic code `MAT`. Last reviewed 2026-09-30.
   - `CLM-MAT-0028` · method DFT · grade B · credibility unknown · simulated · as of 2026-09-29
   - sources: SRC-00050
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The GNN model used for predicting EAD contains ~315k trainable parameters.
+  - `CLM-MAT-0030` · model_type GNN model · grade B · credibility unknown · simulated · as of 2026-09-30
+  - sources: SRC-00056
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Running BECNN is ~3 times slower compared with the EADNN.
+  - `CLM-MAT-0031` · compared_model EADNN · grade B · credibility unknown · simulated · as of 2026-09-30
+  - sources: SRC-00056
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- EADNN achieves a mean absolute error of 0.09 eÅ on cell dipole moment on the BEC subset validation dataset.
+  - `CLM-MAT-0032` · model EADNN, dataset subset with BEC · grade B · credibility unknown · simulated · as of 2026-09-30
+  - sources: SRC-00056
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- BECNN achieves a mean absolute error of 0.11 eÅ on cell dipole moment on the BEC subset validation dataset.
+  - `CLM-MAT-0033` · model BECNN, dataset subset with BEC · grade B · credibility unknown · simulated · as of 2026-09-30
+  - sources: SRC-00056
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The MAE of cell dipole of EADNN on the whole dataset is 0.11 eÅ.
+  - `CLM-MAT-0034` · model EADNN · grade B · credibility unknown · simulated · as of 2026-09-30
+  - sources: SRC-00056
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -149,6 +173,14 @@ Topic code `MAT`. Last reviewed 2026-09-30.
   - `CLM-MAT-0005` · material monolayer MoS2, temperature 300 K, excitation_energy 1.7 eV · grade B · credibility unknown · simulated · as of 2026-09-18
   - sources: SRC-00007
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≤ 200 ns** — The upper limit for the interface-dominated recombination lifetime in the control solar cell is predicted to be 200 ns.
+  - `CLM-MAT-0035` · illumination one sun · grade B · credibility unknown · projected · as of 2026-09-30
+  - sources: SRC-00057
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ 750 ns** — The upper limit for the interface-dominated recombination lifetime in the OAI-treated solar cell is predicted to be 750 ns.
+  - `CLM-MAT-0036` · illumination one sun · grade B · credibility unknown · projected · as of 2026-09-30
+  - sources: SRC-00057
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -172,6 +204,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 28
-- grades: {'B': 28}
-- distinct sources: 12
+- claims: 36
+- grades: {'B': 36}
+- distinct sources: 15

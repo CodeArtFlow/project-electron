@@ -1,0 +1,107 @@
+id: SRC-00055
+title: 'First-Principles Study of Two-Dimensional CeN: Interplay between Structural Stability, Electronic
+  Structure, and Magnetism'
+doi: null
+arxiv_id: 2609.38942v1
+url: https://arxiv.org/abs/2609.38942v1
+venue_id: arxiv_api
+authors:
+- name: Jose Mario Galicia Hernandez
+  affiliation: null
+  corresponding: null
+- name: Jose Jorge Rios Ramirez
+  affiliation: null
+  corresponding: null
+- name: Gregorio Hernandez Cocoletzi
+  affiliation: null
+  corresponding: null
+- name: Juan Francisco Rivas Silva
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-30'
+retrieved_date: '2026-10-01'
+access: full_text
+read_scope: Automated reading. The full PDF text (64,997 characters, 23 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.38942v1 on
+  2026-10-01. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The optimized lattice parameter was found to be a = b = c = 5.291 Å, in good agreement with
+  the reported values (5.02 Å [26], 5.018 Å [27], 5.024 Å [28]).”
+
+  “The optimized bulk CeN structure retains the cubic rocksalt geometry, with four Ce atoms and four N
+  atoms in the conventional unit cell, corresponding to four CeN formula units.”'
+method_summary: '“Computations were performed by using the periodic Density Functional Theory as implemented
+  in Vienna Ab initio Simulation Package (V ASP) [18, 19].”
+
+  “The electron -ion interaction was modeled employing PAW pseudopotentials [21, 22].”
+
+  “As the system includes Ce atoms, Hubbard correction [24] was necessary for treating the electronic
+  correlation effects, in this way, the correction was included in the parametrization of Dudarev et al.
+  [25], the on -site Coulomb interaction was set to 4.5 eV for Ce-f orbitals in all systems.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 17426
+    output: 2462
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: The primitive lattice parameter of the 2D FM CeN monolayer is approximately 4.048 Å.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Since the calculations were performed using a 2×2 cell, the corresponding primitive lattice parameter
+      is approximately equal to 4.048 Å.
+    - 'After structural relaxation, the computed lattice constants for the FM monolayer were equal to
+      a = b = 8.096 Å. Since the calculations were performed using a 2×2 cell, the corresponding primitive
+      lattice parameter is approximately equal to '
+    - After structural relaxation, the computed lattice constants for the FM monolayer were equal to a
+      = b = 8.096 Å.
+  - statement: The primitive lattice parameter of the AFM CeN monolayer is 4.050 Å.
+    reason: the value 4.05 does not appear in any of the claim's quotes
+    quotes:
+    - The AFM structure exhibits an essentially identical equilibrium geometry, with a characteristic
+      primitive lattice parameter of 4.050Å, and for the 2×2 supercell, lattice parameters equal to a
+      = b = 8.100 Å.
+  - statement: The nearest-neighbor distance in the FM monolayer is approximately 2.337 Å.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - For the FM monolayer, the nearest -neighbor distance is approximately 2.337 Å, whereas the AFM configuration
+      gives a very similar average value of approximately 2.341 Å.
+  - statement: The average nearest-neighbor distance in the AFM CeN monolayer is approximately 2.341 Å.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - For the FM monolayer, the nearest -neighbor distance is approximately 2.337 Å, whereas the AFM configuration
+      gives a very similar average value of approximately 2.341 Å.
+  - statement: The cohesive energy per atom of bulk FM CeN is -7.552 eV/atom.
+    reason: 'unit conversion refused: energy: could not parse -7.552 ''eV/atom'': ''atom'' is not defined
+      in the unit registry'
+    quotes:
+    - Bulk FM −7.552 ------- −6.119
+    - The calculated cohesive and formation energies are summarized in table 1.
+  - statement: The cohesive energy per atom of 2D FM CeN is -6.693 eV/atom.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''2D FM −6.693
+      2.760 −5.260'''
+    quotes:
+    - 2D FM −6.693 2.760 −5.260
+    - The calculated cohesive and formation energies are summarized in table 1.
+  - statement: The cohesive energy per atom of 2D AFM CeN is -6.691 eV/atom.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''2D AFM −6.691
+      2.762 −5.258'''
+    quotes:
+    - 2D AFM −6.691 2.762 −5.258
+    - The calculated cohesive and formation energies are summarized in table 1.
+corrections: []

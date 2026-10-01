@@ -30,6 +30,68 @@ id: CAND-20261001-0107
 harvested_date: '2026-10-01'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-01'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Buffered cache-aware scheduling with a 10% buffer extends the estimated HBF write lifetime
+      to 14.82 years for the H3 configuration with 8 HBM and 8 HBF stacks r
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - 8 HBM + 8 HBF Cache aware, 10% 10,419.17 2.640 6.88 6.69 96.46 0.06 14.82
+    - Qwen3-32B scheduling on one GPU, 25k turns, and HBM-resident weights.
+  - statement: Under unbuffered cache-aware scheduling, the estimated HBF write lifetime is 4.77 years
+      for the H3 configuration with 8 HBM and 8 HBF stacks running 25k turns o
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - 8 HBM + 8 HBF Cache aware 10,930.78 2.659 7.32 21.81 86.87 9.66 4.77
+    - Qwen3-32B scheduling on one GPU, 25k turns, and HBM-resident weights.
+  - statement: The H3 configuration with 8 HBM and 8 HBF stacks using HBM weights completes the 100k-turn
+      Llama-3.1-405B workload in 21,439 seconds.
+    reason: the value 21439 does not appear in any of the claim's quotes
+    quotes:
+    - H3 8+8, HBM weights 21,439 40.70 438.61
+    - Llama-3.1-405B weight placement on 8 GPUs with eight-way tensor parallelism (TP8), the 1× trace
+      (100k turns), and a 10% scheduling buffer.
+  - statement: The HBM-only baseline with 8 HBM stacks completes the 100k-turn Llama-3.1-405B workload
+      in 39,666 seconds.
+    reason: the value 39666 does not appear in any of the claim's quotes
+    quotes:
+    - 8+0, HBM weights 39,666 53.60 90.85
+    - Llama-3.1-405B weight placement on 8 GPUs with eight-way tensor parallelism (TP8), the 1× trace
+      (100k turns), and a 10% scheduling buffer.
+  - statement: The H3 configuration with 8 HBM and 8 HBF stacks using HBM weights completes the 100k-turn
+      GLM-5.2 workload in 4,565 seconds.
+    reason: the statement contains the number 100, which none of its quotes contain
+    quotes:
+    - H3 8+8 TP16 HBM 4,565 7.24 277.79 28,231 37.57 351.29
+    - GLM-5.2 architecture, placement, and parallelism on 16 GPUs with a 10% scheduling buffer.
+  - statement: The HBM-only baseline with 8 HBM stacks completes the 100k-turn GLM-5.2 workload in 10,445
+      seconds.
+    reason: the statement contains the number 100, which none of its quotes contain
+    quotes:
+    - HBM-only 8+0 TP16 HBM 10,445 8.46 234.09 188,425 84.99 216.31
+    - GLM-5.2 architecture, placement, and parallelism on 16 GPUs with a 10% scheduling buffer.
+  - statement: The HBM-only baseline with 8 HBM stacks consumes 8.46 MJ of energy on the 100k-turn GLM-5.2
+      workload.
+    reason: the statement contains the number 100, which none of its quotes contain
+    quotes:
+    - HBM-only 8+0 TP16 HBM 10,445 8.46 234.09 188,425 84.99 216.31
+    - GLM-5.2 architecture, placement, and parallelism on 16 GPUs with a 10% scheduling buffer.
+  - statement: The H3 configuration with 8 HBM and 8 HBF stacks using HBM weights consumes 7.24 MJ of
+      energy on the 100k-turn GLM-5.2 workload.
+    reason: the statement contains the number 100, which none of its quotes contain
+    quotes:
+    - H3 8+8 TP16 HBM 4,565 7.24 277.79 28,231 37.57 351.29
+    - GLM-5.2 architecture, placement, and parallelism on 16 GPUs with a 10% scheduling buffer.
+  tokens:
+    input: 17968
+    output: 5446
+  fetched_chars: 53334

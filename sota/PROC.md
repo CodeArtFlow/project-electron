@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-09-30.
+Topic code `PROC`. Last reviewed 2026-10-01.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 

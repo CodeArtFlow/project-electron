@@ -497,3 +497,183 @@ claims:
     method: DFTH-NEGF
     baseline: Full-NEGF
     device: carbon nanotube
+- id: CLM-DEV-0021
+  topic: DEV
+  statement: Under the memory-on ASM-HEMT simulation, mode 1 has a time constant of 1504 µs.
+  sources:
+  - SRC-00054
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-30'
+  created: '2026-10-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    mode: '1'
+    character: thermal (mount)
+    operating_point: Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1504.0
+      unit: µs
+    si_base:
+      value: 0.001504
+      unit: s
+    display:
+      value: 1503999.9999999998
+      unit: ns
+    conditions:
+      mode: '1'
+      character: thermal (mount)
+      operating_point: Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V
+- id: CLM-DEV-0022
+  topic: DEV
+  statement: In the memory-on ASM-HEMT model simulation at gate drive 1.5 V, mode 3 (the linearized trap
+    mode) has a time constant of 14.6 µs.
+  sources:
+  - SRC-00054
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-30'
+  created: '2026-10-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    mode: '3'
+    character: trap, linearized
+    operating_point: Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 14.6
+      unit: µs
+    si_base:
+      value: 1.4599999999999999e-05
+      unit: s
+    display:
+      value: 14599.999999999998
+      unit: ns
+    conditions:
+      mode: '3'
+      character: trap, linearized
+      operating_point: Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V
+- id: CLM-DEV-0023
+  topic: DEV
+  statement: For the memory-on ASM-HEMT simulation, the channel thermal mode (mode 4) has a time constant
+    of 6.01 µs.
+  sources:
+  - SRC-00054
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-30'
+  created: '2026-10-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    mode: '4'
+    character: thermal (channel)
+    operating_point: Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 6.01
+      unit: µs
+    si_base:
+      value: 6.009999999999999e-06
+      unit: s
+    display:
+      value: 6009.999999999998
+      unit: ns
+    conditions:
+      mode: '4'
+      character: thermal (channel)
+      operating_point: Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V
+- id: CLM-DEV-0024
+  topic: DEV
+  statement: At a gate drive EMF of 1.50 V, the memory-on ASM-HEMT simulation yields a junction temperature
+    rise of 30.4 K.
+  sources:
+  - SRC-00054
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-30'
+  created: '2026-10-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    gate_bias_vgs: -2.7 V
+  quantity:
+    quantity: temperature_delta
+    bound: exact
+    approximate: false
+    as_published:
+      value: 30.4
+      unit: K
+    si_base:
+      value: 30.4
+      unit: K
+    display:
+      value: 30.4
+      unit: K
+    conditions:
+      gate_bias_vgs: -2.7 V
+- id: CLM-DEV-0025
+  topic: DEV
+  statement: For a gate drive EMF of 1.50 V, the simulated output power is 30.0 dBm.
+  sources:
+  - SRC-00054
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-30'
+  created: '2026-10-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    gate_bias_vgs: -2.7 V
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 30.0
+      unit: dBm
+    si_base:
+      value: 1.0000000000000007
+      unit: W
+    display:
+      value: 1.0000000000000007
+      unit: W
+    conditions:
+      gate_bias_vgs: -2.7 V

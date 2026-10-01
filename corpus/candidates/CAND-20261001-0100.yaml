@@ -24,6 +24,56 @@ id: CAND-20261001-0100
 harvested_date: '2026-10-01'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-01'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At 300 K, the gold linear thermal-expansion coefficient is 0.000014668 K^-1.
+    reason: the statement contains the number 0.000014668, which none of its quotes contain
+    quotes:
+    - the value at 300 K isα Au = 1.4668×10 −5 K−1 Pamato et al. (2018).
+    - Au coefficients were obtained from the derivative of a fit to 22 literature lattice parameters;
+      the value at 300 K isα Au = 1.4668×10 −5 K−1 Pamato et al. (2018).
+  - statement: The bulk sapphire linear thermal-expansion coefficient at 300 K is 0.0000061724 K^-1.
+    reason: the statement contains the number 0.0000061724, which none of its quotes contain
+    quotes:
+    - We use the bulk sapphire valueα Al2O3(300 K)=6.1724×10 −6 K−1 to approximate the in-plane thermal
+      expansion of the Al2O3 surface layer of the RO substrate National Institute of Standards and Technology
+      (n.d.).
+  - statement: The calculated axial single-wall CNT thermal-expansion coefficient at 300 K is 0.0000017837
+      K^-1.
+    reason: the statement contains the number 0.0000017837, which none of its quotes contain
+    quotes:
+    - αCNT(300K)=1.7837×10 −6 K−1, is used as a surrogate Jiang et al. (2009).
+    - Because the longitudinal TEC of 9-AGNRs is unavailable, the calculated axial single-wall CNT coefficient,
+      αCNT(300K)=1.7837×10 −6 K−1, is used as a surrogate Jiang et al. (2009).
+  - statement: The Raman incident power density at the sample was 0.105 uW/um^2.
+    reason: 'unit conversion refused: power_density: could not parse 0.105 ''µWµm −2'': ''μWμm'' is not
+      defined in the unit registry'
+    quotes:
+    - The incident power density at the sample was 0.105µWµm −2 (10.5 W cm−2).
+    - Raman spectra were acquired in backscattering geometry with a WITec Alpha 300 R confocal microscope
+      and a 785-nm continuous-wave laser.
+  - statement: The silicon line measured before and after each series is at 520.5 cm^-1.
+    reason: 'unit conversion refused: frequency: could not parse 520.5 ''cm −1'': ''−1'' is not defined
+      in the unit registry'
+    quotes:
+    - The Si line at 520.5 cm −1, measured be- fore and after each series, supplied a linear spectral
+      calibration.
+  - statement: For the Aligned Au low-coverage configuration under heating, the fitted RBLM reference
+      frequency is 312.76 cm^-1.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - RBLM Aligned Au, low-coverage Heating 312.76±0.21
+    - Table S1 summarises the fixedω0 values and the fitted parameters.
+  tokens:
+    input: 35055
+    output: 2417
+  fetched_chars: 115676

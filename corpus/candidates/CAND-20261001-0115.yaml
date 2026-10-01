@@ -22,6 +22,51 @@ id: CAND-20261001-0115
 harvested_date: '2026-10-01'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-01'
+  reason: the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The reference operating point includes mechanical frequencies f1 = 353.6 kHz and f2 = 5.636
+      MHz with quality factors Q1 = 6000 and Q2 = 10000.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - The reference point isf 1 = 353.6 kHz,f 2 = 5.636 MHz, Q1 = 6000, andQ 2 = 10000.
+    - f 1 = 353.6 kHz
+    - f 2 = 5.636 MHz
+    - Q1 = 6000
+  - statement: The injection current I used in the simulation is 18 mA.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''I Injection
+      current 18 mA'''
+    quotes:
+    - I Injection current 18 mA
+    - TABLE I. Fixed parameters used in the simulations.
+  - statement: The effective cavity length L used in the simulation is 3.5 µm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - L Effective cavity length 3.5 µm
+    - TABLE I. Fixed parameters used in the simulations.
+  - statement: The peak HCG reflectivity wavelength λp used in the simulation is 1560 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - λp Wavelength at peak HCG reflectivity 1560 nm
+    - TABLE I. Fixed parameters used in the simulations.
+  - statement: The optical group velocity vg used in the simulation is 9.0×10^7 m s−1.
+    reason: the value 9e+07 does not appear in any of the claim's quotes
+    quotes:
+    - vg Optical group velocity 9.0×10 7 m s−1
+    - TABLE I. Fixed parameters used in the simulations.
+  tokens:
+    input: 10867
+    output: 1481
+  fetched_chars: 30812

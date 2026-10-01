@@ -855,3 +855,198 @@ claims:
     verified_quotes: 3
   conditions:
     method: DFT
+- id: CLM-MAT-0029
+  topic: MAT
+  statement: The optimized bulk CeN lattice parameter a was calculated to be 5.291 Å.
+  sources:
+  - SRC-00055
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-30'
+  created: '2026-10-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    material: bulk CeN
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 5.291
+      unit: Å
+    si_base:
+      value: 5.291000000000001e-10
+      unit: m
+    display:
+      value: 0.5291
+      unit: nm
+    conditions:
+      material: bulk CeN
+- id: CLM-MAT-0030
+  topic: MAT
+  statement: The GNN model used for predicting EAD contains ~315k trainable parameters.
+  sources:
+  - SRC-00056
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-30'
+  created: '2026-10-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    model_type: GNN model
+- id: CLM-MAT-0031
+  topic: MAT
+  statement: Running BECNN is ~3 times slower compared with the EADNN.
+  sources:
+  - SRC-00056
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-30'
+  created: '2026-10-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    compared_model: EADNN
+- id: CLM-MAT-0032
+  topic: MAT
+  statement: EADNN achieves a mean absolute error of 0.09 eÅ on cell dipole moment on the BEC subset validation
+    dataset.
+  sources:
+  - SRC-00056
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-30'
+  created: '2026-10-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    model: EADNN
+    dataset: subset with BEC
+- id: CLM-MAT-0033
+  topic: MAT
+  statement: BECNN achieves a mean absolute error of 0.11 eÅ on cell dipole moment on the BEC subset validation
+    dataset.
+  sources:
+  - SRC-00056
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-30'
+  created: '2026-10-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    model: BECNN
+    dataset: subset with BEC
+- id: CLM-MAT-0034
+  topic: MAT
+  statement: The MAE of cell dipole of EADNN on the whole dataset is 0.11 eÅ.
+  sources:
+  - SRC-00056
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-09-30'
+  created: '2026-10-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    model: EADNN
+- id: CLM-MAT-0035
+  topic: MAT
+  statement: The upper limit for the interface-dominated recombination lifetime in the control solar cell
+    is predicted to be 200 ns.
+  sources:
+  - SRC-00057
+  grade: B
+  credibility: unknown
+  evidence_type: projected
+  status: active
+  as_of: '2026-09-30'
+  created: '2026-10-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    illumination: one sun
+  quantity:
+    quantity: time
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 200.0
+      unit: ns
+    si_base:
+      value: 2.0000000000000002e-07
+      unit: s
+    display:
+      value: 200.0
+      unit: ns
+    conditions:
+      illumination: one sun
+- id: CLM-MAT-0036
+  topic: MAT
+  statement: The upper limit for the interface-dominated recombination lifetime in the OAI-treated solar
+    cell is predicted to be 750 ns.
+  sources:
+  - SRC-00057
+  grade: B
+  credibility: unknown
+  evidence_type: projected
+  status: active
+  as_of: '2026-09-30'
+  created: '2026-10-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    illumination: one sun
+  quantity:
+    quantity: time
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 750.0
+      unit: ns
+    si_base:
+      value: 7.5e-07
+      unit: s
+    display:
+      value: 749.9999999999999
+      unit: ns
+    conditions:
+      illumination: one sun

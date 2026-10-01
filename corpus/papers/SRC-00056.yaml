@@ -1,0 +1,74 @@
+id: SRC-00056
+title: An atom-based machine-learned dipole-moment model and application to conjugated systems
+doi: null
+arxiv_id: 2609.39002v1
+url: https://arxiv.org/abs/2609.39002v1
+venue_id: arxiv_api
+authors:
+- name: Yuansheng Zhao
+  affiliation: null
+  corresponding: null
+- name: Tamio Yamazaki
+  affiliation: null
+  corresponding: null
+- name: Ryohei Hosoya
+  affiliation: null
+  corresponding: null
+- name: Yu-ichiro Matsushita
+  affiliation: null
+  corresponding: null
+- name: Shinji Tsuneyuki
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-30'
+retrieved_date: '2026-10-01'
+access: full_text
+read_scope: Automated reading. The full PDF text (48,152 characters, 14 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.39002v1 on
+  2026-10-01. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“This model contains ∼315k trainable parameters and automatically ensures the required translational,
+  rotational and permutational invariance (See Appendix B for detail of the model).”
+
+  “We have designed a GNN model inspired by CHGNet model [ 6] and a covariant model [ 13] to predict the
+  EAD from atomic species and positions.”
+
+  “However, due to requirement to compute the derivative with respect to the atomic coordinates, running
+  BECNN is found to be about 3 times slower compared with the EADNN.”
+
+  “running BECNN is found to be about 3 times slower compared with the EADNN.”
+
+  “We find that both models show excellent accuracy of 0.09 and 0.11 eÅ in mean absolute error (MAE) for
+  EADNN and BECNN, respectively, on the cell dipole moment.”
+
+  “MAE) for EADNN and BECNN, respectively”
+
+  “the same dataset (the subset with BEC).”
+
+  “We have also found that the MAE of cell dipole of EADNN on the whole dataset is 0.11 eÅ albeit containing
+  almost 5 × molecule types, indicating a good generalizability of the GNN model.”
+
+  “MAE of cell dipole of EADNN on the whole dataset”'
+method_summary: '“We have designed a GNN model inspired by CHGNet model [ 6] and a covariant model [ 13]
+  to predict the EAD from atomic species and positions.”
+
+  “This model contains ∼315k trainable parameters and automatically ensures the required translational,
+  rotational and permutational invariance (See Appendix B for detail of the model).”'
+limitations: “It is important to note that our µI is not a well-defined physical observable like BEC,
+  because it depends on the parameters of the model calculation which carries arbitrariness.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14716
+    output: 1415
+  claims_accepted: 5
+  claims_rejected: 0
+  rejected: []
+corrections: []

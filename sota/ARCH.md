@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-09-30.
+Topic code `ARCH`. Last reviewed 2026-10-01.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -146,6 +146,14 @@ Topic code `ARCH`. Last reviewed 2026-09-30.
   - `CLM-ARCH-0018` · concurrency_n_a 48, set_type hot set · grade B · credibility unknown · simulated · as of 2026-09-22
   - sources: SRC-00025
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈97.93 percent** — The directional coupler with a graded magnetic spacer transfers approximately 97.93% of the normalized output power to the adjacent waveguide.
+  - `CLM-ARCH-0040` · frequency 7 GHz, component graded magnetic spacer · grade B · credibility unknown · simulated · as of 2026-09-30
+  - sources: SRC-00058
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **93.08 percent** — In the air-gap structure without a magnetic spacer, 93.08% of the normalized output power remains in the input waveguide.
+  - `CLM-ARCH-0041` · frequency 7 GHz · grade B · credibility unknown · simulated · as of 2026-09-30
+  - sources: SRC-00058
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -180,6 +188,6 @@ _None._
 
 ## Evidence base
 
-- claims: 39
-- grades: {'B': 39}
-- distinct sources: 11
+- claims: 41
+- grades: {'B': 41}
+- distinct sources: 12

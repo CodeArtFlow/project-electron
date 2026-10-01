@@ -1,0 +1,89 @@
+id: SRC-00054
+title: Memory in Behavioral Models as Motion on a Slow Invariant Manifold
+doi: null
+arxiv_id: 2609.38771v1
+url: https://arxiv.org/abs/2609.38771v1
+venue_id: arxiv_api
+authors:
+- name: Nicholas B. Tufillaro
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-30'
+retrieved_date: '2026-10-01'
+access: full_text
+read_scope: Automated reading. The full PDF text (53,719 characters, 9 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.38771v1 on
+  2026-10-01. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“1−665 1504µs thermal (mount)”
+
+  “Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V”
+
+  “The example is the ASM-HEMT compact model (version 101.4.0 of the model described in [14]; 0.25µ m,
+  0.8 mm, Verilog-A compiled with OpenV AF and run in ngspice 44 through its OSDI interface)”
+
+  “3−68 706 14.6µs trap, linearized”
+
+  “4−166 510 6.01µs thermal (channel)”
+
+  “1.50 30.4 24.80 30.0 14.6+0.0050.690−0.0800.612”
+
+  “LAST ROW( ∗):V gs =−2.9V;KERNEL NOT COMPUTED, THE TABLES BEING FORV gs =−2.7V.”'
+method_summary: No method quote was verified. The method is not established by this record.
+limitations: '“The theorem does not give the size of the neighborhood on which the manifold is invariant,
+  nor of the domain of its parameterization; for the ASM-HEMT of Section VI the domain of the parameterization
+  is set by the exponential diode gating of the drain-lag trap and extends only a few thermal voltages,
+  nVT ≈26 mV , in the trap-voltage direction (Section VI-D).”
+
+  “The theorem is stated at a fixed drive; a modulated drive is covered only by Proposition 1, which holds
+  to first order in the ratio of the envelope rate to the electrical rates.”
+
+  “Quasi-periodic forcing, for which the operating point is an invariant torus rather than a periodic
+  orbit, will be the subject of a later study.”
+
+  “The theorem singles out the manifold by its smoothness class, but the other invariant manifolds tangent
+  to E differ from it by terms of order |ξ|Σ+1, far below what measured data could resolve; in practice
+  the manifold is singled out by attraction, since every trajectory reaches it at the fast rates.”
+
+  “The theorem also assumes the model is analytic on the operating region, true of compact models by construction
+  but not of every fitted behavioral model.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 17591
+    output: 3995
+  claims_accepted: 5
+  claims_rejected: 3
+  rejected:
+  - statement: For the memory-on ASM-HEMT model at 2.45 GHz, VDD = 15 V, class AB (Vgs = -2.7 V) with
+      gate drive 1.5 V EMF, mode 1 has a Floquet exponent real part of -665 s^-
+    reason: the statement contains the number 2.45, which none of its quotes contain
+    quotes:
+    - 1−665 1504µs thermal (mount)
+    - The example is the ASM-HEMT compact model (version 101.4.0 of the model described in [14]; 0.25µ
+      m, 0.8 mm, Verilog-A compiled with OpenV AF and run in ngspice 44 through its OSDI interface)
+    - Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V
+  - statement: For the memory-on ASM-HEMT simulation, mode 2 has a Floquet exponent real part of -9 974
+      s^-1.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - 2−9 974 100.3µs thermal (die)
+    - The example is the ASM-HEMT compact model (version 101.4.0 of the model described in [14]; 0.25µ
+      m, 0.8 mm, Verilog-A compiled with OpenV AF and run in ngspice 44 through its OSDI interface)
+    - Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V
+  - statement: In the memory-on ASM-HEMT simulation at gate drive 1.5 V, mode 4 has a Floquet exponent
+      real part of -166 510 s^-1.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - 4−166 510 6.01µs thermal (channel)
+    - The example is the ASM-HEMT compact model (version 101.4.0 of the model described in [14]; 0.25µ
+      m, 0.8 mm, Verilog-A compiled with OpenV AF and run in ngspice 44 through its OSDI interface)
+    - Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V
+corrections: []

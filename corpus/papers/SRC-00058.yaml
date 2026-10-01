@@ -1,0 +1,89 @@
+id: SRC-00058
+title: Exchange-mediated directional coupling of short-wavelength spin waves
+doi: null
+arxiv_id: 2609.39249v1
+url: https://arxiv.org/abs/2609.39249v1
+venue_id: arxiv_api
+authors:
+- name: Zhen Zhu
+  affiliation: null
+  corresponding: null
+- name: Roman Verba
+  affiliation: null
+  corresponding: null
+- name: Philipp Pirro
+  affiliation: null
+  corresponding: null
+- name: Andrii V. Chumak
+  affiliation: null
+  corresponding: null
+- name: Qi Wang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-30'
+retrieved_date: '2026-10-01'
+access: full_text
+read_scope: Automated reading. The full PDF text (47,977 characters, 23 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.39249v1 on
+  2026-10-01. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“With the graded magnetic spacer, 97.93% of the normalized output power is transferred to the
+  adjacent waveguide, while 2.07% remains in the input waveguide.”
+
+  “Micromagnetically simulated spin-wave intensity distributions at 7 GHz (b) without and (c) with the
+  magnetic spacer.”
+
+  “Without the spacer, 93.08% of the normalized output power remains in the input waveguide and only 6.92%
+  reaches the adjacent waveguide.”'
+method_summary: '“Micromagnetic simulations were performed using MuMax335.”
+
+  “We formulate an analytical theory for the collective modes of two magnonic waveguides connected by
+  a dissimilar magnetic spacer and compare it with micromagnetic simulations.”'
+limitations: “In practice, however, the laser or ion-beam modification used to define the spacer may also
+  substantially increase its magnetic damping48,49.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 15134
+    output: 1772
+  claims_accepted: 2
+  claims_rejected: 3
+  rejected:
+  - statement: At 7 GHz, the wavenumber difference increases to 6.29 rad/µm for the magnetic-spacer structure
+      compared to 0.48 rad/µm for the air-gap structure.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''rad/µm'' is not one
+      of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a '
+    quotes:
+    - At 7 GHz, the wavenumber difference∆k=|ks−k as|increases from0.48 rad/µmfor the air-gap structure
+      to6.29 rad/µmfor the magnetic-spacer structure.
+    - Micromagnetically simulated spin-wave dispersion spectra of two YIG waveguides separated by (a)
+      an air gap and (b) a magnetically modified YIG spacer.
+    - for the magnetic-spacer structure.
+  - statement: For the air-gap structure, the wavenumber difference at 7 GHz is 0.48 rad/µm.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''rad/µm'' is not one
+      of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a '
+    quotes:
+    - At 7 GHz, the wavenumber difference∆k=|ks−k as|increases from0.48 rad/µmfor the air-gap structure
+      to6.29 rad/µmfor the magnetic-spacer structure.
+    - Micromagnetically simulated spin-wave dispersion spectra of two YIG waveguides separated by (a)
+      an air gap and (b) a magnetically modified YIG spacer.
+    - from0.48 rad/µmfor the air-gap structure
+  - statement: The straight coupler without curved access waveguides has a footprint area of 0.012 µm².
+    reason: 'unit conversion refused: area_die: could not parse 0.012 ''µm 2'': Unit expression cannot
+      have a scaling factor.'
+    quotes:
+    - Based on this mechanism, we designed a straight directional coupler with an area of only0.012µm
+      2, which transfers approximately98%of the normalized output power to the target waveguide without
+      requiring curved input and output sections.
+    - We develop an analytical model to describe this mechanism and verify it using micromagnetic simulations.
+    - designed a straight directional coupler with an area of only0.012µm 2
+corrections: []

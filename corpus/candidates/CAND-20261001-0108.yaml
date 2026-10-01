@@ -29,6 +29,56 @@ id: CAND-20261001-0108
 harvested_date: '2026-10-01'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-01'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For the MnTe2 sample grown at 200 °C, the Ag Raman mode position is observed at 178 cm-1.
+    reason: 'unit conversion refused: frequency: could not parse 178.0 ''cm -1'': unsupported operand
+      type(s) for -: ''ParserHelper'' and ''int'''
+    quotes:
+    - MaterialT growth (°C) E 1g A1g (Te) E T O (Te) A g MnTe2 200 96, 108 – – 178
+    - Raman spectra acquired for samples grown at different temperatures [Fig. 2(d)], reveal four features
+    - MnTe2
+    - '200'
+  - statement: For the MnTe2 sample grown at 270 °C, the Ag Raman mode position is observed at 177 cm-1.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''270 95, 106
+      123 141 177'''
+    quotes:
+    - 270 95, 106 123 141 177
+    - Raman spectra acquired for samples grown at different temperatures [Fig. 2(d)], reveal four features
+    - MnTe2
+    - '270'
+  - statement: The d-spacing corresponding to the (101) plane of MnTe in the scorched region obtained
+      by SAED is 3.189 Å.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''the d-spacing
+      obtained are 3.189 ˚A and 2.506 ˚A that align with the M'''
+    quotes:
+    - the d-spacing obtained are 3.189 ˚A and 2.506 ˚A that align with the MnTe planes (101) – 3.17 ˚A
+      and (102) – 2.458 ˚A respectively.
+    - Selected area electron diffraction obtained from the transmission electron microscope [Inset of
+      Fig. 4 (d)], exhibits planes of MnTe corresponding to the (101) and (102) planes of MnTe
+    - MnTe
+    - (101)
+  - statement: The d-spacing corresponding to the (102) plane of MnTe in the scorched region obtained
+      by SAED is 2.506 Å.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''the d-spacing
+      obtained are 3.189 ˚A and 2.506 ˚A that align with the M'''
+    quotes:
+    - the d-spacing obtained are 3.189 ˚A and 2.506 ˚A that align with the MnTe planes (101) – 3.17 ˚A
+      and (102) – 2.458 ˚A respectively.
+    - Selected area electron diffraction obtained from the transmission electron microscope [Inset of
+      Fig. 4 (d)], exhibits planes of MnTe corresponding to the (101) and (102) planes of MnTe
+    - MnTe
+    - (102)
+  tokens:
+    input: 13005
+    output: 1545
+  fetched_chars: 34195

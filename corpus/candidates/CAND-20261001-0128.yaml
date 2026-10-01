@@ -29,6 +29,75 @@ id: CAND-20261001-0128
 harvested_date: '2026-10-01'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-01'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The GW+SOC quasiparticle band gap of α-phase monolayer WSi2P4 is 0.69 eV.
+    reason: 'unit conversion refused: voltage: cannot convert 0.69 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** '
+    quotes:
+    - The GW+SOC quasiparticle gaps are 0.69, 0.98, and 1.18 eV for the α, β, and γ phases, respectively
+    - monolayer WSi 2P4
+    - α, β, and γ phases
+    - GW+SOC quasiparticle gaps
+  - statement: The GW+SOC quasiparticle band gap of β-phase monolayer WSi2P4 is 0.98 eV.
+    reason: 'unit conversion refused: voltage: cannot convert 0.98 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** '
+    quotes:
+    - The GW+SOC quasiparticle gaps are 0.69, 0.98, and 1.18 eV for the α, β, and γ phases, respectively
+    - monolayer WSi 2P4
+    - α, β, and γ phases
+    - GW+SOC quasiparticle gaps
+  - statement: The GW+SOC quasiparticle band gap of γ-phase monolayer WSi2P4 is 1.18 eV.
+    reason: 'unit conversion refused: voltage: cannot convert 1.18 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** '
+    quotes:
+    - The GW+SOC quasiparticle gaps are 0.69, 0.98, and 1.18 eV for the α, β, and γ phases, respectively
+    - monolayer WSi 2P4
+    - α, β, and γ phases
+    - GW+SOC quasiparticle gaps
+  - statement: The kinetic barriers separating the polymorph transitions in monolayer WSi2P4 are approximately
+      1.3 eV.
+    reason: 'unit conversion refused: voltage: cannot convert 1.3 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** 3'
+    quotes:
+    - All three phases of MSi2P4 are direct -bandgap semiconductors with quasiparticle gaps of 0.69, 0.98,
+      and 1.18 eV , respectively, and they are separated by lower yet still substantial kinetic barriers
+      of approximately 1.3 eV
+    - All three phases of MSi2P4
+    - kinetic barriers
+  - statement: The conduction-band splitting ΔCB at K for the α phase of monolayer WSi2P4 is -6.0 meV.
+    reason: 'unit conversion refused: voltage: cannot convert -6.0 meV to V - Cannot convert from ''millielectron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [tim'
+    quotes:
+    - For the α phase, negative ΔCB = −6.0 meV implies a band crossing of the spin -split conduction bands
+      .
+    - For the α phase
+    - conduction-band splitting ΔCB at K
+  - statement: The conduction-band splitting ΔCB at K for the β phase of monolayer WSi2P4 is 0.5 meV.
+    reason: 'unit conversion refused: voltage: cannot convert 0.5 meV to V - Cannot convert from ''millielectron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time'
+    quotes:
+    - For the β phase, ΔCB = 0.5 meV is very small, placing the band structure near K in a near-degenerate
+      regime.
+    - For the β phase
+    - ΔCB = 0.5 meV
+  - statement: The conduction-band splitting ΔCB at K for the γ phase of monolayer WSi2P4 is 24.0 meV.
+    reason: 'unit conversion refused: voltage: cannot convert 24.0 meV to V - Cannot convert from ''millielectron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [tim'
+    quotes:
+    - For the γ phase, ΔCB = 24.0 meV is significantly larger than in the α and β phases
+    - For the γ phase
+    - ΔCB = 24.0 meV
+  tokens:
+    input: 12888
+    output: 2442
+  fetched_chars: 36034
