@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-01.
+Topic code `MAT`. Last reviewed 2026-10-02.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -36,6 +36,24 @@ Topic code `MAT`. Last reviewed 2026-10-01.
   - sources: SRC-00036
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0017 — see the open register
+- **2.96403e-05 fJ** — The minimax percolation barrier of LiFePO4 is 0.185 eV.
+  - `CLM-MAT-0048` · material LiFePO4 · grade B · credibility unknown · simulated · as of 2026-10-01
+  - sources: SRC-00063
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0021 — see the open register
+- **4.74244e-05 fJ** — The secondary-route barrier increment of LiFePO4 is 296 meV.
+  - `CLM-MAT-0049` · material LiFePO4 · grade B · credibility unknown · simulated · as of 2026-10-01
+  - sources: SRC-00063
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0021 — see the open register
+- **1.63422e-05 fJ** — The minimax percolation barrier of Li6PS5Cl is 0.102 eV.
+  - `CLM-MAT-0050` · material Li6PS5Cl · grade B · credibility unknown · simulated · as of 2026-10-01
+  - sources: SRC-00063
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.000288552 fJ** — The minimax percolation barrier of gamma-LiAlO2 along the c-axis is 1.801 eV.
+  - `CLM-MAT-0051` · axis c · grade B · credibility unknown · simulated · as of 2026-10-01
+  - sources: SRC-00063
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### length device
 
@@ -67,6 +85,20 @@ Topic code `MAT`. Last reviewed 2026-10-01.
   - `CLM-MAT-0029` · material bulk CeN · grade B · credibility unknown · simulated · as of 2026-09-30
   - sources: SRC-00055
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **14.6 nm** — The TiN film exhibits a Ginzburg-Landau coherence length of 14.6 nm.
+  - `CLM-MAT-0037` · material TiN, property GL coherence length · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00059
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0020 — see the open register
+- **42.9 nm** — The neutron reflectivity fit indicates a thickness of 42.9 nm for the TiN film.
+  - `CLM-MAT-0039` · measurement neutron reflectivity, material TiN · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00059
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0020 — see the open register
+- **0.5 nm** — The electron free mean path of the TiN film is 0.5 nm.
+  - `CLM-MAT-0040` · fermi_velocity 7×105 ms−1, model Drude model · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00059
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### power density
 
@@ -133,6 +165,38 @@ Topic code `MAT`. Last reviewed 2026-10-01.
   - `CLM-MAT-0034` · model EADNN · grade B · credibility unknown · simulated · as of 2026-09-30
   - sources: SRC-00056
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The electron diffusion constant of the TiN film is 1.20 cm2s−1.
+  - `CLM-MAT-0038` · material TiN, carrier_concentration 5.4×1022 eV−1cm−3, film_conductivity 96.5 μΩ·cm · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00059
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The ω-rocking curve FWHM for the (010) epilayer was 63.4 arcsec.
+  - `CLM-MAT-0041` · orientation (010), reflection (020) · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00060
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The ω-rocking curve FWHM for the (001) epilayer was 66.6 arcsec.
+  - `CLM-MAT-0042` · orientation (001), reflection (004) · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00060
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The ω-rocking curve FWHM for the (2̅01) epilayer was 42.8 arcsec.
+  - `CLM-MAT-0043` · orientation (2̅01), reflection (6̅03) · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00060
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The (2̅01) epilayer exhibited an RMS roughness of 0.17 nm over a 2 × 2 µm² local scan area.
+  - `CLM-MAT-0044` · orientation (2̅01), scan_area 2 × 2 µm², growth_temperature 1150 °C · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00060
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The (010) epilayer grown at 1150 °C exhibited an RMS roughness of 6.04 nm over a 5 × 5 µm² scan area.
+  - `CLM-MAT-0045` · orientation (010), scan_area 5 × 5 µm², growth_temperature 1150 °C · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00060
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The (001) epilayer grown at 1150 °C exhibited an RMS roughness of 12.33 nm over a 5 × 5 µm² scan area.
+  - `CLM-MAT-0046` · orientation (001), scan_area 5 × 5 µm², growth_temperature 1150 °C · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00060
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The (2̅01) epilayer grown at 1150 °C exhibited an RMS roughness of 0.49 nm over a 5 × 5 µm² scan area.
+  - `CLM-MAT-0047` · orientation (2̅01), scan_area 5 × 5 µm², growth_temperature 1150 °C · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00060
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -201,9 +265,15 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0019` — length_device: _unexamined; classification pending_
   - claims: CLM-MAT-0023, CLM-MAT-0024
   - missing data: `not yet named`
+- `CFL-0020` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0037, CLM-MAT-0039
+  - missing data: `not yet named`
+- `CFL-0021` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0048, CLM-MAT-0049
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 36
-- grades: {'B': 36}
-- distinct sources: 15
+- claims: 51
+- grades: {'B': 51}
+- distinct sources: 18

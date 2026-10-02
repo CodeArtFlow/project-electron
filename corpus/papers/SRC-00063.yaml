@@ -1,0 +1,104 @@
+id: SRC-00063
+title: Topo-Spectral Percolation Descriptors for Mechanistic Ion Transport Pathways from Static Crystal
+  Structures
+doi: null
+arxiv_id: 2610.01070v1
+url: https://arxiv.org/abs/2610.01070v1
+venue_id: arxiv_api
+authors:
+- name: Diptendu Roy
+  affiliation: null
+  corresponding: null
+- name: Chiku Parida
+  affiliation: null
+  corresponding: null
+- name: Juan María García-Lastra
+  affiliation: null
+  corresponding: null
+- name: Arghya Bhowmik
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-01'
+retrieved_date: '2026-10-02'
+access: full_text
+read_scope: Automated reading. The full PDF text (92,410 characters, 35 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.01070v1 on
+  2026-10-02. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“LiFePO4 1 0.185 0.035−0.150 0.000 64 (8) 296 2.00 † 2”
+
+  “TSPD constructs a periodic migration network for the mobile ions. Each edge carries a migration-barrier
+  profile computed from parameter-free physics.”
+
+  “LiFePO 4 requires an increment of 297 meV to reach its first alternative route”
+
+  “Li6PS5Cl 3 0.102 7.811 +7.708 0.000 96 (24) 710 6.00 24”
+
+  “γ-LiAlO2 c17.248 +3.108−3.943 1.801 6”'
+method_summary: '“Our method computes physics-based migration barriers on a periodic network and analyzes
+  the network through its topology and its graph spectrum.”
+
+  “TSPD constructs a periodic migration network for the mobile ions. Each edge carries a migration-barrier
+  profile computed from parameter-free physics.”
+
+  “We sample the profile along an edge{u,v}at the positionsP(t) = (1−t)c u +tc v. The edge barrierB uv
+  is the maximum energy along this path, measured from the global minimum energy of the mobile sites,E0”'
+limitations: '“First, the energy scale is ordinal. The barrier of each edge ranks crystallographic directions
+  and locates the bottleneck within a structure, but it is not a transport rate and does not give the
+  absolute separation between competing directions.”
+
+  “Third, strongly cooperative motion is not modeled, although its static precondition is often visible.”
+
+  “Fourth, the input is a single ordered structure. Site disorder and partial occupancy enter through
+  the vacancy response and not as a configurational average.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 24708
+    output: 2989
+  claims_accepted: 4
+  claims_rejected: 4
+  rejected:
+  - statement: The direct-hop barrier of LiFePO4 is 0.035 eV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''LiFePO4 (B∗
+      = 0.035eV)'''
+    quotes:
+    - LiFePO4 (B∗ = 0.035eV)
+    - TSPD constructs a periodic migration network for the mobile ions. Each edge carries a migration-barrier
+      profile computed from parameter-free physics.
+    - The direct-hop barrierB ∗ (SI Eq. S7) is the lowest barrier of a single hop between two mobile sites
+      on the resting-site network, evaluated without void decoration.
+  - statement: The direct-hop barrier of Li10GeP2S12 is 0.567 eV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Li10GeP2S12
+      (0.567eV)'''
+    quotes:
+    - Li10GeP2S12 (0.567eV)
+    - TSPD constructs a periodic migration network for the mobile ions. Each edge carries a migration-barrier
+      profile computed from parameter-free physics.
+    - The direct-hop barrierB ∗ (SI Eq. S7) is the lowest barrier of a single hop between two mobile sites
+      on the resting-site network, evaluated without void decoration.
+  - statement: The secondary-route barrier increment of Li10GeP2S12 is 83 meV.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - the next percolating route lies only83meV above the primary route
+    - TSPD constructs a periodic migration network for the mobile ions. Each edge carries a migration-barrier
+      profile computed from parameter-free physics.
+    - ∆B 1 is the barrier increment to the next thermally distinct percolating route once the rate-limiting
+      orbit is removed, measured against the global Bperc.
+  - statement: The secondary-route barrier increment of gamma-LiAlO2 is 1.58 eV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''1.58eV forγ-LiAlO
+      2'''
+    quotes:
+    - 1.58eV forγ-LiAlO 2
+    - TSPD constructs a periodic migration network for the mobile ions. Each edge carries a migration-barrier
+      profile computed from parameter-free physics.
+    - ∆B 1 is the barrier increment to the next thermally distinct percolating route once the rate-limiting
+      orbit is removed, measured against the global Bperc.
+corrections: []

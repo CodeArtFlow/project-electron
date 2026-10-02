@@ -1,10 +1,17 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-10-01.
+Topic code `DEV`. Last reviewed 2026-10-02.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
 ## Current position
+
+### current
+
+- **≈0.6 mA** — Below a critical holding current of approximately 0.6 mA, the metallic channel abruptly pinches off, triggering a reset.
+  - `CLM-DEV-0028` · process_step current ramp-down · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00061
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### frequency
 
@@ -113,6 +120,14 @@ Topic code `DEV`. Last reviewed 2026-10-01.
   - `CLM-DEV-0006` · incident_peak_electric_field 150 kV/cm · grade B · credibility unknown · measured · as of 2026-09-18
   - sources: SRC-00010
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- **12.65 V** — The two-probe VO2 thin film device at 330 K undergoes an abrupt insulator-metal transition (set) at a threshold voltage of 12.65 V.
+  - `CLM-DEV-0026` · device_type VO2 thin film device, temperature 330 K, transition_type set · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00061
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **1.53 V** — The VO2 thin film device resets back to a homogeneous insulator at a voltage of 1.53 V.
+  - `CLM-DEV-0027` · device_type VO2 thin film device, temperature 330 K, transition_type reset · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00061
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -120,6 +135,6 @@ _None._
 
 ## Evidence base
 
-- claims: 22
-- grades: {'B': 22}
-- distinct sources: 9
+- claims: 25
+- grades: {'B': 25}
+- distinct sources: 10

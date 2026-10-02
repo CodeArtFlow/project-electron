@@ -1,0 +1,90 @@
+id: SRC-00062
+title: Cross-platform frequency-domain physical neural networks with identical models and parameters
+doi: null
+arxiv_id: 2610.01059v1
+url: https://arxiv.org/abs/2610.01059v1
+venue_id: arxiv_api
+authors:
+- name: Zichen Xi
+  affiliation: null
+  corresponding: null
+- name: Jun Ji
+  affiliation: null
+  corresponding: null
+- name: Liyang Jin
+  affiliation: null
+  corresponding: null
+- name: Hsuan-Hao Lu
+  affiliation: null
+  corresponding: null
+- name: Wenjie Xiong
+  affiliation: null
+  corresponding: null
+- name: Linbo Shao
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-01'
+retrieved_date: '2026-10-02'
+access: full_text
+read_scope: Automated reading. The full PDF text (48,496 characters, 17 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.01059v1 on
+  2026-10-02. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The optical PPLN module exhibits a nonlinear conversion bandwidth of 25.9 GHz (Fig. 4a).”
+
+  “We measured the frequency -dependent second -harmonic generation (SHG) spectra across the three platforms,
+  with the shaded regions indicating the nonlinear conversion bandwidth (Figs. 4a to 4c).”
+
+  “The integrated phononic device provides a nonlinear conversion bandwidth of 0.6 MHz (Fig. 4c).”'
+method_summary: '“We measured the frequency -dependent second -harmonic generation (SHG) spectra across
+  the three platforms, with the shaded regions indicating the nonlinear conversion bandwidth (Figs. 4a
+  to 4c).”
+
+  “To quantify the nonlinear conversion efficiency, we measured the SHG output power ܲୗୌୋ as a function
+  of the input power ܲ୧୬ for the three platforms (Figs. 4d to 4f).”
+
+  “We also quantified the computing accuracy of the three implementations using the NMSE between the experimentally
+  measured and numerically calculated outputs (Figs. 4g to 4i).”'
+limitations: “The increased error could arise from the accumulation and propagation of physical imperfections
+  through the cascaded computation.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16419
+    output: 1686
+  claims_accepted: 2
+  claims_rejected: 3
+  rejected:
+  - statement: The RF mixer features an operating band with a measured bandwidth of 4.5 MHz.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The RF mixer
+      features two operating bands with bandwidths of 4.5 MHz ('''
+    quotes:
+    - The RF mixer features two operating bands with bandwidths of 4.5 MHz (ܤܹଵ) and 20 MHz (ܤܹଶ) (Fig.
+      4b).
+    - We measured the frequency -dependent second -harmonic generation (SHG) spectra across the three
+      platforms, with the shaded regions indicating the nonlinear conversion bandwidth (Figs. 4a to 4c).
+    - 4.5 MHz (ܤܹଵ)
+  - statement: The RF mixer features an operating band with a measured bandwidth of 20 MHz.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The RF mixer
+      features two operating bands with bandwidths of 4.5 MHz ('''
+    quotes:
+    - The RF mixer features two operating bands with bandwidths of 4.5 MHz (ܤܹଵ) and 20 MHz (ܤܹଶ) (Fig.
+      4b).
+    - We measured the frequency -dependent second -harmonic generation (SHG) spectra across the three
+      platforms, with the shaded regions indicating the nonlinear conversion bandwidth (Figs. 4a to 4c).
+    - 20 MHz (ܤܹଶ)
+  - statement: The electro-optic intensity modulator (EOIM) half-wave voltage is measured to be 3.46 V.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - and ܸగ is the half-wave voltage of EOIM, measured to be 3.46 V for our case (Supplementary Figure
+      1).
+corrections: []

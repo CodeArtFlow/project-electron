@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.01085v1
 doi: null
-title: Independent Amplitude and Phase Modulation in Active Transmissive Metasurfaces
-  via Complex Permittivity Tuning
+title: Independent Amplitude and Phase Modulation in Active Transmissive Metasurfaces via Complex Permittivity
+  Tuning
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-01'
@@ -28,6 +28,80 @@ id: CAND-20261002-0108
 harvested_date: '2026-10-02'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-02'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: 'At a temperature of 293 K and a wavelength of 6.500 μm, gating graphene on the metasurface
+      achieves a phase modulation of 281° while holding transmittance near '
+    reason: the statement contains the number 281, which none of its quotes contain
+    quotes:
+    - Transmittance and phase as a function of Fermi level at λ = 6.500 μm, achieving 2 81° phase modulation
+      while maintaining a stable transmittance of 5% with transmittance variation below 7%. The operating
+      temperature is T = 293 K.
+    - The operating temperature is T = 293 K.
+    - at λ = 6.500 μm
+  - statement: At a temperature of 293 K and an operating wavelength of 6.509 μm, varying the graphene
+      Fermi level yields a transmittance modulation efficiency of 97%, with ab
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - At an operating wavelength of λ = 6.509 μm (Figure 3d), the system satisfies the condition for a
+      transmission null, enabling transmittance modulation efficiency of 97% (Tmin = 0.16%, Tmax = 5.6%)
+      (Figure 3e).
+    - operating wavelength of λ = 6.509 μm
+    - The operating temperature is T = 293 K.
+  - statement: At an operating wavelength of 6.51 μm and a fixed temperature of 310 K, varying the Fermi
+      level enables 282° phase modulation while holding transmittance around
+    reason: the statement contains the number 6.51, which none of its quotes contain
+    quotes:
+    - Path 1 (T = 310 K, varying EF) demonstrates phase-only modulation with 282° phase modulation while
+      maintaining a stable transmittance of 5% with transmittance variation below 5%.
+    - Path 1 (T = 310 K, varying EF)
+    - at λ = 6.51 μm
+  - statement: At an operating wavelength of 6.51 μm and a temperature of 297.3 K, varying the Fermi level
+      drives the transmittance from 5% to near-zero, achieving a transmitt
+    reason: the statement contains the number 6.51, which none of its quotes contain
+    quotes:
+    - Path 2 (T = 297.3 K, varying EF) achieves transmittance modulation efficiency of ~100%, driving
+      the transmittance from 5% to near-zero.
+    - Path 2 (T = 297.3 K, varying EF)
+    - at λ = 6.51 μm
+  - statement: A two-level (N = 2) supercell beam-steering metasurface achieves a relative diffraction
+      efficiency of 99.9% at a steering angle of 30.5°.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''gradient
+      -descent optimization identifies a refined phase difference o'''
+    quotes:
+    - gradient -descent optimization identifies a refined phase difference of 0.65π, achieving a relative
+      efficiency of 99.9% at a steering angle of 30 .5°, with the corresponding field profile presented
+      in Figure 5c.
+    - supercell with N = 2
+    - refined phase difference of 0.65π
+  - statement: A three-level (N = 3) supercell beam-steering metasurface achieves a relative diffraction
+      efficiency of 96.9% at a steering angle of 19.8°.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - In contrast, the optimized results for N = 3 (Figure 5d–f) and N = 4 (Figure 5g–i) converge towards
+      the ideal phase gradients of 2π/3 and 2π/4, respectively, achieving high relative efficiencies of
+      96.9% at 19.8° (N = 3) and 93 .1% at 14. 7
+    - N = 3
+  - statement: A four-level (N = 4) supercell beam-steering metasurface achieves a relative diffraction
+      efficiency of 93.1% at a steering angle of 14.7°.
+    reason: the statement contains the number 93.1, which none of its quotes contain
+    quotes:
+    - In contrast, the optimized results for N = 3 (Figure 5d–f) and N = 4 (Figure 5g–i) converge towards
+      the ideal phase gradients of 2π/3 and 2π/4, respectively, achieving high relative efficiencies of
+      96.9% at 19.8° (N = 3) and 93 .1% at 14. 7
+    - N = 4
+  tokens:
+    input: 26842
+    output: 2860
+  fetched_chars: 92484

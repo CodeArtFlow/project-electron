@@ -33,6 +33,102 @@ id: CAND-20261002-0120
 harvested_date: '2026-10-02'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-02'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Bilayer MoS2 nanoribbon back-gated FETs with a 900 nm channel length achieved a maximum
+      field-effect mobility of 86.7 cm2V-1s-1 when using Sb contacts.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''a maximum
+      mobility of 86.7 cm2V-1s-1 was attained with a bilayer NR-FE'''
+    quotes:
+    - a maximum mobility of 86.7 cm2V-1s-1 was attained with a bilayer NR-FET.
+    - We also fabricated back-gated bilayer MoS2 NR FETs using Sb as a contact metal instead of the Ni
+      to reduce the contact resistance41. The bilayer NR FETs with a channel length of 900 nm showed enhanced
+      performance with mobility of 86.7 cm2V-
+    - Device measurements were performed in vacuum (~10 4 Pa) and at room temperature using a semiconductor
+      analyzer (Keysight B1500A).
+    - We also fabricated back-gated bilayer MoS2 NR FETs using Sb as a contact metal
+  - statement: Bilayer MoS2 nanoribbon FETs with Ni/Au contacts and a 900 nm channel length exhibit an
+      average carrier mobility of 43.2 cm2V-1s-1.
+    reason: 'unit conversion refused: mobility: could not parse 43.2 ''cm 2V-1s-1'': unsupported operand
+      type(s) for -: ''ParserHelper'' and ''ParserHelper'''
+    quotes:
+    - The bilayer devices exhibit an average mobilit y of 43.2 cm 2V-1s-1
+    - Device measurements were performed in vacuum (~10 4 Pa) and at room temperature using a semiconductor
+      analyzer (Keysight B1500A).
+    - bilayer MoS2 NR FETs
+    - with a channel length of 900 nm.
+  - statement: Monolayer MoS2 nanoribbon FETs with a 900 nm channel length exhibit an average carrier
+      mobility of 22.1 cm2V-1s-1.
+    reason: 'unit conversion refused: mobility: could not parse 22.1 ''cm 2V-1s-1'': unsupported operand
+      type(s) for -: ''ParserHelper'' and ''ParserHelper'''
+    quotes:
+    - that of the monolayer devices (22.1 cm 2V-1s-1).
+    - Device measurements were performed in vacuum (~10 4 Pa) and at room temperature using a semiconductor
+      analyzer (Keysight B1500A).
+    - monolayer and bilayer NR FETs.
+    - with a channel length of 900 nm.
+  - statement: Bilayer MoS2 nanoribbon FETs with a 900 nm channel length exhibit an average current density
+      of 30.1 A/μm at VG = 1 V.
+    reason: 'unit conversion refused: current: could not parse 30.1 ''\uf06dA/μm'': ''A'' is not defined
+      in the unit registry'
+    quotes:
+    - the average current density at VG = 1 V is 30.1 A/μm for the bilayer devices
+    - Device measurements were performed in vacuum (~10 4 Pa) and at room temperature using a semiconductor
+      analyzer (Keysight B1500A).
+    - bilayer devices
+    - at VG = 1 V
+  - statement: Monolayer MoS2 nanoribbon FETs with a 900 nm channel length exhibit an average current
+      density of 10.3 A/μm at VG = 1 V.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - nearly three times higher than that of the monolayer devices (10.3 A/μm).
+    - Device measurements were performed in vacuum (~10 4 Pa) and at room temperature using a semiconductor
+      analyzer (Keysight B1500A).
+    - monolayer devices
+    - at VG = 1 V
+  - statement: A back-gated FET fabricated using a 60-nm-wide bilayer MoS2 nanoribbon channel with a 900
+      nm channel length achieved a mobility of 71.3 cm2V-1s-1.
+    reason: 'unit conversion refused: mobility: could not parse 71.3 ''c m2V-1s-1'': unsupported operand
+      type(s) for -: ''ParserHelper'' and ''ParserHelper'''
+    quotes:
+    - Fig. 6 b shows the transfer curves of the FET fabricated using a 60-nm-wide bilayer channel, exhibiting
+      mobility and current density of 71.3 c m2V-1s-1 and 63.1 A/μm, respectively .
+    - Device measurements were performed in vacuum (~10 4 Pa) and at room temperature using a semiconductor
+      analyzer (Keysight B1500A).
+    - bilayer channel
+    - 60-nm-wide
+  - statement: A back-gated FET fabricated using a 60-nm-wide bilayer MoS2 nanoribbon channel with a 900
+      nm channel length achieved a current density of 63.1 A/μm.
+    reason: 'unit conversion refused: current: could not parse 63.1 ''\uf06dA/μm'': ''A'' is not defined
+      in the unit registry'
+    quotes:
+    - Fig. 6 b shows the transfer curves of the FET fabricated using a 60-nm-wide bilayer channel, exhibiting
+      mobility and current density of 71.3 c m2V-1s-1 and 63.1 A/μm, respectively .
+    - Device measurements were performed in vacuum (~10 4 Pa) and at room temperature using a semiconductor
+      analyzer (Keysight B1500A).
+    - bilayer channel
+    - 60-nm-wide
+  - statement: In a single 70-nm-wide nanoribbon device with Au/Ni electrodes and a 340 nm channel length,
+      the bilayer channel exhibits an electron mobility of 17.6 cm2V-1s-1.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The electron
+      mobilities of the monolayer and bilayer FETs are 3.5 cm2V'''
+    quotes:
+    - The electron mobilities of the monolayer and bilayer FETs are 3.5 cm2V-1s-1 and 17.6 cm 2V-1s-1,
+      respectively, indicating an improved device performance for the bilayer.
+    - Device measurements were performed in vacuum (~10 4 Pa) and at room temperature using a semiconductor
+      analyzer (Keysight B1500A).
+    - bilayer channels
+    - within a single 70 -nm-wide NR
+  tokens:
+    input: 18538
+    output: 3194
+  fetched_chars: 57706

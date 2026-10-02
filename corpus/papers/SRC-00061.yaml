@@ -1,0 +1,117 @@
+id: SRC-00061
+title: Landau-like formalism for the thermal-runaway and filamentation instabilities in switching Mott
+  devices
+doi: null
+arxiv_id: 2610.01055v1
+url: https://arxiv.org/abs/2610.01055v1
+venue_id: arxiv_api
+authors:
+- name: Aniket Bajaj
+  affiliation: null
+  corresponding: null
+- name: Anudeep Tullibilli
+  affiliation: null
+  corresponding: null
+- name: Arup Basak
+  affiliation: null
+  corresponding: null
+- name: Pavan Nukala
+  affiliation: null
+  corresponding: null
+- name: Bhavtosh Bansal
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-01'
+retrieved_date: '2026-10-02'
+access: full_text
+read_scope: Automated reading. The full PDF text (52,331 characters, 22 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.01055v1 on
+  2026-10-02. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Current–voltage I(V ) characteristics at 330 K under a voltage ramp show an initial linear
+  regime followed by a pronounced nonlinear response and abrupt insulator-metal transition at VIMT = 12.65
+  V (set) and on ramping down the voltage, the system ( resets) back to an homogeneous insulator at VMIT
+  = 1.53 V .”
+
+  “A two-probe VO 2 thin ﬁlm device (10x100 µm) connected to a voltage source Vs via a load resistor RL.”
+
+  “Current–voltage I(V ) characteristics at 330 K under a voltage ramp show an initial linear regime followed
+  by a pronounced nonlinear response and abrupt insulator-metal transition at VIMT = 12.65 V (set)”
+
+  “abrupt insulator-metal transition at VIMT = 12.65 V (set)”
+
+  “and on ramping down the voltage, the system ( resets) back to an homogeneous insulator at VMIT = 1.53
+  V .”
+
+  “the system ( resets) back to an homogeneous insulator at VMIT = 1.53 V .”
+
+  “Below a critical holding current Ihold ≈ 0.6 mA, the metallic channel abruptly pinches off, triggering
+  a volatile reset”
+
+  “conﬁrms physical ﬁlament contraction during current ramp-down (12 .7 mA → 1.4 mA).”'
+method_summary: '“I(V ) measurements synchronized with spatial optical imaging across numerous cycles
+  quantitatively conﬁrm these theoretical bounds.”
+
+  “Current–voltage I(V ) characteristics at 330 K under a voltage ramp show an initial linear regime followed
+  by a pronounced nonlinear response and abrupt insulator-metal transition at VIMT = 12.65 V (set) and
+  on ramping down the voltage, the system ( resets) back to an homogeneous insulator at VMIT = 1.53 V
+  .”'
+limitations: '“This condition is hard to verify experimentally because the resistance measured in Fig.
+  2, for example, has a non-negligible contribution of the parallel resistance of the insulating region
+  that the model ignores.”
+
+  “Parenthetically note that the formalism ignores the parallel resistance of the insulating region which
+  will become important as the a → 0, but this will alter the overall qualitative picture.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 19114
+    output: 2895
+  claims_accepted: 3
+  claims_rejected: 4
+  rejected:
+  - statement: At the threshold voltage, the device resistance drops from 4500 Ω to 350 Ω.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''At a critical
+      threshold voltage ( Vth = 12.65 V), this thermal runaway'''
+    quotes:
+    - At a critical threshold voltage ( Vth = 12.65 V), this thermal runaway instability drives an abrupt
+      insulator-to-metal transition, causing resistance to drop from ∼ 4500 Ω to 350 Ω [Fig. 1(d)]
+    - A two-probe VO 2 thin ﬁlm device (10x100 µm) connected to a voltage source Vs via a load resistor
+      RL.
+    - causing resistance to drop from ∼ 4500 Ω to 350 Ω
+    - At a critical threshold voltage ( Vth = 12.65 V)
+  - statement: At the threshold voltage of 12.65 V, the device voltage abruptly snaps to 1.24 V.
+    reason: the statement contains the number 12.65, which none of its quotes contain
+    quotes:
+    - and the device voltage to abruptly snap from 12 .65 V to 1 .24 V.
+    - At a critical threshold voltage ( Vth = 12.65 V), this thermal runaway instability drives an abrupt
+      insulator-to-metal transition, causing resistance to drop from ∼ 4500 Ω to 350 Ω [Fig. 1(d)] and
+      the device voltage to abruptly snap from 12
+    - A two-probe VO 2 thin ﬁlm device (10x100 µm) connected to a voltage source Vs via a load resistor
+      RL.
+  - statement: The insulator-to-metal transition temperature TIMT is approximately 348 K.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The transition exhibits pronounced hysteresis with TIMT ≈348 K and TMIT ≈342 K (inset).
+    - with TIMT ≈348 K
+    - The resistance-temperature curve of the device exhibits a negative temperature coefﬁcient of resistance
+      below 340 K followed by an abrupt insulator–metal transition.
+  - statement: The metal-to-insulator transition temperature TMIT is approximately 342 K.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The transition exhibits pronounced hysteresis with TIMT ≈348 K and TMIT ≈342 K (inset).
+    - and TMIT ≈342 K (inset).
+    - The resistance-temperature curve of the device exhibits a negative temperature coefﬁcient of resistance
+      below 340 K followed by an abrupt insulator–metal transition.
+corrections: []

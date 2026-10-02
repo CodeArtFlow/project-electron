@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.01186v1
 doi: null
-title: 'From Physical Devices to RTL Models: Abstraction and Validation in Hardware
-  Engineering'
+title: 'From Physical Devices to RTL Models: Abstraction and Validation in Hardware Engineering'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-01'
@@ -25,6 +24,32 @@ id: CAND-20261002-0100
 harvested_date: '2026-10-02'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-02'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The rise delay Tr of the NAND2 gate model in Figure 4 is 0.15 ns.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Rise delay
+      (Tr) 0.15 ns'''
+    quotes:
+    - Rise delay (Tr) 0.15 ns
+    - NAND2
+    - Rise delay (Tr)
+  - statement: The fall delay Tf of the NAND2 gate model in Figure 4 is 0.22 ns.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Fall delay
+      (Tf ) 0.22 ns'''
+    quotes:
+    - Fall delay (Tf ) 0.22 ns
+    - NAND2
+    - Fall delay (Tf )
+  tokens:
+    input: 10883
+    output: 620
+  fetched_chars: 45768

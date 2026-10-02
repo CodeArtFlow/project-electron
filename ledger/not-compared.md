@@ -4,20 +4,47 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**296 pair(s)** as of 2026-10-01.
+**375 pair(s)** as of 2026-10-02.
 
-## `energy` (8 pair(s))
+## `energy` (35 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0016` = 2020 meV | 97% | mechanism=surface polar phonon, substrate=SiO2 | synthesis_condition=Nitrogen-rich |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0015` = 1980 meV | 97% | mechanism=surface polar phonon, substrate=SiO2 | synthesis_condition=Nitrogen-rich |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0014` = 1940 meV | 97% | mechanism=surface polar phonon, substrate=SiO2 | synthesis_condition=Nitrogen-rich |
+| `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0051` = 1801 meV | 97% | mechanism=surface polar phonon, substrate=SiO2 | axis=c |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0013` = 1340 meV | 96% | mechanism=surface polar phonon, substrate=SiO2 | synthesis_condition=Nitrogen-rich |
+| `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0050` = 102 meV | 95% | synthesis_condition=Nitrogen-rich | material=Li6PS5Cl |
+| `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0050` = 102 meV | 95% | synthesis_condition=Nitrogen-rich | material=Li6PS5Cl |
+| `CLM-MAT-0014` = 1940 meV | `CLM-MAT-0050` = 102 meV | 95% | synthesis_condition=Nitrogen-rich | material=Li6PS5Cl |
+| `CLM-MAT-0050` = 102 meV | `CLM-MAT-0051` = 1801 meV | 94% | material=Li6PS5Cl | axis=c |
+| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0050` = 102 meV | 92% | synthesis_condition=Nitrogen-rich | material=Li6PS5Cl |
+| `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0048` = 185 meV | 91% | synthesis_condition=Nitrogen-rich | material=LiFePO4 |
+| `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0048` = 185 meV | 91% | synthesis_condition=Nitrogen-rich | material=LiFePO4 |
+| `CLM-MAT-0014` = 1940 meV | `CLM-MAT-0048` = 185 meV | 90% | synthesis_condition=Nitrogen-rich | material=LiFePO4 |
 | `CLM-MAT-0002` = 200 meV | `CLM-MAT-0016` = 2020 meV | 90% | mechanism=optical phonon | synthesis_condition=Nitrogen-rich |
 | `CLM-MAT-0002` = 200 meV | `CLM-MAT-0015` = 1980 meV | 90% | mechanism=optical phonon | synthesis_condition=Nitrogen-rich |
+| `CLM-MAT-0048` = 185 meV | `CLM-MAT-0051` = 1801 meV | 90% | material=LiFePO4 | axis=c |
 | `CLM-MAT-0002` = 200 meV | `CLM-MAT-0014` = 1940 meV | 90% | mechanism=optical phonon | synthesis_condition=Nitrogen-rich |
+| `CLM-MAT-0002` = 200 meV | `CLM-MAT-0051` = 1801 meV | 89% | mechanism=optical phonon | axis=c |
+| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0048` = 185 meV | 86% | synthesis_condition=Nitrogen-rich | material=LiFePO4 |
+| `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0049` = 296 meV | 85% | synthesis_condition=Nitrogen-rich | material=LiFePO4 |
 | `CLM-MAT-0002` = 200 meV | `CLM-MAT-0013` = 1340 meV | 85% | mechanism=optical phonon | synthesis_condition=Nitrogen-rich |
+| `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0049` = 296 meV | 85% | synthesis_condition=Nitrogen-rich | material=LiFePO4 |
+| `CLM-MAT-0014` = 1940 meV | `CLM-MAT-0049` = 296 meV | 85% | synthesis_condition=Nitrogen-rich | material=LiFePO4 |
+| `CLM-MAT-0049` = 296 meV | `CLM-MAT-0051` = 1801 meV | 84% | material=LiFePO4 | axis=c |
+| `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0049` = 296 meV | 80% | mechanism=surface polar phonon, substrate=SiO2 | material=LiFePO4 |
+| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0049` = 296 meV | 78% | synthesis_condition=Nitrogen-rich | material=LiFePO4 |
+| `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0048` = 185 meV | 68% | mechanism=surface polar phonon, substrate=SiO2 | material=LiFePO4 |
+| `CLM-MAT-0002` = 200 meV | `CLM-MAT-0050` = 102 meV | 49% | mechanism=optical phonon | material=Li6PS5Cl |
+| `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0050` = 102 meV | 41% | mechanism=surface polar phonon, substrate=SiO2 | material=Li6PS5Cl |
+| `CLM-MAT-0002` = 200 meV | `CLM-MAT-0049` = 296 meV | 32% | mechanism=optical phonon | material=LiFePO4 |
+| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0051` = 1801 meV | 26% | synthesis_condition=Nitrogen-rich | axis=c |
+| `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0051` = 1801 meV | 11% | synthesis_condition=Nitrogen-rich | axis=c |
+| `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0051` = 1801 meV | 9% | synthesis_condition=Nitrogen-rich | axis=c |
+| `CLM-MAT-0002` = 200 meV | `CLM-MAT-0048` = 185 meV | 8% | mechanism=optical phonon | material=LiFePO4 |
+| `CLM-MAT-0014` = 1940 meV | `CLM-MAT-0051` = 1801 meV | 7% | synthesis_condition=Nitrogen-rich | axis=c |
 
 ## `energy_advantage_ratio` (5 pair(s))
 
@@ -29,29 +56,43 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-ARCH-0002` = 5 x | `CLM-ARCH-0022` = 169.1 x | 97% | process=TSMC 16nm FinFET, comparison=PFAL vs static CMOS, operating_point=most favorable operating point, vclk=1 V, fclk=100 MHz | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch |
 | `CLM-ARCH-0006` = 5.3 x | `CLM-ARCH-0022` = 169.1 x | 97% | process=TSMC 16nm FinFET, comparison=4-bit Brent-Kung CLA adder vs architecture-matched static CMOS estimate, power_clock=triangular | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch |
 
-## `frequency` (17 pair(s))
+## `frequency` (31 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-DEV-0012` = 370 GHz | 100% | platform=integrated phononic device | magnetic_field=8.1 T, frequency=1.9 THz |
+| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-DEV-0013` = 180 GHz | 100% | platform=integrated phononic device | magnetic_field=7.5 T, frequency=2.2 THz |
+| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0001` = 18.98 GHz | 100% | platform=integrated phononic device | component=single ring cavity, parameter=FSR |
+| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0003` = 15.41 GHz | 100% | platform=integrated phononic device | component=photonic molecule, mode_spacing=Ω2 |
+| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0036` = 121 GHz | 100% | platform=integrated phononic device | sample_size=22 measured devices |
 | `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | magnetic_field=8.1 T, frequency=1.9 THz | angle_of_incidence=0° to 30°, rotation_angle=90° |
+| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0002` = 3.57 GHz | 100% | platform=integrated phononic device | component=photonic molecule, mode_spacing=Ω1 |
 | `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | magnetic_field=7.5 T, frequency=2.2 THz | angle_of_incidence=0° to 30°, rotation_angle=90° |
 | `CLM-PHOT-0024` = 0.03 GHz | `CLM-PHOT-0036` = 121 GHz | 100% | angle_of_incidence=0° to 30°, rotation_angle=90° | sample_size=22 measured devices |
+| `CLM-ARCH-0042` = 25.9 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | platform=optical PPLN module | angle_of_incidence=0° to 30°, rotation_angle=90° |
 | `CLM-PHOT-0001` = 18.98 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | component=single ring cavity, parameter=FSR | angle_of_incidence=0° to 30°, rotation_angle=90° |
 | `CLM-PHOT-0003` = 15.41 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | component=photonic molecule, mode_spacing=Ω2 | angle_of_incidence=0° to 30°, rotation_angle=90° |
 | `CLM-PHOT-0002` = 3.57 GHz | `CLM-PHOT-0024` = 0.03 GHz | 99% | component=photonic molecule, mode_spacing=Ω1 | angle_of_incidence=0° to 30°, rotation_angle=90° |
 | `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0002` = 3.57 GHz | 99% | magnetic_field=8.1 T, frequency=1.9 THz | component=photonic molecule, mode_spacing=Ω1 |
 | `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0002` = 3.57 GHz | 98% | magnetic_field=7.5 T, frequency=2.2 THz | component=photonic molecule, mode_spacing=Ω1 |
+| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0024` = 0.03 GHz | 98% | platform=integrated phononic device | angle_of_incidence=0° to 30°, rotation_angle=90° |
 | `CLM-PHOT-0002` = 3.57 GHz | `CLM-PHOT-0036` = 121 GHz | 97% | component=photonic molecule, mode_spacing=Ω1 | sample_size=22 measured devices |
 | `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0003` = 15.41 GHz | 96% | magnetic_field=8.1 T, frequency=1.9 THz | component=photonic molecule, mode_spacing=Ω2 |
 | `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0001` = 18.98 GHz | 95% | magnetic_field=8.1 T, frequency=1.9 THz | component=single ring cavity, parameter=FSR |
+| `CLM-ARCH-0042` = 25.9 GHz | `CLM-DEV-0012` = 370 GHz | 93% | platform=optical PPLN module | magnetic_field=8.1 T, frequency=1.9 THz |
 | `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0003` = 15.41 GHz | 91% | magnetic_field=7.5 T, frequency=2.2 THz | component=photonic molecule, mode_spacing=Ω2 |
 | `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0001` = 18.98 GHz | 89% | magnetic_field=7.5 T, frequency=2.2 THz | component=single ring cavity, parameter=FSR |
 | `CLM-PHOT-0003` = 15.41 GHz | `CLM-PHOT-0036` = 121 GHz | 87% | component=photonic molecule, mode_spacing=Ω2 | sample_size=22 measured devices |
+| `CLM-ARCH-0042` = 25.9 GHz | `CLM-PHOT-0002` = 3.57 GHz | 86% | platform=optical PPLN module | component=photonic molecule, mode_spacing=Ω1 |
+| `CLM-ARCH-0042` = 25.9 GHz | `CLM-DEV-0013` = 180 GHz | 86% | platform=optical PPLN module | magnetic_field=7.5 T, frequency=2.2 THz |
 | `CLM-PHOT-0001` = 18.98 GHz | `CLM-PHOT-0036` = 121 GHz | 84% | component=single ring cavity, parameter=FSR | sample_size=22 measured devices |
+| `CLM-ARCH-0042` = 25.9 GHz | `CLM-PHOT-0036` = 121 GHz | 79% | platform=optical PPLN module | sample_size=22 measured devices |
 | `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0036` = 121 GHz | 67% | magnetic_field=8.1 T, frequency=1.9 THz | sample_size=22 measured devices |
+| `CLM-ARCH-0042` = 25.9 GHz | `CLM-PHOT-0003` = 15.41 GHz | 40% | platform=optical PPLN module | component=photonic molecule, mode_spacing=Ω2 |
 | `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0036` = 121 GHz | 33% | magnetic_field=7.5 T, frequency=2.2 THz | sample_size=22 measured devices |
+| `CLM-ARCH-0042` = 25.9 GHz | `CLM-PHOT-0001` = 18.98 GHz | 27% | platform=optical PPLN module | component=single ring cavity, parameter=FSR |
 
-## `length_device` (75 pair(s))
+## `length_device` (111 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -62,6 +103,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-PHOT-0004` = 7 um | `CLM-PROC-0003` = 6.8e-05 um | 100% | parameter=signal-ground electrode spacing | defocus=30 nm |
 | `CLM-PHOT-0004` = 7 um | `CLM-PROC-0004` = 7.7e-05 um | 100% | parameter=signal-ground electrode spacing | material=HEA-NP, defocus=0 nm |
 | `CLM-MAT-0029` = 0.5291 nm | `CLM-PHOT-0004` = 7000 nm | 100% | material=bulk CeN | parameter=signal-ground electrode spacing |
+| `CLM-MAT-0040` = 0.5 nm | `CLM-PHOT-0004` = 7000 nm | 100% | fermi_velocity=7×105 ms−1, model=Drude model | parameter=signal-ground electrode spacing |
 | `CLM-PHOT-0026` = 0.85 um | `CLM-PROC-0003` = 6.8e-05 um | 100% | component=MO-PhC slab | defocus=30 nm |
 | `CLM-PHOT-0026` = 0.85 um | `CLM-PROC-0004` = 7.7e-05 um | 100% | component=MO-PhC slab | material=HEA-NP, defocus=0 nm |
 | `CLM-PHOT-0004` = 7 um | `CLM-PHOT-0009` = 0.0017 um | 100% | parameter=signal-ground electrode spacing | roughness_type=arithmetic average roughness (Sa), sample=after MoSx film deposition |
@@ -72,31 +114,30 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-PHOT-0008` = 0.00033 um | `CLM-PHOT-0026` = 0.85 um | 100% | sample=bare silicon substrate, roughness_type=root mean square roughness (Sq) | component=MO-PhC slab |
 | `CLM-MAT-0023` = 3.5 nm | `CLM-PHOT-0004` = 7000 nm | 100% | state=X2sA | parameter=signal-ground electrode spacing |
 | `CLM-MAT-0029` = 0.5291 nm | `CLM-PHOT-0026` = 850 nm | 100% | material=bulk CeN | component=MO-PhC slab |
+| `CLM-MAT-0040` = 0.5 nm | `CLM-PHOT-0026` = 850 nm | 100% | fermi_velocity=7×105 ms−1, model=Drude model | component=MO-PhC slab |
 | `CLM-MAT-0020` = 6.4 nm | `CLM-PHOT-0004` = 7000 nm | 100% | regime=partially-reconstructed | parameter=signal-ground electrode spacing |
 | `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0004` = 7000 nm | 100% | state=X2sA | parameter=signal-ground electrode spacing |
+| `CLM-MAT-0039` = 42.9 nm | `CLM-PROC-0003` = 0.068 nm | 100% | measurement=neutron reflectivity, material=TiN | defocus=30 nm |
 | `CLM-PHOT-0009` = 0.0017 um | `CLM-PHOT-0026` = 0.85 um | 100% | roughness_type=arithmetic average roughness (Sa), sample=after MoSx film deposition | component=MO-PhC slab |
+| `CLM-MAT-0037` = 14.6 nm | `CLM-PHOT-0004` = 7000 nm | 100% | material=TiN, property=GL coherence length | parameter=signal-ground electrode spacing |
 | `CLM-PHOT-0010` = 0.0021 um | `CLM-PHOT-0026` = 0.85 um | 100% | roughness_type=root mean square roughness (Sq), sample=after MoSx film deposition | component=MO-PhC slab |
 | `CLM-MAT-0023` = 3.5 nm | `CLM-PHOT-0026` = 850 nm | 100% | state=X2sA | component=MO-PhC slab |
+| `CLM-MAT-0037` = 14.6 nm | `CLM-PROC-0003` = 0.068 nm | 100% | material=TiN, property=GL coherence length | defocus=30 nm |
+| `CLM-MAT-0039` = 42.9 nm | `CLM-PHOT-0007` = 0.23 nm | 99% | measurement=neutron reflectivity, material=TiN | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) |
+| `CLM-MAT-0039` = 42.9 nm | `CLM-PHOT-0004` = 7000 nm | 99% | measurement=neutron reflectivity, material=TiN | parameter=signal-ground electrode spacing |
 | `CLM-MAT-0020` = 6.4 nm | `CLM-PHOT-0026` = 850 nm | 99% | regime=partially-reconstructed | component=MO-PhC slab |
 | `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0026` = 850 nm | 99% | state=X2sA | component=MO-PhC slab |
+| `CLM-MAT-0039` = 42.9 nm | `CLM-PHOT-0008` = 0.33 nm | 99% | measurement=neutron reflectivity, material=TiN | sample=bare silicon substrate, roughness_type=root mean square roughness (Sq) |
 | `CLM-MAT-0020` = 6.4 nm | `CLM-PROC-0003` = 0.068 nm | 99% | regime=partially-reconstructed | defocus=30 nm |
 | `CLM-MAT-0024` = 6.4 nm | `CLM-PROC-0003` = 0.068 nm | 99% | state=X2sA | defocus=30 nm |
+| `CLM-MAT-0039` = 42.9 nm | `CLM-MAT-0040` = 0.5 nm | 99% | measurement=neutron reflectivity, material=TiN | fermi_velocity=7×105 ms−1, model=Drude model |
 | `CLM-MAT-0020` = 6.4 nm | `CLM-PROC-0004` = 0.077 nm | 99% | regime=partially-reconstructed | material=HEA-NP, defocus=0 nm |
 | `CLM-MAT-0024` = 6.4 nm | `CLM-PROC-0004` = 0.077 nm | 99% | state=X2sA | material=HEA-NP, defocus=0 nm |
+| `CLM-MAT-0037` = 14.6 nm | `CLM-PHOT-0007` = 0.23 nm | 98% | material=TiN, property=GL coherence length | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) |
+| `CLM-MAT-0037` = 14.6 nm | `CLM-PHOT-0026` = 850 nm | 98% | material=TiN, property=GL coherence length | component=MO-PhC slab |
 | `CLM-MAT-0023` = 3.5 nm | `CLM-PROC-0003` = 0.068 nm | 98% | state=X2sA | defocus=30 nm |
-| `CLM-MAT-0023` = 3.5 nm | `CLM-PROC-0004` = 0.077 nm | 98% | state=X2sA | material=HEA-NP, defocus=0 nm |
-| `CLM-PHOT-0010` = 0.0021 um | `CLM-PROC-0003` = 6.8e-05 um | 97% | roughness_type=root mean square roughness (Sq), sample=after MoSx film deposition | defocus=30 nm |
-| `CLM-MAT-0020` = 6.4 nm | `CLM-PHOT-0007` = 0.23 nm | 96% | regime=partially-reconstructed | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) |
-| `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0007` = 0.23 nm | 96% | state=X2sA | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) |
-| `CLM-PHOT-0010` = 0.0021 um | `CLM-PROC-0004` = 7.7e-05 um | 96% | roughness_type=root mean square roughness (Sq), sample=after MoSx film deposition | material=HEA-NP, defocus=0 nm |
-| `CLM-PHOT-0009` = 0.0017 um | `CLM-PROC-0003` = 6.8e-05 um | 96% | roughness_type=arithmetic average roughness (Sa), sample=after MoSx film deposition | defocus=30 nm |
-| `CLM-MAT-0017` = 0.284 nm | `CLM-MAT-0020` = 6.4 nm | 96% | material=Sb monolayer on SiC(0001) | regime=partially-reconstructed |
-| `CLM-MAT-0017` = 0.284 nm | `CLM-MAT-0024` = 6.4 nm | 96% | material=Sb monolayer on SiC(0001) | state=X2sA |
-| `CLM-PHOT-0009` = 0.0017 um | `CLM-PROC-0004` = 7.7e-05 um | 95% | roughness_type=arithmetic average roughness (Sa), sample=after MoSx film deposition | material=HEA-NP, defocus=0 nm |
-| `CLM-MAT-0018` = 0.327 nm | `CLM-MAT-0020` = 6.4 nm | 95% | material=Sb monolayer on SiC(0001) | regime=partially-reconstructed |
-| `CLM-MAT-0018` = 0.327 nm | `CLM-MAT-0024` = 6.4 nm | 95% | material=Sb monolayer on SiC(0001) | state=X2sA |
 
-_and 35 more_
+_and 71 more_
 
 ## `power` (15 pair(s))
 
@@ -231,6 +272,13 @@ _and 25 more_
 | `CLM-ARCH-0020` = 1.4e+07 ns | `CLM-MAT-0036` = 750 ns | 100% | concurrency_n_a=48, design=our design with tiering, component=end-to-end time-between-tokens (TBT) | illumination=one sun |
 
 _and 56 more_
+
+## `voltage` (2 pair(s))
+
+| Claim A | Claim B | Gap | A's conditions | B's conditions |
+|---|---|---|---|---|
+| `CLM-DEV-0006` = 85 V | `CLM-DEV-0027` = 1.53 V | 98% | incident_peak_electric_field=150 kV/cm | device_type=VO2 thin film device, temperature=330 K, transition_type=reset |
+| `CLM-DEV-0006` = 85 V | `CLM-DEV-0026` = 12.65 V | 85% | incident_peak_electric_field=150 kV/cm | device_type=VO2 thin film device, temperature=330 K, transition_type=set |
 
 ## `wavelength` (10 pair(s))
 

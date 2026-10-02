@@ -677,3 +677,112 @@ claims:
       unit: W
     conditions:
       gate_bias_vgs: -2.7 V
+- id: CLM-DEV-0026
+  topic: DEV
+  statement: The two-probe VO2 thin film device at 330 K undergoes an abrupt insulator-metal transition
+    (set) at a threshold voltage of 12.65 V.
+  sources:
+  - SRC-00061
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-01'
+  created: '2026-10-02'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    device_type: VO2 thin film device
+    temperature: 330 K
+    transition_type: set
+  quantity:
+    quantity: voltage
+    bound: exact
+    approximate: false
+    as_published:
+      value: 12.65
+      unit: V
+    si_base:
+      value: 12.65
+      unit: V
+    display:
+      value: 12.65
+      unit: V
+    conditions:
+      device_type: VO2 thin film device
+      temperature: 330 K
+      transition_type: set
+- id: CLM-DEV-0027
+  topic: DEV
+  statement: The VO2 thin film device resets back to a homogeneous insulator at a voltage of 1.53 V.
+  sources:
+  - SRC-00061
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-01'
+  created: '2026-10-02'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    device_type: VO2 thin film device
+    temperature: 330 K
+    transition_type: reset
+  quantity:
+    quantity: voltage
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.53
+      unit: V
+    si_base:
+      value: 1.53
+      unit: V
+    display:
+      value: 1.53
+      unit: V
+    conditions:
+      device_type: VO2 thin film device
+      temperature: 330 K
+      transition_type: reset
+- id: CLM-DEV-0028
+  topic: DEV
+  statement: Below a critical holding current of approximately 0.6 mA, the metallic channel abruptly pinches
+    off, triggering a reset.
+  sources:
+  - SRC-00061
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-01'
+  created: '2026-10-02'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    process_step: current ramp-down
+  quantity:
+    quantity: current
+    bound: exact
+    approximate: true
+    as_published:
+      value: 0.6
+      unit: mA
+    si_base:
+      value: 0.0006
+      unit: A
+    display:
+      value: 0.6
+      unit: mA
+    conditions:
+      process_step: current ramp-down

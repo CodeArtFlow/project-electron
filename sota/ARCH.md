@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-01.
+Topic code `ARCH`. Last reviewed 2026-10-02.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -34,6 +34,17 @@ Topic code `ARCH`. Last reviewed 2026-10-01.
 - **1.23e-26 J*s** — Low-threshold PFAL Buffer/NOT cell reaches a minimum energy-delay product of 1.23e-26 J*s in simulation.
   - `CLM-ARCH-0001` · process TSMC 16nm FinFET, cell low-threshold Buffer/NOT, vclk 0.6 V, fclk 7.94 GHz · grade B · credibility unknown · simulated · as of 2026-09-17
   - sources: SRC-00001
+
+### frequency
+
+- **25.9 GHz** — The optical PPLN module exhibits a measured nonlinear conversion bandwidth of 25.9 GHz.
+  - `CLM-ARCH-0042` · platform optical PPLN module · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00062
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.0006 GHz** — The integrated phononic device provides a measured nonlinear conversion bandwidth of 0.6 MHz.
+  - `CLM-ARCH-0043` · platform integrated phononic device · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00062
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -188,6 +199,6 @@ _None._
 
 ## Evidence base
 
-- claims: 41
-- grades: {'B': 41}
-- distinct sources: 12
+- claims: 43
+- grades: {'B': 43}
+- distinct sources: 13

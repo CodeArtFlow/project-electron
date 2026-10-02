@@ -1307,3 +1307,70 @@ claims:
       unit: percent
     conditions:
       frequency: 7 GHz
+- id: CLM-ARCH-0042
+  topic: ARCH
+  statement: The optical PPLN module exhibits a measured nonlinear conversion bandwidth of 25.9 GHz.
+  sources:
+  - SRC-00062
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-01'
+  created: '2026-10-02'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    platform: optical PPLN module
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 25.9
+      unit: GHz
+    si_base:
+      value: 25900000000.0
+      unit: Hz
+    display:
+      value: 25.900000000000002
+      unit: GHz
+    conditions:
+      platform: optical PPLN module
+- id: CLM-ARCH-0043
+  topic: ARCH
+  statement: The integrated phononic device provides a measured nonlinear conversion bandwidth of 0.6
+    MHz.
+  sources:
+  - SRC-00062
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-01'
+  created: '2026-10-02'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    platform: integrated phononic device
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.6
+      unit: MHz
+    si_base:
+      value: 600000.0
+      unit: Hz
+    display:
+      value: 0.0006000000000000001
+      unit: GHz
+    conditions:
+      platform: integrated phononic device

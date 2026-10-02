@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.01031v1
 doi: null
-title: 'Symmetry and the Form of Nonlinear Behavioral Models: A Tutorial for Microwave
-  Engineers'
+title: 'Symmetry and the Form of Nonlinear Behavioral Models: A Tutorial for Microwave Engineers'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-01'
@@ -22,6 +21,38 @@ id: CAND-20261002-0115
 harvested_date: '2026-10-02'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-02'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At a fundamental frequency drive of 2.45 GHz, the measured (0,0) Cardiff term coefficient
+      magnitude for b2,1 on the GaN device is 1.379.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''0 0 1 1.379
+      0 1'''
+    quotes:
+    - Al-Rawachy et al. [15] applied the tailored A-pull identification to a GaN device at 2.45 GHz and
+      list the extracted coefficients for b2,1 in their Table 2.
+    - 0 0 1 1.379 0 1
+  - statement: In the ngspice simulation of the ASM-HEMT GaN model driven at 2.45 GHz with a 0.8 V drive
+      level, the (1,1) cluster level is -22.6 dBc relative to (0,0).
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - The default parameter set describes a 0.8mm device with Voff = -2V; it was biased at Vgs = -1.5V
+      (class AB, ≈170mA) with about 20V on the drain, driven at 2.45GHz from a 50 Ω source, and loaded
+      by a 50 Ω environment.
+    - +1 -22.6 -68.2 -88.4 -107 -27.2 -81.1 -116 -141
+    - 'The same experiment was therefore repeated on a physics-based compact model in an open-source circuit
+      simulator: the ASM-HEMT GaN HEMT model (version 101.4.0 of the model described in [17]; Verilog-A),
+      compiled with OpenVAF and run in ngspi'
+    - driven at 2.45GHz from a 50 Ω source
+  tokens:
+    input: 21447
+    output: 1535
+  fetched_chars: 63856

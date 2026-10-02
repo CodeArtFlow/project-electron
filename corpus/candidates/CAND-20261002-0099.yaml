@@ -32,6 +32,32 @@ id: CAND-20261002-0099
 harvested_date: '2026-10-02'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-02'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: An electronic bandgap of 1.6 ± 0.3 eV is extracted for H2-7-iGNRs on Au(111).
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''From the
+      positions of features 1 and 2 we extract an electronic bandga'''
+    quotes:
+    - From the positions of features 1 and 2 we extract an electronic bandgap Eg,exp = 1.6 ± 0.3 eV for
+      H2-7-iGNRs on Au(111).
+  - statement: Freestanding H2-7-iGNR DOS and band structure in DFT-LDA simulations exhibit a bandgap
+      of 0.8 eV.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Simulated H2-7-iGNR DOS (Figure 3h) and band structure (Figure 3i) both exhibit a bandgap of 0.8
+      eV.
+    - These experimental features are consistent with ab initio DFT-LDA simulations of freestanding H2-7-iGNRs
+      (Figures 3e–i).
+  tokens:
+    input: 16945
+    output: 938
+  fetched_chars: 47205
