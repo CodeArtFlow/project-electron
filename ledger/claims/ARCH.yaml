@@ -1374,3 +1374,58 @@ claims:
       unit: GHz
     conditions:
       platform: integrated phononic device
+- id: CLM-ARCH-0044
+  topic: ARCH
+  statement: The 8-channel pulser peripheral instance corresponds to approximately 14.3% of the 104 kGE
+    RISC-V SoC area.
+  sources:
+  - SRC-00067
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-01'
+  created: '2026-10-03'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    process: IHP 130 nm
+    channel_count: '8'
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: true
+    as_published:
+      value: 14.3
+      unit: '%'
+    si_base:
+      value: 0.14300000000000002
+      unit: dimensionless
+    display:
+      value: 14.3
+      unit: percent
+    conditions:
+      process: IHP 130 nm
+      channel_count: '8'
+- id: CLM-ARCH-0045
+  topic: ARCH
+  statement: Functional correctness was verified in Verilator against a Python golden model over 4,379
+    checked cycles.
+  sources:
+  - SRC-00067
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-01'
+  created: '2026-10-03'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    reference_model: Python golden model

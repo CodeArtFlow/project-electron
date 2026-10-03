@@ -171,3 +171,160 @@ claims:
     conditions:
       hardware: NVIDIA RTX PRO 6000 Blackwell GPU
       implementation_type: full-resolution implementation
+- id: CLM-PROC-0006
+  topic: PROC
+  statement: The maximum relative deviation between the third-order polynomial model fit and Monte Carlo
+    simulations for characteristic X-ray yield is 1.1125%.
+  sources:
+  - SRC-00064
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-01'
+  created: '2026-10-03'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    voltage: 20 kV
+    model: third-order polynomial
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 1.1125
+      unit: '%'
+    si_base:
+      value: 0.011125000000000001
+      unit: dimensionless
+    display:
+      value: 1.1125
+      unit: percent
+    conditions:
+      voltage: 20 kV
+      model: third-order polynomial
+- id: CLM-PROC-0007
+  topic: PROC
+  statement: The maximum relative deviation between the fourth-order polynomial model fit and Monte Carlo
+    simulations is 0.5479%.
+  sources:
+  - SRC-00064
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-01'
+  created: '2026-10-03'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    voltage: 20 kV
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 0.5479
+      unit: '%'
+    si_base:
+      value: 0.005479
+      unit: dimensionless
+    display:
+      value: 0.5479
+      unit: percent
+    conditions:
+      voltage: 20 kV
+- id: CLM-PROC-0008
+  topic: PROC
+  statement: The maximum relative deviation between the fifth-order polynomial model fit and Monte Carlo
+    simulations is 0.5461%.
+  sources:
+  - SRC-00064
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-01'
+  created: '2026-10-03'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    voltage: 20 kV
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 0.5461
+      unit: '%'
+    si_base:
+      value: 0.005461000000000001
+      unit: dimensionless
+    display:
+      value: 0.5461
+      unit: percent
+    conditions:
+      voltage: 20 kV
+- id: CLM-PROC-0009
+  topic: PROC
+  statement: The maximum relative deviation between the sixth-order polynomial model fit and Monte Carlo
+    simulations is 0.3757%.
+  sources:
+  - SRC-00064
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-01'
+  created: '2026-10-03'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    voltage: 20 kV
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 0.3757
+      unit: '%'
+    si_base:
+      value: 0.003757
+      unit: dimensionless
+    display:
+      value: 0.3757
+      unit: percent
+    conditions:
+      voltage: 20 kV
+- id: CLM-PROC-0010
+  topic: PROC
+  statement: The scaling factor applied to SEM-EDS experimental results to account for detector efficiency
+    and collection solid angle is 1.13.
+  sources:
+  - SRC-00064
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-01'
+  created: '2026-10-03'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    voltage: 20 kV

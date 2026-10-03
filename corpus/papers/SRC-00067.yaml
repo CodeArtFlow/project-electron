@@ -1,0 +1,100 @@
+id: SRC-00067
+title: 'U-Sonic: An Open-Source 8-Channel Ultrasound Transmit IP in a 130 nm RISC-V SoC'
+doi: null
+arxiv_id: 2610.01603v1
+url: https://arxiv.org/abs/2610.01603v1
+venue_id: arxiv_api
+authors:
+- name: Federico Villani
+  affiliation: null
+  corresponding: null
+- name: Nico Canzani
+  affiliation: null
+  corresponding: null
+- name: Marc-André Wessner
+  affiliation: null
+  corresponding: null
+- name: Philippe Sauter
+  affiliation: null
+  corresponding: null
+- name: Enrico Zelioli
+  affiliation: null
+  corresponding: null
+- name: Andrea Cossettini
+  affiliation: null
+  corresponding: null
+- name: Christoph Leitner
+  affiliation: null
+  corresponding: null
+- name: Luca Benini
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-01'
+retrieved_date: '2026-10-03'
+access: full_text
+read_scope: Automated reading. The full PDF text (21,245 characters, 4 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.01603v1 on
+  2026-10-03. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The 8-channel instance occupies 14.9 kGE, corresponding to approximately 14.3 % of the 104
+  kGE RISC-V SoC.”
+
+  “The design was synthesized and placed-and-routed in IHP 130 nm”
+
+  “The 8-channel instance occupies 14.9 kGE”
+
+  “The design was synthesized and placed-and-routed in IHP 130 nm with the ETH EZ130 8T standard-cell
+  library [23], using Yosys and OpenROAD.”
+
+  “Functional correctness was verified in Verilator against a Python golden model over 4,379 checked cycles
+  across directed and randomized configurations, and confirmed on a Terasic DE10-Lite field-programmable
+  gate array (FPGA).”
+
+  “against a Python golden model”
+
+  “Functional correctness was verified in Verilator against a Python golden model over 4,379 checked cycles
+  across directed and randomized configurations”'
+method_summary: '“Functional correctness was verified in Verilator against a Python golden model over
+  4,379 checked cycles across directed and randomized configurations, and confirmed on a Terasic DE10-Lite
+  field-programmable gate array (FPGA).”
+
+  “The design was synthesized and placed-and-routed in IHP 130 nm with the ETH EZ130 8T standard-cell
+  library [23], using Yosys and OpenROAD.”'
+limitations: '“The current peripheral generates periodic dual-tone bursts on a common time base. It has
+  no per-channel delay field, no pattern memory or drive stage.”
+
+  “The current implementation does not include per-channel delay control or a high-voltage drive stage.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 8142
+    output: 1712
+  claims_accepted: 2
+  claims_rejected: 2
+  rejected:
+  - statement: The 8-channel instance of the pulser peripheral occupies 14.9 kGE in post-layout area.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - The 8-channel instance occupies 14.9 kGE, corresponding to approximately 14.3 % of the 104 kGE RISC-V
+      SoC.
+    - The design was synthesized and placed-and-routed in IHP 130 nm with the ETH EZ130 8T standard-cell
+      library [23], using Yosys and OpenROAD. Gate equivalents refer to the NAND2 cell of that library.
+      Post-layout area scales approximately linea
+    - The design was synthesized and placed-and-routed in IHP 130 nm
+    - with the ETH EZ130 8T standard-cell library
+  - statement: The overall RISC-V SoC area is 104 kGE.
+    reason: the quote says the number is approximate but approximate is false
+    quotes:
+    - corresponding to approximately 14.3 % of the 104 kGE RISC-V SoC.
+    - The design was synthesized and placed-and-routed in IHP 130 nm with the ETH EZ130 8T standard-cell
+      library [23], using Yosys and OpenROAD.
+    - The design was synthesized and placed-and-routed in IHP 130 nm
+    - 104 kGE RISC-V SoC.
+corrections: []

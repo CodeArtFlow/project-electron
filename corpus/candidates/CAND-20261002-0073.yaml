@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.01473v1
 doi: null
-title: Engineering photonic crystal slab modes for strong exciton-photon coupling
-  and polariton dispersion control
+title: Engineering photonic crystal slab modes for strong exciton-photon coupling and polariton dispersion
+  control
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-01'
@@ -25,6 +25,62 @@ id: CAND-20261002-0073
 harvested_date: '2026-10-02'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-03'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: In the Type 1 structure at normal incidence with an hBN thickness of 120 nm, the Rabi splitting
+      is 8.668 meV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''120 1 8.668
+      2.297 1.000 4.382'''
+    quotes:
+    - Table I. Exciton-photon coupling strength at theΓpoint for Type 1 and Type 2 structures. The Rabi
+      splitting, photonic and excitonic linewidthγph andγ X and coupling energygare presented in meV.
+    - 120 1 8.668 2.297 1.000 4.382
+    - We numerically study exciton-photon coupling in a hybrid structure composed of a period-doubled
+      Si3N4 photonic crystal slab and an hBN-encapsulated MoSe2 monolayer.
+    - Table I. Exciton-photon coupling strength at theΓpoint for Type 1 and Type 2 structures.
+  - statement: In the Type 1 structure at the Gamma point with an hBN thickness of 120 nm, the coupling
+      strength g is 4.382 meV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''120 1 8.668
+      2.297 1.000 4.382'''
+    quotes:
+    - Table I. Exciton-photon coupling strength at theΓpoint for Type 1 and Type 2 structures. The Rabi
+      splitting, photonic and excitonic linewidthγph andγ X and coupling energygare presented in meV.
+    - 120 1 8.668 2.297 1.000 4.382
+    - We numerically study exciton-photon coupling in a hybrid structure composed of a period-doubled
+      Si3N4 photonic crystal slab and an hBN-encapsulated MoSe2 monolayer.
+    - Table I. Exciton-photon coupling strength at theΓpoint for Type 1 and Type 2 structures.
+  - statement: In the Type 2 structure at the Gamma point with an hBN thickness of 6 nm, the coupling
+      strength g is 1.532 meV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''2 2.897 0.00006
+      1.000 1.532'''
+    quotes:
+    - Table I. Exciton-photon coupling strength at theΓpoint for Type 1 and Type 2 structures. The Rabi
+      splitting, photonic and excitonic linewidthγph andγ X and coupling energygare presented in meV.
+    - 2 2.897 0.00006 1.000 1.532
+    - We numerically study exciton-photon coupling in a hybrid structure composed of a period-doubled
+      Si3N4 photonic crystal slab and an hBN-encapsulated MoSe2 monolayer.
+    - 6 1 3.435 0.826 1.000 1.720
+  - statement: The photonic gap closes near an hBN thickness of 113 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The hBN thickness also modifies the interaction between folded TE-like modes at finite in-plane
+      momentum. The corresponding photonic gap decreases with increasingh hBN, closes nearh hBN = 113nm,
+      and reopens for larger thicknesses.
+    - We numerically study exciton-photon coupling in a hybrid structure composed of a period-doubled
+      Si3N4 photonic crystal slab and an hBN-encapsulated MoSe2 monolayer.
+    - closes nearh hBN = 113nm
+  tokens:
+    input: 18406
+    output: 1672
+  fetched_chars: 55424

@@ -1,6 +1,6 @@
 # Memory — state of the art
 
-Topic code `MEM`. Last reviewed 2026-10-02.
+Topic code `MEM`. Last reviewed 2026-10-03.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -20,6 +20,14 @@ Topic code `MEM`. Last reviewed 2026-10-02.
   - `CLM-MEM-0004` · dataset MNIST, depression_regime slowly evolving response · grade B · credibility unknown · simulated · as of 2026-09-29
   - sources: SRC-00052
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The single-pulse switching threshold fluence for the continuous-film sample is 3.98 ± 0.29 mJ cm−2.
+  - `CLM-MEM-0005` · pulse_duration 30 fs · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00066
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Multidomain formation appears at the center of the switched region when the average fluence exceeds 7.96 ± 0.59 mJ cm−2.
+  - `CLM-MEM-0006` · pulse_duration 30 fs · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00066
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### resistance
 
@@ -34,6 +42,6 @@ _None._
 
 ## Evidence base
 
-- claims: 4
-- grades: {'B': 4}
-- distinct sources: 1
+- claims: 6
+- grades: {'B': 6}
+- distinct sources: 2

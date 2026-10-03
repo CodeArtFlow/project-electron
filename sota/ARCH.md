@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-02.
+Topic code `ARCH`. Last reviewed 2026-10-03.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -143,6 +143,10 @@ Topic code `ARCH`. Last reviewed 2026-10-02.
   - `CLM-ARCH-0039` · mapping_strategy optimized two-phase TP+EP mapping, baseline EP baseline · grade B · credibility unknown · simulated · as of 2026-09-28
   - sources: SRC-00044
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Functional correctness was verified in Verilator against a Python golden model over 4,379 checked cycles.
+  - `CLM-ARCH-0045` · reference_model Python golden model · grade B · credibility unknown · simulated · as of 2026-10-01
+  - sources: SRC-00067
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -165,6 +169,10 @@ Topic code `ARCH`. Last reviewed 2026-10-02.
   - `CLM-ARCH-0041` · frequency 7 GHz · grade B · credibility unknown · simulated · as of 2026-09-30
   - sources: SRC-00058
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈14.3 percent** — The 8-channel pulser peripheral instance corresponds to approximately 14.3% of the 104 kGE RISC-V SoC area.
+  - `CLM-ARCH-0044` · process IHP 130 nm, channel_count 8 · grade B · credibility unknown · simulated · as of 2026-10-01
+  - sources: SRC-00067
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -199,6 +207,6 @@ _None._
 
 ## Evidence base
 
-- claims: 43
-- grades: {'B': 43}
-- distinct sources: 13
+- claims: 45
+- grades: {'B': 45}
+- distinct sources: 14

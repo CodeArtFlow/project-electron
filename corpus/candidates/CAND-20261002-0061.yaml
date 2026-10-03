@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.01600v1
 doi: null
-title: 'Why polar excitons stay sharp: parity protection of the center-of-mass recoil
-  channel in exciton-phonon scattering'
+title: 'Why polar excitons stay sharp: parity protection of the center-of-mass recoil channel in exciton-phonon
+  scattering'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-01'
@@ -22,6 +22,41 @@ id: CAND-20261002-0061
 harvested_date: '2026-10-02'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-03'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For mass-asymmetric GaAs with eta = -0.74, the calculated parameter-free recoil linewidth
+      gamma_LO_recoil is 2.24 meV.
+    reason: 'unit conversion refused: frequency: cannot convert 2.24 meV to Hz - Cannot convert from ''millielectron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''hertz'' (1 / [time]). A dimensiona'
+    quotes:
+    - 'GaAs−0.74 8.35−0.59 2.24 asymmetric: recoil + ionization 8–14 a'
+  - statement: For near-symmetric MAPbI3 with eta = -0.11, the calculated parameter-free recoil linewidth
+      gamma_LO_recoil is 0.12 meV.
+    reason: 'unit conversion refused: frequency: cannot convert 0.12 meV to Hz - Cannot convert from ''millielectron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''hertz'' (1 / [time]). A dimensiona'
+    quotes:
+    - 'MAPbI3 −0.11 0.98−0.04 0.12 near-symmetric: inelastic resonance 40±2 b'
+  - statement: For mass-symmetric FAPbI3 with eta = 0.00, the calculated parameter-free recoil linewidth
+      gamma_LO_recoil is 0.00 meV.
+    reason: the value 0 does not appear in any of the claim's quotes
+    quotes:
+    - 'FAPbI3 0.00 0.62 0.00 0.00 symmetric: inelastic resonance 27 c'
+  - statement: For CsPbBr3 with eta = -0.11, the calculated parameter-free recoil linewidth gamma_LO_recoil
+      is 0.65 meV.
+    reason: 'unit conversion refused: frequency: cannot convert 0.65 meV to Hz - Cannot convert from ''millielectron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''hertz'' (1 / [time]). A dimensiona'
+    quotes:
+    - CsPbBr3 −0.11 1.32−0.07 0.65 intermediate∼70 d
+  tokens:
+    input: 8460
+    output: 2166
+  fetched_chars: 19770

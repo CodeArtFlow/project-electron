@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-02.
+Topic code `MAT`. Last reviewed 2026-10-03.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -99,6 +99,10 @@ Topic code `MAT`. Last reviewed 2026-10-02.
   - `CLM-MAT-0040` · fermi_velocity 7×105 ms−1, model Drude model · grade B · credibility unknown · measured · as of 2026-10-01
   - sources: SRC-00059
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈23 nm** — AFM analysis shows a Bi2Te3 nanosheet thickness of approximately 23 nm.
+  - `CLM-MAT-0052` · characterization_method AFM · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00068
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power density
 
@@ -219,6 +223,10 @@ Topic code `MAT`. Last reviewed 2026-10-02.
   - `CLM-MAT-0004` · calculation optical phonon and surface polar phonon scattering · grade B · credibility unknown · simulated · as of 2026-09-17
   - sources: SRC-00004
   - ⚙ automated extraction (gemini-3.6-flash; 1 quote(s) verified verbatim against the paper)
+- **230 degC** — BiTe nanosheets synthesized via the phosphine-free route are selective at 230 °C.
+  - `CLM-MAT-0053` · synthesis_approach phosphine-free colloidal approach · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00068
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### thermal conductivity
 
@@ -274,6 +282,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 51
-- grades: {'B': 51}
-- distinct sources: 18
+- claims: 53
+- grades: {'B': 53}
+- distinct sources: 19

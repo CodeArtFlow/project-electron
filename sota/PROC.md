@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-10-02.
+Topic code `PROC`. Last reviewed 2026-10-03.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -16,6 +16,32 @@ Topic code `PROC`. Last reviewed 2026-10-02.
   - `CLM-PROC-0004` · material HEA-NP, defocus 0 nm · grade B · credibility unknown · measured · as of 2026-09-22
   - sources: SRC-00023
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+
+### qualitative
+
+- The scaling factor applied to SEM-EDS experimental results to account for detector efficiency and collection solid angle is 1.13.
+  - `CLM-PROC-0010` · voltage 20 kV · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00064
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+
+### relative deviation
+
+- **≤ 1.1125 percent** — The maximum relative deviation between the third-order polynomial model fit and Monte Carlo simulations for characteristic X-ray yield is 1.1125%.
+  - `CLM-PROC-0006` · voltage 20 kV, model third-order polynomial · grade B · credibility unknown · simulated · as of 2026-10-01
+  - sources: SRC-00064
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≤ 0.5479 percent** — The maximum relative deviation between the fourth-order polynomial model fit and Monte Carlo simulations is 0.5479%.
+  - `CLM-PROC-0007` · voltage 20 kV · grade B · credibility unknown · simulated · as of 2026-10-01
+  - sources: SRC-00064
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ 0.5461 percent** — The maximum relative deviation between the fifth-order polynomial model fit and Monte Carlo simulations is 0.5461%.
+  - `CLM-PROC-0008` · voltage 20 kV · grade B · credibility unknown · simulated · as of 2026-10-01
+  - sources: SRC-00064
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ 0.3757 percent** — The maximum relative deviation between the sixth-order polynomial model fit and Monte Carlo simulations is 0.3757%.
+  - `CLM-PROC-0009` · voltage 20 kV · grade B · credibility unknown · simulated · as of 2026-10-01
+  - sources: SRC-00064
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -41,6 +67,6 @@ _None._
 
 ## Evidence base
 
-- claims: 5
-- grades: {'B': 5}
-- distinct sources: 3
+- claims: 10
+- grades: {'B': 10}
+- distinct sources: 4

@@ -26,6 +26,36 @@ id: CAND-20261002-0058
 harvested_date: '2026-10-02'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-03'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The custom SPI block implemented on an AMD Kria K26 achieves error-free transfers up to
+      an SCLK frequency of 66 MHz in quad mode.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''No transaction
+      errors were detected up to a speed of 66 MHz in quad mo'''
+    quotes:
+    - No transaction errors were detected up to a speed of 66 MHz in quad mode, resulting in a maximum
+      raw bitrate of 264 Mbit/s.
+    - The custom SPI block was verified on a Kria KR260 development board in order to measure the maximum
+      operating frequency.
+  - statement: The IGLOO2 implementation meets static timing analysis at an SCLK frequency of 50 MHz.
+    reason: 'unit conversion refused: frequency: could not parse 50.0 ''Mhz'': ''Mhz'' is not defined
+      in the unit registry'
+    quotes:
+    - The IGLOO2 implementation meets timing at 50 Mhz and is extremely resource efficient, requiring
+      187 LUT and 161 FF logic elements, each less than 1.25% of the complete TinyProbe design resource
+      usage.
+    - Additionally, since the deployed FPGA differs from the testbed FPGA, we verify an IGLOO2 implementation
+      via static timing analysis at SCLK =50 MHz.
+  tokens:
+    input: 7483
+    output: 971
+  fetched_chars: 20219

@@ -6,19 +6,20 @@ A contradiction appears here if and only if the data to resolve it is absent, an
 
 ---
 
-## Status — 2026-10-02
+## Status — 2026-10-03
 
-> 375 pair(s) of claims disagree numerically but share no subject context, so they were **not compared** and opened no conflict (`ledger/not-compared.md`). Listed, not hidden: a real disagreement behind mismatched condition keys would show there.
+> 560 pair(s) of claims disagree numerically but share no subject context, so they were **not compared** and opened no conflict (`ledger/not-compared.md`). Listed, not hidden: a real disagreement behind mismatched condition keys would show there.
 
-> **7 conflict(s) in `live:unexamined`.** This is an error state, not a category of contradiction: it means reconciliation is unfinished. Publication is blocked until they are classified.
+> **8 conflict(s) in `live:unexamined`.** This is an error state, not a category of contradiction: it means reconciliation is unfinished. Publication is blocked until they are classified.
 
-- `CFL-0015` opened 2026-09-28 (4 day(s) ago) — CLM-MAT-0013, CLM-MAT-0014
-- `CFL-0016` opened 2026-09-28 (4 day(s) ago) — CLM-MAT-0013, CLM-MAT-0015
-- `CFL-0017` opened 2026-09-28 (4 day(s) ago) — CLM-MAT-0013, CLM-MAT-0016
-- `CFL-0018` opened 2026-09-28 (4 day(s) ago) — CLM-MAT-0017, CLM-MAT-0018
-- `CFL-0019` opened 2026-09-29 (3 day(s) ago) — CLM-MAT-0023, CLM-MAT-0024
-- `CFL-0020` opened 2026-10-02 (0 day(s) ago) — CLM-MAT-0037, CLM-MAT-0039
-- `CFL-0021` opened 2026-10-02 (0 day(s) ago) — CLM-MAT-0048, CLM-MAT-0049
+- `CFL-0015` opened 2026-09-28 (5 day(s) ago) — CLM-MAT-0013, CLM-MAT-0014
+- `CFL-0016` opened 2026-09-28 (5 day(s) ago) — CLM-MAT-0013, CLM-MAT-0015
+- `CFL-0017` opened 2026-09-28 (5 day(s) ago) — CLM-MAT-0013, CLM-MAT-0016
+- `CFL-0018` opened 2026-09-28 (5 day(s) ago) — CLM-MAT-0017, CLM-MAT-0018
+- `CFL-0019` opened 2026-09-29 (4 day(s) ago) — CLM-MAT-0023, CLM-MAT-0024
+- `CFL-0020` opened 2026-10-02 (1 day(s) ago) — CLM-MAT-0037, CLM-MAT-0039
+- `CFL-0021` opened 2026-10-02 (1 day(s) ago) — CLM-MAT-0048, CLM-MAT-0049
+- `CFL-0022` opened 2026-10-03 (0 day(s) ago) — CLM-PHOT-0041, CLM-PHOT-0042
 
 **0 live contradictions with a named data gap.**
 

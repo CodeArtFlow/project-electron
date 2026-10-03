@@ -1447,3 +1447,69 @@ claims:
       unit: fJ
     conditions:
       axis: c
+- id: CLM-MAT-0052
+  topic: MAT
+  statement: AFM analysis shows a Bi2Te3 nanosheet thickness of approximately 23 nm.
+  sources:
+  - SRC-00068
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-01'
+  created: '2026-10-03'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    characterization_method: AFM
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 23.0
+      unit: nm
+    si_base:
+      value: 2.3e-08
+      unit: m
+    display:
+      value: 22.999999999999996
+      unit: nm
+    conditions:
+      characterization_method: AFM
+- id: CLM-MAT-0053
+  topic: MAT
+  statement: BiTe nanosheets synthesized via the phosphine-free route are selective at 230 °C.
+  sources:
+  - SRC-00068
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-01'
+  created: '2026-10-03'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    synthesis_approach: phosphine-free colloidal approach
+  quantity:
+    quantity: temperature
+    bound: exact
+    approximate: false
+    as_published:
+      value: 230.0
+      unit: °C
+    si_base:
+      value: 503.15
+      unit: K
+    display:
+      value: 230.0
+      unit: degC
+    conditions:
+      synthesis_approach: phosphine-free colloidal approach

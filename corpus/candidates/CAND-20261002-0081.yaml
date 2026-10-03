@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.01357v1
 doi: null
-title: Domain-engineered ferroelectric BiFeO$_3$ thin films for efficient bias-free
-  THz emission
+title: Domain-engineered ferroelectric BiFeO$_3$ thin films for efficient bias-free THz emission
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-01'
@@ -34,6 +33,49 @@ id: CAND-20261002-0081
 harvested_date: '2026-10-02'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-03'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: In Oblique-BFO, the saturation fluence under 400 nm excitation was measured to be 1.5 mJ/cm2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The fluence
+      data of the Oblique-BFO was fitted with a saturation law, '''
+    quotes:
+    - The fluence data of the Oblique-BFO was fitted with a saturation law, where the saturation fluence
+      was extracted to be F0 = 1.5mJ/cm2.
+    - The fluence data of the Oblique-BFO was fitted with a saturation law
+    - MAXIMUM SIGNAL VERSUS PUMPING FLUENCE AT 400NM
+  - statement: In the FeCoB(5nm)/Pt(3nm) spintronic emitter under 400 nm pump wavelength, the saturation
+      fluence was measured to be 1.75 mJ/cm2.
+    reason: 'unit conversion refused: power_density: cannot convert 1.75 mJ/cm2 to W/m^2 - Cannot convert
+      from ''millijoule / centimeter ** 2'' ([mass] / [time] ** 2) to ''watt / meter ** 2'' ([mass] / '
+    quotes:
+    - The fluence data of the FeCoB(5nm)/Pt(3nm) at a pump wavelength 400 nm was fitted with a saturation
+      law, where the saturation fluence was extracted to be F0 = 1.75mJ/cm2
+    - The fluence data of the FeCoB(5nm)/Pt(3nm) at a pump wavelength 400 nm
+    - pump wavelength 400 nm
+  - statement: The group delay introduced by the 0.5 mm thick DyScO3(110)o substrate at 400 nm wavelength
+      was measured in situ to be 132 fs.
+    reason: the statement contains the number 400, which none of its quotes contain
+    quotes:
+    - For DyScO 3(110)o the two methods give ∆t = 132(2) fs (emission timing)
+    - For d = 0.5 mm and our≈ 50 fs pump pulses
+    - 400 nm pump pulse
+  - statement: The group delay introduced by the 0.5 mm thick DyScO3(011)o substrate at 400 nm wavelength
+      was measured to be 80 fs.
+    reason: the statement contains the number 400, which none of its quotes contain
+    quotes:
+    - for DyScO 3(011)o the optical value ∆t = 80 fs (∆ng≈ 0.048) is adopted
+    - For d = 0.5 mm and our≈ 50 fs pump pulses
+    - 400 nm pump pulse
+  tokens:
+    input: 39022
+    output: 1632
+  fetched_chars: 108254

@@ -42,6 +42,76 @@ id: CAND-20261002-0083
 harvested_date: '2026-10-02'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-03'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At an applied magnetic field of 185 mT, the system enters a near-orthogonal regime where
+      layer-resolved XMCD-STXM reveals a skyrmion in layer A and a bimeron in
+    reason: 'unit conversion refused: voltage: cannot convert 185.0 mT to V - Cannot convert from ''millitesla''
+      ([mass] / [time] ** 2 / [current]) to ''volt'' ([mass] * [length] ** 2 / [time] ** 3 / [c'
+    quotes:
+    - At µ0Hz =185 mT , the system enters a near-orthogonal regime in which the magnetization of one layer
+      remains predominantly OOP, whereas that of the other becomes IP.
+    - At the Fe L3 edge (layer A), the localized reversal of mz identifies a skyrmion core, whereas the
+      paired black–white lobes at the Co L3 edge (layer B) are the characteristic XMCD signature of a
+      bimeron in an in-plane background, arising fro
+    - 'At µ0Hz =185 mT , the system enters a near-orthogonal regime in which the magnetization of one
+      layer remains predominantly OOP, whereas that of the other becomes IP. Layer-resolved XMCD–STXM
+      then reveals spatially co-localized but distinct '
+    - At µ0Hz =185 mT
+  - statement: Under negative current density Jx < 0, a skymeron exhibits a current-driven velocity of
+      -35 ± 3 m s^-1.
+    reason: 'unit conversion refused: current: could not parse -35.0 ''ms −1'': ''−1'' is not defined
+      in the unit registry'
+    quotes:
+    - Linear fits yield a current-driven velocityv (J<0) x = (−35±3)ms −1
+    - v (J<0) x
+  - statement: Following the termination of a current pulse, the skymeron exhibits an average relaxation
+      velocity v(J=0)_x of 9 ± 1 m s^-1.
+    reason: 'unit conversion refused: current: could not parse 9.0 ''ms −1'': ''−1'' is not defined in
+      the unit registry'
+    quotes:
+    - and an average relaxation velocityv J=0 x = (9±1)ms −1.
+    - Linear fits yield a current-driven velocityv (J<0) x = (−35±3)ms −1 and an average relaxation velocityv
+      J=0 x = (9±1)ms −1.
+    - v J=0 x
+  - statement: Under negative current density, the skymeron exhibits a transverse current-driven velocity
+      v(J<0)_y of -11 ± 1 m s^-1.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''withv (J<0)
+      y = (−11±1)ms −1'''
+    quotes:
+    - withv (J<0) y = (−11±1)ms −1
+    - In contrast to the x-edge, the current-driven and relaxation velocities in theydirection are comparable,
+      withv (J<0) y = (−11±1)ms −1 and v(J=0) y = (10±1)ms −1.
+    - v (J<0) y
+    - in theydirection
+  - statement: The transverse relaxation velocity v(J=0)_y of the skymeron in the y-direction is 10 ±
+      1 m s^-1.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''and v(J=0)
+      y = (10±1)ms −1.'''
+    quotes:
+    - and v(J=0) y = (10±1)ms −1.
+    - In contrast to the x-edge, the current-driven and relaxation velocities in theydirection are comparable,
+      withv (J<0) y = (−11±1)ms −1 and v(J=0) y = (10±1)ms −1.
+    - v(J=0) y
+    - in theydirection
+  - statement: From the spatial extent of the XMCD contrast, the deduced characteristic radius of the
+      skymeron is 150 ± 25 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - From the spatial extent of the XMCD contrast, we deduce for our system a characteristic skymeron
+      radius of (150±25)nm .
+  tokens:
+    input: 21516
+    output: 1939
+  fetched_chars: 75012

@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-02.
+Topic code `PHOT`. Last reviewed 2026-10-03.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -55,6 +55,28 @@ Topic code `PHOT`. Last reviewed 2026-10-02.
   - `CLM-PHOT-0026` · component MO-PhC slab · grade B · credibility unknown · simulated · as of 2026-09-23
   - sources: SRC-00031
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **60 nm** — The gold layer of the flat surface sample was sputtered to a thickness of 60 nm.
+  - `CLM-PHOT-0041` · layer_material gold, sample_type flat surface · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00065
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0022 — see the open register
+- **160000 nm** — The glass cover slip substrate for the flat surface sample had a thickness of 160 µm.
+  - `CLM-PHOT-0042` · substrate_material glass cover slip, sample_type flat surface · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00065
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0022 — see the open register
+- **765 nm** — The hole array structure fabricated in a square lattice has a period of 765 nm.
+  - `CLM-PHOT-0043` · structure hole array (HA) in a square lattice · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00065
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **576 nm** — The radially periodic true-chiral array of apertures has a radial period of 576 nm.
+  - `CLM-PHOT-0044` · structure_type true-chiral metasurface · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00065
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **603 nm** — The radially periodic true-chiral array of apertures has an azimuthal period of 603 nm.
+  - `CLM-PHOT-0045` · period_direction azimuthal period (arc length), structure_type true-chiral metasurface · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00065
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### qualitative
 
@@ -184,13 +206,21 @@ Topic code `PHOT`. Last reviewed 2026-10-02.
   - `CLM-PHOT-0033` · excitation_wavelength 532 nm, cumulative_exposure_time 5 h · grade B · credibility unknown · measured · as of 2026-09-29
   - sources: SRC-00051
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **0.785 um** — A diode laser operating at a wavelength of 785 nm was used in the experimental setup.
+  - `CLM-PHOT-0040` · source diode laser · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00065
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
-_None._
+Shown here, not in an appendix: a reader of this page must see the disagreement without navigating elsewhere.
+
+- `CFL-0022` — length_device: _unexamined; classification pending_
+  - claims: CLM-PHOT-0041, CLM-PHOT-0042
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 39
-- grades: {'B': 32, 'A': 7}
-- distinct sources: 13
+- claims: 45
+- grades: {'B': 38, 'A': 7}
+- distinct sources: 14

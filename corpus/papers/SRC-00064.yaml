@@ -1,0 +1,108 @@
+id: SRC-00064
+title: Determination of van der Waals thin film thickness via characteristic X-ray photon yield
+doi: null
+arxiv_id: 2610.01309v1
+url: https://arxiv.org/abs/2610.01309v1
+venue_id: arxiv_api
+authors:
+- name: Guoshun Luo
+  affiliation: null
+  corresponding: null
+- name: Shichao Zhao
+  affiliation: null
+  corresponding: null
+- name: Xinyu Liu
+  affiliation: null
+  corresponding: null
+- name: Suguo Chen
+  affiliation: null
+  corresponding: null
+- name: Yue Wang
+  affiliation: null
+  corresponding: null
+- name: Ping Zhang
+  affiliation: null
+  corresponding: null
+- name: Zhigang Lu
+  affiliation: null
+  corresponding: null
+- name: Shaomeng Wang
+  affiliation: null
+  corresponding: null
+- name: Sunchao Huang
+  affiliation: null
+  corresponding: null
+- name: Yubin Gong
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-01'
+retrieved_date: '2026-10-03'
+access: full_text
+read_scope: Automated reading. The full PDF text (34,675 characters, 16 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.01309v1 on
+  2026-10-03. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The maximum relative deviation is 1.1125% for the third-order polynomial.”
+
+  “where electron energy is 20 kV.”
+
+  “Figure 2 compares the performance of third-order fourth-order fifth-order and sixth-order polynomial
+  model in describe the relationship of thin-film thickness with characteristic X-ray yield, where electron
+  energy is 20 kV.”
+
+  “The fourth- and fifth-order models reduce this value to 0.5479% and 0.5461%, respectively.”
+
+  “The maximum relative deviation of the sixth-order model is 0.3757%, and all data points are within
+  the 0.4%.”
+
+  “Here, a scaling factor of 𝛽=1.13 is applied to the experimental results to account for the effects
+  of collection solid angle and detector efficiency.”
+
+  “The SEM‑EDS measurement was carried out at an accelerating voltage of 20 kV and a beam current of 1
+  nA.”'
+method_summary: '“We first establish this relationship vi a Monte Carlo simulations.”
+
+  “Based on the simulated data, we develop a sixth-order polynomial model that directly correlates film
+  thickness with the characteristic X-ray yield.”
+
+  “The X -ray photon yields of these samples were experimentally collected using a scanning electron microscope
+  (SEM) integrated with an energy-dispersive X-ray spectroscopy (EDS) detector”'
+limitations: “Above the saturation thickness, further increasing the graphite thickness no longer raises
+  the X‑ray photon count. This implies that X‑ray‑yield‑based thickness determination cannot be performed
+  for films thicker than this saturation limit.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 12047
+    output: 2426
+  claims_accepted: 5
+  claims_rejected: 2
+  rejected:
+  - statement: The relative error between the sixth-order model predicted X-ray counts and Monte Carlo
+      counts for a 20 nm freestanding graphite film at 20 kV is 0.07%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''20 361941
+      361689 0.07%'''
+    quotes:
+    - 20 361941 361689 0.07%
+    - Table 2. Comparison of sixth-order model predictions and Monte Carlo carbon characteristic X-ray
+      yields for freestanding graphite films at 20 kV.
+    - freestanding graphite films at 20 kV.
+  - statement: The relative error between the reconstructed thickness and reference thickness for a 40
+      nm freestanding graphite film at 20 kV is 0.04%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''722018 40.02
+      40 0.04%'''
+    quotes:
+    - 722018 40.02 40 0.04%
+    - Table 3. Thicknesses reconstructed from carbon characteristic X-ray yields for freestanding graphite
+      films at 20 kV.
+    - freestanding graphite films at 20 kV.
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (measured: 1, simulated:
+  4). This field records the majority (simulated); trust each claim''s own evidence_type over this one.'
