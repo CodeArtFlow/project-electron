@@ -1,0 +1,63 @@
+id: SRC-00072
+title: Giant PhotoMagnetoDiode Effect
+doi: null
+arxiv_id: 2609.39435v1
+url: https://arxiv.org/abs/2609.39435v1
+venue_id: arxiv_api
+authors:
+- name: V. L. Korenev
+  affiliation: null
+  corresponding: null
+- name: S. A. Tarasenko
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-30'
+retrieved_date: '2026-10-04'
+access: full_text
+read_scope: Automated reading. The full PDF text (28,277 characters, 7 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.39435v1 on
+  2026-10-04. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Asymmetry in the PL intensity is even more pronounced than that in the current and reaches
+  the ratio of 27.”
+
+  “The detection wavelength of 819 nm (D +X line) corresponds to the recombination of excitons localized
+  on charged donors.”
+
+  “Measurements were carried out at the temperatureT= 10 K in a closed-cycle cryostat.”'
+method_summary: '“Measurements were carried out at the temperatureT= 10 K in a closed-cycle cryostat.”
+
+  “The samples were illuminated with a continuous-wave Ti:sapphire laser operating at a wavelength of
+  750 nm, corresponding to the photon energy of 1.65 eV, with an optical power of 25 mW.”
+
+  “Figure 1(a) shows the current–voltage characteristics measured at different values of a magnetic field
+  in the range from−100 mT (open symbols) to +100 mT (solid symbols).”'
+limitations: “Also, it does not reproduce the overall PL intensity decrease at high voltages, Figs. 2(a)
+  and 2(b). We attribute it mainly to the heating of carriers in strong electric fields and the effect
+  of heating on electron transport and recombination processes, which is not included in the theory.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 11491
+    output: 876
+  claims_accepted: 1
+  claims_rejected: 1
+  rejected:
+  - statement: In high-quality GaAs samples at interband optical excitation and low temperatures, a rectification
+      ratio of 10 is achieved in a magnetic field of 0.1 T and an e
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - In high-quality GaAs samples at interband optical excitation at low temperatures, an extremely high
+      rectification ratioRof 10 is achieved in the magnetic field B= 0.1 T and the electric fieldE= 10
+      V/cm.
+    - in the magnetic field B= 0.1 T
+    - and the electric fieldE= 10 V/cm.
+    - In high-quality GaAs samples
+corrections: []

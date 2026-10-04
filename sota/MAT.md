@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-03.
+Topic code `MAT`. Last reviewed 2026-10-04.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -84,6 +84,14 @@ Topic code `MAT`. Last reviewed 2026-10-03.
 - **0.5291 nm** — The optimized bulk CeN lattice parameter a was calculated to be 5.291 Å.
   - `CLM-MAT-0029` · material bulk CeN · grade B · credibility unknown · simulated · as of 2026-09-30
   - sources: SRC-00055
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≥ ≈1000 nm** — In the pristine region of the device, the mean free path is at least 1 µm for relevant carrier densities at a temperature of 1.5 K.
+  - `CLM-MAT-0059` · region pristine zone, temperature 1.5 K · grade B · credibility unknown · measured · as of 2026-09-30
+  - sources: SRC-00074
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **101.7 nm** — For the region with 50 nm antidot diameter in Sample A, the extracted fundamental lattice parameter is 101.7 nm.
+  - `CLM-MAT-0060` · sample Sample A · grade B · credibility unknown · measured · as of 2026-09-30
+  - sources: SRC-00074
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 - **14.6 nm** — The TiN film exhibits a Ginzburg-Landau coherence length of 14.6 nm.
   - `CLM-MAT-0037` · material TiN, property GL coherence length · grade B · credibility unknown · measured · as of 2026-10-01
@@ -169,6 +177,26 @@ Topic code `MAT`. Last reviewed 2026-10-03.
   - `CLM-MAT-0034` · model EADNN · grade B · credibility unknown · simulated · as of 2026-09-30
   - sources: SRC-00056
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The highest fluence used to drive the spintronic terahertz emitter on a fused silica substrate without observing damage is 0.58 ± 0.03 µJ cm−2.
+  - `CLM-MAT-0054` · grade B · credibility unknown · measured · as of 2026-09-30
+  - sources: SRC-00073
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The highest fluence used to drive the spintronic terahertz emitter on a HRFZ-Si substrate without observing damage is 1.83 ± 0.01 µJ cm−2.
+  - `CLM-MAT-0055` · grade B · credibility unknown · measured · as of 2026-09-30
+  - sources: SRC-00073
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The damage threshold for spintronic terahertz emitters on MgO, diamond, and sapphire is above 2.92 ± 0.02 µJ cm−2 under the larger drive beam spot size.
+  - `CLM-MAT-0056` · substrates MgO, diamond and sapphire · grade B · credibility unknown · measured · as of 2026-09-30
+  - sources: SRC-00073
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The highest excitation fluence applied to the spintronic terahertz emitter on sapphire without causing damage is 0.51 ± 0.02 mJ cm−2.
+  - `CLM-MAT-0057` · grade B · credibility unknown · measured · as of 2026-09-30
+  - sources: SRC-00073
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The damage threshold for spintronic terahertz emitters on MgO or diamond is above 0.67 ± 0.03 mJ cm−2.
+  - `CLM-MAT-0058` · grade B · credibility unknown · measured · as of 2026-09-30
+  - sources: SRC-00073
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 - The electron diffusion constant of the TiN film is 1.20 cm2s−1.
   - `CLM-MAT-0038` · material TiN, carrier_concentration 5.4×1022 eV−1cm−3, film_conductivity 96.5 μΩ·cm · grade B · credibility unknown · measured · as of 2026-10-01
   - sources: SRC-00059
@@ -282,6 +310,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 53
-- grades: {'B': 53}
-- distinct sources: 19
+- claims: 60
+- grades: {'B': 60}
+- distinct sources: 21

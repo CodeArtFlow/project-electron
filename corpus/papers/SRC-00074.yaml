@@ -1,0 +1,140 @@
+id: SRC-00074
+title: Emergent Quantum Geometric Phases in Holey Graphene
+doi: null
+arxiv_id: 2609.39500v1
+url: https://arxiv.org/abs/2609.39500v1
+venue_id: arxiv_api
+authors:
+- name: Pablo Canteli
+  affiliation: null
+  corresponding: null
+- name: Yuriko Baba
+  affiliation: null
+  corresponding: null
+- name: Juan Salvador-Sánchez
+  affiliation: null
+  corresponding: null
+- name: Jorge Estrada-Álvarez
+  affiliation: null
+  corresponding: null
+- name: Ana Pérez-Rodríguez
+  affiliation: null
+  corresponding: null
+- name: Carlos Sánchez-Sánchez
+  affiliation: null
+  corresponding: null
+- name: Vito Clericò
+  affiliation: null
+  corresponding: null
+- name: Takashi Taniguchi
+  affiliation: null
+  corresponding: null
+- name: Kenji Watanabe
+  affiliation: null
+  corresponding: null
+- name: Francisco Domínguez-Adame
+  affiliation: null
+  corresponding: null
+- name: Rafael A Molina
+  affiliation: null
+  corresponding: null
+- name: Enrique Diez
+  affiliation: null
+  corresponding: null
+- name: Elena Díaz
+  affiliation: null
+  corresponding: null
+- name: Mario Amado
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-30'
+retrieved_date: '2026-10-04'
+access: full_text
+read_scope: Automated reading. The full PDF text (56,211 characters, 22 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.39500v1 on
+  2026-10-04. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“yielding l mfp ≳1µm in the pristine zone for the carrier densities relevant to our devices”
+
+  “Unless otherwise stated, data at T= 1.5K will be shown.”
+
+  “The mean free path was estimated using l mfp =µ p π|n|ℏ/e yielding l mfp ≳1µm in the pristine zone
+  for the carrier densities relevant to our devices”
+
+  “yields fundamental lattice parameters of a| H1 = 101.7 nm (Θ = 50 nm), 149.0 nm (Θ = 75 nm), 192.8
+  nm (Θ = 100 nm), and 282.7 nm (Θ = 150 nm)”
+
+  “for four different antidot dimensions (Θ = 50,75,100,150 nm from Sample A).”
+
+  “Substituting ∆BH1 into Eq. (5) for k= 1 (n 1 =n a) yields fundamental lattice parameters of a| H1 =
+  101.7 nm (Θ = 50 nm), 149.0 nm (Θ = 75 nm), 192.8 nm (Θ = 100 nm), and 282.7 nm (Θ = 150 nm)”'
+method_summary: “For the numerical calculations, we employ a scaled tight-binding Hamiltonian for graphene
+  [2, 44].”
+limitations: “The antidot density scale set by the patterned periodic potential is more than an order
+  of magnitude smaller than the residual carrier density. Consequently, the superlattice-induced satellite
+  Dirac points cannot be resolved and remain hidden beneath the primary Dirac peak.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 18658
+    output: 2862
+  claims_accepted: 2
+  claims_rejected: 5
+  rejected:
+  - statement: In the pristine zone of the encapsulated monolayer graphene devices, carrier mobility is
+      roughly 10^5 cm^2/Vs at a temperature of 1.5 K.
+    reason: the value 100000 does not appear in any of the claim's quotes
+    quotes:
+    - Initial electronic characterization demonstrated excellent device quality, with both samples exhibiting
+      a high carrier mobility of µ∼10 5 cm2/Vs at the pristine regions and a low residual charge carrier
+      density of n∗ c∼8×10 10 cm−2.
+    - Fully encapsulated monolayer graphene heterostructures were assembled on a p-doped silicon wafer
+      featuring a 300 nm top layer of silicon oxide.
+    - both samples exhibiting a high carrier mobility of µ∼10 5 cm2/Vs at the pristine regions
+    - Unless otherwise stated, data at T= 1.5K will be shown.
+  - statement: In the pristine zone of the devices, the residual charge carrier density is approximately
+      8x10^10 cm^-2 at a temperature of 1.5 K.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - a low residual charge carrier density of n∗ c∼8×10 10 cm−2.
+    - Initial electronic characterization demonstrated excellent device quality, with both samples exhibiting
+      a high carrier mobility of µ∼10 5 cm2/Vs at the pristine regions and a low residual charge carrier
+      density of n∗ c∼8×10 10 cm−2.
+    - both samples exhibiting a high carrier mobility of µ∼10 5 cm2/Vs at the pristine regions and a low
+      residual charge carrier density of n∗ c∼8×10 10 cm−2.
+    - Unless otherwise stated, data at T= 1.5K will be shown.
+  - statement: For the region with 75 nm antidot diameter in Sample A, the extracted fundamental lattice
+      parameter is 149.0 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''149.0 nm
+      (Θ = 75 nm)'''
+    quotes:
+    - 149.0 nm (Θ = 75 nm)
+    - Substituting ∆BH1 into Eq. (5) for k= 1 (n 1 =n a) yields fundamental lattice parameters of a| H1
+      = 101.7 nm (Θ = 50 nm), 149.0 nm (Θ = 75 nm), 192.8 nm (Θ = 100 nm), and 282.7 nm (Θ = 150 nm)
+    - for four different antidot dimensions (Θ = 50,75,100,150 nm from Sample A).
+  - statement: For the region with 100 nm antidot diameter in Sample A, the extracted fundamental lattice
+      parameter is 192.8 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''192.8 nm
+      (Θ = 100 nm)'''
+    quotes:
+    - 192.8 nm (Θ = 100 nm)
+    - Substituting ∆BH1 into Eq. (5) for k= 1 (n 1 =n a) yields fundamental lattice parameters of a| H1
+      = 101.7 nm (Θ = 50 nm), 149.0 nm (Θ = 75 nm), 192.8 nm (Θ = 100 nm), and 282.7 nm (Θ = 150 nm)
+    - for four different antidot dimensions (Θ = 50,75,100,150 nm from Sample A).
+  - statement: For the region with 150 nm antidot diameter in Sample A, the extracted fundamental lattice
+      parameter is 282.7 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''282.7 nm
+      (Θ = 150 nm)'''
+    quotes:
+    - 282.7 nm (Θ = 150 nm)
+    - Substituting ∆BH1 into Eq. (5) for k= 1 (n 1 =n a) yields fundamental lattice parameters of a| H1
+      = 101.7 nm (Θ = 50 nm), 149.0 nm (Θ = 75 nm), 192.8 nm (Θ = 100 nm), and 282.7 nm (Θ = 150 nm)
+    - for four different antidot dimensions (Θ = 50,75,100,150 nm from Sample A).
+corrections: []

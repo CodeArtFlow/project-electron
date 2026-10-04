@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-10-03.
+Topic code `DEV`. Last reviewed 2026-10-04.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -84,6 +84,10 @@ Topic code `DEV`. Last reviewed 2026-10-03.
   - `CLM-DEV-0020` · method DFTH-NEGF, baseline Full-NEGF, device carbon nanotube · grade B · credibility unknown · simulated · as of 2026-09-29
   - sources: SRC-00049
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The photoluminescence intensity asymmetry ratio reaches 27.
+  - `CLM-DEV-0029` · detection_wavelength 819 nm, temperature 10 K · grade B · credibility unknown · measured · as of 2026-09-30
+  - sources: SRC-00072
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -135,6 +139,6 @@ _None._
 
 ## Evidence base
 
-- claims: 25
-- grades: {'B': 25}
-- distinct sources: 10
+- claims: 26
+- grades: {'B': 26}
+- distinct sources: 11

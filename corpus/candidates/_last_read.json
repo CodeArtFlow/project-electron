@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-03",
+  "date": "2026-10-04",
   "model": "gemini-3.5-flash-lite",
   "extract_model": "gemini-3.6-flash",
   "prompt_version": "reader-v5",
@@ -10,681 +10,669 @@
   },
   "papers": [
     {
-      "candidate": "CAND-20261002-0087",
+      "candidate": "CAND-20261002-0047",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on sensor signal processing and robust state estimation using an extended Kalman filter, which is outside the scope of semiconductor research.",
+      "chars": 22956,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261002-0046",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on collaborative embodied artificial intelligence and token communication frameworks for multi-agent systems, which is outside the scope of semiconductor research.",
+      "chars": 51542,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261002-0045",
+      "decision": "out_of_scope",
+      "reason": "The paper studies quantum-dot Josephson junctions and superconducting diode effects within quantum information and condensed matter physics, which falls under quantum computing and fundamental physics rather than semiconductor device manufacturing or circuits.",
+      "chars": 75734,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261002-0044",
+      "decision": "out_of_scope",
+      "reason": "The paper discusses the lyophilization (freeze drying) process for pharmaceutical manufacturing, which is out of scope for semiconductor research.",
+      "chars": 92180,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261002-0043",
       "decision": "read",
       "reason": "",
-      "chars": 34675,
+      "chars": 21045,
       "claims": [
-        "CLM-PROC-0006",
-        "CLM-PROC-0007",
-        "CLM-PROC-0008",
-        "CLM-PROC-0009",
-        "CLM-PROC-0010"
+        "CLM-ARCH-0046",
+        "CLM-ARCH-0047",
+        "CLM-ARCH-0048"
       ],
       "rejected": [
         {
-          "statement": "The relative error between the sixth-order model predicted X-ray counts and Monte Carlo counts for a 20 nm freestanding graphite film at 20 kV is 0.07%.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): '20 361941 361689 0.07%'",
-          "quotes": [
-            "20 361941 361689 0.07%",
-            "Table 2. Comparison of sixth-order model predictions and Monte Carlo carbon characteristic X-ray yields for freestanding graphite films at 20 kV.",
-            "freestanding graphite films at 20 kV."
-          ]
-        },
-        {
-          "statement": "The relative error between the reconstructed thickness and reference thickness for a 40 nm freestanding graphite film at 20 kV is 0.04%.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): '722018 40.02 40 0.04%'",
-          "quotes": [
-            "722018 40.02 40 0.04%",
-            "Table 3. Thicknesses reconstructed from carbon characteristic X-ray yields for freestanding graphite films at 20 kV.",
-            "freestanding graphite films at 20 kV."
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261002-0086",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on biomedical reranking for LLM-based question answering over longitudinal clinical notes, which is out of scope for semiconductor research.",
-      "chars": 22147,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261002-0085",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on quantum battery charging within quantum thermodynamics and quantum information theory, which is out of scope.",
-      "chars": 27128,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261002-0084",
-      "decision": "out_of_scope",
-      "reason": "The paper is about solid-state physics and phase transitions in magnetite, which is out of scope for semiconductor research.",
-      "chars": 45975,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261002-0083",
-      "decision": "no_claims",
-      "reason": "the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 75012,
-      "claims": [],
-      "rejected": [
-        {
-          "statement": "At an applied magnetic field of 185 mT, the system enters a near-orthogonal regime where layer-resolved XMCD-STXM reveals a skyrmion in layer A and a bimeron in",
-          "reason": "unit conversion refused: voltage: cannot convert 185.0 mT to V - Cannot convert from 'millitesla' ([mass] / [time] ** 2 / [current]) to 'volt' ([mass] * [length] ** 2 / [time] ** 3 / [c",
-          "quotes": [
-            "At \u00b50Hz =185 mT , the system enters a near-orthogonal regime in which the magnetization of one layer remains predominantly OOP, whereas that of the other becomes IP.",
-            "At the Fe L3 edge (layer A), the localized reversal of mz identifies a skyrmion core, whereas the paired black\u2013white lobes at the Co L3 edge (layer B) are the characteristic XMCD signature of a bimeron in an in-plane background, arising fro",
-            "At \u00b50Hz =185 mT , the system enters a near-orthogonal regime in which the magnetization of one layer remains predominantly OOP, whereas that of the other becomes IP. Layer-resolved XMCD\u2013STXM then reveals spatially co-localized but distinct ",
-            "At \u00b50Hz =185 mT"
-          ]
-        },
-        {
-          "statement": "Under negative current density Jx < 0, a skymeron exhibits a current-driven velocity of -35 \u00b1 3 m s^-1.",
-          "reason": "unit conversion refused: current: could not parse -35.0 'ms \u22121': '\u22121' is not defined in the unit registry",
-          "quotes": [
-            "Linear fits yield a current-driven velocityv (J<0) x = (\u221235\u00b13)ms \u22121",
-            "v (J<0) x"
-          ]
-        },
-        {
-          "statement": "Following the termination of a current pulse, the skymeron exhibits an average relaxation velocity v(J=0)_x of 9 \u00b1 1 m s^-1.",
-          "reason": "unit conversion refused: current: could not parse 9.0 'ms \u22121': '\u22121' is not defined in the unit registry",
-          "quotes": [
-            "and an average relaxation velocityv J=0 x = (9\u00b11)ms \u22121.",
-            "Linear fits yield a current-driven velocityv (J<0) x = (\u221235\u00b13)ms \u22121 and an average relaxation velocityv J=0 x = (9\u00b11)ms \u22121.",
-            "v J=0 x"
-          ]
-        },
-        {
-          "statement": "Under negative current density, the skymeron exhibits a transverse current-driven velocity v(J<0)_y of -11 \u00b1 1 m s^-1.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'withv (J<0) y = (\u221211\u00b11)ms \u22121'",
-          "quotes": [
-            "withv (J<0) y = (\u221211\u00b11)ms \u22121",
-            "In contrast to the x-edge, the current-driven and relaxation velocities in theydirection are comparable, withv (J<0) y = (\u221211\u00b11)ms \u22121 and v(J=0) y = (10\u00b11)ms \u22121.",
-            "v (J<0) y",
-            "in theydirection"
-          ]
-        },
-        {
-          "statement": "The transverse relaxation velocity v(J=0)_y of the skymeron in the y-direction is 10 \u00b1 1 m s^-1.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'and v(J=0) y = (10\u00b11)ms \u22121.'",
-          "quotes": [
-            "and v(J=0) y = (10\u00b11)ms \u22121.",
-            "In contrast to the x-edge, the current-driven and relaxation velocities in theydirection are comparable, withv (J<0) y = (\u221211\u00b11)ms \u22121 and v(J=0) y = (10\u00b11)ms \u22121.",
-            "v(J=0) y",
-            "in theydirection"
-          ]
-        },
-        {
-          "statement": "From the spatial extent of the XMCD contrast, the deduced characteristic radius of the skymeron is 150 \u00b1 25 nm.",
+          "statement": "The ZTA-Q platform on a Digilent Arty A7-100T FPGA operates at a clock frequency of 83.3 MHz.",
           "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
           "quotes": [
-            "From the spatial extent of the XMCD contrast, we deduce for our system a characteristic skymeron radius of (150\u00b125)nm ."
+            "The proposed system is implemented on a Digilent Arty A7-100T FPGA and operates at 83.3 MHz.",
+            "This paper presents ZTA-Q, an open-source RISC-V-based platform that enables accurate deployment of TensorFlow Lite INT8 models.",
+            "Digilent Arty A7-100T FPGA"
+          ]
+        },
+        {
+          "statement": "Executing MobileNetV2 [INT8] inference per image takes 170.0 ms on the Arty A7-100T board at 83.3 MHz.",
+          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'measured')",
+          "quotes": [
+            "MobileNetV2 [INT8] 71.48% 70.72% 70.68% (-0.04 pp) 90.27% 89.88% 89.90% (+0.02 pp) 170.0 ms",
+            "Table IV EVALUATION OF COMMONCNNMODELS ONIMAGENET ANDMNIST",
+            "Inference Time per Image (Arty A7-100T@83.3MHz)"
+          ]
+        },
+        {
+          "statement": "Executing ResNet-18 inference per image takes 1.0 s on the Arty A7-100T board at 83.3 MHz.",
+          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'measured')",
+          "quotes": [
+            "ResNet-18 69.81% 69.57% 69.50% (-0.07 pp) 89.11% 88.93% 88.91% (-0.02 pp) 1.0 s",
+            "Table IV EVALUATION OF COMMONCNNMODELS ONIMAGENET ANDMNIST",
+            "Inference Time per Image (Arty A7-100T@83.3MHz)"
+          ]
+        },
+        {
+          "statement": "Executing ResNet-50 inference per image takes 2.4 s on the Arty A7-100T board at 83.3 MHz.",
+          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'measured')",
+          "quotes": [
+            "ResNet-50 74.72% 74.58% 74.36% (-0.22 pp) 91.96% 91.79% 91.69% (-0.10 pp) 2.4 s",
+            "Table IV EVALUATION OF COMMONCNNMODELS ONIMAGENET ANDMNIST",
+            "Inference Time per Image (Arty A7-100T@83.3MHz)"
+          ]
+        },
+        {
+          "statement": "Executing SqueezeNet1.1 inference per image takes 331.2 ms on the Arty A7-100T board at 83.3 MHz.",
+          "reason": "the statement contains the number 1, which none of its quotes contain",
+          "quotes": [
+            "SqueezeNet1.1 58.19% 57.95% 57.72% (-0.23 pp) 80.62% 80.40% 80.22% (-0.18 pp) 331.2 ms",
+            "Table IV EVALUATION OF COMMONCNNMODELS ONIMAGENET ANDMNIST",
+            "Inference Time per Image (Arty A7-100T@83.3MHz)"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261002-0082",
+      "candidate": "CAND-20261002-0042",
       "decision": "out_of_scope",
-      "reason": "This paper focuses on neuroscience and medical imaging for Alzheimer's disease diagnosis, which is out of scope for semiconductor research.",
-      "chars": 51690,
+      "reason": "The paper discusses fundamental symmetry considerations of the chirality-induced spin selectivity (CISS) effect in physics, which is out of scope as it is not semiconductor research.",
+      "chars": 22743,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261002-0081",
-      "decision": "no_claims",
-      "reason": "the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 108254,
-      "claims": [],
-      "rejected": [
-        {
-          "statement": "In Oblique-BFO, the saturation fluence under 400 nm excitation was measured to be 1.5 mJ/cm2.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'The fluence data of the Oblique-BFO was fitted with a saturation law, '",
-          "quotes": [
-            "The fluence data of the Oblique-BFO was fitted with a saturation law, where the saturation fluence was extracted to be F0 = 1.5mJ/cm2.",
-            "The fluence data of the Oblique-BFO was fitted with a saturation law",
-            "MAXIMUM SIGNAL VERSUS PUMPING FLUENCE AT 400NM"
-          ]
-        },
-        {
-          "statement": "In the FeCoB(5nm)/Pt(3nm) spintronic emitter under 400 nm pump wavelength, the saturation fluence was measured to be 1.75 mJ/cm2.",
-          "reason": "unit conversion refused: power_density: cannot convert 1.75 mJ/cm2 to W/m^2 - Cannot convert from 'millijoule / centimeter ** 2' ([mass] / [time] ** 2) to 'watt / meter ** 2' ([mass] / ",
-          "quotes": [
-            "The fluence data of the FeCoB(5nm)/Pt(3nm) at a pump wavelength 400 nm was fitted with a saturation law, where the saturation fluence was extracted to be F0 = 1.75mJ/cm2",
-            "The fluence data of the FeCoB(5nm)/Pt(3nm) at a pump wavelength 400 nm",
-            "pump wavelength 400 nm"
-          ]
-        },
-        {
-          "statement": "The group delay introduced by the 0.5 mm thick DyScO3(110)o substrate at 400 nm wavelength was measured in situ to be 132 fs.",
-          "reason": "the statement contains the number 400, which none of its quotes contain",
-          "quotes": [
-            "For DyScO 3(110)o the two methods give \u2206t = 132(2) fs (emission timing)",
-            "For d = 0.5 mm and our\u2248 50 fs pump pulses",
-            "400 nm pump pulse"
-          ]
-        },
-        {
-          "statement": "The group delay introduced by the 0.5 mm thick DyScO3(011)o substrate at 400 nm wavelength was measured to be 80 fs.",
-          "reason": "the statement contains the number 400, which none of its quotes contain",
-          "quotes": [
-            "for DyScO 3(011)o the optical value \u2206t = 80 fs (\u2206ng\u2248 0.048) is adopted",
-            "For d = 0.5 mm and our\u2248 50 fs pump pulses",
-            "400 nm pump pulse"
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261002-0080",
+      "candidate": "CAND-20261002-0041",
       "decision": "out_of_scope",
-      "reason": "The paper focuses on atomistic modeling and thermodynamic benchmarks of chemically disordered metal alloys using average atom potentials, which is outside the scope of semiconductor research.",
-      "chars": 61124,
+      "reason": "The paper is about radio interferometric calibration for radio astronomy, which is outside the scope of semiconductor research.",
+      "chars": 36046,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261002-0079",
+      "candidate": "CAND-20261002-0040",
       "decision": "out_of_scope",
-      "reason": "The paper discusses the synthesis and characterization of a condensed matter physics material (Na2IrCl6) for investigating spin-orbit coupling and Kitaev interactions, which falls under fundamental physics rather than semiconductor research.",
-      "chars": 44925,
+      "reason": "The paper focuses on generative machine learning models for general crystal structure generation and symmetry preservation, which is out of scope for semiconductor-specific research.",
+      "chars": 96695,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261002-0078",
-      "decision": "read",
-      "reason": "",
-      "chars": 34294,
-      "claims": [
-        "CLM-PHOT-0040",
-        "CLM-PHOT-0041",
-        "CLM-PHOT-0042",
-        "CLM-PHOT-0043",
-        "CLM-PHOT-0044",
-        "CLM-PHOT-0045"
-      ],
-      "rejected": [
-        {
-          "statement": "The shorter period false-chiral metasurface has a period of 597 nm.",
-          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
-          "quotes": [
-            "We chose to study two structure periods \u2013 shorter period \u039b s = 597nmand longer period \u039bl = 995nmcorresponding to the cases of\u03c3=\u00b11 in Eq. 1.",
-            "The measured results for the period \u039b s with right handed rotation are presented in Fig. 4a1-h1.",
-            "shorter period \u039b s = 597nm"
-          ]
-        },
-        {
-          "statement": "The longer period false-chiral metasurface has a period of 995 nm.",
-          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
-          "quotes": [
-            "We chose to study two structure periods \u2013 shorter period \u039b s = 597nmand longer period \u039bl = 995nmcorresponding to the cases of\u03c3=\u00b11 in Eq. 1.",
-            "Fig. S10 shows the results for false-chiral metasurfaces in a square lattice (see Fig. S8a) with a Longer Period, \u039b l = 995nm, corresponding to the case of\u03c3= +1 in Eq. 1 in the main text.",
-            "longer period \u039bl = 995nm"
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261002-0077",
+      "candidate": "CAND-20261002-0039",
       "decision": "out_of_scope",
-      "reason": "The paper focuses on stochastic switching in levitodynamic systems using quadrupole traps, which is outside the scope of semiconductor research.",
-      "chars": 29948,
+      "reason": "The paper focuses on quantum computing algorithms and parameter optimization for quantum approximate optimization algorithms, which falls under quantum information theory and quantum computing hardware rather than semiconductor research.",
+      "chars": 34847,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261002-0076",
-      "decision": "out_of_scope",
-      "reason": "The paper deals with quantum computing hardware and topological quantum information theory involving Majorana fermions, which is explicitly out of scope.",
-      "chars": 56681,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261002-0075",
+      "candidate": "CAND-20261002-0038",
       "decision": "too_long",
-      "reason": "132,484 characters exceeds the 120,000 budget; not truncated",
-      "chars": 132484,
+      "reason": "137,396 characters exceeds the 120,000 budget; not truncated",
+      "chars": 137396,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261002-0074",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on developing a general machine-learning framework for phase-field models applied to physical materials phenomena like alloy melts and planetary mixtures, rather than semiconductor materials or devices.",
-      "chars": 112117,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261002-0073",
+      "candidate": "CAND-20261002-0037",
       "decision": "no_claims",
-      "reason": "the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 55424,
-      "claims": [],
-      "rejected": [
-        {
-          "statement": "In the Type 1 structure at normal incidence with an hBN thickness of 120 nm, the Rabi splitting is 8.668 meV.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): '120 1 8.668 2.297 1.000 4.382'",
-          "quotes": [
-            "Table I. Exciton-photon coupling strength at the\u0393point for Type 1 and Type 2 structures. The Rabi splitting, photonic and excitonic linewidth\u03b3ph and\u03b3 X and coupling energygare presented in meV.",
-            "120 1 8.668 2.297 1.000 4.382",
-            "We numerically study exciton-photon coupling in a hybrid structure composed of a period-doubled Si3N4 photonic crystal slab and an hBN-encapsulated MoSe2 monolayer.",
-            "Table I. Exciton-photon coupling strength at the\u0393point for Type 1 and Type 2 structures."
-          ]
-        },
-        {
-          "statement": "In the Type 1 structure at the Gamma point with an hBN thickness of 120 nm, the coupling strength g is 4.382 meV.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): '120 1 8.668 2.297 1.000 4.382'",
-          "quotes": [
-            "Table I. Exciton-photon coupling strength at the\u0393point for Type 1 and Type 2 structures. The Rabi splitting, photonic and excitonic linewidth\u03b3ph and\u03b3 X and coupling energygare presented in meV.",
-            "120 1 8.668 2.297 1.000 4.382",
-            "We numerically study exciton-photon coupling in a hybrid structure composed of a period-doubled Si3N4 photonic crystal slab and an hBN-encapsulated MoSe2 monolayer.",
-            "Table I. Exciton-photon coupling strength at the\u0393point for Type 1 and Type 2 structures."
-          ]
-        },
-        {
-          "statement": "In the Type 2 structure at the Gamma point with an hBN thickness of 6 nm, the coupling strength g is 1.532 meV.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): '2 2.897 0.00006 1.000 1.532'",
-          "quotes": [
-            "Table I. Exciton-photon coupling strength at the\u0393point for Type 1 and Type 2 structures. The Rabi splitting, photonic and excitonic linewidth\u03b3ph and\u03b3 X and coupling energygare presented in meV.",
-            "2 2.897 0.00006 1.000 1.532",
-            "We numerically study exciton-photon coupling in a hybrid structure composed of a period-doubled Si3N4 photonic crystal slab and an hBN-encapsulated MoSe2 monolayer.",
-            "6 1 3.435 0.826 1.000 1.720"
-          ]
-        },
-        {
-          "statement": "The photonic gap closes near an hBN thickness of 113 nm.",
-          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
-          "quotes": [
-            "The hBN thickness also modifies the interaction between folded TE-like modes at finite in-plane momentum. The corresponding photonic gap decreases with increasingh hBN, closes nearh hBN = 113nm, and reopens for larger thicknesses.",
-            "We numerically study exciton-photon coupling in a hybrid structure composed of a period-doubled Si3N4 photonic crystal slab and an hBN-encapsulated MoSe2 monolayer.",
-            "closes nearh hBN = 113nm"
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261002-0072",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on wireless communication systems and signal processing for ISAC, which is out of scope for semiconductor research.",
-      "chars": 59759,
+      "reason": "the model proposed no claim; a stronger model or a human reader may do better",
+      "chars": 35591,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261002-0071",
-      "decision": "out_of_scope",
-      "reason": "The paper is about an open-source mobile manipulator robot for plant monitoring in agriculture and forestry, which is outside the scope of semiconductor research.",
-      "chars": 75140,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261002-0070",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on plasma wakefield acceleration physics and diagnostic imaging techniques rather than semiconductor research.",
-      "chars": 43007,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261002-0069",
-      "decision": "out_of_scope",
-      "reason": "This paper is about quantum computing hardware, specifically parafermions in fractional Chern insulator-superconductor heterostructures, which falls under quantum information theory and is out of scope for semiconductor manufacturing and device research.",
-      "chars": 60802,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261002-0068",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on quantum key distribution and optical turbulence in free space, which falls under quantum information theory and optics rather than semiconductor research.",
-      "chars": 25104,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261002-0067",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on wireless communication systems and signal processing algorithms for reconfigurable intelligent surfaces rather than semiconductor device physics or fabrication.",
-      "chars": 68914,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261002-0066",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on measuring geometric phase using indefinite causal order in an optical Sagnac interferometer, which is out of scope for semiconductor research.",
-      "chars": 30073,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261002-0065",
-      "decision": "out_of_scope",
-      "reason": "The paper investigates fundamental magnetoelastic coupling in a uranium-based intermetallic quantum material, which is out of scope for semiconductor research.",
-      "chars": 39227,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261002-0064",
+      "candidate": "CAND-20261002-0036",
       "decision": "read",
       "reason": "",
-      "chars": 44815,
+      "chars": 44660,
       "claims": [
-        "CLM-MEM-0005",
-        "CLM-MEM-0006"
+        "CLM-ARCH-0049"
       ],
       "rejected": [
         {
-          "statement": "Current-driven skyrmion transport in the 20 \u00b5m wide wire is observed at a DC current density of 5.9 \u00d7 109 A m\u22122.",
-          "reason": "the statement contains the number 20, which none of its quotes contain",
+          "statement": "CONFERM improves throughput by 2.18x over state-of-the-art mappers across ten benchmark kernels.",
+          "reason": "unit conversion refused: relative_deviation is dimensionless; unit '\u00d7' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit ",
           "quotes": [
-            "We nucleate magnetic skyrmions in our wire device, and apply a DC current with density JDC = 5.9 \u00d7 109 A m\u22122 supported by OOP oscillatory field and a temperature T= 350 K (see methods for details). We observe skyrmion motion along the wire,",
-            "20 \u00b5m wide wires",
-            "T= 350 K",
-            "tCoB = 1.66 nm"
+            "Across ten benchmark kernels, CONFERM improves throughput by 2.18 \u00d7 over state-of-the-art mappers."
+          ]
+        },
+        {
+          "statement": "CONFERM's mapper pass converges 5.07x faster on average with the same heuristic mapper backend.",
+          "reason": "unit conversion refused: relative_deviation is dimensionless; unit '\u00d7' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit ",
+          "quotes": [
+            "CONFERM\u2019s mapper pass also converges faster by 5.07\u00d7on average with the same heuristic mapper backend."
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261002-0063",
+      "candidate": "CAND-20261002-0035",
       "decision": "out_of_scope",
-      "reason": "The paper is about optical frequency stabilization using passive fiber interferometers for metrology and quantum communications, which is out of scope for semiconductor research.",
-      "chars": 46967,
+      "reason": "The paper investigates the multiferroic properties of the mineral hauerite MnS2, which is fundamental solid-state physics research and out of scope for semiconductor technology.",
+      "chars": 28059,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261002-0062",
+      "candidate": "CAND-20261002-0034",
       "decision": "out_of_scope",
-      "reason": "This paper is about fluid dynamics and the Rayleigh-Plateau instability of liquid jets using femtosecond lasers, which is out of scope for semiconductor research.",
-      "chars": 79001,
+      "reason": "The paper focuses on machine learning interatomic potentials for molecular dynamics and atomistic modeling, which falls outside the scope of semiconductor research.",
+      "chars": 81302,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261002-0061",
-      "decision": "no_claims",
-      "reason": "the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 19770,
-      "claims": [],
-      "rejected": [
-        {
-          "statement": "For mass-asymmetric GaAs with eta = -0.74, the calculated parameter-free recoil linewidth gamma_LO_recoil is 2.24 meV.",
-          "reason": "unit conversion refused: frequency: cannot convert 2.24 meV to Hz - Cannot convert from 'millielectron_volt' ([mass] * [length] ** 2 / [time] ** 2) to 'hertz' (1 / [time]). A dimensiona",
-          "quotes": [
-            "GaAs\u22120.74 8.35\u22120.59 2.24 asymmetric: recoil + ionization 8\u201314 a"
-          ]
-        },
-        {
-          "statement": "For near-symmetric MAPbI3 with eta = -0.11, the calculated parameter-free recoil linewidth gamma_LO_recoil is 0.12 meV.",
-          "reason": "unit conversion refused: frequency: cannot convert 0.12 meV to Hz - Cannot convert from 'millielectron_volt' ([mass] * [length] ** 2 / [time] ** 2) to 'hertz' (1 / [time]). A dimensiona",
-          "quotes": [
-            "MAPbI3 \u22120.11 0.98\u22120.04 0.12 near-symmetric: inelastic resonance 40\u00b12 b"
-          ]
-        },
-        {
-          "statement": "For mass-symmetric FAPbI3 with eta = 0.00, the calculated parameter-free recoil linewidth gamma_LO_recoil is 0.00 meV.",
-          "reason": "the value 0 does not appear in any of the claim's quotes",
-          "quotes": [
-            "FAPbI3 0.00 0.62 0.00 0.00 symmetric: inelastic resonance 27 c"
-          ]
-        },
-        {
-          "statement": "For CsPbBr3 with eta = -0.11, the calculated parameter-free recoil linewidth gamma_LO_recoil is 0.65 meV.",
-          "reason": "unit conversion refused: frequency: cannot convert 0.65 meV to Hz - Cannot convert from 'millielectron_volt' ([mass] * [length] ** 2 / [time] ** 2) to 'hertz' (1 / [time]). A dimensiona",
-          "quotes": [
-            "CsPbBr3 \u22120.11 1.32\u22120.07 0.65 intermediate\u223c70 d"
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261002-0060",
-      "decision": "out_of_scope",
-      "reason": "The paper describes a wearable medical ultrasound system and its control software, which is out of scope for semiconductor research.",
-      "chars": 21409,
+      "candidate": "CAND-20261002-0033",
+      "decision": "too_long",
+      "reason": "222,788 characters exceeds the 120,000 budget; not truncated",
+      "chars": 222788,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261002-0059",
+      "candidate": "CAND-20261002-0032",
       "decision": "read",
       "reason": "",
-      "chars": 21245,
+      "chars": 22672,
       "claims": [
-        "CLM-ARCH-0044",
-        "CLM-ARCH-0045"
+        "CLM-PHOT-0046",
+        "CLM-PHOT-0047"
       ],
       "rejected": [
         {
-          "statement": "The 8-channel instance of the pulser peripheral occupies 14.9 kGE in post-layout area.",
-          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'simulated')",
+          "statement": "The narrowest emission linewidth for InAs/GaAs quantum dots with a 20nm GaAs capping layer is 0.08nm under non-resonant laser excitation at cryogenic temperatur",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): '0.08nm for CL=20nm'",
           "quotes": [
-            "The 8-channel instance occupies 14.9 kGE, corresponding to approximately 14.3 % of the 104 kGE RISC-V SoC.",
-            "The design was synthesized and placed-and-routed in IHP 130 nm with the ETH EZ130 8T standard-cell library [23], using Yosys and OpenROAD. Gate equivalents refer to the NAND2 cell of that library. Post-layout area scales approximately linea",
-            "The design was synthesized and placed-and-routed in IHP 130 nm",
-            "with the ETH EZ130 8T standard-cell library"
-          ]
-        },
-        {
-          "statement": "The overall RISC-V SoC area is 104 kGE.",
-          "reason": "the quote says the number is approximate but approximate is false",
-          "quotes": [
-            "corresponding to approximately 14.3 % of the 104 kGE RISC-V SoC.",
-            "The design was synthesized and placed-and-routed in IHP 130 nm with the ETH EZ130 8T standard-cell library [23], using Yosys and OpenROAD.",
-            "The design was synthesized and placed-and-routed in IHP 130 nm",
-            "104 kGE RISC-V SoC."
+            "0.08nm for CL=20nm",
+            "CL=20nm",
+            "InAs/GaAs QD narrowest emission linewidths",
+            "cooled down to~17K"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261002-0058",
+      "candidate": "CAND-20261002-0031",
       "decision": "no_claims",
-      "reason": "the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 20219,
+      "reason": "evidence type not established by a verifiable quote (or 'mixed'); no claims extracted, a human reader is needed",
+      "chars": 49746,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261002-0030",
+      "decision": "out_of_scope",
+      "reason": "The paper is a theoretical physics study on condensed matter phenomena (hyperbolic lattices with mass disorder) rather than semiconductor research.",
+      "chars": 27674,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261002-0129",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on biomedical signal analysis and machine learning methods for AM-FM mode decomposition of physiological recordings, which is out of scope for semiconductor research.",
+      "chars": 27946,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261002-0128",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on microwave-based volumetric additive manufacturing for ceramic and metal powders rather than semiconductor research.",
+      "chars": 67128,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261001-0099",
+      "decision": "no_claims",
+      "reason": "evidence type not established by a verifiable quote (or 'mixed'); no claims extracted, a human reader is needed",
+      "chars": 52432,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261001-0098",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on quantum computing hardware and spin qubits, which are explicitly out of scope according to the instructions.",
+      "chars": 71451,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261001-0097",
+      "decision": "no_claims",
+      "reason": "the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader may do better",
+      "chars": 24472,
       "claims": [],
       "rejected": [
         {
-          "statement": "The custom SPI block implemented on an AMD Kria K26 achieves error-free transfers up to an SCLK frequency of 66 MHz in quad mode.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'No transaction errors were detected up to a speed of 66 MHz in quad mo'",
+          "statement": "Continuum model calculations for 57 degree twisted bilayer MoS2 at a displacement field of 0.1 V/nm yield a lowest conduction moire miniband bandwidth of approx",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Continuum model calculations [see Supplementary Section S1] indicate t'",
           "quotes": [
-            "No transaction errors were detected up to a speed of 66 MHz in quad mode, resulting in a maximum raw bitrate of 264 Mbit/s.",
-            "The custom SPI block was verified on a Kria KR260 development board in order to measure the maximum operating frequency."
+            "Continuum model calculations [see Supplementary Section S1] indicate that the lowest conduction moir\u00b4 e miniband is well isolated from higher-lying bands under a displacement fieldD= 0.1 V/nm [Fig. 1(c)], exhibiting a narrow bandwidthW\u224815 m",
+            "57\u25e6-tMoS2",
+            "displacement fieldD= 0.1 V/nm",
+            "K valley"
           ]
         },
         {
-          "statement": "The IGLOO2 implementation meets static timing analysis at an SCLK frequency of 50 MHz.",
-          "reason": "unit conversion refused: frequency: could not parse 50.0 'Mhz': 'Mhz' is not defined in the unit registry",
+          "statement": "The fractional insulating state at filling factor nu = 3/4 vanishes above 12 K at a displacement field of -101.6 mV/nm in the approximately 57 degree tMoS2 devi",
+          "reason": "the statement contains the number 57, which none of its quotes contain",
           "quotes": [
-            "The IGLOO2 implementation meets timing at 50 Mhz and is extremely resource efficient, requiring 187 LUT and 161 FF logic elements, each less than 1.25% of the complete TinyProbe design resource usage.",
-            "Additionally, since the deployed FPGA differs from the testbed FPGA, we verify an IGLOO2 implementation via static timing analysis at SCLK =50 MHz."
+            "whereas the fractional insulating state at\u03bd= 3/4 vanishes above 12 K (highlighted by the bold curve).",
+            "Fig. 4(a) displays the temperature-dependent dI/dV Probe signal versus filling factor\u03bdfor temperatures ranging from 2 K to 100 K (with 2 K increments below 40 K) at a fixed displacement fieldD=\u2212101.6 mV/nm and zero magnetic field.",
+            "fractional insulating state at\u03bd= 3/4",
+            "fixed displacement fieldD=\u2212101.6 mV/nm"
+          ]
+        },
+        {
+          "statement": "In the approximately 57 degree tMoS2 device, the insulating state at nu = 1 remains robust up to 100 K at a displacement field of -101.6 mV/nm.",
+          "reason": "the statement contains the number 57, which none of its quotes contain",
+          "quotes": [
+            "The insulating state at\u03bd= 1 remains robust up to 100 K",
+            "Fig. 4(a) displays the temperature-dependent dI/dV Probe signal versus filling factor\u03bdfor temperatures ranging from 2 K to 100 K (with 2 K increments below 40 K) at a fixed displacement fieldD=\u2212101.6 mV/nm and zero magnetic field.",
+            "insulating state at\u03bd= 1",
+            "fixed displacement fieldD=\u2212101.6 mV/nm"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261002-0057",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on routing protocols in optical LEO satellite networks using deep reinforcement learning, which is outside the scope of semiconductor research.",
-      "chars": 67015,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261002-0056",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on wireless communications and beam management for satellite direct-to-device links, which is out of scope for semiconductor research.",
-      "chars": 29080,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261002-0055",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on wearable sensors, electodermal activity (EDA), and affect recognition for health informatics, which is outside the scope of semiconductor research.",
-      "chars": 78768,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261002-0054",
-      "decision": "out_of_scope",
-      "reason": "This paper investigates analogue black hole lightring resonances in an optical fiber and is out of the scope of semiconductor research.",
-      "chars": 35181,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261002-0053",
-      "decision": "out_of_scope",
-      "reason": "The paper investigates the crystal structures and complex magnetic phase diagrams of rare-earth intermetallic compounds, which is fundamental condensed matter physics rather than semiconductor research.",
-      "chars": 70379,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261002-0052",
+      "candidate": "CAND-20261001-0096",
       "decision": "read",
       "reason": "",
-      "chars": 59918,
+      "chars": 28277,
       "claims": [
-        "CLM-MAT-0052",
-        "CLM-MAT-0053"
+        "CLM-DEV-0029"
       ],
       "rejected": [
         {
-          "statement": "BiTe and Bi4Te5 nanosheets transform into Bi2Te3 at approximately 340 \u00b0C based on in situ heating studies.",
-          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
+          "statement": "In high-quality GaAs samples at interband optical excitation and low temperatures, a rectification ratio of 10 is achieved in a magnetic field of 0.1 T and an e",
+          "reason": "[compound_statement] statement appears to join two falsifiable assertions - split it",
           "quotes": [
-            "Based on in situ heating studies, BiTe and Bi 4Te5 nanosheets transform into Bi 2Te3 at ~340 \u00b0C, followed by preferential Te sublimation under vacuum or oxidation in air at higher temperatures .",
-            "BiTe",
-            "Bi 4Te5",
-            "Bi 2Te3"
-          ]
-        },
-        {
-          "statement": "Phosphine-free colloidal synthesis yields Bi2Te3 nanosheets with an average lateral size of approximately 5.2 \u00b5m.",
-          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
-          "quotes": [
-            "While nanosheets obtained from TOP -Te precursors reached a maximum size of only 2 \u00b5m, those synthesized with DPD -Te display an average lateral size of a pproximately 5.2 \u00b5m, with the largest nanosheets extending up to 10 \u00b5m (Figure S2).",
-            "Bi2Te3 nanosheets",
-            "DPD -Te"
-          ]
-        },
-        {
-          "statement": "Bi2Te3 nanosheets synthesized with DPD-Te reach lateral sizes extending up to 10 \u00b5m.",
-          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
-          "quotes": [
-            "While nanosheets obtained from TOP -Te precursors reached a maximum size of only 2 \u00b5m, those synthesized with DPD -Te display an average lateral size of a pproximately 5.2 \u00b5m, with the largest nanosheets extending up to 10 \u00b5m (Figure S2).",
-            "Bi2Te3 nanosheets",
-            "DPD -Te"
-          ]
-        },
-        {
-          "statement": "DFT calculations indicate that the TOP-Te adduct exhibits a dissociation energy of 75.2 kJ/mol.",
-          "reason": "unit conversion refused: energy: cannot convert 75.2 kJ/mol to J - Cannot convert from 'kilojoule / mole' ([mass] * [length] ** 2 / [time] ** 2 / [substance]) to 'joule' ([mass] * [leng",
-          "quotes": [
-            "As summarized in Table S 1 (Supporting Information), the TOP -Te adduct exhibits a dis sociation energy of 75.2 kJ/mol, indicating higher thermodynamic stability relative to the dissociated TOP + Te fragments.",
-            "To gain deeper insight into the reactivity difference between the two precursors, we performed density functional theory (DFT) calculations (see Experimental section for details).29, 30",
-            "TOP -Te adduct",
-            "density functional theory (DFT) calculations"
-          ]
-        },
-        {
-          "statement": "DFT calculations show that dissociation of diphenyl ditelluride into two phenyl-Te radicals requires 39.6 kJ/mol.",
-          "reason": "unit conversion refused: energy: cannot convert 39.6 kJ/mol to J - Cannot convert from 'kilojoule / mole' ([mass] * [length] ** 2 / [time] ** 2 / [substance]) to 'joule' ([mass] * [leng",
-          "quotes": [
-            "In contrast, the dissociation of diphenyl ditelluride into two phenyl -Te radicals requires only 39.6 kJ/mol, and the related PhTe\u2022 \u2192 Ph\u2022 + Te process has an energy of 93.4 kJ/mol.",
-            "To gain deeper insight into the reactivity difference between the two precursors, we performed density functional theory (DFT) calculations (see Experimental section for details).29, 30",
-            "dissociation of diphenyl ditelluride into two phenyl -Te radicals",
-            "density functional theory (DFT) calculations"
-          ]
-        },
-        {
-          "statement": "DFT calculations give an energy of 93.4 kJ/mol for the PhTe\u2022 \u2192 Ph\u2022 + Te process.",
-          "reason": "unit conversion refused: energy: cannot convert 93.4 kJ/mol to J - Cannot convert from 'kilojoule / mole' ([mass] * [length] ** 2 / [time] ** 2 / [substance]) to 'joule' ([mass] * [leng",
-          "quotes": [
-            "In contrast, the dissociation of diphenyl ditelluride into two phenyl -Te radicals requires only 39.6 kJ/mol, and the related PhTe\u2022 \u2192 Ph\u2022 + Te process has an energy of 93.4 kJ/mol.",
-            "To gain deeper insight into the reactivity difference between the two precursors, we performed density functional theory (DFT) calculations (see Experimental section for details).29, 30",
-            "PhTe\u2022 \u2192 Ph\u2022 + Te process",
-            "density functional theory (DFT) calculations"
+            "In high-quality GaAs samples at interband optical excitation at low temperatures, an extremely high rectification ratioRof 10 is achieved in the magnetic field B= 0.1 T and the electric fieldE= 10 V/cm.",
+            "in the magnetic field B= 0.1 T",
+            "and the electric fieldE= 10 V/cm.",
+            "In high-quality GaAs samples"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261002-0051",
+      "candidate": "CAND-20261001-0095",
       "decision": "out_of_scope",
-      "reason": "The paper focuses on chirality-induced spin selectivity in molecular junctions and trefoil-knot molecules, which is fundamental physics and chemistry rather than semiconductor research.",
-      "chars": 36820,
+      "reason": "The paper focuses on wireless communications, UAV tracking, and integrated sensing and communication (ISAC) systems, which is outside the scope of semiconductor research.",
+      "chars": 63570,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261002-0050",
+      "candidate": "CAND-20261001-0094",
       "decision": "out_of_scope",
-      "reason": "The paper focuses on thermoelectric phenomena and structured-light control in a specific material (NaSn2As2) rather than semiconductor devices, fabrication, or integrated circuits.",
-      "chars": 29366,
+      "reason": "The paper focuses on the analysis and approximation of the spatially wideband array factor of antenna arrays for wireless communications, which is out of scope for semiconductor research.",
+      "chars": 50943,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261002-0049",
+      "candidate": "CAND-20261001-0093",
+      "decision": "read",
+      "reason": "",
+      "chars": 21539,
+      "claims": [
+        "CLM-MAT-0054",
+        "CLM-MAT-0055",
+        "CLM-MAT-0056",
+        "CLM-MAT-0057",
+        "CLM-MAT-0058"
+      ],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261001-0092",
+      "decision": "read",
+      "reason": "",
+      "chars": 56211,
+      "claims": [
+        "CLM-MAT-0059",
+        "CLM-MAT-0060"
+      ],
+      "rejected": [
+        {
+          "statement": "In the pristine zone of the encapsulated monolayer graphene devices, carrier mobility is roughly 10^5 cm^2/Vs at a temperature of 1.5 K.",
+          "reason": "the value 100000 does not appear in any of the claim's quotes",
+          "quotes": [
+            "Initial electronic characterization demonstrated excellent device quality, with both samples exhibiting a high carrier mobility of \u00b5\u223c10 5 cm2/Vs at the pristine regions and a low residual charge carrier density of n\u2217 c\u223c8\u00d710 10 cm\u22122.",
+            "Fully encapsulated monolayer graphene heterostructures were assembled on a p-doped silicon wafer featuring a 300 nm top layer of silicon oxide.",
+            "both samples exhibiting a high carrier mobility of \u00b5\u223c10 5 cm2/Vs at the pristine regions",
+            "Unless otherwise stated, data at T= 1.5K will be shown."
+          ]
+        },
+        {
+          "statement": "In the pristine zone of the devices, the residual charge carrier density is approximately 8x10^10 cm^-2 at a temperature of 1.5 K.",
+          "reason": "the statement contains the number 0, which none of its quotes contain",
+          "quotes": [
+            "a low residual charge carrier density of n\u2217 c\u223c8\u00d710 10 cm\u22122.",
+            "Initial electronic characterization demonstrated excellent device quality, with both samples exhibiting a high carrier mobility of \u00b5\u223c10 5 cm2/Vs at the pristine regions and a low residual charge carrier density of n\u2217 c\u223c8\u00d710 10 cm\u22122.",
+            "both samples exhibiting a high carrier mobility of \u00b5\u223c10 5 cm2/Vs at the pristine regions and a low residual charge carrier density of n\u2217 c\u223c8\u00d710 10 cm\u22122.",
+            "Unless otherwise stated, data at T= 1.5K will be shown."
+          ]
+        },
+        {
+          "statement": "For the region with 75 nm antidot diameter in Sample A, the extracted fundamental lattice parameter is 149.0 nm.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): '149.0 nm (\u0398 = 75 nm)'",
+          "quotes": [
+            "149.0 nm (\u0398 = 75 nm)",
+            "Substituting \u2206BH1 into Eq. (5) for k= 1 (n 1 =n a) yields fundamental lattice parameters of a| H1 = 101.7 nm (\u0398 = 50 nm), 149.0 nm (\u0398 = 75 nm), 192.8 nm (\u0398 = 100 nm), and 282.7 nm (\u0398 = 150 nm)",
+            "for four different antidot dimensions (\u0398 = 50,75,100,150 nm from Sample A)."
+          ]
+        },
+        {
+          "statement": "For the region with 100 nm antidot diameter in Sample A, the extracted fundamental lattice parameter is 192.8 nm.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): '192.8 nm (\u0398 = 100 nm)'",
+          "quotes": [
+            "192.8 nm (\u0398 = 100 nm)",
+            "Substituting \u2206BH1 into Eq. (5) for k= 1 (n 1 =n a) yields fundamental lattice parameters of a| H1 = 101.7 nm (\u0398 = 50 nm), 149.0 nm (\u0398 = 75 nm), 192.8 nm (\u0398 = 100 nm), and 282.7 nm (\u0398 = 150 nm)",
+            "for four different antidot dimensions (\u0398 = 50,75,100,150 nm from Sample A)."
+          ]
+        },
+        {
+          "statement": "For the region with 150 nm antidot diameter in Sample A, the extracted fundamental lattice parameter is 282.7 nm.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): '282.7 nm (\u0398 = 150 nm)'",
+          "quotes": [
+            "282.7 nm (\u0398 = 150 nm)",
+            "Substituting \u2206BH1 into Eq. (5) for k= 1 (n 1 =n a) yields fundamental lattice parameters of a| H1 = 101.7 nm (\u0398 = 50 nm), 149.0 nm (\u0398 = 75 nm), 192.8 nm (\u0398 = 100 nm), and 282.7 nm (\u0398 = 150 nm)",
+            "for four different antidot dimensions (\u0398 = 50,75,100,150 nm from Sample A)."
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261001-0091",
       "decision": "out_of_scope",
-      "reason": "The paper investigates fundamental magnetic properties of graphite from a physics perspective rather than semiconductor devices or materials for electronics.",
-      "chars": 37393,
+      "reason": "The paper focuses on telecommunication reflectarrays and shape-morphing metamaterials rather than semiconductor devices, integrated circuits, or fabrication processes.",
+      "chars": 35657,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261002-0048",
+      "candidate": "CAND-20261001-0090",
+      "decision": "no_claims",
+      "reason": "the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader may do better",
+      "chars": 50912,
+      "claims": [],
+      "rejected": [
+        {
+          "statement": "The ZnSe FET with an effective channel width of 4 \u00b5m exhibits a maximum field-effect mobility of 101 cm2/V\u00b7s at room temperature (295 K).",
+          "reason": "the statement contains the number 4, which none of its quotes contain",
+          "quotes": [
+            "The maximum extracted field-effect mobility is around\u00b5(295K) F E = 101 cm2/Vsindependent of drain biasVD.",
+            "The measurements were performed in darkness at room temperature using a probe station (see Methods section).",
+            "Weff. = 5\u00b7W= 4\u00b5m",
+            "295K"
+          ]
+        },
+        {
+          "statement": "The ZnSe FET with an effective channel width of 4 \u00b5m achieves a field-effect mobility of 116 cm2/V\u00b7s at 5 K.",
+          "reason": "unit conversion refused: mobility: cannot convert 116.0 cm2\nV\u00b7s to m^2/(V*s) - Cannot convert from 'centimeter ** 2 * volt * second' ([length] ** 4 * [mass] / [time] ** 2 / [current]) t",
+          "quotes": [
+            "Quantitatively the enhanced carrier transport is reflected in the maximum field-effect mobility (Fig. 4 c), which is noticeably higher than at room temperature reaching \u00b5F E = 116cm2 V\u00b7s at 5K.",
+            "Temperature dependent measurements were performed using a PLC50 probe system with an Agilent E5270B parameter analyzer, a four point needle probe station that allows for measurements down to a base temperature of 5K.",
+            "Weff =4\u00b5m",
+            "5K"
+          ]
+        },
+        {
+          "statement": "At 295 K, the minimum sub-threshold swing extracted for the 5-channel ZnSe FET with an effective width of 4 \u00b5m is 145 mV/dec.",
+          "reason": "the statement contains the number 5, which none of its quotes contain",
+          "quotes": [
+            "In this region, a minimum sub-threshold swing ofSS(295K) min. = 145 mV/decis extracted usingSS (295K) min. = \u2202VG \u2202log 10(ID) (See Supporting Information Section S3).",
+            "The measurements were performed in darkness at room temperature using a probe station (see Methods section).",
+            "295K",
+            "Weff =4\u00b5m"
+          ]
+        },
+        {
+          "statement": "At 5 K, the minimum sub-threshold swing for the 5-channel ZnSe FET with an effective width of 4 \u00b5m is 73 mV/dec.",
+          "reason": "[missing_required_conditions] subthreshold_swing requires temperature; missing temperature",
+          "quotes": [
+            "Compared with room-temperature operation, the transfer characteristic (Fig. 4 a) exhibits a reduced minimum sub-threshold slope ofSS (5K) min. = 73 mV/dec, while maintaining a highly resistive off-state.",
+            "Temperature dependent measurements were performed using a PLC50 probe system with an Agilent E5270B parameter analyzer, a four point needle probe station that allows for measurements down to a base temperature of 5K.",
+            "5 K",
+            "Weff =4\u00b5m"
+          ]
+        },
+        {
+          "statement": "The maximum field-effect mobility of the 15-channel ZnSe FET with an effective channel width of 12 \u00b5m reaches 107 cm2/Vs at 295 K.",
+          "reason": "unit conversion refused: mobility: could not parse 107.0 'cm2/Vs': 'Vs' is not defined in the unit registry",
+          "quotes": [
+            "Table 1: Summary of parameters extracted from transfer curves of two MOSFETs with 5- channels (Weff =4\u00b5m) and 15-channels (Weff =12\u00b5m). Weff =4\u00b5m Weff =12\u00b5m 295K 5K 295K 5K SSmin. (mV/dec) 145 73 167 49 gm,max. (\u00b5A/V) 5.3 6.1 16.9 19.5 \u00b5F E",
+            "The measurements were performed in darkness at room temperature using a probe station (see Methods section).",
+            "Weff =12\u00b5m",
+            "295K"
+          ]
+        },
+        {
+          "statement": "The 15-channel ZnSe FET with an effective channel width of 12 \u00b5m has a maximum field-effect mobility of 123 cm2/Vs at 5 K.",
+          "reason": "unit conversion refused: mobility: could not parse 123.0 'cm2/Vs': 'Vs' is not defined in the unit registry",
+          "quotes": [
+            "Table 1: Summary of parameters extracted from transfer curves of two MOSFETs with 5- channels (Weff =4\u00b5m) and 15-channels (Weff =12\u00b5m). Weff =4\u00b5m Weff =12\u00b5m 295K 5K 295K 5K SSmin. (mV/dec) 145 73 167 49 gm,max. (\u00b5A/V) 5.3 6.1 16.9 19.5 \u00b5F E",
+            "Temperature dependent measurements were performed using a PLC50 probe system with an Agilent E5270B parameter analyzer, a four point needle probe station that allows for measurements down to a base temperature of 5K.",
+            "Weff =12\u00b5m",
+            "5K"
+          ]
+        },
+        {
+          "statement": "Self-consistent Schr\u00f6dinger-Poisson and drift-diffusion simulations predict an intrinsic low-field electron mobility of approximately 200 cm2/Vs at room tempera",
+          "reason": "unit conversion refused: mobility: could not parse 200.0 'cm 2/Vs': Unit expression cannot have a scaling factor.",
+          "quotes": [
+            "The simulations predict an intrinsic low-field electron mobility of approximately \u00b50 \u2248200 cm 2/Vsat room temperature.",
+            "TheelectrostaticandtransportpropertiesoftheZnSeFETwereanalyzedusingself-consistent numerical simulations performed with nextnano++.",
+            "room temperature"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261001-0089",
       "decision": "out_of_scope",
-      "reason": "The paper focuses on neuroscience and computational models of neural dynamics, which is out of scope for semiconductor research.",
-      "chars": 89105,
+      "reason": "The paper focuses on the adsorption and mitigation of radioactive iodine species for nuclear waste management, which is outside semiconductor research.",
+      "chars": 56470,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261001-0088",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on color centers in hexagonal boron nitride for quantum sensing and magnetometry, which falls under quantum information hardware and is out of scope for semiconductor electronics.",
+      "chars": 36224,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261001-0087",
+      "decision": "no_claims",
+      "reason": "the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader may do better",
+      "chars": 45958,
+      "claims": [],
+      "rejected": [
+        {
+          "statement": "The experimental fluorescence lifetime for the 5I7\u21925I8 transition in the SD sample is 1.08 ms.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'SD 1.08 16.3 6.6 -'",
+          "quotes": [
+            "SD 1.08 16.3 6.6 -",
+            "The fluorescence decay curves of the 2 \u00b5m emission (5I7\u21925I8 transition) were measured using identical setup and procedure as described in [30] and the experimental fluorescence lifetime was obtained by single exponential fit.",
+            "5I7\u21925I8 transition"
+          ]
+        },
+        {
+          "statement": "The experimental fluorescence lifetime for the 5I7\u21925I8 transition in the H-NP-1 preform sample is 1.75 ms.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'H-NP-1 1.75 16.5 10.6 -'",
+          "quotes": [
+            "H-NP-1 1.75 16.5 10.6 -",
+            "The fluorescence decay curves of the 2 \u00b5m emission (5I7\u21925I8 transition) were measured using identical setup and procedure as described in [30] and the experimental fluorescence lifetime was obtained by single exponential fit.",
+            "5I7\u21925I8 transition"
+          ]
+        },
+        {
+          "statement": "The experimental fluorescence lifetime for the 5I7\u21925I8 transition in the H-NP-2 preform sample is 1.87 ms.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'H-NP-2 1.87 16.5 11.3 -'",
+          "quotes": [
+            "H-NP-2 1.87 16.5 11.3 -",
+            "The fluorescence decay curves of the 2 \u00b5m emission (5I7\u21925I8 transition) were measured using identical setup and procedure as described in [30] and the experimental fluorescence lifetime was obtained by single exponential fit.",
+            "5I7\u21925I8 transition"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261001-0086",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on wireless communication algorithms and sensor fusion for ISAC systems rather than semiconductor devices, materials, or fabrication processes.",
+      "chars": 32659,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261001-0085",
+      "decision": "out_of_scope",
+      "reason": "The paper discusses fundamental wave propagation and scattering in general turbid media using the radiative transport equation, which is out of scope for semiconductor research.",
+      "chars": 86055,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261001-0084",
+      "decision": "out_of_scope",
+      "reason": "The paper studies fundamental magnetic and magnonic properties of yttrium iron garnet films, which falls under basic condensed matter physics and magnetism rather than semiconductor research.",
+      "chars": 57135,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261001-0083",
+      "decision": "no_claims",
+      "reason": "the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader may do better",
+      "chars": 106326,
+      "claims": [],
+      "rejected": [
+        {
+          "statement": "For BaTiO3 with a ratio of dielectric permittivity along the a- and c-axes of approximately 26, the critical electric field value at which the sharp-interface d",
+          "reason": "unit conversion refused: voltage: cannot convert 15.0 MV/m to V - Cannot convert from 'megavolt / meter' ([mass] * [length] / [time] ** 3 / [current]) to 'volt' ([mass] * [length] ** 2 ",
+          "quotes": [
+            "With increasing electric field, this driving force changes sign at a critical value ect = 2/(\u03bd\u22121).",
+            "For BaTiO3 with\u03bd\u224826, the critical value is obtained as ect = 0.08, which is equivalent to15MV/m."
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261001-0082",
+      "decision": "out_of_scope",
+      "reason": "The paper presents a general computational materials science toolkit for calculating melting temperatures using molecular dynamics, which is not specific to semiconductor research.",
+      "chars": 51921,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261001-0081",
+      "decision": "read",
+      "reason": "",
+      "chars": 27870,
+      "claims": [
+        "CLM-ARCH-0050"
+      ],
+      "rejected": [
+        {
+          "statement": "STELLA operates up to a frequency of 850 MHz at a supply voltage of 1.0V.",
+          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
+          "quotes": [
+            "STELLA can operate up to 850 MHz@1.0V, with 325MHz@0.6V to be its most efficient point (MEP).",
+            "850 MHz@1.0V"
+          ]
+        },
+        {
+          "statement": "At a supply voltage of 0.6V, STELLA operates at a frequency of 325MHz at its most efficient point.",
+          "reason": "the quote says 'up to'/'within'/'at most' before the number but bound is not upper_bound",
+          "quotes": [
+            "STELLA can operate up to 850 MHz@1.0V, with 325MHz@0.6V to be its most efficient point (MEP).",
+            "325MHz@0.6V",
+            "with 325MHz@0.6V to be its most efficient point (MEP)"
+          ]
+        },
+        {
+          "statement": "STELLA achieves an area efficiency up to 110 GOPS/mm2 at 850 MHz.",
+          "reason": "the quote says 'up to'/'within'/'at most' before the number but bound is not upper_bound",
+          "quotes": [
+            "STELLA reaches up to 110 GOPS/mm2 at 850 MHz, and improves effective kernel throughput by 4.84-7.14x over baseline CGRAs.",
+            "STELLA reaches up to 110 GOPS/mm2 at 850 MHz"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261001-0080",
+      "decision": "out_of_scope",
+      "reason": "This paper focuses on wireless communications and radar sensing systems using reconfigurable intelligent surfaces, which is outside the scope of semiconductor devices and manufacturing.",
+      "chars": 64543,
       "claims": [],
       "rejected": []
     }
   ],
   "counts": {
-    "read": 5,
-    "out_of_scope": 29,
-    "no_claims": 5,
-    "too_long": 1
+    "out_of_scope": 24,
+    "read": 7,
+    "too_long": 2,
+    "no_claims": 7
   },
-  "claims_accepted": 17,
-  "claims_rejected": 33,
+  "claims_accepted": 15,
+  "claims_rejected": 31,
   "tokens": {
-    "input": 186020,
-    "output": 20881
+    "input": 221029,
+    "output": 22471
   },
   "stop_reason": "paper_cap",
-  "seconds": 310.8,
-  "cost_usd": 0.198219,
+  "seconds": 332.1,
+  "cost_usd": 0.230961,
   "budget": {
     "monthly_cap_usd": 10.0,
-    "spent_month_usd": 0.710189,
-    "spent_today_usd": 0.198219,
-    "allowance_today_usd": 0.327173,
-    "remaining_today_usd": 0.128954,
-    "run_usd": 0.198219,
-    "run_calls": 49,
+    "spent_month_usd": 0.94115,
+    "spent_today_usd": 0.230961,
+    "allowance_today_usd": 0.331779,
+    "remaining_today_usd": 0.100818,
+    "run_usd": 0.230961,
+    "run_calls": 52,
     "run_unknown_calls": 0,
     "price_table_retrieved": "2026-09-21",
-    "price_table_age_days": 12
+    "price_table_age_days": 13
   },
   "errors": 0
 }

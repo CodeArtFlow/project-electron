@@ -1,0 +1,80 @@
+id: SRC-00075
+title: 'STELLA: A 16nm Spatio-Temporal Elastic Low-Latency CGRA for Multi-Stage Pipelined Applications'
+doi: null
+arxiv_id: 2609.39703v1
+url: https://arxiv.org/abs/2609.39703v1
+venue_id: arxiv_api
+authors:
+- name: Jun Yin
+  affiliation: null
+  corresponding: null
+- name: Chao Fang
+  affiliation: null
+  corresponding: null
+- name: Ryan Antonio
+  affiliation: null
+  corresponding: null
+- name: Xiaoling Yi
+  affiliation: null
+  corresponding: null
+- name: Yunhao Deng
+  affiliation: null
+  corresponding: null
+- name: Fanchen Kong
+  affiliation: null
+  corresponding: null
+- name: Marian Verhelst
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-09-30'
+retrieved_date: '2026-10-04'
+access: full_text
+read_scope: Automated reading. The full PDF text (27,870 characters, 4 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2609.39703v1 on
+  2026-10-04. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“STELLA is fabricated using TSMC 16nm FinFET technology, occupying 0.81 mm2 for core area on
+  a 9 mm2 chip.”
+
+  “STELLA is fabricated using TSMC 16nm FinFET technology”
+
+  “occupying 0.81 mm2 for core area on a 9 mm2 chip”'
+method_summary: “Fabricated with TSMC 16nm FinFET, STELLA achieves 4.84 -7.14x better efficiency/utilization
+  over the state-of-the-art on the multi-stage AI kernel benchmarking.”
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 10079
+    output: 1370
+  claims_accepted: 1
+  claims_rejected: 3
+  rejected:
+  - statement: STELLA operates up to a frequency of 850 MHz at a supply voltage of 1.0V.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - STELLA can operate up to 850 MHz@1.0V, with 325MHz@0.6V to be its most efficient point (MEP).
+    - 850 MHz@1.0V
+  - statement: At a supply voltage of 0.6V, STELLA operates at a frequency of 325MHz at its most efficient
+      point.
+    reason: the quote says 'up to'/'within'/'at most' before the number but bound is not upper_bound
+    quotes:
+    - STELLA can operate up to 850 MHz@1.0V, with 325MHz@0.6V to be its most efficient point (MEP).
+    - 325MHz@0.6V
+    - with 325MHz@0.6V to be its most efficient point (MEP)
+  - statement: STELLA achieves an area efficiency up to 110 GOPS/mm2 at 850 MHz.
+    reason: the quote says 'up to'/'within'/'at most' before the number but bound is not upper_bound
+    quotes:
+    - STELLA reaches up to 110 GOPS/mm2 at 850 MHz, and improves effective kernel throughput by 4.84-7.14x
+      over baseline CGRAs.
+    - STELLA reaches up to 110 GOPS/mm2 at 850 MHz
+corrections: []

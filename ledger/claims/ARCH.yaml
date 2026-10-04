@@ -1429,3 +1429,176 @@ claims:
     verified_quotes: 3
   conditions:
     reference_model: Python golden model
+- id: CLM-ARCH-0046
+  topic: ARCH
+  statement: Compared to the baseline, ZTA-Q increases LUT resource overhead by 26.3%.
+  sources:
+  - SRC-00069
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-01'
+  created: '2026-10-04'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    design: ZTA-Q
+    resource_type: LUT
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 26.3
+      unit: '%'
+    si_base:
+      value: 0.263
+      unit: dimensionless
+    display:
+      value: 26.3
+      unit: percent
+    conditions:
+      design: ZTA-Q
+      resource_type: LUT
+- id: CLM-ARCH-0047
+  topic: ARCH
+  statement: Compared to the baseline, ZTA-Q increases register resource overhead by 12.6%.
+  sources:
+  - SRC-00069
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-01'
+  created: '2026-10-04'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    design: ZTA-Q
+    resource_type: register
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 12.6
+      unit: '%'
+    si_base:
+      value: 0.126
+      unit: dimensionless
+    display:
+      value: 12.6
+      unit: percent
+    conditions:
+      design: ZTA-Q
+      resource_type: register
+- id: CLM-ARCH-0048
+  topic: ARCH
+  statement: Compared to the baseline, ZTA-Q increases DSP resource overhead by 150%.
+  sources:
+  - SRC-00069
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-01'
+  created: '2026-10-04'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    design: ZTA-Q
+    resource_type: DSP
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 150.0
+      unit: '%'
+    si_base:
+      value: 1.5
+      unit: dimensionless
+    display:
+      value: 150.0
+      unit: percent
+    conditions:
+      design: ZTA-Q
+      resource_type: DSP
+- id: CLM-ARCH-0049
+  topic: ARCH
+  statement: CONFERM's uniform iteration offsets shorten the emitted initiation interval by 46%.
+  sources:
+  - SRC-00070
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-01'
+  created: '2026-10-04'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    mechanism: uniform iteration offsets
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 46.0
+      unit: '%'
+    si_base:
+      value: 0.46
+      unit: dimensionless
+    display:
+      value: 46.0
+      unit: percent
+    conditions:
+      mechanism: uniform iteration offsets
+- id: CLM-ARCH-0050
+  topic: ARCH
+  statement: STELLA's core area is 0.81 mm2 fabricated in TSMC 16nm FinFET technology.
+  sources:
+  - SRC-00075
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-30'
+  created: '2026-10-04'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    process: TSMC 16nm FinFET technology
+    component: core area
+  quantity:
+    quantity: area_die
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.81
+      unit: mm2
+    si_base:
+      value: 8.1e-07
+      unit: m^2
+    display:
+      value: 0.8099999999999999
+      unit: mm^2
+    conditions:
+      process: TSMC 16nm FinFET technology
+      component: core area

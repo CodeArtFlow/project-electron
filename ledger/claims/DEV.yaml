@@ -786,3 +786,22 @@ claims:
       unit: mA
     conditions:
       process_step: current ramp-down
+- id: CLM-DEV-0029
+  topic: DEV
+  statement: The photoluminescence intensity asymmetry ratio reaches 27.
+  sources:
+  - SRC-00072
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-09-30'
+  created: '2026-10-04'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    detection_wavelength: 819 nm
+    temperature: 10 K

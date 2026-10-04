@@ -1,0 +1,102 @@
+id: SRC-00069
+title: 'ZTA-Q: an Open-source RISC-V Platform for Accurate Quantized CNN Inference'
+doi: null
+arxiv_id: 2610.01867v1
+url: https://arxiv.org/abs/2610.01867v1
+venue_id: arxiv_api
+authors:
+- name: Yike Li
+  affiliation: null
+  corresponding: null
+- name: Ajay Kumar M
+  affiliation: null
+  corresponding: null
+- name: Vishnu PS
+  affiliation: null
+  corresponding: null
+- name: Dimitrios S. Nikolopoulos
+  affiliation: null
+  corresponding: null
+- name: Bo Ji
+  affiliation: null
+  corresponding: null
+- name: Hans Vandierendonck
+  affiliation: null
+  corresponding: null
+- name: Deepu John
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-01'
+retrieved_date: '2026-10-04'
+access: full_text
+read_scope: Automated reading. The full PDF text (21,045 characters, 4 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.01867v1 on
+  2026-10-04. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Evaluations on representative CNN models show that with LUT, register, and DSP overheads of
+  26.3%, 12.6%, and 150%, respectively, ZTA-Q limits the degradation in both top-1 and top-5 accuracy
+  to within 0.25 percentage points.”
+
+  “ZTA-Q limits the degradation in both top-1 and top-5 accuracy to within 0.25 percentage points.”
+
+  “with LUT, register, and DSP overheads of 26.3%, 12.6%, and 150%, respectively”
+
+  “All designs are implemented on the Arty A7-100T at 83.3 MHz using thePerformance NetDelay Highstrategy.”'
+method_summary: '“Evaluations on representative CNN models show that with LUT, register, and DSP overheads
+  of 26.3%, 12.6%, and 150%, respectively, ZTA-Q limits the degradation in both top-1 and top-5 accuracy
+  to within 0.25 percentage points.”
+
+  “All designs are implemented on the Arty A7-100T at 83.3 MHz using thePerformance NetDelay Highstrategy.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 7960
+    output: 3134
+  claims_accepted: 3
+  claims_rejected: 5
+  rejected:
+  - statement: The ZTA-Q platform on a Digilent Arty A7-100T FPGA operates at a clock frequency of 83.3
+      MHz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The proposed system is implemented on a Digilent Arty A7-100T FPGA and operates at 83.3 MHz.
+    - This paper presents ZTA-Q, an open-source RISC-V-based platform that enables accurate deployment
+      of TensorFlow Lite INT8 models.
+    - Digilent Arty A7-100T FPGA
+  - statement: Executing MobileNetV2 [INT8] inference per image takes 170.0 ms on the Arty A7-100T board
+      at 83.3 MHz.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - MobileNetV2 [INT8] 71.48% 70.72% 70.68% (-0.04 pp) 90.27% 89.88% 89.90% (+0.02 pp) 170.0 ms
+    - Table IV EVALUATION OF COMMONCNNMODELS ONIMAGENET ANDMNIST
+    - Inference Time per Image (Arty A7-100T@83.3MHz)
+  - statement: Executing ResNet-18 inference per image takes 1.0 s on the Arty A7-100T board at 83.3 MHz.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - ResNet-18 69.81% 69.57% 69.50% (-0.07 pp) 89.11% 88.93% 88.91% (-0.02 pp) 1.0 s
+    - Table IV EVALUATION OF COMMONCNNMODELS ONIMAGENET ANDMNIST
+    - Inference Time per Image (Arty A7-100T@83.3MHz)
+  - statement: Executing ResNet-50 inference per image takes 2.4 s on the Arty A7-100T board at 83.3 MHz.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - ResNet-50 74.72% 74.58% 74.36% (-0.22 pp) 91.96% 91.79% 91.69% (-0.10 pp) 2.4 s
+    - Table IV EVALUATION OF COMMONCNNMODELS ONIMAGENET ANDMNIST
+    - Inference Time per Image (Arty A7-100T@83.3MHz)
+  - statement: Executing SqueezeNet1.1 inference per image takes 331.2 ms on the Arty A7-100T board at
+      83.3 MHz.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - SqueezeNet1.1 58.19% 57.95% 57.72% (-0.23 pp) 80.62% 80.40% 80.22% (-0.18 pp) 331.2 ms
+    - Table IV EVALUATION OF COMMONCNNMODELS ONIMAGENET ANDMNIST
+    - Inference Time per Image (Arty A7-100T@83.3MHz)
+corrections: []

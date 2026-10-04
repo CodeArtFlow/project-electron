@@ -1,0 +1,67 @@
+id: SRC-00070
+title: 'CONFERM: Recurrence-Aware Temporal Mapping for Multi-Cycle Multi-Context CGRAs'
+doi: null
+arxiv_id: 2610.01975v1
+url: https://arxiv.org/abs/2610.01975v1
+venue_id: arxiv_api
+authors:
+- name: Jun Yin
+  affiliation: null
+  corresponding: null
+- name: Jannes Willemen
+  affiliation: null
+  corresponding: null
+- name: Stef Cuyckens
+  affiliation: null
+  corresponding: null
+- name: Chao Fang
+  affiliation: null
+  corresponding: null
+- name: Marian Verhelst
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-01'
+retrieved_date: '2026-10-04'
+access: full_text
+read_scope: Automated reading. The full PDF text (44,660 characters, 8 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.01975v1 on
+  2026-10-04. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: “Its uniform iteration offsets shorten the emitted initiation interval by 46%.”
+method_summary: '“Across ten benchmark kernels, CONFERM improves throughput by 2.18 × over state-of-the-art
+  mappers.”
+
+  “Its uniform iteration offsets shorten the emitted initiation interval by 46%.”
+
+  “CONFERM’s mapper pass also converges faster by 5.07×on average with the same heuristic mapper backend.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14215
+    output: 1011
+  claims_accepted: 1
+  claims_rejected: 2
+  rejected:
+  - statement: CONFERM improves throughput by 2.18x over state-of-the-art mappers across ten benchmark
+      kernels.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''×'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - Across ten benchmark kernels, CONFERM improves throughput by 2.18 × over state-of-the-art mappers.
+  - statement: CONFERM's mapper pass converges 5.07x faster on average with the same heuristic mapper
+      backend.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''×'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - CONFERM’s mapper pass also converges faster by 5.07×on average with the same heuristic mapper backend.
+corrections: []

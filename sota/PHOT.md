@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-03.
+Topic code `PHOT`. Last reviewed 2026-10-04.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -132,6 +132,14 @@ Topic code `PHOT`. Last reviewed 2026-10-03.
   - `CLM-PHOT-0039` · harmonic_order fifth-harmonic generation, platform all-dielectric metasurface · grade B · credibility unknown · measured · as of 2026-09-30
   - sources: SRC-00053
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The narrowest emission linewidth for InAs/GaAs quantum dots with a 10nm GaAs capping layer is 0.13nm under non-resonant laser excitation at cryogenic temperatures.
+  - `CLM-PHOT-0046` · excitation 880nm laser · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00071
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The narrowest emission linewidth for reference InAs/GaAs quantum dots with a 95nm GaAs capping layer is 0.04nm under non-resonant laser excitation at cryogenic temperatures.
+  - `CLM-PHOT-0047` · excitation 880nm laser · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00071
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -221,6 +229,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 45
-- grades: {'B': 38, 'A': 7}
-- distinct sources: 14
+- claims: 47
+- grades: {'B': 40, 'A': 7}
+- distinct sources: 15

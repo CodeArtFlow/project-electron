@@ -1,10 +1,17 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-03.
+Topic code `ARCH`. Last reviewed 2026-10-04.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
 ## Current position
+
+### area die
+
+- **0.81 mm^2** — STELLA's core area is 0.81 mm2 fabricated in TSMC 16nm FinFET technology.
+  - `CLM-ARCH-0050` · process TSMC 16nm FinFET technology, component core area · grade B · credibility unknown · measured · as of 2026-09-30
+  - sources: SRC-00075
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### energy advantage ratio
 
@@ -173,6 +180,22 @@ Topic code `ARCH`. Last reviewed 2026-10-03.
   - `CLM-ARCH-0044` · process IHP 130 nm, channel_count 8 · grade B · credibility unknown · simulated · as of 2026-10-01
   - sources: SRC-00067
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **26.3 percent** — Compared to the baseline, ZTA-Q increases LUT resource overhead by 26.3%.
+  - `CLM-ARCH-0046` · design ZTA-Q, resource_type LUT · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00069
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **12.6 percent** — Compared to the baseline, ZTA-Q increases register resource overhead by 12.6%.
+  - `CLM-ARCH-0047` · design ZTA-Q, resource_type register · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00069
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **150 percent** — Compared to the baseline, ZTA-Q increases DSP resource overhead by 150%.
+  - `CLM-ARCH-0048` · design ZTA-Q, resource_type DSP · grade B · credibility unknown · measured · as of 2026-10-01
+  - sources: SRC-00069
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **46 percent** — CONFERM's uniform iteration offsets shorten the emitted initiation interval by 46%.
+  - `CLM-ARCH-0049` · mechanism uniform iteration offsets · grade B · credibility unknown · simulated · as of 2026-10-01
+  - sources: SRC-00070
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -207,6 +230,6 @@ _None._
 
 ## Evidence base
 
-- claims: 45
-- grades: {'B': 45}
-- distinct sources: 14
+- claims: 50
+- grades: {'B': 50}
+- distinct sources: 17

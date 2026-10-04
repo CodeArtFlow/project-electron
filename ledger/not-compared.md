@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**560 pair(s)** as of 2026-10-03.
+**677 pair(s)** as of 2026-10-04.
 
 ## `energy` (35 pair(s))
 
@@ -92,7 +92,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0036` = 121 GHz | 33% | magnetic_field=7.5 T, frequency=2.2 THz | sample_size=22 measured devices |
 | `CLM-ARCH-0042` = 25.9 GHz | `CLM-PHOT-0001` = 18.98 GHz | 27% | platform=optical PPLN module | component=single ring cavity, parameter=FSR |
 
-## `length_device` (226 pair(s))
+## `length_device` (266 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -119,6 +119,8 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-MAT-0037` = 14.6 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=TiN, property=GL coherence length | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0040` = 0.5 nm | `CLM-PHOT-0004` = 7000 nm | 100% | fermi_velocity=7×105 ms−1, model=Drude model | parameter=signal-ground electrode spacing |
 | `CLM-MAT-0052` = 23 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | characterization_method=AFM | substrate_material=glass cover slip, sample_type=flat surface |
+| `CLM-MAT-0059` = 1000 nm | `CLM-PROC-0003` = 0.068 nm | 100% | region=pristine zone, temperature=1.5 K | defocus=30 nm |
+| `CLM-MAT-0059` = 1000 nm | `CLM-PROC-0004` = 0.077 nm | 100% | region=pristine zone, temperature=1.5 K | material=HEA-NP, defocus=0 nm |
 | `CLM-PHOT-0026` = 0.85 um | `CLM-PROC-0003` = 6.8e-05 um | 100% | component=MO-PhC slab | defocus=30 nm |
 | `CLM-PHOT-0026` = 0.85 um | `CLM-PROC-0004` = 7.7e-05 um | 100% | component=MO-PhC slab | material=HEA-NP, defocus=0 nm |
 | `CLM-PHOT-0043` = 0.765 um | `CLM-PROC-0003` = 6.8e-05 um | 100% | structure=hole array (HA) in a square lattice | defocus=30 nm |
@@ -127,17 +129,15 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-PHOT-0044` = 0.576 um | `CLM-PROC-0004` = 7.7e-05 um | 100% | structure_type=true-chiral metasurface | material=HEA-NP, defocus=0 nm |
 | `CLM-PHOT-0045` = 0.603 um | `CLM-PROC-0003` = 6.8e-05 um | 100% | period_direction=azimuthal period (arc length), structure_type=true-chiral metasurface | defocus=30 nm |
 | `CLM-PHOT-0045` = 0.603 um | `CLM-PROC-0004` = 7.7e-05 um | 100% | period_direction=azimuthal period (arc length), structure_type=true-chiral metasurface | material=HEA-NP, defocus=0 nm |
+| `CLM-MAT-0059` = 1000 nm | `CLM-PHOT-0007` = 0.23 nm | 100% | region=pristine zone, temperature=1.5 K | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) |
 | `CLM-PHOT-0004` = 7 um | `CLM-PHOT-0009` = 0.0017 um | 100% | parameter=signal-ground electrode spacing | roughness_type=arithmetic average roughness (Sa), sample=after MoSx film deposition |
+| `CLM-MAT-0017` = 0.284 nm | `CLM-MAT-0059` = 1000 nm | 100% | material=Sb monolayer on SiC(0001) | region=pristine zone, temperature=1.5 K |
 | `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0026` = 850 nm | 100% | material=Sb monolayer on SiC(0001) | component=MO-PhC slab |
+| `CLM-MAT-0018` = 0.327 nm | `CLM-MAT-0059` = 1000 nm | 100% | material=Sb monolayer on SiC(0001) | region=pristine zone, temperature=1.5 K |
 | `CLM-MAT-0039` = 42.9 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | measurement=neutron reflectivity, material=TiN | substrate_material=glass cover slip, sample_type=flat surface |
-| `CLM-PHOT-0004` = 7 um | `CLM-PHOT-0010` = 0.0021 um | 100% | parameter=signal-ground electrode spacing | roughness_type=root mean square roughness (Sq), sample=after MoSx film deposition |
-| `CLM-PHOT-0007` = 0.00023 um | `CLM-PHOT-0026` = 0.85 um | 100% | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) | component=MO-PhC slab |
-| `CLM-PHOT-0007` = 0.00023 um | `CLM-PHOT-0043` = 0.765 um | 100% | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) | structure=hole array (HA) in a square lattice |
-| `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0043` = 765 nm | 100% | material=Sb monolayer on SiC(0001) | structure=hole array (HA) in a square lattice |
-| `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0026` = 850 nm | 100% | material=Sb monolayer on SiC(0001) | component=MO-PhC slab |
-| `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0043` = 765 nm | 100% | material=Sb monolayer on SiC(0001) | structure=hole array (HA) in a square lattice |
+| `CLM-MAT-0059` = 1000 nm | `CLM-PHOT-0008` = 0.33 nm | 100% | region=pristine zone, temperature=1.5 K | sample=bare silicon substrate, roughness_type=root mean square roughness (Sq) |
 
-_and 186 more_
+_and 226 more_
 
 ## `power` (15 pair(s))
 
@@ -159,10 +159,13 @@ _and 186 more_
 | `CLM-ARCH-0038` = 9599 mW | `CLM-DEV-0025` = 1000 mW | 90% | component=added compute and buffer logic in HBM-PIM | gate_bias_vgs=-2.7 V |
 | `CLM-ARCH-0037` = 787 mW | `CLM-DEV-0025` = 1000 mW | 21% | component=synthesized SRAM-PIM subsystem | gate_bias_vgs=-2.7 V |
 
-## `relative_deviation` (125 pair(s))
+## `relative_deviation` (202 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-ARCH-0048` = 150 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | design=ZTA-Q, resource_type=DSP | voltage=20 kV |
+| `CLM-ARCH-0048` = 150 percent | `CLM-PROC-0008` = 0.5461 percent | 100% | design=ZTA-Q, resource_type=DSP | voltage=20 kV |
+| `CLM-ARCH-0048` = 150 percent | `CLM-PROC-0007` = 0.5479 percent | 100% | design=ZTA-Q, resource_type=DSP | voltage=20 kV |
 | `CLM-ARCH-0018` = 98 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | concurrency_n_a=48, set_type=hot set | voltage=20 kV |
 | `CLM-ARCH-0040` = 97.93 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | frequency=7 GHz, component=graded magnetic spacer | voltage=20 kV |
 | `CLM-ARCH-0041` = 93.08 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | frequency=7 GHz | voltage=20 kV |
@@ -187,8 +190,11 @@ _and 186 more_
 | `CLM-EDA-0005` = 86.4 percent | `CLM-PROC-0008` = 0.5461 percent | 99% | model=Cyclic Edge prediction model | voltage=20 kV |
 | `CLM-PHOT-0005` = 85 percent | `CLM-PROC-0007` = 0.5479 percent | 99% | dataset=Iris test set | voltage=20 kV |
 | `CLM-PHOT-0005` = 85 percent | `CLM-PROC-0008` = 0.5461 percent | 99% | dataset=Iris test set | voltage=20 kV |
+| `CLM-ARCH-0048` = 150 percent | `CLM-MAT-0021` = 1 percent | 99% | design=ZTA-Q, resource_type=DSP | layer=WSe2 |
 | `CLM-EDA-0007` = 76 percent | `CLM-PROC-0007` = 0.5479 percent | 99% | model=Non-cyclic + Node prediction model | voltage=20 kV |
 | `CLM-EDA-0007` = 76 percent | `CLM-PROC-0008` = 0.5461 percent | 99% | model=Non-cyclic + Node prediction model | voltage=20 kV |
+| `CLM-ARCH-0048` = 150 percent | `CLM-PROC-0006` = 1.113 percent | 99% | design=ZTA-Q, resource_type=DSP | voltage=20 kV, model=third-order polynomial |
+| `CLM-ARCH-0049` = 46 percent | `CLM-PROC-0009` = 0.3757 percent | 99% | mechanism=uniform iteration offsets | voltage=20 kV |
 | `CLM-EDA-0003` = 60 percent | `CLM-PROC-0007` = 0.5479 percent | 99% | benchmark_circuit=LDO benchmark, framework=proposed method | voltage=20 kV |
 | `CLM-EDA-0003` = 60 percent | `CLM-PROC-0008` = 0.5461 percent | 99% | benchmark_circuit=LDO benchmark, framework=proposed method | voltage=20 kV |
 | `CLM-EDA-0004` = 60 percent | `CLM-PROC-0007` = 0.5479 percent | 99% | circuit=most complex circuit, framework=proposed framework | voltage=20 kV |
@@ -197,14 +203,8 @@ _and 186 more_
 | `CLM-ARCH-0040` = 97.93 percent | `CLM-MAT-0021` = 1 percent | 99% | frequency=7 GHz, component=graded magnetic spacer | layer=WSe2 |
 | `CLM-ARCH-0041` = 93.08 percent | `CLM-MAT-0021` = 1 percent | 99% | frequency=7 GHz | layer=WSe2 |
 | `CLM-EDA-0006` = 89.6 percent | `CLM-MAT-0021` = 1 percent | 99% | model=Non-cyclic Edge prediction model | layer=WSe2 |
-| `CLM-ARCH-0018` = 98 percent | `CLM-PROC-0006` = 1.113 percent | 99% | concurrency_n_a=48, set_type=hot set | voltage=20 kV, model=third-order polynomial |
-| `CLM-ARCH-0040` = 97.93 percent | `CLM-PROC-0006` = 1.113 percent | 99% | frequency=7 GHz, component=graded magnetic spacer | voltage=20 kV, model=third-order polynomial |
-| `CLM-MAT-0021` = 1 percent | `CLM-PHOT-0006` = 88 percent | 99% | layer=WSe2 | dataset=MNIST, setup=experimental system |
-| `CLM-EDA-0005` = 86.4 percent | `CLM-MAT-0021` = 1 percent | 99% | model=Cyclic Edge prediction model | layer=WSe2 |
-| `CLM-MAT-0021` = 1 percent | `CLM-PHOT-0005` = 85 percent | 99% | layer=WSe2 | dataset=Iris test set |
-| `CLM-ARCH-0041` = 93.08 percent | `CLM-PROC-0006` = 1.113 percent | 99% | frequency=7 GHz | voltage=20 kV, model=third-order polynomial |
 
-_and 85 more_
+_and 162 more_
 
 ## `temperature` (7 pair(s))
 

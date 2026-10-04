@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2609.39521v1
 doi: null
-title: Realization of ZnSe-based Field-Effect Transistors operating at Cryogenic Temperatures
-  as a Platform for Future Spin-Qubit Applications
+title: Realization of ZnSe-based Field-Effect Transistors operating at Cryogenic Temperatures as a Platform
+  for Future Spin-Qubit Applications
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-09-30'
@@ -36,6 +36,98 @@ id: CAND-20261001-0090
 harvested_date: '2026-10-01'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-04'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The ZnSe FET with an effective channel width of 4 µm exhibits a maximum field-effect mobility
+      of 101 cm2/V·s at room temperature (295 K).
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - The maximum extracted field-effect mobility is aroundµ(295K) F E = 101 cm2/Vsindependent of drain
+      biasVD.
+    - The measurements were performed in darkness at room temperature using a probe station (see Methods
+      section).
+    - Weff. = 5·W= 4µm
+    - 295K
+  - statement: The ZnSe FET with an effective channel width of 4 µm achieves a field-effect mobility of
+      116 cm2/V·s at 5 K.
+    reason: 'unit conversion refused: mobility: cannot convert 116.0 cm2
+
+      V·s to m^2/(V*s) - Cannot convert from ''centimeter ** 2 * volt * second'' ([length] ** 4 * [mass]
+      / [time] ** 2 / [current]) t'
+    quotes:
+    - Quantitatively the enhanced carrier transport is reflected in the maximum field-effect mobility
+      (Fig. 4 c), which is noticeably higher than at room temperature reaching µF E = 116cm2 V·s at 5K.
+    - Temperature dependent measurements were performed using a PLC50 probe system with an Agilent E5270B
+      parameter analyzer, a four point needle probe station that allows for measurements down to a base
+      temperature of 5K.
+    - Weff =4µm
+    - 5K
+  - statement: At 295 K, the minimum sub-threshold swing extracted for the 5-channel ZnSe FET with an
+      effective width of 4 µm is 145 mV/dec.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - In this region, a minimum sub-threshold swing ofSS(295K) min. = 145 mV/decis extracted usingSS (295K)
+      min. = ∂VG ∂log 10(ID) (See Supporting Information Section S3).
+    - The measurements were performed in darkness at room temperature using a probe station (see Methods
+      section).
+    - 295K
+    - Weff =4µm
+  - statement: At 5 K, the minimum sub-threshold swing for the 5-channel ZnSe FET with an effective width
+      of 4 µm is 73 mV/dec.
+    reason: '[missing_required_conditions] subthreshold_swing requires temperature; missing temperature'
+    quotes:
+    - Compared with room-temperature operation, the transfer characteristic (Fig. 4 a) exhibits a reduced
+      minimum sub-threshold slope ofSS (5K) min. = 73 mV/dec, while maintaining a highly resistive off-state.
+    - Temperature dependent measurements were performed using a PLC50 probe system with an Agilent E5270B
+      parameter analyzer, a four point needle probe station that allows for measurements down to a base
+      temperature of 5K.
+    - 5 K
+    - Weff =4µm
+  - statement: The maximum field-effect mobility of the 15-channel ZnSe FET with an effective channel
+      width of 12 µm reaches 107 cm2/Vs at 295 K.
+    reason: 'unit conversion refused: mobility: could not parse 107.0 ''cm2/Vs'': ''Vs'' is not defined
+      in the unit registry'
+    quotes:
+    - 'Table 1: Summary of parameters extracted from transfer curves of two MOSFETs with 5- channels (Weff
+      =4µm) and 15-channels (Weff =12µm). Weff =4µm Weff =12µm 295K 5K 295K 5K SSmin. (mV/dec) 145 73
+      167 49 gm,max. (µA/V) 5.3 6.1 16.9 19.5 µF E'
+    - The measurements were performed in darkness at room temperature using a probe station (see Methods
+      section).
+    - Weff =12µm
+    - 295K
+  - statement: The 15-channel ZnSe FET with an effective channel width of 12 µm has a maximum field-effect
+      mobility of 123 cm2/Vs at 5 K.
+    reason: 'unit conversion refused: mobility: could not parse 123.0 ''cm2/Vs'': ''Vs'' is not defined
+      in the unit registry'
+    quotes:
+    - 'Table 1: Summary of parameters extracted from transfer curves of two MOSFETs with 5- channels (Weff
+      =4µm) and 15-channels (Weff =12µm). Weff =4µm Weff =12µm 295K 5K 295K 5K SSmin. (mV/dec) 145 73
+      167 49 gm,max. (µA/V) 5.3 6.1 16.9 19.5 µF E'
+    - Temperature dependent measurements were performed using a PLC50 probe system with an Agilent E5270B
+      parameter analyzer, a four point needle probe station that allows for measurements down to a base
+      temperature of 5K.
+    - Weff =12µm
+    - 5K
+  - statement: Self-consistent Schrödinger-Poisson and drift-diffusion simulations predict an intrinsic
+      low-field electron mobility of approximately 200 cm2/Vs at room tempera
+    reason: 'unit conversion refused: mobility: could not parse 200.0 ''cm 2/Vs'': Unit expression cannot
+      have a scaling factor.'
+    quotes:
+    - The simulations predict an intrinsic low-field electron mobility of approximately µ0 ≈200 cm 2/Vsat
+      room temperature.
+    - TheelectrostaticandtransportpropertiesoftheZnSeFETwereanalyzedusingself-consistent numerical simulations
+      performed with nextnano++.
+    - room temperature
+  tokens:
+    input: 16318
+    output: 2603
+  fetched_chars: 50912

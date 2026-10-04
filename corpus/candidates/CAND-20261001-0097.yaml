@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2609.39417v1
 doi: null
-title: Qantum Well Resonant Tunneling Diode Probe of Correlated States in Twisted
-  Bilayer MoS$_2$
+title: Qantum Well Resonant Tunneling Diode Probe of Correlated States in Twisted Bilayer MoS$_2$
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-09-30'
@@ -28,6 +27,49 @@ id: CAND-20261001-0097
 harvested_date: '2026-10-01'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-04'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Continuum model calculations for 57 degree twisted bilayer MoS2 at a displacement field
+      of 0.1 V/nm yield a lowest conduction moire miniband bandwidth of approx
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Continuum
+      model calculations [see Supplementary Section S1] indicate t'''
+    quotes:
+    - Continuum model calculations [see Supplementary Section S1] indicate that the lowest conduction
+      moir´ e miniband is well isolated from higher-lying bands under a displacement fieldD= 0.1 V/nm
+      [Fig. 1(c)], exhibiting a narrow bandwidthW≈15 m
+    - 57◦-tMoS2
+    - displacement fieldD= 0.1 V/nm
+    - K valley
+  - statement: The fractional insulating state at filling factor nu = 3/4 vanishes above 12 K at a displacement
+      field of -101.6 mV/nm in the approximately 57 degree tMoS2 devi
+    reason: the statement contains the number 57, which none of its quotes contain
+    quotes:
+    - whereas the fractional insulating state atν= 3/4 vanishes above 12 K (highlighted by the bold curve).
+    - Fig. 4(a) displays the temperature-dependent dI/dV Probe signal versus filling factorνfor temperatures
+      ranging from 2 K to 100 K (with 2 K increments below 40 K) at a fixed displacement fieldD=−101.6
+      mV/nm and zero magnetic field.
+    - fractional insulating state atν= 3/4
+    - fixed displacement fieldD=−101.6 mV/nm
+  - statement: In the approximately 57 degree tMoS2 device, the insulating state at nu = 1 remains robust
+      up to 100 K at a displacement field of -101.6 mV/nm.
+    reason: the statement contains the number 57, which none of its quotes contain
+    quotes:
+    - The insulating state atν= 1 remains robust up to 100 K
+    - Fig. 4(a) displays the temperature-dependent dI/dV Probe signal versus filling factorνfor temperatures
+      ranging from 2 K to 100 K (with 2 K increments below 40 K) at a fixed displacement fieldD=−101.6
+      mV/nm and zero magnetic field.
+    - insulating state atν= 1
+    - fixed displacement fieldD=−101.6 mV/nm
+  tokens:
+    input: 9566
+    output: 1601
+  fetched_chars: 24472

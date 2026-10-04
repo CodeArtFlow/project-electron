@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2609.39671v1
 doi: null
-title: An electromechanically coupled multiphase-field model with generalized kinetic
-  relations for ferroelectrics
+title: An electromechanically coupled multiphase-field model with generalized kinetic relations for ferroelectrics
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-09-30'
@@ -23,6 +22,25 @@ id: CAND-20261001-0083
 harvested_date: '2026-10-01'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-04'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For BaTiO3 with a ratio of dielectric permittivity along the a- and c-axes of approximately
+      26, the critical electric field value at which the sharp-interface d
+    reason: 'unit conversion refused: voltage: cannot convert 15.0 MV/m to V - Cannot convert from ''megavolt
+      / meter'' ([mass] * [length] / [time] ** 3 / [current]) to ''volt'' ([mass] * [length] ** 2 '
+    quotes:
+    - With increasing electric field, this driving force changes sign at a critical value ect = 2/(ν−1).
+    - For BaTiO3 withν≈26, the critical value is obtained as ect = 0.08, which is equivalent to15MV/m.
+  tokens:
+    input: 34091
+    output: 732
+  fetched_chars: 106326
