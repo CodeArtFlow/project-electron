@@ -1398,3 +1398,39 @@ claims:
     verified_quotes: 3
   conditions:
     excitation: 880nm laser
+- id: CLM-PHOT-0048
+  topic: PHOT
+  statement: The DBS optimization of the broadband directional coupler using PNGF takes 82.9 seconds on
+    128 cores.
+  sources:
+  - SRC-00078
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-02'
+  created: '2026-10-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    algorithm: DBS
+    cores: 128 cores
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 82.9
+      unit: seconds
+    si_base:
+      value: 82.9
+      unit: s
+    display:
+      value: 82900000000.0
+      unit: ns
+    conditions:
+      algorithm: DBS
+      cores: 128 cores

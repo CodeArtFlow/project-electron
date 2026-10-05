@@ -1,0 +1,100 @@
+id: SRC-00076
+title: 'LATHE: LAnguage-driven Toolkit for Hypothesis-based crystal Editing'
+doi: null
+arxiv_id: 2610.02671v1
+url: https://arxiv.org/abs/2610.02671v1
+venue_id: arxiv_api
+authors:
+- name: Qianyu Zheng
+  affiliation: null
+  corresponding: null
+- name: Shuyi Jia
+  affiliation: null
+  corresponding: null
+- name: Victor Fung
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-02'
+retrieved_date: '2026-10-05'
+access: full_text
+read_scope: Automated reading. The full PDF text (103,719 characters, 24 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.02671v1 on
+  2026-10-05. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Across 200 runs (40 prompts×5 independent trials with different seeds per prompt), the agent
+  achieves an overall success rate of 87.5%.”
+
+  “We similarly usedgpt-5.4-nanoas the backbone LLM for the agent.”
+
+  “informative prompts, despite their deliberate ambiguity and qualitative quantifiers, pass at 82.0%”'
+method_summary: '“To optimize crystal structures toward target geometric properties, we treat the fractional
+  coordinatesFand the lattice matrixLas parameters and implement two gradient-based strategies: Adam-based
+  gradient descent (Kingma and Ba [2017]) and Basin-Hopping (Wales and Doye [1997]) with Adam.”'
+limitations: “First, the LATHE-equipped Agent currently converts each requested constraint to a loss covered
+  by a validator, but does not perform a feasibility analysis across the full set of targets on a given
+  structure.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 28325
+    output: 2229
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: Direct CIF generation achieves a success rate of 45.0% on the 40-task benchmark.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Success Rate45.0%'''
+    quotes:
+    - Direct CIF generation succeeds on 18/40 (45%) tasks
+    - Success Rate45.0%
+    - Direct CIF Generation
+    - 40 tasks
+  - statement: Claude Code achieves a success rate of 72.5% on the 40-task benchmark.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''72.5%'''
+    quotes:
+    - Claude Code succeeds on 29/40 (72.5%) tasks
+    - 72.5%
+    - Claude Code
+    - 40 tasks
+  - statement: The LATHE-equipped agent achieves a 93.0% pass rate on direct prompts.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''direct prompts
+      pass at 93.0%'''
+    quotes:
+    - direct prompts pass at 93.0%
+  - statement: In property-only single-property optimization, LATHE achieves a 94.2% pass rate for lattice
+      parameters across 120 test cases.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''94.2%'''
+    quotes:
+    - 94.2% for lattice parameters
+    - 94.2%
+    - 'LATHE achieves near-perfect pass rates across all properties in the property-only setting: bond
+      length, bond angle, dihedral angle, coordination environment, and volume each reach 100%, while
+      lattice parameters and space group attain 94.2% '
+    - property-only setting
+  - statement: In property-only single-property optimization, LATHE achieves an 89.7% pass rate for space
+      group across 78 test cases.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''89.7%'''
+    quotes:
+    - space group attain 94.2% and 89.7%, respectively
+    - 89.7%
+    - 'LATHE achieves near-perfect pass rates across all properties in the property-only setting: bond
+      length, bond angle, dihedral angle, coordination environment, and volume each reach 100%, while
+      lattice parameters and space group attain 94.2% '
+    - space group
+  - statement: In energy-aware single-property optimization, LATHE achieves a 93.6% pass rate for space
+      group.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''93.6%'''
+    quotes:
+    - space group has a modest improvement to 93.6%
+    - 93.6%
+    - 'When an auxiliary MLIP energy loss (MatterSim, Yang et al. [2024]) is added, pass rates remain
+      largely preserved: bond length, bond angle, dihedral, and volume stay at or above 99%, and space
+      group has a modest improvement to 93.6%'
+    - space group
+corrections: []

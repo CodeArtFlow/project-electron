@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-04.
+Topic code `ARCH`. Last reviewed 2026-10-05.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -154,6 +154,14 @@ Topic code `ARCH`. Last reviewed 2026-10-04.
   - `CLM-ARCH-0045` · reference_model Python golden model · grade B · credibility unknown · simulated · as of 2026-10-01
   - sources: SRC-00067
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- At Nyquist input and 13GS/s sampling rate, the prototype ADC achieves 45.8-dB SNDR.
+  - `CLM-ARCH-0051` · grade B · credibility unknown · measured · as of 2026-10-02
+  - sources: SRC-00079
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- At Nyquist input and 13GS/s sampling rate, the prototype ADC achieves 56.1-dB SFDR.
+  - `CLM-ARCH-0052` · grade B · credibility unknown · measured · as of 2026-10-02
+  - sources: SRC-00079
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -196,6 +204,10 @@ Topic code `ARCH`. Last reviewed 2026-10-04.
   - `CLM-ARCH-0049` · mechanism uniform iteration offsets · grade B · credibility unknown · simulated · as of 2026-10-01
   - sources: SRC-00070
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **27.3 percent** — Building PEEK with four Rocket cores upon a BOOM core introduces a 27.3% area overhead versus an unsafe baseline.
+  - `CLM-ARCH-0053` · architecture PEEK with four Rockets upon a BOOM, baseline unsafe baseline · grade B · credibility unknown · simulated · as of 2026-10-02
+  - sources: SRC-00080
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -223,6 +235,10 @@ Topic code `ARCH`. Last reviewed 2026-10-04.
   - `CLM-ARCH-0021` · concurrency_n_a 128, design our design with tiering · grade B · credibility unknown · simulated · as of 2026-09-22
   - sources: SRC-00025
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≤ 4000 ns** — PEEK maintains a detection latency below 4us in most cases.
+  - `CLM-ARCH-0054` · architecture PEEK · grade B · credibility unknown · simulated · as of 2026-10-02
+  - sources: SRC-00080
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -230,6 +246,6 @@ _None._
 
 ## Evidence base
 
-- claims: 50
-- grades: {'B': 50}
-- distinct sources: 17
+- claims: 54
+- grades: {'B': 54}
+- distinct sources: 19

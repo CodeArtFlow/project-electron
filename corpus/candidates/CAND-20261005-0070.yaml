@@ -29,6 +29,41 @@ id: CAND-20261005-0070
 harvested_date: '2026-10-05'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-05'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: An optimized slab waveguide design with an embedded elliptical scatterer achieves a reduced
+      reflection minimum near the target wavelength of 2 µm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Both spectra
+      exhibit a pronounced reflection minimum near the polariza'''
+    quotes:
+    - For numerical verification, we set εco = 8 and εcl = 1 thus ρ = εco/εcl = 8 and determine the slab
+      thickness for each scatterer from Eqs. (6) and (9), such that the cancellation condition is satisfied
+      at the target wavelength 2 µm.
+    - Both spectra exhibit a pronounced reflection minimum near the polarization-matching condition, where
+      the leading-order backward coupling is suppressed.
+    - εco = 8
+    - εcl = 1
+  - statement: The helical PEC fiber reduces backscattering reflection for a cuboid scatterer on the axis
+      by approximately 20 dB relative to the straight PEC fiber.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Figure 3(b) compares the normalized reflection spectra for the cuboid scatterer and shows an approximately
+      20 dB reduction throughout the operating frequency range in the helical fiber relative to the straight
+      fiber.
+    - Figure 3(a), dielectric scatterers with relative permittivity εsca = 2 are placed on the fiber axis,
+      where the forward TE −1,1 background mode, E(−1) +k (r), is nearly perfect circular-polarized.
+    - εsca = 2
+    - R = 1 cm
+  tokens:
+    input: 23820
+    output: 1074
+  fetched_chars: 85159

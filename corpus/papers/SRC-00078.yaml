@@ -1,0 +1,116 @@
+id: SRC-00078
+title: Fast Nanophotonic Inverse Design using Precomputed Numerical Green Functions
+doi: null
+arxiv_id: 2610.02821v1
+url: https://arxiv.org/abs/2610.02821v1
+venue_id: arxiv_api
+authors:
+- name: Thi Phuong Thao Nguyen
+  affiliation: null
+  corresponding: null
+- name: James Wang
+  affiliation: null
+  corresponding: null
+- name: Constantine Sideris
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-02'
+retrieved_date: '2026-10-05'
+access: full_text
+read_scope: Automated reading. The full PDF text (77,764 characters, 37 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.02821v1 on
+  2026-10-05. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“6423 bad flips in82.9 seconds.”
+
+  “Broadband Directional Coupler using PNGF-Accelerated DBS”
+
+  “All comparisons were run on the same server (dual AMD Epyc 7763 CPUs) using 128 cores unless stated
+  otherwise.”'
+method_summary: “All comparisons were run on the same server (dual AMD Epyc 7763 CPUs) using 128 cores
+  unless stated otherwise.”
+limitations: “Under typical conditions, the optimization can be started from a random initial guess and
+  follow this workflow directly. However, the approach may suffer from near non-differentiability and
+  can become trapped in local minima, particularly when initialized with an intuitive but suboptimal design,
+  as discussed in sections S9 and S11 of the Supplementary Information.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 24927
+    output: 3196
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: The standard Direct Binary Search (DBS) optimization of the 1550 nm 50:50 power splitter
+      using PNGF takes 12.1 seconds on 128 cores.
+    reason: the statement contains the number 1550, which none of its quotes contain
+    quotes:
+    - taking a total of 12.1 seconds to run.
+    - The optimization converges to a solution with total transmission>99.4% (>49.7% per channel) after
+      82 accepted (“good”) flips and1911 rejected (“bad”) flips, taking a total of 12.1 seconds to run.
+    - 1550 nm 50:50 Power Splitter with Improved Connectivity
+    - Table 1.Convergence and Acceleration of Power Splitter using DBS
+  - statement: The modified DBS optimization of the 1550 nm 50:50 power splitter using PNGF takes 12.2
+      seconds on 128 cores.
+    reason: the statement contains the number 1550, which none of its quotes contain
+    quotes:
+    - taking a total of 12.2 seconds
+    - The modified optimization converges after 87 good flips and 2906 bad flips, taking a total of 12.2
+      seconds
+    - 1550 nm 50:50 Power Splitter with Improved Connectivity
+    - Table 1.Convergence and Acceleration of Power Splitter using DBS
+  - statement: The level-set optimization of the 50:50 power splitter using PNGF takes 27.8 seconds on
+      128 cores.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''completed
+      in 27.8 seconds'''
+    quotes:
+    - completed in 27.8 seconds
+    - Table 3.Convergence and Acceleration of Power Splitter using level-set method
+    - 5.1. 50:50 Power Splitter
+    - All comparisons were run on the same server (dual AMD Epyc 7763 CPUs) using 128 cores unless stated
+      otherwise.
+  - statement: The level-set optimization of the broadband directional coupler using PNGF takes 4.9 minutes
+      on 128 cores.
+    reason: the statement contains the number 4.9, which none of its quotes contain
+    quotes:
+    - converges within 367 iterations in under 5 minutes
+    - Table 4.Convergence and Acceleration of Broadband Directional Coupler Optimization using the Level-Set
+      Method
+    - 5.2. Broadband Directional Coupler
+    - All comparisons were run on the same server (dual AMD Epyc 7763 CPUs) using 128 cores unless stated
+      otherwise.
+  - statement: The standard DBS optimization of the 90 degree waveguide bend using PNGF takes 16.92 seconds
+      on 128 cores.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''in 17 seconds'''
+    quotes:
+    - in 17 seconds
+    - 16.92 seconds
+    - Table S1.Convergence and Acceleration of Waveguide Bend Optimization using DBS
+    - S10.1. Waveguide Bend
+  - statement: The level-set optimization of the 90 degree waveguide bend using PNGF takes 33.3 seconds
+      on 128 cores.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''completed
+      in 33.3 seconds'''
+    quotes:
+    - completed in 33.3 seconds
+    - Table S5.Convergence and Acceleration of Waveguide Bend Optimization using the Level-Set Method
+    - S11.1. Waveguide Bend
+    - All comparisons were run on the same server (dual AMD Epyc 7763 CPUs) using 128 cores unless stated
+      otherwise.
+  - statement: The mode converter inverse design using rotatable DBS and PNGF takes 36.1 seconds on 128
+      cores.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''in 36.1 seconds.'''
+    quotes:
+    - in 36.1 seconds.
+    - Table S4.Convergence and Acceleration of Mode Converter using RDBS
+    - S10.3. Mode Converter using Rotatable DBS
+    - All comparisons were run on the same server (dual AMD Epyc 7763 CPUs) using 128 cores unless stated
+      otherwise.
+corrections: []

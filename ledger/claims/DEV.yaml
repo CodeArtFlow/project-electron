@@ -805,3 +805,38 @@ claims:
   conditions:
     detection_wavelength: 819 nm
     temperature: 10 K
+- id: CLM-DEV-0030
+  topic: DEV
+  statement: In DC-AC conversion, the peak output power reaches 7.76 W.
+  sources:
+  - SRC-00077
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-02'
+  created: '2026-10-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    mode: DC-AC conversion
+    vin: 24-V DC input
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 7.76
+      unit: W
+    si_base:
+      value: 7.76
+      unit: W
+    display:
+      value: 7.76
+      unit: W
+    conditions:
+      mode: DC-AC conversion
+      vin: 24-V DC input

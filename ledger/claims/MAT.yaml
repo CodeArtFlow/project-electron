@@ -1670,3 +1670,40 @@ claims:
       unit: nm
     conditions:
       sample: Sample A
+- id: CLM-MAT-0061
+  topic: MAT
+  statement: Across 200 runs of the 40-prompt benchmark, the LATHE-equipped agent achieves an overall
+    success rate of 87.5% in translating natural-language prompts into valid executable configurations.
+  sources:
+  - SRC-00076
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-02'
+  created: '2026-10-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    llm_backbone: gpt-5.4-nano
+- id: CLM-MAT-0062
+  topic: MAT
+  statement: The LATHE-equipped agent achieves an 82.0% pass rate on informative prompts.
+  sources:
+  - SRC-00076
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-02'
+  created: '2026-10-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    prompt_style: informative prompts

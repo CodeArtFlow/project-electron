@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-04.
+Topic code `PHOT`. Last reviewed 2026-10-05.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -187,6 +187,10 @@ Topic code `PHOT`. Last reviewed 2026-10-04.
   - `CLM-PHOT-0025` · illumination random speckle illumination · grade B · credibility unknown · simulated · as of 2026-09-23
   - sources: SRC-00029
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **8.29e+10 ns** — The DBS optimization of the broadband directional coupler using PNGF takes 82.9 seconds on 128 cores.
+  - `CLM-PHOT-0048` · algorithm DBS, cores 128 cores · grade B · credibility unknown · simulated · as of 2026-10-02
+  - sources: SRC-00078
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### wavelength
 
@@ -229,6 +233,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 47
-- grades: {'B': 40, 'A': 7}
-- distinct sources: 15
+- claims: 48
+- grades: {'B': 41, 'A': 7}
+- distinct sources: 16

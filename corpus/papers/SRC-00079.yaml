@@ -1,0 +1,85 @@
+id: SRC-00079
+title: A Timing-Robust Frequency-Interleaved ADC with Embedded Analog Fourier Transform
+doi: null
+arxiv_id: 2610.02936v1
+url: https://arxiv.org/abs/2610.02936v1
+venue_id: arxiv_api
+authors:
+- name: Xingchen Chao
+  affiliation: null
+  corresponding: null
+- name: Yunqiang Xu
+  affiliation: null
+  corresponding: null
+- name: Qiang Yu
+  affiliation: null
+  corresponding: null
+- name: Christian Adam
+  affiliation: null
+  corresponding: null
+- name: Qiang Li
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-02'
+retrieved_date: '2026-10-05'
+access: full_text
+read_scope: Automated reading. The full PDF text (41,087 characters, 10 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.02936v1 on
+  2026-10-05. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: “Measured at 10b 13GS/s, the calibration-free ADC achieves 45.8-dB SNDR and 56.1-dB SFDR at
+  Nyquist.”
+method_summary: “Behavioral-level simulations of the proposed FI system have been performed, where an
+  8-point AFT-based FI ADC with ideal 10b sub-ADCs is compared against an 8-channel TI ADC using identical
+  10b sub-ADCs.”
+limitations: “Admittedly, this condition cannot be generally fulfilled in blind ADC applications, such
+  as real-time oscilloscopes and wideband spectrum analyzers, where the input signal is arbitrary and
+  unknown a priori.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 15930
+    output: 1935
+  claims_accepted: 2
+  claims_rejected: 4
+  rejected:
+  - statement: Measured at 10b 13GS/s, the calibration-free ADC achieves a Walden FoM of 12.7 fJ/conv.-step.
+    reason: 'unit conversion refused: energy: could not parse 12.7 ''fJ/conv.-step'': unsupported operand
+      type(s) for -: ''ParserHelper'' and ''ParserHelper'''
+    quotes:
+    - Measured at 10b 13GS/s, the calibration-free ADC achieves 45.8-dB SNDR and 56.1-dB SFDR at Nyquist.
+      The ADC consumes 26.4mA from a single 1V supply, resulting in a Walden FoM of 12.7 fJ/conv.-step.
+    - Measured at 10b 13GS/s, the calibration-free ADC achieves 45.8-dB SNDR and 56.1-dB SFDR at Nyquist.
+    - 10b
+    - 13GS/s
+  - statement: The ADC consumes 26.4 mW under a single 1V supply voltage.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The ADC consumes
+      26.4 mW under a single 1V supply voltage, resulting i'''
+    quotes:
+    - The ADC consumes 26.4 mW under a single 1V supply voltage, resulting in a Walden FoM of 12.7 fJ/conv.-step
+      and a Schreier FoM of 159.7 dB.
+    - 1V supply voltage
+  - statement: At low frequency input of 11.34 MHz and 13 GS/s sampling rate, the ADC achieves 47.1-dB
+      SNDR.
+    reason: the statement contains the number 11.34, which none of its quotes contain
+    quotes:
+    - At low frequency, the ADC achieves 47.1-dB SNDR and 56.9-dB SFDR.
+    - Fig. 17 shows the measured output spectra with a low-frequency input at 11.34 MHz and a Nyquist
+      input at 6.499 GHz.
+    - 11.34 MHz
+    - fS=13GS/s
+  - statement: The prototype ADC occupies an active area of 0.379 mm 2.
+    reason: 'unit conversion refused: area_die: could not parse 0.379 ''mm 2'': Unit expression cannot
+      have a scaling factor.'
+    quotes:
+    - The ADC occupies an active area of 0.379 mm 2, among which 0.253 mm 2 are occupied by the clock
+      and input distribution network.
+    - 28 nm CMOS technology
+corrections: []

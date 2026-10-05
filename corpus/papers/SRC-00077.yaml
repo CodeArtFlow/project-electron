@@ -1,0 +1,133 @@
+id: SRC-00077
+title: Lithium Niobate Surface-Acoustic-Wave Resonator for Very-High-Frequency Isolated Power Conversion
+doi: null
+arxiv_id: 2610.02742v1
+url: https://arxiv.org/abs/2610.02742v1
+venue_id: arxiv_api
+authors:
+- name: Liyang Jin
+  affiliation: null
+  corresponding: null
+- name: Zhiyang Cao
+  affiliation: null
+  corresponding: null
+- name: Zichen Xi
+  affiliation: null
+  corresponding: null
+- name: Jun Ji
+  affiliation: null
+  corresponding: null
+- name: Yizheng Zhu
+  affiliation: null
+  corresponding: null
+- name: Liyan Zhu
+  affiliation: null
+  corresponding: null
+- name: Linbo Shao
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-02'
+retrieved_date: '2026-10-05'
+access: full_text
+read_scope: Automated reading. The full PDF text (26,152 characters, 4 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.02742v1 on
+  2026-10-05. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“a peak output of 7.76 W at 24-V DC input”
+
+  “In DC-AC conversion, we achieve an efficiency of 93.8% at 9-V DC input, a peak output of 7.76 W at
+  24-V DC input”
+
+  “In DC-AC conversion, we achieve an efficiency of 93.8% at 9-V DC input, a peak output of 7.76 W at
+  24-V DC input , and a chip power density of 81.7 W/cm3.”'
+method_summary: '“We characterize our SAW resonator using a vector network analyzer (VNA, Keysight P5000A).”
+
+  “To assess the power handling, we use a power amplifier (Amplifier Research, 150A 100C) with reference
+  signal s from a function generator (Tektronix, AFG3102C) to directly drive our SAW device.”
+
+  “We use Keysight B1505 to measure the DC isolation (breakdown) voltage between the input and output
+  IDTs”
+
+  “DC-AC power conversion is first demonstrated using our SAW devices, where the load resistor is directly
+  connected to the output IDT”'
+limitations: '“DC-DC conversion is also demonstrated by connecting a diode rectifier to the output IDT
+  , despite efficiency degrading to 52.7%.”
+
+  “The DC-DC conversion efficiency is significantly lower than DC-AC conversion efficiency; it is a result
+  of diode forward voltage drop, and the varying impedance seen by the SAW resonator.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 11116
+    output: 3031
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: The 40-MHz SAW resonator achieves a maximum output power of 25.7 W at a temperature rise
+      of less than 15 °C with passive cooling.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Our application-optimized
+      40-MHz SAW resonator, with the two electrica'''
+    quotes:
+    - Our application-optimized 40-MHz SAW resonator, with the two electrically isolated interdigital
+      transducers (IDTs) and acoustic Bragg mirrors, achieves a 25 .7 W output power at a less than 15
+      °C temperature rise with only passive cooling t
+    - Our application-optimized 40-MHz SAW resonator, with the two electrically isolated interdigital
+      transducers (IDTs) and acoustic Bragg mirrors, achieves a 25 .7 W output power
+    - with only passive cooling through the back mounting side
+    - at a less than 15 °C temperature rise
+  - statement: The SAW resonator achieves an isolation voltage of 2.17 kV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - and an isolation voltage o f 2.17 kV.
+    - We use Keysight B1505 to measure the DC isolation (breakdown) voltage between the input and output
+      IDTs, obtaining a value of 2.17 kV [ Fig. 4(b)], limited by air breakdown between the electrodes.
+    - Our application-optimized 40-MHz SAW resonator, with the two electrically isolated interdigital
+      transducers (IDTs) and acoustic Bragg mirrors, achieves a 25 .7 W output power at a less than 15
+      °C temperature rise with only passive cooling t
+    - We use Keysight B1505 to measure the DC isolation (breakdown) voltage between the input and output
+      IDTs, obtaining a value of 2.17 kV
+  - statement: In DC-AC power conversion, the system demonstrates a peak efficiency of 93.8%.
+    reason: 'unit conversion refused: efficiency_compute: cannot convert 93.8 % to 1/J - Cannot convert
+      from ''percent'' (dimensionless) to ''1 / joule'' ([time] ** 2 / [mass] / [length] ** 2). A dimens'
+    quotes:
+    - In DC-AC power conversion, we demonstrate a peak efficiency of 93.8%
+    - In DC-AC conversion, we achieve an efficiency of 93.8% at 9-V DC input
+  - statement: In DC-AC conversion, a peak chip power density of 81.7 W/cm3 is achieved.
+    reason: 'unit conversion refused: power_density: cannot convert 81.7 W/cm3 to W/m^2 - Cannot convert
+      from ''watt / centimeter ** 3'' ([mass] / [length] / [time] ** 3) to ''watt / meter ** 2'' ([mass'
+    quotes:
+    - a peak chip power density of 81.7 W/cm3.
+    - In DC-AC power conversion, we demonstrate a peak efficiency of 93.8% , a power delivery FOM of 13.47
+      mW/V2 and a peak chip power density of 81.7 W/cm3.
+    - Calculated using chip dimensions of 1.9 (long) × 1 (wide) × 0.05 (thick) cm3.
+  - statement: DC-DC conversion efficiency drops to 52.7%.
+    reason: 'unit conversion refused: efficiency_compute: cannot convert 52.7 % to 1/J - Cannot convert
+      from ''percent'' (dimensionless) to ''1 / joule'' ([time] ** 2 / [mass] / [length] ** 2). A dimens'
+    quotes:
+    - DC-DC conversion is also demonstrated by connecting a diode rectifier to the output IDT , despite
+      efficiency degrading to 52.7%.
+    - In DC-DC conversion, a peak DC-DC efficiency of 52.7% is achieved at the 13-V to 11.9-V condition
+  - statement: The SAW resonator single-port admittance spectrum exhibits a resonance at 39.35 MHz.
+    reason: the statement contains the number 39.35, which none of its quotes contain
+    quotes:
+    - Figure 2 plots the admittance of the resonator in a single -IDT measurement (the other IDT is open),
+      showing a resonance at 39. 35 MHz.
+    - Figure 2 plots the admittance of the resonator in a single -IDT measurement (the other IDT is open)
+  - statement: The maximum two-port transmission S21 of the SAW device near resonance is -1.66 dB.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - high transmission S21 is observed with a maximum S21 of -1.66 dB [Fig. 3(b)].
+    - Within the frequency range between series and parallel resonant frequencies (fs and fp), the electrical-to-acoustic
+      transduction is enhanced by the acoustic resonance, and high transmission S21 is observed with a
+      maximum S21 of -1.66 dB [Fi
+    - The characterization impedance is 50 Ω.
+corrections: []

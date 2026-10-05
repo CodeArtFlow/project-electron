@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.03049v1
 doi: null
-title: Metasurface-on-Lithium-Niobate Architecture for Spin-decoupled Second Harmonic
-  Wavefront Shaping
+title: Metasurface-on-Lithium-Niobate Architecture for Spin-decoupled Second Harmonic Wavefront Shaping
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-02'
@@ -25,6 +24,96 @@ id: CAND-20261005-0052
 harvested_date: '2026-10-05'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-05'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The MS-on-LN grating under LCP FW illumination directs the generated LCP SH signal into
+      the m = -1 diffraction order with a measured relative diffraction contra
+    reason: the statement contains the number 0.893, which none of its quotes contain
+    quotes:
+    - The MS-on-LN grating exhibits high- contrast spin-dependent SH beam steering , in which opposite
+      FW CP s direct the generated SH signals into the designed m = −1 and m = 2 diffraction orders, accounting
+      for 89.3% and 80.9 % of the total mea
+    - The MS-on-LN grating exhibits high- contrast spin-dependent SH beam steering
+    - designed m = −1
+    - under LCP and RCP FW illumination
+  - statement: The MS-on-LN grating under RCP FW illumination directs the generated RCP SH signal into
+      the m = +2 diffraction order with a measured relative diffraction contra
+    reason: the statement contains the number 0.809, which none of its quotes contain
+    quotes:
+    - The MS-on-LN grating exhibits high- contrast spin-dependent SH beam steering , in which opposite
+      FW CP s direct the generated SH signals into the designed m = −1 and m = 2 diffraction orders, accounting
+      for 89.3% and 80.9 % of the total mea
+    - The MS-on-LN grating exhibits high- contrast spin-dependent SH beam steering
+    - m = 2 diffraction orders
+    - under LCP and RCP FW illumination
+  - statement: In simulation, the MS-on-LN grating directs the generated LCP SH signal into the m = -1
+      diffraction order with a calculated diffraction contrast of 0.972.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - accounting for 89.3% and 80.9 % of the total measured SH intensity (97.2% and 88.8% in simulation),
+      respectively.
+    - (97.2% and 88.8% in simulation)
+    - The MS-on-LN grating exhibits high- contrast spin-dependent SH beam steering
+    - designed m = −1
+  - statement: In simulation, the MS-on-LN grating directs the generated RCP SH signal into the m = +2
+      diffraction order with a calculated diffraction contrast of 0.888.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - accounting for 89.3% and 80.9 % of the total measured SH intensity (97.2% and 88.8% in simulation),
+      respectively.
+    - (97.2% and 88.8% in simulation)
+    - The MS-on-LN grating exhibits high- contrast spin-dependent SH beam steering
+    - m = 2 diffraction orders
+  - statement: The measured relative SH diffraction efficiency of the MS-on-LN grating for the m = -1
+      order under LCP FW incidence is 0.599.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''ratio'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a u'
+    quotes:
+    - As shown in Fig. 3( E), the measured relative SH diffraction efficiencies at the designed diffraction
+      orders m = −1 and m = +2 are 0.599 and 0.587, respectively, compared with the simulated values of
+      0.881 and 0.747 shown in Figs. S 6(C, D)
+    - the measured relative SH diffraction efficiencies at the designed diffraction orders m = −1 and
+      m = +2 are 0.599 and 0.587, respectively
+    - MS-on-LN grating
+    - m = −1
+  - statement: The measured relative SH diffraction efficiency of the MS-on-LN grating for the m = +2
+      order under RCP FW incidence is 0.587.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''ratio'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a u'
+    quotes:
+    - As shown in Fig. 3( E), the measured relative SH diffraction efficiencies at the designed diffraction
+      orders m = −1 and m = +2 are 0.599 and 0.587, respectively, compared with the simulated values of
+      0.881 and 0.747 shown in Figs. S 6(C, D)
+    - the measured relative SH diffraction efficiencies at the designed diffraction orders m = −1 and
+      m = +2 are 0.599 and 0.587, respectively
+    - MS-on-LN grating
+    - m = +2
+  - statement: In simulation, the relative SH diffraction efficiency of the MS-on-LN grating for the m
+      = -1 order is 0.881.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - compared with the simulated values of 0.881 and 0.747 shown in Figs. S 6(C, D).
+    - MS-on-LN grating
+    - m = −1
+  - statement: In simulation, the relative SH diffraction efficiency of the MS-on-LN grating for the m
+      = +2 order is 0.747.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - compared with the simulated values of 0.881 and 0.747 shown in Figs. S 6(C, D).
+    - MS-on-LN grating
+    - m = +2
+  tokens:
+    input: 20287
+    output: 3103
+  fetched_chars: 69341

@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-04.
+Topic code `MAT`. Last reviewed 2026-10-05.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -229,6 +229,14 @@ Topic code `MAT`. Last reviewed 2026-10-04.
   - `CLM-MAT-0047` · orientation (2̅01), scan_area 5 × 5 µm², growth_temperature 1150 °C · grade B · credibility unknown · measured · as of 2026-10-01
   - sources: SRC-00060
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- Across 200 runs of the 40-prompt benchmark, the LATHE-equipped agent achieves an overall success rate of 87.5% in translating natural-language prompts into valid executable configurations.
+  - `CLM-MAT-0061` · llm_backbone gpt-5.4-nano · grade B · credibility unknown · simulated · as of 2026-10-02
+  - sources: SRC-00076
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The LATHE-equipped agent achieves an 82.0% pass rate on informative prompts.
+  - `CLM-MAT-0062` · prompt_style informative prompts · grade B · credibility unknown · simulated · as of 2026-10-02
+  - sources: SRC-00076
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -310,6 +318,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 60
-- grades: {'B': 60}
-- distinct sources: 21
+- claims: 62
+- grades: {'B': 62}
+- distinct sources: 22

@@ -1602,3 +1602,104 @@ claims:
     conditions:
       process: TSMC 16nm FinFET technology
       component: core area
+- id: CLM-ARCH-0051
+  topic: ARCH
+  statement: At Nyquist input and 13GS/s sampling rate, the prototype ADC achieves 45.8-dB SNDR.
+  sources:
+  - SRC-00079
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-02'
+  created: '2026-10-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-ARCH-0052
+  topic: ARCH
+  statement: At Nyquist input and 13GS/s sampling rate, the prototype ADC achieves 56.1-dB SFDR.
+  sources:
+  - SRC-00079
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-02'
+  created: '2026-10-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-ARCH-0053
+  topic: ARCH
+  statement: Building PEEK with four Rocket cores upon a BOOM core introduces a 27.3% area overhead versus
+    an unsafe baseline.
+  sources:
+  - SRC-00080
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-02'
+  created: '2026-10-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    architecture: PEEK with four Rockets upon a BOOM
+    baseline: unsafe baseline
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 27.3
+      unit: '%'
+    si_base:
+      value: 0.273
+      unit: dimensionless
+    display:
+      value: 27.3
+      unit: percent
+    conditions:
+      architecture: PEEK with four Rockets upon a BOOM
+      baseline: unsafe baseline
+- id: CLM-ARCH-0054
+  topic: ARCH
+  statement: PEEK maintains a detection latency below 4us in most cases.
+  sources:
+  - SRC-00080
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-02'
+  created: '2026-10-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    architecture: PEEK
+  quantity:
+    quantity: time
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 4.0
+      unit: 𝜇s
+    si_base:
+      value: 4.0e-06
+      unit: s
+    display:
+      value: 3999.9999999999995
+      unit: ns
+    conditions:
+      architecture: PEEK

@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-10-04.
+Topic code `DEV`. Last reviewed 2026-10-05.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -30,6 +30,10 @@ Topic code `DEV`. Last reviewed 2026-10-04.
   - `CLM-DEV-0025` · gate_bias_vgs -2.7 V · grade B · credibility unknown · simulated · as of 2026-09-30
   - sources: SRC-00054
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **7.76 W** — In DC-AC conversion, the peak output power reaches 7.76 W.
+  - `CLM-DEV-0030` · mode DC-AC conversion, vin 24-V DC input · grade B · credibility unknown · measured · as of 2026-10-02
+  - sources: SRC-00077
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### qualitative
 
@@ -139,6 +143,6 @@ _None._
 
 ## Evidence base
 
-- claims: 26
-- grades: {'B': 26}
-- distinct sources: 11
+- claims: 27
+- grades: {'B': 27}
+- distinct sources: 12

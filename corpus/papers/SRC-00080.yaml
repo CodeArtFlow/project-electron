@@ -1,0 +1,133 @@
+id: SRC-00080
+title: 'PEEK: Heterogeneous Parallelism for Privileged Error Detection in Safety-Critical Processors'
+doi: null
+arxiv_id: 2610.03045v1
+url: https://arxiv.org/abs/2610.03045v1
+venue_id: arxiv_api
+authors:
+- name: Tinglue Wang
+  affiliation: null
+  corresponding: null
+- name: Zhenghui Guo
+  affiliation: null
+  corresponding: null
+- name: Bing Guo
+  affiliation: null
+  corresponding: null
+- name: Jiapeng Guan
+  affiliation: null
+  corresponding: null
+- name: Renshuang Jiang
+  affiliation: null
+  corresponding: null
+- name: Jie Zhang
+  affiliation: null
+  corresponding: null
+- name: Jing Li
+  affiliation: null
+  corresponding: null
+- name: Xin Si
+  affiliation: null
+  corresponding: null
+- name: Sam Ainsworth
+  affiliation: null
+  corresponding: null
+- name: Zhe Jiang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-02'
+retrieved_date: '2026-10-05'
+access: full_text
+read_scope: Automated reading. The full PDF text (85,092 characters, 14 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.03045v1 on
+  2026-10-05. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“building PEEK with four Rockets upon a BOOM needs 1.08mm2 and 124mW, i.e., 27.3% area overhead”
+
+  “building PEEK with four Rockets upon a BOOM”
+
+  “Versus an unsafe baseline, building PEEK with four Rockets upon a BOOM needs 1.08mm2 and 124mW, i.e.,
+  27.3% area overhead”
+
+  “We synthesize the physical implementation of PEEK using TSMC 28nm PDKs and Design Compiler (v2020.12)”
+
+  “PEEK maintains a detection latency below 4𝜇s in most cases”
+
+  “The netlist is deployed on an AMD Alveo U280 FPGA using FireSim [50] and booted the Linux kernel v6.7.”'
+method_summary: '“Evaluated using various metrics on an RTL-level full system running Linux, PEEK achieves
+  full-privilege protection on Linux with negligible performance slowdown and affordable hardware overhead.”
+
+  “We implement PEEK on an AMD Alveo U280 FPGA, booting a full Linux kernel (v6.7) to validate its practical
+  feasibility.”
+
+  “We synthesize the physical implementation of PEEK using TSMC 28nm PDKs and Design Compiler (v2020.12),
+  and employ PrimeTime PX (v2019.12) for power analysis.”
+
+  “Due to die area constraints, we tape out a minimal configuration of PEEK, which we refer to as TinyPEEK
+  with a 2-width BOOM and two Rockets, using SMIC 28nm process.”'
+limitations: “Due to die area constraints, we tape out a minimal configuration of PEEK, which we refer
+  to as TinyPEEK with a 2-width BOOM and two Rockets, using SMIC 28nm process.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 25177
+    output: 2750
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: PEEK achieves a geomean performance slowdown of 1.016x on SPECint 2006.
+    reason: the statement contains the number 2006, which none of its quotes contain
+    quotes:
+    - PEEK incurs a geomean slowdown of only 1.016× in SPECint
+    - The netlist is deployed on an AMD Alveo U280 FPGA using FireSim [50] and booted the Linux kernel
+      v6.7.
+  - statement: PEEK incurs a geomean slowdown of 1.026x on PARSEC.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''1.026× in
+      PARSEC'''
+    quotes:
+    - 1.026× in PARSEC
+    - The netlist is deployed on an AMD Alveo U280 FPGA using FireSim [50] and booted the Linux kernel
+      v6.7.
+    - PEEK incurs a geomean slowdown of only 1.016× in SPECint, 1.026× in PARSEC
+  - statement: PEEK incurs a geomean slowdown of 1.023x on MiBench.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''1.023× in
+      MiBench'''
+    quotes:
+    - 1.023× in MiBench
+    - The netlist is deployed on an AMD Alveo U280 FPGA using FireSim [50] and booted the Linux kernel
+      v6.7.
+    - PEEK incurs a geomean slowdown of only 1.016× in SPECint, 1.026× in PARSEC and 1.023× in MiBench
+  - statement: In TSMC 28nm, PEEK's BOOM die area is 3.96mm2, introducing a 1.8% area overhead compared
+      to user-only MEEK.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''the BOOM’s
+      area is 3.96mm2'''
+    quotes:
+    - the BOOM’s area is 3.96mm2
+    - 1.8%
+    - We synthesize the physical implementation of PEEK using TSMC 28nm PDKs and Design Compiler (v2020.12)
+    - TSMC 28nm PDKs
+  - statement: In TSMC 28nm, each Rocket core in PEEK has an area of 0.27mm2, introducing a 3.8% overhead
+      compared to user-only MEEK.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''each Rocket
+      is 0.27mm2'''
+    quotes:
+    - each Rocket is 0.27mm2
+    - 3.8%
+    - We synthesize the physical implementation of PEEK using TSMC 28nm PDKs and Design Compiler (v2020.12)
+    - TSMC 28nm PDKs
+  - statement: Building PEEK with four Rocket cores upon a BOOM core consumes 124mW, representing a 29.4%
+      power overhead versus an unsafe baseline.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''124mW'''
+    quotes:
+    - 124mW
+    - 29.4% power overhead
+    - and employ PrimeTime PX (v2019.12) for power analysis.
+    - building PEEK with four Rockets upon a BOOM
+corrections: []
