@@ -28,6 +28,62 @@ id: CAND-20261006-0100
 harvested_date: '2026-10-06'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-06'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: PhaseMatcher with single-GPU Greedy inference on PhaseMix-135K processes 1-phase mixtures
+      in 0.0250 seconds per mixture.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Phase count
+      1 Time (s/mixture) 0.0250'''
+    quotes:
+    - Phase count 1 Time (s/mixture) 0.0250
+    - PhaseMix-135K contains approximately 12.14 million training and 100,000 test mixtures, with 135,258
+      Materials Project structure records as library candidates (Jain et al., 2013).
+    - Single-GPU Greedy inference on PhaseMix-135K.
+    - We measure Greedy inference on a single RTX 4090 with BF16 mixed precision over all 135,258 candidate
+      records, using 256 test spectra for each phase count from one to four.
+  - statement: PhaseMatcher with single-GPU Greedy inference on PhaseMix-135K processes 2-phase mixtures
+      in 0.0401 seconds per mixture.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Phase count
+      2 Time (s/mixture) 0.0401'''
+    quotes:
+    - Phase count 2 Time (s/mixture) 0.0401
+    - PhaseMix-135K contains approximately 12.14 million training and 100,000 test mixtures, with 135,258
+      Materials Project structure records as library candidates (Jain et al., 2013).
+    - Single-GPU Greedy inference on PhaseMix-135K.
+    - We measure Greedy inference on a single RTX 4090 with BF16 mixed precision over all 135,258 candidate
+      records, using 256 test spectra for each phase count from one to four.
+  - statement: PhaseMatcher with single-GPU Greedy inference on PhaseMix-135K processes 3-phase mixtures
+      in 0.0551 seconds per mixture.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Phase count
+      3 Time (s/mixture) 0.0551'''
+    quotes:
+    - Phase count 3 Time (s/mixture) 0.0551
+    - PhaseMix-135K contains approximately 12.14 million training and 100,000 test mixtures, with 135,258
+      Materials Project structure records as library candidates (Jain et al., 2013).
+    - Single-GPU Greedy inference on PhaseMix-135K.
+    - We measure Greedy inference on a single RTX 4090 with BF16 mixed precision over all 135,258 candidate
+      records, using 256 test spectra for each phase count from one to four.
+  - statement: PhaseMatcher with single-GPU Greedy inference on PhaseMix-135K processes 4-phase mixtures
+      in 0.0685 seconds per mixture.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Phase count
+      4 Time (s/mixture) 0.0685'''
+    quotes:
+    - Phase count 4 Time (s/mixture) 0.0685
+    - PhaseMix-135K contains approximately 12.14 million training and 100,000 test mixtures, with 135,258
+      Materials Project structure records as library candidates (Jain et al., 2013).
+    - Single-GPU Greedy inference on PhaseMix-135K.
+    - We measure Greedy inference on a single RTX 4090 with BF16 mixed precision over all 135,258 candidate
+      records, using 256 test spectra for each phase count from one to four.
+  tokens:
+    input: 36975
+    output: 2274
+  fetched_chars: 107855

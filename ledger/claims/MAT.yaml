@@ -1707,3 +1707,300 @@ claims:
     verified_quotes: 3
   conditions:
     prompt_style: informative prompts
+- id: CLM-MAT-0063
+  topic: MAT
+  statement: The thickness of the BiSbTeSe2 flake measured by atomic force microscopy in device D1 is
+    approximately 10.7 nm.
+  sources:
+  - SRC-00081
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-05'
+  created: '2026-10-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device: D1
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 10.7
+      unit: nm
+    si_base:
+      value: 1.07e-08
+      unit: m
+    display:
+      value: 10.7
+      unit: nm
+    conditions:
+      device: D1
+- id: CLM-MAT-0064
+  topic: MAT
+  statement: In device D1 at gate voltages (Vtg, Vbg) = (6 V, 8.5 V), the third-order nonlinear Hall voltage
+    is reduced to 0.15 μV at 250 K.
+  sources:
+  - SRC-00081
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-05'
+  created: '2026-10-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    temperature: 250 K
+    vtg: 6 V
+    vbg: 8.5 V
+    device: D1
+  quantity:
+    quantity: voltage
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.15
+      unit: μV
+    si_base:
+      value: 1.5e-07
+      unit: V
+    display:
+      value: 1.5e-07
+      unit: V
+    conditions:
+      temperature: 250 K
+      vtg: 6 V
+      vbg: 8.5 V
+      device: D1
+- id: CLM-MAT-0065
+  topic: MAT
+  statement: At a fixed Fermi level of 0.031 eV, a conductance enhancement of up to 500% occurs.
+  sources:
+  - SRC-00082
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-05'
+  created: '2026-10-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MAT-0066
+  topic: MAT
+  statement: At a magnetic field of 0.55 T, extremely large positive magnetoresistance reaches 10000%
+    for van Hove singularity A.
+  sources:
+  - SRC-00085
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-05'
+  created: '2026-10-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    magnetic_field: 0.55 T
+    feature: vHS A
+- id: CLM-MAT-0067
+  topic: MAT
+  statement: At a magnetic field of 0.55 T, extremely large positive magnetoresistance reaches 10000%
+    for van Hove singularity B.
+  sources:
+  - SRC-00085
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-05'
+  created: '2026-10-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    magnetic_field: 0.55 T
+- id: CLM-MAT-0068
+  topic: MAT
+  statement: The monolayer graphene-hexagonal boron nitride superlattice sample has an estimated moiré
+    period of 14.5 nm.
+  sources:
+  - SRC-00085
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-05'
+  created: '2026-10-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    method: estimated from the carrier density at the SDP
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 14.5
+      unit: nm
+    si_base:
+      value: 1.45e-08
+      unit: m
+    display:
+      value: 14.499999999999998
+      unit: nm
+    conditions:
+      method: estimated from the carrier density at the SDP
+- id: CLM-MAT-0069
+  topic: MAT
+  statement: Measurements performed down to 10 mK used a 2 nA excitation current.
+  sources:
+  - SRC-00085
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-05'
+  created: '2026-10-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    temperature: 10 mK
+  quantity:
+    quantity: current
+    bound: exact
+    approximate: false
+    as_published:
+      value: 2.0
+      unit: nA
+    si_base:
+      value: 2.0e-09
+      unit: A
+    display:
+      value: 2.0000000000000003e-06
+      unit: mA
+    conditions:
+      temperature: 10 mK
+- id: CLM-MAT-0070
+  topic: MAT
+  statement: Si-N bond breaking on capture accounts for 69% of the traps formed in the deepest spectral-trap
+    decile.
+  sources:
+  - SRC-00087
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-05'
+  created: '2026-10-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MAT-0071
+  topic: MAT
+  statement: The Si-N bond-breaking route accounts for 44.2% of the classified traps in the ensemble.
+  sources:
+  - SRC-00087
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-05'
+  created: '2026-10-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MAT-0072
+  topic: MAT
+  statement: Charge-induced Si-N bond breaking converts 182 of 347 Si4 precursors into Si3 trapped centres.
+  sources:
+  - SRC-00087
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-05'
+  created: '2026-10-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MAT-0073
+  topic: MAT
+  statement: Charge-induced Si-N bond breaking converts 52.4% of 347 Si4 precursors into Si3 trapped centres.
+  sources:
+  - SRC-00087
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-05'
+  created: '2026-10-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MAT-0074
+  topic: MAT
+  statement: Induced K centres account for 30 of the 42 traps in the upper corrected-stabilisation decile.
+  sources:
+  - SRC-00087
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-05'
+  created: '2026-10-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    population: upper corrected-stabilisation decile
+- id: CLM-MAT-0075
+  topic: MAT
+  statement: In the upper corrected-stabilisation decile of 42 traps, polarons contribute 3 traps.
+  sources:
+  - SRC-00087
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-05'
+  created: '2026-10-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    population: upper corrected-stabilisation decile

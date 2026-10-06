@@ -1,0 +1,120 @@
+id: SRC-00081
+title: Gate-tunable large second-order and third-order nonlinear Hall effect in topological insulator
+  BiSbTeSe2
+doi: null
+arxiv_id: 2610.05713v1
+url: https://arxiv.org/abs/2610.05713v1
+venue_id: arxiv_api
+authors:
+- name: Fengyi Guo
+  affiliation: null
+  corresponding: null
+- name: Shuai Zhang
+  affiliation: null
+  corresponding: null
+- name: Xiubing Li
+  affiliation: null
+  corresponding: null
+- name: Zheng Dai
+  affiliation: null
+  corresponding: null
+- name: Congcong Li
+  affiliation: null
+  corresponding: null
+- name: Yufan Ju
+  affiliation: null
+  corresponding: null
+- name: Ziqi Wang
+  affiliation: null
+  corresponding: null
+- name: Cheng Bin
+  affiliation: null
+  corresponding: null
+- name: Zhe Ying
+  affiliation: null
+  corresponding: null
+- name: Fengqi Song
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-05'
+retrieved_date: '2026-10-06'
+access: full_text
+read_scope: Automated reading. The full PDF text (38,073 characters, 23 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.05713v1 on
+  2026-10-06. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The thickness of the BSTS measured by atomic force microscopy is about 10.7 nm (see Fig. S1
+  in Supplementary Materials [53]).”
+
+  “FIG. 1. BSTS Hall device and the nonlinear Hall properties (D1).”
+
+  “Meanwhile, bulk transport gradually becomes dominant, which ultimately reduces the third -order nonlinear
+  Hall voltage to 0.15 μV at 250 K.”
+
+  “Then, we select a typical set of gate voltage in device D1, specifically (Vtg, Vbg) = (6 V , 8.5 V)
+  near the CNP to study the temperature dependen t Vxy 2ω and Vxy 3ω.”'
+method_summary: '“An a.c. excitation current Iω with a frequency of 31 Hz was applied using a current
+  source (Keithley 6221).”
+
+  “The longitudinal and Hall voltages at the first-, second- and third-harmonic frequencies were detected
+  using lock -in amplifiers (Stanford Research Systems SR830).”
+
+  “All transport measurements were performed in a Cryomagnetics cryostat.”'
+limitations: “Determining the exact microscopic origin requires further local structural characterization
+  , which is beyond the scope of this work.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14327
+    output: 2821
+  claims_accepted: 2
+  claims_rejected: 4
+  rejected:
+  - statement: In device D1, the longitudinal resistance reaches a maximum at a top-gate voltage of 6.4
+      V when the back-gate voltage is 13 V.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - The resistance reaches a maximum at Vtg = 6.4 V , corresponding to the charge neutrality point (CNP)
+      of the BSTS device.
+    - Figures 2(a)-2(c) exhibit the dual-gate mapping of Rxx, Vxy 2ω, and Vxy 3ω at T =10 K and Iω = 5
+      μA, respectively.
+    - FIG. 2. Gate-dependent nonlinear Hall effect of BSTS device (D1).
+    - Figure 2(d) shows the dependence of the resistance on the top -gate voltage Vtg when Vbg = 13 V
+      .
+  - statement: In device D1, under gate modulation with Vbg = 13 V, sign reversals of the third-order
+      nonlinear Hall voltage occur at Vtg = 5.8 V and Vtg = 7.2 V.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - Specifically, in addition to reaching a peak [22, 38], sign reversals of the Vxy 3ω signal occur
+      at Vtg = 5.8 V and Vtg = 7.2 V, on either side of the CNP.
+    - FIG. 2. Gate-dependent nonlinear Hall effect of BSTS device (D1).
+    - Figure 2(d) shows the dependence of the resistance on the top -gate voltage Vtg when Vbg = 13 V
+      .
+  - statement: 'At low temperatures and fixed gate voltages of (Vtg, Vbg) = (6 V, 8.5 V), the magnitude
+      of the second-order nonlinear Hall generation efficiency |η(2)| reaches '
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''V-1'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a uni'
+    quotes:
+    - At low temperatures, |η(2)| reaches up to 0.3 V-1, and |η(3)| can reach 5 V-2.
+    - The generation efficiencies were calculated directly using Vxy 2ω, Vxy 3ω, and Vxx ω measured at
+      the same current of Iω = 5 μ A.
+    - Figures 3(b) and 3(e) display the temperature dependence of η(n) at fixed gate voltages of (Vtg,
+      Vbg) = (6 V , 8.5 V).
+  - statement: At low temperatures and fixed gate voltages of (Vtg, Vbg) = (6 V, 8.5 V), the magnitude
+      of the third-order nonlinear Hall generation efficiency |η(3)| can reach
+    reason: the quote says 'up to'/'within'/'at most' before the number but bound is not upper_bound
+    quotes:
+    - At low temperatures, |η(2)| reaches up to 0.3 V-1, and |η(3)| can reach 5 V-2.
+    - The generation efficiencies were calculated directly using Vxy 2ω, Vxy 3ω, and Vxx ω measured at
+      the same current of Iω = 5 μ A.
+    - Figures 3(b) and 3(e) display the temperature dependence of η(n) at fixed gate voltages of (Vtg,
+      Vbg) = (6 V , 8.5 V).
+corrections: []

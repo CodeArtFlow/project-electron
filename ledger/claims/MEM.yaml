@@ -129,3 +129,37 @@ claims:
     verified_quotes: 3
   conditions:
     pulse_duration: 30 fs
+- id: CLM-MEM-0007
+  topic: MEM
+  statement: For a CrSBr nanotube with a perimeter Nc corresponding to a nanotube diameter of 220 Å, the
+    simulated equilibrium distance between two domain walls is 375 Å.
+  sources:
+  - SRC-00084
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-05'
+  created: '2026-10-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    diameter: 220 ˚A
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 375.0
+      unit: ˚A
+    si_base:
+      value: 3.75e-08
+      unit: m
+    display:
+      value: 37.49999999999999
+      unit: nm
+    conditions:
+      diameter: 220 ˚A

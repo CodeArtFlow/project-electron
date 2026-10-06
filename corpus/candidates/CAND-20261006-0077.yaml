@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.06143v1
 doi: null
-title: 'Time frequency distributions of optical sources (I): directly modulated semiconductor
-  lasers'
+title: 'Time frequency distributions of optical sources (I): directly modulated semiconductor lasers'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-05'
@@ -22,6 +21,49 @@ id: CAND-20261006-0077
 harvested_date: '2026-10-06'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-06'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For the DFB-1550 laser at 2.5Ith bias and 2 GHz modulation frequency, the second-order
+      spurious-free dynamic range is 75.7 dB·Hz1/2.
+    reason: the statement contains the number 1550, which none of its quotes contain
+    quotes:
+    - e.g., 75.7 dB·Hz1/2 (second order) and 109.7 dB·Hz2/3 (third order) at 2 GHz.
+    - The closed-form results are validated against direct numerical integration of the rate equations
+      for a 1550 nm distributed-feedback (DFB) laser, and the framework is applied comparatively to a
+      1310 nm DFB laser and an 850 nm vertical-cavity
+    - DFB-1550
+    - 2.5Ith
+  - statement: For the DFB-1550 laser at 2.5Ith bias and 2 GHz modulation frequency, the third-order spurious-free
+      dynamic range is 109.7 dB·Hz2/3.
+    reason: the statement contains the number 1550, which none of its quotes contain
+    quotes:
+    - e.g., 75.7 dB·Hz1/2 (second order) and 109.7 dB·Hz2/3 (third order) at 2 GHz.
+    - The closed-form results are validated against direct numerical integration of the rate equations
+      for a 1550 nm distributed-feedback (DFB) laser, and the framework is applied comparatively to a
+      1310 nm DFB laser and an 850 nm vertical-cavity
+    - DFB-1550
+    - 2.5Ith
+  - statement: The spectrogram moments bias the linewidth-enhancement factor by up to 17%.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - whereas spectrogram moments bias 𝛼 by up to 17%
+    - The closed-form results are validated against direct numerical integration of the rate equations
+      for a 1550 nm distributed-feedback (DFB) laser, and the framework is applied comparatively to a
+      1310 nm DFB laser and an 850 nm vertical-cavity
+    - bias 𝛼
+    - spectrogram moments
+  tokens:
+    input: 33187
+    output: 1221
+  fetched_chars: 79608

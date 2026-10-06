@@ -1,9 +1,8 @@
 source: arxiv
 arxiv_id: 2610.05875v1
 doi: null
-title: 'Scatter-free perfect reflection in multichannel monolithic high-contrast gratings:
-  direct--indirect Fourier-harmonic interference and dimensionality of the solution
-  set'
+title: 'Scatter-free perfect reflection in multichannel monolithic high-contrast gratings: direct--indirect
+  Fourier-harmonic interference and dimensionality of the solution set'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-05'
@@ -24,6 +23,42 @@ id: CAND-20261006-0097
 harvested_date: '2026-10-06'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-06'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At a wavelength of 980 nm, the TE-optimized MHCG with period 817 nm, duty cycle 0.350,
+      thickness 164 nm, and dielectric constants eps_h = eps_s = 12.3904 and ep
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - The grating period, duty cycle, and thickness of this structure are Λ = 817 nm, ρ = 0.350, and t
+      = 164 nm, respectively, and the dielectric constants are ϵ h = ϵ s = 12.3904 and ϵ a = 1, taken
+      as lossless and nondispersive.
+    - At the wavelength λ = 980 nm, the higher-order efficiencies vanish and the zeroth-order efficiency
+      reaches unity, yielding a scatter-free reflected plane wave despite the presence of open higher-order
+      channels in the substrate.
+    - Figures 1(b) and 1(c) reproduce the characteristic responses of the TE-optimized MHCG reported in
+      Refs. [8, 21], calculated by rigorous coupled-wave analysis (RCWA).
+    - Λ = 817 nm
+  - statement: For the TM perfect-reflection solution with rho = 0.5703 and t/Lambda = 0.6813, the zeroth-order
+      efficiency reaches unity at normalized frequency Omega = 0.4295
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Figure 6(a) shows the diffraction efficiencies of a TM perfect-reflection solution in the two-channel
+      window with ρ = 0.5703 and t/Λ = 0.6813.
+    - The zeroth-order efficiency reaches unity at Ω = 0.4295, where the ±1 efficiencies and the zeroth-order
+      transmission vanish.
+    - Figure 6(a) shows the diffraction efficiencies of a TM perfect-reflection solution in the two-channel
+      window with ρ = 0.5703 and t/Λ = 0.6813, calculated by RCWA.
+    - TM perfect-reflection solution
+  tokens:
+    input: 23636
+    output: 1250
+  fetched_chars: 69939

@@ -1,10 +1,17 @@
 # Memory — state of the art
 
-Topic code `MEM`. Last reviewed 2026-10-05.
+Topic code `MEM`. Last reviewed 2026-10-06.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
 ## Current position
+
+### length device
+
+- **37.5 nm** — For a CrSBr nanotube with a perimeter Nc corresponding to a nanotube diameter of 220 Å, the simulated equilibrium distance between two domain walls is 375 Å.
+  - `CLM-MEM-0007` · diameter 220 ˚A · grade B · credibility unknown · simulated · as of 2026-10-05
+  - sources: SRC-00084
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### qualitative
 
@@ -42,6 +49,6 @@ _None._
 
 ## Evidence base
 
-- claims: 6
-- grades: {'B': 6}
-- distinct sources: 2
+- claims: 7
+- grades: {'B': 7}
+- distinct sources: 3

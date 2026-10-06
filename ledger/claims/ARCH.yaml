@@ -1703,3 +1703,76 @@ claims:
       unit: ns
     conditions:
       architecture: PEEK
+- id: CLM-ARCH-0055
+  topic: ARCH
+  statement: The DQN-based optimizer achieves an average normalized PDN area of 0.1686 across the evaluated
+    power delivery networks.
+  sources:
+  - SRC-00086
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-05'
+  created: '2026-10-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    dataset_scope: 4-, 8-, and 16-core PDNs
+- id: CLM-ARCH-0056
+  topic: ARCH
+  statement: The baseline workload-aware power delivery networks have an average normalized area of 0.3170.
+  sources:
+  - SRC-00086
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-05'
+  created: '2026-10-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    method: Baseline
+    dataset_scope: 4-, 8-, and 16-core PDNs
+- id: CLM-ARCH-0057
+  topic: ARCH
+  statement: The proposed DQN-based optimizer reduces the average normalized PDN area by 47%.
+  sources:
+  - SRC-00086
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-05'
+  created: '2026-10-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    method: DQN
+- id: CLM-ARCH-0058
+  topic: ARCH
+  statement: The DQN-based optimizer achieves an optimization speedup of approximately 26× compared to
+    simulated annealing.
+  sources:
+  - SRC-00086
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-05'
+  created: '2026-10-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2

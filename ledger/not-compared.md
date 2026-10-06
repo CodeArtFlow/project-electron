@@ -4,7 +4,13 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**732 pair(s)** as of 2026-10-05.
+**845 pair(s)** as of 2026-10-06.
+
+## `current` (1 pair(s))
+
+| Claim A | Claim B | Gap | A's conditions | B's conditions |
+|---|---|---|---|---|
+| `CLM-DEV-0028` = 0.6 mA | `CLM-MAT-0069` = 2e-06 mA | 100% | process_step=current ramp-down | temperature=10 mK |
 
 ## `energy` (35 pair(s))
 
@@ -56,7 +62,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-ARCH-0002` = 5 x | `CLM-ARCH-0022` = 169.1 x | 97% | process=TSMC 16nm FinFET, comparison=PFAL vs static CMOS, operating_point=most favorable operating point, vclk=1 V, fclk=100 MHz | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch |
 | `CLM-ARCH-0006` = 5.3 x | `CLM-ARCH-0022` = 169.1 x | 97% | process=TSMC 16nm FinFET, comparison=4-bit Brent-Kung CLA adder vs architecture-matched static CMOS estimate, power_clock=triangular | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch |
 
-## `frequency` (31 pair(s))
+## `frequency` (65 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -65,34 +71,45 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0001` = 18.98 GHz | 100% | platform=integrated phononic device | component=single ring cavity, parameter=FSR |
 | `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0003` = 15.41 GHz | 100% | platform=integrated phononic device | component=photonic molecule, mode_spacing=Ω2 |
 | `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0036` = 121 GHz | 100% | platform=integrated phononic device | sample_size=22 measured devices |
+| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0049` = 267 GHz | 100% | platform=integrated phononic device | signal_type=measured phase noise |
+| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | platform=integrated phononic device | component=stabilized CW laser, frequency_offset=10 kHz |
+| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0051` = 230 GHz | 100% | platform=integrated phononic device | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
+| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0052` = 320 GHz | 100% | platform=integrated phononic device | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
+| `CLM-PHOT-0024` = 0.03 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | angle_of_incidence=0° to 30°, rotation_angle=90° | component=stabilized CW laser, frequency_offset=10 kHz |
+| `CLM-ARCH-0042` = 25.9 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | platform=optical PPLN module | component=stabilized CW laser, frequency_offset=10 kHz |
 | `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | magnetic_field=8.1 T, frequency=1.9 THz | angle_of_incidence=0° to 30°, rotation_angle=90° |
+| `CLM-PHOT-0024` = 0.03 GHz | `CLM-PHOT-0049` = 267 GHz | 100% | angle_of_incidence=0° to 30°, rotation_angle=90° | signal_type=measured phase noise |
+| `CLM-PHOT-0024` = 0.03 GHz | `CLM-PHOT-0051` = 230 GHz | 100% | angle_of_incidence=0° to 30°, rotation_angle=90° | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
+| `CLM-PHOT-0024` = 0.03 GHz | `CLM-PHOT-0052` = 320 GHz | 100% | angle_of_incidence=0° to 30°, rotation_angle=90° | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
 | `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0002` = 3.57 GHz | 100% | platform=integrated phononic device | component=photonic molecule, mode_spacing=Ω1 |
 | `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | magnetic_field=7.5 T, frequency=2.2 THz | angle_of_incidence=0° to 30°, rotation_angle=90° |
 | `CLM-PHOT-0024` = 0.03 GHz | `CLM-PHOT-0036` = 121 GHz | 100% | angle_of_incidence=0° to 30°, rotation_angle=90° | sample_size=22 measured devices |
+| `CLM-PHOT-0036` = 121 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | sample_size=22 measured devices | component=stabilized CW laser, frequency_offset=10 kHz |
+| `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | magnetic_field=7.5 T, frequency=2.2 THz | component=stabilized CW laser, frequency_offset=10 kHz |
 | `CLM-ARCH-0042` = 25.9 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | platform=optical PPLN module | angle_of_incidence=0° to 30°, rotation_angle=90° |
+| `CLM-PHOT-0049` = 267 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | signal_type=measured phase noise | component=stabilized CW laser, frequency_offset=10 kHz |
 | `CLM-PHOT-0001` = 18.98 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | component=single ring cavity, parameter=FSR | angle_of_incidence=0° to 30°, rotation_angle=90° |
+| `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | magnetic_field=8.1 T, frequency=1.9 THz | component=stabilized CW laser, frequency_offset=10 kHz |
 | `CLM-PHOT-0003` = 15.41 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | component=photonic molecule, mode_spacing=Ω2 | angle_of_incidence=0° to 30°, rotation_angle=90° |
 | `CLM-PHOT-0002` = 3.57 GHz | `CLM-PHOT-0024` = 0.03 GHz | 99% | component=photonic molecule, mode_spacing=Ω1 | angle_of_incidence=0° to 30°, rotation_angle=90° |
 | `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0002` = 3.57 GHz | 99% | magnetic_field=8.1 T, frequency=1.9 THz | component=photonic molecule, mode_spacing=Ω1 |
+| `CLM-PHOT-0002` = 3.57 GHz | `CLM-PHOT-0052` = 320 GHz | 99% | component=photonic molecule, mode_spacing=Ω1 | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
+| `CLM-PHOT-0002` = 3.57 GHz | `CLM-PHOT-0049` = 267 GHz | 99% | component=photonic molecule, mode_spacing=Ω1 | signal_type=measured phase noise |
+| `CLM-PHOT-0002` = 3.57 GHz | `CLM-PHOT-0051` = 230 GHz | 98% | component=photonic molecule, mode_spacing=Ω1 | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
 | `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0002` = 3.57 GHz | 98% | magnetic_field=7.5 T, frequency=2.2 THz | component=photonic molecule, mode_spacing=Ω1 |
 | `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0024` = 0.03 GHz | 98% | platform=integrated phononic device | angle_of_incidence=0° to 30°, rotation_angle=90° |
 | `CLM-PHOT-0002` = 3.57 GHz | `CLM-PHOT-0036` = 121 GHz | 97% | component=photonic molecule, mode_spacing=Ω1 | sample_size=22 measured devices |
 | `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0003` = 15.41 GHz | 96% | magnetic_field=8.1 T, frequency=1.9 THz | component=photonic molecule, mode_spacing=Ω2 |
+| `CLM-PHOT-0003` = 15.41 GHz | `CLM-PHOT-0052` = 320 GHz | 95% | component=photonic molecule, mode_spacing=Ω2 | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
 | `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0001` = 18.98 GHz | 95% | magnetic_field=8.1 T, frequency=1.9 THz | component=single ring cavity, parameter=FSR |
+| `CLM-PHOT-0003` = 15.41 GHz | `CLM-PHOT-0049` = 267 GHz | 94% | component=photonic molecule, mode_spacing=Ω2 | signal_type=measured phase noise |
+| `CLM-PHOT-0001` = 18.98 GHz | `CLM-PHOT-0052` = 320 GHz | 94% | component=single ring cavity, parameter=FSR | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
+| `CLM-PHOT-0003` = 15.41 GHz | `CLM-PHOT-0051` = 230 GHz | 93% | component=photonic molecule, mode_spacing=Ω2 | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
 | `CLM-ARCH-0042` = 25.9 GHz | `CLM-DEV-0012` = 370 GHz | 93% | platform=optical PPLN module | magnetic_field=8.1 T, frequency=1.9 THz |
-| `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0003` = 15.41 GHz | 91% | magnetic_field=7.5 T, frequency=2.2 THz | component=photonic molecule, mode_spacing=Ω2 |
-| `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0001` = 18.98 GHz | 89% | magnetic_field=7.5 T, frequency=2.2 THz | component=single ring cavity, parameter=FSR |
-| `CLM-PHOT-0003` = 15.41 GHz | `CLM-PHOT-0036` = 121 GHz | 87% | component=photonic molecule, mode_spacing=Ω2 | sample_size=22 measured devices |
-| `CLM-ARCH-0042` = 25.9 GHz | `CLM-PHOT-0002` = 3.57 GHz | 86% | platform=optical PPLN module | component=photonic molecule, mode_spacing=Ω1 |
-| `CLM-ARCH-0042` = 25.9 GHz | `CLM-DEV-0013` = 180 GHz | 86% | platform=optical PPLN module | magnetic_field=7.5 T, frequency=2.2 THz |
-| `CLM-PHOT-0001` = 18.98 GHz | `CLM-PHOT-0036` = 121 GHz | 84% | component=single ring cavity, parameter=FSR | sample_size=22 measured devices |
-| `CLM-ARCH-0042` = 25.9 GHz | `CLM-PHOT-0036` = 121 GHz | 79% | platform=optical PPLN module | sample_size=22 measured devices |
-| `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0036` = 121 GHz | 67% | magnetic_field=8.1 T, frequency=1.9 THz | sample_size=22 measured devices |
-| `CLM-ARCH-0042` = 25.9 GHz | `CLM-PHOT-0003` = 15.41 GHz | 40% | platform=optical PPLN module | component=photonic molecule, mode_spacing=Ω2 |
-| `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0036` = 121 GHz | 33% | magnetic_field=7.5 T, frequency=2.2 THz | sample_size=22 measured devices |
-| `CLM-ARCH-0042` = 25.9 GHz | `CLM-PHOT-0001` = 18.98 GHz | 27% | platform=optical PPLN module | component=single ring cavity, parameter=FSR |
 
-## `length_device` (266 pair(s))
+_and 25 more_
+
+## `length_device` (343 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -121,6 +138,8 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-MAT-0052` = 23 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | characterization_method=AFM | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0059` = 1000 nm | `CLM-PROC-0003` = 0.068 nm | 100% | region=pristine zone, temperature=1.5 K | defocus=30 nm |
 | `CLM-MAT-0059` = 1000 nm | `CLM-PROC-0004` = 0.077 nm | 100% | region=pristine zone, temperature=1.5 K | material=HEA-NP, defocus=0 nm |
+| `CLM-MAT-0063` = 10.7 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | device=D1 | substrate_material=glass cover slip, sample_type=flat surface |
+| `CLM-MAT-0068` = 14.5 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | method=estimated from the carrier density at the SDP | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-PHOT-0026` = 0.85 um | `CLM-PROC-0003` = 6.8e-05 um | 100% | component=MO-PhC slab | defocus=30 nm |
 | `CLM-PHOT-0026` = 0.85 um | `CLM-PROC-0004` = 7.7e-05 um | 100% | component=MO-PhC slab | material=HEA-NP, defocus=0 nm |
 | `CLM-PHOT-0043` = 0.765 um | `CLM-PROC-0003` = 6.8e-05 um | 100% | structure=hole array (HA) in a square lattice | defocus=30 nm |
@@ -130,14 +149,12 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-PHOT-0045` = 0.603 um | `CLM-PROC-0003` = 6.8e-05 um | 100% | period_direction=azimuthal period (arc length), structure_type=true-chiral metasurface | defocus=30 nm |
 | `CLM-PHOT-0045` = 0.603 um | `CLM-PROC-0004` = 7.7e-05 um | 100% | period_direction=azimuthal period (arc length), structure_type=true-chiral metasurface | material=HEA-NP, defocus=0 nm |
 | `CLM-MAT-0059` = 1000 nm | `CLM-PHOT-0007` = 0.23 nm | 100% | region=pristine zone, temperature=1.5 K | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) |
+| `CLM-MEM-0007` = 37.5 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | diameter=220 ˚A | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-PHOT-0004` = 7 um | `CLM-PHOT-0009` = 0.0017 um | 100% | parameter=signal-ground electrode spacing | roughness_type=arithmetic average roughness (Sa), sample=after MoSx film deposition |
 | `CLM-MAT-0017` = 0.284 nm | `CLM-MAT-0059` = 1000 nm | 100% | material=Sb monolayer on SiC(0001) | region=pristine zone, temperature=1.5 K |
 | `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0026` = 850 nm | 100% | material=Sb monolayer on SiC(0001) | component=MO-PhC slab |
-| `CLM-MAT-0018` = 0.327 nm | `CLM-MAT-0059` = 1000 nm | 100% | material=Sb monolayer on SiC(0001) | region=pristine zone, temperature=1.5 K |
-| `CLM-MAT-0039` = 42.9 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | measurement=neutron reflectivity, material=TiN | substrate_material=glass cover slip, sample_type=flat surface |
-| `CLM-MAT-0059` = 1000 nm | `CLM-PHOT-0008` = 0.33 nm | 100% | region=pristine zone, temperature=1.5 K | sample=bare silicon substrate, roughness_type=root mean square roughness (Sq) |
 
-_and 226 more_
+_and 303 more_
 
 ## `power` (22 pair(s))
 
@@ -284,10 +301,11 @@ _and 183 more_
 
 _and 83 more_
 
-## `voltage` (2 pair(s))
+## `voltage` (3 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-DEV-0006` = 85 V | `CLM-MAT-0064` = 1.5e-07 V | 100% | incident_peak_electric_field=150 kV/cm | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 |
 | `CLM-DEV-0006` = 85 V | `CLM-DEV-0027` = 1.53 V | 98% | incident_peak_electric_field=150 kV/cm | device_type=VO2 thin film device, temperature=330 K, transition_type=reset |
 | `CLM-DEV-0006` = 85 V | `CLM-DEV-0026` = 12.65 V | 85% | incident_peak_electric_field=150 kV/cm | device_type=VO2 thin film device, temperature=330 K, transition_type=set |
 

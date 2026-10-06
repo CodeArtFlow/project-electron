@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-05.
+Topic code `PHOT`. Last reviewed 2026-10-06.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -28,6 +28,25 @@ Topic code `PHOT`. Last reviewed 2026-10-05.
   - `CLM-PHOT-0036` · sample_size 22 measured devices · grade B · credibility unknown · measured · as of 2026-09-29
   - sources: SRC-00051
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **267 GHz** — At 267 GHz, the generated THz signal achieves a measured single-sideband phase noise of -95.7 dBc/Hz at a 10-kHz offset frequency.
+  - `CLM-PHOT-0049` · signal_type measured phase noise · grade B · credibility unknown · measured · as of 2026-10-05
+  - sources: SRC-00083
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈194000 GHz** — The stabilized optical reference CW laser demonstrates an SSB phase noise of -83.6 dBc/Hz at a 10 kHz offset frequency at an optical carrier frequency of approximately 194 THz.
+  - `CLM-PHOT-0050` · component stabilized CW laser, frequency_offset 10 kHz · grade B · credibility unknown · measured · as of 2026-10-05
+  - sources: SRC-00083
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0023, CFL-0024 — see the open register
+- **230 GHz** — The THz signal generated at 230 GHz achieves a measured phase noise of -96.8 dBc/Hz at a 10-kHz offset frequency.
+  - `CLM-PHOT-0051` · frequency_offset 10 kHz, signal_type measured phase-noise levels · grade B · credibility unknown · measured · as of 2026-10-05
+  - sources: SRC-00083
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0023, CFL-0025 — see the open register
+- **320 GHz** — The THz signal generated at 320 GHz achieves a measured phase noise of -96.8 dBc/Hz at a 10-kHz offset frequency.
+  - `CLM-PHOT-0052` · frequency_offset 10 kHz, signal_type measured phase-noise levels · grade B · credibility unknown · measured · as of 2026-10-05
+  - sources: SRC-00083
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0024, CFL-0025 — see the open register
 
 ### length device
 
@@ -230,9 +249,18 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0022` — length_device: _unexamined; classification pending_
   - claims: CLM-PHOT-0041, CLM-PHOT-0042
   - missing data: `not yet named`
+- `CFL-0023` — frequency: _unexamined; classification pending_
+  - claims: CLM-PHOT-0050, CLM-PHOT-0051
+  - missing data: `not yet named`
+- `CFL-0024` — frequency: _unexamined; classification pending_
+  - claims: CLM-PHOT-0050, CLM-PHOT-0052
+  - missing data: `not yet named`
+- `CFL-0025` — frequency: _unexamined; classification pending_
+  - claims: CLM-PHOT-0051, CLM-PHOT-0052
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 48
-- grades: {'B': 41, 'A': 7}
-- distinct sources: 16
+- claims: 52
+- grades: {'B': 45, 'A': 7}
+- distinct sources: 17

@@ -1,10 +1,17 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-05.
+Topic code `MAT`. Last reviewed 2026-10-06.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
 ## Current position
+
+### current
+
+- **2e-06 mA** — Measurements performed down to 10 mK used a 2 nA excitation current.
+  - `CLM-MAT-0069` · temperature 10 mK · grade B · credibility unknown · measured · as of 2026-10-05
+  - sources: SRC-00085
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### energy
 
@@ -110,6 +117,14 @@ Topic code `MAT`. Last reviewed 2026-10-05.
 - **≈23 nm** — AFM analysis shows a Bi2Te3 nanosheet thickness of approximately 23 nm.
   - `CLM-MAT-0052` · characterization_method AFM · grade B · credibility unknown · measured · as of 2026-10-01
   - sources: SRC-00068
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈10.7 nm** — The thickness of the BiSbTeSe2 flake measured by atomic force microscopy in device D1 is approximately 10.7 nm.
+  - `CLM-MAT-0063` · device D1 · grade B · credibility unknown · measured · as of 2026-10-05
+  - sources: SRC-00081
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈14.5 nm** — The monolayer graphene-hexagonal boron nitride superlattice sample has an estimated moiré period of 14.5 nm.
+  - `CLM-MAT-0068` · method estimated from the carrier density at the SDP · grade B · credibility unknown · measured · as of 2026-10-05
+  - sources: SRC-00085
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power density
@@ -237,6 +252,42 @@ Topic code `MAT`. Last reviewed 2026-10-05.
   - `CLM-MAT-0062` · prompt_style informative prompts · grade B · credibility unknown · simulated · as of 2026-10-02
   - sources: SRC-00076
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- At a fixed Fermi level of 0.031 eV, a conductance enhancement of up to 500% occurs.
+  - `CLM-MAT-0065` · grade B · credibility unknown · simulated · as of 2026-10-05
+  - sources: SRC-00082
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- At a magnetic field of 0.55 T, extremely large positive magnetoresistance reaches 10000% for van Hove singularity A.
+  - `CLM-MAT-0066` · magnetic_field 0.55 T, feature vHS A · grade B · credibility unknown · measured · as of 2026-10-05
+  - sources: SRC-00085
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- At a magnetic field of 0.55 T, extremely large positive magnetoresistance reaches 10000% for van Hove singularity B.
+  - `CLM-MAT-0067` · magnetic_field 0.55 T · grade B · credibility unknown · measured · as of 2026-10-05
+  - sources: SRC-00085
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Si-N bond breaking on capture accounts for 69% of the traps formed in the deepest spectral-trap decile.
+  - `CLM-MAT-0070` · grade B · credibility unknown · simulated · as of 2026-10-05
+  - sources: SRC-00087
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The Si-N bond-breaking route accounts for 44.2% of the classified traps in the ensemble.
+  - `CLM-MAT-0071` · grade B · credibility unknown · simulated · as of 2026-10-05
+  - sources: SRC-00087
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Charge-induced Si-N bond breaking converts 182 of 347 Si4 precursors into Si3 trapped centres.
+  - `CLM-MAT-0072` · grade B · credibility unknown · simulated · as of 2026-10-05
+  - sources: SRC-00087
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Charge-induced Si-N bond breaking converts 52.4% of 347 Si4 precursors into Si3 trapped centres.
+  - `CLM-MAT-0073` · grade B · credibility unknown · simulated · as of 2026-10-05
+  - sources: SRC-00087
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Induced K centres account for 30 of the 42 traps in the upper corrected-stabilisation decile.
+  - `CLM-MAT-0074` · population upper corrected-stabilisation decile · grade B · credibility unknown · simulated · as of 2026-10-05
+  - sources: SRC-00087
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- In the upper corrected-stabilisation decile of 42 traps, polarons contribute 3 traps.
+  - `CLM-MAT-0075` · population upper corrected-stabilisation decile · grade B · credibility unknown · simulated · as of 2026-10-05
+  - sources: SRC-00087
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -290,6 +341,13 @@ Topic code `MAT`. Last reviewed 2026-10-05.
   - sources: SRC-00057
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
+### voltage
+
+- **1.5e-07 V** — In device D1 at gate voltages (Vtg, Vbg) = (6 V, 8.5 V), the third-order nonlinear Hall voltage is reduced to 0.15 μV at 250 K.
+  - `CLM-MAT-0064` · temperature 250 K, vtg 6 V, vbg 8.5 V, device D1 · grade B · credibility unknown · measured · as of 2026-10-05
+  - sources: SRC-00081
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+
 ## Live contradictions in this layer
 
 Shown here, not in an appendix: a reader of this page must see the disagreement without navigating elsewhere.
@@ -318,6 +376,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 62
-- grades: {'B': 62}
-- distinct sources: 22
+- claims: 75
+- grades: {'B': 75}
+- distinct sources: 26

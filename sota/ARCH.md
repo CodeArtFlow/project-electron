@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-05.
+Topic code `ARCH`. Last reviewed 2026-10-06.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -162,6 +162,22 @@ Topic code `ARCH`. Last reviewed 2026-10-05.
   - `CLM-ARCH-0052` · grade B · credibility unknown · measured · as of 2026-10-02
   - sources: SRC-00079
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The DQN-based optimizer achieves an average normalized PDN area of 0.1686 across the evaluated power delivery networks.
+  - `CLM-ARCH-0055` · dataset_scope 4-, 8-, and 16-core PDNs · grade B · credibility unknown · simulated · as of 2026-10-05
+  - sources: SRC-00086
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The baseline workload-aware power delivery networks have an average normalized area of 0.3170.
+  - `CLM-ARCH-0056` · method Baseline, dataset_scope 4-, 8-, and 16-core PDNs · grade B · credibility unknown · simulated · as of 2026-10-05
+  - sources: SRC-00086
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The proposed DQN-based optimizer reduces the average normalized PDN area by 47%.
+  - `CLM-ARCH-0057` · method DQN · grade B · credibility unknown · simulated · as of 2026-10-05
+  - sources: SRC-00086
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The DQN-based optimizer achieves an optimization speedup of approximately 26× compared to simulated annealing.
+  - `CLM-ARCH-0058` · grade B · credibility unknown · simulated · as of 2026-10-05
+  - sources: SRC-00086
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -246,6 +262,6 @@ _None._
 
 ## Evidence base
 
-- claims: 54
-- grades: {'B': 54}
-- distinct sources: 19
+- claims: 58
+- grades: {'B': 58}
+- distinct sources: 20

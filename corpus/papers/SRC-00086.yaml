@@ -1,0 +1,99 @@
+id: SRC-00086
+title: Reinforcement Learning-Based Optimization of Workload-Aware Power Delivery Networks
+doi: null
+arxiv_id: 2610.06148v1
+url: https://arxiv.org/abs/2610.06148v1
+venue_id: arxiv_api
+authors:
+- name: Oran Hayes
+  affiliation: null
+  corresponding: null
+- name: Maria Pantazi-Kypraiou
+  affiliation: null
+  corresponding: null
+- name: Athanasios Tziouvaras
+  affiliation: null
+  corresponding: null
+- name: George Stamoulis
+  affiliation: null
+  corresponding: null
+- name: Anuj Pathania
+  affiliation: null
+  corresponding: null
+- name: Shreejith Shanker
+  affiliation: null
+  corresponding: null
+- name: George Floros
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-05'
+retrieved_date: '2026-10-06'
+access: full_text
+read_scope: Automated reading. The full PDF text (21,540 characters, 4 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.06148v1 on
+  2026-10-06. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Experimental results on 4-, 8-, and 16-core PDNs demonstrate that the proposed approach reduces
+  the average PDN area from 0.3170 to 0.1686, corresponding to a 47% reduction, while maintaining zero
+  EM and voltage violations.”
+
+  “Performance was compared against the original workload-aware PDNs (Baseline) and a Simulated Annealing
+  (SA) optimizer using the same objective and constraint definitions.”
+
+  “Furthermore, the proposed Deep Q-Network (DQN)-based optimizer reduces the average normalized PDN area
+  by 47% while satisfying all EM and IR-drop constraints.”
+
+  “Compared to simulated annealing, the proposed approach achieves comparable optimization quality while
+  providing approximately 26×faster optimization.”'
+method_summary: “Electrical and reliability metrics are obtained using SPICE-based circuit analysis and
+  EM lifetime estimation.”
+limitations: “While SA achieves a slightly lower average normalized area (0.1438 versus 0.1686), the difference
+  in optimization quality is relatively small compared to the substantial difference in runtime.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 7319
+    output: 2878
+  claims_accepted: 4
+  claims_rejected: 4
+  rejected:
+  - statement: The DQN-based optimizer achieves an average optimization runtime of 171.99 seconds across
+      the evaluated 4-, 8-, and 16-core power delivery networks.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - DQN completes optimization in an average of 171.99s, whereas SA requires 4561.67s, corresponding
+      to an approximately 26× speedup.
+    - Table I compares the proposed DQN approach against SA on the test set.
+  - statement: The simulated annealing method achieves an average optimization runtime of 4561.67 seconds
+      across the evaluated 4-, 8-, and 16-core power delivery networks.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - DQN completes optimization in an average of 171.99s, whereas SA requires 4561.67s, corresponding
+      to an approximately 26× speedup.
+    - Table I compares the proposed DQN approach against SA on the test set.
+  - statement: For the 4-core power delivery network, the DQN-based optimizer achieves an optimization
+      runtime of 72.73 seconds.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - PDN Method Area EM/IR Viol. Runtime (s) 4-core Baseline 0.3330 0 / 0 – DQN 0.1724 0 / 0 72.73
+    - 4-core
+    - DQN 0.1724 0 / 0 72.73
+  - statement: For the 16-core power delivery network, simulated annealing requires an optimization runtime
+      of 7827 seconds.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - 16-core Baseline 0.3050 0 / 0 – DQN 0.1608 0 / 0 294.61 SA 0.1425 0 / 0 7827
+    - 16-core
+    - SA 0.1425 0 / 0 7827
+corrections: []

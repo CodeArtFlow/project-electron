@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.06138v1
 doi: null
-title: Co-Optimizing Graph Sparsification and Approximate Computing for Energy-Efficient
-  FPGA-Based GCN Inference
+title: Co-Optimizing Graph Sparsification and Approximate Computing for Energy-Efficient FPGA-Based GCN
+  Inference
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-05'
@@ -24,6 +24,85 @@ id: CAND-20261006-0078
 harvested_date: '2026-10-06'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-06'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The proposed CSR-based sparse 8-bit implementation operates at a clock frequency of 100
+      MHz on the AMD Kria KV260 FPGA platform.
+    reason: the statement contains the number 8, which none of its quotes contain
+    quotes:
+    - The proposed accelerator was evaluated on the AMD Kria KV260 FPGA platform using Vitis HLS at 100
+      MHz.
+    - AMD Kria KV260 FPGA platform
+    - using Vitis HLS at 100 MHz.
+  - statement: The proposed CSR-based sparse 8-bit implementation has a total power consumption of 0.668
+      W on the AMD Kria KV260 FPGA platform.
+    reason: the statement contains the number 60, which none of its quotes contain
+    quotes:
+    - On the KV260, the proposed CSR-based sparse 8-bit implementation occupies 16.2% of LUTs, 8.9% of
+      FFs, 28.1% of BRAMs, and 23.2% of DSPs, with a total power consumption of 0.668W.
+    - On the KV260
+    - the proposed CSR-based sparse 8-bit implementation
+  - statement: The total power consumption is below 1 W.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The combined approach achieves up to 9.88× speedup while maintaining 86.6% classification accuracy
+      on Amazon Photo, and 1.52×speedup with 77.0% accuracy on Cora, with total power consumption below
+      1 W.
+    - with total power consumption below 1 W.
+  - statement: The 8-bit Exact configuration achieves a latency of 103.2 ms on the Cora dataset.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - 8-bit Exact Cora 103.2 1.00×76.3
+    - Latency, speedup, and classification accuracy are summarized in Table I.
+    - 8-bit Exact
+    - Cora
+  - statement: The DSpar (epsilon = 0.35) configuration achieves a latency of 73.9 ms on the Cora dataset.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - DSpar (ϵ= 0.35) Cora 73.9 1.40×78.7
+    - Latency, speedup, and classification accuracy are summarized in Table I.
+    - DSpar (ϵ= 0.35)
+    - Cora
+  - statement: The DSpar + Approx (1L2J) configuration achieves a latency of 67.8 ms on the Cora dataset.
+    reason: the quote says the number is approximate but approximate is false
+    quotes:
+    - DSpar + Approx (1L2J) Cora 67.8 1.52×78.3
+    - Latency, speedup, and classification accuracy are summarized in Table I.
+    - DSpar + Approx (1L2J)
+    - Cora
+  - statement: The 8-bit Exact configuration achieves a latency of 339.2 ms on the LastFM Asia dataset.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - 8-bit Exact LastFM 339.2 1.00×66.4
+    - Latency, speedup, and classification accuracy are summarized in Table I.
+    - 8-bit Exact
+    - LastFM
+  - statement: The DSpar + Approx (1L2J) configuration achieves a latency of 224.4 ms on the Amazon Photo
+      dataset.
+    reason: the quote says the number is approximate but approximate is false
+    quotes:
+    - DSpar + Approx (1L2J) Photo 224.4 9.88×86.6
+    - Latency, speedup, and classification accuracy are summarized in Table I.
+    - DSpar + Approx (1L2J)
+    - Photo
+  tokens:
+    input: 7341
+    output: 2405
+  fetched_chars: 20528
