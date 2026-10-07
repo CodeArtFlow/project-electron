@@ -2004,3 +2004,106 @@ claims:
     verified_quotes: 3
   conditions:
     population: upper corrected-stabilisation decile
+- id: CLM-MAT-0076
+  topic: MAT
+  statement: The thickness of the ammonothermal GaN wafer was approximately 340 µm.
+  sources:
+  - SRC-00093
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: GaN
+    growth_method: ammonothermal
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 340.0
+      unit: µm
+    si_base:
+      value: 0.00033999999999999997
+      unit: m
+    display:
+      value: 339999.99999999994
+      unit: nm
+    conditions:
+      material: GaN
+      growth_method: ammonothermal
+- id: CLM-MAT-0077
+  topic: MAT
+  statement: The ft-nano MLIP model predicts a binding energy of 4.33 eV for the VAl(ON)3 defect complex.
+  sources:
+  - SRC-00095
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    defect_complex: VAl(ON)3
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 4.33
+      unit: eV
+    si_base:
+      value: 6.93742482522e-19
+      unit: J
+    display:
+      value: 0.0006937424825219999
+      unit: fJ
+    conditions:
+      defect_complex: VAl(ON)3
+- id: CLM-MAT-0078
+  topic: MAT
+  statement: DFT calculations yield a binding energy of 4.81 eV for the VAl(ON)3 defect complex.
+  sources:
+  - SRC-00095
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    defect_complex: VAl(ON)3
+    model: DFT
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 4.81
+      unit: eV
+    si_base:
+      value: 7.706469609539999e-19
+      unit: J
+    display:
+      value: 0.0007706469609539998
+      unit: fJ
+    conditions:
+      defect_complex: VAl(ON)3
+      model: DFT

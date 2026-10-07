@@ -1,0 +1,94 @@
+id: SRC-00088
+title: Towards Accurate MHz Core Loss Measurements
+doi: null
+arxiv_id: 2610.07596v1
+url: https://arxiv.org/abs/2610.07596v1
+venue_id: arxiv_api
+authors:
+- name: Nick J. Kirkby
+  affiliation: null
+  corresponding: null
+- name: Mike K. Ranjram
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-06'
+retrieved_date: '2026-10-07'
+access: full_text
+read_scope: Automated reading. The full PDF text (57,234 characters, 12 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.07596v1 on
+  2026-10-07. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Using data from [17] instead of [18] results in a design having 35% larger core area (and
+  volume) to achieve the same loss density target of 300 mW cm3 .”
+
+  “measurements of DMR51W cores made at 2 MHz”
+
+  “in design of an E core for a 300mW/cm 3 design target”'
+method_summary: '“Uncertainty is propagated using the software package SUNCAL [44].”
+
+  “Measurements of L s and R s of a test item (HP 16484A 5.2µH standard inductor). Reference measurements
+  are made with the HP 4294A rf impedance analyzer.”'
+limitations: “However, methods for de-embedding magnetic loss P dm from P V , or guaranteeing that the
+  measured P V is free of ac effects, have not yet been demonstrated.”
+evidence_type: projected
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 20183
+    output: 2462
+  claims_accepted: 1
+  claims_rejected: 6
+  rejected:
+  - statement: At 2 MHz, the calibrated Power Q-Meter measures a volumetric core loss of 999 mW/cm3 for
+      the ML91S sample.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''PV 999 22
+      mW/cm 3 4.40%'''
+    quotes:
+    - PV 999 22 mW/cm 3 4.40%
+    - TABLE III MEASURAND VALUES AND COMBINED UNCERTAINTY FOR ML91S SAMPLE AT TABLE II OPERATING POINT
+    - f 2.00×10 6 0.0 Hz
+    - Vcap 37.69 0.53 V
+  - statement: The peak effective flux density of the ML91S sample measured at 2 MHz is 55.74 mT.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''ˆBe 55.74
+      0.87 mT 3.12%'''
+    quotes:
+    - ˆBe 55.74 0.87 mT 3.12%
+    - TABLE III MEASURAND VALUES AND COMBINED UNCERTAINTY FOR ML91S SAMPLE AT TABLE II OPERATING POINT
+    - f 2.00×10 6 0.0 Hz
+    - Vcap 37.69 0.53 V
+  - statement: The measured series resistance of the ML91S sample is 51.8 Ω at 2 MHz.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Rs 51.8 1.1
+      Ω 4.25%'''
+    quotes:
+    - Rs 51.8 1.1 Ω 4.25%
+    - TABLE III MEASURAND VALUES AND COMBINED UNCERTAINTY FOR ML91S SAMPLE AT TABLE II OPERATING POINT
+    - f 2.00×10 6 0.0 Hz
+  - statement: The component-stage parasitic meter capacitance fitted by the calibration scheme is 10.84
+      pF.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Cp 10.84
+      0.89 pF 8.2%'''
+    quotes:
+    - Cp 10.84 0.89 pF 8.2%
+    - After applying the calibration procedure, statistical agreement |ζ| < 1 was reached at all eight
+      operating points as shown in Table V.
+  - statement: At 2 MHz with a volumetric core loss of 818 mW/cm3, capacitor voltage measurement uncertainty
+      contributes 25.06% of the uncertainty in PV for ML91S.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - ˆVcap 37.69 0.53 V 2.79% – 29.87% 80.46% 25.06% –
+    - Uncertainty is propagated using the software package SUNCAL [44].
+    - TABLE VI UNCERTAINTY CONTRIBUTIONS FOR ML91S AT 2 MHZ, P V = 818 mW/cm3.
+  - statement: For Fair-Rite FR67 measured at 5 MHz and a volumetric core loss of 1026 mW/cm3, testbed
+      calibration parameter K1 contributes 55.77% of the uncertainty in PV.
+    reason: the statement contains the number 7, which none of its quotes contain
+    quotes:
+    - K1 -3.912 0.21 − 10.69% – 50.22% – 55.77% –
+    - Uncertainty is propagated using the software package SUNCAL [44].
+    - TABLE VII UNCERTAINTY CONTRIBUTIONS FOR FR67 AT 5 MHZ, P V = 1026 mW/cm3.
+corrections: []

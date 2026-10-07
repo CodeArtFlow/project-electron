@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-06.
+Topic code `ARCH`. Last reviewed 2026-10-07.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -178,6 +178,38 @@ Topic code `ARCH`. Last reviewed 2026-10-06.
   - `CLM-ARCH-0058` · grade B · credibility unknown · simulated · as of 2026-10-05
   - sources: SRC-00086
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- For a 1024-entry 8-way set-associative L2 TLB with a 4KB page size, CHIRP reduces MPKI by an average of 28.21% over the LRU policy.
+  - `CLM-ARCH-0060` · l2_tlb_size 1024-entry, associativity 8-way, page_size 4KB, baseline_policy LRU · grade B · credibility unknown · simulated · as of 2026-10-06
+  - sources: SRC-00091
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- SRRIP reduces MPKI by an average of 10.36% over the LRU policy for a 1024-entry 8-way set-associative L2 TLB with a 4KB page size.
+  - `CLM-ARCH-0061` · l2_tlb_size 1024-entry, associativity 8-way, page_size 4KB, baseline_policy LRU · grade B · credibility unknown · simulated · as of 2026-10-06
+  - sources: SRC-00091
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- GHRP reduces MPKI by an average of 9.03% over the LRU policy for a 1024-entry 8-way set-associative L2 TLB with a 4KB page size.
+  - `CLM-ARCH-0062` · l2_tlb_size 1024-entry, associativity 8-way, page_size 4KB, baseline_policy LRU · grade B · credibility unknown · simulated · as of 2026-10-06
+  - sources: SRC-00091
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- SHiP reduces MPKI by an average of 0.88% over the LRU policy for a 1024-entry 8-way set-associative L2 TLB with a 4KB page size.
+  - `CLM-ARCH-0063` · l2_tlb_size 1024-entry, associativity 8-way, page_size 4KB, baseline_policy LRU · grade B · credibility unknown · simulated · as of 2026-10-06
+  - sources: SRC-00091
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- For a page walk latency of 150 cycles, CHIRP yields a geometric mean speedup of 4.8%.
+  - `CLM-ARCH-0064` · page_walk_latency 150 cycles · grade B · credibility unknown · simulated · as of 2026-10-06
+  - sources: SRC-00091
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Selective Hit Update improves prediction accuracy by reducing average MPKI by 5.85%.
+  - `CLM-ARCH-0065` · feature_optimization Selective Hit Update · grade B · credibility unknown · simulated · as of 2026-10-06
+  - sources: SRC-00091
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- CHIRP accesses its prediction table for an average of 10.14% of accesses to the L2 TLB.
+  - `CLM-ARCH-0066` · policy CHIRP, target_structure L2 TLB · grade B · credibility unknown · simulated · as of 2026-10-06
+  - sources: SRC-00091
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- CHIRP improves average cache efficiency over 870 traces by 8.07% compared to LRU.
+  - `CLM-ARCH-0067` · trace_count 870 traces, baseline_policy LRU · grade B · credibility unknown · simulated · as of 2026-10-06
+  - sources: SRC-00091
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -224,6 +256,20 @@ Topic code `ARCH`. Last reviewed 2026-10-06.
   - `CLM-ARCH-0053` · architecture PEEK with four Rockets upon a BOOM, baseline unsafe baseline · grade B · credibility unknown · simulated · as of 2026-10-02
   - sources: SRC-00080
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **0.74 percent** — T1 fbnic unplanned unavailability decreased from 9.11% to 0.74% over six months.
+  - `CLM-ARCH-0059` · tier T1, device fbnic · grade B · credibility unknown · measured · as of 2026-10-06
+  - sources: SRC-00090
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **352 percent** — Accelerated encryption achieved a 3.52x lower cycle count than the reference Cortex-M0 implementation for Set 1.
+  - `CLM-ARCH-0068` · baseline reference Cortex-M0 implementation · grade B · credibility unknown · measured · as of 2026-10-06
+  - sources: SRC-00092
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0026 — see the open register
+- **318 percent** — Accelerated decryption achieved a 3.18x lower cycle count than the reference Cortex-M0 implementation for Set 1.
+  - `CLM-ARCH-0069` · baseline reference Cortex-M0 implementation · grade B · credibility unknown · measured · as of 2026-10-06
+  - sources: SRC-00092
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0026 — see the open register
 
 ### time
 
@@ -258,10 +304,14 @@ Topic code `ARCH`. Last reviewed 2026-10-06.
 
 ## Live contradictions in this layer
 
-_None._
+Shown here, not in an appendix: a reader of this page must see the disagreement without navigating elsewhere.
+
+- `CFL-0026` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-ARCH-0068, CLM-ARCH-0069
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 58
-- grades: {'B': 58}
-- distinct sources: 20
+- claims: 69
+- grades: {'B': 69}
+- distinct sources: 23

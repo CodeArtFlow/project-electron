@@ -1,6 +1,6 @@
 # EDA — state of the art
 
-Topic code `EDA`. Last reviewed 2026-10-06.
+Topic code `EDA`. Last reviewed 2026-10-07.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 

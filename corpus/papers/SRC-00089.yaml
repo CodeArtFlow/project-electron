@@ -1,0 +1,103 @@
+id: SRC-00089
+title: Direct visualization of non-equilibrium heat extraction by a metasurface absorber
+doi: null
+arxiv_id: 2610.07633v1
+url: https://arxiv.org/abs/2610.07633v1
+venue_id: arxiv_api
+authors:
+- name: Shu Watanabe
+  affiliation: null
+  corresponding: null
+- name: Robert E. Simpson
+  affiliation: null
+  corresponding: null
+- name: Takuo Tanaka
+  affiliation: null
+  corresponding: null
+- name: Wakana Kubo
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-06'
+retrieved_date: '2026-10-07'
+access: full_text
+read_scope: Automated reading. The full PDF text (23,513 characters, 9 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.07633v1 on
+  2026-10-07. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“At 10 s, the temperatures were 355 K and 358 K, respectively, corresponding to a temperature
+  difference of 3.0 K.”
+
+  “At 10 s, the temperatures were 355 K and 358 K, respectively”
+
+  “The temporal evolution of the surface temperatures was monitored by infrared thermography (FLIR, FLIR
+  One Pro)”'
+method_summary: '“The temporal evolution of the surface temperatures was monitored by infrared thermography
+  (FLIR, FLIR One Pro), while the electrical output of the thermoelectric devices was measured simultaneously
+  using multimeters (KEITHLEY, DMM -6500).”
+
+  “The heat absorbed by the metasurface was evaluated by finite-element analysis ( COMSOL Multiphysics)”'
+limitations: “This TBR limited the M S electrode cooling rate.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 8917
+    output: 2401
+  claims_accepted: 3
+  claims_rejected: 5
+  rejected:
+  - statement: The output voltage of both the metasurface and control thermoelectric devices reaches steady
+      values of approximately 38 mV within 10-15 s after heating starts.
+    reason: '[qualifier_dropped] the statement is a bound but quantity.bound is ''exact''. Record the
+      qualifier the source used - UnitEngine.record(..., bound=..., approximate=...).'
+    quotes:
+    - When the heating started, the output voltages of both devices increased rapidly and reached nearly
+      steady values of approximately 38 mV within 10-15 s, reflecting the establishment of a temperature
+      difference across the thermoelectric modul
+    - The temporal evolution of the surface temperatures was monitored by infrared thermography (FLIR,
+      FLIR One Pro), while the electrical output of the thermoelectric devices was measured simultaneously
+      using multimeters (KEITHLEY, DMM -6500).
+    - output voltages of both devices
+    - within 10-15 s
+  - statement: The heat extracted from the Cu plate QCu is estimated to be 0.07 ± 0.00 J.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The resulting value of 𝑄Cu was 0.07 ± 0.00 J.
+    - The heat extracted from the Cu plate, 𝑄Cu , was estimated from the measured temperature difference
+      according to 𝑄Cu = 𝑚Cu ∙ 𝑐Cu ∙ ∆𝑇
+    - heat extracted from the Cu plate ( 𝑄Cu)
+  - statement: The calculated heat power density absorbed by the metasurface is 1.4 × 108 W m-3.
+    reason: 'unit conversion refused: power_density: cannot convert 140000000.0 W m-3 to W/m^2 - Cannot
+      convert from ''watt / meter ** 3'' ([mass] / [length] / [time] ** 3) to ''watt / meter ** 2'' ([ma'
+    quotes:
+    - The calculated heat power density was 1.4 × 108 W m-3, yielding 𝑄MS = 0.08 J over 40 s.
+    - The heat absorbed by the metasurface was evaluated by finite-element analysis ( COMSOL Multiphysics)
+    - using the volumetric J oule heating density
+  - statement: The heat QMS absorbed by the metasurface evaluated by finite-element analysis is 0.08 J
+      over 40 s.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The calculated heat power density was 1.4 × 108 W m-3, yielding 𝑄MS = 0.08 J over 40 s.
+    - The heat absorbed by the metasurface was evaluated by finite-element analysis ( COMSOL Multiphysics)
+    - over 40 s
+    - heat absorbed by the metasurface (𝑄MS)
+  - statement: The estimated energy involved in thermoelectric conversion QTE is (0.07 ± 0.00) J.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Consequently, the energy involved in thermoelectric conversion was 𝑄TE = (0.07 ± 0.00) J.
+    - The effective output power was integrated over the first 40 s after the onset of cooling to obtain
+      the total electrical energy
+    - energy involved in thermoelectric conversion was 𝑄TE
+corrections: []

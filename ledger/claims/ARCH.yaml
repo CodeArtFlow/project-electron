@@ -1776,3 +1776,268 @@ claims:
     model: gemini-3.6-flash
     prompt_version: reader-v5
     verified_quotes: 2
+- id: CLM-ARCH-0059
+  topic: ARCH
+  statement: T1 fbnic unplanned unavailability decreased from 9.11% to 0.74% over six months.
+  sources:
+  - SRC-00090
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    tier: T1
+    device: fbnic
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.74
+      unit: '%'
+    si_base:
+      value: 0.0074
+      unit: dimensionless
+    display:
+      value: 0.74
+      unit: percent
+    conditions:
+      tier: T1
+      device: fbnic
+- id: CLM-ARCH-0060
+  topic: ARCH
+  statement: For a 1024-entry 8-way set-associative L2 TLB with a 4KB page size, CHIRP reduces MPKI by
+    an average of 28.21% over the LRU policy.
+  sources:
+  - SRC-00091
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    l2_tlb_size: 1024-entry
+    associativity: 8-way
+    page_size: 4KB
+    baseline_policy: LRU
+- id: CLM-ARCH-0061
+  topic: ARCH
+  statement: SRRIP reduces MPKI by an average of 10.36% over the LRU policy for a 1024-entry 8-way set-associative
+    L2 TLB with a 4KB page size.
+  sources:
+  - SRC-00091
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    l2_tlb_size: 1024-entry
+    associativity: 8-way
+    page_size: 4KB
+    baseline_policy: LRU
+- id: CLM-ARCH-0062
+  topic: ARCH
+  statement: GHRP reduces MPKI by an average of 9.03% over the LRU policy for a 1024-entry 8-way set-associative
+    L2 TLB with a 4KB page size.
+  sources:
+  - SRC-00091
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    l2_tlb_size: 1024-entry
+    associativity: 8-way
+    page_size: 4KB
+    baseline_policy: LRU
+- id: CLM-ARCH-0063
+  topic: ARCH
+  statement: SHiP reduces MPKI by an average of 0.88% over the LRU policy for a 1024-entry 8-way set-associative
+    L2 TLB with a 4KB page size.
+  sources:
+  - SRC-00091
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    l2_tlb_size: 1024-entry
+    associativity: 8-way
+    page_size: 4KB
+    baseline_policy: LRU
+- id: CLM-ARCH-0064
+  topic: ARCH
+  statement: For a page walk latency of 150 cycles, CHIRP yields a geometric mean speedup of 4.8%.
+  sources:
+  - SRC-00091
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    page_walk_latency: 150 cycles
+- id: CLM-ARCH-0065
+  topic: ARCH
+  statement: Selective Hit Update improves prediction accuracy by reducing average MPKI by 5.85%.
+  sources:
+  - SRC-00091
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    feature_optimization: Selective Hit Update
+- id: CLM-ARCH-0066
+  topic: ARCH
+  statement: CHIRP accesses its prediction table for an average of 10.14% of accesses to the L2 TLB.
+  sources:
+  - SRC-00091
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    policy: CHIRP
+    target_structure: L2 TLB
+- id: CLM-ARCH-0067
+  topic: ARCH
+  statement: CHIRP improves average cache efficiency over 870 traces by 8.07% compared to LRU.
+  sources:
+  - SRC-00091
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    trace_count: 870 traces
+    baseline_policy: LRU
+- id: CLM-ARCH-0068
+  topic: ARCH
+  statement: Accelerated encryption achieved a 3.52x lower cycle count than the reference Cortex-M0 implementation
+    for Set 1.
+  sources:
+  - SRC-00092
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    baseline: reference Cortex-M0 implementation
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 3.52
+      unit: x
+    si_base:
+      value: 3.52
+      unit: dimensionless
+    display:
+      value: 352.0
+      unit: percent
+    conditions:
+      baseline: reference Cortex-M0 implementation
+- id: CLM-ARCH-0069
+  topic: ARCH
+  statement: Accelerated decryption achieved a 3.18x lower cycle count than the reference Cortex-M0 implementation
+    for Set 1.
+  sources:
+  - SRC-00092
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    baseline: reference Cortex-M0 implementation
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 3.18
+      unit: x
+    si_base:
+      value: 3.18
+      unit: dimensionless
+    display:
+      value: 318.0
+      unit: percent
+    conditions:
+      baseline: reference Cortex-M0 implementation

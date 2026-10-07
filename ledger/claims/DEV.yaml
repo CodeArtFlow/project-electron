@@ -840,3 +840,195 @@ claims:
     conditions:
       mode: DC-AC conversion
       vin: 24-V DC input
+- id: CLM-DEV-0031
+  topic: DEV
+  statement: Using core loss data from CPES instead of DMEGC results in an E core design having 35% larger
+    core volume to achieve a 300 mW/cm3 loss density target.
+  sources:
+  - SRC-00088
+  grade: B
+  credibility: unknown
+  evidence_type: projected
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    material: DMR51W
+    frequency: 2 MHz
+    core_geometry: E core
+- id: CLM-DEV-0032
+  topic: DEV
+  statement: At 10 s after the onset of cooling, the temperature of the Cu plate on the metasurface device
+    is 355 K.
+  sources:
+  - SRC-00089
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    time_after_cooling_onset: 10 s
+  quantity:
+    quantity: temperature
+    bound: exact
+    approximate: false
+    as_published:
+      value: 355.0
+      unit: K
+    si_base:
+      value: 355.0
+      unit: K
+    display:
+      value: 81.85000000000002
+      unit: degC
+    conditions:
+      time_after_cooling_onset: 10 s
+- id: CLM-DEV-0033
+  topic: DEV
+  statement: At 10 s after the onset of cooling, the temperature of the Cu plate on the control device
+    is 358 K.
+  sources:
+  - SRC-00089
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    time_after_cooling_onset: 10 s
+  quantity:
+    quantity: temperature
+    bound: exact
+    approximate: false
+    as_published:
+      value: 358.0
+      unit: K
+    si_base:
+      value: 358.0
+      unit: K
+    display:
+      value: 84.85000000000002
+      unit: degC
+    conditions:
+      time_after_cooling_onset: 10 s
+- id: CLM-DEV-0034
+  topic: DEV
+  statement: The temperature difference between the Cu plates on the metasurface and control devices at
+    10 s after the onset of cooling is 3.0 K.
+  sources:
+  - SRC-00089
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    time_after_cooling_onset: 10 s
+  quantity:
+    quantity: temperature_delta
+    bound: exact
+    approximate: false
+    as_published:
+      value: 3.0
+      unit: K
+    si_base:
+      value: 3.0
+      unit: K
+    display:
+      value: 3.0
+      unit: K
+    conditions:
+      time_after_cooling_onset: 10 s
+- id: CLM-DEV-0035
+  topic: DEV
+  statement: The SCO metastable HS* state relaxes back to LS at TLIESST ≈ 69 K upon heating in the dark.
+  sources:
+  - SRC-00094
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    relaxation_temperature: TLIESST
+  quantity:
+    quantity: temperature
+    bound: exact
+    approximate: true
+    as_published:
+      value: 69.0
+      unit: K
+    si_base:
+      value: 69.0
+      unit: K
+    display:
+      value: -204.14999999999998
+      unit: degC
+    conditions:
+      relaxation_temperature: TLIESST
+- id: CLM-DEV-0036
+  topic: DEV
+  statement: In the SCO/NbSe2 vdWH device, light irradiation increases the critical current Ic from approximately
+    0.290 mA to approximately 0.558 mA at 2 K.
+  sources:
+  - SRC-00094
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-06'
+  created: '2026-10-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    temperature: 2 K
+    state: after light irradiation
+  quantity:
+    quantity: current
+    bound: exact
+    approximate: true
+    as_published:
+      value: 0.558
+      unit: mA
+    si_base:
+      value: 0.000558
+      unit: A
+    display:
+      value: 0.558
+      unit: mA
+    conditions:
+      temperature: 2 K
+      state: after light irradiation

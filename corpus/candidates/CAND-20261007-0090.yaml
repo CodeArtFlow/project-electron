@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.07600v1
 doi: null
-title: 'Beyond No-Good Benders Cuts: Exact Realizability for Discretely Tunable Clock
-  Trees'
+title: 'Beyond No-Good Benders Cuts: Exact Realizability for Discretely Tunable Clock Trees'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-06'
@@ -23,6 +22,35 @@ id: CAND-20261007-0090
 harvested_date: '2026-10-07'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-07'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Laminar tree contraction achieves a median projection-only speedup of 6.73x across 48 exact
+      projections.
+    reason: the statement contains the number 48, which none of its quotes contain
+    quotes:
+    - Full trees with 20–248 edges contract to 2–4 groups, with median projection-only speedup 6.73× (range
+      1.68–32.89×; Fig. 3).
+    - The contraction ablation covers 48 projections on balanced, caterpillar, and clustered trees with
+      16/32 sinks, selected support two/three, one/four edge subdivisions, and binary/ternary libraries.
+    - median projection-only speedup 6.73× (range 1.68–32.89×; Fig. 3).
+  - statement: Monolithic exact optimization solves non-parity stress workloads in 18 out of 18 instances.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Monolithic
+      solves all 18.'''
+    quotes:
+    - Monolithic solves all 18.
+    - Six methods run three times on 18 instances, each with a 5-s budget after common backend warmup.
+    - 'TABLE IV NON-PARITY STRESS: INSTANCES SOLVED IN ALL THREE 5-S RUNS.'
+    - Monolithic 9 9 18
+  tokens:
+    input: 7384
+    output: 896
+  fetched_chars: 19552

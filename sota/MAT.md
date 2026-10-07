@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-06.
+Topic code `MAT`. Last reviewed 2026-10-07.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -61,6 +61,16 @@ Topic code `MAT`. Last reviewed 2026-10-06.
   - `CLM-MAT-0051` · axis c · grade B · credibility unknown · simulated · as of 2026-10-01
   - sources: SRC-00063
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.000693742 fJ** — The ft-nano MLIP model predicts a binding energy of 4.33 eV for the VAl(ON)3 defect complex.
+  - `CLM-MAT-0077` · defect_complex VAl(ON)3 · grade B · credibility unknown · simulated · as of 2026-10-06
+  - sources: SRC-00095
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0027 — see the open register
+- **0.000770647 fJ** — DFT calculations yield a binding energy of 4.81 eV for the VAl(ON)3 defect complex.
+  - `CLM-MAT-0078` · defect_complex VAl(ON)3, model DFT · grade B · credibility unknown · simulated · as of 2026-10-06
+  - sources: SRC-00095
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0027 — see the open register
 
 ### length device
 
@@ -126,6 +136,10 @@ Topic code `MAT`. Last reviewed 2026-10-06.
   - `CLM-MAT-0068` · method estimated from the carrier density at the SDP · grade B · credibility unknown · measured · as of 2026-10-05
   - sources: SRC-00085
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈340000 nm** — The thickness of the ammonothermal GaN wafer was approximately 340 µm.
+  - `CLM-MAT-0076` · material GaN, growth_method ammonothermal · grade B · credibility unknown · measured · as of 2026-10-06
+  - sources: SRC-00093
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### power density
 
@@ -373,9 +387,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0021` — energy: _unexamined; classification pending_
   - claims: CLM-MAT-0048, CLM-MAT-0049
   - missing data: `not yet named`
+- `CFL-0027` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0077, CLM-MAT-0078
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 75
-- grades: {'B': 75}
-- distinct sources: 26
+- claims: 78
+- grades: {'B': 78}
+- distinct sources: 28

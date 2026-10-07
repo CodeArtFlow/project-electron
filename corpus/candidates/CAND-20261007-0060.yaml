@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.08030v1
 doi: null
-title: Finite-Momentum Antiferromagnetic Magnon Dynamics across the Morin Transition
-  in Hematite
+title: Finite-Momentum Antiferromagnetic Magnon Dynamics across the Morin Transition in Hematite
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-06'
@@ -30,6 +29,70 @@ id: CAND-20261007-0060
 harvested_date: '2026-10-07'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-07'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At 300 K, the limiting magnon group velocity v0 in hematite is 24.6 km/s.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Using Eqs.
+      (1) and (2), we obtained v0 = 24.6 km/s and vg(k) = 2π df(k'''
+    quotes:
+    - Using Eqs. (1) and (2), we obtained v0 = 24.6 km/s and vg(k) = 2π df(k)/dk at 300 K, as shown in
+      Fig. 1(f).
+    - at 300 K
+    - v0 = 24.6 km/s
+  - statement: At 300 K, the magnon group velocity vg at a wave vector km = 6.22 × 10^5 cm^-1 is 19.9
+      km/s.
+    reason: the statement contains the number 300, which none of its quotes contain
+    quotes:
+    - The resulting vg = 19.9 km/s at km = 6.22 × 10 5 cm−1 indicate the potential of hematite for ultra-fast
+      room-temperature magnonic applications.
+    - room-temperature
+    - km = 6.22 × 10 5 cm−1
+  - statement: At 120 K, the first-order uniaxial anisotropy field HK1 is 17.0 mT.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''120 17.0
+      5.2 2.0 19.6 25.2'''
+    quotes:
+    - 120 17.0 5.2 2.0 19.6 25.2
+    - The fields HK1, HK2, and HD were extracted from joint fits to the field-dependent magnon spectra,
+      whereas v0 and vg were determined from the k = 0 and finite-k magnon frequencies.
+    - '120'
+    - HK1
+  - statement: At 120 K, the second-order uniaxial anisotropy field HK2 is 5.2 mT.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''120 17.0
+      5.2 2.0 19.6 25.2'''
+    quotes:
+    - 120 17.0 5.2 2.0 19.6 25.2
+    - The fields HK1, HK2, and HD were extracted from joint fits to the field-dependent magnon spectra,
+      whereas v0 and vg were determined from the k = 0 and finite-k magnon frequencies.
+    - '120'
+    - HK2
+  - statement: At 300 K, the first-order uniaxial anisotropy field HK1 is -16.2 mT.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''300 −16.2
+      – 2.0 19.9 24.6'''
+    quotes:
+    - 300 −16.2 – 2.0 19.9 24.6
+    - The fields HK1, HK2, and HD were extracted from joint fits to the field-dependent magnon spectra,
+      whereas v0 and vg were determined from the k = 0 and finite-k magnon frequencies.
+    - '300'
+    - HK1
+  - statement: At 255 K, the finite-k group velocity vg is 23.3 km/s.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''255 −2.6
+      – 2.2 23.3 24.9'''
+    quotes:
+    - 255 −2.6 – 2.2 23.3 24.9
+    - The fields HK1, HK2, and HD were extracted from joint fits to the field-dependent magnon spectra,
+      whereas v0 and vg were determined from the k = 0 and finite-k magnon frequencies.
+    - '255'
+    - km = 6.22×10 5 cm−1.
+  tokens:
+    input: 17431
+    output: 2013
+  fetched_chars: 44921

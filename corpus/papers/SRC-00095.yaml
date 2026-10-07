@@ -1,0 +1,113 @@
+id: SRC-00095
+title: Defect-limited thermal transport in AlN using pretrained machine-learning interatomic potentials
+doi: null
+arxiv_id: 2610.08013v1
+url: https://arxiv.org/abs/2610.08013v1
+venue_id: arxiv_api
+authors:
+- name: Minseok Moon
+  affiliation: null
+  corresponding: null
+- name: Wonjun Choi
+  affiliation: null
+  corresponding: null
+- name: Seungwu Han
+  affiliation: null
+  corresponding: null
+- name: Youngho Kang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-06'
+retrieved_date: '2026-10-07'
+access: full_text
+read_scope: Automated reading. The full PDF text (62,546 characters, 21 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.08013v1 on
+  2026-10-07. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Ft-nano predicts a binding energy of 4.33 eV, compared with the DFT value of 4.81 eV, where
+  the binding energy is defined as the energy required to separate the complex into isolated constituent
+  point defects.”
+
+  “To determine which complexes are preferentially formed at experimentally relevant oxygen contents,
+  we perform Monte Carlo annealing at at 0.407 wt% oxygen. Initially dispersedO N impurities associate
+  with Al vacancies to formVAl(ON)3 complexes (Fig. S4), supporting their thermodynamic preference under
+  the simulated conditions.”'
+method_summary: '“We investigate phonon scattering by oxygen-related defects using pretrained universal
+  machine-learning interatomic potentials (MLIPs), molecular dynamics (MD), and phonon Boltzmann transport
+  calculations.”
+
+  “The lattice thermal conductivity is calculated by iteratively solving the linearized phonon BTE [30]
+  using a modified ShengBTE package [31].”
+
+  “In the SED approach, the defect scattering rate is estimated from the excess spectral linewidth of
+  the defective supercell relative to the pristine supercell in MD simulations.”'
+limitations: '“At high concentrations, however, the scattering rate deviates from linear scaling with
+  oxygen content, suggesting limitations of independent-defect and pristine-phonon descriptions.”
+
+  “Although SED spectra can still be evaluated for highly disordered crystalline systems, extracting well-defined
+  phonon lifetimes becomes increasingly challenging as mode mixing and spectral broadening obscure individual
+  phonon peaks.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 23231
+    output: 3531
+  claims_accepted: 2
+  claims_rejected: 5
+  rejected:
+  - statement: The room-temperature thermal conductivity of single-crystalline AlN reaches up to 374 W
+      m^-1 K^-1.
+    reason: 'unit conversion refused: power_density: could not parse 374.0 ''Wm−1K−1'': ''Wm−1'' is not
+      defined in the unit registry'
+    quotes:
+    - Reported room-temperature values reach up to 374 Wm−1K−1 [5].
+    - Aluminum nitride (AlN) is an important thermal management material whose high lattice thermal conductivity
+      is strongly suppressed by oxygen impurities.
+  - statement: Iterative solution of the linearized phonon Boltzmann transport equation yields a thermal
+      conductivity of pristine AlN at 300 K of 271.0 W m^-1 K^-1 in the basa
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''DFT 3.129
+      5.016 271.0'''
+    quotes:
+    - 'Table 1: Lattice parameters and lattice thermal conductivities of pristine AlN. Thermal conductivities
+      are calculated at 300 K using the iterative BTE solution with anharmonic three-phonon scattering
+      and are reported in Wm−1K−1.'
+    - DFT 3.129 5.016 271.0
+    - Thermal conductivities are calculated at 300 K using the iterative BTE solution with anharmonic
+      three-phonon scattering and are reported in Wm−1K−1.
+    - corresponding to transport in the basal plane (κxx =κ yy)
+  - statement: The calculated DFT lattice thermal conductivity of pristine AlN along the c-axis at 300
+      K using the iterative BTE solution is 261.2 W m^-1 K^-1.
+    reason: 'unit conversion refused: power_density: could not parse 261.2 ''Wm−1K−1'': ''Wm−1'' is not
+      defined in the unit registry'
+    quotes:
+    - 'Table 1: Lattice parameters and lattice thermal conductivities of pristine AlN. Thermal conductivities
+      are calculated at 300 K using the iterative BTE solution with anharmonic three-phonon scattering
+      and are reported in Wm−1K−1.'
+    - DFT 3.129 5.016 271.0 (247.7) 261.2
+    - Thermal conductivities are calculated at 300 K using the iterative BTE solution with anharmonic
+      three-phonon scattering and are reported in Wm−1K−1.
+    - DFT 3.129 5.016 271.0
+  - statement: At an oxygen concentration of 0.407 wt%, the SED approach yields an orientationally averaged
+      thermal conductivity of 77.5 W m^-1 K^-1.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''At the two
+      concentrations examined, the SED approach yields orientatio'''
+    quotes:
+    - At the two concentrations examined, the SED approach yields orientationally averaged conductivities
+      of 77.5 Wm−1K−1 at 0.407 wt% and 51.6 Wm−1K−1 at 0.816 wt%, within 10% of the T-matrix values obtained
+      with the same potential and ft-nano l
+  - statement: At an oxygen concentration of 0.816 wt%, the SED approach yields an orientationally averaged
+      thermal conductivity of 51.6 W m^-1 K^-1.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''At the two
+      concentrations examined, the SED approach yields orientatio'''
+    quotes:
+    - At the two concentrations examined, the SED approach yields orientationally averaged conductivities
+      of 77.5 Wm−1K−1 at 0.407 wt% and 51.6 Wm−1K−1 at 0.816 wt%, within 10% of the T-matrix values obtained
+      with the same potential and ft-nano l
+corrections: []

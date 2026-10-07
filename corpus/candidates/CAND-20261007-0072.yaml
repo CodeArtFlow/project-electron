@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.07878v1
 doi: null
-title: Negative charging energy in LaAlO$_3$/SrTiO$_3$ quantum dots induced by SrTiO$_3$
-  polarization
+title: Negative charging energy in LaAlO$_3$/SrTiO$_3$ quantum dots induced by SrTiO$_3$ polarization
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-06'
@@ -35,6 +34,27 @@ id: CAND-20261007-0072
 harvested_date: '2026-10-07'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-07'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For a parabolic confinement with characteristic length ξ = 30 nm and an image-charge distance
+      d_image = 10 nm, the effective interaction parameter U is calculat
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''In Fig. 3,
+      we present the parameterUas a function of the characteristi'''
+    quotes:
+    - In Fig. 3, we present the parameterUas a function of the characteristic confinement lengthξfor several
+      selected values ofd image, marked by color.
+    - ξ= 30 nm
+    - d image = 10 nm
+  tokens:
+    input: 12506
+    output: 672
+  fetched_chars: 32574

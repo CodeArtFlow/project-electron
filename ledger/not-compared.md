@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**845 pair(s)** as of 2026-10-06.
+**972 pair(s)** as of 2026-10-07.
 
 ## `current` (1 pair(s))
 
@@ -12,19 +12,29 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 |---|---|---|---|---|
 | `CLM-DEV-0028` = 0.6 mA | `CLM-MAT-0069` = 2e-06 mA | 100% | process_step=current ramp-down | temperature=10 mK |
 
-## `energy` (35 pair(s))
+## `energy` (55 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0078` = 4810 meV | 99% | mechanism=surface polar phonon, substrate=SiO2 | defect_complex=VAl(ON)3, model=DFT |
+| `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0077` = 4330 meV | 99% | mechanism=surface polar phonon, substrate=SiO2 | defect_complex=VAl(ON)3 |
+| `CLM-MAT-0050` = 102 meV | `CLM-MAT-0078` = 4810 meV | 98% | material=Li6PS5Cl | defect_complex=VAl(ON)3, model=DFT |
+| `CLM-MAT-0050` = 102 meV | `CLM-MAT-0077` = 4330 meV | 98% | material=Li6PS5Cl | defect_complex=VAl(ON)3 |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0016` = 2020 meV | 97% | mechanism=surface polar phonon, substrate=SiO2 | synthesis_condition=Nitrogen-rich |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0015` = 1980 meV | 97% | mechanism=surface polar phonon, substrate=SiO2 | synthesis_condition=Nitrogen-rich |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0014` = 1940 meV | 97% | mechanism=surface polar phonon, substrate=SiO2 | synthesis_condition=Nitrogen-rich |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0051` = 1801 meV | 97% | mechanism=surface polar phonon, substrate=SiO2 | axis=c |
+| `CLM-MAT-0048` = 185 meV | `CLM-MAT-0078` = 4810 meV | 96% | material=LiFePO4 | defect_complex=VAl(ON)3, model=DFT |
+| `CLM-MAT-0002` = 200 meV | `CLM-MAT-0078` = 4810 meV | 96% | mechanism=optical phonon | defect_complex=VAl(ON)3, model=DFT |
+| `CLM-MAT-0048` = 185 meV | `CLM-MAT-0077` = 4330 meV | 96% | material=LiFePO4 | defect_complex=VAl(ON)3 |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0013` = 1340 meV | 96% | mechanism=surface polar phonon, substrate=SiO2 | synthesis_condition=Nitrogen-rich |
+| `CLM-MAT-0002` = 200 meV | `CLM-MAT-0077` = 4330 meV | 95% | mechanism=optical phonon | defect_complex=VAl(ON)3 |
 | `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0050` = 102 meV | 95% | synthesis_condition=Nitrogen-rich | material=Li6PS5Cl |
 | `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0050` = 102 meV | 95% | synthesis_condition=Nitrogen-rich | material=Li6PS5Cl |
 | `CLM-MAT-0014` = 1940 meV | `CLM-MAT-0050` = 102 meV | 95% | synthesis_condition=Nitrogen-rich | material=Li6PS5Cl |
 | `CLM-MAT-0050` = 102 meV | `CLM-MAT-0051` = 1801 meV | 94% | material=Li6PS5Cl | axis=c |
+| `CLM-MAT-0049` = 296 meV | `CLM-MAT-0078` = 4810 meV | 94% | material=LiFePO4 | defect_complex=VAl(ON)3, model=DFT |
+| `CLM-MAT-0049` = 296 meV | `CLM-MAT-0077` = 4330 meV | 93% | material=LiFePO4 | defect_complex=VAl(ON)3 |
 | `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0050` = 102 meV | 92% | synthesis_condition=Nitrogen-rich | material=Li6PS5Cl |
 | `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0048` = 185 meV | 91% | synthesis_condition=Nitrogen-rich | material=LiFePO4 |
 | `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0048` = 185 meV | 91% | synthesis_condition=Nitrogen-rich | material=LiFePO4 |
@@ -42,15 +52,12 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-MAT-0049` = 296 meV | `CLM-MAT-0051` = 1801 meV | 84% | material=LiFePO4 | axis=c |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0049` = 296 meV | 80% | mechanism=surface polar phonon, substrate=SiO2 | material=LiFePO4 |
 | `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0049` = 296 meV | 78% | synthesis_condition=Nitrogen-rich | material=LiFePO4 |
+| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0078` = 4810 meV | 72% | synthesis_condition=Nitrogen-rich | defect_complex=VAl(ON)3, model=DFT |
+| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0077` = 4330 meV | 69% | synthesis_condition=Nitrogen-rich | defect_complex=VAl(ON)3 |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0048` = 185 meV | 68% | mechanism=surface polar phonon, substrate=SiO2 | material=LiFePO4 |
-| `CLM-MAT-0002` = 200 meV | `CLM-MAT-0050` = 102 meV | 49% | mechanism=optical phonon | material=Li6PS5Cl |
-| `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0050` = 102 meV | 41% | mechanism=surface polar phonon, substrate=SiO2 | material=Li6PS5Cl |
-| `CLM-MAT-0002` = 200 meV | `CLM-MAT-0049` = 296 meV | 32% | mechanism=optical phonon | material=LiFePO4 |
-| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0051` = 1801 meV | 26% | synthesis_condition=Nitrogen-rich | axis=c |
-| `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0051` = 1801 meV | 11% | synthesis_condition=Nitrogen-rich | axis=c |
-| `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0051` = 1801 meV | 9% | synthesis_condition=Nitrogen-rich | axis=c |
-| `CLM-MAT-0002` = 200 meV | `CLM-MAT-0048` = 185 meV | 8% | mechanism=optical phonon | material=LiFePO4 |
-| `CLM-MAT-0014` = 1940 meV | `CLM-MAT-0051` = 1801 meV | 7% | synthesis_condition=Nitrogen-rich | axis=c |
+| `CLM-MAT-0051` = 1801 meV | `CLM-MAT-0078` = 4810 meV | 63% | axis=c | defect_complex=VAl(ON)3, model=DFT |
+
+_and 15 more_
 
 ## `energy_advantage_ratio` (5 pair(s))
 
@@ -109,7 +116,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 
 _and 25 more_
 
-## `length_device` (343 pair(s))
+## `length_device` (364 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -117,11 +124,22 @@ _and 25 more_
 | `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=Sb monolayer on SiC(0001) | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0004` = 7000 nm | 100% | material=Sb monolayer on SiC(0001) | parameter=signal-ground electrode spacing |
 | `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=Sb monolayer on SiC(0001) | substrate_material=glass cover slip, sample_type=flat surface |
+| `CLM-MAT-0020` = 6.4 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | regime=partially-reconstructed | material=GaN, growth_method=ammonothermal |
 | `CLM-MAT-0020` = 6.4 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | regime=partially-reconstructed | substrate_material=glass cover slip, sample_type=flat surface |
+| `CLM-MAT-0023` = 3.5 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | state=X2sA | material=GaN, growth_method=ammonothermal |
 | `CLM-MAT-0023` = 3.5 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | state=X2sA | substrate_material=glass cover slip, sample_type=flat surface |
+| `CLM-MAT-0024` = 6.4 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | state=X2sA | material=GaN, growth_method=ammonothermal |
 | `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | state=X2sA | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0029` = 0.5291 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=bulk CeN | substrate_material=glass cover slip, sample_type=flat surface |
+| `CLM-MAT-0040` = 0.5 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | fermi_velocity=7×105 ms−1, model=Drude model | material=GaN, growth_method=ammonothermal |
 | `CLM-MAT-0040` = 0.5 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | fermi_velocity=7×105 ms−1, model=Drude model | substrate_material=glass cover slip, sample_type=flat surface |
+| `CLM-MAT-0063` = 10.7 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | device=D1 | material=GaN, growth_method=ammonothermal |
+| `CLM-MAT-0068` = 14.5 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | method=estimated from the carrier density at the SDP | material=GaN, growth_method=ammonothermal |
+| `CLM-MAT-0076` = 3.4e+05 nm | `CLM-PHOT-0007` = 0.23 nm | 100% | material=GaN, growth_method=ammonothermal | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) |
+| `CLM-MAT-0076` = 3.4e+05 nm | `CLM-PHOT-0008` = 0.33 nm | 100% | material=GaN, growth_method=ammonothermal | sample=bare silicon substrate, roughness_type=root mean square roughness (Sq) |
+| `CLM-MAT-0076` = 3.4e+05 nm | `CLM-PHOT-0009` = 1.7 nm | 100% | material=GaN, growth_method=ammonothermal | roughness_type=arithmetic average roughness (Sa), sample=after MoSx film deposition |
+| `CLM-MAT-0076` = 3.4e+05 nm | `CLM-PHOT-0010` = 2.1 nm | 100% | material=GaN, growth_method=ammonothermal | roughness_type=root mean square roughness (Sq), sample=after MoSx film deposition |
+| `CLM-MAT-0076` = 3.4e+05 nm | `CLM-PROC-0003` = 0.068 nm | 100% | material=GaN, growth_method=ammonothermal | defocus=30 nm |
 | `CLM-PHOT-0004` = 7 um | `CLM-PHOT-0007` = 0.00023 um | 100% | parameter=signal-ground electrode spacing | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) |
 | `CLM-PHOT-0004` = 7 um | `CLM-PHOT-0008` = 0.00033 um | 100% | parameter=signal-ground electrode spacing | sample=bare silicon substrate, roughness_type=root mean square roughness (Sq) |
 | `CLM-PHOT-0004` = 7 um | `CLM-PROC-0003` = 6.8e-05 um | 100% | parameter=signal-ground electrode spacing | defocus=30 nm |
@@ -135,26 +153,15 @@ _and 25 more_
 | `CLM-MAT-0029` = 0.5291 nm | `CLM-PHOT-0004` = 7000 nm | 100% | material=bulk CeN | parameter=signal-ground electrode spacing |
 | `CLM-MAT-0037` = 14.6 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=TiN, property=GL coherence length | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0040` = 0.5 nm | `CLM-PHOT-0004` = 7000 nm | 100% | fermi_velocity=7×105 ms−1, model=Drude model | parameter=signal-ground electrode spacing |
+| `CLM-MAT-0052` = 23 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | characterization_method=AFM | material=GaN, growth_method=ammonothermal |
 | `CLM-MAT-0052` = 23 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | characterization_method=AFM | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0059` = 1000 nm | `CLM-PROC-0003` = 0.068 nm | 100% | region=pristine zone, temperature=1.5 K | defocus=30 nm |
 | `CLM-MAT-0059` = 1000 nm | `CLM-PROC-0004` = 0.077 nm | 100% | region=pristine zone, temperature=1.5 K | material=HEA-NP, defocus=0 nm |
 | `CLM-MAT-0063` = 10.7 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | device=D1 | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0068` = 14.5 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | method=estimated from the carrier density at the SDP | substrate_material=glass cover slip, sample_type=flat surface |
-| `CLM-PHOT-0026` = 0.85 um | `CLM-PROC-0003` = 6.8e-05 um | 100% | component=MO-PhC slab | defocus=30 nm |
-| `CLM-PHOT-0026` = 0.85 um | `CLM-PROC-0004` = 7.7e-05 um | 100% | component=MO-PhC slab | material=HEA-NP, defocus=0 nm |
-| `CLM-PHOT-0043` = 0.765 um | `CLM-PROC-0003` = 6.8e-05 um | 100% | structure=hole array (HA) in a square lattice | defocus=30 nm |
-| `CLM-PHOT-0043` = 0.765 um | `CLM-PROC-0004` = 7.7e-05 um | 100% | structure=hole array (HA) in a square lattice | material=HEA-NP, defocus=0 nm |
-| `CLM-PHOT-0044` = 0.576 um | `CLM-PROC-0003` = 6.8e-05 um | 100% | structure_type=true-chiral metasurface | defocus=30 nm |
-| `CLM-PHOT-0044` = 0.576 um | `CLM-PROC-0004` = 7.7e-05 um | 100% | structure_type=true-chiral metasurface | material=HEA-NP, defocus=0 nm |
-| `CLM-PHOT-0045` = 0.603 um | `CLM-PROC-0003` = 6.8e-05 um | 100% | period_direction=azimuthal period (arc length), structure_type=true-chiral metasurface | defocus=30 nm |
-| `CLM-PHOT-0045` = 0.603 um | `CLM-PROC-0004` = 7.7e-05 um | 100% | period_direction=azimuthal period (arc length), structure_type=true-chiral metasurface | material=HEA-NP, defocus=0 nm |
-| `CLM-MAT-0059` = 1000 nm | `CLM-PHOT-0007` = 0.23 nm | 100% | region=pristine zone, temperature=1.5 K | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) |
-| `CLM-MEM-0007` = 37.5 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | diameter=220 ˚A | substrate_material=glass cover slip, sample_type=flat surface |
-| `CLM-PHOT-0004` = 7 um | `CLM-PHOT-0009` = 0.0017 um | 100% | parameter=signal-ground electrode spacing | roughness_type=arithmetic average roughness (Sa), sample=after MoSx film deposition |
-| `CLM-MAT-0017` = 0.284 nm | `CLM-MAT-0059` = 1000 nm | 100% | material=Sb monolayer on SiC(0001) | region=pristine zone, temperature=1.5 K |
-| `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0026` = 850 nm | 100% | material=Sb monolayer on SiC(0001) | component=MO-PhC slab |
+| `CLM-MAT-0076` = 3.4e+05 nm | `CLM-MEM-0007` = 37.5 nm | 100% | material=GaN, growth_method=ammonothermal | diameter=220 ˚A |
 
-_and 303 more_
+_and 324 more_
 
 ## `power` (22 pair(s))
 
@@ -183,11 +190,23 @@ _and 303 more_
 | `CLM-ARCH-0037` = 787 mW | `CLM-DEV-0025` = 1000 mW | 21% | component=synthesized SRAM-PIM subsystem | gate_bias_vgs=-2.7 V |
 | `CLM-ARCH-0038` = 9599 mW | `CLM-DEV-0030` = 7760 mW | 19% | component=added compute and buffer logic in HBM-PIM | mode=DC-AC conversion, vin=24-V DC input |
 
-## `relative_deviation` (223 pair(s))
+## `relative_deviation` (290 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-ARCH-0068` = 352 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | baseline=reference Cortex-M0 implementation | voltage=20 kV |
+| `CLM-ARCH-0069` = 318 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | baseline=reference Cortex-M0 implementation | voltage=20 kV |
+| `CLM-ARCH-0068` = 352 percent | `CLM-PROC-0007` = 0.5479 percent | 100% | baseline=reference Cortex-M0 implementation | voltage=20 kV |
+| `CLM-ARCH-0068` = 352 percent | `CLM-PROC-0008` = 0.5461 percent | 100% | baseline=reference Cortex-M0 implementation | voltage=20 kV |
+| `CLM-ARCH-0069` = 318 percent | `CLM-PROC-0007` = 0.5479 percent | 100% | baseline=reference Cortex-M0 implementation | voltage=20 kV |
+| `CLM-ARCH-0069` = 318 percent | `CLM-PROC-0008` = 0.5461 percent | 100% | baseline=reference Cortex-M0 implementation | voltage=20 kV |
+| `CLM-ARCH-0059` = 0.74 percent | `CLM-ARCH-0068` = 352 percent | 100% | tier=T1, device=fbnic | baseline=reference Cortex-M0 implementation |
+| `CLM-ARCH-0059` = 0.74 percent | `CLM-ARCH-0069` = 318 percent | 100% | tier=T1, device=fbnic | baseline=reference Cortex-M0 implementation |
 | `CLM-ARCH-0048` = 150 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | design=ZTA-Q, resource_type=DSP | voltage=20 kV |
+| `CLM-ARCH-0068` = 352 percent | `CLM-MAT-0021` = 1 percent | 100% | baseline=reference Cortex-M0 implementation | layer=WSe2 |
+| `CLM-ARCH-0069` = 318 percent | `CLM-MAT-0021` = 1 percent | 100% | baseline=reference Cortex-M0 implementation | layer=WSe2 |
+| `CLM-ARCH-0068` = 352 percent | `CLM-PROC-0006` = 1.113 percent | 100% | baseline=reference Cortex-M0 implementation | voltage=20 kV, model=third-order polynomial |
+| `CLM-ARCH-0069` = 318 percent | `CLM-PROC-0006` = 1.113 percent | 100% | baseline=reference Cortex-M0 implementation | voltage=20 kV, model=third-order polynomial |
 | `CLM-ARCH-0048` = 150 percent | `CLM-PROC-0008` = 0.5461 percent | 100% | design=ZTA-Q, resource_type=DSP | voltage=20 kV |
 | `CLM-ARCH-0048` = 150 percent | `CLM-PROC-0007` = 0.5479 percent | 100% | design=ZTA-Q, resource_type=DSP | voltage=20 kV |
 | `CLM-ARCH-0018` = 98 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | concurrency_n_a=48, set_type=hot set | voltage=20 kV |
@@ -197,56 +216,63 @@ _and 303 more_
 | `CLM-EDA-0005` = 86.4 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | model=Cyclic Edge prediction model | voltage=20 kV |
 | `CLM-PHOT-0006` = 88 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | dataset=MNIST, setup=experimental system | voltage=20 kV |
 | `CLM-PHOT-0005` = 85 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | dataset=Iris test set | voltage=20 kV |
+| `CLM-ARCH-0048` = 150 percent | `CLM-ARCH-0059` = 0.74 percent | 100% | design=ZTA-Q, resource_type=DSP | tier=T1, device=fbnic |
 | `CLM-EDA-0007` = 76 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | model=Non-cyclic + Node prediction model | voltage=20 kV |
 | `CLM-ARCH-0018` = 98 percent | `CLM-PROC-0007` = 0.5479 percent | 99% | concurrency_n_a=48, set_type=hot set | voltage=20 kV |
 | `CLM-ARCH-0018` = 98 percent | `CLM-PROC-0008` = 0.5461 percent | 99% | concurrency_n_a=48, set_type=hot set | voltage=20 kV |
 | `CLM-ARCH-0040` = 97.93 percent | `CLM-PROC-0007` = 0.5479 percent | 99% | frequency=7 GHz, component=graded magnetic spacer | voltage=20 kV |
 | `CLM-ARCH-0040` = 97.93 percent | `CLM-PROC-0008` = 0.5461 percent | 99% | frequency=7 GHz, component=graded magnetic spacer | voltage=20 kV |
+| `CLM-ARCH-0003` = 2 percent | `CLM-ARCH-0068` = 352 percent | 99% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | baseline=reference Cortex-M0 implementation |
+| `CLM-ARCH-0068` = 352 percent | `CLM-MAT-0022` = 2 percent | 99% | baseline=reference Cortex-M0 implementation | layer=WS2 |
 | `CLM-ARCH-0041` = 93.08 percent | `CLM-PROC-0007` = 0.5479 percent | 99% | frequency=7 GHz | voltage=20 kV |
 | `CLM-ARCH-0041` = 93.08 percent | `CLM-PROC-0008` = 0.5461 percent | 99% | frequency=7 GHz | voltage=20 kV |
 | `CLM-EDA-0006` = 89.6 percent | `CLM-PROC-0007` = 0.5479 percent | 99% | model=Non-cyclic Edge prediction model | voltage=20 kV |
 | `CLM-EDA-0006` = 89.6 percent | `CLM-PROC-0008` = 0.5461 percent | 99% | model=Non-cyclic Edge prediction model | voltage=20 kV |
 | `CLM-PHOT-0006` = 88 percent | `CLM-PROC-0007` = 0.5479 percent | 99% | dataset=MNIST, setup=experimental system | voltage=20 kV |
 | `CLM-PHOT-0006` = 88 percent | `CLM-PROC-0008` = 0.5461 percent | 99% | dataset=MNIST, setup=experimental system | voltage=20 kV |
+| `CLM-ARCH-0003` = 2 percent | `CLM-ARCH-0069` = 318 percent | 99% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | baseline=reference Cortex-M0 implementation |
+| `CLM-ARCH-0069` = 318 percent | `CLM-MAT-0022` = 2 percent | 99% | baseline=reference Cortex-M0 implementation | layer=WS2 |
 | `CLM-EDA-0003` = 60 percent | `CLM-PROC-0009` = 0.3757 percent | 99% | benchmark_circuit=LDO benchmark, framework=proposed method | voltage=20 kV |
 | `CLM-EDA-0004` = 60 percent | `CLM-PROC-0009` = 0.3757 percent | 99% | circuit=most complex circuit, framework=proposed framework | voltage=20 kV |
-| `CLM-EDA-0005` = 86.4 percent | `CLM-PROC-0007` = 0.5479 percent | 99% | model=Cyclic Edge prediction model | voltage=20 kV |
-| `CLM-EDA-0005` = 86.4 percent | `CLM-PROC-0008` = 0.5461 percent | 99% | model=Cyclic Edge prediction model | voltage=20 kV |
-| `CLM-PHOT-0005` = 85 percent | `CLM-PROC-0007` = 0.5479 percent | 99% | dataset=Iris test set | voltage=20 kV |
-| `CLM-PHOT-0005` = 85 percent | `CLM-PROC-0008` = 0.5461 percent | 99% | dataset=Iris test set | voltage=20 kV |
-| `CLM-ARCH-0048` = 150 percent | `CLM-MAT-0021` = 1 percent | 99% | design=ZTA-Q, resource_type=DSP | layer=WSe2 |
-| `CLM-EDA-0007` = 76 percent | `CLM-PROC-0007` = 0.5479 percent | 99% | model=Non-cyclic + Node prediction model | voltage=20 kV |
-| `CLM-EDA-0007` = 76 percent | `CLM-PROC-0008` = 0.5461 percent | 99% | model=Non-cyclic + Node prediction model | voltage=20 kV |
-| `CLM-ARCH-0048` = 150 percent | `CLM-PROC-0006` = 1.113 percent | 99% | design=ZTA-Q, resource_type=DSP | voltage=20 kV, model=third-order polynomial |
-| `CLM-ARCH-0049` = 46 percent | `CLM-PROC-0009` = 0.3757 percent | 99% | mechanism=uniform iteration offsets | voltage=20 kV |
-| `CLM-EDA-0003` = 60 percent | `CLM-PROC-0007` = 0.5479 percent | 99% | benchmark_circuit=LDO benchmark, framework=proposed method | voltage=20 kV |
-| `CLM-EDA-0003` = 60 percent | `CLM-PROC-0008` = 0.5461 percent | 99% | benchmark_circuit=LDO benchmark, framework=proposed method | voltage=20 kV |
-| `CLM-EDA-0004` = 60 percent | `CLM-PROC-0007` = 0.5479 percent | 99% | circuit=most complex circuit, framework=proposed framework | voltage=20 kV |
-| `CLM-EDA-0004` = 60 percent | `CLM-PROC-0008` = 0.5461 percent | 99% | circuit=most complex circuit, framework=proposed framework | voltage=20 kV |
-| `CLM-ARCH-0018` = 98 percent | `CLM-MAT-0021` = 1 percent | 99% | concurrency_n_a=48, set_type=hot set | layer=WSe2 |
-| `CLM-ARCH-0040` = 97.93 percent | `CLM-MAT-0021` = 1 percent | 99% | frequency=7 GHz, component=graded magnetic spacer | layer=WSe2 |
-| `CLM-ARCH-0041` = 93.08 percent | `CLM-MAT-0021` = 1 percent | 99% | frequency=7 GHz | layer=WSe2 |
-| `CLM-EDA-0006` = 89.6 percent | `CLM-MAT-0021` = 1 percent | 99% | model=Non-cyclic Edge prediction model | layer=WSe2 |
 
-_and 183 more_
+_and 250 more_
 
-## `temperature` (7 pair(s))
+## `temperature` (24 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0004` = -73.15 degC | 189% | time_after_cooling_onset=10 s | calculation=optical phonon and surface polar phonon scattering |
+| `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0053` = 230 degC | 189% | relaxation_temperature=TLIESST | synthesis_approach=phosphine-free colloidal approach |
+| `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0004` = -73.15 degC | 186% | time_after_cooling_onset=10 s | calculation=optical phonon and surface polar phonon scattering |
+| `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0003` = -123.1 degC | 169% | time_after_cooling_onset=10 s | calculation=acoustic phonon scattering |
+| `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0003` = -123.1 degC | 166% | time_after_cooling_onset=10 s | calculation=acoustic phonon scattering |
+| `CLM-DEV-0033` = 84.85 degC | `CLM-DEV-0035` = -204.1 degC | 142% | time_after_cooling_onset=10 s | relaxation_temperature=TLIESST |
+| `CLM-DEV-0032` = 81.85 degC | `CLM-DEV-0035` = -204.1 degC | 140% | time_after_cooling_onset=10 s | relaxation_temperature=TLIESST |
 | `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0004` = -73.15 degC | 135% | temperature_control_system=VAHEAT system | calculation=optical phonon and surface polar phonon scattering |
 | `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0003` = -123.1 degC | 121% | temperature_control_system=VAHEAT system | calculation=acoustic phonon scattering |
+| `CLM-DEV-0035` = -204.1 degC | `CLM-PROC-0001` = 26.85 degC | 113% | relaxation_temperature=TLIESST | thermal_model=Debye model |
+| `CLM-DEV-0017` = 25.35 degC | `CLM-DEV-0035` = -204.1 degC | 112% | temperature_control_system=VAHEAT system | relaxation_temperature=TLIESST |
 | `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0053` = 230 degC | 89% | temperature_control_system=VAHEAT system | synthesis_approach=phosphine-free colloidal approach |
 | `CLM-MAT-0003` = 150 K | `CLM-MAT-0053` = 503.1 K | 70% | calculation=acoustic phonon scattering | synthesis_approach=phosphine-free colloidal approach |
+| `CLM-DEV-0017` = 25.35 degC | `CLM-DEV-0033` = 84.85 degC | 70% | temperature_control_system=VAHEAT system | time_after_cooling_onset=10 s |
+| `CLM-DEV-0017` = 25.35 degC | `CLM-DEV-0032` = 81.85 degC | 69% | temperature_control_system=VAHEAT system | time_after_cooling_onset=10 s |
+| `CLM-DEV-0033` = 84.85 degC | `CLM-PROC-0001` = 26.85 degC | 68% | time_after_cooling_onset=10 s | thermal_model=Debye model |
+| `CLM-DEV-0032` = 81.85 degC | `CLM-PROC-0001` = 26.85 degC | 67% | time_after_cooling_onset=10 s | thermal_model=Debye model |
+| `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0053` = 230 degC | 64% | time_after_cooling_onset=10 s | synthesis_approach=phosphine-free colloidal approach |
+| `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0004` = -73.15 degC | 64% | relaxation_temperature=TLIESST | calculation=optical phonon and surface polar phonon scattering |
+| `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0053` = 230 degC | 63% | time_after_cooling_onset=10 s | synthesis_approach=phosphine-free colloidal approach |
 | `CLM-MAT-0004` = 200 K | `CLM-MAT-0053` = 503.1 K | 60% | calculation=optical phonon and surface polar phonon scattering | synthesis_approach=phosphine-free colloidal approach |
 | `CLM-MAT-0053` = 503.1 K | `CLM-PROC-0001` = 300 K | 40% | synthesis_approach=phosphine-free colloidal approach | thermal_model=Debye model |
+| `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0003` = -123.1 degC | 40% | relaxation_temperature=TLIESST | calculation=acoustic phonon scattering |
 | `CLM-DEV-0017` = 25.35 degC | `CLM-PROC-0001` = 26.85 degC | 6% | temperature_control_system=VAHEAT system | thermal_model=Debye model |
 
-## `temperature_delta` (1 pair(s))
+## `temperature_delta` (3 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-DEV-0024` = 30.4 K | `CLM-PHOT-0037` = 0.11 K | 100% | gate_bias_vgs=-2.7 V | cavity_length=20 µm, beam_shape=circular, incident_power=1.09 mW |
+| `CLM-DEV-0034` = 3 K | `CLM-PHOT-0037` = 0.11 K | 96% | time_after_cooling_onset=10 s | cavity_length=20 µm, beam_shape=circular, incident_power=1.09 mW |
+| `CLM-DEV-0024` = 30.4 K | `CLM-DEV-0034` = 3 K | 90% | gate_bias_vgs=-2.7 V | time_after_cooling_onset=10 s |
 
 ## `thermal_conductivity` (1 pair(s))
 

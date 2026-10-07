@@ -1,0 +1,106 @@
+id: SRC-00093
+title: Determination of Burgers-vector directions of threading edge dislocations in GaN by phase-contrast
+  microscopy
+doi: null
+arxiv_id: 2610.07837v1
+url: https://arxiv.org/abs/2610.07837v1
+venue_id: arxiv_api
+authors:
+- name: Yukari Ishikawa
+  affiliation: null
+  corresponding: null
+- name: Maki Shimizu
+  affiliation: null
+  corresponding: null
+- name: Koji Sato
+  affiliation: null
+  corresponding: null
+- name: Kisara Matsumoto
+  affiliation: null
+  corresponding: null
+- name: Kazuki Ohnishi
+  affiliation: null
+  corresponding: null
+- name: Yongzhao Yao
+  affiliation: null
+  corresponding: null
+- name: Ryo Hattori
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-06'
+retrieved_date: '2026-10-07'
+access: full_text
+read_scope: Automated reading. The full PDF text (30,503 characters, 20 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.07837v1 on
+  2026-10-07. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The wafer thickness was approximately 340 µm, and the [0001] axis was tilted by 0.5° from
+  the wafer normal toward [1̅100] by rotation about the [112̅0] axis.”
+
+  “The commercially available 2-inch GaN (0001) wafer grown by a conventional ammonothermal method25 was
+  used.”'
+method_summary: '“Phase-contrast microscopy was performed using a Crystalline Tester CP1 (Ceramic Forum
+  Co., Ltd., Japan) equipped with a 20× CFI Plan Fluor DLL positive -phase-contrast objective lens (NA
+  = 0.5, PH1; Nikon, Japan), a ring-aperture condenser (NA = 0.78), and a 405-nm LED light source.”
+
+  “Reflection XRT images of the ammonothermal GaN wafer were acquired using six equivalent g = 11−24 reflections
+  at BL3C of the High Energy Accelerator Research Organization (KEK).”
+
+  “The dislocation was characterized by weak-beam dark -field imaging and large-angle convergent -beam
+  electron diffraction (LACBED) analysis to determine its Burgers vector26–30.”'
+limitations: “When the inclination of a threading edge dislocation with respect to the optical axis becomes
+  large, linear contrast arising from the inclined dislocation line is superimposed on the dipole -like
+  contrast, making determination of the Burgers vector difficult.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 10957
+    output: 2217
+  claims_accepted: 1
+  claims_rejected: 4
+  rejected:
+  - statement: The threading-dislocation density of the 2-inch ammonothermal GaN (0001) wafer was approximately
+      3 x 10^4 cm^-2.
+    reason: 'unit conversion refused: defect_density: could not parse 30000.0 ''cm−2'': ''cm−2'' is not
+      defined in the unit registry'
+    quotes:
+    - The threading-dislocation density was approximately 3 × 10 4 cm−2, allowing the Burgers vector of
+      individual dislocations to be determined by XRT.
+    - The commercially available 2-inch GaN (0001) wafer grown by a conventional ammonothermal method25
+      was used.
+  - statement: The dislocation density of the HVPE-grown GaN chip was 7 x 10^5 cm^-2.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - Because the dislocation density was 7 × 105 cm−2, discrimination of individual dislocations by XRT
+      was difficult.
+    - A chip was cut from a commercially available 2 -inch HVPE-grown GaN (0001) wafer; it was taken from
+      the same wafer as the chip analyzed in Ref. 24.
+  - statement: In the order-of-magnitude estimate using reported theoretical photoelastic coefficients,
+      the maximum magnitude of the PSF-averaged refractive-index change was a
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Using the reported theoretical photoelastic coefficients p11=0.031 and p12=0.008 reported for GaN
+      [Ref. S. Yu. Davydov and S. K. Tikhonov, Semiconductors 31, 698 (1997).], the maximum magnitude
+      of the PSF-averaged refractive-index change wa
+    - p11=0.031
+    - p12=0.008
+    - l=43 μm
+  - statement: The calculated maximum phase shift was estimated to be approximately 7.6 x 10^-3 rad under
+      the given optical model conditions.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''rad'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a uni'
+    quotes:
+    - was estimated to be |𝜙|𝑚𝑎𝑥 ≈ 7.6 × 10−3 rad.
+    - λ=405 nm
+    - l=43 μm
+corrections: []

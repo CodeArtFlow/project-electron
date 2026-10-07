@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.07942v1
 doi: null
-title: First principles modeling of group-III acceptors and their potential lifetime-limiting
-  effects in n-type 4H-SiC
+title: First principles modeling of group-III acceptors and their potential lifetime-limiting effects
+  in n-type 4H-SiC
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-06'
@@ -22,6 +22,78 @@ id: CAND-20261007-0069
 harvested_date: '2026-10-07'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-07'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: In 4H-SiC, under intrinsic conditions, the formation energy of AlC is calculated to be
+      approximately 6.5 eV higher than that of AlSi.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - the formation energy of Al C under intrinsic conditions is approximately 6.5 eV higher than that
+      of Al Si, con- firming previous findings that the former is unlikely to occur.
+    - n-type 4H-SiC
+    - under intrinsic conditions
+    - the formation energy of Al C under intrinsic conditions is approximately 6.5 eV higher than that
+      of Al Si
+  - statement: The calculated band gap width of 4H-SiC using the HSE06 hybrid functional is 3.26 eV.
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - εv =7.65 eV andε c =10.91 eV are respectively the energy of the highest occupied and lowest unoccupied
+      states of bulk 4H-SiC, which lead to a calculated band gap width ofE g = εc−ε v =3.26 eV.
+    - bulk 4H-SiC
+    - screened hybrid den- sity functional of Heyd-Scuseria-Ernzerhof (HSE06)
+  - statement: The heat of formation of 4H-SiC was evaluated to be 0.62 eV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The heat of formation of 4H-SiC was eval- uated as∆H SiC f =0.62 eV, and that defines the variability
+      for the Si and C chemical potentials,|∆µ|≤∆H SiC f .
+    - 4H-SiC
+  - statement: The calculated acceptor transition level E(-/0) for BSi at the k sub-lattice site in 4H-SiC
+      is 0.38 eV above the valence band top.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - The calculated acceptor transitions for BSi(k)and B Si(h)are found atE v +0.38eV andE v +0.32eV,
+      respectively
+    - BSi(k)
+    - Table I. Calculated transition level energies of B-related and Al- related defects in 4H-SiC. All
+      values are given in eV and with respect to the valence band top (Ev).
+  - statement: The calculated transition level E(-/0) for BC at the h sub-lattice site in 4H-SiC is 0.74
+      eV above the valence band top.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - The calculated acceptor levels for B C(k)and B C(h)are found atE v +0.69eV andE v +0.74eV, respectively.
+    - B C(h)
+    - Table I. Calculated transition level energies of B-related and Al- related defects in 4H-SiC. All
+      values are given in eV and with respect to the valence band top (Ev).
+  - statement: The electron capture cross section for B0Si at the k sub-lattice site in 4H-SiC at 300
+      K is calculated to be 0.7 x 10^-14 cm^2.
+    reason: the statement contains the number 300, which none of its quotes contain
+    quotes:
+    - Table III. Calculated cross sections for capture of electrons and holes by boron and aluminum defects
+      in 4H-SiC at different sub-lattice sites (k andh) and selected temperatures.
+    - B0 Si +e−→B− Si k 0.00 1.2 0.7 0.4 0.3 ×10−14
+    - B0 Si +e−→B− Si
+    - k
+  - statement: The hole capture cross section for B-C at the k sub-lattice site in 4H-SiC at 700 K is
+      calculated to be 7.5 x 10^-14 cm^2.
+    reason: the statement contains the number 700, which none of its quotes contain
+    quotes:
+    - Table III. Calculated cross sections for capture of electrons and holes by boron and aluminum defects
+      in 4H-SiC at different sub-lattice sites (k andh) and selected temperatures.
+    - B− C +h +→B 0 C k 0.29 13 5.9 6.3 7.5 ×10−14
+    - B− C +h +→B 0 C
+    - k
+  tokens:
+    input: 20105
+    output: 2892
+  fetched_chars: 59616

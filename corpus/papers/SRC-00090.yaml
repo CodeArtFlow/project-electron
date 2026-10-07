@@ -1,0 +1,142 @@
+id: SRC-00090
+title: 'From ASIC to Fleet: Lessons from Building and Operating a Hyperscaler NIC'
+doi: null
+arxiv_id: 2610.07644v1
+url: https://arxiv.org/abs/2610.07644v1
+venue_id: arxiv_api
+authors:
+- name: Prankur Gupta
+  affiliation: null
+  corresponding: null
+- name: Alexander Duyck
+  affiliation: null
+  corresponding: null
+- name: Jakub Kicinski
+  affiliation: null
+  corresponding: null
+- name: Joseph Provine
+  affiliation: null
+  corresponding: null
+- name: Neal Peacock
+  affiliation: null
+  corresponding: null
+- name: Prabhakaran Ganesan
+  affiliation: null
+  corresponding: null
+- name: Rajiv Krishnamurthy
+  affiliation: null
+  corresponding: null
+- name: Chen Liu
+  affiliation: null
+  corresponding: null
+- name: Akshay Viswakumar
+  affiliation: null
+  corresponding: null
+- name: Timothy Vitkin
+  affiliation: null
+  corresponding: null
+- name: Jie Meng
+  affiliation: null
+  corresponding: null
+- name: Beatriz Padilla Hernandez
+  affiliation: null
+  corresponding: null
+- name: Michael Edwards
+  affiliation: null
+  corresponding: null
+- name: Andrei Kozlov
+  affiliation: null
+  corresponding: null
+- name: Viren Nathan
+  affiliation: null
+  corresponding: null
+- name: Tianyi Cui
+  affiliation: null
+  corresponding: null
+- name: Joy Chaoyue Xiong
+  affiliation: null
+  corresponding: null
+- name: Raul Hormazabal
+  affiliation: null
+  corresponding: null
+- name: Mohsin Bashir
+  affiliation: null
+  corresponding: null
+- name: Fred Feng
+  affiliation: null
+  corresponding: null
+- name: Nathan Walker
+  affiliation: null
+  corresponding: null
+- name: Lavin Khandelwal
+  affiliation: null
+  corresponding: null
+- name: Matt Maia
+  affiliation: null
+  corresponding: null
+- name: Milo Piazza
+  affiliation: null
+  corresponding: null
+- name: Mohanraj Thillainayagam
+  affiliation: null
+  corresponding: null
+- name: Mahmoud Mehr
+  affiliation: null
+  corresponding: null
+- name: Amithash Prasad
+  affiliation: null
+  corresponding: null
+- name: Lee Trager
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-06'
+retrieved_date: '2026-10-07'
+access: full_text
+read_scope: Automated reading. The full PDF text (73,407 characters, 15 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.07644v1 on
+  2026-10-07. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“T1 fbnic unplanned unavailability (UU) improved from 9.11% to 0.74%, a 12× reduction over
+  six months (M1 to M7), reaching parity with the vendor NIC baseline on the same platform (Figure 4).”
+
+  “T1 fbnic unplanned unavailability”'
+method_summary: No method quote was verified. The method is not established by this record.
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 19767
+    output: 1462
+  claims_accepted: 1
+  claims_rejected: 3
+  rejected:
+  - statement: The fbnic chip die area is 38 mm2 in a 5 nm process node.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The per-host
+      datapath (MAC, DMA engines, queue management, and buffers'''
+    quotes:
+    - The per-host datapath (MAC, DMA engines, queue management, and buffers) is replicated across the
+      NIC's four slices on a single 38 mm 2 die (5 nm) [21], adding die area relative to a shared pipeline.
+    - single 38 mm 2 die (5 nm)
+    - fbnic's smaller per-host receive buffer
+  - statement: The average time to repair for fbnic over a 10-month observation window was 125.5 hours.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - Metric fbnic Vendor Avg TTR (hours)125.5197.9
+    - Table 6 compares repair outcomes for fbnic and vendor NICs on the same platform over ten months.
+    - Metric fbnic Vendor
+    - over a 10-month observation window
+  - statement: The p90 time to repair for fbnic over a 10-month observation window was 188 hours.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''P90 TTR (hours)188289'''
+    quotes:
+    - P90 TTR (hours)188289
+    - Table 6 compares repair outcomes for fbnic and vendor NICs on the same platform over ten months.
+    - Metric fbnic Vendor
+    - P90 TTR (hours)
+corrections: []

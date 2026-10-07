@@ -1,0 +1,82 @@
+id: SRC-00091
+title: 'CHiRP: Control-Flow History Reuse Prediction'
+doi: null
+arxiv_id: 2610.07685v1
+url: https://arxiv.org/abs/2610.07685v1
+venue_id: arxiv_api
+authors:
+- name: Samira Mirbagher-Ajorpaz
+  affiliation: null
+  corresponding: null
+- name: Elba Garza
+  affiliation: null
+  corresponding: null
+- name: Gilles Pokam
+  affiliation: null
+  corresponding: null
+- name: Daniel A. Jiménez
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-06'
+retrieved_date: '2026-10-07'
+access: full_text
+read_scope: Automated reading. The full PDF text (79,195 characters, 16 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.07685v1 on
+  2026-10-07. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“For a 1024-entry 8-way set-associative L2 TLB with a 4KB page size, we show that CHIRP reduces
+  misses per 1000 instructions (MPKI) by an average 28.21% over the least-recently-used (LRU) policy”
+
+  “To measure the performance numbers we built a timing-approximate performance model similar to previous
+  work [37].”
+
+  “outperforming Static Re-reference Interval Prediction (SRRIP) [1], Global History Reuse Policy (GHRP)
+  [2] and SHiP [3], which reduce MPKI by an average of 10.36%, 9.03% and 0.88%, respectively.”
+
+  “For a 1024-entry 8-way set-associative L2 TLB with a 4KB page size”
+
+  “over the least-recently-used (LRU) policy”
+
+  “For example, for a page walk latency of 150 cycles, CHIRP yields a geometric mean speedup of 4.8%.”
+
+  “for a page walk latency of 150 cycles, CHIRP yields a geometric mean speedup of 4.8%.”
+
+  “Selective Hit Update improves accuracy by reducing average MPKI by 5.85%.”
+
+  “On average CHIRP accesses the prediction table for 10.14% of the accesses to L2 TLB.”
+
+  “CHIRP improves average cache efficiency over 870 traces by 8.07% compared to LRU.”'
+method_summary: '“We simulated 870 workloads from a variety of categories provided publicly by Qualcomm
+  [69] to prevent overfitting to one type of workload.”
+
+  “Our model simulates first-order sources of processor latency such as the memory hierarchy composed
+  of L1 i-TLB and L1 d-TLB, L1 i-cache, L1 d-cache, L2 and L3 unified caches, DRAM, a branch prediction
+  unit that includes an indirect branch predictor, a conditional branch predictor with branch target buffer,
+  and an in-order pipeline model.”'
+limitations: '“Large pages are supported in current microarchitectures,e.g. Intel’s Skylake supports page
+  sizes of 4KB, 2MB, 4MB, and 1GB.”
+
+  “Reasoning about how to do replacement with a mix of page sizes is an interesting problem we plan to
+  tackle in future work; imagine, when one entry covers 4KB and another covers 2MB, which one is is more
+  important to keep?”
+
+  “This question is beyond the scope of this initial study.”
+
+  “Thus, in this initial study of predictive replacement policies for TLBs, we focus on the standard 4KB
+  page size.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 25417
+    output: 3125
+  claims_accepted: 8
+  claims_rejected: 0
+  rejected: []
+corrections: []

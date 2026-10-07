@@ -1,0 +1,128 @@
+id: SRC-00092
+title: Efficient and Implementation-Hardened RBLWE on Commodity Cortex-M Microcontrollers
+doi: null
+arxiv_id: 2610.07820v1
+url: https://arxiv.org/abs/2610.07820v1
+venue_id: arxiv_api
+authors:
+- name: Muhammad Asim Javaid
+  affiliation: null
+  corresponding: null
+- name: Muhammad Adeel Pasha
+  affiliation: null
+  corresponding: null
+- name: Muhammad Ali Siddiqi
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-06'
+retrieved_date: '2026-10-07'
+access: full_text
+read_scope: Automated reading. The full PDF text (53,937 characters, 10 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.07820v1 on
+  2026-10-07. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“and 3.52×/3.18× lower encryption/decryption cycle counts than a reference Cortex-M0 implementation.”
+
+  “Set 1: (n,q) = (256,256) M33/M0 193.275/– 268.056/944.000 (3.52×) 126.568/403.000 (3.18×)”
+
+  “reference Cortex-M0 implementation”
+
+  “The Cortex-M33 Data Watchpoint and Trace (DWT) cycle counter measures key generation, encryption, or
+  decryption with interrupts disabled, and correctness is checked outside the timed interval.”'
+method_summary: '“The Cortex-M33 Data Watchpoint and Trace (DWT) cycle counter measures key generation,
+  encryption, or decryption with interrupts disabled, and correctness is checked outside the timed interval.”
+
+  “Using arm-none-eabi-objdump and arm-none-eabi-nm from the same toolchain, we inspected the application
+  objects and final ELF file for secret-dependent branches and memory addresses, fixed loop bounds, removal
+  of countermeasure operations, and recombination of Boolean shares.”
+
+  “We perform four dudect-style tests covering polynomial multiplication during decryption and encryption,
+  as well as both complete CCA2 operations. Each test collects 100,000 DWT measurements, divided equally
+  between two classes, using the (n,q) = (256,256) firmware image.”'
+limitations: '“Evaluation is limited to the tested binaries and components: fixed-versus-random timing,
+  TVLA, and debugger-assisted single faults. Multi-target faults and electromagnetic or invasive injection
+  are considered out of scope for this work.”
+
+  “The six selector-store and loop-control skip trials reveal a narrower integrity limitation: skipping
+  the final store or loop control silently corrupts a valid output, so output-selection duplication or
+  a loop-completion check remains necessary.”
+
+  “Sharing covers CPA decryption but not its surrounding oracle and re-encryption logic; fault results
+  cover the tested single-point logical model.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 18007
+    output: 3265
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: Accelerated key generation on the Cortex-M33 achieved a same-core cold-start speedup of
+      4.06x over a scalar baseline.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - Together these give same-core cold-start speedups of 4.06×, 3.35×, and 3.01× for key generation,
+      encryption, and decryption over a scalar baseline
+    - The Cortex-M33 Data Watchpoint and Trace (DWT) cycle counter measures key generation, encryption,
+      or decryption with interrupts disabled, and correctness is checked outside the timed interval.
+    - key generation, encryption, and decryption
+    - scalar baseline
+  - statement: Accelerated encryption on the Cortex-M33 achieved a same-core cold-start speedup of 3.35x
+      over a scalar baseline.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - Together these give same-core cold-start speedups of 4.06×, 3.35×, and 3.01× for key generation,
+      encryption, and decryption over a scalar baseline
+    - The Cortex-M33 Data Watchpoint and Trace (DWT) cycle counter measures key generation, encryption,
+      or decryption with interrupts disabled, and correctness is checked outside the timed interval.
+    - key generation, encryption, and decryption
+    - scalar baseline
+  - statement: Accelerated decryption on the Cortex-M33 achieved a same-core cold-start speedup of 3.01x
+      over a scalar baseline.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - Together these give same-core cold-start speedups of 4.06×, 3.35×, and 3.01× for key generation,
+      encryption, and decryption over a scalar baseline
+    - The Cortex-M33 Data Watchpoint and Trace (DWT) cycle counter measures key generation, encryption,
+      or decryption with interrupts disabled, and correctness is checked outside the timed interval.
+    - key generation, encryption, and decryption
+    - scalar baseline
+  - statement: The maximum Welch t-statistic recorded during dudect-style timing tests for complete CCA2
+      decryption was 1.589.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''t-statistic'' is not
+      one of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number
+      would hi'
+    quotes:
+    - In the order shown in the figure legend, namely complete CCA2 decryption, complete CCA2 encryption,
+      decryption polynomial multiplication, and encryption polynomial multiplication, the maximum running
+      |t| values were 1.589, 1.037, 1.634, and
+    - Each test collects 100,000 DWT measurements, divided equally between two classes, using the (n,q)
+      = (256,256) firmware image.
+    - complete CCA2 decryption
+    - (n,q) = (256,256)
+  - statement: The maximum Welch t-statistic recorded in TVLA for the masked multiplication operation
+      was 3.566.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - TABLE IV FIRST-ORDER TVLA RESULTS FOR THE PROTECTED OPERATIONS.
+    - Masked multiplication 3.566
+    - A BK Precision 2569B-MSO oscilloscope records the board's Advanced Energy Monitor (AEM) current-measurement
+      output (Fig. 5) on channel 1 at 5 MSa/s; a GPIO trigger pulse on channel 2 delimits the selected
+      kernel.
+    - Masked multiplication
+  - statement: A total of 2,678 debugger-assisted fault injection trials were conducted across the hardened
+      builds.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - Table V summarizes 2,678 trials on the hardened builds.
+    - On-target logical injections use the GNU Debugger (GDB) through J-Link at addresses resolved from
+      the campaign's linked ELF.
+    - hardened builds
+corrections: []

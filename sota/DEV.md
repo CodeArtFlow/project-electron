@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-10-06.
+Topic code `DEV`. Last reviewed 2026-10-07.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -12,6 +12,10 @@ Topic code `DEV`. Last reviewed 2026-10-06.
   - `CLM-DEV-0028` · process_step current ramp-down · grade B · credibility unknown · measured · as of 2026-10-01
   - sources: SRC-00061
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈0.558 mA** — In the SCO/NbSe2 vdWH device, light irradiation increases the critical current Ic from approximately 0.290 mA to approximately 0.558 mA at 2 K.
+  - `CLM-DEV-0036` · temperature 2 K, state after light irradiation · grade B · credibility unknown · measured · as of 2026-10-06
+  - sources: SRC-00094
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### frequency
 
@@ -92,6 +96,10 @@ Topic code `DEV`. Last reviewed 2026-10-06.
   - `CLM-DEV-0029` · detection_wavelength 819 nm, temperature 10 K · grade B · credibility unknown · measured · as of 2026-09-30
   - sources: SRC-00072
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Using core loss data from CPES instead of DMEGC results in an E core design having 35% larger core volume to achieve a 300 mW/cm3 loss density target.
+  - `CLM-DEV-0031` · material DMR51W, frequency 2 MHz, core_geometry E core · grade B · credibility unknown · projected · as of 2026-10-06
+  - sources: SRC-00088
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -99,12 +107,28 @@ Topic code `DEV`. Last reviewed 2026-10-06.
   - `CLM-DEV-0017` · temperature_control_system VAHEAT system · grade B · credibility unknown · measured · as of 2026-09-29
   - sources: SRC-00046
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **81.85 degC** — At 10 s after the onset of cooling, the temperature of the Cu plate on the metasurface device is 355 K.
+  - `CLM-DEV-0032` · time_after_cooling_onset 10 s · grade B · credibility unknown · measured · as of 2026-10-06
+  - sources: SRC-00089
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **84.85 degC** — At 10 s after the onset of cooling, the temperature of the Cu plate on the control device is 358 K.
+  - `CLM-DEV-0033` · time_after_cooling_onset 10 s · grade B · credibility unknown · measured · as of 2026-10-06
+  - sources: SRC-00089
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈-204.15 degC** — The SCO metastable HS* state relaxes back to LS at TLIESST ≈ 69 K upon heating in the dark.
+  - `CLM-DEV-0035` · relaxation_temperature TLIESST · grade B · credibility unknown · measured · as of 2026-10-06
+  - sources: SRC-00094
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature delta
 
 - **30.4 K** — At a gate drive EMF of 1.50 V, the memory-on ASM-HEMT simulation yields a junction temperature rise of 30.4 K.
   - `CLM-DEV-0024` · gate_bias_vgs -2.7 V · grade B · credibility unknown · simulated · as of 2026-09-30
   - sources: SRC-00054
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **3 K** — The temperature difference between the Cu plates on the metasurface and control devices at 10 s after the onset of cooling is 3.0 K.
+  - `CLM-DEV-0034` · time_after_cooling_onset 10 s · grade B · credibility unknown · measured · as of 2026-10-06
+  - sources: SRC-00089
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### time
@@ -143,6 +167,6 @@ _None._
 
 ## Evidence base
 
-- claims: 27
-- grades: {'B': 27}
-- distinct sources: 12
+- claims: 33
+- grades: {'B': 33}
+- distinct sources: 15
