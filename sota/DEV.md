@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-10-07.
+Topic code `DEV`. Last reviewed 2026-10-08.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -100,6 +100,62 @@ Topic code `DEV`. Last reviewed 2026-10-07.
   - `CLM-DEV-0031` · material DMR51W, frequency 2 MHz, core_geometry E core · grade B · credibility unknown · projected · as of 2026-10-06
   - sources: SRC-00088
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- At a Cr concentration of beta = 4.17% in the VCA model, the calculated anomalous Hall conductivity at the Fermi level reaches 603 S cm-1.
+  - `CLM-DEV-0037` · model VCA · grade B · credibility unknown · simulated · as of 2026-10-07
+  - sources: SRC-00102
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The zero-field Hall resistivity of the [Mn 3Sn(2.4)/Cr(0.15)]30 sample is 3.35 uOhm cm at 300 K.
+  - `CLM-DEV-0038` · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00102
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The zero-field Hall resistivity of the [Mn 3Sn(2.4)/Cr(0.15)]30 sample is 5.56 uOhm cm at 50 K.
+  - `CLM-DEV-0039` · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00102
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- At 300 K, the anomalous Hall conductivity of [Mn 3Sn(2.4)/Cr(0.15)]30 is 57.8 Ohm-1 cm-1.
+  - `CLM-DEV-0040` · sample [Mn 3Sn(2.4)/Cr(0.15)]30 · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00102
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- At 300 K, the anomalous Hall conductivity of undoped MS is 39.5 Ohm-1 cm-1.
+  - `CLM-DEV-0041` · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00102
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- At 50 K, the anomalous Hall conductivity of [Mn 3Sn(2.4)/Cr(0.15)]30 is 184.8 Ohm-1 cm-1.
+  - `CLM-DEV-0042` · sample [Mn 3Sn(2.4)/Cr(0.15)]30, temperature 50 K · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00102
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The saturation magnetization of the Co2MnGa layer in the decoupled Co2MnGa(5 nm)/Al(2 nm)/MnGa(3 nm) multilayer is 762 emu/cm3 at 300 K.
+  - `CLM-DEV-0043` · structure CMG(5 nm)/Al(2 nm)/MnGa(3 nm) multilayer · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00104
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The Co2MnGa single layer exhibits an in-plane fourfold anisotropy constant Hk4 of 130.6 Oe.
+  - `CLM-DEV-0044` · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00104
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The optical absorption exceeds 95% for circular nanomagnet arrays with a diameter of 205 nm in FTIR experiment.
+  - `CLM-DEV-0045` · nanomagnet_geometry circular-disk metasurface, diameter 205 nm, fill_factor 25.5% · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00105
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The optical absorption exceeds 95% for circular nanomagnet arrays with a diameter of 205 nm in FDTD simulation.
+  - `CLM-DEV-0046` · nanomagnet_geometry circular-disk metasurface, diameter 205 nm, fill_factor 25.5% · grade B · credibility unknown · simulated · as of 2026-10-07
+  - sources: SRC-00105
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The measured absorption of the artificial spin ice nanobar array peaks at over 80%.
+  - `CLM-DEV-0047` · nanomagnet_geometry ASI nanobar array · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00105
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The simulated peak absorption of the artificial spin ice nanobar array exceeds 95%.
+  - `CLM-DEV-0048` · nanomagnet_geometry ASI nanobar array · grade B · credibility unknown · simulated · as of 2026-10-07
+  - sources: SRC-00105
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The experimental peak absorption reaches approximately 80% for the rectangular bar configuration with a fill factor of 19.9%.
+  - `CLM-DEV-0049` · nanomagnet_geometry rectangular bar configuration, fill_factor 19.9% · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00105
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The Kerr rotation of a continuous 20 nm permalloy reference film on the same sample is 12.5 mdeg.
+  - `CLM-DEV-0050` · sample_type continuous permalloy reference region, permalloy_thickness 20 nm · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00105
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -167,6 +223,6 @@ _None._
 
 ## Evidence base
 
-- claims: 33
-- grades: {'B': 33}
-- distinct sources: 15
+- claims: 47
+- grades: {'B': 47}
+- distinct sources: 18

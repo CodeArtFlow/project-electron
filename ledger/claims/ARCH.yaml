@@ -2041,3 +2041,89 @@ claims:
       unit: percent
     conditions:
       baseline: reference Cortex-M0 implementation
+- id: CLM-ARCH-0070
+  topic: ARCH
+  statement: The parallel dependent quantization hardware architecture reaches an operating frequency
+    of 556 MHz when synthesized using the TSMC 28nm process standard cell library for ASIC.
+  sources:
+  - SRC-00096
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-07'
+  created: '2026-10-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    process_node: TSMC 28 nm
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 556.0
+      unit: MHz
+    si_base:
+      value: 556000000.0
+      unit: Hz
+    display:
+      value: 0.556
+      unit: GHz
+    conditions:
+      process_node: TSMC 28 nm
+- id: CLM-ARCH-0071
+  topic: ARCH
+  statement: The power consumption of the proposed architecture in the TSMC 28nm ASIC implementation is
+    370.125 mW.
+  sources:
+  - SRC-00096
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-07'
+  created: '2026-10-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    process_node: TSMC 28 nm
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 370.125
+      unit: mW
+    si_base:
+      value: 0.370125
+      unit: W
+    display:
+      value: 0.370125
+      unit: W
+    conditions:
+      process_node: TSMC 28 nm
+- id: CLM-ARCH-0072
+  topic: ARCH
+  statement: OpenBench-Universe contains 272 benchmarks across 14 application domains.
+  sources:
+  - SRC-00099
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-07'
+  created: '2026-10-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    benchmark_suite: openbench-universe

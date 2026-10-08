@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-07.
+Topic code `ARCH`. Last reviewed 2026-10-08.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -52,6 +52,10 @@ Topic code `ARCH`. Last reviewed 2026-10-07.
   - `CLM-ARCH-0043` · platform integrated phononic device · grade B · credibility unknown · measured · as of 2026-10-01
   - sources: SRC-00062
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.556 GHz** — The parallel dependent quantization hardware architecture reaches an operating frequency of 556 MHz when synthesized using the TSMC 28nm process standard cell library for ASIC.
+  - `CLM-ARCH-0070` · process_node TSMC 28 nm · grade B · credibility unknown · simulated · as of 2026-10-07
+  - sources: SRC-00096
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -74,6 +78,10 @@ Topic code `ARCH`. Last reviewed 2026-10-07.
 - **9.599 W** — The added compute and buffer logic in HBM-PIM consumes 9.599 W of power.
   - `CLM-ARCH-0038` · component added compute and buffer logic in HBM-PIM · grade B · credibility unknown · simulated · as of 2026-09-28
   - sources: SRC-00044
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.370125 W** — The power consumption of the proposed architecture in the TSMC 28nm ASIC implementation is 370.125 mW.
+  - `CLM-ARCH-0071` · process_node TSMC 28 nm · grade B · credibility unknown · simulated · as of 2026-10-07
+  - sources: SRC-00096
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### qualitative
@@ -210,6 +218,10 @@ Topic code `ARCH`. Last reviewed 2026-10-07.
   - `CLM-ARCH-0067` · trace_count 870 traces, baseline_policy LRU · grade B · credibility unknown · simulated · as of 2026-10-06
   - sources: SRC-00091
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- OpenBench-Universe contains 272 benchmarks across 14 application domains.
+  - `CLM-ARCH-0072` · benchmark_suite openbench-universe · grade B · credibility unknown · simulated · as of 2026-10-07
+  - sources: SRC-00099
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -312,6 +324,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 69
-- grades: {'B': 69}
-- distinct sources: 23
+- claims: 72
+- grades: {'B': 72}
+- distinct sources: 25

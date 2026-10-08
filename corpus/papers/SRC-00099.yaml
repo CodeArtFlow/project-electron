@@ -1,0 +1,107 @@
+id: SRC-00099
+title: 'BenchmarkAnything: Agent-Driven Construction of Simulator-Ready Microarchitecture Benchmarks'
+doi: null
+arxiv_id: 2610.09447v1
+url: https://arxiv.org/abs/2610.09447v1
+venue_id: arxiv_api
+authors:
+- name: Xiangfeng Sun
+  affiliation: null
+  corresponding: null
+- name: Ceyu Xu
+  affiliation: null
+  corresponding: null
+- name: Chen Bai
+  affiliation: null
+  corresponding: null
+- name: Yuan Xie
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-07'
+retrieved_date: '2026-10-08'
+access: full_text
+read_scope: Automated reading. The full PDF text (68,324 characters, 12 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.09447v1 on
+  2026-10-08. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“openbench-universeconsists of 272 benchmarks spanning 14 domains, providing substantial diversity
+  and coverage.”
+
+  “We execute this profiling space with the gem5 simulator in Syscall Emulation mode under the x86 ISA.”'
+method_summary: '“In our current implementation, 93% of the open-source projects retrieved in Phase 1
+  are successfully transformed into standardized benchmarks by this end-to-end flow. All agents are driven
+  by a single backbone model, MiniMax-M2.5, which balances cost efficiency, throughput, and coding proficiency.”
+
+  “We execute this profiling space with the gem5 simulator in Syscall Emulation mode under the x86 ISA.
+  To avoid distortion from unrepresentative setup phases, we fast-forward the first 1B instructions of
+  each benchmark as warmup on a simple CPU with warm caches, then reset all statistics and collect them
+  over a precisely defined 100M-instruction Region of Interest (ROI) executed on the detailed out-of-order
+  core.”'
+limitations: “A primary limitation is the use of gem5 in syscall-emulation mode, which abstracts away
+  kernel execution, page faults, context switches, and complex input-output behavior.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 20078
+    output: 2406
+  claims_accepted: 1
+  claims_rejected: 6
+  rejected:
+  - statement: The average token usage per benchmark under MiniMax-M2.5 for OpenBench-Universe is 0.03
+      million tokens.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - The mean token usage is 0.03M and the median token usage is 0.021M, showing the extremely low cost
+      and scalability ofBenchmarkAnything.
+    - Fig. 6. Token-usage distribution ofopenbench-universeunder MiniMax-M2.5 in millions of tokens.
+  - statement: The median token usage per benchmark under MiniMax-M2.5 for OpenBench-Universe is 0.021
+      million tokens.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - The mean token usage is 0.03M and the median token usage is 0.021M, showing the extremely low cost
+      and scalability ofBenchmarkAnything.
+    - Fig. 6. Token-usage distribution ofopenbench-universeunder MiniMax-M2.5 in millions of tokens.
+  - statement: The mean absolute error of OpenBench-Core Core-8 relative to the full OpenBench-Universe
+      across 30 configurations is 3.14%.
+    reason: the statement contains the number 30, which none of its quotes contain
+    quotes:
+    - Core-8 achieves a mean absolute error of 3.14%, ap 90 error of6.54%, and a maximum error of 9.10%.
+    - We execute this profiling space with the gem5 simulator in Syscall Emulation mode under the x86
+      ISA.
+    - Fig. 9. Performance fidelity of the core subsets compared to theopenbench-universeacross 30 configurations
+      (C1–C30).
+  - statement: The mean absolute error of OpenBench-Core Core-23 relative to the full OpenBench-Universe
+      across 30 configurations is 0.83%.
+    reason: the statement contains the number 30, which none of its quotes contain
+    quotes:
+    - Core-23 tightens these bounds to0.83%,2.06%, and2.31%, respectively.
+    - We execute this profiling space with the gem5 simulator in Syscall Emulation mode under the x86
+      ISA.
+    - Fig. 9. Performance fidelity of the core subsets compared to theopenbench-universeacross 30 configurations
+      (C1–C30).
+  - statement: The maximum error of OpenBench-Core Core-8 relative to the full OpenBench-Universe across
+      30 configurations is 9.10%.
+    reason: the statement contains the number 30, which none of its quotes contain
+    quotes:
+    - Core-8 achieves a mean absolute error of 3.14%, ap 90 error of6.54%, and a maximum error of 9.10%.
+    - We execute this profiling space with the gem5 simulator in Syscall Emulation mode under the x86
+      ISA.
+    - Fig. 9. Performance fidelity of the core subsets compared to theopenbench-universeacross 30 configurations
+      (C1–C30).
+  - statement: The maximum error of OpenBench-Core Core-23 relative to the full OpenBench-Universe across
+      30 configurations is 2.31%.
+    reason: the statement contains the number 30, which none of its quotes contain
+    quotes:
+    - Core-23 tightens these bounds to0.83%,2.06%, and2.31%, respectively.
+    - We execute this profiling space with the gem5 simulator in Syscall Emulation mode under the x86
+      ISA.
+    - Fig. 9. Performance fidelity of the core subsets compared to theopenbench-universeacross 30 configurations
+      (C1–C30).
+corrections: []

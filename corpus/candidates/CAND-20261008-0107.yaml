@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.09359v1
 doi: null
-title: Electromagnetically Transmissive and Thermally Opaque Engineered Microwave
-  Interconnect
+title: Electromagnetically Transmissive and Thermally Opaque Engineered Microwave Interconnect
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-07'
@@ -27,6 +26,55 @@ id: CAND-20261008-0107
 harvested_date: '2026-10-08'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-08'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The isolated-island SSPP interconnect with substrate voids achieves a simulated effective
+      thermal conductivity of 0.336 W/m·K.
+    reason: 'unit conversion refused: thermal_conductivity: cannot convert 0.336 W/m·K to W/(m*K) - Cannot
+      convert from ''watt * kelvin / meter'' ([mass] * [length] * [temperature] / [time] ** 3) to '''
+    quotes:
+    - Coupled electro-thermal simulation yields an effective thermal conductivity of 0.336 W/m·K, a 40×
+      reduction relative to a continuous microstrip line of identical footprint.
+    - variant-1, isolated islands with periodic substrate voids (Fig. 3(b)), the primary proposed design
+    - 300 K to 77 K gradient
+  - statement: The de-embedded propagation loss of the fabricated isolated-island waveguide is approximately
+      0.0031 dB/mm across a 5–6.5 GHz passband.
+    reason: 'unit conversion refused: resistance: could not parse 0.0031 ''dB/mm'': '
+    quotes:
+    - de-embedded propagation loss of∼0.0031 dB/mm across a 5–6.5 GHz passband.
+    - Measurements on fabricated prototypes confirm the transmission response despite the physical fragmentation
+      of the conductor, with de-embedded propagation loss of∼0.0031 dB/mm across a 5–6.5 GHz passband.
+    - across a 5–6.5 GHz passband.
+  - statement: The group delay variation across a 1 GHz window centered at 7.9 GHz is approximately 140
+      ps.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Within a 1 GHz window centered at 7.9 GHz, |S 21| varies by approximately 10% and τ g by ∆τ g ≈
+      140 ps
+    - Fig. 7 shows |S 21| and τ g for the odd mode of an isolated-island SSPP waveguide with 10 mm island
+      width.
+    - centered at 7.9 GHz
+    - Within a 1 GHz window
+  - statement: The calculated passive heat load of the proposed isolated islands interconnect with substrate
+      voids (variant-1) is 10 mW under a 300 K to 77 K gradient.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - combining island isolation with substrate voids (variant-1) brings it to a minimum of 10 mW, an
+      8× reduction relative to the fully bridged case.
+    - Transient 3D thermal simulations were conducted in Ansys Icepak, performing a conjugate heat transfer
+      (CHT) analysis by solving the Navier-Stokes and energy equations simultaneously.
+    - variant-1, isolated islands with periodic substrate voids (Fig. 3(b)), the primary proposed design
+    - evaluated across a 300K to 77K applied gradient.
+  tokens:
+    input: 13110
+    output: 1638
+  fetched_chars: 43012

@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-07.
+Topic code `MAT`. Last reviewed 2026-10-08.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -140,6 +140,10 @@ Topic code `MAT`. Last reviewed 2026-10-07.
   - `CLM-MAT-0076` · material GaN, growth_method ammonothermal · grade B · credibility unknown · measured · as of 2026-10-06
   - sources: SRC-00093
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈0.98 nm** — The step height of the CrSb thickness unit on SrTiO3(001) is approximately 0.98 nm, corresponding to a bilayer structure.
+  - `CLM-MAT-0081` · material CrSb · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00101
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power density
 
@@ -302,6 +306,18 @@ Topic code `MAT`. Last reviewed 2026-10-07.
   - `CLM-MAT-0075` · population upper corrected-stabilisation decile · grade B · credibility unknown · simulated · as of 2026-10-05
   - sources: SRC-00087
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Calculating dynamic polarizability tensors for a subset of 5000 molecules from QM9 requires approximately 13600 CPU hours using TD-DFT.
+  - `CLM-MAT-0079` · dataset QM9, calculation_type dynamic polarizability tensors · grade B · credibility unknown · simulated · as of 2026-10-07
+  - sources: SRC-00097
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Computing UV–vis spectra for the QM9 subset requires about 500 CPU hours.
+  - `CLM-MAT-0080` · calculation_type UV–vis spectra · grade B · credibility unknown · simulated · as of 2026-10-07
+  - sources: SRC-00097
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The fundamental gaps for ground-state n-LPs (n = 1–40) range from 1.66 eV to 7.12 eV.
+  - `CLM-MAT-0082` · method TAO-LDA, system ground-state n-LPs (n = 1–40) · grade B · credibility unknown · simulated · as of 2026-10-07
+  - sources: SRC-00103
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -313,6 +329,10 @@ Topic code `MAT`. Last reviewed 2026-10-07.
   - `CLM-MAT-0022` · layer WS2 · grade B · credibility unknown · measured · as of 2026-09-28
   - sources: SRC-00039
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈530 percent** — The symmetrized von Neumann entropy reaches approximately 5.3 at n = 40 for ground-state n-LP.
+  - `CLM-MAT-0083` · n 40, method spin-restricted TAO-LDA · grade B · credibility unknown · simulated · as of 2026-10-07
+  - sources: SRC-00103
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -393,6 +413,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 78
-- grades: {'B': 78}
-- distinct sources: 28
+- claims: 83
+- grades: {'B': 83}
+- distinct sources: 31

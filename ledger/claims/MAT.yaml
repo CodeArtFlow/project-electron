@@ -2107,3 +2107,130 @@ claims:
     conditions:
       defect_complex: VAl(ON)3
       model: DFT
+- id: CLM-MAT-0079
+  topic: MAT
+  statement: Calculating dynamic polarizability tensors for a subset of 5000 molecules from QM9 requires
+    approximately 13600 CPU hours using TD-DFT.
+  sources:
+  - SRC-00097
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-07'
+  created: '2026-10-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    dataset: QM9
+    calculation_type: dynamic polarizability tensors
+- id: CLM-MAT-0080
+  topic: MAT
+  statement: Computing UV–vis spectra for the QM9 subset requires about 500 CPU hours.
+  sources:
+  - SRC-00097
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-07'
+  created: '2026-10-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    calculation_type: UV–vis spectra
+- id: CLM-MAT-0081
+  topic: MAT
+  statement: The step height of the CrSb thickness unit on SrTiO3(001) is approximately 0.98 nm, corresponding
+    to a bilayer structure.
+  sources:
+  - SRC-00101
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-07'
+  created: '2026-10-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    material: CrSb
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 0.98
+      unit: nm
+    si_base:
+      value: 9.800000000000001e-10
+      unit: m
+    display:
+      value: 0.98
+      unit: nm
+    conditions:
+      material: CrSb
+- id: CLM-MAT-0082
+  topic: MAT
+  statement: The fundamental gaps for ground-state n-LPs (n = 1–40) range from 1.66 eV to 7.12 eV.
+  sources:
+  - SRC-00103
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-07'
+  created: '2026-10-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    method: TAO-LDA
+    system: ground-state n-LPs (n = 1–40)
+- id: CLM-MAT-0083
+  topic: MAT
+  statement: The symmetrized von Neumann entropy reaches approximately 5.3 at n = 40 for ground-state
+    n-LP.
+  sources:
+  - SRC-00103
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-07'
+  created: '2026-10-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    n: '40'
+    method: spin-restricted TAO-LDA
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: true
+    as_published:
+      value: 5.3
+      unit: dimensionless
+    si_base:
+      value: 5.3
+      unit: dimensionless
+    display:
+      value: 530.0
+      unit: percent
+    conditions:
+      n: '40'
+      method: spin-restricted TAO-LDA

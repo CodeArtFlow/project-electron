@@ -1,0 +1,29 @@
+{
+  "arxiv_id": "2610.09447v1",
+  "claims": {
+    "CLM-ARCH-0072": {
+      "evidence_spans": [
+        "openbench-universeconsists of 272 benchmarks spanning 14 domains, providing substantial diversity and coverage.",
+        "openbench-universeconsists of 272 benchmarks spanning 14 domains, providing substantial diversity and coverage.",
+        "We execute this profiling space with the gem5 simulator in Syscall Emulation mode under the x86 ISA."
+      ],
+      "statement": "OpenBench-Universe contains 272 benchmarks across 14 application domains.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "In our current implementation, 93% of the open-source projects retrieved in Phase 1 are successfully transformed into standardized benchmarks by this end-to-end flow. All agents are driven by a single backbone model, MiniMax-M2.5, which balances cost efficiency, throughput, and coding proficiency.",
+    "We execute this profiling space with the gem5 simulator in Syscall Emulation mode under the x86 ISA. To avoid distortion from unrepresentative setup phases, we fast-forward the first 1B instructions of each benchmark as warmup on a simple CPU with warm caches, then reset all statistics and collect them over a precisely defined 100M-instruction Region of Interest (ROI) executed on the detailed out-of-order core.",
+    "A primary limitation is the use of gem5 in syscall-emulation mode, which abstracts away kernel execution, page faults, context switches, and complex input-output behavior."
+  ],
+  "generated": "2026-10-08",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00099",
+  "text_chars": 68324,
+  "text_sha256": "cdad03ac7df21f22c1c29a0f6695de6255de8254d9c09768ef41c5f8ed58aa47"
+}

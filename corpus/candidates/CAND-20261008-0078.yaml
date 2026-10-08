@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.09837v1
 doi: null
-title: Origins of Universal Machine Learning Force-Field Errors in Multicomponent
-  Materials
+title: Origins of Universal Machine Learning Force-Field Errors in Multicomponent Materials
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-07'
@@ -34,6 +33,86 @@ id: CAND-20261008-0078
 harvested_date: '2026-10-08'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-08'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: MatRIS-10M-OAM achieves a mean formation-energy error of 0.0414 eV atom⁻¹ on the benchmark
+      configurations.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''eV atom⁻¹'' is not one
+      of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide'
+    quotes:
+    - Across the eleven models, mean form ation-energy errors range from approx- imately 0.041 to 0.067
+      eV atom ¹ (Fig. 4), with MatRIS-10M-OAM giving the lowest mean at 0.0414 eV⁻ atom ¹.
+    - MatRIS-10M-OAM
+    - common set of 7,599 configurations
+  - statement: PET-OAM-XL achieves a structure-averaged force mean absolute error of 0.0941 eV Å⁻¹ on
+      the benchmark configurations.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Structure-averaged
+      force mean absolute errors (MAEs) span a wider rela'''
+    quotes:
+    - Structure-averaged force mean absolute errors (MAEs) span a wider relative range, from 0.0941 eV
+      Å ¹ for PET-OAM-XL to 0.2516 eV Å ¹ for⁻ ⁻ DPA-3.1-MPtrj.
+    - PET-OAM-XL
+    - common set of 7,599 configurations
+  - statement: DPA-3.1-MPtrj has a structure-averaged force mean absolute error of 0.2516 eV Å⁻¹ on the
+      benchmark configurations.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Structure-averaged
+      force mean absolute errors (MAEs) span a wider rela'''
+    quotes:
+    - Structure-averaged force mean absolute errors (MAEs) span a wider relative range, from 0.0941 eV
+      Å ¹ for PET-OAM-XL to 0.2516 eV Å ¹ for⁻ ⁻ DPA-3.1-MPtrj.
+    - DPA-3.1-MPtrj
+    - common set of 7,599 configurations
+  - statement: PET-OAM-XL has a force-error median of 0.0763 eV Å⁻¹.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''eV Å⁻¹'' is not one
+      of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a '
+    quotes:
+    - For example, PET-OAM-XL has a force-error median of 0.0763 eV Å ¹ and a⁻ 95th percentile of 0.2241
+      eV Å ¹, compared with 0.1913 and 0.5158 eV Å ¹ for DPA-3.1-MPtrj.⁻ ⁻
+    - PET-OAM-XL
+  - statement: SevenNet-Omni-I12 has an adsorption-proxy MAE of 0.122 eV.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - SevenNet-Omni-I12 has the lowest adsorp tion-proxy MAE (0.122 eV), whereas MACE-MPA-0 has the lowest
+      OH energy-dif ference MAE (0.569 eV).
+    - SevenNet-Omni-I12
+  - statement: MACE-MPA-0 achieves an OH reaction-energy-difference MAE of 0.569 eV.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''eV'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - SevenNet-Omni-I12 has the lowest adsorp tion-proxy MAE (0.122 eV), whereas MACE-MPA-0 has the lowest
+      OH energy-dif ference MAE (0.569 eV).
+    - MACE-MPA-0
+  - statement: The atom-based descriptor model achieves a structure-level force-error prediction MAE of
+      29.47 meV Å⁻¹.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''meV Å⁻¹'' is not one
+      of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a'
+    quotes:
+    - The complete descriptor model achieves a struc ture-level prediction MAE of 29.47 meV Å ¹ and a
+      coef⁻ fi- cient of determination of R²log = 0.798, evaluated in logarithmic space (Fig. 7a).
+    - atom-based regressor
+  - statement: Matching element pairs and absolute distance deviations yields compression-side force errors
+      that are 1.81 to 1.95 times extension-side errors.
+    reason: 'unit conversion refused: energy_advantage_ratio is dimensionless; unit ''times'' is not one
+      of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide'
+    quotes:
+    - After matching element pairs and absolute distance deviations, compression-side force errors are
+      1.81–1.95 times extension-side errors.
+    - compression-side force errors are 1.81–1.95 times extension-side errors
+  tokens:
+    input: 20658
+    output: 2811
+  fetched_chars: 75294

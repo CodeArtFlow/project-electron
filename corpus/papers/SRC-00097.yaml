@@ -1,0 +1,99 @@
+id: SRC-00097
+title: Accelerating dynamic polarizability calculations of organic molecules using equivariant graph neural
+  networks
+doi: null
+arxiv_id: 2610.09389v1
+url: https://arxiv.org/abs/2610.09389v1
+venue_id: arxiv_api
+authors:
+- name: Houssam Metni
+  affiliation: null
+  corresponding: null
+- name: Maria Kraus
+  affiliation: null
+  corresponding: null
+- name: Marie Louise Schubert
+  affiliation: null
+  corresponding: null
+- name: Marjan Krstic
+  affiliation: null
+  corresponding: null
+- name: Carsten Rockstuhl
+  affiliation: null
+  corresponding: null
+- name: Pascal Friederich
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-07'
+retrieved_date: '2026-10-08'
+access: full_text
+read_scope: Automated reading. The full PDF text (86,794 characters, 30 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.09389v1 on
+  2026-10-08. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“For example, calculating dynamic polarizability tensors for a subset of roughly 5000 molecules
+  from the Quantum Machine 9 (QM9) dataset [13, 14] requires approximately 13600 CPU hours.”
+
+  “Quantum Machine 9 (QM9) dataset”
+
+  “calculating dynamic polarizability tensors”
+
+  “In contrast, computing only UV–vis spectra is far more efficient, requiring only about 500 CPU hours
+  for the same QM9 subset and 5300 CPU hours for the HOPV15 molecules.”
+
+  “computing only UV–vis spectra”'
+method_summary: “Using both TD-DFT polarizabilities and our model predictions, we compute the corresponding
+  molecular T-matrices and perform device-level optical simulations to obtain charge-carrier generation
+  rates.”
+limitations: “These discrepancies may originate from the relatively limited size of the dataset, which
+  could lead to overfitting, especially considering that DetaNet was originally trained on over 130000
+  molecules to achieve accurate UV–vis spectrum predictions.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 27581
+    output: 1754
+  claims_accepted: 2
+  claims_rejected: 4
+  rejected:
+  - statement: Calculating dynamic polarizability tensors for the HOPV15 dataset requires around 60000
+      CPU hours using TD-DFT.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - For the Harvard Organic Photovoltaic dataset (HOPV15) [15], which contains 347 larger and more structurally
+      complex organic photoactive molecules relevant to OPV applications, the cost is around 60000 CPU
+      hours.
+    - Harvard Organic Photovoltaic dataset (HOPV15)
+    - calculating dynamic polarizability tensors
+  - statement: Computing UV–vis spectra for HOPV15 molecules requires 5300 CPU hours.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - In contrast, computing only UV–vis spectra is far more efficient, requiring only about 500 CPU hours
+      for the same QM9 subset and 5300 CPU hours for the HOPV15 molecules.
+    - HOPV15 molecules
+    - computing only UV–vis spectra
+  - statement: The model trained on QM9SPol with UV-vis input achieves an RMSE of 22.1 a.u.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''QM9SPol ✓
+      61 22.1 5.8 0.86'''
+    quotes:
+    - QM9SPol ✓ 61 22.1 5.8 0.86
+    - QM9SPol
+    - ✓
+    - '61'
+  - statement: The model trained on HOPV15 with UV-vis input across 241 frequency points achieves an EMD
+      of 71.7 a.u.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''HOPV15 ✓
+      241 231.6 71.7 0.79'''
+    quotes:
+    - HOPV15 ✓ 241 231.6 71.7 0.79
+    - HOPV15
+    - ✓
+    - '241'
+corrections: []

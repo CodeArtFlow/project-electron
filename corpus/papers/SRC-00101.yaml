@@ -1,0 +1,134 @@
+id: SRC-00101
+title: Vanishing Altermagnetism and Emergent Ferromagnetism at the Two-Dimensional Limit of CrSb
+doi: null
+arxiv_id: 2610.09664v1
+url: https://arxiv.org/abs/2610.09664v1
+venue_id: arxiv_api
+authors:
+- name: Yunlong Liu
+  affiliation: null
+  corresponding: null
+- name: Zixuan Wu
+  affiliation: null
+  corresponding: null
+- name: Qinxi Liu
+  affiliation: null
+  corresponding: null
+- name: Yupeng Zhi
+  affiliation: null
+  corresponding: null
+- name: Mingqiang Ren
+  affiliation: null
+  corresponding: null
+- name: Xue Jiang
+  affiliation: null
+  corresponding: null
+- name: Canli Song
+  affiliation: null
+  corresponding: null
+- name: Ding Zhang
+  affiliation: null
+  corresponding: null
+- name: Xucun Ma
+  affiliation: null
+  corresponding: null
+- name: Huimin Zhang
+  affiliation: null
+  corresponding: null
+- name: Jijun Zhao
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-07'
+retrieved_date: '2026-10-08'
+access: full_text
+read_scope: Automated reading. The full PDF text (46,397 characters, 21 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.09664v1 on
+  2026-10-08. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The step height of the thickness unit is approximately 0.98 nm (Fig ure 1C), corresponding
+  to eight Cr/Sb atomic layers along the c axis, namely a bilayer structure.”
+
+  “CrSb films on S TO(001) substrates”'
+method_summary: '“We epitaxially grew uniform CrSb films on S TO(001) substrates by MBE, with experimental
+  details provided in the Methods section.”
+
+  “Electrical transport and magnetic characterizations were measured by Physical Property Measurement
+  System (PPMS) from Quantum Design integrated with a Vibrating Sample Magnetometer (VSM).”
+
+  “DFT calculations for CrSb were performed using the VASP by employing the Perdew-Burke-Ernzerhof (PBE)
+  generalized gradient approximation (GGA) for exchange-correlation functional”'
+limitations: “While the saturation magnetic moment exhibits slight sample‑to‑sample variation, a common
+  feature of ultrathin epitaxial films due to inherent thickness and coverage fluctuations, the characteristic
+  hysteresis loop remains fully reproducible across all measured samples.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16343
+    output: 2516
+  claims_accepted: 1
+  claims_rejected: 6
+  rejected:
+  - statement: The Kagome lattice periodicity measured on 1 BL CrSb/STO is 1.7 nm.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - The measured Kagome lattice periodicity is 1.7 nm, corresponding to four times the in‑plane lattice
+      constant of CrSb (a = 4.02 Å).
+    - The measured Kagome lattice periodicity is 1.7 nm
+    - CrSb (a = 4.02 Å)
+  - statement: At site A of the 1 BL CrSb/STO Kagome lattice, the dI/dV spectrum features a peak at 0.35
+      eV.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - The dI/dV spectrum at site A features a prominent peak at 0.35 eV and a valence band edge near −0.7
+      eV (marked by red arrows in Figure 2 C), with a relatively low density of states (DOS) betw een
+      these two spectral features.
+    - sites A (hexagon center)
+    - 1BL CrSb/STO films
+  - statement: Under a perpendicular magnetic field, the coercive field Hc of 1 BL CrSb/STO is 397 Oe
+      at 2 K.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - Under H⊥, the coercive field Hc decreases from 397 Oe at 2 K to 215 Oe at 100 K, and further to
+      198 Oe at room temperature (Fig ure S12).
+    - Under H⊥
+    - 397 Oe at 2 K
+    - bilayer CrSb/STO film
+  - statement: Under a perpendicular magnetic field, the coercive field Hc of 1 BL CrSb/STO is 198 Oe
+      at room temperature.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - Under H⊥, the coercive field Hc decreases from 397 Oe at 2 K to 215 Oe at 100 K, and further to
+      198 Oe at room temperature (Fig ure S12).
+    - Under H⊥
+    - 198 Oe at room temperature
+    - bilayer CrSb/STO film
+  - statement: DFT calculations show that 1 BL CrSb/STO has an interface interaction energy of -0.11 eV/Å².
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - 'The preferential stability of the 1 BL CrSb phase arises from the strong interfacial interaction
+      with the STO substrate (interface interaction energy: –0.11 eV/Å2), which is substantially larger
+      than that for thicker films (e.g., –0.02 eV/Å'
+    - To explore the electronic properties of 1BL CrSb/STO films, we performed dI/dV measurements... DFT
+      calculations for CrSb were performed using the VASP
+    - 1 BL CrSb phase
+    - STO substrate
+  - statement: DFT calculations predict a Curie temperature Tc of 347 K for 1 BL CrSb/STO within the mean-field
+      Ising model.
+    reason: '[qualifier_dropped] the statement is a bound but quantity.bound is ''exact''. Record the
+      qualifier the source used - UnitEngine.record(..., bound=..., approximate=...).'
+    quotes:
+    - Within the framework of the mean-field Ising model, the Curie temperature (Tc) is predicted to be
+      347 K (Table S1), which is in excellent agreement with our experimental observation that the Tc
+      exceeds 300 K.
+    - Within the framework of the mean-field Ising model, the Curie temperature (Tc) is predicted to be
+      347 K (Table S1)
+    - mean-field Ising model
+    - 1BL CrSb/STO films
+corrections: []

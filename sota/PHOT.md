@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-07.
+Topic code `PHOT`. Last reviewed 2026-10-08.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -47,6 +47,10 @@ Topic code `PHOT`. Last reviewed 2026-10-07.
   - sources: SRC-00083
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0024, CFL-0025 — see the open register
+- **≤ ≈0.0048 GHz** — The Ho3+-doped fluoride glass waveguide laser exhibits a linewidth of approximately 4.8 MHz.
+  - `CLM-PHOT-0056` · device Ho3+-doped fluoride glass waveguide laser · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00098
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### length device
 
@@ -96,6 +100,23 @@ Topic code `PHOT`. Last reviewed 2026-10-07.
   - `CLM-PHOT-0045` · period_direction azimuthal period (arc length), structure_type true-chiral metasurface · grade B · credibility unknown · measured · as of 2026-10-01
   - sources: SRC-00065
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **0.024 nm** — The lasing wavelength exhibited a drift of 24 pm over a period exceeding 15.5 hours.
+  - `CLM-PHOT-0057` · measurement_duration exceeding 15.5 hours · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00098
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+
+### power
+
+- **0.0217 W** — The Ho3+-doped fluoride glass waveguide laser achieves an output power of 21.7 mW at an incident pump power of 825 mW.
+  - `CLM-PHOT-0053` · pump_power 825 mW, device Ho3+-doped fluoride glass waveguide laser · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00098
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0028 — see the open register
+- **≈0.1325 W** — The Ho3+-doped fluoride glass waveguide laser exhibits a threshold pump power of approximately 132.5 mW.
+  - `CLM-PHOT-0054` · device Ho3+-doped fluoride glass waveguide laser · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00098
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0028 — see the open register
 
 ### qualitative
 
@@ -241,6 +262,10 @@ Topic code `PHOT`. Last reviewed 2026-10-07.
   - `CLM-PHOT-0040` · source diode laser · grade B · credibility unknown · measured · as of 2026-10-01
   - sources: SRC-00065
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **2.06221 um** — The Ho3+-doped fluoride glass waveguide laser operates at a lasing wavelength of 2062.21 nm.
+  - `CLM-PHOT-0055` · device Ho3+-doped fluoride glass waveguide laser · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00098
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -258,9 +283,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0025` — frequency: _unexamined; classification pending_
   - claims: CLM-PHOT-0051, CLM-PHOT-0052
   - missing data: `not yet named`
+- `CFL-0028` — power: _unexamined; classification pending_
+  - claims: CLM-PHOT-0053, CLM-PHOT-0054
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 52
-- grades: {'B': 45, 'A': 7}
-- distinct sources: 17
+- claims: 57
+- grades: {'B': 50, 'A': 7}
+- distinct sources: 18

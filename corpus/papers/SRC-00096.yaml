@@ -1,0 +1,72 @@
+id: SRC-00096
+title: An Interleaved Parallel Dependent Quantization Hardware Architecture for H.266/VVC
+doi: null
+arxiv_id: 2610.09292v1
+url: https://arxiv.org/abs/2610.09292v1
+venue_id: arxiv_api
+authors:
+- name: Jun Zhang
+  affiliation: null
+  corresponding: null
+- name: Weizhi Bian
+  affiliation: null
+  corresponding: null
+- name: Hao Zhang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-07'
+retrieved_date: '2026-10-08'
+access: full_text
+read_scope: Automated reading. The full PDF text (51,836 characters, 12 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.09292v1 on
+  2026-10-08. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“when synthesized using the TSMC 28 nm process standard cell library for ASIC implementation,
+  the proposed parallel dependent quantization hardware architecture occupies an area of 0.69mm 2 with
+  a power consumption of 370.125 mW, and the maximum operating frequency reaches 556 MHz.”
+
+  “when synthesized using the TSMC 28 nm process standard cell library for ASIC implementation”
+
+  “Synthesis was then carried out using the Xilinx XCZU19 FPGA and the TSMC 28 nm process standard cell
+  library.”'
+method_summary: “To evaluate the maximum operating frequency and hardware resource consumption, the proposed
+  high-parallel dependent quantization hardware architecture was implemented in Verilog HDL. Synthesis
+  was then carried out using the Xilinx XCZU19 FPGA and the TSMC 28 nm process standard cell library.”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16455
+    output: 1361
+  claims_accepted: 2
+  claims_rejected: 2
+  rejected:
+  - statement: The parallel dependent quantization hardware architecture achieves a maximum operating
+      frequency of 220 MHz when synthesized on the Xilinx XCZU19 FPGA.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''As shown
+      in Table IV, the proposed parallel dependent quantization har'''
+    quotes:
+    - As shown in Table IV, the proposed parallel dependent quantization hardware architecture consumes
+      55,575 LUTs, 55,974 FFs, 43 DSPs, and 8 BRAMs when implemented on the Xilinx XCZU19 FPGA, and the
+      achievable operating frequency reaches 220 M
+    - Synthesis was then carried out using the Xilinx XCZU19 FPGA and the TSMC 28 nm process standard
+      cell library.
+    - when implemented on the Xilinx XCZU19 FPGA
+  - statement: The ASIC implementation of the proposed architecture occupies an area of 0.69 mm².
+    reason: 'unit conversion refused: area_die: could not parse 0.69 ''mm 2'': Unit expression cannot
+      have a scaling factor.'
+    quotes:
+    - when synthesized using the TSMC 28 nm process standard cell library for ASIC implementation, the
+      proposed parallel dependent quantization hardware architecture occupies an area of 0.69mm 2 with
+      a power consumption of 370.125 mW, and the max
+    - Synthesis was then carried out using the Xilinx XCZU19 FPGA and the TSMC 28 nm process standard
+      cell library.
+    - when synthesized using the TSMC 28 nm process standard cell library for ASIC implementation
+corrections: []

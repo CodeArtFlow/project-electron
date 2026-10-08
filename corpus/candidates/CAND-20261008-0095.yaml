@@ -21,6 +21,54 @@ id: CAND-20261008-0095
 harvested_date: '2026-10-08'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-08'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For a waveguide thickness of 500 μm, the linewidth requirement for source washout at a
+      wavelength of 520 nm and a TIR angle of 40 degrees is 0.077 nm.
+    reason: the statement contains the number 520, which none of its quotes contain
+    quotes:
+    - ThisisthelinewidthrequirementforthedisplaylightsourcetoensurecontinuousTIRanglecoverage
+    - At𝑡=500𝜇m, 𝛿𝜆=0.077nm corresponds to𝛿𝜈=85GHz
+    - We derive the angular resolution limit of an augmented-reality (AR) waveguide combiner from guided
+      mode theory.
+    - At𝑡=500𝜇m,
+  - statement: At a wavelength of 520 nm and a waveguide thickness of 500 μm, the minimum local thickness
+      variation requirement for mode washout at the critical angle is 104 n
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - For𝜆0 =520nm this is189nm at𝑛 2 =1.7and falls to104nm at𝑛 2 =2.7
+    - We derive the angular resolution limit of an augmented-reality (AR) waveguide combiner from guided
+      mode theory.
+    - For𝜆0 =520nm
+    - for𝜆0=520nm,𝑛 1 =1and𝑡=500𝜇m
+  - statement: At a wavelength of 520 nm and a waveguide thickness of 500 μm, the local slope requirement
+      across the pupil period at the critical angle is 53.6 arcsec.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - becomes simply𝜆0/(4𝑛 1𝑡), equal to53.6′′ for𝜆 0 =520nm,𝑛 1 =1and𝑡=500𝜇m
+    - We derive the angular resolution limit of an augmented-reality (AR) waveguide combiner from guided
+      mode theory.
+    - for𝜆 0 =520nm,
+    - 𝑛 1 =1
+  - statement: To reach 1 arcmin resolution at a TIR angle of 40 degrees, normal incidence in-coupling,
+      wavelength of 520 nm, and cladding index of 1, the required waveguide t
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''40◦ 1065𝜇m'''
+    quotes:
+    - 40◦ 1065𝜇m
+    - We derive the angular resolution limit of an augmented-reality (AR) waveguide combiner from guided
+      mode theory.
+    - Table 1.Waveguide thickness required to reach1arcmin (60 ppd) resolution
+    - 𝜆0=520nm,
+  tokens:
+    input: 13589
+    output: 1744
+  fetched_chars: 32198

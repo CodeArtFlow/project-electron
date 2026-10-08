@@ -1,0 +1,82 @@
+id: SRC-00100
+title: Optimization-Based Thickness Estimation and Depth-Resolved FIB-Induced Damage Characterization
+  via Multislice Electron Ptychography
+doi: null
+arxiv_id: 2610.09465v1
+url: https://arxiv.org/abs/2610.09465v1
+venue_id: arxiv_api
+authors:
+- name: Keun-Yeol Park
+  affiliation: null
+  corresponding: null
+- name: Chuqiao Shi
+  affiliation: null
+  corresponding: null
+- name: Murat Tuna Pamuk
+  affiliation: null
+  corresponding: null
+- name: Sooyoung Cheong
+  affiliation: null
+  corresponding: null
+- name: Seonyu Lee
+  affiliation: null
+  corresponding: null
+- name: Juhui Oh
+  affiliation: null
+  corresponding: null
+- name: Yu-Tsun Shao
+  affiliation: null
+  corresponding: null
+- name: Celesta S. Chang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-07'
+retrieved_date: '2026-10-08'
+access: full_text
+read_scope: Automated reading. The full PDF text (71,500 characters, 39 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.09465v1 on
+  2026-10-08. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Regions milled at final voltages of 2, 5, 8, and 30 kV yield ed amorphous-layer thicknesses
+  of 3.2, 5.0, 7.0, and 26.4 nm, respectively”
+
+  “The resulting thicknesses were t* = 23.2, 24.5, and 26.5 nm, respectively, increasing from top to bottom
+  as expected for the wedge -shaped geometry formed by ion milling (Fig. 3c).”
+
+  “the top, middle, and bottom subregions were optimized separately”
+
+  “All panels correspond to the 2 kV milled region.”'
+method_summary: '“Multislice electron ptychographic reconstructions were performed using the least-squares
+  maximum-likelihood multislice algorithm [20,26,27] implemented in the GPU_MS engine of the fold_slice
+  package [28], which builds upon PtychoShelves [29].”
+
+  “Bayesian optimization (BO) was used to jointly determine three parameters required for multislice electron
+  ptychography: the total specimen thickness t, the probe defocus Δf, and the number of slices N, with
+  the slice spacing d efined as Δz = t/N.”'
+limitations: “A practical limitation is that the optimization still requires physically reasonable search
+  bounds.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 21804
+    output: 3337
+  claims_accepted: 7
+  claims_rejected: 1
+  rejected:
+  - statement: In the 2 kV region top subregion, the EELS log-ratio method measures a local specimen thickness
+      of 27.9 nm.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - The local thickness along the same direction was then measured independently by the EELS log -ratio
+      method ( Fig. 3d, e ), yielding 27.9, 28.7, and 29.4 nm for the depths corresponding to the top,
+      middle, and bottom subregions.
+    - yielding 27.9, 28.7, and 29.4 nm for the depths corresponding to the top, middle, and bottom subregions.
+    - measured independently by the EELS log -ratio method
+corrections: []
