@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-10-08.
+Topic code `PROC`. Last reviewed 2026-10-09.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -74,6 +74,43 @@ Topic code `PROC`. Last reviewed 2026-10-08.
   - `CLM-PROC-0009` · voltage 20 kV · grade B · credibility unknown · simulated · as of 2026-10-01
   - sources: SRC-00064
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.023 percent** — For the grade 1 no-target group of 34 public test images, training with all 244 images resulted in a false-positive area fraction of 0.023%.
+  - `CLM-PROC-0018` · training_set_size full 244-image public training set, test_subset No target, grade 1 (including mapped −1) · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00107
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **0.624 percent** — On 10 confirmed negative internal test images, the mean-score ensemble yielded a false-positive area fraction of 0.624%.
+  - `CLM-PROC-0019` · test_dataset 10 images confirmed negative by multiple observers · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00107
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **4.5 percent** — For the polycrystalline rolled Au reference sample, the mean normalized mean absolute error (NMAE) is 4.5% across 10 continuous measurements.
+  - `CLM-PROC-0020` · material polycrystalline rolled Au, measurement_type 10-times continuous measurement · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00109
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0035, CFL-0036, CFL-0037, CFL-0038 — see the open register
+- **162 percent** — For the polycrystalline rolled Au reference sample, the mean RMSE-to-MAE ratio (RMR) is 1.62 across 10 continuous measurements.
+  - `CLM-PROC-0021` · material polycrystalline rolled Au, measurement_type 10-times continuous measurement · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00109
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0035, CFL-0039, CFL-0040, CFL-0041 — see the open register
+- **215 percent** — For the polycrystalline rolled Au sample, the mean Durbin-Watson (DW) statistic is 2.15 across 10 continuous measurements.
+  - `CLM-PROC-0022` · material polycrystalline rolled Au, measurement_type 10-times continuous measurement · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00109
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0036, CFL-0039, CFL-0042, CFL-0043 — see the open register
+- **4.2 percent** — For the polycrystalline rolled Au sample, the mean difference of the coefficients of determination (∆R2) is 0.042 across 10 continuous measurements.
+  - `CLM-PROC-0023` · material polycrystalline rolled Au, measurement_type 10-times continuous measurement · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00109
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0037, CFL-0040, CFL-0042, CFL-0044 — see the open register
+- **184 percent** — For the polycrystalline rolled Au sample, the mean optimal exponent n is 1.84.
+  - `CLM-PROC-0024` · material polycrystalline rolled Au · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00109
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0038, CFL-0041, CFL-0043, CFL-0044 — see the open register
+- **≈5700 percent** — Applying a two-component model to the 30th PYS measurement of the heavily doped p-type Si (PL) sample improves the AIC by approximately 57 relative to the single-component model.
+  - `CLM-PROC-0025` · measurement_number 30th measurement · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00109
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -115,9 +152,39 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0034` — length_device: _unexamined; classification pending_
   - claims: CLM-PROC-0013, CLM-PROC-0014
   - missing data: `not yet named`
+- `CFL-0035` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-PROC-0020, CLM-PROC-0021
+  - missing data: `not yet named`
+- `CFL-0036` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-PROC-0020, CLM-PROC-0022
+  - missing data: `not yet named`
+- `CFL-0037` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-PROC-0020, CLM-PROC-0023
+  - missing data: `not yet named`
+- `CFL-0038` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-PROC-0020, CLM-PROC-0024
+  - missing data: `not yet named`
+- `CFL-0039` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-PROC-0021, CLM-PROC-0022
+  - missing data: `not yet named`
+- `CFL-0040` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-PROC-0021, CLM-PROC-0023
+  - missing data: `not yet named`
+- `CFL-0041` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-PROC-0021, CLM-PROC-0024
+  - missing data: `not yet named`
+- `CFL-0042` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-PROC-0022, CLM-PROC-0023
+  - missing data: `not yet named`
+- `CFL-0043` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-PROC-0022, CLM-PROC-0024
+  - missing data: `not yet named`
+- `CFL-0044` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-PROC-0023, CLM-PROC-0024
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 17
-- grades: {'B': 17}
-- distinct sources: 5
+- claims: 25
+- grades: {'B': 25}
+- distinct sources: 7

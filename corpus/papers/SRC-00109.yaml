@@ -1,0 +1,78 @@
+id: SRC-00109
+title: 'Data-Driven Variable-Exponent Analysis for Photoemission Yield Spectroscopy: An Autonomous Self-Diagnosing
+  Framework Based on Integrated Residual Metrics'
+doi: null
+arxiv_id: 2610.11331v1
+url: https://arxiv.org/abs/2610.11331v1
+venue_id: arxiv_api
+authors:
+- name: Shinjiro Yagyu
+  affiliation: null
+  corresponding: null
+- name: Takahiro Nagata
+  affiliation: null
+  corresponding: null
+- name: Yoshiyuki Nakajima
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-08'
+retrieved_date: '2026-10-09'
+access: full_text
+read_scope: Automated reading. The full PDF text (56,321 characters, 30 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.11331v1 on
+  2026-10-09. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“For the data quality in Step 2, the means of NMAE and RMR were 4.5% and 1.62, respectively.”
+
+  “A 10-times continuous measurement of a polycrystalline rolled Au sample was carried out as a benchmark
+  for the soundness of each residual metric”
+
+  “Even under conditions where the contribution of noise specific to the real environment was visible,
+  the means of DW and ∆R 2 were 2.15 and 0.042.”
+
+  “The optimal exponentnwas 1.65–2.02 (mean 1.84), slightly below the Fowler valuen= 2 for metals.”
+
+  “As a result of the verification, the AICMAE = 367 of the single-component model decreased to AIC MAE
+  = 310 for the two-component model (both without the constant 2Nln 2 of Appendix A-5), an improvement
+  of ∆AIC≈57, far above the level ∆AIC>10 at which the weaker model has essentially no empirical support.”
+
+  “the 30th measurement was analyzed; the details of the fitting are given in Supplementary S-8”'
+method_summary: “A 10-times continuous measurement of a polycrystalline rolled Au sample was carried out
+  as a benchmark for the soundness of each residual metric”
+limitations: “The autonomy demonstrated in this study covers the diagnosis at the analysis stage; closed-loop
+  control, in which a detected change of physical state is fed back to the choice of the next experimental
+  conditions, is outside the scope of this study.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16117
+    output: 2972
+  claims_accepted: 6
+  claims_rejected: 2
+  rejected:
+  - statement: For the lightly doped p-type Si (PH), lightly doped n-type Si (NH), and heavily doped n-type
+      Si (NL) samples, the photoemission yield spectroscopy (PYS) thresho
+    reason: 'unit conversion refused: voltage: cannot convert 5.1 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** 3'
+    quotes:
+    - The PYS thresholdI th was about 5.1 eV for PH, NH, and NL and about 4.6 eV for PL, so that the order
+      of the two quantities is reversed for PL.
+    - Figure 3 shows the relation between the CPD values and the thresholdI th obtained from PYS measurements
+      (the average of the 1/n-Scan analysis of measurements 1–3).
+  - statement: For the heavily doped p-type Si (PL) sample, the photoemission yield spectroscopy (PYS)
+      threshold Ith is approximately 4.6 eV.
+    reason: 'unit conversion refused: voltage: cannot convert 4.6 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** 3'
+    quotes:
+    - The PYS thresholdI th was about 5.1 eV for PH, NH, and NL and about 4.6 eV for PL, so that the order
+      of the two quantities is reversed for PL.
+    - Figure 3 shows the relation between the CPD values and the thresholdI th obtained from PYS measurements
+      (the average of the 1/n-Scan analysis of measurements 1–3).
+corrections: []

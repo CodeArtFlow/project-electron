@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**1330 pair(s)** as of 2026-10-08.
+**1613 pair(s)** as of 2026-10-09.
 
 ## `current` (1 pair(s))
 
@@ -12,19 +12,33 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 |---|---|---|---|---|
 | `CLM-DEV-0028` = 0.6 mA | `CLM-MAT-0069` = 2e-06 mA | 100% | process_step=current ramp-down | temperature=10 mK |
 
-## `energy` (55 pair(s))
+## `energy` (73 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-MAT-0078` = 4810 meV | `CLM-MAT-0086` = 52.4 meV | 99% | defect_complex=VAl(ON)3, model=DFT | material=CrGeCN4, method=PBE+SOC |
+| `CLM-MAT-0078` = 4810 meV | `CLM-MAT-0085` = 53.3 meV | 99% | defect_complex=VAl(ON)3, model=DFT | material=CrSiCN4, method=PBE+SOC |
+| `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0086` = 52.4 meV | 99% | defect_complex=VAl(ON)3 | material=CrGeCN4, method=PBE+SOC |
+| `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0085` = 53.3 meV | 99% | defect_complex=VAl(ON)3 | material=CrSiCN4, method=PBE+SOC |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0078` = 4810 meV | 99% | mechanism=surface polar phonon, substrate=SiO2 | defect_complex=VAl(ON)3, model=DFT |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0077` = 4330 meV | 99% | mechanism=surface polar phonon, substrate=SiO2 | defect_complex=VAl(ON)3 |
 | `CLM-MAT-0050` = 102 meV | `CLM-MAT-0078` = 4810 meV | 98% | material=Li6PS5Cl | defect_complex=VAl(ON)3, model=DFT |
 | `CLM-MAT-0050` = 102 meV | `CLM-MAT-0077` = 4330 meV | 98% | material=Li6PS5Cl | defect_complex=VAl(ON)3 |
+| `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0086` = 52.4 meV | 97% | synthesis_condition=Nitrogen-rich | material=CrGeCN4, method=PBE+SOC |
+| `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0085` = 53.3 meV | 97% | synthesis_condition=Nitrogen-rich | material=CrSiCN4, method=PBE+SOC |
+| `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0086` = 52.4 meV | 97% | synthesis_condition=Nitrogen-rich | material=CrGeCN4, method=PBE+SOC |
+| `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0085` = 53.3 meV | 97% | synthesis_condition=Nitrogen-rich | material=CrSiCN4, method=PBE+SOC |
+| `CLM-MAT-0014` = 1940 meV | `CLM-MAT-0086` = 52.4 meV | 97% | synthesis_condition=Nitrogen-rich | material=CrGeCN4, method=PBE+SOC |
+| `CLM-MAT-0014` = 1940 meV | `CLM-MAT-0085` = 53.3 meV | 97% | synthesis_condition=Nitrogen-rich | material=CrSiCN4, method=PBE+SOC |
+| `CLM-MAT-0051` = 1801 meV | `CLM-MAT-0086` = 52.4 meV | 97% | axis=c | material=CrGeCN4, method=PBE+SOC |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0016` = 2020 meV | 97% | mechanism=surface polar phonon, substrate=SiO2 | synthesis_condition=Nitrogen-rich |
+| `CLM-MAT-0051` = 1801 meV | `CLM-MAT-0085` = 53.3 meV | 97% | axis=c | material=CrSiCN4, method=PBE+SOC |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0015` = 1980 meV | 97% | mechanism=surface polar phonon, substrate=SiO2 | synthesis_condition=Nitrogen-rich |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0014` = 1940 meV | 97% | mechanism=surface polar phonon, substrate=SiO2 | synthesis_condition=Nitrogen-rich |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0051` = 1801 meV | 97% | mechanism=surface polar phonon, substrate=SiO2 | axis=c |
 | `CLM-MAT-0048` = 185 meV | `CLM-MAT-0078` = 4810 meV | 96% | material=LiFePO4 | defect_complex=VAl(ON)3, model=DFT |
+| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0086` = 52.4 meV | 96% | synthesis_condition=Nitrogen-rich | material=CrGeCN4, method=PBE+SOC |
+| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0085` = 53.3 meV | 96% | synthesis_condition=Nitrogen-rich | material=CrSiCN4, method=PBE+SOC |
 | `CLM-MAT-0002` = 200 meV | `CLM-MAT-0078` = 4810 meV | 96% | mechanism=optical phonon | defect_complex=VAl(ON)3, model=DFT |
 | `CLM-MAT-0048` = 185 meV | `CLM-MAT-0077` = 4330 meV | 96% | material=LiFePO4 | defect_complex=VAl(ON)3 |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0013` = 1340 meV | 96% | mechanism=surface polar phonon, substrate=SiO2 | synthesis_condition=Nitrogen-rich |
@@ -42,22 +56,8 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-MAT-0002` = 200 meV | `CLM-MAT-0016` = 2020 meV | 90% | mechanism=optical phonon | synthesis_condition=Nitrogen-rich |
 | `CLM-MAT-0002` = 200 meV | `CLM-MAT-0015` = 1980 meV | 90% | mechanism=optical phonon | synthesis_condition=Nitrogen-rich |
 | `CLM-MAT-0048` = 185 meV | `CLM-MAT-0051` = 1801 meV | 90% | material=LiFePO4 | axis=c |
-| `CLM-MAT-0002` = 200 meV | `CLM-MAT-0014` = 1940 meV | 90% | mechanism=optical phonon | synthesis_condition=Nitrogen-rich |
-| `CLM-MAT-0002` = 200 meV | `CLM-MAT-0051` = 1801 meV | 89% | mechanism=optical phonon | axis=c |
-| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0048` = 185 meV | 86% | synthesis_condition=Nitrogen-rich | material=LiFePO4 |
-| `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0049` = 296 meV | 85% | synthesis_condition=Nitrogen-rich | material=LiFePO4 |
-| `CLM-MAT-0002` = 200 meV | `CLM-MAT-0013` = 1340 meV | 85% | mechanism=optical phonon | synthesis_condition=Nitrogen-rich |
-| `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0049` = 296 meV | 85% | synthesis_condition=Nitrogen-rich | material=LiFePO4 |
-| `CLM-MAT-0014` = 1940 meV | `CLM-MAT-0049` = 296 meV | 85% | synthesis_condition=Nitrogen-rich | material=LiFePO4 |
-| `CLM-MAT-0049` = 296 meV | `CLM-MAT-0051` = 1801 meV | 84% | material=LiFePO4 | axis=c |
-| `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0049` = 296 meV | 80% | mechanism=surface polar phonon, substrate=SiO2 | material=LiFePO4 |
-| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0049` = 296 meV | 78% | synthesis_condition=Nitrogen-rich | material=LiFePO4 |
-| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0078` = 4810 meV | 72% | synthesis_condition=Nitrogen-rich | defect_complex=VAl(ON)3, model=DFT |
-| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0077` = 4330 meV | 69% | synthesis_condition=Nitrogen-rich | defect_complex=VAl(ON)3 |
-| `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0048` = 185 meV | 68% | mechanism=surface polar phonon, substrate=SiO2 | material=LiFePO4 |
-| `CLM-MAT-0051` = 1801 meV | `CLM-MAT-0078` = 4810 meV | 63% | axis=c | defect_complex=VAl(ON)3, model=DFT |
 
-_and 15 more_
+_and 33 more_
 
 ## `energy_advantage_ratio` (5 pair(s))
 
@@ -210,52 +210,52 @@ _and 596 more_
 
 _and 8 more_
 
-## `relative_deviation` (317 pair(s))
+## `relative_deviation` (548 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-MAT-0083` = 530 percent | `CLM-PROC-0018` = 0.023 percent | 100% | n=40, method=spin-restricted TAO-LDA | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
+| `CLM-PROC-0018` = 0.023 percent | `CLM-PROC-0025` = 5700 percent | 100% | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) | measurement_number=30th measurement |
+| `CLM-ARCH-0059` = 0.74 percent | `CLM-PROC-0025` = 5700 percent | 100% | tier=T1, device=fbnic | measurement_number=30th measurement |
+| `CLM-ARCH-0068` = 352 percent | `CLM-PROC-0018` = 0.023 percent | 100% | baseline=reference Cortex-M0 implementation | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
+| `CLM-ARCH-0069` = 318 percent | `CLM-PROC-0018` = 0.023 percent | 100% | baseline=reference Cortex-M0 implementation | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
+| `CLM-PROC-0007` = 0.5479 percent | `CLM-PROC-0025` = 5700 percent | 100% | voltage=20 kV | measurement_number=30th measurement |
+| `CLM-PROC-0008` = 0.5461 percent | `CLM-PROC-0025` = 5700 percent | 100% | voltage=20 kV | measurement_number=30th measurement |
+| `CLM-PROC-0009` = 0.3757 percent | `CLM-PROC-0025` = 5700 percent | 100% | voltage=20 kV | measurement_number=30th measurement |
+| `CLM-PROC-0018` = 0.023 percent | `CLM-PROC-0021` = 162 percent | 100% | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) | material=polycrystalline rolled Au, measurement_type=10-times continuous measurement |
+| `CLM-PROC-0018` = 0.023 percent | `CLM-PROC-0022` = 215 percent | 100% | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) | material=polycrystalline rolled Au, measurement_type=10-times continuous measurement |
+| `CLM-PROC-0018` = 0.023 percent | `CLM-PROC-0024` = 184 percent | 100% | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) | material=polycrystalline rolled Au |
+| `CLM-PROC-0019` = 0.624 percent | `CLM-PROC-0025` = 5700 percent | 100% | test_dataset=10 images confirmed negative by multiple observers | measurement_number=30th measurement |
+| `CLM-ARCH-0018` = 98 percent | `CLM-PROC-0018` = 0.023 percent | 100% | concurrency_n_a=48, set_type=hot set | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
+| `CLM-ARCH-0040` = 97.93 percent | `CLM-PROC-0018` = 0.023 percent | 100% | frequency=7 GHz, component=graded magnetic spacer | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
+| `CLM-ARCH-0041` = 93.08 percent | `CLM-PROC-0018` = 0.023 percent | 100% | frequency=7 GHz | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
+| `CLM-ARCH-0048` = 150 percent | `CLM-PROC-0018` = 0.023 percent | 100% | design=ZTA-Q, resource_type=DSP | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
+| `CLM-MAT-0021` = 1 percent | `CLM-PROC-0025` = 5700 percent | 100% | layer=WSe2 | measurement_number=30th measurement |
+| `CLM-PROC-0006` = 1.113 percent | `CLM-PROC-0025` = 5700 percent | 100% | voltage=20 kV, model=third-order polynomial | measurement_number=30th measurement |
+| `CLM-EDA-0005` = 86.4 percent | `CLM-PROC-0018` = 0.023 percent | 100% | model=Cyclic Edge prediction model | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
+| `CLM-EDA-0006` = 89.6 percent | `CLM-PROC-0018` = 0.023 percent | 100% | model=Non-cyclic Edge prediction model | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
+| `CLM-EDA-0007` = 76 percent | `CLM-PROC-0018` = 0.023 percent | 100% | model=Non-cyclic + Node prediction model | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
+| `CLM-PHOT-0005` = 85 percent | `CLM-PROC-0018` = 0.023 percent | 100% | dataset=Iris test set | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
+| `CLM-PHOT-0006` = 88 percent | `CLM-PROC-0018` = 0.023 percent | 100% | dataset=MNIST, setup=experimental system | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
+| `CLM-ARCH-0003` = 2 percent | `CLM-PROC-0025` = 5700 percent | 100% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | measurement_number=30th measurement |
+| `CLM-EDA-0003` = 60 percent | `CLM-PROC-0018` = 0.023 percent | 100% | benchmark_circuit=LDO benchmark, framework=proposed method | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
+| `CLM-EDA-0004` = 60 percent | `CLM-PROC-0018` = 0.023 percent | 100% | circuit=most complex circuit, framework=proposed framework | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
+| `CLM-MAT-0022` = 2 percent | `CLM-PROC-0025` = 5700 percent | 100% | layer=WS2 | measurement_number=30th measurement |
+| `CLM-ARCH-0049` = 46 percent | `CLM-PROC-0018` = 0.023 percent | 100% | mechanism=uniform iteration offsets | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
 | `CLM-MAT-0083` = 530 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | n=40, method=spin-restricted TAO-LDA | voltage=20 kV |
+| `CLM-PROC-0023` = 4.2 percent | `CLM-PROC-0025` = 5700 percent | 100% | material=polycrystalline rolled Au, measurement_type=10-times continuous measurement | measurement_number=30th measurement |
+| `CLM-ARCH-0053` = 27.3 percent | `CLM-PROC-0018` = 0.023 percent | 100% | architecture=PEEK with four Rockets upon a BOOM, baseline=unsafe baseline | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
+| `CLM-PROC-0020` = 4.5 percent | `CLM-PROC-0025` = 5700 percent | 100% | material=polycrystalline rolled Au, measurement_type=10-times continuous measurement | measurement_number=30th measurement |
+| `CLM-ARCH-0046` = 26.3 percent | `CLM-PROC-0018` = 0.023 percent | 100% | design=ZTA-Q, resource_type=LUT | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
 | `CLM-MAT-0083` = 530 percent | `CLM-PROC-0007` = 0.5479 percent | 100% | n=40, method=spin-restricted TAO-LDA | voltage=20 kV |
 | `CLM-MAT-0083` = 530 percent | `CLM-PROC-0008` = 0.5461 percent | 100% | n=40, method=spin-restricted TAO-LDA | voltage=20 kV |
 | `CLM-ARCH-0068` = 352 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | baseline=reference Cortex-M0 implementation | voltage=20 kV |
 | `CLM-ARCH-0069` = 318 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | baseline=reference Cortex-M0 implementation | voltage=20 kV |
+| `CLM-MAT-0083` = 530 percent | `CLM-PROC-0019` = 0.624 percent | 100% | n=40, method=spin-restricted TAO-LDA | test_dataset=10 images confirmed negative by multiple observers |
 | `CLM-ARCH-0059` = 0.74 percent | `CLM-MAT-0083` = 530 percent | 100% | tier=T1, device=fbnic | n=40, method=spin-restricted TAO-LDA |
-| `CLM-ARCH-0068` = 352 percent | `CLM-PROC-0007` = 0.5479 percent | 100% | baseline=reference Cortex-M0 implementation | voltage=20 kV |
-| `CLM-ARCH-0068` = 352 percent | `CLM-PROC-0008` = 0.5461 percent | 100% | baseline=reference Cortex-M0 implementation | voltage=20 kV |
-| `CLM-ARCH-0069` = 318 percent | `CLM-PROC-0007` = 0.5479 percent | 100% | baseline=reference Cortex-M0 implementation | voltage=20 kV |
-| `CLM-ARCH-0069` = 318 percent | `CLM-PROC-0008` = 0.5461 percent | 100% | baseline=reference Cortex-M0 implementation | voltage=20 kV |
-| `CLM-MAT-0021` = 1 percent | `CLM-MAT-0083` = 530 percent | 100% | layer=WSe2 | n=40, method=spin-restricted TAO-LDA |
-| `CLM-ARCH-0059` = 0.74 percent | `CLM-ARCH-0068` = 352 percent | 100% | tier=T1, device=fbnic | baseline=reference Cortex-M0 implementation |
-| `CLM-MAT-0083` = 530 percent | `CLM-PROC-0006` = 1.113 percent | 100% | n=40, method=spin-restricted TAO-LDA | voltage=20 kV, model=third-order polynomial |
-| `CLM-ARCH-0059` = 0.74 percent | `CLM-ARCH-0069` = 318 percent | 100% | tier=T1, device=fbnic | baseline=reference Cortex-M0 implementation |
-| `CLM-ARCH-0048` = 150 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | design=ZTA-Q, resource_type=DSP | voltage=20 kV |
-| `CLM-ARCH-0068` = 352 percent | `CLM-MAT-0021` = 1 percent | 100% | baseline=reference Cortex-M0 implementation | layer=WSe2 |
-| `CLM-ARCH-0069` = 318 percent | `CLM-MAT-0021` = 1 percent | 100% | baseline=reference Cortex-M0 implementation | layer=WSe2 |
-| `CLM-ARCH-0068` = 352 percent | `CLM-PROC-0006` = 1.113 percent | 100% | baseline=reference Cortex-M0 implementation | voltage=20 kV, model=third-order polynomial |
-| `CLM-ARCH-0069` = 318 percent | `CLM-PROC-0006` = 1.113 percent | 100% | baseline=reference Cortex-M0 implementation | voltage=20 kV, model=third-order polynomial |
-| `CLM-ARCH-0048` = 150 percent | `CLM-PROC-0008` = 0.5461 percent | 100% | design=ZTA-Q, resource_type=DSP | voltage=20 kV |
-| `CLM-ARCH-0048` = 150 percent | `CLM-PROC-0007` = 0.5479 percent | 100% | design=ZTA-Q, resource_type=DSP | voltage=20 kV |
-| `CLM-ARCH-0003` = 2 percent | `CLM-MAT-0083` = 530 percent | 100% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | n=40, method=spin-restricted TAO-LDA |
-| `CLM-ARCH-0018` = 98 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | concurrency_n_a=48, set_type=hot set | voltage=20 kV |
-| `CLM-ARCH-0040` = 97.93 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | frequency=7 GHz, component=graded magnetic spacer | voltage=20 kV |
-| `CLM-MAT-0022` = 2 percent | `CLM-MAT-0083` = 530 percent | 100% | layer=WS2 | n=40, method=spin-restricted TAO-LDA |
-| `CLM-ARCH-0041` = 93.08 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | frequency=7 GHz | voltage=20 kV |
-| `CLM-EDA-0006` = 89.6 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | model=Non-cyclic Edge prediction model | voltage=20 kV |
-| `CLM-EDA-0005` = 86.4 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | model=Cyclic Edge prediction model | voltage=20 kV |
-| `CLM-PHOT-0006` = 88 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | dataset=MNIST, setup=experimental system | voltage=20 kV |
-| `CLM-PHOT-0005` = 85 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | dataset=Iris test set | voltage=20 kV |
-| `CLM-ARCH-0048` = 150 percent | `CLM-ARCH-0059` = 0.74 percent | 100% | design=ZTA-Q, resource_type=DSP | tier=T1, device=fbnic |
-| `CLM-EDA-0007` = 76 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | model=Non-cyclic + Node prediction model | voltage=20 kV |
-| `CLM-ARCH-0018` = 98 percent | `CLM-PROC-0007` = 0.5479 percent | 99% | concurrency_n_a=48, set_type=hot set | voltage=20 kV |
-| `CLM-ARCH-0018` = 98 percent | `CLM-PROC-0008` = 0.5461 percent | 99% | concurrency_n_a=48, set_type=hot set | voltage=20 kV |
-| `CLM-ARCH-0040` = 97.93 percent | `CLM-PROC-0007` = 0.5479 percent | 99% | frequency=7 GHz, component=graded magnetic spacer | voltage=20 kV |
-| `CLM-ARCH-0040` = 97.93 percent | `CLM-PROC-0008` = 0.5461 percent | 99% | frequency=7 GHz, component=graded magnetic spacer | voltage=20 kV |
-| `CLM-ARCH-0003` = 2 percent | `CLM-ARCH-0068` = 352 percent | 99% | process=TSMC 16nm FinFET, comparison=quadrature-VCO power-clock vs ideal sinusoidal power-clock, cell=Buffer/NOT, fclk=3 GHz | baseline=reference Cortex-M0 implementation |
-| `CLM-ARCH-0068` = 352 percent | `CLM-MAT-0022` = 2 percent | 99% | baseline=reference Cortex-M0 implementation | layer=WS2 |
-| `CLM-ARCH-0041` = 93.08 percent | `CLM-PROC-0007` = 0.5479 percent | 99% | frequency=7 GHz | voltage=20 kV |
-| `CLM-ARCH-0041` = 93.08 percent | `CLM-PROC-0008` = 0.5461 percent | 99% | frequency=7 GHz | voltage=20 kV |
+| `CLM-ARCH-0044` = 14.3 percent | `CLM-PROC-0018` = 0.023 percent | 100% | process=IHP 130 nm, channel_count=8 | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
 
-_and 277 more_
+_and 508 more_
 
 ## `temperature` (24 pair(s))
 
@@ -300,7 +300,7 @@ _and 277 more_
 |---|---|---|---|---|
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0007` = 3100 W/(m*K) | 99% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | temperature=room-temperature, sample_13c_concentration=~0.00024% |
 
-## `time` (123 pair(s))
+## `time` (157 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -327,6 +327,7 @@ _and 277 more_
 | `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-PROC-0005` = 5.79e+09 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | hardware=NVIDIA RTX PRO 6000 Blackwell GPU, implementation_type=full-resolution implementation |
 | `CLM-ARCH-0020` = 1.4e+07 ns | `CLM-MAT-0005` = 0.0061 ns | 100% | concurrency_n_a=48, design=our design with tiering, component=end-to-end time-between-tokens (TBT) | material=monolayer MoS2, temperature=300 K, excitation_energy=1.7 eV |
 | `CLM-ARCH-0020` = 1.4e+07 ns | `CLM-MAT-0035` = 200 ns | 100% | concurrency_n_a=48, design=our design with tiering, component=end-to-end time-between-tokens (TBT) | illumination=one sun |
+| `CLM-ARCH-0021` = 2.7e+07 ns | `CLM-DEV-0051` = 1321 ns | 100% | concurrency_n_a=128, design=our design with tiering | frequency=146 MHz |
 | `CLM-ARCH-0021` = 2.7e+07 ns | `CLM-MAT-0005` = 0.0061 ns | 100% | concurrency_n_a=128, design=our design with tiering | material=monolayer MoS2, temperature=300 K, excitation_energy=1.7 eV |
 | `CLM-ARCH-0021` = 2.7e+07 ns | `CLM-MAT-0035` = 200 ns | 100% | concurrency_n_a=128, design=our design with tiering | illumination=one sun |
 | `CLM-ARCH-0021` = 2.7e+07 ns | `CLM-MAT-0036` = 750 ns | 100% | concurrency_n_a=128, design=our design with tiering | illumination=one sun |
@@ -342,10 +343,9 @@ _and 277 more_
 | `CLM-DEV-0023` = 6010 ns | `CLM-PHOT-0048` = 8.29e+10 ns | 100% | mode=4, character=thermal (channel), operating_point=Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V | algorithm=DBS, cores=128 cores |
 | `CLM-DEV-0023` = 6010 ns | `CLM-PKG-0002` = 2.499e+08 ns | 100% | mode=4, character=thermal (channel), operating_point=Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V | model=Qwen3-1.7B, channels=16 channels, erase_latency=2000 µs |
 | `CLM-DEV-0023` = 6010 ns | `CLM-PROC-0005` = 5.79e+09 ns | 100% | mode=4, character=thermal (channel), operating_point=Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V | hardware=NVIDIA RTX PRO 6000 Blackwell GPU, implementation_type=full-resolution implementation |
-| `CLM-MAT-0005` = 6.1 ps | `CLM-PHOT-0025` = 4e+09 ps | 100% | material=monolayer MoS2, temperature=300 K, excitation_energy=1.7 eV | illumination=random speckle illumination |
-| `CLM-MAT-0005` = 6.1 ps | `CLM-PHOT-0048` = 8.29e+13 ps | 100% | material=monolayer MoS2, temperature=300 K, excitation_energy=1.7 eV | algorithm=DBS, cores=128 cores |
+| `CLM-DEV-0051` = 1321 ns | `CLM-MAT-0005` = 0.0061 ns | 100% | frequency=146 MHz | material=monolayer MoS2, temperature=300 K, excitation_energy=1.7 eV |
 
-_and 83 more_
+_and 117 more_
 
 ## `voltage` (3 pair(s))
 

@@ -1,0 +1,126 @@
+id: SRC-00106
+title: Light-induced interlayer spacing dynamics via orbital phonon coupling
+doi: null
+arxiv_id: 2610.11212v1
+url: https://arxiv.org/abs/2610.11212v1
+venue_id: arxiv_api
+authors:
+- name: Wenwen Mao
+  affiliation: null
+  corresponding: null
+- name: Hanbyul Kim
+  affiliation: null
+  corresponding: null
+- name: Angel Rubio
+  affiliation: null
+  corresponding: null
+- name: Dongbin Shin
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-08'
+retrieved_date: '2026-10-09'
+access: full_text
+read_scope: Automated reading. The full PDF text (38,122 characters, 16 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.11212v1 on
+  2026-10-09. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“For the trilayer 1T ′-WS2 case, increasing the interlayer spacing opens a band gap and induces
+  a QSHI phase reported for ∆d >0.18 ˚A (Fig. 6(c)).”
+
+  “induces a QSHI phase reported for ∆d >0.18 ˚A”
+
+  “We evaluate the indirect band gap and topological characterization at statically varied interlayer
+  spacings using HSE hybrid-functional calculations for an accurate description.”'
+method_summary: '“We relaxed the ground-state structures of monolayer, bilayer, and trilayer 1T ′-WX2
+  (X= S or Se) using density functional theory as implemented in Quantum ESPRESSO 46.”
+
+  “For the electronic-structure and topology analysis, we used the HSE06 hybrid functional 50 for monolayer,
+  bilayer, and trilayer 1T ′-WX2.”
+
+  “We performed Ehrenfest dynamics using a homemade rt-TDDFT code based on Quantum ESPRESSO and tested
+  it with Octopus 41,53.”'
+limitations: “Although our rt-TDDFT simulation does not provide enough interlayer spacing to compare with
+  our static analysis of the topological phase transition, our first-principles calculation result may
+  under- or overestimate the critical distance due to DFT inaccuracies in the band gap.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 13751
+    output: 3150
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: Bilayer 1T′-WSe2 has a band gap of approximately 88 meV.
+    reason: the value 0.088 does not appear in any of the claim's quotes
+    quotes:
+    - The bilayer has a finite band gap of approximately 88 meV but becomes topologically trivial (see
+      Fig. 1(c)).
+    - Electronic band structures of (b) monolayer, (c) bilayer with AB stacking, and (d) trilayer 1T ′-WSe2
+      with ABA stacking evaluated by the HSE06 hybrid functional.
+    - Bilayer 1T′-WSe2
+    - bilayer with AB stacking
+  - statement: Trilayer 1T′-WSe2 has a band gap of about 22 meV.
+    reason: the value 0.022 does not appear in any of the claim's quotes
+    quotes:
+    - In contrast, trilayer 1T ′-WSe2 recovers non-trivial topology with a band gap of about 22 meV.
+    - Electronic band structures of (b) monolayer, (c) bilayer with AB stacking, and (d) trilayer 1T ′-WSe2
+      with ABA stacking evaluated by the HSE06 hybrid functional.
+    - trilayer 1T ′-WSe2
+    - trilayer 1T ′-WSe2 with ABA stacking
+  - statement: Monolayer 1T′-WS2 has an electronic band gap of 151 meV.
+    reason: the value 0.151 does not appear in any of the claim's quotes
+    quotes:
+    - In addition, monolayer 1T′-WS2 has a gap of 151 meV and is classified as a QSHI, whereas trilayer
+      1T′-WS2 is a trivial semimetal.
+    - For the electronic-structure and topology analysis, we used the HSE06 hybrid functional 50 for monolayer,
+      bilayer, and trilayer 1T ′-WX2.
+    - monolayer 1T′-WS2
+    - monolayer 1T′-WS2 has a gap of 151 meV
+  - statement: The effective carrier relaxation rate γ10 in the two-level model for 1T′-WSe2 is 0.5 THz.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - The effective excitation energy is set to 0.60 eV, and the relaxation rate (γ 10 = 0.5 THz) is taken
+      from the experimental report for the 1T′-WTe2 system 45.
+    - To understand how photoexcited carriers drive the interlayer-spacing changes observed in the rt-TDDFT
+      simulations, we employ a minimal model that couples electronic dynamics to interlayer lattice motion.
+    - For trilayer 1T′-WSe2 with a 0.6 eV laser, the minimal model with a ground state |0⟩ and one effective
+      excited state |1⟩
+    - For trilayer 1T′-WSe2 with a 0.6 eV laser
+  - statement: In the three-level model for trilayer 1T′-WS2 under 3.0 eV excitation, the relaxation rate
+      γ10 is 0.111 THz.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - The effective excitation energies are set as ϵ 1 = 2.9 eV and ϵ 2 = 3.0 eV, with relaxation rates
+      γ 21 = 0.5 THz and γ 10 = 0.111 THz achieved from experimental report 45.
+    - We construct a simple model for trilayer 1T′-WS2 with a 3.0 eV laser. The two excitation channels
+      are described by the three-level carrier dynamics
+    - trilayer 1T′-WS2
+    - 3.0 eV laser
+  - statement: In the three-level model for trilayer 1T′-WS2 under 3.0 eV excitation, the relaxation rate
+      γ21 is 0.5 THz.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - The effective excitation energies are set as ϵ 1 = 2.9 eV and ϵ 2 = 3.0 eV, with relaxation rates
+      γ 21 = 0.5 THz and γ 10 = 0.111 THz achieved from experimental report 45.
+    - We construct a simple model for trilayer 1T′-WS2 with a 3.0 eV laser. The two excitation channels
+      are described by the three-level carrier dynamics
+    - trilayer 1T′-WS2
+    - 3.0 eV laser
+  - statement: The fitted breathing-mode frequency in the three-level model for trilayer 1T′-WS2 is 0.70
+      THz.
+    reason: the value 0.7 does not appear in any of the claim's quotes
+    quotes:
+    - We extracted the coupling strengths g 1 = −1.2×10 −2 Ry/bohr and g 2 = −6.3×10 −3 Ry/bohr, breathing-mode
+      frequency ω ph = 0.70 THz, and pulse amplitude 6.3×10 −4 Ry by fitting to rt-TDDFT simulation results
+      with a 2.2×10 12 W/cm2 laser pum
+    - fitting to rt-TDDFT simulation results with a 2.2×10 12 W/cm2 laser pump.
+    - trilayer 1T′-WS2
+    - breathing-mode frequency ω ph = 0.70 THz
+corrections: []

@@ -574,3 +574,284 @@ claims:
     conditions:
       subregion: bottom
       milling_voltage: 2 kV
+- id: CLM-PROC-0018
+  topic: PROC
+  statement: For the grade 1 no-target group of 34 public test images, training with all 244 images resulted
+    in a false-positive area fraction of 0.023%.
+  sources:
+  - SRC-00107
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-09'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    training_set_size: full 244-image public training set
+    test_subset: No target, grade 1 (including mapped −1)
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.023
+      unit: '%'
+    si_base:
+      value: 0.00023
+      unit: dimensionless
+    display:
+      value: 0.023
+      unit: percent
+    conditions:
+      training_set_size: full 244-image public training set
+      test_subset: No target, grade 1 (including mapped −1)
+- id: CLM-PROC-0019
+  topic: PROC
+  statement: On 10 confirmed negative internal test images, the mean-score ensemble yielded a false-positive
+    area fraction of 0.624%.
+  sources:
+  - SRC-00107
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-09'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    test_dataset: 10 images confirmed negative by multiple observers
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.624
+      unit: '%'
+    si_base:
+      value: 0.00624
+      unit: dimensionless
+    display:
+      value: 0.624
+      unit: percent
+    conditions:
+      test_dataset: 10 images confirmed negative by multiple observers
+- id: CLM-PROC-0020
+  topic: PROC
+  statement: For the polycrystalline rolled Au reference sample, the mean normalized mean absolute error
+    (NMAE) is 4.5% across 10 continuous measurements.
+  sources:
+  - SRC-00109
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-09'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: polycrystalline rolled Au
+    measurement_type: 10-times continuous measurement
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 4.5
+      unit: '%'
+    si_base:
+      value: 0.045
+      unit: dimensionless
+    display:
+      value: 4.5
+      unit: percent
+    conditions:
+      material: polycrystalline rolled Au
+      measurement_type: 10-times continuous measurement
+- id: CLM-PROC-0021
+  topic: PROC
+  statement: For the polycrystalline rolled Au reference sample, the mean RMSE-to-MAE ratio (RMR) is 1.62
+    across 10 continuous measurements.
+  sources:
+  - SRC-00109
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-09'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: polycrystalline rolled Au
+    measurement_type: 10-times continuous measurement
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.62
+      unit: dimensionless
+    si_base:
+      value: 1.62
+      unit: dimensionless
+    display:
+      value: 162.0
+      unit: percent
+    conditions:
+      material: polycrystalline rolled Au
+      measurement_type: 10-times continuous measurement
+- id: CLM-PROC-0022
+  topic: PROC
+  statement: For the polycrystalline rolled Au sample, the mean Durbin-Watson (DW) statistic is 2.15 across
+    10 continuous measurements.
+  sources:
+  - SRC-00109
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-09'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: polycrystalline rolled Au
+    measurement_type: 10-times continuous measurement
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 2.15
+      unit: dimensionless
+    si_base:
+      value: 2.15
+      unit: dimensionless
+    display:
+      value: 215.0
+      unit: percent
+    conditions:
+      material: polycrystalline rolled Au
+      measurement_type: 10-times continuous measurement
+- id: CLM-PROC-0023
+  topic: PROC
+  statement: For the polycrystalline rolled Au sample, the mean difference of the coefficients of determination
+    (∆R2) is 0.042 across 10 continuous measurements.
+  sources:
+  - SRC-00109
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-09'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: polycrystalline rolled Au
+    measurement_type: 10-times continuous measurement
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.042
+      unit: dimensionless
+    si_base:
+      value: 0.042
+      unit: dimensionless
+    display:
+      value: 4.2
+      unit: percent
+    conditions:
+      material: polycrystalline rolled Au
+      measurement_type: 10-times continuous measurement
+- id: CLM-PROC-0024
+  topic: PROC
+  statement: For the polycrystalline rolled Au sample, the mean optimal exponent n is 1.84.
+  sources:
+  - SRC-00109
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-09'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    material: polycrystalline rolled Au
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.84
+      unit: dimensionless
+    si_base:
+      value: 1.84
+      unit: dimensionless
+    display:
+      value: 184.0
+      unit: percent
+    conditions:
+      material: polycrystalline rolled Au
+- id: CLM-PROC-0025
+  topic: PROC
+  statement: Applying a two-component model to the 30th PYS measurement of the heavily doped p-type Si
+    (PL) sample improves the AIC by approximately 57 relative to the single-component model.
+  sources:
+  - SRC-00109
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-09'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    measurement_number: 30th measurement
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: true
+    as_published:
+      value: 57.0
+      unit: dimensionless
+    si_base:
+      value: 57.0
+      unit: dimensionless
+    display:
+      value: 5700.0
+      unit: percent
+    conditions:
+      measurement_number: 30th measurement

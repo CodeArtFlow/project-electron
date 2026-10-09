@@ -25,6 +25,75 @@ id: CAND-20261009-0154
 harvested_date: '2026-10-09'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-09'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The DynaTE accelerator ASIC chip area is 3.91 mm2 when fabricated in TSMC 28 nm technology
+      at 1 GHz.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Area (mm
+      2) 2.12 1.79 – 3.91'''
+    quotes:
+    - Area (mm 2) 2.12 1.79 – 3.91
+    - The datapath and control logic are synthesized using Synopsys Design Compiler. On-chip SRAM area
+      and energy are modeled using CACTI 7.0 [25].
+    - Technology / Frequency TSMC 28 nm / 1 GHz
+    - TABLE IV COMPARISON WITH PRIOR DLLMACCELERATORS.
+  - statement: DynaTE achieves an overall power consumption of 7.36 W.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Power (W)
+      1.01 1.18 5.17 7.36'''
+    quotes:
+    - Power (W) 1.01 1.18 5.17 7.36
+    - A cycle-accurate simulator models PE execution, on-chip and off-chip memory accesses, MSM refinement,
+      and streaming vocabulary processing.
+    - TABLE III AREA AND POWER BREAKDOWN OFDYNATE.
+  - statement: DynaTE achieves a throughput of 24.89 tokens/s across LLaDA-8B and Dream-7B on five evaluated
+      benchmarks with a generation length of 256 tokens.
+    reason: the statement contains the number 8, which none of its quotes contain
+    quotes:
+    - Throughput (tokens/s) 8.97 12.12 5.76 24.89
+    - A cycle-accurate simulator models PE execution, on-chip and off-chip memory accesses, MSM refinement,
+      and streaming vocabulary processing.
+    - TABLE IV COMPARISON WITH PRIOR DLLMACCELERATORS.
+    - Table IV reports the average results across LLaDA-8B and Dream-7B on the five evaluated benchmarks,
+      with the generation length fixed at 256 tokens.
+  - statement: Supporting multiple precision modes increases the MAC area by 6.17%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''+6.17%'''
+    quotes:
+    - +6.17%
+    - The datapath and control logic are synthesized using Synopsys Design Compiler.
+    - Fig. 19(c) compares the proposed splittable MAC with the baseline MAC. Supporting multiple precision
+      modes increases the MAC area by only 6.17%
+  - statement: Iteration-adaptive precision reduces PE-array energy by 32.6% compared with uniform W8A8
+      execution.
+    reason: the value -32.6 does not appear in any of the claim's quotes
+    quotes:
+    - while iteration-adaptive precision reduces the PE-array energy by 32.6% compared with uniform W8A8
+      execution.
+    - A cycle-accurate simulator models PE execution, on-chip and off-chip memory accesses, MSM refinement,
+      and streaming vocabulary processing.
+  - statement: DynaTE reduces intermediate-logit traffic for LLaDA-8B from 16.0 MiB to 8.2 KiB per iteration.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''KiB'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a uni'
+    quotes:
+    - For LLaDA-8B, DynaTE reduces intermediate-logit traffic from 16.0 MiB to 8.2 KiB per iteration
+    - A cycle-accurate simulator models PE execution, on-chip and off-chip memory accesses, MSM refinement,
+      and streaming vocabulary processing.
+  - statement: Prior-ID seeding reduces the number of logits admitted to the tournament tree by 91.68%.
+    reason: the value -91.68 does not appear in any of the claim's quotes
+    quotes:
+    - Prior-ID seeding further reduces the number of logits admitted to the tournament tree by 91.68%.
+    - A cycle-accurate simulator models PE execution, on-chip and off-chip memory accesses, MSM refinement,
+      and streaming vocabulary processing.
+  tokens:
+    input: 22298
+    output: 2314
+  fetched_chars: 68703

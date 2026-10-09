@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-08.
+Topic code `MAT`. Last reviewed 2026-10-09.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -71,6 +71,14 @@ Topic code `MAT`. Last reviewed 2026-10-08.
   - sources: SRC-00095
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0027 — see the open register
+- **8.5396e-06 fJ** — Monolayer CrSiCN4 has a valence-band spin splitting of 53.3 meV.
+  - `CLM-MAT-0085` · material CrSiCN4, method PBE+SOC · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00108
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **8.39541e-06 fJ** — Monolayer CrGeCN4 has a valence-band spin splitting of 52.4 meV.
+  - `CLM-MAT-0086` · material CrGeCN4, method PBE+SOC · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00108
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### length device
 
@@ -143,6 +151,10 @@ Topic code `MAT`. Last reviewed 2026-10-08.
 - **≈0.98 nm** — The step height of the CrSb thickness unit on SrTiO3(001) is approximately 0.98 nm, corresponding to a bilayer structure.
   - `CLM-MAT-0081` · material CrSb · grade B · credibility unknown · measured · as of 2026-10-07
   - sources: SRC-00101
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≥ 0.018 nm** — Static HSE calculations indicate that trilayer 1T′-WS2 transitions to a QSHI phase for interlayer spacing expansion Δd greater than 0.18 Å.
+  - `CLM-MAT-0084` · phase QSHI · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00106
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power density
@@ -413,6 +425,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 83
-- grades: {'B': 83}
-- distinct sources: 31
+- claims: 86
+- grades: {'B': 86}
+- distinct sources: 33

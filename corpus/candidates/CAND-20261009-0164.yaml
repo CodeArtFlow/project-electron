@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.11191v1
 doi: null
-title: 'Cooperative STT and SOT switching in perpendicular magnetic tunnel junctions:
-  Role of the pulse-end magnetization state'
+title: 'Cooperative STT and SOT switching in perpendicular magnetic tunnel junctions: Role of the pulse-end
+  magnetization state'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-08'
@@ -35,6 +35,56 @@ id: CAND-20261009-0164
 harvested_date: '2026-10-09'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-09'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: In micromagnetic simulations of the CoFeB free layer, applying JSTT = 3.42 × 108 A/cm2
+      and JSOT = 7.2 × 108 A/cm2 with a 2-ns pulse duration results in rapid re
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - When JSOT is increased to 7.2×108 A/cm2 [Fig. 2(b)], the magnetization dynamics change markedly.
+    - The enhanced precession amplitude renders the combined torque s strong enough to overcome the PMA
+      field, leading to a rapid reversal of mz at about 0.8 ns.
+    - Micromagnetic simulations used a damping constant α = 0.1 and uniaxial anisotropy Ku = 1.35 × 106
+      J/m3.
+    - (b) JSTT = 3.42 × 108 A/cm2, JSOT = 7.2 × 108 A/cm2
+  - statement: Increasing JSTT to 3.47 × 108 A/cm2 at JSOT = 7.0 × 108 A/cm2 under a 2-ns pulse completes
+      magnetization reversal within 0.7 ns.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''reversal
+      completes within 0.7 ns for the increased-JSTT case, faster t'''
+    quotes:
+    - reversal completes within 0.7 ns for the increased-JSTT case, faster than when increasing JSOT.
+    - Micromagnetic simulations used a damping constant α = 0.1 and uniaxial anisotropy Ku = 1.35 × 106
+      J/m3.
+    - (c) JSTT = 3.47 × 108 A/cm2, JSOT = 7.0 × 108 A/cm2.
+    - applied 2-ns current-density pulses JSTT and JSOT
+  - statement: For JSTT = 4 × 108 A/cm2 and JSOT = 5.4 × 108 A/cm2, increasing the pulse duration from
+      0.23 ns to 0.24 ns enables successful magnetization switching.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - As illustrated in Fig. 3(a), for JSTT = 4 × 10 8 A/cm2 and JSOT = 5.4 × 108 A/cm2 with a pulse duration
+      of 0.23 ns, the combined current pulse excites significant magnetization precession.
+    - In contrast, Fig. 3(b) demonstrates that a marginal increase in pulse duration to 0.24 ns allows
+      m to cross into the reversed state ’s attraction basin before the current is switched off.
+    - All micromagnetic simulations use α = 0.1 and Ku = 1.35 × 10 6 J/m3.
+    - JSTT = 4 × 10 8 A/cm2
+  - statement: Under combined STT and SOT driving at JSTT = 3.11 × 108 A/cm2 and JSOT = 11.11 × 108 A/cm2
+      with Ku = 1.35 × 106 J/m3, increasing α reduces the time required for
+    reason: the statement contains the number 1.35, which none of its quotes contain
+    quotes:
+    - The current densities are fixed at JSTT = 3.11 × 108 A/cm2 and JSOT = 11.11 × 108 A/cm2.
+    - As α increases, the switching time decreases monotonically, but the dependence is not linear.
+    - (c) Switching time as a function of α with Ku fixed at 1.35 × 10 6 J/m3.
+    - JSTT = 3.11 × 108 A/cm2
+  tokens:
+    input: 20611
+    output: 2494
+  fetched_chars: 60730

@@ -41,6 +41,98 @@ id: CAND-20261009-0162
 harvested_date: '2026-10-09'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-09'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The maximum saturation magnetization reaches approximately 3.7 μB/f.u. at 300 K for the
+      2 nm-thick epitaxial ErFeO3 film.
+    reason: 'unit conversion refused: mobility: could not parse 3.7 ''µB/f.u.'': ''f'' is not defined
+      in the unit registry'
+    quotes:
+    - The magnetic response reaches its maximum value of 3.7 µB/f.u. for the 2 nm-thick epitaxial film.
+    - Figure 2a-d show M(H) hysteresis curves from magnetic property measurement system (MPMS) results
+      of ErFeO3 thin films with film thicknesses of 1.2, 2, 3, and 4 nm, with an external magnetic field
+      swept between −5 and 5 T, along three orthog
+    - ErFeO3 epitaxial thin film with atomically precise thickness control demonstrates that the magnetic
+      response at 300 K can be significantly enhanced compared to its bulk counterpart.
+    - demonstrates that the magnetic response at 300 K can be significantly enhanced compared to its bulk
+      counterpart.
+  - statement: At 300 K above 1 T along the out-of-plane direction, the saturation magnetization reaches
+      maximum values of 3.7 μB/f.u. for a 2-nm-thick ErFeO3 film.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''reaching
+      a maximum value of 1.5 and 3.7 μB/f.u. above 1 T along the in'''
+    quotes:
+    - reaching a maximum value of 1.5 and 3.7 μB/f.u. above 1 T along the in-plane and out-of-plane directions,
+      respectively, for a 2-nm-thick film.
+    - Figure 2a-d show M(H) hysteresis curves from magnetic property measurement system (MPMS) results
+      of ErFeO3 thin films with film thicknesses of 1.2, 2, 3, and 4 nm, with an external magnetic field
+      swept between −5 and 5 T, along three orthog
+    - for a 2-nm-thick film.
+    - along the in-plane and out-of-plane directions, respectively, for a 2-nm-thick film.
+  - statement: At 300 K above 1 T along the in-plane direction, the saturation magnetization reaches a
+      maximum value of 1.5 μB/f.u. for a 2-nm-thick ErFeO3 film.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''reaching
+      a maximum value of 1.5 and 3.7 μB/f.u. above 1 T along the in'''
+    quotes:
+    - reaching a maximum value of 1.5 and 3.7 μB/f.u. above 1 T along the in-plane and out-of-plane directions,
+      respectively, for a 2-nm-thick film.
+    - Figure 2a-d show M(H) hysteresis curves from magnetic property measurement system (MPMS) results
+      of ErFeO3 thin films with film thicknesses of 1.2, 2, 3, and 4 nm, with an external magnetic field
+      swept between −5 and 5 T, along three orthog
+    - for a 2-nm-thick film.
+    - along the in-plane and out-of-plane directions, respectively, for a 2-nm-thick film.
+  - statement: At 2 K, MPMS measurements show the saturation magnetization reaches a maximum value of
+      8.5 μB/f.u. along the out-of-plane direction for a 2 nm-thick ErFeO3 film
+    reason: 'unit conversion refused: mobility: could not parse 8.5 ''μB/f.u.'': ''f'' is not defined
+      in the unit registry'
+    quotes:
+    - reaching maximum values of 4.9 and 8.5 μB/f.u., along the in-plane and out-of-plane directions,
+      respectively, for the 2 nm-thick film.
+    - Figures S4a-d show the MPMS results at 2 K.
+    - Figures S4a-d show the MPMS results of 2.0, 3.0, 4.0, 20 nm ErFeO3 films at 2 K
+    - for the 2 nm-thick film.
+  - statement: At 2 K, MPMS measurements show the saturation magnetization reaches a maximum value of
+      4.9 μB/f.u. along the in-plane direction for a 2 nm-thick ErFeO3 film.
+    reason: 'unit conversion refused: mobility: could not parse 4.9 ''μB/f.u.'': ''f'' is not defined
+      in the unit registry'
+    quotes:
+    - reaching maximum values of 4.9 and 8.5 μB/f.u., along the in-plane and out-of-plane directions,
+      respectively, for the 2 nm-thick film.
+    - Figures S4a-d show the MPMS results at 2 K.
+    - Figures S4a-d show the MPMS results of 2.0, 3.0, 4.0, 20 nm ErFeO3 films at 2 K
+    - for the 2 nm-thick film.
+  - statement: In PNR measurements at 300 K with a 4.5 T magnetic field, fitting yields an average in-plane
+      magnetic moment of 0.72 μB/f.u. for the 2 nm-thick ErFeO3 film.
+    reason: 'unit conversion refused: mobility: could not parse 0.72 ''μB/f.u.'': ''f'' is not defined
+      in the unit registry'
+    quotes:
+    - magnitudes of 0.72, 0.36, and 0.32 μB/f.u. for the 2, 4, and 7 nm-thick films, respectively.
+    - Upper panels of Figure 2e-g show PNR results of 2, 4, and 7 nm-thick ErFeO3 films, respectively,
+      at 300 K with a 4.5 T magnetic field.
+    - for the 2, 4, and 7 nm-thick films, respectively.
+    - This magnetic scattering length density corresponds to average magnetic moments oriented within
+      the plane of the film, with magnitudes of 0.72, 0.36, and 0.32 μB/f.u. for the 2, 4, and 7 nm-thick
+      films, respectively.
+  - statement: In PNR measurements at 1.5 K with a 4.5 T magnetic field, fitting yields an average in-plane
+      magnetic moment of 6.5 μB/f.u. for the 2 nm-thick ErFeO3 film.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - which corresponds to 6.5, 5.0, and 4.0 μB/f.u. of average in-plane magnetic moments, respectively.
+    - The upper panels of the Figure S4e-g show the PNR results of 2, 4, and 7 nm-thick films, respectively,
+      obtained at a temperature of 1.5 K and a magnetic field of 4.5 T.
+    - obtained at a temperature of 1.5 K and a magnetic field of 4.5 T.
+    - The magnetic scattering length densities of the 2, 4, and 7 nm-thick films were obtained to be 3.0
+      × 10−6, 2.3 × 10−6, and 1.8 × 10−6 Å−2, which corresponds to 6.5, 5.0, and 4.0 μB/f.u. of average
+      in-plane magnetic moments, respectively.
+  tokens:
+    input: 22342
+    output: 3867
+  fetched_chars: 68234

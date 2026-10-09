@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-10-08.
+Topic code `DEV`. Last reviewed 2026-10-09.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -201,6 +201,14 @@ Topic code `DEV`. Last reviewed 2026-10-08.
   - `CLM-DEV-0023` · mode 4, character thermal (channel), operating_point Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V · grade B · credibility unknown · simulated · as of 2026-09-30
   - sources: SRC-00054
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **1321 ns** — At an operating frequency of 146 MHz, the simulated delay time of the SAW sensor is 1.321 µs.
+  - `CLM-DEV-0051` · frequency 146 MHz · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00110
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1357 ns** — At an operating frequency of 146 MHz, the measured delay time of the SAW sensor is 1.357 µs.
+  - `CLM-DEV-0052` · frequency 146 MHz · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00110
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -223,6 +231,6 @@ _None._
 
 ## Evidence base
 
-- claims: 47
-- grades: {'B': 47}
-- distinct sources: 18
+- claims: 49
+- grades: {'B': 49}
+- distinct sources: 19

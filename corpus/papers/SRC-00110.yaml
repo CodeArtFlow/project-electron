@@ -1,0 +1,109 @@
+id: SRC-00110
+title: Time-Domain Analysis of Surface Acoustic Wave Magnetoelectric Sensors
+doi: null
+arxiv_id: 2610.11421v1
+url: https://arxiv.org/abs/2610.11421v1
+venue_id: arxiv_api
+authors:
+- name: Mohsen Samadi
+  affiliation: null
+  corresponding: null
+- name: Henrik Wolframm
+  affiliation: null
+  corresponding: null
+- name: Felix Weisheit
+  affiliation: null
+  corresponding: null
+- name: Dirk Meyners
+  affiliation: null
+  corresponding: null
+- name: Eckhard Quandt
+  affiliation: null
+  corresponding: null
+- name: Michael Höft
+  affiliation: null
+  corresponding: null
+- name: Martina Gerken
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-08'
+retrieved_date: '2026-10-09'
+access: full_text
+read_scope: Automated reading. The full PDF text (43,104 characters, 18 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.11421v1 on
+  2026-10-09. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: “The simulated delay time at 146 MHz was 1.321 μs, compared with 1.357 μs measured experimentally,
+  corresponding to a deviation of 2.7%.”
+method_summary: '“To simulate the frequency - and time-domain responses of the SAW sensor, an electromechanical
+  model was developed in COMSOL Multiphysics ® [37], as shown in Fig. 1.”
+
+  “The time-domain response of the SAW sensor was experimentally measured at the operating frequencies
+  of 146 MHz and 143 MHz, as shown in Fig. 4b.”'
+limitations: “The present study focuses exclusively on the SAW propagation characteristics and transient
+  response of the sensor, rather than its magnetic -field sensing performance.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14658
+    output: 2854
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: At the operating frequency of 146 MHz, time-domain simulation yields a phase velocity of
+      4271 m/s.
+    reason: 'unit conversion refused: mobility: cannot convert 4271.0 m/s to m^2/(V*s) - Cannot convert
+      from ''meter / second'' ([length] / [time]) to ''meter ** 2 / volt / second'' ([time] ** 2 * [curr'
+    quotes:
+    - At the operating frequency of 146 MHz, a phase velocity of 4271 m/s and a group velocity of 3419
+      m/s were obtained.
+    - The phase and group velocity values obtained from the time-domain simulations are compared with
+      those derived from the frequency -domain analysis presented in Section 3.1.
+  - statement: At the operating frequency of 146 MHz, time-domain simulation via wavefront tracking yields
+      a group velocity of 3419 m/s.
+    reason: 'unit conversion refused: mobility: cannot convert 3419.0 m/s to m^2/(V*s) - Cannot convert
+      from ''meter / second'' ([length] / [time]) to ''meter ** 2 / volt / second'' ([time] ** 2 * [curr'
+    quotes:
+    - At the operating frequency of 146 MHz, a phase velocity of 4271 m/s and a group velocity of 3419
+      m/s were obtained.
+    - The group velocity obtained from wavefront tracking also showed good agreement with the experimental
+      value, with a deviation of approximately 0.9%.
+  - statement: The measured electrical 6-dB bandwidth of the SAW sensor is 4.28 MHz.
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - For the sensor investigated here, this yields an electrical bandwidth of 4.28 MHz.
+    - The electrical bandwidth is defined as the frequency range in which the output amplitude remains
+      within 6 dB of its maximum, i.e. above half the maximum amplitude.
+  - statement: Under resonant excitation, a group velocity of approximately 3390 m/s was experimentally
+      measured.
+    reason: 'unit conversion refused: mobility: cannot convert 3390.0 m/s to m^2/(V*s) - Cannot convert
+      from ''meter / second'' ([length] / [time]) to ''meter ** 2 / volt / second'' ([time] ** 2 * [curr'
+    quotes:
+    - A group velocity of vg≃3390 m/s was obtained under resonant excitation, deviating by approximately
+      29 m/s (0.9%) from the time-domain analysis.
+  - statement: At a wavelength of 28 µm, frequency-domain simulation yields a phase velocity of approximately
+      4105 m/s.
+    reason: 'unit conversion refused: mobility: cannot convert 4105.0 m/s to m^2/(V*s) - Cannot convert
+      from ''meter / second'' ([length] / [time]) to ''meter ** 2 / volt / second'' ([time] ** 2 * [curr'
+    quotes:
+    - At this wavelength, which is indicated by a vertical dashed line in Fig. 3, the frequency-domain
+      simulations yielded a phase velocity of vp≃4105 m/s and a group velocity of vg≃3405 m/s.
+    - The measured phase and group velocities at λ=28 μm are indicated by blue and red asterisks, respectively.
+  - statement: At a wavelength of 28 µm, frequency-domain simulation yields a group velocity of approximately
+      3405 m/s.
+    reason: 'unit conversion refused: mobility: cannot convert 3405.0 m/s to m^2/(V*s) - Cannot convert
+      from ''meter / second'' ([length] / [time]) to ''meter ** 2 / volt / second'' ([time] ** 2 * [curr'
+    quotes:
+    - At this wavelength, which is indicated by a vertical dashed line in Fig. 3, the frequency-domain
+      simulations yielded a phase velocity of vp≃4105 m/s and a group velocity of vg≃3405 m/s.
+    - The measured phase and group velocities at λ=28 μm are indicated by blue and red asterisks, respectively.
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (measured: 1, simulated:
+  1). This field records the majority (simulated); trust each claim''s own evidence_type over this one.'

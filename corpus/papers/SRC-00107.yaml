@@ -1,0 +1,125 @@
+id: SRC-00107
+title: 'Localization of Candidate Kikuchi Regions in RHEED Images: Visibility and Annotation Boundaries'
+doi: null
+arxiv_id: 2610.11232v1
+url: https://arxiv.org/abs/2610.11232v1
+venue_id: arxiv_api
+authors:
+- name: Lumou Weng
+  affiliation: null
+  corresponding: null
+- name: Hanshan Huang
+  affiliation: null
+  corresponding: null
+- name: Zhenhan Zhang
+  affiliation: null
+  corresponding: null
+- name: Gan Wang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-08'
+retrieved_date: '2026-10-09'
+access: full_text
+read_scope: Automated reading. The full PDF text (101,133 characters, 42 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.11232v1 on
+  2026-10-09. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“No target, grade 1 (including mapped −1) 34 (0/34) False-positive area 0.023%”
+
+  “full 244-image public training set”
+
+  “No target, grade 1 (including mapped −1)”
+
+  “False-positive area ranged from 0.394% to 2.957% across the four models and was 0.624% for the mean-score
+  ensemble, mainly around streak ends, central bright spots, and screen edges, with variation across runs
+  (Figure S3).”
+
+  “10 images confirmed negative by multiple observers”'
+method_summary: '“We combine multiscale convolution with spatial detail from skip connections and independent
+  supervision that allows overlapping regions to localize streaks and candidate Kikuchi regions separately.”
+
+  “Using manual polygon annotations made before model-assisted editing, the Kikuchi intersection-over-union
+  (IoU) on 29 laboratory test images from separate growth batches was 0.6290±0.0137.”
+
+  “We then performed supervised adaptation to public chalcogenide images and stratified images by Kikuchi
+  visibility using the median ratings of three observers who rated the images separately, two of whom
+  rated with predictions hidden.”'
+limitations: '“Public-image adaptation used reference masks of mixed provenance, including prediction-derived
+  drafts.”
+
+  “Agreement was lower for ambiguous cues.”
+
+  “Current results apply to static datasets dominated by streak patterns; extension to polycrystalline,
+  spot-like, or abnormal patterns remains to be evaluated.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 29337
+    output: 3035
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: On 29 laboratory test images separated by growth batch, candidate Kikuchi region localization
+      achieved an IoU of 0.6290±0.0137 using original manual polygon ann
+    reason: the value 0.629 does not appear in any of the claim's quotes
+    quotes:
+    - Using manual polygon annotations made before model-assisted editing, the Kikuchi intersection-over-union
+      (IoU) on 29 laboratory test images from separate growth batches was 0.6290±0.0137.
+    - 29 laboratory test images from separate growth batches
+    - manual polygon annotations made before model-assisted editing
+    - candidate Kikuchi regions
+  - statement: Streak region localization on the 29 internal test images achieved an IoU of 0.6765±0.0114.
+    reason: the statement contains the number 29, which none of its quotes contain
+    quotes:
+    - Streak IoU was 0.6765±0.0114;
+    - 29 internal test images
+    - Streaks
+  - statement: When trained with all 244 public training images, Kikuchi region localization IoU was 0.5014±0.0336
+      on the clear-feature group of 10 test images.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''IoU'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a uni'
+    quotes:
+    - With all 244 training images, IoU for the clear-feature group of 10 test images was 0.5014±0.0336,
+      whereas ambiguous images gave lower values.
+    - 244 training images
+    - clear-feature group of 10 test images
+    - Kikuchi
+  - statement: When trained with 100 public training images, clear-group Kikuchi region IoU was 0.5171±0.0073
+      on the public test set.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''IoU'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a uni'
+    quotes:
+    - With 100 training images, clear-group IoU was 0.5171±0.0073;
+    - 100 training images
+    - clear-group
+    - Kikuchi
+  - statement: Direct application of the laboratory starting model to 86 public test images gave a Kikuchi
+      region IoU of 0.1413.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''IoU'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a uni'
+    quotes:
+    - Direct application of the laboratory starting model to 86 public test images gave IoU 0.1413.
+    - laboratory starting model
+    - 86 public test images
+    - Kikuchi
+  - statement: For ambiguous grade 2 public test images, Kikuchi IoU with the full 244-image training
+      set was 0.1666±0.0224.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''IoU'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a uni'
+    quotes:
+    - Ambiguous, grade 2 26 (10/16) IoU 0.1666±0.0224
+    - full 244-image public training set
+    - Ambiguous, grade 2
+    - '26'
+corrections: []

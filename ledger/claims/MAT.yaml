@@ -2234,3 +2234,107 @@ claims:
     conditions:
       n: '40'
       method: spin-restricted TAO-LDA
+- id: CLM-MAT-0084
+  topic: MAT
+  statement: Static HSE calculations indicate that trilayer 1T′-WS2 transitions to a QSHI phase for interlayer
+    spacing expansion Δd greater than 0.18 Å.
+  sources:
+  - SRC-00106
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-09'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    phase: QSHI
+  quantity:
+    quantity: length_device
+    bound: lower_bound
+    approximate: false
+    as_published:
+      value: 0.18
+      unit: Å
+    si_base:
+      value: 1.8e-11
+      unit: m
+    display:
+      value: 0.018
+      unit: nm
+    conditions:
+      phase: QSHI
+- id: CLM-MAT-0085
+  topic: MAT
+  statement: Monolayer CrSiCN4 has a valence-band spin splitting of 53.3 meV.
+  sources:
+  - SRC-00108
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-09'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: CrSiCN4
+    method: PBE+SOC
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 53.3
+      unit: meV
+    si_base:
+      value: 8.539601459219999e-21
+      unit: J
+    display:
+      value: 8.539601459219998e-06
+      unit: fJ
+    conditions:
+      material: CrSiCN4
+      method: PBE+SOC
+- id: CLM-MAT-0086
+  topic: MAT
+  statement: Monolayer CrGeCN4 has a valence-band spin splitting of 52.4 meV.
+  sources:
+  - SRC-00108
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-09'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: CrGeCN4
+    method: PBE+SOC
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 52.4
+      unit: meV
+    si_base:
+      value: 8.395405562159999e-21
+      unit: J
+    display:
+      value: 8.395405562159998e-06
+      unit: fJ
+    conditions:
+      material: CrGeCN4
+      method: PBE+SOC

@@ -1291,3 +1291,71 @@ claims:
   conditions:
     sample_type: continuous permalloy reference region
     permalloy_thickness: 20 nm
+- id: CLM-DEV-0051
+  topic: DEV
+  statement: At an operating frequency of 146 MHz, the simulated delay time of the SAW sensor is 1.321
+    µs.
+  sources:
+  - SRC-00110
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-09'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    frequency: 146 MHz
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.321
+      unit: μs
+    si_base:
+      value: 1.321e-06
+      unit: s
+    display:
+      value: 1320.9999999999998
+      unit: ns
+    conditions:
+      frequency: 146 MHz
+- id: CLM-DEV-0052
+  topic: DEV
+  statement: At an operating frequency of 146 MHz, the measured delay time of the SAW sensor is 1.357
+    µs.
+  sources:
+  - SRC-00110
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-09'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    frequency: 146 MHz
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.357
+      unit: μs
+    si_base:
+      value: 1.3569999999999999e-06
+      unit: s
+    display:
+      value: 1356.9999999999998
+      unit: ns
+    conditions:
+      frequency: 146 MHz

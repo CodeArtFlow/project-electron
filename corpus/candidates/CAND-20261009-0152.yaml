@@ -33,6 +33,64 @@ id: CAND-20261009-0152
 harvested_date: '2026-10-09'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-09'
+  reason: the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: An applied displacement field of approximately 0.5 V/nm produces additional electron doping
+      of roughly 10 to 20 x 10^9 cm^-2 in graphene encapsulated between hB
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Increasing
+      the displacement field induces notable charge transfer betw'''
+    quotes:
+    - Increasing the displacement field induces notable charge transfer between graphene and hBN, producing
+      additional electron doping of ≈ 𝟏𝟎 − 𝟐𝟎 × 𝟏𝟎𝟗 𝐜𝐦−𝟐 even at the moderate displacement field (∼ 𝟎.
+      𝟓 𝐕 𝐧𝐦−−𝟏)
+    - Electrical transport measurements were conducted with low -frequency lock-in amplifiers from Stanford
+      Research Systems (SRS) working at reference frequencies 9 - 133 Hz.
+    - (∼ 𝟎. 𝟓 𝐕 𝐧𝐦−−𝟏)
+  - statement: The bulk density of defect states in hBN crystals extracted by fitting the charge neutrality
+      point shift is roughly 1 to 7 x 10^-5 nm^-3 across different hBN cr
+    reason: 'unit conversion refused: defect_density: could not parse 1e-05 ''nm−3'': ''nm−3'' is not
+      defined in the unit registry'
+    quotes:
+    - with the bulk density ~𝟏 − 𝟕 × 𝟏𝟎−𝟓 𝐧𝐦−𝟑 varying across different hBN crystals.
+    - The approach used to fit CNP shift gives results in the range of ~1 − 7 × 10−5 nm−3 for our devices
+  - statement: At zero gate voltages, all measured devices exhibit initial hole doping of approximately
+      20 to 40 x 10^9 cm^-2.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - we have found that at zero gate voltages, all our devices exhibit a noticeable hole doping 𝑛0 ∼
+      20 − 40 × 109 cm−2
+    - Electrical transport measurements were conducted with low -frequency lock-in amplifiers from Stanford
+      Research Systems (SRS) working at reference frequencies 9 - 133 Hz.
+    - at zero gate voltages
+  - statement: In device 1, the charge neutrality point gap resistivity at zero displacement field reaches
+      approximately 1 MΩ.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - At 𝐷 = 0, the CNP resistivity of the gapped state approaches ∼ 1MΩ, in contrast to the 2 -5 kΩ typically
+      observed in lower -quality devices49,50.
+    - Electrical transport measurements were conducted with low -frequency lock-in amplifiers from Stanford
+      Research Systems (SRS) working at reference frequencies 9 - 133 Hz.
+    - high electronic quality of this device enables the resolution of the gap at the graphene CNP shown
+      in Fig. 3d. At 𝐷 = 0, the CNP resistivity of the gapped state approaches ∼ 1MΩ
+    - At 𝐷 = 0
+  - statement: The bulk defect concentration extracted from the change in disorder is approximately 0.1
+      to 4.0 x 10^-5 nm^-3.
+    reason: the value 1e-06 does not appear in any of the claim's quotes
+    quotes:
+    - whereas analysis based on ∆𝑛dis gives significantly lower values of ~0.1 − 4.0 × 10−5 nm−3 Fig.
+      4c, d.
+  tokens:
+    input: 27717
+    output: 1730
+  fetched_chars: 83637
