@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.11682v1
 doi: null
-title: Robust skyrmion nucleation and transport via composition gradient in rare earth-transition
-  metal ferrimagnets
+title: Robust skyrmion nucleation and transport via composition gradient in rare earth-transition metal
+  ferrimagnets
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-08'
@@ -24,6 +24,40 @@ id: CAND-20261009-0123
 harvested_date: '2026-10-09'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-10'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The threshold current density required to depin the skyrmion from the engineered parking
+      spot is approximately 3.5×10 10 A/m2 for a damping parameter α = 0.1.
+    reason: 'unit conversion refused: current_drive: cannot convert 35000000000.0 A/m2 to A/m - Cannot
+      convert from ''ampere / meter ** 2'' ([current] / [length] ** 2) to ''ampere / meter'' ([current]
+      /'
+    quotes:
+    - The threshold current density required to depin the skyrmion from the engineered parking spot is
+      found to be approximatelyJ th = 3.5×10 10 A/m2 (Jth = 2.5×1010 A/m2) forα= 0.1 (α= 0.01).
+    - Micromagnetic simulations were performed using MuMax3, which was extended to accurately model ferrimagnetic
+      systems [41, 42].
+    - forα= 0.1 (α= 0.01).
+  - statement: The threshold current density required to depin the skyrmion from the engineered parking
+      spot is approximately 2.5×10 10 A/m2 for α = 0.01.
+    reason: 'unit conversion refused: current_drive: cannot convert 25000000000.0 A/m2 to A/m - Cannot
+      convert from ''ampere / meter ** 2'' ([current] / [length] ** 2) to ''ampere / meter'' ([current]
+      /'
+    quotes:
+    - The threshold current density required to depin the skyrmion from the engineered parking spot is
+      found to be approximatelyJ th = 3.5×10 10 A/m2 (Jth = 2.5×1010 A/m2) forα= 0.1 (α= 0.01).
+    - Micromagnetic simulations were performed using MuMax3, which was extended to accurately model ferrimagnetic
+      systems [41, 42].
+    - forα= 0.1 (α= 0.01).
+  tokens:
+    input: 10079
+    output: 878
+  fetched_chars: 27543

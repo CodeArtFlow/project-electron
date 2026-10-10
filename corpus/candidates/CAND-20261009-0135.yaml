@@ -30,6 +30,57 @@ id: CAND-20261009-0135
 harvested_date: '2026-10-09'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-10'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: In the zero-field limit, the magnon frequency of pristine CrSBr is 24 GHz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Similarly, the zero-field magnon frequency decreases from 24 GHz down to 10 GHz.
+    - The core results of our work were obtained by means of magneto-optical measurements, which were
+      performed at T = 5 K in a helium-cooled cryostat.
+    - pristine CrSBr
+    - zero-field
+  - statement: The zero-field magnon frequency decreases down to 10 GHz for chlorine-substituted CrSBr.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Similarly, the zero-field magnon frequency decreases from 24 GHz down to 10 GHz.
+    - The core results of our work were obtained by means of magneto-optical measurements, which were
+      performed at T = 5 K in a helium-cooled cryostat.
+    - zero-field
+  - statement: The saturation field along the c-axis for pristine CrSBr decreases linearly from around
+      2.05 T to around 1.19 T for a maximum chlorine content of 56%.
+    reason: 'unit conversion refused: voltage: cannot convert 2.05 T to V - Cannot convert from ''tesla''
+      ([mass] / [time] ** 2 / [current]) to ''volt'' ([mass] * [length] ** 2 / [time] ** 3 / [current]'
+    quotes:
+    - In the experiment, we see that as the content of the chlorine increases, the saturation field decreases
+      linearly from around 2.05 T to around 1.19 T for the maximum chlorine content of 56%.
+    - The core results of our work were obtained by means of magneto-optical measurements, which were
+      performed at T = 5 K in a helium-cooled cryostat.
+    - pristine CrSBr
+  - statement: The saturation field for CrSBr1-xClx with 56% chlorine content decreases down to around
+      1.19 T.
+    reason: 'unit conversion refused: voltage: cannot convert 1.19 T to V - Cannot convert from ''tesla''
+      ([mass] / [time] ** 2 / [current]) to ''volt'' ([mass] * [length] ** 2 / [time] ** 3 / [current]'
+    quotes:
+    - In the experiment, we see that as the content of the chlorine increases, the saturation field decreases
+      linearly from around 2.05 T to around 1.19 T for the maximum chlorine content of 56%.
+    - The core results of our work were obtained by means of magneto-optical measurements, which were
+      performed at T = 5 K in a helium-cooled cryostat.
+    - 56%
+  tokens:
+    input: 10931
+    output: 1251
+  fetched_chars: 33166

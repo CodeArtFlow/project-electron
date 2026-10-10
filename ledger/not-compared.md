@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**1613 pair(s)** as of 2026-10-09.
+**1749 pair(s)** as of 2026-10-10.
 
 ## `current` (1 pair(s))
 
@@ -12,10 +12,24 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 |---|---|---|---|---|
 | `CLM-DEV-0028` = 0.6 mA | `CLM-MAT-0069` = 2e-06 mA | 100% | process_step=current ramp-down | temperature=10 mK |
 
-## `energy` (73 pair(s))
+## `energy` (87 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0001` = 9.581e-06 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | mechanism=surface polar phonon, substrate=SiO2 |
+| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0002` = 3.204e-05 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | mechanism=optical phonon |
+| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0013` = 0.0002147 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | synthesis_condition=Nitrogen-rich |
+| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0014` = 0.0003108 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | synthesis_condition=Nitrogen-rich |
+| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0015` = 0.0003172 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | synthesis_condition=Nitrogen-rich |
+| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0016` = 0.0003236 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | synthesis_condition=Nitrogen-rich |
+| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0048` = 2.964e-05 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | material=LiFePO4 |
+| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0049` = 4.742e-05 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | material=LiFePO4 |
+| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0050` = 1.634e-05 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | material=Li6PS5Cl |
+| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0051` = 0.0002886 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | axis=c |
+| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0077` = 0.0006937 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | defect_complex=VAl(ON)3 |
+| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0078` = 0.0007706 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | defect_complex=VAl(ON)3, model=DFT |
+| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0085` = 8.54e-06 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | material=CrSiCN4, method=PBE+SOC |
+| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0086` = 8.395e-06 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | material=CrGeCN4, method=PBE+SOC |
 | `CLM-MAT-0078` = 4810 meV | `CLM-MAT-0086` = 52.4 meV | 99% | defect_complex=VAl(ON)3, model=DFT | material=CrGeCN4, method=PBE+SOC |
 | `CLM-MAT-0078` = 4810 meV | `CLM-MAT-0085` = 53.3 meV | 99% | defect_complex=VAl(ON)3, model=DFT | material=CrSiCN4, method=PBE+SOC |
 | `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0086` = 52.4 meV | 99% | defect_complex=VAl(ON)3 | material=CrGeCN4, method=PBE+SOC |
@@ -42,22 +56,8 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-MAT-0002` = 200 meV | `CLM-MAT-0078` = 4810 meV | 96% | mechanism=optical phonon | defect_complex=VAl(ON)3, model=DFT |
 | `CLM-MAT-0048` = 185 meV | `CLM-MAT-0077` = 4330 meV | 96% | material=LiFePO4 | defect_complex=VAl(ON)3 |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0013` = 1340 meV | 96% | mechanism=surface polar phonon, substrate=SiO2 | synthesis_condition=Nitrogen-rich |
-| `CLM-MAT-0002` = 200 meV | `CLM-MAT-0077` = 4330 meV | 95% | mechanism=optical phonon | defect_complex=VAl(ON)3 |
-| `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0050` = 102 meV | 95% | synthesis_condition=Nitrogen-rich | material=Li6PS5Cl |
-| `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0050` = 102 meV | 95% | synthesis_condition=Nitrogen-rich | material=Li6PS5Cl |
-| `CLM-MAT-0014` = 1940 meV | `CLM-MAT-0050` = 102 meV | 95% | synthesis_condition=Nitrogen-rich | material=Li6PS5Cl |
-| `CLM-MAT-0050` = 102 meV | `CLM-MAT-0051` = 1801 meV | 94% | material=Li6PS5Cl | axis=c |
-| `CLM-MAT-0049` = 296 meV | `CLM-MAT-0078` = 4810 meV | 94% | material=LiFePO4 | defect_complex=VAl(ON)3, model=DFT |
-| `CLM-MAT-0049` = 296 meV | `CLM-MAT-0077` = 4330 meV | 93% | material=LiFePO4 | defect_complex=VAl(ON)3 |
-| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0050` = 102 meV | 92% | synthesis_condition=Nitrogen-rich | material=Li6PS5Cl |
-| `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0048` = 185 meV | 91% | synthesis_condition=Nitrogen-rich | material=LiFePO4 |
-| `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0048` = 185 meV | 91% | synthesis_condition=Nitrogen-rich | material=LiFePO4 |
-| `CLM-MAT-0014` = 1940 meV | `CLM-MAT-0048` = 185 meV | 90% | synthesis_condition=Nitrogen-rich | material=LiFePO4 |
-| `CLM-MAT-0002` = 200 meV | `CLM-MAT-0016` = 2020 meV | 90% | mechanism=optical phonon | synthesis_condition=Nitrogen-rich |
-| `CLM-MAT-0002` = 200 meV | `CLM-MAT-0015` = 1980 meV | 90% | mechanism=optical phonon | synthesis_condition=Nitrogen-rich |
-| `CLM-MAT-0048` = 185 meV | `CLM-MAT-0051` = 1801 meV | 90% | material=LiFePO4 | axis=c |
 
-_and 33 more_
+_and 47 more_
 
 ## `energy_advantage_ratio` (5 pair(s))
 
@@ -69,7 +69,7 @@ _and 33 more_
 | `CLM-ARCH-0002` = 5 x | `CLM-ARCH-0022` = 169.1 x | 97% | process=TSMC 16nm FinFET, comparison=PFAL vs static CMOS, operating_point=most favorable operating point, vclk=1 V, fclk=100 MHz | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch |
 | `CLM-ARCH-0006` = 5.3 x | `CLM-ARCH-0022` = 169.1 x | 97% | process=TSMC 16nm FinFET, comparison=4-bit Brent-Kung CLA adder vs architecture-matched static CMOS estimate, power_clock=triangular | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch |
 
-## `frequency` (91 pair(s))
+## `frequency` (106 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -83,6 +83,7 @@ _and 33 more_
 | `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0051` = 230 GHz | 100% | platform=integrated phononic device | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
 | `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0052` = 320 GHz | 100% | platform=integrated phononic device | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
 | `CLM-ARCH-0070` = 0.556 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | process_node=TSMC 28 nm | component=stabilized CW laser, frequency_offset=10 kHz |
+| `CLM-ARCH-0073` = 0.5 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | process=45 nm | component=stabilized CW laser, frequency_offset=10 kHz |
 | `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | magnetic_field=8.1 T, frequency=1.9 THz | device=Ho3+-doped fluoride glass waveguide laser |
 | `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | magnetic_field=7.5 T, frequency=2.2 THz | device=Ho3+-doped fluoride glass waveguide laser |
 | `CLM-PHOT-0024` = 0.03 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | angle_of_incidence=0° to 30°, rotation_angle=90° | component=stabilized CW laser, frequency_offset=10 kHz |
@@ -106,17 +107,16 @@ _and 33 more_
 | `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | magnetic_field=7.5 T, frequency=2.2 THz | component=stabilized CW laser, frequency_offset=10 kHz |
 | `CLM-ARCH-0043` = 0.0006 GHz | `CLM-ARCH-0070` = 0.556 GHz | 100% | platform=integrated phononic device | process_node=TSMC 28 nm |
 | `CLM-ARCH-0042` = 25.9 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | platform=optical PPLN module | angle_of_incidence=0° to 30°, rotation_angle=90° |
+| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-ARCH-0073` = 0.5 GHz | 100% | platform=integrated phononic device | process=45 nm |
 | `CLM-PHOT-0002` = 3.57 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | component=photonic molecule, mode_spacing=Ω1 | device=Ho3+-doped fluoride glass waveguide laser |
+| `CLM-ARCH-0073` = 0.5 GHz | `CLM-DEV-0012` = 370 GHz | 100% | process=45 nm | magnetic_field=8.1 T, frequency=1.9 THz |
 | `CLM-PHOT-0049` = 267 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | signal_type=measured phase noise | component=stabilized CW laser, frequency_offset=10 kHz |
 | `CLM-ARCH-0070` = 0.556 GHz | `CLM-DEV-0012` = 370 GHz | 100% | process_node=TSMC 28 nm | magnetic_field=8.1 T, frequency=1.9 THz |
-| `CLM-PHOT-0001` = 18.98 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | component=single ring cavity, parameter=FSR | angle_of_incidence=0° to 30°, rotation_angle=90° |
-| `CLM-ARCH-0070` = 0.556 GHz | `CLM-PHOT-0052` = 320 GHz | 100% | process_node=TSMC 28 nm | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
-| `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | magnetic_field=8.1 T, frequency=1.9 THz | component=stabilized CW laser, frequency_offset=10 kHz |
-| `CLM-PHOT-0003` = 15.41 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | component=photonic molecule, mode_spacing=Ω2 | angle_of_incidence=0° to 30°, rotation_angle=90° |
+| `CLM-ARCH-0073` = 0.5 GHz | `CLM-PHOT-0052` = 320 GHz | 100% | process=45 nm | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
 
-_and 51 more_
+_and 66 more_
 
-## `length_device` (636 pair(s))
+## `length_device` (674 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -161,7 +161,7 @@ _and 51 more_
 | `CLM-PHOT-0042` = 160 um | `CLM-PROC-0004` = 7.7e-05 um | 100% | substrate_material=glass cover slip, sample_type=flat surface | material=HEA-NP, defocus=0 nm |
 | `CLM-PHOT-0042` = 160 um | `CLM-PROC-0011` = 0.0032 um | 100% | substrate_material=glass cover slip, sample_type=flat surface | feature=amorphous-layer thickness |
 
-_and 596 more_
+_and 634 more_
 
 ## `power` (48 pair(s))
 
@@ -210,7 +210,7 @@ _and 596 more_
 
 _and 8 more_
 
-## `relative_deviation` (548 pair(s))
+## `relative_deviation` (581 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -231,6 +231,7 @@ _and 8 more_
 | `CLM-ARCH-0041` = 93.08 percent | `CLM-PROC-0018` = 0.023 percent | 100% | frequency=7 GHz | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
 | `CLM-ARCH-0048` = 150 percent | `CLM-PROC-0018` = 0.023 percent | 100% | design=ZTA-Q, resource_type=DSP | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
 | `CLM-MAT-0021` = 1 percent | `CLM-PROC-0025` = 5700 percent | 100% | layer=WSe2 | measurement_number=30th measurement |
+| `CLM-PHOT-0059` = 94.4 percent | `CLM-PROC-0018` = 0.023 percent | 100% | route=Fourier route | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
 | `CLM-PROC-0006` = 1.113 percent | `CLM-PROC-0025` = 5700 percent | 100% | voltage=20 kV, model=third-order polynomial | measurement_number=30th measurement |
 | `CLM-EDA-0005` = 86.4 percent | `CLM-PROC-0018` = 0.023 percent | 100% | model=Cyclic Edge prediction model | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
 | `CLM-EDA-0006` = 89.6 percent | `CLM-PROC-0018` = 0.023 percent | 100% | model=Non-cyclic Edge prediction model | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
@@ -253,38 +254,55 @@ _and 8 more_
 | `CLM-ARCH-0069` = 318 percent | `CLM-PROC-0009` = 0.3757 percent | 100% | baseline=reference Cortex-M0 implementation | voltage=20 kV |
 | `CLM-MAT-0083` = 530 percent | `CLM-PROC-0019` = 0.624 percent | 100% | n=40, method=spin-restricted TAO-LDA | test_dataset=10 images confirmed negative by multiple observers |
 | `CLM-ARCH-0059` = 0.74 percent | `CLM-MAT-0083` = 530 percent | 100% | tier=T1, device=fbnic | n=40, method=spin-restricted TAO-LDA |
-| `CLM-ARCH-0044` = 14.3 percent | `CLM-PROC-0018` = 0.023 percent | 100% | process=IHP 130 nm, channel_count=8 | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
 
-_and 508 more_
+_and 541 more_
 
-## `temperature` (24 pair(s))
+## `temperature` (44 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0092` = -23.15 degC | 191% | temperature_control_system=VAHEAT system | pressure=ambient pressure, magnetic_field=0.05 T |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0004` = -73.15 degC | 189% | time_after_cooling_onset=10 s | calculation=optical phonon and surface polar phonon scattering |
 | `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0053` = 230 degC | 189% | relaxation_temperature=TLIESST | synthesis_approach=phosphine-free colloidal approach |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0004` = -73.15 degC | 186% | time_after_cooling_onset=10 s | calculation=optical phonon and surface polar phonon scattering |
+| `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0091` = -113.1 degC | 175% | time_after_cooling_onset=10 s | pressure=ambient pressure, magnetic_field=0.05 T |
+| `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0091` = -113.1 degC | 172% | time_after_cooling_onset=10 s | pressure=ambient pressure, magnetic_field=0.05 T |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0003` = -123.1 degC | 169% | time_after_cooling_onset=10 s | calculation=acoustic phonon scattering |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0003` = -123.1 degC | 166% | time_after_cooling_onset=10 s | calculation=acoustic phonon scattering |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-DEV-0035` = -204.1 degC | 142% | time_after_cooling_onset=10 s | relaxation_temperature=TLIESST |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-DEV-0035` = -204.1 degC | 140% | time_after_cooling_onset=10 s | relaxation_temperature=TLIESST |
+| `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0093` = 76.85 degC | 138% | relaxation_temperature=TLIESST | magnetic_field=0.05 T |
 | `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0004` = -73.15 degC | 135% | temperature_control_system=VAHEAT system | calculation=optical phonon and surface polar phonon scattering |
+| `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0092` = -23.15 degC | 128% | time_after_cooling_onset=10 s | pressure=ambient pressure, magnetic_field=0.05 T |
+| `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0092` = -23.15 degC | 127% | time_after_cooling_onset=10 s | pressure=ambient pressure, magnetic_field=0.05 T |
+| `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0091` = -113.1 degC | 122% | temperature_control_system=VAHEAT system | pressure=ambient pressure, magnetic_field=0.05 T |
 | `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0003` = -123.1 degC | 121% | temperature_control_system=VAHEAT system | calculation=acoustic phonon scattering |
 | `CLM-DEV-0035` = -204.1 degC | `CLM-PROC-0001` = 26.85 degC | 113% | relaxation_temperature=TLIESST | thermal_model=Debye model |
 | `CLM-DEV-0017` = 25.35 degC | `CLM-DEV-0035` = -204.1 degC | 112% | temperature_control_system=VAHEAT system | relaxation_temperature=TLIESST |
 | `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0053` = 230 degC | 89% | temperature_control_system=VAHEAT system | synthesis_approach=phosphine-free colloidal approach |
+| `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0092` = -23.15 degC | 89% | relaxation_temperature=TLIESST | pressure=ambient pressure, magnetic_field=0.05 T |
 | `CLM-MAT-0003` = 150 K | `CLM-MAT-0053` = 503.1 K | 70% | calculation=acoustic phonon scattering | synthesis_approach=phosphine-free colloidal approach |
 | `CLM-DEV-0017` = 25.35 degC | `CLM-DEV-0033` = 84.85 degC | 70% | temperature_control_system=VAHEAT system | time_after_cooling_onset=10 s |
 | `CLM-DEV-0017` = 25.35 degC | `CLM-DEV-0032` = 81.85 degC | 69% | temperature_control_system=VAHEAT system | time_after_cooling_onset=10 s |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-PROC-0001` = 26.85 degC | 68% | time_after_cooling_onset=10 s | thermal_model=Debye model |
+| `CLM-MAT-0053` = 503.1 K | `CLM-MAT-0091` = 160 K | 68% | synthesis_approach=phosphine-free colloidal approach | pressure=ambient pressure, magnetic_field=0.05 T |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-PROC-0001` = 26.85 degC | 67% | time_after_cooling_onset=10 s | thermal_model=Debye model |
+| `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0093` = 76.85 degC | 67% | temperature_control_system=VAHEAT system | magnetic_field=0.05 T |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0053` = 230 degC | 64% | time_after_cooling_onset=10 s | synthesis_approach=phosphine-free colloidal approach |
 | `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0004` = -73.15 degC | 64% | relaxation_temperature=TLIESST | calculation=optical phonon and surface polar phonon scattering |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0053` = 230 degC | 63% | time_after_cooling_onset=10 s | synthesis_approach=phosphine-free colloidal approach |
 | `CLM-MAT-0004` = 200 K | `CLM-MAT-0053` = 503.1 K | 60% | calculation=optical phonon and surface polar phonon scattering | synthesis_approach=phosphine-free colloidal approach |
+| `CLM-MAT-0003` = 150 K | `CLM-MAT-0093` = 350 K | 57% | calculation=acoustic phonon scattering | magnetic_field=0.05 T |
+| `CLM-MAT-0091` = 160 K | `CLM-MAT-0093` = 350 K | 54% | pressure=ambient pressure, magnetic_field=0.05 T | magnetic_field=0.05 T |
+| `CLM-MAT-0053` = 503.1 K | `CLM-MAT-0092` = 250 K | 50% | synthesis_approach=phosphine-free colloidal approach | pressure=ambient pressure, magnetic_field=0.05 T |
+| `CLM-MAT-0091` = 160 K | `CLM-PROC-0001` = 300 K | 47% | pressure=ambient pressure, magnetic_field=0.05 T | thermal_model=Debye model |
+| `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0091` = -113.1 degC | 45% | relaxation_temperature=TLIESST | pressure=ambient pressure, magnetic_field=0.05 T |
+| `CLM-MAT-0004` = 200 K | `CLM-MAT-0093` = 350 K | 43% | calculation=optical phonon and surface polar phonon scattering | magnetic_field=0.05 T |
 | `CLM-MAT-0053` = 503.1 K | `CLM-PROC-0001` = 300 K | 40% | synthesis_approach=phosphine-free colloidal approach | thermal_model=Debye model |
+| `CLM-MAT-0003` = 150 K | `CLM-MAT-0092` = 250 K | 40% | calculation=acoustic phonon scattering | pressure=ambient pressure, magnetic_field=0.05 T |
 | `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0003` = -123.1 degC | 40% | relaxation_temperature=TLIESST | calculation=acoustic phonon scattering |
-| `CLM-DEV-0017` = 25.35 degC | `CLM-PROC-0001` = 26.85 degC | 6% | temperature_control_system=VAHEAT system | thermal_model=Debye model |
+
+_and 4 more_
 
 ## `temperature_delta` (3 pair(s))
 
@@ -300,7 +318,7 @@ _and 508 more_
 |---|---|---|---|---|
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0007` = 3100 W/(m*K) | 99% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | temperature=room-temperature, sample_13c_concentration=~0.00024% |
 
-## `time` (157 pair(s))
+## `time` (173 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -334,6 +352,9 @@ _and 508 more_
 | `CLM-ARCH-0054` = 4000 ns | `CLM-PHOT-0048` = 8.29e+10 ns | 100% | architecture=PEEK | algorithm=DBS, cores=128 cores |
 | `CLM-ARCH-0054` = 4000 ns | `CLM-PKG-0002` = 2.499e+08 ns | 100% | architecture=PEEK | model=Qwen3-1.7B, channels=16 channels, erase_latency=2000 µs |
 | `CLM-ARCH-0054` = 4000 ns | `CLM-PROC-0005` = 5.79e+09 ns | 100% | architecture=PEEK | hardware=NVIDIA RTX PRO 6000 Blackwell GPU, implementation_type=full-resolution implementation |
+| `CLM-ARCH-0074` = 1.66e+07 ns | `CLM-MAT-0005` = 0.0061 ns | 100% | architecture=eight-output accelerator with shared activation delivery | material=monolayer MoS2, temperature=300 K, excitation_energy=1.7 eV |
+| `CLM-ARCH-0074` = 1.66e+07 ns | `CLM-MAT-0035` = 200 ns | 100% | architecture=eight-output accelerator with shared activation delivery | illumination=one sun |
+| `CLM-ARCH-0074` = 1.66e+07 ns | `CLM-MAT-0036` = 750 ns | 100% | architecture=eight-output accelerator with shared activation delivery | illumination=one sun |
 | `CLM-DEV-0021` = 1.504e+06 ns | `CLM-MAT-0005` = 0.0061 ns | 100% | mode=1, character=thermal (mount), operating_point=Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V | material=monolayer MoS2, temperature=300 K, excitation_energy=1.7 eV |
 | `CLM-DEV-0021` = 1.504e+06 ns | `CLM-PHOT-0048` = 8.29e+10 ns | 100% | mode=1, character=thermal (mount), operating_point=Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V | algorithm=DBS, cores=128 cores |
 | `CLM-DEV-0022` = 1.46e+04 ns | `CLM-MAT-0005` = 0.0061 ns | 100% | mode=3, character=trap, linearized, operating_point=Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V | material=monolayer MoS2, temperature=300 K, excitation_energy=1.7 eV |
@@ -341,11 +362,8 @@ _and 508 more_
 | `CLM-DEV-0022` = 1.46e+04 ns | `CLM-PROC-0005` = 5.79e+09 ns | 100% | mode=3, character=trap, linearized, operating_point=Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V | hardware=NVIDIA RTX PRO 6000 Blackwell GPU, implementation_type=full-resolution implementation |
 | `CLM-DEV-0023` = 6010 ns | `CLM-MAT-0005` = 0.0061 ns | 100% | mode=4, character=thermal (channel), operating_point=Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V | material=monolayer MoS2, temperature=300 K, excitation_energy=1.7 eV |
 | `CLM-DEV-0023` = 6010 ns | `CLM-PHOT-0048` = 8.29e+10 ns | 100% | mode=4, character=thermal (channel), operating_point=Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V | algorithm=DBS, cores=128 cores |
-| `CLM-DEV-0023` = 6010 ns | `CLM-PKG-0002` = 2.499e+08 ns | 100% | mode=4, character=thermal (channel), operating_point=Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V | model=Qwen3-1.7B, channels=16 channels, erase_latency=2000 µs |
-| `CLM-DEV-0023` = 6010 ns | `CLM-PROC-0005` = 5.79e+09 ns | 100% | mode=4, character=thermal (channel), operating_point=Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V | hardware=NVIDIA RTX PRO 6000 Blackwell GPU, implementation_type=full-resolution implementation |
-| `CLM-DEV-0051` = 1321 ns | `CLM-MAT-0005` = 0.0061 ns | 100% | frequency=146 MHz | material=monolayer MoS2, temperature=300 K, excitation_energy=1.7 eV |
 
-_and 117 more_
+_and 133 more_
 
 ## `voltage` (3 pair(s))
 

@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-09.
+Topic code `PHOT`. Last reviewed 2026-10-10.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -104,6 +104,10 @@ Topic code `PHOT`. Last reviewed 2026-10-09.
   - `CLM-PHOT-0057` · measurement_duration exceeding 15.5 hours · grade B · credibility unknown · measured · as of 2026-10-07
   - sources: SRC-00098
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **250 nm** — The silicon thickness for all seven metasurface families in the FDTD simulations is set to 250 nm.
+  - `CLM-PHOT-0058` · substrate_refractive_index 1.4, background_refractive_index 1.0 · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00111
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -190,6 +194,10 @@ Topic code `PHOT`. Last reviewed 2026-10-09.
 - **88 percent** — The experimental optical HDC classification on the MNIST dataset achieved 88% accuracy.
   - `CLM-PHOT-0006` · dataset MNIST, setup experimental system · grade B · credibility unknown · measured · as of 2026-09-21
   - sources: SRC-00014
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **94.4 percent** — On the 221 test samples, inverse reconstruction using the Fourier route achieves a mean foreground intersection-over-union of 0.944.
+  - `CLM-PHOT-0059` · route Fourier route · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00111
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### sensitivity advantage ratio
@@ -289,6 +297,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 57
-- grades: {'B': 50, 'A': 7}
-- distinct sources: 18
+- claims: 59
+- grades: {'B': 52, 'A': 7}
+- distinct sources: 19

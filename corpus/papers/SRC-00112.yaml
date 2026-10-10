@@ -1,0 +1,122 @@
+id: SRC-00112
+title: 'AtomWorld-Mirror: Macro-Step World Modeling of Critical Evolution Backbones for Materials Dynamics'
+doi: null
+arxiv_id: 2610.11527v1
+url: https://arxiv.org/abs/2610.11527v1
+venue_id: arxiv_api
+authors:
+- name: Ziming Pan
+  affiliation: null
+  corresponding: null
+- name: Ruge Zhang
+  affiliation: null
+  corresponding: null
+- name: Haozhi Han
+  affiliation: null
+  corresponding: null
+- name: Junkai Zhou
+  affiliation: null
+  corresponding: null
+- name: Xingyuan Chen
+  affiliation: null
+  corresponding: null
+- name: Yifeng Chen
+  affiliation: null
+  corresponding: null
+- name: Yunquan Zhang
+  affiliation: null
+  corresponding: null
+- name: Ting Cao
+  affiliation: null
+  corresponding: null
+- name: Yunxin Liu
+  affiliation: null
+  corresponding: null
+- name: Kun Li
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-08'
+retrieved_date: '2026-10-10'
+access: full_text
+read_scope: Automated reading. The full PDF text (73,745 characters, 21 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.11527v1 on
+  2026-10-10. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Across five atomic systems, Mirror maintains zero reachability violations and zero inventory
+  violations, and delivers an end-to-end speed up of 103 to 104 times.”
+
+  “We measure sensitivity over k∈ {1,2,4, . . . ,1024}micro steps on 16 held-out trajectories and compute
+  the persistence ratio, defined as the fraction of backbone events surviving across horizons. Persistence
+  stays above 0.98 throughout.”
+
+  “Mirror violation 0%·F1 0.91 log-MAE 0.27·scale 1.17 ρT 0.89”
+
+  “54-billion-atom RPV steel aging benchmark”'
+method_summary: '“We propose AtomWorld-Mirror, a time-aware macro-step world model for the critical evolution
+  backbone of atomic systems.”
+
+  “For Step-Wise atomistic simulation, AtomWorld-Mirror distills short micro-event segments into physically
+  reachable transitions between key states, jointly predicting sparse structural edits and accumulated
+  physical time through latent macro-step dynamics.”'
+limitations: '“AtomWorld-Mirror targets long-horizon materials evolution in regimes where explicit microscopic
+  replay consumes most of the computational budget before structurally consequential states are reached.”
+
+  “The current operating range reaches k= 1024 . Extending candidate-support construction and conservation
+  projection to systems with larger species inventories, together with topology criteria for continuously
+  evolving structures, defines the next methodological step.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 25299
+    output: 2369
+  claims_accepted: 3
+  claims_rejected: 5
+  rejected:
+  - statement: AtomWorld-Mirror reaches a persistent structural hierarchy stability ratio of 0.9066 for
+      the largest Cu cluster identity across trajectory seeds.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Across trajectory
+      seeds, the largest-Cu-cluster identity reaches 0.906'''
+    quotes:
+    - Across trajectory seeds, the largest-Cu-cluster identity reaches 0.9066, showing that the persistent
+      structural hierarchy remains stable under microscopic stochasticity.
+  - statement: AtomWorld-Mirror achieves an edit F1 score of 0.77 on 3-element RPV steel.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Mirror 0%·0.77
+      0.21·1.05'''
+    quotes:
+    - RPV 3-element KMC 0%·1.00 0.00·1.00
+    - Mirror 0%·0.77 0.21·1.05
+    - RPV 3-element
+    - RPV 3-element KMC
+  - statement: AtomWorld-Mirror achieves an edit F1 score of 0.78 on 10-element RPV steel.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Mirror 0%·0.78
+      0.32·1.06'''
+    quotes:
+    - RPV 10-element KMC 0%·1.00 0.00·1.00
+    - Mirror 0%·0.78 0.32·1.06
+    - RPV 10-element
+    - RPV 10-element KMC
+  - statement: AtomWorld-Mirror achieves an edit F1 score of 0.84 on Cu–Zr metallic glass.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Mirror 0%·0.84
+      0.26·1.10'''
+    quotes:
+    - MD teacher 0%·1.00 0.00·1.00
+    - Mirror 0%·0.84 0.26·1.10
+    - Cu–Zr metallic glass (MD teacher)
+    - MD teacher
+  - statement: AtomWorld-Mirror achieves an edit F1 score of 0.71 on Li3N-based anti-perovskite solid
+      electrolyte.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Mirror 0%·0.71
+      0.27·1.07'''
+    quotes:
+    - MD teacher 0%·1.00 0.00·1.00
+    - Mirror 0%·0.71 0.27·1.07
+    - Li 3N-based anti-perovskite solid electrolyte (MD teacher)
+    - MD teacher
+corrections: []

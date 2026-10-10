@@ -1,0 +1,91 @@
+id: SRC-00115
+title: 'DEX: Digit-Level Early Exit for Energy-Efficient MSDF Neural Network Inference'
+doi: null
+arxiv_id: 2610.11748v1
+url: https://arxiv.org/abs/2610.11748v1
+venue_id: arxiv_api
+authors:
+- name: Yousef Sadegheih
+  affiliation: null
+  corresponding: null
+- name: Dorit Merhof
+  affiliation: null
+  corresponding: null
+- name: Muhammad Usman
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-08'
+retrieved_date: '2026-10-10'
+access: full_text
+read_scope: Automated reading. The full PDF text (77,099 characters, 22 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.11748v1 on
+  2026-10-10. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Synthesized in 45 nm, the processing element operates at 500 MHz, occupies 0.858 mm 2, and
+  consumes 0.726 mJ per192× 192patch under switching-activity-annotated power analysis.”
+
+  “A projected eight-output accelerator with shared activation delivery achieves 16.6 ms latency and 1.67
+  mJ per patch.”
+
+  “The synthesized PE comprises 373,032 leaf cells, among them 327 inferred ICG cells that control 77,853
+  registers, and occupies 0.858 mm 2 of cell area.”'
+method_summary: '“Synthesized in 45 nm, the processing element operates at 500 MHz, occupies 0.858 mm
+  2, and consumes 0.726 mJ per192× 192patch under switching-activity-annotated power analysis.”
+
+  “A projected eight-output accelerator with shared activation delivery achieves 16.6 ms latency and 1.67
+  mJ per patch.”
+
+  “The PE is described in SystemVerilog and synthesized with Synopsys Design Compiler on the Nangate 45
+  nm Open Cell Library [38] at the typical corner (1.1 V) under a 2.00 ns clock constraint.”'
+limitations: '“First,sandpwere selected on the same 73 evaluation cases on which accuracy is reported,
+  so the mean Dice of the selected operating point is not an independent estimate.”
+
+  “Second, the evaluation covers a single dataset and a 2-D network.”
+
+  “Third, the PE figures are pre-layout estimates, and the eight-output accelerator is a model, not an
+  implemented design (Sections 7 and 9).”
+
+  “Finally, the sign-only decision assumes an independent binary decision per region; a multi-class head
+  would require a comparison between logits, which the present controller lacks.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 26314
+    output: 3142
+  claims_accepted: 4
+  claims_rejected: 4
+  rejected:
+  - statement: The synthesized processing element operates at 500 MHz, occupies 0.858 mm2, and consumes
+      0.726 mJ per 192x192 patch under switching-activity-annotated power ana
+    reason: the statement contains the number 92, which none of its quotes contain
+    quotes:
+    - Synthesized in 45 nm, the processing element operates at 500 MHz, occupies 0.858 mm 2, and consumes
+      0.726 mJ per192× 192patch under switching-activity-annotated power analysis.
+  - statement: The synthesized processing element area is 0.858 mm2.
+    reason: 'unit conversion refused: area_die: could not parse 0.858 ''mm 2'': Unit expression cannot
+      have a scaling factor.'
+    quotes:
+    - Synthesized in 45 nm, the processing element operates at 500 MHz, occupies 0.858 mm 2, and consumes
+      0.726 mJ per192× 192patch under switching-activity-annotated power analysis.
+  - statement: In the MG1-64L mode, the PE power consumption is 7.48 mW at 500 MHz.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''MG1-64L 1
+      64 7.48 14.97'''
+    quotes:
+    - MG1-64L 1 64 7.48 14.97
+    - 'Table 3: SAIF-Annotated PE Modes at 500 MHz (Nangate 45 nm, Typical Corner)'
+  - statement: In the MG55-64L mode, the PE power consumption is 9.55 mW at 500 MHz.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''MG55-64L
+      55 64 9.55 19.10'''
+    quotes:
+    - MG55-64L 55 64 9.55 19.10
+    - 'Table 3: SAIF-Annotated PE Modes at 500 MHz (Nangate 45 nm, Typical Corner)'
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (projected: 2, simulated:
+  2). This field records the majority (simulated); trust each claim''s own evidence_type over this one.'

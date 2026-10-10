@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-10-09.
+Topic code `DEV`. Last reviewed 2026-10-10.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 

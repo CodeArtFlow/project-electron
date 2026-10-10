@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.11767v1
 doi: null
-title: Optical absorption spectra from the $GW$-Bethe-Salpeter framework for thousands
-  of atoms
+title: Optical absorption spectra from the $GW$-Bethe-Salpeter framework for thousands of atoms
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-08'
@@ -26,6 +25,26 @@ id: CAND-20261009-0113
 harvested_date: '2026-10-09'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-10'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The linear-response BSE calculation for the nanographene with repeat units L = 2 gives
+      a first absorption peak energy that differs by no more than about 0.01 eV
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - the first absorption peak differs by no more than about 0.01 eV
+    - L=2
+    - RT-BSE
+    - LR-BSE
+  tokens:
+    input: 13909
+    output: 549
+  fetched_chars: 35617

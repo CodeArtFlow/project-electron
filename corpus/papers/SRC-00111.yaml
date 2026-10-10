@@ -1,0 +1,135 @@
+id: SRC-00111
+title: Learning qBIC Resonances across Metasurface Families in Dielectric Fourier Space
+doi: null
+arxiv_id: 2610.11500v1
+url: https://arxiv.org/abs/2610.11500v1
+venue_id: arxiv_api
+authors:
+- name: Shuangteng Lei
+  affiliation: null
+  corresponding: null
+- name: Li Yu
+  affiliation: null
+  corresponding: null
+- name: Tianxin Li
+  affiliation: null
+  corresponding: null
+- name: Wei Lu
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-08'
+retrieved_date: '2026-10-10'
+access: full_text
+read_scope: Automated reading. The full PDF text (60,141 characters, 45 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.11500v1 on
+  2026-10-10. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Si (Silicon)–Palik; metasurface thickness, 250 nm; substrate refractive index, n = 1.4; background
+  refractive index, n = 1.0.”
+
+  “substrate refractive index, n = 1.4”
+
+  “background refractive index, n = 1.0.”
+
+  “On the 221 test samples, the Fourier route reaches a mean foreground intersection-over-union (IoU)
+  of 0.944, compared with 0.853 for direct real-space decoding; joint supervision gives 0.926 (Fig. 5b
+  and Supplementary Fig. S 10).”
+
+  “the Fourier route reaches a mean foreground intersection-over-union (IoU) of 0.944”'
+method_summary: '“Here, 2015 samples from seven dielectric metasurface families are mapped to a shared
+  reciprocal -lattice grid, where two frozen low-order Fourier channels capture resonance shifts with
+  mean within-branch R² values of 0.871–0.999.”
+
+  “A five-channel K-space backbone models the broadband spectrum, while a local complex K-space expert
+  parameterizes the qBIC resonance through a differentiable Fano layer.”
+
+  “Transmission spectra of the seven silicon metasurface families were computed with three -dimensional
+  finite-difference time-domain (FDTD) (Lumerical).”
+
+  “Each family is a fixed unit -cell motif controlled by two geometric parameters, P1 and P2, sampled
+  on a nominal 17 × 17 grid.”'
+limitations: '“First -order perturbation in 𝛥𝜀 is not exact when high-index-contrast boundaries move [40],
+  so we use Eq. (4) to identify which wavevectors matter and test its trends numerically below, not as
+  a quantitative predictor.”
+
+  “Amplitude -only scalars cannot capture this interference in general, and the full lineshape therefore
+  calls for the complex local representation used below.”
+
+  “The descriptors are empirical compressions for resonance position. Finally, different structures can
+  produce similar spectra, and the inverse model returns one plausible structure rather than the set of
+  admissible ones.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 20354
+    output: 3804
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: On the geometry-blocked test set, the complex Fourier expert reduces the resonance-position
+      mean absolute error from 3.2 to 0.95 nm.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''nm'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - The expert reduces resonance-position mean absolute error (MAE) from 3.2 to 0.95 nm and the resonance-depth
+      error by 14-fold on a geometry-blocked test set.
+    - Over the test set and five random seeds, the expert lowers the resonance -position mean absolute
+      error (MAE) from 3.000 to 0.998 nm on the real -space backbone and from 3.223 to 0.947 nm on the
+      Fourier backbone
+    - from 3.223 to 0.947 nm on the Fourier backbone
+    - The expert reduces resonance-position mean absolute error (MAE) from 3.2 to 0.95 nm
+  - statement: All seven metasurface families share a square lattice period of 1,320 nm.
+    reason: the value 1320 does not appear in any of the claim's quotes
+    quotes:
+    - The seven families—Asymmetric Cross (AC), Asymmetric Disks (AD), Circular Split Ring (CSR), Disk
+      with an Asymmetric Nanohole (DAN), Parallel Bars with an x -offset (PX), Stepped Rectangle (SR)
+      and Twin Yawed Ellipses (TY) (Fig. 2a)—are sili
+    - Transmission spectra of the seven silicon metasurface families were computed with three -dimensional
+      finite-difference time-domain (FDTD) (Lumerical).
+    - silicon motifs on a square lattice of period 1,320 nm
+    - The seven families—Asymmetric Cross (AC), Asymmetric Disks (AD), Circular Split Ring (CSR), Disk
+      with an Asymmetric Nanohole (DAN), Parallel Bars with an x -offset (PX), Stepped Rectangle (SR)
+      and Twin Yawed Ellipses (TY)
+  - statement: The total 2,015 effective FDTD simulations consumed a total of 146,984.4 CPU hours.
+    reason: the value 146984 does not appear in any of the claim's quotes
+    quotes:
+    - The 2,015 effective FDTD simulations consume 146,984.4 CPU·h in total, corresponding to 72.95 CPU·h
+      and 2.28 wall-clock h per sample on 32 allocated CPU cores.
+    - The 2,015 effective FDTD simulations
+    - on 32 allocated CPU cores.
+  - statement: Each FDTD simulation sample required a median CPU resource cost of 72.95 CPU hours.
+    reason: 'unit conversion refused: time: could not parse 72.95 ''CPU·h'': ''CPU'' is not defined in
+      the unit registry'
+    quotes:
+    - The 2,015 effective FDTD simulations consume 146,984.4 CPU·h in total, corresponding to 72.95 CPU·h
+      and 2.28 wall-clock h per sample on 32 allocated CPU cores.
+    - per sample on 32 allocated CPU cores.
+    - on 32 allocated CPU cores.
+  - statement: The K bg model achieves a resonance-position MAE of 3.2226 nm on the strict test set.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Model | Spectral
+      MAE ± 8 nm MAE | Min-transmission MAE | Resonance-pos'''
+    quotes:
+    - Model | Spectral MAE ± 8 nm MAE | Min-transmission MAE | Resonance-position MAE (nm) | ln(Q) MAE
+      | Median spectral correlation R
+    - K bg | 0.0375± 0.0063 | 0.0685± 0.0685 | 0.6617± 0.0490 | 3.2226± 0.3410 | 0.6728± 0.2260 | 0.2624±
+      0.0685
+    - K bg 0.0375± 0.0063 0.0685± 0.0068 0.6617± 0.0490 3.2226± 0.3410 0.6728± 0.2260 0.2624± 0.0685
+    - strict test set of 221 samples
+  - statement: The Real + K peak model achieves a resonance-position MAE of 0.9981 nm on the strict test
+      set.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''nm'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - Real + K peak 0.0219± 0.0006 0.0448± 0.0023 0.0535± 0.0031 0.9981± 0.0594 0.2886± 0.0104 0.7377±
+      0.0622
+    - strict test set of 221 samples
+corrections: []

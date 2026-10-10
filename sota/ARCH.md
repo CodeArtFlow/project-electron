@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-09.
+Topic code `ARCH`. Last reviewed 2026-10-10.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -12,6 +12,13 @@ Topic code `ARCH`. Last reviewed 2026-10-09.
   - `CLM-ARCH-0050` · process TSMC 16nm FinFET technology, component core area · grade B · credibility unknown · measured · as of 2026-09-30
   - sources: SRC-00075
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+
+### energy
+
+- **1.67e+12 fJ** — A projected eight-output accelerator consumes 1.67 mJ per patch.
+  - `CLM-ARCH-0075` · architecture eight-output accelerator with shared activation delivery · grade B · credibility unknown · projected · as of 2026-10-08
+  - sources: SRC-00115
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### energy advantage ratio
 
@@ -55,6 +62,10 @@ Topic code `ARCH`. Last reviewed 2026-10-09.
 - **0.556 GHz** — The parallel dependent quantization hardware architecture reaches an operating frequency of 556 MHz when synthesized using the TSMC 28nm process standard cell library for ASIC.
   - `CLM-ARCH-0070` · process_node TSMC 28 nm · grade B · credibility unknown · simulated · as of 2026-10-07
   - sources: SRC-00096
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.5 GHz** — The processing element operates at a frequency of 500 MHz.
+  - `CLM-ARCH-0073` · process 45 nm · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00115
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
@@ -222,6 +233,10 @@ Topic code `ARCH`. Last reviewed 2026-10-09.
   - `CLM-ARCH-0072` · benchmark_suite openbench-universe · grade B · credibility unknown · simulated · as of 2026-10-07
   - sources: SRC-00099
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The full-capacity synthesized netlist contains 373,032 leaf cells.
+  - `CLM-ARCH-0076` · component synthesized PE · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00115
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -313,6 +328,10 @@ Topic code `ARCH`. Last reviewed 2026-10-09.
   - `CLM-ARCH-0054` · architecture PEEK · grade B · credibility unknown · simulated · as of 2026-10-02
   - sources: SRC-00080
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1.66e+07 ns** — A projected eight-output accelerator achieves a latency of 16.6 ms per patch.
+  - `CLM-ARCH-0074` · architecture eight-output accelerator with shared activation delivery · grade B · credibility unknown · projected · as of 2026-10-08
+  - sources: SRC-00115
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -324,6 +343,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 72
-- grades: {'B': 72}
-- distinct sources: 25
+- claims: 76
+- grades: {'B': 76}
+- distinct sources: 26

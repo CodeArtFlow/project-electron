@@ -2338,3 +2338,234 @@ claims:
     conditions:
       material: CrGeCN4
       method: PBE+SOC
+- id: CLM-MAT-0087
+  topic: MAT
+  statement: AtomWorld-Mirror achieves zero reachability violations and zero inventory violations across
+    five atomic systems while providing an end-to-end speedup over event-by-event simulation.
+  sources:
+  - SRC-00112
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MAT-0088
+  topic: MAT
+  statement: Over a micro-step horizon sensitivity test of 1 to 1024 micro steps, the persistence ratio
+    of backbone events surviving across horizons remains above 0.98.
+  sources:
+  - SRC-00112
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MAT-0089
+  topic: MAT
+  statement: In a 54-billion-atom RPV steel aging benchmark, AtomWorld-Mirror achieves an edit F1 score
+    of 0.91 with zero physically invalid edit violations.
+  sources:
+  - SRC-00112
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    material_system: RPV steel
+- id: CLM-MAT-0090
+  topic: MAT
+  statement: The average growth rate of WO3 thin films deposited by hot-filament metal-oxide deposition
+    using CO2 as a precursor is 0.25 nm/min.
+  sources:
+  - SRC-00113
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    deposition_method: HFMOD
+    deposition_time: 120 min
+    substrate_temperature: 450 °C
+- id: CLM-MAT-0091
+  topic: MAT
+  statement: The characteristic temperature Tinf1 of Fe3GaTe2 single crystals measured under ambient pressure
+    and a magnetic field of 0.05 T is approximately 160 K.
+  sources:
+  - SRC-00114
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    pressure: ambient pressure
+    magnetic_field: 0.05 T
+  quantity:
+    quantity: temperature
+    bound: exact
+    approximate: true
+    as_published:
+      value: 160.0
+      unit: K
+    si_base:
+      value: 160.0
+      unit: K
+    display:
+      value: -113.14999999999998
+      unit: degC
+    conditions:
+      pressure: ambient pressure
+      magnetic_field: 0.05 T
+- id: CLM-MAT-0092
+  topic: MAT
+  statement: The characteristic temperature Tinf2 of Fe3GaTe2 single crystals measured under ambient pressure
+    and a magnetic field of 0.05 T is approximately 250 K.
+  sources:
+  - SRC-00114
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    pressure: ambient pressure
+    magnetic_field: 0.05 T
+  quantity:
+    quantity: temperature
+    bound: exact
+    approximate: true
+    as_published:
+      value: 250.0
+      unit: K
+    si_base:
+      value: 250.0
+      unit: K
+    display:
+      value: -23.149999999999977
+      unit: degC
+    conditions:
+      pressure: ambient pressure
+      magnetic_field: 0.05 T
+- id: CLM-MAT-0093
+  topic: MAT
+  statement: The Curie temperature TC of the synthesized Fe3GaTe2 single crystals under ambient pressure
+    and a magnetic field of 0.05 T is approximately 350 K.
+  sources:
+  - SRC-00114
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    magnetic_field: 0.05 T
+  quantity:
+    quantity: temperature
+    bound: exact
+    approximate: true
+    as_published:
+      value: 350.0
+      unit: K
+    si_base:
+      value: 350.0
+      unit: K
+    display:
+      value: 76.85000000000002
+      unit: degC
+    conditions:
+      magnetic_field: 0.05 T
+- id: CLM-MAT-0094
+  topic: MAT
+  statement: In equiatomic Mo-Ta, the energy K1 - sqrt(K2) lies within 25 meV/atom of the convex hull
+    across the entire composition range.
+  sources:
+  - SRC-00116
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MAT-0095
+  topic: MAT
+  statement: In equiatomic W-Cr, the energy K1 - sqrt(K2) lies within 60 meV/atom of the convex hull over
+    the entire composition range.
+  sources:
+  - SRC-00116
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MAT-0096
+  topic: MAT
+  statement: The best-fit slope comparing T*deltaS against deltaH relative to regular solution values
+    across equiatomic alloys above Tc is 0.583.
+  sources:
+  - SRC-00116
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2

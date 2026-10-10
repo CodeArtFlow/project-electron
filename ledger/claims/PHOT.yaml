@@ -1746,3 +1746,73 @@ claims:
       unit: nm
     conditions:
       measurement_duration: exceeding 15.5 hours
+- id: CLM-PHOT-0058
+  topic: PHOT
+  statement: The silicon thickness for all seven metasurface families in the FDTD simulations is set to
+    250 nm.
+  sources:
+  - SRC-00111
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    substrate_refractive_index: '1.4'
+    background_refractive_index: '1.0'
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 250.0
+      unit: nm
+    si_base:
+      value: 2.5000000000000004e-07
+      unit: m
+    display:
+      value: 250.0
+      unit: nm
+    conditions:
+      substrate_refractive_index: '1.4'
+      background_refractive_index: '1.0'
+- id: CLM-PHOT-0059
+  topic: PHOT
+  statement: On the 221 test samples, inverse reconstruction using the Fourier route achieves a mean foreground
+    intersection-over-union of 0.944.
+  sources:
+  - SRC-00111
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    route: Fourier route
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.944
+      unit: dimensionless
+    si_base:
+      value: 0.944
+      unit: dimensionless
+    display:
+      value: 94.39999999999999
+      unit: percent
+    conditions:
+      route: Fourier route

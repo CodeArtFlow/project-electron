@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-09.
+Topic code `MAT`. Last reviewed 2026-10-10.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -330,6 +330,34 @@ Topic code `MAT`. Last reviewed 2026-10-09.
   - `CLM-MAT-0082` · method TAO-LDA, system ground-state n-LPs (n = 1–40) · grade B · credibility unknown · simulated · as of 2026-10-07
   - sources: SRC-00103
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- AtomWorld-Mirror achieves zero reachability violations and zero inventory violations across five atomic systems while providing an end-to-end speedup over event-by-event simulation.
+  - `CLM-MAT-0087` · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00112
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Over a micro-step horizon sensitivity test of 1 to 1024 micro steps, the persistence ratio of backbone events surviving across horizons remains above 0.98.
+  - `CLM-MAT-0088` · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00112
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- In a 54-billion-atom RPV steel aging benchmark, AtomWorld-Mirror achieves an edit F1 score of 0.91 with zero physically invalid edit violations.
+  - `CLM-MAT-0089` · material_system RPV steel · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00112
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The average growth rate of WO3 thin films deposited by hot-filament metal-oxide deposition using CO2 as a precursor is 0.25 nm/min.
+  - `CLM-MAT-0090` · deposition_method HFMOD, deposition_time 120 min, substrate_temperature 450 °C · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00113
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- In equiatomic Mo-Ta, the energy K1 - sqrt(K2) lies within 25 meV/atom of the convex hull across the entire composition range.
+  - `CLM-MAT-0094` · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00116
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- In equiatomic W-Cr, the energy K1 - sqrt(K2) lies within 60 meV/atom of the convex hull over the entire composition range.
+  - `CLM-MAT-0095` · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00116
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The best-fit slope comparing T*deltaS against deltaH relative to regular solution values across equiatomic alloys above Tc is 0.583.
+  - `CLM-MAT-0096` · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00116
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -359,6 +387,18 @@ Topic code `MAT`. Last reviewed 2026-10-09.
 - **230 degC** — BiTe nanosheets synthesized via the phosphine-free route are selective at 230 °C.
   - `CLM-MAT-0053` · synthesis_approach phosphine-free colloidal approach · grade B · credibility unknown · measured · as of 2026-10-01
   - sources: SRC-00068
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈-113.15 degC** — The characteristic temperature Tinf1 of Fe3GaTe2 single crystals measured under ambient pressure and a magnetic field of 0.05 T is approximately 160 K.
+  - `CLM-MAT-0091` · pressure ambient pressure, magnetic_field 0.05 T · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00114
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈-23.15 degC** — The characteristic temperature Tinf2 of Fe3GaTe2 single crystals measured under ambient pressure and a magnetic field of 0.05 T is approximately 250 K.
+  - `CLM-MAT-0092` · pressure ambient pressure, magnetic_field 0.05 T · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00114
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈76.85 degC** — The Curie temperature TC of the synthesized Fe3GaTe2 single crystals under ambient pressure and a magnetic field of 0.05 T is approximately 350 K.
+  - `CLM-MAT-0093` · magnetic_field 0.05 T · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00114
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### thermal conductivity
@@ -425,6 +465,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 86
-- grades: {'B': 86}
-- distinct sources: 33
+- claims: 96
+- grades: {'B': 96}
+- distinct sources: 37

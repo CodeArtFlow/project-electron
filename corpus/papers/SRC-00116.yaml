@@ -1,0 +1,101 @@
+id: SRC-00116
+title: 'Beyond special quasirandom structures: free energies from energy cumulants'
+doi: null
+arxiv_id: 2610.11882v1
+url: https://arxiv.org/abs/2610.11882v1
+venue_id: arxiv_api
+authors:
+- name: Yann L. Müller
+  affiliation: null
+  corresponding: null
+- name: Anirudh Raju Natarajan
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-08'
+retrieved_date: '2026-10-10'
+access: full_text
+read_scope: Automated reading. The full PDF text (55,523 characters, 12 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.11882v1 on
+  2026-10-10. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The energyκ 1 − √κ2 lay within 25 meV/atom of the convex hull over the whole composition range
+  in Mo–Ta”
+
+  “Energies per site of atomic arrangements in small supercells (blue circles) of (b) W 1−xCrx and (c)
+  Ta1−xMox, computed with density functional theory (DFT)[13, 27].”
+
+  “and within 60 meV/atom in W–Cr.”
+
+  “The two errors were strongly correlated, and their ratio stayed close to1/2regardless of the chemical
+  system, with a best-fit slope of 0.583.”
+
+  “evaluated against canonical MC.”'
+method_summary: '“We express the free energy as an expansion in these energy cumulants, in which the regular
+  solution model is the first term. The cumulants are estimated from the energies of random atomic arrangements,
+  without MC or MD simulation, and the resulting free energies are analytic.”
+
+  “Canonical MC simulations driven by these models provide the reference free energies against which the
+  approximations are compared.”
+
+  “We estimated the cumulants from the energies of 106 random arrangements at fixed composition in10×10×10conventional
+  BCC or6×6×6conventional FCC supercells”'
+limitations: '“The truncated expansions lose validity below a critical temperature at which the variance
+  or the entropy would become negative.”
+
+  “The free energies in this study are configurational, and vibrational contributions are not included.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 17723
+    output: 2068
+  claims_accepted: 3
+  claims_rejected: 4
+  rejected:
+  - statement: Between 800 K and 3000 K, the Gaussian approximation deviates from the MC free energy of
+      the equiatomic Mo-Ta alloy by at most 10 meV/atom.
+    reason: the statement contains the number 800, which none of its quotes contain
+    quotes:
+    - and the Gaussian approximation by at most 10 meV/atom, against up to 30 meV/atom for the regular
+      solution model.
+    - Canonical MC simulations driven by these models provide the reference free energies against which
+      the approximations are compared.
+    - Between 800 K and 3000 K
+    - equiatomic Mo–Ta alloy
+  - statement: Between 800 K and 3000 K, the third-order and binomial approximations deviate from the
+      MC free energy of the equiatomic Mo-Ta alloy by at most 5 meV/atom.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - Between 800 K and 3000 K, the third-order and binomial approximations deviated from the MC free
+      energy of the equiatomic Mo–Ta alloy by at most 5 meV/atom
+    - Canonical MC simulations driven by these models provide the reference free energies against which
+      the approximations are compared.
+    - Between 800 K and 3000 K
+    - equiatomic Mo–Ta alloy
+  - statement: Between 800 K and 3000 K, the regular solution model deviates from the MC free energy of
+      the equiatomic Mo-Ta alloy by up to 30 meV/atom.
+    reason: the statement contains the number 800, which none of its quotes contain
+    quotes:
+    - against up to 30 meV/atom for the regular solution model.
+    - Canonical MC simulations driven by these models provide the reference free energies against which
+      the approximations are compared.
+    - Between 800 K and 3000 K
+    - equiatomic Mo–Ta alloy
+  - statement: In the binomial approximation, the free energy of the disordered Li1.2Mg0.4Mn0.4O2 phase
+      falls below the convex hull of competing ground states above 2329 K.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - In the binomial approximation, the free energy of the disordered phase falls below the convex hull
+      of its competing ground states above 2329 K.
+    - For each oxide, a pseudo-binary cluster expansion of 5 pairs, 7 triplets and 1 quadruplet on the
+      cation sublattice, in which the four alloying elements are represented by a single mean-field cation
+      M, was parameterized on the energies of 10
+    - Li 1.2Mg0.4Mn0.4O2
+    - binomial approximation
+corrections: []

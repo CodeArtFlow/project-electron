@@ -2127,3 +2127,120 @@ claims:
     verified_quotes: 3
   conditions:
     benchmark_suite: openbench-universe
+- id: CLM-ARCH-0073
+  topic: ARCH
+  statement: The processing element operates at a frequency of 500 MHz.
+  sources:
+  - SRC-00115
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    process: 45 nm
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 500.0
+      unit: MHz
+    si_base:
+      value: 500000000.0
+      unit: Hz
+    display:
+      value: 0.5
+      unit: GHz
+    conditions:
+      process: 45 nm
+- id: CLM-ARCH-0074
+  topic: ARCH
+  statement: A projected eight-output accelerator achieves a latency of 16.6 ms per patch.
+  sources:
+  - SRC-00115
+  grade: B
+  credibility: unknown
+  evidence_type: projected
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    architecture: eight-output accelerator with shared activation delivery
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 16.6
+      unit: ms
+    si_base:
+      value: 0.0166
+      unit: s
+    display:
+      value: 16599999.999999998
+      unit: ns
+    conditions:
+      architecture: eight-output accelerator with shared activation delivery
+- id: CLM-ARCH-0075
+  topic: ARCH
+  statement: A projected eight-output accelerator consumes 1.67 mJ per patch.
+  sources:
+  - SRC-00115
+  grade: B
+  credibility: unknown
+  evidence_type: projected
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    architecture: eight-output accelerator with shared activation delivery
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.67
+      unit: mJ
+    si_base:
+      value: 0.00167
+      unit: J
+    display:
+      value: 1669999999999.9998
+      unit: fJ
+    conditions:
+      architecture: eight-output accelerator with shared activation delivery
+- id: CLM-ARCH-0076
+  topic: ARCH
+  statement: The full-capacity synthesized netlist contains 373,032 leaf cells.
+  sources:
+  - SRC-00115
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    component: synthesized PE
