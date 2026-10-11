@@ -1816,3 +1816,175 @@ claims:
       unit: percent
     conditions:
       route: Fourier route
+- id: CLM-PHOT-0060
+  topic: PHOT
+  statement: The measured transmission spectrum of the bulk position exhibits a bandgap spanning from
+    6.89 to 8.83 GHz.
+  sources:
+  - SRC-00121
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    lattice_constant: 17 mm
+    material: YIG
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 6.89
+      unit: GHz
+    si_base:
+      value: 6890000000.0
+      unit: Hz
+    display:
+      value: 6.890000000000001
+      unit: GHz
+    conditions:
+      lattice_constant: 17 mm
+      material: YIG
+- id: CLM-PHOT-0061
+  topic: PHOT
+  statement: A transmission peak appears at 7.48 GHz in the corner spectrum.
+  sources:
+  - SRC-00121
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    corner_radius: 1.4 mm
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 7.48
+      unit: GHz
+    si_base:
+      value: 7480000000.0
+      unit: Hz
+    display:
+      value: 7.48
+      unit: GHz
+    conditions:
+      corner_radius: 1.4 mm
+- id: CLM-PHOT-0062
+  topic: PHOT
+  statement: Under position disorder, the corner state merges into the bulk continuum when the fluctuation
+    parameter delta reaches approximately 0.25.
+  sources:
+  - SRC-00121
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    disorder_type: position disorder
+    corner_radius_ratio: 0.45r
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: true
+    as_published:
+      value: 0.25
+      unit: dimensionless
+    si_base:
+      value: 0.25
+      unit: dimensionless
+    display:
+      value: 25.0
+      unit: percent
+    conditions:
+      disorder_type: position disorder
+      corner_radius_ratio: 0.45r
+- id: CLM-PHOT-0063
+  topic: PHOT
+  statement: Under radius disorder, the bandgap closes at delta of approximately 0.37.
+  sources:
+  - SRC-00121
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    disorder_type: radius disorder
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: true
+    as_published:
+      value: 0.37
+      unit: dimensionless
+    si_base:
+      value: 0.37
+      unit: dimensionless
+    display:
+      value: 37.0
+      unit: percent
+    conditions:
+      disorder_type: radius disorder
+- id: CLM-PHOT-0064
+  topic: PHOT
+  statement: Under radius disorder, the corner state becomes indistinguishable from bulk modes when delta
+    exceeds approximately 0.31.
+  sources:
+  - SRC-00121
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    disorder_type: radius disorder
+  quantity:
+    quantity: relative_deviation
+    bound: lower_bound
+    approximate: true
+    as_published:
+      value: 0.31
+      unit: dimensionless
+    si_base:
+      value: 0.31
+      unit: dimensionless
+    display:
+      value: 31.0
+      unit: percent
+    conditions:
+      disorder_type: radius disorder

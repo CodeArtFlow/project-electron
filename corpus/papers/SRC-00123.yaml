@@ -1,0 +1,82 @@
+id: SRC-00123
+title: 'RAPID-DNN: Reliability-Aware Partitioning for Robust DNN Inference Deployment on Edge AI'
+doi: null
+arxiv_id: 2610.12111v1
+url: https://arxiv.org/abs/2610.12111v1
+venue_id: arxiv_api
+authors:
+- name: Mukta Debnath
+  affiliation: null
+  corresponding: null
+- name: Krishnendu Guha
+  affiliation: null
+  corresponding: null
+- name: Debasri Saha
+  affiliation: null
+  corresponding: null
+- name: Amlan Chakrabarti
+  affiliation: null
+  corresponding: null
+- name: Susmita Sur-Kolay
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-08'
+retrieved_date: '2026-10-11'
+access: full_text
+read_scope: Automated reading. The full PDF text (87,563 characters, 30 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.12111v1 on
+  2026-10-11. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“while reducing the average expected fault-induced accuracy degradation by 36.86%, incurring
+  only 2.38% average latency overhead and 3.34% average energy overhead relative to the fault-agnostic
+  baseline.”
+
+  “RAPID-DNN achieves an average improvement of 9.81 percentage points in Top-1 inference accuracy while
+  reducing the average expected fault-induced accuracy degradation by 36.86%”
+
+  “under the representative mixed random fault configuration”
+
+  “relative to the fault-agnostic baseline.”
+
+  “Per-layer latency and energy profiles are generated using Timeloop and Accelergy [13,14] following
+  the profiling methodology adopted by CNNParted.”
+
+  “incurring only 2.38% average latency overhead and 3.34% average energy overhead relative to the fault-agnostic
+  baseline.”
+
+  “RAPID-DNN achieves an average improvement of 9.81 percentage points in Top-1 inference accuracy”'
+method_summary: '“Experimental evaluation on AlexNet, SqueezeNet, ResNet18, VGG16, and MobileNetV2 using
+  heterogeneous Eyeriss and SIMBA accelerator profiles demonstrates that RAPID-DNN consistently improves
+  inference robustness over the fault-agnostic baseline across diverse fault models and injection probabilities.”
+
+  “Per-layer latency and energy profiles are generated using Timeloop and Accelergy [13,14] following
+  the profiling methodology adopted by CNNParted.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 22684
+    output: 1719
+  claims_accepted: 3
+  claims_rejected: 1
+  rejected:
+  - statement: RAPID-DNN achieves an average improvement of 9.81 percentage points in Top-1 inference
+      accuracy compared to the fault-agnostic baseline across the evaluated ben
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''percentage points''
+      is not one of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare
+      number wo'
+    quotes:
+    - Across the evaluated benchmarks under the representative mixed random fault configuration, RAPID-DNN
+      achieves an average improvement of 9.81 percentage points in Top-1 inference accuracy
+    - Per-layer latency and energy profiles are generated using Timeloop and Accelergy [13,14] following
+      the profiling methodology adopted by CNNParted.
+    - RAPID-DNN achieves an average improvement of 9.81 percentage points in Top-1 inference accuracy
+    - under the representative mixed random fault configuration
+corrections: []

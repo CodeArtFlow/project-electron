@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-10.
+Topic code `MAT`. Last reviewed 2026-10-11.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -79,6 +79,10 @@ Topic code `MAT`. Last reviewed 2026-10-10.
   - `CLM-MAT-0086` · material CrGeCN4, method PBE+SOC · grade B · credibility unknown · simulated · as of 2026-10-08
   - sources: SRC-00108
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈3.52479e-05 fJ** — In the RIXS measurements at the Fe L3 edge, the total energy resolution was approximately 220 meV.
+  - `CLM-MAT-0104` · measurement RIXS, absorption_edge Fe L3 edge · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00120
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### length device
 
@@ -155,6 +159,14 @@ Topic code `MAT`. Last reviewed 2026-10-10.
 - **≥ 0.018 nm** — Static HSE calculations indicate that trilayer 1T′-WS2 transitions to a QSHI phase for interlayer spacing expansion Δd greater than 0.18 Å.
   - `CLM-MAT-0084` · phase QSHI · grade B · credibility unknown · simulated · as of 2026-10-08
   - sources: SRC-00106
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈1.915 nm** — In the dry state, the alternating stacking distance of PEDOT and PSS is approximately 19.15 Å.
+  - `CLM-MAT-0097` · feature alternating stacking of PEDOT and PSS · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00117
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈2.172 nm** — Upon hydration of PEDOT:PSS, the alternating PEDOT and PSS stacking spacing expands to approximately 21.72 Å.
+  - `CLM-MAT-0098` · feature alternating stacking of PEDOT and PSS · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00117
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power density
@@ -358,6 +370,10 @@ Topic code `MAT`. Last reviewed 2026-10-10.
   - `CLM-MAT-0096` · grade B · credibility unknown · simulated · as of 2026-10-08
   - sources: SRC-00116
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The monolayer FePS3 on gold substrate S2 exhibits an XMCD signal as large as 18.5%.
+  - `CLM-MAT-0103` · sample S2, layer_count monolayer, substrate Au(4 nm)/Ti(2 nm)/SiO2, magnetic_field 9 T, temperature 5 K · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00120
+  - ⚙ automated extraction (gemini-3.6-flash; 7 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -400,6 +416,16 @@ Topic code `MAT`. Last reviewed 2026-10-10.
   - `CLM-MAT-0093` · magnetic_field 0.05 T · grade B · credibility unknown · measured · as of 2026-10-08
   - sources: SRC-00114
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈-155.15 degC** — Bulk FePS3 displays an antiferromagnetic transition with an onset temperature TN of approximately 118 K.
+  - `CLM-MAT-0101` · material bulk FePS3 crystal, magnetic_field 0.5 T · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00120
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0049 — see the open register
+- **≈-354.15 degC** — The Curie-Weiss fit to the inverse susceptibility of bulk FePS3 yields a paramagnetic temperature of approximately -81 K.
+  - `CLM-MAT-0102` · material bulk FePS3 crystal, paramagnetic_region paramagnetic region · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00120
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0049 — see the open register
 
 ### thermal conductivity
 
@@ -433,6 +459,16 @@ Topic code `MAT`. Last reviewed 2026-10-10.
   - `CLM-MAT-0064` · temperature 250 K, vtg 6 V, vbg 8.5 V, device D1 · grade B · credibility unknown · measured · as of 2026-10-05
   - sources: SRC-00081
   - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- **≈0.53 V** — After charging to 0.6 V vs Ag/AgCl, P3AOT-OTBS maintains an open-circuit potential of approximately 0.53 V after 30 minutes.
+  - `CLM-MAT-0099` · charging_voltage 0.6 V versus Ag/AgCl · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00117
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0048 — see the open register
+- **≈0.38 V** — After charging to 0.6 V vs Ag/AgCl, P3AOT-OH open-circuit potential decays to approximately 0.38 V after 30 minutes.
+  - `CLM-MAT-0100` · charging_voltage 0.6 V versus Ag/AgCl · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00117
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0048 — see the open register
 
 ## Live contradictions in this layer
 
@@ -462,9 +498,15 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0027` — energy: _unexamined; classification pending_
   - claims: CLM-MAT-0077, CLM-MAT-0078
   - missing data: `not yet named`
+- `CFL-0048` — voltage: _unexamined; classification pending_
+  - claims: CLM-MAT-0099, CLM-MAT-0100
+  - missing data: `not yet named`
+- `CFL-0049` — temperature: _unexamined; classification pending_
+  - claims: CLM-MAT-0101, CLM-MAT-0102
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 96
-- grades: {'B': 96}
-- distinct sources: 37
+- claims: 104
+- grades: {'B': 104}
+- distinct sources: 39

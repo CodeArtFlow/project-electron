@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-10.
+Topic code `ARCH`. Last reviewed 2026-10-11.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -297,6 +297,21 @@ Topic code `ARCH`. Last reviewed 2026-10-10.
   - sources: SRC-00092
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0026 — see the open register
+- **36.86 percent** — RAPID-DNN achieves an average reduction of 36.86% in expected fault-induced accuracy degradation relative to the fault-agnostic baseline under the representative mixed random fault configuration.
+  - `CLM-ARCH-0077` · framework RAPID-DNN, fault_configuration mixed random fault configuration, baseline fault-agnostic baseline · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00123
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0045, CFL-0046 — see the open register
+- **2.38 percent** — RAPID-DNN incurs an average latency overhead of 2.38% relative to the fault-agnostic baseline under the representative mixed random fault configuration.
+  - `CLM-ARCH-0078` · framework RAPID-DNN, fault_configuration mixed random fault configuration, baseline fault-agnostic baseline · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00123
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0045, CFL-0047 — see the open register
+- **3.34 percent** — RAPID-DNN incurs an average energy overhead of 3.34% relative to the fault-agnostic baseline under the representative mixed random fault configuration.
+  - `CLM-ARCH-0079` · framework RAPID-DNN, fault_configuration mixed random fault configuration, baseline fault-agnostic baseline · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00123
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0046, CFL-0047 — see the open register
 
 ### time
 
@@ -340,9 +355,18 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0026` — relative_deviation: _unexamined; classification pending_
   - claims: CLM-ARCH-0068, CLM-ARCH-0069
   - missing data: `not yet named`
+- `CFL-0045` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-ARCH-0077, CLM-ARCH-0078
+  - missing data: `not yet named`
+- `CFL-0046` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-ARCH-0077, CLM-ARCH-0079
+  - missing data: `not yet named`
+- `CFL-0047` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-ARCH-0078, CLM-ARCH-0079
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 76
-- grades: {'B': 76}
-- distinct sources: 26
+- claims: 79
+- grades: {'B': 79}
+- distinct sources: 27

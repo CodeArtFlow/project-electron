@@ -1,0 +1,150 @@
+id: SRC-00120
+title: Emergent gold-induced interfacial magnetism in monolayer FePS$_3$
+doi: null
+arxiv_id: 2610.12041v1
+url: https://arxiv.org/abs/2610.12041v1
+venue_id: arxiv_api
+authors:
+- name: Giuseppe Buccoliero
+  affiliation: null
+  corresponding: null
+- name: Anita Polli
+  affiliation: null
+  corresponding: null
+- name: Marli dos Reis Cantarino
+  affiliation: null
+  corresponding: null
+- name: Rachel Nickel
+  affiliation: null
+  corresponding: null
+- name: Aloïs Arrighi
+  affiliation: null
+  corresponding: null
+- name: Roberto Sant
+  affiliation: null
+  corresponding: null
+- name: Tristan Riccardi
+  affiliation: null
+  corresponding: null
+- name: Valérie Reita
+  affiliation: null
+  corresponding: null
+- name: Nedjma Bendiab
+  affiliation: null
+  corresponding: null
+- name: Laëtitia Marty
+  affiliation: null
+  corresponding: null
+- name: Kurt Kummer
+  affiliation: null
+  corresponding: null
+- name: Johann Coraux
+  affiliation: null
+  corresponding: null
+- name: Nicholas B. Brookes
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-08'
+retrieved_date: '2026-10-11'
+access: full_text
+read_scope: Automated reading. The full PDF text (58,268 characters, 11 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.12041v1 on
+  2026-10-11. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The bulk transition is apparent in the magnetization M(T) curve which displays the characteristic
+  cusp at TN ≈118 K [Fig. 1(c)], in agreement with previous reports 13;”
+
+  “Magnetization M(T) of a bulk FePS3 crystal measured under an out-of-plane magnetic field of 0.5 T”
+
+  “under an out-of-plane magnetic field of 0.5 T”
+
+  “a Curie–Weiss fit to the inverse susceptibility [inset in Fig. 1(c)] yields a paramagnetic temperature
+  θ≈ −81K, confirming the dominant antiferromagnetic interactions 41.”
+
+  “Curie–Weiss fit (paramagnetic region shaded).”
+
+  “This is accompanied by a strongly enhanced XMCD signal, as much as 18.5% [Fig. 3(d)], three times larger
+  than on the SiO2 reference.”
+
+  “On the Au substrate (S2) the XAS lineshape measured under identical conditions changes radically”
+
+  “monolayer on Au(4 nm)/Ti(2 nm)/SiO2”
+
+  “(S2) at 9 T and 5 K in NI geometry.”
+
+  “The total energy resolution was around 220 meV at the Fe L3 edge, sufficient to resolve intra-atomic
+  d–d transitions and charge-transfer excitations, though not lower-energy excitations (i.e. phonons,
+  magnons, and the spin–orbit exciton).”
+
+  “RIXS measurements were performed at the same ID32 beamline”
+
+  “around 220 meV at the Fe L3 edge”'
+method_summary: '“Element-specific synchrotron spectroscopies are uniquely suited to understand magnetic
+  properties in the light of the details of the local microscopic electronic structure.”
+
+  “Specifically, X-ray magnetic circular dichroism (XMCD) 24–26 and resonant inelastic X-ray scattering
+  (RIXS)27,28 have provided fundamental insight into related vdW magnets 29,30, and start to be increasingly
+  applied to exfoliated few-layer samples31 to separate dimensionality from bulk electronic structure,
+  as in NiPS3 32.”
+
+  “X-ray absorption, XMCD, and RIXS spectra at the Fe L3,2 edges were simulated within the Anderson impurity
+  model as implemented in the many-body package QUANTY 37,38.”'
+limitations: '“Reaching the genuine 2D limit, however, remains challenging: flakes, produced by mechanical
+  exfoliation, have limited lateral extension34—often smaller than the footprint of soft X-ray synchrotron
+  beams— and relatively poor surface cleanliness.”
+
+  “Additionally, finding small flakes across the macroscopic surface of a substrate can be practically
+  challenging in the experimental setups where these techniques are implemented.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 18117
+    output: 3491
+  claims_accepted: 4
+  claims_rejected: 4
+  rejected:
+  - statement: Bulk FePS3 exhibits a weak XMCD signal of approximately 3% at 9 T and 5 K in normal-incidence
+      geometry.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - At 9 T and 5 K in normal-incidence (NI) geometry, the bulk shows only a weak XMCD signal of ∼3%
+      [Fig. 1(f)], consistent with the antiferromagnetic ground state, the dichroism arising from a small
+      field-induced uncompensation of the sublatti
+    - Fe L3,2-edge XAS (e) and XMCD (f) of bulk FePS3 at 9 T and 5 K in normal-incidence (NI) geometry
+    - at 9 T and 5 K in normal-incidence (NI) geometry
+  - statement: Atomic multiplet calculations for the ground state of bulk FePS3 yield an unquenched orbital
+      moment ml of approximately 1.05 uB per Fe atom.
+    reason: 'unit conversion refused: mobility: cannot convert 1.05 µB to m^2/(V*s) - Cannot convert from
+      ''microbyte'' (dimensionless) to ''meter ** 2 / volt / second'' ([time] ** 2 * [current] / [mass'
+    quotes:
+    - The calculated ground state carries an unquenched orbital moment ml ≈1.05µ B and a spin moment ms
+      ≈3.56µ B per Fe atom ( ml/ms ≈0.29 ), as expected for Fe2+ in this trigonally distorted environment19,20.
+    - Both lineshapes are well reproduced by AMCs using parameters consistent with related work 33;
+    - Fe L3,2-edge XAS (e) and XMCD (f) of bulk FePS3 at 9 T and 5 K in normal-incidence (NI) geometry
+  - statement: Atomic multiplet calculations for bulk FePS3 predict a spin moment ms of approximately
+      3.56 uB per Fe atom.
+    reason: 'unit conversion refused: mobility: cannot convert 3.56 µB to m^2/(V*s) - Cannot convert from
+      ''microbyte'' (dimensionless) to ''meter ** 2 / volt / second'' ([time] ** 2 * [current] / [mass'
+    quotes:
+    - The calculated ground state carries an unquenched orbital moment ml ≈1.05µ B and a spin moment ms
+      ≈3.56µ B per Fe atom ( ml/ms ≈0.29 ), as expected for Fe2+ in this trigonally distorted environment19,20.
+    - Both lineshapes are well reproduced by AMCs using parameters consistent with related work 33;
+    - Fe L3,2-edge XAS (e) and XMCD (f) of bulk FePS3 at 9 T and 5 K in normal-incidence (NI) geometry
+  - statement: For bilayer FePS3 on Au substrate (sample S3), the XMCD signal is approximately 14% at
+      9 T and 5 K in normal incidence.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - the bilayer still exhibits a sizeable XMCD of ∼14%, more than twice that of the bilayer/SiO2 (S1)
+      under identical conditions, and only at five layers and above does the signal return to the bulk
+      value.
+    - Layer-dependent decay of the interfacial magnetism in FePS 3 on gold (sample S3).
+    - the bilayer still exhibits a sizeable XMCD of ∼14%
+    - measured at 9 T and 5 K in normal-incidence geometry;
+corrections: []

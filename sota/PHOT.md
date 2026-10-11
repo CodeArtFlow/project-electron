@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-10.
+Topic code `PHOT`. Last reviewed 2026-10-11.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -50,6 +50,14 @@ Topic code `PHOT`. Last reviewed 2026-10-10.
 - **≤ ≈0.0048 GHz** — The Ho3+-doped fluoride glass waveguide laser exhibits a linewidth of approximately 4.8 MHz.
   - `CLM-PHOT-0056` · device Ho3+-doped fluoride glass waveguide laser · grade B · credibility unknown · measured · as of 2026-10-07
   - sources: SRC-00098
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **6.89 GHz** — The measured transmission spectrum of the bulk position exhibits a bandgap spanning from 6.89 to 8.83 GHz.
+  - `CLM-PHOT-0060` · lattice_constant 17 mm, material YIG · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00121
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **7.48 GHz** — A transmission peak appears at 7.48 GHz in the corner spectrum.
+  - `CLM-PHOT-0061` · corner_radius 1.4 mm · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00121
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### length device
@@ -199,6 +207,18 @@ Topic code `PHOT`. Last reviewed 2026-10-10.
   - `CLM-PHOT-0059` · route Fourier route · grade B · credibility unknown · simulated · as of 2026-10-08
   - sources: SRC-00111
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈25 percent** — Under position disorder, the corner state merges into the bulk continuum when the fluctuation parameter delta reaches approximately 0.25.
+  - `CLM-PHOT-0062` · disorder_type position disorder, corner_radius_ratio 0.45r · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00121
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈37 percent** — Under radius disorder, the bandgap closes at delta of approximately 0.37.
+  - `CLM-PHOT-0063` · disorder_type radius disorder · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00121
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≥ ≈31 percent** — Under radius disorder, the corner state becomes indistinguishable from bulk modes when delta exceeds approximately 0.31.
+  - `CLM-PHOT-0064` · disorder_type radius disorder · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00121
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### sensitivity advantage ratio
 
@@ -297,6 +317,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 59
-- grades: {'B': 52, 'A': 7}
-- distinct sources: 19
+- claims: 64
+- grades: {'B': 57, 'A': 7}
+- distinct sources: 20

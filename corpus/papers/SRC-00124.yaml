@@ -1,0 +1,98 @@
+id: SRC-00124
+title: Programmable Asymmetric Spin-Orbit Torque Switching for Spin Logic
+doi: null
+arxiv_id: 2610.09950v1
+url: https://arxiv.org/abs/2610.09950v1
+venue_id: arxiv_api
+authors:
+- name: Rongkun Han
+  affiliation: null
+  corresponding: null
+- name: Dahai Wei
+  affiliation: null
+  corresponding: null
+- name: Jianhua Zhao
+  affiliation: null
+  corresponding: null
+- name: Yuan Lu
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-07'
+retrieved_date: '2026-10-11'
+access: full_text
+read_scope: Automated reading. The full PDF text (47,787 characters, 26 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.09950v1 on
+  2026-10-11. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“All switching curves display clear offsets, with the small switching current appearing at
+  about ±30 mA , corresponding to a current density of 3.09×106 A/cm2, and the large switching current
+  at about ±40 mA , corresponding to a current density of 4.13×10 6 A/cm2.”
+
+  “with the small switching current appearing at about ±30 mA”
+
+  “and the large switching current at about ±40 mA”
+
+  “Furthermore, by measuring the SOT switching under different magnetic fields applied along the y-direction,
+  we estimated the effective field Hy to be approximately 10 Oe.”
+
+  “measuring the SOT switching under different magnetic fields applied along the y-direction”'
+method_summary: '“The Fe/MCA/Pt multilayers were grown on GaAs(001) substrates by molecular beam epitaxy,
+  as illustrated in Fig . 1(a).”
+
+  “Current-driven switching was measured using a pulsed current source (Keithley 6221) and a nanovoltmeter
+  (Keithley 2182A).”
+
+  “Magnetization dynamics were simulated within a macrospin model by solving the Landau -Lifshitz-Gilbert
+  (LLG) equation.”'
+limitations: '“The pulse width was fixed at 50 μs due to instrumental limitations”
+
+  “Although logic operations are performed under field -free conditions , the programming step currently
+  requires an external magnetic field, which may limit device scalability.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 15510
+    output: 2708
+  claims_accepted: 3
+  claims_rejected: 4
+  rejected:
+  - statement: The Fe layer exhibits a uniaxial anisotropy field of 120.3 Oe.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Fitting the
+      PHE curve using equation 1 reveals that the Fe layer exhib'''
+    quotes:
+    - Fitting the PHE curve using equation 1 reveals that the Fe layer exhibits both uniaxial ( HKU=120.3±4.77
+      Oe) and fourfold ( HK4=298.3±11.93 Oe) anisotropies, as shown in Fig. 1(d), with details provided
+      in S3 in the Supporting Information.
+  - statement: The Fe layer exhibits a fourfold anisotropy field of 298.3 Oe.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Fitting the
+      PHE curve using equation 1 reveals that the Fe layer exhib'''
+    quotes:
+    - Fitting the PHE curve using equation 1 reveals that the Fe layer exhibits both uniaxial ( HKU=120.3±4.77
+      Oe) and fourfold ( HK4=298.3±11.93 Oe) anisotropies, as shown in Fig. 1(d), with details provided
+      in S3 in the Supporting Information.
+  - statement: The small SOT switching current corresponds to a current density of 3.09×10^6 A/cm2.
+    reason: 'unit conversion refused: power_density: cannot convert 3090000.0 A/cm2 to W/m^2 - Cannot
+      convert from ''ampere / centimeter ** 2'' ([current] / [length] ** 2) to ''watt / meter ** 2'' ([mas'
+    quotes:
+    - All switching curves display clear offsets, with the small switching current appearing at about
+      ±30 mA , corresponding to a current density of 3.09×106 A/cm2, and the large switching current at
+      about ±40 mA , corresponding to a current dens
+    - with the small switching current appearing at about ±30 mA , corresponding to a current density
+      of 3.09×106 A/cm2
+  - statement: The large SOT switching current corresponds to a current density of 4.13×10^6 A/cm2.
+    reason: 'unit conversion refused: power_density: cannot convert 4130000.0 A/cm2 to W/m^2 - Cannot
+      convert from ''ampere / centimeter ** 2'' ([current] / [length] ** 2) to ''watt / meter ** 2'' ([mas'
+    quotes:
+    - All switching curves display clear offsets, with the small switching current appearing at about
+      ±30 mA , corresponding to a current density of 3.09×106 A/cm2, and the large switching current at
+      about ±40 mA , corresponding to a current dens
+    - and the large switching current at about ±40 mA , corresponding to a current density of 4.13×10
+      6 A/cm2.
+corrections: []

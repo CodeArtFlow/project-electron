@@ -1359,3 +1359,185 @@ claims:
       unit: ns
     conditions:
       frequency: 146 MHz
+- id: CLM-DEV-0053
+  topic: DEV
+  statement: The fitting parameter ts for characteristic length of strain build-up is approximately 1.61
+    nm.
+  sources:
+  - SRC-00119
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    parameter: ts
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 1.61
+      unit: nm
+    si_base:
+      value: 1.6100000000000002e-09
+      unit: m
+    display:
+      value: 1.61
+      unit: nm
+    conditions:
+      parameter: ts
+- id: CLM-DEV-0054
+  topic: DEV
+  statement: Adding an auxiliary Ag reflector and microlens-array film to the green phosphorescent OLED
+    increased its maximum external quantum efficiency from 20% for the planar reference to 55.8%.
+  sources:
+  - SRC-00122
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    device_structure: ITO (150 nm)/HA TCN (5 nm)/TAPC (55 nm)/HATCN (5 nm)/TAPC (55 nm)/HA TCN (5 nm)/TAPC
+      (55 nm)/TCTA (10 nm)/TCTA:B3PyMPM:Ir(ppy)2acac (25 nm, 4 wt%, co-evaporation)/B3PyMPM (50 nm)/B3PyMPM:Cs₂CO₃
+      (5 nm, 20 wt%)/Ag (100 nm)
+    outcoupling_structure: microlens-array film (MAF02, Lumtec)
+    auxiliary_reflector: MoO x/Ag reflector (5/100 nm)
+- id: CLM-DEV-0055
+  topic: DEV
+  statement: An orange phosphorescent OLED on a high-index microlens substrate reached a maximum external
+    quantum efficiency of 77% when equipped with a ZnS/LiF DBR auxiliary reflector.
+  sources:
+  - SRC-00122
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    device_stack: HATCN (5 nm)/TAPC (95 nm)/HATCN (5 nm)/TAPC (95 nm)/TCTA (10 nm)/TCTA:B3PyMPM:Ir(dmppy-ph)2tmd
+      (25 nm, 4 wt%, co-evaporation)/B3PyMPM (55 nm)/Liq (1 nm)/Al (100 nm)
+    auxiliary_reflector: 4.5 alternating ZnS (70 nm)/LiF (115 nm) pairs
+- id: CLM-DEV-0056
+  topic: DEV
+  statement: An orange phosphorescent OLED on a high-index microlens substrate reached a maximum external
+    quantum efficiency of 61% with an Al auxiliary reflector.
+  sources:
+  - SRC-00122
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device_stack: HATCN (5 nm)/TAPC (95 nm)/HATCN (5 nm)/TAPC (95 nm)/TCTA (10 nm)/TCTA:B3PyMPM:Ir(dmppy-ph)2tmd
+      (25 nm, 4 wt%, co-evaporation)/B3PyMPM (55 nm)/Liq (1 nm)/Al (100 nm)
+- id: CLM-DEV-0057
+  topic: DEV
+  statement: The small SOT switching current appears at approximately 30 mA.
+  sources:
+  - SRC-00124
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-07'
+  created: '2026-10-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    switching_regime: small switching current
+  quantity:
+    quantity: current
+    bound: exact
+    approximate: true
+    as_published:
+      value: 30.0
+      unit: mA
+    si_base:
+      value: 0.03
+      unit: A
+    display:
+      value: 30.0
+      unit: mA
+    conditions:
+      switching_regime: small switching current
+- id: CLM-DEV-0058
+  topic: DEV
+  statement: The large SOT switching current appears at approximately 40 mA.
+  sources:
+  - SRC-00124
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-07'
+  created: '2026-10-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    switching_regime: large switching current
+  quantity:
+    quantity: current
+    bound: exact
+    approximate: true
+    as_published:
+      value: 40.0
+      unit: mA
+    si_base:
+      value: 0.04
+      unit: A
+    display:
+      value: 40.0
+      unit: mA
+    conditions:
+      switching_regime: large switching current
+- id: CLM-DEV-0059
+  topic: DEV
+  statement: The effective field Hy between Fe and MCA is estimated to be approximately 10 Oe.
+  sources:
+  - SRC-00124
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-07'
+  created: '2026-10-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    field_direction: y-direction

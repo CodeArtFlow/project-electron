@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-10-10.
+Topic code `DEV`. Last reviewed 2026-10-11.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -16,6 +16,14 @@ Topic code `DEV`. Last reviewed 2026-10-10.
   - `CLM-DEV-0036` · temperature 2 K, state after light irradiation · grade B · credibility unknown · measured · as of 2026-10-06
   - sources: SRC-00094
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈30 mA** — The small SOT switching current appears at approximately 30 mA.
+  - `CLM-DEV-0057` · switching_regime small switching current · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00124
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈40 mA** — The large SOT switching current appears at approximately 40 mA.
+  - `CLM-DEV-0058` · switching_regime large switching current · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00124
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### frequency
 
@@ -27,6 +35,13 @@ Topic code `DEV`. Last reviewed 2026-10-10.
   - `CLM-DEV-0013` · magnetic_field 7.5 T, frequency 2.2 THz · grade B · credibility unknown · measured · as of 2026-09-23
   - sources: SRC-00033
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+
+### length device
+
+- **≈1.61 nm** — The fitting parameter ts for characteristic length of strain build-up is approximately 1.61 nm.
+  - `CLM-DEV-0053` · parameter ts · grade B · credibility unknown · simulated · as of 2026-10-08
+  - sources: SRC-00119
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -156,6 +171,22 @@ Topic code `DEV`. Last reviewed 2026-10-10.
   - `CLM-DEV-0050` · sample_type continuous permalloy reference region, permalloy_thickness 20 nm · grade B · credibility unknown · measured · as of 2026-10-07
   - sources: SRC-00105
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The effective field Hy between Fe and MCA is estimated to be approximately 10 Oe.
+  - `CLM-DEV-0059` · field_direction y-direction · grade B · credibility unknown · measured · as of 2026-10-07
+  - sources: SRC-00124
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Adding an auxiliary Ag reflector and microlens-array film to the green phosphorescent OLED increased its maximum external quantum efficiency from 20% for the planar reference to 55.8%.
+  - `CLM-DEV-0054` · device_structure ITO (150 nm)/HA TCN (5 nm)/TAPC (55 nm)/HATCN (5 nm)/TAPC (55 nm)/HA TCN (5 nm)/TAPC (55 nm)/TCTA (10 nm)/TCTA:B3PyMPM:Ir(ppy)2acac (25 nm, 4 wt%, co-evaporation)/B3PyMPM (50 nm)/B3PyMPM:Cs₂CO₃ (5 nm, 20 wt%)/Ag (100 nm), outcoupling_structure microlens-array film (MAF02, Lumtec), auxiliary_reflector MoO x/Ag reflector (5/100 nm) · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00122
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- An orange phosphorescent OLED on a high-index microlens substrate reached a maximum external quantum efficiency of 77% when equipped with a ZnS/LiF DBR auxiliary reflector.
+  - `CLM-DEV-0055` · device_stack HATCN (5 nm)/TAPC (95 nm)/HATCN (5 nm)/TAPC (95 nm)/TCTA (10 nm)/TCTA:B3PyMPM:Ir(dmppy-ph)2tmd (25 nm, 4 wt%, co-evaporation)/B3PyMPM (55 nm)/Liq (1 nm)/Al (100 nm), auxiliary_reflector 4.5 alternating ZnS (70 nm)/LiF (115 nm) pairs · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00122
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- An orange phosphorescent OLED on a high-index microlens substrate reached a maximum external quantum efficiency of 61% with an Al auxiliary reflector.
+  - `CLM-DEV-0056` · device_stack HATCN (5 nm)/TAPC (95 nm)/HATCN (5 nm)/TAPC (95 nm)/TCTA (10 nm)/TCTA:B3PyMPM:Ir(dmppy-ph)2tmd (25 nm, 4 wt%, co-evaporation)/B3PyMPM (55 nm)/Liq (1 nm)/Al (100 nm) · grade B · credibility unknown · measured · as of 2026-10-08
+  - sources: SRC-00122
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -231,6 +262,6 @@ _None._
 
 ## Evidence base
 
-- claims: 49
-- grades: {'B': 49}
-- distinct sources: 19
+- claims: 56
+- grades: {'B': 56}
+- distinct sources: 22

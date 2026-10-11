@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-10",
+  "date": "2026-10-11",
   "model": "gemini-3.5-flash-lite",
   "extract_model": "gemini-3.6-flash",
   "prompt_version": "reader-v5",
@@ -10,685 +10,746 @@
   },
   "papers": [
     {
-      "candidate": "CAND-20261009-0139",
-      "decision": "no_claims",
-      "reason": "the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 29177,
-      "claims": [],
-      "rejected": [
-        {
-          "statement": "The main chamber of the PIONEER system is maintained at a vacuum level of 10-7 Pa.",
-          "reason": "the value 1e-07 does not appear in any of the claim's quotes",
-          "quotes": [
-            "Consequently, the main chamber is maintained at a level of vacuum comparable to that of outer space (10-7 Pa).",
-            "the main chamber is maintained at a level of vacuum comparable to that of outer space (10-7 Pa).",
-            "Process Informatics OperaNdo Experiment for Electronic Research (PIONEER) system."
-          ]
-        },
-        {
-          "statement": "The transfer chamber is evacuated to a vacuum level of 10-5 Pa.",
-          "reason": "the value 1e-05 does not appear in any of the claim's quotes",
-          "quotes": [
-            "once a sample is placed inside, a vacuum pump activates to evacuate the chamber to a vacuum level of 10 -5 Pa.",
-            "The transfer chamber features an automatic internal pressure adjustment system; once a sample is placed inside, a vacuum pump activates to evacuate the chamber to a vacuum level of 10 -5 Pa."
-          ]
-        },
-        {
-          "statement": "The PIONEER system acquires approximately 100 spectra daily using fully automatic operations.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Currently, we are able to acquire tens of thousands of data points (ap'",
-          "quotes": [
-            "Currently, we are able to acquire tens of thousands of data points (approximately 100 spectra) daily using fully automatic operations simply by placing various samples into the UFO chamber.",
-            "Process Informatics OperaNdo Experiment for Electronic Research (PIONEER) system",
-            "daily using fully automatic operations simply by placing various samples into the UFO chamber."
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261009-0138",
+      "candidate": "CAND-20261009-0099",
       "decision": "out_of_scope",
-      "reason": "This paper focuses on a medium access control (MAC) protocol for energy-harvesting IoT networks, which is a networking and communication protocol topic rather than semiconductor research.",
-      "chars": 19119,
+      "reason": "The paper focuses on wireless communication networks, specifically over-the-air computation and non-orthogonal multiple access, which is out of scope for semiconductor research.",
+      "chars": 45442,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261009-0137",
-      "decision": "out_of_scope",
-      "reason": "The paper discusses laser fragmentation of gold colloids in liquid for applications in theranostics, photonics, and catalysis, which is out of scope for semiconductor manufacturing or device research.",
-      "chars": 70592,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0136",
+      "candidate": "CAND-20261009-0098",
       "decision": "read",
       "reason": "",
-      "chars": 60141,
+      "chars": 46530,
       "claims": [
-        "CLM-PHOT-0058",
-        "CLM-PHOT-0059"
+        "CLM-MAT-0097",
+        "CLM-MAT-0098",
+        "CLM-MAT-0099",
+        "CLM-MAT-0100"
       ],
       "rejected": [
         {
-          "statement": "On the geometry-blocked test set, the complex Fourier expert reduces the resonance-position mean absolute error from 3.2 to 0.95 nm.",
-          "reason": "unit conversion refused: relative_deviation is dimensionless; unit 'nm' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit",
+          "statement": "The PEDOT \u03c0\u2013\u03c0 stacking spacing in dry PEDOT:PSS film is approximately 3.68 \u00c5.",
+          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
           "quotes": [
-            "The expert reduces resonance-position mean absolute error (MAE) from 3.2 to 0.95 nm and the resonance-depth error by 14-fold on a geometry-blocked test set.",
-            "Over the test set and five random seeds, the expert lowers the resonance -position mean absolute error (MAE) from 3.000 to 0.998 nm on the real -space backbone and from 3.223 to 0.947 nm on the Fourier backbone",
-            "from 3.223 to 0.947 nm on the Fourier backbone",
-            "The expert reduces resonance-position mean absolute error (MAE) from 3.2 to 0.95 nm"
+            "A weaker feature associated with PEDOT \u03c0\u2013\u03c0 stacking(25) is also observed, shifting slightly from ~3.68 \u00c5 in the dry film to ~3.77 \u00c5 after hydration.",
+            "The summed two-dimensional diffraction patterns of dry and hydrated PEDOT:PSS films are shown in Fig. 4E and 4F, respectively.",
+            "dry and hydrated PEDOT:PSS",
+            "dry film"
           ]
         },
         {
-          "statement": "All seven metasurface families share a square lattice period of 1,320 nm.",
-          "reason": "the value 1320 does not appear in any of the claim's quotes",
+          "statement": "The PEDOT \u03c0\u2013\u03c0 stacking spacing in hydrated PEDOT:PSS film expands to approximately 3.77 \u00c5.",
+          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
           "quotes": [
-            "The seven families\u2014Asymmetric Cross (AC), Asymmetric Disks (AD), Circular Split Ring (CSR), Disk with an Asymmetric Nanohole (DAN), Parallel Bars with an x -offset (PX), Stepped Rectangle (SR) and Twin Yawed Ellipses (TY) (Fig. 2a)\u2014are sili",
-            "Transmission spectra of the seven silicon metasurface families were computed with three -dimensional finite-difference time-domain (FDTD) (Lumerical).",
-            "silicon motifs on a square lattice of period 1,320 nm",
-            "The seven families\u2014Asymmetric Cross (AC), Asymmetric Disks (AD), Circular Split Ring (CSR), Disk with an Asymmetric Nanohole (DAN), Parallel Bars with an x -offset (PX), Stepped Rectangle (SR) and Twin Yawed Ellipses (TY)"
+            "A weaker feature associated with PEDOT \u03c0\u2013\u03c0 stacking(25) is also observed, shifting slightly from ~3.68 \u00c5 in the dry film to ~3.77 \u00c5 after hydration.",
+            "The summed two-dimensional diffraction patterns of dry and hydrated PEDOT:PSS films are shown in Fig. 4E and 4F, respectively.",
+            "dry and hydrated PEDOT:PSS",
+            "after hydration"
           ]
         },
         {
-          "statement": "The total 2,015 effective FDTD simulations consumed a total of 146,984.4 CPU hours.",
-          "reason": "the value 146984 does not appear in any of the claim's quotes",
+          "statement": "P3AOT-OTBS shows a low passive swelling of approximately 0.3%.",
+          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
           "quotes": [
-            "The 2,015 effective FDTD simulations consume 146,984.4 CPU\u00b7h in total, corresponding to 72.95 CPU\u00b7h and 2.28 wall-clock h per sample on 32 allocated CPU cores.",
-            "The 2,015 effective FDTD simulations",
-            "on 32 allocated CPU cores."
+            "Using quartz crystal microbalance with dissipation (QCM-D, Fig. S9) measurements showed that P3AOT-OTBS has very low passive swelling of ~0.3%.",
+            "P3AOT-OTBS",
+            "passive swelling"
           ]
         },
         {
-          "statement": "Each FDTD simulation sample required a median CPU resource cost of 72.95 CPU hours.",
-          "reason": "unit conversion refused: time: could not parse 72.95 'CPU\u00b7h': 'CPU' is not defined in the unit registry",
+          "statement": "P3AOT-OTBS OECTs show a transfer curve hysteresis window of approximately 0.5 V between forward and backward sweeps.",
+          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
           "quotes": [
-            "The 2,015 effective FDTD simulations consume 146,984.4 CPU\u00b7h in total, corresponding to 72.95 CPU\u00b7h and 2.28 wall-clock h per sample on 32 allocated CPU cores.",
-            "per sample on 32 allocated CPU cores.",
-            "on 32 allocated CPU cores."
-          ]
-        },
-        {
-          "statement": "The K bg model achieves a resonance-position MAE of 3.2226 nm on the strict test set.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Model | Spectral MAE \u00b1 8 nm MAE | Min-transmission MAE | Resonance-pos'",
-          "quotes": [
-            "Model | Spectral MAE \u00b1 8 nm MAE | Min-transmission MAE | Resonance-position MAE (nm) | ln(Q) MAE | Median spectral correlation R",
-            "K bg | 0.0375\u00b1 0.0063 | 0.0685\u00b1 0.0685 | 0.6617\u00b1 0.0490 | 3.2226\u00b1 0.3410 | 0.6728\u00b1 0.2260 | 0.2624\u00b1 0.0685",
-            "K bg 0.0375\u00b1 0.0063 0.0685\u00b1 0.0068 0.6617\u00b1 0.0490 3.2226\u00b1 0.3410 0.6728\u00b1 0.2260 0.2624\u00b1 0.0685",
-            "strict test set of 221 samples"
-          ]
-        },
-        {
-          "statement": "The Real + K peak model achieves a resonance-position MAE of 0.9981 nm on the strict test set.",
-          "reason": "unit conversion refused: relative_deviation is dimensionless; unit 'nm' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit",
-          "quotes": [
-            "Real + K peak 0.0219\u00b1 0.0006 0.0448\u00b1 0.0023 0.0535\u00b1 0.0031 0.9981\u00b1 0.0594 0.2886\u00b1 0.0104 0.7377\u00b1 0.0622",
-            "strict test set of 221 samples"
+            "In contrast, P3AOT-OTBS exhibited a pronounced hysteresis window of ~0.5 V between the forward and backward transfer sweeps (Fig 5E and Fig. S11A-B), indicating a substantial retention of the electrochemically injected state.",
+            "Transfer characteristics of P3AOT-OTBS and P3AOT-OH OECTs, showing a large hysteresis window in P3AOT-OTBS.",
+            "P3AOT-OTBS",
+            "hysteresis window of ~0.5 V between the forward and backward transfer sweeps"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261009-0135",
+      "candidate": "CAND-20261009-0097",
+      "decision": "out_of_scope",
+      "reason": "The paper investigates fundamental magnon dynamics and quantum geometry in spin chains, which falls under pure condensed-matter physics rather than semiconductor research.",
+      "chars": 79021,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0096",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on wireless communication and sensing systems (ISAC) rather than semiconductor devices or integrated circuit technology.",
+      "chars": 48599,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0095",
+      "decision": "read",
+      "reason": "",
+      "chars": 56281,
+      "claims": [
+        "CLM-MEM-0008",
+        "CLM-MEM-0009",
+        "CLM-MEM-0010",
+        "CLM-MEM-0011",
+        "CLM-MEM-0012"
+      ],
+      "rejected": [
+        {
+          "statement": "The memristor device RESET transition occurs at approximately -2.50 V.",
+          "reason": "the value -2.5 does not appear in any of the claim's quotes",
+          "quotes": [
+            "The corresponding RESET transition occurs at approximately -2.50 V.",
+            "Figure 2(a) presents the current\u2013voltage (I\u2013V) characteristics for 300 consecutive switching cycles with a current compliance limit of 100 mA.",
+            "The electrical performance of the Ag/TiOx/NiOx/p++-Si device was evaluated"
+          ]
+        },
+        {
+          "statement": "Retention characteristics recorded at a constant read voltage of 2.0 V preserve performance for 11000 s.",
+          "reason": "the statement contains the number 11000, which none of its quotes contain",
+          "quotes": [
+            "Figure 2(c) presents the retention characteristics recorded for 1.1\u00d710 4 s at a constant read voltage of 2.0 V.",
+            "at a constant read voltage of 2.0 V.",
+            "The electrical performance of the Ag/TiOx/NiOx/p++-Si device was evaluated"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261009-0094",
       "decision": "no_claims",
       "reason": "the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 33166,
+      "chars": 36892,
       "claims": [],
       "rejected": [
         {
-          "statement": "In the zero-field limit, the magnon frequency of pristine CrSBr is 24 GHz.",
-          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
+          "statement": "The 004 diffraction peak of Mn1.8CoAl occurs at 61.98\u00b0.",
+          "reason": "the statement contains the number 8, which none of its quotes contain",
           "quotes": [
-            "Similarly, the zero-field magnon frequency decreases from 24 GHz down to 10 GHz.",
-            "The core results of our work were obtained by means of magneto-optical measurements, which were performed at T = 5 K in a helium-cooled cryostat.",
-            "pristine CrSBr",
-            "zero-field"
+            "For the MnxCoAl magnetic layer, the (004) diffraction peak exhibits a pronounced composition dependence, shifting from 61.98\u00b0 for Mn1.8CoAl to 59.06\u00b0 for Mn2.5CoAl.",
+            "The crystal structures of the samples were characterized by XRD using Cu K\u03b1 radiation.",
+            "61.98\u00b0 for Mn1.8CoAl",
+            "(004) diffraction peak"
           ]
         },
         {
-          "statement": "The zero-field magnon frequency decreases down to 10 GHz for chlorine-substituted CrSBr.",
-          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
+          "statement": "The 004 diffraction peak of Mn2.5CoAl occurs at 59.06\u00b0.",
+          "reason": "the statement contains the number 5, which none of its quotes contain",
           "quotes": [
-            "Similarly, the zero-field magnon frequency decreases from 24 GHz down to 10 GHz.",
-            "The core results of our work were obtained by means of magneto-optical measurements, which were performed at T = 5 K in a helium-cooled cryostat.",
-            "zero-field"
+            "For the MnxCoAl magnetic layer, the (004) diffraction peak exhibits a pronounced composition dependence, shifting from 61.98\u00b0 for Mn1.8CoAl to 59.06\u00b0 for Mn2.5CoAl.",
+            "The crystal structures of the samples were characterized by XRD using Cu K\u03b1 radiation.",
+            "59.06\u00b0 for Mn2.5CoAl",
+            "(004) diffraction peak"
           ]
         },
         {
-          "statement": "The saturation field along the c-axis for pristine CrSBr decreases linearly from around 2.05 T to around 1.19 T for a maximum chlorine content of 56%.",
-          "reason": "unit conversion refused: voltage: cannot convert 2.05 T to V - Cannot convert from 'tesla' ([mass] / [time] ** 2 / [current]) to 'volt' ([mass] * [length] ** 2 / [time] ** 3 / [current]",
+          "statement": "The composition-gradient Mn1.8-2.5CoAl device exhibits a critical switching current density of 4.9 \u00d7 10^7 A/cm2.",
+          "reason": "the statement contains the number 8, which none of its quotes contain",
           "quotes": [
-            "In the experiment, we see that as the content of the chlorine increases, the saturation field decreases linearly from around 2.05 T to around 1.19 T for the maximum chlorine content of 56%.",
-            "The core results of our work were obtained by means of magneto-optical measurements, which were performed at T = 5 K in a helium-cooled cryostat.",
-            "pristine CrSBr"
+            "The critical current density is then calculated using the Pt current and the Pt cross-sectional area, yielding 4.9 \u00d7 10 7 A/cm2 for the composition- gradient device.",
+            "Electrical transport measurements and SOT driven magnetization switching experiments were performed using a physical property measurement system (PPMS).",
+            "4.9 \u00d7 10 7 A/cm2 for the composition- gradient device"
           ]
         },
         {
-          "statement": "The saturation field for CrSBr1-xClx with 56% chlorine content decreases down to around 1.19 T.",
-          "reason": "unit conversion refused: voltage: cannot convert 1.19 T to V - Cannot convert from 'tesla' ([mass] / [time] ** 2 / [current]) to 'volt' ([mass] * [length] ** 2 / [time] ** 3 / [current]",
+          "statement": "For the Mn1.8-2.5CoAl device, the polarity reversal occurs near Hx \u2248 -23 Oe.",
+          "reason": "the statement contains the number 8, which none of its quotes contain",
           "quotes": [
-            "In the experiment, we see that as the content of the chlorine increases, the saturation field decreases linearly from around 2.05 T to around 1.19 T for the maximum chlorine content of 56%.",
-            "The core results of our work were obtained by means of magneto-optical measurements, which were performed at T = 5 K in a helium-cooled cryostat.",
-            "56%"
+            "For the Mn1.8-2.5CoAl device, the polarity reversal occurs near Hx\u2248-23 Oe, indicating the presence of an effective symmetry-breaking bias involved in the zero-field switching.",
+            "Electrical transport measurements and SOT driven magnetization switching experiments were performed using a physical property measurement system (PPMS).",
+            "For the Mn1.8-2.5CoAl device",
+            "near Hx\u2248-23 Oe"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261009-0134",
+      "candidate": "CAND-20261009-0093",
       "decision": "read",
       "reason": "",
-      "chars": 73745,
+      "chars": 30636,
       "claims": [
-        "CLM-MAT-0087",
-        "CLM-MAT-0088",
-        "CLM-MAT-0089"
+        "CLM-DEV-0053"
       ],
       "rejected": [
         {
-          "statement": "AtomWorld-Mirror reaches a persistent structural hierarchy stability ratio of 0.9066 for the largest Cu cluster identity across trajectory seeds.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Across trajectory seeds, the largest-Cu-cluster identity reaches 0.906'",
+          "statement": "The 3 nm thick Mn1.6Co1.4Ga film exhibits a critical current density of 3.18\u00d7107 A/cm2.",
+          "reason": "the statement contains the number 6, which none of its quotes contain",
           "quotes": [
-            "Across trajectory seeds, the largest-Cu-cluster identity reaches 0.9066, showing that the persistent structural hierarchy remains stable under microscopic stochasticity."
+            "The 3 -nm MCG film exhibits the highest switching ratio of 62% and the largest J c=3.18\u00d7107 A/cm2.",
+            "single-layer Mn1.6Co1.4Ga (MCG) Heusler alloy"
           ]
         },
         {
-          "statement": "AtomWorld-Mirror achieves an edit F1 score of 0.77 on 3-element RPV steel.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Mirror 0%\u00b70.77 0.21\u00b71.05'",
+          "statement": "The 20 nm thick Mn1.6Co1.4Ga film exhibits a critical current density of 1.65\u00d7107 A/cm2.",
+          "reason": "the statement contains the number 6, which none of its quotes contain",
           "quotes": [
-            "RPV 3-element KMC 0%\u00b71.00 0.00\u00b71.00",
-            "Mirror 0%\u00b70.77 0.21\u00b71.05",
-            "RPV 3-element",
-            "RPV 3-element KMC"
+            "As the film thickness increases, the Jc decreases monotonically and reaches 1.65\u00d7107 A/cm2 at 20 nm.",
+            "single-layer Mn1.6Co1.4Ga (MCG) Heusler alloy",
+            "reaches 1.65\u00d7107 A/cm2 at 20 nm."
           ]
         },
         {
-          "statement": "AtomWorld-Mirror achieves an edit F1 score of 0.78 on 10-element RPV steel.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Mirror 0%\u00b70.78 0.32\u00b71.06'",
+          "statement": "The 3 nm thick Mn1.6Co1.4Ga film shows a damping-like torque efficiency \u03c7DL of -22.71\u00d710-7 Oe\u00b7cm2/A.",
+          "reason": "the statement contains the number 4, which none of its quotes contain",
           "quotes": [
-            "RPV 10-element KMC 0%\u00b71.00 0.00\u00b71.00",
-            "Mirror 0%\u00b70.78 0.32\u00b71.06",
-            "RPV 10-element",
-            "RPV 10-element KMC"
+            "The 3 nm film exhibits a negative \u03c7DL of -22.71\u00d710-7 Oe\u00b7cm2/A, while \u03c7DL becomes positive for thicker films and increases from 9.82 to 18.23\u00d710-7 Oe\u00b7cm2/A as the thickness grows from 6 to 20 nm [Figs 3(c) and 3( d)].",
+            "single-layer Mn1.6Co1.4Ga (MCG) Heusler alloy",
+            "The 3 nm film exhibits a negative \u03c7DL of -22.71\u00d710-7 Oe\u00b7cm2/A"
           ]
         },
         {
-          "statement": "AtomWorld-Mirror achieves an edit F1 score of 0.84 on Cu\u2013Zr metallic glass.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Mirror 0%\u00b70.84 0.26\u00b71.10'",
+          "statement": "Calculated saturation magnetization of Mn1.5Co1.5Ga is 150 emu/cm3 in the undistorted structure.",
+          "reason": "the statement contains the number 5, which none of its quotes contain",
           "quotes": [
-            "MD teacher 0%\u00b71.00 0.00\u00b71.00",
-            "Mirror 0%\u00b70.84 0.26\u00b71.10",
-            "Cu\u2013Zr metallic glass (MD teacher)",
-            "MD teacher"
+            "The calculated MS increases from 150 emu/cm 3 in the undistorted structure to 264 emu/cm3 at c=6.05 \u00c5.",
+            "First-principles calculations reveal a sizable intrinsic spin Hall conductivity (SHC) in MCG originating from its topological band structure, which is enhanced by the tetragonal distortion without changing sign.",
+            "obtain Mn1.5Co1.5Ga",
+            "The calculated MS increases from 150 emu/cm 3 in the undistorted structure"
           ]
         },
         {
-          "statement": "AtomWorld-Mirror achieves an edit F1 score of 0.71 on Li3N-based anti-perovskite solid electrolyte.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Mirror 0%\u00b70.71 0.27\u00b71.07'",
+          "statement": "Calculated saturation magnetization of Mn1.5Co1.5Ga is 264 emu/cm3 at c = 6.05 \u00c5.",
+          "reason": "the statement contains the number 5, which none of its quotes contain",
           "quotes": [
-            "MD teacher 0%\u00b71.00 0.00\u00b71.00",
-            "Mirror 0%\u00b70.71 0.27\u00b71.07",
-            "Li 3N-based anti-perovskite solid electrolyte (MD teacher)",
-            "MD teacher"
+            "The calculated MS increases from 150 emu/cm 3 in the undistorted structure to 264 emu/cm3 at c=6.05 \u00c5.",
+            "First-principles calculations reveal a sizable intrinsic spin Hall conductivity (SHC) in MCG originating from its topological band structure, which is enhanced by the tetragonal distortion without changing sign.",
+            "obtain Mn1.5Co1.5Ga",
+            "at c=6.05 \u00c5."
+          ]
+        },
+        {
+          "statement": "Calculated spin Hall conductivity increases from 238.48 \u03a9-1cm-1 in the cubic structure to 491.97 \u03a9-1cm-1 at c=6.05 \u00c5.",
+          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'simulated')",
+          "quotes": [
+            "The calculated SHC increases from 238.48 \u03a9-1cm-1 in the cubic structure to 491.97 \u03a9-1cm-1 at c=6.05 \u00c5 and further to 655.53 \u03a9-1cm-1 at c=6.21 \u00c5, demonstrating a strong dependence on lattice disto rtion.",
+            "First-principles calculations reveal a sizable intrinsic spin Hall conductivity (SHC) in MCG originating from its topological band structure, which is enhanced by the tetragonal distortion without changing sign.",
+            "obtain Mn1.5Co1.5Ga",
+            "at c=6.05 \u00c5"
+          ]
+        },
+        {
+          "statement": "Calculated spin Hall conductivity reaches 655.53 \u03a9-1cm-1 at c=6.21 \u00c5.",
+          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'simulated')",
+          "quotes": [
+            "The calculated SHC increases from 238.48 \u03a9-1cm-1 in the cubic structure to 491.97 \u03a9-1cm-1 at c=6.05 \u00c5 and further to 655.53 \u03a9-1cm-1 at c=6.21 \u00c5, demonstrating a strong dependence on lattice disto rtion.",
+            "First-principles calculations reveal a sizable intrinsic spin Hall conductivity (SHC) in MCG originating from its topological band structure, which is enhanced by the tetragonal distortion without changing sign.",
+            "obtain Mn1.5Co1.5Ga",
+            "at c=6.21 \u00c5"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261009-0133",
+      "candidate": "CAND-20261009-0092",
       "decision": "out_of_scope",
-      "reason": "The paper focuses on fundamental physics of ultrafast magnonics and spin dynamics in magnetic materials, which is out of scope for semiconductor manufacturing or devices.",
-      "chars": 32211,
+      "reason": "The paper focuses on communication protocols, wavelet packet division multiplexing, and access control for IoT sensor networks rather than semiconductor research.",
+      "chars": 31690,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261009-0132",
-      "decision": "out_of_scope",
-      "reason": "This paper focuses on wireless communication algorithms for massive MIMO channel state information feedback, which is out of scope for semiconductor research.",
-      "chars": 77821,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0131",
-      "decision": "out_of_scope",
-      "reason": "The paper discusses quantum optics and spectroscopy using undetected photons, which falls outside the scope of semiconductor devices and manufacturing.",
-      "chars": 48624,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0130",
-      "decision": "out_of_scope",
-      "reason": "The paper is about achieving room temperature plasticity in TiO2 ceramics via flash processing for general structural and mechanical applications rather than semiconductor device manufacturing or electronics.",
-      "chars": 33408,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0129",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on optical fiber communication systems and the evaluation of the GN-model for multi-span optical links, which is out of scope for semiconductor research.",
-      "chars": 62489,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0128",
-      "decision": "out_of_scope",
-      "reason": "This paper is about probing orbital angular momentum and topological properties in quantum materials via scanning tunneling microscopy, which falls under pure condensed matter physics rather than semiconductor devices or technology.",
-      "chars": 30852,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0127",
-      "decision": "no_claims",
-      "reason": "evidence type not established by a verifiable quote (or 'mixed'); no claims extracted, a human reader is needed",
-      "chars": 74380,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0126",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on quantum optical sensing platforms and spin defects for biomedical applications, which falls under quantum information and biology rather than semiconductor research.",
-      "chars": 72620,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0125",
+      "candidate": "CAND-20261009-0091",
       "decision": "read",
       "reason": "",
-      "chars": 18860,
+      "chars": 58268,
       "claims": [
-        "CLM-MAT-0090"
-      ],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0124",
-      "decision": "out_of_scope",
-      "reason": "The paper discusses thermodynamic cycles using robotic mobility and sensing in natural environments, which is unrelated to semiconductor research.",
-      "chars": 50768,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0123",
-      "decision": "no_claims",
-      "reason": "the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 27543,
-      "claims": [],
-      "rejected": [
-        {
-          "statement": "The threshold current density required to depin the skyrmion from the engineered parking spot is approximately 3.5\u00d710 10 A/m2 for a damping parameter \u03b1 = 0.1.",
-          "reason": "unit conversion refused: current_drive: cannot convert 35000000000.0 A/m2 to A/m - Cannot convert from 'ampere / meter ** 2' ([current] / [length] ** 2) to 'ampere / meter' ([current] /",
-          "quotes": [
-            "The threshold current density required to depin the skyrmion from the engineered parking spot is found to be approximatelyJ th = 3.5\u00d710 10 A/m2 (Jth = 2.5\u00d71010 A/m2) for\u03b1= 0.1 (\u03b1= 0.01).",
-            "Micromagnetic simulations were performed using MuMax3, which was extended to accurately model ferrimagnetic systems [41, 42].",
-            "for\u03b1= 0.1 (\u03b1= 0.01)."
-          ]
-        },
-        {
-          "statement": "The threshold current density required to depin the skyrmion from the engineered parking spot is approximately 2.5\u00d710 10 A/m2 for \u03b1 = 0.01.",
-          "reason": "unit conversion refused: current_drive: cannot convert 25000000000.0 A/m2 to A/m - Cannot convert from 'ampere / meter ** 2' ([current] / [length] ** 2) to 'ampere / meter' ([current] /",
-          "quotes": [
-            "The threshold current density required to depin the skyrmion from the engineered parking spot is found to be approximatelyJ th = 3.5\u00d710 10 A/m2 (Jth = 2.5\u00d71010 A/m2) for\u03b1= 0.1 (\u03b1= 0.01).",
-            "Micromagnetic simulations were performed using MuMax3, which was extended to accurately model ferrimagnetic systems [41, 42].",
-            "for\u03b1= 0.1 (\u03b1= 0.01)."
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261009-0122",
-      "decision": "out_of_scope",
-      "reason": "The paper investigates the fundamental physical properties of kagome metals (YRu3Si2 and LaRu3Si2) and their charge density wave mechanisms, which is classified as condensed matter physics rather than semiconductor research.",
-      "chars": 40259,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0121",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on extracting plasmonic pole representations of dielectric spectra using machine learning for many-body physics, which is out of scope for semiconductor manufacturing or device engineering.",
-      "chars": 45498,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0120",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on wireless communications, UAV tracking, and integrated sensing and communications (ISAC) system resource allocation, which is outside semiconductor research.",
-      "chars": 29584,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0119",
-      "decision": "out_of_scope",
-      "reason": "This paper is about biological membrane-protein imaging using an X-ray laser, which is out of scope for semiconductor research.",
-      "chars": 71696,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0118",
-      "decision": "read",
-      "reason": "",
-      "chars": 58847,
-      "claims": [
-        "CLM-MAT-0091",
-        "CLM-MAT-0092",
-        "CLM-MAT-0093"
+        "CLM-MAT-0101",
+        "CLM-MAT-0102",
+        "CLM-MAT-0103",
+        "CLM-MAT-0104"
       ],
       "rejected": [
         {
-          "statement": "The calculated interlayer exchange coupling energy delta E per interface for Fe3GaTe2 at ambient pressure is approximately 19.6 meV.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Fe3GaTe2 19.6 4.72'",
-          "quotes": [
-            "Fe3GaTe2 19.6 4.72",
-            "TABLE I. Comparison of the interlayer exchange coupling energy \u2206Eand its pressure dependence in Fe 3GaTe2 and Fe3GeTe2 obtained from our DFT calculations.",
-            "The energy difference between the interlayer ferromagnetic and layered antiferromagnetic states, which is approximately \u2206E\u223c20 meV at ambient pressure"
-          ]
-        },
-        {
-          "statement": "The calculated interlayer exchange coupling energy delta E per interface for Fe3GeTe2 at ambient pressure is -1.96 meV.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Fe3GeTe2 \u22121.96\u22120.13'",
-          "quotes": [
-            "Fe3GeTe2 \u22121.96\u22120.13",
-            "TABLE I. Comparison of the interlayer exchange coupling energy \u2206Eand its pressure dependence in Fe 3GaTe2 and Fe3GeTe2 obtained from our DFT calculations."
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261009-0117",
-      "decision": "out_of_scope",
-      "reason": "The paper presents a general physics algorithm for calculating elastic constants of crystalline solids from first-principles, which is too broad and fundamental rather than specific to semiconductor research.",
-      "chars": 49153,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0116",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on fundamental physics and machine learning methods applied to magnetic anisotropy in atomic-scale magnets, which is out of scope for semiconductor research.",
-      "chars": 90250,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0115",
-      "decision": "read",
-      "reason": "",
-      "chars": 77099,
-      "claims": [
-        "CLM-ARCH-0073",
-        "CLM-ARCH-0074",
-        "CLM-ARCH-0075",
-        "CLM-ARCH-0076"
-      ],
-      "rejected": [
-        {
-          "statement": "The synthesized processing element operates at 500 MHz, occupies 0.858 mm2, and consumes 0.726 mJ per 192x192 patch under switching-activity-annotated power ana",
-          "reason": "the statement contains the number 92, which none of its quotes contain",
-          "quotes": [
-            "Synthesized in 45 nm, the processing element operates at 500 MHz, occupies 0.858 mm 2, and consumes 0.726 mJ per192\u00d7 192patch under switching-activity-annotated power analysis."
-          ]
-        },
-        {
-          "statement": "The synthesized processing element area is 0.858 mm2.",
-          "reason": "unit conversion refused: area_die: could not parse 0.858 'mm 2': Unit expression cannot have a scaling factor.",
-          "quotes": [
-            "Synthesized in 45 nm, the processing element operates at 500 MHz, occupies 0.858 mm 2, and consumes 0.726 mJ per192\u00d7 192patch under switching-activity-annotated power analysis."
-          ]
-        },
-        {
-          "statement": "In the MG1-64L mode, the PE power consumption is 7.48 mW at 500 MHz.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'MG1-64L 1 64 7.48 14.97'",
-          "quotes": [
-            "MG1-64L 1 64 7.48 14.97",
-            "Table 3: SAIF-Annotated PE Modes at 500 MHz (Nangate 45 nm, Typical Corner)"
-          ]
-        },
-        {
-          "statement": "In the MG55-64L mode, the PE power consumption is 9.55 mW at 500 MHz.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'MG55-64L 55 64 9.55 19.10'",
-          "quotes": [
-            "MG55-64L 55 64 9.55 19.10",
-            "Table 3: SAIF-Annotated PE Modes at 500 MHz (Nangate 45 nm, Typical Corner)"
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261009-0114",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on wireless communication waveforms and channel estimation algorithms for AFDM systems, which is out of scope for semiconductor research.",
-      "chars": 32703,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0113",
-      "decision": "no_claims",
-      "reason": "the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 35617,
-      "claims": [],
-      "rejected": [
-        {
-          "statement": "The linear-response BSE calculation for the nanographene with repeat units L = 2 gives a first absorption peak energy that differs by no more than about 0.01 eV",
-          "reason": "the statement contains the number 2, which none of its quotes contain",
-          "quotes": [
-            "the first absorption peak differs by no more than about 0.01 eV",
-            "L=2",
-            "RT-BSE",
-            "LR-BSE"
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261009-0112",
-      "decision": "no_claims",
-      "reason": "the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 40813,
-      "claims": [],
-      "rejected": [
-        {
-          "statement": "The optimized lattice constant a of monolayer CoS is 3.85 \u00c5.",
-          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
-          "quotes": [
-            "After structural optimization, the lattice constants area=b= 3.85 \u02daA for CoS anda=b= 4.03 \u02daA for CoSe.",
-            "First-principles calculations were performed using the Viennaab initioSimulation Package (V ASP) [63, 64] within the framework of density functional theory (DFT).",
-            "area=b= 3.85 \u02daA for CoS",
-            "Monolayer CoS and CoSe consist of two buckled honeycomb CoX(X= S,Se) sublayers"
-          ]
-        },
-        {
-          "statement": "The optimized lattice constant a of monolayer CoSe is 4.03 \u00c5.",
-          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
-          "quotes": [
-            "After structural optimization, the lattice constants area=b= 3.85 \u02daA for CoS anda=b= 4.03 \u02daA for CoSe.",
-            "First-principles calculations were performed using the Viennaab initioSimulation Package (V ASP) [63, 64] within the framework of density functional theory (DFT).",
-            "a=b= 4.03 \u02daA for CoSe.",
-            "Monolayer CoS and CoSe consist of two buckled honeycomb CoX(X= S,Se) sublayers"
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261009-0111",
-      "decision": "out_of_scope",
-      "reason": "The paper presents an IoT system and embedded application for cycling safety rather than semiconductor devices, materials, or chip design.",
-      "chars": 27297,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0110",
-      "decision": "out_of_scope",
-      "reason": "This paper focuses on speech processing and dysarthria detection during surgery, which is in the biomedical domain and unrelated to semiconductor research.",
-      "chars": 72432,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0109",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on the chemical synthesis, structural characterization, and thermal analysis of Prussian Blue analogue powders rather than semiconductor devices, materials, or processes.",
-      "chars": 64950,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0108",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on pure condensed matter physics regarding magnetism and magnon band splitting in CuF2, which is out of scope for semiconductor research.",
-      "chars": 77914,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0107",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on high-power CW Yb fiber laser architectures and relative intensity noise (RIN) for general photonics and laser applications, which is out of the scope of semiconductor device and manufacturing research.",
-      "chars": 55686,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0106",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on fundamental quantum magnonics and squeezed states in an antiferromagnetic material, which falls under quantum information theory and fundamental magnetism rather than semiconductor research.",
-      "chars": 77231,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0105",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on benchmarking machine-learning interatomic potentials for the temperature-dependent elasticity of refractory carbides, which is a general materials science and mechanical properties topic rather than semiconductor research.",
-      "chars": 49002,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261009-0104",
-      "decision": "read",
-      "reason": "",
-      "chars": 55523,
-      "claims": [
-        "CLM-MAT-0094",
-        "CLM-MAT-0095",
-        "CLM-MAT-0096"
-      ],
-      "rejected": [
-        {
-          "statement": "Between 800 K and 3000 K, the Gaussian approximation deviates from the MC free energy of the equiatomic Mo-Ta alloy by at most 10 meV/atom.",
-          "reason": "the statement contains the number 800, which none of its quotes contain",
-          "quotes": [
-            "and the Gaussian approximation by at most 10 meV/atom, against up to 30 meV/atom for the regular solution model.",
-            "Canonical MC simulations driven by these models provide the reference free energies against which the approximations are compared.",
-            "Between 800 K and 3000 K",
-            "equiatomic Mo\u2013Ta alloy"
-          ]
-        },
-        {
-          "statement": "Between 800 K and 3000 K, the third-order and binomial approximations deviate from the MC free energy of the equiatomic Mo-Ta alloy by at most 5 meV/atom.",
+          "statement": "Bulk FePS3 exhibits a weak XMCD signal of approximately 3% at 9 T and 5 K in normal-incidence geometry.",
           "reason": "[compound_statement] statement appears to join two falsifiable assertions - split it",
           "quotes": [
-            "Between 800 K and 3000 K, the third-order and binomial approximations deviated from the MC free energy of the equiatomic Mo\u2013Ta alloy by at most 5 meV/atom",
-            "Canonical MC simulations driven by these models provide the reference free energies against which the approximations are compared.",
-            "Between 800 K and 3000 K",
-            "equiatomic Mo\u2013Ta alloy"
+            "At 9 T and 5 K in normal-incidence (NI) geometry, the bulk shows only a weak XMCD signal of \u223c3% [Fig. 1(f)], consistent with the antiferromagnetic ground state, the dichroism arising from a small field-induced uncompensation of the sublatti",
+            "Fe L3,2-edge XAS (e) and XMCD (f) of bulk FePS3 at 9 T and 5 K in normal-incidence (NI) geometry",
+            "at 9 T and 5 K in normal-incidence (NI) geometry"
           ]
         },
         {
-          "statement": "Between 800 K and 3000 K, the regular solution model deviates from the MC free energy of the equiatomic Mo-Ta alloy by up to 30 meV/atom.",
-          "reason": "the statement contains the number 800, which none of its quotes contain",
+          "statement": "Atomic multiplet calculations for the ground state of bulk FePS3 yield an unquenched orbital moment ml of approximately 1.05 uB per Fe atom.",
+          "reason": "unit conversion refused: mobility: cannot convert 1.05 \u00b5B to m^2/(V*s) - Cannot convert from 'microbyte' (dimensionless) to 'meter ** 2 / volt / second' ([time] ** 2 * [current] / [mass",
           "quotes": [
-            "against up to 30 meV/atom for the regular solution model.",
-            "Canonical MC simulations driven by these models provide the reference free energies against which the approximations are compared.",
-            "Between 800 K and 3000 K",
-            "equiatomic Mo\u2013Ta alloy"
+            "The calculated ground state carries an unquenched orbital moment ml \u22481.05\u00b5 B and a spin moment ms \u22483.56\u00b5 B per Fe atom ( ml/ms \u22480.29 ), as expected for Fe2+ in this trigonally distorted environment19,20.",
+            "Both lineshapes are well reproduced by AMCs using parameters consistent with related work 33;",
+            "Fe L3,2-edge XAS (e) and XMCD (f) of bulk FePS3 at 9 T and 5 K in normal-incidence (NI) geometry"
           ]
         },
         {
-          "statement": "In the binomial approximation, the free energy of the disordered Li1.2Mg0.4Mn0.4O2 phase falls below the convex hull of competing ground states above 2329 K.",
-          "reason": "the statement contains the number 2, which none of its quotes contain",
+          "statement": "Atomic multiplet calculations for bulk FePS3 predict a spin moment ms of approximately 3.56 uB per Fe atom.",
+          "reason": "unit conversion refused: mobility: cannot convert 3.56 \u00b5B to m^2/(V*s) - Cannot convert from 'microbyte' (dimensionless) to 'meter ** 2 / volt / second' ([time] ** 2 * [current] / [mass",
           "quotes": [
-            "In the binomial approximation, the free energy of the disordered phase falls below the convex hull of its competing ground states above 2329 K.",
-            "For each oxide, a pseudo-binary cluster expansion of 5 pairs, 7 triplets and 1 quadruplet on the cation sublattice, in which the four alloying elements are represented by a single mean-field cation M, was parameterized on the energies of 10",
-            "Li 1.2Mg0.4Mn0.4O2",
-            "binomial approximation"
+            "The calculated ground state carries an unquenched orbital moment ml \u22481.05\u00b5 B and a spin moment ms \u22483.56\u00b5 B per Fe atom ( ml/ms \u22480.29 ), as expected for Fe2+ in this trigonally distorted environment19,20.",
+            "Both lineshapes are well reproduced by AMCs using parameters consistent with related work 33;",
+            "Fe L3,2-edge XAS (e) and XMCD (f) of bulk FePS3 at 9 T and 5 K in normal-incidence (NI) geometry"
+          ]
+        },
+        {
+          "statement": "For bilayer FePS3 on Au substrate (sample S3), the XMCD signal is approximately 14% at 9 T and 5 K in normal incidence.",
+          "reason": "[compound_statement] statement appears to join two falsifiable assertions - split it",
+          "quotes": [
+            "the bilayer still exhibits a sizeable XMCD of \u223c14%, more than twice that of the bilayer/SiO2 (S1) under identical conditions, and only at five layers and above does the signal return to the bulk value.",
+            "Layer-dependent decay of the interfacial magnetism in FePS 3 on gold (sample S3).",
+            "the bilayer still exhibits a sizeable XMCD of \u223c14%",
+            "measured at 9 T and 5 K in normal-incidence geometry;"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261009-0103",
+      "candidate": "CAND-20261009-0090",
+      "decision": "read",
+      "reason": "",
+      "chars": 55419,
+      "claims": [
+        "CLM-PHOT-0060",
+        "CLM-PHOT-0061",
+        "CLM-PHOT-0062",
+        "CLM-PHOT-0063",
+        "CLM-PHOT-0064"
+      ],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0089",
+      "decision": "read",
+      "reason": "",
+      "chars": 74657,
+      "claims": [
+        "CLM-DEV-0054",
+        "CLM-DEV-0055",
+        "CLM-DEV-0056"
+      ],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0088",
       "decision": "out_of_scope",
-      "reason": "This paper focuses on single-protein imaging using hard X-ray lasers, which belongs to structural biology rather than semiconductor research.",
-      "chars": 67595,
+      "reason": "The paper focuses on Faster-than-Nyquist (FTN) signaling and spectral efficiency in communications, which is out of scope for semiconductor research.",
+      "chars": 25171,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261009-0102",
+      "candidate": "CAND-20261009-0087",
       "decision": "out_of_scope",
-      "reason": "The paper focuses on wireless communication systems and beamforming algorithms for reconfigurable intelligent surfaces, which is out of scope for semiconductor research.",
-      "chars": 52391,
+      "reason": "This paper focuses on probabilistic machine learning, specifically particle filters and variational sequential Monte Carlo, which is out of scope for semiconductor research.",
+      "chars": 75856,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261009-0101",
+      "candidate": "CAND-20261009-0086",
+      "decision": "read",
+      "reason": "",
+      "chars": 87563,
+      "claims": [
+        "CLM-ARCH-0077",
+        "CLM-ARCH-0078",
+        "CLM-ARCH-0079"
+      ],
+      "rejected": [
+        {
+          "statement": "RAPID-DNN achieves an average improvement of 9.81 percentage points in Top-1 inference accuracy compared to the fault-agnostic baseline across the evaluated ben",
+          "reason": "unit conversion refused: relative_deviation is dimensionless; unit 'percentage points' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number wo",
+          "quotes": [
+            "Across the evaluated benchmarks under the representative mixed random fault configuration, RAPID-DNN achieves an average improvement of 9.81 percentage points in Top-1 inference accuracy",
+            "Per-layer latency and energy profiles are generated using Timeloop and Accelergy [13,14] following the profiling methodology adopted by CNNParted.",
+            "RAPID-DNN achieves an average improvement of 9.81 percentage points in Top-1 inference accuracy",
+            "under the representative mixed random fault configuration"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261009-0085",
       "decision": "too_long",
-      "reason": "154,858 characters exceeds the 120,000 budget; not truncated",
-      "chars": 154858,
+      "reason": "134,447 characters exceeds the 120,000 budget; not truncated",
+      "chars": 134447,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261009-0100",
+      "candidate": "CAND-20261009-0084",
       "decision": "out_of_scope",
-      "reason": "The paper investigates temporal chirality and time modulation in general photonic media, which is fundamental optical physics rather than semiconductor device or circuit research.",
-      "chars": 48249,
+      "reason": "The paper focuses on multimodal large language models and signal tokenization for electromagnetic spectrum monitoring, which is out of scope for semiconductor research.",
+      "chars": 101048,
       "claims": [],
       "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0083",
+      "decision": "no_claims",
+      "reason": "the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader may do better",
+      "chars": 36292,
+      "claims": [],
+      "rejected": [
+        {
+          "statement": "The average effective magnetic field measured on the thin film with L-AHPA selective adsorption is +14.4 \u00b1 7.3 \u00b5T.",
+          "reason": "unit conversion refused: relative_deviation is dimensionless; unit '\u00b5T' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit",
+          "quotes": [
+            "The L -AHPA sample exhibits an average effective magnetic field of +14.4 \u00b1 7.3 \u00b5T",
+            "The resulting values are summarized in Fig. 3(a)."
+          ]
+        },
+        {
+          "statement": "The average effective magnetic field measured on the thin film with D-AHPA selective adsorption is \u221218.7 \u00b1 7.0 \u00b5T.",
+          "reason": "unit conversion refused: relative_deviation is dimensionless; unit '\u00b5T' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit",
+          "quotes": [
+            "the D-AHPA sample shows an average value of \u221218.7 \u00b1 7.0 \u00b5T.",
+            "The resulting values are summarized in Fig. 3(a).",
+            "Measurements on this sample were performed at a slightly reduced temperature where identical anisotropy values are stabilized (286.6 K)."
+          ]
+        },
+        {
+          "statement": "The average effective magnetic field measured on the thin film with racemic AHPA (R-AHPA) selective adsorption is \u22125.0 \u00b1 11.3 \u00b5T.",
+          "reason": "unit conversion refused: relative_deviation is dimensionless; unit '\u00b5T' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit",
+          "quotes": [
+            "In contrast, the racemic sample yields no significantly changed average field (\u22125.0 \u00b1 11.3 \u00b5T).",
+            "The resulting values are summarized in Fig. 3(a)."
+          ]
+        },
+        {
+          "statement": "The measurement on the D-AHPA sample was conducted at a temperature of 286.6 K.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Measurements on this sample were performed at a slightly reduced tempe'",
+          "quotes": [
+            "Measurements on this sample were performed at a slightly reduced temperature where identical anisotropy values are stabilized (286.6 K).",
+            "The D -AHPA sample exhibiting a larger saturation field at 300.0 K. To ensure comparable magnetic conditions, measurements on this sample were performed at a slightly reduced temperature where identical anisotropy values are stabilized (286"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261009-0082",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on machine learning for ultrafast laser and optical science facilities rather than semiconductor research.",
+      "chars": 80095,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0081",
+      "decision": "too_long",
+      "reason": "146,947 characters exceeds the 120,000 budget; not truncated",
+      "chars": 146947,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0080",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on statistical analysis of ambiguity functions for wireless communications and radar signal processing (ISAC) rather than semiconductor technology.",
+      "chars": 65954,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0079",
+      "decision": "no_claims",
+      "reason": "evidence type not established by a verifiable quote (or 'mixed'); no claims extracted, a human reader is needed",
+      "chars": 42991,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0078",
+      "decision": "out_of_scope",
+      "reason": "This paper is about wireless communications and massive MIMO localization algorithms, which is out of scope for semiconductor research.",
+      "chars": 35543,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0077",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on deep-unfolded maximum likelihood expectation maximization for Poisson image reconstruction in imaging systems, which is outside the scope of semiconductor research.",
+      "chars": 27307,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0076",
+      "decision": "out_of_scope",
+      "reason": "This paper focuses on quantum computing hardware and Majorana zero modes, which are classified as out of scope according to the instructions.",
+      "chars": 90428,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0075",
+      "decision": "out_of_scope",
+      "reason": "This paper is about condensed matter physics and superconductivity in kagome metals, which is out of scope for semiconductor research.",
+      "chars": 30957,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0074",
+      "decision": "out_of_scope",
+      "reason": "The paper discusses 6G wireless communication frameworks and immersive communications, which are out of scope for semiconductor research.",
+      "chars": 62171,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0073",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on motion correction algorithms for medical photoacoustic tomography, which falls under biomedical imaging rather than semiconductor research.",
+      "chars": 91738,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0072",
+      "decision": "no_claims",
+      "reason": "the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader may do better",
+      "chars": 100363,
+      "claims": [],
+      "rejected": [
+        {
+          "statement": "Reaction of Sn metal powder with PBM containing a 1:1:1 mole ratio of MABr:Br2:HBr and 1:1 metal:MABr mole ratio yields 90.9 mol% MASnBr3 perovskite phase.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): '90.9'",
+          "quotes": [
+            "90.9",
+            "1:1.00:1",
+            "Sn : 1.00Br2",
+            "Powder X-ray diffraction (PXRD) data were collected on a Panalytical Empyrean diffractometer equipped with a Cu K! X-ray source (\u03bb = 1.5418 \u00c5)."
+          ]
+        },
+        {
+          "statement": "Single crystal XRD measurement of MA2SnBr6 determined a unit cell parameter a of 7.5334 \u00c5 at room temperature.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): '7.5334(5)'",
+          "quotes": [
+            "7.5334(5)",
+            "a, c (\u00c5)",
+            "The crystal was mounted on a CrystalCapTM ALS HT cryo-loop mount for data collection on a Rigaku XtaLAB Synergy-S single crystal x-ray diffractometer",
+            "MA\u2082SnBr6"
+          ]
+        },
+        {
+          "statement": "Single crystal XRD measurement of MA2SnBr6 determined a unit cell parameter c of 22.1364 \u00c5 at room temperature.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): '22.1364(14)'",
+          "quotes": [
+            "22.1364(14)",
+            "a, c (\u00c5)",
+            "The crystal was mounted on a CrystalCapTM ALS HT cryo-loop mount for data collection on a Rigaku XtaLAB Synergy-S single crystal x-ray diffractometer",
+            "MA\u2082SnBr6"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261009-0071",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on quantum emission and defects in two-dimensional materials for quantum information and photonics, which is considered out of scope according to the instructions.",
+      "chars": 48480,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0070",
+      "decision": "too_long",
+      "reason": "197,130 characters exceeds the 120,000 budget; not truncated",
+      "chars": 197130,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0069",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on wireless communications and massive MIMO system precoder design rather than semiconductor device physics or hardware manufacturing.",
+      "chars": 81267,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0068",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on quantum spin ice and Weyl semimetal physics, which falls under fundamental condensed matter and quantum materials research rather than semiconductor devices or technology.",
+      "chars": 29815,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0067",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on electrocatalysts for water electrolysis and hydrogen production, which is outside the scope of semiconductor research.",
+      "chars": 77003,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0066",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on communication networks and power control for high-altitude platform stations (HAPS), which is out of scope for semiconductor research.",
+      "chars": 27526,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261009-0065",
+      "decision": "out_of_scope",
+      "reason": "This paper is about optical tweezer arrays trapping ultracold atoms for quantum computing and quantum science, which falls under quantum computing hardware and quantum information, making it out of scope for semiconductor research.",
+      "chars": 55430,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261008-0073",
+      "decision": "out_of_scope",
+      "reason": "The paper deals with theoretical condensed matter physics concerning Floquet topology in stacked Su-Schrieffer-Heeger chains, which is out of scope for semiconductor research.",
+      "chars": 52300,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261008-0072",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on quantum computing hardware provenance and execution recording precision, which falls under quantum computing hardware and is explicitly out of scope for semiconductor research.",
+      "chars": 49445,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261008-0071",
+      "decision": "read",
+      "reason": "",
+      "chars": 47787,
+      "claims": [
+        "CLM-DEV-0057",
+        "CLM-DEV-0058",
+        "CLM-DEV-0059"
+      ],
+      "rejected": [
+        {
+          "statement": "The Fe layer exhibits a uniaxial anisotropy field of 120.3 Oe.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Fitting the PHE curve using equation 1 reveals that the Fe layer exhib'",
+          "quotes": [
+            "Fitting the PHE curve using equation 1 reveals that the Fe layer exhibits both uniaxial ( HKU=120.3\u00b14.77 Oe) and fourfold ( HK4=298.3\u00b111.93 Oe) anisotropies, as shown in Fig. 1(d), with details provided in S3 in the Supporting Information."
+          ]
+        },
+        {
+          "statement": "The Fe layer exhibits a fourfold anisotropy field of 298.3 Oe.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Fitting the PHE curve using equation 1 reveals that the Fe layer exhib'",
+          "quotes": [
+            "Fitting the PHE curve using equation 1 reveals that the Fe layer exhibits both uniaxial ( HKU=120.3\u00b14.77 Oe) and fourfold ( HK4=298.3\u00b111.93 Oe) anisotropies, as shown in Fig. 1(d), with details provided in S3 in the Supporting Information."
+          ]
+        },
+        {
+          "statement": "The small SOT switching current corresponds to a current density of 3.09\u00d710^6 A/cm2.",
+          "reason": "unit conversion refused: power_density: cannot convert 3090000.0 A/cm2 to W/m^2 - Cannot convert from 'ampere / centimeter ** 2' ([current] / [length] ** 2) to 'watt / meter ** 2' ([mas",
+          "quotes": [
+            "All switching curves display clear offsets, with the small switching current appearing at about \u00b130 mA , corresponding to a current density of 3.09\u00d7106 A/cm2, and the large switching current at about \u00b140 mA , corresponding to a current dens",
+            "with the small switching current appearing at about \u00b130 mA , corresponding to a current density of 3.09\u00d7106 A/cm2"
+          ]
+        },
+        {
+          "statement": "The large SOT switching current corresponds to a current density of 4.13\u00d710^6 A/cm2.",
+          "reason": "unit conversion refused: power_density: cannot convert 4130000.0 A/cm2 to W/m^2 - Cannot convert from 'ampere / centimeter ** 2' ([current] / [length] ** 2) to 'watt / meter ** 2' ([mas",
+          "quotes": [
+            "All switching curves display clear offsets, with the small switching current appearing at about \u00b130 mA , corresponding to a current density of 3.09\u00d7106 A/cm2, and the large switching current at about \u00b140 mA , corresponding to a current dens",
+            "and the large switching current at about \u00b140 mA , corresponding to a current density of 4.13\u00d710 6 A/cm2."
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261008-0070",
+      "decision": "read",
+      "reason": "",
+      "chars": 106626,
+      "claims": [
+        "CLM-MEM-0013",
+        "CLM-MEM-0014"
+      ],
+      "rejected": [
+        {
+          "statement": "In visual place recognition (VPR), feature matching and feature extraction can account for approximately 60\u201370% of execution time.",
+          "reason": "unit conversion refused: time: cannot convert 60.0 % to s - Cannot convert from 'percent' (dimensionless) to 'second' ([time]). A dimensional mismatch means the value was recorded again",
+          "quotes": [
+            "Visual place recognition (VPR) is a representative example, where feature matching corresponds to nearest-neighbor search in Hamming space and, together with feature extraction, can account for approximately 60\u201370% of execution time [68]."
+          ]
+        },
+        {
+          "statement": "Analog-to-digital converters (ADCs) and digital-to-analog converters (DACs) are reported to contribute roughly 60\u201390% of energy consumption in analog compute-in",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'This is particularly relevant because many analogCIM architectures are'",
+          "quotes": [
+            "This is particularly relevant because many analogCIM architectures are dominated by data-conversion overhead, with analog-to-digital converters (ADCs) and digital-to-analog converter (DAC) reported to contribute roughly 60\u201390% of the energy",
+            "with analog-to-digital converters (ADCs) and digital-to-analog converter (DAC) reported to contribute roughly 60\u201390% of the energy consumption and up to\u223c80% of the area [119\u2013121].",
+            "This is particularly relevant because many analogCIM architectures are dominated by data-conversion overhead"
+          ]
+        },
+        {
+          "statement": "ADCs and DACs contribute up to approximately 80% of the area in analog compute-in-memory architectures.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'This is particularly relevant because many analogCIM architectures are'",
+          "quotes": [
+            "This is particularly relevant because many analogCIM architectures are dominated by data-conversion overhead, with analog-to-digital converters (ADCs) and digital-to-analog converter (DAC) reported to contribute roughly 60\u201390% of the energy",
+            "with analog-to-digital converters (ADCs) and digital-to-analog converter (DAC) reported to contribute roughly 60\u201390% of the energy consumption and up to\u223c80% of the area [119\u2013121].",
+            "This is particularly relevant because many analogCIM architectures are dominated by data-conversion overhead"
+          ]
+        },
+        {
+          "statement": "Segmented and hierarchical CAM architectures lower overall power consumption by up to 60%.",
+          "reason": "unit conversion refused: power: cannot convert 60.0 % to W - Cannot convert from 'percent' (dimensionless) to 'watt' ([mass] * [length] ** 2 / [time] ** 3). A dimensional mismatch means",
+          "quotes": [
+            "To mitigate this problem, segmented and hierarchical CAM architectures were proposed, where search operations can terminate early once any mismatch is detected, reducing unnecessary switching activity and lowering overall power consumption ",
+            "segmented and hierarchical CAM architectures were proposed, where search operations can terminate early once any mismatch is detected, reducing unnecessary switching activity and lowering overall power consumption by up to 60% [27]."
+          ]
+        },
+        {
+          "statement": "Data-aware gating nodes in search-lines cut energy consumption by nearly half.",
+          "reason": "the value 0.5 does not appear in any of the claim's quotes",
+          "quotes": [
+            "This principle of progressive pruning has been extended directly to search-lines, where data-aware gating nodes actively halt signal propagation upon encountering \"don\u2019t care\" bits in IP routing tables to cut energy consumption by nearly ha",
+            "where data-aware gating nodes actively halt signal propagation upon encountering \"don\u2019t care\" bits in IP routing tables to cut energy consumption by nearly half [132]."
+          ]
+        },
+        {
+          "statement": "Sequential feature-wise search with early termination reduces Random Forest inference energy by approximately 50%.",
+          "reason": "unit conversion refused: energy: cannot convert 50.0 % to J - Cannot convert from 'percent' (dimensionless) to 'joule' ([mass] * [length] ** 2 / [time] ** 2). A dimensional mismatch mea",
+          "quotes": [
+            "Similar ideas were recently validated in application-driven associative computing, where sequential feature-wise search with early termination reduced Random Forest inference energy by approximately 50% across multiple datasets while requir",
+            "where sequential feature-wise search with early termination reduced Random Forest inference energy by approximately 50% across multiple datasets",
+            "reduced Random Forest inference energy by approximately 50%"
+          ]
+        }
+      ]
     }
   ],
   "counts": {
-    "no_claims": 6,
-    "out_of_scope": 27,
-    "read": 6,
-    "too_long": 1
+    "out_of_scope": 23,
+    "read": 9,
+    "no_claims": 4,
+    "too_long": 3
   },
-  "claims_accepted": 16,
-  "claims_rejected": 33,
+  "claims_accepted": 30,
+  "claims_rejected": 39,
   "tokens": {
-    "input": 230539,
-    "output": 21564
+    "input": 263221,
+    "output": 30284
   },
-  "stop_reason": "paper_cap",
-  "seconds": 392.8,
-  "cost_usd": 0.233591,
+  "stop_reason": "budget",
+  "budget_note": "the next call could cost up to $0.0776 but only $0.0596 is left for today ($2.8958 of the $10.00 monthly cap is spent; today's even share is $0.3522)",
+  "seconds": 386.6,
+  "cost_usd": 0.292668,
   "budget": {
     "monthly_cap_usd": 10.0,
-    "spent_month_usd": 2.603126,
-    "spent_today_usd": 0.233591,
-    "allowance_today_usd": 0.346839,
-    "remaining_today_usd": 0.113248,
-    "run_usd": 0.233591,
-    "run_calls": 51,
+    "spent_month_usd": 2.895794,
+    "spent_today_usd": 0.292668,
+    "allowance_today_usd": 0.352232,
+    "remaining_today_usd": 0.059564,
+    "run_usd": 0.292668,
+    "run_calls": 50,
     "run_unknown_calls": 0,
     "price_table_retrieved": "2026-09-21",
-    "price_table_age_days": 19
+    "price_table_age_days": 20
   },
   "errors": 0
 }

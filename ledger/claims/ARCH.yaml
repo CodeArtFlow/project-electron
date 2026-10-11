@@ -2244,3 +2244,117 @@ claims:
     verified_quotes: 3
   conditions:
     component: synthesized PE
+- id: CLM-ARCH-0077
+  topic: ARCH
+  statement: RAPID-DNN achieves an average reduction of 36.86% in expected fault-induced accuracy degradation
+    relative to the fault-agnostic baseline under the representative mixed random fault configuration.
+  sources:
+  - SRC-00123
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    framework: RAPID-DNN
+    fault_configuration: mixed random fault configuration
+    baseline: fault-agnostic baseline
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 36.86
+      unit: '%'
+    si_base:
+      value: 0.3686
+      unit: dimensionless
+    display:
+      value: 36.86
+      unit: percent
+    conditions:
+      framework: RAPID-DNN
+      fault_configuration: mixed random fault configuration
+      baseline: fault-agnostic baseline
+- id: CLM-ARCH-0078
+  topic: ARCH
+  statement: RAPID-DNN incurs an average latency overhead of 2.38% relative to the fault-agnostic baseline
+    under the representative mixed random fault configuration.
+  sources:
+  - SRC-00123
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    framework: RAPID-DNN
+    fault_configuration: mixed random fault configuration
+    baseline: fault-agnostic baseline
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 2.38
+      unit: '%'
+    si_base:
+      value: 0.023799999999999998
+      unit: dimensionless
+    display:
+      value: 2.38
+      unit: percent
+    conditions:
+      framework: RAPID-DNN
+      fault_configuration: mixed random fault configuration
+      baseline: fault-agnostic baseline
+- id: CLM-ARCH-0079
+  topic: ARCH
+  statement: RAPID-DNN incurs an average energy overhead of 3.34% relative to the fault-agnostic baseline
+    under the representative mixed random fault configuration.
+  sources:
+  - SRC-00123
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-08'
+  created: '2026-10-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    framework: RAPID-DNN
+    fault_configuration: mixed random fault configuration
+    baseline: fault-agnostic baseline
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 3.34
+      unit: '%'
+    si_base:
+      value: 0.0334
+      unit: dimensionless
+    display:
+      value: 3.34
+      unit: percent
+    conditions:
+      framework: RAPID-DNN
+      fault_configuration: mixed random fault configuration
+      baseline: fault-agnostic baseline

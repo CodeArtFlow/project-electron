@@ -27,6 +27,52 @@ id: CAND-20261009-0094
 harvested_date: '2026-10-09'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-11'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The 004 diffraction peak of Mn1.8CoAl occurs at 61.98°.
+    reason: the statement contains the number 8, which none of its quotes contain
+    quotes:
+    - For the MnxCoAl magnetic layer, the (004) diffraction peak exhibits a pronounced composition dependence,
+      shifting from 61.98° for Mn1.8CoAl to 59.06° for Mn2.5CoAl.
+    - The crystal structures of the samples were characterized by XRD using Cu Kα radiation.
+    - 61.98° for Mn1.8CoAl
+    - (004) diffraction peak
+  - statement: The 004 diffraction peak of Mn2.5CoAl occurs at 59.06°.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - For the MnxCoAl magnetic layer, the (004) diffraction peak exhibits a pronounced composition dependence,
+      shifting from 61.98° for Mn1.8CoAl to 59.06° for Mn2.5CoAl.
+    - The crystal structures of the samples were characterized by XRD using Cu Kα radiation.
+    - 59.06° for Mn2.5CoAl
+    - (004) diffraction peak
+  - statement: The composition-gradient Mn1.8-2.5CoAl device exhibits a critical switching current density
+      of 4.9 × 10^7 A/cm2.
+    reason: the statement contains the number 8, which none of its quotes contain
+    quotes:
+    - The critical current density is then calculated using the Pt current and the Pt cross-sectional
+      area, yielding 4.9 × 10 7 A/cm2 for the composition- gradient device.
+    - Electrical transport measurements and SOT driven magnetization switching experiments were performed
+      using a physical property measurement system (PPMS).
+    - 4.9 × 10 7 A/cm2 for the composition- gradient device
+  - statement: For the Mn1.8-2.5CoAl device, the polarity reversal occurs near Hx ≈ -23 Oe.
+    reason: the statement contains the number 8, which none of its quotes contain
+    quotes:
+    - For the Mn1.8-2.5CoAl device, the polarity reversal occurs near Hx≈-23 Oe, indicating the presence
+      of an effective symmetry-breaking bias involved in the zero-field switching.
+    - Electrical transport measurements and SOT driven magnetization switching experiments were performed
+      using a physical property measurement system (PPMS).
+    - For the Mn1.8-2.5CoAl device
+    - near Hx≈-23 Oe
+  tokens:
+    input: 12701
+    output: 1299
+  fetched_chars: 36892

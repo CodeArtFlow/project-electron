@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.12278v1
 doi: null
-title: A Universal Polybromide Melt Strategy for the Direct Conversion of Metals into
-  Optoelectronic-Grade Bromide Perovskites
+title: A Universal Polybromide Melt Strategy for the Direct Conversion of Metals into Optoelectronic-Grade
+  Bromide Perovskites
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-08'
@@ -26,6 +26,45 @@ id: CAND-20261009-0072
 harvested_date: '2026-10-09'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-11'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Reaction of Sn metal powder with PBM containing a 1:1:1 mole ratio of MABr:Br2:HBr and
+      1:1 metal:MABr mole ratio yields 90.9 mol% MASnBr3 perovskite phase.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''90.9'''
+    quotes:
+    - '90.9'
+    - 1:1.00:1
+    - 'Sn : 1.00Br2'
+    - Powder X-ray diffraction (PXRD) data were collected on a Panalytical Empyrean diffractometer equipped
+      with a Cu K! X-ray source (λ = 1.5418 Å).
+  - statement: Single crystal XRD measurement of MA2SnBr6 determined a unit cell parameter a of 7.5334
+      Å at room temperature.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''7.5334(5)'''
+    quotes:
+    - 7.5334(5)
+    - a, c (Å)
+    - The crystal was mounted on a CrystalCapTM ALS HT cryo-loop mount for data collection on a Rigaku
+      XtaLAB Synergy-S single crystal x-ray diffractometer
+    - MA₂SnBr6
+  - statement: Single crystal XRD measurement of MA2SnBr6 determined a unit cell parameter c of 22.1364
+      Å at room temperature.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''22.1364(14)'''
+    quotes:
+    - 22.1364(14)
+    - a, c (Å)
+    - The crystal was mounted on a CrystalCapTM ALS HT cryo-loop mount for data collection on a Rigaku
+      XtaLAB Synergy-S single crystal x-ray diffractometer
+    - MA₂SnBr6
+  tokens:
+    input: 32233
+    output: 1207
+  fetched_chars: 100363
