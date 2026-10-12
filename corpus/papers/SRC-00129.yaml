@@ -1,0 +1,103 @@
+id: SRC-00129
+title: Assessing quantitative phase reliability in electron ptychography using a twisted trilayer WS2
+  thickness staircase
+doi: null
+arxiv_id: 2610.13115v1
+url: https://arxiv.org/abs/2610.13115v1
+venue_id: arxiv_api
+authors:
+- name: Hu Bao
+  affiliation: null
+  corresponding: null
+- name: Qilong Feng
+  affiliation: null
+  corresponding: null
+- name: Kun Ye
+  affiliation: null
+  corresponding: null
+- name: Tianyu Xue
+  affiliation: null
+  corresponding: null
+- name: Stephen J. Pennycook
+  affiliation: null
+  corresponding: null
+- name: Yihan Zhu
+  affiliation: null
+  corresponding: null
+- name: Anmin Nie
+  affiliation: null
+  corresponding: null
+- name: Shoucong Ning
+  affiliation: null
+  corresponding: null
+- name: Jing Tao
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-09'
+retrieved_date: '2026-10-12'
+access: full_text
+read_scope: Automated reading. The full PDF text (28,443 characters, 15 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.13115v1 on
+  2026-10-12. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The mean W-column phase increases by approximately 13.2% from the monolayer to the bilayer
+  region, compared with only 4.7% from the bilayer to the trilayer region, revealing a nonlinear thickness
+  dependence.”
+
+  “twisted trilayer WS₂ thickness staircase”
+
+  “This corresponds to an increase of about 12.5% from monolayer to bilayer, but only about 4.4% from
+  bilayer to trilayer.”
+
+  “We constructed a ttWS₂ simulation model to simulate the observed phase responses.”
+
+  “Simulated thickness- and overlap-dependent phase responses”'
+method_summary: '“All in-focus 4D-STEM datasets of t tWS₂ used in this work were acquired on a Thermo
+  Fisher Themis Z microscope equipped with an EMPAD detector at an accelerating voltage of 60 kV.”
+
+  “The iterative ptychographic reconstruction was then performed using the LSQML engine.”
+
+  “4D-STEM simulations were performed on a ttWS₂ model using the abTEM package to test the origin of the
+  experimentally observed thickness - and overlap -dependent phase variations.”'
+limitations: '“The single-slice reconstruction provides high -resolution phase contrast but exhibits local
+  anomalies , including contrast reversal , in the thicker parts of the specimen.”
+
+  “Owing to microscope instabilities during acquisition, the ADF images generated from the 4D -STEM datasets
+  show noticeable affine distortions.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 9118
+    output: 1999
+  claims_accepted: 4
+  claims_rejected: 2
+  rejected:
+  - statement: In the bilayer region, the W-column phase increases from approximately 0.428 for isolated
+      W to 0.468 for W-W overlap, representing an enhancement of about 9.3%.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - In the bilayer region, the phase values increases from approximately 0.428 for isolated W to 0.468
+      for W -W overlap, corresponding to an enhancement of about 9.3%.
+    - In the bilayer region
+    - for W -W overlap
+  - statement: In the trilayer region, the W-column phase increases from approximately 0.446 to 0.482,
+      representing an enhancement of about 8.1%.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - In the trilayer region, the corresponding phase values increases from approximately 0.446 to 0.482,
+      corresponding to an enhancement o f about 8.1%.
+    - In the trilayer region
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (measured: 2, simulated:
+  2). This field records the majority (measured); trust each claim''s own evidence_type over this one.'

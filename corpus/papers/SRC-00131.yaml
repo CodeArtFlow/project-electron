@@ -1,0 +1,121 @@
+id: SRC-00131
+title: Orbital transfer reveals material-selective structure in Rydberg excitons
+doi: null
+arxiv_id: 2610.13149v1
+url: https://arxiv.org/abs/2610.13149v1
+venue_id: arxiv_api
+authors:
+- name: Mengli Wang
+  affiliation: null
+  corresponding: null
+- name: Peng Chen
+  affiliation: null
+  corresponding: null
+- name: Wenqi Xue
+  affiliation: null
+  corresponding: null
+- name: Haonan Xia
+  affiliation: null
+  corresponding: null
+- name: Hong Zhang
+  affiliation: null
+  corresponding: null
+- name: Benniu Zhang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-09'
+retrieved_date: '2026-10-12'
+access: full_text
+read_scope: Automated reading. The full PDF text (63,193 characters, 24 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.13149v1 on
+  2026-10-12. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“In a separate high -field-calibrated benchmark, RK removes 66.8% of the orbital error of a
+  pure two -dimensional Coulomb reference”
+
+  “pure two -dimensional Coulomb reference”
+
+  “high -field-calibrated benchmark”
+
+  “This work is a theoretical and computational reanalysis of published exciton spectra.”
+
+  “A three-band nearest-neighbor exciton-geometric calculation [22,23] yields a MoSe 2 2p m = ± 1 splitting
+  of 15.9 meV, used in the Discussion as a sensitivity scale for geometric orbital effects.”
+
+  “three-band nearest-neighbor exciton-geometric calculation”
+
+  “A three-band nearest-neighbor exciton-geometric calculation [22,23] yields a MoSe 2 2p m = ± 1 splitting
+  of 15.9 meV”
+
+  “With q=1.680 fixed by the high -field analysis and one p -specific coordinate determined from 2p, the
+  extra coordinate shifts the predicted 3p energy by 1.03 meV. Its effect falls to 0.38, 0.19 and 0.13
+  meV at 4p, 5p and 6p (Fig. 2C).”
+
+  “The numerical comparison in WSe 2 makes the experimental consequence concrete.”
+
+  “The 3p residual (observed minus predicted) is -7.38 meV in MoSe 2, +5.58 meV in WS₂ and +2.22 meV in
+  WSe 2. (Fig. 1).”
+
+  “The 3p residual (observed minus predicted)”'
+method_summary: '“We compute an 800-point transfer manifold spanning q=0.25-15 using a cell-centered finite-volume
+  solver”
+
+  “All calculations were performed in MATLAB using a cell -centered finite -volume RK solver.”'
+limitations: “The inference is conditional on the chosen RK reference, common -residue assumption and
+  projected self -energy.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 19555
+    output: 2906
+  claims_accepted: 4
+  claims_rejected: 4
+  rejected:
+  - statement: In MoSe2, the observed 3p state lies 7.38 meV below the scalar Rytova-Keldysh Hamiltonian
+      prediction determined using the 1s, 2p and 2s levels.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - 'Using the 1s, 2p and 2s levels to determine a scalar Rytova –Keldysh Hamiltonian, we test its transfer
+      to the excluded 3p state. The transfer deviations have opposite signs: the observed 3p lies 7.38
+      meV below the prediction in MoS e2'
+    - This work is a theoretical and computational reanalysis of published exciton spectra.
+    - MoS e2
+    - 3p lies 7.38 meV below the prediction
+  - statement: In WS2, the observed 3p state lies 5.58 meV above the scalar Rytova-Keldysh Hamiltonian
+      prediction determined using the 1s, 2p and 2s levels.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''and 5.58
+      meV above it in WS 2'''
+    quotes:
+    - Using the 1s, 2p and 2s levels to determine a scalar Rytova –Keldysh Hamiltonian, we test its transfer
+      to the excluded 3p state.
+    - and 5.58 meV above it in WS 2
+    - This work is a theoretical and computational reanalysis of published exciton spectra.
+    - WS 2
+  - statement: For WS2, the parameter-fixed prediction for Q4p is +4.08 meV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - For WS₂, the measured 2p/3p curvatures yield a parameter -fixed prediction, Q 4p=+4.08 meV, for
+      a future same-platform measurement.
+    - yield a parameter -fixed prediction, Q 4p=+4.08 meV, for a future same-platform measurement.
+    - WS₂
+    - Q 4p
+  - statement: Under high-field-q calibration and same-sample 1s-2s scaling, scalar RK reduces the held-out
+      2p/3p orbital RMSE from 11.10 meV to 3.68 meV relative to pure 2D C
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - 'Under the same high -field-q calibration, the aggregate held -out 2p/3p RMSE falls from 11.10 meV
+      for a pure two -dimensional Coulomb reference to 3.68 meV for scalar RK: a 66.8% reduction (Fig.
+      2B).'
+    - This work is a theoretical and computational reanalysis of published exciton spectra.
+    - pure two -dimensional Coulomb reference
+    - falls from 11.10 meV for a pure two -dimensional Coulomb reference
+corrections: []

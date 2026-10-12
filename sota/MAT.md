@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-11.
+Topic code `MAT`. Last reviewed 2026-10-12.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -83,6 +83,18 @@ Topic code `MAT`. Last reviewed 2026-10-11.
   - `CLM-MAT-0104` · measurement RIXS, absorption_edge Fe L3 edge · grade B · credibility unknown · measured · as of 2026-10-08
   - sources: SRC-00120
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **2.54746e-06 fJ** — A three-band nearest-neighbor exciton-geometric calculation gives a MoSe2 2p m = ± 1 splitting of 15.9 meV.
+  - `CLM-MAT-0113` · method three-band nearest-neighbor exciton-geometric calculation · grade B · credibility unknown · simulated · as of 2026-10-09
+  - sources: SRC-00131
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **2.08283e-08 fJ** — In WSe2, the model separation for the extra p-specific coordinate falls to 0.13 meV at the 6p state.
+  - `CLM-MAT-0114` · material WSe2 · grade B · credibility unknown · simulated · as of 2026-10-09
+  - sources: SRC-00131
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **3.55683e-07 fJ** — In WSe2, the scalar RK 3p residual is +2.22 meV.
+  - `CLM-MAT-0115` · state 3p · grade B · credibility unknown · simulated · as of 2026-10-09
+  - sources: SRC-00131
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### length device
 
@@ -167,6 +179,13 @@ Topic code `MAT`. Last reviewed 2026-10-11.
 - **≈2.172 nm** — Upon hydration of PEDOT:PSS, the alternating PEDOT and PSS stacking spacing expands to approximately 21.72 Å.
   - `CLM-MAT-0098` · feature alternating stacking of PEDOT and PSS · grade B · credibility unknown · measured · as of 2026-10-08
   - sources: SRC-00117
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+
+### power
+
+- **0.002412 W** — CPGE measurements were performed using a laser excitation wavelength of 405 nm at a power of 2.412 mW.
+  - `CLM-MAT-0106` · wavelength 405 nm · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00126
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power density
@@ -374,6 +393,26 @@ Topic code `MAT`. Last reviewed 2026-10-11.
   - `CLM-MAT-0103` · sample S2, layer_count monolayer, substrate Au(4 nm)/Ti(2 nm)/SiO2, magnetic_field 9 T, temperature 5 K · grade B · credibility unknown · measured · as of 2026-10-08
   - sources: SRC-00120
   - ⚙ automated extraction (gemini-3.6-flash; 7 quote(s) verified verbatim against the paper)
+- DFT calculations reveal a nonrelativistic spin splitting of approximately 100 meV for the two highest spin-split valence bands of BiFeO3.
+  - `CLM-MAT-0105` · grade B · credibility unknown · simulated · as of 2026-10-09
+  - sources: SRC-00126
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- At 2 K, the hole concentration in TiAs single crystals is approximately 8.1 x 10^21 cm^-3.
+  - `CLM-MAT-0107` · temperature 2 K, material TiAs · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00127
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- At 2 K, the electron concentration in TiAs single crystals is approximately 7.6 x 10^21 cm^-3.
+  - `CLM-MAT-0108` · temperature 2 K, material TiAs · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00127
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- At 2 K, the hole mobility in TiAs single crystals is approximately 2.5 x 10^3 cm^2 V^-1 s^-1.
+  - `CLM-MAT-0109` · temperature 2 K · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00127
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- At 2 K, the electron mobility in TiAs single crystals is approximately 2.2 x 10^3 cm^2 V^-1 s^-1.
+  - `CLM-MAT-0110` · temperature 2 K · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00127
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -389,6 +428,18 @@ Topic code `MAT`. Last reviewed 2026-10-11.
   - `CLM-MAT-0083` · n 40, method spin-restricted TAO-LDA · grade B · credibility unknown · simulated · as of 2026-10-07
   - sources: SRC-00103
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈-60 percent** — In sample B1-1 at high fields, the maximum negative longitudinal magnetoresistance reaches approximately -60%.
+  - `CLM-MAT-0111` · sample B1-1 · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00128
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **66.8 percent** — The Rytova-Keldysh model removes 66.8% of the orbital error relative to a pure two-dimensional Coulomb reference.
+  - `CLM-MAT-0112` · baseline pure two-dimensional Coulomb reference, benchmark_protocol high-field-calibrated · grade B · credibility unknown · simulated · as of 2026-10-09
+  - sources: SRC-00131
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈100 percent** — In a 2D square-lattice tight-binding model, a minimum ratio of U/t of approximately 1 is numerically required to bind two excitons together.
+  - `CLM-MAT-0116` · system 2D square-lattice tight-binding model · grade B · credibility unknown · simulated · as of 2026-10-09
+  - sources: SRC-00132
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -507,6 +558,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 104
-- grades: {'B': 104}
-- distinct sources: 39
+- claims: 116
+- grades: {'B': 116}
+- distinct sources: 44

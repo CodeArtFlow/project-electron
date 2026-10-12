@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.12867v1
 doi: null
-title: Topologically steerable ultra-flat electro-optic combs via non-Hermitian frequency
-  lattices
+title: Topologically steerable ultra-flat electro-optic combs via non-Hermitian frequency lattices
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-09'
@@ -31,6 +30,27 @@ id: CAND-20261012-0086
 harvested_date: '2026-10-12'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-12'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At the critical condition |L| = 1, the measured flat comb spans approximately 50 lines
+      with a root-mean-square deviation in power of 0.77 dB.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''At the critical
+      condition | L| = 1, the flat comb spans approximately '''
+    quotes:
+    - At the critical condition | L| = 1, the flat comb spans approximately 50 lines with a root -mean-square
+      deviation (RMSE) of σ = 0.77 dB in power, demonstrating a high spectral uniformity.
+    - Fig ure 2(b) presents the measured comb spectra as a function of bias voltage.
+    - At the critical condition | L| = 1
+  tokens:
+    input: 12448
+    output: 531
+  fetched_chars: 32030

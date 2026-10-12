@@ -1,6 +1,6 @@
 # The field, as our corpus knows it
 
-Generated 2026-10-11 from the claim ledger.
+Generated 2026-10-12 from the claim ledger.
 
 > **Read this as a description of our corpus, not of the field.** Every number below counts what we have read and extracted. A layer with no claims means we have not read anything for it — never that nothing is happening there.
 
@@ -8,43 +8,43 @@ Generated 2026-10-11 from the claim ledger.
 
 | Layer | Claims | Read |
 |---|---|---|
-| Materials (`MAT`) | 104 | yes |
+| Materials (`MAT`) | 116 | yes |
 | Devices (`DEV`) | 56 | yes |
 | Lithography (`LITHO`) | 0 | **nothing yet** |
-| Process (`PROC`) | 25 | yes |
+| Process (`PROC`) | 29 | yes |
 | Packaging (`PKG`) | 2 | yes |
 | Memory (`MEM`) | 14 | yes |
-| Architecture (`ARCH`) | 79 | yes |
+| Architecture (`ARCH`) | 87 | yes |
 | Photonics (`PHOT`) | 64 | yes |
 | EDA (`EDA`) | 7 | yes |
 | Economics (`ECON`) | 0 | **nothing yet** |
 
-8 of 10 layers have any claim at all. 125 source record(s) read; 1558 candidate(s) queued unread.
+8 of 10 layers have any claim at all. 132 source record(s) read; 1608 candidate(s) queued unread.
 
 ## Evidence quality
 
 | Grade | Claims |
 |---|---|
 | A | 7 |
-| B | 347 |
+| B | 371 |
 | C | 0 |
 | D | 0 |
 | E | 0 |
 
 | Evidence type | Claims |
 |---|---|
-| measured | 176 |
-| simulated | 172 |
+| measured | 192 |
+| simulated | 180 |
 | projected | 6 |
 
 ## Where the corpus disagrees with itself
 
-**37 conflict(s) are unexamined.** Reconciliation is unfinished, so the picture below is provisional and publication is blocked.
+**43 conflict(s) are unexamined.** Reconciliation is unfinished, so the picture below is provisional and publication is blocked.
 
 ## What we cannot yet say
 
 - Nothing about **Lithography, Economics** — no claims extracted for those layers.
 
-- 1558 candidate(s) sit unread. Until they are read, absence of a claim here is absence of reading, not absence of evidence.
+- 1608 candidate(s) sit unread. Until they are read, absence of a claim here is absence of reading, not absence of evidence.
 
 - Nothing about any paper with no legal open-access copy. That exclusion is a property of our access policy, and it is tracked as `access-blocked`.

@@ -2358,3 +2358,298 @@ claims:
       framework: RAPID-DNN
       fault_configuration: mixed random fault configuration
       baseline: fault-agnostic baseline
+- id: CLM-ARCH-0080
+  topic: ARCH
+  statement: On Arrow, configuring write-back memory with GPU cache coherence increases GPU write time
+    by 2.07x compared to without GPU cache coherence.
+  sources:
+  - SRC-00130
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-09'
+  created: '2026-10-12'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    platform: Arrow
+    coherence: CC
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 2.07
+      unit: x
+    si_base:
+      value: 2.07
+      unit: dimensionless
+    display:
+      value: 206.99999999999997
+      unit: percent
+    conditions:
+      platform: Arrow
+      coherence: CC
+- id: CLM-ARCH-0081
+  topic: ARCH
+  statement: On Orin, uncached memory reduces L2-optimized GEMM compute performance from 2,680 GFLOPS
+    to 2,250 GFLOPS, representing a 16% degradation.
+  sources:
+  - SRC-00130
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-09'
+  created: '2026-10-12'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    platform: Orin
+    workload: L2-optimized GEMM
+    cache_policy: UC
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 16.0
+      unit: '%'
+    si_base:
+      value: 0.16
+      unit: dimensionless
+    display:
+      value: 16.0
+      unit: percent
+    conditions:
+      platform: Orin
+      workload: L2-optimized GEMM
+      cache_policy: UC
+- id: CLM-ARCH-0082
+  topic: ARCH
+  statement: On Arrow, applying libumsh to OpenCV image preprocessing reduces total CPU processing and
+    GPU transfer time by 16%.
+  sources:
+  - SRC-00130
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-09'
+  created: '2026-10-12'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    platform: Arrow
+    application: OpenCV
+    variant: Cv+Opt
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 16.0
+      unit: '%'
+    si_base:
+      value: 0.16
+      unit: dimensionless
+    display:
+      value: 16.0
+      unit: percent
+    conditions:
+      platform: Arrow
+      application: OpenCV
+      variant: Cv+Opt
+- id: CLM-ARCH-0083
+  topic: ARCH
+  statement: On Arrow, applying libumsh to OpenVINO GenAI output sampling reduces end-to-end time by 18%.
+  sources:
+  - SRC-00130
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-09'
+  created: '2026-10-12'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    platform: Arrow
+    application: OpenVINO GenAI
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 18.0
+      unit: '%'
+    si_base:
+      value: 0.18
+      unit: dimensionless
+    display:
+      value: 18.0
+      unit: percent
+    conditions:
+      platform: Arrow
+      application: OpenVINO GenAI
+- id: CLM-ARCH-0084
+  topic: ARCH
+  statement: On Arrow, applying libumsh to sparse point cloud processing achieves a 34% reduction in data
+    transfer latency compared to the copy baseline.
+  sources:
+  - SRC-00130
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-09'
+  created: '2026-10-12'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    platform: Arrow
+    application: Sparse point cloud processing
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 34.0
+      unit: '%'
+    si_base:
+      value: 0.34
+      unit: dimensionless
+    display:
+      value: 34.0
+      unit: percent
+    conditions:
+      platform: Arrow
+      application: Sparse point cloud processing
+- id: CLM-ARCH-0085
+  topic: ARCH
+  statement: On Arrow, applying libumsh to Accelerate for LLM offloading reduces time to first token by
+    11%.
+  sources:
+  - SRC-00130
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-09'
+  created: '2026-10-12'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    workload: 10-token prefill
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 11.0
+      unit: '%'
+    si_base:
+      value: 0.11
+      unit: dimensionless
+    display:
+      value: 11.0
+      unit: percent
+    conditions:
+      workload: 10-token prefill
+- id: CLM-ARCH-0086
+  topic: ARCH
+  statement: On Orin, applying libumsh with grid-level barriers to Demand Layering reduces execution time
+    by 14%.
+  sources:
+  - SRC-00130
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-09'
+  created: '2026-10-12'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    platform: Orin
+    application: Demand Layering
+    variant: DL+Opt
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 14.0
+      unit: '%'
+    si_base:
+      value: 0.14
+      unit: dimensionless
+    display:
+      value: 14.000000000000002
+      unit: percent
+    conditions:
+      platform: Orin
+      application: Demand Layering
+      variant: DL+Opt
+- id: CLM-ARCH-0087
+  topic: ARCH
+  statement: On Spark, GPU Read-Alone on write-back memory with two-way cache coherence loses 8% throughput
+    relative to its uncached counterpart.
+  sources:
+  - SRC-00130
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-09'
+  created: '2026-10-12'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    platform: NVIDIA DGX Spark
+    operation: GPU Read-Alone
+    cache_policy: WB
+    coherence: two-way CC
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: true
+    as_published:
+      value: 8.0
+      unit: '%'
+    si_base:
+      value: 0.08
+      unit: dimensionless
+    display:
+      value: 8.0
+      unit: percent
+    conditions:
+      platform: NVIDIA DGX Spark
+      operation: GPU Read-Alone
+      cache_policy: WB
+      coherence: two-way CC

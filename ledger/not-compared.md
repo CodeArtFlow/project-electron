@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**2346 pair(s)** as of 2026-10-11.
+**3098 pair(s)** as of 2026-10-12.
 
 ## `current` (7 pair(s))
 
@@ -18,7 +18,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-DEV-0036` = 0.558 mA | `CLM-DEV-0057` = 30 mA | 98% | temperature=2 K, state=after light irradiation | switching_regime=small switching current |
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0057` = 30 mA | 98% | process_step=current ramp-down | switching_regime=small switching current |
 
-## `energy` (100 pair(s))
+## `energy` (144 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -37,33 +37,33 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0085` = 8.54e-06 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | material=CrSiCN4, method=PBE+SOC |
 | `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0086` = 8.395e-06 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | material=CrGeCN4, method=PBE+SOC |
 | `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0104` = 3.525e-05 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | measurement=RIXS, absorption_edge=Fe L3 edge |
-| `CLM-MAT-0078` = 4810 meV | `CLM-MAT-0086` = 52.4 meV | 99% | defect_complex=VAl(ON)3, model=DFT | material=CrGeCN4, method=PBE+SOC |
-| `CLM-MAT-0078` = 4810 meV | `CLM-MAT-0085` = 53.3 meV | 99% | defect_complex=VAl(ON)3, model=DFT | material=CrSiCN4, method=PBE+SOC |
-| `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0086` = 52.4 meV | 99% | defect_complex=VAl(ON)3 | material=CrGeCN4, method=PBE+SOC |
-| `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0085` = 53.3 meV | 99% | defect_complex=VAl(ON)3 | material=CrSiCN4, method=PBE+SOC |
-| `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0078` = 4810 meV | 99% | mechanism=surface polar phonon, substrate=SiO2 | defect_complex=VAl(ON)3, model=DFT |
-| `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0077` = 4330 meV | 99% | mechanism=surface polar phonon, substrate=SiO2 | defect_complex=VAl(ON)3 |
-| `CLM-MAT-0050` = 102 meV | `CLM-MAT-0078` = 4810 meV | 98% | material=Li6PS5Cl | defect_complex=VAl(ON)3, model=DFT |
-| `CLM-MAT-0050` = 102 meV | `CLM-MAT-0077` = 4330 meV | 98% | material=Li6PS5Cl | defect_complex=VAl(ON)3 |
-| `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0086` = 52.4 meV | 97% | synthesis_condition=Nitrogen-rich | material=CrGeCN4, method=PBE+SOC |
-| `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0085` = 53.3 meV | 97% | synthesis_condition=Nitrogen-rich | material=CrSiCN4, method=PBE+SOC |
-| `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0086` = 52.4 meV | 97% | synthesis_condition=Nitrogen-rich | material=CrGeCN4, method=PBE+SOC |
-| `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0085` = 53.3 meV | 97% | synthesis_condition=Nitrogen-rich | material=CrSiCN4, method=PBE+SOC |
-| `CLM-MAT-0014` = 1940 meV | `CLM-MAT-0086` = 52.4 meV | 97% | synthesis_condition=Nitrogen-rich | material=CrGeCN4, method=PBE+SOC |
-| `CLM-MAT-0014` = 1940 meV | `CLM-MAT-0085` = 53.3 meV | 97% | synthesis_condition=Nitrogen-rich | material=CrSiCN4, method=PBE+SOC |
-| `CLM-MAT-0051` = 1801 meV | `CLM-MAT-0086` = 52.4 meV | 97% | axis=c | material=CrGeCN4, method=PBE+SOC |
-| `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0016` = 2020 meV | 97% | mechanism=surface polar phonon, substrate=SiO2 | synthesis_condition=Nitrogen-rich |
-| `CLM-MAT-0051` = 1801 meV | `CLM-MAT-0085` = 53.3 meV | 97% | axis=c | material=CrSiCN4, method=PBE+SOC |
-| `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0015` = 1980 meV | 97% | mechanism=surface polar phonon, substrate=SiO2 | synthesis_condition=Nitrogen-rich |
-| `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0014` = 1940 meV | 97% | mechanism=surface polar phonon, substrate=SiO2 | synthesis_condition=Nitrogen-rich |
-| `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0051` = 1801 meV | 97% | mechanism=surface polar phonon, substrate=SiO2 | axis=c |
-| `CLM-MAT-0048` = 185 meV | `CLM-MAT-0078` = 4810 meV | 96% | material=LiFePO4 | defect_complex=VAl(ON)3, model=DFT |
-| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0086` = 52.4 meV | 96% | synthesis_condition=Nitrogen-rich | material=CrGeCN4, method=PBE+SOC |
-| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0085` = 53.3 meV | 96% | synthesis_condition=Nitrogen-rich | material=CrSiCN4, method=PBE+SOC |
-| `CLM-MAT-0002` = 200 meV | `CLM-MAT-0078` = 4810 meV | 96% | mechanism=optical phonon | defect_complex=VAl(ON)3, model=DFT |
-| `CLM-MAT-0048` = 185 meV | `CLM-MAT-0077` = 4330 meV | 96% | material=LiFePO4 | defect_complex=VAl(ON)3 |
+| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0113` = 2.547e-06 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | method=three-band nearest-neighbor exciton-geometric calculation |
+| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0114` = 2.083e-08 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | material=WSe2 |
+| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0115` = 3.557e-07 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | state=3p |
+| `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0114` = 0.13 meV | 100% | defect_complex=VAl(ON)3 | material=WSe2 |
+| `CLM-MAT-0078` = 4810 meV | `CLM-MAT-0114` = 0.13 meV | 100% | defect_complex=VAl(ON)3, model=DFT | material=WSe2 |
+| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0114` = 0.13 meV | 100% | synthesis_condition=Nitrogen-rich | material=WSe2 |
+| `CLM-MAT-0014` = 1940 meV | `CLM-MAT-0114` = 0.13 meV | 100% | synthesis_condition=Nitrogen-rich | material=WSe2 |
+| `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0114` = 0.13 meV | 100% | synthesis_condition=Nitrogen-rich | material=WSe2 |
+| `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0114` = 0.13 meV | 100% | synthesis_condition=Nitrogen-rich | material=WSe2 |
+| `CLM-MAT-0051` = 1801 meV | `CLM-MAT-0114` = 0.13 meV | 100% | axis=c | material=WSe2 |
+| `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0115` = 2.22 meV | 100% | defect_complex=VAl(ON)3 | state=3p |
+| `CLM-MAT-0078` = 4810 meV | `CLM-MAT-0115` = 2.22 meV | 100% | defect_complex=VAl(ON)3, model=DFT | state=3p |
+| `CLM-MAT-0002` = 200 meV | `CLM-MAT-0114` = 0.13 meV | 100% | mechanism=optical phonon | material=WSe2 |
+| `CLM-MAT-0104` = 220 meV | `CLM-MAT-0114` = 0.13 meV | 100% | measurement=RIXS, absorption_edge=Fe L3 edge | material=WSe2 |
+| `CLM-MAT-0014` = 1940 meV | `CLM-MAT-0115` = 2.22 meV | 100% | synthesis_condition=Nitrogen-rich | state=3p |
+| `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0115` = 2.22 meV | 100% | synthesis_condition=Nitrogen-rich | state=3p |
+| `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0115` = 2.22 meV | 100% | synthesis_condition=Nitrogen-rich | state=3p |
+| `CLM-MAT-0051` = 1801 meV | `CLM-MAT-0115` = 2.22 meV | 100% | axis=c | state=3p |
+| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0115` = 2.22 meV | 100% | synthesis_condition=Nitrogen-rich | state=3p |
+| `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0114` = 0.13 meV | 100% | mechanism=surface polar phonon, substrate=SiO2 | material=WSe2 |
+| `CLM-MAT-0078` = 4810 meV | `CLM-MAT-0113` = 15.9 meV | 100% | defect_complex=VAl(ON)3, model=DFT | method=three-band nearest-neighbor exciton-geometric calculation |
+| `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0113` = 15.9 meV | 100% | defect_complex=VAl(ON)3 | method=three-band nearest-neighbor exciton-geometric calculation |
+| `CLM-MAT-0049` = 296 meV | `CLM-MAT-0115` = 2.22 meV | 99% | material=LiFePO4 | state=3p |
+| `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0113` = 15.9 meV | 99% | synthesis_condition=Nitrogen-rich | method=three-band nearest-neighbor exciton-geometric calculation |
+| `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0113` = 15.9 meV | 99% | synthesis_condition=Nitrogen-rich | method=three-band nearest-neighbor exciton-geometric calculation |
 
-_and 60 more_
+_and 104 more_
 
 ## `energy_advantage_ratio` (5 pair(s))
 
@@ -169,7 +169,7 @@ _and 99 more_
 
 _and 856 more_
 
-## `power` (48 pair(s))
+## `power` (59 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -181,17 +181,24 @@ _and 856 more_
 | `CLM-ARCH-0071` = 370.1 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | process_node=TSMC 28 nm | benchmark_circuit=BGR, framework=AgenticSizing |
 | `CLM-DEV-0025` = 1 W | `CLM-EDA-0002` = 1.06e-07 W | 100% | gate_bias_vgs=-2.7 V | benchmark_circuit=BGR, framework=AgenticSizing |
 | `CLM-DEV-0030` = 7.76 W | `CLM-EDA-0002` = 1.06e-07 W | 100% | mode=DC-AC conversion, vin=24-V DC input | benchmark_circuit=BGR, framework=AgenticSizing |
+| `CLM-EDA-0002` = 1.06e-07 W | `CLM-MAT-0106` = 0.002412 W | 100% | benchmark_circuit=BGR, framework=AgenticSizing | wavelength=405 nm |
 | `CLM-EDA-0002` = 1.06e-07 W | `CLM-PHOT-0053` = 0.0217 W | 100% | benchmark_circuit=BGR, framework=AgenticSizing | pump_power=825 mW, device=Ho3+-doped fluoride glass waveguide laser |
 | `CLM-EDA-0002` = 1.06e-07 W | `CLM-PHOT-0054` = 0.1325 W | 100% | benchmark_circuit=BGR, framework=AgenticSizing | device=Ho3+-doped fluoride glass waveguide laser |
+| `CLM-ARCH-0038` = 9599 mW | `CLM-MAT-0106` = 2.412 mW | 100% | component=added compute and buffer logic in HBM-PIM | wavelength=405 nm |
+| `CLM-DEV-0030` = 7.76 W | `CLM-MAT-0106` = 0.002412 W | 100% | mode=DC-AC conversion, vin=24-V DC input | wavelength=405 nm |
 | `CLM-ARCH-0038` = 9599 mW | `CLM-PHOT-0053` = 21.7 mW | 100% | component=added compute and buffer logic in HBM-PIM | pump_power=825 mW, device=Ho3+-doped fluoride glass waveguide laser |
+| `CLM-DEV-0025` = 1 W | `CLM-MAT-0106` = 0.002412 W | 100% | gate_bias_vgs=-2.7 V | wavelength=405 nm |
 | `CLM-ARCH-0009` = 26.8 mW | `CLM-ARCH-0038` = 9599 mW | 100% | architecture=MiX-INT4, array_size=512-MAC, process=28nm, frequency=500 MHz | component=added compute and buffer logic in HBM-PIM |
 | `CLM-DEV-0030` = 7.76 W | `CLM-PHOT-0053` = 0.0217 W | 100% | mode=DC-AC conversion, vin=24-V DC input | pump_power=825 mW, device=Ho3+-doped fluoride glass waveguide laser |
+| `CLM-ARCH-0037` = 787 mW | `CLM-MAT-0106` = 2.412 mW | 100% | component=synthesized SRAM-PIM subsystem | wavelength=405 nm |
 | `CLM-ARCH-0008` = 31.8 mW | `CLM-ARCH-0038` = 9599 mW | 100% | architecture=MiX-INT4g16, array_size=512-MAC, process=28nm, frequency=500 MHz | component=added compute and buffer logic in HBM-PIM |
 | `CLM-ARCH-0009` = 26.8 mW | `CLM-DEV-0030` = 7760 mW | 100% | architecture=MiX-INT4, array_size=512-MAC, process=28nm, frequency=500 MHz | mode=DC-AC conversion, vin=24-V DC input |
 | `CLM-ARCH-0008` = 31.8 mW | `CLM-DEV-0030` = 7760 mW | 100% | architecture=MiX-INT4g16, array_size=512-MAC, process=28nm, frequency=500 MHz | mode=DC-AC conversion, vin=24-V DC input |
 | `CLM-ARCH-0007` = 40.4 mW | `CLM-DEV-0030` = 7760 mW | 99% | component=1024-MAC Systolic Array, architecture=MiX-INT4g16, array_size=1024-MAC, process=28nm, frequency=500 MHz | mode=DC-AC conversion, vin=24-V DC input |
+| `CLM-ARCH-0071` = 370.1 mW | `CLM-MAT-0106` = 2.412 mW | 99% | process_node=TSMC 28 nm | wavelength=405 nm |
 | `CLM-ARCH-0038` = 9599 mW | `CLM-PHOT-0054` = 132.5 mW | 99% | component=added compute and buffer logic in HBM-PIM | device=Ho3+-doped fluoride glass waveguide laser |
 | `CLM-DEV-0030` = 7.76 W | `CLM-PHOT-0054` = 0.1325 W | 98% | mode=DC-AC conversion, vin=24-V DC input | device=Ho3+-doped fluoride glass waveguide laser |
+| `CLM-MAT-0106` = 0.002412 W | `CLM-PHOT-0054` = 0.1325 W | 98% | wavelength=405 nm | device=Ho3+-doped fluoride glass waveguide laser |
 | `CLM-DEV-0025` = 1 W | `CLM-PHOT-0053` = 0.0217 W | 98% | gate_bias_vgs=-2.7 V | pump_power=825 mW, device=Ho3+-doped fluoride glass waveguide laser |
 | `CLM-ARCH-0009` = 26.8 mW | `CLM-DEV-0025` = 1000 mW | 97% | architecture=MiX-INT4, array_size=512-MAC, process=28nm, frequency=500 MHz | gate_bias_vgs=-2.7 V |
 | `CLM-ARCH-0037` = 787 mW | `CLM-PHOT-0053` = 21.7 mW | 97% | component=synthesized SRAM-PIM subsystem | pump_power=825 mW, device=Ho3+-doped fluoride glass waveguide laser |
@@ -202,66 +209,59 @@ _and 856 more_
 | `CLM-ARCH-0008` = 31.8 mW | `CLM-ARCH-0037` = 787 mW | 96% | architecture=MiX-INT4g16, array_size=512-MAC, process=28nm, frequency=500 MHz | component=synthesized SRAM-PIM subsystem |
 | `CLM-ARCH-0071` = 370.1 mW | `CLM-DEV-0030` = 7760 mW | 95% | process_node=TSMC 28 nm | mode=DC-AC conversion, vin=24-V DC input |
 | `CLM-ARCH-0071` = 370.1 mW | `CLM-PHOT-0053` = 21.7 mW | 94% | process_node=TSMC 28 nm | pump_power=825 mW, device=Ho3+-doped fluoride glass waveguide laser |
+| `CLM-ARCH-0007` = 40.4 mW | `CLM-MAT-0106` = 2.412 mW | 94% | component=1024-MAC Systolic Array, architecture=MiX-INT4g16, array_size=1024-MAC, process=28nm, frequency=500 MHz | wavelength=405 nm |
 | `CLM-ARCH-0009` = 26.8 mW | `CLM-ARCH-0071` = 370.1 mW | 93% | architecture=MiX-INT4, array_size=512-MAC, process=28nm, frequency=500 MHz | process_node=TSMC 28 nm |
+| `CLM-ARCH-0008` = 31.8 mW | `CLM-MAT-0106` = 2.412 mW | 92% | architecture=MiX-INT4g16, array_size=512-MAC, process=28nm, frequency=500 MHz | wavelength=405 nm |
 | `CLM-ARCH-0008` = 31.8 mW | `CLM-ARCH-0071` = 370.1 mW | 91% | architecture=MiX-INT4g16, array_size=512-MAC, process=28nm, frequency=500 MHz | process_node=TSMC 28 nm |
-| `CLM-ARCH-0037` = 787 mW | `CLM-DEV-0030` = 7760 mW | 90% | component=synthesized SRAM-PIM subsystem | mode=DC-AC conversion, vin=24-V DC input |
-| `CLM-ARCH-0038` = 9599 mW | `CLM-DEV-0025` = 1000 mW | 90% | component=added compute and buffer logic in HBM-PIM | gate_bias_vgs=-2.7 V |
-| `CLM-ARCH-0007` = 40.4 mW | `CLM-ARCH-0071` = 370.1 mW | 89% | component=1024-MAC Systolic Array, architecture=MiX-INT4g16, array_size=1024-MAC, process=28nm, frequency=500 MHz | process_node=TSMC 28 nm |
-| `CLM-DEV-0025` = 1 W | `CLM-DEV-0030` = 7.76 W | 87% | gate_bias_vgs=-2.7 V | mode=DC-AC conversion, vin=24-V DC input |
-| `CLM-DEV-0025` = 1 W | `CLM-PHOT-0054` = 0.1325 W | 87% | gate_bias_vgs=-2.7 V | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-ARCH-0037` = 787 mW | `CLM-PHOT-0054` = 132.5 mW | 83% | component=synthesized SRAM-PIM subsystem | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-ARCH-0009` = 26.8 mW | `CLM-PHOT-0054` = 132.5 mW | 80% | architecture=MiX-INT4, array_size=512-MAC, process=28nm, frequency=500 MHz | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-ARCH-0008` = 31.8 mW | `CLM-PHOT-0054` = 132.5 mW | 76% | architecture=MiX-INT4g16, array_size=512-MAC, process=28nm, frequency=500 MHz | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-ARCH-0007` = 40.4 mW | `CLM-PHOT-0054` = 132.5 mW | 70% | component=1024-MAC Systolic Array, architecture=MiX-INT4g16, array_size=1024-MAC, process=28nm, frequency=500 MHz | device=Ho3+-doped fluoride glass waveguide laser |
 
-_and 8 more_
+_and 19 more_
 
-## `relative_deviation` (872 pair(s))
+## `relative_deviation` (1569 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
-| `CLM-ARCH-0068` = 352 percent | `CLM-MEM-0013` = 0.01 percent | 100% | baseline=reference Cortex-M0 implementation | technology=Next-Generation Sequencing (NGS) |
-| `CLM-ARCH-0069` = 318 percent | `CLM-MEM-0013` = 0.01 percent | 100% | baseline=reference Cortex-M0 implementation | technology=Next-Generation Sequencing (NGS) |
-| `CLM-MAT-0083` = 530 percent | `CLM-MEM-0013` = 0.01 percent | 100% | n=40, method=spin-restricted TAO-LDA | technology=Next-Generation Sequencing (NGS) |
-| `CLM-MAT-0083` = 530 percent | `CLM-PROC-0018` = 0.023 percent | 100% | n=40, method=spin-restricted TAO-LDA | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
-| `CLM-MEM-0013` = 0.01 percent | `CLM-PROC-0022` = 215 percent | 100% | technology=Next-Generation Sequencing (NGS) | material=polycrystalline rolled Au, measurement_type=10-times continuous measurement |
-| `CLM-MEM-0013` = 0.01 percent | `CLM-PROC-0025` = 5700 percent | 100% | technology=Next-Generation Sequencing (NGS) | measurement_number=30th measurement |
-| `CLM-PROC-0018` = 0.023 percent | `CLM-PROC-0025` = 5700 percent | 100% | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) | measurement_number=30th measurement |
-| `CLM-ARCH-0018` = 98 percent | `CLM-MEM-0013` = 0.01 percent | 100% | concurrency_n_a=48, set_type=hot set | technology=Next-Generation Sequencing (NGS) |
-| `CLM-ARCH-0040` = 97.93 percent | `CLM-MEM-0013` = 0.01 percent | 100% | frequency=7 GHz, component=graded magnetic spacer | technology=Next-Generation Sequencing (NGS) |
-| `CLM-ARCH-0041` = 93.08 percent | `CLM-MEM-0013` = 0.01 percent | 100% | frequency=7 GHz | technology=Next-Generation Sequencing (NGS) |
-| `CLM-ARCH-0048` = 150 percent | `CLM-MEM-0013` = 0.01 percent | 100% | design=ZTA-Q, resource_type=DSP | technology=Next-Generation Sequencing (NGS) |
-| `CLM-ARCH-0059` = 0.74 percent | `CLM-PROC-0025` = 5700 percent | 100% | tier=T1, device=fbnic | measurement_number=30th measurement |
-| `CLM-ARCH-0068` = 352 percent | `CLM-PROC-0018` = 0.023 percent | 100% | baseline=reference Cortex-M0 implementation | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
-| `CLM-ARCH-0069` = 318 percent | `CLM-PROC-0018` = 0.023 percent | 100% | baseline=reference Cortex-M0 implementation | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
-| `CLM-EDA-0005` = 86.4 percent | `CLM-MEM-0013` = 0.01 percent | 100% | model=Cyclic Edge prediction model | technology=Next-Generation Sequencing (NGS) |
-| `CLM-EDA-0006` = 89.6 percent | `CLM-MEM-0013` = 0.01 percent | 100% | model=Non-cyclic Edge prediction model | technology=Next-Generation Sequencing (NGS) |
-| `CLM-EDA-0007` = 76 percent | `CLM-MEM-0013` = 0.01 percent | 100% | model=Non-cyclic + Node prediction model | technology=Next-Generation Sequencing (NGS) |
-| `CLM-MEM-0012` = 95 percent | `CLM-MEM-0013` = 0.01 percent | 100% | encoding_scheme=differential encoding, benchmark=MNIST | technology=Next-Generation Sequencing (NGS) |
-| `CLM-MEM-0013` = 0.01 percent | `CLM-PHOT-0005` = 85 percent | 100% | technology=Next-Generation Sequencing (NGS) | dataset=Iris test set |
-| `CLM-MEM-0013` = 0.01 percent | `CLM-PHOT-0006` = 88 percent | 100% | technology=Next-Generation Sequencing (NGS) | dataset=MNIST, setup=experimental system |
-| `CLM-MEM-0013` = 0.01 percent | `CLM-PHOT-0059` = 94.4 percent | 100% | technology=Next-Generation Sequencing (NGS) | route=Fourier route |
-| `CLM-MEM-0013` = 0.01 percent | `CLM-PROC-0021` = 162 percent | 100% | technology=Next-Generation Sequencing (NGS) | material=polycrystalline rolled Au, measurement_type=10-times continuous measurement |
-| `CLM-MEM-0013` = 0.01 percent | `CLM-PROC-0024` = 184 percent | 100% | technology=Next-Generation Sequencing (NGS) | material=polycrystalline rolled Au |
-| `CLM-PROC-0007` = 0.5479 percent | `CLM-PROC-0025` = 5700 percent | 100% | voltage=20 kV | measurement_number=30th measurement |
-| `CLM-PROC-0008` = 0.5461 percent | `CLM-PROC-0025` = 5700 percent | 100% | voltage=20 kV | measurement_number=30th measurement |
-| `CLM-PROC-0009` = 0.3757 percent | `CLM-PROC-0025` = 5700 percent | 100% | voltage=20 kV | measurement_number=30th measurement |
-| `CLM-PROC-0018` = 0.023 percent | `CLM-PROC-0021` = 162 percent | 100% | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) | material=polycrystalline rolled Au, measurement_type=10-times continuous measurement |
-| `CLM-PROC-0018` = 0.023 percent | `CLM-PROC-0022` = 215 percent | 100% | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) | material=polycrystalline rolled Au, measurement_type=10-times continuous measurement |
-| `CLM-PROC-0018` = 0.023 percent | `CLM-PROC-0024` = 184 percent | 100% | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) | material=polycrystalline rolled Au |
-| `CLM-PROC-0019` = 0.624 percent | `CLM-PROC-0025` = 5700 percent | 100% | test_dataset=10 images confirmed negative by multiple observers | measurement_number=30th measurement |
-| `CLM-ARCH-0018` = 98 percent | `CLM-PROC-0018` = 0.023 percent | 100% | concurrency_n_a=48, set_type=hot set | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
-| `CLM-ARCH-0040` = 97.93 percent | `CLM-PROC-0018` = 0.023 percent | 100% | frequency=7 GHz, component=graded magnetic spacer | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
-| `CLM-ARCH-0041` = 93.08 percent | `CLM-PROC-0018` = 0.023 percent | 100% | frequency=7 GHz | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
-| `CLM-ARCH-0048` = 150 percent | `CLM-PROC-0018` = 0.023 percent | 100% | design=ZTA-Q, resource_type=DSP | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
-| `CLM-ARCH-0049` = 46 percent | `CLM-MEM-0013` = 0.01 percent | 100% | mechanism=uniform iteration offsets | technology=Next-Generation Sequencing (NGS) |
-| `CLM-EDA-0003` = 60 percent | `CLM-MEM-0013` = 0.01 percent | 100% | benchmark_circuit=LDO benchmark, framework=proposed method | technology=Next-Generation Sequencing (NGS) |
-| `CLM-EDA-0004` = 60 percent | `CLM-MEM-0013` = 0.01 percent | 100% | circuit=most complex circuit, framework=proposed framework | technology=Next-Generation Sequencing (NGS) |
-| `CLM-MAT-0021` = 1 percent | `CLM-PROC-0025` = 5700 percent | 100% | layer=WSe2 | measurement_number=30th measurement |
-| `CLM-MEM-0012` = 95 percent | `CLM-PROC-0018` = 0.023 percent | 100% | encoding_scheme=differential encoding, benchmark=MNIST | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
-| `CLM-PHOT-0059` = 94.4 percent | `CLM-PROC-0018` = 0.023 percent | 100% | route=Fourier route | training_set_size=full 244-image public training set, test_subset=No target, grade 1 (including mapped −1) |
+| `CLM-EDA-0003` = 60 percent | `CLM-MAT-0111` = -60 percent | 200% | benchmark_circuit=LDO benchmark, framework=proposed method | sample=B1-1 |
+| `CLM-EDA-0004` = 60 percent | `CLM-MAT-0111` = -60 percent | 200% | circuit=most complex circuit, framework=proposed framework | sample=B1-1 |
+| `CLM-MAT-0111` = -60 percent | `CLM-MAT-0112` = 66.8 percent | 190% | sample=B1-1 | baseline=pure two-dimensional Coulomb reference, benchmark_protocol=high-field-calibrated |
+| `CLM-EDA-0007` = 76 percent | `CLM-MAT-0111` = -60 percent | 179% | model=Non-cyclic + Node prediction model | sample=B1-1 |
+| `CLM-ARCH-0049` = 46 percent | `CLM-MAT-0111` = -60 percent | 177% | mechanism=uniform iteration offsets | sample=B1-1 |
+| `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0005` = 85 percent | 171% | sample=B1-1 | dataset=Iris test set |
+| `CLM-EDA-0005` = 86.4 percent | `CLM-MAT-0111` = -60 percent | 169% | model=Cyclic Edge prediction model | sample=B1-1 |
+| `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0006` = 88 percent | 168% | sample=B1-1 | dataset=MNIST, setup=experimental system |
+| `CLM-EDA-0006` = 89.6 percent | `CLM-MAT-0111` = -60 percent | 167% | model=Non-cyclic Edge prediction model | sample=B1-1 |
+| `CLM-ARCH-0041` = 93.08 percent | `CLM-MAT-0111` = -60 percent | 164% | frequency=7 GHz | sample=B1-1 |
+| `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0059` = 94.4 percent | 164% | sample=B1-1 | route=Fourier route |
+| `CLM-MAT-0111` = -60 percent | `CLM-MEM-0012` = 95 percent | 163% | sample=B1-1 | encoding_scheme=differential encoding, benchmark=MNIST |
+| `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0063` = 37 percent | 162% | sample=B1-1 | disorder_type=radius disorder |
+| `CLM-ARCH-0077` = 36.86 percent | `CLM-MAT-0111` = -60 percent | 161% | framework=RAPID-DNN, fault_configuration=mixed random fault configuration, baseline=fault-agnostic baseline | sample=B1-1 |
+| `CLM-ARCH-0040` = 97.93 percent | `CLM-MAT-0111` = -60 percent | 161% | frequency=7 GHz, component=graded magnetic spacer | sample=B1-1 |
+| `CLM-ARCH-0018` = 98 percent | `CLM-MAT-0111` = -60 percent | 161% | concurrency_n_a=48, set_type=hot set | sample=B1-1 |
+| `CLM-MAT-0111` = -60 percent | `CLM-MAT-0116` = 100 percent | 160% | sample=B1-1 | system=2D square-lattice tight-binding model |
+| `CLM-ARCH-0084` = 34 percent | `CLM-MAT-0111` = -60 percent | 157% | platform=Arrow, application=Sparse point cloud processing | sample=B1-1 |
+| `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0064` = 31 percent | 152% | sample=B1-1 | disorder_type=radius disorder |
+| `CLM-ARCH-0053` = 27.3 percent | `CLM-MAT-0111` = -60 percent | 146% | architecture=PEEK with four Rockets upon a BOOM, baseline=unsafe baseline | sample=B1-1 |
+| `CLM-ARCH-0046` = 26.3 percent | `CLM-MAT-0111` = -60 percent | 144% | design=ZTA-Q, resource_type=LUT | sample=B1-1 |
+| `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0062` = 25 percent | 142% | sample=B1-1 | disorder_type=position disorder, corner_radius_ratio=0.45r |
+| `CLM-ARCH-0048` = 150 percent | `CLM-MAT-0111` = -60 percent | 140% | design=ZTA-Q, resource_type=DSP | sample=B1-1 |
+| `CLM-MAT-0111` = -60 percent | `CLM-PROC-0021` = 162 percent | 137% | sample=B1-1 | material=polycrystalline rolled Au, measurement_type=10-times continuous measurement |
+| `CLM-MAT-0111` = -60 percent | `CLM-PROC-0024` = 184 percent | 133% | sample=B1-1 | material=polycrystalline rolled Au |
+| `CLM-ARCH-0083` = 18 percent | `CLM-MAT-0111` = -60 percent | 130% | platform=Arrow, application=OpenVINO GenAI | sample=B1-1 |
+| `CLM-ARCH-0080` = 207 percent | `CLM-MAT-0111` = -60 percent | 129% | platform=Arrow, coherence=CC | sample=B1-1 |
+| `CLM-MAT-0111` = -60 percent | `CLM-PROC-0022` = 215 percent | 128% | sample=B1-1 | material=polycrystalline rolled Au, measurement_type=10-times continuous measurement |
+| `CLM-ARCH-0081` = 16 percent | `CLM-MAT-0111` = -60 percent | 127% | platform=Orin, workload=L2-optimized GEMM, cache_policy=UC | sample=B1-1 |
+| `CLM-ARCH-0082` = 16 percent | `CLM-MAT-0111` = -60 percent | 127% | platform=Arrow, application=OpenCV, variant=Cv+Opt | sample=B1-1 |
+| `CLM-ARCH-0044` = 14.3 percent | `CLM-MAT-0111` = -60 percent | 124% | process=IHP 130 nm, channel_count=8 | sample=B1-1 |
+| `CLM-ARCH-0086` = 14 percent | `CLM-MAT-0111` = -60 percent | 123% | platform=Orin, application=Demand Layering, variant=DL+Opt | sample=B1-1 |
+| `CLM-MAT-0111` = -60 percent | `CLM-PROC-0026` = 13.2 percent | 122% | sample=B1-1 | material=WS2 |
+| `CLM-ARCH-0047` = 12.6 percent | `CLM-MAT-0111` = -60 percent | 121% | design=ZTA-Q, resource_type=register | sample=B1-1 |
+| `CLM-MAT-0111` = -60 percent | `CLM-PROC-0028` = 12.5 percent | 121% | sample=B1-1 | model=ttWS2 simulation model |
+| `CLM-ARCH-0069` = 318 percent | `CLM-MAT-0111` = -60 percent | 119% | baseline=reference Cortex-M0 implementation | sample=B1-1 |
+| `CLM-ARCH-0085` = 11 percent | `CLM-MAT-0111` = -60 percent | 118% | workload=10-token prefill | sample=B1-1 |
+| `CLM-ARCH-0068` = 352 percent | `CLM-MAT-0111` = -60 percent | 117% | baseline=reference Cortex-M0 implementation | sample=B1-1 |
+| `CLM-ARCH-0087` = 8 percent | `CLM-MAT-0111` = -60 percent | 113% | platform=NVIDIA DGX Spark, operation=GPU Read-Alone, cache_policy=WB, coherence=two-way CC | sample=B1-1 |
+| `CLM-MAT-0083` = 530 percent | `CLM-MAT-0111` = -60 percent | 111% | n=40, method=spin-restricted TAO-LDA | sample=B1-1 |
 
-_and 832 more_
+_and 1529 more_
 
 ## `temperature` (63 pair(s))
 

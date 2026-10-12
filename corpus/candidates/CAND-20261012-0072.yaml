@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.13067v1
 doi: null
-title: 'TPCS: A Cycle-Level Simulation Paradigm with Native Execution Semantics for
-  RTL Modeling and Generation'
+title: 'TPCS: A Cycle-Level Simulation Paradigm with Native Execution Semantics for RTL Modeling and Generation'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-09'
@@ -26,6 +25,76 @@ id: CAND-20261012-0072
 harvested_date: '2026-10-12'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-12'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Single-threaded TPCS execution achieves a simulation speed of 11.37 MCycles/s on an isolated
+      RV64GC CPU pipeline executing ten bare-metal CoreMark iterations.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''TPCS Native
+      C++'''
+    quotes:
+    - TPCS Native C++
+    - '11.37'
+    - All implementations execute ten bare-metal CoreMark iterations under the same harness, taking 8,970,967
+      cycles and retiring 3,681,166 instructions, timed from reset completion to program completion.
+    - ten bare-metal CoreMark iterations
+  - statement: Handcrafted SV simulation under Verilator achieves 2.384 MCycles/s on the isolated RV64GC
+      CPU pipeline workload.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Handcrafted
+      SV'''
+    quotes:
+    - Handcrafted SV
+    - '2.384'
+    - All implementations execute ten bare-metal CoreMark iterations under the same harness, taking 8,970,967
+      cycles and retiring 3,681,166 instructions, timed from reset completion to program completion.
+    - ten bare-metal CoreMark iterations
+  - statement: The full pipeline synthesized from TPCS achieves a minimum clock period of 1269.84 ps.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''TPCS Native
+      C++'''
+    quotes:
+    - TPCS Native C++
+    - '1269.84'
+    - RTL quality is evaluated after routing using OpenROAD and ASAP7, reporting minimum clock period
+      and standard-cell area excluding filler cells.
+    - Full Pipeline
+  - statement: The full pipeline synthesized from TPCS occupies a standard-cell area of 19761 um^2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''TPCS Native
+      C++'''
+    quotes:
+    - TPCS Native C++
+    - '19761'
+    - RTL quality is evaluated after routing using OpenROAD and ASAP7, reporting minimum clock period
+      and standard-cell area excluding filler cells.
+    - Full Pipeline
+  - statement: The full pipeline synthesized from Handcrafted SV achieves a minimum clock period of 1310.39
+      ps.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Handcrafted
+      SV'''
+    quotes:
+    - Handcrafted SV
+    - '1310.39'
+    - RTL quality is evaluated after routing using OpenROAD and ASAP7, reporting minimum clock period
+      and standard-cell area excluding filler cells.
+    - Full Pipeline
+  - statement: The full pipeline synthesized from Handcrafted SV occupies a standard-cell area of 20438
+      um^2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Handcrafted
+      SV'''
+    quotes:
+    - Handcrafted SV
+    - '20438'
+    - RTL quality is evaluated after routing using OpenROAD and ASAP7, reporting minimum clock period
+      and standard-cell area excluding filler cells.
+    - Full Pipeline
+  tokens:
+    input: 23479
+    output: 2380
+  fetched_chars: 78736

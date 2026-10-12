@@ -1,0 +1,90 @@
+id: SRC-00130
+title: Characterizing CPU-GPU Memory Sharing over Unified Memory Architecture
+doi: null
+arxiv_id: 2610.13125v1
+url: https://arxiv.org/abs/2610.13125v1
+venue_id: arxiv_api
+authors:
+- name: Jinrong Yang
+  affiliation: null
+  corresponding: null
+- name: Zimeng Wang
+  affiliation: null
+  corresponding: null
+- name: Rong Chen
+  affiliation: null
+  corresponding: null
+- name: Haibo Chen
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-09'
+retrieved_date: '2026-10-12'
+access: full_text
+read_scope: Automated reading. The full PDF text (115,735 characters, 22 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.13125v1 on
+  2026-10-12. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“On Arrow, which lacks an MSC, GPU write time with CC is 2.07×that without CC.”
+
+  “An L2-optimized GEMM workload on Orin degrades by 16% (from 2,680 to 2,250 GFLOPS) on UC memory.”
+
+  “In contrast, selecting WB memory with GPU-side CC (Cv+Opt) bypasses the copy step without degrading
+  write performance, reducing total time by 16%.”
+
+  “We use Arrow to compare CPU UC/WB access costs with GPU-side CC (see Finding 2).”
+
+  “We optimized OpenCV [90] by intercepting its memory allocator to employ unified memory, bypassing the
+  copy.”
+
+  “This eliminates copying without degradingReadperformance. It results in an 18% reduction in end-to-end
+  time.”
+
+  “We use Arrow to examine CPU-read cacheability (see Finding 2).”
+
+  “During LLM inference with OpenVINO GenAI [91], model logits must be transferred to the CPU for sampling
+  after each iteration.”
+
+  “This retains zero-copy benefits while mitigatingWriteoverhead, achieving a 34% reduction in data transfer
+  latency compared to the copy baseline.”
+
+  “On Arrow, an initial optimization using WF and RA with CC (+CC) skipped the copy phase, but as shown
+  in Figure 10 (right), it incurred a 1.5× Writetime penalty because Arrow lacks MSC and thehigh-intensity
+  GPU writeswere bottlenecked by CC (see Finding 3).”
+
+  “Sparse point cloud processing.In 3D spatial data processing, converting sparse point clouds to dense
+  images on the GPU for CPU-side processing [117, 123] often incurs significant transmission costs.”
+
+  “As shown in Figure 12 (left), evaluation on a 10-token prefill workload demonstrates a TTFT reduction
+  of 11%.”
+
+  “Conversely, whilegrid-level barriers(DL+Opt) introduced complexity due to deadlock avoidance, this
+  effectively managed contention, reducing execution time by 14%.”
+
+  “To apply Orin’s contention-control techniques (Figure 8), we optimized Demand Layering [ 53] on Orin,
+  where operator source code can be modified directly.”
+
+  “For the largest streaming transfers, GPU Read-Alone and Write-Alone on WB memory with two-way CC lose
+  about 8% and up to 27% throughput, respectively, relative to their UC counterparts.”
+
+  “We applied this workflow as a post-study extension to NVIDIA DGX Spark [111].”'
+method_summary: No method quote was verified. The method is not established by this record.
+limitations: “Write-write contention is outside these tests; atomic synchronization and contended locks
+  are examined separately (§4.1.4). We assume that the driver and hardware apply the requested page size,
+  cache policy, and coherence settings. The results provide empirical evidence for the tested platforms,
+  configurations, and sharing model, without formal guarantees for general CPU–GPU shared-memory interactions.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 35056
+    output: 3317
+  claims_accepted: 8
+  claims_rejected: 0
+  rejected: []
+corrections: []

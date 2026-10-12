@@ -35,6 +35,96 @@ id: CAND-20261012-0058
 harvested_date: '2026-10-12'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-12'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The hBN-encapsulated graphene double quantum dot features bonding and antibonding states
+      separated by an energy of up to 0.6 meV.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - featuring bonding and antibonding states separated by an energy of up to 0.6 meV, corresponding
+      to a resonance frequency of∼0.145 THz.
+    - Using low-temperature transport spectroscopy in the dark combined with modeling based on nonequilibrium
+      Green’s function formalism, we demonstrate the formation of an artificial molecule, featuring bonding
+      and antibonding states separated b
+    - here, we show that an hBN-encapsulated graphene double quantum dot realizes atwo-levelsystemwithatransitionfrequencyintheTHzspectralrange.
+  - statement: The hBN-encapsulated graphene double quantum dot realizes a two-level system with a resonance
+      frequency of approximately 0.145 THz.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - featuring bonding and antibonding states separated by an energy of up to 0.6 meV, corresponding
+      to a resonance frequency of∼0.145 THz.
+    - Using low-temperature transport spectroscopy in the dark combined with modeling based on nonequilibrium
+      Green’s function formalism, we demonstrate the formation of an artificial molecule, featuring bonding
+      and antibonding states separated b
+    - here, we show that an hBN-encapsulated graphene double quantum dot realizes atwo-levelsystemwithatransitionfrequencyintheTHzspectralrange.
+  - statement: The charging energy of the left quantum dot in the graphene DQD device is 1.83 meV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Themodelyieldstheleverarms,thechargingenergies of left and right QDs,𝐸𝐶𝐿 =1.83meV and𝐸 𝐶𝑅 =2.54meV
+      respectively, as well as their mutual charging energy,𝐸𝑚 =0.41meV (see Supplementary Information
+      for details).
+    - We probe the quantum transport in the hBN-encapsulated graphene DQDdevicesusinglow-temperaturetransportspectroscopy,mountingthedevicesina
+      3Hecryostat with a base temperature of 280 mK and using DC measurement techniques (see Methods for
+      the
+    - thechargingenergies of left and right QDs,𝐸𝐶𝐿 =1.83meV and𝐸 𝐶𝑅 =2.54meV respectively
+  - statement: The charging energy of the right quantum dot in the graphene DQD device is 2.54 meV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Themodelyieldstheleverarms,thechargingenergies of left and right QDs,𝐸𝐶𝐿 =1.83meV and𝐸 𝐶𝑅 =2.54meV
+      respectively, as well as their mutual charging energy,𝐸𝑚 =0.41meV (see Supplementary Information
+      for details).
+    - We probe the quantum transport in the hBN-encapsulated graphene DQDdevicesusinglow-temperaturetransportspectroscopy,mountingthedevicesina
+      3Hecryostat with a base temperature of 280 mK and using DC measurement techniques (see Methods for
+      the
+    - thechargingenergies of left and right QDs,𝐸𝐶𝐿 =1.83meV and𝐸 𝐶𝑅 =2.54meV respectively
+  - statement: The mutual charging energy Em of the two quantum dots in the graphene DQD device is 0.41
+      meV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - as well as their mutual charging energy,𝐸𝑚 =0.41meV (see Supplementary Information for details).
+    - We probe the quantum transport in the hBN-encapsulated graphene DQDdevicesusinglow-temperaturetransportspectroscopy,mountingthedevicesina
+      3Hecryostat with a base temperature of 280 mK and using DC measurement techniques (see Methods for
+      the
+    - as well as their mutual charging energy,𝐸𝑚 =0.41meV
+  - statement: Fitting the transport data using nonequilibrium Green's function formalism yields an interdot
+      coupling energy t of 0.30 ± 0.025 meV.
+    reason: the value 0.3 does not appear in any of the claim's quotes
+    quotes:
+    - The best agreement with theory is obtained for an interdot coupling energy of𝑡=0.30±0.025meV, corresponding
+      to a resonance frequency of the graphene DQD two-level system𝑓res=2𝑡/ℎ=0.145±0.012THz, thereby operating
+      in the THz spectral range.
+    - For a more accurate description of our experimental data, we model the transport through the DQD
+      using nonequilibrium Green’s function based on the equation-of-motion method and the Meir–Wingreen
+      current formula (51).
+    - interdot coupling energy of𝑡=0.30±0.025meV
+  - statement: The resonance frequency extracted from nonequilibrium Green's function fitting for the
+      graphene DQD two-level system is 0.145 ± 0.012 THz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - corresponding to a resonance frequency of the graphene DQD two-level system𝑓res=2𝑡/ℎ=0.145±0.012THz,
+      thereby operating in the THz spectral range.
+    - For a more accurate description of our experimental data, we model the transport through the DQD
+      using nonequilibrium Green’s function based on the equation-of-motion method and the Meir–Wingreen
+      current formula (51).
+    - resonance frequency of the graphene DQD two-level system𝑓res=2𝑡/ℎ=0.145±0.012THz
+  tokens:
+    input: 17394
+    output: 2367
+  fetched_chars: 46281

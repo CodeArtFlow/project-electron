@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-10-11.
+Topic code `PROC`. Last reviewed 2026-10-12.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -111,6 +111,26 @@ Topic code `PROC`. Last reviewed 2026-10-11.
   - `CLM-PROC-0025` · measurement_number 30th measurement · grade B · credibility unknown · measured · as of 2026-10-08
   - sources: SRC-00109
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈13.2 percent** — The mean W-column phase increases by approximately 13.2% from the monolayer to the bilayer region.
+  - `CLM-PROC-0026` · material WS2 · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00129
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0056 — see the open register
+- **4.7 percent** — The mean W-column phase increases by 4.7% from the bilayer to the trilayer region.
+  - `CLM-PROC-0027` · material WS2 · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00129
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0056 — see the open register
+- **≈12.5 percent** — Simulations show an increase of about 12.5% in simulated mean phase value from monolayer to bilayer.
+  - `CLM-PROC-0028` · model ttWS2 simulation model · grade B · credibility unknown · simulated · as of 2026-10-09
+  - sources: SRC-00129
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0057 — see the open register
+- **≈4.4 percent** — Simulations show an increase of about 4.4% in simulated mean phase value from bilayer to trilayer.
+  - `CLM-PROC-0029` · model ttWS2 simulation model · grade B · credibility unknown · simulated · as of 2026-10-09
+  - sources: SRC-00129
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0057 — see the open register
 
 ### temperature
 
@@ -182,9 +202,15 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0044` — relative_deviation: _unexamined; classification pending_
   - claims: CLM-PROC-0023, CLM-PROC-0024
   - missing data: `not yet named`
+- `CFL-0056` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-PROC-0026, CLM-PROC-0027
+  - missing data: `not yet named`
+- `CFL-0057` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-PROC-0028, CLM-PROC-0029
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 25
-- grades: {'B': 25}
-- distinct sources: 7
+- claims: 29
+- grades: {'B': 29}
+- distinct sources: 8

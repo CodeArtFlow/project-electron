@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-11.
+Topic code `ARCH`. Last reviewed 2026-10-12.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -312,6 +312,44 @@ Topic code `ARCH`. Last reviewed 2026-10-11.
   - sources: SRC-00123
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0046, CFL-0047 — see the open register
+- **207 percent** — On Arrow, configuring write-back memory with GPU cache coherence increases GPU write time by 2.07x compared to without GPU cache coherence.
+  - `CLM-ARCH-0080` · platform Arrow, coherence CC · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00130
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0052, CFL-0053, CFL-0054 — see the open register
+- **16 percent** — On Orin, uncached memory reduces L2-optimized GEMM compute performance from 2,680 GFLOPS to 2,250 GFLOPS, representing a 16% degradation.
+  - `CLM-ARCH-0081` · platform Orin, workload L2-optimized GEMM, cache_policy UC · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00130
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0055 — see the open register
+- **16 percent** — On Arrow, applying libumsh to OpenCV image preprocessing reduces total CPU processing and GPU transfer time by 16%.
+  - `CLM-ARCH-0082` · platform Arrow, application OpenCV, variant Cv+Opt · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00130
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0052 — see the open register
+- **18 percent** — On Arrow, applying libumsh to OpenVINO GenAI output sampling reduces end-to-end time by 18%.
+  - `CLM-ARCH-0083` · platform Arrow, application OpenVINO GenAI · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00130
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0053 — see the open register
+- **34 percent** — On Arrow, applying libumsh to sparse point cloud processing achieves a 34% reduction in data transfer latency compared to the copy baseline.
+  - `CLM-ARCH-0084` · platform Arrow, application Sparse point cloud processing · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00130
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0054 — see the open register
+- **11 percent** — On Arrow, applying libumsh to Accelerate for LLM offloading reduces time to first token by 11%.
+  - `CLM-ARCH-0085` · workload 10-token prefill · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00130
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **14 percent** — On Orin, applying libumsh with grid-level barriers to Demand Layering reduces execution time by 14%.
+  - `CLM-ARCH-0086` · platform Orin, application Demand Layering, variant DL+Opt · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00130
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0055 — see the open register
+- **≈8 percent** — On Spark, GPU Read-Alone on write-back memory with two-way cache coherence loses 8% throughput relative to its uncached counterpart.
+  - `CLM-ARCH-0087` · platform NVIDIA DGX Spark, operation GPU Read-Alone, cache_policy WB, coherence two-way CC · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00130
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -364,9 +402,21 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0047` — relative_deviation: _unexamined; classification pending_
   - claims: CLM-ARCH-0078, CLM-ARCH-0079
   - missing data: `not yet named`
+- `CFL-0052` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-ARCH-0080, CLM-ARCH-0082
+  - missing data: `not yet named`
+- `CFL-0053` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-ARCH-0080, CLM-ARCH-0083
+  - missing data: `not yet named`
+- `CFL-0054` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-ARCH-0080, CLM-ARCH-0084
+  - missing data: `not yet named`
+- `CFL-0055` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-ARCH-0081, CLM-ARCH-0086
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 79
-- grades: {'B': 79}
-- distinct sources: 27
+- claims: 87
+- grades: {'B': 87}
+- distinct sources: 28

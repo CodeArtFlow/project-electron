@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.12940v1
 doi: null
-title: 'CacheFlex: Direct Software-Managed Access to Higher-Level Cache for Scalable
-  Vector Support'
+title: 'CacheFlex: Direct Software-Managed Access to Higher-Level Cache for Scalable Vector Support'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-09'
@@ -28,6 +27,79 @@ id: CAND-20261012-0081
 harvested_date: '2026-10-12'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-12'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The total area overhead of CacheFlex relative to the L2 baseline is 2.02%.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - When including the SPM LSQ, the total area overhead relative to the L2 baseline is only 2.02%.
+    - We estimate CacheFlex’s area overhead using post-place-and-route results for a commercial 12 nm
+      FinFET process.
+  - statement: The L2 cache area increases from 414677 µm2 to 415970 µm2, corresponding to a 0.31% increase.
+    reason: the statement contains the number 414677, which none of its quotes contain
+    quotes:
+    - As a result, the L2 cache area increases only from 414,677 µm2 to 415,970 µm2, corresponding to
+      a 0.31% increase.
+    - We estimate CacheFlex’s area overhead using post-place-and-route results for a commercial 12 nm
+      FinFET process.
+  - statement: At VL = 4 (512-bit), CacheFlex achieves a kernel-level geometric-mean speedup of 1.12×.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''At the kernel
+      level, CacheFlex achieves a geometric-mean 1.12× speedup'''
+    quotes:
+    - At the kernel level, CacheFlex achieves a geometric-mean 1.12× speedup with 26% memory-subsystem
+      energy reduction at vector length (VL) = 4 (512-bit), scaling to 1.44× with 40% energy reduction
+      at VL = 16 (2048-bit).
+    - We then model CacheFlex in gem5 and evaluate it (single-core) across a wide range of GEMM dimensions
+      and tiling configurations
+    - at vector length (VL) = 4 (512-bit)
+    - At the kernel level, CacheFlex achieves a geometric-mean 1.12× speedup
+  - statement: At VL = 16 (2048-bit), CacheFlex achieves a kernel-level geometric-mean speedup of 1.44×.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''At the kernel
+      level, CacheFlex achieves a geometric-mean 1.12× speedup'''
+    quotes:
+    - At the kernel level, CacheFlex achieves a geometric-mean 1.12× speedup with 26% memory-subsystem
+      energy reduction at vector length (VL) = 4 (512-bit), scaling to 1.44× with 40% energy reduction
+      at VL = 16 (2048-bit).
+    - We then model CacheFlex in gem5 and evaluate it (single-core) across a wide range of GEMM dimensions
+      and tiling configurations
+    - scaling to 1.44× with 40% energy reduction at VL = 16 (2048-bit).
+    - At the kernel level, CacheFlex achieves a geometric-mean 1.12× speedup
+  - statement: Combining CacheFlex with FlashAttention on full transformer layers delivers up to 1.78×
+      speedup on BERT-Base with sequence length T=4096 and VL = 16.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''On full transformer
+      layers combining CacheFlex with FlashAttention, th'''
+    quotes:
+    - 'On full transformer layers combining CacheFlex with FlashAttention, the design delivers up to 1.78
+      × speedup and 45% memory-subsystem energy savings (BERT-Base, sequence length T=4096 , VL = 16;
+      LLaMA-3.2-1B: 1.64× and 38%).'
+    - 'We then model CacheFlex in gem5 and evaluate it (single-core) across a wide range of GEMM dimensions
+      and tiling configurations, fused kernels (FlashAttention-like [ 5], [ 6]), and full-layer workloads
+      from LLaMA-3.2-1B and BERT-Base in the '
+    - '(BERT-Base, sequence length T=4096 , VL = 16; LLaMA-3.2-1B: 1.64× and 38%).'
+    - sequence length T=4096
+  - statement: Combining CacheFlex with FlashAttention on full transformer layers achieves a 1.64× speedup
+      on LLaMA-3.2-1B.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''On full transformer
+      layers combining CacheFlex with FlashAttention, th'''
+    quotes:
+    - 'On full transformer layers combining CacheFlex with FlashAttention, the design delivers up to 1.78
+      × speedup and 45% memory-subsystem energy savings (BERT-Base, sequence length T=4096 , VL = 16;
+      LLaMA-3.2-1B: 1.64× and 38%).'
+    - 'We then model CacheFlex in gem5 and evaluate it (single-core) across a wide range of GEMM dimensions
+      and tiling configurations, fused kernels (FlashAttention-like [ 5], [ 6]), and full-layer workloads
+      from LLaMA-3.2-1B and BERT-Base in the '
+    - 'LLaMA-3.2-1B: 1.64× and 38%'
+    - combining CacheFlex with FlashAttention
+  tokens:
+    input: 26359
+    output: 2466
+  fetched_chars: 80474

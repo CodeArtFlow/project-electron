@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.12956v1
 doi: null
-title: Vacuum-field-mediated Landau-level reconstruction in a cavity-coupled two-dimensional
-  electron gas
+title: Vacuum-field-mediated Landau-level reconstruction in a cavity-coupled two-dimensional electron
+  gas
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-09'
@@ -23,6 +23,77 @@ id: CAND-20261012-0080
 harvested_date: '2026-10-12'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-12'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The occupied-subspace Chern numbers remain C_nu = nu for nu = 1, 2, 3 throughout 0 <= lambda_cav
+      <= 0.5.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Occupied-subspace Chern numbers remainC ν =νforν= 1,2,3 throughout 0≤λ cav ≤0.5, while the bulk
+      gaps decrease without closing.
+    - Figure 4 gives Cν(λcav) =C ν(0) =ν, ν= 1,2,3, throughout 0≤λ cav ≤0.5.
+    - throughout 0≤λ cav ≤0.5
+    - forν= 1,2,3
+  - statement: At lambda_cav = 0, the minimum direct gaps over the twist grid for the first three gaps
+      are approximately 0.355, 0.320, and 0.285 in lattice units.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - The minimum direct gaps over the twist grid decrease from approximately 0.355, 0.320, and 0.285
+      atλ cav = 0 to 0.270, 0.222, and 0.157 atλ cav = 0.5, in lattice units.
+    - Figure 4 gives Cν(λcav) =C ν(0) =ν, ν= 1,2,3, throughout 0≤λ cav ≤0.5. The minimum direct gaps over
+      the twist grid decrease from approximately 0.355, 0.320, and 0.285 atλ cav = 0 to 0.270, 0.222,
+      and 0.157 atλ cav = 0.5, in lattice units.
+    - atλ cav = 0
+  - statement: At lambda_cav = 0.5, the minimum direct gaps over the twist grid for the first three gaps
+      are 0.270, 0.222, and 0.157 in lattice units.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - The minimum direct gaps over the twist grid decrease from approximately 0.355, 0.320, and 0.285
+      atλ cav = 0 to 0.270, 0.222, and 0.157 atλ cav = 0.5, in lattice units.
+    - Figure 4 gives Cν(λcav) =C ν(0) =ν, ν= 1,2,3, throughout 0≤λ cav ≤0.5. The minimum direct gaps over
+      the twist grid decrease from approximately 0.355, 0.320, and 0.285 atλ cav = 0 to 0.270, 0.222,
+      and 0.157 atλ cav = 0.5, in lattice units.
+    - atλ cav = 0.5
+  - statement: For a strip of width Lx = 10 l_B with lambda_cav = 0.2, the Hall residuals |n - sigma_xy|
+      for E_plot / omega_B = 1, 2, 3 are 0.254, 0.593, and 1.030, respective
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - ForE plot/ωB = 1,2,3 they decrease from 0.254, 0.593, and 1.030 atL x = 10ℓ B to 0.064, 0.148, and
+      0.258 at 40ℓB, passing 0.127, 0.298, and 0.526 at the working widthL x = 20ℓB.
+    - Figure 8 shows that the noninteger Hall plateaus of Fig. 5 atL x = 20ℓ B are a finite-width effect,
+      while the cavity-induced step displacements survive as the strip is widened.
+    - Atλ cav = 0.2 the Hall residuals|n−σ xy|in Fig. 8(b) fall as 1/L x.
+    - atL x = 10ℓ B
+  - statement: For a strip of width Lx = 20 l_B with lambda_cav = 0.2, the Hall residuals |n - sigma_xy|
+      for E_plot / omega_B = 1, 2, 3 are 0.127, 0.298, and 0.526, respective
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - ForE plot/ωB = 1,2,3 they decrease from 0.254, 0.593, and 1.030 atL x = 10ℓ B to 0.064, 0.148, and
+      0.258 at 40ℓB, passing 0.127, 0.298, and 0.526 at the working widthL x = 20ℓB.
+    - Figure 8 shows that the noninteger Hall plateaus of Fig. 5 atL x = 20ℓ B are a finite-width effect,
+      while the cavity-induced step displacements survive as the strip is widened.
+    - Atλ cav = 0.2 the Hall residuals|n−σ xy|in Fig. 8(b) fall as 1/L x.
+    - at the working widthL x = 20ℓB.
+  - statement: For a strip of width Lx = 40 l_B with lambda_cav = 0.2, the Hall residuals |n - sigma_xy|
+      for E_plot / omega_B = 1, 2, 3 are 0.064, 0.148, and 0.258, respective
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - ForE plot/ωB = 1,2,3 they decrease from 0.254, 0.593, and 1.030 atL x = 10ℓ B to 0.064, 0.148, and
+      0.258 at 40ℓB, passing 0.127, 0.298, and 0.526 at the working widthL x = 20ℓB.
+    - Figure 8 shows that the noninteger Hall plateaus of Fig. 5 atL x = 20ℓ B are a finite-width effect,
+      while the cavity-induced step displacements survive as the strip is widened.
+    - Atλ cav = 0.2 the Hall residuals|n−σ xy|in Fig. 8(b) fall as 1/L x.
+    - to 0.064, 0.148, and 0.258 at 40ℓB
+  tokens:
+    input: 11825
+    output: 2428
+  fetched_chars: 32213
