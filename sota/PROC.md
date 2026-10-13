@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-10-12.
+Topic code `PROC`. Last reviewed 2026-10-13.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -48,6 +48,10 @@ Topic code `PROC`. Last reviewed 2026-10-12.
   - `CLM-PROC-0017` · subregion bottom, milling_voltage 2 kV · grade B · credibility unknown · simulated · as of 2026-10-07
   - sources: SRC-00100
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **50 nm** — Experimental vertically oriented wide-trench lines milled through a gold film achieved a linewidth of 50.0±2.7 nm.
+  - `CLM-PROC-0030` · feature wide -trench line · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00133
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### qualitative
 
@@ -211,6 +215,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 29
-- grades: {'B': 29}
-- distinct sources: 8
+- claims: 30
+- grades: {'B': 30}
+- distinct sources: 9

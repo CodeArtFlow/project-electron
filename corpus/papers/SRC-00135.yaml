@@ -1,0 +1,113 @@
+id: SRC-00135
+title: A Hybrid and Hierarchical Ray Tracing Method for Efficient 3D Gaussian Rendering
+doi: null
+arxiv_id: 2610.13498v1
+url: https://arxiv.org/abs/2610.13498v1
+venue_id: arxiv_api
+authors:
+- name: Tiancheng Zhao
+  affiliation: null
+  corresponding: null
+- name: Sixu Li
+  affiliation: null
+  corresponding: null
+- name: Yuzhou Chen
+  affiliation: null
+  corresponding: null
+- name: Hengyu Ding
+  affiliation: null
+  corresponding: null
+- name: Zhiming Pan
+  affiliation: null
+  corresponding: null
+- name: Chaojian Li
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-09'
+retrieved_date: '2026-10-13'
+access: full_text
+read_scope: Automated reading. The full PDF text (53,298 characters, 11 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.13498v1 on
+  2026-10-13. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“In matched multi-view evaluation, H2-Ray decreases average PSNR by only 0.034 dB relative
+  to RaySplats.”
+
+  “In matched multi-view evaluation”'
+method_summary: '“We evaluate H 2-Ray on 8 scenes from Mip-NeRF 360 [2] and Deep Blending [6] (Figure
+  2), combining cycle-level modeling of the modified RT Core with measured RTX A5000 timings for all CUDA
+  work.”
+
+  “The synthesizable C++/SystemC core is translated to RTL with Siemens Catapult HLS [18], then synthesized,
+  placed, and routed at 28 nm, 0.9 V , and 1 GHz with Synopsys Fusion Compiler [20]; Figure 7 shows its
+  layout.”'
+limitations: “GRTX has no public implementation at the time of writing, so we cannot directly compare
+  against it.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 17665
+    output: 2153
+  claims_accepted: 1
+  claims_rejected: 5
+  rejected:
+  - statement: H2-Ray achieves a geometric-mean speedup of 3.77x over RaySplats on the NVIDIA RTX A5000
+      across 8 scenes.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Across 8
+      scenes, H 2-Ray achieves a geometric-mean speedup of 3.77×and'''
+    quotes:
+    - Across 8 scenes, H 2-Ray achieves a geometric-mean speedup of 3.77×and a maximum speedup of 9.26×
+      over RaySplats on the NVIDIA RTX A5000, combining a cycle-accurate model of the modified RT Core
+      with measured CUDA timings.
+    - combining a cycle-accurate model of the modified RT Core with measured CUDA timings.
+    - over RaySplats on the NVIDIA RTX A5000
+    - Across 8 scenes, H 2-Ray achieves a geometric-mean speedup of 3.77×
+  - statement: H2-Ray achieves a maximum speedup of 9.26x over RaySplats on the NVIDIA RTX A5000 across
+      8 scenes.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Across 8
+      scenes, H 2-Ray achieves a geometric-mean speedup of 3.77×and'''
+    quotes:
+    - Across 8 scenes, H 2-Ray achieves a geometric-mean speedup of 3.77×and a maximum speedup of 9.26×
+      over RaySplats on the NVIDIA RTX A5000, combining a cycle-accurate model of the modified RT Core
+      with measured CUDA timings.
+    - combining a cycle-accurate model of the modified RT Core with measured CUDA timings.
+    - over RaySplats on the NVIDIA RTX A5000
+    - Across 8 scenes, H 2-Ray achieves a geometric-mean speedup of 3.77×and a maximum speedup of 9.26×
+  - statement: LB-SBVH achieves a microarchitectural traversal speedup of up to 1.31x over a monolithic
+      BVH.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Load-Balanced
+      Spatial BVH (LB-SBVH) partitions the scene into uniform '''
+    quotes:
+    - Load-Balanced Spatial BVH (LB-SBVH) partitions the scene into uniform grids and uses density-aware
+      representations to convert an imbalanced global workload into balanced local traversal units, achieving
+      a microarchitectural traversal speedu
+    - combining a cycle-accurate model of the modified RT Core with measured CUDA timings.
+    - over a monolithic BVH.
+    - Load-Balanced Spatial BVH (LB-SBVH) partitions the scene into uniform grids
+  - statement: The H2-Ray core has a core area of 0.81 mm2 in a 28 nm process.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Core Area0.81mm
+      2'''
+    quotes:
+    - Core Area0.81mm 2
+    - Technology Node 28 nm
+    - The synthesizable C++/SystemC core is translated to RTL with Siemens Catapult HLS [18], then synthesized,
+      placed, and routed at 28 nm, 0.9 V , and 1 GHz with Synopsys Fusion Compiler [20]; Figure 7 shows
+      its layout.
+  - statement: The single H2-Ray core consumes 24.7 mW of power.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Power24.7mW'''
+    quotes:
+    - Power24.7mW
+    - Power is scaled to the 1 GHz operating point from post-synthesis measurements at 100 MHz, assuming
+      dynamic power scales linearly with clock frequency while leakage power remains constant.
+    - The synthesizable C++/SystemC core is translated to RTL with Siemens Catapult HLS [18], then synthesized,
+      placed, and routed at 28 nm, 0.9 V , and 1 GHz with Synopsys Fusion Compiler [20]; Figure 7 shows
+      its layout.
+    - Power is scaled to the 1 GHz operating point from post-synthesis measurements at 100 MHz
+corrections: []

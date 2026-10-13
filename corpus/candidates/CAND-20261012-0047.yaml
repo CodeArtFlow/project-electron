@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.13368v1
 doi: null
-title: 'Anechoic: Onsager-Corrected Parallel Annealing for Sub-0.1 ms Dense Max-Cut
-  on an FPGA'
+title: 'Anechoic: Onsager-Corrected Parallel Annealing for Sub-0.1 ms Dense Max-Cut on an FPGA'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-09'
@@ -24,6 +23,76 @@ id: CAND-20261012-0047
 harvested_date: '2026-10-12'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-13'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Twelve engines at 250 MHz on an AMD Alveo V80 reach a cut of at least 33,000 on K2000 with
+      99% probability in 0.050 ms primary time-to-solution.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - Twelve engines at 250 MHz on an AMD Alveo V80 reach a cut of at least 33,000 on K2000 with 99% probability
+      in 0.05 ms
+    - 'Table 2: Measured TTS 99 [ms] on the V80 (12 engines, 250 MHz, cut≥ 33,000, 2,052 trials each).'
+    - AMD Alveo V80
+    - 250 MHz
+  - statement: On the AMD Alveo V80, twelve engines running schedule O1 draw 108 W of power.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''With O1,
+      the board draws 108 W'''
+    quotes:
+    - With O1, the board draws 108 W
+    - Board input power is sampled every 0.25 s through the AVED Management Interface driver while all
+      engines run back to back for 150 s, over 99% busy and without clock throttling.
+    - 'Table 5: The same bit-exact engine on three platforms (K2000, cut≥ 33,000): the V80 and the GH200
+      GPU are measured'
+  - statement: The 12-engine system on the AMD Alveo V80 uses 5.4 mJ per solution with schedule O1.
+    reason: the statement contains the number 12, which none of its quotes contain
+    quotes:
+    - Twelve engines at 250 MHz on an AMD Alveo V80 reach a cut of at least 33,000 on K2000 with 99% probability
+      in 0.05 ms, 5.2× faster than the fastest published hardware, at 5.4 mJ per solution
+    - 'Table 5: The same bit-exact engine on three platforms (K2000, cut≥ 33,000): the V80 and the GH200
+      GPU are measured'
+    - With O1, the board draws 108 W, so the energy per solution, power times primary TTS 99, is 5.4 mJ
+    - AMD Alveo V80
+  - statement: An NVIDIA GH200 GPU achieves a primary time-to-solution of 0.114 ms on K2000.
+    reason: the statement contains the number 00, which none of its quotes contain
+    quotes:
+    - Primary TTS99 [ms] 0.050 0.114 0.010
+    - 'Table 5: The same bit-exact engine on three platforms (K2000, cut≥ 33,000): the V80 and the GH200
+      GPU are measured'
+    - GH200
+    - the GPU uses 120 chains for the primary
+  - statement: As a GlobalFoundries 22 nm ASIC routed at 1.25 GHz, twelve engines are estimated to reach
+      a primary time-to-solution of 0.010 ms.
+    reason: the statement contains the number 22, which none of its quotes contain
+    quotes:
+    - twelve engines would reach the target in about 10µs
+    - Primary TTS99 [ms] 0.050 0.114 0.010
+    - and the ASIC is estimated (Section 6.6)
+    - GlobalFoundries 22FDX
+  - statement: One v6 ASIC engine in GlobalFoundries 22FDX routed at 1.25 GHz has a die area of 3.60 mm2.
+    reason: the statement contains the number 22, which none of its quotes contain
+    quotes:
+    - Die area 3.60 mm 2 (2.23×1.62mm)
+    - 'Table 7: ASIC estimate of one v6 engine in GlobalFoundries 22FDX (after routing, typical corner'
+    - GlobalFoundries 22FDX
+    - 1.25 GHz
+  - statement: At 1.25 GHz and 0.80 V, 25°C typical corner, one v6 ASIC engine draws 1,660 mW of power.
+    reason: the statement contains the number 1.25, which none of its quotes contain
+    quotes:
+    - Power (leakage) 1,660 mW (6 mW)
+    - power is estimated from the signal toggle rates recorded in RTL simulation of one K2000 trial with
+      schedule O1.
+    - GlobalFoundries 22FDX
+    - typical corner (0.80 V, 25◦C)
+  tokens:
+    input: 25265
+    output: 2980
+  fetched_chars: 64802

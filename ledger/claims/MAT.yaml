@@ -3166,3 +3166,69 @@ claims:
       unit: percent
     conditions:
       system: 2D square-lattice tight-binding model
+- id: CLM-MAT-0117
+  topic: MAT
+  statement: In the monolayer hBN-separated region, the mean dilation is approximately 0.37%.
+  sources:
+  - SRC-00134
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-09'
+  created: '2026-10-13'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    region: spacer-separated region
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: true
+    as_published:
+      value: 0.37
+      unit: '%'
+    si_base:
+      value: 0.0037
+      unit: dimensionless
+    display:
+      value: 0.37
+      unit: percent
+    conditions:
+      region: spacer-separated region
+- id: CLM-MAT-0118
+  topic: MAT
+  statement: The measured moiré period of the monolayer hBN-separated region is approximately 8.5 nm.
+  sources:
+  - SRC-00134
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-09'
+  created: '2026-10-13'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    region: separated by a single hBN spacer layer
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 8.5
+      unit: 𝑛𝑚
+    si_base:
+      value: 8.5e-09
+      unit: m
+    display:
+      value: 8.499999999999998
+      unit: nm
+    conditions:
+      region: separated by a single hBN spacer layer

@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**3098 pair(s)** as of 2026-10-12.
+**3280 pair(s)** as of 2026-10-13.
 
 ## `current` (7 pair(s))
 
@@ -122,30 +122,42 @@ _and 104 more_
 
 _and 99 more_
 
-## `length_device` (896 pair(s))
+## `length_device` (1024 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-DEV-0053` = 1.61 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | parameter=ts | material=GaN, growth_method=ammonothermal |
 | `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | parameter=ts | substrate_material=glass cover slip, sample_type=flat surface |
+| `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | parameter=ts | chip_thickness=4-mm |
 | `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0004` = 7000 nm | 100% | material=Sb monolayer on SiC(0001) | parameter=signal-ground electrode spacing |
 | `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=Sb monolayer on SiC(0001) | substrate_material=glass cover slip, sample_type=flat surface |
+| `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | material=Sb monolayer on SiC(0001) | chip_thickness=4-mm |
 | `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0004` = 7000 nm | 100% | material=Sb monolayer on SiC(0001) | parameter=signal-ground electrode spacing |
 | `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=Sb monolayer on SiC(0001) | substrate_material=glass cover slip, sample_type=flat surface |
+| `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | material=Sb monolayer on SiC(0001) | chip_thickness=4-mm |
 | `CLM-MAT-0020` = 6.4 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | regime=partially-reconstructed | material=GaN, growth_method=ammonothermal |
 | `CLM-MAT-0020` = 6.4 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | regime=partially-reconstructed | substrate_material=glass cover slip, sample_type=flat surface |
+| `CLM-MAT-0020` = 6.4 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | regime=partially-reconstructed | chip_thickness=4-mm |
 | `CLM-MAT-0023` = 3.5 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | state=X2sA | material=GaN, growth_method=ammonothermal |
 | `CLM-MAT-0023` = 3.5 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | state=X2sA | substrate_material=glass cover slip, sample_type=flat surface |
+| `CLM-MAT-0023` = 3.5 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | state=X2sA | chip_thickness=4-mm |
 | `CLM-MAT-0024` = 6.4 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | state=X2sA | material=GaN, growth_method=ammonothermal |
 | `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | state=X2sA | substrate_material=glass cover slip, sample_type=flat surface |
+| `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | state=X2sA | chip_thickness=4-mm |
 | `CLM-MAT-0029` = 0.5291 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=bulk CeN | substrate_material=glass cover slip, sample_type=flat surface |
+| `CLM-MAT-0029` = 0.5291 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | material=bulk CeN | chip_thickness=4-mm |
+| `CLM-MAT-0037` = 14.6 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | material=TiN, property=GL coherence length | chip_thickness=4-mm |
 | `CLM-MAT-0040` = 0.5 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | fermi_velocity=7×105 ms−1, model=Drude model | material=GaN, growth_method=ammonothermal |
 | `CLM-MAT-0040` = 0.5 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | fermi_velocity=7×105 ms−1, model=Drude model | substrate_material=glass cover slip, sample_type=flat surface |
+| `CLM-MAT-0040` = 0.5 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | fermi_velocity=7×105 ms−1, model=Drude model | chip_thickness=4-mm |
 | `CLM-MAT-0059` = 1000 nm | `CLM-PHOT-0057` = 0.024 nm | 100% | region=pristine zone, temperature=1.5 K | measurement_duration=exceeding 15.5 hours |
 | `CLM-MAT-0063` = 10.7 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | device=D1 | material=GaN, growth_method=ammonothermal |
+| `CLM-MAT-0063` = 10.7 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | device=D1 | chip_thickness=4-mm |
 | `CLM-MAT-0068` = 14.5 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | method=estimated from the carrier density at the SDP | material=GaN, growth_method=ammonothermal |
+| `CLM-MAT-0068` = 14.5 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | method=estimated from the carrier density at the SDP | chip_thickness=4-mm |
 | `CLM-MAT-0076` = 3.4e+05 nm | `CLM-MAT-0097` = 1.915 nm | 100% | material=GaN, growth_method=ammonothermal | feature=alternating stacking of PEDOT and PSS |
 | `CLM-MAT-0076` = 3.4e+05 nm | `CLM-MAT-0098` = 2.172 nm | 100% | material=GaN, growth_method=ammonothermal | feature=alternating stacking of PEDOT and PSS |
+| `CLM-MAT-0076` = 3.4e+05 nm | `CLM-MAT-0118` = 8.5 nm | 100% | material=GaN, growth_method=ammonothermal | region=separated by a single hBN spacer layer |
 | `CLM-MAT-0076` = 3.4e+05 nm | `CLM-PHOT-0007` = 0.23 nm | 100% | material=GaN, growth_method=ammonothermal | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) |
 | `CLM-MAT-0076` = 3.4e+05 nm | `CLM-PHOT-0008` = 0.33 nm | 100% | material=GaN, growth_method=ammonothermal | sample=bare silicon substrate, roughness_type=root mean square roughness (Sq) |
 | `CLM-MAT-0076` = 3.4e+05 nm | `CLM-PHOT-0009` = 1.7 nm | 100% | material=GaN, growth_method=ammonothermal | roughness_type=arithmetic average roughness (Sa), sample=after MoSx film deposition |
@@ -154,20 +166,8 @@ _and 99 more_
 | `CLM-MAT-0076` = 3.4e+05 nm | `CLM-PROC-0003` = 0.068 nm | 100% | material=GaN, growth_method=ammonothermal | defocus=30 nm |
 | `CLM-MAT-0076` = 3.4e+05 nm | `CLM-PROC-0011` = 3.2 nm | 100% | material=GaN, growth_method=ammonothermal | feature=amorphous-layer thickness |
 | `CLM-MAT-0076` = 3.4e+05 nm | `CLM-PROC-0012` = 5 nm | 100% | material=GaN, growth_method=ammonothermal | feature=amorphous-layer thickness |
-| `CLM-MAT-0076` = 3.4e+05 nm | `CLM-PROC-0013` = 7 nm | 100% | material=GaN, growth_method=ammonothermal | feature=amorphous-layer thickness |
-| `CLM-MAT-0081` = 0.98 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=CrSb | substrate_material=glass cover slip, sample_type=flat surface |
-| `CLM-MAT-0097` = 1.915 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | feature=alternating stacking of PEDOT and PSS | substrate_material=glass cover slip, sample_type=flat surface |
-| `CLM-MAT-0098` = 2.172 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | feature=alternating stacking of PEDOT and PSS | substrate_material=glass cover slip, sample_type=flat surface |
-| `CLM-PHOT-0004` = 7 um | `CLM-PHOT-0007` = 0.00023 um | 100% | parameter=signal-ground electrode spacing | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) |
-| `CLM-PHOT-0004` = 7 um | `CLM-PHOT-0008` = 0.00033 um | 100% | parameter=signal-ground electrode spacing | sample=bare silicon substrate, roughness_type=root mean square roughness (Sq) |
-| `CLM-PHOT-0004` = 7 um | `CLM-PHOT-0057` = 2.4e-05 um | 100% | parameter=signal-ground electrode spacing | measurement_duration=exceeding 15.5 hours |
-| `CLM-PHOT-0004` = 7 um | `CLM-PROC-0003` = 6.8e-05 um | 100% | parameter=signal-ground electrode spacing | defocus=30 nm |
-| `CLM-PHOT-0004` = 7 um | `CLM-PROC-0004` = 7.7e-05 um | 100% | parameter=signal-ground electrode spacing | material=HEA-NP, defocus=0 nm |
-| `CLM-PHOT-0007` = 0.00023 um | `CLM-PHOT-0042` = 160 um | 100% | sample=bare silicon substrate, roughness_type=arithmetic average roughness (Sa) | substrate_material=glass cover slip, sample_type=flat surface |
-| `CLM-PHOT-0008` = 0.00033 um | `CLM-PHOT-0042` = 160 um | 100% | sample=bare silicon substrate, roughness_type=root mean square roughness (Sq) | substrate_material=glass cover slip, sample_type=flat surface |
-| `CLM-PHOT-0009` = 0.0017 um | `CLM-PHOT-0042` = 160 um | 100% | roughness_type=arithmetic average roughness (Sa), sample=after MoSx film deposition | substrate_material=glass cover slip, sample_type=flat surface |
 
-_and 856 more_
+_and 984 more_
 
 ## `power` (59 pair(s))
 
@@ -216,7 +216,7 @@ _and 856 more_
 
 _and 19 more_
 
-## `relative_deviation` (1569 pair(s))
+## `relative_deviation` (1623 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -261,7 +261,7 @@ _and 19 more_
 | `CLM-ARCH-0087` = 8 percent | `CLM-MAT-0111` = -60 percent | 113% | platform=NVIDIA DGX Spark, operation=GPU Read-Alone, cache_policy=WB, coherence=two-way CC | sample=B1-1 |
 | `CLM-MAT-0083` = 530 percent | `CLM-MAT-0111` = -60 percent | 111% | n=40, method=spin-restricted TAO-LDA | sample=B1-1 |
 
-_and 1529 more_
+_and 1583 more_
 
 ## `temperature` (63 pair(s))
 

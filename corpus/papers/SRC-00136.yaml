@@ -1,0 +1,84 @@
+id: SRC-00136
+title: UV Fluorescence Sensing of Medical-Chemical-and- Biological Analytes by an AlGaN/Si-on-Sapphire
+  Optoelectronic Chip
+doi: null
+arxiv_id: 2610.13525v1
+url: https://arxiv.org/abs/2610.13525v1
+venue_id: arxiv_api
+authors:
+- name: Richard Soref
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-09'
+retrieved_date: '2026-10-13'
+access: full_text
+read_scope: Automated reading. The full PDF text (42,753 characters, 31 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.13525v1 on
+  2026-10-13. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“After this cone traverses the 4-mm chip body, it produces a laser- spot diameter of 0.4 mm
+  at the sample’s front surface.”
+
+  “Theory indicates that 99.5% reflectivity will be achieved by the 13 -period p-AlGaN DBR, with 99.0%
+  reflectiv ity for the 15 -period n-AlGaN DBR.”'
+method_summary: '“This paper proposes and analyzes a compact fluorescence-photometer lab-on-a-chip that
+  is simpler than a fluorescence spectrometer, and that does not require spectrum reconstruction by a
+  computer.”
+
+  “For each of the eight applications, the SNR was quantified by quantifying the signal properties of
+  the lab chip, and then the noise properties of the chip were quantified.”'
+limitations: “However, in practice, the laser will be operated in a quasi-CW mode because of a thermal
+  -management problem.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 15077
+    output: 2651
+  claims_accepted: 3
+  claims_rejected: 5
+  rejected:
+  - statement: The predicted signal-to-noise ratio (SNR) for Application A is 137,000.
+    reason: the statement contains the number 137, which none of its quotes contain
+    quotes:
+    - Table 2. TIA Noise Floor and Signal -to-Noise Ratio assuming a bandwidth of 1 Hz.
+    - SNR –the Signal-to-noise ratio which is I_signal / i_total .These factors are quantified in Table
+      2.
+    - The SNRs calculated in this Section assume CW operation of the laser.
+    - The SNRs predicted for applications A, B, E, F, G, H , which range from 26,200 to 574,000, are high
+      or even extremely high.
+  - statement: The predicted signal-to-noise ratio for Application B is 26,200.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The SNRs
+      predicted for applications A, B, E, F, G, H , which range fro'''
+    quotes:
+    - The SNRs predicted for applications A, B, E, F, G, H , which range from 26,200 to 574,000, are high
+      or even extremely high.
+    - The SNRs calculated in this Section assume CW operation of the laser.
+    - Table 2. TIA Noise Floor and Signal -to-Noise Ratio assuming a bandwidth of 1 Hz.
+  - statement: The predicted signal-to-noise ratio for Application C is 3,870.
+    reason: the value 3870 does not appear in any of the claim's quotes
+    quotes:
+    - The SNRs for the “water applications” C and D are, by comparison, much weaker; however, at their
+      SNRs of 3,870 and 5,320, respectively, these ratios seem adequate for practical use.
+    - The SNRs calculated in this Section assume CW operation of the laser.
+    - Table 2. TIA Noise Floor and Signal -to-Noise Ratio assuming a bandwidth of 1 Hz.
+  - statement: The predicted signal-to-noise ratio for Application D is 5,320.
+    reason: the value 5320 does not appear in any of the claim's quotes
+    quotes:
+    - The SNRs for the “water applications” C and D are, by comparison, much weaker; however, at their
+      SNRs of 3,870 and 5,320, respectively, these ratios seem adequate for practical use.
+    - The SNRs calculated in this Section assume CW operation of the laser.
+    - Table 2. TIA Noise Floor and Signal -to-Noise Ratio assuming a bandwidth of 1 Hz.
+  - statement: The predicted laser beam cone angle inside the sapphire chip is 3.7 degrees FWHM.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Using laser
+      theory, a cone angle of 3.7 degrees FWHM is predicted for '''
+    quotes:
+    - Using laser theory, a cone angle of 3.7 degrees FWHM is predicted for the Fig. 6-device.
+    - CONE ANGLE IS 3.7 DEGREES FWHM IN SAPPHIRE CHIP
+corrections: []

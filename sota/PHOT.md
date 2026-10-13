@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-12.
+Topic code `PHOT`. Last reviewed 2026-10-13.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -116,6 +116,10 @@ Topic code `PHOT`. Last reviewed 2026-10-12.
   - `CLM-PHOT-0058` · substrate_refractive_index 1.4, background_refractive_index 1.0 · grade B · credibility unknown · simulated · as of 2026-10-08
   - sources: SRC-00111
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **400000 nm** — The predicted laser spot diameter at the top face of the chip is 0.4 mm after traversing the 4-mm chip body.
+  - `CLM-PHOT-0065` · chip_thickness 4-mm · grade B · credibility unknown · simulated · as of 2026-10-09
+  - sources: SRC-00136
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -191,6 +195,14 @@ Topic code `PHOT`. Last reviewed 2026-10-12.
 - The narrowest emission linewidth for reference InAs/GaAs quantum dots with a 95nm GaAs capping layer is 0.04nm under non-resonant laser excitation at cryogenic temperatures.
   - `CLM-PHOT-0047` · excitation 880nm laser · grade B · credibility unknown · measured · as of 2026-10-01
   - sources: SRC-00071
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The predicted reflectivity of the 13-period p-AlGaN DBR is 99.5%.
+  - `CLM-PHOT-0066` · component 13-period p-AlGaN DBR · grade B · credibility unknown · simulated · as of 2026-10-09
+  - sources: SRC-00136
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The predicted reflectivity of the 15-period n-AlGaN DBR is 99.0%.
+  - `CLM-PHOT-0067` · component 15-period n-AlGaN DBR · grade B · credibility unknown · simulated · as of 2026-10-09
+  - sources: SRC-00136
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
@@ -317,6 +329,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 64
-- grades: {'B': 57, 'A': 7}
-- distinct sources: 20
+- claims: 67
+- grades: {'B': 60, 'A': 7}
+- distinct sources: 21

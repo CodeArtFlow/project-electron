@@ -1,0 +1,88 @@
+id: SRC-00133
+title: 'Predicting Nanofabrication Variance: A Conditional Diffusion Model'
+doi: null
+arxiv_id: 2610.13420v1
+url: https://arxiv.org/abs/2610.13420v1
+venue_id: arxiv_api
+authors:
+- name: Wenhan Zhang
+  affiliation: null
+  corresponding: null
+- name: Ben Mills
+  affiliation: null
+  corresponding: null
+- name: Oleksandr Buchnev
+  affiliation: null
+  corresponding: null
+- name: Kevin F. MacDonald
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-09'
+retrieved_date: '2026-10-13'
+access: full_text
+read_scope: Automated reading. The full PDF text (27,261 characters, 8 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.13420v1 on
+  2026-10-13. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The diffusion model accurately and precisely predicts the experimentally achieved wide -trench
+  line linewidths of 50.0±2.7 nm (vertical orientation)”
+
+  “wide -trench line linewidths”
+
+  “experimentally achieved wide -trench line linewidths of 50.0±2.7 nm (vertical orientation)”'
+method_summary: '“Samples were fabricated and imaged using an FEI Helios Nanolab 600 DualBeam FIB/SEM
+  system: The patterns were milled through a 50 nm thermally evaporated gold film supported on a 50 nm
+  silicon nitride membrane, using a fixed ion beam current of 10 pA and a dose of 7 mC/cm².”
+
+  “The conditional diffusion model was trained using a composite loss function: The primary loss was the
+  standard denoising mean squared error, which trains the network to predict the Gaussian noise added
+  to each SEM image.”
+
+  “Linewidths are evaluated for each 256-pixel length of each line (in each of the 18 experimental SEM
+  image patches, and each of the 200 pseudo -SEM images), after binarization with a fixed intensity threshold
+  (of 0.7), as averages over 64 equally spaced points (i.e. at 4 -pixel intervals)”'
+limitations: '“Narrow trenches are omitted from (b) because high defect rates preclude meaningful linewidth
+  measurement”
+
+  “narrow horizontal lines are not fully -formed”
+
+  “the correlation weakens for higher -order modes representing increasingly subtle and less -frequently
+  occurring perturbations.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 8697
+    output: 1507
+  claims_accepted: 1
+  claims_rejected: 2
+  rejected:
+  - statement: Experimental horizontally oriented wide-trench lines milled through a gold film achieved
+      a linewidth of 49.4±2.4 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''and 49.4±2.4
+      nm (horizonal)'''
+    quotes:
+    - and 49.4±2.4 nm (horizonal)
+    - experimentally achieved wide -trench line linewidths of 50.0±2.7 nm (vertical orientation) and 49.4±2.4
+      nm (horizonal)
+    - wide -trench line linewidths
+    - 49.4±2.4 nm (horizonal)
+  - statement: Experimental vertically oriented narrow-trench lines milled through a gold film achieved
+      a linewidth of 30.0±1.8 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - and narrow -trench linewidths of 30.0±1.8 nm (vertical only; narrow horizontal lines are not fully
+      -formed – see below).
+    - experimentally achieved wide -trench line linewidths of 50.0±2.7 nm (vertical orientation) and 49.4±2.4
+      nm (horizonal), and narrow -trench linewidths of 30.0±1.8 nm (vertical only
+    - narrow -trench linewidths
+    - vertical only
+corrections: []

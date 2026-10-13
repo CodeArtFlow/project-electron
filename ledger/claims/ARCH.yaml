@@ -2653,3 +2653,21 @@ claims:
       operation: GPU Read-Alone
       cache_policy: WB
       coherence: two-way CC
+- id: CLM-ARCH-0088
+  topic: ARCH
+  statement: H2-Ray decreases average PSNR by 0.034 dB relative to RaySplats in matched multi-view evaluation.
+  sources:
+  - SRC-00135
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-09'
+  created: '2026-10-13'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    evaluation_mode: matched multi-view evaluation

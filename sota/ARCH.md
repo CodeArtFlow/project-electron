@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-12.
+Topic code `ARCH`. Last reviewed 2026-10-13.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -237,6 +237,10 @@ Topic code `ARCH`. Last reviewed 2026-10-12.
   - `CLM-ARCH-0076` · component synthesized PE · grade B · credibility unknown · simulated · as of 2026-10-08
   - sources: SRC-00115
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- H2-Ray decreases average PSNR by 0.034 dB relative to RaySplats in matched multi-view evaluation.
+  - `CLM-ARCH-0088` · evaluation_mode matched multi-view evaluation · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00135
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -417,6 +421,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 87
-- grades: {'B': 87}
-- distinct sources: 28
+- claims: 88
+- grades: {'B': 88}
+- distinct sources: 29

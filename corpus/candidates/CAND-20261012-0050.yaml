@@ -23,6 +23,26 @@ id: CAND-20261012-0050
 harvested_date: '2026-10-12'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-13'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Frozen-phonon calculations use opposite displacements along each normal mode with a maximum
+      bond-length change of 0.0125 Å.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Frozen-phonon
+      calculations [29] use opposite displacements along each '''
+    quotes:
+    - Frozen-phonon calculations [29] use opposite displacements along each normal mode, with a maximum
+      bond-length change of0.0125Å.
+    - Frozen-phonon calculations [29] use opposite displacements along each normal mode
+  tokens:
+    input: 22390
+    output: 559
+  fetched_chars: 65286

@@ -1988,3 +1988,73 @@ claims:
       unit: percent
     conditions:
       disorder_type: radius disorder
+- id: CLM-PHOT-0065
+  topic: PHOT
+  statement: The predicted laser spot diameter at the top face of the chip is 0.4 mm after traversing
+    the 4-mm chip body.
+  sources:
+  - SRC-00136
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-09'
+  created: '2026-10-13'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    chip_thickness: 4-mm
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.4
+      unit: mm
+    si_base:
+      value: 0.0004
+      unit: m
+    display:
+      value: 400000.0
+      unit: nm
+    conditions:
+      chip_thickness: 4-mm
+- id: CLM-PHOT-0066
+  topic: PHOT
+  statement: The predicted reflectivity of the 13-period p-AlGaN DBR is 99.5%.
+  sources:
+  - SRC-00136
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-09'
+  created: '2026-10-13'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    component: 13-period p-AlGaN DBR
+- id: CLM-PHOT-0067
+  topic: PHOT
+  statement: The predicted reflectivity of the 15-period n-AlGaN DBR is 99.0%.
+  sources:
+  - SRC-00136
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-09'
+  created: '2026-10-13'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    component: 15-period n-AlGaN DBR

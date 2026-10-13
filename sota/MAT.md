@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-12.
+Topic code `MAT`. Last reviewed 2026-10-13.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -179,6 +179,10 @@ Topic code `MAT`. Last reviewed 2026-10-12.
 - **≈2.172 nm** — Upon hydration of PEDOT:PSS, the alternating PEDOT and PSS stacking spacing expands to approximately 21.72 Å.
   - `CLM-MAT-0098` · feature alternating stacking of PEDOT and PSS · grade B · credibility unknown · measured · as of 2026-10-08
   - sources: SRC-00117
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈8.5 nm** — The measured moiré period of the monolayer hBN-separated region is approximately 8.5 nm.
+  - `CLM-MAT-0118` · region separated by a single hBN spacer layer · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00134
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
@@ -440,6 +444,10 @@ Topic code `MAT`. Last reviewed 2026-10-12.
   - `CLM-MAT-0116` · system 2D square-lattice tight-binding model · grade B · credibility unknown · simulated · as of 2026-10-09
   - sources: SRC-00132
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈0.37 percent** — In the monolayer hBN-separated region, the mean dilation is approximately 0.37%.
+  - `CLM-MAT-0117` · region spacer-separated region · grade B · credibility unknown · measured · as of 2026-10-09
+  - sources: SRC-00134
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -558,6 +566,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 116
-- grades: {'B': 116}
-- distinct sources: 44
+- claims: 118
+- grades: {'B': 118}
+- distinct sources: 45
