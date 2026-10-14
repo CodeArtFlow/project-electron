@@ -1541,3 +1541,87 @@ claims:
     verified_quotes: 3
   conditions:
     field_direction: y-direction
+- id: CLM-DEV-0060
+  topic: DEV
+  statement: The two-state synapse under Variant A with phase-based updates achieves a test error of 2.01%
+    on MNIST.
+  sources:
+  - SRC-00142
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-13'
+  created: '2026-10-14'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    dataset: MNIST
+    variant: Variant A
+    update_scheme: phase-based
+- id: CLM-DEV-0061
+  topic: DEV
+  statement: The two-state synapse under Variant B with phase-based updates achieves a test error of 1.98%
+    on MNIST.
+  sources:
+  - SRC-00142
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-13'
+  created: '2026-10-14'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    dataset: MNIST
+    variant: Variant B
+    update_scheme: phase-based
+- id: CLM-DEV-0062
+  topic: DEV
+  statement: The two-state synapse under Variant A with continual updates achieves a test error of 2.24%
+    on MNIST.
+  sources:
+  - SRC-00142
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-13'
+  created: '2026-10-14'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    dataset: MNIST
+    variant: Variant A
+    update_scheme: continual
+- id: CLM-DEV-0063
+  topic: DEV
+  statement: The two-state synapse under Variant B with continual updates achieves a test error of 2.30%
+    on MNIST.
+  sources:
+  - SRC-00142
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-13'
+  created: '2026-10-14'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    dataset: MNIST
+    variant: Variant B
+    update_scheme: continual

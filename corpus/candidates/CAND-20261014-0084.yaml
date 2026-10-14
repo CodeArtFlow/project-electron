@@ -23,6 +23,45 @@ id: CAND-20261014-0084
 harvested_date: '2026-10-14'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-14'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The remote-band bandwidth at θ = 0.67° is simulated to be approximately 3.8 meV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''θ ≈ 0.67◦
+      , BW ≈ 3.8 meV'''
+    quotes:
+    - θ ≈ 0.67◦ , BW ≈ 3.8 meV
+    - The remote-band flat band is most clearly resolved at θ = 0.67 ◦, where the second shell flattens
+      the remote band into a nearly dispersionless band of width∼4 meV within the 50–100 meV window (Fig.
+      13).
+    - θ ≈ 0.67◦
+    - remote band
+  - statement: The second-shell interlayer coupling amplitude ratio w(2)/w is simulated to be approximately
+      0.9995.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''w(2)/w =
+      t(|K+ 2q m|)/t(|K|) ≃1−αγ(|K|d) γ θ2 ≃0.9995'''
+    quotes:
+    - w(2)/w = t(|K+ 2q m|)/t(|K|) ≃1−αγ(|K|d) γ θ2 ≃0.9995
+    - The second-shell matrices are (the Supplemental Material, Sec. S5)
+    - Second-neighbor inter-layer coupling
+  - statement: The box-counting dimension D at φ is calculated to be 0.501.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''fit: D =
+      0.501'''
+    quotes:
+    - 'fit: D = 0.501'
+    - Figure 4 shows the eigenvalue spectrum of the (p+q)×(p+q) Hamiltonian as the rational ratio p/q
+      is swept at fixed q = 150
+    - Box-counting dimension at φ (critical point t ⟂ = 2t)
+    - critical point t ⟂ = 2t
+  tokens:
+    input: 28209
+    output: 1079
+  fetched_chars: 77803

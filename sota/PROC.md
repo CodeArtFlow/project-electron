@@ -1,10 +1,17 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-10-13.
+Topic code `PROC`. Last reviewed 2026-10-14.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
 ## Current position
+
+### energy
+
+- **1.45798e-05 fJ** — The root-mean-square deviation of the formation free energy per formula unit for fluorides is reduced to 0.091 eV.
+  - `CLM-PROC-0031` · error_metric root-mean-square deviation per formula unit · grade B · credibility unknown · simulated · as of 2026-10-13
+  - sources: SRC-00137
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### length device
 
@@ -215,6 +222,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 30
-- grades: {'B': 30}
-- distinct sources: 9
+- claims: 31
+- grades: {'B': 31}
+- distinct sources: 10

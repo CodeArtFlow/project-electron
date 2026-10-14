@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-10-13.
+Topic code `DEV`. Last reviewed 2026-10-14.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -187,6 +187,22 @@ Topic code `DEV`. Last reviewed 2026-10-13.
   - `CLM-DEV-0056` · device_stack HATCN (5 nm)/TAPC (95 nm)/HATCN (5 nm)/TAPC (95 nm)/TCTA (10 nm)/TCTA:B3PyMPM:Ir(dmppy-ph)2tmd (25 nm, 4 wt%, co-evaporation)/B3PyMPM (55 nm)/Liq (1 nm)/Al (100 nm) · grade B · credibility unknown · measured · as of 2026-10-08
   - sources: SRC-00122
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The two-state synapse under Variant A with phase-based updates achieves a test error of 2.01% on MNIST.
+  - `CLM-DEV-0060` · dataset MNIST, variant Variant A, update_scheme phase-based · grade B · credibility unknown · simulated · as of 2026-10-13
+  - sources: SRC-00142
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The two-state synapse under Variant B with phase-based updates achieves a test error of 1.98% on MNIST.
+  - `CLM-DEV-0061` · dataset MNIST, variant Variant B, update_scheme phase-based · grade B · credibility unknown · simulated · as of 2026-10-13
+  - sources: SRC-00142
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The two-state synapse under Variant A with continual updates achieves a test error of 2.24% on MNIST.
+  - `CLM-DEV-0062` · dataset MNIST, variant Variant A, update_scheme continual · grade B · credibility unknown · simulated · as of 2026-10-13
+  - sources: SRC-00142
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The two-state synapse under Variant B with continual updates achieves a test error of 2.30% on MNIST.
+  - `CLM-DEV-0063` · dataset MNIST, variant Variant B, update_scheme continual · grade B · credibility unknown · simulated · as of 2026-10-13
+  - sources: SRC-00142
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -262,6 +278,6 @@ _None._
 
 ## Evidence base
 
-- claims: 56
-- grades: {'B': 56}
-- distinct sources: 22
+- claims: 60
+- grades: {'B': 60}
+- distinct sources: 23

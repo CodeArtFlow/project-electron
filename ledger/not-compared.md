@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**3280 pair(s)** as of 2026-10-13.
+**3509 pair(s)** as of 2026-10-14.
 
 ## `current` (7 pair(s))
 
@@ -18,7 +18,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-DEV-0036` = 0.558 mA | `CLM-DEV-0057` = 30 mA | 98% | temperature=2 K, state=after light irradiation | switching_regime=small switching current |
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0057` = 30 mA | 98% | process_step=current ramp-down | switching_regime=small switching current |
 
-## `energy` (144 pair(s))
+## `energy` (163 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -40,6 +40,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0113` = 2.547e-06 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | method=three-band nearest-neighbor exciton-geometric calculation |
 | `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0114` = 2.083e-08 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | material=WSe2 |
 | `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0115` = 3.557e-07 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | state=3p |
+| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-PROC-0031` = 1.458e-05 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | error_metric=root-mean-square deviation per formula unit |
 | `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0114` = 0.13 meV | 100% | defect_complex=VAl(ON)3 | material=WSe2 |
 | `CLM-MAT-0078` = 4810 meV | `CLM-MAT-0114` = 0.13 meV | 100% | defect_complex=VAl(ON)3, model=DFT | material=WSe2 |
 | `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0114` = 0.13 meV | 100% | synthesis_condition=Nitrogen-rich | material=WSe2 |
@@ -55,15 +56,14 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0115` = 2.22 meV | 100% | synthesis_condition=Nitrogen-rich | state=3p |
 | `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0115` = 2.22 meV | 100% | synthesis_condition=Nitrogen-rich | state=3p |
 | `CLM-MAT-0051` = 1801 meV | `CLM-MAT-0115` = 2.22 meV | 100% | axis=c | state=3p |
+| `CLM-MAT-0114` = 0.13 meV | `CLM-PROC-0031` = 91 meV | 100% | material=WSe2 | error_metric=root-mean-square deviation per formula unit |
 | `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0115` = 2.22 meV | 100% | synthesis_condition=Nitrogen-rich | state=3p |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0114` = 0.13 meV | 100% | mechanism=surface polar phonon, substrate=SiO2 | material=WSe2 |
 | `CLM-MAT-0078` = 4810 meV | `CLM-MAT-0113` = 15.9 meV | 100% | defect_complex=VAl(ON)3, model=DFT | method=three-band nearest-neighbor exciton-geometric calculation |
 | `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0113` = 15.9 meV | 100% | defect_complex=VAl(ON)3 | method=three-band nearest-neighbor exciton-geometric calculation |
 | `CLM-MAT-0049` = 296 meV | `CLM-MAT-0115` = 2.22 meV | 99% | material=LiFePO4 | state=3p |
-| `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0113` = 15.9 meV | 99% | synthesis_condition=Nitrogen-rich | method=three-band nearest-neighbor exciton-geometric calculation |
-| `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0113` = 15.9 meV | 99% | synthesis_condition=Nitrogen-rich | method=three-band nearest-neighbor exciton-geometric calculation |
 
-_and 104 more_
+_and 123 more_
 
 ## `energy_advantage_ratio` (5 pair(s))
 
@@ -169,21 +169,32 @@ _and 99 more_
 
 _and 984 more_
 
-## `power` (59 pair(s))
+## `power` (71 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-ARCH-0007` = 40.4 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | component=1024-MAC Systolic Array, architecture=MiX-INT4g16, array_size=1024-MAC, process=28nm, frequency=500 MHz | benchmark_circuit=BGR, framework=AgenticSizing |
+| `CLM-ARCH-0007` = 40.4 mW | `CLM-PHOT-0068` = 0.00024 mW | 100% | component=1024-MAC Systolic Array, architecture=MiX-INT4g16, array_size=1024-MAC, process=28nm, frequency=500 MHz | operating_point=3 mW total trapping-beam power |
 | `CLM-ARCH-0008` = 31.8 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | architecture=MiX-INT4g16, array_size=512-MAC, process=28nm, frequency=500 MHz | benchmark_circuit=BGR, framework=AgenticSizing |
+| `CLM-ARCH-0008` = 31.8 mW | `CLM-PHOT-0068` = 0.00024 mW | 100% | architecture=MiX-INT4g16, array_size=512-MAC, process=28nm, frequency=500 MHz | operating_point=3 mW total trapping-beam power |
 | `CLM-ARCH-0009` = 26.8 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | architecture=MiX-INT4, array_size=512-MAC, process=28nm, frequency=500 MHz | benchmark_circuit=BGR, framework=AgenticSizing |
+| `CLM-ARCH-0009` = 26.8 mW | `CLM-PHOT-0068` = 0.00024 mW | 100% | architecture=MiX-INT4, array_size=512-MAC, process=28nm, frequency=500 MHz | operating_point=3 mW total trapping-beam power |
 | `CLM-ARCH-0037` = 787 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | component=synthesized SRAM-PIM subsystem | benchmark_circuit=BGR, framework=AgenticSizing |
+| `CLM-ARCH-0037` = 787 mW | `CLM-PHOT-0068` = 0.00024 mW | 100% | component=synthesized SRAM-PIM subsystem | operating_point=3 mW total trapping-beam power |
 | `CLM-ARCH-0038` = 9599 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | component=added compute and buffer logic in HBM-PIM | benchmark_circuit=BGR, framework=AgenticSizing |
+| `CLM-ARCH-0038` = 9599 mW | `CLM-PHOT-0068` = 0.00024 mW | 100% | component=added compute and buffer logic in HBM-PIM | operating_point=3 mW total trapping-beam power |
 | `CLM-ARCH-0071` = 370.1 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | process_node=TSMC 28 nm | benchmark_circuit=BGR, framework=AgenticSizing |
+| `CLM-ARCH-0071` = 370.1 mW | `CLM-PHOT-0068` = 0.00024 mW | 100% | process_node=TSMC 28 nm | operating_point=3 mW total trapping-beam power |
 | `CLM-DEV-0025` = 1 W | `CLM-EDA-0002` = 1.06e-07 W | 100% | gate_bias_vgs=-2.7 V | benchmark_circuit=BGR, framework=AgenticSizing |
+| `CLM-DEV-0025` = 1 W | `CLM-PHOT-0068` = 2.4e-07 W | 100% | gate_bias_vgs=-2.7 V | operating_point=3 mW total trapping-beam power |
 | `CLM-DEV-0030` = 7.76 W | `CLM-EDA-0002` = 1.06e-07 W | 100% | mode=DC-AC conversion, vin=24-V DC input | benchmark_circuit=BGR, framework=AgenticSizing |
+| `CLM-DEV-0030` = 7.76 W | `CLM-PHOT-0068` = 2.4e-07 W | 100% | mode=DC-AC conversion, vin=24-V DC input | operating_point=3 mW total trapping-beam power |
 | `CLM-EDA-0002` = 1.06e-07 W | `CLM-MAT-0106` = 0.002412 W | 100% | benchmark_circuit=BGR, framework=AgenticSizing | wavelength=405 nm |
 | `CLM-EDA-0002` = 1.06e-07 W | `CLM-PHOT-0053` = 0.0217 W | 100% | benchmark_circuit=BGR, framework=AgenticSizing | pump_power=825 mW, device=Ho3+-doped fluoride glass waveguide laser |
 | `CLM-EDA-0002` = 1.06e-07 W | `CLM-PHOT-0054` = 0.1325 W | 100% | benchmark_circuit=BGR, framework=AgenticSizing | device=Ho3+-doped fluoride glass waveguide laser |
+| `CLM-PHOT-0053` = 0.0217 W | `CLM-PHOT-0068` = 2.4e-07 W | 100% | pump_power=825 mW, device=Ho3+-doped fluoride glass waveguide laser | operating_point=3 mW total trapping-beam power |
+| `CLM-PHOT-0054` = 0.1325 W | `CLM-PHOT-0068` = 2.4e-07 W | 100% | device=Ho3+-doped fluoride glass waveguide laser | operating_point=3 mW total trapping-beam power |
+| `CLM-MAT-0106` = 0.002412 W | `CLM-PHOT-0068` = 2.4e-07 W | 100% | wavelength=405 nm | operating_point=3 mW total trapping-beam power |
 | `CLM-ARCH-0038` = 9599 mW | `CLM-MAT-0106` = 2.412 mW | 100% | component=added compute and buffer logic in HBM-PIM | wavelength=405 nm |
 | `CLM-DEV-0030` = 7.76 W | `CLM-MAT-0106` = 0.002412 W | 100% | mode=DC-AC conversion, vin=24-V DC input | wavelength=405 nm |
 | `CLM-ARCH-0038` = 9599 mW | `CLM-PHOT-0053` = 21.7 mW | 100% | component=added compute and buffer logic in HBM-PIM | pump_power=825 mW, device=Ho3+-doped fluoride glass waveguide laser |
@@ -202,21 +213,10 @@ _and 984 more_
 | `CLM-DEV-0025` = 1 W | `CLM-PHOT-0053` = 0.0217 W | 98% | gate_bias_vgs=-2.7 V | pump_power=825 mW, device=Ho3+-doped fluoride glass waveguide laser |
 | `CLM-ARCH-0009` = 26.8 mW | `CLM-DEV-0025` = 1000 mW | 97% | architecture=MiX-INT4, array_size=512-MAC, process=28nm, frequency=500 MHz | gate_bias_vgs=-2.7 V |
 | `CLM-ARCH-0037` = 787 mW | `CLM-PHOT-0053` = 21.7 mW | 97% | component=synthesized SRAM-PIM subsystem | pump_power=825 mW, device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-ARCH-0008` = 31.8 mW | `CLM-DEV-0025` = 1000 mW | 97% | architecture=MiX-INT4g16, array_size=512-MAC, process=28nm, frequency=500 MHz | gate_bias_vgs=-2.7 V |
-| `CLM-ARCH-0009` = 26.8 mW | `CLM-ARCH-0037` = 787 mW | 97% | architecture=MiX-INT4, array_size=512-MAC, process=28nm, frequency=500 MHz | component=synthesized SRAM-PIM subsystem |
-| `CLM-ARCH-0038` = 9599 mW | `CLM-ARCH-0071` = 370.1 mW | 96% | component=added compute and buffer logic in HBM-PIM | process_node=TSMC 28 nm |
-| `CLM-ARCH-0007` = 40.4 mW | `CLM-DEV-0025` = 1000 mW | 96% | component=1024-MAC Systolic Array, architecture=MiX-INT4g16, array_size=1024-MAC, process=28nm, frequency=500 MHz | gate_bias_vgs=-2.7 V |
-| `CLM-ARCH-0008` = 31.8 mW | `CLM-ARCH-0037` = 787 mW | 96% | architecture=MiX-INT4g16, array_size=512-MAC, process=28nm, frequency=500 MHz | component=synthesized SRAM-PIM subsystem |
-| `CLM-ARCH-0071` = 370.1 mW | `CLM-DEV-0030` = 7760 mW | 95% | process_node=TSMC 28 nm | mode=DC-AC conversion, vin=24-V DC input |
-| `CLM-ARCH-0071` = 370.1 mW | `CLM-PHOT-0053` = 21.7 mW | 94% | process_node=TSMC 28 nm | pump_power=825 mW, device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-ARCH-0007` = 40.4 mW | `CLM-MAT-0106` = 2.412 mW | 94% | component=1024-MAC Systolic Array, architecture=MiX-INT4g16, array_size=1024-MAC, process=28nm, frequency=500 MHz | wavelength=405 nm |
-| `CLM-ARCH-0009` = 26.8 mW | `CLM-ARCH-0071` = 370.1 mW | 93% | architecture=MiX-INT4, array_size=512-MAC, process=28nm, frequency=500 MHz | process_node=TSMC 28 nm |
-| `CLM-ARCH-0008` = 31.8 mW | `CLM-MAT-0106` = 2.412 mW | 92% | architecture=MiX-INT4g16, array_size=512-MAC, process=28nm, frequency=500 MHz | wavelength=405 nm |
-| `CLM-ARCH-0008` = 31.8 mW | `CLM-ARCH-0071` = 370.1 mW | 91% | architecture=MiX-INT4g16, array_size=512-MAC, process=28nm, frequency=500 MHz | process_node=TSMC 28 nm |
 
-_and 19 more_
+_and 31 more_
 
-## `relative_deviation` (1623 pair(s))
+## `relative_deviation` (1682 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -237,6 +237,7 @@ _and 19 more_
 | `CLM-ARCH-0040` = 97.93 percent | `CLM-MAT-0111` = -60 percent | 161% | frequency=7 GHz, component=graded magnetic spacer | sample=B1-1 |
 | `CLM-ARCH-0018` = 98 percent | `CLM-MAT-0111` = -60 percent | 161% | concurrency_n_a=48, set_type=hot set | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0116` = 100 percent | 160% | sample=B1-1 | system=2D square-lattice tight-binding model |
+| `CLM-MAT-0111` = -60 percent | `CLM-MAT-0124` = 36 percent | 160% | sample=B1-1 | elastic_constant=C22, rotation_direction=from y to x |
 | `CLM-ARCH-0084` = 34 percent | `CLM-MAT-0111` = -60 percent | 157% | platform=Arrow, application=Sparse point cloud processing | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0064` = 31 percent | 152% | sample=B1-1 | disorder_type=radius disorder |
 | `CLM-ARCH-0053` = 27.3 percent | `CLM-MAT-0111` = -60 percent | 146% | architecture=PEEK with four Rockets upon a BOOM, baseline=unsafe baseline | sample=B1-1 |
@@ -259,11 +260,10 @@ _and 19 more_
 | `CLM-ARCH-0085` = 11 percent | `CLM-MAT-0111` = -60 percent | 118% | workload=10-token prefill | sample=B1-1 |
 | `CLM-ARCH-0068` = 352 percent | `CLM-MAT-0111` = -60 percent | 117% | baseline=reference Cortex-M0 implementation | sample=B1-1 |
 | `CLM-ARCH-0087` = 8 percent | `CLM-MAT-0111` = -60 percent | 113% | platform=NVIDIA DGX Spark, operation=GPU Read-Alone, cache_policy=WB, coherence=two-way CC | sample=B1-1 |
-| `CLM-MAT-0083` = 530 percent | `CLM-MAT-0111` = -60 percent | 111% | n=40, method=spin-restricted TAO-LDA | sample=B1-1 |
 
-_and 1583 more_
+_and 1642 more_
 
-## `temperature` (63 pair(s))
+## `temperature` (91 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -295,20 +295,20 @@ _and 1583 more_
 | `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0003` = -123.1 degC | 121% | temperature_control_system=VAHEAT system | calculation=acoustic phonon scattering |
 | `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0101` = -155.1 degC | 116% | temperature_control_system=VAHEAT system | material=bulk FePS3 crystal, magnetic_field=0.5 T |
 | `CLM-MAT-0053` = 503.1 K | `CLM-MAT-0102` = -81 K | 116% | synthesis_approach=phosphine-free colloidal approach | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region |
+| `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0126` = 1367 degC | 115% | relaxation_temperature=TLIESST | layer=top layer |
 | `CLM-DEV-0035` = -204.1 degC | `CLM-PROC-0001` = 26.85 degC | 113% | relaxation_temperature=TLIESST | thermal_model=Debye model |
 | `CLM-DEV-0017` = 25.35 degC | `CLM-DEV-0035` = -204.1 degC | 112% | temperature_control_system=VAHEAT system | relaxation_temperature=TLIESST |
+| `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0125` = 2227 degC | 109% | relaxation_temperature=TLIESST | layer=bottom layer |
 | `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0102` = -354.1 degC | 107% | temperature_control_system=VAHEAT system | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region |
-| `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0053` = 230 degC | 89% | temperature_control_system=VAHEAT system | synthesis_approach=phosphine-free colloidal approach |
-| `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0092` = -23.15 degC | 89% | relaxation_temperature=TLIESST | pressure=ambient pressure, magnetic_field=0.05 T |
-| `CLM-MAT-0053` = 503.1 K | `CLM-MAT-0101` = 118 K | 77% | synthesis_approach=phosphine-free colloidal approach | material=bulk FePS3 crystal, magnetic_field=0.5 T |
-| `CLM-MAT-0003` = 150 K | `CLM-MAT-0053` = 503.1 K | 70% | calculation=acoustic phonon scattering | synthesis_approach=phosphine-free colloidal approach |
-| `CLM-DEV-0017` = 25.35 degC | `CLM-DEV-0033` = 84.85 degC | 70% | temperature_control_system=VAHEAT system | time_after_cooling_onset=10 s |
-| `CLM-DEV-0017` = 25.35 degC | `CLM-DEV-0032` = 81.85 degC | 69% | temperature_control_system=VAHEAT system | time_after_cooling_onset=10 s |
-| `CLM-DEV-0033` = 84.85 degC | `CLM-PROC-0001` = 26.85 degC | 68% | time_after_cooling_onset=10 s | thermal_model=Debye model |
-| `CLM-MAT-0053` = 503.1 K | `CLM-MAT-0091` = 160 K | 68% | synthesis_approach=phosphine-free colloidal approach | pressure=ambient pressure, magnetic_field=0.05 T |
-| `CLM-DEV-0032` = 81.85 degC | `CLM-PROC-0001` = 26.85 degC | 67% | time_after_cooling_onset=10 s | thermal_model=Debye model |
+| `CLM-MAT-0102` = -81 K | `CLM-MAT-0126` = 1640 K | 105% | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region | layer=top layer |
+| `CLM-MAT-0102` = -81 K | `CLM-MAT-0125` = 2500 K | 103% | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region | layer=bottom layer |
+| `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0125` = 2227 degC | 99% | temperature_control_system=VAHEAT system | layer=bottom layer |
+| `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0126` = 1367 degC | 98% | temperature_control_system=VAHEAT system | layer=top layer |
+| `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0125` = 2227 degC | 96% | time_after_cooling_onset=10 s | layer=bottom layer |
+| `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0125` = 2227 degC | 96% | time_after_cooling_onset=10 s | layer=bottom layer |
+| `CLM-MAT-0101` = 118 K | `CLM-MAT-0125` = 2500 K | 95% | material=bulk FePS3 crystal, magnetic_field=0.5 T | layer=bottom layer |
 
-_and 23 more_
+_and 51 more_
 
 ## `temperature_delta` (3 pair(s))
 
@@ -324,52 +324,52 @@ _and 23 more_
 |---|---|---|---|---|
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0007` = 3100 W/(m*K) | 99% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | temperature=room-temperature, sample_13c_concentration=~0.00024% |
 
-## `time` (173 pair(s))
+## `time` (284 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0020` = 1.4e+07 ns | 100% | device_type=FTJ, architecture=Naive | concurrency_n_a=48, design=our design with tiering, component=end-to-end time-between-tokens (TBT) |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0021` = 2.7e+07 ns | 100% | device_type=FTJ, architecture=Naive | concurrency_n_a=128, design=our design with tiering |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0119` = 0.00029 ns | 100% | device_type=FTJ, architecture=Naive | material=MAPbBr3, measurement_method=Time-resolved optical Kerr-effect measurements |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0120` = 0.0007 ns | 100% | device_type=FTJ, architecture=Naive | measurement_method=Time-resolved optical Kerr-effect measurements |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0123` = 0.00015 ns | 100% | device_type=FTJ, architecture=Naive | measurement_method=Multidimensional coherent spectroscopy |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0127` = 0.0003 ns | 100% | device_type=FTJ, architecture=Naive | feature=XA |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PHOT-0025` = 4e+06 ns | 100% | device_type=FTJ, architecture=Naive | illumination=random speckle illumination |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PHOT-0048` = 8.29e+10 ns | 100% | device_type=FTJ, architecture=Naive | algorithm=DBS, cores=128 cores |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PKG-0002` = 2.499e+08 ns | 100% | device_type=FTJ, architecture=Naive | model=Qwen3-1.7B, channels=16 channels, erase_latency=2000 µs |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PROC-0005` = 5.79e+09 ns | 100% | device_type=FTJ, architecture=Naive | hardware=NVIDIA RTX PRO 6000 Blackwell GPU, implementation_type=full-resolution implementation |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0020` = 1.4e+07 ns | 100% | device_type=FTJ, architecture=Merged | concurrency_n_a=48, design=our design with tiering, component=end-to-end time-between-tokens (TBT) |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0021` = 2.7e+07 ns | 100% | device_type=FTJ, architecture=Merged | concurrency_n_a=128, design=our design with tiering |
+| `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0119` = 0.00029 ns | 100% | device_type=FTJ, architecture=Merged | material=MAPbBr3, measurement_method=Time-resolved optical Kerr-effect measurements |
+| `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0120` = 0.0007 ns | 100% | device_type=FTJ, architecture=Merged | measurement_method=Time-resolved optical Kerr-effect measurements |
+| `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0123` = 0.00015 ns | 100% | device_type=FTJ, architecture=Merged | measurement_method=Multidimensional coherent spectroscopy |
+| `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0127` = 0.0003 ns | 100% | device_type=FTJ, architecture=Merged | feature=XA |
 | `CLM-ARCH-0013` = 162 ns | `CLM-PHOT-0025` = 4e+06 ns | 100% | device_type=FTJ, architecture=Merged | illumination=random speckle illumination |
 | `CLM-ARCH-0013` = 162 ns | `CLM-PHOT-0048` = 8.29e+10 ns | 100% | device_type=FTJ, architecture=Merged | algorithm=DBS, cores=128 cores |
 | `CLM-ARCH-0013` = 162 ns | `CLM-PKG-0002` = 2.499e+08 ns | 100% | device_type=FTJ, architecture=Merged | model=Qwen3-1.7B, channels=16 channels, erase_latency=2000 µs |
 | `CLM-ARCH-0013` = 162 ns | `CLM-PROC-0005` = 5.79e+09 ns | 100% | device_type=FTJ, architecture=Merged | hardware=NVIDIA RTX PRO 6000 Blackwell GPU, implementation_type=full-resolution implementation |
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-ARCH-0020` = 1.4e+07 ns | 100% | device_type=FTJ, architecture=Symmetry | concurrency_n_a=48, design=our design with tiering, component=end-to-end time-between-tokens (TBT) |
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-ARCH-0021` = 2.7e+07 ns | 100% | device_type=FTJ, architecture=Symmetry | concurrency_n_a=128, design=our design with tiering |
+| `CLM-ARCH-0014` = 153.5 ns | `CLM-MAT-0119` = 0.00029 ns | 100% | device_type=FTJ, architecture=Symmetry | material=MAPbBr3, measurement_method=Time-resolved optical Kerr-effect measurements |
+| `CLM-ARCH-0014` = 153.5 ns | `CLM-MAT-0120` = 0.0007 ns | 100% | device_type=FTJ, architecture=Symmetry | measurement_method=Time-resolved optical Kerr-effect measurements |
+| `CLM-ARCH-0014` = 153.5 ns | `CLM-MAT-0123` = 0.00015 ns | 100% | device_type=FTJ, architecture=Symmetry | measurement_method=Multidimensional coherent spectroscopy |
+| `CLM-ARCH-0014` = 153.5 ns | `CLM-MAT-0127` = 0.0003 ns | 100% | device_type=FTJ, architecture=Symmetry | feature=XA |
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-PHOT-0025` = 4e+06 ns | 100% | device_type=FTJ, architecture=Symmetry | illumination=random speckle illumination |
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-PHOT-0048` = 8.29e+10 ns | 100% | device_type=FTJ, architecture=Symmetry | algorithm=DBS, cores=128 cores |
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-PKG-0002` = 2.499e+08 ns | 100% | device_type=FTJ, architecture=Symmetry | model=Qwen3-1.7B, channels=16 channels, erase_latency=2000 µs |
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-PROC-0005` = 5.79e+09 ns | 100% | device_type=FTJ, architecture=Symmetry | hardware=NVIDIA RTX PRO 6000 Blackwell GPU, implementation_type=full-resolution implementation |
 | `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-MAT-0005` = 0.0061 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | material=monolayer MoS2, temperature=300 K, excitation_energy=1.7 eV |
+| `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-MAT-0119` = 0.00029 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | material=MAPbBr3, measurement_method=Time-resolved optical Kerr-effect measurements |
+| `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-MAT-0120` = 0.0007 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | measurement_method=Time-resolved optical Kerr-effect measurements |
+| `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-MAT-0121` = 0.01 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | carrier_density=2.3×1019 cm−3, measurement_method=Femtosecond electron diffraction (FED) |
+| `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-MAT-0122` = 0.027 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | carrier_density=2.3×1019 cm−3, measurement_method=Femtosecond electron diffraction (FED) |
+| `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-MAT-0123` = 0.00015 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | measurement_method=Multidimensional coherent spectroscopy |
+| `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-MAT-0127` = 0.0003 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | feature=XA |
 | `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-PHOT-0048` = 8.29e+10 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | algorithm=DBS, cores=128 cores |
 | `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-PROC-0005` = 5.79e+09 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | hardware=NVIDIA RTX PRO 6000 Blackwell GPU, implementation_type=full-resolution implementation |
 | `CLM-ARCH-0020` = 1.4e+07 ns | `CLM-MAT-0005` = 0.0061 ns | 100% | concurrency_n_a=48, design=our design with tiering, component=end-to-end time-between-tokens (TBT) | material=monolayer MoS2, temperature=300 K, excitation_energy=1.7 eV |
-| `CLM-ARCH-0020` = 1.4e+07 ns | `CLM-MAT-0035` = 200 ns | 100% | concurrency_n_a=48, design=our design with tiering, component=end-to-end time-between-tokens (TBT) | illumination=one sun |
-| `CLM-ARCH-0021` = 2.7e+07 ns | `CLM-DEV-0051` = 1321 ns | 100% | concurrency_n_a=128, design=our design with tiering | frequency=146 MHz |
-| `CLM-ARCH-0021` = 2.7e+07 ns | `CLM-MAT-0005` = 0.0061 ns | 100% | concurrency_n_a=128, design=our design with tiering | material=monolayer MoS2, temperature=300 K, excitation_energy=1.7 eV |
-| `CLM-ARCH-0021` = 2.7e+07 ns | `CLM-MAT-0035` = 200 ns | 100% | concurrency_n_a=128, design=our design with tiering | illumination=one sun |
-| `CLM-ARCH-0021` = 2.7e+07 ns | `CLM-MAT-0036` = 750 ns | 100% | concurrency_n_a=128, design=our design with tiering | illumination=one sun |
-| `CLM-ARCH-0054` = 4000 ns | `CLM-PHOT-0048` = 8.29e+10 ns | 100% | architecture=PEEK | algorithm=DBS, cores=128 cores |
-| `CLM-ARCH-0054` = 4000 ns | `CLM-PKG-0002` = 2.499e+08 ns | 100% | architecture=PEEK | model=Qwen3-1.7B, channels=16 channels, erase_latency=2000 µs |
-| `CLM-ARCH-0054` = 4000 ns | `CLM-PROC-0005` = 5.79e+09 ns | 100% | architecture=PEEK | hardware=NVIDIA RTX PRO 6000 Blackwell GPU, implementation_type=full-resolution implementation |
-| `CLM-ARCH-0074` = 1.66e+07 ns | `CLM-MAT-0005` = 0.0061 ns | 100% | architecture=eight-output accelerator with shared activation delivery | material=monolayer MoS2, temperature=300 K, excitation_energy=1.7 eV |
-| `CLM-ARCH-0074` = 1.66e+07 ns | `CLM-MAT-0035` = 200 ns | 100% | architecture=eight-output accelerator with shared activation delivery | illumination=one sun |
-| `CLM-ARCH-0074` = 1.66e+07 ns | `CLM-MAT-0036` = 750 ns | 100% | architecture=eight-output accelerator with shared activation delivery | illumination=one sun |
-| `CLM-DEV-0021` = 1.504e+06 ns | `CLM-MAT-0005` = 0.0061 ns | 100% | mode=1, character=thermal (mount), operating_point=Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V | material=monolayer MoS2, temperature=300 K, excitation_energy=1.7 eV |
-| `CLM-DEV-0021` = 1.504e+06 ns | `CLM-PHOT-0048` = 8.29e+10 ns | 100% | mode=1, character=thermal (mount), operating_point=Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V | algorithm=DBS, cores=128 cores |
-| `CLM-DEV-0022` = 1.46e+04 ns | `CLM-MAT-0005` = 0.0061 ns | 100% | mode=3, character=trap, linearized, operating_point=Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V | material=monolayer MoS2, temperature=300 K, excitation_energy=1.7 eV |
-| `CLM-DEV-0022` = 1.46e+04 ns | `CLM-PHOT-0048` = 8.29e+10 ns | 100% | mode=3, character=trap, linearized, operating_point=Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V | algorithm=DBS, cores=128 cores |
-| `CLM-DEV-0022` = 1.46e+04 ns | `CLM-PROC-0005` = 5.79e+09 ns | 100% | mode=3, character=trap, linearized, operating_point=Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V | hardware=NVIDIA RTX PRO 6000 Blackwell GPU, implementation_type=full-resolution implementation |
-| `CLM-DEV-0023` = 6010 ns | `CLM-MAT-0005` = 0.0061 ns | 100% | mode=4, character=thermal (channel), operating_point=Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V | material=monolayer MoS2, temperature=300 K, excitation_energy=1.7 eV |
-| `CLM-DEV-0023` = 6010 ns | `CLM-PHOT-0048` = 8.29e+10 ns | 100% | mode=4, character=thermal (channel), operating_point=Memory-on ASM-HEMT at A2 = 0.3 + 0.1j , gate drive 1.5 V | algorithm=DBS, cores=128 cores |
 
-_and 133 more_
+_and 244 more_
 
 ## `voltage` (16 pair(s))
 

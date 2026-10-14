@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-13.
+Topic code `MAT`. Last reviewed 2026-10-14.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -448,6 +448,10 @@ Topic code `MAT`. Last reviewed 2026-10-13.
   - `CLM-MAT-0117` · region spacer-separated region · grade B · credibility unknown · measured · as of 2026-10-09
   - sources: SRC-00134
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **36 percent** — Magnetization rotation from y to x in monolayer NbMnTe2 reduces C22 by 36%.
+  - `CLM-MAT-0124` · elastic_constant C22, rotation_direction from y to x · grade B · credibility unknown · simulated · as of 2026-10-13
+  - sources: SRC-00139
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -485,6 +489,14 @@ Topic code `MAT`. Last reviewed 2026-10-13.
   - sources: SRC-00120
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0049 — see the open register
+- **≈2226.85 degC** — The bottom graphene layer reaches a peak electronic temperature of approximately 2500 K.
+  - `CLM-MAT-0125` · layer bottom layer · grade B · credibility unknown · measured · as of 2026-10-13
+  - sources: SRC-00141
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈1366.85 degC** — The top graphene layer reaches a peak electronic temperature of approximately 1640 K.
+  - `CLM-MAT-0126` · layer top layer · grade B · credibility unknown · measured · as of 2026-10-13
+  - sources: SRC-00141
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### thermal conductivity
 
@@ -510,6 +522,34 @@ Topic code `MAT`. Last reviewed 2026-10-13.
 - **≤ 750 ns** — The upper limit for the interface-dominated recombination lifetime in the OAI-treated solar cell is predicted to be 750 ns.
   - `CLM-MAT-0036` · illumination one sun · grade B · credibility unknown · projected · as of 2026-09-30
   - sources: SRC-00057
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.00029 ns** — Optical Kerr-effect measurements show a nuclear response time constant of 0.29 ps in MAPbBr3 upon carrier injection.
+  - `CLM-MAT-0119` · material MAPbBr3, measurement_method Time-resolved optical Kerr-effect measurements · grade B · credibility unknown · measured · as of 2026-10-13
+  - sources: SRC-00138
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0058 — see the open register
+- **0.0007 ns** — Optical Kerr-effect measurements show a nuclear response time constant of 0.7 ps in CsPbBr3 upon carrier injection.
+  - `CLM-MAT-0120` · measurement_method Time-resolved optical Kerr-effect measurements · grade B · credibility unknown · measured · as of 2026-10-13
+  - sources: SRC-00138
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0058 — see the open register
+- **≈0.01 ns** — In MAPbI3 thin films measured by femtosecond electron diffraction at a carrier density of 2.3×1019 cm−3, Bragg intensities decayed with a time constant of about 10 ps.
+  - `CLM-MAT-0121` · carrier_density 2.3×1019 cm−3, measurement_method Femtosecond electron diffraction (FED) · grade B · credibility unknown · measured · as of 2026-10-13
+  - sources: SRC-00138
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0059 — see the open register
+- **≈0.027 ns** — In MAPbI3 thin films measured by femtosecond electron diffraction at a carrier density of 2.3×1019 cm−3, the pair-distribution function changed with a time constant of about 27 ps.
+  - `CLM-MAT-0122` · carrier_density 2.3×1019 cm−3, measurement_method Femtosecond electron diffraction (FED) · grade B · credibility unknown · measured · as of 2026-10-13
+  - sources: SRC-00138
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0059 — see the open register
+- **0.00015 ns** — Multidimensional coherent spectroscopy on CsPbBr3 quantum dots yields an exponential polaron build-up time of 150 fs.
+  - `CLM-MAT-0123` · measurement_method Multidimensional coherent spectroscopy · grade B · credibility unknown · measured · as of 2026-10-13
+  - sources: SRC-00138
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.0003 ns** — The XA exciton feature exhibits a decay time constant of 300 fs.
+  - `CLM-MAT-0127` · feature XA · grade B · credibility unknown · measured · as of 2026-10-13
+  - sources: SRC-00141
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### voltage
@@ -563,9 +603,15 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0049` — temperature: _unexamined; classification pending_
   - claims: CLM-MAT-0101, CLM-MAT-0102
   - missing data: `not yet named`
+- `CFL-0058` — time: _unexamined; classification pending_
+  - claims: CLM-MAT-0119, CLM-MAT-0120
+  - missing data: `not yet named`
+- `CFL-0059` — time: _unexamined; classification pending_
+  - claims: CLM-MAT-0121, CLM-MAT-0122
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 118
-- grades: {'B': 118}
-- distinct sources: 45
+- claims: 127
+- grades: {'B': 127}
+- distinct sources: 48

@@ -1,0 +1,129 @@
+id: SRC-00140
+title: A Photonic Integrated Light Generation, Control, and Delivery Engine for Creating Cold Atoms
+doi: null
+arxiv_id: 2610.17918v1
+url: https://arxiv.org/abs/2610.17918v1
+venue_id: arxiv_api
+authors:
+- name: Andrei Isichenko
+  affiliation: null
+  corresponding: null
+- name: Calisto Ruiz
+  affiliation: null
+  corresponding: null
+- name: Chuan Zhong
+  affiliation: null
+  corresponding: null
+- name: Nick Montifiore
+  affiliation: null
+  corresponding: null
+- name: Sam J. Harding
+  affiliation: null
+  corresponding: null
+- name: Meiting Song
+  affiliation: null
+  corresponding: null
+- name: Chenghang Liu
+  affiliation: null
+  corresponding: null
+- name: Nitin Indukuri
+  affiliation: null
+  corresponding: null
+- name: Karl D. Nelson
+  affiliation: null
+  corresponding: null
+- name: Daniel J. Blumenthal
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-13'
+retrieved_date: '2026-10-14'
+access: full_text
+read_scope: Automated reading. The full PDF text (94,620 characters, 38 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.17918v1 on
+  2026-10-14. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“and the on-chip intensity servo stabilizes the 3 mW total trapping-beam power to 0.24µW r.m.s.”
+
+  “3 mW total trapping-beam power”'
+method_summary: '“We measure the MOT temperature using time-of-flight (TOF) absorption imaging 45,46.”
+
+  “We measure the MOT atom number using two independent methods: absorption imaging and fluorescence detection
+  47,48.”
+
+  “The absolute frequency stability of the SAS-locked cooling laser is measured against a self-referenced
+  fiber frequency comb (Vescent FFC-100) whose repetition rate is phase-locked to a 1 Hz-linewidth ULE-cavity-stabilized
+  laser (Stable Laser Systems) / Rb-disciplined, GPS-referenced oscillator (SRS-FS725).”'
+limitations: '“The limitations of the present implementation arise from the actuators rather than the
+  photonic architecture. The ring intensity modulator provides 6.3 dB of extinction, but only 2.2 dB can
+  presently be used because tuning its resonance close to the laser frequency introduces resonant back-reflection
+  that injection-locks the cooling laser and pulls it from the SAS lock point (Extended Data Fig. 5).”
+
+  “The thermo-optic actuators also limit the intensity-control bandwidth to approximately 2 kHz, so full
+  extinction during time-of-flight measurements currently requires switching off the cooling-laser current.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 28970
+    output: 2623
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: When locked to a Rb reference over one hour, the cooling-laser frequency fluctuates by
+      12.9 kHz r.m.s.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - locked to a Rb reference, the cooling-laser frequency fluctuates by 12.9 kHz r.m.s. over one hour,
+    - cooling-laser frequency
+    - over one hour
+    - locked to a Rb reference
+  - statement: The 3D-MOT traps up to 1.12 x 10^6 87Rb atoms.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - Using this architecture, we trap up to 1.12×106 87 Rb atoms at a temperature of 350µK,
+    - 87 Rb atoms
+    - temperature of 350µK
+  - statement: The average temperature of the trapped 87Rb atoms in the 3D-MOT is 350 µK.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - Using this architecture, we trap up to 1.12×106 87 Rb atoms at a temperature of 350µK,
+    - 87 Rb atoms
+  - statement: The free-running cooling SIL laser reaches an integral linewidth of 117 kHz.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - The cooling laser reaches an integral linewidth (1/π integration) of 117 kHz and a fundamental linewidth
+      of 314 Hz;
+    - Figure 3e shows... Frequency noise of the free-running cooling (red) and repump (blue) SIL lasers
+    - cooling laser
+    - free-running
+  - statement: The free-running cooling SIL laser achieves a fundamental linewidth of 314 Hz.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - The cooling laser reaches an integral linewidth (1/π integration) of 117 kHz and a fundamental linewidth
+      of 314 Hz;
+    - Figure 3e shows... Frequency noise of the free-running cooling (red) and repump (blue) SIL lasers
+    - cooling laser
+    - free-running
+  - statement: The free-running repump SIL laser achieves an integral linewidth of 103 kHz.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - the repump laser reaches 103 kHz and 942 Hz, respectively.
+    - Figure 3e shows... Frequency noise of the free-running cooling (red) and repump (blue) SIL lasers
+    - repump laser
+    - free-running
+  - statement: The free-running repump SIL laser demonstrates a fundamental linewidth of 942 Hz.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - the repump laser reaches 103 kHz and 942 Hz, respectively.
+    - Figure 3e shows... Frequency noise of the free-running cooling (red) and repump (blue) SIL lasers
+    - repump laser
+    - free-running
+corrections: []

@@ -1024,3 +1024,37 @@ claims:
       unit: nm
     conditions:
       feature: wide -trench line
+- id: CLM-PROC-0031
+  topic: PROC
+  statement: The root-mean-square deviation of the formation free energy per formula unit for fluorides
+    is reduced to 0.091 eV.
+  sources:
+  - SRC-00137
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-13'
+  created: '2026-10-14'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    error_metric: root-mean-square deviation per formula unit
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.091
+      unit: eV
+    si_base:
+      value: 1.45798073694e-20
+      unit: J
+    display:
+      value: 1.4579807369399997e-05
+      unit: fJ
+    conditions:
+      error_metric: root-mean-square deviation per formula unit

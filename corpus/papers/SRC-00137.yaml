@@ -1,0 +1,115 @@
+id: SRC-00137
+title: A grand potential for molten-salt electrochemical phase diagrams from first principles
+doi: null
+arxiv_id: 2610.17611v1
+url: https://arxiv.org/abs/2610.17611v1
+venue_id: arxiv_api
+authors:
+- name: Lorenzo Bastonero
+  affiliation: null
+  corresponding: null
+- name: Lucio Colombi Ciacchi
+  affiliation: null
+  corresponding: null
+- name: Nicola Marzari
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-13'
+retrieved_date: '2026-10-14'
+access: full_text
+read_scope: Automated reading. The full PDF text (88,497 characters, 23 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.17611v1 on
+  2026-10-14. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The shifts are determined by a global least-squares fit,δX = Pi nX,i di/ Pi n2X,i, whered
+  i =G fi,theo −G fi,exp runs over all temperature–compound points.”
+
+  “reducing the root-mean-square deviation per formula unit from 0.567 to 0.091 eV for the fluorides and
+  to 0.060 eV for the chlorides.”
+
+  “root-mean-square deviation per formula unit”'
+method_summary: '“This is achieved by combining density-functional theory (DFT) with vibrational free
+  energies from density-functional perturbation theory (DFPT) [28] and from a first-principle accurate
+  fine-tuned foundation equivariant neural network interatomic potential, which allows us to extend the
+  phase space to an arbitrary number of competing phases.”
+
+  “The DFT calculations are performed using theQuantum ESPRESSOdistribution v7.2 and are automatically
+  managed through the aiida-quantumespresso,aiida-quantumespresso-ph, andaiida-vibroscopy[64] plugins
+  of AiiDA [72, 73].”
+
+  “Phonon calculations with NequIP-OAM-MAD-L were performedusingthefinite-displacementmethodasimplemented
+  inPhonopy[62, 63, 74], using displacement distanceof0.01Å,employingsupercellscommensuratewith the corresponding
+  DFPTq-point grids where available, and otherwise determined by the same∆q= 0.4Å −1 criterion.”'
+limitations: '“The crystal approximation for liquids neglects the entropy of fusion, approximately∆Sfus(T−T
+  m), i.e. about 0.04 eV/atom for aluminum at 1300 K, using the enthalpy of fusion of the NIST-JANAF tables
+  [30].”
+
+  “Equation 13 neglects thermal expansion, electronic entropy, configurational entropy, and anharmonicity.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 30256
+    output: 2754
+  claims_accepted: 1
+  claims_rejected: 5
+  rejected:
+  - statement: At 1000 K, NequIP-OAM-MAD-L reproduces DFPT vibrational free energies with a mean absolute
+      error of 12.7 meV/atom.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''meV/atom'' is not one
+      of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide '
+    quotes:
+    - It supplies only the vibrational term, and reproduces the DFPT vibrational free energies with a
+      mean absolute error of 12.7 meV/atom at 1000 K (see Supplementary Notes and Supplementary Figure
+      3).
+    - 1000 K
+    - NequIP-OAM-MAD-L
+    - DFPT
+  - statement: At 1120 K, the free energy of the decomposition 2Ca14Si19 -> 9Ca3Si4 + CaSi2 is +0.6 meV/atom
+      in favor of Ca14Si19.
+    reason: 'unit conversion refused: energy: could not parse 0.6 ''meV/atom'': ''atom'' is not defined
+      in the unit registry'
+    quotes:
+    - At 1120 K, the free energy of the decomposition 2Ca14Si19 − − →9Ca3Si4 + CaSi2 is only+0.6meV/atom
+      in favor of Ca 14Si19, an order of magnitude below the spread between MLIP and DFPT vibrational
+      free energies.
+    - At 1120 K
+    - 2Ca14Si19 − − →9Ca3Si4 + CaSi2
+  - statement: The root-mean-square deviation of the formation free energy per formula unit for chlorides
+      is reduced to 0.060 eV.
+    reason: the value 0.06 does not appear in any of the claim's quotes
+    quotes:
+    - reducing the root-mean-square deviation per formula unit from 0.567 to 0.091 eV for the fluorides
+      and to 0.060 eV for the chlorides.
+    - for the chlorides
+    - root-mean-square deviation per formula unit
+  - statement: At 500 K, the MLIP harmonic vibrational free energy has a mean absolute error of 5.6 meV/atom
+      compared to DFPT.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''meV/atom'' is not one
+      of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide '
+    quotes:
+    - 'As shown in Fig. 3, the agreement is excellent at the temperatures relevant to molten-salt operation:
+      the mean absolute error is 5.6 meV/atom at 500 K, 12.7 meV/atom at 1000 K and 20.7 meV/atom at 1500
+      K, with root-mean-square errors of 10.'
+    - 500 K
+    - DFPT
+  - statement: At 1500 K, the MLIP harmonic vibrational free energy has a mean absolute error of 20.7
+      meV/atom compared to DFPT.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''meV/atom'' is not one
+      of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide '
+    quotes:
+    - 'As shown in Fig. 3, the agreement is excellent at the temperatures relevant to molten-salt operation:
+      the mean absolute error is 5.6 meV/atom at 500 K, 12.7 meV/atom at 1000 K and 20.7 meV/atom at 1500
+      K, with root-mean-square errors of 10.'
+    - 1500 K
+    - DFPT
+corrections: []

@@ -1,0 +1,57 @@
+id: SRC-00142
+title: Two-State Dynamical Synapses as a Physical Substrate for Equilibrium Propagation
+doi: null
+arxiv_id: 2610.18058v1
+url: https://arxiv.org/abs/2610.18058v1
+venue_id: arxiv_api
+authors:
+- name: Dongshu Liu
+  affiliation: null
+  corresponding: null
+- name: Julie Grollier
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-13'
+retrieved_date: '2026-10-14'
+access: full_text
+read_scope: Automated reading. The full PDF text (59,323 characters, 24 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.18058v1 on
+  2026-10-14. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“With phase-based updates, our method reaches a test error of 2.01% for the energy-coupled
+  form (Variant A) and 1.98% for the hardware-oriented decoupled form (Variant B), compared with 2.00%
+  for standard phase-based EqProp.”
+
+  “We train a multilayer perceptron with a single hidden layer on MNIST.”
+
+  “We train a multilayer perceptron with a single hidden layer on MNIST. These simulations serve three
+  purposes: to verify that the two-timescale synapse preserves the learning behaviour of EqProp, to compare
+  the energy-coupled form (Variant A) with the hardware-oriented decoupled form (Variant B), and to compare
+  the two ways of writing the non-volatile state, phase-based and continual.”
+
+  “With continual updates, Variant A reaches 2.24% and Variant B 2.30%, compared with 2.28% for continual
+  EqProp.”'
+method_summary: '“We train a multilayer perceptron with a single hidden layer on MNIST.”
+
+  “During our simulation, we follow the prototypical discrete-time version proposed by Ernoult et al.
+  (2019) to simulate the neural states dynamics.”'
+limitations: “The test error with continual updates is 0.2% to 0.3% higher than with phase-based updates,
+  as also observed by Ernoult et al. (2020). A likely explanation is that the learning rate must be kept
+  small during the nudged phase to preserve the accuracy of the gradient estimate, which slows convergence
+  and can limit the final performance.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 18102
+    output: 1953
+  claims_accepted: 4
+  claims_rejected: 0
+  rejected: []
+corrections: []

@@ -29,6 +29,77 @@ id: CAND-20261014-0095
 harvested_date: '2026-10-14'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-14'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At a chemical potential of 0 eV, the T-even EEE coefficient α_yx for 2D MnSe2 is -0.030
+      μB/V^2.
+    reason: the value -0.03 does not appear in any of the claim's quotes
+    quotes:
+    - Atµ= 0 (−0.2) eV, we findα yx =−0.030 (0.117)µ B/V 2
+    - First-principles calculations predict pronounced effects in the centrosymmetric ferromagnet MnSe2
+    - 2D MnSe2
+    - µ= 0 (−0.2) eV
+  - statement: At a chemical potential of -0.2 eV, the T-even EEE coefficient α_yx for 2D MnSe2 is 0.117
+      μB/V^2.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''µ B/V 2'' is not one
+      of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a'
+    quotes:
+    - Atµ= 0 (−0.2) eV, we findα yx =−0.030 (0.117)µ B/V 2
+    - First-principles calculations predict pronounced effects in the centrosymmetric ferromagnet MnSe2
+    - 2D MnSe2
+    - µ= 0 (−0.2) eV
+  - statement: At a chemical potential of 0 eV, the T-odd EEE coefficient α_xx for 2D MnSe2 is -0.009
+      μB/V^2.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - andα xx =−0.009 (−0.099)µ B/V 2
+    - First-principles calculations predict pronounced effects in the centrosymmetric ferromagnet MnSe2
+    - 2D MnSe2
+    - Atµ= 0 (−0.2) eV
+  - statement: At a chemical potential of -0.2 eV, the T-odd EEE coefficient α_xx for 2D MnSe2 is -0.099
+      μB/V^2.
+    reason: the statement contains the number 0.2, which none of its quotes contain
+    quotes:
+    - andα xx =−0.009 (−0.099)µ B/V 2
+    - First-principles calculations predict pronounced effects in the centrosymmetric ferromagnet MnSe2
+    - 2D MnSe2
+    - Atµ= 0 (−0.2) eV
+  - statement: At a chemical potential of 0 eV, an out-of-plane electric field of 0.02 eV/Å, and an in-plane
+      driving field Ex of 10^5 V/m, the total spin polarization in 2D Mn
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - which give a total spin polarization δs= 0.63×10 −6 (3.07×10 −6)µ B/nm2 forE z = 0.02 eV/˚A and
+      a driving fieldE x = 10 5 V/m
+    - First-principles calculations predict pronounced effects in the centrosymmetric ferromagnet MnSe2
+    - 2D MnSe2
+    - Atµ= 0 (−0.2) eV
+  - statement: At a chemical potential of -0.2 eV, an out-of-plane electric field of 0.02 eV/Å, and an
+      in-plane driving field Ex of 10^5 V/m, the total spin polarization in 2D
+    reason: the statement contains the number 0.2, which none of its quotes contain
+    quotes:
+    - which give a total spin polarization δs= 0.63×10 −6 (3.07×10 −6)µ B/nm2 forE z = 0.02 eV/˚A and
+      a driving fieldE x = 10 5 V/m
+    - First-principles calculations predict pronounced effects in the centrosymmetric ferromagnet MnSe2
+    - 2D MnSe2
+    - Atµ= 0 (−0.2) eV
+  - statement: A small band gap of about 0.13 meV opens at the X points in monolayer SnSe.
+    reason: the value 0.00013 does not appear in any of the claim's quotes
+    quotes:
+    - a small band gap of about 0.13 meV opens at the X points
+    - Fig. 3(b) shows the calculated band structure of monolayer SnSe.
+    - monolayer SnSe
+    - at the X points
+  tokens:
+    input: 11991
+    output: 2940
+  fetched_chars: 29727

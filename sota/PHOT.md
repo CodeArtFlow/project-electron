@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-13.
+Topic code `PHOT`. Last reviewed 2026-10-14.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -133,6 +133,10 @@ Topic code `PHOT`. Last reviewed 2026-10-13.
   - sources: SRC-00098
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0028 — see the open register
+- **2.4e-07 W** — The on-chip intensity servo stabilizes the 3 mW total trapping-beam power to 0.24 µW r.m.s.
+  - `CLM-PHOT-0068` · operating_point 3 mW total trapping-beam power · grade B · credibility unknown · measured · as of 2026-10-13
+  - sources: SRC-00140
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### qualitative
 
@@ -329,6 +333,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 67
-- grades: {'B': 60, 'A': 7}
-- distinct sources: 21
+- claims: 68
+- grades: {'B': 61, 'A': 7}
+- distinct sources: 22

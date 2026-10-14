@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.17955v1
 doi: null
-title: Thermal stability and structural ordering of thick Co$_2$MnAl films grown on
-  MgO and Si substrates
+title: Thermal stability and structural ordering of thick Co$_2$MnAl films grown on MgO and Si substrates
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-13'
@@ -27,6 +26,65 @@ id: CAND-20261014-0066
 harvested_date: '2026-10-14'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-14'
+  reason: the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Co2MnAl films grown on Si at room temperature exhibit an average roughness Ra of 0.25 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Ra (nm),
+      Si 0.25'''
+    quotes:
+    - Ra (nm), Si 0.25
+    - The average roughness was measured by averaging in squares of 4x4 μm2 and the results are shown
+      in Table 1.
+    - Ra (nm), Si
+    - Temperature (ºC) R.T.
+  - statement: Co2MnAl films grown on MgO at room temperature exhibit an average roughness Ra of 0.35
+      nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Ra (nm),
+      MgO 0.35'''
+    quotes:
+    - Ra (nm), MgO 0.35
+    - The average roughness was measured by averaging in squares of 4x4 μm2 and the results are shown
+      in Table 1.
+    - Ra (nm), MgO
+    - Temperature (ºC) R.T.
+  - statement: Co2MnAl thin films grown on Si up to 400 °C exhibit a resistivity of approximately 260
+      μΩ·cm.
+    reason: 'unit conversion refused: resistance: cannot convert 260.0 μ Ω·cm to ohm - Cannot convert
+      from ''micron * ohm * centimeter'' ([length] ** 4 * [mass] / [time] ** 3 / [current] ** 2) to ''ohm'
+    quotes:
+    - In the case of the samples grown on Si, the resistivity is around 260 μ Ω·cm for the samples grown
+      up to 400ºC.
+    - Resistivity was measured using a custom -built measurement setup implementing the Van der Pauw method
+      with spring- loaded probe pins.
+  - statement: Co2MnAl thin films grown on Si at 500 °C exhibit a resistivity of approximately 310 μΩ·cm.
+    reason: 'unit conversion refused: resistance: cannot convert 310.0 μ Ω·cm to ohm - Cannot convert
+      from ''micron * ohm * centimeter'' ([length] ** 4 * [mass] / [time] ** 3 / [current] ** 2) to ''ohm'
+    quotes:
+    - There is a jump in the resistivity at 500ºC, with a value around 310 μ Ω·cm afterwards
+    - Resistivity was measured using a custom -built measurement setup implementing the Van der Pauw method
+      with spring- loaded probe pins.
+    - In the case of the samples grown on Si, the resistivity is around 260 μ Ω·cm for the samples grown
+      up to 400ºC.
+  - statement: Co2MnAl thin films exhibit an experimental saturation magnetization of approximately 600
+      emu/cm³.
+    reason: 'unit conversion refused: power_density: could not parse 600.0 ''emu/cm³'': ''emu'' is not
+      defined in the unit registry'
+    quotes:
+    - Despite the Mn -poor stoichiometry (Co2.25Mn0.7Al1.05), the films maintain a robust saturation magnetization
+      of ~600 emu/cm³
+    - The experimental saturation magnetization of approximately 600 emu/cm 3 observed in our films
+    - Hysteresis loops at room temperature were measured using a Vibrating Sample Magnetometer (VSM model
+      9500, LDJ).
+  tokens:
+    input: 13521
+    output: 1728
+  fetched_chars: 42090

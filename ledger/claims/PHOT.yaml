@@ -2058,3 +2058,36 @@ claims:
     verified_quotes: 3
   conditions:
     component: 15-period n-AlGaN DBR
+- id: CLM-PHOT-0068
+  topic: PHOT
+  statement: The on-chip intensity servo stabilizes the 3 mW total trapping-beam power to 0.24 µW r.m.s.
+  sources:
+  - SRC-00140
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-13'
+  created: '2026-10-14'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    operating_point: 3 mW total trapping-beam power
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.24
+      unit: µW
+    si_base:
+      value: 2.4e-07
+      unit: W
+    display:
+      value: 2.4e-07
+      unit: W
+    conditions:
+      operating_point: 3 mW total trapping-beam power

@@ -31,6 +31,56 @@ id: CAND-20261014-0064
 harvested_date: '2026-10-14'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-14'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The optimized device with an IrMn/FeGaB/Cu/FeGaB magnetic multilayer exhibits a center
+      frequency f0 of 2.89 GHz.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - In our optimized device, the SAW wavelength λSA W is 1.4 µm, with a center frequency f0 of 2.89
+      GHz.
+    - Figure 3(a,b) Experimental results of the SAW transmission attenuation (a) ∆S 21 and (b) ∆S 12 as
+      functions of the field H and its in-plane angle ϕ H.
+    - the magnetic structure consists of IrMn(10)/FeGaB(20)/ Cu(4)/FeGaB(10) (in nanometers) sandwiched
+      by two Cu layers
+  - statement: The measured zero-field normalized isolation of the optimized IrMn/FeGaB/Cu/FeGaB multilayer
+      device reaches 21 dB/mm.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''dB/mm'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a u'
+    quotes:
+    - The normalized isolation |∆S±/Lfilm| at zero field reaches 21 dB/mm, where L film = 150 µm denotes
+      the length of magnetic film along the SAW propagation direction.
+    - Figure 1(c) presents a representative field-dependent magnetoacoustic response measured at ϕ H =
+      60 ◦.
+    - where L film = 150 µm denotes the length of magnetic film along the SAW propagation direction.
+  - statement: Numerical optimization predicts a zero-field normalized isolation of 91 dB/mm for the exchange-biased
+      bilayer structure.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - The maximum calculated zero-field |∆S ±/Lfilm| reaches 91 dB/mm at ϕ EB = 13.25 ◦ and t L = 24.6
+      nm, as marked by the star in Fig. 4(c).
+    - Figure 4(c) maps the calculated zero-field normalized isolation|∆S±/Lfilm|as functions of exchange-bias
+      angleϕEB and lower-FeGaB thicknesst L.
+  - statement: The optimized structure achieves a calculated magnetoacoustic insertion loss of 0.6 dB
+      around zero field.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''dB'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - Around zero field, ∆S 12 exhibits pronounced resonant attenuation, whereas ∆S 21 remains weak, yielding
+      large nonreciprocity with low magnetoacoustic insertion loss of only 0.6 dB.
+    - Figure 4(d) shows the corresponding optimized response at ϕ H = 60◦.
+  tokens:
+    input: 11000
+    output: 1897
+  fetched_chars: 31128
