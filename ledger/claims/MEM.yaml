@@ -406,3 +406,195 @@ claims:
       unit: percent
     conditions:
       technology: Third-Generation Sequencing (TGS)
+- id: CLM-MEM-0015
+  topic: MEM
+  statement: For N=32 neurons, the single-array iteration time for the unenhanced Scan-select algorithm
+    is 8079 ns.
+  sources:
+  - SRC-00143
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    selection_algorithm: unenhanced Scan-select
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 8079.0
+      unit: ns
+    si_base:
+      value: 8.079e-06
+      unit: s
+    display:
+      value: 8078.999999999999
+      unit: ns
+    conditions:
+      selection_algorithm: unenhanced Scan-select
+- id: CLM-MEM-0016
+  topic: MEM
+  statement: For N=512 neurons, the single-array iteration time for the unenhanced Scan-select algorithm
+    is 168423 ns.
+  sources:
+  - SRC-00143
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    selection_algorithm: unenhanced Scan-select
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 168423.0
+      unit: ns
+    si_base:
+      value: 0.000168423
+      unit: s
+    display:
+      value: 168423.0
+      unit: ns
+    conditions:
+      selection_algorithm: unenhanced Scan-select
+- id: CLM-MEM-0017
+  topic: MEM
+  statement: The normalized hardware cost of uniform Diff-W/Diff-A encoding is 3.06.
+  sources:
+  - SRC-00147
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    encoding: Diff-W/Diff-A
+- id: CLM-MEM-0018
+  topic: MEM
+  statement: ARPES measurement performed at a temperature of 100 K reveals a flat band splitting of approximately
+    0.5 eV in YCl.
+  sources:
+  - SRC-00148
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    temperature: 100 K
+    measurement_method: ARPES
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: true
+    as_published:
+      value: 0.5
+      unit: eV
+    si_base:
+      value: 8.01088317e-20
+      unit: J
+    display:
+      value: 8.010883169999998e-05
+      unit: fJ
+    conditions:
+      temperature: 100 K
+      measurement_method: ARPES
+- id: CLM-MEM-0019
+  topic: MEM
+  statement: Random phase approximation analysis predicts a critical Curie temperature of approximately
+    1042 K for the 2D ferromagnetic order in realistic multi-orbital YCl model.
+  sources:
+  - SRC-00148
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    model: realistic multi-orbital model of YCl
+    onsite_hubbard_parameter: 0.9 eV
+  quantity:
+    quantity: temperature
+    bound: exact
+    approximate: true
+    as_published:
+      value: 1042.0
+      unit: K
+    si_base:
+      value: 1042.0
+      unit: K
+    display:
+      value: 768.85
+      unit: degC
+    conditions:
+      model: realistic multi-orbital model of YCl
+      onsite_hubbard_parameter: 0.9 eV
+- id: CLM-MEM-0020
+  topic: MEM
+  statement: Self-consistent Hartree-Fock calculation yields a critical Curie temperature of approximately
+    1075 K at filling number N = 3.8.
+  sources:
+  - SRC-00148
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    method: Hartree-Fock approximation
+  quantity:
+    quantity: temperature
+    bound: exact
+    approximate: true
+    as_published:
+      value: 1075.0
+      unit: K
+    si_base:
+      value: 1075.0
+      unit: K
+    display:
+      value: 801.85
+      unit: degC
+    conditions:
+      method: Hartree-Fock approximation

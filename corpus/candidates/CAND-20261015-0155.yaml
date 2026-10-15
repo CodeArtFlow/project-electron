@@ -24,6 +24,99 @@ id: CAND-20261015-0155
 harvested_date: '2026-10-15'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-15'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At zero GPa and 500 K, the low-density amorphous phase of a-Si has a mean coordination
+      number of 4.0.
+    reason: the statement contains the number 500, which none of its quotes contain
+    quotes:
+    - The mean values are 4.0 and 7.4 for LDA and VHDA, respectively.
+    - The a-Si models contained 100,000 atoms, corresponding to a cubic simulation box of ≈13 nm at ambient
+      conditions.
+    - LDA
+    - 500 K
+  - statement: At 13 GPa and 500 K, the very-high-density amorphous phase of a-Si has a mean coordination
+      number of 7.4.
+    reason: the statement contains the number 13, which none of its quotes contain
+    quotes:
+    - The mean values are 4.0 and 7.4 for LDA and VHDA, respectively.
+    - The a-Si models contained 100,000 atoms, corresponding to a cubic simulation box of ≈13 nm at ambient
+      conditions.
+    - VHDA
+    - 500 K
+  - statement: The coordination number cutoff distance used for determining nearest neighbors in the a-Si
+      models is 2.85 Å.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Based on
+      g(r), the coordination number Z of a given atom can be determ'''
+    quotes:
+    - Based on g(r), the coordination number Z of a given atom can be determined by counting its neighboring
+      atoms up to the first minimum distance of g(r), which is chosen to be 2.85 Å for the studied a-Si
+      models.
+    - The a-Si models contained 100,000 atoms, corresponding to a cubic simulation box of ≈13 nm at ambient
+      conditions.
+    - a-Si models
+  - statement: The extracted exponential decay length of r'|g(r')-1| for the low-density amorphous silicon
+      phase is approximately 4.5 Å.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The length
+      scales ξ extracted from the exponential fits are ξ ≈ 4.5 an'''
+    quotes:
+    - The length scales ξ extracted from the exponential fits are ξ ≈ 4.5 and 6.2 Å for LDA and VHDA,
+      respectively
+    - The a-Si models contained 100,000 atoms, corresponding to a cubic simulation box of ≈13 nm at ambient
+      conditions.
+    - LDA
+  - statement: The extracted exponential decay length of r'|g(r')-1| for the very-high-density amorphous
+      silicon phase is approximately 6.2 Å.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The length
+      scales ξ extracted from the exponential fits are ξ ≈ 4.5 an'''
+    quotes:
+    - The length scales ξ extracted from the exponential fits are ξ ≈ 4.5 and 6.2 Å for LDA and VHDA,
+      respectively
+    - The a-Si models contained 100,000 atoms, corresponding to a cubic simulation box of ≈13 nm at ambient
+      conditions.
+    - VHDA
+  - statement: The pseudo-period lr in the ring center-to-center radial distribution function for the
+      low-density amorphous silicon phase is approximately 3.0 Å.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The arrows
+      indicate the presence of a pseudo-period of lr ≈ 3.0 Å and '''
+    quotes:
+    - The arrows indicate the presence of a pseudo-period of lr ≈ 3.0 Å and ≈ 2.2 Å for LDA and VHDA,
+      respectively.
+    - The a-Si models contained 100,000 atoms, corresponding to a cubic simulation box of ≈13 nm at ambient
+      conditions.
+    - LDA
+  - statement: The pseudo-period lr in the ring center-to-center radial distribution function for the
+      very-high-density amorphous silicon phase is approximately 2.2 Å.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The arrows
+      indicate the presence of a pseudo-period of lr ≈ 3.0 Å and '''
+    quotes:
+    - The arrows indicate the presence of a pseudo-period of lr ≈ 3.0 Å and ≈ 2.2 Å for LDA and VHDA,
+      respectively.
+    - The a-Si models contained 100,000 atoms, corresponding to a cubic simulation box of ≈13 nm at ambient
+      conditions.
+    - VHDA
+  - statement: At 100 K and 20 GPa, the trapped very-high-density amorphous silicon phase achieves a specific
+      volume of 12.8 Å^3/atom.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''This implies
+      that the system is trapped in a very-high-density amorpho'''
+    quotes:
+    - This implies that the system is trapped in a very-high-density amorphous phase (with a specific
+      volume of 12.8 Å3/atom at 20 GPa), having a density that is even higher than the crystalline counterpart
+      with a simple hexagonal structure.
+    - In order to discern the influence of temperature on the results, we performed additional pressurization
+      runs for the a-Si model at 100 K using the same compression rate as at 500 K.
+    - at 100 K
+    - 20 GPa
+  tokens:
+    input: 16329
+    output: 2212
+  fetched_chars: 55702

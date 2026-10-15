@@ -1,0 +1,92 @@
+id: SRC-00147
+title: 'CAFE: Conducting-Cell-Aware Adaptive Differential Encoding for Robust DNN Inference in FeFET-Based
+  Compute-in-Memory'
+doi: null
+arxiv_id: 2610.19697v1
+url: https://arxiv.org/abs/2610.19697v1
+venue_id: arxiv_api
+authors:
+- name: Wenshuai Yao
+  affiliation: null
+  corresponding: null
+- name: Wenyong Zhou
+  affiliation: null
+  corresponding: null
+- name: Hanyong Shao
+  affiliation: null
+  corresponding: null
+- name: Zhiyuan Ning
+  affiliation: null
+  corresponding: null
+- name: Ru Huang
+  affiliation: null
+  corresponding: null
+- name: Kechao Tang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-14'
+retrieved_date: '2026-10-15'
+access: full_text
+read_scope: Automated reading. The full PDF text (42,823 characters, 9 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.19697v1 on
+  2026-10-15. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“compared with 3.06×for uniform full-differential encoding.”
+
+  “Diff-W/Diff-A 88.66 88.67±0.04 88.65±0.07 88.40±0.09 87.21±0.18 0.035 3.06”
+
+  “We evaluate CAFE with a behavioral bit-sliced CIM simulator adapted from NeuroSim [9], extended to
+  support signed Transformer bit-plane encodings and the conducting-cell-level FeFET error flow in Fig.
+  3, including bit-plane decomposition, on-current variation, bit-line accumulation, ADC quantization,
+  and shift-and-add reconstruction.”'
+method_summary: “We evaluate CAFE with a behavioral bit-sliced CIM simulator adapted from NeuroSim [9],
+  extended to support signed Transformer bit-plane encodings and the conducting-cell-level FeFET error
+  flow in Fig. 3, including bit-plane decomposition, on-current variation, bit-line accumulation, ADC
+  quantization, and shift-and-add reconstruction.”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16324
+    output: 1733
+  claims_accepted: 1
+  claims_rejected: 3
+  rejected:
+  - statement: Diff-W/Diff-A encoding reduces normalized C2AM to 0.035, representing a 28.6x reduction
+      relative to the baseline.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''By directly
+      suppressing sign-extension-induced conducting activity, Di'''
+    quotes:
+    - Across representative vision and language workloads, CAFE reduces C 2AM by up to 28.6×
+    - By directly suppressing sign-extension-induced conducting activity, Diff-W/Diff-A achieves the lowest
+      normalized C 2AM (0.035, a 28.6×reduction) and the best strong-variation accuracy.
+    - We evaluate CAFE with a behavioral bit-sliced CIM simulator adapted from NeuroSim [9], extended
+      to support signed Transformer bit-plane encodings and the conducting-cell-level FeFET error flow
+      in Fig. 3, including bit-plane decomposition, o
+  - statement: At a FeFET variation strength of sigma = 0.20, CAFE adaptive deployment achieves an accuracy
+      of 87.07% at a normalized cost of 2.784 and normalized C2AM of 0.07
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''0.20 87.07
+      0.0755 2.784CAFE'''
+    quotes:
+    - 0.20 87.07 0.0755 2.784CAFE
+    - We evaluate CAFE with a behavioral bit-sliced CIM simulator adapted from NeuroSim [9], extended
+      to support signed Transformer bit-plane encodings and the conducting-cell-level FeFET error flow
+      in Fig. 3, including bit-plane decomposition, o
+  - statement: Diff-W/Diff-A achieves a top-1 accuracy of 75.5% on ViT-Tiny on ImageNet at sigma = 0.10
+      variation strength.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''75.5'''
+    quotes:
+    - '75.5'
+    - 0.1 75.5
+    - ViT-Tiny @ ImageNet
+    - We evaluate CAFE with a behavioral bit-sliced CIM simulator adapted from NeuroSim [9], extended
+      to support signed Transformer bit-plane encodings and the conducting-cell-level FeFET error flow
+      in Fig. 3, including bit-plane decomposition, o
+corrections: []

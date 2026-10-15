@@ -1625,3 +1625,53 @@ claims:
     dataset: MNIST
     variant: Variant B
     update_scheme: continual
+- id: CLM-DEV-0064
+  topic: DEV
+  statement: Measurements were performed in a vacuum chamber at an ambient pressure of 8×10−6 mbar.
+  sources:
+  - SRC-00149
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    temperature: room temperature
+  quantity:
+    quantity: pressure
+    bound: exact
+    approximate: false
+    as_published:
+      value: 8.0e-06
+      unit: mbar
+    si_base:
+      value: 0.0007999999999999999
+      unit: Pa
+    display:
+      value: 0.006000493461633357
+      unit: mTorr
+    conditions:
+      temperature: room temperature
+- id: CLM-DEV-0065
+  topic: DEV
+  statement: For linear amplification in the CP-OFDM ambiguity function analysis, the sidelobe floor reaches
+    -88 dB.
+  sources:
+  - SRC-00151
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2

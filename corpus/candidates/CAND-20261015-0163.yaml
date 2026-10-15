@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.19412v1
 doi: null
-title: Strong field confinement in air and enhanced optical Kerr nonlinearity of high-index
-  star-shaped pore membrane metasurfaces
+title: Strong field confinement in air and enhanced optical Kerr nonlinearity of high-index star-shaped
+  pore membrane metasurfaces
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-14'
@@ -22,6 +22,39 @@ id: CAND-20261015-0163
 harvested_date: '2026-10-15'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-15'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The maximum value of the effective second-order refractive index enhancement factor n2eff/n2bulk
+      reaches approximately 1700 for a GaP metasurface with lattice c
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The maximum
+      value of n2eﬀ/n2bulk for a = 250 nm, r = 122 nm reaches ap'''
+    quotes:
+    - The maximum value of n2eﬀ/n2bulk for a = 250 nm, r = 122 nm reaches approximately 1700, which has
+      not been reported previously for GaP metasurfaces14,15.
+    - In this work, the OKE in high-index membrane metasurfaces patterned with star-shaped pores is investigated
+      numerically.
+    - a = 250 nm
+    - r = 122 nm
+  - statement: The maximum electric energy density in the rays of the star-shaped nanoholes exceeds that
+      in Mie voids by a factor of seven.
+    reason: the value 7 does not appear in any of the claim's quotes
+    quotes:
+    - The maximum electric energy density in these rays exceeds that in the Mie voids 18 by a factor of
+      seven.
+    - In this work, the OKE in high-index membrane metasurfaces patterned with star-shaped pores is investigated
+      numerically.
+    - The simulations are performed at the wavelength λ = 532 nm.
+    - The thickness of the free-standing GaP membrane in vacuum is fixed at h = 100 nm.
+  tokens:
+    input: 9125
+    output: 1089
+  fetched_chars: 22736

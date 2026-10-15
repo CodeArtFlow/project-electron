@@ -2091,3 +2091,167 @@ claims:
       unit: W
     conditions:
       operating_point: 3 mW total trapping-beam power
+- id: CLM-PHOT-0069
+  topic: PHOT
+  statement: The third-harmonic generation signal achieves a polarization ellipse rotation of 23.3° within
+    approximately 600 fs.
+  sources:
+  - SRC-00144
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    wavelength: 407 nm
+    process: third-harmonic generation
+    time: ~600 fs
+- id: CLM-PHOT-0070
+  topic: PHOT
+  statement: The second-harmonic generation signal achieves a polarization ellipse rotation of 55.0° at
+    610 nm within approximately 600 fs.
+  sources:
+  - SRC-00144
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    wavelength: 610 nm
+    process: second-harmonic generation
+    time: ~600 fs
+- id: CLM-PHOT-0071
+  topic: PHOT
+  statement: The ENZ wavelength of the ITO film appears at 1240 nm.
+  sources:
+  - SRC-00144
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    material: ITO
+  quantity:
+    quantity: wavelength
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1240.0
+      unit: nm
+    si_base:
+      value: 1.24e-06
+      unit: m
+    display:
+      value: 1.24
+      unit: um
+    conditions:
+      material: ITO
+- id: CLM-PHOT-0072
+  topic: PHOT
+  statement: The x-polarized coupled resonance is centered at 1220 nm in the transmittance spectrum.
+  sources:
+  - SRC-00144
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    polarization: x-polarization
+    incident_angle: normal incidence
+  quantity:
+    quantity: wavelength
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1220.0
+      unit: nm
+    si_base:
+      value: 1.2200000000000002e-06
+      unit: m
+    display:
+      value: 1.2200000000000002
+      unit: um
+    conditions:
+      polarization: x-polarization
+      incident_angle: normal incidence
+- id: CLM-PHOT-0073
+  topic: PHOT
+  statement: The effective relaxation process of the hot electrons in the ITO film takes approximately
+    400 fs.
+  sources:
+  - SRC-00144
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    material: ITO film
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: true
+    as_published:
+      value: 400.0
+      unit: fs
+    si_base:
+      value: 4.0e-13
+      unit: s
+    display:
+      value: 0.00039999999999999996
+      unit: ns
+    conditions:
+      material: ITO film
+- id: CLM-PHOT-0074
+  topic: PHOT
+  statement: Under a pump fluence of 7.2 mJ/cm², the transmitted fundamental wave signal light exhibits
+    a polarization ellipse rotation of 32.9° within approximately 600 fs.
+  sources:
+  - SRC-00144
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    pump_fluence: 7.2 mJ/cm 2
+    incident_azimuthal_angle: 45°

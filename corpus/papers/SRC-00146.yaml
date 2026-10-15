@@ -1,0 +1,104 @@
+id: SRC-00146
+title: 'ESL-former: Event Sparse Linear Transformer for FPGA-Accelerated Malware Detection'
+doi: null
+arxiv_id: 2610.19665v1
+url: https://arxiv.org/abs/2610.19665v1
+venue_id: arxiv_api
+authors:
+- name: Jun Yang
+  affiliation: null
+  corresponding: null
+- name: Yumeng Cao
+  affiliation: null
+  corresponding: null
+- name: Yingxuan Xiao
+  affiliation: null
+  corresponding: null
+- name: Changhong Li
+  affiliation: null
+  corresponding: null
+- name: Shangru Zhou
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-14'
+retrieved_date: '2026-10-15'
+access: full_text
+read_scope: Automated reading. The full PDF text (69,345 characters, 19 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.19665v1 on
+  2026-10-15. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Q8 93.00 95.91 891.3 14019 124 15.0”
+
+  “baseline Linear Transformer model”
+
+  “All data points are measured on the PYNQ-Z2 board.”'
+method_summary: “All data points are measured on the PYNQ-Z2 board.”
+limitations: “Although Q8 further reduces the latency, its accuracy decreases to 93.00%, indicating a
+  larger performance degradation compared with Q16.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 27308
+    output: 2695
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: Under Q32 quantization on the baseline Linear Transformer model, the kernel latency is
+      3166.3 µs.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - Q32 95.00 97.11 3166.3 23431 184 9.0
+    - All data points are measured on the PYNQ-Z2 board.
+    - baseline Linear Transformer model
+  - statement: Under Q16 quantization on the baseline Linear Transformer model, the kernel latency is
+      1146.1 µs.
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - Q16 94.13 96.53 1146.1 13701 149 9.5
+    - All data points are measured on the PYNQ-Z2 board.
+    - baseline Linear Transformer model
+  - statement: For the K16/D16 configuration on PYNQ-Z2, the PL Kernel latency is 1146.1 µs and total
+      end-to-end latency is 26272.0 µs.
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - PL Kernel 1146.1 1008.9 904.4 868.4
+    - T otal E2E 26272.0 21964.1 20295.5 19486.9
+    - All data points are measured on the PYNQ-Z2 board.
+    - Stage K16/D16 K14/D13 K13/D10 K11/D8
+  - statement: For the K14/D13 configuration on PYNQ-Z2, the total end-to-end latency is 21964.1 µs.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - T otal E2E 26272.0 21964.1 20295.5 19486.9
+    - All data points are measured on the PYNQ-Z2 board.
+    - Stage K16/D16 K14/D13 K13/D10 K11/D8
+    - T able 2.PYNQ-Z2 end-to-end latency breakdown (µs).
+  - statement: For the K13/D10 configuration on PYNQ-Z2, the total end-to-end latency is 20295.5 µs.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - T otal E2E 26272.0 21964.1 20295.5 19486.9
+    - All data points are measured on the PYNQ-Z2 board.
+    - Stage K16/D16 K14/D13 K13/D10 K11/D8
+    - T able 2.PYNQ-Z2 end-to-end latency breakdown (µs).
+  - statement: For the K11/D8 configuration on PYNQ-Z2, the total end-to-end latency is 19486.9 µs.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - T otal E2E 26272.0 21964.1 20295.5 19486.9
+    - All data points are measured on the PYNQ-Z2 board.
+    - Stage K16/D16 K14/D13 K13/D10 K11/D8
+    - T able 2.PYNQ-Z2 end-to-end latency breakdown (µs).
+  - statement: ESL-former achieves up to 41.56× end-to-end speedup over ViT4Mal.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Experimental
+      results show that ESL-former achieves up to 41.56×end-to-'''
+    quotes:
+    - Experimental results show that ESL-former achieves up to 41.56×end-to-end speedup over ViT4Mal while
+      maintaining competitive detection performance.
+    - over ViT4Mal
+    - ESL-former achieves up to 41.56×end-to-end speedup over ViT4Mal
+corrections: []

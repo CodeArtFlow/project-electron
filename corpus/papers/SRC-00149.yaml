@@ -1,0 +1,93 @@
+id: SRC-00149
+title: Nonadiabatic dynamics under slow parametric modulation in nonlinear graphene resonators
+doi: null
+arxiv_id: 2610.19816v1
+url: https://arxiv.org/abs/2610.19816v1
+venue_id: arxiv_api
+authors:
+- name: Chris F. D. Wattjes
+  affiliation: null
+  corresponding: null
+- name: Haemin Lim
+  affiliation: null
+  corresponding: null
+- name: Pierpaolo Belardinelli
+  affiliation: null
+  corresponding: null
+- name: John E. Sader
+  affiliation: null
+  corresponding: null
+- name: Peter G. Steeneken
+  affiliation: null
+  corresponding: null
+- name: Farbod Alijani
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-14'
+retrieved_date: '2026-10-15'
+access: full_text
+read_scope: Automated reading. The full PDF text (76,836 characters, 38 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.19816v1 on
+  2026-10-15. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: “All measurements are performed at room temperature in a vacuum chamber at a pressure of 8×10
+  −6 mbar.”
+method_summary: '“The membrane displacement is measured interferometrically using a red laser (632.8 nm),
+  while a blue laser (488 nm) provides optothermal actuation [21].”
+
+  “All measurements are performed at room temperature in a vacuum chamber at a pressure of 8×10 −6 mbar.”'
+limitations: “This reduction in modulation efficiency at higher frequencies is likely associated with
+  the finite thermal response time of the membrane and therefore sets an upper frequency limit for effective
+  optothermal parametric modulation.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 23766
+    output: 1854
+  claims_accepted: 1
+  claims_rejected: 4
+  rejected:
+  - statement: Without slow modulation and at a drive voltage VF = 1.5 V, the fundamental resonance frequency
+      of the chemical vapour deposition bilayer graphene drum is 10.765
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Nonlinear frequency response (green) and Duffing fit (solid lines) without slow modulation, yieldingf
+      0 = 10.765±0.019 MHz, Γ = 4.90±0.81×10 4 s−1, γ= 2.15±0.61×10 17 V−2s−2, andF F = 1.65±0.38×10 11
+      Vs−2 atV F = 1.5 V.
+    - chemical vapour deposition (CVD) bilayer graphene membrane suspended over a circular cavity with
+      a diameter of 8µm and a depth of 420 nm etched into a SiO 2 layer.
+    - atV F = 1.5 V.
+    - without slow modulation
+  - statement: The quality factor of the fundamental resonance of the graphene drum is 708.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''Q'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - The fundamental resonance frequency of the drum is found to be f0 = 10.8 MHz and its quality factor
+      isQ= 708.
+  - statement: The graphene drum exhibits an intrinsic relaxation rate of 15.6 kHz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - well below or well above its intrinsic relaxation ratef relax = 2Γ2π = 15.6 kHz, and compare the
+      resulting responses.
+    - intrinsic relaxation ratef relax = 2Γ2π = 15.6 kHz
+  - statement: The largest Lyapunov exponent extracted from the experimental time series under slow modulation
+      at fS = 20 kHz and VS = 0.32 V is 10752 s^-1.
+    reason: the statement contains the number 0.32, which none of its quotes contain
+    quotes:
+    - A linear fit, indicated by the black line, is placed on the initial increase to obtain a largest
+      Lyapunov exponent (LLE)λ max = 10 752 s−1.
+    - slow modulation with frequencyf S = 20 kHz
+    - amplitudeV S = 0.32 V
+corrections: []

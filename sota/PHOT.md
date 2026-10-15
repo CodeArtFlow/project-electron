@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-14.
+Topic code `PHOT`. Last reviewed 2026-10-15.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -208,6 +208,18 @@ Topic code `PHOT`. Last reviewed 2026-10-14.
   - `CLM-PHOT-0067` · component 15-period n-AlGaN DBR · grade B · credibility unknown · simulated · as of 2026-10-09
   - sources: SRC-00136
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The third-harmonic generation signal achieves a polarization ellipse rotation of 23.3° within approximately 600 fs.
+  - `CLM-PHOT-0069` · wavelength 407 nm, process third-harmonic generation, time ~600 fs · grade B · credibility unknown · measured · as of 2026-10-14
+  - sources: SRC-00144
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The second-harmonic generation signal achieves a polarization ellipse rotation of 55.0° at 610 nm within approximately 600 fs.
+  - `CLM-PHOT-0070` · wavelength 610 nm, process second-harmonic generation, time ~600 fs · grade B · credibility unknown · measured · as of 2026-10-14
+  - sources: SRC-00144
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- Under a pump fluence of 7.2 mJ/cm², the transmitted fundamental wave signal light exhibits a polarization ellipse rotation of 32.9° within approximately 600 fs.
+  - `CLM-PHOT-0074` · pump_fluence 7.2 mJ/cm 2, incident_azimuthal_angle 45° · grade B · credibility unknown · measured · as of 2026-10-14
+  - sources: SRC-00144
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -275,6 +287,10 @@ Topic code `PHOT`. Last reviewed 2026-10-14.
   - `CLM-PHOT-0048` · algorithm DBS, cores 128 cores · grade B · credibility unknown · simulated · as of 2026-10-02
   - sources: SRC-00078
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈0.0004 ns** — The effective relaxation process of the hot electrons in the ITO film takes approximately 400 fs.
+  - `CLM-PHOT-0073` · material ITO film · grade B · credibility unknown · simulated · as of 2026-10-14
+  - sources: SRC-00144
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### wavelength
 
@@ -310,6 +326,14 @@ Topic code `PHOT`. Last reviewed 2026-10-14.
   - `CLM-PHOT-0055` · device Ho3+-doped fluoride glass waveguide laser · grade B · credibility unknown · measured · as of 2026-10-07
   - sources: SRC-00098
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1.24 um** — The ENZ wavelength of the ITO film appears at 1240 nm.
+  - `CLM-PHOT-0071` · material ITO · grade B · credibility unknown · measured · as of 2026-10-14
+  - sources: SRC-00144
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1.22 um** — The x-polarized coupled resonance is centered at 1220 nm in the transmittance spectrum.
+  - `CLM-PHOT-0072` · polarization x-polarization, incident_angle normal incidence · grade B · credibility unknown · measured · as of 2026-10-14
+  - sources: SRC-00144
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -333,6 +357,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 68
-- grades: {'B': 61, 'A': 7}
-- distinct sources: 22
+- claims: 74
+- grades: {'B': 67, 'A': 7}
+- distinct sources: 23

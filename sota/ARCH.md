@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-14.
+Topic code `ARCH`. Last reviewed 2026-10-15.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -354,6 +354,14 @@ Topic code `ARCH`. Last reviewed 2026-10-14.
   - `CLM-ARCH-0087` · platform NVIDIA DGX Spark, operation GPU Read-Alone, cache_policy WB, coherence two-way CC · grade B · credibility unknown · measured · as of 2026-10-09
   - sources: SRC-00130
   - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- **64.2 percent** — OBSR reduces incremental MX area overhead by 64.2% versus a naive MX implementation baseline.
+  - `CLM-ARCH-0089` · baseline naive MX implementation baseline, technique OBSR · grade B · credibility unknown · simulated · as of 2026-10-14
+  - sources: SRC-00145
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **67.5 percent** — OBSR reduces the incremental MX energy overhead by 67.5% compared to a naive MX implementation baseline.
+  - `CLM-ARCH-0090` · baseline naive MX implementation baseline, technique OBSR · grade B · credibility unknown · simulated · as of 2026-10-14
+  - sources: SRC-00145
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -389,6 +397,10 @@ Topic code `ARCH`. Last reviewed 2026-10-14.
   - `CLM-ARCH-0074` · architecture eight-output accelerator with shared activation delivery · grade B · credibility unknown · projected · as of 2026-10-08
   - sources: SRC-00115
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **891300 ns** — Under Q8 quantization on the baseline Linear Transformer model, the kernel latency is 891.3 µs.
+  - `CLM-ARCH-0091` · quantization Q8, model baseline Linear Transformer model · grade B · credibility unknown · measured · as of 2026-10-14
+  - sources: SRC-00146
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -421,6 +433,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 88
-- grades: {'B': 88}
-- distinct sources: 29
+- claims: 91
+- grades: {'B': 91}
+- distinct sources: 31

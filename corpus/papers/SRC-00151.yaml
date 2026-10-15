@@ -1,0 +1,111 @@
+id: SRC-00151
+title: Comparative Analysis and Behavioral Modelling of Power Amplifiers in FR3
+doi: null
+arxiv_id: 2610.19889v1
+url: https://arxiv.org/abs/2610.19889v1
+venue_id: arxiv_api
+authors:
+- name: Cel Thys
+  affiliation: null
+  corresponding: null
+- name: Rodney Martinez Alonso
+  affiliation: null
+  corresponding: null
+- name: Ali H Alsarraf
+  affiliation: null
+  corresponding: null
+- name: Zhuangzhuang Cui
+  affiliation: null
+  corresponding: null
+- name: Dominique Schreurs
+  affiliation: null
+  corresponding: null
+- name: Sofie Pollin
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-14'
+retrieved_date: '2026-10-15'
+access: full_text
+read_scope: Automated reading. The full PDF text (29,410 characters, 6 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.19889v1 on
+  2026-10-15. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: “We note from Fig. 7 that the linear amplification has a sidelobe floor of −88 dB, set by the
+  clipping filtering.”
+method_summary: '“The setup in Fig. 1 uses a Keysight M9484C VXG to generate the wideband waveforms and
+  a PNA-X N5247B for calibrated acquisition [13].”
+
+  “The coefficients are extracted by least squares fit:”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 11394
+    output: 2538
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: The GaN PA evaluated at 8 GHz with 100 MHz bandwidth achieves a test NMSE of -39.4 dB for
+      a memoryless model and -40.8 dB for a Generalized Memory Polynomial (G
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - GaN PA 8 GHz, 100 MHz 11 / 11 6 / 64 −39.4 −40.8 −1.4
+    - GaN PA
+    - 8 GHz
+    - 100 MHz
+  - statement: The TLPA evaluated at 7.225 GHz with 200 MHz bandwidth achieves a test NMSE of -29.5 dB
+      using a memoryless model and -31.7 dB using a GMP model.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - TLPA 7.225 GHz, 200 MHz 5 / 5 3 / 27 −29.5 −31.7 −2.2
+    - TLPA
+    - 7.225 GHz
+    - 200 MHz
+  - statement: The TLPA evaluated at 15 GHz with 100 MHz bandwidth achieves a test NMSE of -31.8 dB with
+      a memoryless model and -34.7 dB with a GMP model.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - TLPA 15 GHz, 100 MHz 3 / 5 2 / 27 −31.8 −34.7 −2.9
+    - TLPA
+    - 15 GHz
+    - 100 MHz
+  - statement: The TLPA operating at 15 GHz with 200 MHz bandwidth achieves a test NMSE of -28.1 dB for
+      a memoryless model and -32.7 dB for a GMP model.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - TLPA 15 GHz, 200 MHz 3 / 5 2 / 27 −28.1 −32.7 −4.6
+    - TLPA
+    - 15 GHz
+    - 200 MHz
+  - statement: The GaAs LNA evaluated at 15 GHz with 100 MHz bandwidth achieves a test NMSE of -29.2 dB
+      with a memoryless model and -31.6 dB with a GMP model.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - GaAs LNA 15 GHz, 100 MHz 3 / 7 2 / 34 −29.2 −31.6 −2.4
+    - GaAs LNA
+    - 15 GHz
+    - 100 MHz
+  - statement: For the GaN PA at 8 GHz and 100 MHz bandwidth with order 11, the Memory Polynomial model
+      achieves a test NMSE of -40.4 dB.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - GaN PA 8/100 11 6 / −39.4 42 / −40.4 64 / −40.8
+    - GaN PA
+    - 8/100
+    - '11'
+  - statement: For the TLPA at 15 GHz and 200 MHz bandwidth with order 3, the Memory Polynomial model
+      achieves a test NMSE of -32.2 dB.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - TLPA 15/200 3 2 / −28.1 14 / −32.2 18 / −32.6
+    - TLPA
+    - 15/200
+    - '3'
+corrections: []

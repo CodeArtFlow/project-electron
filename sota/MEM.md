@@ -1,10 +1,17 @@
 # Memory — state of the art
 
-Topic code `MEM`. Last reviewed 2026-10-14.
+Topic code `MEM`. Last reviewed 2026-10-15.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
 ## Current position
+
+### energy
+
+- **≈8.01088e-05 fJ** — ARPES measurement performed at a temperature of 100 K reveals a flat band splitting of approximately 0.5 eV in YCl.
+  - `CLM-MEM-0018` · temperature 100 K, measurement_method ARPES · grade B · credibility unknown · measured · as of 2026-10-14
+  - sources: SRC-00148
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### length device
 
@@ -50,6 +57,10 @@ Topic code `MEM`. Last reviewed 2026-10-14.
   - `CLM-MEM-0006` · pulse_duration 30 fs · grade B · credibility unknown · measured · as of 2026-10-01
   - sources: SRC-00066
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The normalized hardware cost of uniform Diff-W/Diff-A encoding is 3.06.
+  - `CLM-MEM-0017` · encoding Diff-W/Diff-A · grade B · credibility unknown · simulated · as of 2026-10-14
+  - sources: SRC-00147
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -73,6 +84,30 @@ Topic code `MEM`. Last reviewed 2026-10-14.
   - sources: SRC-00052
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
+### temperature
+
+- **≈768.85 degC** — Random phase approximation analysis predicts a critical Curie temperature of approximately 1042 K for the 2D ferromagnetic order in realistic multi-orbital YCl model.
+  - `CLM-MEM-0019` · model realistic multi-orbital model of YCl, onsite_hubbard_parameter 0.9 eV · grade B · credibility unknown · simulated · as of 2026-10-14
+  - sources: SRC-00148
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈801.85 degC** — Self-consistent Hartree-Fock calculation yields a critical Curie temperature of approximately 1075 K at filling number N = 3.8.
+  - `CLM-MEM-0020` · method Hartree-Fock approximation · grade B · credibility unknown · simulated · as of 2026-10-14
+  - sources: SRC-00148
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+
+### time
+
+- **8079 ns** — For N=32 neurons, the single-array iteration time for the unenhanced Scan-select algorithm is 8079 ns.
+  - `CLM-MEM-0015` · selection_algorithm unenhanced Scan-select · grade B · credibility unknown · simulated · as of 2026-10-14
+  - sources: SRC-00143
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0060 — see the open register
+- **168423 ns** — For N=512 neurons, the single-array iteration time for the unenhanced Scan-select algorithm is 168423 ns.
+  - `CLM-MEM-0016` · selection_algorithm unenhanced Scan-select · grade B · credibility unknown · simulated · as of 2026-10-14
+  - sources: SRC-00143
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0060 — see the open register
+
 ### voltage
 
 - **≈2.32 V** — The memristor device SET voltage occurs at approximately +2.32 V.
@@ -90,9 +125,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0051` — length_device: _unexamined; classification pending_
   - claims: CLM-MEM-0009, CLM-MEM-0010
   - missing data: `not yet named`
+- `CFL-0060` — time: _unexamined; classification pending_
+  - claims: CLM-MEM-0015, CLM-MEM-0016
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 14
-- grades: {'B': 14}
-- distinct sources: 5
+- claims: 20
+- grades: {'B': 20}
+- distinct sources: 8

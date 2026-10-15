@@ -1,0 +1,103 @@
+id: SRC-00148
+title: Room-Temperature Metallic 2D Ferromagnetism Stabilized by Quantum Metric
+doi: null
+arxiv_id: 2610.19713v1
+url: https://arxiv.org/abs/2610.19713v1
+venue_id: arxiv_api
+authors:
+- name: Teng-Fei Ying
+  affiliation: null
+  corresponding: null
+- name: Jianqi Zhong
+  affiliation: null
+  corresponding: null
+- name: Songyuan Geng
+  affiliation: null
+  corresponding: null
+- name: Fangjie Chen
+  affiliation: null
+  corresponding: null
+- name: Haoxiang Li
+  affiliation: null
+  corresponding: null
+- name: Benjamin T. Zhou
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-14'
+retrieved_date: '2026-10-15'
+access: full_text
+read_scope: Automated reading. The full PDF text (49,008 characters, 14 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.19713v1 on
+  2026-10-15. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“A striking feature found in the ARPES spectrum, measured at temperature 100 K, is the presence
+  of a giant energy splitting of approximately 0.5 eV between two sets of flat bands [1], which points
+  to a robust, long-range ferromagnetic (FM) order at q=0.”
+
+  “measured at temperature 100 K”
+
+  “ARPES measurement nevertheless revealed a uniform flat band splitting of 0.5 eV”
+
+  “A striking feature found in the ARPES spectrum, measured at temperature 100 K, is the presence of a
+  giant energy splitting of approximately 0.5 eV between two sets of flat bands [1]”
+
+  “For the realistic multi-orbital model of YCl with the onsite Hubbard parameter U d2z = 0.9 eV derived
+  from first-principles estimates [30], we find that χ RPAs (q, T) remains sharply peaked at q = 0 for
+  all temperatures down to the critical temperature (in-set of Fig. 3(c)), and the Stoner condition yields
+  a critical temperature of T RPA c ≃ 1042 K.”
+
+  “realistic multi-orbital model of YCl”
+
+  “onsite Hubbard parameter U d2z = 0.9 eV”
+
+  “In the mean-field approximation, the Curie temperature is defined by the point where the magnetic order
+  parameter vanishes: T HF c ≃ 1075 K, in excellent agreement with the RPA result.”
+
+  “obtained under Hartree-Fock approximation at filling number N = 3.8.”'
+method_summary: '“In this Letter, we propose that the uniform metallic FM order is stabilized by the prominent
+  quantum metric near topological band crossing points at K and K ′, which reconstructs the magnetic instability
+  in the dice metal and tips the density-wave instability toward a uniform FM order.”
+
+  “Importantly, our analysis based on random phase approximation (RPA) and Hartree–Fock theory predicts
+  a remarkably high Curie temperature above room temperature for the 2D FM order.”
+
+  “For the realistic multi-orbital model of YCl with the onsite Hubbard parameter U d2z = 0.9 eV derived
+  from first-principles estimates [30], we find that χ RPAs (q, T) remains sharply peaked at q = 0 for
+  all temperatures down to the critical temperature (in-set of Fig. 3(c)), and the Stoner condition yields
+  a critical temperature of T RPA c ≃ 1042 K.”
+
+  “To complement the RPA analysis with a more microscopic treatment of local magnetic moments on inequivalent
+  sublattice sites, we perform self-consistent Hartree–Fock (HF) calculations based on the same ab inito-based
+  Hubbard model of YCl and the same model parameters.”'
+limitations: “Notably, while our RPA and HF framework neglects spatial and thermal spin fluctuations which
+  may affect the exact value of Curie temperatures [44], the consistent high temperature scales obtained
+  from the two independent approaches, T RPA c ≃ 1042 K and T HF c ≃ 1075 K, indicate a robust uniform
+  ferromagnetic order with transition temperatures a few times of the room temperature of 300 K.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 17272
+    output: 2183
+  claims_accepted: 3
+  claims_rejected: 1
+  rejected:
+  - statement: Hartree-Fock calculation with reduced interaction U = 0.885 U0 yields a critical Curie
+      temperature of approximately 718 K at filling number N = 3.8.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - In our calculation, the magnetic order is lost only at a much higher temperature, T c ≃ 718 K, where
+      the magnetization vanishes, and the spin-resolved band reconstruction disappears.
+    - The magnetization m i = 1/2 (⟨n i↑⟩ − ⟨n i↓⟩) computed from the Hartree-Fock approximation with
+      smaller interaction U = 0.885U 0 than our benchmark and the filling number N = 3.8.
+    - computed from the Hartree-Fock approximation with smaller interaction U = 0.885U 0
+    - reduced interaction parameters, U = 0.885U 0
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (measured: 1, simulated:
+  2). This field records the majority (simulated); trust each claim''s own evidence_type over this one.'

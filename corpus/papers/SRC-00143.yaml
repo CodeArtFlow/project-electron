@@ -1,0 +1,97 @@
+id: SRC-00143
+title: Hopfield Networks in Non-volatile Memory
+doi: null
+arxiv_id: 2610.19321v1
+url: https://arxiv.org/abs/2610.19321v1
+venue_id: arxiv_api
+authors:
+- name: Patrick Miller
+  affiliation: null
+  corresponding: null
+- name: Ulya R. Karpuzcu
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-14'
+retrieved_date: '2026-10-15'
+access: full_text
+read_scope: Automated reading. The full PDF text (95,573 characters, 18 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.19321v1 on
+  2026-10-15. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The least-optimized algorithm, the unenhanced Scan-select, requires 8079ns (168423ns) at N=32(512).”
+
+  “The least-optimized algorithm, the unenhanced Scan-select”
+
+  “Simulations of Hopfield networks ranging from 32-512 neurons produce raw performance values”'
+method_summary: “An instruction-level simulator has been written to provide a software interface for writing
+  the algorithmic of Hopfield network stages in terms of gate operations executed on a target CRAM architecture.”
+limitations: '“While technology improvements are being made to increase this ceiling, computation inherently
+  involves multiple write operations–preset and logic operation. Active computation at hundreds of MHz
+  localized to the same cells can rapidly exhaust what seems to be an large amount of cell endurance,
+  and a compute algorithm’s non-uniform application of compute can require measures such as load-balancing
+  and address remapping to prevent premature failure [26].”
+
+  “Modern Hopfield networks the dot product more expensive, as the state vector now has multi-bit precision.”
+
+  “The NV-CiM array faces a number of significant challenges for the more recent network types. Unlike
+  the Classical Hopfield, the simple threshold function that can be calculated locally to a column has
+  been replaced. The update process requires expensive non-linear value calculation, where the most gracefully
+  scaling option is some external LUT or hardware.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 25212
+    output: 2111
+  claims_accepted: 2
+  claims_rejected: 5
+  rejected:
+  - statement: An STT cell in the simulated model exhibits a switching time tsw of 1 ns.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''tsw (ns)
+      1'''
+    quotes:
+    - tsw (ns) 1
+    - The base architecture can be modeled as using an STT or SHE cell technologies in order to evaluate
+      the effects of changing the cell architecture on energy consumption.
+    - Parameter STT [7]
+  - statement: An SHE cell in the simulated model exhibits a switching time tsw of 1 ns.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''tsw (ns)
+      1'''
+    quotes:
+    - tsw (ns) 1
+    - The base architecture can be modeled as using an STT or SHE cell technologies in order to evaluate
+      the effects of changing the cell architecture on energy consumption.
+    - SHE [38]
+  - statement: For an STT cell, the simulated energy for a NAND operation is 53.9 fJ.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''EN AN D(f
+      J) 53.9'''
+    quotes:
+    - EN AN D(f J) 53.9
+    - The calculation for the example NAND gate operation was performed by calculating the minimum voltage
+      for switching the output cell based on the resistance of the cell network
+    - Parameter STT [7]
+    - EN AN D(f J)
+  - statement: For an SHE cell, the simulated energy for a NAND operation is 3.74 fJ.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''EN AN D(f
+      J) 3.74'''
+    quotes:
+    - EN AN D(f J) 3.74
+    - The calculation for the example NAND gate operation was performed by calculating the minimum voltage
+      for switching the output cell based on the resistance of the cell network
+    - SHE [38]
+    - EN AN D(f J)
+  - statement: For N=32768, the multi-array parallel iteration time is 96.3 µs.
+    reason: the statement contains the number 32768, which none of its quotes contain
+    quotes:
+    - Compared to the 11.47ms without parallel arrays, the time per iteration is 96318ns, or96.3µs.
+    - For these estimates, a fully-optimized Scan-select with indexed dot product is scaled up toN= 32768.
+    - scaled up toN= 32768
+    - 128 arrays for accelerating the dot product, each of which is subdivided 4 ways, and 64 arrays in
+      the row direction for selection.
+corrections: []

@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-14.
+Topic code `MAT`. Last reviewed 2026-10-15.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -417,6 +417,22 @@ Topic code `MAT`. Last reviewed 2026-10-14.
   - `CLM-MAT-0110` · temperature 2 K · grade B · credibility unknown · measured · as of 2026-10-09
   - sources: SRC-00127
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The melt-quench glass yields a goodness of fit R2 of 0.29 when evaluated against the measured pair distribution function.
+  - `CLM-MAT-0128` · material Li 0.9NbO0.9Cl4.1 · grade B · credibility unknown · simulated · as of 2026-10-14
+  - sources: SRC-00150
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Pure RMC fits the measured pair distribution function with an R2 of 0.99, but sits at more than 1.3 eV/atom above the melt-quench glass.
+  - `CLM-MAT-0129` · grade B · credibility unknown · simulated · as of 2026-10-14
+  - sources: SRC-00150
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Starting from the melt-quench glass, both hybrid schemes achieve an R2 of 0.92 while remaining within 0.1 eV/atom of its energy.
+  - `CLM-MAT-0130` · method hybrid schemes · grade B · credibility unknown · simulated · as of 2026-10-14
+  - sources: SRC-00150
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Amorphous xLi2O–MCly electrolytes reach up to 6.6 mS/cm at 25°C.
+  - `CLM-MAT-0131` · material xLi 2O – MCly electrolytes (M = Ta, Hf) · grade B · credibility unknown · measured · as of 2026-10-14
+  - sources: SRC-00150
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -612,6 +628,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 127
-- grades: {'B': 127}
-- distinct sources: 48
+- claims: 131
+- grades: {'B': 131}
+- distinct sources: 49

@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-10-14.
+Topic code `DEV`. Last reviewed 2026-10-15.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -53,6 +53,13 @@ Topic code `DEV`. Last reviewed 2026-10-14.
   - `CLM-DEV-0030` · mode DC-AC conversion, vin 24-V DC input · grade B · credibility unknown · measured · as of 2026-10-02
   - sources: SRC-00077
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+
+### pressure
+
+- **0.00600049 mTorr** — Measurements were performed in a vacuum chamber at an ambient pressure of 8×10−6 mbar.
+  - `CLM-DEV-0064` · temperature room temperature · grade B · credibility unknown · measured · as of 2026-10-14
+  - sources: SRC-00149
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### qualitative
 
@@ -203,6 +210,10 @@ Topic code `DEV`. Last reviewed 2026-10-14.
   - `CLM-DEV-0063` · dataset MNIST, variant Variant B, update_scheme continual · grade B · credibility unknown · simulated · as of 2026-10-13
   - sources: SRC-00142
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- For linear amplification in the CP-OFDM ambiguity function analysis, the sidelobe floor reaches -88 dB.
+  - `CLM-DEV-0065` · grade B · credibility unknown · simulated · as of 2026-10-14
+  - sources: SRC-00151
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -278,6 +289,6 @@ _None._
 
 ## Evidence base
 
-- claims: 60
-- grades: {'B': 60}
-- distinct sources: 23
+- claims: 62
+- grades: {'B': 62}
+- distinct sources: 25

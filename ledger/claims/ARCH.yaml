@@ -2671,3 +2671,110 @@ claims:
     verified_quotes: 3
   conditions:
     evaluation_mode: matched multi-view evaluation
+- id: CLM-ARCH-0089
+  topic: ARCH
+  statement: OBSR reduces incremental MX area overhead by 64.2% versus a naive MX implementation baseline.
+  sources:
+  - SRC-00145
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    baseline: naive MX implementation baseline
+    technique: OBSR
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 64.2
+      unit: '%'
+    si_base:
+      value: 0.642
+      unit: dimensionless
+    display:
+      value: 64.2
+      unit: percent
+    conditions:
+      baseline: naive MX implementation baseline
+      technique: OBSR
+- id: CLM-ARCH-0090
+  topic: ARCH
+  statement: OBSR reduces the incremental MX energy overhead by 67.5% compared to a naive MX implementation
+    baseline.
+  sources:
+  - SRC-00145
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    baseline: naive MX implementation baseline
+    technique: OBSR
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 67.5
+      unit: '%'
+    si_base:
+      value: 0.675
+      unit: dimensionless
+    display:
+      value: 67.5
+      unit: percent
+    conditions:
+      baseline: naive MX implementation baseline
+      technique: OBSR
+- id: CLM-ARCH-0091
+  topic: ARCH
+  statement: Under Q8 quantization on the baseline Linear Transformer model, the kernel latency is 891.3
+    µs.
+  sources:
+  - SRC-00146
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    quantization: Q8
+    model: baseline Linear Transformer model
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 891.3
+      unit: µs
+    si_base:
+      value: 0.0008912999999999999
+      unit: s
+    display:
+      value: 891299.9999999998
+      unit: ns
+    conditions:
+      quantization: Q8
+      model: baseline Linear Transformer model

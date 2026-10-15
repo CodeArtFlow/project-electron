@@ -1,0 +1,102 @@
+id: SRC-00145
+title: 'MFSA: A Multi-Format Systolic Array with Native Micro Scaling Support'
+doi: null
+arxiv_id: 2610.19645v1
+url: https://arxiv.org/abs/2610.19645v1
+venue_id: arxiv_api
+authors:
+- name: Jiayi Wang
+  affiliation: null
+  corresponding: null
+- name: Kearnan Bishop
+  affiliation: null
+  corresponding: null
+- name: Ang Li
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-14'
+retrieved_date: '2026-10-15'
+access: full_text
+read_scope: Automated reading. The full PDF text (45,114 characters, 8 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.19645v1 on
+  2026-10-15. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“OBSR cuts the incremental MX overhead by 64.2% in area and 67.5% in energy versus a naive
+  MX implementation baseline”
+
+  “versus a naive MX implementation baseline”
+
+  “We implement and evaluate MFSA in TSMC 28 nm with a Cadence Genus/Innovus/Joules flow.”'
+method_summary: No method quote was verified. The method is not established by this record.
+limitations: “The integer formats ride the FPU’s multipliers and thus reach half the rate of the same-width
+  FP formats (INT8 tracks BF16/FP16 rather than CFP8).”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16507
+    output: 3431
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: The routed 16x16 MFSA achieves a peak throughput of 0.512 TOPS in FP32 mode with FP32 accumulation
+      at 1 GHz.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''FP32 FP32
+      0.512 1.89 3.68'''
+    quotes:
+    - FP32 FP32 0.512 1.89 3.68
+    - We implement MFSA in RTL and push it through synthesis with Cadence Genus [24] and the full place-and-route
+      flow with Cadence Innovus [25] in TSMC 28 nm at the SS 0.72V/125 °C corner with a 1 GHz target.
+    - A routed 16×16 MFSA reaches a peak 0.5/1/2/4 TOPS of FP32/BF16/FP8/FP4
+    - In TSMC 28 nm at 1 GHz
+  - statement: In FP4 mode with FP32 accumulation, the 16x16 MFSA reaches a peak throughput of 4.096 TOPS.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''FP4 FP32
+      4.096 1.85 0.45'''
+    quotes:
+    - FP4 FP32 4.096 1.85 0.45
+    - We implement MFSA in RTL and push it through synthesis with Cadence Genus [24] and the full place-and-route
+      flow with Cadence Innovus [25] in TSMC 28 nm at the SS 0.72V/125 °C corner with a 1 GHz target.
+    - A routed 16×16 MFSA reaches a peak 0.5/1/2/4 TOPS of FP32/BF16/FP8/FP4
+    - In TSMC 28 nm at 1 GHz
+  - statement: The 16x16 MFSA array consumes 1.89 W in FP32 mode.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''FP32 FP32
+      0.512 1.89 3.68'''
+    quotes:
+    - FP32 FP32 0.512 1.89 3.68
+    - Power is estimated with Cadence Joules [26] driven by post-route parasitics and gate-level GEMM
+      waveforms whose activations and weights are sampled from Qwen2.5-7B [27] prefill traces (post-RMSNorm
+      distributions rather than uniform random).
+    - A routed 16×16 MFSA reaches a peak 0.5/1/2/4 TOPS of FP32/BF16/FP8/FP4
+    - In TSMC 28 nm at 1 GHz
+  - statement: In INT8 mode with INT32 accumulation, the 16x16 MFSA array consumes 1.72 W.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''INT8 INT32
+      1.024 1.72 1.68'''
+    quotes:
+    - INT8 INT32 1.024 1.72 1.68
+    - Power is estimated with Cadence Joules [26] driven by post-route parasitics and gate-level GEMM
+      waveforms whose activations and weights are sampled from Qwen2.5-7B [27] prefill traces (post-RMSNorm
+      distributions rather than uniform random).
+    - A routed 16×16 MFSA reaches a peak 0.5/1/2/4 TOPS of FP32/BF16/FP8/FP4
+    - In TSMC 28 nm at 1 GHz
+  - statement: Adding support for all other formats based on a BF16+CFP8 systolic array costs 25.7% additional
+      cell area.
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - Adding support for all other formats based on a BF16+CFP8 systolic array costs 25.7% additional
+      area.
+    - We implement and evaluate MFSA in TSMC 28 nm with a Cadence Genus/Innovus/Joules flow.
+    - based on a BF16+CFP8 systolic array
+  - statement: The signoff cell area for the routed 16x16 MFSA die is 3.27 mm2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''3.27 mm 2
+      signoff cell area'''
+    quotes:
+    - 3.27 mm 2 signoff cell area
+    - We implement and evaluate MFSA in TSMC 28 nm with a Cadence Genus/Innovus/Joules flow.
+    - 16×16 MFSA post-route layout in TSMC 28 nm at 1 GHz
+corrections: []
