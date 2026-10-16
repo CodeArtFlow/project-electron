@@ -1058,3 +1058,96 @@ claims:
       unit: fJ
     conditions:
       error_metric: root-mean-square deviation per formula unit
+- id: CLM-PROC-0032
+  topic: PROC
+  statement: The two-channel holder equipped with a representative Si/Si3N4 TEM chip exhibits a -3 dB
+    bandwidth of 7.9 GHz.
+  sources:
+  - SRC-00152
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-15'
+  created: '2026-10-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    holder_type: two-channel holder
+    chip_type: Si/Si3N4 chip
+    metric: -3 dB bandwidth
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 7.9
+      unit: GHz
+    si_base:
+      value: 7900000000.0
+      unit: Hz
+    display:
+      value: 7.9
+      unit: GHz
+    conditions:
+      holder_type: two-channel holder
+      chip_type: Si/Si3N4 chip
+      metric: -3 dB bandwidth
+- id: CLM-PROC-0033
+  topic: PROC
+  statement: For the four-channel configuration, the -3 dB bandwidth reaches approximately 4.5 GHz.
+  sources:
+  - SRC-00152
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-15'
+  created: '2026-10-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    holder_type: four-channel configuration
+    metric: -3 dB bandwidth
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: true
+    as_published:
+      value: 4.5
+      unit: GHz
+    si_base:
+      value: 4500000000.0
+      unit: Hz
+    display:
+      value: 4.5
+      unit: GHz
+    conditions:
+      holder_type: four-channel configuration
+      metric: -3 dB bandwidth
+- id: CLM-PROC-0034
+  topic: PROC
+  statement: For a 330 µm-wide deflector, the FEM calculated deflection angle per unit applied voltage
+    is 16 µrad·V-1.
+  sources:
+  - SRC-00152
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-15'
+  created: '2026-10-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    slit_width: 330 µm
+    method: finite-element modelling

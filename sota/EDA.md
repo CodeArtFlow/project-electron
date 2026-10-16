@@ -1,6 +1,6 @@
 # EDA — state of the art
 
-Topic code `EDA`. Last reviewed 2026-10-15.
+Topic code `EDA`. Last reviewed 2026-10-16.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -12,6 +12,21 @@ Topic code `EDA`. Last reviewed 2026-10-15.
   - `CLM-EDA-0002` · benchmark_circuit BGR, framework AgenticSizing · grade B · credibility unknown · simulated · as of 2026-09-22
   - sources: SRC-00027
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+
+### qualitative
+
+- The base testbench for the Async FIFO design achieves a functional coverage of 91.7% by hitting 33 out of 36 bins.
+  - `CLM-EDA-0008` · design Async FIFO · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00156
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The base testbench for the UART TX design achieves a functional coverage of 88.9% by hitting 16 out of 18 bins.
+  - `CLM-EDA-0009` · design UART TX · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00156
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The base testbench for the AHB2APB design achieves a functional coverage of 67.4% by hitting 31 out of 46 bins.
+  - `CLM-EDA-0010` · design AHB2APB · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00156
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -46,6 +61,6 @@ _None._
 
 ## Evidence base
 
-- claims: 7
-- grades: {'B': 7}
-- distinct sources: 3
+- claims: 10
+- grades: {'B': 10}
+- distinct sources: 4

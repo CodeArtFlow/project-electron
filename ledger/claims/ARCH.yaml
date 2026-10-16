@@ -2778,3 +2778,39 @@ claims:
     conditions:
       quantization: Q8
       model: baseline Linear Transformer model
+- id: CLM-ARCH-0092
+  topic: ARCH
+  statement: PSA reduces the ifmap memory footprint by 18.67x compared with an explicit im2col baseline.
+  sources:
+  - SRC-00153
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-15'
+  created: '2026-10-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: dense explicit im2col baseline
+- id: CLM-ARCH-0093
+  topic: ARCH
+  statement: PSA reduces mapping cost by 12.43x compared with a dense explicit im2col baseline.
+  sources:
+  - SRC-00153
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-15'
+  created: '2026-10-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: dense explicit im2col baseline

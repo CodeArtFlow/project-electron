@@ -1,0 +1,144 @@
+id: SRC-00157
+title: Wavelength-selective bidirectional plasticity in self-powered Se/ZnMgO visual synapses
+doi: null
+arxiv_id: 2610.21618v1
+url: https://arxiv.org/abs/2610.21618v1
+venue_id: arxiv_api
+authors:
+- name: Zacharie Jehl Li-Kao
+  affiliation: null
+  corresponding: null
+- name: Miho Akasaka
+  affiliation: null
+  corresponding: null
+- name: Myeongok Kim
+  affiliation: null
+  corresponding: null
+- name: Kunal J. Tiwari
+  affiliation: null
+  corresponding: null
+- name: Antoine Moore
+  affiliation: null
+  corresponding: null
+- name: Mykhailo A. Koltsov
+  affiliation: null
+  corresponding: null
+- name: Sergio Giraldo
+  affiliation: null
+  corresponding: null
+- name: Saiki Kitagawa
+  affiliation: null
+  corresponding: null
+- name: Marcel Placidi
+  affiliation: null
+  corresponding: null
+- name: Taizo Kobayashi
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-15'
+retrieved_date: '2026-10-16'
+access: full_text
+read_scope: Automated reading. The full PDF text (73,720 characters, 25 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.21618v1 on
+  2026-10-16. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“At equal photon flux, 365 nm pulses increase the photocurrent by 38 % while 455 nm pulses
+  decrease it, and the depression reaching 30 % at higher flux, with up to 19 distinguishable levels per
+  branch and no electrical energy spent.”
+
+  “365 nm pulses increase the photocurrent by 38 %”
+
+  “batch A was measured in December 2024 (zero -bias plasticity at 365 and 455 nm)”
+
+  “The photocurrent in short circuit (0 V) was recorded during each light pulse”
+
+  “Figure 1b compares trains of 60 pulses of 5 ms at 20 Hz under 365 nm and 455 nm light at the same photon
+  flux, recorded three minutes apart on the same device.”
+
+  “while 455 nm pulses decrease it, and the depression reaching 30 % at higher flux”
+
+  “The device stack consists of ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm),
+  with an active area of 8 mm2.”
+
+  “Se/ZnMgO photodiodes were fabricated on soda lime glass (SLG) and on 125 µm poly(ethylene terephthalate)
+  (PET) substrates (product number 0081, GEOMATEC Co., Ltd, Japan).”'
+method_summary: '“Light pulses were generated with Thorlabs fibre -coupled LEDs at 365 nm and 455 nm driven
+  by a waveform generator controlling the pulse frequency, duration and number.”
+
+  “The photocurrent in short circuit (0 V) was recorded during each light pulse with a Keysight 34461A
+  digital multimeter triggered by the waveform generator, with 3 to 5 samples per pulse.”
+
+  “For batch B, the persistent photoconductance was monitored by recording the current under a read voltage
+  (0.5 V for the reset and relearning experiments, about 0.7 V for the flexible device) while 455 nm light
+  pulses were applied, and the conductance was calculated as 𝐺 = 𝐼/𝑉read.”'
+limitations: '“The qualitative behaviour is reproduced over the devices which we fabricated, but the crossover
+  photon energy changes between the two fabrication batches.”
+
+  “We are not yet capable of fully controlling the defects at the interface and therefore the crossover.”
+
+  “The retention, from minutes to tens of minutes, places the devices in the short-term plasticity regime,
+  which is suitable for adaptive sensing and reservoir -type processing but not for long-term storage
+  of weights.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 23553
+    output: 2978
+  claims_accepted: 3
+  claims_rejected: 5
+  rejected:
+  - statement: A neural network built from the measured weight updates achieves 89 % accuracy on handwritten
+      digit recognition without noise.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - a network built from the measured weight updates reaches 89 % accuracy on handwritten digit recognition
+      without noise and 85 % with the measured noise, against 97.5 % for floating-point weights.
+    - The measured weight updates are used in a network simulation in order to assess the device for in
+      -sensor computing.
+    - accuracy on handwritten digit recognition without noise
+  - statement: The network simulation achieves 85 % accuracy on handwritten digit recognition with the
+      measured noise.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - a network built from the measured weight updates reaches 89 % accuracy on handwritten digit recognition
+      without noise and 85 % with the measured noise, against 97.5 % for floating-point weights.
+    - The measured weight updates are used in a network simulation in order to assess the device for in
+      -sensor computing.
+    - handwritten digit recognition
+    - 85 % with the measured noise
+  - statement: Floating-point weights achieve 97.5 % accuracy on handwritten digit recognition in the
+      network simulation.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - a network built from the measured weight updates reaches 89 % accuracy on handwritten digit recognition
+      without noise and 85 % with the measured noise, against 97.5 % for floating-point weights.
+    - The measured weight updates are used in a network simulation in order to assess the device for in
+      -sensor computing.
+    - accuracy on handwritten digit recognition
+    - against 97.5 % for floating-point weights.
+  - statement: At 365 nm, maximum photon flux available at the sample is 3.1 × 1014 photons cm−2 s−1.
+    reason: 'unit conversion refused: power_density: could not parse 0.17 ''mW cm−2'': ''cm−2'' is not
+      defined in the unit registry'
+    quotes:
+    - The maximum photon flux available at the sample was 3.1 × 1014 photons cm−2 s−1 at 365 nm (0.17
+      mW cm−2) and 1.5 × 1015 photons cm−2 s−1 at 455 nm (0.66 mW cm−2).
+    - Light pulses were generated with Thorlabs fibre -coupled LEDs at 365 nm and 455 nm driven by a waveform
+      generator controlling the pulse frequency, duration and number.
+    - 3.1 × 1014 photons cm−2 s−1 at 365 nm (0.17 mW cm−2)
+  - statement: At 455 nm, maximum power density available at the sample is 0.66 mW cm−2.
+    reason: 'unit conversion refused: power_density: could not parse 0.66 ''mW cm−2'': ''cm−2'' is not
+      defined in the unit registry'
+    quotes:
+    - The maximum photon flux available at the sample was 3.1 × 1014 photons cm−2 s−1 at 365 nm (0.17
+      mW cm−2) and 1.5 × 1015 photons cm−2 s−1 at 455 nm (0.66 mW cm−2).
+    - Light pulses were generated with Thorlabs fibre -coupled LEDs at 365 nm and 455 nm driven by a waveform
+      generator controlling the pulse frequency, duration and number.
+    - 1.5 × 1015 photons cm−2 s−1 at 455 nm (0.66 mW cm−2).
+corrections: []

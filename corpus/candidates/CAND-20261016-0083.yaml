@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.21064v1
 doi: null
-title: 'Where the SRAM Goes: Per-Symbol Attribution of Static Memory in FreeRTOS-C
-  and Embassy-Rust IoT Firmware on a 64 KB RISC-V Microcontroller'
+title: 'Where the SRAM Goes: Per-Symbol Attribution of Static Memory in FreeRTOS-C and Embassy-Rust IoT
+  Firmware on a 64 KB RISC-V Microcontroller'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-15'
@@ -25,6 +25,76 @@ id: CAND-20261016-0083
 harvested_date: '2026-10-16'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-16'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At milestone M07, FreeRTOS-C required 63,776 bytes of static RAM on the CH32V203RBT6.
+    reason: the statement contains the number 7, which none of its quotes contain
+    quotes:
+    - M07 +MQTT QoS 0 63,776 97.3% 14,568 22.2% 76,824 58.6% 73,164 55.8%
+    - All measurements were performed on release-mode (optimized) builds.
+    - RTOS
+    - M07 +MQTT QoS 0
+  - statement: At milestone M07, Embassy-Rust required 14,568 bytes of static RAM on the CH32V203RBT6.
+    reason: the statement contains the number 7, which none of its quotes contain
+    quotes:
+    - M07 +MQTT QoS 0 63,776 97.3% 14,568 22.2% 76,824 58.6% 73,164 55.8%
+    - All measurements were performed on release-mode (optimized) builds.
+    - Emb RAM
+    - M07 +MQTT QoS 0
+  - statement: At milestone M07, FreeRTOS-C Flash consumption was 76,824 bytes on the CH32V203RBT6.
+    reason: the statement contains the number 7, which none of its quotes contain
+    quotes:
+    - M07 +MQTT QoS 0 63,776 97.3% 14,568 22.2% 76,824 58.6% 73,164 55.8%
+    - All measurements were performed on release-mode (optimized) builds.
+    - RTOS Flash
+    - M07 +MQTT QoS 0
+  - statement: At milestone M07, Embassy-Rust Flash consumption was 73,164 bytes on the CH32V203RBT6.
+    reason: the statement contains the number 7, which none of its quotes contain
+    quotes:
+    - M07 +MQTT QoS 0 63,776 97.3% 14,568 22.2% 76,824 58.6% 73,164 55.8%
+    - All measurements were performed on release-mode (optimized) builds.
+    - Emb Flash
+    - M07 +MQTT QoS 0
+  - statement: At milestone M00, FreeRTOS-C required 6,928 bytes of static RAM.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - M00 Baseline 6,928 10.6% 556 0.8% 9,372 7.2% 4,098 3.1%
+    - All measurements were performed on release-mode (optimized) builds.
+    - RTOS
+    - M00 Baseline
+  - statement: At milestone M00, Embassy-Rust required 556 bytes of static RAM.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - M00 Baseline 6,928 10.6% 556 0.8% 9,372 7.2% 4,098 3.1%
+    - All measurements were performed on release-mode (optimized) builds.
+    - Emb RAM
+    - M00 Baseline
+  - statement: At milestone M07, the cold build time for FreeRTOS-C was 7.72 seconds.
+    reason: the statement contains the number 7, which none of its quotes contain
+    quotes:
+    - M07 7.72 8.49 0.91x 7.60 0.101 75.3x
+    - Each regime was run five times, sequentially and never overlapping, on the same machine ... and
+      the median of the five runs is reported.
+    - 'Cold: FreeRTOS-C'
+    - M07
+  - statement: At milestone M07, the warm build time for Embassy-Rust was 0.101 seconds.
+    reason: the statement contains the number 7, which none of its quotes contain
+    quotes:
+    - M07 7.72 8.49 0.91x 7.60 0.101 75.3x
+    - Each regime was run five times, sequentially and never overlapping, on the same machine ... and
+      the median of the five runs is reported.
+    - 'Warm: Embassy-Rust'
+    - M07
+  tokens:
+    input: 17557
+    output: 2936
+  fetched_chars: 46837

@@ -1,0 +1,58 @@
+id: SRC-00156
+title: Independent Data-Integrity Verification for LLM-Driven Functional Coverage Closure in Hardware
+  Design
+doi: null
+arxiv_id: 2610.21570v1
+url: https://arxiv.org/abs/2610.21570v1
+venue_id: arxiv_api
+authors:
+- name: Venkata Krishna Kumar Vedantam
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-15'
+retrieved_date: '2026-10-16'
+access: full_text
+read_scope: Automated reading. The full PDF text (15,521 characters, 5 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.21570v1 on
+  2026-10-16. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Async FIFO 36 91.7% (33/36) 100% 5/5”
+
+  “UART TX 18 88.9% (16/18) 100% 4/4”
+
+  “AHB2APB 46 67.4% (31/46) 100% 5/5”'
+method_summary: “Run the test with Verilator. After every successful simulation, merge the new coverage
+  into a running result with a per-bin max(), so a bin once hit is never lost; this is the union-merge
+  idea of UCIS [Accellera Systems Initiative, 2012].”
+limitations: '“(i) The LLM-generated directed tests are not independently checked in the loop. Only one
+  test was checked by hand with the monitor. A test can close coverage with invalid stimulus, and we do
+  not measure how often that happens.”
+
+  “(ii) There are three small designs and 12 logged runs from several agent checkpoints, with no fixed-version
+  repeated trials, no confidence intervals and no pass@k.”
+
+  “(iii) There is no baseline, such as plain random re-seeding, a scripted strategy, or another LLM system,
+  and no ablation of the single-bin target,LESSONS.md or clean_code().”
+
+  “(v) The base testbenches are hand-built per design, so the agent’s input is not free. Base coverage
+  therefore describes our testbenches, not a measured random-stimulus plateau; the 1000-seed runs mentioned
+  above checked data integrity, not coverage.”
+
+  “(vi) If clean_code() rejects the output, for example on a syntax error, the iteration is skipped and
+  the model is not told why.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 5972
+    output: 1278
+  claims_accepted: 3
+  claims_rejected: 0
+  rejected: []
+corrections: []

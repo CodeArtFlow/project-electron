@@ -243,3 +243,60 @@ claims:
       unit: percent
     conditions:
       model: Non-cyclic + Node prediction model
+- id: CLM-EDA-0008
+  topic: EDA
+  statement: The base testbench for the Async FIFO design achieves a functional coverage of 91.7% by hitting
+    33 out of 36 bins.
+  sources:
+  - SRC-00156
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-15'
+  created: '2026-10-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    design: Async FIFO
+- id: CLM-EDA-0009
+  topic: EDA
+  statement: The base testbench for the UART TX design achieves a functional coverage of 88.9% by hitting
+    16 out of 18 bins.
+  sources:
+  - SRC-00156
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-15'
+  created: '2026-10-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    design: UART TX
+- id: CLM-EDA-0010
+  topic: EDA
+  statement: The base testbench for the AHB2APB design achieves a functional coverage of 67.4% by hitting
+    31 out of 46 bins.
+  sources:
+  - SRC-00156
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-15'
+  created: '2026-10-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    design: AHB2APB

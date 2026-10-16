@@ -1,10 +1,17 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-10-15.
+Topic code `DEV`. Last reviewed 2026-10-16.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
 ## Current position
+
+### area die
+
+- **8 mm^2** — The active area of the fabricate Se/ZnMgO photodiode stack is 8 mm2.
+  - `CLM-DEV-0071` · device_stack ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00157
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### current
 
@@ -41,6 +48,10 @@ Topic code `DEV`. Last reviewed 2026-10-15.
 - **≈1.61 nm** — The fitting parameter ts for characteristic length of strain build-up is approximately 1.61 nm.
   - `CLM-DEV-0053` · parameter ts · grade B · credibility unknown · simulated · as of 2026-10-08
   - sources: SRC-00119
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈100 nm** — The spin-coated PEDOT:PSS layer thickness is approximately 100 nm.
+  - `CLM-DEV-0068` · material PEDOT:PSS · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00155
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
@@ -215,6 +226,17 @@ Topic code `DEV`. Last reviewed 2026-10-15.
   - sources: SRC-00151
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
+### relative deviation
+
+- **38 percent** — At equal photon flux under 365 nm light pulses, the photocurrent increases by 38 % (potentiation).
+  - `CLM-DEV-0069` · wavelength 365 nm, batch batch A, operating_voltage 0 V · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00157
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **30 percent** — Under 455 nm light pulses at higher flux, depression of the photocurrent reaches 30 %.
+  - `CLM-DEV-0070` · wavelength 455 nm · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00157
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+
 ### temperature
 
 - **25.35 degC** — All experiments were performed at a temperature of 298.5 K.
@@ -267,6 +289,10 @@ Topic code `DEV`. Last reviewed 2026-10-15.
   - `CLM-DEV-0052` · frequency 146 MHz · grade B · credibility unknown · measured · as of 2026-10-08
   - sources: SRC-00110
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈6e+10 ns** — Training the MLP surrogate model takes approximately 1 minute on a laptop with an Intel Core i5-13600H CPU using the MATLAB Deep Learning Toolbox.
+  - `CLM-DEV-0066` · software MATLAB Deep Learning Toolbox · grade B · credibility unknown · simulated · as of 2026-10-15
+  - sources: SRC-00154
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -282,6 +308,10 @@ Topic code `DEV`. Last reviewed 2026-10-15.
   - `CLM-DEV-0027` · device_type VO2 thin film device, temperature 330 K, transition_type reset · grade B · credibility unknown · measured · as of 2026-10-01
   - sources: SRC-00061
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **0.47 V** — The open-circuit voltage of the pristine Gr/n-Si solar cell under illumination is 0.47 V.
+  - `CLM-DEV-0067` · device_architecture Gr/n-Si, illumination AM 1.5G, 100 mW cm⁻² · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00155
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -289,6 +319,6 @@ _None._
 
 ## Evidence base
 
-- claims: 62
-- grades: {'B': 62}
-- distinct sources: 25
+- claims: 68
+- grades: {'B': 68}
+- distinct sources: 28

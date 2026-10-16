@@ -1,0 +1,50 @@
+{
+  "arxiv_id": "2610.21570v1",
+  "claims": {
+    "CLM-EDA-0008": {
+      "evidence_spans": [
+        "Async FIFO 36 91.7% (33/36) 100% 5/5",
+        "Async FIFO 36 91.7% (33/36) 100% 5/5",
+        "Async FIFO 36 91.7% (33/36) 100% 5/5"
+      ],
+      "statement": "The base testbench for the Async FIFO design achieves a functional coverage of 91.7% by hitting 33 out of 36 bins.",
+      "terms": []
+    },
+    "CLM-EDA-0009": {
+      "evidence_spans": [
+        "UART TX 18 88.9% (16/18) 100% 4/4",
+        "UART TX 18 88.9% (16/18) 100% 4/4",
+        "UART TX 18 88.9% (16/18) 100% 4/4"
+      ],
+      "statement": "The base testbench for the UART TX design achieves a functional coverage of 88.9% by hitting 16 out of 18 bins.",
+      "terms": []
+    },
+    "CLM-EDA-0010": {
+      "evidence_spans": [
+        "AHB2APB 46 67.4% (31/46) 100% 5/5",
+        "AHB2APB 46 67.4% (31/46) 100% 5/5",
+        "AHB2APB 46 67.4% (31/46) 100% 5/5"
+      ],
+      "statement": "The base testbench for the AHB2APB design achieves a functional coverage of 67.4% by hitting 31 out of 46 bins.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "Run the test with Verilator. After every successful simulation, merge the new coverage into a running result with a per-bin max(), so a bin once hit is never lost; this is the union-merge idea of UCIS [Accellera Systems Initiative, 2012].",
+    "(i) The LLM-generated directed tests are not independently checked in the loop. Only one test was checked by hand with the monitor. A test can close coverage with invalid stimulus, and we do not measure how often that happens.",
+    "(ii) There are three small designs and 12 logged runs from several agent checkpoints, with no fixed-version repeated trials, no confidence intervals and no pass@k.",
+    "(iii) There is no baseline, such as plain random re-seeding, a scripted strategy, or another LLM system, and no ablation of the single-bin target,LESSONS.md or clean_code().",
+    "(v) The base testbenches are hand-built per design, so the agent’s input is not free. Base coverage therefore describes our testbenches, not a measured random-stimulus plateau; the 1000-seed runs mentioned above checked data integrity, not coverage.",
+    "(vi) If clean_code() rejects the output, for example on a syntax error, the iteration is skipped and the model is not told why."
+  ],
+  "generated": "2026-10-16",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00156",
+  "text_chars": 15521,
+  "text_sha256": "6fac453c30c3629d64a157392dc57492be20793d2be4c4fa640c9f454edcf97d"
+}

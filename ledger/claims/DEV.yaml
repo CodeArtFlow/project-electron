@@ -1675,3 +1675,208 @@ claims:
     model: gemini-3.6-flash
     prompt_version: reader-v5
     verified_quotes: 2
+- id: CLM-DEV-0066
+  topic: DEV
+  statement: Training the MLP surrogate model takes approximately 1 minute on a laptop with an Intel Core
+    i5-13600H CPU using the MATLAB Deep Learning Toolbox.
+  sources:
+  - SRC-00154
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-15'
+  created: '2026-10-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    software: MATLAB Deep Learning Toolbox
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: true
+    as_published:
+      value: 1.0
+      unit: minute
+    si_base:
+      value: 60.0
+      unit: s
+    display:
+      value: 59999999999.99999
+      unit: ns
+    conditions:
+      software: MATLAB Deep Learning Toolbox
+- id: CLM-DEV-0067
+  topic: DEV
+  statement: The open-circuit voltage of the pristine Gr/n-Si solar cell under illumination is 0.47 V.
+  sources:
+  - SRC-00155
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-15'
+  created: '2026-10-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    device_architecture: Gr/n-Si
+    illumination: AM 1.5G, 100 mW cm⁻²
+  quantity:
+    quantity: voltage
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.47
+      unit: V
+    si_base:
+      value: 0.47
+      unit: V
+    display:
+      value: 0.47
+      unit: V
+    conditions:
+      device_architecture: Gr/n-Si
+      illumination: AM 1.5G, 100 mW cm⁻²
+- id: CLM-DEV-0068
+  topic: DEV
+  statement: The spin-coated PEDOT:PSS layer thickness is approximately 100 nm.
+  sources:
+  - SRC-00155
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-15'
+  created: '2026-10-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    material: PEDOT:PSS
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 100.0
+      unit: nm
+    si_base:
+      value: 1.0000000000000001e-07
+      unit: m
+    display:
+      value: 100.0
+      unit: nm
+    conditions:
+      material: PEDOT:PSS
+- id: CLM-DEV-0069
+  topic: DEV
+  statement: At equal photon flux under 365 nm light pulses, the photocurrent increases by 38 % (potentiation).
+  sources:
+  - SRC-00157
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-15'
+  created: '2026-10-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    wavelength: 365 nm
+    batch: batch A
+    operating_voltage: 0 V
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 38.0
+      unit: '%'
+    si_base:
+      value: 0.38
+      unit: dimensionless
+    display:
+      value: 38.0
+      unit: percent
+    conditions:
+      wavelength: 365 nm
+      batch: batch A
+      operating_voltage: 0 V
+- id: CLM-DEV-0070
+  topic: DEV
+  statement: Under 455 nm light pulses at higher flux, depression of the photocurrent reaches 30 %.
+  sources:
+  - SRC-00157
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-15'
+  created: '2026-10-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    wavelength: 455 nm
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 30.0
+      unit: '%'
+    si_base:
+      value: 0.3
+      unit: dimensionless
+    display:
+      value: 30.0
+      unit: percent
+    conditions:
+      wavelength: 455 nm
+- id: CLM-DEV-0071
+  topic: DEV
+  statement: The active area of the fabricate Se/ZnMgO photodiode stack is 8 mm2.
+  sources:
+  - SRC-00157
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-15'
+  created: '2026-10-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device_stack: ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm)
+  quantity:
+    quantity: area_die
+    bound: exact
+    approximate: false
+    as_published:
+      value: 8.0
+      unit: mm2
+    si_base:
+      value: 8.0e-06
+      unit: m^2
+    display:
+      value: 8.0
+      unit: mm^2
+    conditions:
+      device_stack: ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm)

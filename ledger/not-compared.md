@@ -4,7 +4,13 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**3792 pair(s)** as of 2026-10-15.
+**4026 pair(s)** as of 2026-10-16.
+
+## `area_die` (1 pair(s))
+
+| Claim A | Claim B | Gap | A's conditions | B's conditions |
+|---|---|---|---|---|
+| `CLM-ARCH-0050` = 0.81 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 90% | process=TSMC 16nm FinFET technology, component=core area | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
 
 ## `current` (7 pair(s))
 
@@ -75,7 +81,7 @@ _and 143 more_
 | `CLM-ARCH-0002` = 5 x | `CLM-ARCH-0022` = 169.1 x | 97% | process=TSMC 16nm FinFET, comparison=PFAL vs static CMOS, operating_point=most favorable operating point, vclk=1 V, fclk=100 MHz | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch |
 | `CLM-ARCH-0006` = 5.3 x | `CLM-ARCH-0022` = 169.1 x | 97% | process=TSMC 16nm FinFET, comparison=4-bit Brent-Kung CLA adder vs architecture-matched static CMOS estimate, power_clock=triangular | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch |
 
-## `frequency` (139 pair(s))
+## `frequency` (175 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -98,11 +104,15 @@ _and 143 more_
 | `CLM-PHOT-0050` = 1.94e+05 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | component=stabilized CW laser, frequency_offset=10 kHz | device=Ho3+-doped fluoride glass waveguide laser |
 | `CLM-PHOT-0050` = 1.94e+05 GHz | `CLM-PHOT-0060` = 6.89 GHz | 100% | component=stabilized CW laser, frequency_offset=10 kHz | lattice_constant=17 mm, material=YIG |
 | `CLM-PHOT-0050` = 1.94e+05 GHz | `CLM-PHOT-0061` = 7.48 GHz | 100% | component=stabilized CW laser, frequency_offset=10 kHz | corner_radius=1.4 mm |
+| `CLM-PHOT-0050` = 1.94e+05 GHz | `CLM-PROC-0032` = 7.9 GHz | 100% | component=stabilized CW laser, frequency_offset=10 kHz | holder_type=two-channel holder, chip_type=Si/Si3N4 chip, metric=-3 dB bandwidth |
+| `CLM-PHOT-0050` = 1.94e+05 GHz | `CLM-PROC-0033` = 4.5 GHz | 100% | component=stabilized CW laser, frequency_offset=10 kHz | holder_type=four-channel configuration, metric=-3 dB bandwidth |
 | `CLM-PHOT-0051` = 230 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | frequency_offset=10 kHz, signal_type=measured phase-noise levels | device=Ho3+-doped fluoride glass waveguide laser |
 | `CLM-PHOT-0052` = 320 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | frequency_offset=10 kHz, signal_type=measured phase-noise levels | device=Ho3+-doped fluoride glass waveguide laser |
 | `CLM-ARCH-0042` = 25.9 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | platform=optical PPLN module | component=stabilized CW laser, frequency_offset=10 kHz |
 | `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0060` = 6.89 GHz | 100% | platform=integrated phononic device | lattice_constant=17 mm, material=YIG |
 | `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0061` = 7.48 GHz | 100% | platform=integrated phononic device | corner_radius=1.4 mm |
+| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PROC-0032` = 7.9 GHz | 100% | platform=integrated phononic device | holder_type=two-channel holder, chip_type=Si/Si3N4 chip, metric=-3 dB bandwidth |
+| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PROC-0033` = 4.5 GHz | 100% | platform=integrated phononic device | holder_type=four-channel configuration, metric=-3 dB bandwidth |
 | `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | magnetic_field=8.1 T, frequency=1.9 THz | angle_of_incidence=0° to 30°, rotation_angle=90° |
 | `CLM-PHOT-0024` = 0.03 GHz | `CLM-PHOT-0049` = 267 GHz | 100% | angle_of_incidence=0° to 30°, rotation_angle=90° | signal_type=measured phase noise |
 | `CLM-PHOT-0024` = 0.03 GHz | `CLM-PHOT-0051` = 230 GHz | 100% | angle_of_incidence=0° to 30°, rotation_angle=90° | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
@@ -115,14 +125,10 @@ _and 143 more_
 | `CLM-PHOT-0003` = 15.41 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | component=photonic molecule, mode_spacing=Ω2 | device=Ho3+-doped fluoride glass waveguide laser |
 | `CLM-PHOT-0036` = 121 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | sample_size=22 measured devices | component=stabilized CW laser, frequency_offset=10 kHz |
 | `CLM-PHOT-0056` = 0.0048 GHz | `CLM-PHOT-0061` = 7.48 GHz | 100% | device=Ho3+-doped fluoride glass waveguide laser | corner_radius=1.4 mm |
-| `CLM-PHOT-0056` = 0.0048 GHz | `CLM-PHOT-0060` = 6.89 GHz | 100% | device=Ho3+-doped fluoride glass waveguide laser | lattice_constant=17 mm, material=YIG |
-| `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | magnetic_field=7.5 T, frequency=2.2 THz | component=stabilized CW laser, frequency_offset=10 kHz |
-| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-ARCH-0070` = 0.556 GHz | 100% | platform=integrated phononic device | process_node=TSMC 28 nm |
-| `CLM-ARCH-0042` = 25.9 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | platform=optical PPLN module | angle_of_incidence=0° to 30°, rotation_angle=90° |
 
-_and 99 more_
+_and 135 more_
 
-## `length_device` (1024 pair(s))
+## `length_device` (1061 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -167,7 +173,7 @@ _and 99 more_
 | `CLM-MAT-0076` = 3.4e+05 nm | `CLM-PROC-0011` = 3.2 nm | 100% | material=GaN, growth_method=ammonothermal | feature=amorphous-layer thickness |
 | `CLM-MAT-0076` = 3.4e+05 nm | `CLM-PROC-0012` = 5 nm | 100% | material=GaN, growth_method=ammonothermal | feature=amorphous-layer thickness |
 
-_and 984 more_
+_and 1021 more_
 
 ## `power` (71 pair(s))
 
@@ -216,7 +222,7 @@ _and 984 more_
 
 _and 31 more_
 
-## `relative_deviation` (1790 pair(s))
+## `relative_deviation` (1914 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -233,6 +239,7 @@ _and 31 more_
 | `CLM-EDA-0006` = 89.6 percent | `CLM-MAT-0111` = -60 percent | 167% | model=Non-cyclic Edge prediction model | sample=B1-1 |
 | `CLM-ARCH-0041` = 93.08 percent | `CLM-MAT-0111` = -60 percent | 164% | frequency=7 GHz | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0059` = 94.4 percent | 164% | sample=B1-1 | route=Fourier route |
+| `CLM-DEV-0069` = 38 percent | `CLM-MAT-0111` = -60 percent | 163% | wavelength=365 nm, batch=batch A, operating_voltage=0 V | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0012` = 95 percent | 163% | sample=B1-1 | encoding_scheme=differential encoding, benchmark=MNIST |
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0063` = 37 percent | 162% | sample=B1-1 | disorder_type=radius disorder |
 | `CLM-ARCH-0077` = 36.86 percent | `CLM-MAT-0111` = -60 percent | 161% | framework=RAPID-DNN, fault_configuration=mixed random fault configuration, baseline=fault-agnostic baseline | sample=B1-1 |
@@ -242,6 +249,7 @@ _and 31 more_
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0124` = 36 percent | 160% | sample=B1-1 | elastic_constant=C22, rotation_direction=from y to x |
 | `CLM-ARCH-0084` = 34 percent | `CLM-MAT-0111` = -60 percent | 157% | platform=Arrow, application=Sparse point cloud processing | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0064` = 31 percent | 152% | sample=B1-1 | disorder_type=radius disorder |
+| `CLM-DEV-0070` = 30 percent | `CLM-MAT-0111` = -60 percent | 150% | wavelength=455 nm | sample=B1-1 |
 | `CLM-ARCH-0053` = 27.3 percent | `CLM-MAT-0111` = -60 percent | 146% | architecture=PEEK with four Rockets upon a BOOM, baseline=unsafe baseline | sample=B1-1 |
 | `CLM-ARCH-0046` = 26.3 percent | `CLM-MAT-0111` = -60 percent | 144% | design=ZTA-Q, resource_type=LUT | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0062` = 25 percent | 142% | sample=B1-1 | disorder_type=position disorder, corner_radius_ratio=0.45r |
@@ -258,10 +266,8 @@ _and 31 more_
 | `CLM-MAT-0111` = -60 percent | `CLM-PROC-0026` = 13.2 percent | 122% | sample=B1-1 | material=WS2 |
 | `CLM-ARCH-0047` = 12.6 percent | `CLM-MAT-0111` = -60 percent | 121% | design=ZTA-Q, resource_type=register | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-PROC-0028` = 12.5 percent | 121% | sample=B1-1 | model=ttWS2 simulation model |
-| `CLM-ARCH-0069` = 318 percent | `CLM-MAT-0111` = -60 percent | 119% | baseline=reference Cortex-M0 implementation | sample=B1-1 |
-| `CLM-ARCH-0085` = 11 percent | `CLM-MAT-0111` = -60 percent | 118% | workload=10-token prefill | sample=B1-1 |
 
-_and 1750 more_
+_and 1874 more_
 
 ## `temperature` (123 pair(s))
 
@@ -324,12 +330,13 @@ _and 83 more_
 |---|---|---|---|---|
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0007` = 3100 W/(m*K) | 99% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | temperature=room-temperature, sample_13c_concentration=~0.00024% |
 
-## `time` (391 pair(s))
+## `time` (422 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0020` = 1.4e+07 ns | 100% | device_type=FTJ, architecture=Naive | concurrency_n_a=48, design=our design with tiering, component=end-to-end time-between-tokens (TBT) |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0021` = 2.7e+07 ns | 100% | device_type=FTJ, architecture=Naive | concurrency_n_a=128, design=our design with tiering |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-DEV-0066` = 6e+10 ns | 100% | device_type=FTJ, architecture=Naive | software=MATLAB Deep Learning Toolbox |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0119` = 0.00029 ns | 100% | device_type=FTJ, architecture=Naive | material=MAPbBr3, measurement_method=Time-resolved optical Kerr-effect measurements |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0120` = 0.0007 ns | 100% | device_type=FTJ, architecture=Naive | measurement_method=Time-resolved optical Kerr-effect measurements |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0123` = 0.00015 ns | 100% | device_type=FTJ, architecture=Naive | measurement_method=Multidimensional coherent spectroscopy |
@@ -341,6 +348,7 @@ _and 83 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PROC-0005` = 5.79e+09 ns | 100% | device_type=FTJ, architecture=Naive | hardware=NVIDIA RTX PRO 6000 Blackwell GPU, implementation_type=full-resolution implementation |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0020` = 1.4e+07 ns | 100% | device_type=FTJ, architecture=Merged | concurrency_n_a=48, design=our design with tiering, component=end-to-end time-between-tokens (TBT) |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0021` = 2.7e+07 ns | 100% | device_type=FTJ, architecture=Merged | concurrency_n_a=128, design=our design with tiering |
+| `CLM-ARCH-0013` = 162 ns | `CLM-DEV-0066` = 6e+10 ns | 100% | device_type=FTJ, architecture=Merged | software=MATLAB Deep Learning Toolbox |
 | `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0119` = 0.00029 ns | 100% | device_type=FTJ, architecture=Merged | material=MAPbBr3, measurement_method=Time-resolved optical Kerr-effect measurements |
 | `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0120` = 0.0007 ns | 100% | device_type=FTJ, architecture=Merged | measurement_method=Time-resolved optical Kerr-effect measurements |
 | `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0123` = 0.00015 ns | 100% | device_type=FTJ, architecture=Merged | measurement_method=Multidimensional coherent spectroscopy |
@@ -352,6 +360,7 @@ _and 83 more_
 | `CLM-ARCH-0013` = 162 ns | `CLM-PROC-0005` = 5.79e+09 ns | 100% | device_type=FTJ, architecture=Merged | hardware=NVIDIA RTX PRO 6000 Blackwell GPU, implementation_type=full-resolution implementation |
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-ARCH-0020` = 1.4e+07 ns | 100% | device_type=FTJ, architecture=Symmetry | concurrency_n_a=48, design=our design with tiering, component=end-to-end time-between-tokens (TBT) |
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-ARCH-0021` = 2.7e+07 ns | 100% | device_type=FTJ, architecture=Symmetry | concurrency_n_a=128, design=our design with tiering |
+| `CLM-ARCH-0014` = 153.5 ns | `CLM-DEV-0066` = 6e+10 ns | 100% | device_type=FTJ, architecture=Symmetry | software=MATLAB Deep Learning Toolbox |
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-MAT-0119` = 0.00029 ns | 100% | device_type=FTJ, architecture=Symmetry | material=MAPbBr3, measurement_method=Time-resolved optical Kerr-effect measurements |
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-MAT-0120` = 0.0007 ns | 100% | device_type=FTJ, architecture=Symmetry | measurement_method=Time-resolved optical Kerr-effect measurements |
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-MAT-0123` = 0.00015 ns | 100% | device_type=FTJ, architecture=Symmetry | measurement_method=Multidimensional coherent spectroscopy |
@@ -361,34 +370,36 @@ _and 83 more_
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-PHOT-0073` = 0.0004 ns | 100% | device_type=FTJ, architecture=Symmetry | material=ITO film |
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-PKG-0002` = 2.499e+08 ns | 100% | device_type=FTJ, architecture=Symmetry | model=Qwen3-1.7B, channels=16 channels, erase_latency=2000 µs |
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-PROC-0005` = 5.79e+09 ns | 100% | device_type=FTJ, architecture=Symmetry | hardware=NVIDIA RTX PRO 6000 Blackwell GPU, implementation_type=full-resolution implementation |
+| `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-DEV-0066` = 6e+10 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | software=MATLAB Deep Learning Toolbox |
 | `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-MAT-0005` = 0.0061 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | material=monolayer MoS2, temperature=300 K, excitation_energy=1.7 eV |
 | `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-MAT-0119` = 0.00029 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | material=MAPbBr3, measurement_method=Time-resolved optical Kerr-effect measurements |
 | `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-MAT-0120` = 0.0007 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | measurement_method=Time-resolved optical Kerr-effect measurements |
-| `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-MAT-0121` = 0.01 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | carrier_density=2.3×1019 cm−3, measurement_method=Femtosecond electron diffraction (FED) |
-| `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-MAT-0122` = 0.027 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | carrier_density=2.3×1019 cm−3, measurement_method=Femtosecond electron diffraction (FED) |
-| `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-MAT-0123` = 0.00015 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | measurement_method=Multidimensional coherent spectroscopy |
-| `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-MAT-0127` = 0.0003 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | feature=XA |
 
-_and 351 more_
+_and 382 more_
 
-## `voltage` (16 pair(s))
+## `voltage` (21 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-DEV-0006` = 85 V | `CLM-MAT-0064` = 1.5e-07 V | 100% | incident_peak_electric_field=150 kV/cm | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 |
+| `CLM-DEV-0067` = 0.47 V | `CLM-MAT-0064` = 1.5e-07 V | 100% | device_architecture=Gr/n-Si, illumination=AM 1.5G, 100 mW cm⁻² | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 |
 | `CLM-MAT-0064` = 1.5e-07 V | `CLM-MAT-0099` = 0.53 V | 100% | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 | charging_voltage=0.6 V versus Ag/AgCl |
 | `CLM-MAT-0064` = 1.5e-07 V | `CLM-MAT-0100` = 0.38 V | 100% | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 | charging_voltage=0.6 V versus Ag/AgCl |
 | `CLM-DEV-0006` = 85 V | `CLM-MAT-0100` = 0.38 V | 100% | incident_peak_electric_field=150 kV/cm | charging_voltage=0.6 V versus Ag/AgCl |
+| `CLM-DEV-0006` = 85 V | `CLM-DEV-0067` = 0.47 V | 99% | incident_peak_electric_field=150 kV/cm | device_architecture=Gr/n-Si, illumination=AM 1.5G, 100 mW cm⁻² |
 | `CLM-DEV-0006` = 85 V | `CLM-MAT-0099` = 0.53 V | 99% | incident_peak_electric_field=150 kV/cm | charging_voltage=0.6 V versus Ag/AgCl |
 | `CLM-DEV-0006` = 85 V | `CLM-DEV-0027` = 1.53 V | 98% | incident_peak_electric_field=150 kV/cm | device_type=VO2 thin film device, temperature=330 K, transition_type=reset |
 | `CLM-DEV-0006` = 85 V | `CLM-MEM-0011` = 2.32 V | 97% | incident_peak_electric_field=150 kV/cm | device=Ag/TiOx/NiOx/p++-Si device, operation=SET voltage (V SET) |
 | `CLM-DEV-0026` = 12.65 V | `CLM-MAT-0100` = 0.38 V | 97% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | charging_voltage=0.6 V versus Ag/AgCl |
+| `CLM-DEV-0026` = 12.65 V | `CLM-DEV-0067` = 0.47 V | 96% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | device_architecture=Gr/n-Si, illumination=AM 1.5G, 100 mW cm⁻² |
 | `CLM-DEV-0026` = 12.65 V | `CLM-MAT-0099` = 0.53 V | 96% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | charging_voltage=0.6 V versus Ag/AgCl |
 | `CLM-DEV-0006` = 85 V | `CLM-DEV-0026` = 12.65 V | 85% | incident_peak_electric_field=150 kV/cm | device_type=VO2 thin film device, temperature=330 K, transition_type=set |
 | `CLM-MAT-0100` = 0.38 V | `CLM-MEM-0011` = 2.32 V | 84% | charging_voltage=0.6 V versus Ag/AgCl | device=Ag/TiOx/NiOx/p++-Si device, operation=SET voltage (V SET) |
 | `CLM-DEV-0026` = 12.65 V | `CLM-MEM-0011` = 2.32 V | 82% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | device=Ag/TiOx/NiOx/p++-Si device, operation=SET voltage (V SET) |
+| `CLM-DEV-0067` = 0.47 V | `CLM-MEM-0011` = 2.32 V | 80% | device_architecture=Gr/n-Si, illumination=AM 1.5G, 100 mW cm⁻² | device=Ag/TiOx/NiOx/p++-Si device, operation=SET voltage (V SET) |
 | `CLM-MAT-0099` = 0.53 V | `CLM-MEM-0011` = 2.32 V | 77% | charging_voltage=0.6 V versus Ag/AgCl | device=Ag/TiOx/NiOx/p++-Si device, operation=SET voltage (V SET) |
 | `CLM-DEV-0027` = 1.53 V | `CLM-MAT-0100` = 0.38 V | 75% | device_type=VO2 thin film device, temperature=330 K, transition_type=reset | charging_voltage=0.6 V versus Ag/AgCl |
+| `CLM-DEV-0027` = 1.53 V | `CLM-DEV-0067` = 0.47 V | 69% | device_type=VO2 thin film device, temperature=330 K, transition_type=reset | device_architecture=Gr/n-Si, illumination=AM 1.5G, 100 mW cm⁻² |
 | `CLM-DEV-0027` = 1.53 V | `CLM-MAT-0099` = 0.53 V | 65% | device_type=VO2 thin film device, temperature=330 K, transition_type=reset | charging_voltage=0.6 V versus Ag/AgCl |
 | `CLM-DEV-0027` = 1.53 V | `CLM-MEM-0011` = 2.32 V | 34% | device_type=VO2 thin film device, temperature=330 K, transition_type=reset | device=Ag/TiOx/NiOx/p++-Si device, operation=SET voltage (V SET) |
 

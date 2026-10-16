@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-10-15.
+Topic code `PROC`. Last reviewed 2026-10-16.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -11,6 +11,17 @@ Topic code `PROC`. Last reviewed 2026-10-15.
 - **1.45798e-05 fJ** — The root-mean-square deviation of the formation free energy per formula unit for fluorides is reduced to 0.091 eV.
   - `CLM-PROC-0031` · error_metric root-mean-square deviation per formula unit · grade B · credibility unknown · simulated · as of 2026-10-13
   - sources: SRC-00137
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+
+### frequency
+
+- **7.9 GHz** — The two-channel holder equipped with a representative Si/Si3N4 TEM chip exhibits a -3 dB bandwidth of 7.9 GHz.
+  - `CLM-PROC-0032` · holder_type two-channel holder, chip_type Si/Si3N4 chip, metric -3 dB bandwidth · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00152
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **≈4.5 GHz** — For the four-channel configuration, the -3 dB bandwidth reaches approximately 4.5 GHz.
+  - `CLM-PROC-0033` · holder_type four-channel configuration, metric -3 dB bandwidth · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00152
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### length device
@@ -66,6 +77,10 @@ Topic code `PROC`. Last reviewed 2026-10-15.
   - `CLM-PROC-0010` · voltage 20 kV · grade B · credibility unknown · measured · as of 2026-10-01
   - sources: SRC-00064
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- For a 330 µm-wide deflector, the FEM calculated deflection angle per unit applied voltage is 16 µrad·V-1.
+  - `CLM-PROC-0034` · slit_width 330 µm, method finite-element modelling · grade B · credibility unknown · simulated · as of 2026-10-15
+  - sources: SRC-00152
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -222,6 +237,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 31
-- grades: {'B': 31}
-- distinct sources: 10
+- claims: 34
+- grades: {'B': 34}
+- distinct sources: 11

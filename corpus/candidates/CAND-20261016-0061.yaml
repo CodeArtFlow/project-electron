@@ -23,6 +23,30 @@ id: CAND-20261016-0061
 harvested_date: '2026-10-16'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-16'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: 'Iterative phase retrieval from a single CBED pattern reconstructs relaxed atomic coordinates
+      in graphene around a defect with a maximum deviation of 0.1 Å from '
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''Å'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - The maximal deviation of the reconstructed coordinates from the correct coordinates is 0.1 Å, and
+      this originates not from the iterative phase retrieval but from the finite sampling of the transmission
+      function of the atomic distribution an
+    - finite pixel size of 9.8 pm
+    - The defocus value was set to f = −0.1 m
+    - semi -convergence angle  = 7 mrad
+  tokens:
+    input: 10850
+    output: 658
+  fetched_chars: 29488

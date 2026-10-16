@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-15.
+Topic code `MAT`. Last reviewed 2026-10-16.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 

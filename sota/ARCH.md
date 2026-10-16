@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-15.
+Topic code `ARCH`. Last reviewed 2026-10-16.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -241,6 +241,14 @@ Topic code `ARCH`. Last reviewed 2026-10-15.
   - `CLM-ARCH-0088` · evaluation_mode matched multi-view evaluation · grade B · credibility unknown · measured · as of 2026-10-09
   - sources: SRC-00135
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- PSA reduces the ifmap memory footprint by 18.67x compared with an explicit im2col baseline.
+  - `CLM-ARCH-0092` · baseline dense explicit im2col baseline · grade B · credibility unknown · simulated · as of 2026-10-15
+  - sources: SRC-00153
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- PSA reduces mapping cost by 12.43x compared with a dense explicit im2col baseline.
+  - `CLM-ARCH-0093` · baseline dense explicit im2col baseline · grade B · credibility unknown · simulated · as of 2026-10-15
+  - sources: SRC-00153
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -433,6 +441,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 91
-- grades: {'B': 91}
-- distinct sources: 31
+- claims: 93
+- grades: {'B': 93}
+- distinct sources: 32

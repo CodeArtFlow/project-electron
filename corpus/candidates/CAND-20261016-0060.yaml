@@ -23,6 +23,66 @@ id: CAND-20261016-0060
 harvested_date: '2026-10-16'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-16'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The optimized 8-stage RISC-V core with no reset on delays achieves a maximum clock frequency
+      of 775MHz in an Altera Agilex 5 device for the Quicksort applicatio
+    reason: the statement contains the number 8, which none of its quotes contain
+    quotes:
+    - Our optimized RISC-V is as small as170 ALMsand closes timing at775MHzin an Altera Agilex 5 device.
+    - We compiled the optimized RISC-V core using Quartus 25.1 into an Agilex 5 A5EC013AB23AI1V device.
+    - in an Altera Agilex 5 device.
+    - RISC-V 8-Stage
+  - statement: The optimized 8-stage RISC-V core with no reset on delays uses 170 ALMs in an Altera Agilex
+      5 device for Quicksort.
+    reason: the statement contains the number 8, which none of its quotes contain
+    quotes:
+    - Our optimized RISC-V is as small as170 ALMsand closes timing at775MHzin an Altera Agilex 5 device.
+    - We compiled the optimized RISC-V core using Quartus 25.1 into an Agilex 5 A5EC013AB23AI1V device.
+    - in an Altera Agilex 5 device.
+    - RISC-V 8-Stage
+  - statement: The default 8-stage lightweight RISC-V core consumes 447 ALMs and achieves an FMax of 658
+      MHz on Agilex A5EC013AB23 speed grade -1.
+    reason: the statement contains the number 13, which none of its quotes contain
+    quotes:
+    - RISC-V 8-Stage Default 447 250 914 751 152 11 658 639 511
+    - 'Table 1: Lightweight RISC-V cost when compiled to Agilex A5EC013AB23 devices.'
+    - compiled to Agilex A5EC013AB23 devices.
+    - Speed Grade -1
+  - statement: The default 5-stage lightweight RISC-V core consumes 493 ALMs and achieves an FMax of 428
+      MHz on Agilex A5EC013AB23 speed grade -1.
+    reason: the statement contains the number 13, which none of its quotes contain
+    quotes:
+    - RISC-V 5-Stage Default 493 248 762 634 128 0 428 383 301
+    - 'Table 1: Lightweight RISC-V cost when compiled to Agilex A5EC013AB23 devices.'
+    - compiled to Agilex A5EC013AB23 devices.
+    - Speed Grade -1
+  - statement: The 8-stage RV32I core achieves an FMax of 784 MHz for the Quicksort application with default
+      synthesis.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - RISC-V 8-Stage Default 178 85 42 349 300 49 0 784
+    - We compiled the optimized RISC-V core using Quartus 25.1 into an Agilex 5 A5EC013AB23AI1V device.
+    - RISC-V 8-Stage
+    - Default
+  - statement: The optimized RV32F configuration with enumerated shifts consumes 298 ALMs and reaches
+      an FMax of 668 MHz for the Gaussian matrix solver.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - Enumerated Shifts 298 133 639 6 1 668
+    - 'Table 6: Optimized RISC-V F-extension resources for the Gaussian matrix solver.'
+    - Enumerated Shifts
+    - compiled to the A5EC013AB23AI1V device
+  tokens:
+    input: 13618
+    output: 2545
+  fetched_chars: 41131

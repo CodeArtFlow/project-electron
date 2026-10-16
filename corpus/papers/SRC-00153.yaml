@@ -1,0 +1,89 @@
+id: SRC-00153
+title: 'PSA: A Pruning-Friendly Sparse-Aware Accelerator for Efficient Sparse Convolution in SNNs'
+doi: null
+arxiv_id: 2610.21313v1
+url: https://arxiv.org/abs/2610.21313v1
+venue_id: arxiv_api
+authors:
+- name: Sanhe Fu
+  affiliation: null
+  corresponding: null
+- name: Kainan Wang
+  affiliation: null
+  corresponding: null
+- name: Bo Wang
+  affiliation: null
+  corresponding: null
+- name: Aili Wang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-15'
+retrieved_date: '2026-10-16'
+access: full_text
+read_scope: Automated reading. The full PDF text (23,493 characters, 5 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.21313v1 on
+  2026-10-16. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“PSA reduces the ifmap memory footprint by 18.67×and the mapping cost by 12.43× compared with
+  a dense explicit im2col baseline.”
+
+  “We synthesized PSA in a 28 nm CMOS technology at 500 MHz and 0.72 V , and the overall implementation
+  results are summarized in Table I.”'
+method_summary: “We synthesized PSA in a 28 nm CMOS technology at 500 MHz and 0.72 V , and the overall
+  implementation results are summarized in Table I.”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 8168
+    output: 2607
+  claims_accepted: 2
+  claims_rejected: 5
+  rejected:
+  - statement: PSA achieves a peak performance of 843.93 GOPS at 500 MHz and 0.72 V in 28 nm CMOS technology.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - We synthesized PSA in a 28 nm CMOS technology at 500 MHz and 0.72 V , and the overall implementation
+      results are summarized in Table I.
+    - Peak Performancea [GOPS] 843.93
+  - statement: PSA achieves an energy efficiency of 24.09 TOPS/W at a pruning rate of 76.3% and an input
+      sparsity of 93.67%.
+    reason: '[missing_required_conditions] efficiency_compute requires precision, sparsity; missing precision,
+      sparsity'
+    quotes:
+    - Energy Efficiency [TOPS/W] 24.09c
+    - c Energy Eff. & Area Eff. @ Pruning Rate = 76.3%, Input Sparsity = 93.67%.
+    - We synthesized PSA in a 28 nm CMOS technology at 500 MHz and 0.72 V , and the overall implementation
+      results are summarized in Table I.
+  - statement: PSA occupies an area of 2.55 mm2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Area [mm
+      2] 2.55'''
+    quotes:
+    - Area [mm 2] 2.55
+    - We synthesized PSA in a 28 nm CMOS technology at 500 MHz and 0.72 V , and the overall implementation
+      results are summarized in Table I.
+  - statement: PSA achieves a 4.45x improvement in energy efficiency over the dense baseline.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Results on
+      ResNet-18/CIFAR-10 show that PSA achieves a 4.45x improveme'''
+    quotes:
+    - Results on ResNet-18/CIFAR-10 show that PSA achieves a 4.45x improvement in energy efficiency and
+      an 18.52x reduction in energy-delay product (EDP) over the dense baseline.
+    - We synthesized PSA in a 28 nm CMOS technology at 500 MHz and 0.72 V , and the overall implementation
+      results are summarized in Table I.
+  - statement: PSA achieves an 18.52x reduction in energy-delay product (EDP) over the dense baseline
+      on ResNet-18/CIFAR-10.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Results on
+      ResNet-18/CIFAR-10 show that PSA achieves a 4.45x improveme'''
+    quotes:
+    - Results on ResNet-18/CIFAR-10 show that PSA achieves a 4.45x improvement in energy efficiency and
+      an 18.52x reduction in energy-delay product (EDP) over the dense baseline.
+    - We synthesized PSA in a 28 nm CMOS technology at 500 MHz and 0.72 V , and the overall implementation
+      results are summarized in Table I.
+corrections: []

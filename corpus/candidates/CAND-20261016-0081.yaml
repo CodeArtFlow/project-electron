@@ -23,6 +23,64 @@ id: CAND-20261016-0081
 harvested_date: '2026-10-16'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-16'
+  reason: the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Helix achieves a maximum speedup of 7.91× over Xilinx XcgSolver on a Xilinx Alveo U55C
+      FPGA.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - Helix achieves up to 7.91× and 1.16× speedups over Xilinx XcgSolver and the state -of-the-art FPGA
+      accelerator Callipepla, respectively, both of which support only JPCG.
+    - We prototype Helix on a Xilinx Alveo U55C FPGA and evaluate Helix’s practicality and performance
+      by using it to compile and execute eight solvers.
+    - We prototype Helix on a Xilinx Alveo U55C FPGA
+    - over Xilinx XcgSolver
+  - statement: Helix achieves a maximum speedup of 1.16× over Callipepla on a Xilinx Alveo U55C FPGA.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - Helix achieves up to 7.91× and 1.16× speedups over Xilinx XcgSolver and the state -of-the-art FPGA
+      accelerator Callipepla, respectively, both of which support only JPCG.
+    - We prototype Helix on a Xilinx Alveo U55C FPGA and evaluate Helix’s practicality and performance
+      by using it to compile and execute eight solvers.
+    - We prototype Helix on a Xilinx Alveo U55C FPGA
+    - and the state -of-the-art FPGA accelerator Callipepla, respectively
+  - statement: The programmable components of Helix incur an execution-time overhead of between 0.25%
+      and 0.57%.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - The programmable components incur 0.25%−0.57% execution -time overhead and 4.7% LUT and 4.0% FF
+      overhead, demonstrating negligible overhead for programmability.
+    - We prototype Helix on a Xilinx Alveo U55C FPGA and evaluate Helix’s practicality and performance
+      by using it to compile and execute eight solvers.
+    - We prototype Helix on a Xilinx Alveo U55C FPGA
+  - statement: Helix operates at a clock frequency of 226 MHz on a Xilinx Alveo U55C FPGA.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''TABLE III'''
+    quotes:
+    - TABLE III
+    - Helix 226 MHz 14 GB 403 GB/s 56 W
+    - We prototype Helix on a Xilinx Alveo U55C FPGA and evaluate Helix’s practicality and performance
+      by using it to compile and execute eight solvers.
+    - TABLE III THE OPERATING FREQUENCY, UTILIZED MEMORY CAPACITY, PEAK MEMORY BANDWIDTH, AND RUNTIME
+      POWER OF THE EVALUATED FPGA ACCELERATORS AND GPU.
+  - statement: Helix consumes 56 W of runtime power on the Xilinx Alveo U55C FPGA.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''TABLE III'''
+    quotes:
+    - TABLE III
+    - Helix 226 MHz 14 GB 403 GB/s 56 W
+    - We prototype Helix on a Xilinx Alveo U55C FPGA and evaluate Helix’s practicality and performance
+      by using it to compile and execute eight solvers.
+    - TABLE III THE OPERATING FREQUENCY, UTILIZED MEMORY CAPACITY, PEAK MEMORY BANDWIDTH, AND RUNTIME
+      POWER OF THE EVALUATED FPGA ACCELERATORS AND GPU.
+  tokens:
+    input: 27819
+    output: 1628
+  fetched_chars: 85454
