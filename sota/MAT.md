@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-16.
+Topic code `MAT`. Last reviewed 2026-10-17.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -184,6 +184,53 @@ Topic code `MAT`. Last reviewed 2026-10-16.
   - `CLM-MAT-0118` · region separated by a single hBN spacer layer · grade B · credibility unknown · measured · as of 2026-10-09
   - sources: SRC-00134
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **800 nm** — The average domain period of CoB/Pt measured via Fresnel imaging at zero-field and 25° tilt is 800 nm.
+  - `CLM-MAT-0132` · sample_alias CoB/Pt, imaging_mode Fresnel imaging, sample_tilt 25 o · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00158
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **41 nm** — The domain wall width of CoB/Pt measured via DPC imaging is 41 nm.
+  - `CLM-MAT-0133` · sample_alias CoB/Pt, imaging_mode DPC · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00158
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **0.558 nm** — The calculated LDA-relaxed lattice parameter for germanium is 5.58 Å.
+  - `CLM-MAT-0134` · method LDA-relaxed · grade B · credibility unknown · simulated · as of 2026-10-15
+  - sources: SRC-00161
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.013 nm** — In the refined model for the n=3, m=5 superlattice, the out-of-plane displacement of Pb in the PbTiO3 layers is 13 pm.
+  - `CLM-MAT-0135` · superlattice_layer_n 3, superlattice_layer_m 5 · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00162
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0061, CFL-0062, CFL-0063, CFL-0064, CFL-0065, CFL-0066 — see the open register
+- **0.006 nm** — In the refined model for the n=3, m=5 superlattice, the in-plane displacement of Pb in the PbTiO3 layers is 6 pm.
+  - `CLM-MAT-0136` · superlattice_layer_n 3, superlattice_layer_m 5 · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00162
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0061, CFL-0067, CFL-0068, CFL-0069, CFL-0070, CFL-0071 — see the open register
+- **0.011 nm** — In the refined model for the n=3, m=5 superlattice, the out-of-plane displacement of Ti in the PbTiO3 layers is 11 pm.
+  - `CLM-MAT-0137` · superlattice_layer_n 3, superlattice_layer_m 5 · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00162
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0062, CFL-0067, CFL-0072, CFL-0073, CFL-0074, CFL-0075 — see the open register
+- **0.005 nm** — In the refined model for the n=3, m=5 superlattice, the in-plane displacement of Ti in the PbTiO3 layers is 5 pm.
+  - `CLM-MAT-0138` · superlattice_layer_n 3, superlattice_layer_m 5 · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00162
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0063, CFL-0068, CFL-0072, CFL-0076, CFL-0077 — see the open register
+- **0.007 nm** — In the refined model for the n=3, m=5 superlattice, Sr in the SrTiO3 spacers is displaced by 7 pm out of plane.
+  - `CLM-MAT-0139` · superlattice_layer_n 3, superlattice_layer_m 5 · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00162
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0064, CFL-0069, CFL-0073, CFL-0076, CFL-0078, CFL-0079 — see the open register
+- **0.005 nm** — In the refined model for the n=3, m=5 superlattice, Ti in the SrTiO3 spacers is displaced by 5 pm out of plane.
+  - `CLM-MAT-0140` · superlattice_layer_n 3, superlattice_layer_m 5 · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00162
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0065, CFL-0070, CFL-0074, CFL-0078, CFL-0080 — see the open register
+- **0.3947 nm** — The out-of-plane lattice parameter of the SrTiO3 layers, c_STO, in the n=3, m=5 superlattice is 3.947 Å.
+  - `CLM-MAT-0141` · layer_type SrTiO3 layers, superlattice_layer_n 3, superlattice_layer_m 5 · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00162
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0066, CFL-0071, CFL-0075, CFL-0077, CFL-0079, CFL-0080 — see the open register
 
 ### power
 
@@ -625,9 +672,69 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0059` — time: _unexamined; classification pending_
   - claims: CLM-MAT-0121, CLM-MAT-0122
   - missing data: `not yet named`
+- `CFL-0061` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0135, CLM-MAT-0136
+  - missing data: `not yet named`
+- `CFL-0062` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0135, CLM-MAT-0137
+  - missing data: `not yet named`
+- `CFL-0063` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0135, CLM-MAT-0138
+  - missing data: `not yet named`
+- `CFL-0064` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0135, CLM-MAT-0139
+  - missing data: `not yet named`
+- `CFL-0065` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0135, CLM-MAT-0140
+  - missing data: `not yet named`
+- `CFL-0066` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0135, CLM-MAT-0141
+  - missing data: `not yet named`
+- `CFL-0067` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0136, CLM-MAT-0137
+  - missing data: `not yet named`
+- `CFL-0068` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0136, CLM-MAT-0138
+  - missing data: `not yet named`
+- `CFL-0069` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0136, CLM-MAT-0139
+  - missing data: `not yet named`
+- `CFL-0070` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0136, CLM-MAT-0140
+  - missing data: `not yet named`
+- `CFL-0071` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0136, CLM-MAT-0141
+  - missing data: `not yet named`
+- `CFL-0072` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0137, CLM-MAT-0138
+  - missing data: `not yet named`
+- `CFL-0073` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0137, CLM-MAT-0139
+  - missing data: `not yet named`
+- `CFL-0074` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0137, CLM-MAT-0140
+  - missing data: `not yet named`
+- `CFL-0075` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0137, CLM-MAT-0141
+  - missing data: `not yet named`
+- `CFL-0076` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0138, CLM-MAT-0139
+  - missing data: `not yet named`
+- `CFL-0077` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0138, CLM-MAT-0141
+  - missing data: `not yet named`
+- `CFL-0078` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0139, CLM-MAT-0140
+  - missing data: `not yet named`
+- `CFL-0079` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0139, CLM-MAT-0141
+  - missing data: `not yet named`
+- `CFL-0080` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0140, CLM-MAT-0141
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 131
-- grades: {'B': 131}
-- distinct sources: 49
+- claims: 141
+- grades: {'B': 141}
+- distinct sources: 52

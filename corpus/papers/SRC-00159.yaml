@@ -1,0 +1,61 @@
+id: SRC-00159
+title: Compiling Multi-Threshold Operators for Quantized Non-Monotonic and Fine-Granular Activations in
+  Custom-Tailored DNN Accelerators
+doi: null
+arxiv_id: 2610.21825v1
+url: https://arxiv.org/abs/2610.21825v1
+venue_id: arxiv_api
+authors:
+- name: Christoph Berganski
+  affiliation: null
+  corresponding: null
+- name: Felix Jentzsch
+  affiliation: null
+  corresponding: null
+- name: Marco Platzner
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-15'
+retrieved_date: '2026-10-17'
+access: full_text
+read_scope: Automated reading. The full PDF text (44,157 characters, 10 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.21825v1 on
+  2026-10-17. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The graph-level decomposition clearly shows the cost of inserting additional operators, where
+  the total LUT utilization is up to 1.5× compared to the hardware implementation.”
+
+  “targeting the Alveo U55C at 100 MHz”
+
+  “The design is synthesized using Vivado 2024.2 targeting the Alveo U55C at 100 MHz.”
+
+  “PE= 4 parallel processing elements along the final axis”
+
+  “Non-Monotonic Graph-Level Decomposition”'
+method_summary: '“The design is synthesized using Vivado 2024.2 targeting the Alveo U55C at 100 MHz.”
+
+  “The design is verified in RTL simulation.”
+
+  “We report resource utilization averaged over seven repetitions using varying random seeds.”'
+limitations: '“Non-monotonic functions are more costly to implement than monotonic functions, though the
+  difference is rather small for the direct hardware implementation and on the order of at most a few
+  hundred LUTs.”
+
+  “The graph-level decomposition clearly shows the cost of inserting additional operators, where the total
+  LUT utilization is up to 1.5× compared to the hardware implementation.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14991
+    output: 704
+  claims_accepted: 1
+  claims_rejected: 0
+  rejected: []
+corrections: []

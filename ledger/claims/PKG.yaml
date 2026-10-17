@@ -56,3 +56,75 @@ claims:
       model: Qwen3-1.7B
       channels: 16 channels
       erase_latency: 2000 µs
+- id: CLM-PKG-0003
+  topic: PKG
+  statement: The EL emission peak of the D-DLAT sample is red-shifted by 1 nm under an injection current
+    of 9 mA.
+  sources:
+  - SRC-00160
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-15'
+  created: '2026-10-17'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    injection_current: 9 mA
+    sample_type: D-DLAT sample
+  quantity:
+    quantity: wavelength
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.0
+      unit: nm
+    si_base:
+      value: 1.0e-09
+      unit: m
+    display:
+      value: 0.001
+      unit: um
+    conditions:
+      injection_current: 9 mA
+      sample_type: D-DLAT sample
+- id: CLM-PKG-0004
+  topic: PKG
+  statement: The brightness and EQE of the transferred chips undergo a maximum decrease of approximately
+    35% after the D-DLAT process.
+  sources:
+  - SRC-00160
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-15'
+  created: '2026-10-17'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    process: D-DLAT
+    device: transferred chips
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: true
+    as_published:
+      value: 35.0
+      unit: '%'
+    si_base:
+      value: 0.35000000000000003
+      unit: dimensionless
+    display:
+      value: 35.0
+      unit: percent
+    conditions:
+      process: D-DLAT
+      device: transferred chips

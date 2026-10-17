@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-16.
+Topic code `ARCH`. Last reviewed 2026-10-17.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -249,6 +249,10 @@ Topic code `ARCH`. Last reviewed 2026-10-16.
   - `CLM-ARCH-0093` · baseline dense explicit im2col baseline · grade B · credibility unknown · simulated · as of 2026-10-15
   - sources: SRC-00153
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- For non-monotonic functions using the graph-level decomposition approach, the total lookup table utilization is up to 1.5x compared to the direct hardware implementation.
+  - `CLM-ARCH-0094` · target_device Alveo U55C, frequency 100 MHz, synthesis_tool Vivado 2024.2, processing_elements 4, function_type Non-Monotonic · grade B · credibility unknown · measured · as of 2026-10-15
+  - sources: SRC-00159
+  - ⚙ automated extraction (gemini-3.6-flash; 7 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -441,6 +445,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 93
-- grades: {'B': 93}
-- distinct sources: 32
+- claims: 94
+- grades: {'B': 94}
+- distinct sources: 33

@@ -1,0 +1,90 @@
+id: SRC-00160
+title: Ablation-Driven Selective Laser Direct Mass Transfer for Micro-LEDs with High Speed, Enhanced Gap
+  Tolerance, and High Precision
+doi: null
+arxiv_id: 2610.21839v1
+url: https://arxiv.org/abs/2610.21839v1
+venue_id: arxiv_api
+authors:
+- name: Yuxuan Cao
+  affiliation: null
+  corresponding: null
+- name: Yulong Wang
+  affiliation: null
+  corresponding: null
+- name: Jürgen Brugger
+  affiliation: null
+  corresponding: null
+- name: Zhen Zhang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-15'
+retrieved_date: '2026-10-17'
+access: full_text
+read_scope: Automated reading. The full PDF text (63,295 characters, 34 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.21839v1 on
+  2026-10-17. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Figure 7A illustrates the electroluminescence (EL) spectra of the reference and D-DLAT samples
+  under an injection current of 9 mA. The EL emission peak of the D-DLAT sample exhibits a slight red-shift
+  of 1 nm, which remains within the commercial tolerance (±4 nm) and is considered negligible (47).”
+
+  “Figure 7A illustrates the electroluminescence (EL) spectra of the reference and D-DLAT samples under
+  an injection current of 9 mA.”
+
+  “The EL emission peak of the D-DLAT sample exhibits a slight red-shift of 1 nm, which remains within
+  the commercial tolerance (±4 nm) and is considered negligible (47).”
+
+  “Figures 7C and D display the current-brightness and external quantum efficiency (EQE) curves, respectively.
+  The brightness and EQE of the transferred chips show a maximum decrease of≈35%, but maintain the same
+  trends and order of magnitude as those of the reference chips.”
+
+  “This reduction remains within a reasonable range compared with previously reported results, indicating
+  that the D-DLAT process exerts an acceptable impact on the overall performance of the micro-LEDs (48,
+  49).”
+
+  “The brightness and EQE of the transferred chips show a maximum decrease of≈35%, but maintain the same
+  trends and order of magnitude as those of the reference chips.”
+
+  “Figures 7C and D display the current-brightness and external quantum efficiency (EQE) curves, respectively.”'
+method_summary: '“A pulsed laser system (355 nm wavelength, 1 ns pulse width) generates individual laser
+  pulses with energies ranging from 1µJ to 10µJ.”
+
+  “A coaxial microscope system facilitatesin-situobservation of the laser ablation and the resulting transfer
+  displacement at an resolution of 0.97µm, thereby aiding in the evaluation of transfer precision and
+  the optimization of process parameters.”
+
+  “Furthermore, a cross-correlation image processing method is employed to precisely quantify the placement
+  mismatch of the 35×20×5µm chips, as detailed in Note S1 and Figure S5.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 18780
+    output: 1760
+  claims_accepted: 2
+  claims_rejected: 2
+  rejected:
+  - statement: 'In single-pulse transfer mode, the D-DLAT method achieves a minimum transferable chip
+      size of 35 µm, a minimum placement error of less than 1 µm, and a maximum '
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - In the single-pulse transfer mode, the D-DLAT method actively propels the chips towards the receiver,
+      achieving a minimum transferable chip size of 35µm, a minimum placement error of<1µm, and a maximum
+      transfer gap of≥50µm, which exceeds te
+  - statement: The D-DLAT process achieves a minimum reaction time of 1 ns.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''D-DLAT 35µm<1µm
+      50µm 1 ns'''
+    quotes:
+    - Table 2:Performance comparison of laser-assisted micro-LED transfer methods.Comparison of minimum
+      chip size, placement precision, maximum transfer gap, and reaction time for existing laser transfer
+      techniques and the proposed D-DLAT method.
+    - D-DLAT 35µm<1µm 50µm 1 ns
+corrections: []

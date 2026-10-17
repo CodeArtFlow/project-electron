@@ -2814,3 +2814,26 @@ claims:
     verified_quotes: 3
   conditions:
     baseline: dense explicit im2col baseline
+- id: CLM-ARCH-0094
+  topic: ARCH
+  statement: For non-monotonic functions using the graph-level decomposition approach, the total lookup
+    table utilization is up to 1.5x compared to the direct hardware implementation.
+  sources:
+  - SRC-00159
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-15'
+  created: '2026-10-17'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 7
+  conditions:
+    target_device: Alveo U55C
+    frequency: 100 MHz
+    synthesis_tool: Vivado 2024.2
+    processing_elements: '4'
+    function_type: Non-Monotonic

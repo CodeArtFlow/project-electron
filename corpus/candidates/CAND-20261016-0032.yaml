@@ -23,6 +23,86 @@ id: CAND-20261016-0032
 harvested_date: '2026-10-16'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-17'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The 200-nm-thick CrN(113) layer has an out-of-plane lattice constant of 4.146 Å in its
+      final state.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Although
+      the CrN(113) layer is fully relaxed in the final state, exhib'''
+    quotes:
+    - Although the CrN(113) layer is fully relaxed in the final state, exhibiting an out-of-plane lattice
+      constant of 4.146​Åand in-plane lattice constants of 2.933​Åalong [1 ¯10]CrN and 9.727​Å along [33¯2]CrN
+    - The structural properties of the layers are characterized using a high-resolution (HR)XRD system
+      (Philips Panalytical X’Pert PRO MRD) equipped with a two-bounce hybrid monochromator Ge(220) for
+      the CuKα1 source (λ =1.540 598​Å).
+    - CrN(113) layer
+    - 200-nm-thick
+  - statement: The 200-nm-thick CrN(113) layer has an in-plane lattice constant of 2.933 Å along the [1¯10]CrN
+      direction.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Although
+      the CrN(113) layer is fully relaxed in the final state, exhib'''
+    quotes:
+    - Although the CrN(113) layer is fully relaxed in the final state, exhibiting an out-of-plane lattice
+      constant of 4.146​Åand in-plane lattice constants of 2.933​Åalong [1 ¯10]CrN and 9.727​Å along [33¯2]CrN
+    - The structural properties of the layers are characterized using a high-resolution (HR)XRD system
+      (Philips Panalytical X’Pert PRO MRD) equipped with a two-bounce hybrid monochromator Ge(220) for
+      the CuKα1 source (λ =1.540 598​Å).
+    - CrN(113) layer
+    - along [1 ¯10]CrN
+  - statement: The 200-nm-thick CrN(113) layer has an in-plane lattice constant of 9.727 Å along the [33¯2]CrN
+      direction.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Although
+      the CrN(113) layer is fully relaxed in the final state, exhib'''
+    quotes:
+    - Although the CrN(113) layer is fully relaxed in the final state, exhibiting an out-of-plane lattice
+      constant of 4.146​Åand in-plane lattice constants of 2.933​Åalong [1 ¯10]CrN and 9.727​Å along [33¯2]CrN
+    - The structural properties of the layers are characterized using a high-resolution (HR)XRD system
+      (Philips Panalytical X’Pert PRO MRD) equipped with a two-bounce hybrid monochromator Ge(220) for
+      the CuKα1 source (λ =1.540 598​Å).
+    - CrN(113) layer
+    - along [33¯2]CrN
+  - statement: The root-mean-square surface roughness of the 200-nm-thick CrN(113) layer is 5.2 nm for
+      a 10×10 μm2 scan.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Similar to
+      ScN(113),40 the CrN(113) filmreplicates the anisotropic, st'''
+    quotes:
+    - Similar to ScN(113),40 the CrN(113) filmreplicates the anisotropic, stripe-like morphology of the
+      underlying semipolar AlN layer35,36 [see Fig. S3(a) in the Supplemental Material] but exhibits a
+      slightly larger root-mean-square (rms) roughn
+    - The surface morphology of layers is imaged by atomic force microscopy in contact mode (Dimension
+      Edge, Bruker).
+    - CrN(113) film
+    - 10×10μm 2 scan
+  - statement: The root-mean-square surface roughness of the AlN template is 3.0 nm for the 10×10 μm2
+      scan.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - with an rms value of 5.2nm for the10×10μm 2 scan compared to 3.0nm for the template
+    - The surface morphology of layers is imaged by atomic force microscopy in contact mode (Dimension
+      Edge, Bruker).
+    - template
+    - 10×10μm 2 scan
+  - statement: The residual strain magnitude of the CrN(113) layer is at most 0.03–0.06% along all axes.
+    reason: the statement contains the number 113, which none of its quotes contain
+    quotes:
+    - These results indicate that the layer is fully relaxed, with a residual strain magnitude of at most
+      0.03–0.06% along all axes.
+    - X-ray diffraction symmetric (*), skew-symmetric (**), and asymmetric (***) reflections of a CrN(113)
+      layer.
+    - CrN(113) layer
+    - along all axes
+  tokens:
+    input: 24884
+    output: 2921
+  fetched_chars: 54685

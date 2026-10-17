@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "model": "gemini-3.5-flash-lite",
   "extract_model": "gemini-3.6-flash",
   "prompt_version": "reader-v5",
@@ -10,769 +10,485 @@
   },
   "papers": [
     {
-      "candidate": "CAND-20261016-0085",
+      "candidate": "CAND-20261016-0045",
       "decision": "out_of_scope",
-      "reason": "This paper focuses on wireless communications and indoor localization using reconfigurable intelligent surfaces and millimeter-wave systems, which is out of scope for semiconductor research.",
-      "chars": 91309,
+      "reason": "The paper discusses quantum instanton approaches to metastable collective spin systems and is out of scope as it belongs to pure quantum physics and statistical mechanics rather than semiconductor research.",
+      "chars": 88150,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261016-0084",
+      "candidate": "CAND-20261016-0044",
       "decision": "out_of_scope",
-      "reason": "The paper focuses on metal-organic frameworks and soft porous crystals for gas adsorption using large language models, which is outside semiconductor research.",
-      "chars": 52938,
+      "reason": "The paper focuses on an unsupervised EEG-based auditory attention tracking algorithm using hidden Markov models, which belongs to biomedical signal processing and neuroscience rather than semiconductor research.",
+      "chars": 59423,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261016-0083",
-      "decision": "no_claims",
-      "reason": "the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 46837,
+      "candidate": "CAND-20261016-0043",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on thermoplasmonics and nanoscale heat localization in nanoparticles for photothermal applications in chemistry and medicine, which is out of scope for semiconductor research.",
+      "chars": 82491,
       "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0042",
+      "decision": "read",
+      "reason": "",
+      "chars": 37532,
+      "claims": [
+        "CLM-MAT-0132",
+        "CLM-MAT-0133"
+      ],
       "rejected": [
         {
-          "statement": "At milestone M07, FreeRTOS-C required 63,776 bytes of static RAM on the CH32V203RBT6.",
-          "reason": "the statement contains the number 7, which none of its quotes contain",
-          "quotes": [
-            "M07 +MQTT QoS 0 63,776 97.3% 14,568 22.2% 76,824 58.6% 73,164 55.8%",
-            "All measurements were performed on release-mode (optimized) builds.",
-            "RTOS",
-            "M07 +MQTT QoS 0"
-          ]
-        },
-        {
-          "statement": "At milestone M07, Embassy-Rust required 14,568 bytes of static RAM on the CH32V203RBT6.",
-          "reason": "the statement contains the number 7, which none of its quotes contain",
-          "quotes": [
-            "M07 +MQTT QoS 0 63,776 97.3% 14,568 22.2% 76,824 58.6% 73,164 55.8%",
-            "All measurements were performed on release-mode (optimized) builds.",
-            "Emb RAM",
-            "M07 +MQTT QoS 0"
-          ]
-        },
-        {
-          "statement": "At milestone M07, FreeRTOS-C Flash consumption was 76,824 bytes on the CH32V203RBT6.",
-          "reason": "the statement contains the number 7, which none of its quotes contain",
-          "quotes": [
-            "M07 +MQTT QoS 0 63,776 97.3% 14,568 22.2% 76,824 58.6% 73,164 55.8%",
-            "All measurements were performed on release-mode (optimized) builds.",
-            "RTOS Flash",
-            "M07 +MQTT QoS 0"
-          ]
-        },
-        {
-          "statement": "At milestone M07, Embassy-Rust Flash consumption was 73,164 bytes on the CH32V203RBT6.",
-          "reason": "the statement contains the number 7, which none of its quotes contain",
-          "quotes": [
-            "M07 +MQTT QoS 0 63,776 97.3% 14,568 22.2% 76,824 58.6% 73,164 55.8%",
-            "All measurements were performed on release-mode (optimized) builds.",
-            "Emb Flash",
-            "M07 +MQTT QoS 0"
-          ]
-        },
-        {
-          "statement": "At milestone M00, FreeRTOS-C required 6,928 bytes of static RAM.",
+          "statement": "The average domain period of CoB/C60 measured via Fresnel imaging at zero-field and 25\u00b0 tilt is 540 nm.",
           "reason": "the statement contains the number 0, which none of its quotes contain",
           "quotes": [
-            "M00 Baseline 6,928 10.6% 556 0.8% 9,372 7.2% 4,098 3.1%",
-            "All measurements were performed on release-mode (optimized) builds.",
-            "RTOS",
-            "M00 Baseline"
+            "This approach gave a period of 540\u00b115 nm for CoB/C60, which is significantly smaller than the period of 800\u00b115 nm measured for CoB/Pt.",
+            "CoB/C60: [Pt(7)CoB(14)Ir(7)] 5/C60(150)/Al(20)",
+            "Further zero-field Fresnel imaging of the multilayers at 25 o tilt was used to determine the domain period as shown in Fig. 3."
           ]
         },
         {
-          "statement": "At milestone M00, Embassy-Rust required 556 bytes of static RAM.",
+          "statement": "The domain wall width of CoB/C60 measured via DPC imaging is 28 nm.",
           "reason": "the statement contains the number 0, which none of its quotes contain",
           "quotes": [
-            "M00 Baseline 6,928 10.6% 556 0.8% 9,372 7.2% 4,098 3.1%",
-            "All measurements were performed on release-mode (optimized) builds.",
-            "Emb RAM",
-            "M00 Baseline"
-          ]
-        },
-        {
-          "statement": "At milestone M07, the cold build time for FreeRTOS-C was 7.72 seconds.",
-          "reason": "the statement contains the number 7, which none of its quotes contain",
-          "quotes": [
-            "M07 7.72 8.49 0.91x 7.60 0.101 75.3x",
-            "Each regime was run five times, sequentially and never overlapping, on the same machine ... and the median of the five runs is reported.",
-            "Cold: FreeRTOS-C",
-            "M07"
-          ]
-        },
-        {
-          "statement": "At milestone M07, the warm build time for Embassy-Rust was 0.101 seconds.",
-          "reason": "the statement contains the number 7, which none of its quotes contain",
-          "quotes": [
-            "M07 7.72 8.49 0.91x 7.60 0.101 75.3x",
-            "Each regime was run five times, sequentially and never overlapping, on the same machine ... and the median of the five runs is reported.",
-            "Warm: Embassy-Rust",
-            "M07"
+            "Repeating this process across all DPC images acquired for each sample, the characteristic wall width for CoB/C 60 was 28\u00b13 nm and for CoB/Pt was 41\u00b12 nm.",
+            "CoB/C60: [Pt(7)CoB(14)Ir(7)] 5/C60(150)/Al(20)"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261016-0082",
+      "candidate": "CAND-20261016-0041",
       "decision": "out_of_scope",
-      "reason": "The paper is focused on mathematical algorithms for spectral compressed sensing and low-rank Hankel matrix recovery, which is out of scope for semiconductor research.",
-      "chars": 47666,
+      "reason": "The paper focuses on structural and thermodynamic properties of multi-principal element alloys (MPEAs) for mechanical engineering applications, which is outside semiconductor research.",
+      "chars": 50719,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261016-0081",
-      "decision": "no_claims",
-      "reason": "the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 85454,
+      "candidate": "CAND-20261016-0040",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on quantum magnonics and fundamental magnetic properties of EuSe films at millikelvin temperatures for quantum information applications rather than semiconductor devices, materials for electronics, or chip fabrication.",
+      "chars": 42370,
       "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0039",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on optical wireless communication and localization waveforms, which is outside the scope of semiconductor devices, materials, or manufacturing.",
+      "chars": 67965,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0038",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on using Multimodal Large Language Models for deepfake image detection and forensics, which is out of scope for semiconductor research.",
+      "chars": 83367,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0037",
+      "decision": "out_of_scope",
+      "reason": "The paper discusses a high-power dual-comb solid-state laser for spectroscopy applications rather than semiconductor devices or integrated photonics chips.",
+      "chars": 61383,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0036",
+      "decision": "out_of_scope",
+      "reason": "The paper is a fundamental physics study on altermagnetic and compensated ferrimagnetic motifs in a multiferroic material rather than semiconductor research.",
+      "chars": 35062,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0035",
+      "decision": "read",
+      "reason": "",
+      "chars": 44157,
+      "claims": [
+        "CLM-ARCH-0094"
+      ],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0034",
+      "decision": "read",
+      "reason": "",
+      "chars": 63295,
+      "claims": [
+        "CLM-PKG-0003",
+        "CLM-PKG-0004"
+      ],
       "rejected": [
         {
-          "statement": "Helix achieves a maximum speedup of 7.91\u00d7 over Xilinx XcgSolver on a Xilinx Alveo U55C FPGA.",
-          "reason": "the statement contains the number 5, which none of its quotes contain",
-          "quotes": [
-            "Helix achieves up to 7.91\u00d7 and 1.16\u00d7 speedups over Xilinx XcgSolver and the state -of-the-art FPGA accelerator Callipepla, respectively, both of which support only JPCG.",
-            "We prototype Helix on a Xilinx Alveo U55C FPGA and evaluate Helix\u2019s practicality and performance by using it to compile and execute eight solvers.",
-            "We prototype Helix on a Xilinx Alveo U55C FPGA",
-            "over Xilinx XcgSolver"
-          ]
-        },
-        {
-          "statement": "Helix achieves a maximum speedup of 1.16\u00d7 over Callipepla on a Xilinx Alveo U55C FPGA.",
-          "reason": "the statement contains the number 5, which none of its quotes contain",
-          "quotes": [
-            "Helix achieves up to 7.91\u00d7 and 1.16\u00d7 speedups over Xilinx XcgSolver and the state -of-the-art FPGA accelerator Callipepla, respectively, both of which support only JPCG.",
-            "We prototype Helix on a Xilinx Alveo U55C FPGA and evaluate Helix\u2019s practicality and performance by using it to compile and execute eight solvers.",
-            "We prototype Helix on a Xilinx Alveo U55C FPGA",
-            "and the state -of-the-art FPGA accelerator Callipepla, respectively"
-          ]
-        },
-        {
-          "statement": "The programmable components of Helix incur an execution-time overhead of between 0.25% and 0.57%.",
+          "statement": "In single-pulse transfer mode, the D-DLAT method achieves a minimum transferable chip size of 35 \u00b5m, a minimum placement error of less than 1 \u00b5m, and a maximum ",
           "reason": "[compound_statement] statement appears to join two falsifiable assertions - split it",
           "quotes": [
-            "The programmable components incur 0.25%\u22120.57% execution -time overhead and 4.7% LUT and 4.0% FF overhead, demonstrating negligible overhead for programmability.",
-            "We prototype Helix on a Xilinx Alveo U55C FPGA and evaluate Helix\u2019s practicality and performance by using it to compile and execute eight solvers.",
-            "We prototype Helix on a Xilinx Alveo U55C FPGA"
+            "In the single-pulse transfer mode, the D-DLAT method actively propels the chips towards the receiver, achieving a minimum transferable chip size of 35\u00b5m, a minimum placement error of<1\u00b5m, and a maximum transfer gap of\u226550\u00b5m, which exceeds te"
           ]
         },
         {
-          "statement": "Helix operates at a clock frequency of 226 MHz on a Xilinx Alveo U55C FPGA.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'TABLE III'",
+          "statement": "The D-DLAT process achieves a minimum reaction time of 1 ns.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'D-DLAT 35\u00b5m<1\u00b5m 50\u00b5m 1 ns'",
           "quotes": [
-            "TABLE III",
-            "Helix 226 MHz 14 GB 403 GB/s 56 W",
-            "We prototype Helix on a Xilinx Alveo U55C FPGA and evaluate Helix\u2019s practicality and performance by using it to compile and execute eight solvers.",
-            "TABLE III THE OPERATING FREQUENCY, UTILIZED MEMORY CAPACITY, PEAK MEMORY BANDWIDTH, AND RUNTIME POWER OF THE EVALUATED FPGA ACCELERATORS AND GPU."
-          ]
-        },
-        {
-          "statement": "Helix consumes 56 W of runtime power on the Xilinx Alveo U55C FPGA.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'TABLE III'",
-          "quotes": [
-            "TABLE III",
-            "Helix 226 MHz 14 GB 403 GB/s 56 W",
-            "We prototype Helix on a Xilinx Alveo U55C FPGA and evaluate Helix\u2019s practicality and performance by using it to compile and execute eight solvers.",
-            "TABLE III THE OPERATING FREQUENCY, UTILIZED MEMORY CAPACITY, PEAK MEMORY BANDWIDTH, AND RUNTIME POWER OF THE EVALUATED FPGA ACCELERATORS AND GPU."
+            "Table 2:Performance comparison of laser-assisted micro-LED transfer methods.Comparison of minimum chip size, placement precision, maximum transfer gap, and reaction time for existing laser transfer techniques and the proposed D-DLAT method.",
+            "D-DLAT 35\u00b5m<1\u00b5m 50\u00b5m 1 ns"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261016-0080",
+      "candidate": "CAND-20261016-0033",
       "decision": "out_of_scope",
-      "reason": "This paper is about gravitational-wave detection using photon orbital angular momentum states, which falls under physics and astronomy rather than semiconductor research.",
-      "chars": 27916,
+      "reason": "The paper investigates the fundamental magnetic and electronic properties of a frustrated condensed matter lattice (A3V9Te13) and is out of scope for semiconductor research.",
+      "chars": 47448,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261016-0079",
-      "decision": "out_of_scope",
-      "reason": "The paper is about antenna placement and wireless sensing algorithms for communication systems, which is outside the scope of semiconductor research.",
-      "chars": 31634,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0078",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on wireless communications, specifically integrated sensing and communication (ISAC) networks for UAV flight-state estimation, which is outside the scope of semiconductor research.",
-      "chars": 72450,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0077",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on wireless communications and antenna systems theory (fluid antenna receivers), which is out of scope for semiconductor research.",
-      "chars": 47016,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0076",
-      "decision": "read",
-      "reason": "",
-      "chars": 72992,
-      "claims": [
-        "CLM-PROC-0032",
-        "CLM-PROC-0033",
-        "CLM-PROC-0034"
-      ],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0075",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on audio-based condition monitoring and stakeholder needs for agricultural machinery, which is outside the scope of semiconductor research.",
-      "chars": 46257,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0074",
-      "decision": "out_of_scope",
-      "reason": "The paper is about fundamental condensed matter physics involving topological phases and chiral insulators in graphene superlattices, rather than semiconductor device engineering or technology.",
-      "chars": 75879,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0073",
-      "decision": "read",
-      "reason": "",
-      "chars": 23493,
-      "claims": [
-        "CLM-ARCH-0092",
-        "CLM-ARCH-0093"
-      ],
-      "rejected": [
-        {
-          "statement": "PSA achieves a peak performance of 843.93 GOPS at 500 MHz and 0.72 V in 28 nm CMOS technology.",
-          "reason": "[compound_statement] statement appears to join two falsifiable assertions - split it",
-          "quotes": [
-            "We synthesized PSA in a 28 nm CMOS technology at 500 MHz and 0.72 V , and the overall implementation results are summarized in Table I.",
-            "Peak Performancea [GOPS] 843.93"
-          ]
-        },
-        {
-          "statement": "PSA achieves an energy efficiency of 24.09 TOPS/W at a pruning rate of 76.3% and an input sparsity of 93.67%.",
-          "reason": "[missing_required_conditions] efficiency_compute requires precision, sparsity; missing precision, sparsity",
-          "quotes": [
-            "Energy Efficiency [TOPS/W] 24.09c",
-            "c Energy Eff. & Area Eff. @ Pruning Rate = 76.3%, Input Sparsity = 93.67%.",
-            "We synthesized PSA in a 28 nm CMOS technology at 500 MHz and 0.72 V , and the overall implementation results are summarized in Table I."
-          ]
-        },
-        {
-          "statement": "PSA occupies an area of 2.55 mm2.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Area [mm 2] 2.55'",
-          "quotes": [
-            "Area [mm 2] 2.55",
-            "We synthesized PSA in a 28 nm CMOS technology at 500 MHz and 0.72 V , and the overall implementation results are summarized in Table I."
-          ]
-        },
-        {
-          "statement": "PSA achieves a 4.45x improvement in energy efficiency over the dense baseline.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Results on ResNet-18/CIFAR-10 show that PSA achieves a 4.45x improveme'",
-          "quotes": [
-            "Results on ResNet-18/CIFAR-10 show that PSA achieves a 4.45x improvement in energy efficiency and an 18.52x reduction in energy-delay product (EDP) over the dense baseline.",
-            "We synthesized PSA in a 28 nm CMOS technology at 500 MHz and 0.72 V , and the overall implementation results are summarized in Table I."
-          ]
-        },
-        {
-          "statement": "PSA achieves an 18.52x reduction in energy-delay product (EDP) over the dense baseline on ResNet-18/CIFAR-10.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Results on ResNet-18/CIFAR-10 show that PSA achieves a 4.45x improveme'",
-          "quotes": [
-            "Results on ResNet-18/CIFAR-10 show that PSA achieves a 4.45x improvement in energy efficiency and an 18.52x reduction in energy-delay product (EDP) over the dense baseline.",
-            "We synthesized PSA in a 28 nm CMOS technology at 500 MHz and 0.72 V , and the overall implementation results are summarized in Table I."
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261016-0072",
-      "decision": "out_of_scope",
-      "reason": "The paper discusses fractional quantum Hall ground states and quantum many-body bootstrap methods in condensed matter physics, which is out of scope for semiconductor research.",
-      "chars": 60010,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0071",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on an X-ray compressive ghost imaging system for non-destructive imaging applications and radiation transport, which is outside the scope of semiconductor research.",
-      "chars": 63495,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0070",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on wearable navigation algorithms and system integration using inertial sensors, which is outside the scope of semiconductor research.",
-      "chars": 39913,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0069",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on quantum optomechanics and levitated particles, which are out of scope for semiconductor research.",
-      "chars": 72323,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0068",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on medical or general imaging techniques using X-ray computed tomography, which is outside the scope of semiconductor research.",
-      "chars": 64573,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0067",
-      "decision": "out_of_scope",
-      "reason": "This paper focuses on theoretical condensed matter physics concerning edge state reconstruction and RKKY interactions in proximitized graphene, which falls outside of semiconductor engineering and devices.",
-      "chars": 41981,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0066",
-      "decision": "read",
-      "reason": "",
-      "chars": 42713,
-      "claims": [
-        "CLM-DEV-0066"
-      ],
-      "rejected": [
-        {
-          "statement": "The machine learning surrogate model achieves a speedup of approximately 10^6 times compared to full device simulations.",
-          "reason": "the value 1e+06 does not appear in any of the claim's quotes",
-          "quotes": [
-            "demonstrates a\u223c10 6\u00d7speed up compared to full device simulations.",
-            "full device simulations"
-          ]
-        },
-        {
-          "statement": "Executing a single inference with the surrogate model takes approximately 0.015 ms on a laptop with an Intel Core i5-13600H CPU.",
-          "reason": "the statement contains the number 13600, which none of its quotes contain",
-          "quotes": [
-            "a single inference takes approximately 0.015 ms.",
-            "Intel Core i5-13600H (12 cores / 16 threads, 4.8 GHz max turbo, 45 W) CPU"
-          ]
-        },
-        {
-          "statement": "A full device simulation with Harold takes an average time of 20 seconds per design on the same laptop.",
-          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
-          "quotes": [
-            "full device simulation with Harold which took an average of 20 seconds per design on the same laptop.",
-            "Harold",
-            "same laptop"
-          ]
-        },
-        {
-          "statement": "The average threshold current MAPE for the 37 Pareto-optimal designs evaluated with Harold is 3.39%.",
-          "reason": "the statement contains the number 37, which none of its quotes contain",
-          "quotes": [
-            "The average MAPE between inference and simulation is 3.39% forI th",
-            "Ith",
-            "37 Pareto-optimal designs"
-          ]
-        },
-        {
-          "statement": "The average internal loss MAPE for the 37 Pareto-optimal designs evaluated with Harold is 3.19%.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): '3.19% for\u03b1 i'",
-          "quotes": [
-            "3.19% for\u03b1 i",
-            "\u03b1i",
-            "37 Pareto-optimal designs"
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261016-0065",
-      "decision": "out_of_scope",
-      "reason": "The paper investigates fundamental physics phenomena, specifically Casimir forces on graphene-covered dielectric membranes, which is out of scope for semiconductor research.",
-      "chars": 42127,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0064",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on multi-agent semantic communication algorithms and information valuation for wireless systems, which is outside the scope of semiconductor research.",
-      "chars": 36918,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0063",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on wireless communications and physical layer security in antenna array systems, which is outside the scope of semiconductor research.",
-      "chars": 57122,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0062",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on communication theory, signal processing, and over-the-air computation in wireless networks rather than semiconductor research.",
-      "chars": 104083,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0061",
-      "decision": "no_claims",
-      "reason": "the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 29488,
-      "claims": [],
-      "rejected": [
-        {
-          "statement": "Iterative phase retrieval from a single CBED pattern reconstructs relaxed atomic coordinates in graphene around a defect with a maximum deviation of 0.1 \u00c5 from ",
-          "reason": "unit conversion refused: relative_deviation is dimensionless; unit '\u00c5' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit ",
-          "quotes": [
-            "The maximal deviation of the reconstructed coordinates from the correct coordinates is 0.1 \u00c5, and this originates not from the iterative phase retrieval but from the finite sampling of the transmission function of the atomic distribution an",
-            "finite pixel size of 9.8 pm",
-            "The defocus value was set to \uf044f = \u22120.1 \uf06dm",
-            "semi -convergence angle \uf061 = 7 mrad"
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261016-0060",
+      "candidate": "CAND-20261016-0032",
       "decision": "no_claims",
       "reason": "the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 41131,
+      "chars": 54685,
       "claims": [],
       "rejected": [
         {
-          "statement": "The optimized 8-stage RISC-V core with no reset on delays achieves a maximum clock frequency of 775MHz in an Altera Agilex 5 device for the Quicksort applicatio",
-          "reason": "the statement contains the number 8, which none of its quotes contain",
+          "statement": "The 200-nm-thick CrN(113) layer has an out-of-plane lattice constant of 4.146 \u00c5 in its final state.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Although the CrN(113) layer is fully relaxed in the final state, exhib'",
           "quotes": [
-            "Our optimized RISC-V is as small as170 ALMsand closes timing at775MHzin an Altera Agilex 5 device.",
-            "We compiled the optimized RISC-V core using Quartus 25.1 into an Agilex 5 A5EC013AB23AI1V device.",
-            "in an Altera Agilex 5 device.",
-            "RISC-V 8-Stage"
+            "Although the CrN(113) layer is fully relaxed in the final state, exhibiting an out-of-plane lattice constant of 4.146\u200b\u00c5and in-plane lattice constants of 2.933\u200b\u00c5along [1 \u00af10]CrN and 9.727\u200b\u00c5 along [33\u00af2]CrN",
+            "The structural properties of the layers are characterized using a high-resolution (HR)XRD system (Philips Panalytical X\u2019Pert PRO MRD) equipped with a two-bounce hybrid monochromator Ge(220) for the CuK\u03b11 source (\u03bb =1.540 598\u200b\u00c5).",
+            "CrN(113) layer",
+            "200-nm-thick"
           ]
         },
         {
-          "statement": "The optimized 8-stage RISC-V core with no reset on delays uses 170 ALMs in an Altera Agilex 5 device for Quicksort.",
-          "reason": "the statement contains the number 8, which none of its quotes contain",
+          "statement": "The 200-nm-thick CrN(113) layer has an in-plane lattice constant of 2.933 \u00c5 along the [1\u00af10]CrN direction.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Although the CrN(113) layer is fully relaxed in the final state, exhib'",
           "quotes": [
-            "Our optimized RISC-V is as small as170 ALMsand closes timing at775MHzin an Altera Agilex 5 device.",
-            "We compiled the optimized RISC-V core using Quartus 25.1 into an Agilex 5 A5EC013AB23AI1V device.",
-            "in an Altera Agilex 5 device.",
-            "RISC-V 8-Stage"
+            "Although the CrN(113) layer is fully relaxed in the final state, exhibiting an out-of-plane lattice constant of 4.146\u200b\u00c5and in-plane lattice constants of 2.933\u200b\u00c5along [1 \u00af10]CrN and 9.727\u200b\u00c5 along [33\u00af2]CrN",
+            "The structural properties of the layers are characterized using a high-resolution (HR)XRD system (Philips Panalytical X\u2019Pert PRO MRD) equipped with a two-bounce hybrid monochromator Ge(220) for the CuK\u03b11 source (\u03bb =1.540 598\u200b\u00c5).",
+            "CrN(113) layer",
+            "along [1 \u00af10]CrN"
           ]
         },
         {
-          "statement": "The default 8-stage lightweight RISC-V core consumes 447 ALMs and achieves an FMax of 658 MHz on Agilex A5EC013AB23 speed grade -1.",
-          "reason": "the statement contains the number 13, which none of its quotes contain",
+          "statement": "The 200-nm-thick CrN(113) layer has an in-plane lattice constant of 9.727 \u00c5 along the [33\u00af2]CrN direction.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Although the CrN(113) layer is fully relaxed in the final state, exhib'",
           "quotes": [
-            "RISC-V 8-Stage Default 447 250 914 751 152 11 658 639 511",
-            "Table 1: Lightweight RISC-V cost when compiled to Agilex A5EC013AB23 devices.",
-            "compiled to Agilex A5EC013AB23 devices.",
-            "Speed Grade -1"
+            "Although the CrN(113) layer is fully relaxed in the final state, exhibiting an out-of-plane lattice constant of 4.146\u200b\u00c5and in-plane lattice constants of 2.933\u200b\u00c5along [1 \u00af10]CrN and 9.727\u200b\u00c5 along [33\u00af2]CrN",
+            "The structural properties of the layers are characterized using a high-resolution (HR)XRD system (Philips Panalytical X\u2019Pert PRO MRD) equipped with a two-bounce hybrid monochromator Ge(220) for the CuK\u03b11 source (\u03bb =1.540 598\u200b\u00c5).",
+            "CrN(113) layer",
+            "along [33\u00af2]CrN"
           ]
         },
         {
-          "statement": "The default 5-stage lightweight RISC-V core consumes 493 ALMs and achieves an FMax of 428 MHz on Agilex A5EC013AB23 speed grade -1.",
-          "reason": "the statement contains the number 13, which none of its quotes contain",
+          "statement": "The root-mean-square surface roughness of the 200-nm-thick CrN(113) layer is 5.2 nm for a 10\u00d710 \u03bcm2 scan.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Similar to ScN(113),40 the CrN(113) filmreplicates the anisotropic, st'",
           "quotes": [
-            "RISC-V 5-Stage Default 493 248 762 634 128 0 428 383 301",
-            "Table 1: Lightweight RISC-V cost when compiled to Agilex A5EC013AB23 devices.",
-            "compiled to Agilex A5EC013AB23 devices.",
-            "Speed Grade -1"
+            "Similar to ScN(113),40 the CrN(113) filmreplicates the anisotropic, stripe-like morphology of the underlying semipolar AlN layer35,36 [see Fig. S3(a) in the Supplemental Material] but exhibits a slightly larger root-mean-square (rms) roughn",
+            "The surface morphology of layers is imaged by atomic force microscopy in contact mode (Dimension Edge, Bruker).",
+            "CrN(113) film",
+            "10\u00d710\u03bcm 2 scan"
           ]
         },
         {
-          "statement": "The 8-stage RV32I core achieves an FMax of 784 MHz for the Quicksort application with default synthesis.",
-          "reason": "the statement contains the number 2, which none of its quotes contain",
+          "statement": "The root-mean-square surface roughness of the AlN template is 3.0 nm for the 10\u00d710 \u03bcm2 scan.",
+          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
           "quotes": [
-            "RISC-V 8-Stage Default 178 85 42 349 300 49 0 784",
-            "We compiled the optimized RISC-V core using Quartus 25.1 into an Agilex 5 A5EC013AB23AI1V device.",
-            "RISC-V 8-Stage",
-            "Default"
+            "with an rms value of 5.2nm for the10\u00d710\u03bcm 2 scan compared to 3.0nm for the template",
+            "The surface morphology of layers is imaged by atomic force microscopy in contact mode (Dimension Edge, Bruker).",
+            "template",
+            "10\u00d710\u03bcm 2 scan"
           ]
         },
         {
-          "statement": "The optimized RV32F configuration with enumerated shifts consumes 298 ALMs and reaches an FMax of 668 MHz for the Gaussian matrix solver.",
-          "reason": "the statement contains the number 2, which none of its quotes contain",
+          "statement": "The residual strain magnitude of the CrN(113) layer is at most 0.03\u20130.06% along all axes.",
+          "reason": "the statement contains the number 113, which none of its quotes contain",
           "quotes": [
-            "Enumerated Shifts 298 133 639 6 1 668",
-            "Table 6: Optimized RISC-V F-extension resources for the Gaussian matrix solver.",
-            "Enumerated Shifts",
-            "compiled to the A5EC013AB23AI1V device"
+            "These results indicate that the layer is fully relaxed, with a residual strain magnitude of at most 0.03\u20130.06% along all axes.",
+            "X-ray diffraction symmetric (*), skew-symmetric (**), and asymmetric (***) reflections of a CrN(113) layer.",
+            "CrN(113) layer",
+            "along all axes"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261016-0059",
+      "candidate": "CAND-20261016-0031",
+      "decision": "out_of_scope",
+      "reason": "The paper studies fundamental condensed matter physics phenomena (Wigner crystals and moire-commensurate electron crystals in graphene at milli-Kelvin temperatures) rather than semiconductor devices, materials for electronics, or fabrication processes.",
+      "chars": 39611,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0030",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on free-space optical communication and atmospheric turbulence compensation rather than semiconductor devices or integrated circuits.",
+      "chars": 48382,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0029",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on wireless communications and beam tracking for mmWave systems, which is outside the scope of semiconductor research.",
+      "chars": 26431,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0028",
+      "decision": "out_of_scope",
+      "reason": "This paper focuses on wireless communication and radar sensing (ISAC) algorithms rather than semiconductor devices, materials, or chip fabrication.",
+      "chars": 58888,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0027",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on wireless communication systems and integrated sensing and communication (ISAC) algorithms rather than semiconductor devices, fabrication, or hardware.",
+      "chars": 29208,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0026",
+      "decision": "out_of_scope",
+      "reason": "The paper presents a computational method for enumerating Voronoi cell topologies to analyze general crystal structures in molecular dynamics simulations, which is a mathematical and materials-characterization tool rather than specific semiconductor device or process research.",
+      "chars": 43100,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0025",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on robotic welding for in-space manufacturing, which is outside the scope of semiconductor research.",
+      "chars": 63775,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0024",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on general system dynamics, frequency-domain identification, and event-triggered data selection for control systems rather than semiconductor devices or manufacturing.",
+      "chars": 43582,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0023",
+      "decision": "out_of_scope",
+      "reason": "The paper presents a method for determining dynamic contact angles in molecular dynamics simulations of fluid wetting, which is out of scope for semiconductor research.",
+      "chars": 41420,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0022",
       "decision": "read",
       "reason": "",
-      "chars": 38333,
+      "chars": 65629,
       "claims": [
-        "CLM-DEV-0067",
-        "CLM-DEV-0068"
+        "CLM-MAT-0134"
       ],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0021",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on a graph-based temporal framework for cancer risk stratification from electronic health records, which is outside the scope of semiconductor research.",
+      "chars": 70954,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0020",
+      "decision": "too_long",
+      "reason": "236,175 characters exceeds the 120,000 budget; not truncated",
+      "chars": 236175,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0019",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on underwater acoustic target sensing using large language models, which is outside the scope of semiconductor research.",
+      "chars": 69719,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0018",
+      "decision": "out_of_scope",
+      "reason": "This paper is about antenna impedance matching using plasma, which falls under electromagnetics and antennas rather than semiconductor research.",
+      "chars": 36981,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0017",
+      "decision": "out_of_scope",
+      "reason": "This paper focuses on an antenna system for underground mine tunnel communications, which is outside the scope of semiconductor research.",
+      "chars": 25421,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0016",
+      "decision": "out_of_scope",
+      "reason": "The paper is about superconducting circuits for quantum computing, which is explicitly out of scope.",
+      "chars": 97479,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0015",
+      "decision": "no_claims",
+      "reason": "the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader may do better",
+      "chars": 35464,
+      "claims": [],
       "rejected": [
         {
-          "statement": "The pristine Gr/n-Si reference solar cell achieved a power conversion efficiency of 4.56%.",
-          "reason": "unit conversion refused: efficiency_compute: cannot convert 4.56 % to 1/J - Cannot convert from 'percent' (dimensionless) to '1 / joule' ([time] ** 2 / [mass] / [length] ** 2). A dimens",
+          "statement": "Platicon solutions are stable at \u03b1 = 3 and F = 5.59 for normalized mode split strength \u03b5 = 3 and normalized second order dispersion \u03b2 = 0.1.",
+          "reason": "the statement contains the number 0.1, which none of its quotes contain",
           "quotes": [
-            "Consequently, the trilayer device achieves a PCE of 8.52%, markedly outperforming the pristine Gr/n-Si reference cell (4.56%).",
-            "Photovoltaic performance was evaluated by measuring current density\u2013voltage (J\u2013V) characteristics under simulated solar illumination (AM 1.5G, 100 mW cm\u207b\u00b2) and in the dark, using a Keithley 2400 source measurement unit.",
-            "pristine Gr/n-Si reference cell (4.56%)",
-            "under simulated solar illumination (AM 1.5G, 100 mW cm\u207b\u00b2)"
-          ]
-        },
-        {
-          "statement": "The trilayer PP/Gr/n-Si Schottky junction solar cell achieved a power conversion efficiency of 8.52%.",
-          "reason": "unit conversion refused: efficiency_compute: cannot convert 8.52 % to 1/J - Cannot convert from 'percent' (dimensionless) to '1 / joule' ([time] ** 2 / [mass] / [length] ** 2). A dimens",
-          "quotes": [
-            "Consequently, the trilayer device achieves a PCE of 8.52%, markedly outperforming the pristine Gr/n-Si reference cell (4.56%).",
-            "Photovoltaic performance was evaluated by measuring current density\u2013voltage (J\u2013V) characteristics under simulated solar illumination (AM 1.5G, 100 mW cm\u207b\u00b2) and in the dark, using a Keithley 2400 source measurement unit.",
-            "trilayer device achieves a PCE of 8.52%",
-            "under simulated solar illumination (AM 1.5G, 100 mW cm\u207b\u00b2)"
-          ]
-        },
-        {
-          "statement": "The PP/n-Si solar cell achieved a power conversion efficiency of 7.46%.",
-          "reason": "unit conversion refused: efficiency_compute: cannot convert 7.46 % to 1/J - Cannot convert from 'percent' (dimensionless) to '1 / joule' ([time] ** 2 / [mass] / [length] ** 2). A dimens",
-          "quotes": [
-            "By comparison, the PP/n-Si hybrid solar cell demonstrates a PCE of 7.46%, likewise in line with previously reported values for this device type [20,22,28\u201330].",
-            "Photovoltaic performance was evaluated by measuring current density\u2013voltage (J\u2013V) characteristics under simulated solar illumination (AM 1.5G, 100 mW cm\u207b\u00b2) and in the dark, using a Keithley 2400 source measurement unit.",
-            "PP/n-Si hybrid solar cell demonstrates a PCE of 7.46%",
-            "under simulated solar illumination (AM 1.5G, 100 mW cm\u207b\u00b2)"
-          ]
-        },
-        {
-          "statement": "The short-circuit current density of the trilayer PP/Gr/n-Si solar cell under illumination is 33.0 mA cm\u207b\u00b2.",
-          "reason": "unit conversion refused: current: cannot convert 33.0 mA/cm2 to A - Cannot convert from 'milliampere / centimeter ** 2' ([current] / [length] ** 2) to 'ampere' ([current]). A dimensiona",
-          "quotes": [
-            "This improvement is driven primarily by significant enhancements in both FF (59.5%) and JSC (33.0 mA cm\u207b\u00b2), although the VOC (0.43 V) decreases slightly compared to the Gr/n-Si reference.",
-            "Photovoltaic performance was evaluated by measuring current density\u2013voltage (J\u2013V) characteristics under simulated solar illumination (AM 1.5G, 100 mW cm\u207b\u00b2) and in the dark, using a Keithley 2400 source measurement unit.",
-            "trilayer PP/Gr/n-Si device achieves the highest performance",
-            "under simulated solar illumination (AM 1.5G, 100 mW cm\u207b\u00b2)"
-          ]
-        },
-        {
-          "statement": "The series resistance extracted for the pristine Gr/n-Si solar cell is 5.30 \u03a9 cm\u00b2.",
-          "reason": "the value 5.3 does not appear in any of the claim's quotes",
-          "quotes": [
-            "The pristine Gr/n-Si cell exhibits favorable diode parameters, with n = 1.74 and \u03a6SB = 0.84 V , but a relatively high RS of 5.30 \u03a9 cm\u00b2.",
-            "The dark J\u2013V curves were further analyzed to extract the ideality factor (n), Schottky barrier height (\u03a6SB), and series resistance (RS) using the ln J\u2013V and dV/d(ln J)\u2013J plots as shown in Figs. 2(b) and 2(c), respectively.",
-            "pristine Gr/n-Si cell",
-            "The dark J\u2013V curves were further analyzed"
-          ]
-        },
-        {
-          "statement": "The series resistance extracted for the trilayer PP/Gr/n-Si solar cell is 1.30 \u03a9 cm\u00b2.",
-          "reason": "the value 1.3 does not appear in any of the claim's quotes",
-          "quotes": [
-            "The trilayer PP/Gr/n-Si cell yields the best overall diode parameters: n = 1.51, \u03a6SB = 0.84 V , and RS = 1.30 \u03a9 cm\u00b2.",
-            "The dark J\u2013V curves were further analyzed to extract the ideality factor (n), Schottky barrier height (\u03a6SB), and series resistance (RS) using the ln J\u2013V and dV/d(ln J)\u2013J plots as shown in Figs. 2(b) and 2(c), respectively.",
-            "trilayer PP/Gr/n-Si cell",
-            "The dark J\u2013V curves were further analyzed"
+            "In Figs. 2(b) and (c) we show the intensity and spectra of these bistable solutions at \u03b1 = 3 and F = 5.59, marked in Fig. 2(a) by the black dot.",
+            "\u03b1 = 3",
+            "F = 5.59",
+            "\u03b5 = 3"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261016-0058",
-      "decision": "read",
-      "reason": "",
-      "chars": 15521,
-      "claims": [
-        "CLM-EDA-0008",
-        "CLM-EDA-0009",
-        "CLM-EDA-0010"
-      ],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0057",
+      "candidate": "CAND-20261016-0014",
       "decision": "out_of_scope",
-      "reason": "The paper focuses on wireless communications and orbital angular momentum (OAM) beam multiplexing rather than semiconductor devices or integrated circuits.",
-      "chars": 66089,
+      "reason": "The paper focuses on offshore drilling systems and friction dynamics in mechanical structures, which is outside the scope of semiconductor research.",
+      "chars": 114911,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261016-0056",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on wireless communication protocols, synchronization, and IoT networking algorithms rather than semiconductor devices or integrated circuits.",
-      "chars": 73098,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0055",
-      "decision": "read",
-      "reason": "",
-      "chars": 73720,
-      "claims": [
-        "CLM-DEV-0069",
-        "CLM-DEV-0070",
-        "CLM-DEV-0071"
-      ],
-      "rejected": [
-        {
-          "statement": "A neural network built from the measured weight updates achieves 89 % accuracy on handwritten digit recognition without noise.",
-          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'simulated')",
-          "quotes": [
-            "a network built from the measured weight updates reaches 89 % accuracy on handwritten digit recognition without noise and 85 % with the measured noise, against 97.5 % for floating-point weights.",
-            "The measured weight updates are used in a network simulation in order to assess the device for in -sensor computing.",
-            "accuracy on handwritten digit recognition without noise"
-          ]
-        },
-        {
-          "statement": "The network simulation achieves 85 % accuracy on handwritten digit recognition with the measured noise.",
-          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'simulated')",
-          "quotes": [
-            "a network built from the measured weight updates reaches 89 % accuracy on handwritten digit recognition without noise and 85 % with the measured noise, against 97.5 % for floating-point weights.",
-            "The measured weight updates are used in a network simulation in order to assess the device for in -sensor computing.",
-            "handwritten digit recognition",
-            "85 % with the measured noise"
-          ]
-        },
-        {
-          "statement": "Floating-point weights achieve 97.5 % accuracy on handwritten digit recognition in the network simulation.",
-          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'simulated')",
-          "quotes": [
-            "a network built from the measured weight updates reaches 89 % accuracy on handwritten digit recognition without noise and 85 % with the measured noise, against 97.5 % for floating-point weights.",
-            "The measured weight updates are used in a network simulation in order to assess the device for in -sensor computing.",
-            "accuracy on handwritten digit recognition",
-            "against 97.5 % for floating-point weights."
-          ]
-        },
-        {
-          "statement": "At 365 nm, maximum photon flux available at the sample is 3.1 \u00d7 1014 photons cm\u22122 s\u22121.",
-          "reason": "unit conversion refused: power_density: could not parse 0.17 'mW cm\u22122': 'cm\u22122' is not defined in the unit registry",
-          "quotes": [
-            "The maximum photon flux available at the sample was 3.1 \u00d7 1014 photons cm\u22122 s\u22121 at 365 nm (0.17 mW cm\u22122) and 1.5 \u00d7 1015 photons cm\u22122 s\u22121 at 455 nm (0.66 mW cm\u22122).",
-            "Light pulses were generated with Thorlabs fibre -coupled LEDs at 365 nm and 455 nm driven by a waveform generator controlling the pulse frequency, duration and number.",
-            "3.1 \u00d7 1014 photons cm\u22122 s\u22121 at 365 nm (0.17 mW cm\u22122)"
-          ]
-        },
-        {
-          "statement": "At 455 nm, maximum power density available at the sample is 0.66 mW cm\u22122.",
-          "reason": "unit conversion refused: power_density: could not parse 0.66 'mW cm\u22122': 'cm\u22122' is not defined in the unit registry",
-          "quotes": [
-            "The maximum photon flux available at the sample was 3.1 \u00d7 1014 photons cm\u22122 s\u22121 at 365 nm (0.17 mW cm\u22122) and 1.5 \u00d7 1015 photons cm\u22122 s\u22121 at 455 nm (0.66 mW cm\u22122).",
-            "Light pulses were generated with Thorlabs fibre -coupled LEDs at 365 nm and 455 nm driven by a waveform generator controlling the pulse frequency, duration and number.",
-            "1.5 \u00d7 1015 photons cm\u22122 s\u22121 at 455 nm (0.66 mW cm\u22122)."
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261016-0054",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on the physical properties and mechanical behavior of metallic glasses, which falls under general materials physics rather than semiconductor materials or devices.",
-      "chars": 34393,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0053",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on molecular dynamics and bond cleavage in energetic materials (TATB) rather than semiconductor research.",
-      "chars": 54740,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0052",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on general signal processing and sinusoidal modeling for speech and audio signals, which is out of scope for semiconductor research.",
-      "chars": 64904,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0051",
-      "decision": "out_of_scope",
-      "reason": "The paper is about acoustics and wavefield engineering for acoustic illusion, which is unrelated to semiconductor research.",
-      "chars": 41519,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261016-0050",
+      "candidate": "CAND-20261016-0013",
       "decision": "no_claims",
       "reason": "evidence type not established by a verifiable quote (or 'mixed'); no claims extracted, a human reader is needed",
-      "chars": 74072,
+      "chars": 98607,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261016-0049",
+      "candidate": "CAND-20261016-0012",
       "decision": "out_of_scope",
-      "reason": "The paper focuses on probabilistic constellation shaping for wireless communication and integrated sensing and communication (ISAC) systems, which is outside the scope of semiconductor research.",
-      "chars": 67368,
+      "reason": "The paper investigates the thermoelectric and magnetotransport properties of a half-Heusler alloy, which is focused on energy harvesting and fundamental materials physics rather than semiconductor devices, microelectronics manufacturing, or integrated circuit technologies.",
+      "chars": 44793,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261016-0048",
+      "candidate": "CAND-20261016-0011",
       "decision": "out_of_scope",
-      "reason": "The paper is a mathematical optimization study on low-rank matrix recovery and spectral regularization for general linear inverse problems, unrelated to semiconductor devices, fabrication, or hardware.",
-      "chars": 64343,
+      "reason": "The paper focuses on theoretical condensed matter physics concerning Tomonaga-Luttinger liquids and quantum spin chains rather than semiconductor research.",
+      "chars": 42937,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261016-0047",
+      "candidate": "CAND-20261016-0010",
       "decision": "out_of_scope",
-      "reason": "The paper investigates atomic point defects in 2D materials for quantum optics (single-photon emission), which falls under quantum information hardware rather than semiconductor electronics.",
-      "chars": 16068,
+      "reason": "The paper focuses on telecommunications, specifically O-RAN architecture, Radio Access Networks (RAN), and reinforcement learning for network slicing and resource allocation, which is out of scope for semiconductor research.",
+      "chars": 47593,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261016-0046",
-      "decision": "no_claims",
-      "reason": "evidence type not established by a verifiable quote (or 'mixed'); no claims extracted, a human reader is needed",
-      "chars": 33075,
+      "candidate": "CAND-20261016-0009",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on debugging software and programs for fault-tolerant quantum computing, which is explicitly excluded as quantum computing hardware and software.",
+      "chars": 86289,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0008",
+      "decision": "out_of_scope",
+      "reason": "The paper investigates fundamental condensed matter physics, specifically strange metal and superconductivity behavior in moir\u00e9 semiconductor systems, which is outside the scope of semiconductor device and manufacturing research.",
+      "chars": 45770,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261016-0007",
+      "decision": "read",
+      "reason": "",
+      "chars": 34990,
+      "claims": [
+        "CLM-MAT-0135",
+        "CLM-MAT-0136",
+        "CLM-MAT-0137",
+        "CLM-MAT-0138",
+        "CLM-MAT-0139",
+        "CLM-MAT-0140",
+        "CLM-MAT-0141"
+      ],
+      "rejected": [
+        {
+          "statement": "The out-of-plane lattice parameter c of bulk SrTiO3 is 3.905 \u00c5.",
+          "reason": "the quote says the number is approximate but approximate is false",
+          "quotes": [
+            "The out-of-plane lattice parameter of the SrTiO3 layers, \ud835\udc50 STO=3.947 \u00c5, is expanded by about 1% relative to bulk SrTiO3 (\ud835\udc50=3.905 \u00c5), consistent with a polar distortion of the spacers induced by the adjacent PbTiO3 layers.",
+            "relative to bulk SrTiO3 (\ud835\udc50=3.905 \u00c5)"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261016-0006",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on theoretical condensed matter physics regarding parafermions and quantum Hall heterostructures for topological quantum computing, which is out of scope as semiconductor research.",
+      "chars": 116431,
       "claims": [],
       "rejected": []
     }
   ],
   "counts": {
-    "out_of_scope": 28,
-    "no_claims": 6,
-    "read": 6
+    "out_of_scope": 31,
+    "read": 5,
+    "no_claims": 3,
+    "too_long": 1
   },
-  "claims_accepted": 14,
-  "claims_rejected": 41,
+  "claims_accepted": 13,
+  "claims_rejected": 12,
   "tokens": {
-    "input": 219715,
-    "output": 26087
+    "input": 179665,
+    "output": 16443
   },
   "stop_reason": "paper_cap",
-  "seconds": 340.4,
-  "cost_usd": 0.242761,
+  "seconds": 281.9,
+  "cost_usd": 0.176662,
   "budget": {
     "monthly_cap_usd": 10.0,
-    "spent_month_usd": 4.172901,
-    "spent_today_usd": 0.242761,
-    "allowance_today_usd": 0.379366,
-    "remaining_today_usd": 0.136605,
-    "run_usd": 0.242761,
-    "run_calls": 52,
+    "spent_month_usd": 4.349563,
+    "spent_today_usd": 0.176662,
+    "allowance_today_usd": 0.388473,
+    "remaining_today_usd": 0.211811,
+    "run_usd": 0.176662,
+    "run_calls": 47,
     "run_unknown_calls": 0,
     "price_table_retrieved": "2026-09-21",
-    "price_table_age_days": 25
+    "price_table_age_days": 26
   },
   "errors": 0
 }
