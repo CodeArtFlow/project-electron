@@ -3975,3 +3975,129 @@ claims:
       layer_type: SrTiO3 layers
       superlattice_layer_n: '3'
       superlattice_layer_m: '5'
+- id: CLM-MAT-0142
+  topic: MAT
+  statement: Scanning tunneling microscopy measurements were performed at a temperature of 9 K.
+  sources:
+  - SRC-00163
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    measurement_setup: STM measurements
+  quantity:
+    quantity: temperature
+    bound: exact
+    approximate: false
+    as_published:
+      value: 9.0
+      unit: K
+    si_base:
+      value: 9.0
+      unit: K
+    display:
+      value: -264.15
+      unit: degC
+    conditions:
+      measurement_setup: STM measurements
+- id: CLM-MAT-0143
+  topic: MAT
+  statement: The carbon-to-carbon width of the hydrogen-passivated zigzag graphene nanoribbon is 11.36
+    Å.
+  sources:
+  - SRC-00165
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    structure: hydrogen-passivated zigzag graphene nanoribbon with six zigzag chains
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 11.36
+      unit: Å
+    si_base:
+      value: 1.136e-09
+      unit: m
+    display:
+      value: 1.136
+      unit: nm
+    conditions:
+      structure: hydrogen-passivated zigzag graphene nanoribbon with six zigzag chains
+- id: CLM-MAT-0144
+  topic: MAT
+  statement: Defect formation energies calculated using MACE show a mean absolute error of 1.106 eV compared
+    to DFT calculations.
+  sources:
+  - SRC-00168
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    comparison_baseline: DFT
+    model: MACE
+- id: CLM-MAT-0145
+  topic: MAT
+  statement: The computational cost for MACE MD calculations across the investigated structures is approximately
+    2,500 core-hours.
+  sources:
+  - SRC-00168
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    temperature: 0 K
+- id: CLM-MAT-0146
+  topic: MAT
+  statement: Defect formation energies calculated using MACE show a root mean square error of 1.867 eV
+    compared to DFT calculations.
+  sources:
+  - SRC-00168
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    comparison_baseline: DFT
+    model: MACE

@@ -1,0 +1,98 @@
+id: SRC-00164
+title: 'PAGE404: Breaking GPU Isolation Through Hardware-assisted Page Migration'
+doi: null
+arxiv_id: 2610.20962v1
+url: https://arxiv.org/abs/2610.20962v1
+venue_id: arxiv_api
+authors:
+- name: Ravan Nazaraliyev
+  affiliation: null
+  corresponding: null
+- name: Yicheng Zhang
+  affiliation: null
+  corresponding: null
+- name: Nael Abu-Ghazaleh
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-14'
+retrieved_date: '2026-10-18'
+access: full_text
+read_scope: Automated reading. The full PDF text (98,390 characters, 19 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.20962v1 on
+  2026-10-18. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“estimating an LLM’s processed token length with a mean absolute error of 4.6 tokens on average.”
+
+  “mean absolute error of 4.6 tokens”
+
+  “Experiments are performed on GH200 nodes from both CloudLab [27] and Lambda Cloud.”
+
+  “Table 1 reports the fingerprinting results, achieving nearly 94% accuracy in identifying which CUDA
+  application the victim is running.”
+
+  “XGBoost 93.6 (0.6) 93.9 (0.6) 93.6 (0.6)”
+
+  “TABLE 1: CUDA Applications: five-fold cross-validation performance over 25 classes.”
+
+  “Unless otherwise stated, all experiments are performed on a GH200 node from CloudLab [27] running NVIDIA
+  driver version 590.48.01 and CUDA Toolkit 12.2.”
+
+  “The classifier achieves 72% cross-provider accuracy, demonstrating that the extracted side-channel
+  signatures capture underlying, machine-independent structural characteristics of the models rather than
+  platform-specific noise.”
+
+  “We train an Extra-Trees classifier (500 estimators) exclusively on the CloudLab dataset (80 traces
+  per model)”
+
+  “and evaluate it on the Lambda dataset (20 traces per model).”'
+method_summary: '“We construct the eviction set using the following procedure: the target page is first
+  accessed N−δ times, bringing its counter close to the migration threshold; then M distractor pages are
+  accessed; finally, the target page is accessed again to determine whether migration is triggered, following
+  the methodology of previous experiments.”'
+limitations: “Its main drawback is that it relies purely on software-level contention, which makes it
+  unstable across runs, primarily because the contention level is difficult to control.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 29281
+    output: 1996
+  claims_accepted: 3
+  claims_rejected: 4
+  rejected:
+  - statement: The eviction-based covert channel achieves a rate of 8,500 bps at an error rate of 1.5%.
+    reason: the statement contains the number 8, which none of its quotes contain
+    quotes:
+    - The eviction-based covert channel achieves 8500 bps at a 1.5% error rate, rising to 15500 bps at
+      roughly 5% error with two eviction sets
+    - Experiments are performed on GH200 nodes from both CloudLab [27] and Lambda Cloud.
+    - The eviction-based covert channel achieves 8500 bps at a 1.5% error rate
+  - statement: The eviction-based covert channel reaches a rate of 15,500 bps with two eviction sets at
+      approximately 5% error.
+    reason: the statement contains the number 15, which none of its quotes contain
+    quotes:
+    - rising to 15500 bps at roughly 5% error with two eviction sets
+    - Experiments are performed on GH200 nodes from both CloudLab [27] and Lambda Cloud.
+  - statement: The migration-delay covert channel achieves a rate of 8,100 bps at a 4% error rate.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''while the
+      migration-delay leakage enables a covert channel of 8100 bps'''
+    quotes:
+    - while the migration-delay leakage enables a covert channel of 8100 bps at a 4% error rate
+    - Experiments are performed on GH200 nodes from both CloudLab [27] and Lambda Cloud.
+  - statement: The eviction-based side channel distinguishes among 10 CUDA workloads with 94% accuracy
+      when system-allocated memory is used.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''while the
+      eviction-based side channel distinguishes among 10 different'''
+    quotes:
+    - while the eviction-based side channel distinguishes among 10 different CUDA workloads with 94% accuracy
+      when they use system-allocated memory.
+    - Experiments are performed on GH200 nodes from both CloudLab [27] and Lambda Cloud.
+    - distinguishes among 10 different CUDA workloads
+    - when they use system-allocated memory
+corrections: []

@@ -1,0 +1,49 @@
+{
+  "arxiv_id": "2610.20962v1",
+  "claims": {
+    "CLM-ARCH-0095": {
+      "evidence_spans": [
+        "estimating an LLM’s processed token length with a mean absolute error of 4.6 tokens on average.",
+        "mean absolute error of 4.6 tokens",
+        "Experiments are performed on GH200 nodes from both CloudLab [27] and Lambda Cloud."
+      ],
+      "statement": "The migration-delay leakage estimates an LLM's processed token length with a mean absolute error of 4.6 tokens.",
+      "terms": []
+    },
+    "CLM-ARCH-0096": {
+      "evidence_spans": [
+        "Table 1 reports the fingerprinting results, achieving nearly 94% accuracy in identifying which CUDA application the victim is running.",
+        "XGBoost 93.6 (0.6) 93.9 (0.6) 93.6 (0.6)",
+        "XGBoost 93.6 (0.6) 93.9 (0.6) 93.6 (0.6)",
+        "TABLE 1: CUDA Applications: five-fold cross-validation performance over 25 classes.",
+        "Unless otherwise stated, all experiments are performed on a GH200 node from CloudLab [27] running NVIDIA driver version 590.48.01 and CUDA Toolkit 12.2."
+      ],
+      "statement": "The XGBoost classifier identifies CUDA applications with 93.6% accuracy in five-fold cross-validation.",
+      "terms": []
+    },
+    "CLM-ARCH-0097": {
+      "evidence_spans": [
+        "The classifier achieves 72% cross-provider accuracy, demonstrating that the extracted side-channel signatures capture underlying, machine-independent structural characteristics of the models rather than platform-specific noise.",
+        "We train an Extra-Trees classifier (500 estimators) exclusively on the CloudLab dataset (80 traces per model)",
+        "and evaluate it on the Lambda dataset (20 traces per model).",
+        "Unless otherwise stated, all experiments are performed on a GH200 node from CloudLab [27] running NVIDIA driver version 590.48.01 and CUDA Toolkit 12.2."
+      ],
+      "statement": "The Extra-Trees classifier achieves 72% cross-provider accuracy when trained on CloudLab data and evaluated on Lambda Cloud data.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "We construct the eviction set using the following procedure: the target page is first accessed N−δ times, bringing its counter close to the migration threshold; then M distractor pages are accessed; finally, the target page is accessed again to determine whether migration is triggered, following the methodology of previous experiments.",
+    "Its main drawback is that it relies purely on software-level contention, which makes it unstable across runs, primarily because the contention level is difficult to control."
+  ],
+  "generated": "2026-10-18",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00164",
+  "text_chars": 98390,
+  "text_sha256": "fc2a32998373e6aa49c78bb6ad1aca956b0d911fd603680204b4b4090a5cfd88"
+}

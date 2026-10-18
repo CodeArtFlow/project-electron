@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.20039v1
 doi: null
-title: Bias-Modulated Electronically-Tunable Optoelectronic Chromatic Dispersion in
-  Ge PN Photodiodes
+title: Bias-Modulated Electronically-Tunable Optoelectronic Chromatic Dispersion in Ge PN Photodiodes
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-14'
@@ -27,6 +26,70 @@ id: CAND-20261015-0122
 harvested_date: '2026-10-15'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-18'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Under an optical power of 5.7 mW and a reverse bias of 4 V, the measured OED sensitivity
+      peaks at +4.13 deg/nm in the L-band.
+    reason: 'unit conversion refused: sensitivity_advantage_ratio is dimensionless; unit ''deg/nm'' is
+      not one of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare
+      number woul'
+    quotes:
+    - A peak sensitivity of +4.13 deg/nm was measured at 5.7 mW and 4 V
+    - Ge PN photodiode
+    - 5.7 mW
+    - 4 V
+  - statement: At 1575 nm and 2.2 mW optical power, the maximum experimental phase tunability |Δθ/ΔV|
+      is 65.47 deg/V.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''deg/V'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a u'
+    quotes:
+    - Its largest experimental value is 65.47 deg/V at 1575 nm and 2.2 mW
+    - 1575 nm
+    - 2.2 mW
+  - statement: At 1575 nm and 5.7 mW optical power, the experimental maximum OED tunability |ΔSOED/ΔV|
+      is 2.2 deg/(nm.V).
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''deg/(nm.V)'' is not
+      one of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number
+      would hid'
+    quotes:
+    - with an experimental maximum of 2.2 deg/(nm.V) at 1575 nm and 5.7 mW
+    - 1575 nm
+    - 5.7 mW
+  - statement: Under 5.7 mW optical power, the theoretical maximum phase tunability |Δθ/ΔV| is 34.7 deg/V
+      at 1530 nm.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''deg/V'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a u'
+    quotes:
+    - while the theoretical maximum is 34.7 deg/V at 1530 nm under optical power of 5.7 mW.
+    - 1530 nm
+    - 5.7 mW
+  - statement: The theoretical maximum OED tunability |ΔSOED/ΔV| is 1.85 deg/(nm.V).
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''deg/(nm.V)'' is not
+      one of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number
+      would hid'
+    quotes:
+    - and a theoretical maximum of 1.85 deg/(nm.V).
+  - statement: The 15 mdeg phase-noise floor yields a projected wavelength resolution of approximately
+      3.6 pm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The 15 mdeg
+      phase-noise floor corresponds to a projected wavelength re'''
+    quotes:
+    - The 15 mdeg phase-noise floor yields a spectral resolution of 3.6 pm.
+    - The 15 mdeg phase-noise floor corresponds to a projected wavelength resolution of approximately
+      3.6 pm .
+    - 15 mdeg
+  tokens:
+    input: 12065
+    output: 1940
+  fetched_chars: 31911

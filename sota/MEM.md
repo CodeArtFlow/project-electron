@@ -1,6 +1,6 @@
 # Memory — state of the art
 
-Topic code `MEM`. Last reviewed 2026-10-17.
+Topic code `MEM`. Last reviewed 2026-10-18.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -12,6 +12,13 @@ Topic code `MEM`. Last reviewed 2026-10-17.
   - `CLM-MEM-0018` · temperature 100 K, measurement_method ARPES · grade B · credibility unknown · measured · as of 2026-10-14
   - sources: SRC-00148
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+
+### energy advantage ratio
+
+- **≥ 3.7 ×** — The proposed pipelined mapping achieves a speedup of 3.7x to 16.4x over SoA mappings across the evaluated workloads.
+  - `CLM-MEM-0025` · baseline SoA mappings · grade B · credibility unknown · simulated · as of 2026-10-14
+  - sources: SRC-00169
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### length device
 
@@ -76,6 +83,25 @@ Topic code `MEM`. Last reviewed 2026-10-17.
   - `CLM-MEM-0012` · encoding_scheme differential encoding, benchmark MNIST · grade B · credibility unknown · simulated · as of 2026-10-08
   - sources: SRC-00118
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **87.5 percent** — The experimental validation of MAGIC NOR logic primitive on printed Ag/ZnO/Au ECM memristors achieved an overall success rate of 87.5 %.
+  - `CLM-MEM-0021` · device_technology printed Ag/ZnO/Au ECM memristors · grade B · credibility unknown · measured · as of 2026-10-14
+  - sources: SRC-00169
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0081, CFL-0082 — see the open register
+- **100 percent** — The experimental validation of MAGIC NOT logic primitive on printed Ag/ZnO/Au ECM memristors achieved an overall success rate of 100 %.
+  - `CLM-MEM-0022` · device_technology printed Ag/ZnO/Au ECM memristors · grade B · credibility unknown · measured · as of 2026-10-14
+  - sources: SRC-00169
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0081 — see the open register
+- **95 percent** — The experimental validation of FELIX XOR logic primitive on printed Ag/ZnO/Au ECM memristors achieved an overall success rate of 95.0 %.
+  - `CLM-MEM-0023` · device_technology printed Ag/ZnO/Au ECM memristors · grade B · credibility unknown · measured · as of 2026-10-14
+  - sources: SRC-00169
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0082 — see the open register
+- **1.25 percent** — Input switching was observed in 1.25 % of the tests for NOR and XOR operations on printed Ag/ZnO/Au ECM memristors.
+  - `CLM-MEM-0024` · logic_primitives NOR and XOR · grade B · credibility unknown · measured · as of 2026-10-14
+  - sources: SRC-00169
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### resistance
 
@@ -128,9 +154,15 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0060` — time: _unexamined; classification pending_
   - claims: CLM-MEM-0015, CLM-MEM-0016
   - missing data: `not yet named`
+- `CFL-0081` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-MEM-0021, CLM-MEM-0022
+  - missing data: `not yet named`
+- `CFL-0082` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-MEM-0021, CLM-MEM-0023
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 20
-- grades: {'B': 20}
-- distinct sources: 8
+- claims: 25
+- grades: {'B': 25}
+- distinct sources: 9

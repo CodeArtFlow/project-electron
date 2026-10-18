@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.19973v1
 doi: null
-title: 'STISA: A 0.16 GOPS/W/PE Single-Shot Inference FPGA-based SNN Accelerator with
-  Algorithm and Hardware Co-Design'
+title: 'STISA: A 0.16 GOPS/W/PE Single-Shot Inference FPGA-based SNN Accelerator with Algorithm and Hardware
+  Co-Design'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-14'
@@ -28,6 +28,76 @@ id: CAND-20261015-0125
 harvested_date: '2026-10-15'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-18'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The STISA FPGA implementation achieves an efficiency of 0.16 GOPS/W/PE on ResNet34 for
+      ImageNet.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - STISA xczu28dr ImageNet ResNet34 68.51 2.25 12.85 241.48 2.21 109.27 0.16
+    - xczu28dr
+    - ImageNet
+    - ResNet34
+  - statement: The ResNet34 FPGA prototype achieves a average power reduction of 30.4% with TSC enabled
+      under TPOS and BMS.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - for ResNet34 the power consumption of different blocks is reduced from 0.38-0.93W to 0.18-0.77W,
+      yielding an average reduction of 30.4%
+    - ResNet34
+  - statement: The ResNet34 FPGA prototype achieves an average LUT utilization reduction of 30.1% with
+      TSC enabled.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - giving 13.8%-53.2% block-wise reductions (30.1% on average)
+    - ResNet34
+  - statement: The SCNN9 FPGA prototype achieves an average power reduction of 17.7% with TSC enabled
+      under TPOS and BMS.
+    reason: 'unit conversion refused: power: cannot convert 17.7 % to W - Cannot convert from ''percent''
+      (dimensionless) to ''watt'' ([mass] * [length] ** 2 / [time] ** 3). A dimensional mismatch means'
+    quotes:
+    - for SCNN9 the average power decreases by 17.7% with a 1.26×efficiency gain
+    - SCNN9
+  - statement: The SCNN9 FPGA prototype achieves an average LUT utilization reduction of 20.9% with TSC
+      enabled.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - For SCNN9, LUT and FF utilizations are reduced on average by 20.9% and 22.2%
+    - SCNN9
+  - statement: STISA on XCZU9EG operating at 200 MHz achieves a power consumption of 1.69 W for ResNet18
+      on CIFAR-10.
+    reason: the statement contains the number 200, which none of its quotes contain
+    quotes:
+    - STISA xczu9eg CIFAR-10 ResNet18 95.29 2 49.33 126.28 1.69 74.72 0.19
+    - xczu9eg
+    - CIFAR-10
+    - ResNet18
+  - statement: STISA on XCZU9EG operating at 200 MHz consumes 1.04 W for ResNet18 on CIFAR-100.
+    reason: the statement contains the number 200, which none of its quotes contain
+    quotes:
+    - STISA xczu9eg CIFAR-100 ResNet18 78.15 2.25 30.5 85.03 1.04 85 0.34
+    - xczu9eg
+    - CIFAR-100
+    - ResNet18
+  - statement: The operating frequency for the FPGA design synthesized in Vivado is 200 MHz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The design is implemented in Verilog HDL and synthesized using Xilinx Vivado 2022.1 at 200 MHz.
+    - Xilinx Vivado 2022.1
+  tokens:
+    input: 25325
+    output: 2523
+  fetched_chars: 70962

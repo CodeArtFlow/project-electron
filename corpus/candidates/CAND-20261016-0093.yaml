@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.20938v1
 doi: null
-title: Analytically Benchmarked Spatial and Temporal Discretization Guidelines for
-  Finite Element Simulation of Thermal Waves
+title: Analytically Benchmarked Spatial and Temporal Discretization Guidelines for Finite Element Simulation
+  of Thermal Waves
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-14'
@@ -26,6 +26,53 @@ id: CAND-20261016-0093
 harvested_date: '2026-10-16'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-18'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At a spatial resolution of ten elements per thermal diffusion length, the spatial surface
+      phase error reaches 0.14 degrees.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''◦'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - The spatial phase error converges at second order in the element size, reaching0.14 ◦ at ten elements
+      per diffusion length
+    - The harmonic simulation results were evaluated for a mapped mesh ofa=µ/∆xelements per diffusion
+      length, withaswept from 1 to 20 at a fixed excitation frequency of 20 Hz.
+    - reaching0.14 ◦ at ten elements per diffusion length
+    - fixed excitation frequency of 20 Hz.
+  - statement: At a spatial resolution of 5 elements per diffusion length, the spatial surface phase error
+      deviates by 0.54 degrees while the amplitude already agrees with the
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''◦'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - An example of this asymmetric behavior is illustrated ata= 5, where the amplitude already agrees
+      with the analytical value while the phase still deviates by0.54 ◦.
+    - The harmonic simulation results were evaluated for a mapped mesh ofa=µ/∆xelements per diffusion
+      length, withaswept from 1 to 20 at a fixed excitation frequency of 20 Hz.
+    - illustrated ata= 5
+    - The first benchmark isolates the discretization error in the absence of any surface defect.
+  - statement: For the finite-thickness slab, the harmonic surface phase yields a mean absolute phase
+      error of 0.14 degrees against the analytical solution across normalized t
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''◦'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - The phase MAE between the two curves of0.14 ◦ matches the spatial errorε s established in Section
+      IV-A
+    - Fig. 5 compares the harmonic surface phase to the analytical response of (6).
+    - fixed mesha= 10
+    - The normalized thicknessL/µis varied from 0.3 to 7.2
+  tokens:
+    input: 12377
+    output: 1468
+  fetched_chars: 40397

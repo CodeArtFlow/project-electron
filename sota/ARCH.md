@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-17.
+Topic code `ARCH`. Last reviewed 2026-10-18.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -241,6 +241,10 @@ Topic code `ARCH`. Last reviewed 2026-10-17.
   - `CLM-ARCH-0088` · evaluation_mode matched multi-view evaluation · grade B · credibility unknown · measured · as of 2026-10-09
   - sources: SRC-00135
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The migration-delay leakage estimates an LLM's processed token length with a mean absolute error of 4.6 tokens.
+  - `CLM-ARCH-0095` · metric mean absolute error · grade B · credibility unknown · measured · as of 2026-10-14
+  - sources: SRC-00164
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 - PSA reduces the ifmap memory footprint by 18.67x compared with an explicit im2col baseline.
   - `CLM-ARCH-0092` · baseline dense explicit im2col baseline · grade B · credibility unknown · simulated · as of 2026-10-15
   - sources: SRC-00153
@@ -374,6 +378,14 @@ Topic code `ARCH`. Last reviewed 2026-10-17.
   - `CLM-ARCH-0090` · baseline naive MX implementation baseline, technique OBSR · grade B · credibility unknown · simulated · as of 2026-10-14
   - sources: SRC-00145
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **93.6 percent** — The XGBoost classifier identifies CUDA applications with 93.6% accuracy in five-fold cross-validation.
+  - `CLM-ARCH-0096` · classifier XGBoost, evaluation_method five-fold cross-validation · grade B · credibility unknown · measured · as of 2026-10-14
+  - sources: SRC-00164
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **72 percent** — The Extra-Trees classifier achieves 72% cross-provider accuracy when trained on CloudLab data and evaluated on Lambda Cloud data.
+  - `CLM-ARCH-0097` · training_dataset CloudLab, evaluation_dataset Lambda · grade B · credibility unknown · measured · as of 2026-10-14
+  - sources: SRC-00164
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -413,6 +425,10 @@ Topic code `ARCH`. Last reviewed 2026-10-17.
   - `CLM-ARCH-0091` · quantization Q8, model baseline Linear Transformer model · grade B · credibility unknown · measured · as of 2026-10-14
   - sources: SRC-00146
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **120000 ns** — Six mutually inhibiting cells settle from a power-up reset in 0.12 ms.
+  - `CLM-ARCH-0098` · circuit_configuration six mutually inhibiting cells · grade B · credibility unknown · simulated · as of 2026-10-14
+  - sources: SRC-00167
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -445,6 +461,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 94
-- grades: {'B': 94}
-- distinct sources: 33
+- claims: 98
+- grades: {'B': 98}
+- distinct sources: 35

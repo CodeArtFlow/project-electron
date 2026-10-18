@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.20154v1
 doi: null
-title: Access Rate-Dependent Endurance Behavior of Ferroelectric Hafnium Zirconium
-  Oxide Capacitors
+title: Access Rate-Dependent Endurance Behavior of Ferroelectric Hafnium Zirconium Oxide Capacitors
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-14'
@@ -30,6 +29,67 @@ id: CAND-20261015-0112
 harvested_date: '2026-10-15'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-18'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: After 2·10^6 bipolar switching cycles, the ferroelectric capacitor achieves a remanent
+      polarization (Pr) of 19.3 µC cm-2.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''µC cm -2'' is not one
+      of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide '
+    quotes:
+    - leads the ferroelectric capacitors to achieve a remanent polarization (P r) of 19.3 µC cm -2 after
+      2⋅10 6 bipolar switching cycles.
+    - 'Electrical Characterization: Room temperature electrical measurements were performed using a Cascade
+      Microtech Summit 12000 probe station, whereas high temperature measurements were performed using
+      a Süss MicroTec PA200 probe station.'
+    - after 2⋅10 6 bipolar switching cycles.
+    - 5 nm thick Hf 0.5 Zr 0.5 O2
+  - statement: The relative permittivity of the ferroelectric capacitor stack continuously decreases from
+      34 to 28.5 upon cycling.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - the relative dielectric constant of the capacitors continuously decreases from 34 to 28.5 upon cycling
+      independent of the delay time (Figure 2d).
+    - 'Electrical Characterization: Room temperature electrical measurements were performed using a Cascade
+      Microtech Summit 12000 probe station, whereas high temperature measurements were performed using
+      a Süss MicroTec PA200 probe station.'
+    - 5 nm thick Hf 0.5 Zr 0.5 O2
+  - statement: The relative variation of remanent polarization with respect to the first switching cycle
+      (Δ2Pr) reaches a maximum of 10-12 µC cm-2 after 10^6 cycles.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''µC cm -2'' is not one
+      of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide '
+    quotes:
+    - The increase of switchable polarization relative to the first switching cycle (Δ2P r) during wake-up
+      also does not show a clear dependence on the delay time and reaches a maximum of 10-12 µC cm -2
+      after 10 6 cycles in the capacitors investi
+    - 'Electrical Characterization: Room temperature electrical measurements were performed using a Cascade
+      Microtech Summit 12000 probe station, whereas high temperature measurements were performed using
+      a Süss MicroTec PA200 probe station.'
+    - after 10 6 cycles
+  - statement: The estimated activation energy Ea for τ0 decreases from 0.09 eV to 0.04 eV going from
+      the low-temperature region to the high-temperature region around 85°C.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - Extracting the activation energy (E a) for τ0, two distinct regions can be identified around 85°C.
+      The Ea decreases going from the low to the high temperature region from 0.09 to 0.04 eV.
+    - Based on the theoretical understanding, a physics-based model is developed to extrapolate the long-term
+      access rate-dependent endurance performance and experimentally verified considering temperatures
+      up to 135°C and delay times up to 2 ms.
+    - around 85°C.
+    - from 0.09 to 0.04 eV.
+  tokens:
+    input: 22965
+    output: 1739
+  fetched_chars: 71329

@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.20103v1
 doi: null
-title: Polaritonic self-hybridized critical coupling by Brillouin zone folding induced
-  quasi-bound states in the continuum in bulk WS2 metasurfaces
+title: Polaritonic self-hybridized critical coupling by Brillouin zone folding induced quasi-bound states
+  in the continuum in bulk WS2 metasurfaces
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-14'
@@ -26,6 +26,44 @@ id: CAND-20261015-0117
 harvested_date: '2026-10-15'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-18'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: By changing the height of WS2 metasurfaces under zero detuning, a Rabi splitting of 246.5
+      meV is obtained.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - By changing the height of WS2 metasurfaces, we observe a typical anti-crossing behavior with a Rabi
+      splitting of 246.5 meV .
+    - When 𝐸𝑐𝑎𝑣 = 𝐸𝑒𝑥𝑐 (zero detuning) is satisfied, a Rabi splitting of 246.5 meV can be extracted from
+      simulat ed results in Figure 2(b).
+    - bulk WS2 metasurfaces
+    - When 𝐸𝑐𝑎𝑣 = 𝐸𝑒𝑥𝑐 (zero detuning) is satisfied
+  - statement: At the polaritonic critical coupling condition, a maximum absorption value of 0.5 for exciton-polaritons
+      is achieved.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Moreover,
+      the maximum absorption value of 0.5 for exciton-polaritons i'''
+    quotes:
+    - Moreover, the maximum absorption value of 0.5 for exciton-polaritons is achieved at the polaritonic
+      critical coupling condition .
+    - Notably, when 𝛾𝑐𝑎𝑣 = 𝛾𝑒𝑥𝑐, the absorption strength of UP reach the theoretical maximum value of
+      0.5, which is signature of critical coupling, enhancing polariton absorption through critical strong
+      clearly larger than those under the conditi
+    - 'To study the absorption enhancement behavior of the polaritonic critical coupling , the absorption
+      spectra of the self -hybridized structure with different damping rates: 𝛾𝑐𝑎𝑣 < 𝛾𝑒𝑥𝑐 , 𝛾𝑐𝑎𝑣 = 𝛾𝑒𝑥𝑐
+      (critical coupling) and 𝛾𝑐𝑎𝑣 > 𝛾𝑒𝑥𝑐 were si'
+    - 𝛾𝑐𝑎𝑣 = 𝛾𝑒𝑥𝑐 (critical coupling)
+  tokens:
+    input: 11797
+    output: 911
+  fetched_chars: 31981

@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-17.
+Topic code `MAT`. Last reviewed 2026-10-18.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -183,6 +183,10 @@ Topic code `MAT`. Last reviewed 2026-10-17.
 - **≈8.5 nm** — The measured moiré period of the monolayer hBN-separated region is approximately 8.5 nm.
   - `CLM-MAT-0118` · region separated by a single hBN spacer layer · grade B · credibility unknown · measured · as of 2026-10-09
   - sources: SRC-00134
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1.136 nm** — The carbon-to-carbon width of the hydrogen-passivated zigzag graphene nanoribbon is 11.36 Å.
+  - `CLM-MAT-0143` · structure hydrogen-passivated zigzag graphene nanoribbon with six zigzag chains · grade B · credibility unknown · simulated · as of 2026-10-14
+  - sources: SRC-00165
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 - **800 nm** — The average domain period of CoB/Pt measured via Fresnel imaging at zero-field and 25° tilt is 800 nm.
   - `CLM-MAT-0132` · sample_alias CoB/Pt, imaging_mode Fresnel imaging, sample_tilt 25 o · grade B · credibility unknown · measured · as of 2026-10-15
@@ -480,6 +484,18 @@ Topic code `MAT`. Last reviewed 2026-10-17.
   - `CLM-MAT-0131` · material xLi 2O – MCly electrolytes (M = Ta, Hf) · grade B · credibility unknown · measured · as of 2026-10-14
   - sources: SRC-00150
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Defect formation energies calculated using MACE show a mean absolute error of 1.106 eV compared to DFT calculations.
+  - `CLM-MAT-0144` · comparison_baseline DFT, model MACE · grade B · credibility unknown · simulated · as of 2026-10-14
+  - sources: SRC-00168
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The computational cost for MACE MD calculations across the investigated structures is approximately 2,500 core-hours.
+  - `CLM-MAT-0145` · temperature 0 K · grade B · credibility unknown · simulated · as of 2026-10-14
+  - sources: SRC-00168
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Defect formation energies calculated using MACE show a root mean square error of 1.867 eV compared to DFT calculations.
+  - `CLM-MAT-0146` · comparison_baseline DFT, model MACE · grade B · credibility unknown · simulated · as of 2026-10-14
+  - sources: SRC-00168
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -559,6 +575,10 @@ Topic code `MAT`. Last reviewed 2026-10-17.
 - **≈1366.85 degC** — The top graphene layer reaches a peak electronic temperature of approximately 1640 K.
   - `CLM-MAT-0126` · layer top layer · grade B · credibility unknown · measured · as of 2026-10-13
   - sources: SRC-00141
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **-264.15 degC** — Scanning tunneling microscopy measurements were performed at a temperature of 9 K.
+  - `CLM-MAT-0142` · measurement_setup STM measurements · grade B · credibility unknown · measured · as of 2026-10-14
+  - sources: SRC-00163
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### thermal conductivity
@@ -735,6 +755,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 141
-- grades: {'B': 141}
-- distinct sources: 52
+- claims: 146
+- grades: {'B': 146}
+- distinct sources: 55

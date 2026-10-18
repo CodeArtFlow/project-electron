@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-17.
+Topic code `PHOT`. Last reviewed 2026-10-18.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -220,6 +220,14 @@ Topic code `PHOT`. Last reviewed 2026-10-17.
   - `CLM-PHOT-0074` · pump_fluence 7.2 mJ/cm 2, incident_azimuthal_angle 45° · grade B · credibility unknown · measured · as of 2026-10-14
   - sources: SRC-00144
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The time-averaged optical power delivered to the first diffraction order at an angle of 53.5° reaches 0.09% of the incident power.
+  - `CLM-PHOT-0075` · steering_angle 53.5° · grade B · credibility unknown · measured · as of 2026-10-14
+  - sources: SRC-00166
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The metasurface fabricated with S-G-G-S electrode configuration exhibits a quality factor of 1953 at 1606.1 nm.
+  - `CLM-PHOT-0076` · electrode_configuration S-G-G-S · grade B · credibility unknown · measured · as of 2026-10-14
+  - sources: SRC-00166
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -357,6 +365,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 74
-- grades: {'B': 67, 'A': 7}
-- distinct sources: 23
+- claims: 76
+- grades: {'B': 69, 'A': 7}
+- distinct sources: 24

@@ -1,0 +1,82 @@
+id: SRC-00167
+title: 'The Reciprocal tau-Cell: A Log-Domain Circuit for On-Chip Learning'
+doi: null
+arxiv_id: 2610.20018v1
+url: https://arxiv.org/abs/2610.20018v1
+venue_id: arxiv_api
+authors:
+- name: Craig Jin
+  affiliation: null
+  corresponding: null
+- name: Thomas Chaffey
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-14'
+retrieved_date: '2026-10-18'
+access: full_text
+read_scope: Automated reading. The full PDF text (24,201 characters, 5 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.20018v1 on
+  2026-10-18. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“six mutually inhibiting cells settle from a power-up reset to the solution of (3) in 0.12
+  ms”
+
+  “six mutually inhibiting cells”
+
+  “transistor-level ngspice simulations”'
+method_summary: “transistor-level ngspice simulations with the SKY130 models (typical corner, 27 °C):W/L=
+  4µm/8µm,C= 1 pF,I0 = 5 nA, 1.8 V supply.”
+limitations: “learning dynamic sequence mappings in situ remains an open problem [17], [27].”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 9653
+    output: 1569
+  claims_accepted: 1
+  claims_rejected: 5
+  rejected:
+  - statement: Transistor-level SKY130 simulations show that the second run gives the gradient within
+      1.9% error.
+    reason: the statement contains the number 30, which none of its quotes contain
+    quotes:
+    - Transistor-level SKY130 simulations show that the second run gives the gradient within 1.9%
+    - SKY130 models
+    - the second run gives the gradient
+  - statement: In situ learning restores mismatched circuits to test accuracy between 88% and 96%.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - learning in situ restores mismatched circuits on which software-trained weights fail, from 53–63%
+      to 88–96% test accuracy.
+    - Transistor-level SKY130 simulations show that
+    - learning in situ
+    - Iris data set
+  - statement: Six cells with ten weight pairs consume 0.26 µW of power.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Six cells with ten pairs draw 0.26 µW.
+    - Transistor-level SKY130 simulations show
+    - Six cells with ten pairs
+  - statement: The step response tau of one cell is 11 µs when biased at I0 = 5 nA.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - 51, 11 and 2.9 µs atI 0 = 1, 5 and 20 nA
+    - transistor-level ngspice simulations
+    - I 0 = 1, 5 and 20 nA
+    - The cell is first order withτ∝1/I 0
+  - statement: A supply voltage of 1.8 V is used in the simulation setup.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''1.8 V supply.'''
+    quotes:
+    - 1.8 V supply.
+    - transistor-level ngspice simulations
+corrections: []

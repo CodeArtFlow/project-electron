@@ -2837,3 +2837,126 @@ claims:
     synthesis_tool: Vivado 2024.2
     processing_elements: '4'
     function_type: Non-Monotonic
+- id: CLM-ARCH-0095
+  topic: ARCH
+  statement: The migration-delay leakage estimates an LLM's processed token length with a mean absolute
+    error of 4.6 tokens.
+  sources:
+  - SRC-00164
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    metric: mean absolute error
+- id: CLM-ARCH-0096
+  topic: ARCH
+  statement: The XGBoost classifier identifies CUDA applications with 93.6% accuracy in five-fold cross-validation.
+  sources:
+  - SRC-00164
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    classifier: XGBoost
+    evaluation_method: five-fold cross-validation
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 93.6
+      unit: '%'
+    si_base:
+      value: 0.9359999999999999
+      unit: dimensionless
+    display:
+      value: 93.6
+      unit: percent
+    conditions:
+      classifier: XGBoost
+      evaluation_method: five-fold cross-validation
+- id: CLM-ARCH-0097
+  topic: ARCH
+  statement: The Extra-Trees classifier achieves 72% cross-provider accuracy when trained on CloudLab
+    data and evaluated on Lambda Cloud data.
+  sources:
+  - SRC-00164
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    training_dataset: CloudLab
+    evaluation_dataset: Lambda
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 72.0
+      unit: '%'
+    si_base:
+      value: 0.72
+      unit: dimensionless
+    display:
+      value: 72.0
+      unit: percent
+    conditions:
+      training_dataset: CloudLab
+      evaluation_dataset: Lambda
+- id: CLM-ARCH-0098
+  topic: ARCH
+  statement: Six mutually inhibiting cells settle from a power-up reset in 0.12 ms.
+  sources:
+  - SRC-00167
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-14'
+  created: '2026-10-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    circuit_configuration: six mutually inhibiting cells
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.12
+      unit: ms
+    si_base:
+      value: 0.00012
+      unit: s
+    display:
+      value: 119999.99999999999
+      unit: ns
+    conditions:
+      circuit_configuration: six mutually inhibiting cells

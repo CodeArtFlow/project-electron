@@ -1,0 +1,126 @@
+id: SRC-00165
+title: 'MASON: Materials Atomistic Structure builder Operated in Natural language'
+doi: null
+arxiv_id: 2610.21015v1
+url: https://arxiv.org/abs/2610.21015v1
+venue_id: arxiv_api
+authors:
+- name: Xinyue Zhang
+  affiliation: null
+  corresponding: null
+- name: Jixiang Li
+  affiliation: null
+  corresponding: null
+- name: Bin Shao
+  affiliation: null
+  corresponding: null
+- name: Baishun Yang
+  affiliation: null
+  corresponding: null
+- name: Zhiyang Liu
+  affiliation: null
+  corresponding: null
+- name: Weichao Wang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-14'
+retrieved_date: '2026-10-18'
+access: full_text
+read_scope: Automated reading. The full PDF text (37,377 characters, 19 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.21015v1 on
+  2026-10-18. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“For a hydrogen-passivated zigzag graphene nanoribbon with six zigzag chains (Fig. 9a), the
+  agent reports a carbon-to-carbon width of 11.36 Å”
+
+  “hydrogen-passivated zigzag graphene nanoribbon with six zigzag chains”
+
+  “All tool outputs have been validated by comparison with analytic values or with direct pymatgen and
+  spglib calculations”'
+method_summary: “The crystallographic operations of MASON are built on pymatgen [13] and ASE [14], the
+  symmetry analysis uses spglib [27], and the three-dimensional pages are generated with 3Dmol.js [28].”
+limitations: “The agent made more than ten tool calls in total, and the researcher provided only the parameters
+  in the request.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 12924
+    output: 2360
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: The in-plane lattice constant of the MoS2 monolayer is 3.16 Å.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The same analysis of the MoS2 monolayer (Fig. 5b) gives an in-plane lattice constant of 3.16 Å
+    - All tool outputs have been validated by comparison with analytic values or with direct pymatgen
+      and spglib calculations
+    - MoS2 monolayer
+    - in-plane lattice constant
+  - statement: The S–Mo–S layer thickness for the MoS2 monolayer is 3.12 Å.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - an S–Mo–S layer thickness of 3.12 Å
+    - All tool outputs have been validated by comparison with analytic values or with direct pymatgen
+      and spglib calculations
+    - MoS2 monolayer
+    - S–Mo–S layer thickness
+  - statement: The four-layer Pt(111) slab model has an interlayer spacing of 2.27 Å.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - For a four-layer Pt(111) slab with 15 Å of vacuum and the bottom two layers fixed (Fig. 7a), the
+      agent reports an interlayer spacing of 2.27 Å
+    - All tool outputs have been validated by comparison with analytic values or with direct pymatgen
+      and spglib calculations
+    - four-layer Pt(111) slab
+    - 15 Å of vacuum
+  - statement: The four-layer Pt(111) slab model has a slab thickness of 6.80 Å.
+    reason: the statement contains the number 111, which none of its quotes contain
+    quotes:
+    - a slab thickness of 6.80 Å (three interlayer spacings)
+    - All tool outputs have been validated by comparison with analytic values or with direct pymatgen
+      and spglib calculations
+    - four-layer Pt(111) slab
+  - statement: The (10,0) single-walled carbon nanotube has a diameter of 7.83 Å.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The (10,0) carbon nanotube (Fig. 9b) has a diameter of 7.83 Å
+    - All tool outputs have been validated by comparison with analytic values or with direct pymatgen
+      and spglib calculations
+    - (10,0) carbon nanotube
+  - statement: The selected 210-atom match for 3C-SiC(111) on Si(111) has an interface area of 153.26
+      Å2.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - The agent selects the 210-atom match, which has an area of 153.26 Å2
+    - All tool outputs have been validated by comparison with analytic values or with direct pymatgen
+      and spglib calculations
+    - 3C-SiC on Si(111)
+    - 210-atom match
+  - statement: The 1x1 match for graphene on Ni(111) has an area of 5.38 Å2.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The agent selects the smallest one, in which the 1× 1 cell of graphene matches the 1× 1 cell of
+      Ni(111), with an area of 5.38 Å2
+    - All tool outputs have been validated by comparison with analytic values or with direct pymatgen
+      and spglib calculations
+    - graphene on Ni(111)
+    - 1× 1 cell of graphene matches the 1× 1 cell of Ni(111)
+corrections: []

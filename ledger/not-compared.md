@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**4577 pair(s)** as of 2026-10-17.
+**5068 pair(s)** as of 2026-10-18.
 
 ## `area_die` (1 pair(s))
 
@@ -71,7 +71,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 
 _and 143 more_
 
-## `energy_advantage_ratio` (5 pair(s))
+## `energy_advantage_ratio` (7 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -80,6 +80,8 @@ _and 143 more_
 | `CLM-ARCH-0004` = 3.83 x | `CLM-ARCH-0022` = 169.1 x | 98% | process=TSMC 16nm FinFET, comparison=single-gate PFAL vs static CMOS, power_clock=trapezoidal, operating_point=minimum-energy points of the parameter sweep (Table 2) | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch |
 | `CLM-ARCH-0002` = 5 x | `CLM-ARCH-0022` = 169.1 x | 97% | process=TSMC 16nm FinFET, comparison=PFAL vs static CMOS, operating_point=most favorable operating point, vclk=1 V, fclk=100 MHz | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch |
 | `CLM-ARCH-0006` = 5.3 x | `CLM-ARCH-0022` = 169.1 x | 97% | process=TSMC 16nm FinFET, comparison=4-bit Brent-Kung CLA adder vs architecture-matched static CMOS estimate, power_clock=triangular | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch |
+| `CLM-ARCH-0016` = 1.22 x | `CLM-MEM-0025` = 3.7 x | 67% | device=B200, benchmark=GroupGEMM | baseline=SoA mappings |
+| `CLM-ARCH-0005` = 1.32 x | `CLM-MEM-0025` = 3.7 x | 64% | process=TSMC 16nm FinFET, comparison=sinusoidal vs trapezoidal power-clock, gate_at_maximum=XOR/XNOR, vclk_at_maximum=0.5 V, fclk_at_maximum=384 MHz | baseline=SoA mappings |
 
 ## `frequency` (175 pair(s))
 
@@ -128,7 +130,7 @@ _and 143 more_
 
 _and 135 more_
 
-## `length_device` (1576 pair(s))
+## `length_device` (1630 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -173,7 +175,7 @@ _and 135 more_
 | `CLM-MAT-0068` = 14.5 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | method=estimated from the carrier density at the SDP | chip_thickness=4-mm |
 | `CLM-MAT-0076` = 3.4e+05 nm | `CLM-MAT-0097` = 1.915 nm | 100% | material=GaN, growth_method=ammonothermal | feature=alternating stacking of PEDOT and PSS |
 
-_and 1536 more_
+_and 1590 more_
 
 ## `power` (71 pair(s))
 
@@ -222,7 +224,7 @@ _and 1536 more_
 
 _and 31 more_
 
-## `relative_deviation` (1940 pair(s))
+## `relative_deviation` (2326 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -231,22 +233,27 @@ _and 31 more_
 | `CLM-ARCH-0089` = 64.2 percent | `CLM-MAT-0111` = -60 percent | 193% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0112` = 66.8 percent | 190% | sample=B1-1 | baseline=pure two-dimensional Coulomb reference, benchmark_protocol=high-field-calibrated |
 | `CLM-ARCH-0090` = 67.5 percent | `CLM-MAT-0111` = -60 percent | 189% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
+| `CLM-ARCH-0097` = 72 percent | `CLM-MAT-0111` = -60 percent | 183% | training_dataset=CloudLab, evaluation_dataset=Lambda | sample=B1-1 |
 | `CLM-EDA-0007` = 76 percent | `CLM-MAT-0111` = -60 percent | 179% | model=Non-cyclic + Node prediction model | sample=B1-1 |
 | `CLM-ARCH-0049` = 46 percent | `CLM-MAT-0111` = -60 percent | 177% | mechanism=uniform iteration offsets | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0005` = 85 percent | 171% | sample=B1-1 | dataset=Iris test set |
 | `CLM-EDA-0005` = 86.4 percent | `CLM-MAT-0111` = -60 percent | 169% | model=Cyclic Edge prediction model | sample=B1-1 |
+| `CLM-MAT-0111` = -60 percent | `CLM-MEM-0021` = 87.5 percent | 169% | sample=B1-1 | device_technology=printed Ag/ZnO/Au ECM memristors |
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0006` = 88 percent | 168% | sample=B1-1 | dataset=MNIST, setup=experimental system |
 | `CLM-EDA-0006` = 89.6 percent | `CLM-MAT-0111` = -60 percent | 167% | model=Non-cyclic Edge prediction model | sample=B1-1 |
 | `CLM-ARCH-0041` = 93.08 percent | `CLM-MAT-0111` = -60 percent | 164% | frequency=7 GHz | sample=B1-1 |
+| `CLM-ARCH-0096` = 93.6 percent | `CLM-MAT-0111` = -60 percent | 164% | classifier=XGBoost, evaluation_method=five-fold cross-validation | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0059` = 94.4 percent | 164% | sample=B1-1 | route=Fourier route |
 | `CLM-DEV-0069` = 38 percent | `CLM-MAT-0111` = -60 percent | 163% | wavelength=365 nm, batch=batch A, operating_voltage=0 V | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0012` = 95 percent | 163% | sample=B1-1 | encoding_scheme=differential encoding, benchmark=MNIST |
+| `CLM-MAT-0111` = -60 percent | `CLM-MEM-0023` = 95 percent | 163% | sample=B1-1 | device_technology=printed Ag/ZnO/Au ECM memristors |
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0063` = 37 percent | 162% | sample=B1-1 | disorder_type=radius disorder |
 | `CLM-ARCH-0077` = 36.86 percent | `CLM-MAT-0111` = -60 percent | 161% | framework=RAPID-DNN, fault_configuration=mixed random fault configuration, baseline=fault-agnostic baseline | sample=B1-1 |
 | `CLM-ARCH-0040` = 97.93 percent | `CLM-MAT-0111` = -60 percent | 161% | frequency=7 GHz, component=graded magnetic spacer | sample=B1-1 |
 | `CLM-ARCH-0018` = 98 percent | `CLM-MAT-0111` = -60 percent | 161% | concurrency_n_a=48, set_type=hot set | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0116` = 100 percent | 160% | sample=B1-1 | system=2D square-lattice tight-binding model |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0124` = 36 percent | 160% | sample=B1-1 | elastic_constant=C22, rotation_direction=from y to x |
+| `CLM-MAT-0111` = -60 percent | `CLM-MEM-0022` = 100 percent | 160% | sample=B1-1 | device_technology=printed Ag/ZnO/Au ECM memristors |
 | `CLM-ARCH-0084` = 34 percent | `CLM-MAT-0111` = -60 percent | 157% | platform=Arrow, application=Sparse point cloud processing | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0064` = 31 percent | 152% | sample=B1-1 | disorder_type=radius disorder |
 | `CLM-DEV-0070` = 30 percent | `CLM-MAT-0111` = -60 percent | 150% | wavelength=455 nm | sample=B1-1 |
@@ -261,15 +268,10 @@ _and 31 more_
 | `CLM-MAT-0111` = -60 percent | `CLM-PROC-0022` = 215 percent | 128% | sample=B1-1 | material=polycrystalline rolled Au, measurement_type=10-times continuous measurement |
 | `CLM-ARCH-0081` = 16 percent | `CLM-MAT-0111` = -60 percent | 127% | platform=Orin, workload=L2-optimized GEMM, cache_policy=UC | sample=B1-1 |
 | `CLM-ARCH-0082` = 16 percent | `CLM-MAT-0111` = -60 percent | 127% | platform=Arrow, application=OpenCV, variant=Cv+Opt | sample=B1-1 |
-| `CLM-ARCH-0044` = 14.3 percent | `CLM-MAT-0111` = -60 percent | 124% | process=IHP 130 nm, channel_count=8 | sample=B1-1 |
-| `CLM-ARCH-0086` = 14 percent | `CLM-MAT-0111` = -60 percent | 123% | platform=Orin, application=Demand Layering, variant=DL+Opt | sample=B1-1 |
-| `CLM-MAT-0111` = -60 percent | `CLM-PROC-0026` = 13.2 percent | 122% | sample=B1-1 | material=WS2 |
-| `CLM-ARCH-0047` = 12.6 percent | `CLM-MAT-0111` = -60 percent | 121% | design=ZTA-Q, resource_type=register | sample=B1-1 |
-| `CLM-MAT-0111` = -60 percent | `CLM-PROC-0028` = 12.5 percent | 121% | sample=B1-1 | model=ttWS2 simulation model |
 
-_and 1900 more_
+_and 2286 more_
 
-## `temperature` (123 pair(s))
+## `temperature` (140 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -291,6 +293,8 @@ _and 1900 more_
 | `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0093` = 76.85 degC | 138% | relaxation_temperature=TLIESST | magnetic_field=0.05 T |
 | `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0004` = -73.15 degC | 135% | temperature_control_system=VAHEAT system | calculation=optical phonon and surface polar phonon scattering |
 | `CLM-MAT-0092` = 250 K | `CLM-MAT-0102` = -81 K | 132% | pressure=ambient pressure, magnetic_field=0.05 T | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region |
+| `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0142` = -264.1 degC | 132% | time_after_cooling_onset=10 s | measurement_setup=STM measurements |
+| `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0142` = -264.1 degC | 131% | time_after_cooling_onset=10 s | measurement_setup=STM measurements |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0092` = -23.15 degC | 128% | time_after_cooling_onset=10 s | pressure=ambient pressure, magnetic_field=0.05 T |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0092` = -23.15 degC | 127% | time_after_cooling_onset=10 s | pressure=ambient pressure, magnetic_field=0.05 T |
 | `CLM-MAT-0102` = -81 K | `CLM-PROC-0001` = 300 K | 127% | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region | thermal_model=Debye model |
@@ -306,15 +310,13 @@ _and 1900 more_
 | `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0126` = 1367 degC | 115% | relaxation_temperature=TLIESST | layer=top layer |
 | `CLM-DEV-0035` = -204.1 degC | `CLM-PROC-0001` = 26.85 degC | 113% | relaxation_temperature=TLIESST | thermal_model=Debye model |
 | `CLM-DEV-0017` = 25.35 degC | `CLM-DEV-0035` = -204.1 degC | 112% | temperature_control_system=VAHEAT system | relaxation_temperature=TLIESST |
+| `CLM-MAT-0102` = -81 K | `CLM-MAT-0142` = 9 K | 111% | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region | measurement_setup=STM measurements |
+| `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0142` = -264.1 degC | 110% | temperature_control_system=VAHEAT system | measurement_setup=STM measurements |
 | `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0125` = 2227 degC | 109% | relaxation_temperature=TLIESST | layer=bottom layer |
 | `CLM-MAT-0102` = -81 K | `CLM-MEM-0019` = 1042 K | 108% | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region | model=realistic multi-orbital model of YCl, onsite_hubbard_parameter=0.9 eV |
 | `CLM-MAT-0102` = -81 K | `CLM-MEM-0020` = 1075 K | 108% | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region | method=Hartree-Fock approximation |
-| `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0102` = -354.1 degC | 107% | temperature_control_system=VAHEAT system | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region |
-| `CLM-MAT-0102` = -81 K | `CLM-MAT-0126` = 1640 K | 105% | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region | layer=top layer |
-| `CLM-MAT-0102` = -81 K | `CLM-MAT-0125` = 2500 K | 103% | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region | layer=bottom layer |
-| `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0125` = 2227 degC | 99% | temperature_control_system=VAHEAT system | layer=bottom layer |
 
-_and 83 more_
+_and 100 more_
 
 ## `temperature_delta` (3 pair(s))
 
@@ -330,7 +332,7 @@ _and 83 more_
 |---|---|---|---|---|
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0007` = 3100 W/(m*K) | 99% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | temperature=room-temperature, sample_13c_concentration=~0.00024% |
 
-## `time` (422 pair(s))
+## `time` (454 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -375,7 +377,7 @@ _and 83 more_
 | `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-MAT-0119` = 0.00029 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | material=MAPbBr3, measurement_method=Time-resolved optical Kerr-effect measurements |
 | `CLM-ARCH-0019` = 8.4e+04 ns | `CLM-MAT-0120` = 0.0007 ns | 100% | concurrency_n_a=48, memory_tier=HBF, component=HBF tiering resume/access latency overhead | measurement_method=Time-resolved optical Kerr-effect measurements |
 
-_and 382 more_
+_and 414 more_
 
 ## `voltage` (21 pair(s))
 

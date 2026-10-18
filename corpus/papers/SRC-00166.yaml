@@ -1,0 +1,122 @@
+id: SRC-00166
+title: Localized high-Q resonances enable electrically defined beam steering in lithium niobate metasurfaces
+doi: null
+arxiv_id: 2610.21027v1
+url: https://arxiv.org/abs/2610.21027v1
+venue_id: arxiv_api
+authors:
+- name: Jiyong Shim
+  affiliation: null
+  corresponding: null
+- name: Sahil Dagli
+  affiliation: null
+  corresponding: null
+- name: Hamish Carr Delgado
+  affiliation: null
+  corresponding: null
+- name: Remi Dado
+  affiliation: null
+  corresponding: null
+- name: Chih-Yi Chen
+  affiliation: null
+  corresponding: null
+- name: Feng Pan
+  affiliation: null
+  corresponding: null
+- name: Isabella He
+  affiliation: null
+  corresponding: null
+- name: Sajjad Abdollahramezani
+  affiliation: null
+  corresponding: null
+- name: Mark L. Brongersma
+  affiliation: null
+  corresponding: null
+- name: Jennifer A. Dionne
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-14'
+retrieved_date: '2026-10-18'
+access: full_text
+read_scope: Automated reading. The full PDF text (37,507 characters, 12 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.21027v1 on
+  2026-10-18. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“0.09% of incident power in the steered order”
+
+  “The inset shows that the time-averaged optical power delivered to this diffraction order reaches 0.09%
+  of the incident power, directly confirming optical power transfer into the steered order.”
+
+  “θ = sin -1(1606.8 nm/2000 nm) = 53.5°”
+
+  “The metasurface exhibits a resonance at 1606.1 nm with a quality factor of 1953 (Fig. S8).”
+
+  “signal–ground–ground–signal (S-G-G-S) electrode configuration”'
+method_summary: '“Numerical simulations indicate that 6.7% of the modal energy resides within the underlying
+  LN layer.”
+
+  “For beam steering and diffraction measurements, a second InGaAs photodetector placed along the diffracted
+  beam path collected the steered order (Fig. S13).”'
+limitations: “The measured modulation efficiency is lower than the simulated diffraction efficiency, consistent
+  with the experimentally reduced Q and fabrication-induced nonuniformity, which causes individual nanoantennas
+  to resonate at slightly different wavelengths.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 12679
+    output: 2407
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: The GMR nanoantenna exhibits a quality factor of 1745 at a resonant wavelength of 1606.8
+      nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Fitting the
+      measured spectrum to a Fano-type resonance lineshape yield'''
+    quotes:
+    - Fitting the measured spectrum to a Fano-type resonance lineshape yields a quality factor of 1745
+      at 1606.8 nm.
+    - 1606.8 nm
+  - statement: A maximum 0th-order modulation depth of 18.0% was measured at a wavelength of 1606.6 nm.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - a peak modulation depth of 18.0% at 1606.6 nm
+    - Fig. 3(d) shows a measured second-harmonic modulation efficiency of 0.56% in the 0th order reflected
+      signal at 25.2 Vpp, with the signal scaling quadratically with applied voltage (inset), and a peak
+      modulation depth of 18.0% at 1606.6 nm [
+    - 25.2 Vpp
+    - 1606.6 nm
+  - statement: The detected 3 dB modulation bandwidth reaches 940 MHz for a 100 x 100 μm² metasurface
+      device.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - reaching 245 MHz, 552 MHz, and 940 MHz for the 200 × 200, 150 × 150, and 100 × 100 µm² devices,
+      respectively.
+    - 100 × 100 µm²
+  - statement: The 3 dB modulation bandwidth reaches 552 MHz for a 150 x 150 μm² metasurface device.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - reaching 245 MHz, 552 MHz, and 940 MHz for the 200 × 200, 150 × 150, and 100 × 100 µm² devices,
+      respectively.
+    - 150 × 150 µm²
+  - statement: The 3 dB modulation bandwidth reaches 245 MHz for a 200 x 200 μm² metasurface device.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - reaching 245 MHz, 552 MHz, and 940 MHz for the 200 × 200, 150 × 150, and 100 × 100 µm² devices,
+      respectively.
+    - 200 × 200 µm²
+  - statement: The projected modulation bandwidth for a 50 x 50 μm² device is approximately 3.6 GHz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Extrapolation of the measured area scaling projects a bandwidth of approximately 3.6 GHz for a 50
+      × 50 µm² device [Fig. 5(c)].
+    - 50 × 50 µm²
+corrections: []

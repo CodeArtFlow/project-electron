@@ -1,0 +1,87 @@
+id: SRC-00168
+title: Sorption Molecular Dynamics of Point Defects in 2D Materials with a Machine Learning Potential
+doi: null
+arxiv_id: 2610.20063v1
+url: https://arxiv.org/abs/2610.20063v1
+venue_id: arxiv_api
+authors:
+- name: Nils-Ruben Skogemyr
+  affiliation: null
+  corresponding: null
+- name: Albin Sjöstedt
+  affiliation: null
+  corresponding: null
+- name: Isak Wernroth
+  affiliation: null
+  corresponding: null
+- name: Isak Häggqvist
+  affiliation: null
+  corresponding: null
+- name: Isac Ljungwald
+  affiliation: null
+  corresponding: null
+- name: Hans-Ove Åkesson
+  affiliation: null
+  corresponding: null
+- name: Henricus R. A. ten Eikelder
+  affiliation: null
+  corresponding: null
+- name: Rickard Armiento
+  affiliation: null
+  corresponding: null
+- name: Joel Davidsson
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-14'
+retrieved_date: '2026-10-18'
+access: full_text
+read_scope: Automated reading. The full PDF text (31,090 characters, 8 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.20063v1 on
+  2026-10-18. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“A clear positive correlation is observed, with an MAE of 1.106 eV and an RMSE of 1.867 eV
+  .”
+
+  “The relationship between the two methods can be examined in Fig. 3, where the formation energies obtained
+  using MACE are compared directly with the DFT values.”
+
+  “The calculations require approximately 2,500 core-hours, which is significantly less (about 0.13%)
+  than the over 2 million core-hours needed for the original DFT study [30].”
+
+  “In this section, we first compare the sorption trends of MACE with DFT at 0 K.”'
+method_summary: '“Interatomic interactions are modeled using the MACE potential, with the mace-mpa-0-medium.model
+  [22].”
+
+  “Each system is simulated in the NVT ensemble at 0 K and 300 K, using the Langevin integrator.”'
+limitations: “Although quantitative differences are observed between MACE and DFT formation energies,
+  the same chemical trends are observed across the periodic table.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 10733
+    output: 1497
+  claims_accepted: 3
+  claims_rejected: 2
+  rejected:
+  - statement: The linear fit for adsorption formation energy calculated using MACE versus DFT yields
+      a slope of 0.57.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''ads fit (slope
+      = 0.57)'''
+    quotes:
+    - ads fit (slope = 0.57)
+    - 'FIG. 3: Comparison of defect formation energies calculated using MACE and DFT.'
+  - statement: The linear fit for absorption formation energy calculated using MACE versus DFT yields
+      a slope of 0.47.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''int fit (slope
+      = 0.47)'''
+    quotes:
+    - int fit (slope = 0.47)
+    - 'FIG. 3: Comparison of defect formation energies calculated using MACE and DFT.'
+corrections: []

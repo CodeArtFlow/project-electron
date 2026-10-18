@@ -1,0 +1,90 @@
+id: SRC-00169
+title: Cross-Layer Co-Design of Low-Latency Stateful Logic Adders with Printed Memristors
+doi: null
+arxiv_id: 2610.20109v1
+url: https://arxiv.org/abs/2610.20109v1
+venue_id: arxiv_api
+authors:
+- name: Fabian Seiler
+  affiliation: null
+  corresponding: null
+- name: Kerem Kagan Güclü
+  affiliation: null
+  corresponding: null
+- name: Hongrong Hu
+  affiliation: null
+  corresponding: null
+- name: Gabriel Cadilha Marques
+  affiliation: null
+  corresponding: null
+- name: Jasmin Aghassi-Hagmann
+  affiliation: null
+  corresponding: null
+- name: Nima TaheriNejad
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-14'
+retrieved_date: '2026-10-18'
+access: full_text
+read_scope: Automated reading. The full PDF text (26,082 characters, 5 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.20109v1 on
+  2026-10-18. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“As shown in Figure 1(d)–(f), the NOR, NOT, and XOR circuits achieved overall success rates
+  of87.5 %,100 %, and 95.0 %, respectively”
+
+  “printed Ag/ZnO/Au ECM memristors.”
+
+  “Input switching was observed in only1.25 %of the tests for NOR and XOR, and not at all for NOT.”
+
+  “The proposed pipelined mapping achieves the highest speedup, improving over the proposed parallel mapping
+  by approximately2×and over SoA mappings by 3.7×–16.4×.”
+
+  “and over SoA mappings by 3.7×–16.4×.”
+
+  “To evaluate workload-level throughput, we use a custom cycle-accurate simulator in which workloads
+  are represented as Directed Acyclic Graphs (DAGs), with scalar additions as nodes and data dependencies
+  as edges.”'
+method_summary: '“Printed logic circuits based on ECM memristors were fabricated using laser ablation
+  (Trumpf TruMicro 5000) for Au bottom electrode patterning and inkjet printing for the active layer deposition
+  and the top electrode (Ag) deposition.”
+
+  “The pulse amplitudes for initialization and logic operations are listed in Table I, where each pulse
+  has a width of 200 ms, while the SET and XOR,1 pulses have a 3 mA compliance current.”
+
+  “All operation voltages in Table I were determined experimentally by scanning the operation range, taking
+  into account the boundary conditions proposed in [9] and [10].”
+
+  “To evaluate workload-level throughput, we use a custom cycle-accurate simulator in which workloads
+  are represented as Directed Acyclic Graphs (DAGs), with scalar additions as nodes and data dependencies
+  as edges.”'
+limitations: “Although the success rates of NOR and XOR are limited by device variability, the presented
+  results are intended as a proof of concept that requires further device optimization.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 9619
+    output: 2324
+  claims_accepted: 5
+  claims_rejected: 1
+  rejected:
+  - statement: For a 32-bit addition, mapping the proposed full adder sequence to bit-parallel or bit-pipelined
+      datapaths requires 70 cycles.
+    reason: 'unit conversion refused: time: cannot convert 70.0 cycles to s - Cannot convert from ''turn''
+      (dimensionless) to ''second'' ([time]). A dimensional mismatch means the value was recorded aga'
+    quotes:
+    - The proposed parallel and pipelined mappings require only2n+ 6cycles, or 70 cycles forn= 32, while
+      retaining row-wise SIMD execution.
+    - 'TABLE IV: Comparison of proposedn-bit adders with SoA.'
+    - n= 32
+    - The proposed parallel and pipelined mappings require only2n+ 6cycles, or 70 cycles forn= 32
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (measured: 4, simulated:
+  1). This field records the majority (measured); trust each claim''s own evidence_type over this one.'
