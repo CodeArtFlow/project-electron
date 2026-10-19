@@ -4101,3 +4101,213 @@ claims:
   conditions:
     comparison_baseline: DFT
     model: MACE
+- id: CLM-MAT-0147
+  topic: MAT
+  statement: The NV axis is tilted by 36.5 degrees from the magnetic field.
+  sources:
+  - SRC-00171
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MAT-0148
+  topic: MAT
+  statement: The Rabi oscillation frequency under driving of the f-g transition is 1.756 MHz.
+  sources:
+  - SRC-00171
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    transition: f-g
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.756
+      unit: MHz
+    si_base:
+      value: 1756000.0
+      unit: Hz
+    display:
+      value: 0.0017560000000000002
+      unit: GHz
+    conditions:
+      transition: f-g
+- id: CLM-MAT-0149
+  topic: MAT
+  statement: The co-rotating drive field in the NV frame during Rabi oscillations has an upper bound of
+    44 µT.
+  sources:
+  - SRC-00171
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    transition: f-g
+- id: CLM-MAT-0150
+  topic: MAT
+  statement: The computed frequency of the out-of-plane A1g phonon mode in monolayer MoTe2 is approximately
+    5 THz.
+  sources:
+  - SRC-00172
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: monolayer MoTe2
+    phonon_mode: A1g
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: true
+    as_published:
+      value: 5.0
+      unit: THz
+    si_base:
+      value: 5000000000000.0
+      unit: Hz
+    display:
+      value: 5000.0
+      unit: GHz
+    conditions:
+      material: monolayer MoTe2
+      phonon_mode: A1g
+- id: CLM-MAT-0151
+  topic: MAT
+  statement: The average domain cross-section along the Y-direction increases from 0.9 µm in the unexposed
+    region to 2.2 µm at the center of the track exposed to 5 mJ/cm2 laser irradiation.
+  sources:
+  - SRC-00174
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    laser_fluence: 5 mJ/cm2
+    location: center of the laser track
+    direction: Y-direction
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 2.2
+      unit: µm
+    si_base:
+      value: 2.2e-06
+      unit: m
+    display:
+      value: 2200.0
+      unit: nm
+    conditions:
+      laser_fluence: 5 mJ/cm2
+      location: center of the laser track
+      direction: Y-direction
+- id: CLM-MAT-0152
+  topic: MAT
+  statement: The laser source central wavelength is 400 nm.
+  sources:
+  - SRC-00174
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    repetition_rate: 1 kHz
+    pulse_duration: 100 fs
+  quantity:
+    quantity: wavelength
+    bound: exact
+    approximate: false
+    as_published:
+      value: 400.0
+      unit: nm
+    si_base:
+      value: 4.0000000000000003e-07
+      unit: m
+    display:
+      value: 0.4
+      unit: um
+    conditions:
+      repetition_rate: 1 kHz
+      pulse_duration: 100 fs
+- id: CLM-MAT-0153
+  topic: MAT
+  statement: The laser beam operates at a repetition rate of 1 kHz.
+  sources:
+  - SRC-00174
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    wavelength: 400 nm
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.0
+      unit: kHz
+    si_base:
+      value: 1000.0
+      unit: Hz
+    display:
+      value: 1.0000000000000002e-06
+      unit: GHz
+    conditions:
+      wavelength: 400 nm

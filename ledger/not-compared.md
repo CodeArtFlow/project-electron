@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**5068 pair(s)** as of 2026-10-18.
+**5392 pair(s)** as of 2026-10-19.
 
 ## `area_die` (1 pair(s))
 
@@ -83,12 +83,14 @@ _and 143 more_
 | `CLM-ARCH-0016` = 1.22 x | `CLM-MEM-0025` = 3.7 x | 67% | device=B200, benchmark=GroupGEMM | baseline=SoA mappings |
 | `CLM-ARCH-0005` = 1.32 x | `CLM-MEM-0025` = 3.7 x | 64% | process=TSMC 16nm FinFET, comparison=sinusoidal vs trapezoidal power-clock, gate_at_maximum=XOR/XNOR, vclk_at_maximum=0.5 V, fclk_at_maximum=384 MHz | baseline=SoA mappings |
 
-## `frequency` (175 pair(s))
+## `frequency` (235 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-ARCH-0042` = 25.9 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | platform=optical PPLN module | wavelength=400 nm |
 | `CLM-ARCH-0043` = 0.0006 GHz | `CLM-DEV-0012` = 370 GHz | 100% | platform=integrated phononic device | magnetic_field=8.1 T, frequency=1.9 THz |
 | `CLM-ARCH-0043` = 0.0006 GHz | `CLM-DEV-0013` = 180 GHz | 100% | platform=integrated phononic device | magnetic_field=7.5 T, frequency=2.2 THz |
+| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-MAT-0150` = 5000 GHz | 100% | platform=integrated phononic device | material=monolayer MoTe2, phonon_mode=A1g |
 | `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0001` = 18.98 GHz | 100% | platform=integrated phononic device | component=single ring cavity, parameter=FSR |
 | `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0003` = 15.41 GHz | 100% | platform=integrated phononic device | component=photonic molecule, mode_spacing=Ω2 |
 | `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0036` = 121 GHz | 100% | platform=integrated phononic device | sample_size=22 measured devices |
@@ -96,41 +98,39 @@ _and 143 more_
 | `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | platform=integrated phononic device | component=stabilized CW laser, frequency_offset=10 kHz |
 | `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0051` = 230 GHz | 100% | platform=integrated phononic device | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
 | `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0052` = 320 GHz | 100% | platform=integrated phononic device | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
+| `CLM-ARCH-0070` = 0.556 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | process_node=TSMC 28 nm | wavelength=400 nm |
 | `CLM-ARCH-0070` = 0.556 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | process_node=TSMC 28 nm | component=stabilized CW laser, frequency_offset=10 kHz |
+| `CLM-ARCH-0073` = 0.5 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | process=45 nm | wavelength=400 nm |
 | `CLM-ARCH-0073` = 0.5 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | process=45 nm | component=stabilized CW laser, frequency_offset=10 kHz |
+| `CLM-DEV-0012` = 370 GHz | `CLM-MAT-0148` = 0.001756 GHz | 100% | magnetic_field=8.1 T, frequency=1.9 THz | transition=f-g |
+| `CLM-DEV-0012` = 370 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | magnetic_field=8.1 T, frequency=1.9 THz | wavelength=400 nm |
 | `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | magnetic_field=8.1 T, frequency=1.9 THz | device=Ho3+-doped fluoride glass waveguide laser |
+| `CLM-DEV-0013` = 180 GHz | `CLM-MAT-0148` = 0.001756 GHz | 100% | magnetic_field=7.5 T, frequency=2.2 THz | transition=f-g |
+| `CLM-DEV-0013` = 180 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | magnetic_field=7.5 T, frequency=2.2 THz | wavelength=400 nm |
 | `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | magnetic_field=7.5 T, frequency=2.2 THz | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-PHOT-0024` = 0.03 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | angle_of_incidence=0° to 30°, rotation_angle=90° | component=stabilized CW laser, frequency_offset=10 kHz |
-| `CLM-PHOT-0036` = 121 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | sample_size=22 measured devices | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-PHOT-0049` = 267 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | signal_type=measured phase noise | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-PHOT-0050` = 1.94e+05 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | component=stabilized CW laser, frequency_offset=10 kHz | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-PHOT-0050` = 1.94e+05 GHz | `CLM-PHOT-0060` = 6.89 GHz | 100% | component=stabilized CW laser, frequency_offset=10 kHz | lattice_constant=17 mm, material=YIG |
-| `CLM-PHOT-0050` = 1.94e+05 GHz | `CLM-PHOT-0061` = 7.48 GHz | 100% | component=stabilized CW laser, frequency_offset=10 kHz | corner_radius=1.4 mm |
-| `CLM-PHOT-0050` = 1.94e+05 GHz | `CLM-PROC-0032` = 7.9 GHz | 100% | component=stabilized CW laser, frequency_offset=10 kHz | holder_type=two-channel holder, chip_type=Si/Si3N4 chip, metric=-3 dB bandwidth |
-| `CLM-PHOT-0050` = 1.94e+05 GHz | `CLM-PROC-0033` = 4.5 GHz | 100% | component=stabilized CW laser, frequency_offset=10 kHz | holder_type=four-channel configuration, metric=-3 dB bandwidth |
-| `CLM-PHOT-0051` = 230 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | frequency_offset=10 kHz, signal_type=measured phase-noise levels | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-PHOT-0052` = 320 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | frequency_offset=10 kHz, signal_type=measured phase-noise levels | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-ARCH-0042` = 25.9 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | platform=optical PPLN module | component=stabilized CW laser, frequency_offset=10 kHz |
-| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0060` = 6.89 GHz | 100% | platform=integrated phononic device | lattice_constant=17 mm, material=YIG |
-| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0061` = 7.48 GHz | 100% | platform=integrated phononic device | corner_radius=1.4 mm |
-| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PROC-0032` = 7.9 GHz | 100% | platform=integrated phononic device | holder_type=two-channel holder, chip_type=Si/Si3N4 chip, metric=-3 dB bandwidth |
-| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PROC-0033` = 4.5 GHz | 100% | platform=integrated phononic device | holder_type=four-channel configuration, metric=-3 dB bandwidth |
-| `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | magnetic_field=8.1 T, frequency=1.9 THz | angle_of_incidence=0° to 30°, rotation_angle=90° |
-| `CLM-PHOT-0024` = 0.03 GHz | `CLM-PHOT-0049` = 267 GHz | 100% | angle_of_incidence=0° to 30°, rotation_angle=90° | signal_type=measured phase noise |
-| `CLM-PHOT-0024` = 0.03 GHz | `CLM-PHOT-0051` = 230 GHz | 100% | angle_of_incidence=0° to 30°, rotation_angle=90° | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
-| `CLM-PHOT-0024` = 0.03 GHz | `CLM-PHOT-0052` = 320 GHz | 100% | angle_of_incidence=0° to 30°, rotation_angle=90° | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
-| `CLM-ARCH-0042` = 25.9 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | platform=optical PPLN module | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0002` = 3.57 GHz | 100% | platform=integrated phononic device | component=photonic molecule, mode_spacing=Ω1 |
-| `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | magnetic_field=7.5 T, frequency=2.2 THz | angle_of_incidence=0° to 30°, rotation_angle=90° |
-| `CLM-PHOT-0024` = 0.03 GHz | `CLM-PHOT-0036` = 121 GHz | 100% | angle_of_incidence=0° to 30°, rotation_angle=90° | sample_size=22 measured devices |
-| `CLM-PHOT-0001` = 18.98 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | component=single ring cavity, parameter=FSR | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-PHOT-0003` = 15.41 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | component=photonic molecule, mode_spacing=Ω2 | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-PHOT-0036` = 121 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | sample_size=22 measured devices | component=stabilized CW laser, frequency_offset=10 kHz |
-| `CLM-PHOT-0056` = 0.0048 GHz | `CLM-PHOT-0061` = 7.48 GHz | 100% | device=Ho3+-doped fluoride glass waveguide laser | corner_radius=1.4 mm |
+| `CLM-MAT-0148` = 0.001756 GHz | `CLM-MAT-0150` = 5000 GHz | 100% | transition=f-g | material=monolayer MoTe2, phonon_mode=A1g |
+| `CLM-MAT-0148` = 0.001756 GHz | `CLM-PHOT-0036` = 121 GHz | 100% | transition=f-g | sample_size=22 measured devices |
+| `CLM-MAT-0148` = 0.001756 GHz | `CLM-PHOT-0049` = 267 GHz | 100% | transition=f-g | signal_type=measured phase noise |
+| `CLM-MAT-0148` = 0.001756 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | transition=f-g | component=stabilized CW laser, frequency_offset=10 kHz |
+| `CLM-MAT-0148` = 0.001756 GHz | `CLM-PHOT-0051` = 230 GHz | 100% | transition=f-g | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
+| `CLM-MAT-0148` = 0.001756 GHz | `CLM-PHOT-0052` = 320 GHz | 100% | transition=f-g | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
+| `CLM-MAT-0150` = 5000 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | material=monolayer MoTe2, phonon_mode=A1g | wavelength=400 nm |
+| `CLM-MAT-0150` = 5000 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | material=monolayer MoTe2, phonon_mode=A1g | angle_of_incidence=0° to 30°, rotation_angle=90° |
+| `CLM-MAT-0150` = 5000 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | material=monolayer MoTe2, phonon_mode=A1g | device=Ho3+-doped fluoride glass waveguide laser |
+| `CLM-MAT-0153` = 1e-06 GHz | `CLM-PHOT-0001` = 18.98 GHz | 100% | wavelength=400 nm | component=single ring cavity, parameter=FSR |
+| `CLM-MAT-0153` = 1e-06 GHz | `CLM-PHOT-0002` = 3.57 GHz | 100% | wavelength=400 nm | component=photonic molecule, mode_spacing=Ω1 |
+| `CLM-MAT-0153` = 1e-06 GHz | `CLM-PHOT-0003` = 15.41 GHz | 100% | wavelength=400 nm | component=photonic molecule, mode_spacing=Ω2 |
+| `CLM-MAT-0153` = 1e-06 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | wavelength=400 nm | angle_of_incidence=0° to 30°, rotation_angle=90° |
+| `CLM-MAT-0153` = 1e-06 GHz | `CLM-PHOT-0036` = 121 GHz | 100% | wavelength=400 nm | sample_size=22 measured devices |
+| `CLM-MAT-0153` = 1e-06 GHz | `CLM-PHOT-0049` = 267 GHz | 100% | wavelength=400 nm | signal_type=measured phase noise |
+| `CLM-MAT-0153` = 1e-06 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | wavelength=400 nm | component=stabilized CW laser, frequency_offset=10 kHz |
+| `CLM-MAT-0153` = 1e-06 GHz | `CLM-PHOT-0051` = 230 GHz | 100% | wavelength=400 nm | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
+| `CLM-MAT-0153` = 1e-06 GHz | `CLM-PHOT-0052` = 320 GHz | 100% | wavelength=400 nm | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
+| `CLM-MAT-0153` = 1e-06 GHz | `CLM-PHOT-0060` = 6.89 GHz | 100% | wavelength=400 nm | lattice_constant=17 mm, material=YIG |
 
-_and 135 more_
+_and 195 more_
 
-## `length_device` (1630 pair(s))
+## `length_device` (1689 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -175,7 +175,7 @@ _and 135 more_
 | `CLM-MAT-0068` = 14.5 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | method=estimated from the carrier density at the SDP | chip_thickness=4-mm |
 | `CLM-MAT-0076` = 3.4e+05 nm | `CLM-MAT-0097` = 1.915 nm | 100% | material=GaN, growth_method=ammonothermal | feature=alternating stacking of PEDOT and PSS |
 
-_and 1590 more_
+_and 1649 more_
 
 ## `power` (71 pair(s))
 
@@ -224,7 +224,7 @@ _and 1590 more_
 
 _and 31 more_
 
-## `relative_deviation` (2326 pair(s))
+## `relative_deviation` (2520 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -240,7 +240,9 @@ _and 31 more_
 | `CLM-EDA-0005` = 86.4 percent | `CLM-MAT-0111` = -60 percent | 169% | model=Cyclic Edge prediction model | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0021` = 87.5 percent | 169% | sample=B1-1 | device_technology=printed Ag/ZnO/Au ECM memristors |
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0006` = 88 percent | 168% | sample=B1-1 | dataset=MNIST, setup=experimental system |
+| `CLM-ARCH-0101` = 89.4 percent | `CLM-MAT-0111` = -60 percent | 167% | correction_type=uncorrected | sample=B1-1 |
 | `CLM-EDA-0006` = 89.6 percent | `CLM-MAT-0111` = -60 percent | 167% | model=Non-cyclic Edge prediction model | sample=B1-1 |
+| `CLM-ARCH-0099` = 91.8 percent | `CLM-MAT-0111` = -60 percent | 165% | training_method=CSI-based training | sample=B1-1 |
 | `CLM-ARCH-0041` = 93.08 percent | `CLM-MAT-0111` = -60 percent | 164% | frequency=7 GHz | sample=B1-1 |
 | `CLM-ARCH-0096` = 93.6 percent | `CLM-MAT-0111` = -60 percent | 164% | classifier=XGBoost, evaluation_method=five-fold cross-validation | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0059` = 94.4 percent | 164% | sample=B1-1 | route=Fourier route |
@@ -251,6 +253,7 @@ _and 31 more_
 | `CLM-ARCH-0077` = 36.86 percent | `CLM-MAT-0111` = -60 percent | 161% | framework=RAPID-DNN, fault_configuration=mixed random fault configuration, baseline=fault-agnostic baseline | sample=B1-1 |
 | `CLM-ARCH-0040` = 97.93 percent | `CLM-MAT-0111` = -60 percent | 161% | frequency=7 GHz, component=graded magnetic spacer | sample=B1-1 |
 | `CLM-ARCH-0018` = 98 percent | `CLM-MAT-0111` = -60 percent | 161% | concurrency_n_a=48, set_type=hot set | sample=B1-1 |
+| `CLM-ARCH-0100` = 36.2 percent | `CLM-MAT-0111` = -60 percent | 160% | correction_type=uncorrected | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0116` = 100 percent | 160% | sample=B1-1 | system=2D square-lattice tight-binding model |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0124` = 36 percent | 160% | sample=B1-1 | elastic_constant=C22, rotation_direction=from y to x |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0022` = 100 percent | 160% | sample=B1-1 | device_technology=printed Ag/ZnO/Au ECM memristors |
@@ -265,11 +268,8 @@ _and 31 more_
 | `CLM-MAT-0111` = -60 percent | `CLM-PROC-0024` = 184 percent | 133% | sample=B1-1 | material=polycrystalline rolled Au |
 | `CLM-ARCH-0083` = 18 percent | `CLM-MAT-0111` = -60 percent | 130% | platform=Arrow, application=OpenVINO GenAI | sample=B1-1 |
 | `CLM-ARCH-0080` = 207 percent | `CLM-MAT-0111` = -60 percent | 129% | platform=Arrow, coherence=CC | sample=B1-1 |
-| `CLM-MAT-0111` = -60 percent | `CLM-PROC-0022` = 215 percent | 128% | sample=B1-1 | material=polycrystalline rolled Au, measurement_type=10-times continuous measurement |
-| `CLM-ARCH-0081` = 16 percent | `CLM-MAT-0111` = -60 percent | 127% | platform=Orin, workload=L2-optimized GEMM, cache_policy=UC | sample=B1-1 |
-| `CLM-ARCH-0082` = 16 percent | `CLM-MAT-0111` = -60 percent | 127% | platform=Arrow, application=OpenCV, variant=Cv+Opt | sample=B1-1 |
 
-_and 2286 more_
+_and 2480 more_
 
 ## `temperature` (140 pair(s))
 
@@ -405,7 +405,7 @@ _and 414 more_
 | `CLM-DEV-0027` = 1.53 V | `CLM-MAT-0099` = 0.53 V | 65% | device_type=VO2 thin film device, temperature=330 K, transition_type=reset | charging_voltage=0.6 V versus Ag/AgCl |
 | `CLM-DEV-0027` = 1.53 V | `CLM-MEM-0011` = 2.32 V | 34% | device_type=VO2 thin film device, temperature=330 K, transition_type=reset | device=Ag/TiOx/NiOx/p++-Si device, operation=SET voltage (V SET) |
 
-## `wavelength` (49 pair(s))
+## `wavelength` (60 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -422,6 +422,7 @@ _and 414 more_
 | `CLM-PHOT-0013` = 3.26 um | `CLM-PHOT-0033` = 0.00315 um | 100% | target_gas=CH4, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | excitation_wavelength=532 nm, cumulative_exposure_time=5 h |
 | `CLM-PHOT-0040` = 0.785 um | `CLM-PKG-0003` = 0.001 um | 100% | source=diode laser | injection_current=9 mA, sample_type=D-DLAT sample |
 | `CLM-PHOT-0033` = 0.00315 um | `CLM-PHOT-0055` = 2.062 um | 100% | excitation_wavelength=532 nm, cumulative_exposure_time=5 h | device=Ho3+-doped fluoride glass waveguide laser |
+| `CLM-MAT-0152` = 0.4 um | `CLM-PKG-0003` = 0.001 um | 100% | repetition_rate=1 kHz, pulse_duration=100 fs | injection_current=9 mA, sample_type=D-DLAT sample |
 | `CLM-PHOT-0033` = 0.00315 um | `CLM-PHOT-0071` = 1.24 um | 100% | excitation_wavelength=532 nm, cumulative_exposure_time=5 h | material=ITO |
 | `CLM-PHOT-0033` = 0.00315 um | `CLM-PHOT-0072` = 1.22 um | 100% | excitation_wavelength=532 nm, cumulative_exposure_time=5 h | polarization=x-polarization, incident_angle=normal incidence |
 | `CLM-PHOT-0012` = 6.3 um | `CLM-PHOT-0028` = 0.0167 um | 100% | target_gas=NO2, method=TMM/FDTD inverse design (MOPSO) | component=integrated microheater |
@@ -430,24 +431,23 @@ _and 414 more_
 | `CLM-PHOT-0033` = 0.00315 um | `CLM-PHOT-0040` = 0.785 um | 100% | excitation_wavelength=532 nm, cumulative_exposure_time=5 h | source=diode laser |
 | `CLM-PHOT-0011` = 3.26 um | `CLM-PHOT-0028` = 0.0167 um | 99% | target_gas=CH4, method=TMM/FDTD inverse design (MOPSO) | component=integrated microheater |
 | `CLM-PHOT-0013` = 3.26 um | `CLM-PHOT-0028` = 0.0167 um | 99% | target_gas=CH4, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | component=integrated microheater |
+| `CLM-MAT-0152` = 0.4 um | `CLM-PHOT-0033` = 0.00315 um | 99% | repetition_rate=1 kHz, pulse_duration=100 fs | excitation_wavelength=532 nm, cumulative_exposure_time=5 h |
 | `CLM-PHOT-0028` = 0.0167 um | `CLM-PHOT-0055` = 2.062 um | 99% | component=integrated microheater | device=Ho3+-doped fluoride glass waveguide laser |
 | `CLM-PHOT-0029` = 0.3 um | `CLM-PHOT-0033` = 0.00315 um | 99% | component=9-channel ultra-broadband WDM DETRX, spectral_range=O-to-C band | excitation_wavelength=532 nm, cumulative_exposure_time=5 h |
 | `CLM-PHOT-0028` = 0.0167 um | `CLM-PHOT-0071` = 1.24 um | 99% | component=integrated microheater | material=ITO |
 | `CLM-PHOT-0028` = 0.0167 um | `CLM-PHOT-0072` = 1.22 um | 99% | component=integrated microheater | polarization=x-polarization, incident_angle=normal incidence |
 | `CLM-PHOT-0028` = 0.0167 um | `CLM-PHOT-0040` = 0.785 um | 98% | component=integrated microheater | source=diode laser |
+| `CLM-MAT-0152` = 0.4 um | `CLM-PHOT-0028` = 0.0167 um | 96% | repetition_rate=1 kHz, pulse_duration=100 fs | component=integrated microheater |
 | `CLM-PHOT-0028` = 0.0167 um | `CLM-PKG-0003` = 0.001 um | 94% | component=integrated microheater | injection_current=9 mA, sample_type=D-DLAT sample |
+| `CLM-MAT-0152` = 0.4 um | `CLM-PHOT-0012` = 6.3 um | 94% | repetition_rate=1 kHz, pulse_duration=100 fs | target_gas=NO2, method=TMM/FDTD inverse design (MOPSO) |
+| `CLM-MAT-0152` = 0.4 um | `CLM-PHOT-0014` = 6.3 um | 94% | repetition_rate=1 kHz, pulse_duration=100 fs | target_gas=NO2, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter |
+| `CLM-MAT-0152` = 0.4 um | `CLM-PHOT-0011` = 3.26 um | 88% | repetition_rate=1 kHz, pulse_duration=100 fs | target_gas=CH4, method=TMM/FDTD inverse design (MOPSO) |
+| `CLM-MAT-0152` = 0.4 um | `CLM-PHOT-0013` = 3.26 um | 88% | repetition_rate=1 kHz, pulse_duration=100 fs | target_gas=CH4, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter |
 | `CLM-PHOT-0012` = 6.3 um | `CLM-PHOT-0040` = 0.785 um | 88% | target_gas=NO2, method=TMM/FDTD inverse design (MOPSO) | source=diode laser |
 | `CLM-PHOT-0014` = 6.3 um | `CLM-PHOT-0040` = 0.785 um | 88% | target_gas=NO2, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | source=diode laser |
 | `CLM-PHOT-0028` = 0.0167 um | `CLM-PHOT-0033` = 0.00315 um | 81% | component=integrated microheater | excitation_wavelength=532 nm, cumulative_exposure_time=5 h |
 | `CLM-PHOT-0012` = 6.3 um | `CLM-PHOT-0072` = 1.22 um | 81% | target_gas=NO2, method=TMM/FDTD inverse design (MOPSO) | polarization=x-polarization, incident_angle=normal incidence |
 | `CLM-PHOT-0014` = 6.3 um | `CLM-PHOT-0072` = 1.22 um | 81% | target_gas=NO2, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | polarization=x-polarization, incident_angle=normal incidence |
-| `CLM-PHOT-0012` = 6.3 um | `CLM-PHOT-0071` = 1.24 um | 80% | target_gas=NO2, method=TMM/FDTD inverse design (MOPSO) | material=ITO |
-| `CLM-PHOT-0014` = 6.3 um | `CLM-PHOT-0071` = 1.24 um | 80% | target_gas=NO2, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | material=ITO |
-| `CLM-PHOT-0011` = 3.26 um | `CLM-PHOT-0040` = 0.785 um | 76% | target_gas=CH4, method=TMM/FDTD inverse design (MOPSO) | source=diode laser |
-| `CLM-PHOT-0013` = 3.26 um | `CLM-PHOT-0040` = 0.785 um | 76% | target_gas=CH4, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | source=diode laser |
-| `CLM-PHOT-0012` = 6.3 um | `CLM-PHOT-0055` = 2.062 um | 67% | target_gas=NO2, method=TMM/FDTD inverse design (MOPSO) | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-PHOT-0014` = 6.3 um | `CLM-PHOT-0055` = 2.062 um | 67% | target_gas=NO2, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-PHOT-0011` = 3.26 um | `CLM-PHOT-0072` = 1.22 um | 63% | target_gas=CH4, method=TMM/FDTD inverse design (MOPSO) | polarization=x-polarization, incident_angle=normal incidence |
-| `CLM-PHOT-0013` = 3.26 um | `CLM-PHOT-0072` = 1.22 um | 63% | target_gas=CH4, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | polarization=x-polarization, incident_angle=normal incidence |
+| `CLM-MAT-0152` = 0.4 um | `CLM-PHOT-0055` = 2.062 um | 81% | repetition_rate=1 kHz, pulse_duration=100 fs | device=Ho3+-doped fluoride glass waveguide laser |
 
-_and 9 more_
+_and 20 more_

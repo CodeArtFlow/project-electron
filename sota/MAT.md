@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-18.
+Topic code `MAT`. Last reviewed 2026-10-19.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -94,6 +94,21 @@ Topic code `MAT`. Last reviewed 2026-10-18.
 - **3.55683e-07 fJ** — In WSe2, the scalar RK 3p residual is +2.22 meV.
   - `CLM-MAT-0115` · state 3p · grade B · credibility unknown · simulated · as of 2026-10-09
   - sources: SRC-00131
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+
+### frequency
+
+- **0.001756 GHz** — The Rabi oscillation frequency under driving of the f-g transition is 1.756 MHz.
+  - `CLM-MAT-0148` · transition f-g · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00171
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈5000 GHz** — The computed frequency of the out-of-plane A1g phonon mode in monolayer MoTe2 is approximately 5 THz.
+  - `CLM-MAT-0150` · material monolayer MoTe2, phonon_mode A1g · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00172
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **1e-06 GHz** — The laser beam operates at a repetition rate of 1 kHz.
+  - `CLM-MAT-0153` · wavelength 400 nm · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00174
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### length device
@@ -235,6 +250,10 @@ Topic code `MAT`. Last reviewed 2026-10-18.
   - sources: SRC-00162
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0066, CFL-0071, CFL-0075, CFL-0077, CFL-0079, CFL-0080 — see the open register
+- **2200 nm** — The average domain cross-section along the Y-direction increases from 0.9 µm in the unexposed region to 2.2 µm at the center of the track exposed to 5 mJ/cm2 laser irradiation.
+  - `CLM-MAT-0151` · laser_fluence 5 mJ/cm2, location center of the laser track, direction Y-direction · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00174
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -496,6 +515,14 @@ Topic code `MAT`. Last reviewed 2026-10-18.
   - `CLM-MAT-0146` · comparison_baseline DFT, model MACE · grade B · credibility unknown · simulated · as of 2026-10-14
   - sources: SRC-00168
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The NV axis is tilted by 36.5 degrees from the magnetic field.
+  - `CLM-MAT-0147` · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00171
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The co-rotating drive field in the NV frame during Rabi oscillations has an upper bound of 44 µT.
+  - `CLM-MAT-0149` · transition f-g · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00171
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -652,6 +679,13 @@ Topic code `MAT`. Last reviewed 2026-10-18.
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0048 — see the open register
 
+### wavelength
+
+- **0.4 um** — The laser source central wavelength is 400 nm.
+  - `CLM-MAT-0152` · repetition_rate 1 kHz, pulse_duration 100 fs · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00174
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+
 ## Live contradictions in this layer
 
 Shown here, not in an appendix: a reader of this page must see the disagreement without navigating elsewhere.
@@ -755,6 +789,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 146
-- grades: {'B': 146}
-- distinct sources: 55
+- claims: 153
+- grades: {'B': 153}
+- distinct sources: 58

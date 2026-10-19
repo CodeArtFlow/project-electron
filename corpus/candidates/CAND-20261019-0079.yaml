@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.22877v1
 doi: null
-title: 'BS-Spec: BFP-Based Bit-Sharing for Self-Speculative LLM Decoding with LUT-Driven
-  Mixed-Precision Acceleration'
+title: 'BS-Spec: BFP-Based Bit-Sharing for Self-Speculative LLM Decoding with LUT-Driven Mixed-Precision
+  Acceleration'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-16'
@@ -27,6 +27,52 @@ id: CAND-20261019-0079
 harvested_date: '2026-10-19'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-19'
+  reason: the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: BS-Spec achieves up to 1.9x speedup over conventional autoregressive decoding.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Experimental results show that BS-Spec achieves up to 1.9×speedup over conventional autoregressive
+      decoding
+    - All latency and energy terms are obtained from cycle-level modeling that includes computation, SRAM
+      and HBM accesses, and pipeline overlap under identical memory-bandwidth constraints.
+    - 1.9×speedup over conventional autoregressive decoding
+  - statement: BS-Spec improves speedup over evaluated bit-sharing self-speculative decoding baselines
+      by an average of 67.2%.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - improves speedup over the evaluated bit-sharing self-speculative decoding baselines by 67.2% on
+      average
+    - All latency and energy terms are obtained from cycle-level modeling that includes computation, SRAM
+      and HBM accesses, and pipeline overlap under identical memory-bandwidth constraints.
+  - statement: The SPEQ computation unit has an area of 5.56x10^7 um2.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - SPEQ [41] QuantSpec [36] BS-Spec Area (µm 2) 5.56×10 7 3.62×10 7 2.51×10 7
+    - Arithmetic units are synthesized using Synopsys DesignWare libraries
+    - SPEQ [41]
+  - statement: The QuantSpec computation unit has an area of 3.62x10^7 um2.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - SPEQ [41] QuantSpec [36] BS-Spec Area (µm 2) 5.56×10 7 3.62×10 7 2.51×10 7
+    - Arithmetic units are synthesized using Synopsys DesignWare libraries
+    - QuantSpec [36]
+  - statement: The BS-Spec computation unit has an area of 2.51x10^7 um2.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - SPEQ [41] QuantSpec [36] BS-Spec Area (µm 2) 5.56×10 7 3.62×10 7 2.51×10 7
+    - Arithmetic units are synthesized using Synopsys DesignWare libraries
+    - BS-Spec
+  tokens:
+    input: 21887
+    output: 1382
+  fetched_chars: 67251

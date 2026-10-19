@@ -1,0 +1,113 @@
+id: SRC-00175
+title: 'Wait to Learn: Lobes and Dead Zones in Physical Backpropagation over an Aging Single-Antenna Channel'
+doi: null
+arxiv_id: 2610.23135v1
+url: https://arxiv.org/abs/2610.23135v1
+venue_id: arxiv_api
+authors:
+- name: Xianzhong Li
+  affiliation: null
+  corresponding: null
+- name: Yuzhi Yang
+  affiliation: null
+  corresponding: null
+- name: Tianhao Guo
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-16'
+retrieved_date: '2026-10-19'
+access: full_text
+read_scope: Automated reading. The full PDF text (18,675 characters, 4 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.23135v1 on
+  2026-10-19. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“CSI-based training uses 5440 blocks (32 640 RF vectors) and reaches 91.8% test accuracy on
+  8192 test blocks.”
+
+  “CSI-based training uses 5440 blocks”
+
+  “In simulation, uncorrected training fails in negative correlation lobes and revives in positive ones.”
+
+  “For the isotropic spectrum (Fig. 1), uncorrected training collapses in the first negative lobe (36.2%
+  at d = 0.55) and revives in the second positive lobe (89.4% at d = 1.05, matching phase correction to
+  one decimal).”
+
+  “uncorrected training collapses”'
+method_summary: '“We train eight equiprobable messages over four channel uses with N t = 2 and a single
+  receive antenna.”
+
+  “The transmitter learns a 2×4 codebook per message with unit-norm columns; the receiver learns a softmax
+  classifier on the 16 real features of the temporal Gram matrix of the received block.”
+
+  “Forward and reverse noise variances are 0.10 and 0.0009 (the latter added before norm restoration);
+  encoder and receiver use Adam with learning rates 0.01 and 0.03.”'
+limitations: “Limitations. The rotation statement is exact for the conditional-mean port-domain return
+  under our single-antenna Gaussian model; the lobe, waiting and few-bit results are simulations, not
+  a convergence theorem.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 7707
+    output: 2956
+  claims_accepted: 3
+  claims_rejected: 5
+  rejected:
+  - statement: Returning at d1 = 0.610 instead of d0 in {0.38, 0.40, 0.42} reaches a test accuracy of
+      90.2%.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Returning at d 1 = 0.610 instead of d 0 ∈ {0.38, 0.40, 0.42} improves CE by 0.153 ([0.134, 0.172])
+      over the best correction available at d 0, chosen by mean CE among full, 2-bit and 1-bit phase and
+      scalar correction (1-bit phase in all thre
+    - In simulation, uncorrected training fails in negative correlation lobes and revives in positive
+      ones.
+    - Returning at d 1 = 0.610
+    - d 0 ∈ {0.38, 0.40, 0.42}
+  - statement: With a 1-bit phase correction and an isotropic spectrum at d = 0.55, the test accuracy
+      is 90.0%.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - isotropic, 0.55 180 ◦ 90.0 90.0 90.0
+    - In simulation, uncorrected training fails in negative correlation lobes and revives in positive
+      ones.
+    - isotropic, 0.55
+    - 1 bit
+  - statement: With a 2-bit phase correction and a broad spectrum at d = 0.30, the test accuracy is 90.6%.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - broad, 0.30 63 ◦ 90.8 90.6 88.8
+    - In simulation, uncorrected training fails in negative correlation lobes and revives in positive
+      ones.
+    - broad, 0.30
+    - 2 bit
+  - statement: With full phase correction and a broad spectrum at d = 0.40, the test accuracy is 90.3%.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - broad, 0.40 107 ◦ 90.3 90.2 86.4
+    - In simulation, uncorrected training fails in negative correlation lobes and revives in positive
+      ones.
+    - broad, 0.40
+    - full
+  - statement: With a 3-element array, correcting by the polar factor gives a CE gap of -0.0001 near the
+      first zero.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''CE gap'' is not one
+      of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a '
+    quotes:
+    - 3-elem. array polar factor [12] −0.0001 [−0.0005, 0.0002]
+    - In simulation, uncorrected training fails in negative correlation lobes and revives in positive
+      ones.
+    - 3-elem. array
+    - polar factor [12]
+corrections: []

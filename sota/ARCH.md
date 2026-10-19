@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-18.
+Topic code `ARCH`. Last reviewed 2026-10-19.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -257,6 +257,38 @@ Topic code `ARCH`. Last reviewed 2026-10-18.
   - `CLM-ARCH-0094` · target_device Alveo U55C, frequency 100 MHz, synthesis_tool Vivado 2024.2, processing_elements 4, function_type Non-Monotonic · grade B · credibility unknown · measured · as of 2026-10-15
   - sources: SRC-00159
   - ⚙ automated extraction (gemini-3.6-flash; 7 quote(s) verified verbatim against the paper)
+- In simulation, uncorrected training on channels with |ρ| > 0.9 reaches 51.7% accuracy, while phase correction reaches 92.5% accuracy.
+  - `CLM-ARCH-0102` · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00176
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Polar correction reaches 96.9% accuracy compared to 97.2% for CSI in the tested near-zero geometry task.
+  - `CLM-ARCH-0103` · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00176
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- In the broad asymmetric spectrum at d = 0.5, Doppler derotation reaches 61.7% accuracy versus 96.5% for phase correction.
+  - `CLM-ARCH-0104` · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00176
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- In the broad asymmetric spectrum message task at d = 0.55, Doppler derotation leaves BLER at 5.17% compared to 2.08% for phase correction.
+  - `CLM-ARCH-0105` · task message task · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00176
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- When considering 150 early-stop generations, applying the proposed heuristics in qGAMMA reduces the overall execution time by about 31% compared to using the original GAMMA search algorithm.
+  - `CLM-ARCH-0106` · benchmark mixed-precision ResNet18, early_stop_generations 150, baseline original GAMMA search algorithm · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00177
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- Without applying the early-stop condition, the proposed heuristics in qGAMMA reduce the overall execution time by 51%.
+  - `CLM-ARCH-0107` · benchmark mixed-precision ResNet18 · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00177
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- For a mixed-precision (INT8, INT4) ResNet18 optimized for minimum latency with single clustering optimization, qGAMMA achieves a 1.20x latency speedup compared to a single-precision (INT8) ResNet18.
+  - `CLM-ARCH-0108` · benchmark ResNet18, optimization_objective minimum latency, clustering single clustering optimization, baseline uniform INT8 ResNet18 · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00177
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- A 17% reduction in energy consumption is observed when comparing the mixed-precision (INT8, INT4) ResNet18 with a single-precision (INT8) ResNet18, both optimized for minimum latency with single clustering optimization.
+  - `CLM-ARCH-0109` · benchmark ResNet18, optimization_objective minimum latency, clustering single clustering optimization · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00177
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -386,6 +418,20 @@ Topic code `ARCH`. Last reviewed 2026-10-18.
   - `CLM-ARCH-0097` · training_dataset CloudLab, evaluation_dataset Lambda · grade B · credibility unknown · measured · as of 2026-10-14
   - sources: SRC-00164
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **91.8 percent** — CSI-based training reaches a test accuracy of 91.8%.
+  - `CLM-ARCH-0099` · training_method CSI-based training · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00175
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **36.2 percent** — Uncorrected training achieves a test accuracy of 36.2% at a displacement of d = 0.55 for the isotropic spectrum.
+  - `CLM-ARCH-0100` · correction_type uncorrected · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00175
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0083 — see the open register
+- **89.4 percent** — Uncorrected training achieves a test accuracy of 89.4% at a displacement of d = 1.05 for the isotropic spectrum.
+  - `CLM-ARCH-0101` · correction_type uncorrected · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00175
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0083 — see the open register
 
 ### time
 
@@ -458,9 +504,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0055` — relative_deviation: _unexamined; classification pending_
   - claims: CLM-ARCH-0081, CLM-ARCH-0086
   - missing data: `not yet named`
+- `CFL-0083` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-ARCH-0100, CLM-ARCH-0101
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 98
-- grades: {'B': 98}
-- distinct sources: 35
+- claims: 109
+- grades: {'B': 109}
+- distinct sources: 38

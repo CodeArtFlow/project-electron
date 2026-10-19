@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.22801v1
 doi: null
-title: Programming the Nonlinear Optics of a Nanoporous Photonic Metamaterial by Confined
-  Crystallization
+title: Programming the Nonlinear Optics of a Nanoporous Photonic Metamaterial by Confined Crystallization
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-16'
@@ -33,6 +32,50 @@ id: CAND-20261019-0084
 harvested_date: '2026-10-19'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-19'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The average size of the confined benzil nanoclusters along the long channel axis of the
+      free-standing BZL:AAO membranes was estimated to be in the range of 22–2
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''By extracting
+      the full width at half maximum (FWHM) and angular positi'''
+    quotes:
+    - 'By extracting the full width at half maximum (FWHM) and angular position of the XRD peaks from
+      the recorded diffractograms (Figure 3) and applying the Scherrer equation [61], the average size
+      of the confined BZL nanoclusters along the long '
+    - X-ray diffraction (XRD) was carried out on a DRON-4 diffractometer with Cu Kα radiation.
+    - free-standing BZL:AAO nanocomposite membranes with channel diameters of 32, 45, 55, 70, 180, and
+      270 nm, obtained under free-standing crystallization conditions.
+    - the average size of the confined BZL nanoclusters along the long channel axis was estimated to be
+      in the range of 22–24 nm.
+  - statement: The effective thickness of the NLO-inactive amorphous BZL interfacial layer fitted from
+      the normalized SHG response as a function of channel diameter is L = 2.6
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The fit yields an effective thickness of the amorphous interfacial layer of L= 2.6nm.
+    - The blue solid line represents the model fit of theR#2ω(D)dependence using the functionR 0(D−2L)
+      2/D2, whereR 0 = 1200andL= 2.6nm are fitting parameters.
+  - statement: The transmission factor kt measured for the individual BZL:AAO nanocomposite membranes
+      is in the range of 0.016–0.025.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - The measured values ofk t were in the range 0.016–0.025.
+    - By replacing the picosecond Nd:YAG laser used in the experimental setup (Figure 1(j)) with a low-power
+      continuous-wave laser (λ= 532nm),k t was determined from the ratio of the detected intensities with
+      and with-out the sample in the optica
+    - continuous-wave laser (λ= 532nm)
+    - individual composite membranes
+  tokens:
+    input: 28924
+    output: 1625
+  fetched_chars: 92295

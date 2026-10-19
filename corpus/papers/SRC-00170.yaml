@@ -1,0 +1,72 @@
+id: SRC-00170
+title: Development of a fabrication-to-benchtop process for SiN-based quantum devices
+doi: null
+arxiv_id: 2610.22776v1
+url: https://arxiv.org/abs/2610.22776v1
+venue_id: arxiv_api
+authors:
+- name: Connor Kupchak
+  affiliation: null
+  corresponding: null
+- name: Abubaker Tareki
+  affiliation: null
+  corresponding: null
+- name: Tara Moradi
+  affiliation: null
+  corresponding: null
+- name: Patrick Laferriere
+  affiliation: null
+  corresponding: null
+- name: Niall Tait
+  affiliation: null
+  corresponding: null
+- name: Khaled Mnaymneh
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-16'
+retrieved_date: '2026-10-19'
+access: full_text
+read_scope: Automated reading. The full PDF text (34,912 characters, 7 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.22776v1 on
+  2026-10-19. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The in-house fabricated devices showed a propagation loss of 0.3 dB/cm”
+
+  “For the initial optical loss characterization, we employed a NIR laser at 980 nm.”
+
+  “Here, we fabricated 260 nm thick stoichiometric waveguides using LPCVD at 820 ◦C and 300 mTorr.”
+
+  “and a coupling loss of 1 dB per facet.”'
+method_summary: '“Here, we fabricated 260 nm thick stoichiometric waveguides using LPCVD at 820 ◦C and
+  300 mTorr.”
+
+  “For the initial optical loss characterization, we employed a NIR laser at 980 nm. Light was coupled
+  into the input and output facets of the device using lensed fibres.”
+
+  “We choose the LLE approach here due to its computational efficiency in calculating a large number of
+  modes.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 11886
+    output: 1457
+  claims_accepted: 2
+  claims_rejected: 1
+  rejected:
+  - statement: In LLE simulations of a SiN microring resonator with R=23 µm, h=0.94 µm, and w=2.2 µm,
+      a dissipative soliton is generated at a continuous-wave field power of 57
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - In our simulations, a dissipative soliton was generated using a continuous-wave field of 57 mW at
+      1324 nm.
+    - In our parameter space search, we simulated electromagnetic propagation through the microring resonator
+      with dimensionsR= 23µm,h= 0.94µm, andw= 2.2µm.
+corrections: []

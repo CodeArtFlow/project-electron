@@ -1,0 +1,87 @@
+id: SRC-00171
+title: Chirality-resolved imaging of spin waves with a quantum spin
+doi: null
+arxiv_id: 2610.22867v1
+url: https://arxiv.org/abs/2610.22867v1
+venue_id: arxiv_api
+authors:
+- name: Enbo Zhang
+  affiliation: null
+  corresponding: null
+- name: Tiancheng Zheng
+  affiliation: null
+  corresponding: null
+- name: Bo-Yuan Yang
+  affiliation: null
+  corresponding: null
+- name: Shreyes Nallan
+  affiliation: null
+  corresponding: null
+- name: Chengchao Xu
+  affiliation: null
+  corresponding: null
+- name: Mark Ku
+  affiliation: null
+  corresponding: null
+- name: Jian-Gang Zhu
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-16'
+retrieved_date: '2026-10-19'
+access: full_text
+read_scope: Automated reading. The full PDF text (50,792 characters, 22 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.22867v1 on
+  2026-10-19. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“and an NV axis tilted by 36.5±0.4 ◦ from the field”
+
+  “The spin population oscillates with the pulse length at Ω/2π = 1.756 ± 0.014 MHz”
+
+  “we drove f −g with microwave pulses”
+
+  “so the co-rotating field in the NV frame is about 44 µT. Because detuning raises the fitted frequency,
+  44 µT is an upper bound.”
+
+  “Because detuning raises the fitted frequency, 44 µT is an upper bound.”'
+method_summary: “Fitting a damped cosine gives Ω/2π = 1.756 ± 0.014 MHz (Supplementary Note 5).”
+limitations: “Because the two excited-state lines are broad and a few hundred MHz apart, they image waves
+  of different wavelengths.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 17359
+    output: 1766
+  claims_accepted: 3
+  claims_rejected: 3
+  rejected:
+  - statement: The zero-field splitting of the ground state is measured as 2870.6 MHz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The fit gives a zero-field splitting of 2870.6±0.2 MHz
+    - fitted both ground-state lines
+  - statement: The decay length of the sigma+ contrast at f+e is 512 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - the σ + contrast of f +e falls exponentially with a decay length L = 512 ± 22 nm
+    - f +e
+    - σ +
+    - at B = 7.43 mT
+  - statement: The decay length of the sigma- contrast at f-e is 1035 nm.
+    reason: the statement contains the number 1035, which none of its quotes contain
+    quotes:
+    - and the σ − contrast of f −e with L = 1,035 ± 35 nm
+    - f −e
+    - σ −
+    - at B = 7.43 mT
+corrections: []

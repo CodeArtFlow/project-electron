@@ -30,6 +30,49 @@ id: CAND-20261019-0081
 harvested_date: '2026-10-19'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-19'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At 0.5 THz target frequency, particle-in-cell simulation demonstrates an optimal electron
+      kinetic energy of 143.6 keV at a grating period of 375 μm and a duty c
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - For the 0.5 THz target frequency, the global maximum intensity enhancement factor reaches 34, occurring
+      at a duty cycle of 0.4, with the corresponding optimal parameter combination of 𝑑𝑑 = 375 μm and
+      𝐸𝐸k = 143.6 keV (Fig. 2(d)).
+    - All numerical simulations are carried out via the particle -in-cell solver in CST, based on the
+      finite integration technique for fully self-consistent beam-wave interaction calculations.
+    - For the 0.5 THz target frequency
+    - occurring at a duty cycle of 0.4
+  - statement: 'At 0.4 THz target frequency, particle-in-cell simulation demonstrates an optimal electron
+      kinetic energy of 137.69 keV at a grating period of 462 μm and a duty '
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - The global maximum enhancement factor reaches 𝐼𝐼/𝐼𝐼0 = 96 at a duty cycle of 0.2, corresponding
+      to optimal parameters 𝑑𝑑 = 462 μm and 𝐸𝐸k = 137.69 keV (Fig. 3(b)).
+    - All numerical simulations are carried out via the particle -in-cell solver in CST, based on the
+      finite integration technique for fully self-consistent beam-wave interaction calculations.
+    - For the 0.4 THz target frequency, we employ the same optimization strategy as for 0.5 THz.
+    - at a duty cycle of 0.2
+  - statement: 'At 0.6 THz target frequency, particle-in-cell simulation demonstrates an optimal electron
+      kinetic energy of 189.93 keV at a grating period of 340 μm and a duty '
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - The global maximum enhancement factor 𝐼𝐼/𝐼𝐼0 = 17.5 appears at 𝑤𝑤/𝑑𝑑 = 0.4, corresponding to optimal
+      parameters 𝑑𝑑 = 340 μm and 𝐸𝐸k = 189.93 keV (Fig. 4(d)).
+    - All numerical simulations are carried out via the particle -in-cell solver in CST, based on the
+      finite integration technique for fully self-consistent beam-wave interaction calculations.
+    - The optimization gain at 0.6 THz continues the trend of monotonic attenuation with increasing frequency.
+    - appears at 𝑤𝑤/𝑑𝑑 = 0.4
+  tokens:
+    input: 10047
+    output: 1450
+  fetched_chars: 28594

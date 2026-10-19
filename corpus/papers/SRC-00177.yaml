@@ -1,0 +1,94 @@
+id: SRC-00177
+title: 'qGAMMA: A Framework for Optimal DNN Mapping on Multi-Precision Accelerators'
+doi: null
+arxiv_id: 2610.23222v1
+url: https://arxiv.org/abs/2610.23222v1
+venue_id: arxiv_api
+authors:
+- name: Leandro Fiorin
+  affiliation: null
+  corresponding: null
+- name: Luigi Altamura
+  affiliation: null
+  corresponding: null
+- name: Cristina Silvano
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-16'
+retrieved_date: '2026-10-19'
+access: full_text
+read_scope: Automated reading. The full PDF text (31,470 characters, 15 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.23222v1 on
+  2026-10-19. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“decreased overall execution time by about 31% when considering the 150 early-stop generations
+  (Figure 5b)”
+
+  “To demonstrate their effectiveness, we optimized the mixed-precision ResNet18 for minimum latency.”
+
+  “when considering the 150 early-stop generations”
+
+  “and without them (original GAMMA search algorithm).”
+
+  “and by 51% without them (results not shown).”
+
+  “Overall, we achieve a 1.20×latency speedup, which aligns with the average improvement reported in [16]
+  when comparing the mixed-precision and uniform INT8 ResNet18.”
+
+  “compared a mixed-precision (INT8, INT4) ResNet18 with a uniform INT8 ResNet18.”
+
+  “both optimized for minimum latency with single clustering optimization.”
+
+  “when comparing the mixed-precision and uniform INT8 ResNet18.”
+
+  “Additionally, we observe a 17% reduction in energy consumption.”'
+method_summary: '“By leveraging the search based on a genetic algorithm and the dataflow encoding used
+  in GAMMA [9], qGAMMA explores a range of possible dataflows and architectural configurations—such as
+  the number of components in each hardware cluster and buffer utilization across memory levels— to identify
+  the characteristics that minimize the chosen metric.”
+
+  “Leveraging MAESTRO [10], we designed an analytical estimation tool supporting multi-precision pipelines
+  and incorporating the changes introduced in qGAMMA.”'
+limitations: “The genetic algorithm may occasionally converge to suboptimal solutions.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 10015
+    output: 2437
+  claims_accepted: 4
+  claims_rejected: 3
+  rejected:
+  - statement: When optimizing a mixed-precision ResNet18 for minimum latency, applying the proposed heuristics
+      in qGAMMA results in a 4% reduction in latency compared to usin
+    reason: the statement contains the number 8, which none of its quotes contain
+    quotes:
+    - The latency results are nearly identical in both cases, with a modest 4% reduction when heuristics
+      are applied.
+    - To demonstrate their effectiveness, we optimized the mixed-precision ResNet18 for minimum latency.
+    - we optimized the mixed-precision ResNet18 for minimum latency.
+    - and without them (original GAMMA search algorithm).
+  - statement: Switching from FP32 to FP16 in ResNetV1 optimized for minimum EDP improves EDP by 6.96x.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - Switching from FP32 to FP16 improves EDP by 6.96×
+    - 'optimizing with qGAMMA the EDP of ResNetV1 under three uniform precision settings: FP8, FP16, and
+      FP32.'
+    - optimizing with qGAMMA the EDP of ResNetV1
+    - Switching from FP32 to FP16
+  - statement: Transitioning from FP32 to FP8 in ResNetV1 optimized for minimum EDP results in a 21.44x
+      EDP improvement.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - while transitioning from FP32 to FP8 results in a 21.44×improvement.
+    - 'optimizing with qGAMMA the EDP of ResNetV1 under three uniform precision settings: FP8, FP16, and
+      FP32.'
+    - optimizing with qGAMMA the EDP of ResNetV1
+    - while transitioning from FP32 to FP8
+corrections: []

@@ -1,0 +1,48 @@
+{
+  "arxiv_id": "2610.23135v1",
+  "claims": {
+    "CLM-ARCH-0099": {
+      "evidence_spans": [
+        "CSI-based training uses 5440 blocks (32 640 RF vectors) and reaches 91.8% test accuracy on 8192 test blocks.",
+        "CSI-based training uses 5440 blocks",
+        "In simulation, uncorrected training fails in negative correlation lobes and revives in positive ones."
+      ],
+      "statement": "CSI-based training reaches a test accuracy of 91.8%.",
+      "terms": []
+    },
+    "CLM-ARCH-0100": {
+      "evidence_spans": [
+        "For the isotropic spectrum (Fig. 1), uncorrected training collapses in the first negative lobe (36.2% at d = 0.55) and revives in the second positive lobe (89.4% at d = 1.05, matching phase correction to one decimal).",
+        "uncorrected training collapses",
+        "In simulation, uncorrected training fails in negative correlation lobes and revives in positive ones."
+      ],
+      "statement": "Uncorrected training achieves a test accuracy of 36.2% at a displacement of d = 0.55 for the isotropic spectrum.",
+      "terms": []
+    },
+    "CLM-ARCH-0101": {
+      "evidence_spans": [
+        "For the isotropic spectrum (Fig. 1), uncorrected training collapses in the first negative lobe (36.2% at d = 0.55) and revives in the second positive lobe (89.4% at d = 1.05, matching phase correction to one decimal).",
+        "uncorrected training collapses",
+        "In simulation, uncorrected training fails in negative correlation lobes and revives in positive ones."
+      ],
+      "statement": "Uncorrected training achieves a test accuracy of 89.4% at a displacement of d = 1.05 for the isotropic spectrum.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "We train eight equiprobable messages over four channel uses with N t = 2 and a single receive antenna.",
+    "The transmitter learns a 2×4 codebook per message with unit-norm columns; the receiver learns a softmax classifier on the 16 real features of the temporal Gram matrix of the received block.",
+    "Forward and reverse noise variances are 0.10 and 0.0009 (the latter added before norm restoration); encoder and receiver use Adam with learning rates 0.01 and 0.03.",
+    "Limitations. The rotation statement is exact for the conditional-mean port-domain return under our single-antenna Gaussian model; the lobe, waiting and few-bit results are simulations, not a convergence theorem."
+  ],
+  "generated": "2026-10-19",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00175",
+  "text_chars": 18675,
+  "text_sha256": "854728deb6b49824f8e51c6eb2b35b2e6759ecb981dab31df4cf2fff86bede79"
+}

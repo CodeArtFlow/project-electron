@@ -2960,3 +2960,258 @@ claims:
       unit: ns
     conditions:
       circuit_configuration: six mutually inhibiting cells
+- id: CLM-ARCH-0099
+  topic: ARCH
+  statement: CSI-based training reaches a test accuracy of 91.8%.
+  sources:
+  - SRC-00175
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    training_method: CSI-based training
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 91.8
+      unit: '%'
+    si_base:
+      value: 0.918
+      unit: dimensionless
+    display:
+      value: 91.8
+      unit: percent
+    conditions:
+      training_method: CSI-based training
+- id: CLM-ARCH-0100
+  topic: ARCH
+  statement: Uncorrected training achieves a test accuracy of 36.2% at a displacement of d = 0.55 for
+    the isotropic spectrum.
+  sources:
+  - SRC-00175
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    correction_type: uncorrected
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 36.2
+      unit: '%'
+    si_base:
+      value: 0.36200000000000004
+      unit: dimensionless
+    display:
+      value: 36.2
+      unit: percent
+    conditions:
+      correction_type: uncorrected
+- id: CLM-ARCH-0101
+  topic: ARCH
+  statement: Uncorrected training achieves a test accuracy of 89.4% at a displacement of d = 1.05 for
+    the isotropic spectrum.
+  sources:
+  - SRC-00175
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    correction_type: uncorrected
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 89.4
+      unit: '%'
+    si_base:
+      value: 0.8940000000000001
+      unit: dimensionless
+    display:
+      value: 89.4
+      unit: percent
+    conditions:
+      correction_type: uncorrected
+- id: CLM-ARCH-0102
+  topic: ARCH
+  statement: In simulation, uncorrected training on channels with |ρ| > 0.9 reaches 51.7% accuracy, while
+    phase correction reaches 92.5% accuracy.
+  sources:
+  - SRC-00176
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-ARCH-0103
+  topic: ARCH
+  statement: Polar correction reaches 96.9% accuracy compared to 97.2% for CSI in the tested near-zero
+    geometry task.
+  sources:
+  - SRC-00176
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-ARCH-0104
+  topic: ARCH
+  statement: In the broad asymmetric spectrum at d = 0.5, Doppler derotation reaches 61.7% accuracy versus
+    96.5% for phase correction.
+  sources:
+  - SRC-00176
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-ARCH-0105
+  topic: ARCH
+  statement: In the broad asymmetric spectrum message task at d = 0.55, Doppler derotation leaves BLER
+    at 5.17% compared to 2.08% for phase correction.
+  sources:
+  - SRC-00176
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    task: message task
+- id: CLM-ARCH-0106
+  topic: ARCH
+  statement: When considering 150 early-stop generations, applying the proposed heuristics in qGAMMA reduces
+    the overall execution time by about 31% compared to using the original GAMMA search algorithm.
+  sources:
+  - SRC-00177
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    benchmark: mixed-precision ResNet18
+    early_stop_generations: '150'
+    baseline: original GAMMA search algorithm
+- id: CLM-ARCH-0107
+  topic: ARCH
+  statement: Without applying the early-stop condition, the proposed heuristics in qGAMMA reduce the overall
+    execution time by 51%.
+  sources:
+  - SRC-00177
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    benchmark: mixed-precision ResNet18
+- id: CLM-ARCH-0108
+  topic: ARCH
+  statement: For a mixed-precision (INT8, INT4) ResNet18 optimized for minimum latency with single clustering
+    optimization, qGAMMA achieves a 1.20x latency speedup compared to a single-precision (INT8) ResNet18.
+  sources:
+  - SRC-00177
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    benchmark: ResNet18
+    optimization_objective: minimum latency
+    clustering: single clustering optimization
+    baseline: uniform INT8 ResNet18
+- id: CLM-ARCH-0109
+  topic: ARCH
+  statement: A 17% reduction in energy consumption is observed when comparing the mixed-precision (INT8,
+    INT4) ResNet18 with a single-precision (INT8) ResNet18, both optimized for minimum latency with single
+    clustering optimization.
+  sources:
+  - SRC-00177
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    benchmark: ResNet18
+    optimization_objective: minimum latency
+    clustering: single clustering optimization

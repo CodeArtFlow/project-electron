@@ -1,0 +1,69 @@
+{
+  "arxiv_id": "2610.23222v1",
+  "claims": {
+    "CLM-ARCH-0106": {
+      "evidence_spans": [
+        "decreased overall execution time by about 31% when considering the 150 early-stop generations (Figure 5b)",
+        "To demonstrate their effectiveness, we optimized the mixed-precision ResNet18 for minimum latency.",
+        "when considering the 150 early-stop generations",
+        "and without them (original GAMMA search algorithm).",
+        "decreased overall execution time by about 31% when considering the 150 early-stop generations (Figure 5b)"
+      ],
+      "statement": "When considering 150 early-stop generations, applying the proposed heuristics in qGAMMA reduces the overall execution time by about 31% compared to using the original GAMMA search algorithm.",
+      "terms": [
+        "qGAMMA"
+      ]
+    },
+    "CLM-ARCH-0107": {
+      "evidence_spans": [
+        "and by 51% without them (results not shown).",
+        "To demonstrate their effectiveness, we optimized the mixed-precision ResNet18 for minimum latency.",
+        "and by 51% without them (results not shown)."
+      ],
+      "statement": "Without applying the early-stop condition, the proposed heuristics in qGAMMA reduce the overall execution time by 51%.",
+      "terms": [
+        "qGAMMA"
+      ]
+    },
+    "CLM-ARCH-0108": {
+      "evidence_spans": [
+        "Overall, we achieve a 1.20×latency speedup, which aligns with the average improvement reported in [16] when comparing the mixed-precision and uniform INT8 ResNet18.",
+        "compared a mixed-precision (INT8, INT4) ResNet18 with a uniform INT8 ResNet18.",
+        "both optimized for minimum latency with single clustering optimization.",
+        "both optimized for minimum latency with single clustering optimization.",
+        "when comparing the mixed-precision and uniform INT8 ResNet18.",
+        "Overall, we achieve a 1.20×latency speedup, which aligns with the average improvement reported in [16] when comparing the mixed-precision and uniform INT8 ResNet18."
+      ],
+      "statement": "For a mixed-precision (INT8, INT4) ResNet18 optimized for minimum latency with single clustering optimization, qGAMMA achieves a 1.20x latency speedup compared to a single-precision (INT8) ResNet18.",
+      "terms": [
+        "qGAMMA"
+      ]
+    },
+    "CLM-ARCH-0109": {
+      "evidence_spans": [
+        "Additionally, we observe a 17% reduction in energy consumption.",
+        "compared a mixed-precision (INT8, INT4) ResNet18 with a uniform INT8 ResNet18.",
+        "both optimized for minimum latency with single clustering optimization.",
+        "both optimized for minimum latency with single clustering optimization.",
+        "Additionally, we observe a 17% reduction in energy consumption."
+      ],
+      "statement": "A 17% reduction in energy consumption is observed when comparing the mixed-precision (INT8, INT4) ResNet18 with a single-precision (INT8) ResNet18, both optimized for minimum latency with single clustering optimization.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "By leveraging the search based on a genetic algorithm and the dataflow encoding used in GAMMA [9], qGAMMA explores a range of possible dataflows and architectural configurations—such as the number of components in each hardware cluster and buffer utilization across memory levels— to identify the characteristics that minimize the chosen metric.",
+    "Leveraging MAESTRO [10], we designed an analytical estimation tool supporting multi-precision pipelines and incorporating the changes introduced in qGAMMA.",
+    "The genetic algorithm may occasionally converge to suboptimal solutions."
+  ],
+  "generated": "2026-10-19",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00177",
+  "text_chars": 31470,
+  "text_sha256": "077ef6d352f36688d959b56c25d65c0c534629226eebdde03d114eec6483f450"
+}

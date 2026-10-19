@@ -1,0 +1,90 @@
+id: SRC-00173
+title: Wavelength Diversity Expands the Expressive Power of Optical Computing
+doi: null
+arxiv_id: 2610.23070v1
+url: https://arxiv.org/abs/2610.23070v1
+venue_id: arxiv_api
+authors:
+- name: Shiqi Chen
+  affiliation: null
+  corresponding: null
+- name: Che-Yung Shen
+  affiliation: null
+  corresponding: null
+- name: Parnian Ghapandar Kashani
+  affiliation: null
+  corresponding: null
+- name: Yongkang Cheng
+  affiliation: null
+  corresponding: null
+- name: Aydogan Ozcan
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-16'
+retrieved_date: '2026-10-19'
+access: full_text
+read_scope: Automated reading. The full PDF text (63,543 characters, 34 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.23070v1 on
+  2026-10-19. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Using simultaneous five -wavelength illumination spanning 500–700 nm, we experimentally demonstrate
+  the parallel approximation of 4,136 nonlinear functions.”
+
+  “single -layer diffractive processor”'
+method_summary: '“Instead of a monochromatic diffractive function approximator, here we consider 𝑁𝑤 wavelengths
+  (𝜆𝑖 , 𝑖 = 1,2, … , 𝑁𝑤 ) simultaneously illuminating the same encoder plane and being summed in intensity
+  at an output detector 𝑘; see Fig. 1.”
+
+  “We assume that , for each channel 𝑘, the field 𝑓̃𝑘,𝑖(𝐚) at the output of the spectral-domain diffractive
+  processor is designed to approximate 𝑓𝑘,𝑖,𝛬𝑖(𝐚) for 𝑖 = 1, . . . , 𝑁𝑤 (see Eq. (4D)) , and that the
+  photodetector assigned to channel 𝑘 performs a time-averaged square -law detection, where distinct optical
+  wavelengths that are simult aneously on add in intensity .”
+
+  “Figure 8a shows the optical layout and experimental setup, in which a phase -only SLM implements the
+  co -localized encoder and decoder (E+D), and a camera records the output intensities over spatially
+  separated detector regions.”'
+limitations: '“Approximation accuracy can therefore remain limited when target nonlinear functions require
+  frequency components that are inadequately represented by the available computational Fourier features.”
+
+  “In practical implementations, factors such as encoder dispersion, finite phase -modulation range, optical
+  throughput, detector response and experimental noise can further influence the achievable accuracy.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 21012
+    output: 1579
+  claims_accepted: 1
+  claims_rejected: 3
+  rejected:
+  - statement: The five-wavelength diffractive processor achieved a zero-shot experimental mean-squared
+      error of approximately 0.0079.
+    reason: the statement contains the number 0.0079, which none of its quotes contain
+    quotes:
+    - The five-wavelength diffractive processor (𝑁𝑤 = 5) achieved a zero-shot experimental MSE of ~7.9
+      × 10−3
+    - (𝑁𝑤 = 5)
+    - zero-shot experimental MSE
+  - statement: After in-situ learning, the five-wavelength diffractive processor achieved an experimental
+      mean-squared error of approximately 0.0049.
+    reason: the statement contains the number 0.0049, which none of its quotes contain
+    quotes:
+    - which decreased to ~4.9 × 10−3 after in-situ learning, closely matching the numerical design.
+    - The five-wavelength diffractive processor (𝑁𝑤 = 5)
+    - after in-situ learning
+  - statement: At 𝛼Gmax = 20, the nine-wavelength encoder-decoder processor with r = 1.5 achieved a simulated
+      mean-squared error of approximately 3e-05.
+    reason: the statement contains the number 05, which none of its quotes contain
+    quotes:
+    - For example, at 𝛼 Gmax = 20, the nine -wavelength E+D processor with 𝑁 = 2 𝑟 𝑁𝑤𝑁𝑝𝑁𝑓 = 3𝑁𝑤𝑁𝑝𝑁𝑓 (r=1.5)
+      achieves an MSE of ~3×10-5
+    - 𝛼 Gmax = 20
+    - nine -wavelength E+D processor
+    - (r=1.5)
+corrections: []

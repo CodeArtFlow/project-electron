@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.22811v1
 doi: null
-title: Replay Pruning and Few-Bit Integer Inference for Hardware-Efficient Speed-Sign
-  Recognition
+title: Replay Pruning and Few-Bit Integer Inference for Hardware-Efficient Speed-Sign Recognition
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-16'
@@ -25,6 +24,103 @@ id: CAND-20261019-0083
 harvested_date: '2026-10-19'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-19'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The Replay YOLOv5n detector running in DLA INT8 precision achieves a median GPU latency
+      of 2.06 ms on Jetson AGX Orin.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''DLA INT82.06
+      8.3 22.1'''
+    quotes:
+    - Replay YOLOv5n (0.70 M) FP16 2.79 13.1 31.8
+    - DLA INT82.06 8.3 22.1
+    - Both detector families were measured on a Jetson AGX Orin (Table II) in three 30 s windows after
+      a warm-up, with the median GPU time of TensorRT’s command-line tool as the latency and the energy
+      from the module’s power rails.
+    - Jetson AGX Orin
+  - statement: The Replay YOLOv5n detector running in DLA INT8 mode consumes 8.3 mJ above idle per inference
+      on Jetson AGX Orin.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''DLA INT82.06
+      8.3 22.1'''
+    quotes:
+    - Replay YOLOv5n (0.70 M) FP16 2.79 13.1 31.8
+    - DLA INT82.06 8.3 22.1
+    - Both detector families were measured on a Jetson AGX Orin (Table II) in three 30 s windows after
+      a warm-up, with the median GPU time of TensorRT’s command-line tool as the latency and the energy
+      from the module’s power rails.
+    - Jetson AGX Orin
+  - statement: The parent YOLOv5n detector in FP16 precision has a median GPU time of 3.01 ms on Jetson
+      AGX Orin.
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - Parent YOLOv5n (1.77 M) FP16 3.01 15.5 35.7
+    - Both detector families were measured on a Jetson AGX Orin (Table II) in three 30 s windows after
+      a warm-up, with the median GPU time of TensorRT’s command-line tool as the latency and the energy
+      from the module’s power rails.
+    - Jetson AGX Orin
+    - Parent YOLOv5n (1.77 M)
+  - statement: The YOLOv8n with regression head in INT8 implicit precision achieves a median GPU time
+      of 3.01 ms on Jetson AGX Orin.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''INT8 implicit3.01
+      12.6 32.8'''
+    quotes:
+    - YOLOv8n, regression head (2.70 M) FP16 3.96 20.5 47.1
+    - INT8 implicit3.01 12.6 32.8
+    - Both detector families were measured on a Jetson AGX Orin (Table II) in three 30 s windows after
+      a warm-up, with the median GPU time of TensorRT’s command-line tool as the latency and the energy
+      from the module’s power rails.
+    - Jetson AGX Orin
+  - statement: The combined system frame pipeline achieves an energy consumption of 32.9 mJ per frame
+      above idle.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - runs at 94.1 frames per second (fps) over the whole loop with frames in memory, with a median frame
+      time of 9.73 ms, at 32.9 mJ per frame above idle and 103.8 mJ in total
+    - Both detector families were measured on a Jetson AGX Orin (Table II) in three 30 s windows after
+      a warm-up, with the median GPU time of TensorRT’s command-line tool as the latency and the energy
+      from the module’s power rails.
+    - Jetson AGX Orin
+    - The combined system, the replay YOLOv5n on the DLA followed by the W4A8 reader as an INT8 engine
+      on the GPU
+  - statement: The combined system frame pipeline achieves a total energy consumption of 103.8 mJ per
+      frame.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - runs at 94.1 frames per second (fps) over the whole loop with frames in memory, with a median frame
+      time of 9.73 ms, at 32.9 mJ per frame above idle and 103.8 mJ in total
+    - Both detector families were measured on a Jetson AGX Orin (Table II) in three 30 s windows after
+      a warm-up, with the median GPU time of TensorRT’s command-line tool as the latency and the energy
+      from the module’s power rails.
+    - Jetson AGX Orin
+    - The combined system, the replay YOLOv5n on the DLA followed by the W4A8 reader as an INT8 engine
+      on the GPU
+  - statement: The combined system frame pipeline achieves a median frame time of 9.73 ms on Jetson AGX
+      Orin.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - runs at 94.1 frames per second (fps) over the whole loop with frames in memory, with a median frame
+      time of 9.73 ms, at 32.9 mJ per frame above idle and 103.8 mJ in total
+    - Both detector families were measured on a Jetson AGX Orin (Table II) in three 30 s windows after
+      a warm-up, with the median GPU time of TensorRT’s command-line tool as the latency and the energy
+      from the module’s power rails.
+    - Jetson AGX Orin
+    - The combined system, the replay YOLOv5n on the DLA followed by the W4A8 reader as an INT8 engine
+      on the GPU
+  tokens:
+    input: 12012
+    output: 3194
+  fetched_chars: 31227

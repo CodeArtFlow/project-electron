@@ -1,0 +1,76 @@
+id: SRC-00172
+title: Coherent phonons in photoexcited semiconductors from first principles
+doi: null
+arxiv_id: 2610.22901v1
+url: https://arxiv.org/abs/2610.22901v1
+venue_id: arxiv_api
+authors:
+- name: Yuhui Qiu
+  affiliation: null
+  corresponding: null
+- name: Rong-Tian Pang
+  affiliation: null
+  corresponding: null
+- name: Meng-Xue Guan
+  affiliation: null
+  corresponding: null
+- name: Jin-Jian Zhou
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-16'
+retrieved_date: '2026-10-19'
+access: full_text
+read_scope: Automated reading. The full PDF text (41,229 characters, 8 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.22901v1 on
+  2026-10-19. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The computed frequency is approximately 5 THz, corresponding to a period of about 200 fs,
+  in agreement with the measured value of 5.1 THz [23].”
+
+  “We apply the extended EOM framework to monolayer MoTe 2.”
+
+  “We therefore focus on the out-of-plane A1g mode, highlighted in Fig. 1(a), consistent with recent coherent-phonon
+  studies of monolayer MoTe2 [20, 23, 24].”'
+method_summary: '“First-principles calculations are performed using Quantum ESPRESSO with 12 × 12 × 1
+  k- and q-point grids [ 39, 40]. To solve the equations of motion, the band energies and electron–phonon
+  matrix elements are interpolated onto a denser 100 × 100 × 1 grid using the Perturbo package [41].”
+
+  “On this dense grid, the time-dependent carrier distribution fnk(t) is obtained by solving the Boltzmann
+  transport equation with electron–phonon scattering using Perturbo.”'
+limitations: '“Carrier-induced and anharmonic frequency renormalization, as well as carrier-dependent
+  phonon dephasing, are not included here; a fully ﬁrst-principles treatment of these eﬀects is beyond
+  the scope of the present work.”
+
+  “Carrier recombination is neglected in our calculations.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14201
+    output: 1318
+  claims_accepted: 1
+  claims_rejected: 2
+  rejected:
+  - statement: The calculation uses a phenomenological A1g phonon lifetime of 1 ps.
+    reason: the quote says the number is approximate but approximate is false
+    quotes:
+    - To highlight the decoherence process, we use a phenomenological phonon lifetime of 1 ps in our simulations,
+      shorter than the experimentally measured damping time of ≈6 ps for the A1g coherent phonon in monolayer
+      MoTe2 [23], so that the deca
+    - for the A1g coherent phonon in monolayer MoTe2 [23]
+  - statement: The indirect band gap between K and Q becomes smaller than the direct band gap at K when
+      the photoexcited carrier density exceeds approximately 5.0 × 1014 cm-2.
+    reason: the value 5e+14 does not appear in any of the claim's quotes
+    quotes:
+    - When nc exceeds approximately 5.0 × 1014 cm−2, the indirect gap becomes the smaller gap, showing
+      that the conduction-band minimum moves from K to Q.
+    - Figure 2(c) shows that the direct gap at K increases with nc, while the indirect gap between K and
+      Q decreases.
+    - We apply the extended EOM framework to monolayer MoTe 2.
+corrections: []

@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.22911v1
 doi: null
-title: 'From Surface Reactions to Inhibitor Coverage: A Machine-Learning-Assisted
-  Computational Study of Area-Selective Atomic Layer Deposition'
+title: 'From Surface Reactions to Inhibitor Coverage: A Machine-Learning-Assisted Computational Study
+  of Area-Selective Atomic Layer Deposition'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-16'
@@ -24,6 +24,63 @@ id: CAND-20261019-0075
 harvested_date: '2026-10-19'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-19'
+  reason: the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The GCMC simulation predicts that a single dose of DMATMS consumes 2.23 OH/nm2 on an amorphous
+      SiO2 surface with an initial silanol density of 4.11 OH/nm2.
+    reason: 'unit conversion refused: defect_density: could not parse 2.23 ''OH/nm2'': ''OH'' is not defined
+      in the unit registry'
+    quotes:
+    - Across five independent GCMC runs, DMATMS consumes 2.23 ± 0.05 OH/nm2 from an initial silanol density
+      of 4.11 OH/nm2, leaving about 1.9 OH/nm2 unreacted.
+    - DMATMS consumes 2.23 ± 0.05 OH/nm2
+    - from an initial silanol density of 4.11 OH/nm2
+    - Across five independent GCMC runs
+  - statement: The GCMC simulation predicts that a single dose of DMADMS consumes 2.6 OH/nm2 from an initial
+      silanol density of 4.11 OH/nm2 on amorphous SiO2.
+    reason: 'unit conversion refused: defect_density: could not parse 2.6 ''OH/nm2'': ''OH'' is not defined
+      in the unit registry'
+    quotes:
+    - DMADMS consumes the largest number of silanol groups, reaching 2.6 OH/nm2.
+    - DMADMS consumes the largest number of silanol groups
+    - The dashed horizontal line indicates the silanol density of the bare surface (4.11 OH/nm2).
+  - statement: For an HMDS-passivated surface, the TiCl4-accessible silanol site density is predicted
+      to be 0.59 nm-2.
+    reason: 'unit conversion refused: defect_density: could not parse 0.59 ''nm−2'': ''nm−2'' is not defined
+      in the unit registry'
+    quotes:
+    - The accessible-site density for TiCl4 is found to be 0.59 ± 0.19, 0.43 ± 0.06, and 0.49 ± 0.12 nm−2
+      for HMDS, DMATMS, and DMADMS, respectively.
+    - The accessible-site density for TiCl4
+    - 0.59 ± 0.19, 0.43 ± 0.06, and 0.49 ± 0.12 nm−2 for HMDS, DMATMS, and DMADMS, respectively.
+  - statement: Sequential dosing of HMDS followed by DMATMS reduces the TiCl4-accessible site density
+      to 0.39 nm-2.
+    reason: 'unit conversion refused: defect_density: could not parse 0.39 ''nm−2'': ''nm−2'' is not defined
+      in the unit registry'
+    quotes:
+    - Consequently, HMDS followed by DMATMS reduces the TiCl4-accessible site density from 0.59 to 0.39
+      nm−2
+    - reduces the TiCl4-accessible site density
+    - HMDS followed by DMATMS
+  - statement: Sequential dosing of DMADMS followed by DMATMS reduces the DMAI-accessible site density
+      to 0.76 nm-2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Similarly,
+      DMADMS followed by DMATMS reduces the DMAI-accessible site '''
+    quotes:
+    - Similarly, DMADMS followed by DMATMS reduces the DMAI-accessible site density from 0.92 to 0.76
+      nm−2.
+    - reduces the DMAI-accessible site density
+    - DMADMS followed by DMATMS
+  tokens:
+    input: 19669
+    output: 2008
+  fetched_chars: 61391

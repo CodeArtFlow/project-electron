@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-18.
+Topic code `PHOT`. Last reviewed 2026-10-19.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -228,6 +228,18 @@ Topic code `PHOT`. Last reviewed 2026-10-18.
   - `CLM-PHOT-0076` · electrode_configuration S-G-G-S · grade B · credibility unknown · measured · as of 2026-10-14
   - sources: SRC-00166
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The in-house fabricated planar waveguides exhibit a propagation loss of 0.3 dB/cm at 980 nm.
+  - `CLM-PHOT-0077` · wavelength 980 nm, waveguide_thickness 260 nm, growth_temperature 820 ◦C, growth_pressure 300 mTorr · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00170
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- The in-house fabricated planar waveguides show a coupling loss of 1 dB per facet at 980 nm.
+  - `CLM-PHOT-0078` · wavelength 980 nm, waveguide_thickness 260 nm, growth_temperature 820 ◦C, growth_pressure 300 mTorr · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00170
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- Under five-wavelength illumination spanning 500–700 nm, a single-layer diffractive processor experimentally achieved parallel approximation of 4,136 distinct nonlinear functions.
+  - `CLM-PHOT-0079` · processor_architecture single-layer diffractive processor · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00173
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -365,6 +377,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 76
-- grades: {'B': 69, 'A': 7}
-- distinct sources: 24
+- claims: 79
+- grades: {'B': 72, 'A': 7}
+- distinct sources: 26
