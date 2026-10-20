@@ -768,3 +768,177 @@ claims:
       unit: dimensionless
     conditions:
       baseline: SoA mappings
+- id: CLM-MEM-0026
+  topic: MEM
+  statement: Under conventional placement in full-trace replay across 108 MoE FFN cases, the request-weighted
+    row-conflict rate is 75.7%.
+  sources:
+  - SRC-00185
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    placement: conventional
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 75.7
+      unit: '%'
+    si_base:
+      value: 0.757
+      unit: dimensionless
+    display:
+      value: 75.7
+      unit: percent
+    conditions:
+      placement: conventional
+- id: CLM-MEM-0027
+  topic: MEM
+  statement: Under TileDRAM placement in full-trace replay across 108 MoE FFN cases, the request-weighted
+    row-conflict rate is reduced to 15.2%.
+  sources:
+  - SRC-00185
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    placement: TileDRAM
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 15.2
+      unit: '%'
+    si_base:
+      value: 0.152
+      unit: dimensionless
+    display:
+      value: 15.2
+      unit: percent
+    conditions:
+      placement: TileDRAM
+- id: CLM-MEM-0028
+  topic: MEM
+  statement: Address transformation in TileDRAM adds a geometric mean overhead of 0.17% over identity
+    address generation across 108 measured kernel configurations on an RTX 3090.
+  sources:
+  - SRC-00185
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    workload: 108 measured kernel configurations
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.17
+      unit: '%'
+    si_base:
+      value: 0.0017000000000000001
+      unit: dimensionless
+    display:
+      value: 0.17
+      unit: percent
+    conditions:
+      workload: 108 measured kernel configurations
+- id: CLM-MEM-0029
+  topic: MEM
+  statement: TileDRAM achieves a geometric mean speedup of 1.77x across 108 MoE FFN cases in full-trace
+    replay.
+  sources:
+  - SRC-00185
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MEM-0030
+  topic: MEM
+  statement: Retargeting six full-trace streams to six 3D DRAM organizations with TileDRAM yields a 2.20x
+    geometric mean speedup.
+  sources:
+  - SRC-00185
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MEM-0031
+  topic: MEM
+  statement: Retargeting six full-trace streams to six 3D DRAM organizations reduces row conflicts by
+    79.2% under TileDRAM.
+  sources:
+  - SRC-00185
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    workload: six full-trace streams
+    hardware_configuration: six 3D DRAM organizations
+    method: TileDRAM
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 79.2
+      unit: '%'
+    si_base:
+      value: 0.792
+      unit: dimensionless
+    display:
+      value: 79.2
+      unit: percent
+    conditions:
+      workload: six full-trace streams
+      hardware_configuration: six 3D DRAM organizations
+      method: TileDRAM

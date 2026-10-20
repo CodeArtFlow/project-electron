@@ -1,0 +1,109 @@
+id: SRC-00181
+title: Noise suppression of quantum frequency conversion in thin-film lithium niobate waveguides via adapted
+  poling
+doi: null
+arxiv_id: 2610.23575v1
+url: https://arxiv.org/abs/2610.23575v1
+venue_id: arxiv_api
+authors:
+- name: Ian Briggs
+  affiliation: null
+  corresponding: null
+- name: Pao-Kang Chen
+  affiliation: null
+  corresponding: null
+- name: Jiaqi Huang
+  affiliation: null
+  corresponding: null
+- name: Linran Fan
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-16'
+retrieved_date: '2026-10-20'
+access: full_text
+read_scope: Automated reading. The full PDF text (28,482 characters, 8 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.23575v1 on
+  2026-10-20. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“In 2-cm-long waveguides, adapted poling enables maximum conversion efficiency at an on-chip
+  pump power of19±0.8mW”
+
+  “In 2-cm-long waveguides, adapted poling”
+
+  “enables maximum conversion efficiency at an on-chip pump power”
+
+  “In contrast, the maximum conversion in the waveguide with periodic poling must require pump power of120±4mW.”
+
+  “in the waveguide with periodic poling”
+
+  “the maximum conversion in the waveguide with periodic poling”
+
+  “Tuning sensitivity of6.32±0.03nm per degree at the pump wavelength is demonstrated (Fig. 2(c)).”
+
+  “Difference-frequency generation (DFG) spectrum is measured”
+
+  “fixing the input signal wavelength at 637 nm”'
+method_summary: '“We first verify the frequency conversion efficiency through the sum-frequency generation
+  (SFG) process.”
+
+  “Near 1078 nm, the waveguide with adapted poling exhibits an on-chip noise spectral density of45±1Hz/nm
+  at the maximum conversion pump power.”
+
+  “We use four pump and device configurations to isolate different noise contributions”'
+limitations: “Both waveguides achieve photon number conversion efficiency of37±3%, limited by propagation
+  losses.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 10373
+    output: 2596
+  claims_accepted: 3
+  claims_rejected: 4
+  rejected:
+  - statement: The peak sum-frequency generation nonlinear efficiency of the adapted-poling device measured
+      by sweeping signal wavelength with fixed pump at 1557 nm is up to 7
+    reason: the statement contains the number 1557, which none of its quotes contain
+    quotes:
+    - The peak nonlinear efficiency up to7800±600%/W is measured.
+    - adapted-poling (blue) and periodic-poling (red) devices
+    - with the pump fixed at 1557 nm
+    - 20-mm-long adapted-poling
+  - statement: Near 1078 nm, the on-chip noise spectral density of the adapted-poling waveguide at maximum
+      conversion pump power is 45 Hz/nm.
+    reason: 'unit conversion refused: frequency: cannot convert 45.0 Hz/nm to Hz - Cannot convert from
+      ''hertz / nanometer'' (1 / [time] / [length]) to ''hertz'' (1 / [time]). A dimensional mismatch
+      mea'
+    quotes:
+    - Near 1078 nm, the waveguide with adapted poling exhibits an on-chip noise spectral density of45±1Hz/nm
+      at the maximum conversion pump power.
+    - Near 1078 nm
+    - the waveguide with adapted poling
+    - at the maximum conversion pump power
+  - statement: Near 637 nm, the noise spectral density of the adapted-poling device near maximum conversion
+      is 15 Hz/nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Near 637
+      nm, noise spectral densities of15±0.4Hz/nm and400±15Hz/nm are'''
+    quotes:
+    - Near 637 nm, noise spectral densities of15±0.4Hz/nm and400±15Hz/nm are measured in the adapted-
+      and periodic-poling devices near maximum conversion, respectively.
+    - Near 637 nm
+    - in the adapted- and periodic-poling devices
+    - near maximum conversion
+  - statement: Near 637 nm, the noise spectral density of the periodic-poling device near maximum conversion
+      is 400 Hz/nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Near 637
+      nm, noise spectral densities of15±0.4Hz/nm and400±15Hz/nm are'''
+    quotes:
+    - Near 637 nm, noise spectral densities of15±0.4Hz/nm and400±15Hz/nm are measured in the adapted-
+      and periodic-poling devices near maximum conversion, respectively.
+    - Near 637 nm
+    - in the adapted- and periodic-poling devices
+    - near maximum conversion
+corrections: []

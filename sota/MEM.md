@@ -1,6 +1,6 @@
 # Memory — state of the art
 
-Topic code `MEM`. Last reviewed 2026-10-19.
+Topic code `MEM`. Last reviewed 2026-10-20.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -68,6 +68,14 @@ Topic code `MEM`. Last reviewed 2026-10-19.
   - `CLM-MEM-0017` · encoding Diff-W/Diff-A · grade B · credibility unknown · simulated · as of 2026-10-14
   - sources: SRC-00147
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- TileDRAM achieves a geometric mean speedup of 1.77x across 108 MoE FFN cases in full-trace replay.
+  - `CLM-MEM-0029` · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00185
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Retargeting six full-trace streams to six 3D DRAM organizations with TileDRAM yields a 2.20x geometric mean speedup.
+  - `CLM-MEM-0030` · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00185
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -102,6 +110,22 @@ Topic code `MEM`. Last reviewed 2026-10-19.
   - `CLM-MEM-0024` · logic_primitives NOR and XOR · grade B · credibility unknown · measured · as of 2026-10-14
   - sources: SRC-00169
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **75.7 percent** — Under conventional placement in full-trace replay across 108 MoE FFN cases, the request-weighted row-conflict rate is 75.7%.
+  - `CLM-MEM-0026` · placement conventional · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00185
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **15.2 percent** — Under TileDRAM placement in full-trace replay across 108 MoE FFN cases, the request-weighted row-conflict rate is reduced to 15.2%.
+  - `CLM-MEM-0027` · placement TileDRAM · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00185
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.17 percent** — Address transformation in TileDRAM adds a geometric mean overhead of 0.17% over identity address generation across 108 measured kernel configurations on an RTX 3090.
+  - `CLM-MEM-0028` · workload 108 measured kernel configurations · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00185
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **79.2 percent** — Retargeting six full-trace streams to six 3D DRAM organizations reduces row conflicts by 79.2% under TileDRAM.
+  - `CLM-MEM-0031` · workload six full-trace streams, hardware_configuration six 3D DRAM organizations, method TileDRAM · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00185
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### resistance
 
@@ -163,6 +187,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 25
-- grades: {'B': 25}
-- distinct sources: 9
+- claims: 31
+- grades: {'B': 31}
+- distinct sources: 10

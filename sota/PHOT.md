@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-19.
+Topic code `PHOT`. Last reviewed 2026-10-20.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -137,6 +137,14 @@ Topic code `PHOT`. Last reviewed 2026-10-19.
   - `CLM-PHOT-0068` · operating_point 3 mW total trapping-beam power · grade B · credibility unknown · measured · as of 2026-10-13
   - sources: SRC-00140
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈0.019 W** — In a 2-cm-long adapted-poling TFLN waveguide, maximum conversion efficiency is reached at an on-chip pump power of 19 mW.
+  - `CLM-PHOT-0080` · length_waveguide 2-cm, operating_point maximum conversion efficiency · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00181
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈0.12 W** — The maximum conversion in the periodic-poling waveguide requires an on-chip pump power of 120 mW.
+  - `CLM-PHOT-0081` · device_type waveguide with periodic poling, operating_point maximum conversion · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00181
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### qualitative
 
@@ -354,6 +362,10 @@ Topic code `PHOT`. Last reviewed 2026-10-19.
   - `CLM-PHOT-0072` · polarization x-polarization, incident_angle normal incidence · grade B · credibility unknown · measured · as of 2026-10-14
   - sources: SRC-00144
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈0.362109 um** — The tuning sensitivity of the pump wavelength in DFG spectrum measurement with fixed input signal at 637 nm is 6.32 nm per degree.
+  - `CLM-PHOT-0082` · process Difference-frequency generation (DFG), input_signal_wavelength 637 nm · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00181
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -377,6 +389,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 79
-- grades: {'B': 72, 'A': 7}
-- distinct sources: 26
+- claims: 82
+- grades: {'B': 75, 'A': 7}
+- distinct sources: 27

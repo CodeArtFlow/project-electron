@@ -3215,3 +3215,220 @@ claims:
     benchmark: ResNet18
     optimization_objective: minimum latency
     clustering: single clustering optimization
+- id: CLM-ARCH-0110
+  topic: ARCH
+  statement: The synthesized area of the Address Translation Module in the RCD chip is 3x10-4 mm2.
+  sources:
+  - SRC-00178
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    component: Address Translation Module
+    location: RCD
+    process: TSMC 90nm
+    frequency: 2.4GHz
+  quantity:
+    quantity: area_die
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.0003
+      unit: mm2
+    si_base:
+      value: 2.9999999999999995e-10
+      unit: m^2
+    display:
+      value: 0.0002999999999999999
+      unit: mm^2
+    conditions:
+      component: Address Translation Module
+      location: RCD
+      process: TSMC 90nm
+      frequency: 2.4GHz
+- id: CLM-ARCH-0111
+  topic: ARCH
+  statement: The synthesized area of the Rank Chunk List in the RCD chip is 0.151 mm2.
+  sources:
+  - SRC-00178
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    component: Rank Chunk List
+    location: RCD
+    process: TSMC 90nm
+    frequency: 2.4GHz
+  quantity:
+    quantity: area_die
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.151
+      unit: mm2
+    si_base:
+      value: 1.51e-07
+      unit: m^2
+    display:
+      value: 0.151
+      unit: mm^2
+    conditions:
+      component: Rank Chunk List
+      location: RCD
+      process: TSMC 90nm
+      frequency: 2.4GHz
+- id: CLM-ARCH-0112
+  topic: ARCH
+  statement: The synthesized area of the PIM Chunk List in the DRAM chip is 0.032 mm2.
+  sources:
+  - SRC-00178
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    component: PIM Chunk List
+    location: DRAM chip
+  quantity:
+    quantity: area_die
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.032
+      unit: mm2
+    si_base:
+      value: 3.2e-08
+      unit: m^2
+    display:
+      value: 0.032
+      unit: mm^2
+    conditions:
+      component: PIM Chunk List
+      location: DRAM chip
+- id: CLM-ARCH-0113
+  topic: ARCH
+  statement: The synthesized area of the Row Migration Table in the DRAM chip is 0.134 mm2.
+  sources:
+  - SRC-00178
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    component: Row Migration Table
+    location: DRAM chip
+  quantity:
+    quantity: area_die
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.134
+      unit: mm2
+    si_base:
+      value: 1.34e-07
+      unit: m^2
+    display:
+      value: 0.134
+      unit: mm^2
+    conditions:
+      component: Row Migration Table
+      location: DRAM chip
+- id: CLM-ARCH-0114
+  topic: ARCH
+  statement: The power consumption of the PIM Chunk List in the DRAM chip is 3.55 mW.
+  sources:
+  - SRC-00178
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    component: PIM Chunk List
+    location: DRAM chip
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 3.55
+      unit: mW
+    si_base:
+      value: 0.0035499999999999998
+      unit: W
+    display:
+      value: 0.0035499999999999998
+      unit: W
+    conditions:
+      component: PIM Chunk List
+      location: DRAM chip
+- id: CLM-ARCH-0115
+  topic: ARCH
+  statement: The best agent-discovered design achieves a per-workload speedup of 2.61x for the coupled
+    AI+HPC workload relative to the reference system.
+  sources:
+  - SRC-00182
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    workload: coupled AI+HPC workload
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 2.61
+      unit: x
+    si_base:
+      value: 2.61
+      unit: dimensionless
+    display:
+      value: 261.0
+      unit: percent
+    conditions:
+      workload: coupled AI+HPC workload

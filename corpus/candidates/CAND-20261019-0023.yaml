@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.23643v1
 doi: null
-title: Scalable long-range machine learning interatomic potentials with electrical
-  response for atomistic material modeling
+title: Scalable long-range machine learning interatomic potentials with electrical response for atomistic
+  material modeling
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-16'
@@ -29,6 +29,27 @@ id: CAND-20261019-0023
 harvested_date: '2026-10-19'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-20'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: In amorphous Li 0.9NbO0.9Cl4.1, DPA4C-LR predicts a room-temperature field-driven ionic
+      conductivity of 6.8±0.7 mS/cm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''predicting
+      a room-temperature field-driven ionic conductivity of 6.8±0'''
+    quotes:
+    - predicting a room-temperature field-driven ionic conductivity of 6.8±0.7 mS/cm in amorphous Li 0.9NbO0.9Cl4.1;
+    - amorphous Li 0.9NbO0.9Cl4.1
+    - room-temperature
+    - Implemented as DPA4C-LR
+  tokens:
+    input: 21384
+    output: 700
+  fetched_chars: 60264

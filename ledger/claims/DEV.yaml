@@ -1880,3 +1880,103 @@ claims:
       unit: mm^2
     conditions:
       device_stack: ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm)
+- id: CLM-DEV-0072
+  topic: DEV
+  statement: BLS measurements on top of the Pt bar under DC gate currents detect a dominant mode near
+    7 GHz.
+  sources:
+  - SRC-00183
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    measurement_method: BLS spectra
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: true
+    as_published:
+      value: 7.0
+      unit: GHz
+    si_base:
+      value: 7000000000.0
+      unit: Hz
+    display:
+      value: 7.0
+      unit: GHz
+    conditions:
+      measurement_method: BLS spectra
+- id: CLM-DEV-0073
+  topic: DEV
+  statement: In BLS measurements, the laser power was 2 mW.
+  sources:
+  - SRC-00183
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    wavelength: 488 nm
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 2.0
+      unit: mW
+    si_base:
+      value: 0.002
+      unit: W
+    display:
+      value: 0.002
+      unit: W
+    conditions:
+      wavelength: 488 nm
+- id: CLM-DEV-0074
+  topic: DEV
+  statement: The laser wavelength used in the BLS measurements was 488 nm.
+  sources:
+  - SRC-00183
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    power: 2 mW
+  quantity:
+    quantity: wavelength
+    bound: exact
+    approximate: false
+    as_published:
+      value: 488.0
+      unit: nm
+    si_base:
+      value: 4.88e-07
+      unit: m
+    display:
+      value: 0.48800000000000004
+      unit: um
+    conditions:
+      power: 2 mW

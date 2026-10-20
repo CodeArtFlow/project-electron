@@ -2355,3 +2355,111 @@ claims:
     verified_quotes: 3
   conditions:
     processor_architecture: single-layer diffractive processor
+- id: CLM-PHOT-0080
+  topic: PHOT
+  statement: In a 2-cm-long adapted-poling TFLN waveguide, maximum conversion efficiency is reached at
+    an on-chip pump power of 19 mW.
+  sources:
+  - SRC-00181
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    length_waveguide: 2-cm
+    operating_point: maximum conversion efficiency
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: true
+    as_published:
+      value: 19.0
+      unit: mW
+    si_base:
+      value: 0.019
+      unit: W
+    display:
+      value: 0.019
+      unit: W
+    conditions:
+      length_waveguide: 2-cm
+      operating_point: maximum conversion efficiency
+- id: CLM-PHOT-0081
+  topic: PHOT
+  statement: The maximum conversion in the periodic-poling waveguide requires an on-chip pump power of
+    120 mW.
+  sources:
+  - SRC-00181
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    device_type: waveguide with periodic poling
+    operating_point: maximum conversion
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: true
+    as_published:
+      value: 120.0
+      unit: mW
+    si_base:
+      value: 0.12
+      unit: W
+    display:
+      value: 0.12
+      unit: W
+    conditions:
+      device_type: waveguide with periodic poling
+      operating_point: maximum conversion
+- id: CLM-PHOT-0082
+  topic: PHOT
+  statement: The tuning sensitivity of the pump wavelength in DFG spectrum measurement with fixed input
+    signal at 637 nm is 6.32 nm per degree.
+  sources:
+  - SRC-00181
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-16'
+  created: '2026-10-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    process: Difference-frequency generation (DFG)
+    input_signal_wavelength: 637 nm
+  quantity:
+    quantity: wavelength
+    bound: exact
+    approximate: true
+    as_published:
+      value: 6.32
+      unit: nm per degree
+    si_base:
+      value: 3.6210932652268036e-07
+      unit: m
+    display:
+      value: 0.36210932652268035
+      unit: um
+    conditions:
+      process: Difference-frequency generation (DFG)
+      input_signal_wavelength: 637 nm

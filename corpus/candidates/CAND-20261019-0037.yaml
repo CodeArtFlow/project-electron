@@ -26,6 +26,72 @@ id: CAND-20261019-0037
 harvested_date: '2026-10-19'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-20'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Tracing and trace collection for Qwen2.5-1.5B-Instruct (bfloat16, batch size 1) covering
+      a 32-token prefill followed by two fixed-token decode steps took 43.4 m
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - For Qwen2.5-1.5B-Instruct (bfloat16, batch size 1), a 32-token prefill followed by two fixed-token
+      decode steps required 43.4 minutes for trace collection on an RTX 4000 Ada with NVBit [30].
+    - Qwen2.5-1.5B-Instruct
+    - bfloat16
+    - batch size 1
+  - statement: HBF serves data that does not fit in HBM 11.0 to 19.0 times faster than host DRAM.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - HBF serves data that does not fit in HBM 11.0–19.0× faster than host DRAM;
+    - Using HBFSim, we study decoding of Llama-3.1-70B and Qwen3-235B-A22B under three workloads that
+      differ in their input and output lengths.
+    - host DRAM
+    - HBF
+  - statement: Page grouping accelerates a Llama-3.1-70B batch with 7.3 million page reads by 1.48 times.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Page grouping
+      speeds up a Llama-3.1-70B batch (7.3M page reads) by 1.4'''
+    quotes:
+    - Page grouping speeds up a Llama-3.1-70B batch (7.3M page reads) by 1.48×, and lazy FTL recounting
+      accelerates ten write batches (3.2M page programs) by 1.55×.
+    - Page grouping speeds up a Llama-3.1-70B batch (7.3M page reads) by 1.48×
+    - Llama-3.1-70B
+    - 7.3M page reads
+  - statement: Lazy FTL recounting accelerates ten write batches consisting of 3.2 million page programs
+      by 1.55 times.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Page grouping
+      speeds up a Llama-3.1-70B batch (7.3M page reads) by 1.4'''
+    quotes:
+    - Page grouping speeds up a Llama-3.1-70B batch (7.3M page reads) by 1.48×, and lazy FTL recounting
+      accelerates ten write batches (3.2M page programs) by 1.55×.
+    - lazy FTL recounting accelerates ten write batches (3.2M page programs) by 1.55×.
+    - lazy FTL recounting
+    - ten write batches (3.2M page programs)
+  - statement: Full trace-driven simulation takes 19.9 wall-clock hours for a small model.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Full trace-driven
+      simulation already takes 19.9 wall-clock hours even '''
+    quotes:
+    - Full trace-driven simulation already takes 19.9 wall-clock hours even for a small model.
+    - Full trace-driven simulation
+  - statement: At a published peak load of Llama-3.1-70B, HBF lifetime ranges from 2.0 to 6.9 years depending
+      on the stacks that share the KV writes.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - and at a published peak load of Llama-3.1-70B, HBF lasts 2.0 to 6.9 years, in proportion to the
+      stacks that share the KV writes.
+    - Llama-3.1-70B
+    - published peak load
+  tokens:
+    input: 21863
+    output: 2385
+  fetched_chars: 62983

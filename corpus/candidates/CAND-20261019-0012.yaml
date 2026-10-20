@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.23773v1
 doi: null
-title: Engineering nonrelativistic spin splitting in semiconductors by altermagnetic
-  proximity
+title: Engineering nonrelativistic spin splitting in semiconductors by altermagnetic proximity
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-16'
@@ -23,6 +22,29 @@ id: CAND-20261019-0012
 harvested_date: '2026-10-19'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-20'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: When the band alignment fraction x equals x*, the induced Rashba spin-orbit coupling at
+      the band edge vanishes.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Specifically,
+      if we define a band alignment parameter x= ∆v/∆ALM ∈(0,1'''
+    quotes:
+    - Specifically, if we define a band alignment parameter x= ∆v/∆ALM ∈(0,1),∆ ALM =∆ v+∆ c,(1) to quantify
+      the position of the host band edge we find that there is always a value ofxthat results invanishingRashba
+      SOC at the Fermi surface.
+    - x∗ = gv/(gv+g c)
+    - Our model calculations show that significant spin-splitting can be induced in the semiconducting
+      host through the altermagnetic proximity effect.
+  tokens:
+    input: 33198
+    output: 533
+  fetched_chars: 79737

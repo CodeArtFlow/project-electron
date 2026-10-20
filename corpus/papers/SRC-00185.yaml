@@ -1,0 +1,77 @@
+id: SRC-00185
+title: 'TileDRAM: Compiler-Controlled Tile-to-DRAM Layouts for 3D DRAM GPGPUs'
+doi: null
+arxiv_id: 2610.23767v1
+url: https://arxiv.org/abs/2610.23767v1
+venue_id: arxiv_api
+authors:
+- name: Guangyuan Xu
+  affiliation: null
+  corresponding: null
+- name: Lanxuan Zhang
+  affiliation: null
+  corresponding: null
+- name: Ziyang Li
+  affiliation: null
+  corresponding: null
+- name: Zhaoshi Li
+  affiliation: null
+  corresponding: null
+- name: Yajun Ha
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-16'
+retrieved_date: '2026-10-20'
+access: full_text
+read_scope: Automated reading. The full PDF text (111,272 characters, 23 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.23767v1 on
+  2026-10-20. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“In full-trace replay on Accel-Sim/Ramulator2 across 108 MoE FFN cases, TileDRAM reduces the
+  request-weighted row-conflict rate from 75.7% to 15.2% and achieves a 1.77× geomean speedup.”
+
+  “conventional placement under the existing DRAM address mapping can subject structured tile accesses
+  to severe row-buffer conflicts.”
+
+  “TileDRAM reduces the request-weighted row-conflict rate from 75.7% to 15.2%”
+
+  “On an RTX 3090, address transformation adds 0.17% geomean overhead over identity.”
+
+  “across the 108 measured kernel configurations.”
+
+  “Retargeting six traces to six 3D DRAM organizations yields a 2.20× geomean speedup under the same compiler
+  abstraction.”
+
+  “Across six full-trace streams retargeted to six 3D DRAM organizations, TileDRAM reduces row conflicts
+  by 79.2% and achieves a 2.20× geomean speedup.”
+
+  “Across six full-trace streams”
+
+  “retargeted to six 3D DRAM organizations”
+
+  “TileDRAM reduces row conflicts by 79.2%”'
+method_summary: '“Using NVBit traces of Triton/Gluon kernels [ 35, 48, 49] replayed with Accel-Sim/Ramulator2
+  [14, 21], TileDRAM reduces the request-weighted row-conflict rate from 75.7% to 15.2% and achieves a
+  1.77×geomean kernel speedup across 108 MoE FFN cases.”
+
+  “On an NVIDIA GeForce RTX 3090, address transformation adds 0.17% geomean overhead over identity across
+  the 108 measured kernel configurations.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 35137
+    output: 2477
+  claims_accepted: 6
+  claims_rejected: 0
+  rejected: []
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (measured: 1, simulated:
+  5). This field records the majority (simulated); trust each claim''s own evidence_type over this one.'

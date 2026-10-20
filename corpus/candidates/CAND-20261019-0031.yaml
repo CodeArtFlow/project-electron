@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.23556v1
 doi: null
-title: 'Magnetic order in epitaxial (La2/3Sr1/3MnO3)3/(BaTiO3)3 trilayer heterostructures:
-  Evidence for quasi-two-dimensional ferrimagnetism'
+title: 'Magnetic order in epitaxial (La2/3Sr1/3MnO3)3/(BaTiO3)3 trilayer heterostructures: Evidence for
+  quasi-two-dimensional ferrimagnetism'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-16'
@@ -30,6 +30,68 @@ id: CAND-20261019-0031
 harvested_date: '2026-10-19'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-20'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: 'The E2 sample exhibits a ferromagnetic component at 5 K under an applied field along the
+      [100] direction, with a minimum bound remanent ferromagnetic moment of '
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The remnant
+      ferromagnetic moment remains small, corresponding to ∼ 0.5'''
+    quotes:
+    - 'The remnant ferromagnetic moment remains small, corresponding to ∼ 0.5 µB per Mn atom. This value
+      (0.65 µB/Mn at 5 K) constitutes a minimum bound for the ferromagnetic component, as the existence
+      of magnetic domains can possibly reduce the '
+    - hysteresis loops were then recorded by cycling the magnetic field along the same direction, from
+      +5 T to -5 T and back to +5 T. Two samples, E1 and E2, were characterized under these conditions,
+      yielding similar results.
+    - For sample E2, the magnetic response was recorded at 5 K, 10 K, 100 K, and 300 K.
+    - This value (0.65 µB/Mn at 5 K) constitutes a minimum bound for the ferromagnetic component
+  - statement: The c-axis repetition period of the (3-3) configuration is 24.10 Å as measured by X-ray
+      diffraction.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Along the
+      c-axis, the periodicity depends on the number of LSMO and BT'''
+    quotes:
+    - Along the c-axis, the periodicity depends on the number of LSMO and BTO monolayers (one perovskite
+      unit cell), with a measured value of 24.10 ± 0.02 Å for the (3-3) configuration.
+    - This periodicity was determined via X-ray diffraction measurements along the 00ℓ direction.
+    - with a measured value of 24.10 ± 0.02 Å for the (3-3) configuration.
+  - statement: The in-plane lattice parameters of the E1-E3 superlattices are 3.905 Å.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The in-plane
+      lattice parameters of the E1-E3 superlattices are aE = bE'''
+    quotes:
+    - The in-plane lattice parameters of the E1-E3 superlattices are aE = bE = 3.905 Å, indicating excellent
+      epitaxial growth on STO.
+    - The in-plane lattice parameters of the E1-E3 superlattices are aE = bE = 3.905 Å
+  - statement: The LSMO-LSMO interlayer cation-to-cation distance derived from X-ray diffraction repetition
+      periods is 3.70 Å.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - • LSMO-LSMO = 3.70 ± 0.02 Å (La to La)
+    - 'we derived the following cation-to-cation distances from the c-axis repetition periods determined
+      by X-ray diffraction :'
+  - statement: The LSMO-BTO interlayer cation-to-cation distance derived from X-ray diffraction repetition
+      periods is 4.35 Å.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - • LSMO-BTO = 4.35 ± 0.02 Å (La to Ba)
+    - 'we derived the following cation-to-cation distances from the c-axis repetition periods determined
+      by X-ray diffraction :'
+  - statement: The BTO-BTO interlayer cation-to-cation distance derived from X-ray diffraction repetition
+      periods is 4.00 Å.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - • BTO-BTO = 4.00 ± 0.02 Å (Ba to Ba)
+    - 'we derived the following cation-to-cation distances from the c-axis repetition periods determined
+      by X-ray diffraction :'
+  tokens:
+    input: 19344
+    output: 1496
+  fetched_chars: 33772

@@ -1,0 +1,90 @@
+id: SRC-00183
+title: Limits from nonlinear loss of spin-orbit-torque control of magnon transport
+doi: null
+arxiv_id: 2610.23763v1
+url: https://arxiv.org/abs/2610.23763v1
+venue_id: arxiv_api
+authors:
+- name: Lerato Takana
+  affiliation: null
+  corresponding: null
+- name: Katya Mikhailova
+  affiliation: null
+  corresponding: null
+- name: Charles Zheng
+  affiliation: null
+  corresponding: null
+- name: Sauviz Alaei
+  affiliation: null
+  corresponding: null
+- name: Xiangcheng Liu
+  affiliation: null
+  corresponding: null
+- name: Junwei Tong
+  affiliation: null
+  corresponding: null
+- name: Kwangyul Hu
+  affiliation: null
+  corresponding: null
+- name: Michael Flatté
+  affiliation: null
+  corresponding: null
+- name: Xiaoqin Li
+  affiliation: null
+  corresponding: null
+- name: Yuri Suzuki
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-16'
+retrieved_date: '2026-10-20'
+access: full_text
+read_scope: Automated reading. The full PDF text (32,057 characters, 20 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.23763v1 on
+  2026-10-20. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“At all currents, the spectra contain a dominant mode near7 GHz.”
+
+  “BLS spectra measured with the laser spot positioned on top of the Pt bar under DC currents ranging
+  from0.4to1.0 mAin0.025 mAincrements.”
+
+  “A488 nmlaser with a power of2 mWwas focused through a100×objective to a spot approximately1µmin diameter.”
+
+  “BLS measurements were performed in a backscattering geometry using a tandem Fabry–Pérot interferometer
+  (TFP-1, JRS Scientific Instruments).”'
+method_summary: '“To investigate electrical control of magnon transport in LAFO, we performed nonlocal
+  transport measurements in three-terminal devices comprised of a source, a drain and an electrical gate
+  in between (Fig. 2(a)).”
+
+  “Brillouin light scattering (BLS) microscopy, which probes the magnon population both beneath the gate
+  and in the channel next to it”
+
+  “To determine whether nonlinear damping can account for the observed turnover, we performed micromagnetic
+  simulations of both the propagating magnon amplitude and the nonlocal signal.”'
+limitations: “Our results show that SOT compensation of magnon damping is ultimately limited by nonlinear
+  damping attributed to auto-oscillations”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 10247
+    output: 1463
+  claims_accepted: 3
+  claims_rejected: 1
+  rejected:
+  - statement: In three-terminal nonlocal transport measurements on LAFO, the drain voltage modulation
+      reaches a maximum of 51% at a gate current of approximately 0.7 mA.
+    reason: '[qualifier_dropped] the statement says the value is approximate but quantity.approximate
+      is false. Record the qualifier the source used - UnitEngine.record(..., bound=..., approximate=...).'
+    quotes:
+    - The modulation reaches a maximum of 51% at a gate current of≈0.7 mA, corresponding to a current
+      density of≈5.8×10 11 A/m2 in the Pt gate.
+    - at a gate current of≈0.7 mA
+    - corresponding to a current density of≈5.8×10 11 A/m2 in the Pt gate.
+    - in the Pt gate.
+corrections: []

@@ -1,0 +1,88 @@
+id: SRC-00180
+title: 'Linear response for machine-learned interatomic potentials: phonons at arbitrary wave vectors
+  from the primitive cell'
+doi: null
+arxiv_id: 2610.23545v1
+url: https://arxiv.org/abs/2610.23545v1
+venue_id: arxiv_api
+authors:
+- name: Thalis H. B. da Silva
+  affiliation: null
+  corresponding: null
+- name: Hai-Chen Wang
+  affiliation: null
+  corresponding: null
+- name: Miguel A. L. Marques
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-16'
+retrieved_date: '2026-10-20'
+access: full_text
+read_scope: Automated reading. The full PDF text (46,579 characters, 10 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.23545v1 on
+  2026-10-20. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“At 300 K the supercells with 54 atoms or more are within 0.01 of the linear response, which
+  gives 0.693.”
+
+  “We calculated γ(T) of silicon on a 60 × 60 × 60 mesh of wave vectors”
+
+  “Figure 4. Thermodynamic Grüneisen parameter of silicon as a function of temperature, calculated with
+  NequIP-OAM-M from the linear response (black) and from the exact Hessians of supercells with 16 to 250
+  atoms (dashed).”'
+method_summary: “Here we show that the dynamical matrix of a message-passing potential can be obtained
+  exactly in the primitive cell, at any wave vector, as the linear response of the forces to a displacement
+  modulated by a Bloch phase, in the spirit of density-functional perturbation theory.”
+limitations: “If, on the other hand, the dynamical matrix is calculated directly at many wave vectors,
+  the cost is proportional to their number, and a dense mesh is expensive.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 15071
+    output: 2483
+  claims_accepted: 1
+  claims_rejected: 4
+  rejected:
+  - statement: The maximum deviation between the frequencies of the supercell approach and the linear
+      response for silicon is 0.34 THz when calculated using NequIP-OAM-M.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Si 54 0.34
+      0.34 0.21'''
+    quotes:
+    - Table I. Maximum deviation ∆ω between the frequencies of the supercell and of the linear response
+      along the paths of fig. 1, for NequIP-OAM-M.
+    - Si 54 0.34 0.34 0.21
+  - statement: For kaolinite, the maximum frequency deviation between the supercell and linear response
+      approaches is 3.4 THz with NequIP-OAM-M.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Kaolinite
+      136 3.4 125 22'''
+    quotes:
+    - Table I. Maximum deviation ∆ω between the frequencies of the supercell and of the linear response
+      along the paths of fig. 1, for NequIP-OAM-M.
+    - Kaolinite 136 3.4 125 22
+  - statement: The calculation time to obtain force constants using linear response on the grid of wave
+      vectors commensurate with the 136-atom kaolinite supercell is 125 s.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Kaolinite
+      136 3.4 125 22'''
+    quotes:
+    - Table I. Maximum deviation ∆ω between the frequencies of the supercell and of the linear response
+      along the paths of fig. 1, for NequIP-OAM-M. The last two columns show the time required to obtain
+      the same force constants with the linear re
+    - Kaolinite 136 3.4 125 22
+    - Table I. Maximum deviation ∆ω between the frequencies of the supercell and of the linear response
+      along the paths of fig. 1, for NequIP-OAM-M.
+    - The last two columns show the time required to obtain the same force constants with the linear response
+      on the grid of wave vectors commensurate with the supercell (tLR) and with finite displacements
+      in the supercell (tFD), both using the s
+  - statement: Linear response calculation for silicon on a 60x60x60 mesh takes 23 minutes.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - We calculated γ(T) of silicon on a 60 × 60 × 60 mesh of wave vectors, with 5216 points in the irreducible
+      wedge of the Brillouin zone, which took 23 minutes with the linear response.
+corrections: []

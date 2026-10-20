@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.23413v1
 doi: null
-title: Stability and Nonlinear Dynamics of Field-Driven Extended Domain Walls with
-  Interfacial Dzyaloshinskii-Moriya Interaction
+title: Stability and Nonlinear Dynamics of Field-Driven Extended Domain Walls with Interfacial Dzyaloshinskii-Moriya
+  Interaction
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-16'
@@ -24,6 +24,39 @@ id: CAND-20261019-0046
 harvested_date: '2026-10-19'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-20'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: 'In micromagnetic simulations of the Pt/Co/GdOx multilayer, the domain wall interface remains
+      in the non-precessional regime in the field range B_z = 0 to 28.25 '
+    reason: 'unit conversion refused: voltage: cannot convert 28.25 mT to V - Cannot convert from ''millitesla''
+      ([mass] / [time] ** 2 / [current]) to ''volt'' ([mass] * [length] ** 2 / [time] ** 3 / [c'
+    quotes:
+    - In the field range𝐵 𝑧 =0–28.25 mT, for the chosen micromagnetic parameters, the interface moves
+      rigidly in the non-precessionalregime (also calledstationary regime)
+    - In Figs. 2(a) and 2(b) we show how typical transport and geometrical properties of a driven extended
+      DW evolve as a function of𝐵𝑧.
+    - To be concrete we consider a Pt/Co/GdO x multilayer
+    - 𝛼=0.15
+  - statement: In micromagnetic simulations of the Pt/Co/GdOx multilayer, rough domain wall configurations
+      emerge up to a critical field B_c = 508.5 mT.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''roughconfigurations
+      emerge from𝐵 𝑊 up to a critical field𝐵 𝑐 =508.5 mT'''
+    quotes:
+    - roughconfigurations emerge from𝐵 𝑊 up to a critical field𝐵 𝑐 =508.5 mT.
+    - In Figs. 2(a) and 2(b) we show how typical transport and geometrical properties of a driven extended
+      DW evolve as a function of𝐵𝑧.
+    - To be concrete we consider a Pt/Co/GdO x multilayer
+    - 𝛼=0.15
+  tokens:
+    input: 21354
+    output: 1431
+  fetched_chars: 54040

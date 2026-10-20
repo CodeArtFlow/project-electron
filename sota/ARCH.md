@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-19.
+Topic code `ARCH`. Last reviewed 2026-10-20.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -11,6 +11,22 @@ Topic code `ARCH`. Last reviewed 2026-10-19.
 - **0.81 mm^2** — STELLA's core area is 0.81 mm2 fabricated in TSMC 16nm FinFET technology.
   - `CLM-ARCH-0050` · process TSMC 16nm FinFET technology, component core area · grade B · credibility unknown · measured · as of 2026-09-30
   - sources: SRC-00075
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **0.0003 mm^2** — The synthesized area of the Address Translation Module in the RCD chip is 3x10-4 mm2.
+  - `CLM-ARCH-0110` · component Address Translation Module, location RCD, process TSMC 90nm, frequency 2.4GHz · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00178
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- **0.151 mm^2** — The synthesized area of the Rank Chunk List in the RCD chip is 0.151 mm2.
+  - `CLM-ARCH-0111` · component Rank Chunk List, location RCD, process TSMC 90nm, frequency 2.4GHz · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00178
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- **0.032 mm^2** — The synthesized area of the PIM Chunk List in the DRAM chip is 0.032 mm2.
+  - `CLM-ARCH-0112` · component PIM Chunk List, location DRAM chip · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00178
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **0.134 mm^2** — The synthesized area of the Row Migration Table in the DRAM chip is 0.134 mm2.
+  - `CLM-ARCH-0113` · component Row Migration Table, location DRAM chip · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00178
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### energy
@@ -94,6 +110,10 @@ Topic code `ARCH`. Last reviewed 2026-10-19.
   - `CLM-ARCH-0071` · process_node TSMC 28 nm · grade B · credibility unknown · simulated · as of 2026-10-07
   - sources: SRC-00096
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.00355 W** — The power consumption of the PIM Chunk List in the DRAM chip is 3.55 mW.
+  - `CLM-ARCH-0114` · component PIM Chunk List, location DRAM chip · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00178
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### qualitative
 
@@ -432,6 +452,10 @@ Topic code `ARCH`. Last reviewed 2026-10-19.
   - sources: SRC-00175
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0083 — see the open register
+- **261 percent** — The best agent-discovered design achieves a per-workload speedup of 2.61x for the coupled AI+HPC workload relative to the reference system.
+  - `CLM-ARCH-0115` · workload coupled AI+HPC workload · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00182
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -510,6 +534,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 109
-- grades: {'B': 109}
-- distinct sources: 38
+- claims: 115
+- grades: {'B': 115}
+- distinct sources: 40

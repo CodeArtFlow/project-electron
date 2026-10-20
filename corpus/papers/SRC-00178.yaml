@@ -1,0 +1,138 @@
+id: SRC-00178
+title: 'GUMPIM: Unitary and Malleable Memory for Processing-in-Memory with Guaranteed PIM Pages'
+doi: null
+arxiv_id: 2610.23406v1
+url: https://arxiv.org/abs/2610.23406v1
+venue_id: arxiv_api
+authors:
+- name: Yilong Zhao
+  affiliation: null
+  corresponding: null
+- name: Fangxin Liu
+  affiliation: null
+  corresponding: null
+- name: Yiwei Hu
+  affiliation: null
+  corresponding: null
+- name: Zongwu Wang
+  affiliation: null
+  corresponding: null
+- name: Mingyu Gao
+  affiliation: null
+  corresponding: null
+- name: Onur Mutlu
+  affiliation: null
+  corresponding: null
+- name: He Xian
+  affiliation: null
+  corresponding: null
+- name: Hanlin Dong
+  affiliation: null
+  corresponding: null
+- name: Naifeng Jing
+  affiliation: null
+  corresponding: null
+- name: Xiaoyao Liang
+  affiliation: null
+  corresponding: null
+- name: Haibing Guan
+  affiliation: null
+  corresponding: null
+- name: Qiang Xu
+  affiliation: null
+  corresponding: null
+- name: Chixiao Chen
+  affiliation: null
+  corresponding: null
+- name: Shuxue Quan
+  affiliation: null
+  corresponding: null
+- name: Tao Yang
+  affiliation: null
+  corresponding: null
+- name: Li Jiang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-16'
+retrieved_date: '2026-10-20'
+access: full_text
+read_scope: Automated reading. The full PDF text (98,786 characters, 26 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.23406v1 on
+  2026-10-20. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Address Translation Module 3×10-4 (~0%)”
+
+  “RCD Address Translation Module 3×10-4 (~0%)”
+
+  “synthesized through Synopsys Design Compiler with the TSMC 90nm technology library at a frequency of
+  2.4GHz”
+
+  “The logic circuits used in the Rank Chunk List, Address Translation Module, and Re-layout Cache are
+  synthesized through Synopsys Design Compiler with the TSMC 90nm technology library at a frequency of
+  2.4GHz, and the buffer array used in the Re-layout Cache is simulated with CACTI 7.0 [3].”
+
+  “Rank Chunk List 0.151 (0.100%)”
+
+  “PIM Chunk List 0.032 (0.025%) 3.55 (1.60%)”
+
+  “DRAM chip Row Migration Table 0.134 (0.102%) 3.61 (1.63%)”
+
+  “Row Migration Table 0.134 (0.102%) 3.61 (1.63%)”'
+method_summary: '“The performance of GUMPIM and baselines is evaluated with the GEM5 simulator [60] under
+  the X86 ISA and by integrating Ramulator2 [15, 61] (based on Ramulator [52]) for DRAM modeling.”
+
+  “PIM unit performance is measured with real-world UPMEM DPUs [17], and the PIM task latency is inserted
+  into the PIM-task launch point of the CPU host program to obtain the overall computing time.”
+
+  “The logic circuits used in the Rank Chunk List, Address Translation Module, and Re-layout Cache are
+  synthesized through Synopsys Design Compiler with the TSMC 90nm technology library at a frequency of
+  2.4GHz, and the buffer array used in the Re-layout Cache is simulated with CACTI 7.0 [3].”'
+limitations: '“Although the GUMPIM interface is in the critical path between the memory controller and
+  the DRAM interface, it preserves native DRAM device timings.”
+
+  “Note that for each bank, the minimum page migration granularity of GUMPIM is an entire DRAM row.”
+
+  “To avoid the complexity of multi-level redirection or migration chains, the system enforces serialized
+  chunk allocation by allowing a new allocation only after the Row Migration Table is fully cleared.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 31583
+    output: 3302
+  claims_accepted: 5
+  claims_rejected: 3
+  rejected:
+  - statement: The simulated area of the Re-layout Cache in the DIMM Buffer is 0.208 mm2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Re-layout
+      Cache 0.208 33.10'''
+    quotes:
+    - Re-layout Cache 0.208 33.10
+    - The logic circuits used in the Rank Chunk List, Address Translation Module, and Re-layout Cache
+      are synthesized through Synopsys Design Compiler with the TSMC 90nm technology library at a frequency
+      of 2.4GHz, and the buffer array used in th
+    - DIMM Buffer Re-layout Cache 0.208 33.10
+  - statement: The power consumption of the Re-layout Cache in the DIMM Buffer is 33.10 mW.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Re-layout
+      Cache 0.208 33.10'''
+    quotes:
+    - Re-layout Cache 0.208 33.10
+    - The logic circuits used in the Rank Chunk List, Address Translation Module, and Re-layout Cache
+      are synthesized through Synopsys Design Compiler with the TSMC 90nm technology library at a frequency
+      of 2.4GHz, and the buffer array used in th
+    - DIMM Buffer Re-layout Cache 0.208 33.10
+  - statement: The power consumption of the Address Translation Module in the RCD chip is 0.08 mW.
+    reason: the quote says the number is approximate but approximate is false
+    quotes:
+    - Address Translation Module 3×10-4 (~0%) 0.08 (~0%)
+    - The logic circuits used in the Rank Chunk List, Address Translation Module, and Re-layout Cache
+      are synthesized through Synopsys Design Compiler with the TSMC 90nm technology library at a frequency
+      of 2.4GHz, and the buffer array used in th
+    - RCD Address Translation Module 3×10-4 (~0%)
+corrections: []

@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-19.
+Topic code `MAT`. Last reviewed 2026-10-20.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -523,6 +523,54 @@ Topic code `MAT`. Last reviewed 2026-10-19.
   - `CLM-MAT-0149` · transition f-g · grade B · credibility unknown · measured · as of 2026-10-16
   - sources: SRC-00171
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The as-grown diamond exhibits an optical bandgap of approximately 5.26 eV.
+  - `CLM-MAT-0154` · sample_state as-grown diamond · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00179
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The final single-crystal diamond membrane exhibits an optical bandgap of approximately 5.18 eV after bottom graphitic layer removal.
+  - `CLM-MAT-0155` · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00179
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The as-grown epitaxial diamond sample exhibits a first-order diamond Raman peak FWHM of 9 cm⁻¹.
+  - `CLM-MAT-0156` · sample_state as-grown diamond · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00179
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- After delamination and backside plasma cleaning, the freestanding single-crystal diamond membrane exhibits a first-order diamond Raman peak FWHM of 13 cm⁻¹.
+  - `CLM-MAT-0157` · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00179
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Hydrogen implantation produces a high-density damage region width of 32 nm in Monte Carlo simulations.
+  - `CLM-MAT-0158` · ion_species H · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00179
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Monte Carlo vacancy simulations show an overall damaged-layer thickness of 311 nm for hydrogen implantation in diamond.
+  - `CLM-MAT-0159` · ion_species H · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00179
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The thermodynamic Grüneisen parameter of silicon at 300 K computed via linear response with NequIP-OAM-M is 0.693.
+  - `CLM-MAT-0160` · material silicon, temperature 300 K, method linear response, model NequIP-OAM-M · grade B · credibility unknown · simulated · as of 2026-10-16
+  - sources: SRC-00180
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- The effective magnetization Meff derived from Kittel equation fit is 1.02 T for the Py/ α-Fe2O3(40 nm)/Pt heterostructure.
+  - `CLM-MAT-0161` · sample Py/ α-Fe2O3(40 nm)/Pt heterostructure · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00184
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The Lande g factor for the Py/ α-Fe2O3(40 nm)/Pt heterostructure is 2.03.
+  - `CLM-MAT-0162` · sample Py/ α-Fe2O3(40 nm)/Pt heterostructure · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00184
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The Gilbert damping constant alpha is 6.21 x 10-3 for the Py/Pt reference.
+  - `CLM-MAT-0163` · sample Py/Pt reference · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00184
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The Gilbert damping constant alpha is 6.59 x 10-3 for the 30 nm Fe2O3 film heterostructure.
+  - `CLM-MAT-0164` · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00184
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The Gilbert damping constant alpha is 6.58 x 10-3 for the 40 nm Fe2O3 film heterostructure.
+  - `CLM-MAT-0165` · fe2o3_thickness 40 nm · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00184
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -789,6 +837,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 153
-- grades: {'B': 153}
-- distinct sources: 58
+- claims: 165
+- grades: {'B': 165}
+- distinct sources: 61

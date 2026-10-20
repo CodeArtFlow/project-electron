@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-10-19.
+Topic code `DEV`. Last reviewed 2026-10-20.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -42,6 +42,10 @@ Topic code `DEV`. Last reviewed 2026-10-19.
   - `CLM-DEV-0013` · magnetic_field 7.5 T, frequency 2.2 THz · grade B · credibility unknown · measured · as of 2026-09-23
   - sources: SRC-00033
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈7 GHz** — BLS measurements on top of the Pt bar under DC gate currents detect a dominant mode near 7 GHz.
+  - `CLM-DEV-0072` · measurement_method BLS spectra · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00183
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### length device
 
@@ -64,6 +68,10 @@ Topic code `DEV`. Last reviewed 2026-10-19.
   - `CLM-DEV-0030` · mode DC-AC conversion, vin 24-V DC input · grade B · credibility unknown · measured · as of 2026-10-02
   - sources: SRC-00077
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **0.002 W** — In BLS measurements, the laser power was 2 mW.
+  - `CLM-DEV-0073` · wavelength 488 nm · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00183
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### pressure
 
@@ -313,12 +321,19 @@ Topic code `DEV`. Last reviewed 2026-10-19.
   - sources: SRC-00155
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
+### wavelength
+
+- **0.488 um** — The laser wavelength used in the BLS measurements was 488 nm.
+  - `CLM-DEV-0074` · power 2 mW · grade B · credibility unknown · measured · as of 2026-10-16
+  - sources: SRC-00183
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+
 ## Live contradictions in this layer
 
 _None._
 
 ## Evidence base
 
-- claims: 68
-- grades: {'B': 68}
-- distinct sources: 28
+- claims: 71
+- grades: {'B': 71}
+- distinct sources: 29
