@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-20.
+Topic code `ARCH`. Last reviewed 2026-10-21.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -309,6 +309,62 @@ Topic code `ARCH`. Last reviewed 2026-10-20.
   - `CLM-ARCH-0109` · benchmark ResNet18, optimization_objective minimum latency, clustering single clustering optimization · grade B · credibility unknown · simulated · as of 2026-10-16
   - sources: SRC-00177
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- Interflow achieves a 1.26x speedup for ResNet-50 inference compared with baseline frameworks.
+  - `CLM-ARCH-0116` · platform Zynq UltraScale+ ZCU102, workload ResNet-50, baseline baseline frameworks · grade B · credibility unknown · measured · as of 2026-10-20
+  - sources: SRC-00186
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- Interflow achieves a 1.21x speedup for BERT-base inference compared with baseline frameworks.
+  - `CLM-ARCH-0117` · platform Zynq UltraScale+ ZCU102, workload BERT-base, baseline baseline frameworks · grade B · credibility unknown · measured · as of 2026-10-20
+  - sources: SRC-00186
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- Interflow reduces memory footprint by up to 37% compared with baseline frameworks.
+  - `CLM-ARCH-0118` · platform Zynq UltraScale+ ZCU102, baseline baseline frameworks · grade B · credibility unknown · measured · as of 2026-10-20
+  - sources: SRC-00186
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Interflow achieves a speedup of 2.24x for secure comparison microbenchmarks over LAN.
+  - `CLM-ARCH-0119` · network LAN, elements 200,704, primitive SecComp · grade B · credibility unknown · measured · as of 2026-10-20
+  - sources: SRC-00186
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- Interflow achieves a speedup of 1.39x for secure multiplication microbenchmarks at l=32.
+  - `CLM-ARCH-0120` · bit_width 32 · grade B · credibility unknown · measured · as of 2026-10-20
+  - sources: SRC-00186
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Interflow achieves a speedup of 1.45x for secure multiplication microbenchmarks at l=64.
+  - `CLM-ARCH-0121` · bit_width 64 · grade B · credibility unknown · measured · as of 2026-10-20
+  - sources: SRC-00186
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Interflow achieves an end-to-end speedup of 1.42x for SqueezeNet over LAN compared to the software baseline.
+  - `CLM-ARCH-0122` · network LAN, workload SqueezeNet, baseline software baseline · grade B · credibility unknown · measured · as of 2026-10-20
+  - sources: SRC-00186
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- Interflow achieves an end-to-end speedup of 1.95x for SqueezeNet over LAN compared to the protocol-matched FPGA baseline.
+  - `CLM-ARCH-0123` · network LAN, workload SqueezeNet, baseline protocol-matched FPGA baseline · grade B · credibility unknown · measured · as of 2026-10-20
+  - sources: SRC-00186
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- ZKPU achieves up to 144x speedup for NTT over state-of-the-art accelerators.
+  - `CLM-ARCH-0124` · operation NTT, device ZKPU · grade B · credibility unknown · simulated · as of 2026-10-20
+  - sources: SRC-00188
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- ZKPU achieves a 13.6x speedup for MSM over state-of-the-art accelerators.
+  - `CLM-ARCH-0125` · operation MSM, device ZKPU · grade B · credibility unknown · simulated · as of 2026-10-20
+  - sources: SRC-00188
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- ZKPU achieves an average speedup of 36.0x over PipeZK for 256-bit NTTs.
+  - `CLM-ARCH-0126` · operand_width 256-bit, operation NTT, baseline PipeZK · grade B · credibility unknown · simulated · as of 2026-10-20
+  - sources: SRC-00188
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- ZKPU achieves an average speedup of 2.0x over LegoZK for 256-bit NTTs.
+  - `CLM-ARCH-0127` · operand_width 256-bit, operation NTT, baseline LegoZK · grade B · credibility unknown · simulated · as of 2026-10-20
+  - sources: SRC-00188
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- ZKPU achieves an average speedup of approximately 9.5x over UniZK across both Plonky2 applications.
+  - `CLM-ARCH-0128` · framework Plonky2, baseline UniZK · grade B · credibility unknown · simulated · as of 2026-10-20
+  - sources: SRC-00188
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- ZKPU maintains over 90% PE utilization across all supported operand sizes.
+  - `CLM-ARCH-0129` · device ZKPU · grade B · credibility unknown · simulated · as of 2026-10-20
+  - sources: SRC-00188
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -534,6 +590,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 115
-- grades: {'B': 115}
-- distinct sources: 40
+- claims: 129
+- grades: {'B': 129}
+- distinct sources: 42

@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.27508v1
 doi: null
-title: 'KatoANN: Enabling Near-Exact Vector Search at the Speed of Lossy Scans with
-  CPU Matrix Engines'
+title: 'KatoANN: Enabling Near-Exact Vector Search at the Speed of Lossy Scans with CPU Matrix Engines'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-20'
@@ -23,6 +22,89 @@ id: CAND-20261021-0105
 harvested_date: '2026-10-21'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-21'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: On 3,072-dimensional embeddings at recall@10 >= 0.99, KatoANN achieves 15,635 QPS, outperforming
+      CABANA and ScaNN by 3.14x and 8.45x, respectively.
+    reason: the statement contains the number 3.14, which none of its quotes contain
+    quotes:
+    - For example, on 3,072-dimensional embeddings, KatoANN achieves 15,635 QPS at recall@10 ≥ 0.99, outperforming
+      CABANA and ScaNN by 3 .14× and 8.45×, respectively.
+    - All experiments run on a 2-socket Intel Xeon Silver 4514Y server (Emerald Rapids, 32 physical cores
+      / 64 logical cores) with 256 GB DDR5 and NVMe storage.
+    - 3,072-dimensional embeddings
+    - recall@10 ≥ 0.99
+  - statement: On OpenAI-3072-1M at recall@10 >= 0.99, KatoANN's dimension cascade achieves 15,635 QPS,
+      which is 3.14x CABANA's throughput and 8.45x ScaNN's throughput.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - On OpenAI-3072-1M at recall@10 ≥ 0.99, the dimension cascade serves 15,635 QPS, 3.14× CABANA and
+      8.45× ScaNN.
+    - All experiments run on a 2-socket Intel Xeon Silver 4514Y server (Emerald Rapids, 32 physical cores
+      / 64 logical cores) with 256 GB DDR5 and NVMe storage.
+    - On OpenAI-3072-1M
+    - recall@10 ≥ 0.99
+  - statement: On BioASQ-1024-10M, KatoANN serves 6,831 QPS at recall 0.9912 while consuming 20.8 GB of
+      memory.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Figure 9
+      plots serving memory against throughput on BioASQ-1024-10M. K'''
+    quotes:
+    - Figure 9 plots serving memory against throughput on BioASQ-1024-10M. KatoANN serves 6 ,831 QPS at
+      recall 0.9912 in 20.8 GB, smaller and 3.7× faster than the reduced-dimension LeanVec graph (1 ,856
+      QPS, 26.6 GB).
+    - All experiments run on a 2-socket Intel Xeon Silver 4514Y server (Emerald Rapids, 32 physical cores
+      / 64 logical cores) with 256 GB DDR5 and NVMe storage.
+    - BioASQ-1024-10M
+    - recall 0.9912
+  - statement: With survivor factor S=2, the largest recall gap between the cascade and the full byte-split
+      scan across k in {10, 100} and nprobe in {64, 256, 512} is 0.01 rec
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''With the
+      calibrated S=2, the cascade reproduces the full scan’s recall'''
+    quotes:
+    - With the calibrated S=2, the cascade reproduces the full scan’s recall on every set, with a maximum
+      gap of 0.01 recall points.
+    - All experiments run on a 2-socket Intel Xeon Silver 4514Y server (Emerald Rapids, 32 physical cores
+      / 64 logical cores) with 256 GB DDR5 and NVMe storage.
+    - calibrated S=2
+    - k ∈ { 10, 100}
+  - statement: Without an over-fetch margin (S=1), the cascade loses up to 5.0 recall points.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Removing
+      the over-fetch margin (S=1) loses up to 5.0 points.'''
+    quotes:
+    - Removing the over-fetch margin (S=1) loses up to 5.0 points.
+    - All experiments run on a 2-socket Intel Xeon Silver 4514Y server (Emerald Rapids, 32 physical cores
+      / 64 logical cores) with 256 GB DDR5 and NVMe storage.
+    - (S=1)
+  - statement: On OpenAI-3072-1M, KatoANN's throughput scales roughly 13x over 32 threads, from 1,186
+      QPS to 15,400 QPS.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''On OpenAI-3072-1M,
+      KatoANN scales about 13 × over 32 threads, from 1,1'''
+    quotes:
+    - On OpenAI-3072-1M, KatoANN scales about 13 × over 32 threads, from 1,186 to 15,400 QPS, enabled
+      by lock-free per-thread heaps and scan-stage locality.
+    - All experiments run on a 2-socket Intel Xeon Silver 4514Y server (Emerald Rapids, 32 physical cores
+      / 64 logical cores) with 256 GB DDR5 and NVMe storage.
+    - On OpenAI-3072-1M
+    - 32 threads
+  - statement: On BioASQ-1024-10M at recall 0.99, KatoANN's throughput scales 17x over 32 threads, from
+      370 QPS to 6,288 QPS.
+    reason: the statement contains the number 1024, which none of its quotes contain
+    quotes:
+    - For example, KatoANN scales 17×, from 370 to 6,288 QPS at recall 0.99.
+    - All experiments run on a 2-socket Intel Xeon Silver 4514Y server (Emerald Rapids, 32 physical cores
+      / 64 logical cores) with 256 GB DDR5 and NVMe storage.
+    - BioASQ-1024-10M
+    - recall 0.99
+  tokens:
+    input: 24372
+    output: 2595
+  fetched_chars: 70213

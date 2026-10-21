@@ -1,0 +1,101 @@
+id: SRC-00188
+title: 'ZKPU: Zero-Knowledge Processing Unit for Heterogeneous Workloads'
+doi: null
+arxiv_id: 2610.27530v1
+url: https://arxiv.org/abs/2610.27530v1
+venue_id: arxiv_api
+authors:
+- name: Jonathan Ku
+  affiliation: null
+  corresponding: null
+- name: Changchun Zhou
+  affiliation: null
+  corresponding: null
+- name: Jiawen Wu
+  affiliation: null
+  corresponding: null
+- name: Sangouk Jeon
+  affiliation: null
+  corresponding: null
+- name: Cong Guo
+  affiliation: null
+  corresponding: null
+- name: Yuzhe Fu
+  affiliation: null
+  corresponding: null
+- name: Bowen Duan
+  affiliation: null
+  corresponding: null
+- name: Dongsuk Jeon
+  affiliation: null
+  corresponding: null
+- name: JV Rajendran
+  affiliation: null
+  corresponding: null
+- name: Yiran Chen
+  affiliation: null
+  corresponding: null
+- name: Hai Li
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-20'
+retrieved_date: '2026-10-21'
+access: full_text
+read_scope: Automated reading. The full PDF text (63,462 characters, 20 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.27530v1 on
+  2026-10-21. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Evaluation using Groth16 and Plonky2 shows that ZKPU achieves up to 144× speedup for NTT,
+  13.6× for MSM, and approximately 7.2× end-to-end application speedup over state-of-the-art accelerators”
+
+  “To evaluate ZKPU, we develop a cycle-accurate simulator that models the core computational kernels
+  of both curve-based and hash-based ZKP protocols.”
+
+  “For 256-bit NTTs, ZKPU provides an average speedup of 36.0× over PipeZK and 2.0× over LegoZK.”
+
+  “ZKPU consistently outperforms UniZK, achieving an average speedup of approximately 9.5× across both
+  applications.”
+
+  “Plonky2 evaluation. Figure 11 compares the end-to-end proving latency of ZKPU with UniZK using benchmarks
+  provided by the Plonky2 framework.”
+
+  “In contrast, ZKPU composes 64-bit processing elements into modular multipliers of arbitrary widths,
+  maintaining over 90% utilization across all supported operand sizes.”'
+method_summary: '“To evaluate ZKPU, we develop a cycle-accurate simulator that models the core computational
+  kernels of both curve-based and hash-based ZKP protocols.”
+
+  “The key hardware components of ZKPU are implemented in Verilog and synthesized using Synopsys Design
+  Compiler with the TSMC 16nm technology PDK at 300MHz to obtain area and power estimates.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 20318
+    output: 2723
+  claims_accepted: 6
+  claims_rejected: 2
+  rejected:
+  - statement: ZKPU achieves a power consumption of 11.95 W in a 16nm technology node.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''ZKPU 16nm
+      24.93 11.95'''
+    quotes:
+    - 'Table 3: Area and power breakdown of previous works.'
+    - ZKPU 16nm 24.93 11.95
+    - The key hardware components of ZKPU are implemented in Verilog and synthesized using Synopsys Design
+      Compiler with the TSMC 16nm technology PDK at 300MHz to obtain area and power estimates.
+  - statement: ZKPU achieves an area of 24.93 mm2 in a 16nm technology node.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''ZKPU 16nm
+      24.93 11.95'''
+    quotes:
+    - 'Table 3: Area and power breakdown of previous works.'
+    - ZKPU 16nm 24.93 11.95
+    - The key hardware components of ZKPU are implemented in Verilog and synthesized using Synopsys Design
+      Compiler with the TSMC 16nm technology PDK at 300MHz to obtain area and power estimates.
+corrections: []

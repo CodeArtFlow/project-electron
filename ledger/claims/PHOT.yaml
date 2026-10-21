@@ -2463,3 +2463,73 @@ claims:
     conditions:
       process: Difference-frequency generation (DFG)
       input_signal_wavelength: 637 nm
+- id: CLM-PHOT-0083
+  topic: PHOT
+  statement: For the middle layer of the trilayer structure, the diagonal term of the permittivity tensor
+    εM is set to 4.75 at a wavelength of 1.55 µm.
+  sources:
+  - SRC-00191
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-20'
+  created: '2026-10-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    permittivity_diagonal_term: '4.75'
+    material: Bi-substituted yttrium iron garnet (Bi:YIG)
+  quantity:
+    quantity: wavelength
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.55
+      unit: µm
+    si_base:
+      value: 1.55e-06
+      unit: m
+    display:
+      value: 1.55
+      unit: um
+    conditions:
+      permittivity_diagonal_term: '4.75'
+      material: Bi-substituted yttrium iron garnet (Bi:YIG)
+- id: CLM-PHOT-0084
+  topic: PHOT
+  statement: The thickness d of each layer in the PT-symmetric trilayer structure is 3 µm unless otherwise
+    stated.
+  sources:
+  - SRC-00191
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-20'
+  created: '2026-10-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    structure: PT-symmetric trilayer
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 3.0
+      unit: µm
+    si_base:
+      value: 3.0e-06
+      unit: m
+    display:
+      value: 2999.9999999999995
+      unit: nm
+    conditions:
+      structure: PT-symmetric trilayer

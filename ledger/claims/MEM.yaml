@@ -942,3 +942,36 @@ claims:
       workload: six full-trace streams
       hardware_configuration: six 3D DRAM organizations
       method: TileDRAM
+- id: CLM-MEM-0032
+  topic: MEM
+  statement: CwSG reaches 84.9% accuracy on SVHN in simulations using measured filamentary memristor trajectories.
+  sources:
+  - SRC-00192
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-20'
+  created: '2026-10-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    memory_technology: filamentary memristor
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 84.9
+      unit: '%'
+    si_base:
+      value: 0.8490000000000001
+      unit: dimensionless
+    display:
+      value: 84.9
+      unit: percent
+    conditions:
+      memory_technology: filamentary memristor

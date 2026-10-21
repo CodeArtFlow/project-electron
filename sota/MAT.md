@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-20.
+Topic code `MAT`. Last reviewed 2026-10-21.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -254,6 +254,14 @@ Topic code `MAT`. Last reviewed 2026-10-20.
   - `CLM-MAT-0151` · laser_fluence 5 mJ/cm2, location center of the laser track, direction Y-direction · grade B · credibility unknown · measured · as of 2026-10-16
   - sources: SRC-00174
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **≈1.2 nm** — The ultraviolet phase singularity pair in MoS₂ films annihilates at a critical thickness of approximately 1.2 nm.
+  - `CLM-MAT-0168` · material MoS₂, substrate sapphire · grade B · credibility unknown · measured · as of 2026-10-20
+  - sources: SRC-00187
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈40.7 nm** — The thickness of the BSTS flake is about 40.7 nm.
+  - `CLM-MAT-0169` · material BSTS · grade B · credibility unknown · measured · as of 2026-10-20
+  - sources: SRC-00190
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -733,6 +741,16 @@ Topic code `MAT`. Last reviewed 2026-10-20.
   - `CLM-MAT-0152` · repetition_rate 1 kHz, pulse_duration 100 fs · grade B · credibility unknown · measured · as of 2026-10-16
   - sources: SRC-00174
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **0.679 um** — Photoluminescence spectroscopy of the MoS₂ film reveals a direct excitonic transition energy of 1.826 eV under 532 nm laser excitation.
+  - `CLM-MAT-0166` · material MoS₂, excitation_wavelength 532 nm · grade B · credibility unknown · measured · as of 2026-10-20
+  - sources: SRC-00187
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0084, CFL-0085 — see the open register
+- **0.318 um** — Spectroscopic ellipsometry measured a zero-reflection wavelength at 318 nm at a fixed incidence angle of 63.9° for a 1.05 nm MoS₂ film on sapphire.
+  - `CLM-MAT-0167` · material MoS₂, substrate sapphire, thickness 1.05 nm, angle 63.9° · grade B · credibility unknown · measured · as of 2026-10-20
+  - sources: SRC-00187
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0084 — see the open register
 
 ## Live contradictions in this layer
 
@@ -834,9 +852,15 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0080` — length_device: _unexamined; classification pending_
   - claims: CLM-MAT-0140, CLM-MAT-0141
   - missing data: `not yet named`
+- `CFL-0084` — wavelength: _unexamined; classification pending_
+  - claims: CLM-MAT-0166, CLM-MAT-0167
+  - missing data: `not yet named`
+- `CFL-0085` — wavelength: _unexamined; classification pending_
+  - claims: CLM-MAT-0166, CLM-PHOT-0033
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 165
-- grades: {'B': 165}
-- distinct sources: 61
+- claims: 169
+- grades: {'B': 169}
+- distinct sources: 63

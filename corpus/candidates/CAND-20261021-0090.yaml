@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.27798v1
 doi: null
-title: Accelerating real-time hybrid-functional calculations with learned ACE and
-  symmetry-based FFT reuse
+title: Accelerating real-time hybrid-functional calculations with learned ACE and symmetry-based FFT reuse
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-20'
@@ -22,6 +21,66 @@ id: CAND-20261021-0090
 harvested_date: '2026-10-21'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-21'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For silicon with a 4^3 k-mesh on Fugaku, symmetry-based FFT reuse without temporal prediction
+      achieves a 14.54-fold step-time speedup relative to conventional A
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - Learned ACE On 2.539 14.54 0.582 63.39
+    - We conduct the benchmarks on Fugaku.
+    - conventional Si cell
+    - Nk = 43
+  - statement: For silicon with a 4^3 k-mesh on Fugaku, learned ACE without SBFR achieves a 5.29-fold
+      step-time speedup relative to conventional ACE after learning.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - Learned ACE Off 36.680 1.01 6.978 5.29
+    - We conduct the benchmarks on Fugaku.
+    - conventional Si cell
+    - Nk = 43
+  - statement: For silicon with a 4^3 k-mesh on Fugaku, combining learned ACE and SBFR achieves a 63.39-fold
+      step-time speedup relative to conventional ACE after learning.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - Learned ACE On 2.539 14.54 0.582 63.39
+    - We conduct the benchmarks on Fugaku.
+    - conventional Si cell
+    - Nk = 43
+  - statement: For silicon with a 4^3 k-mesh on Fugaku, combining learned ACE and SBFR achieves a post-learning
+      mean step time of 0.582 s per step.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - Learned ACE On 2.539 14.54 0.582 63.39
+    - We conduct the benchmarks on Fugaku.
+    - conventional Si cell
+    - Nk = 43
+  - statement: For silicon with a 16^3 k-mesh on 144 Fugaku nodes, post-learning mean step time is 0.448
+      s per step.
+    reason: the statement contains the number 16, which none of its quotes contain
+    quotes:
+    - 163 144 576 1.728 0.448 0.148 2.546
+    - We conduct the benchmarks on Fugaku.
+    - conventional Si cell
+    - '163'
+  - statement: For silicon with a 32^3 k-mesh on 1088 Fugaku nodes, post-learning mean step time is 0.767
+      s per step.
+    reason: the statement contains the number 32, which none of its quotes contain
+    quotes:
+    - 323 1088 4352 3.424 0.767 0.150 5.086
+    - We conduct the benchmarks on Fugaku.
+    - conventional Si cell
+    - '323'
+  tokens:
+    input: 17659
+    output: 2369
+  fetched_chars: 50681

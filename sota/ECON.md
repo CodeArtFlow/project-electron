@@ -1,6 +1,6 @@
 # Economics — state of the art
 
-Topic code `ECON`. Last reviewed 2026-10-20.
+Topic code `ECON`. Last reviewed 2026-10-21.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 

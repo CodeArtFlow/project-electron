@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.27469v1
 doi: null
-title: Magnetic-Field-Induced Darkening of Bright Excitons in a MoWSe$_2$ Monolayer
-  Alloy
+title: Magnetic-Field-Induced Darkening of Bright Excitons in a MoWSe$_2$ Monolayer Alloy
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-20'
@@ -38,6 +37,79 @@ id: CAND-20261021-0107
 harvested_date: '2026-10-21'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-21'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: An in-plane magnetic field suppresses the bright-exciton emission of Mo0.68W0.32Se2 at
+      4.2 K by about 85%.
+    reason: the statement contains the number 68, which none of its quotes contain
+    quotes:
+    - At 4.2 K, an in-plane magnetic field up to 25 T activates a dark-exciton line 14.2±1.3 meV below
+      the bright exciton while suppressing the bright-exciton emission by about 85%.
+    - Mo0.68W0.32Se2
+    - At 4.2 K
+    - an in-plane magnetic field up to 25 T
+  - statement: An in-plane magnetic field activates a dark-exciton line 14.2±1.3 meV below the bright
+      exciton in Mo0.68W0.32Se2 at 4.2 K.
+    reason: the statement contains the number 68, which none of its quotes contain
+    quotes:
+    - At 4.2 K, an in-plane magnetic field up to 25 T activates a dark-exciton line 14.2±1.3 meV below
+      the bright exciton while suppressing the bright-exciton emission by about 85%.
+    - Mo0.68W0.32Se2
+    - At 4.2 K
+    - an in-plane magnetic field up to 25 T
+  - statement: A bright-dark mixing model yields an effective in-plane g-factor of |g∥| = 5.2±0.2 for
+      Mo0.68W0.32Se2.
+    reason: the statement contains the number 68, which none of its quotes contain
+    quotes:
+    - A bright-dark mixing model quantitatively captures the coupled energy and intensity evolution with
+      an effective in-planegfactor of|g ∥|= 5.2±0.2.
+    - Mo0.68W0.32Se2
+    - A bright-dark mixing model
+  - statement: The G0W0 direct quasiparticle gap of monolayer Mo0.75W0.25Se2 at K is 2.29 eV.
+    reason: the statement contains the number 75, which none of its quotes contain
+    quotes:
+    - The G0W0 correction increases the direct quasiparticle gap atKto2.29eV.
+    - First-principles calculations were performed within (density-functional-theory) DFT using the plane-wave
+      pseudopotential approach as implemented in theQuantum ESPRESSOpackage [61–63].
+    - ML Mo0.75W0.25Se2
+    - The G0W0 correction
+  - statement: The direct fundamental band gap of monolayer Mo0.75W0.25Se2 at K from DFT with SOC is 1.33
+      eV.
+    reason: the statement contains the number 75, which none of its quotes contain
+    quotes:
+    - The DFT calculation including SOC yields a direct fundamental band gap atKof1.33eV.
+    - First-principles calculations were performed within (density-functional-theory) DFT using the plane-wave
+      pseudopotential approach as implemented in theQuantum ESPRESSOpackage [61–63].
+    - ML Mo0.75W0.25Se2
+    - The DFT calculation including SOC
+  - statement: The conduction-band spin-orbit splitting of monolayer Mo0.75W0.25Se2 at the K+ valley is
+      18 meV.
+    reason: the statement contains the number 75, which none of its quotes contain
+    quotes:
+    - At theK+ valley of the PC BZ, the corresponding conduction- and valence-band spin-orbit splittings
+      are∆cSO (K) = 18meV and∆ vSO (K) = 200meV, respectively.
+    - The spin-resolved band-unfolding procedure applied to fully relativistic DFT+SOC wave functions.
+    - ML Mo0.75W0.25Se2
+    - At theK+ valley
+  - statement: The valence-band spin-orbit splitting of monolayer Mo0.75W0.25Se2 at the K+ valley is 200
+      meV.
+    reason: the statement contains the number 75, which none of its quotes contain
+    quotes:
+    - At theK+ valley of the PC BZ, the corresponding conduction- and valence-band spin-orbit splittings
+      are∆cSO (K) = 18meV and∆ vSO (K) = 200meV, respectively.
+    - The spin-resolved band-unfolding procedure applied to fully relativistic DFT+SOC wave functions.
+    - ML Mo0.75W0.25Se2
+    - At theK+ valley
+  tokens:
+    input: 22613
+    output: 2666
+  fetched_chars: 61630

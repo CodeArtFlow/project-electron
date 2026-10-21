@@ -1,0 +1,82 @@
+id: SRC-00190
+title: On the origin of nonreciprocal charge transport in topological insulator BiSbTeSe2
+doi: null
+arxiv_id: 2610.27849v1
+url: https://arxiv.org/abs/2610.27849v1
+venue_id: arxiv_api
+authors:
+- name: Fengyi Guo
+  affiliation: null
+  corresponding: null
+- name: Ziqi Wang
+  affiliation: null
+  corresponding: null
+- name: Xiubing Li
+  affiliation: null
+  corresponding: null
+- name: Zheng Dai
+  affiliation: null
+  corresponding: null
+- name: Congcong Li
+  affiliation: null
+  corresponding: null
+- name: Yufan Ju
+  affiliation: null
+  corresponding: null
+- name: Shuai Zhang
+  affiliation: null
+  corresponding: null
+- name: Bin Cheng
+  affiliation: null
+  corresponding: null
+- name: Zhe Ying
+  affiliation: null
+  corresponding: null
+- name: Fengqi Song
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-20'
+retrieved_date: '2026-10-21'
+access: full_text
+read_scope: Automated reading. The full PDF text (27,541 characters, 21 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.27849v1 on
+  2026-10-21. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: “The thickness of BSTS is about 40.7nm (see Fig. S1 in the Supplementary Information ).”
+method_summary: '“Gold electrodes were fabricated by electron beam lithography and electron beam evaporation,
+  followed by dry transfer of hexagonal boron nitride (h-BN) and graphite onto the BSTS flake.”
+
+  “The transport was measured by standard lock-in amplifiers (SRS SR830).”'
+limitations: “Unlike the cross-shaped pattern reported in dual-gated TI device46,47, our mapping shows
+  only a single diagonal resistance ridge, indicating that the top and bottom surfaces cannot be independently
+  controlled by dual gates.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 10321
+    output: 1005
+  claims_accepted: 1
+  claims_rejected: 2
+  rejected:
+  - statement: The current dependence of Rxx2ω remains linear up to Iω = 5 μA.
+    reason: 'unit conversion refused: current: cannot convert 5.0 μ A to A - Cannot convert from ''micron
+      * ampere'' ([length] * [current]) to ''ampere'' ([current]). A dimensional mismatch means the va'
+    quotes:
+    - The current dependence of Rxx2ω remains linear up to Iω = 5 μ A.
+    - The extracted current dependence of Rxx2ω at By = 1 T is displayed in Fig. 2(b) .
+    - Figure 2a shows the magnetic-field-dependent nonreciprocal resistance Rxx2ω (Rxx2ω = Vxx2ω/𝐼𝜔.)
+      of the BSTS at 20 K under different driving currents, with the top- and back-gate voltages fixed
+      near the CNP.
+  - statement: At 20 K, the nonreciprocal coefficient γ in BiSbTeSe2 is 500 A^-1T^-1.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''BiSbTeSe2
+      500 @20 K this work'''
+    quotes:
+    - BiSbTeSe2 500 @20 K this work
+corrections: []

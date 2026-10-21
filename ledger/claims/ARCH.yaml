@@ -3432,3 +3432,275 @@ claims:
       unit: percent
     conditions:
       workload: coupled AI+HPC workload
+- id: CLM-ARCH-0116
+  topic: ARCH
+  statement: Interflow achieves a 1.26x speedup for ResNet-50 inference compared with baseline frameworks.
+  sources:
+  - SRC-00186
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-20'
+  created: '2026-10-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    platform: Zynq UltraScale+ ZCU102
+    workload: ResNet-50
+    baseline: baseline frameworks
+- id: CLM-ARCH-0117
+  topic: ARCH
+  statement: Interflow achieves a 1.21x speedup for BERT-base inference compared with baseline frameworks.
+  sources:
+  - SRC-00186
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-20'
+  created: '2026-10-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    platform: Zynq UltraScale+ ZCU102
+    workload: BERT-base
+    baseline: baseline frameworks
+- id: CLM-ARCH-0118
+  topic: ARCH
+  statement: Interflow reduces memory footprint by up to 37% compared with baseline frameworks.
+  sources:
+  - SRC-00186
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-20'
+  created: '2026-10-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    platform: Zynq UltraScale+ ZCU102
+    baseline: baseline frameworks
+- id: CLM-ARCH-0119
+  topic: ARCH
+  statement: Interflow achieves a speedup of 2.24x for secure comparison microbenchmarks over LAN.
+  sources:
+  - SRC-00186
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-20'
+  created: '2026-10-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    network: LAN
+    elements: 200,704
+    primitive: SecComp
+- id: CLM-ARCH-0120
+  topic: ARCH
+  statement: Interflow achieves a speedup of 1.39x for secure multiplication microbenchmarks at l=32.
+  sources:
+  - SRC-00186
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-20'
+  created: '2026-10-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    bit_width: '32'
+- id: CLM-ARCH-0121
+  topic: ARCH
+  statement: Interflow achieves a speedup of 1.45x for secure multiplication microbenchmarks at l=64.
+  sources:
+  - SRC-00186
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-20'
+  created: '2026-10-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    bit_width: '64'
+- id: CLM-ARCH-0122
+  topic: ARCH
+  statement: Interflow achieves an end-to-end speedup of 1.42x for SqueezeNet over LAN compared to the
+    software baseline.
+  sources:
+  - SRC-00186
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-20'
+  created: '2026-10-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    network: LAN
+    workload: SqueezeNet
+    baseline: software baseline
+- id: CLM-ARCH-0123
+  topic: ARCH
+  statement: Interflow achieves an end-to-end speedup of 1.95x for SqueezeNet over LAN compared to the
+    protocol-matched FPGA baseline.
+  sources:
+  - SRC-00186
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-20'
+  created: '2026-10-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    network: LAN
+    workload: SqueezeNet
+    baseline: protocol-matched FPGA baseline
+- id: CLM-ARCH-0124
+  topic: ARCH
+  statement: ZKPU achieves up to 144x speedup for NTT over state-of-the-art accelerators.
+  sources:
+  - SRC-00188
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-20'
+  created: '2026-10-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    operation: NTT
+    device: ZKPU
+- id: CLM-ARCH-0125
+  topic: ARCH
+  statement: ZKPU achieves a 13.6x speedup for MSM over state-of-the-art accelerators.
+  sources:
+  - SRC-00188
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-20'
+  created: '2026-10-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    operation: MSM
+    device: ZKPU
+- id: CLM-ARCH-0126
+  topic: ARCH
+  statement: ZKPU achieves an average speedup of 36.0x over PipeZK for 256-bit NTTs.
+  sources:
+  - SRC-00188
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-20'
+  created: '2026-10-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    operand_width: 256-bit
+    operation: NTT
+    baseline: PipeZK
+- id: CLM-ARCH-0127
+  topic: ARCH
+  statement: ZKPU achieves an average speedup of 2.0x over LegoZK for 256-bit NTTs.
+  sources:
+  - SRC-00188
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-20'
+  created: '2026-10-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    operand_width: 256-bit
+    operation: NTT
+    baseline: LegoZK
+- id: CLM-ARCH-0128
+  topic: ARCH
+  statement: ZKPU achieves an average speedup of approximately 9.5x over UniZK across both Plonky2 applications.
+  sources:
+  - SRC-00188
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-20'
+  created: '2026-10-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    framework: Plonky2
+    baseline: UniZK
+- id: CLM-ARCH-0129
+  topic: ARCH
+  statement: ZKPU maintains over 90% PE utilization across all supported operand sizes.
+  sources:
+  - SRC-00188
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-20'
+  created: '2026-10-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device: ZKPU

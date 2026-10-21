@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.27797v1
 doi: null
-title: 'Toward Agentic AI for the 6G Physical Layer: From Algorithm Discovery to Verified
-  Baseband Silicon'
+title: 'Toward Agentic AI for the 6G Physical Layer: From Algorithm Discovery to Verified Baseband Silicon'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-20'
@@ -25,6 +24,78 @@ id: CAND-20261021-0091
 harvested_date: '2026-10-21'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-21'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The lmmse_opt kernel requires 18318 cycles per frame on silicon.
+    reason: the statement contains the number 18318, which none of its quotes contain
+    quotes:
+    - lmmse_opt0.6518 3181693×97.9% 50.5%
+    - All twelve kernels were promoted to silicon in the separated hardware phase, over a self-hosted
+      transport that needs no debug probe.Every kernel reproduced its simulator cycle count exactly, with
+      zero difference, across four orders of magni
+  - statement: The ep_opt kernel requires 405379 cycles per frame on silicon.
+    reason: the statement contains the number 405379, which none of its quotes contain
+    quotes:
+    - ep_opt0.94 405 379 154×100% 70.5%
+    - All twelve kernels were promoted to silicon in the separated hardware phase, over a self-hosted
+      transport that needs no debug probe.Every kernel reproduced its simulator cycle count exactly, with
+      zero difference, across four orders of magni
+  - statement: The mp_opt kernel requires 232847 cycles per frame on silicon.
+    reason: the statement contains the number 232847, which none of its quotes contain
+    quotes:
+    - mp_opt1.09 232 847 1066×95.8% 54.2%
+    - All twelve kernels were promoted to silicon in the separated hardware phase, over a self-hosted
+      transport that needs no debug probe.Every kernel reproduced its simulator cycle count exactly, with
+      zero difference, across four orders of magni
+  - statement: The uamp_opt kernel requires 266422 cycles per frame on silicon.
+    reason: the statement contains the number 266422, which none of its quotes contain
+    quotes:
+    - uamp_opt0.94 266 422 182×98.9% 95.8%
+    - All twelve kernels were promoted to silicon in the separated hardware phase, over a self-hosted
+      transport that needs no debug probe.Every kernel reproduced its simulator cycle count exactly, with
+      zero difference, across four orders of magni
+  - statement: The ec2rich_opt kernel requires 39520 cycles per frame on silicon.
+    reason: the statement contains the number 39520, which none of its quotes contain
+    quotes:
+    - ec2rich_opt0.56 39 520 162×98.9% 88.8%
+    - All twelve kernels were promoted to silicon in the separated hardware phase, over a self-hosted
+      transport that needs no debug probe.Every kernel reproduced its simulator cycle count exactly, with
+      zero difference, across four orders of magni
+  - statement: The ec_frozen_opt kernel requires 34010 cycles per frame on silicon.
+    reason: the statement contains the number 34010, which none of its quotes contain
+    quotes:
+    - ec_frozen_opt⋆ 0.51 34 010286×98.9% 88.0%
+    - All twelve kernels were promoted to silicon in the separated hardware phase, over a self-hosted
+      transport that needs no debug probe.Every kernel reproduced its simulator cycle count exactly, with
+      zero difference, across four orders of magni
+  - statement: The NXP LA9310 VSPA DSP operates at a clock frequency of 614.4 MHz.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''a second-generation
+      Vector Signal Processing Accelerator (VSPA) vector'''
+    quotes:
+    - a second-generation Vector Signal Processing Accelerator (VSPA) vector DSP (614.4 MHz, 16 arithmetic
+      units, up to 16 complex single-precision operations per clock).
+    - 'The campaign runs on 6G4All [3]: a LimeSDR-Micro board around the NXP LA9310, a commercial baseband
+      system-on-chip (SoC) pairing a Cortex-M4 control core with a second-generation Vector Signal Processing
+      Accelerator (VSPA) vector DSP (614.4'
+  - statement: The total measured agent engineering output tokens across all 18 metered phases is 2246.6
+      thousand.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''10 3'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a un'
+    quotes:
+    - 18 metered phases 303.2 1846.4 97.0 2246.6
+    - 'Table III is the campaign’s effort record: agent output tokens per phase (including billed reasoning
+      tokens), deduplicated per API response.'
+  tokens:
+    input: 13741
+    output: 3117
+  fetched_chars: 41782

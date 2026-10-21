@@ -1,0 +1,102 @@
+id: SRC-00189
+title: Nanophotonic Extreme Ultraviolet Polarimeter
+doi: null
+arxiv_id: 2610.27705v1
+url: https://arxiv.org/abs/2610.27705v1
+venue_id: arxiv_api
+authors:
+- name: Anna Kulter
+  affiliation: null
+  corresponding: null
+- name: Lorenz Weiß
+  affiliation: null
+  corresponding: null
+- name: David J. Grafinger
+  affiliation: null
+  corresponding: null
+- name: Alexander Sagar Grossek
+  affiliation: null
+  corresponding: null
+- name: Rodolfo Previdi
+  affiliation: null
+  corresponding: null
+- name: Martin Schultze
+  affiliation: null
+  corresponding: null
+- name: Marcus Ossiander
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-20'
+retrieved_date: '2026-10-21'
+access: full_text
+read_scope: Automated reading. The full PDF text (47,186 characters, 25 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.27705v1 on
+  2026-10-21. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“onto a 0.5 -μm-thick crystalline silicon membrane (Silson Ltd, M1003577).”
+
+  “focusing a near-infrared laser pulse (central vacuum wavelength 1.035 μm, pulse duration <190 fs, pulse
+  energy 1 mJ) into an argon gas target.”
+
+  “Fig. 5B shows the rotation -dependent polarization contrast detected for 30 eV photon energy and a
+  fit of Eq. 1 to the data . The fit yields a polarization contrast amplitude PCmax = (9.6 ± 0.3) % (95
+  % confidence)”
+
+  “Fig. 5B shows the rotation -dependent polarization contrast detected for 30 eV photon energy”'
+method_summary: '“We implement channel waveguides that restrict incident 41-nm-wavelength light to a few
+  modes with defined spatial profiles and propagation constants.”
+
+  “Following the design (d = 0.14 μm, Λ = 0.19 μm, h = 0.26 μm), we fabricated a 100 μm × 100 μm-large
+  device via electron -beam lithography and inductively coupled plasma reactive ion etching of a 0.5 -μm-thick
+  crystalline silicon membrane”
+
+  “To investigate the polarization analyzer, we generated an EUV attosecond pulse train via high-harmonic
+  generation by focusing a near-infrared laser pulse (central vacuum wavelength 1.035 μm, pulse duration
+  <190 fs, pulse energy 1 mJ) into an argon gas target.”'
+limitations: “The realized polarization contrast amounts to ~64 % of the numerical prediction despite
+  the etched channels’ roughness, uncertainties in the achieved etch depth (see Fig. S4), a possible oxidation
+  of the analyzer surface, uncertainties in silicon’s refractive index, and a possible ellipticity of
+  the incident polarization states”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16909
+    output: 2568
+  claims_accepted: 4
+  claims_rejected: 4
+  rejected:
+  - statement: The fabrication process used a 0.4-μm-thick CSAR 62 positive electron-beam resist.
+    reason: the statement contains the number 62, which none of its quotes contain
+    quotes:
+    - The hole pattern was exposed in the 0.4 -μm-thick resist using electron -beam lithography (Raith
+      GmbH, eLine plus) and subsequently transferred into the silicon via pseudo -Bosch inductively coupled
+      plasma reactive ion etching
+    - spin -coating a positive electron -beam resist (Allresist GmbH, AR -P 6200.13, CSAR 62)
+  - statement: The pseudo-Bosch ICP-RIE process was performed for 160 seconds.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - 'transferred into the silicon via pseudo -Bosch inductively coupled plasma reactive ion etching
+      (ICP -RIE, Oxford Instruments, Plasma Pro 100 Cobra, etching gas: SF 6, passivation gas: C 4F8)
+      for 160 seconds.'
+  - statement: The distance between the polarization analyzer and the EUV-sensitive camera detector was
+      15.6 mm.
+    reason: the statement contains the number 15.6, which none of its quotes contain
+    quotes:
+    - The polarization analyzer was placed within the Rayleigh range of the focus and 1 5.6 mm before
+      an EUV-sensitive camera (see Fig. 4D).
+  - statement: The polarization contrast amplitude at 29.9 eV photon energy was measured to be 9.6%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''29.9 9.6
+      % ± 0.3 %'''
+    quotes:
+    - 29.9 9.6 % ± 0.3 %
+    - Table S2. Measured photon-energy-resolved polarization contrast amplitudes.
+corrections: []

@@ -1,0 +1,118 @@
+id: SRC-00192
+title: Local learning with imperfect analog synapses
+doi: null
+arxiv_id: 2610.27910v1
+url: https://arxiv.org/abs/2610.27910v1
+venue_id: arxiv_api
+authors:
+- name: Théo Dupuis
+  affiliation: null
+  corresponding: null
+- name: Adrien Renaudineau
+  affiliation: null
+  corresponding: null
+- name: Guillaume Bourgeois
+  affiliation: null
+  corresponding: null
+- name: Joel Minguet Lopez
+  affiliation: null
+  corresponding: null
+- name: Gabriele Navarro
+  affiliation: null
+  corresponding: null
+- name: Jean-Michel Portal
+  affiliation: null
+  corresponding: null
+- name: Elisa Vianello
+  affiliation: null
+  corresponding: null
+- name: Jacques-Olivier Klein
+  affiliation: null
+  corresponding: null
+- name: Damien Querlioz
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-20'
+retrieved_date: '2026-10-21'
+access: full_text
+read_scope: Automated reading. The full PDF text (87,421 characters, 30 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.27910v1 on
+  2026-10-21. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Conversely, on the quasi-linear but more variable FM trajectories, CwSG reaches 84.9%”
+
+  “1,268 filamentary memristor devices”
+
+  “We then evaluate CwSG in device-calibrated simulations that replay experimentally measured programming
+  trajectories from 1,189 PCM and 1,268 FM devices.”'
+method_summary: “We introduce Channel-wise Spatial Gradient learning (CwSG), a strictly local, forward-only
+  rule that trains each convolutional layer by rewarding spatial variation in its feature maps.”
+limitations: '“On an MLP architecture (see Methods), where neighboring units have no intrinsic geometric
+  relationship, the one-dimensional difference objective depends on an arbitrary ordering of the hidden
+  units and provides no systematic advantage.”
+
+  “The class-to-channel encoding also requires at least one channel per class in every supervised layer,
+  making narrow layers difficult to reconcile with large class counts.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 25718
+    output: 2331
+  claims_accepted: 1
+  claims_rejected: 5
+  rejected:
+  - statement: CwSG achieves 99.34% accuracy on MNIST under full-precision optimization with SGD on CNN-7.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''CwSG (This
+      work) 99.34±0.04'''
+    quotes:
+    - CwSG (This work) 99.34±0.04
+    - Under full-precision optimization, CwSG achieves the highest accuracy among the evaluated backpropagation-free
+      methods on MNIST
+    - MNIST 36
+    - full-precision optimization test accuracy of CNN-7
+  - statement: CwSG achieves 92.70% accuracy on Fashion-MNIST under full-precision optimization with SGD
+      on CNN-7.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''CwSG (This
+      work) 92.70±0.06'''
+    quotes:
+    - CwSG (This work) 92.70±0.06
+    - Under full-precision optimization, CwSG achieves the highest accuracy among the evaluated backpropagation-free
+      methods on MNIST, Fashion-MNIST, and CIFAR-10
+    - Fashion-MNIST37
+    - full-precision optimization test accuracy of CNN-7
+  - statement: CwSG achieves 83.66% accuracy on CIFAR-10 under full-precision optimization with SGD on
+      CNN-7.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''CwSG (This
+      work) 83.66±1.24'''
+    quotes:
+    - CwSG (This work) 83.66±1.24
+    - Under full-precision optimization, CwSG achieves the highest accuracy among the evaluated backpropagation-free
+      methods on MNIST, Fashion-MNIST, and CIFAR-10
+    - CIFAR-1038
+    - full-precision optimization test accuracy of CNN-7
+  - statement: Under SignSGD, CwSG achieves 83.26% test accuracy on CIFAR-10 on CNN-7.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''CwSG (This
+      work) 83.26±0.32'''
+    quotes:
+    - CwSG (This work) 83.26±0.32
+    - Under SignSGD, CwSG reaches 98.71% on MNIST, 91.22% on Fashion-MNIST, and 83.26% on CIFAR-10
+    - CIFAR-10
+    - Sign-only update test accuracy of CNN-7
+  - statement: CwSG reaches 82.5% accuracy on SVHN in simulations using measured phase-change memory trajectories.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - On SVHN21, CwSG reaches 82.5% on PCM
+    - We then evaluate CwSG in device-calibrated simulations that replay experimentally measured programming
+      trajectories from 1,189 PCM and 1,268 FM devices.
+    - On SVHN21
+    - 1,189 phase-change memory
+corrections: []

@@ -1,0 +1,66 @@
+id: SRC-00186
+title: 'Interflow: Breaking the Offline-Online Barrier for Private AI at the Edge'
+doi: null
+arxiv_id: 2610.27431v1
+url: https://arxiv.org/abs/2610.27431v1
+venue_id: arxiv_api
+authors:
+- name: Hanieh Totonchi Asl
+  affiliation: null
+  corresponding: null
+- name: Ebrahim Nouri
+  affiliation: null
+  corresponding: null
+- name: Zhuoran Li
+  affiliation: null
+  corresponding: null
+- name: Danella Zhao
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-20'
+retrieved_date: '2026-10-21'
+access: full_text
+read_scope: Automated reading. The full PDF text (49,387 characters, 8 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.27431v1 on
+  2026-10-21. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“It achieves up to1.26×speedup for ResNet-50 and up to1.21×speedup for BERT-base, and reduces
+  memory footprint by up to37%, compared with baseline frameworks.”
+
+  “Implemented on the Zynq UltraScale+ ZCU102,Interflowimproves nonlinear evaluation throughput by up
+  to1.55×for CNN operators and1.48×for transformer operators.”
+
+  “Interflowachieves a2.24×speedup and reduces PS-side preprocessing overhead to a lightweight DDR transfer,
+  which contributes only5%of total execution time.”
+
+  “TABLE III MICROBENCHMARK COMPARISON WITHN= 200,704ELEMENTS OVER LAN.”
+
+  “SecComp 5.75 (66%)3.69(95%) 2.93 (34%)0.18(4.7%) 8.683.88(2.24×)”
+
+  “Interflowachieves a1.39×speedup atℓ= 32, rising to1.45×atℓ= 64as the correlation demand doubles.”
+
+  “Under the LAN network setting,Interflowachieves speedups of 1.42×,1.26×, and1.30×over the software
+  baseline, and 1.95×,1.67×, and1.77×over the protocol-matched FPGA baseline across SqueezeNet, ResNet-50,
+  and DenseNet-121, respectively.”'
+method_summary: '“Implemented on the Zynq UltraScale+ ZCU102,Interflowimproves nonlinear evaluation throughput
+  by up to1.55×for CNN operators and1.48×for transformer operators.”
+
+  “We implement our design using Vitis High-Level Synthesis [16], targeting 170 MHz and the Zynq UltraScale+
+  ZCU102.”'
+limitations: “In contrast, the execution speedup decreases under W AN latency.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16092
+    output: 2746
+  claims_accepted: 8
+  claims_rejected: 0
+  rejected: []
+corrections: []

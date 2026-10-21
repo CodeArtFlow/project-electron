@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-20.
+Topic code `PHOT`. Last reviewed 2026-10-21.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -119,6 +119,10 @@ Topic code `PHOT`. Last reviewed 2026-10-20.
 - **400000 nm** — The predicted laser spot diameter at the top face of the chip is 0.4 mm after traversing the 4-mm chip body.
   - `CLM-PHOT-0065` · chip_thickness 4-mm · grade B · credibility unknown · simulated · as of 2026-10-09
   - sources: SRC-00136
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **3000 nm** — The thickness d of each layer in the PT-symmetric trilayer structure is 3 µm unless otherwise stated.
+  - `CLM-PHOT-0084` · structure PT-symmetric trilayer · grade B · credibility unknown · simulated · as of 2026-10-20
+  - sources: SRC-00191
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
@@ -346,6 +350,7 @@ Topic code `PHOT`. Last reviewed 2026-10-20.
   - `CLM-PHOT-0033` · excitation_wavelength 532 nm, cumulative_exposure_time 5 h · grade B · credibility unknown · measured · as of 2026-09-29
   - sources: SRC-00051
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0085 — see the open register
 - **0.785 um** — A diode laser operating at a wavelength of 785 nm was used in the experimental setup.
   - `CLM-PHOT-0040` · source diode laser · grade B · credibility unknown · measured · as of 2026-10-01
   - sources: SRC-00065
@@ -365,6 +370,10 @@ Topic code `PHOT`. Last reviewed 2026-10-20.
 - **≈0.362109 um** — The tuning sensitivity of the pump wavelength in DFG spectrum measurement with fixed input signal at 637 nm is 6.32 nm per degree.
   - `CLM-PHOT-0082` · process Difference-frequency generation (DFG), input_signal_wavelength 637 nm · grade B · credibility unknown · measured · as of 2026-10-16
   - sources: SRC-00181
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **1.55 um** — For the middle layer of the trilayer structure, the diagonal term of the permittivity tensor εM is set to 4.75 at a wavelength of 1.55 µm.
+  - `CLM-PHOT-0083` · permittivity_diagonal_term 4.75, material Bi-substituted yttrium iron garnet (Bi:YIG) · grade B · credibility unknown · simulated · as of 2026-10-20
+  - sources: SRC-00191
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
@@ -386,9 +395,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0028` — power: _unexamined; classification pending_
   - claims: CLM-PHOT-0053, CLM-PHOT-0054
   - missing data: `not yet named`
+- `CFL-0085` — wavelength: _unexamined; classification pending_
+  - claims: CLM-MAT-0166, CLM-PHOT-0033
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 82
-- grades: {'B': 75, 'A': 7}
-- distinct sources: 27
+- claims: 84
+- grades: {'B': 77, 'A': 7}
+- distinct sources: 28

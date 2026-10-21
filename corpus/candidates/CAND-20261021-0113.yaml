@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.27428v1
 doi: null
-title: In Situ Thermal Preparation by CO$_2$-Laser and Chemical Characterization of
-  Oxide Substrates Across Multiple Crystallographic Orientations
+title: In Situ Thermal Preparation by CO$_2$-Laser and Chemical Characterization of Oxide Substrates Across
+  Multiple Crystallographic Orientations
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-20'
@@ -25,6 +25,88 @@ id: CAND-20261021-0113
 harvested_date: '2026-10-21'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-21'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: An in situ thermal annealing process of SrTiO3 (100) at 1400 °C for 200 s produced an atomically
+      flat surface with a step height of 0.4 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The measured
+      step height of 0.4 nm is consistent with the formation of'''
+    quotes:
+    - The optimal annealing conditions were determined to be 1400°C and 200 s dwell time.
+    - The measured step height of 0.4 nm is consistent with the formation of single-unit-cell-height terraces,
+      as it is closer to the room-temperature lattice parameter of SrTiO 3, a= 3.905 Å [12, 32].
+    - After XPS characterization, the samples were removed from vacuum and their surface morphologies
+      were analyzed ex situ by AFM.
+    - SrTiO 3 (100)
+  - statement: In situ thermal preparation of SrTiO3 (111) at 1500 °C for 220 s yielded regular step heights
+      of approximately 0.23 nm.
+    reason: the statement contains the number 111, which none of its quotes contain
+    quotes:
+    - 'Among the various combinations of maximum annealing temperature and annealing duration explored,
+      two yielded well-defined, atomically flat step-and-terrace structures: annealing at 1400°C for 600
+      s and at 1500°C for 220 s.'
+    - The corresponding height profile [Fig. 4(g)] yields a regular step height of about 0.23 nm.
+    - After XPS characterization, the samples were removed from vacuum and their surface morphologies
+      were analyzed ex situ by AFM.
+    - SrTiO 3 (111)
+  - statement: In situ thermal preparation of GdScO3 (110) at 1400 °C for 200 s produced uniform step
+      heights of approximately 0.4 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Figure 6 depicts the surface characteristics of a GdScO3 (110) substrate annealed at an optimal
+      temperature of 1400°C for the duration of 200 s.
+    - The height profile displayed in Fig. 6(d) exhibits well-resolved terrace edges, as well as straight
+      and uniform steps of about 0.4 nm.
+    - After XPS characterization, the samples were removed from vacuum and their surface morphologies
+      were analyzed ex situ by AFM.
+    - GdScO 3 (110)
+  - statement: LaAlO3 (111) substrates annealed in situ at 1400 °C for 200 s displayed step heights of
+      0.23 nm.
+    reason: the statement contains the number 111, which none of its quotes contain
+    quotes:
+    - The AFM topography images of a surface annealed at 1400°C for 200 s are presented in Figs. 7(a)–7(c).
+    - Both profiles exhibit step heights of 0.23 nm, denoting consistent step-height characteristics across
+      different scan areas.
+    - After XPS characterization, the samples were removed from vacuum and their surface morphologies
+      were analyzed ex situ by AFM.
+    - LaAlO 3 (111)
+  - statement: In situ annealing of LSAT (001) at 1400 °C for 500 s produced terraces separated by step
+      heights of approximately 0.39 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Both measured
+      step heights are comparable, and their value is around 0'''
+    quotes:
+    - Several annealing conditions were investigated, with the best surface quality obtained for a substrate
+      annealed at 1400°C for 500 s.
+    - Both measured step heights are comparable, and their value is around 0.39 nm, in excellent accord
+      with one unit cell of LSAT (~3.868 Å) [66, 67].
+    - After XPS characterization, the samples were removed from vacuum and their surface morphologies
+      were analyzed ex situ by AFM.
+    - LSAT (001)
+  - statement: In situ thermal preparation of NdGaO3 (110) at 1050 °C for 200 s formed terraces with a
+      step height of 0.39 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''However,
+      when the annealing temperature is slightly elevated to 1050°C'''
+    quotes:
+    - However, when the annealing temperature is slightly elevated to 1050°C for the same annealing time
+      period of 200 s [Figs. 9(b) and 9(c)], more prominent terrace features become visible, indicating
+      a considerable improvement in surface morph
+    - The extracted height profile shown in Fig. 9(d) exhibits well-defined and uniform steps, with a
+      height of 0.39 nm.
+    - After XPS characterization, the samples were removed from vacuum and their surface morphologies
+      were analyzed ex situ by AFM.
+    - NdGaO3 (110)
+  tokens:
+    input: 26062
+    output: 2502
+  fetched_chars: 77775

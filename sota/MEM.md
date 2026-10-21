@@ -1,6 +1,6 @@
 # Memory — state of the art
 
-Topic code `MEM`. Last reviewed 2026-10-20.
+Topic code `MEM`. Last reviewed 2026-10-21.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -126,6 +126,10 @@ Topic code `MEM`. Last reviewed 2026-10-20.
   - `CLM-MEM-0031` · workload six full-trace streams, hardware_configuration six 3D DRAM organizations, method TileDRAM · grade B · credibility unknown · simulated · as of 2026-10-16
   - sources: SRC-00185
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **84.9 percent** — CwSG reaches 84.9% accuracy on SVHN in simulations using measured filamentary memristor trajectories.
+  - `CLM-MEM-0032` · memory_technology filamentary memristor · grade B · credibility unknown · simulated · as of 2026-10-20
+  - sources: SRC-00192
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### resistance
 
@@ -187,6 +191,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 31
-- grades: {'B': 31}
-- distinct sources: 10
+- claims: 32
+- grades: {'B': 32}
+- distinct sources: 11
