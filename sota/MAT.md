@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-21.
+Topic code `MAT`. Last reviewed 2026-10-22.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -94,6 +94,10 @@ Topic code `MAT`. Last reviewed 2026-10-21.
 - **3.55683e-07 fJ** — In WSe2, the scalar RK 3p residual is +2.22 meV.
   - `CLM-MAT-0115` · state 3p · grade B · credibility unknown · simulated · as of 2026-10-09
   - sources: SRC-00131
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **-0.000815508 fJ** — The cohesive energy per atom of the monolayer black phosphorene baseline is calculated to be -5.09 eV.
+  - `CLM-MAT-0172` · material MLBP · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00194
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### frequency
@@ -579,6 +583,50 @@ Topic code `MAT`. Last reviewed 2026-10-21.
   - `CLM-MAT-0165` · fe2o3_thickness 40 nm · grade B · credibility unknown · measured · as of 2026-10-16
   - sources: SRC-00184
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- In supercell GGA calculations for the 1st shell (111) of Fe-Si alloys at dilute Si concentration, the chemical EPI in the paramagnetic (DLM) state is 45.92 mRy.
+  - `CLM-MAT-0173` · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00196
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- In SGPM-LDA calculations for the 1st shell (111) of Fe-Si alloys at dilute Si concentration, the chemical EPI in the paramagnetic (DLM) state is 37.58 mRy.
+  - `CLM-MAT-0174` · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00196
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- In supercell GGA calculations for the 1st shell (111) of Fe-Si alloys at dilute Si concentration, the chemical EPI in the nonmagnetic state is 45.00 mRy.
+  - `CLM-MAT-0175` · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00196
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The 2Pr remanent polarization value for the BTO film grown under 0.15 mbar oxygen pressure is 20 µC cm −2.
+  - `CLM-MAT-0177` · growth_oxygen_pressure 0.15 mbar, measurement_frequency 1 kHz · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00197
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The 2Pr remanent polarization value for the BTO film grown under 0.015 mbar oxygen pressure is 40 µC cm −2.
+  - `CLM-MAT-0178` · growth_oxygen_pressure 0.015 mbar, measurement_frequency 1 kHz · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00197
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The 2Pr remanent polarization value for the BTO film grown under 0.005 mbar oxygen pressure is 6 µC cm −2.
+  - `CLM-MAT-0179` · measurement_frequency 1 kHz · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00197
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The ST-BTO film grown under 0.015 mbar oxygen pressure displays no fatigue for at least 10 10 cycles.
+  - `CLM-MAT-0180` · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00197
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- For Lennard-Jones thin films with cutoff radius Rc = 10 σ, p1 is -0.8.
+  - `CLM-MAT-0181` · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00199
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- For Morse thin films with exponential prefactor ρ0 = 3, p1 is -0.47.
+  - `CLM-MAT-0182` · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00199
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Without geometry relaxation, p1 is -0.8 for Lennard-Jones thin films with cutoff radius Rc = 10 σ.
+  - `CLM-MAT-0183` · geometry_relaxation without geometry relaxation · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00199
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Without geometry relaxation, p1 is -0.31 for Morse thin films with exponential prefactor ρ0 = 3.
+  - `CLM-MAT-0184` · geometry_relaxation without geometry relaxation · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00199
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -614,6 +662,10 @@ Topic code `MAT`. Last reviewed 2026-10-21.
   - `CLM-MAT-0124` · elastic_constant C22, rotation_direction from y to x · grade B · credibility unknown · simulated · as of 2026-10-13
   - sources: SRC-00139
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≤ ≈108 percent** — The maximum tetragonality ratio c/a reached for BTO films is approximately 1.08.
+  - `CLM-MAT-0176` · material BTO · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00197
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -716,6 +768,14 @@ Topic code `MAT`. Last reviewed 2026-10-21.
 - **0.0003 ns** — The XA exciton feature exhibits a decay time constant of 300 fs.
   - `CLM-MAT-0127` · feature XA · grade B · credibility unknown · measured · as of 2026-10-13
   - sources: SRC-00141
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈0.002 ns** — In monolayer WSe2, the decay time of the bright exciton measured by time-resolved PL at 12 K is 2 ps.
+  - `CLM-MAT-0170` · state bright exciton · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00193
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈0.11 ns** — In monolayer WSe2, the decay time of the grey exciton measured by time-resolved PL at 12 K is 110 ps.
+  - `CLM-MAT-0171` · state grey exciton · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00193
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### voltage
@@ -861,6 +921,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 169
-- grades: {'B': 169}
-- distinct sources: 63
+- claims: 184
+- grades: {'B': 184}
+- distinct sources: 68

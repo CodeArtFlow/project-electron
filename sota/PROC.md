@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-10-21.
+Topic code `PROC`. Last reviewed 2026-10-22.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -69,6 +69,10 @@ Topic code `PROC`. Last reviewed 2026-10-21.
 - **50 nm** — Experimental vertically oriented wide-trench lines milled through a gold film achieved a linewidth of 50.0±2.7 nm.
   - `CLM-PROC-0030` · feature wide -trench line · grade B · credibility unknown · measured · as of 2026-10-09
   - sources: SRC-00133
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ 150 nm** — For slab-style parameterization training data generation, total layer thickness is restricted not to exceed 1500 Angstroms.
+  - `CLM-PROC-0036` · parameterization_type slab-style · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00195
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### qualitative
@@ -157,6 +161,14 @@ Topic code `PROC`. Last reviewed 2026-10-21.
   - sources: SRC-00129
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0057 — see the open register
+- **5 percent** — The full spin-resolved PNR synthetic data emulation applies a magnetic field resolution smearing dq/q of 0.05.
+  - `CLM-PROC-0035` · data_type synthetic full spin-resolved PNR data · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00195
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1000 percent** — For the polymer-brush example parameterization, the continuous brush profile is discretized into 10 slices of equal thickness.
+  - `CLM-PROC-0037` · model polymer-brush · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00195
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -237,6 +249,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 34
-- grades: {'B': 34}
-- distinct sources: 11
+- claims: 37
+- grades: {'B': 37}
+- distinct sources: 12

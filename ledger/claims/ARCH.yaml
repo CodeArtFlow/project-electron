@@ -3704,3 +3704,155 @@ claims:
     verified_quotes: 3
   conditions:
     device: ZKPU
+- id: CLM-ARCH-0130
+  topic: ARCH
+  statement: On an RTX 5080 GPU, the fastest direct micro-tile/thread-block configuration takes 10.361
+    ms.
+  sources:
+  - SRC-00200
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    device: NVIDIA GeForce RTX 5080
+    form: direct
+    decode: ALU
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 10.361
+      unit: ms
+    si_base:
+      value: 0.010361
+      unit: s
+    display:
+      value: 10361000.0
+      unit: ns
+    conditions:
+      device: NVIDIA GeForce RTX 5080
+      form: direct
+      decode: ALU
+- id: CLM-ARCH-0131
+  topic: ARCH
+  statement: On an RTX 5080 GPU, the fastest hoisted micro-tile/thread-block configuration takes 11.151
+    ms.
+  sources:
+  - SRC-00200
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    device: NVIDIA GeForce RTX 5080
+    form: hoisted
+    decode: LUT
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 11.151
+      unit: ms
+    si_base:
+      value: 0.011151
+      unit: s
+    display:
+      value: 11150999.999999998
+      unit: ns
+    conditions:
+      device: NVIDIA GeForce RTX 5080
+      form: hoisted
+      decode: LUT
+- id: CLM-ARCH-0132
+  topic: ARCH
+  statement: Moving the exponential polynomial's coefficients into scalar registers reduces vector memory
+    instructions in the softmax region by 78.7%.
+  sources:
+  - SRC-00201
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    region: softmax
+    block_query_size: '128'
+    block_key_size: '512'
+- id: CLM-ARCH-0133
+  topic: ARCH
+  statement: On the EPAC FPGA implementation, combining scalar coefficients and reorientation reduces
+    whole-kernel cycles by 2.71x.
+  sources:
+  - SRC-00201
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    platform: FPGA
+    sequence_length: '1024'
+    head_dimension: '64'
+- id: CLM-ARCH-0134
+  topic: ARCH
+  statement: At a 10 ms inter-arrival time, the standard deviation of per-client SLO achievement rates
+    under the proposed scheduler is 12.16%.
+  sources:
+  - SRC-00202
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    metric: standard deviation of client-level rates
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 12.16
+      unit: '%'
+    si_base:
+      value: 0.1216
+      unit: dimensionless
+    display:
+      value: 12.16
+      unit: percent
+    conditions:
+      metric: standard deviation of client-level rates

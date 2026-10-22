@@ -1151,3 +1151,105 @@ claims:
   conditions:
     slit_width: 330 µm
     method: finite-element modelling
+- id: CLM-PROC-0035
+  topic: PROC
+  statement: The full spin-resolved PNR synthetic data emulation applies a magnetic field resolution smearing
+    dq/q of 0.05.
+  sources:
+  - SRC-00195
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    data_type: synthetic full spin-resolved PNR data
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.05
+      unit: dimensionless
+    si_base:
+      value: 0.05
+      unit: dimensionless
+    display:
+      value: 5.0
+      unit: percent
+    conditions:
+      data_type: synthetic full spin-resolved PNR data
+- id: CLM-PROC-0036
+  topic: PROC
+  statement: For slab-style parameterization training data generation, total layer thickness is restricted
+    not to exceed 1500 Angstroms.
+  sources:
+  - SRC-00195
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    parameterization_type: slab-style
+  quantity:
+    quantity: length_device
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 1500.0
+      unit: ˚A
+    si_base:
+      value: 1.5e-07
+      unit: m
+    display:
+      value: 149.99999999999997
+      unit: nm
+    conditions:
+      parameterization_type: slab-style
+- id: CLM-PROC-0037
+  topic: PROC
+  statement: For the polymer-brush example parameterization, the continuous brush profile is discretized
+    into 10 slices of equal thickness.
+  sources:
+  - SRC-00195
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    model: polymer-brush
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 10.0
+      unit: dimensionless
+    si_base:
+      value: 10.0
+      unit: dimensionless
+    display:
+      value: 1000.0
+      unit: percent
+    conditions:
+      model: polymer-brush

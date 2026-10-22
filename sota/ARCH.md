@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-21.
+Topic code `ARCH`. Last reviewed 2026-10-22.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -365,6 +365,14 @@ Topic code `ARCH`. Last reviewed 2026-10-21.
   - `CLM-ARCH-0129` · device ZKPU · grade B · credibility unknown · simulated · as of 2026-10-20
   - sources: SRC-00188
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Moving the exponential polynomial's coefficients into scalar registers reduces vector memory instructions in the softmax region by 78.7%.
+  - `CLM-ARCH-0132` · region softmax, block_query_size 128, block_key_size 512 · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00201
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- On the EPAC FPGA implementation, combining scalar coefficients and reorientation reduces whole-kernel cycles by 2.71x.
+  - `CLM-ARCH-0133` · platform FPGA, sequence_length 1024, head_dimension 64 · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00201
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -512,6 +520,10 @@ Topic code `ARCH`. Last reviewed 2026-10-21.
   - `CLM-ARCH-0115` · workload coupled AI+HPC workload · grade B · credibility unknown · simulated · as of 2026-10-16
   - sources: SRC-00182
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **12.16 percent** — At a 10 ms inter-arrival time, the standard deviation of per-client SLO achievement rates under the proposed scheduler is 12.16%.
+  - `CLM-ARCH-0134` · metric standard deviation of client-level rates · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00202
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -555,6 +567,14 @@ Topic code `ARCH`. Last reviewed 2026-10-21.
   - `CLM-ARCH-0098` · circuit_configuration six mutually inhibiting cells · grade B · credibility unknown · simulated · as of 2026-10-14
   - sources: SRC-00167
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1.0361e+07 ns** — On an RTX 5080 GPU, the fastest direct micro-tile/thread-block configuration takes 10.361 ms.
+  - `CLM-ARCH-0130` · device NVIDIA GeForce RTX 5080, form direct, decode ALU · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00200
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **1.1151e+07 ns** — On an RTX 5080 GPU, the fastest hoisted micro-tile/thread-block configuration takes 11.151 ms.
+  - `CLM-ARCH-0131` · device NVIDIA GeForce RTX 5080, form hoisted, decode LUT · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00200
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -590,6 +610,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 129
-- grades: {'B': 129}
-- distinct sources: 42
+- claims: 134
+- grades: {'B': 134}
+- distinct sources: 45

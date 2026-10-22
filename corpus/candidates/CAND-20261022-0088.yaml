@@ -24,6 +24,26 @@ id: CAND-20261022-0088
 harvested_date: '2026-10-22'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-22'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At 8 K and 10 T, the AMR ratio of Fe-doped Ta4SiTe4 reaches -33%.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - At 8 K and 10 T, 𝑟AMR reaches –33%.
+    - Electrical resistivity measurements were performed using a Physical Property Measurement System
+      (PPMS, Quantum Design).
+    - whereas the Fe -doped sample exhibits a large negative AMR at 𝜃 = 0∘, corresponding to 𝐵//𝑐. At
+      8 K and 10 T, 𝑟AMR reaches –33%.
+  tokens:
+    input: 12109
+    output: 521
+  fetched_chars: 32132

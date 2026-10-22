@@ -1,0 +1,46 @@
+{
+  "arxiv_id": "2610.29489v1",
+  "claims": {
+    "CLM-ARCH-0132": {
+      "evidence_spans": [
+        "The second moves the polynomial’s coefficients into scalar registers, which stops the spilling and cuts the softmax region’s vector memory instructions by 78.7%.",
+        "cuts the softmax region’s vector memory instructions by 78.7%.",
+        "AT B q = 128, B kv = 512, N = 1024, d = 64.",
+        "AT B q = 128, B kv = 512, N = 1024, d = 64.",
+        "The second moves the polynomial’s coefficients into scalar registers, which stops the spilling and cuts the softmax region’s vector memory instructions by 78.7%."
+      ],
+      "statement": "Moving the exponential polynomial's coefficients into scalar registers reduces vector memory instructions in the softmax region by 78.7%.",
+      "terms": []
+    },
+    "CLM-ARCH-0133": {
+      "evidence_spans": [
+        "An FPGA of the same design ranks the changes identically and scores them higher, at 2.71×, so the silicon figure is the conservative one.",
+        "An FPGA of the same design ranks the changes identically and scores them higher, at 2.71×, so the silicon figure is the conservative one.",
+        "EACH ARM AT ITS OWN FASTEST TILE ON EACH TARGET, N = 1024, d = 64.",
+        "EACH ARM AT ITS OWN FASTEST TILE ON EACH TARGET, N = 1024, d = 64.",
+        "An FPGA of the same design ranks the changes identically and scores them higher, at 2.71×, so the silicon figure is the conservative one."
+      ],
+      "statement": "On the EPAC FPGA implementation, combining scalar coefficients and reorientation reduces whole-kernel cycles by 2.71x.",
+      "terms": [
+        "EPAC"
+      ]
+    }
+  },
+  "extra_quotes": [
+    "We port PyTorch’s CPU FlashAttention kernel to a RISC-V CPU with 2KB vector registers",
+    "We propose two techniques. The first transposes the two matrices the kernel builds, the tile of scores and the running output, so that queries lie along the contiguous axis.",
+    "The second moves the polynomial’s coefficients into scalar registers, which stops the spilling and cuts the softmax region’s vector memory instructions by 78.7%.",
+    "None of this is a comparison against a GPU or a short-vector CPU, and none is needed for the claim, which is conditional: given a long-vector machine and a query block longer than the head dimension, the orientation in which the recurrence is evaluated decides the vector length of every region",
+    "It concerns prefill and training, where B q can be set to VLMAX, and not autoregressive decode, where a query block holds one row or one query group and the natural orientation is the right one."
+  ],
+  "generated": "2026-10-22",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00201",
+  "text_chars": 57745,
+  "text_sha256": "f780620a7bbb40a2ef0fb7e0f9d8c0c94fbf3ca044af884e1fd1063e7e19170f"
+}

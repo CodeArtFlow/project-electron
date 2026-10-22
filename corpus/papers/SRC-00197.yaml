@@ -1,0 +1,117 @@
+id: SRC-00197
+title: Super-tetragonal ferroelectric barium titanate through anionic overstoichiometry
+doi: null
+arxiv_id: 2610.29401v1
+url: https://arxiv.org/abs/2610.29401v1
+venue_id: arxiv_api
+authors:
+- name: Jingtian Zhao
+  affiliation: null
+  corresponding: null
+- name: Johanna van Gent González
+  affiliation: null
+  corresponding: null
+- name: Iñigo Robredo-Magro
+  affiliation: null
+  corresponding: null
+- name: Ewout van der Veer
+  affiliation: null
+  corresponding: null
+- name: Daniel A. Chaney
+  affiliation: null
+  corresponding: null
+- name: Jorge Íñiguez-González
+  affiliation: null
+  corresponding: null
+- name: Beatriz Noheda
+  affiliation: null
+  corresponding: null
+- name: Martin F. Sarott
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-21'
+retrieved_date: '2026-10-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (64,736 characters, 40 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.29401v1 on
+  2026-10-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“increase of the BTO tetragonality (c/a) to a maximum of∼1.08”
+
+  “Symmetricθ-2θ, X-ray reflectivity, and reciprocal space mapping measurements were performed in line
+  focus on a Panalytical X’Pert MRD thin-film diffractometer, equipped with a Cu source (Cu-Kα,λ= 1.54
+  ˚A), a 2xGe(220) hybrid monochromator, and a PIXcel 3D area detector.”
+
+  “Upon reducing thep O2 from 0.15 mbar to 0.015 mbar, the remanent polarization shows a marked increase
+  from a 2P r value of 20µC cm −2 to 40µC cm −2”
+
+  “Upon reducing thep O2 from 0.15 mbar to 0.015 mbar”
+
+  “measured at 1 kHz and room temperature using PUND.”
+
+  “The polarization-electric field (P-E) hysteresis loops acquired using the Positive-Up-Negative-Down
+  (PUND) measurement protocol, separating the ferroelectric switching currents from all non-ferroelectric
+  parasitic contributions (e.g. leakage or capacitive charging) are shown in Fig. 4A”
+
+  “However, for an even more tetragonal film grown at 0.005 mbar, 2P r is reduced to 6µC cm −2”
+
+  “the film grown at 0.015 mbar displaying no fatigue for at least 10 10 cycles.”
+
+  “Fatigue measurements (Fig. 4C) show that the conventional BTO films undergo a soft breakdown with a
+  concomitant leakage increase from about 108 cycles.”'
+method_summary: “Symmetricθ-2θ, X-ray reflectivity, and reciprocal space mapping measurements were performed
+  in line focus on a Panalytical X’Pert MRD thin-film diffractometer, equipped with a Cu source (Cu-Kα,λ=
+  1.54 ˚A), a 2xGe(220) hybrid monochromator, and a PIXcel 3D area detector.”
+limitations: '“The reliance of epitaxial strain engineering on a finite number of available single-crystal
+  substrates, many of which are not compatible with complementary metal-oxide-semiconductor technology,
+  however, complicates continuous strain tuning and typically limits it to discrete values.”
+
+  “Furthermore, because strain energy scales with film volume, large epitaxial strains (up to 4 %) are
+  restricted to ultrathin films of a few unit cells in thickness.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 23168
+    output: 2688
+  claims_accepted: 5
+  claims_rejected: 3
+  rejected:
+  - statement: The BTO film grown under an oxygen pressure of 0.005 mbar exhibits a clattice constant
+      of 4.27 ˚A.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The BTO 002
+      reflection significantly shifts to smaller 2θvalues upon l'''
+    quotes:
+    - The BTO 002 reflection significantly shifts to smaller 2θvalues upon loweringp O2, corresponding
+      to an increase of the clattice constant from 4.04 ˚A to 4.27 ˚A
+    - 'Symmetricθ-2θ, X-ray reflectivity, and reciprocal space mapping measurements were performed in
+      line focus on a Panalytical X’Pert MRD thin-film diffractometer, equipped with a Cu source (Cu-Kα,λ=
+      1.54 ˚A), a 2xGe(220) hybrid monochromator, '
+    - atp O2 values of 0.15, 0.015, and 0.005 mbar, respectively
+  - statement: The maximum relative expansion of the out-of-plane lattice constant ∆c/c bulk is approximately
+      5.9 %.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - an out-of-plane expansion ∆c/c bulk of∼5.9 %
+    - 'Symmetricθ-2θ, X-ray reflectivity, and reciprocal space mapping measurements were performed in
+      line focus on a Panalytical X’Pert MRD thin-film diffractometer, equipped with a Cu source (Cu-Kα,λ=
+      1.54 ˚A), a 2xGe(220) hybrid monochromator, '
+  - statement: The calculated binding energy difference between oxygen atoms in regular lattice sites
+      and peroxide sites is 2.04 eV.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - calculating the difference in the binding energy between oxygen atoms in regular lattice sites and
+      the oxygen atoms in the peroxide sites,E extra −E lattice, yields a value of 2.04 eV
+    - To shed light into this and consolidate our findings from XPS, we perform first-principles density
+      functional theorty (DFT) calculations, in which we introduce extra oxygen atoms in a periodically
+      repeated 2x2x2 BTO supercell and run a stru
+    - first-principles density functional theorty (DFT) calculations
+corrections: []

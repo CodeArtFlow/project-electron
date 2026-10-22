@@ -1,0 +1,99 @@
+id: SRC-00198
+title: Quasi-Phase-Matched Second Harmonic Generation in Poling-Free Lithium Niobate Microrings with Surface
+  Molecular Pattern
+doi: null
+arxiv_id: 2610.29417v1
+url: https://arxiv.org/abs/2610.29417v1
+venue_id: arxiv_api
+authors:
+- name: Jinsong Cheng
+  affiliation: null
+  corresponding: null
+- name: Simin Yu
+  affiliation: null
+  corresponding: null
+- name: Jiahe Wang
+  affiliation: null
+  corresponding: null
+- name: Yilun Zhang
+  affiliation: null
+  corresponding: null
+- name: Juanjuan Lu
+  affiliation: null
+  corresponding: null
+- name: Xiaoqin Shen
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-21'
+retrieved_date: '2026-10-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (32,117 characters, 16 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.29417v1 on
+  2026-10-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“As the temperature increases, the SH power first increases and then decreases, reaching the
+  maximum S H output at 29 °C.”
+
+  “under a constant external pump power of 300 μW.”
+
+  “The temperature dependence of SH output follows a Lorentzian profile with a full width at half -maximum
+  (FWHM) of 2.01 °C.”
+
+  “The SH signal peaks at 775.71 nm under a fundamental pump wavelength of 1551.42 nm.”
+
+  “under a fundamental pump wavelength of 1551.42 nm.”
+
+  “The high -resolution X-ray photoelectron spectroscopy spectrum of the DASP-grafted LN clearly shows
+  a binding energy peak at 399.4 eV from nitrogen atoms (Figure 2d ), confirming the formation of the
+  DASP molecular layer on the surface.”'
+method_summary: '“The fabricated devices were characterized using a continuous-wave (CW) telecom laser
+  (Toptica CTL1550, tunable from 1510 to 1630 nm) and a near -visible laser (Newport TLB6712, tunable
+  from 765 to 781 nm) , as shown in Figure 3a.”
+
+  “To evaluate the impact of the surface molecular pattern on SHG, we measured the on-chip SH power versus
+  pump power for the same poling-free TFLN device with and without the surface patterned molecules.”'
+limitations: '“Because their effective refractive indices differ significantly, natural phase matching
+  cannot satisfy the momentum conservation condition for SHG.”
+
+  “Due to the simultaneous presence of material and geom etric dispersion in TFLN microrings, a frequency
+  mismatch inherently exists between the telecom fundamental mode and its corresponding SH mode.”
+
+  “It is noted that the moderate conversion efficiency is mainly limited by the unoptimized surface density
+  of the molecules which is ~15% of the optimal value (Figure S4) and the consequent enlarged molecular
+  tilt angle.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 11314
+    output: 2158
+  claims_accepted: 4
+  claims_rejected: 2
+  rejected:
+  - statement: The normalized conversion efficiency for the surface-patterned poling-free TFLN device
+      is 11.5% W⁻¹.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - The normalized conversion efficiency for the device with surface patterned molecules, 𝜂 = 𝑃𝑆𝐻𝐺/𝑃𝑝2
+      , reaches 11.5% 𝑊−1 in the undepleted -pump regime .
+    - The normalized conversion efficiency for the device with surface patterned molecules, 𝜂 = 𝑃𝑆𝐻𝐺/𝑃团2
+      , reaches 11.5% 𝑊−1 in the undepleted -pump regime .
+    - in the undepleted -pump regime .
+  - statement: The normalized conversion efficiency for the device without surface patterned molecules
+      is 0.029% W⁻¹.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''% W⁻¹'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a u'
+    quotes:
+    - Only at pump power higher than 0.8 mW can be observed detectable SH signals, with 𝜂 of only 0.029%
+      𝑊−1 owing to the lack of QPM.
+    - However, without surface patterned molecules, the same device shows no detectable SH signals in
+      the low pump power range.
+    - Only at pump power higher than 0.8 mW can be observed detectable SH signals
+corrections: []

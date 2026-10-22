@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-21.
+Topic code `PHOT`. Last reviewed 2026-10-22.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -252,6 +252,10 @@ Topic code `PHOT`. Last reviewed 2026-10-21.
   - `CLM-PHOT-0079` · processor_architecture single-layer diffractive processor · grade B · credibility unknown · measured · as of 2026-10-16
   - sources: SRC-00173
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The binding energy peak of nitrogen atoms in the DASP-grafted LN surface is 399.4 eV.
+  - `CLM-PHOT-0088` · measurement_method high-resolution X-ray photoelectron spectroscopy · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00198
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -294,6 +298,10 @@ Topic code `PHOT`. Last reviewed 2026-10-21.
 - **≤ 419.85 degC** — The fabricated dual-narrowband thermal emitter maintains its dual-narrowband spectral response for temperatures up to 693 K.
   - `CLM-PHOT-0015` · structure fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter · grade A · credibility unknown · measured · as of 2026-09-18
   - sources: SRC-00019
+- **29 degC** — The peak SHG power reaches its maximum output at a temperature of 29 °C.
+  - `CLM-PHOT-0085` · external_pump_power 300 μW · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00198
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature delta
 
@@ -301,6 +309,10 @@ Topic code `PHOT`. Last reviewed 2026-10-21.
   - `CLM-PHOT-0037` · cavity_length 20 µm, beam_shape circular, incident_power 1.09 mW · grade B · credibility unknown · measured · as of 2026-09-29
   - sources: SRC-00051
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **275.16 K** — The full width at half-maximum of the temperature dependence of SH output is 2.01 °C.
+  - `CLM-PHOT-0086` · external_pump_power 300 μW · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00198
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### throughput tool
 
@@ -375,6 +387,10 @@ Topic code `PHOT`. Last reviewed 2026-10-21.
   - `CLM-PHOT-0083` · permittivity_diagonal_term 4.75, material Bi-substituted yttrium iron garnet (Bi:YIG) · grade B · credibility unknown · simulated · as of 2026-10-20
   - sources: SRC-00191
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **0.77571 um** — The second-harmonic signal peaks at a wavelength of 775.71 nm.
+  - `CLM-PHOT-0087` · fundamental_pump_wavelength 1551.42 nm · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00198
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -401,6 +417,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 84
-- grades: {'B': 77, 'A': 7}
-- distinct sources: 28
+- claims: 88
+- grades: {'B': 81, 'A': 7}
+- distinct sources: 29

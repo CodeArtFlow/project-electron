@@ -1,0 +1,85 @@
+id: SRC-00201
+title: 'Reorienting the Vector Axis: Restructuring FlashAttention for Long-Vector Processors'
+doi: null
+arxiv_id: 2610.29489v1
+url: https://arxiv.org/abs/2610.29489v1
+venue_id: arxiv_api
+authors:
+- name: Emmanuel Irabor
+  affiliation: null
+  corresponding: null
+- name: Marc Casas
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-21'
+retrieved_date: '2026-10-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (57,745 characters, 11 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.29489v1 on
+  2026-10-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The second moves the polynomial’s coefficients into scalar registers, which stops the spilling
+  and cuts the softmax region’s vector memory instructions by 78.7%.”
+
+  “cuts the softmax region’s vector memory instructions by 78.7%.”
+
+  “AT B q = 128, B kv = 512, N = 1024, d = 64.”
+
+  “An FPGA of the same design ranks the changes identically and scores them higher, at 2.71×, so the silicon
+  figure is the conservative one.”
+
+  “EACH ARM AT ITS OWN FASTEST TILE ON EACH TARGET, N = 1024, d = 64.”'
+method_summary: '“We port PyTorch’s CPU FlashAttention kernel to a RISC-V CPU with 2KB vector registers”
+
+  “We propose two techniques. The first transposes the two matrices the kernel builds, the tile of scores
+  and the running output, so that queries lie along the contiguous axis.”
+
+  “The second moves the polynomial’s coefficients into scalar registers, which stops the spilling and
+  cuts the softmax region’s vector memory instructions by 78.7%.”'
+limitations: '“None of this is a comparison against a GPU or a short-vector CPU, and none is needed for
+  the claim, which is conditional: given a long-vector machine and a query block longer than the head
+  dimension, the orientation in which the recurrence is evaluated decides the vector length of every region”
+
+  “It concerns prefill and training, where B q can be set to VLMAX, and not autoregressive decode, where
+  a query block holds one row or one query group and the natural orientation is the right one.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 19594
+    output: 2090
+  claims_accepted: 2
+  claims_rejected: 3
+  rejected:
+  - statement: On the EPAC chip at a head dimension of 64, combining scalar coefficients and reorientation
+      reduces whole-kernel cycles by 1.84x.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - On silicon the two together cut whole-kernel cycles by 1.84 to 2.08× at a head dimension of 64,
+      raising floating-point utilisation from 16.2% to 29.7% of peak.
+    - N = 1024 49.5 26.9 1.84×
+  - statement: On the EPAC chip at a sequence length of 4096 and head dimension of 64, combining scalar
+      coefficients and reorientation achieves a 2.08x speed-up.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''N = 4096
+      46.8 22.5 2.08×'''
+    quotes:
+    - N = 4096 46.8 22.5 2.08×
+    - HOW THE GAIN VARIES, EPAC CHIP, EACH ARM AT ITS OWN BEST TILE.
+    - Sequence length, d = 64
+  - statement: The stock PyTorch FlashAttention kernel on the RISC-V EPAC chip core achieves a floating-point
+      utilization of 5.17 FLOP/cycle.
+    reason: 'unit conversion refused: throughput_tool: could not parse 5.17 ''FLOP/cycle'': ''FLOP'' is
+      not defined in the unit registry'
+    quotes:
+    - We port PyTorch’s CPU FlashAttention kernel to a RISC-V CPU with 2KB vector registers and find that
+      it achieves 5.17 of the 32 peak floating-point operations per cycle the core can issue (16.2% of
+      peak).
+    - We port PyTorch’s CPU FlashAttention kernel to a RISC-V CPU with 2KB vector registers
+    - 5.17 of the 32 peak floating-point operations per cycle the core can issue
+corrections: []

@@ -2533,3 +2533,120 @@ claims:
       unit: nm
     conditions:
       structure: PT-symmetric trilayer
+- id: CLM-PHOT-0085
+  topic: PHOT
+  statement: The peak SHG power reaches its maximum output at a temperature of 29 °C.
+  sources:
+  - SRC-00198
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    external_pump_power: 300 μW
+  quantity:
+    quantity: temperature
+    bound: exact
+    approximate: false
+    as_published:
+      value: 29.0
+      unit: °C
+    si_base:
+      value: 302.15
+      unit: K
+    display:
+      value: 29.0
+      unit: degC
+    conditions:
+      external_pump_power: 300 μW
+- id: CLM-PHOT-0086
+  topic: PHOT
+  statement: The full width at half-maximum of the temperature dependence of SH output is 2.01 °C.
+  sources:
+  - SRC-00198
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    external_pump_power: 300 μW
+  quantity:
+    quantity: temperature_delta
+    bound: exact
+    approximate: false
+    as_published:
+      value: 2.01
+      unit: °C
+    si_base:
+      value: 275.15999999999997
+      unit: K
+    display:
+      value: 275.15999999999997
+      unit: K
+    conditions:
+      external_pump_power: 300 μW
+- id: CLM-PHOT-0087
+  topic: PHOT
+  statement: The second-harmonic signal peaks at a wavelength of 775.71 nm.
+  sources:
+  - SRC-00198
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    fundamental_pump_wavelength: 1551.42 nm
+  quantity:
+    quantity: wavelength
+    bound: exact
+    approximate: false
+    as_published:
+      value: 775.71
+      unit: nm
+    si_base:
+      value: 7.757100000000001e-07
+      unit: m
+    display:
+      value: 0.7757100000000001
+      unit: um
+    conditions:
+      fundamental_pump_wavelength: 1551.42 nm
+- id: CLM-PHOT-0088
+  topic: PHOT
+  statement: The binding energy peak of nitrogen atoms in the DASP-grafted LN surface is 399.4 eV.
+  sources:
+  - SRC-00198
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    measurement_method: high-resolution X-ray photoelectron spectroscopy

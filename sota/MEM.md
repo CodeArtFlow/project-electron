@@ -1,6 +1,6 @@
 # Memory — state of the art
 
-Topic code `MEM`. Last reviewed 2026-10-21.
+Topic code `MEM`. Last reviewed 2026-10-22.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -75,6 +75,26 @@ Topic code `MEM`. Last reviewed 2026-10-21.
 - Retargeting six full-trace streams to six 3D DRAM organizations with TileDRAM yields a 2.20x geometric mean speedup.
   - `CLM-MEM-0030` · grade B · credibility unknown · simulated · as of 2026-10-16
   - sources: SRC-00185
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The saturation magnetization of Cu-seeded gamma-FeMn films is approximately 0.06 to 0.07 muB/atom.
+  - `CLM-MEM-0033` · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00203
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The effective perpendicular anisotropy energy density of gamma-FeMn films thicker than 40 nm is approximately 3 kJ/m3.
+  - `CLM-MEM-0034` · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00203
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The room-temperature anomalous Hall conductivity of the sample is approximately 12 to 14 S/cm.
+  - `CLM-MEM-0035` · temperature room -temperature, material 𝛾-FeMn · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00203
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Upon post-annealing at 430 degrees Celsius, the saturation magnetization of FeMn rises sharply to 0.65 muB/atom.
+  - `CLM-MEM-0036` · annealing_temperature 430°C · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00203
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- From sum-rule analysis of XMCD spectra, the orbital moment in gamma-FeMn is approximately 0.003 muB/Fe atom.
+  - `CLM-MEM-0037` · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00203
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
@@ -191,6 +211,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 32
-- grades: {'B': 32}
-- distinct sources: 11
+- claims: 37
+- grades: {'B': 37}
+- distinct sources: 12

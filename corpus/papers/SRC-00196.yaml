@@ -1,0 +1,108 @@
+id: SRC-00196
+title: First-principles modeling of ordering in Fe-rich Fe-Si alloys
+doi: null
+arxiv_id: 2610.29386v1
+url: https://arxiv.org/abs/2610.29386v1
+venue_id: arxiv_api
+authors:
+- name: Daniil M. Khodachenko
+  affiliation: null
+  corresponding: null
+- name: Andrei V. Ruban
+  affiliation: null
+  corresponding: null
+- name: Franco Moitzi
+  affiliation: null
+  corresponding: null
+- name: Oleg E. Peil
+  affiliation: null
+  corresponding: null
+- name: Vsevolod I. Razumovskiy
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-21'
+retrieved_date: '2026-10-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (53,624 characters, 13 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.29386v1 on
+  2026-10-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Table I. Chemical EPI in Fe-Si alloys at dilute Si concentration obtained from supercell (SC)
+  and SGPM calculations, given in mRy.”
+
+  “1 (111) 31.26 26.45 28.87 45.92”
+
+  “1 (111) 31.26 26.45 28.87 45.92 37.58”
+
+  “1 (111) 31.26 26.45 28.87 45.92 37.58 35.69 45.00”'
+method_summary: '“Here, we address this gap by using effective cluster interactions (ECI) obtained from
+  density functional theory (DFT) calculations and subsequent statistical thermodynamics modeling to unravel
+  the interplay between magnetism, composition, and temperature in body-centered cubic (bcc) Fe–Si alloys
+  up to 20 at% Si.”
+
+  “The temperature-dependent evolution of these ordering patterns, obtained from Monte Carlo simulations
+  based on the magnetically resolved ECIs, reproduces the experimentally observed phase equilibria and
+  short-range order characteristics.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 18111
+    output: 3085
+  claims_accepted: 3
+  claims_rejected: 5
+  rejected:
+  - statement: In supercell GGA calculations for the 1st shell (111) of Fe-Si alloys at dilute Si concentration,
+      the chemical EPI in the ferromagnetic state is 31.26 mRy.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''1 (111) 31.26'''
+    quotes:
+    - Table I. Chemical EPI in Fe-Si alloys at dilute Si concentration obtained from supercell (SC) and
+      SGPM calculations, given in mRy.
+    - 1 (111) 31.26
+    - 1 (111)
+    - ferromagnetic state
+  - statement: In supercell GGA calculations for the 2nd shell (200) of Fe-Si alloys at dilute Si concentration,
+      the chemical EPI in the ferromagnetic state is 16.51 mRy.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''2 (200) 16.51'''
+    quotes:
+    - Table I. Chemical EPI in Fe-Si alloys at dilute Si concentration obtained from supercell (SC) and
+      SGPM calculations, given in mRy.
+    - 2 (200) 16.51
+    - 2 (200)
+    - ferromagnetic state
+  - statement: In MC simulations for the Fe0.88Si0.12 alloy in the FM state with fixed ECI at a lattice
+      parameter of 2.87 Å, the A2-D03 phase transition occurs at about 1000 K
+    reason: the statement contains the number 88, which none of its quotes contain
+    quotes:
+    - The high-temperature peak of C V in the FM-state simulation indicates that the A2-D0 3 transition
+      occurs at about 1000 K.
+    - Fe 0.88Si0.12
+    - FM
+    - 2.87 Å
+  - statement: In MC simulations for the Fe0.88Si0.12 alloy in the FM state with fixed ECI at a lattice
+      parameter of 2.87 Å, a sharp peak of CV located at a low temperature of
+    reason: the statement contains the number 88, which none of its quotes contain
+    quotes:
+    - The other sharp peak of C V located at a relatively low temperature of about 200 K and also complemented
+      by the inflection point of SRO parameters, is related to the phase separation transition, when the
+      D03 phase precipitates with the stoi
+    - Fe 0.88Si0.12
+    - FM
+    - 2.87 Å
+  - statement: In MC simulations for the Fe0.88Si0.12 alloy in the PM (DLM) state with fixed ECI at a
+      lattice parameter of 2.87 Å, the first ordering transition to B2 occurs a
+    reason: the statement contains the number 88, which none of its quotes contain
+    quotes:
+    - The high-temperature alloy configuration in this case exhibits the B2 type of ordering. The first
+      ordering transition occurs approximately at 800 K, where B2 precipitates are formed.
+    - Fe 0.88Si0.12
+    - PM (DLM)
+    - 2.87 Å
+corrections: []

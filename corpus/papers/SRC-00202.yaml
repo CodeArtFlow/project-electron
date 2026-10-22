@@ -1,0 +1,106 @@
+id: SRC-00202
+title: Hard and Soft Real-Time DNN Inference Scheduling on Heterogeneous Multi-Accelerator Systems via
+  Reinforcement Learning
+doi: null
+arxiv_id: 2610.29503v1
+url: https://arxiv.org/abs/2610.29503v1
+venue_id: arxiv_api
+authors:
+- name: Francesco Giulio Blanco
+  affiliation: null
+  corresponding: null
+- name: Enrico Russo
+  affiliation: null
+  corresponding: null
+- name: Giuseppe Ascia
+  affiliation: null
+  corresponding: null
+- name: Davide Patti
+  affiliation: null
+  corresponding: null
+- name: Maurizio Palesi
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-21'
+retrieved_date: '2026-10-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (76,932 characters, 28 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.29503v1 on
+  2026-10-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“At 10 ms, our scheduler achievesHS = 81.41%with a standard deviation of client-level rates
+  equal to 12.16%.”
+
+  “standard deviation of client-level rates”'
+method_summary: “For each submitted SRT jobi, we sample Xi ∼Pareto(α= 4, xm = 1)andseta i =a i−1+3d(Xi−1).”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 22774
+    output: 2322
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: Under a 40 ms inter-arrival time workload, the proposed scheduling framework achieves a
+      soft-deadline hit ratio of 98.29%.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Atd= 40ms, this work achieved a98.29%SRT hit ratio
+    - d= 40ms
+    - SRT hit ratio
+  - statement: Under a 10 ms inter-arrival time workload, the proposed scheduler achieves a soft-deadline
+      hit ratio of 81.41%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''At 10 ms,
+      our scheduler still reachesHS = 81.41%'''
+    quotes:
+    - At 10 ms, our scheduler still reachesHS = 81.41%
+    - At 10 ms
+    - HS = 81.41%
+  - statement: Under a 40 ms inter-arrival time workload, the proposed scheduler achieves a worst-client
+      SLO achievement rate of 90.32%.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - At 40 ms, our scheduler reaches 90.32%
+    - At 40 ms
+    - Figure 7 reportsmin k H Sk.
+  - statement: Under a 10 ms inter-arrival time workload, the proposed scheduler maintains a worst-client
+      SLO achievement rate of 62.05%.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - Our scheduler keeps the worst client at 62.05%
+    - d= 10 ms
+    - worst client
+  - statement: The GRU scheduling policy network execution with 64 sub-jobs consumes 37888 cycles.
+    reason: 'unit conversion refused: time: cannot convert 37888.0 cycles to s - Cannot convert from ''turn''
+      (dimensionless) to ''second'' ([time]). A dimensional mismatch means the value was recorded '
+    quotes:
+    - WithN max = 64, this givesτpolicy = 64·592 = 37888cycles
+    - N max = 64
+    - hidden size 192
+  - statement: At a 1 GHz clock frequency, the GRU policy execution latency for 64 sub-jobs is 37.9 µs.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''37888cycles=
+      37.9µs at 1GHz'''
+    quotes:
+    - 37888cycles= 37.9µs at 1GHz
+    - at 1GHz
+    - N max = 64
+  - statement: The scheduler activation period is set to 5 ms.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The scheduler is activated everyTS = 5 ms.
+    - TS = 5 ms
+corrections: []

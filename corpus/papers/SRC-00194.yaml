@@ -1,0 +1,67 @@
+id: SRC-00194
+title: Geometry and electronic properties of chiral phosphorene nanotubes
+doi: null
+arxiv_id: 2610.29112v1
+url: https://arxiv.org/abs/2610.29112v1
+venue_id: arxiv_api
+authors:
+- name: Felipe Cervantes-Sodi
+  affiliation: null
+  corresponding: null
+- name: Carlos Delmote
+  affiliation: null
+  corresponding: null
+- name: José Ángel Reyes-Retana
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-21'
+retrieved_date: '2026-10-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (39,234 characters, 16 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.29112v1 on
+  2026-10-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: “MLBP exhibits a cohesive energy of−5.09 eV, confirming its stability as a 2D sheet in agreement
+  with previous studies [24, 25].”
+method_summary: “Using the Chiraltube software, a comprehensive set of 214 PNTs was generated and analyzed
+  via a 2D zone-folding mapping approach. Subsequently, a representative subset of 48 chiral PNTs was
+  selected forab initiocalculations covering the full chiral space.”
+limitations: “While the mapping method overestimates band gaps by directly inheriting monolayer features,
+  it serves as a qualitative tool for specific chiral geometries—particularly armchair configurations
+  and larger-radius tubes—by effectively capturing their subband density and dispersion profiles.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 12810
+    output: 1554
+  claims_accepted: 1
+  claims_rejected: 3
+  rejected:
+  - statement: The direct band gap of monolayer black phosphorene at the Γ point is calculated to be 0.95
+      eV using DFT with the PBE functional.
+    reason: 'unit conversion refused: voltage: cannot convert 0.95 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** '
+    quotes:
+    - The direct band gap at the Γ point is found to be 0.95 eV at the PBE level of theory.
+    - The band structure of MLBP is displayed in Fig. 4a
+  - statement: The calculated DFT band gap for the (12,3) phosphorene nanotube is 0.25 eV.
+    reason: 'unit conversion refused: voltage: cannot convert 0.25 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** '
+    quotes:
+    - e.g., 0.95 eV projected versus 0.25 eV from DFT for the (12,3) PNT
+  - statement: The (8,1) phosphorene nanotube exhibits a finite band gap of 0.25 eV in DFT calculations.
+    reason: 'unit conversion refused: voltage: cannot convert 0.25 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** '
+    quotes:
+    - The (8,1) nanotube stands as an exception, displaying a finite band gap of 0.25 eV
+    - Focusing on DFT results, quantum confinement and nanotube curvature significantly modify the band
+      structure
+    - its unrelaxed radius is 4.36 ˚A, and its relaxed structure departs from a circular cross-section
+corrections: []

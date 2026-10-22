@@ -1,0 +1,103 @@
+id: SRC-00200
+title: Deciding Scale Placement in MXFP4 Dot Products with Integer Arithmetic
+doi: null
+arxiv_id: 2610.29445v1
+url: https://arxiv.org/abs/2610.29445v1
+venue_id: arxiv_api
+authors:
+- name: Shreyas Vinayakumar
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-21'
+retrieved_date: '2026-10-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (65,082 characters, 24 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.29445v1 on
+  2026-10-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“the fastest direct configuration takes 10.361 ms”
+
+  “The recorded environment is an NVIDIA GeForce RTX 5080 (16 GiB,sm120)”
+
+  “8×8 8×16 ALU 10.361 11.460−10.61”
+
+  “Recorded RTX 5080 kernel times.”
+
+  “whereas the fastest hoisted configuration takes 11.151 ms”
+
+  “4×4 16×16 LUT 12.074 11.151 +7.64”'
+method_summary: '“To decide rewrite legality, we construct an integer state machine that exploits the
+  finite element alphabet and shared power-of-two scales, modeling overflow, NaN, and subnormal rounding.”
+
+  “For four tree shapes at block lengths k∈ {2,3,4,8,16,32}and two shapes atk= 64, SMT finds counterexamples
+  when this upper bound is increased by one exponent step.”
+
+  “We evaluate the computational cost of this approach against the standard direct encoding in quantifier-free
+  floating-point arithmetic (QF FP).”'
+limitations: '“The guarantees in this paper apply to a specific execution model: each operation evaluated
+  separately in binary32 with round to nearest ties-to-even and gradual underflow.”
+
+  “However, wider accumulators, flush-to-zero, or a reduction tree other than the one certified can change
+  the behavior and require a separate equivalence argument.”
+
+  “Theorems 1 and 2 have mathematical proofs supported by exhaustive and differential checks, but haven’t
+  been mechanized.”
+
+  “The rewrite proof does not verify subsequent LL VM transformations or machine-code generation.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 21332
+    output: 2890
+  claims_accepted: 2
+  claims_rejected: 5
+  rejected:
+  - statement: At block length k = 8, cvc5 solves the LIA integer query in an average of 4.78 wall-clock
+      seconds.
+    reason: the statement contains the number 8, which none of its quotes contain
+    quotes:
+    - At eight lanes, cvc5’s integer query averages 4.78 wall-clock seconds.
+    - cvc5 proves the two- and four-lane integer queries in under one second on average, but the corresponding
+      floating-point proofs reach the configured one-CPU-hour cap.
+    - 8 120 4.78 —≥69 238 —
+    - cvc5 LIA
+  - statement: For block length k = 32 and a left fold tree, the certified upper endpoint for the exponent
+      sum is B_max = 117.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''32 117 118
+      117 118'''
+    quotes:
+    - 32 117 118 117 118
+    - Every entry isunsatatBandsatatB+ 1.
+    - left fold
+  - statement: For block length k = 32 and a balanced tree, the certified upper endpoint for the exponent
+      sum is B_max = 118.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''32 117 118
+      117 118'''
+    quotes:
+    - 32 117 118 117 118
+    - Every entry isunsatatBandsatatB+ 1.
+    - balanced
+  - statement: Z3 proves the left fold QF LIA query unsat at k = 32 lanes in a mean time of 1.76 seconds.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - At 32 lanes, the left fold averages 1.76 seconds and the balanced tree 2.36 seconds.
+    - All 36 runs returnedunsat.
+    - left fold 32 117 35 10805 1.76 1.37–2.15
+    - QFLIAunsatproofs at the certified endpoint, using the supplied encoding. Times are means and ranges
+      of three wall-clock runs of Z3 on an otherwise idle host.
+  - statement: Z3 proves the balanced tree QF LIA query unsat at k = 32 lanes in a mean time of 2.36 seconds.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - At 32 lanes, the left fold averages 1.76 seconds and the balanced tree 2.36 seconds.
+    - All 36 runs returnedunsat.
+    - balanced 32 118 35 10805 2.36 2.23–2.57
+    - QFLIAunsatproofs at the certified endpoint, using the supplied encoding. Times are means and ranges
+      of three wall-clock runs of Z3 on an otherwise idle host.
+corrections: []

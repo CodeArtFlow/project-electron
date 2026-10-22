@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.29235v1
 doi: null
-title: 'Disorder-Mediated Magnetism in Transition-Metal Dichalcogenide Monolayers:
-  XS$_2$ and XSe$_2$ (X = Ti, V, Co, Mo, and Ru)'
+title: 'Disorder-Mediated Magnetism in Transition-Metal Dichalcogenide Monolayers: XS$_2$ and XSe$_2$
+  (X = Ti, V, Co, Mo, and Ru)'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-21'
@@ -24,6 +24,85 @@ id: CAND-20261022-0104
 harvested_date: '2026-10-22'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-22'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: In a 6x6 supercell, the mixing energy of 1H-Ti0.25Co0.25Mo0.25Ru0.25S2 relative to its
+      unmixed 1H counterparts is -55.9 meV/atom.
+    reason: the statement contains the number 25, which none of its quotes contain
+    quotes:
+    - 1H-Ti0.25Co0.25Mo0.25Ru0.25S2 -55.9 46.4
+    - DFT-GGA calculations were performed using OpenMX[22, 23].
+    - E mixing is defined as the energy of the selected phase relative to the total energy of the corresponding
+      unmixed compounds in the same structural form, determined solely from the column labeled 1H-(6×6)
+      or 1T-(6×6).
+  - statement: In a 6x6 supercell, the relative energy of 1H-Ti0.25Co0.25Mo0.25Ru0.25S2 is 46.4 meV/atom.
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - 1H-Ti0.25Co0.25Mo0.25Ru0.25S2 -55.9 46.4
+    - DFT-GGA calculations were performed using OpenMX[22, 23].
+    - E relative is defined as the energy of the selected phase relative to the total energy of the corresponding
+      unmixed compounds in their respective lower-energy structural forms, which may be either 1H or 1T.
+  - statement: In a 6x6 supercell, the mixing energy of 1T-Ti0.25V0.25Co0.25Ru0.25S2 relative to its unmixed
+      1T counterparts is -20.2 meV/atom.
+    reason: the statement contains the number 25, which none of its quotes contain
+    quotes:
+    - 1T-Ti0.25V0.25Co0.25Ru0.25S2 -20.2 -15.1
+    - DFT-GGA calculations were performed using OpenMX[22, 23].
+    - E mixing is defined as the energy of the selected phase relative to the total energy of the corresponding
+      unmixed compounds in the same structural form, determined solely from the column labeled 1H-(6×6)
+      or 1T-(6×6).
+  - statement: In a 6x6 supercell, the mixing energy of 1T-V0.89Co0.11S2 relative to unmixed 1T compounds
+      is -5.4 meV/atom.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''1T-V0.89Co0.11S2
+      -5.4 12.9'''
+    quotes:
+    - 1T-V0.89Co0.11S2 -5.4 12.9
+    - DFT-GGA calculations were performed using OpenMX[22, 23].
+    - E mixing is defined as the energy of the selected phase relative to the total energy of the corresponding
+      unmixed compounds in the same structural form, determined solely from the column labeled 1H-(6×6)
+      or 1T-(6×6).
+  - statement: The mixing energy of ferrimagnetic 1T-VSe2 in a 6x6 supercell is -0.2 meV/atom.
+    reason: 'unit conversion refused: energy: could not parse -0.2 ''meV/atom'': ''atom'' is not defined
+      in the unit registry'
+    quotes:
+    - Ferrimagnetic (6×6) 1T-VSe2 -0.2 16.8
+    - DFT-GGA calculations were performed using OpenMX[22, 23].
+    - E mixing is defined as the energy of the selected phase relative to the total energy of the corresponding
+      unmixed compounds in the same structural form, determined solely from the column labeled 1H-(6×6)
+      or 1T-(6×6).
+  - statement: The relative energy of 1T-VS2 in a 1x1 supercell relative to the lowest-energy configuration
+      is 20.6 meV/atom.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''VS2 0.0 0.0
+      20.6 20.6'''
+    quotes:
+    - VS2 0.0 0.0 20.6 20.6
+    - DFT-GGA calculations were performed using OpenMX[22, 23].
+  - statement: The relative energy of 1H-CoS2 in a 1x1 supercell is 165.6 meV/atom.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''CoS2 165.6
+      110.9 36.5 0.0'''
+    quotes:
+    - CoS2 165.6 110.9 36.5 0.0
+    - DFT-GGA calculations were performed using OpenMX[22, 23].
+  - statement: The energy reduction of 1H-VSe2 in the 6x6 supercell relative to the 1x1 structure is 0.1
+      meV/atom.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''VSe2 0.1
+      0.0 17.0 17.0'''
+    quotes:
+    - VSe2 0.1 0.0 17.0 17.0
+    - For 1H-VSe2, the energy reduction in the (6×6) supercell is only 0.1 meV/atom, which is within our
+      computational uncertainty; the relaxed structure remains essentially identical to that of (1×1)
+      1H-VSe 2.
+    - DFT-GGA calculations were performed using OpenMX[22, 23].
+  tokens:
+    input: 11971
+    output: 3064
+  fetched_chars: 27781
