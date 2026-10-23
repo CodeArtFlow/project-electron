@@ -1,0 +1,77 @@
+id: SRC-00208
+title: Reconfigurable Free-Space Optical Interconnects
+doi: null
+arxiv_id: 2610.30757v1
+url: https://arxiv.org/abs/2610.30757v1
+venue_id: arxiv_api
+authors:
+- name: Jaekwon Lee
+  affiliation: null
+  corresponding: null
+- name: Carson G. Valdez
+  affiliation: null
+  corresponding: null
+- name: Anne R. Kroo
+  affiliation: null
+  corresponding: null
+- name: David A. B. Miller
+  affiliation: null
+  corresponding: null
+- name: Olav Solgaard
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-22'
+retrieved_date: '2026-10-23'
+access: full_text
+read_scope: Automated reading. The full PDF text (36,211 characters, 13 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.30757v1 on
+  2026-10-23. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The final crosstalk was -21.7 dB for kb=2, -24.3 dB for kb=2.33, and -24.5 dB for kb=3.09.”
+
+  “During the optimization, the average OFF/ON ratio is optimized from -8.33 dB to -17.02 dB, below the
+  ideal value of -10.1 dB at kb=2 that considers the effect from all nearby channels.”
+
+  “below the ideal value of -10.1 dB at kb=2”
+
+  “Figure 5 (a) show s the optimization of multiple one -to-one channels under simultaneous illumination.”
+
+  “The average loss due to this optimization was -1.24 dB, which will be improved with better phase resolution20.”
+
+  “(b) pixel-by-pixel optimization.”
+
+  “Figure 6 (b) reveals optimized worst-case crosstalk of -18.3 dB for A, - 19.4 dB for B, - 18.8 dB for
+  C, and - 19.6 dB for D , showing that multi-output channels have larger crosstalk.”'
+method_summary: '“The optimization uses gradient ascent, where the N-dimensional gradient is determined
+  experimentally from N2 different perturbations on the pattern and measurements on the region of interest
+  from the camera.”
+
+  “Light from a 450 nm laser diode is reflected at the micromirror array at a nearly 45° angle of incidence.”'
+limitations: “The optimization trade -off. (c) the crosstalk, and (d) the signal loss. Signal loss occurs
+  when the optimization enters a fine r stage, which is caused by discrete phase levels and resultant
+  scattering loss between pixels.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 12650
+    output: 1614
+  claims_accepted: 7
+  claims_rejected: 1
+  rejected:
+  - statement: The system achieved an average worst-case crosstalk of -21.7 dB after optimization at kb=2.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - The system after the optimization performed better than the ideal value of -16.2 dB, with the average
+      worst-case crosstalk of -21.7 dB.
+    - Figure 3 (b) shows the optimization results. The system after the optimization performed better
+      than the ideal value of -16.2 dB, with the average worst-case crosstalk of -21.7 dB.
+    - corresponding to kb=2.
+    - Figure 3 (a-b) Evaluation of nine channels
+corrections: []

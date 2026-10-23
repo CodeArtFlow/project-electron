@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-22.
+Topic code `PHOT`. Last reviewed 2026-10-23.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -256,6 +256,18 @@ Topic code `PHOT`. Last reviewed 2026-10-22.
   - `CLM-PHOT-0088` · measurement_method high-resolution X-ray photoelectron spectroscopy · grade B · credibility unknown · measured · as of 2026-10-21
   - sources: SRC-00198
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The loaded Q factor of the pump mode of the microdisk cavity was measured to be 2.67×106.
+  - `CLM-PHOT-0089` · device microdisk cavity, mode pump mode · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00205
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The loaded Q factor of the pump mode in the microring was measured to be 6.71 × 105 at low power.
+  - `CLM-PHOT-0092` · device microring, mode pump mode, power_level low power · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00205
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- Raw two-photon interference visibility is 41% for time windows longer than 4 ns.
+  - `CLM-PHOT-0093` · time_window longer than 4 ns · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00210
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -313,6 +325,10 @@ Topic code `PHOT`. Last reviewed 2026-10-22.
   - `CLM-PHOT-0086` · external_pump_power 300 μW · grade B · credibility unknown · measured · as of 2026-10-21
   - sources: SRC-00198
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **281.62 K** — The temperature dependence of the THG intensity in the microdisk exhibits a full width at half maximum of 8.47 °C.
+  - `CLM-PHOT-0091` · device microdisk, pump_power 12.4 mW · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00205
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### throughput tool
 
@@ -391,6 +407,10 @@ Topic code `PHOT`. Last reviewed 2026-10-22.
   - `CLM-PHOT-0087` · fundamental_pump_wavelength 1551.42 nm · grade B · credibility unknown · measured · as of 2026-10-21
   - sources: SRC-00198
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.51913 um** — When the microdisk was pumped at a wavelength of 1559.40 nm, a nonlinear signal was detected at 519.13 nm.
+  - `CLM-PHOT-0090` · device microdisk, pump_wavelength 1559.40 nm, pump_power 12.4 mW · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00205
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -417,6 +437,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 88
-- grades: {'B': 81, 'A': 7}
-- distinct sources: 29
+- claims: 93
+- grades: {'B': 86, 'A': 7}
+- distinct sources: 31

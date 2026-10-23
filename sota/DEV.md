@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-10-22.
+Topic code `DEV`. Last reviewed 2026-10-23.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -31,6 +31,14 @@ Topic code `DEV`. Last reviewed 2026-10-22.
   - `CLM-DEV-0058` · switching_regime large switching current · grade B · credibility unknown · measured · as of 2026-10-07
   - sources: SRC-00124
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈1.5 mA** — At 4.5 K, the NbN/FePt heterostructure with stripes perpendicular to the current achieves a larger critical current of approximately 1.5 mA.
+  - `CLM-DEV-0075` · sample NbN/FePt, temperature 4.5 K, stripe_orientation_angle 90° · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00204
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **≈4 mA** — At 4.5 K, the larger critical current for NbN/AlN/FePt reaches approximately 4 mA for stripes perpendicular to the current.
+  - `CLM-DEV-0077` · sample NbN/AlN/FePt, temperature 4.5 K, stripe_orientation θ = 90° · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00204
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### frequency
 
@@ -263,6 +271,10 @@ Topic code `DEV`. Last reviewed 2026-10-22.
   - `CLM-DEV-0035` · relaxation_temperature TLIESST · grade B · credibility unknown · measured · as of 2026-10-06
   - sources: SRC-00094
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈-257.65 degC** — The critical temperature Tc of NbN/I/FePt is approximately 15.5 K.
+  - `CLM-DEV-0076` · sample NbN/I/FePt · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00204
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature delta
 
@@ -334,6 +346,6 @@ _None._
 
 ## Evidence base
 
-- claims: 71
-- grades: {'B': 71}
-- distinct sources: 29
+- claims: 74
+- grades: {'B': 74}
+- distinct sources: 30

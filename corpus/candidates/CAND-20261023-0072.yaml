@@ -26,6 +26,96 @@ id: CAND-20261023-0072
 harvested_date: '2026-10-23'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-23'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At 10 K, the screened plasma frequency of PtSe2 is 1764 cm-1.
+    reason: 'unit conversion refused: frequency: could not parse 1764.0 ''cm−1'': ''cm−1'' is not defined
+      in the unit registry'
+    quotes:
+    - The zero crossing ofε 1(ω) corresponds to the screened plasma frequencyω scrp , which is 1764 cm−1
+      (0.22 eV) in PtSe 2 and 4148 cm −1 (0.51 eV) in PtTe 2 at 10 K.
+    - The reflectivity and the real part of the dielectric functionε 1(ω) of PtSe 2 and PtTe2 are shown
+      in Figs. 1(a) and 1(d), respectively.
+    - 1764 cm−1 (0.22 eV) in PtSe 2
+    - at 10 K
+  - statement: At 10 K, the screened plasma frequency of PtTe2 is 4148 cm-1.
+    reason: 'unit conversion refused: frequency: could not parse 4148.0 ''cm−1'': ''cm−1'' is not defined
+      in the unit registry'
+    quotes:
+    - The zero crossing ofε 1(ω) corresponds to the screened plasma frequencyω scrp , which is 1764 cm−1
+      (0.22 eV) in PtSe 2 and 4148 cm −1 (0.51 eV) in PtTe 2 at 10 K.
+    - The reflectivity and the real part of the dielectric functionε 1(ω) of PtSe 2 and PtTe2 are shown
+      in Figs. 1(a) and 1(d), respectively.
+    - 4148 cm −1 (0.51 eV) in PtTe 2
+    - at 10 K
+  - statement: At 10 K, the Drude plasma frequency of PtSe2 is 8758 cm-1.
+    reason: 'unit conversion refused: frequency: could not parse 8758.0 ''cm−1'': ''cm−1'' is not defined
+      in the unit registry'
+    quotes:
+    - At 10 K, the plasma frequencyω p of the Drude term amounts to 8758 cm −1 in PtSe 2 and 27 632 cm
+      −1 in PtTe2, corresponding to Drude spectral weights, given by the area under the Drude contribution
+      toσ 1(ω), of 2.0×10 6 and 2.0×10 7 Ω−1 cm−
+    - At 10 K, the plasma frequencyω p of the Drude term amounts to 8758 cm −1 in PtSe 2 and 27 632 cm
+      −1 in PtTe2
+    - 8758 cm −1 in PtSe 2
+    - At 10 K
+  - statement: At 10 K, the Drude plasma frequency of PtTe2 is 27 632 cm-1.
+    reason: the value 27632 does not appear in any of the claim's quotes
+    quotes:
+    - At 10 K, the plasma frequencyω p of the Drude term amounts to 8758 cm −1 in PtSe 2 and 27 632 cm
+      −1 in PtTe2, corresponding to Drude spectral weights, given by the area under the Drude contribution
+      toσ 1(ω), of 2.0×10 6 and 2.0×10 7 Ω−1 cm−
+    - At 10 K, the plasma frequencyω p of the Drude term amounts to 8758 cm −1 in PtSe 2 and 27 632 cm
+      −1 in PtTe2
+    - 27 632 cm −1 in PtTe2
+    - At 10 K
+  - statement: In Drude-Lorentz fits at 10 K, the low-energy peak of PtSe2 is centered at 1273 cm-1.
+    reason: 'unit conversion refused: frequency: could not parse 1273.0 ''cm−1'': ''cm−1'' is not defined
+      in the unit registry'
+    quotes:
+    - In the Drude–Lorentz fits at 10 K, this peak is centered at 1273 cm−1 in PtSe2 and at 1131 cm−1
+      in PtTe2 [insets of Figs. 1(c) and 1(f)].
+    - In the Drude–Lorentz fits at 10 K, this peak is centered at 1273 cm−1 in PtSe2 and at 1131 cm−1
+      in PtTe2
+    - 1273 cm−1 in PtSe2
+    - In the Drude–Lorentz fits at 10 K
+  - statement: In Drude-Lorentz fits at 10 K, the low-energy peak of PtTe2 is centered at 1131 cm-1.
+    reason: 'unit conversion refused: frequency: could not parse 1131.0 ''cm−1'': ''cm−1'' is not defined
+      in the unit registry'
+    quotes:
+    - In the Drude–Lorentz fits at 10 K, this peak is centered at 1273 cm−1 in PtSe2 and at 1131 cm−1
+      in PtTe2 [insets of Figs. 1(c) and 1(f)].
+    - In the Drude–Lorentz fits at 10 K, this peak is centered at 1273 cm−1 in PtSe2 and at 1131 cm−1
+      in PtTe2
+    - at 1131 cm−1 in PtTe2
+    - In the Drude–Lorentz fits at 10 K
+  - statement: At 10 K, the background dielectric constant epsilon_infinity is approximately 25 in PtSe2.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - At 10 K, this relation yieldsε ∞ ≈25 in PtSe2 and 44 in PtTe 2.
+    - 25 in PtSe2
+    - At 10 K
+  - statement: In calculations, the type-II Dirac points lie along the Gamma-A direction at approximately
+      -1.27 eV in PtSe2.
+    reason: 'unit conversion refused: voltage: cannot convert -1.27 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] **'
+    quotes:
+    - In our calculations, the type-II Dirac points lie along the Γ–Adirection at about−1.27 eV in PtSe
+      2 and −0.80 eV in PtTe2 (Fig. 3).
+    - −1.27 eV in PtSe 2
+    - Γ–Adirection
+  tokens:
+    input: 12920
+    output: 3015
+  fetched_chars: 31503

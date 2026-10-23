@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-22.
+Topic code `MAT`. Last reviewed 2026-10-23.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -99,6 +99,16 @@ Topic code `MAT`. Last reviewed 2026-10-22.
   - `CLM-MAT-0172` · material MLBP · grade B · credibility unknown · simulated · as of 2026-10-21
   - sources: SRC-00194
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **3.20435e-05 fJ** — The activation energy below the peak of the 2.3 eV emission in HPHT diamond is 0.20 eV.
+  - `CLM-MAT-0200` · band 2.3 eV emission, impurity_content <0.1 ppm · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00212
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0088 — see the open register
+- **5.92805e-05 fJ** — The activation energy above the peak of the 2.3 eV emission in HPHT diamond is 0.37 eV.
+  - `CLM-MAT-0201` · band 2.3 eV emission, impurity_content <0.1 ppm · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00212
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0088 — see the open register
 
 ### frequency
 
@@ -266,12 +276,48 @@ Topic code `MAT`. Last reviewed 2026-10-22.
   - `CLM-MAT-0169` · material BSTS · grade B · credibility unknown · measured · as of 2026-10-20
   - sources: SRC-00190
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **3.3 nm** — The measured AFM thickness of the (PEA)2CuCl4 monolayer crystal is 3.3 nm.
+  - `CLM-MAT-0192` · material (PEA)2CuCl4, layer_count monolayer · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00209
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0087 — see the open register
+- **≈1.9 nm** — The bulk crystallographic interlayer spacing of (PEA)2CuCl4 is ~ 1.9 nm.
+  - `CLM-MAT-0193` · material (PEA)2CuCl4, type bulk crystallographic interlayer spacing · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00209
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0087 — see the open register
+- **≈47.8 nm** — The gold electrode thickness measured across the (PEA)2PbI4 device is ≈ 47.8 nm.
+  - `CLM-MAT-0194` · component Au electrode, device (PEA)2PbI4 device · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00209
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈0.2 nm** — Quantum-chemical calculations at the r2SCAN-3c level give an optimized Cu–O distance of approximately 2.0 Å for the [CuCl3(DMF)]− complex.
+  - `CLM-MAT-0196` · species [CuCl3(DMF)]−, method r2SCAN-3c · grade B · credibility unknown · simulated · as of 2026-10-22
+  - sources: SRC-00209
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **0.34 nm** — The calculated Bohr radius for the boron acceptor is 0.34 nm.
+  - `CLM-MAT-0202` · static_dielectric_constant ~ 5.7, ionization_energy 0.37 eV · grade B · credibility unknown · simulated · as of 2026-10-22
+  - sources: SRC-00212
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### power
 
 - **0.002412 W** — CPGE measurements were performed using a laser excitation wavelength of 405 nm at a power of 2.412 mW.
   - `CLM-MAT-0106` · wavelength 405 nm · grade B · credibility unknown · measured · as of 2026-10-09
   - sources: SRC-00126
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈2e-13 W** — The static power consumption of the isolated ultrathin (PEA)2PbI4 channel at 5 V operating bias is ~ 0.2 pW.
+  - `CLM-MAT-0189` · channel_material (PEA)2PbI4, vds 5 V · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00209
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0086 — see the open register
+- **5.6e-12 W** — The static power consumption of the isolated ultrathin (PEA)2PbI4 channel at 20 V operating bias is 5.6 pW.
+  - `CLM-MAT-0190` · channel_material (PEA)2PbI4 · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00209
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0086 — see the open register
+- **≈5e-11 W** — The static power consumption of the drop-cast control device at 5 V operating bias is ~ 50 pW.
+  - `CLM-MAT-0191` · device_type drop-cast control devices · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00209
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power density
@@ -627,6 +673,10 @@ Topic code `MAT`. Last reviewed 2026-10-22.
   - `CLM-MAT-0184` · geometry_relaxation without geometry relaxation · grade B · credibility unknown · simulated · as of 2026-10-21
   - sources: SRC-00199
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The calculated band gap of the conventional 2D h-BN phase is 4.7 eV.
+  - `CLM-MAT-0185` · material_phase h-BN, method DFT calculations · grade B · credibility unknown · simulated · as of 2026-10-22
+  - sources: SRC-00206
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -666,6 +716,22 @@ Topic code `MAT`. Last reviewed 2026-10-22.
   - `CLM-MAT-0176` · material BTO · grade B · credibility unknown · measured · as of 2026-10-21
   - sources: SRC-00197
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈46 percent** — In a representative 13.5% In composition configuration, In substitution at the unrelaxed pristine-GaN geometry reduces PR_VBM by approximately 46% relative to pristine GaN.
+  - `CLM-MAT-0186` · indium_composition 13.5%, geometry fixed pristine-GaN geometry · grade B · credibility unknown · simulated · as of 2026-10-22
+  - sources: SRC-00207
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈1 percent** — In InGaAs alloys, as In content increases, the localization ratio changes by only about 1% relative to pristine GaAs.
+  - `CLM-MAT-0187` · material InxGa1−xAs, baseline pristine GaAs · grade B · credibility unknown · simulated · as of 2026-10-22
+  - sources: SRC-00207
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **46 percent** — The configurationally averaged radiative strength decreases monotonically with In content, reaching a 46% reduction at 22% In relative to pristine GaN.
+  - `CLM-MAT-0188` · indium_composition 22%, baseline pristine GaN · grade B · credibility unknown · simulated · as of 2026-10-22
+  - sources: SRC-00207
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **34 percent** — DFT calculations predict a circular dichroism degree of 34% at the X valleys in monolayer SnSe.
+  - `CLM-MAT-0198` · method DFT calculations, location X valleys · grade B · credibility unknown · simulated · as of 2026-10-22
+  - sources: SRC-00211
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -777,6 +843,14 @@ Topic code `MAT`. Last reviewed 2026-10-22.
   - `CLM-MAT-0171` · state grey exciton · grade B · credibility unknown · measured · as of 2026-10-21
   - sources: SRC-00193
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.000603 ns** — An X/X' valley asymmetry decay time constant of 603 fs was measured in SnSe following circularly polarized excitation.
+  - `CLM-MAT-0197` · material SnSe, excitation_helicity σ+ · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00211
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **10 ns** — The lifetime of the 2.8 eV luminescence band in HPHT diamond was measured as 10 ns under excitation.
+  - `CLM-MAT-0199` · band 2.8 eV band, boron_concentration 0.2 ppm · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00212
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -811,6 +885,10 @@ Topic code `MAT`. Last reviewed 2026-10-22.
   - sources: SRC-00187
   - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0084 — see the open register
+- **≈0.0035 um** — The photoluminescence emission of the (PEA)2PbI4 monolayer shows an ≈ 3.5 nm blueshift compared to the bulk crystal.
+  - `CLM-MAT-0195` · material (PEA)2PbI4 · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00209
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -918,9 +996,18 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0085` — wavelength: _unexamined; classification pending_
   - claims: CLM-MAT-0166, CLM-PHOT-0033
   - missing data: `not yet named`
+- `CFL-0086` — power: _unexamined; classification pending_
+  - claims: CLM-MAT-0189, CLM-MAT-0190
+  - missing data: `not yet named`
+- `CFL-0087` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0192, CLM-MAT-0193
+  - missing data: `not yet named`
+- `CFL-0088` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0200, CLM-MAT-0201
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 184
-- grades: {'B': 184}
-- distinct sources: 68
+- claims: 202
+- grades: {'B': 202}
+- distinct sources: 73

@@ -1980,3 +1980,112 @@ claims:
       unit: um
     conditions:
       power: 2 mW
+- id: CLM-DEV-0075
+  topic: DEV
+  statement: At 4.5 K, the NbN/FePt heterostructure with stripes perpendicular to the current achieves
+    a larger critical current of approximately 1.5 mA.
+  sources:
+  - SRC-00204
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    sample: NbN/FePt
+    temperature: 4.5 K
+    stripe_orientation_angle: 90°
+  quantity:
+    quantity: current
+    bound: exact
+    approximate: true
+    as_published:
+      value: 1.5
+      unit: mA
+    si_base:
+      value: 0.0015
+      unit: A
+    display:
+      value: 1.5
+      unit: mA
+    conditions:
+      sample: NbN/FePt
+      temperature: 4.5 K
+      stripe_orientation_angle: 90°
+- id: CLM-DEV-0076
+  topic: DEV
+  statement: The critical temperature Tc of NbN/I/FePt is approximately 15.5 K.
+  sources:
+  - SRC-00204
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    sample: NbN/I/FePt
+  quantity:
+    quantity: temperature
+    bound: exact
+    approximate: true
+    as_published:
+      value: 15.5
+      unit: K
+    si_base:
+      value: 15.5
+      unit: K
+    display:
+      value: -257.65
+      unit: degC
+    conditions:
+      sample: NbN/I/FePt
+- id: CLM-DEV-0077
+  topic: DEV
+  statement: At 4.5 K, the larger critical current for NbN/AlN/FePt reaches approximately 4 mA for stripes
+    perpendicular to the current.
+  sources:
+  - SRC-00204
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    sample: NbN/AlN/FePt
+    temperature: 4.5 K
+    stripe_orientation: θ = 90°
+  quantity:
+    quantity: current
+    bound: exact
+    approximate: true
+    as_published:
+      value: 4.0
+      unit: mA
+    si_base:
+      value: 0.004
+      unit: A
+    display:
+      value: 4.0
+      unit: mA
+    conditions:
+      sample: NbN/AlN/FePt
+      temperature: 4.5 K
+      stripe_orientation: θ = 90°

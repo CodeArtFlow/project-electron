@@ -1,0 +1,96 @@
+id: SRC-00210
+title: Broadband emitter localization and prefabrication two-photon interference from InAs/InP quantum
+  dots monolithically grown on an InGaAsP/InP distributed Bragg reflector
+doi: null
+arxiv_id: 2610.30905v1
+url: https://arxiv.org/abs/2610.30905v1
+venue_id: arxiv_api
+authors:
+- name: Paweł Mrowiński
+  affiliation: null
+  corresponding: null
+- name: Jan Śmigiel
+  affiliation: null
+  corresponding: null
+- name: Mikołaj Badura
+  affiliation: null
+  corresponding: null
+- name: Beata Ściana
+  affiliation: null
+  corresponding: null
+- name: Wojciech Kijaszek
+  affiliation: null
+  corresponding: null
+- name: Emilia Zięba-Ostój
+  affiliation: null
+  corresponding: null
+- name: Paweł Holewa
+  affiliation: null
+  corresponding: null
+- name: Marcin Syperek
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-22'
+retrieved_date: '2026-10-23'
+access: full_text
+read_scope: Automated reading. The full PDF text (43,870 characters, 13 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.30905v1 on
+  2026-10-23. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“decreasing to 41% for time ranges longer than 4 ns.”
+
+  “for time ranges longer than 4 ns”'
+method_summary: '“Microphotoluminescence spectroscopy and quantum optics”
+
+  “Hong-Ou–Mandel (HOM) interference”'
+limitations: “The quoted value represents the statistical precision with which the center of the selected
+  PL spot is determined. We underline here, that it is not yet the absolute QD -to-device placement accuracy.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14333
+    output: 1381
+  claims_accepted: 1
+  claims_rejected: 4
+  rejected:
+  - statement: The calculated maximum upward photon extraction efficiency reaches roughly 13% at 1573
+      nm.
+    reason: 'unit conversion refused: efficiency_compute: cannot convert 13.0 % to 1/J - Cannot convert
+      from ''percent'' (dimensionless) to ''1 / joule'' ([time] ** 2 / [mass] / [length] ** 2). A dimens'
+    quotes:
+    - producing a calculated maximum upward photon extraction efficiency (PEE) of roughly 13% at 1573
+      nm
+    - at 1573 nm
+  - statement: Statistical centroid-localization precision of the selected quantum dot PL spot is approximately
+      3 nm.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''nm'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - We conservatively quote a statistical localization precision of approximately 3 nm after accounting
+      for the precision with which the fit uncertainty and pixel calibration are determined
+    - mounted in a closed-cycle cryostat at approximately 5 K
+  - statement: The X- line transition at 1549.5 nm yields a raw second-order autocorrelation value g(2)(0)
+      of 0.059 ± 0.002 under pulsed quasi-resonant excitation.
+    reason: the statement contains the number 1549.5, which none of its quotes contain
+    quotes:
+    - The resulting autocorrelation histogram yields a raw g (2)(0) = A 0,2ns/A10,2ns = 0.059 ± 0.002,
+      using identical 2 ns integration windows
+    - under pulsed quasi-resonant excitation
+    - The X- emission was subsequently coupled
+    - using identical 2 ns integration windows
+  - statement: Raw two-photon interference visibility of 51% is measured for a 2 ns time window under
+      pulsed quasi-resonant excitation.
+    reason: the statement contains the number 51, which none of its quotes contain
+    quotes:
+    - This quantitative analysis shows approximately 5 1% TPI visibility for a 2 ns time range
+    - under pulsed quasi-resonant excitation
+    - for a 2 ns time range
+corrections: []

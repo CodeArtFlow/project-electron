@@ -2650,3 +2650,135 @@ claims:
     verified_quotes: 3
   conditions:
     measurement_method: high-resolution X-ray photoelectron spectroscopy
+- id: CLM-PHOT-0089
+  topic: PHOT
+  statement: The loaded Q factor of the pump mode of the microdisk cavity was measured to be 2.67×106.
+  sources:
+  - SRC-00205
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    device: microdisk cavity
+    mode: pump mode
+- id: CLM-PHOT-0090
+  topic: PHOT
+  statement: When the microdisk was pumped at a wavelength of 1559.40 nm, a nonlinear signal was detected
+    at 519.13 nm.
+  sources:
+  - SRC-00205
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    device: microdisk
+    pump_wavelength: 1559.40 nm
+    pump_power: 12.4 mW
+  quantity:
+    quantity: wavelength
+    bound: exact
+    approximate: false
+    as_published:
+      value: 519.13
+      unit: nm
+    si_base:
+      value: 5.1913e-07
+      unit: m
+    display:
+      value: 0.51913
+      unit: um
+    conditions:
+      device: microdisk
+      pump_wavelength: 1559.40 nm
+      pump_power: 12.4 mW
+- id: CLM-PHOT-0091
+  topic: PHOT
+  statement: The temperature dependence of the THG intensity in the microdisk exhibits a full width at
+    half maximum of 8.47 °C.
+  sources:
+  - SRC-00205
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    device: microdisk
+    pump_power: 12.4 mW
+  quantity:
+    quantity: temperature_delta
+    bound: exact
+    approximate: false
+    as_published:
+      value: 8.47
+      unit: °C
+    si_base:
+      value: 281.62
+      unit: K
+    display:
+      value: 281.62
+      unit: K
+    conditions:
+      device: microdisk
+      pump_power: 12.4 mW
+- id: CLM-PHOT-0092
+  topic: PHOT
+  statement: The loaded Q factor of the pump mode in the microring was measured to be 6.71 × 105 at low
+    power.
+  sources:
+  - SRC-00205
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    device: microring
+    mode: pump mode
+    power_level: low power
+- id: CLM-PHOT-0093
+  topic: PHOT
+  statement: Raw two-photon interference visibility is 41% for time windows longer than 4 ns.
+  sources:
+  - SRC-00210
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    time_window: longer than 4 ns

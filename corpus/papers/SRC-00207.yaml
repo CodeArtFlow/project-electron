@@ -1,0 +1,91 @@
+id: SRC-00207
+title: Localization Contrast As a Fundamental Limit of Radiative Quantum Efficiency
+doi: null
+arxiv_id: 2610.30741v1
+url: https://arxiv.org/abs/2610.30741v1
+venue_id: arxiv_api
+authors:
+- name: Arsineh Apelian
+  affiliation: null
+  corresponding: null
+- name: Tanay Tak
+  affiliation: null
+  corresponding: null
+- name: Xuance Jiang
+  affiliation: null
+  corresponding: null
+- name: Tsung-Yin Tsai
+  affiliation: null
+  corresponding: null
+- name: James S. Speck
+  affiliation: null
+  corresponding: null
+- name: Vojtech Vlcek
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-22'
+retrieved_date: '2026-10-23'
+access: full_text
+read_scope: Automated reading. The full PDF text (35,038 characters, 7 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.30741v1 on
+  2026-10-23. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“For a representative 13.5% configuration, In substitution at the fixed pristine-GaN geometry
+  reduces PRVBM by∼46%, while structural relaxation produces an additional∼13% reduction relative to the
+  unrelaxed alloy (see SI).”
+
+  “For a representative 13.5% configuration, In substitution at the fixed pristine-GaN geometry reduces
+  PRVBM by∼46%”
+
+  “In substitution at the fixed pristine-GaN geometry reduces PRVBM by∼46%”
+
+  “As shown by the blue curve in Fig. 1, the localization ratio remains essentially constant as the In
+  content increases, changing by only about 1% relative to pristine GaAs.”
+
+  “We therefore repeat the analysis for In xGa1−xAs atx= 0%,13.5% and 16%, with 5 random configurations
+  for each alloy.”
+
+  “changing by only about 1% relative to pristine GaAs.”
+
+  “Our results show that the configurationally averaged radiative strength decreases monotonically with
+  increasing In content, reaching a 46% reduction atx= 22% relative to pristine GaN.”
+
+  “reaching a 46% reduction atx= 22% relative to pristine GaN.”'
+method_summary: '“Here, we obtain single-particle wavefunctions of bulk InGaN alloys directly from first-principles
+  and determine how this localization contrast affects radiative and Auger–Meitner recombination through
+  matrix elements of the one-body momentum and two-body Coulomb operators.”
+
+  “For each composition, we use 15 random 864-atom supercells to capture configurational fluctuations
+  in the electronic states.”'
+limitations: “In QWs, polarization fields and quantum confinement introduce additional effects beyond
+  this bulk-alloy mechanism [20, 48, 49].”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 12437
+    output: 2069
+  claims_accepted: 3
+  claims_rejected: 2
+  rejected:
+  - statement: At 13.5% In composition, PR_VBM and PR_CBM are reduced by 55% and 19%, respectively, relative
+      to pristine GaN.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - At 13.5% In, the PR VBM and PR CBM are reduced by 55% and 19%, respectively, while at 22% In the
+      reductions increase to 63% and 22%.
+    - At 13.5% In, the PR VBM and PR CBM are reduced by 55% and 19%, respectively
+  - statement: At 22% In composition, PR_VBM and PR_CBM are reduced by 63% and 22%, respectively, relative
+      to pristine GaN.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - At 13.5% In, the PR VBM and PR CBM are reduced by 55% and 19%, respectively, while at 22% In the
+      reductions increase to 63% and 22%.
+    - while at 22% In the reductions increase to 63% and 22%.
+corrections: []

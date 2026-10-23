@@ -5008,3 +5008,622 @@ claims:
     verified_quotes: 3
   conditions:
     geometry_relaxation: without geometry relaxation
+- id: CLM-MAT-0185
+  topic: MAT
+  statement: The calculated band gap of the conventional 2D h-BN phase is 4.7 eV.
+  sources:
+  - SRC-00206
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material_phase: h-BN
+    method: DFT calculations
+- id: CLM-MAT-0186
+  topic: MAT
+  statement: In a representative 13.5% In composition configuration, In substitution at the unrelaxed
+    pristine-GaN geometry reduces PR_VBM by approximately 46% relative to pristine GaN.
+  sources:
+  - SRC-00207
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    indium_composition: 13.5%
+    geometry: fixed pristine-GaN geometry
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: true
+    as_published:
+      value: 46.0
+      unit: '%'
+    si_base:
+      value: 0.46
+      unit: dimensionless
+    display:
+      value: 46.0
+      unit: percent
+    conditions:
+      indium_composition: 13.5%
+      geometry: fixed pristine-GaN geometry
+- id: CLM-MAT-0187
+  topic: MAT
+  statement: In InGaAs alloys, as In content increases, the localization ratio changes by only about 1%
+    relative to pristine GaAs.
+  sources:
+  - SRC-00207
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: InxGa1−xAs
+    baseline: pristine GaAs
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: true
+    as_published:
+      value: 1.0
+      unit: '%'
+    si_base:
+      value: 0.01
+      unit: dimensionless
+    display:
+      value: 1.0
+      unit: percent
+    conditions:
+      material: InxGa1−xAs
+      baseline: pristine GaAs
+- id: CLM-MAT-0188
+  topic: MAT
+  statement: The configurationally averaged radiative strength decreases monotonically with In content,
+    reaching a 46% reduction at 22% In relative to pristine GaN.
+  sources:
+  - SRC-00207
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    indium_composition: 22%
+    baseline: pristine GaN
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 46.0
+      unit: '%'
+    si_base:
+      value: 0.46
+      unit: dimensionless
+    display:
+      value: 46.0
+      unit: percent
+    conditions:
+      indium_composition: 22%
+      baseline: pristine GaN
+- id: CLM-MAT-0189
+  topic: MAT
+  statement: The static power consumption of the isolated ultrathin (PEA)2PbI4 channel at 5 V operating
+    bias is ~ 0.2 pW.
+  sources:
+  - SRC-00209
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    channel_material: (PEA)2PbI4
+    vds: 5 V
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: true
+    as_published:
+      value: 0.2
+      unit: pW
+    si_base:
+      value: 2.0e-13
+      unit: W
+    display:
+      value: 2.0e-13
+      unit: W
+    conditions:
+      channel_material: (PEA)2PbI4
+      vds: 5 V
+- id: CLM-MAT-0190
+  topic: MAT
+  statement: The static power consumption of the isolated ultrathin (PEA)2PbI4 channel at 20 V operating
+    bias is 5.6 pW.
+  sources:
+  - SRC-00209
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    channel_material: (PEA)2PbI4
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 5.6
+      unit: pW
+    si_base:
+      value: 5.5999999999999996e-12
+      unit: W
+    display:
+      value: 5.5999999999999996e-12
+      unit: W
+    conditions:
+      channel_material: (PEA)2PbI4
+- id: CLM-MAT-0191
+  topic: MAT
+  statement: The static power consumption of the drop-cast control device at 5 V operating bias is ~ 50
+    pW.
+  sources:
+  - SRC-00209
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device_type: drop-cast control devices
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: true
+    as_published:
+      value: 50.0
+      unit: pW
+    si_base:
+      value: 5.0e-11
+      unit: W
+    display:
+      value: 5.0e-11
+      unit: W
+    conditions:
+      device_type: drop-cast control devices
+- id: CLM-MAT-0192
+  topic: MAT
+  statement: The measured AFM thickness of the (PEA)2CuCl4 monolayer crystal is 3.3 nm.
+  sources:
+  - SRC-00209
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: (PEA)2CuCl4
+    layer_count: monolayer
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 3.3
+      unit: nm
+    si_base:
+      value: 3.3e-09
+      unit: m
+    display:
+      value: 3.3
+      unit: nm
+    conditions:
+      material: (PEA)2CuCl4
+      layer_count: monolayer
+- id: CLM-MAT-0193
+  topic: MAT
+  statement: The bulk crystallographic interlayer spacing of (PEA)2CuCl4 is ~ 1.9 nm.
+  sources:
+  - SRC-00209
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: (PEA)2CuCl4
+    type: bulk crystallographic interlayer spacing
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 1.9
+      unit: nm
+    si_base:
+      value: 1.9e-09
+      unit: m
+    display:
+      value: 1.9
+      unit: nm
+    conditions:
+      material: (PEA)2CuCl4
+      type: bulk crystallographic interlayer spacing
+- id: CLM-MAT-0194
+  topic: MAT
+  statement: The gold electrode thickness measured across the (PEA)2PbI4 device is ≈ 47.8 nm.
+  sources:
+  - SRC-00209
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    component: Au electrode
+    device: (PEA)2PbI4 device
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 47.8
+      unit: nm
+    si_base:
+      value: 4.78e-08
+      unit: m
+    display:
+      value: 47.79999999999999
+      unit: nm
+    conditions:
+      component: Au electrode
+      device: (PEA)2PbI4 device
+- id: CLM-MAT-0195
+  topic: MAT
+  statement: The photoluminescence emission of the (PEA)2PbI4 monolayer shows an ≈ 3.5 nm blueshift compared
+    to the bulk crystal.
+  sources:
+  - SRC-00209
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    material: (PEA)2PbI4
+  quantity:
+    quantity: wavelength
+    bound: exact
+    approximate: true
+    as_published:
+      value: 3.5
+      unit: nm
+    si_base:
+      value: 3.5000000000000003e-09
+      unit: m
+    display:
+      value: 0.0035000000000000005
+      unit: um
+    conditions:
+      material: (PEA)2PbI4
+- id: CLM-MAT-0196
+  topic: MAT
+  statement: Quantum-chemical calculations at the r2SCAN-3c level give an optimized Cu–O distance of approximately
+    2.0 Å for the [CuCl3(DMF)]− complex.
+  sources:
+  - SRC-00209
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    species: '[CuCl3(DMF)]−'
+    method: r2SCAN-3c
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 2.0
+      unit: Å
+    si_base:
+      value: 2.0e-10
+      unit: m
+    display:
+      value: 0.19999999999999998
+      unit: nm
+    conditions:
+      species: '[CuCl3(DMF)]−'
+      method: r2SCAN-3c
+- id: CLM-MAT-0197
+  topic: MAT
+  statement: An X/X' valley asymmetry decay time constant of 603 fs was measured in SnSe following circularly
+    polarized excitation.
+  sources:
+  - SRC-00211
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: SnSe
+    excitation_helicity: σ+
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 603.0
+      unit: fs
+    si_base:
+      value: 6.030000000000001e-13
+      unit: s
+    display:
+      value: 0.000603
+      unit: ns
+    conditions:
+      material: SnSe
+      excitation_helicity: σ+
+- id: CLM-MAT-0198
+  topic: MAT
+  statement: DFT calculations predict a circular dichroism degree of 34% at the X valleys in monolayer
+    SnSe.
+  sources:
+  - SRC-00211
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    method: DFT calculations
+    location: X valleys
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 34.0
+      unit: '%'
+    si_base:
+      value: 0.34
+      unit: dimensionless
+    display:
+      value: 34.0
+      unit: percent
+    conditions:
+      method: DFT calculations
+      location: X valleys
+- id: CLM-MAT-0199
+  topic: MAT
+  statement: The lifetime of the 2.8 eV luminescence band in HPHT diamond was measured as 10 ns under
+    excitation.
+  sources:
+  - SRC-00212
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    band: 2.8 eV band
+    boron_concentration: 0.2 ppm
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 10.0
+      unit: ns
+    si_base:
+      value: 1.0e-08
+      unit: s
+    display:
+      value: 9.999999999999998
+      unit: ns
+    conditions:
+      band: 2.8 eV band
+      boron_concentration: 0.2 ppm
+- id: CLM-MAT-0200
+  topic: MAT
+  statement: The activation energy below the peak of the 2.3 eV emission in HPHT diamond is 0.20 eV.
+  sources:
+  - SRC-00212
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    band: 2.3 eV emission
+    impurity_content: <0.1 ppm
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.2
+      unit: eV
+    si_base:
+      value: 3.204353268e-20
+      unit: J
+    display:
+      value: 3.2043532679999995e-05
+      unit: fJ
+    conditions:
+      band: 2.3 eV emission
+      impurity_content: <0.1 ppm
+- id: CLM-MAT-0201
+  topic: MAT
+  statement: The activation energy above the peak of the 2.3 eV emission in HPHT diamond is 0.37 eV.
+  sources:
+  - SRC-00212
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    band: 2.3 eV emission
+    impurity_content: <0.1 ppm
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.37
+      unit: eV
+    si_base:
+      value: 5.928053545799999e-20
+      unit: J
+    display:
+      value: 5.928053545799998e-05
+      unit: fJ
+    conditions:
+      band: 2.3 eV emission
+      impurity_content: <0.1 ppm
+- id: CLM-MAT-0202
+  topic: MAT
+  statement: The calculated Bohr radius for the boron acceptor is 0.34 nm.
+  sources:
+  - SRC-00212
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    static_dielectric_constant: ~ 5.7
+    ionization_energy: 0.37 eV
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.34
+      unit: nm
+    si_base:
+      value: 3.4000000000000007e-10
+      unit: m
+    display:
+      value: 0.34
+      unit: nm
+    conditions:
+      static_dielectric_constant: ~ 5.7
+      ionization_energy: 0.37 eV
