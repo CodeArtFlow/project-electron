@@ -1,0 +1,83 @@
+id: SRC-00215
+title: Observation of Polarization Topology in Magneto-Optical BICs
+doi: null
+arxiv_id: 2610.31498v1
+url: https://arxiv.org/abs/2610.31498v1
+venue_id: arxiv_api
+authors:
+- name: Yaqi Li
+  affiliation: null
+  corresponding: null
+- name: Mingyu Tong
+  affiliation: null
+  corresponding: null
+- name: Fujia Chen
+  affiliation: null
+  corresponding: null
+- name: Li Zhang
+  affiliation: null
+  corresponding: null
+- name: Rui Zhao
+  affiliation: null
+  corresponding: null
+- name: Yuze Hu
+  affiliation: null
+  corresponding: null
+- name: Bei Wu
+  affiliation: null
+  corresponding: null
+- name: Haiyao Luo
+  affiliation: null
+  corresponding: null
+- name: Hongsheng Chen
+  affiliation: null
+  corresponding: null
+- name: Yihao Yang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-22'
+retrieved_date: '2026-10-24'
+access: full_text
+read_scope: Automated reading. The full PDF text (37,519 characters, 12 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.31498v1 on
+  2026-10-24. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: “Fig. 1c shows the simulated three -dimensional band structure of the MO PhC near the Γ point
+  for κ = 0, focusing on the band near λ ≈ 20.3 mm.”
+method_summary: “We extract the resonant output polarization using singular value decomposition of the
+  polarization-resolved angle-resolved reflection matrix without invoking reciprocity.”
+limitations: “In the experimental spectra, the hatched regions denote the inaccessible angular range |θ|
+  < 6° due to the limitations of the measurement setup.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 11879
+    output: 1061
+  claims_accepted: 1
+  claims_rejected: 2
+  rejected:
+  - statement: The symmetry-protected BIC at the Γ point reaches a simulated maximum radiative Q factor
+      of 6.8 × 10^7 for κ = 0.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - The radiative Q factor increases sharply toward the Γ point and reaches a simulated maximum of 6.8
+      × 107, confirming a symmetry-protected (SP) BIC at Γ.
+    - Fig. 1c shows the simulated three -dimensional band structure of the MO PhC near the Γ point for
+      κ = 0, focusing on the band near λ ≈ 20.3 mm.
+  - statement: The unit cell lattice constant a is 11 mm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The right inset shows the geometry of the unit cell, with a = 11 mm, D = 4.5 mm, h = 3 mm, t = 1
+      mm, w = 1.2 mm, and L = 2.6 mm.
+    - b Photographs of the fabricated sample in front and side views.
+    - a = 11 mm
+corrections: []

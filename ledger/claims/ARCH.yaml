@@ -3856,3 +3856,233 @@ claims:
       unit: percent
     conditions:
       metric: standard deviation of client-level rates
+- id: CLM-ARCH-0135
+  topic: ARCH
+  statement: For the tested 7-bit factorization case, fixed-temperature FPGA CPC achieves a mean core
+    solving time of 95.59 microseconds.
+  sources:
+  - SRC-00214
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    case: 7-bit factorization
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 95.59
+      unit: μs
+    si_base:
+      value: 9.559e-05
+      unit: s
+    display:
+      value: 95589.99999999999
+      unit: ns
+    conditions:
+      case: 7-bit factorization
+- id: CLM-ARCH-0136
+  topic: ARCH
+  statement: Software CPC reaches 90% reference coverage of the feasible area in approximately 18% of
+    the time required by restarted Adam for the Space task.
+  sources:
+  - SRC-00214
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    baseline: Adam5000
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: true
+    as_published:
+      value: 18.0
+      unit: '%'
+    si_base:
+      value: 0.18
+      unit: dimensionless
+    display:
+      value: 18.0
+      unit: percent
+    conditions:
+      baseline: Adam5000
+- id: CLM-ARCH-0137
+  topic: ARCH
+  statement: Software CPC reaches 90% reference coverage of the feasible area in approximately 30% of
+    the time required by restarted Adam for the Line task.
+  sources:
+  - SRC-00214
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: Adam5000
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: true
+    as_published:
+      value: 30.0
+      unit: '%'
+    si_base:
+      value: 0.3
+      unit: dimensionless
+    display:
+      value: 30.0
+      unit: percent
+    conditions:
+      baseline: Adam5000
+- id: CLM-ARCH-0138
+  topic: ARCH
+  statement: Ray-by-Ray achieves an average speedup of 1.91x over the baseline.
+  sources:
+  - SRC-00216
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: baseline
+- id: CLM-ARCH-0139
+  topic: ARCH
+  statement: Ray-by-Ray incurs an area overhead of 0.19%.
+  sources:
+  - SRC-00216
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    process: 15nm
+    fclk: 1GHz
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.19
+      unit: '%'
+    si_base:
+      value: 0.0019
+      unit: dimensionless
+    display:
+      value: 0.19
+      unit: percent
+    conditions:
+      process: 15nm
+      fclk: 1GHz
+- id: CLM-ARCH-0140
+  topic: ARCH
+  statement: Ray-by-Ray Shadow Rays workloads achieve a speedup of 1.42x over the baseline.
+  sources:
+  - SRC-00216
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    technique: Shadow Rays (SH)
+    baseline: baseline
+- id: CLM-ARCH-0141
+  topic: ARCH
+  statement: Ray-by-Ray Ambient Occlusion workloads achieve a speedup of 1.70x over the baseline.
+  sources:
+  - SRC-00216
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    technique: Ambient Occlusion (AO)
+    baseline: baseline
+- id: CLM-ARCH-0142
+  topic: ARCH
+  statement: Ray-by-Ray Path Tracing workloads achieve a speedup of 2.78x over the baseline.
+  sources:
+  - SRC-00216
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    technique: Path Tracing (PT)
+    baseline: baseline
+- id: CLM-ARCH-0143
+  topic: ARCH
+  statement: Ray-by-Ray achieves an average energy consumption of 0.98x relative to the baseline.
+  sources:
+  - SRC-00216
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-22'
+  created: '2026-10-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: baseline

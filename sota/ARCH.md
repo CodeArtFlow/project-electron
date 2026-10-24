@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-23.
+Topic code `ARCH`. Last reviewed 2026-10-24.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -373,6 +373,26 @@ Topic code `ARCH`. Last reviewed 2026-10-23.
   - `CLM-ARCH-0133` · platform FPGA, sequence_length 1024, head_dimension 64 · grade B · credibility unknown · measured · as of 2026-10-21
   - sources: SRC-00201
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- Ray-by-Ray achieves an average speedup of 1.91x over the baseline.
+  - `CLM-ARCH-0138` · baseline baseline · grade B · credibility unknown · simulated · as of 2026-10-22
+  - sources: SRC-00216
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Ray-by-Ray Shadow Rays workloads achieve a speedup of 1.42x over the baseline.
+  - `CLM-ARCH-0140` · technique Shadow Rays (SH), baseline baseline · grade B · credibility unknown · simulated · as of 2026-10-22
+  - sources: SRC-00216
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Ray-by-Ray Ambient Occlusion workloads achieve a speedup of 1.70x over the baseline.
+  - `CLM-ARCH-0141` · technique Ambient Occlusion (AO), baseline baseline · grade B · credibility unknown · simulated · as of 2026-10-22
+  - sources: SRC-00216
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Ray-by-Ray Path Tracing workloads achieve a speedup of 2.78x over the baseline.
+  - `CLM-ARCH-0142` · technique Path Tracing (PT), baseline baseline · grade B · credibility unknown · simulated · as of 2026-10-22
+  - sources: SRC-00216
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Ray-by-Ray achieves an average energy consumption of 0.98x relative to the baseline.
+  - `CLM-ARCH-0143` · baseline baseline · grade B · credibility unknown · simulated · as of 2026-10-22
+  - sources: SRC-00216
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -524,6 +544,20 @@ Topic code `ARCH`. Last reviewed 2026-10-23.
   - `CLM-ARCH-0134` · metric standard deviation of client-level rates · grade B · credibility unknown · simulated · as of 2026-10-21
   - sources: SRC-00202
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈18 percent** — Software CPC reaches 90% reference coverage of the feasible area in approximately 18% of the time required by restarted Adam for the Space task.
+  - `CLM-ARCH-0136` · baseline Adam5000 · grade B · credibility unknown · simulated · as of 2026-10-22
+  - sources: SRC-00214
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0089 — see the open register
+- **≈30 percent** — Software CPC reaches 90% reference coverage of the feasible area in approximately 30% of the time required by restarted Adam for the Line task.
+  - `CLM-ARCH-0137` · baseline Adam5000 · grade B · credibility unknown · simulated · as of 2026-10-22
+  - sources: SRC-00214
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0089 — see the open register
+- **0.19 percent** — Ray-by-Ray incurs an area overhead of 0.19%.
+  - `CLM-ARCH-0139` · process 15nm, fclk 1GHz · grade B · credibility unknown · simulated · as of 2026-10-22
+  - sources: SRC-00216
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -575,6 +609,10 @@ Topic code `ARCH`. Last reviewed 2026-10-23.
   - `CLM-ARCH-0131` · device NVIDIA GeForce RTX 5080, form hoisted, decode LUT · grade B · credibility unknown · measured · as of 2026-10-21
   - sources: SRC-00200
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **95590 ns** — For the tested 7-bit factorization case, fixed-temperature FPGA CPC achieves a mean core solving time of 95.59 microseconds.
+  - `CLM-ARCH-0135` · case 7-bit factorization · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00214
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -607,9 +645,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0083` — relative_deviation: _unexamined; classification pending_
   - claims: CLM-ARCH-0100, CLM-ARCH-0101
   - missing data: `not yet named`
+- `CFL-0089` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-ARCH-0136, CLM-ARCH-0137
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 134
-- grades: {'B': 134}
-- distinct sources: 45
+- claims: 143
+- grades: {'B': 143}
+- distinct sources: 47

@@ -32,6 +32,82 @@ id: CAND-20261023-0065
 harvested_date: '2026-10-23'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-24'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The total energy of a 142-atom AlN model with clustered nitrogen vacancies is approximately
+      1.17 eV lower than with dispersed nitrogen vacancies.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - In a 142 -atom model, clustered 𝑉N had a total energy approximately 1.17 eV lower than dispersed
+      𝑉N.
+    - In a 142 -atom model
+    - clustered 𝑉N had a total energy approximately 1.17 eV lower than dispersed 𝑉N
+  - statement: The spontaneous polarization of the fabricated Al0.9Sc0.1N film exceeds 150 μC/cm2.
+    reason: the statement contains the number 9, which none of its quotes contain
+    quotes:
+    - The spontaneous polarization exceeds 150 μ C/cm2 as demonstrated in Fig. 2a.
+    - Mo/Al0.9Sc0.1N/Mo ferroelectric capacitors were fabricated through physical vapor deposition.
+    - 50 nm-thick Al0.9Sc0.1N film
+  - statement: CI-NEB calculations yield a local nucleation barrier of approximately 0.77 eV per unit
+      cell near a nitrogen vacancy.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - CI -NEB calculations gave a local nucleation barrier of approximately 0.77eV per unit cell near
+      𝑉N.
+    - near 𝑉N
+    - CI -NEB calculations
+  - statement: The local nucleation barrier near a nitrogen vacancy is approximately 0.31 eV lower than
+      that in pristine AlN.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - This value is approximately 0.31 eV lower than that in pristine AlN (Fig. 3b).
+    - pristine AlN
+    - near 𝑉N
+  - statement: In MD simulations of pristine AlN, the coercive field is 30.84 MV/cm.
+    reason: the quote says the number is approximate but approximate is false
+    quotes:
+    - At a 𝑉N concentration of approximately 1% , 𝐸c decreased from 30.84 MV/cm in pristine AlN to 21.75
+      MV/cm, corresponding to ~30.1% reduction (Fig. 4b).
+    - MD simulated hysteresis loops for pristine AlN and AlN with randomly distributed 𝑉N at varying concentrations.
+    - pristine AlN
+  - statement: In MD simulations of AlN with a randomly distributed nitrogen vacancy concentration of
+      approximately 1%, the coercive field is 21.75 MV/cm.
+    reason: 'unit conversion refused: voltage: cannot convert 21.75 MV/cm to V - Cannot convert from ''megavolt
+      / centimeter'' ([mass] * [length] / [time] ** 3 / [current]) to ''volt'' ([mass] * [length'
+    quotes:
+    - At a 𝑉N concentration of approximately 1% , 𝐸c decreased from 30.84 MV/cm in pristine AlN to 21.75
+      MV/cm, corresponding to ~30.1% reduction (Fig. 4b).
+    - MD simulated hysteresis loops for pristine AlN and AlN with randomly distributed 𝑉N at varying concentrations.
+    - At a 𝑉N concentration of approximately 1%
+    - AlN with randomly distributed 𝑉N
+  - statement: In Sc-doped AlN, a nitrogen vacancy at the N2 site reduces the local switching barrier
+      by 0.31 eV per unit cell.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Most 𝑉N sites further lowered the local switching barrier, with 𝑉N at the N2 site reducing the barrier
+      by 0.31 eV per unit cell, corresponding to a decrease of approximately 45% ( Fig. 5c).
+    - CI-NEB calculations of switching pathways at different 𝑉N sites in Sc-doped AlN gave a consistent
+      picture.
+    - Sc-doped AlN
+    - 𝑉N at the N2 site
+  tokens:
+    input: 17719
+    output: 2249
+  fetched_chars: 54324

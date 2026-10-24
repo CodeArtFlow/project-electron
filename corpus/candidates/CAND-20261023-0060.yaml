@@ -27,6 +27,29 @@ id: CAND-20261023-0060
 harvested_date: '2026-10-23'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-24'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The remanent polarization of CsGeBr3 is estimated at about 12 µC/cm2.
+    reason: 'unit conversion refused: power_density: could not parse 12.0 ''µC/cm 2'': Unit expression
+      cannot have a scaling factor.'
+    quotes:
+    - The remanent polarization, about 12µC/cm 2, lies at the lower end of the experimental range for
+      CsGeBr 3 [27].
+    - The polarization was estimated asP= V −1 Pi Ziui, whereVis the volume,Z i are fixed Born effective
+      charges evaluated with qNEP at the relaxed ground-state structure, andu i are the atomic displacements
+      from an ideal cubic reference.
+    - CsGeBr3 lies at the lower end of the experimental range for CsGeBr 3
+    - at 300 K for CsGeBr 3
+  tokens:
+    input: 13957
+    output: 616
+  fetched_chars: 38930

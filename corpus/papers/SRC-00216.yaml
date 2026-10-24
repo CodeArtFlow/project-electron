@@ -1,0 +1,80 @@
+id: SRC-00216
+title: 'Ray-by-Ray: Fine-Grained Resource Management for GPU Ray Tracing Units'
+doi: null
+arxiv_id: 2610.31630v1
+url: https://arxiv.org/abs/2610.31630v1
+venue_id: arxiv_api
+authors:
+- name: Junrui Pan
+  affiliation: null
+  corresponding: null
+- name: Cesar Avalos Baddouh
+  affiliation: null
+  corresponding: null
+- name: Kai Ze Ee
+  affiliation: null
+  corresponding: null
+- name: Timothy G. Rogers
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-22'
+retrieved_date: '2026-10-24'
+access: full_text
+read_scope: Automated reading. The full PDF text (92,699 characters, 16 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.31630v1 on
+  2026-10-24. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Across a wide range of workloads, this design achieves an average speedup of 1.91×with an
+  area overhead of 0.19%.”
+
+  “Experimental results show that Ray-by-Ray achieves an average performance improvement of 1.91x over
+  the baseline”
+
+  “with a 15nm process design kit [36] at a 1GHz target clock frequency.”
+
+  “These techniques achieve speedups of 1.42×,1.70×, and2.78×over the baseline, respectively.”
+
+  “We evaluate each scene with three ray tracing techniques: Shadow Rays (SH), Ambient Occlusion (AO),
+  and Path Tracing (PT).”
+
+  “Fig. 13 shows our design achieves an average energy consumption of 0.98×relative to the baseline.”'
+method_summary: '“We implement our proposed design in Vulkan-Sim v2.0 [3], [5], [53], a cycle-level GPGPU
+  simulator that integrates Vulkan with Mesa’s frontend.”
+
+  “We evaluate hardware area overhead by synthesizing the RTL implementation using the Cadence Genus Synthesis
+  tool (ver. 21.11) with a 15nm process design kit [36] at a 1GHz target clock frequency.”'
+limitations: '“While we rely on the MSHR merging capacity to absorb the extra L1 sector loads, we must
+  confirm how the MSHR behaves and verify that we do not exhaust its capacity.”
+
+  “Where L2 bandwidth is the binding constraint, this added demand can cap the achievable speedup.”
+
+  “Because the design does not reduce the amount of work performed or the number of memory loads issued,
+  large energy savings are not expected.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 26590
+    output: 2900
+  claims_accepted: 6
+  claims_rejected: 2
+  rejected:
+  - statement: The baseline RT core occupies an area of 677,066.8 µm^2.
+    reason: the value 677067 does not appear in any of the claim's quotes
+    quotes:
+    - Synthesis results show the baseline RT core occupies 677,066.8µm 2, while our improved RT core occupies
+      678,368.4µm 2.
+    - with a 15nm process design kit [36] at a 1GHz target clock frequency.
+  - statement: The improved RT core occupies an area of 678,368.4 µm^2.
+    reason: the value 678368 does not appear in any of the claim's quotes
+    quotes:
+    - Synthesis results show the baseline RT core occupies 677,066.8µm 2, while our improved RT core occupies
+      678,368.4µm 2.
+    - with a 15nm process design kit [36] at a 1GHz target clock frequency.
+corrections: []

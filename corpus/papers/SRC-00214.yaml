@@ -1,0 +1,89 @@
+id: SRC-00214
+title: First hardware demonstration of a continuous-state probabilistic computer with programmable energy-defined
+  sampling
+doi: null
+arxiv_id: 2610.31339v1
+url: https://arxiv.org/abs/2610.31339v1
+venue_id: arxiv_api
+authors:
+- name: Chao Fang
+  affiliation: null
+  corresponding: null
+- name: Hsuan Yao Tu
+  affiliation: null
+  corresponding: null
+- name: Yihan He
+  affiliation: null
+  corresponding: null
+- name: Xiao Gong
+  affiliation: null
+  corresponding: null
+- name: Chin-Fu Nien
+  affiliation: null
+  corresponding: null
+- name: Gengchiau Liang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-22'
+retrieved_date: '2026-10-24'
+access: full_text
+read_scope: Automated reading. The full PDF text (55,357 characters, 22 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.31339v1 on
+  2026-10-24. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Fixed -temperature FPGA CPC recovers the exact 7-bit factor pair in all tested runs, with
+  a mean core time of 95.59 μs, 11.1 times faster than fixed -temperature CPU CPC.”
+
+  “For the tested 7-bit factorization case”
+
+  “Software CPC reaches 90% reference coverage of the feasible area in approximately 18% of the time required
+  by restarted Adam.”
+
+  “For the region and line segment, median software CPC times to 90% reference coverage are approximately
+  18% and 30% of the corresponding Adam5000 times respectively under the tested resolution, tolerances
+  and readout rules.”
+
+  “corresponding Adam5000 times”'
+method_summary: '“A field -programmable gate array (FPGA) prototype updates finite -precision states using
+  digital randomness.”
+
+  “The FPGA prototype uses digitally generated pseudorandom numbers and a fixed -point rejection-sampling
+  data path.”'
+limitations: “The FPGA uses rejection sampling and recalculates local network inputs at each node update.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16673
+    output: 1986
+  claims_accepted: 3
+  claims_rejected: 2
+  rejected:
+  - statement: For the tested 7-bit factorization case, fixed-temperature FPGA CPC reduces mean core solving
+      time approximately 33,000-fold relative to the evaluated QUBO soft
+    reason: the value 33000 does not appear in any of the claim's quotes
+    quotes:
+    - For the tested 7-bit factorization case, fixed -temperature FPGA CPC reduces mean core solving time
+      approximately 33,000 -fold relative to the evaluated quadratic unconstrained binary optimization
+      software implementation.
+    - tested 7-bit factorization case
+    - FPGA CPC
+    - fixed -temperature
+  - statement: The FPGA prototype operates at an operating frequency of 100 MHz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The FPGA designs were implemented on a KCU105 board with an XCKU040 -FFV A1156-2- E device using
+      Vivado 2025.2 and operated at 100 MHz.
+    - XCKU040 -FFV A1156-2- E device
+    - KCU105 board
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (measured: 1, simulated:
+  2). This field records the majority (simulated); trust each claim''s own evidence_type over this one.'

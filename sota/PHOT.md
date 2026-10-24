@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-23.
+Topic code `PHOT`. Last reviewed 2026-10-24.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -123,6 +123,25 @@ Topic code `PHOT`. Last reviewed 2026-10-23.
 - **3000 nm** — The thickness d of each layer in the PT-symmetric trilayer structure is 3 µm unless otherwise stated.
   - `CLM-PHOT-0084` · structure PT-symmetric trilayer · grade B · credibility unknown · simulated · as of 2026-10-20
   - sources: SRC-00191
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1230 nm** — The concentric ring metasurface resonator bars have a height of 1230 nm.
+  - `CLM-PHOT-0094` · metasurface_design concentric ring metasurface · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00213
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0090, CFL-0091 — see the open register
+- **1300 nm** — The resonator bars in the concentric ring metasurface have a width of 1300 nm.
+  - `CLM-PHOT-0095` · metasurface_design concentric ring metasurface · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00213
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0090, CFL-0092 — see the open register
+- **4000 nm** — The concentric ring metasurface unit-cell period is 4000 nm.
+  - `CLM-PHOT-0096` · metasurface_design concentric ring metasurface · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00213
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0091, CFL-0092 — see the open register
+- **≈20000 nm** — In the 20-armed spiral metasurface, the unstructured central area extends over about 20 µm.
+  - `CLM-PHOT-0097` · spiral_arms 20 · grade B · credibility unknown · measured · as of 2026-10-22
+  - sources: SRC-00213
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
@@ -411,6 +430,14 @@ Topic code `PHOT`. Last reviewed 2026-10-23.
   - `CLM-PHOT-0090` · device microdisk, pump_wavelength 1559.40 nm, pump_power 12.4 mW · grade B · credibility unknown · measured · as of 2026-10-22
   - sources: SRC-00205
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **0.298 um** — Using a silicon nitride concentric ring metasurface, the radial periodicity shrinks to 229 nm to shift the out-of-plane mode to a wavelength of 298 nm.
+  - `CLM-PHOT-0098` · material silicon nitride, radial_periodicity 229 nm, mode out-of-plane mode · grade B · credibility unknown · simulated · as of 2026-10-22
+  - sources: SRC-00213
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **≈20300 um** — Under the κ = 0 condition, the symmetry-protected BIC band is focused near a wavelength of approximately 20.3 mm.
+  - `CLM-PHOT-0099` · mo_coupling_coefficient 0 · grade B · credibility unknown · simulated · as of 2026-10-22
+  - sources: SRC-00215
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -434,9 +461,18 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0085` — wavelength: _unexamined; classification pending_
   - claims: CLM-MAT-0166, CLM-PHOT-0033
   - missing data: `not yet named`
+- `CFL-0090` — length_device: _unexamined; classification pending_
+  - claims: CLM-PHOT-0094, CLM-PHOT-0095
+  - missing data: `not yet named`
+- `CFL-0091` — length_device: _unexamined; classification pending_
+  - claims: CLM-PHOT-0094, CLM-PHOT-0096
+  - missing data: `not yet named`
+- `CFL-0092` — length_device: _unexamined; classification pending_
+  - claims: CLM-PHOT-0095, CLM-PHOT-0096
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 93
-- grades: {'B': 86, 'A': 7}
-- distinct sources: 31
+- claims: 99
+- grades: {'B': 92, 'A': 7}
+- distinct sources: 33

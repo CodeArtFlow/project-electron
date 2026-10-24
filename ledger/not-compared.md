@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**7551 pair(s)** as of 2026-10-23.
+**8137 pair(s)** as of 2026-10-24.
 
 ## `area_die` (5 pair(s))
 
@@ -140,7 +140,7 @@ _and 224 more_
 
 _and 215 more_
 
-## `length_device` (2205 pair(s))
+## `length_device` (2488 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -159,9 +159,11 @@ _and 215 more_
 | `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0004` = 7000 nm | 100% | material=Sb monolayer on SiC(0001) | parameter=signal-ground electrode spacing |
 | `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=Sb monolayer on SiC(0001) | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | material=Sb monolayer on SiC(0001) | chip_thickness=4-mm |
+| `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0097` = 2e+04 nm | 100% | material=Sb monolayer on SiC(0001) | spiral_arms=20 |
 | `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0004` = 7000 nm | 100% | material=Sb monolayer on SiC(0001) | parameter=signal-ground electrode spacing |
 | `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=Sb monolayer on SiC(0001) | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | material=Sb monolayer on SiC(0001) | chip_thickness=4-mm |
+| `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0097` = 2e+04 nm | 100% | material=Sb monolayer on SiC(0001) | spiral_arms=20 |
 | `CLM-MAT-0020` = 6.4 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | regime=partially-reconstructed | material=GaN, growth_method=ammonothermal |
 | `CLM-MAT-0020` = 6.4 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | regime=partially-reconstructed | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0020` = 6.4 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | regime=partially-reconstructed | chip_thickness=4-mm |
@@ -173,19 +175,17 @@ _and 215 more_
 | `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | state=X2sA | chip_thickness=4-mm |
 | `CLM-MAT-0029` = 0.5291 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=bulk CeN | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0029` = 0.5291 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | material=bulk CeN | chip_thickness=4-mm |
+| `CLM-MAT-0029` = 0.5291 nm | `CLM-PHOT-0097` = 2e+04 nm | 100% | material=bulk CeN | spiral_arms=20 |
 | `CLM-MAT-0037` = 14.6 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | material=TiN, property=GL coherence length | chip_thickness=4-mm |
 | `CLM-MAT-0040` = 0.5 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | fermi_velocity=7×105 ms−1, model=Drude model | material=GaN, growth_method=ammonothermal |
 | `CLM-MAT-0040` = 0.5 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | fermi_velocity=7×105 ms−1, model=Drude model | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0040` = 0.5 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | fermi_velocity=7×105 ms−1, model=Drude model | chip_thickness=4-mm |
+| `CLM-MAT-0040` = 0.5 nm | `CLM-PHOT-0097` = 2e+04 nm | 100% | fermi_velocity=7×105 ms−1, model=Drude model | spiral_arms=20 |
 | `CLM-MAT-0059` = 1000 nm | `CLM-MAT-0135` = 0.013 nm | 100% | region=pristine zone, temperature=1.5 K | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-MAT-0059` = 1000 nm | `CLM-MAT-0136` = 0.006 nm | 100% | region=pristine zone, temperature=1.5 K | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-MAT-0059` = 1000 nm | `CLM-MAT-0137` = 0.011 nm | 100% | region=pristine zone, temperature=1.5 K | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-MAT-0059` = 1000 nm | `CLM-MAT-0138` = 0.005 nm | 100% | region=pristine zone, temperature=1.5 K | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-MAT-0059` = 1000 nm | `CLM-MAT-0139` = 0.007 nm | 100% | region=pristine zone, temperature=1.5 K | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-MAT-0059` = 1000 nm | `CLM-MAT-0140` = 0.005 nm | 100% | region=pristine zone, temperature=1.5 K | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-MAT-0059` = 1000 nm | `CLM-PHOT-0057` = 0.024 nm | 100% | region=pristine zone, temperature=1.5 K | measurement_duration=exceeding 15.5 hours |
 
-_and 2165 more_
+_and 2448 more_
 
 ## `power` (172 pair(s))
 
@@ -234,7 +234,7 @@ _and 2165 more_
 
 _and 132 more_
 
-## `relative_deviation` (3588 pair(s))
+## `relative_deviation` (3815 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -275,11 +275,11 @@ _and 132 more_
 | `CLM-ARCH-0084` = 34 percent | `CLM-MAT-0111` = -60 percent | 157% | platform=Arrow, application=Sparse point cloud processing | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0198` = 34 percent | 157% | sample=B1-1 | method=DFT calculations, location=X valleys |
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0064` = 31 percent | 152% | sample=B1-1 | disorder_type=radius disorder |
+| `CLM-ARCH-0137` = 30 percent | `CLM-MAT-0111` = -60 percent | 150% | baseline=Adam5000 | sample=B1-1 |
 | `CLM-DEV-0070` = 30 percent | `CLM-MAT-0111` = -60 percent | 150% | wavelength=455 nm | sample=B1-1 |
 | `CLM-ARCH-0053` = 27.3 percent | `CLM-MAT-0111` = -60 percent | 146% | architecture=PEEK with four Rockets upon a BOOM, baseline=unsafe baseline | sample=B1-1 |
-| `CLM-ARCH-0046` = 26.3 percent | `CLM-MAT-0111` = -60 percent | 144% | design=ZTA-Q, resource_type=LUT | sample=B1-1 |
 
-_and 3548 more_
+_and 3775 more_
 
 ## `temperature` (173 pair(s))
 
@@ -348,7 +348,7 @@ _and 133 more_
 |---|---|---|---|---|
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0007` = 3100 W/(m*K) | 99% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | temperature=room-temperature, sample_13c_concentration=~0.00024% |
 
-## `time` (650 pair(s))
+## `time` (689 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -393,7 +393,7 @@ _and 133 more_
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-MAT-0120` = 0.0007 ns | 100% | device_type=FTJ, architecture=Symmetry | measurement_method=Time-resolved optical Kerr-effect measurements |
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-MAT-0123` = 0.00015 ns | 100% | device_type=FTJ, architecture=Symmetry | measurement_method=Multidimensional coherent spectroscopy |
 
-_and 610 more_
+_and 649 more_
 
 ## `voltage` (21 pair(s))
 
@@ -421,14 +421,36 @@ _and 610 more_
 | `CLM-DEV-0027` = 1.53 V | `CLM-MAT-0099` = 0.53 V | 65% | device_type=VO2 thin film device, temperature=330 K, transition_type=reset | charging_voltage=0.6 V versus Ag/AgCl |
 | `CLM-DEV-0027` = 1.53 V | `CLM-MEM-0011` = 2.32 V | 34% | device_type=VO2 thin film device, temperature=330 K, transition_type=reset | device=Ag/TiOx/NiOx/p++-Si device, operation=SET voltage (V SET) |
 
-## `wavelength` (188 pair(s))
+## `wavelength` (225 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-DEV-0074` = 0.488 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | power=2 mW | mo_coupling_coefficient=0 |
+| `CLM-MAT-0152` = 0.4 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | repetition_rate=1 kHz, pulse_duration=100 fs | mo_coupling_coefficient=0 |
+| `CLM-MAT-0166` = 0.679 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | material=MoS₂, excitation_wavelength=532 nm | mo_coupling_coefficient=0 |
+| `CLM-MAT-0167` = 0.318 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | material=MoS₂, substrate=sapphire, thickness=1.05 nm, angle=63.9° | mo_coupling_coefficient=0 |
+| `CLM-MAT-0195` = 0.0035 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | material=(PEA)2PbI4 | mo_coupling_coefficient=0 |
+| `CLM-PHOT-0028` = 0.0167 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | component=integrated microheater | mo_coupling_coefficient=0 |
+| `CLM-PHOT-0033` = 0.00315 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | excitation_wavelength=532 nm, cumulative_exposure_time=5 h | mo_coupling_coefficient=0 |
+| `CLM-PHOT-0040` = 0.785 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | source=diode laser | mo_coupling_coefficient=0 |
+| `CLM-PHOT-0082` = 0.3621 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | process=Difference-frequency generation (DFG), input_signal_wavelength=637 nm | mo_coupling_coefficient=0 |
+| `CLM-PHOT-0087` = 0.7757 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | fundamental_pump_wavelength=1551.42 nm | mo_coupling_coefficient=0 |
+| `CLM-PHOT-0090` = 0.5191 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | device=microdisk, pump_wavelength=1559.40 nm, pump_power=12.4 mW | mo_coupling_coefficient=0 |
+| `CLM-PHOT-0098` = 0.298 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | material=silicon nitride, radial_periodicity=229 nm, mode=out-of-plane mode | mo_coupling_coefficient=0 |
+| `CLM-PHOT-0099` = 2.03e+04 um | `CLM-PKG-0003` = 0.001 um | 100% | mo_coupling_coefficient=0 | injection_current=9 mA, sample_type=D-DLAT sample |
+| `CLM-LITHO-0003` = 1.035 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | component=near-infrared laser pulse | mo_coupling_coefficient=0 |
+| `CLM-PHOT-0055` = 2.062 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | device=Ho3+-doped fluoride glass waveguide laser | mo_coupling_coefficient=0 |
+| `CLM-PHOT-0071` = 1.24 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | material=ITO | mo_coupling_coefficient=0 |
+| `CLM-PHOT-0072` = 1.22 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | polarization=x-polarization, incident_angle=normal incidence | mo_coupling_coefficient=0 |
+| `CLM-PHOT-0083` = 1.55 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | permittivity_diagonal_term=4.75, material=Bi-substituted yttrium iron garnet (Bi:YIG) | mo_coupling_coefficient=0 |
+| `CLM-PHOT-0011` = 3.26 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | target_gas=CH4, method=TMM/FDTD inverse design (MOPSO) | mo_coupling_coefficient=0 |
 | `CLM-PHOT-0012` = 6.3 um | `CLM-PKG-0003` = 0.001 um | 100% | target_gas=NO2, method=TMM/FDTD inverse design (MOPSO) | injection_current=9 mA, sample_type=D-DLAT sample |
+| `CLM-PHOT-0013` = 3.26 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | target_gas=CH4, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | mo_coupling_coefficient=0 |
 | `CLM-PHOT-0014` = 6.3 um | `CLM-PKG-0003` = 0.001 um | 100% | target_gas=NO2, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | injection_current=9 mA, sample_type=D-DLAT sample |
 | `CLM-PHOT-0011` = 3.26 um | `CLM-PKG-0003` = 0.001 um | 100% | target_gas=CH4, method=TMM/FDTD inverse design (MOPSO) | injection_current=9 mA, sample_type=D-DLAT sample |
+| `CLM-PHOT-0012` = 6.3 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | target_gas=NO2, method=TMM/FDTD inverse design (MOPSO) | mo_coupling_coefficient=0 |
 | `CLM-PHOT-0013` = 3.26 um | `CLM-PKG-0003` = 0.001 um | 100% | target_gas=CH4, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | injection_current=9 mA, sample_type=D-DLAT sample |
+| `CLM-PHOT-0014` = 6.3 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | target_gas=NO2, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | mo_coupling_coefficient=0 |
 | `CLM-PHOT-0012` = 6.3 um | `CLM-PHOT-0033` = 0.00315 um | 100% | target_gas=NO2, method=TMM/FDTD inverse design (MOPSO) | excitation_wavelength=532 nm, cumulative_exposure_time=5 h |
 | `CLM-PHOT-0014` = 6.3 um | `CLM-PHOT-0033` = 0.00315 um | 100% | target_gas=NO2, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | excitation_wavelength=532 nm, cumulative_exposure_time=5 h |
 | `CLM-PHOT-0055` = 2.062 um | `CLM-PKG-0003` = 0.001 um | 100% | device=Ho3+-doped fluoride glass waveguide laser | injection_current=9 mA, sample_type=D-DLAT sample |
@@ -443,27 +465,5 @@ _and 610 more_
 | `CLM-MAT-0195` = 0.0035 um | `CLM-PHOT-0011` = 3.26 um | 100% | material=(PEA)2PbI4 | target_gas=CH4, method=TMM/FDTD inverse design (MOPSO) |
 | `CLM-MAT-0195` = 0.0035 um | `CLM-PHOT-0013` = 3.26 um | 100% | material=(PEA)2PbI4 | target_gas=CH4, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter |
 | `CLM-PHOT-0040` = 0.785 um | `CLM-PKG-0003` = 0.001 um | 100% | source=diode laser | injection_current=9 mA, sample_type=D-DLAT sample |
-| `CLM-PHOT-0087` = 0.7757 um | `CLM-PKG-0003` = 0.001 um | 100% | fundamental_pump_wavelength=1551.42 nm | injection_current=9 mA, sample_type=D-DLAT sample |
-| `CLM-MAT-0166` = 0.679 um | `CLM-PKG-0003` = 0.001 um | 100% | material=MoS₂, excitation_wavelength=532 nm | injection_current=9 mA, sample_type=D-DLAT sample |
-| `CLM-PHOT-0033` = 0.00315 um | `CLM-PHOT-0055` = 2.062 um | 100% | excitation_wavelength=532 nm, cumulative_exposure_time=5 h | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-MAT-0195` = 0.0035 um | `CLM-PHOT-0055` = 2.062 um | 100% | material=(PEA)2PbI4 | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-PHOT-0090` = 0.5191 um | `CLM-PKG-0003` = 0.001 um | 100% | device=microdisk, pump_wavelength=1559.40 nm, pump_power=12.4 mW | injection_current=9 mA, sample_type=D-DLAT sample |
-| `CLM-DEV-0074` = 0.488 um | `CLM-PKG-0003` = 0.001 um | 100% | power=2 mW | injection_current=9 mA, sample_type=D-DLAT sample |
-| `CLM-PHOT-0033` = 0.00315 um | `CLM-PHOT-0083` = 1.55 um | 100% | excitation_wavelength=532 nm, cumulative_exposure_time=5 h | permittivity_diagonal_term=4.75, material=Bi-substituted yttrium iron garnet (Bi:YIG) |
-| `CLM-MAT-0152` = 0.4 um | `CLM-PKG-0003` = 0.001 um | 100% | repetition_rate=1 kHz, pulse_duration=100 fs | injection_current=9 mA, sample_type=D-DLAT sample |
-| `CLM-PHOT-0033` = 0.00315 um | `CLM-PHOT-0071` = 1.24 um | 100% | excitation_wavelength=532 nm, cumulative_exposure_time=5 h | material=ITO |
-| `CLM-PHOT-0033` = 0.00315 um | `CLM-PHOT-0072` = 1.22 um | 100% | excitation_wavelength=532 nm, cumulative_exposure_time=5 h | polarization=x-polarization, incident_angle=normal incidence |
-| `CLM-PHOT-0012` = 6.3 um | `CLM-PHOT-0028` = 0.0167 um | 100% | target_gas=NO2, method=TMM/FDTD inverse design (MOPSO) | component=integrated microheater |
-| `CLM-PHOT-0014` = 6.3 um | `CLM-PHOT-0028` = 0.0167 um | 100% | target_gas=NO2, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | component=integrated microheater |
-| `CLM-PHOT-0082` = 0.3621 um | `CLM-PKG-0003` = 0.001 um | 100% | process=Difference-frequency generation (DFG), input_signal_wavelength=637 nm | injection_current=9 mA, sample_type=D-DLAT sample |
-| `CLM-MAT-0195` = 0.0035 um | `CLM-PHOT-0072` = 1.22 um | 100% | material=(PEA)2PbI4 | polarization=x-polarization, incident_angle=normal incidence |
-| `CLM-LITHO-0003` = 1.035 um | `CLM-PHOT-0033` = 0.00315 um | 100% | component=near-infrared laser pulse | excitation_wavelength=532 nm, cumulative_exposure_time=5 h |
-| `CLM-MAT-0167` = 0.318 um | `CLM-PKG-0003` = 0.001 um | 100% | material=MoS₂, substrate=sapphire, thickness=1.05 nm, angle=63.9° | injection_current=9 mA, sample_type=D-DLAT sample |
-| `CLM-PHOT-0029` = 0.3 um | `CLM-PKG-0003` = 0.001 um | 100% | component=9-channel ultra-broadband WDM DETRX, spectral_range=O-to-C band | injection_current=9 mA, sample_type=D-DLAT sample |
-| `CLM-LITHO-0003` = 1.035 um | `CLM-MAT-0195` = 0.0035 um | 100% | component=near-infrared laser pulse | material=(PEA)2PbI4 |
-| `CLM-PHOT-0033` = 0.00315 um | `CLM-PHOT-0040` = 0.785 um | 100% | excitation_wavelength=532 nm, cumulative_exposure_time=5 h | source=diode laser |
-| `CLM-PHOT-0033` = 0.00315 um | `CLM-PHOT-0087` = 0.7757 um | 100% | excitation_wavelength=532 nm, cumulative_exposure_time=5 h | fundamental_pump_wavelength=1551.42 nm |
-| `CLM-MAT-0195` = 0.0035 um | `CLM-PHOT-0040` = 0.785 um | 100% | material=(PEA)2PbI4 | source=diode laser |
-| `CLM-MAT-0195` = 0.0035 um | `CLM-PHOT-0087` = 0.7757 um | 100% | material=(PEA)2PbI4 | fundamental_pump_wavelength=1551.42 nm |
 
-_and 148 more_
+_and 185 more_
