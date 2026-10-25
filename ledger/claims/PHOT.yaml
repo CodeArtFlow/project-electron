@@ -2986,3 +2986,70 @@ claims:
       unit: um
     conditions:
       mo_coupling_coefficient: '0'
+- id: CLM-PHOT-0100
+  topic: PHOT
+  statement: Design A achieved a minimum emitted-intensity coefficient of variation of 9.3% at a wavelength
+    of 530 nm over a 15-emitter field of view.
+  sources:
+  - SRC-00217
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    number_of_emitters: '15'
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 9.3
+      unit: '%'
+    si_base:
+      value: 0.09300000000000001
+      unit: dimensionless
+    display:
+      value: 9.3
+      unit: percent
+    conditions:
+      number_of_emitters: '15'
+- id: CLM-PHOT-0101
+  topic: PHOT
+  statement: Design B reached a minimum coefficient of variation of 14.7% at a wavelength of 600 nm.
+  sources:
+  - SRC-00217
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    circuit_design: Design B
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 14.7
+      unit: '%'
+    si_base:
+      value: 0.147
+      unit: dimensionless
+    display:
+      value: 14.7
+      unit: percent
+    conditions:
+      circuit_design: Design B

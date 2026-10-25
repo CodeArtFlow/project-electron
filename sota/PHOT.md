@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-24.
+Topic code `PHOT`. Last reviewed 2026-10-25.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -314,6 +314,14 @@ Topic code `PHOT`. Last reviewed 2026-10-24.
   - `CLM-PHOT-0064` · disorder_type radius disorder · grade B · credibility unknown · simulated · as of 2026-10-08
   - sources: SRC-00121
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **9.3 percent** — Design A achieved a minimum emitted-intensity coefficient of variation of 9.3% at a wavelength of 530 nm over a 15-emitter field of view.
+  - `CLM-PHOT-0100` · number_of_emitters 15 · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00217
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **14.7 percent** — Design B reached a minimum coefficient of variation of 14.7% at a wavelength of 600 nm.
+  - `CLM-PHOT-0101` · circuit_design Design B · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00217
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### sensitivity advantage ratio
 
@@ -473,6 +481,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 99
-- grades: {'B': 92, 'A': 7}
-- distinct sources: 33
+- claims: 101
+- grades: {'B': 94, 'A': 7}
+- distinct sources: 34

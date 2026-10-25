@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.29694v1
 doi: null
-title: Effect of Annealing on Maze Domains in Topological Insulator - Magnetic Multilayer
-  Heterostructures
+title: Effect of Annealing on Maze Domains in Topological Insulator - Magnetic Multilayer Heterostructures
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-21'
@@ -30,6 +29,26 @@ id: CAND-20261022-0060
 harvested_date: '2026-10-22'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-25'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: After annealing to 350 °C, the average domain width extracted from angular averages of
+      FFTs was reduced by approximately 40% from 600 to 340 nm.
+    reason: the statement contains the number 350, which none of its quotes contain
+    quotes:
+    - The average domain width, shown in Fig. 4(g), extracted from angular averages of fast Fourier transforms
+      FFTs of the images, was reduced by∼40% from 600 to 340 nm
+    - Bi2Se3(20)/Ta(1.5)/[Pt(0.8)/CoB(0.6)/Ru(0.5)]×6/Ru(0.5) stack
+    - after a 200 ◦C anneal
+  tokens:
+    input: 12176
+    output: 693
+  fetched_chars: 34398

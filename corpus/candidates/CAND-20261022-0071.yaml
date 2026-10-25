@@ -26,6 +26,64 @@ id: CAND-20261022-0071
 harvested_date: '2026-10-22'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-25'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Under 45 nm technology, TernScope reduces compute-array area by 88.46% compared with original
+      Gemmini.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Under the
+      same 45 nm technology, TernScope reduces compute-array area '''
+    quotes:
+    - Under the same 45 nm technology, TernScope reduces compute-array area by 88.46% compared with the
+      original Gemmini, a systolic-array accelerator with 8-bit×8-bit multipliers.
+    - Both designs are synthesized using Yosys/ABC with the Nangate45 45-nm standard-cell library.
+  - statement: TernScope reduces synthesized standard-cell area by 70.28% compared with original Gemmini
+      for the same 25-convolution workload.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Using ternary PEs and shared arithmetic resources, it reduces compute-array area, synthesized standard-cell
+      area, and estimated logic power by 88.46%, 70.28%, and 62.82%, respectively, compared with the original
+      Gemmini [7].
+    - Both designs are synthesized using Yosys/ABC with the Nangate45 45-nm standard-cell library.
+    - The comparison uses the same 25-convolution workload and a 16×16 PE array for each design.
+  - statement: TernScope achieves a synthesized standard-cell area of 0.540 mm2.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Standard-cell area (mm 2) 1.816 0.540
+    - Both designs are synthesized using Yosys/ABC with the Nangate45 45-nm standard-cell library.
+    - Library Nangate45 Nangate45
+    - Metric Original Gemmini TernScope
+  - statement: TernScope achieves a compute-array area of 0.079 mm2 under Nangate45 synthesis.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - Compute-array area (mm 2) 0.685 0.079
+    - Both designs are synthesized using Yosys/ABC with the Nangate45 45-nm standard-cell library.
+    - Library Nangate45 Nangate45
+    - Metric Original Gemmini TernScope
+  - statement: TernScope operates at a clock frequency of 100 MHz in synthesis.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Frequency
+      (MHz) 100 100'''
+    quotes:
+    - Frequency (MHz) 100 100
+    - Both designs are synthesized using Yosys/ABC with the Nangate45 45-nm standard-cell library.
+    - Metric Original Gemmini TernScope
+    - Library Nangate45 Nangate45
+  - statement: For the evaluated 25-convolution graph, TernScope reduces logic energy cost from 14.019
+      mJ to 0.604 mJ per image.
+    reason: the statement contains the number 25, which none of its quotes contain
+    quotes:
+    - For this workload, logic energy cost decreases from 14.019 to 0.604 mJ per image, a 95.690% reduction.
+    - Logic energy is estimated from OpenSTA vectorless power analysis.
+    - Metric Original Gemmini TernScope
+  tokens:
+    input: 8923
+    output: 1955
+  fetched_chars: 21872

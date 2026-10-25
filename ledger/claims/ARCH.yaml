@@ -4086,3 +4086,377 @@ claims:
     verified_quotes: 3
   conditions:
     baseline: baseline
+- id: CLM-ARCH-0144
+  topic: ARCH
+  statement: Proba achieves a geomean speedup of 6.6% on SPECspeed 2017 while incurring 8.5% additional
+    DRAM traffic.
+  sources:
+  - SRC-00219
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    benchmark_suite: SPECspeed 2017
+    prefetcher: Proba
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 6.6
+      unit: '%'
+    si_base:
+      value: 0.066
+      unit: dimensionless
+    display:
+      value: 6.6000000000000005
+      unit: percent
+    conditions:
+      benchmark_suite: SPECspeed 2017
+      prefetcher: Proba
+- id: CLM-ARCH-0145
+  topic: ARCH
+  statement: In a 4-core execution of CloudSuite, Proba achieves a geomean speedup of 7.9%.
+  sources:
+  - SRC-00219
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    benchmark_suite: CloudSuite
+    num_cores: 4-core
+    prefetcher: Proba
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 7.9
+      unit: '%'
+    si_base:
+      value: 0.079
+      unit: dimensionless
+    display:
+      value: 7.9
+      unit: percent
+    conditions:
+      benchmark_suite: CloudSuite
+      num_cores: 4-core
+      prefetcher: Proba
+- id: CLM-ARCH-0146
+  topic: ARCH
+  statement: FIGFLEX has a chip area of 3.43 mm2.
+  sources:
+  - SRC-00220
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    component: FIGFLEX
+    process: NanGate 15 nm technology
+    fclk: 1 GHz
+    activation_format: FP16
+  quantity:
+    quantity: area_die
+    bound: exact
+    approximate: false
+    as_published:
+      value: 3.43
+      unit: mm2
+    si_base:
+      value: 3.43e-06
+      unit: m^2
+    display:
+      value: 3.43
+      unit: mm^2
+    conditions:
+      component: FIGFLEX
+      process: NanGate 15 nm technology
+      fclk: 1 GHz
+      activation_format: FP16
+- id: CLM-ARCH-0147
+  topic: ARCH
+  statement: AxCore has a chip area of 3.97 mm2.
+  sources:
+  - SRC-00220
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    component: AxCore
+    process: NanGate 15 nm technology
+    fclk: 1 GHz
+    activation_format: FP16
+  quantity:
+    quantity: area_die
+    bound: exact
+    approximate: false
+    as_published:
+      value: 3.97
+      unit: mm2
+    si_base:
+      value: 3.97e-06
+      unit: m^2
+    display:
+      value: 3.97
+      unit: mm^2
+    conditions:
+      component: AxCore
+      process: NanGate 15 nm technology
+      fclk: 1 GHz
+      activation_format: FP16
+- id: CLM-ARCH-0148
+  topic: ARCH
+  statement: FIGLUT has a chip area of 4.68 mm2.
+  sources:
+  - SRC-00220
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    component: FIGLUT
+    process: NanGate 15 nm technology
+    fclk: 1 GHz
+    activation_format: FP16
+  quantity:
+    quantity: area_die
+    bound: exact
+    approximate: false
+    as_published:
+      value: 4.68
+      unit: mm2
+    si_base:
+      value: 4.679999999999999e-06
+      unit: m^2
+    display:
+      value: 4.679999999999999
+      unit: mm^2
+    conditions:
+      component: FIGLUT
+      process: NanGate 15 nm technology
+      fclk: 1 GHz
+      activation_format: FP16
+- id: CLM-ARCH-0149
+  topic: ARCH
+  statement: FIGFLEX chip power is 4.02 W at INT4.
+  sources:
+  - SRC-00220
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    component: FIGFLEX
+    toggle_rate: '0.2'
+    activation_format: FP16
+    precision: INT4
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 4.02
+      unit: W
+    si_base:
+      value: 4.02
+      unit: W
+    display:
+      value: 4.02
+      unit: W
+    conditions:
+      component: FIGFLEX
+      toggle_rate: '0.2'
+      activation_format: FP16
+      precision: INT4
+- id: CLM-ARCH-0150
+  topic: ARCH
+  statement: FIGFLEX chip power with HBM3E traffic on Llama-3.1-8B is 6.67 W.
+  sources:
+  - SRC-00220
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    component: FIGFLEX
+    benchmark: Llama-3.1-8B
+    activation_format: FP16
+    interface: HBM3E
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 6.67
+      unit: W
+    si_base:
+      value: 6.67
+      unit: W
+    display:
+      value: 6.67
+      unit: W
+    conditions:
+      component: FIGFLEX
+      benchmark: Llama-3.1-8B
+      activation_format: FP16
+      interface: HBM3E
+- id: CLM-ARCH-0151
+  topic: ARCH
+  statement: FIGFLEX achieves 43.4 TOPS at the F3 precision operating point.
+  sources:
+  - SRC-00220
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    component: FIGFLEX
+    activation_format: FP16
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 43.4
+      unit: TOPS
+    si_base:
+      value: 43400000000000.0
+      unit: Hz
+    display:
+      value: 43400.0
+      unit: GHz
+    conditions:
+      component: FIGFLEX
+      activation_format: FP16
+- id: CLM-ARCH-0152
+  topic: ARCH
+  statement: FIGFLEX achieves 64.9 TOPS at the F2 precision operating point.
+  sources:
+  - SRC-00220
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    component: FIGFLEX
+    activation_format: FP16
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 64.9
+      unit: TOPS
+    si_base:
+      value: 64900000000000.01
+      unit: Hz
+    display:
+      value: 64900.000000000015
+      unit: GHz
+    conditions:
+      component: FIGFLEX
+      activation_format: FP16
+- id: CLM-ARCH-0153
+  topic: ARCH
+  statement: The execution time per request on Llama-3.1-8B for FIGFLEX at F3 operating point is 3.72
+    s.
+  sources:
+  - SRC-00220
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    component: FIGFLEX
+    benchmark: Llama-3.1-8B
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 3.72
+      unit: s
+    si_base:
+      value: 3.72
+      unit: s
+    display:
+      value: 3719999999.9999995
+      unit: ns
+    conditions:
+      component: FIGFLEX
+      benchmark: Llama-3.1-8B

@@ -1,0 +1,77 @@
+id: SRC-00220
+title: 'FIGFLEX: A Mixed-Precision FP-INT GEMM Accelerator Co-Designed with Low-Bit LLM Quantization'
+doi: null
+arxiv_id: 2610.30480v1
+url: https://arxiv.org/abs/2610.30480v1
+venue_id: arxiv_api
+authors:
+- name: Faraz Tahmasebi
+  affiliation: null
+  corresponding: null
+- name: Haocheng Xu
+  affiliation: null
+  corresponding: null
+- name: Andrew Trauger
+  affiliation: null
+  corresponding: null
+- name: Yomal Perera
+  affiliation: null
+  corresponding: null
+- name: Zhenyu Tang
+  affiliation: null
+  corresponding: null
+- name: Nael Chowdhury
+  affiliation: null
+  corresponding: null
+- name: Sitao Huang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-21'
+retrieved_date: '2026-10-25'
+access: full_text
+read_scope: Automated reading. The full PDF text (79,742 characters, 15 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.30480v1 on
+  2026-10-25. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“FIGFLEX 3.43 4.02 6.67 43.4 64.9 3.72 2.67”
+
+  “synthesize them using Synopsys Design Compiler in the NanGate 15 nm technology, targeting 1 GHz.”
+
+  “FP16 activations, 128×128 MACs, 1 GHz”
+
+  “We implement FIGFLEX and all baselines as parameterized SystemVerilog RTL and synthesize them using
+  Synopsys Design Compiler in the NanGate 15 nm technology, targeting 1 GHz.”
+
+  “AxCore [60] 3.97 5.02 7.67 32.8 32.8 4.58 4.39”
+
+  “FIGLUT [40] 4.68 5.22 7.87 43.7 65.5 3.70 2.65”
+
+  “Power at INT4 (0.2 toggle rate), chip and with HBM3E traffic (Llama-3.1-8B).”
+
+  “Request: one Llama-3.1-8B chat request (4k/4k tokens, batch 128; time per request), weights and KV
+  cache at the F3/F2 bit-widths, HBM3E at 1280 GB/s, attention on a common FP16 unit.”'
+method_summary: '“We implement FIGFLEX and all baselines as parameterized SystemVerilog RTL and synthesize
+  them using Synopsys Design Compiler in the NanGate 15 nm technology, targeting 1 GHz.”
+
+  “Power is obtained under an identical switching activity of 0.2 toggles per clock cycle for every design.”
+
+  “To model memory properly, input, weight, and output buffers are compiled as SRAM and characterized
+  with CACTI [ 38], sized identically across designs.”'
+limitations: “All hardware results in this section are for the linear GEMM layers, which dominate LLM
+  runtime (Figure 1); attention and the rest of the model are outside FIGFLEX.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 31675
+    output: 3821
+  claims_accepted: 8
+  claims_rejected: 0
+  rejected: []
+corrections: []

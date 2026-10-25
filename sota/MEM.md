@@ -1,6 +1,6 @@
 # Memory — state of the art
 
-Topic code `MEM`. Last reviewed 2026-10-24.
+Topic code `MEM`. Last reviewed 2026-10-25.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -150,6 +150,14 @@ Topic code `MEM`. Last reviewed 2026-10-24.
   - `CLM-MEM-0032` · memory_technology filamentary memristor · grade B · credibility unknown · simulated · as of 2026-10-20
   - sources: SRC-00192
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **99.6907 percent** — The group verification pass rate at a threshold of 550 for Jetson Orin Nano is 0.996907.
+  - `CLM-MEM-0038` · platform Jetson Orin Nano, threshold 550, verification_stage Group verification · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00218
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **49.8454 percent** — On Jetson Orin Nano, the expected pass rate after removing one correct bank mask in single function verification at a threshold of 550 is 0.498454.
+  - `CLM-MEM-0039` · platform Jetson Orin Nano, threshold 550, verification_stage Single function verification · grade B · credibility unknown · measured · as of 2026-10-21
+  - sources: SRC-00218
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### resistance
 
@@ -211,6 +219,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 37
-- grades: {'B': 37}
-- distinct sources: 12
+- claims: 39
+- grades: {'B': 39}
+- distinct sources: 13

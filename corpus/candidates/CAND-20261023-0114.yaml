@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.30453v1
 doi: null
-title: Orientation-selective microwave heating of laser-graphitized diamond at 2.45
-  GHz
+title: Orientation-selective microwave heating of laser-graphitized diamond at 2.45 GHz
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-21'
@@ -30,6 +29,68 @@ id: CAND-20261023-0114
 harvested_date: '2026-10-23'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-25'
+  reason: the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At a launched power of 80 W with the concentric grating aligned with the electric field
+      E, the diamond reached an indicated radiative temperature of ~500 °C.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - Each power step produces a distinct plateau and the trajectory is smooth up to an indicated∼500◦C
+      atP in = 80 W.
+    - Figure 3(a) shows the indicated radiative temperature of the diamond as the launched powerP in was
+      ramped in 5–10 Wsteps from5 Wto90 W, with the concentric grating aligned with the cavity electric
+      field E.
+    - P in = 80 W
+    - with the concentric grating aligned with the cavity electric field E
+  - statement: Increasing the launched power to 90 W triggered an abrupt excursion to an indicated radiative
+      temperature of ~900 °C.
+    reason: the statement contains the number 90, which none of its quotes contain
+    quotes:
+    - The next10 Wincrement triggers an abrupt excursion to an indicated∼900 ◦C, reached within tens of
+      seconds rather than over the several-minute settling time of the preceding steps.
+    - Figure 3(a) shows the indicated radiative temperature of the diamond as the launched powerP in was
+      ramped in 5–10 Wsteps from5 Wto90 W, with the concentric grating aligned with the cavity electric
+      field E.
+    - The next10 Wincrement triggers an abrupt excursion
+    - with the concentric grating aligned with the cavity electric field E
+  - statement: In control configurations, temperature remained below the ~40 °C measurement floor at powers
+      up to 90 W.
+    reason: 'unit conversion refused: temperature: could not parse 40.0 ''◦C'': ''◦C'' is not defined
+      in the unit registry'
+    quotes:
+    - An unmodified diamond block, and the same inscribed sample rotated so that the grating diameter
+      rather than its∼1.8 mmdepth lies alongE, both remained below the ∼40 ◦C floor of the measurement
+      at all powers up toPin = 90 W.
+    - at all powers up toPin = 90 W
+  - statement: The overall resonant frequency shifted by approximately 1.7 MHz through the stepped power
+      ramp.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The resonant frequency rises monotonically through the stepped ramp, by∆f≈1.7 MHzin total, mirroring
+      the temperature staircase step for step, and then reverses at the onset of the abrupt excursion.
+    - Figure 3(b) shows the cavity resonance tracked simultaneously.
+    - The resonant frequency rises monotonically through the stepped ramp, by∆f≈1.7 MHzin total
+  - statement: The finite-element simulation calculates eigenfrequencies of 2483.2 + 0.418i MHz and 2483.1
+      + 0.418i MHz for the collinear and staggered wire configurations, re
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - The computed eigen frequencies are 2483.2 + 0.418iMHz (a) and 2483.1 + 0.418iMHz (b).
+    - 'COMSOL Multiphysics 6.4 simulation of the microwave electric field in a diamond disk (diameter
+      7 mm, thickness 2.5 mm) containing laser-inscribed graphite wires (diameter 20µm, length 1 mm each),
+      placed on the axis of the TM010 cylindrical '
+    - (a) Two collinear wires separated by an axial gap of 0.1 mm
+  tokens:
+    input: 20911
+    output: 1892
+  fetched_chars: 67105

@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.29687v1
 doi: null
-title: 'Wave Processing Unit: Closed-Form Matrix Synthesis for Wave Computing in Multiuser
-  MIMO Communications'
+title: 'Wave Processing Unit: Closed-Form Matrix Synthesis for Wave Computing in Multiuser MIMO Communications'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-21'
@@ -27,6 +26,55 @@ id: CAND-20261022-0062
 harvested_date: '2026-10-22'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-25'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For 64x64 general complex-valued square operators, the proposed WPU achieves a mean NMSE
+      of 4.46e-28 with a runtime of 0.116 s.
+    reason: the statement contains the number 64, which none of its quotes contain
+    quotes:
+    - WPU (Proposed)4.46×10 −28 0.116 8256
+    - The simulations are performed on an Intel Core i7-12700 CPU at2.10GHz using double-precision complex
+      arithmetic.
+    - 64×64
+    - WPU (Proposed)
+  - statement: For 16x16 general complex-valued square operators, the proposed WPU achieves a mean NMSE
+      of 3.43e-29 with a runtime of 0.006 s.
+    reason: the statement contains the number 16, which none of its quotes contain
+    quotes:
+    - WPU (Proposed)3.43×10 −29 0.006 528
+    - The simulations are performed on an Intel Core i7-12700 CPU at2.10GHz using double-precision complex
+      arithmetic.
+    - 16×16
+    - WPU (Proposed)
+  - statement: For 4x4 general complex-valued square operators, the proposed WPU achieves a mean NMSE
+      of 2.77e-30 with a runtime of 0.001 s.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - WPU (Proposed)2.77×10 −30 0.001 36
+    - The simulations are performed on an Intel Core i7-12700 CPU at2.10GHz using double-precision complex
+      arithmetic.
+    - 4×4
+    - WPU (Proposed)
+  - statement: For a 64x8 multiuser MISO downlink precoding system at 50 dB transmit SNR, WPU reaches
+      an average sum rate of 154.65 bit/s/Hz.
+    reason: the statement contains the number 64, which none of its quotes contain
+    quotes:
+    - Across the entire SNR sweep, the WPU curves track the digital benchmark with near-zero discrepancy,
+      reaching an average sum rate of154.65bit/s/Hz at50dB.
+    - The simulations are performed on an Intel Core i7-12700 CPU at2.10GHz using double-precision complex
+      arithmetic.
+    - 50dB
+    - N ant = 64
+  tokens:
+    input: 21525
+    output: 1201
+  fetched_chars: 64082

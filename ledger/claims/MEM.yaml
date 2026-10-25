@@ -1065,3 +1065,78 @@ claims:
     model: gemini-3.6-flash
     prompt_version: reader-v5
     verified_quotes: 2
+- id: CLM-MEM-0038
+  topic: MEM
+  statement: The group verification pass rate at a threshold of 550 for Jetson Orin Nano is 0.996907.
+  sources:
+  - SRC-00218
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    platform: Jetson Orin Nano
+    threshold: '550'
+    verification_stage: Group verification
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.996907
+      unit: dimensionless
+    si_base:
+      value: 0.996907
+      unit: dimensionless
+    display:
+      value: 99.69069999999999
+      unit: percent
+    conditions:
+      platform: Jetson Orin Nano
+      threshold: '550'
+      verification_stage: Group verification
+- id: CLM-MEM-0039
+  topic: MEM
+  statement: On Jetson Orin Nano, the expected pass rate after removing one correct bank mask in single
+    function verification at a threshold of 550 is 0.498454.
+  sources:
+  - SRC-00218
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-21'
+  created: '2026-10-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    platform: Jetson Orin Nano
+    threshold: '550'
+    verification_stage: Single function verification
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.498454
+      unit: dimensionless
+    si_base:
+      value: 0.498454
+      unit: dimensionless
+    display:
+      value: 49.8454
+      unit: percent
+    conditions:
+      platform: Jetson Orin Nano
+      threshold: '550'
+      verification_stage: Single function verification

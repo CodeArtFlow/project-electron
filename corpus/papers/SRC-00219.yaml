@@ -1,0 +1,83 @@
+id: SRC-00219
+title: 'Proba: A High-Performance, Low-Traffic Probabilistic Spatial Memory Streaming Prefetcher'
+doi: null
+arxiv_id: 2610.30448v1
+url: https://arxiv.org/abs/2610.30448v1
+venue_id: arxiv_api
+authors:
+- name: Yinting Huang
+  affiliation: null
+  corresponding: null
+- name: Jacky Wong
+  affiliation: null
+  corresponding: null
+- name: Sam Ainsworth
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-21'
+retrieved_date: '2026-10-25'
+access: full_text
+read_scope: Automated reading. The full PDF text (74,384 characters, 14 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.30448v1 on
+  2026-10-25. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“In the breakdown of SPECspeed 2017 (Figure 12), we show that Proba delivers a 6.6% geomean
+  speedup while incurring only 8.5% additional DRAM traffic.”
+
+  “We evaluate Proba with the trace-based ChampSim simulator [17], using the configuration in Table 2.”
+
+  “Figure 15 shows a breakdown of the workloads in CloudSuite, where Proba achieves a geomean speedup
+  of 7.9% for 4-core execution, almost double that of the nearest contender.”'
+method_summary: “We evaluate Proba with the trace-based ChampSim simulator [17], using the configuration
+  in Table 2.”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 23900
+    output: 2349
+  claims_accepted: 2
+  claims_rejected: 4
+  rejected:
+  - statement: Overall storage required by Proba is 10.04 KiB.
+    reason: 'unit conversion refused: area_die: cannot convert 10.04 KiB to m^2 - Cannot convert from
+      ''kibibyte'' (dimensionless) to ''meter ** 2'' ([length] ** 2). A dimensional mismatch means the
+      val'
+    quotes:
+    - Overall, Proba requires 10.04 KiB of storage (Table 1).
+    - We evaluate Proba with the trace-based ChampSim simulator [17], using the configuration in Table
+      2.
+  - statement: On SPEC CPU2006, Proba improves performance on mcf by 29.7%.
+    reason: the statement contains the number 006, which none of its quotes contain
+    quotes:
+    - Proba also achieves large gains on workloads such as mcf, where it improves performance by 29.7%,
+      compared with 26.0% for DSPatch and substantially smaller speedups for the other prefetchers.
+    - We evaluate Proba with the trace-based ChampSim simulator [17], using the configuration in Table
+      2.
+  - statement: Proba achieves a 5.1% speedup above baseline on CloudSuite.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The advantage
+      is even more pronounced on CloudSuite: Proba achieves a '''
+    quotes:
+    - 'The advantage is even more pronounced on CloudSuite: Proba achieves a 5.1% speedup above baseline,
+      outperforming every competitor across all workloads.'
+    - We evaluate Proba with the trace-based ChampSim simulator [17], using the configuration in Table
+      2.
+  - statement: When Berti is placed at L1 with Proba at L2, a 3.8% geomean speedup is achieved on SPECspeed
+      2017.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''In Config
+      1, Berti [ 30] is placed at L1 with each SMS-based prefetche'''
+    quotes:
+    - 'In Config 1, Berti [ 30] is placed at L1 with each SMS-based prefetcher at L2. On SPECspeed 2017,
+      Proba achieves a 3.8% geomean speedup versus 3.1% for the next-best design, PMP, while adding only
+      8.7% DRAM traffic, compared with 15.1% for '
+    - We evaluate Proba with the trace-based ChampSim simulator [17], using the configuration in Table
+      2.
+    - In Config 1, Berti [ 30] is placed at L1 with each SMS-based prefetcher at L2.
+corrections: []

@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-24.
+Topic code `ARCH`. Last reviewed 2026-10-25.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -28,6 +28,18 @@ Topic code `ARCH`. Last reviewed 2026-10-24.
   - `CLM-ARCH-0113` · component Row Migration Table, location DRAM chip · grade B · credibility unknown · simulated · as of 2026-10-16
   - sources: SRC-00178
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **3.43 mm^2** — FIGFLEX has a chip area of 3.43 mm2.
+  - `CLM-ARCH-0146` · component FIGFLEX, process NanGate 15 nm technology, fclk 1 GHz, activation_format FP16 · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00220
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- **3.97 mm^2** — AxCore has a chip area of 3.97 mm2.
+  - `CLM-ARCH-0147` · component AxCore, process NanGate 15 nm technology, fclk 1 GHz, activation_format FP16 · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00220
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- **4.68 mm^2** — FIGLUT has a chip area of 4.68 mm2.
+  - `CLM-ARCH-0148` · component FIGLUT, process NanGate 15 nm technology, fclk 1 GHz, activation_format FP16 · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00220
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
 
 ### energy
 
@@ -83,6 +95,16 @@ Topic code `ARCH`. Last reviewed 2026-10-24.
   - `CLM-ARCH-0073` · process 45 nm · grade B · credibility unknown · simulated · as of 2026-10-08
   - sources: SRC-00115
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **43400 GHz** — FIGFLEX achieves 43.4 TOPS at the F3 precision operating point.
+  - `CLM-ARCH-0151` · component FIGFLEX, activation_format FP16 · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00220
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0094 — see the open register
+- **64900 GHz** — FIGFLEX achieves 64.9 TOPS at the F2 precision operating point.
+  - `CLM-ARCH-0152` · component FIGFLEX, activation_format FP16 · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00220
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0094 — see the open register
 
 ### power
 
@@ -114,6 +136,16 @@ Topic code `ARCH`. Last reviewed 2026-10-24.
   - `CLM-ARCH-0114` · component PIM Chunk List, location DRAM chip · grade B · credibility unknown · simulated · as of 2026-10-16
   - sources: SRC-00178
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **4.02 W** — FIGFLEX chip power is 4.02 W at INT4.
+  - `CLM-ARCH-0149` · component FIGFLEX, toggle_rate 0.2, activation_format FP16, precision INT4 · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00220
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0093 — see the open register
+- **6.67 W** — FIGFLEX chip power with HBM3E traffic on Llama-3.1-8B is 6.67 W.
+  - `CLM-ARCH-0150` · component FIGFLEX, benchmark Llama-3.1-8B, activation_format FP16, interface HBM3E · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00220
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0093 — see the open register
 
 ### qualitative
 
@@ -544,6 +576,14 @@ Topic code `ARCH`. Last reviewed 2026-10-24.
   - `CLM-ARCH-0134` · metric standard deviation of client-level rates · grade B · credibility unknown · simulated · as of 2026-10-21
   - sources: SRC-00202
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **6.6 percent** — Proba achieves a geomean speedup of 6.6% on SPECspeed 2017 while incurring 8.5% additional DRAM traffic.
+  - `CLM-ARCH-0144` · benchmark_suite SPECspeed 2017, prefetcher Proba · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00219
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **7.9 percent** — In a 4-core execution of CloudSuite, Proba achieves a geomean speedup of 7.9%.
+  - `CLM-ARCH-0145` · benchmark_suite CloudSuite, num_cores 4-core, prefetcher Proba · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00219
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 - **≈18 percent** — Software CPC reaches 90% reference coverage of the feasible area in approximately 18% of the time required by restarted Adam for the Space task.
   - `CLM-ARCH-0136` · baseline Adam5000 · grade B · credibility unknown · simulated · as of 2026-10-22
   - sources: SRC-00214
@@ -609,6 +649,10 @@ Topic code `ARCH`. Last reviewed 2026-10-24.
   - `CLM-ARCH-0131` · device NVIDIA GeForce RTX 5080, form hoisted, decode LUT · grade B · credibility unknown · measured · as of 2026-10-21
   - sources: SRC-00200
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **3.72e+09 ns** — The execution time per request on Llama-3.1-8B for FIGFLEX at F3 operating point is 3.72 s.
+  - `CLM-ARCH-0153` · component FIGFLEX, benchmark Llama-3.1-8B · grade B · credibility unknown · simulated · as of 2026-10-21
+  - sources: SRC-00220
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 - **95590 ns** — For the tested 7-bit factorization case, fixed-temperature FPGA CPC achieves a mean core solving time of 95.59 microseconds.
   - `CLM-ARCH-0135` · case 7-bit factorization · grade B · credibility unknown · measured · as of 2026-10-22
   - sources: SRC-00214
@@ -648,9 +692,15 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0089` — relative_deviation: _unexamined; classification pending_
   - claims: CLM-ARCH-0136, CLM-ARCH-0137
   - missing data: `not yet named`
+- `CFL-0093` — power: _unexamined; classification pending_
+  - claims: CLM-ARCH-0149, CLM-ARCH-0150
+  - missing data: `not yet named`
+- `CFL-0094` — frequency: _unexamined; classification pending_
+  - claims: CLM-ARCH-0151, CLM-ARCH-0152
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 143
-- grades: {'B': 143}
-- distinct sources: 47
+- claims: 153
+- grades: {'B': 153}
+- distinct sources: 49

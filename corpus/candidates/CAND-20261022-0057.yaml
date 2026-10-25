@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.29739v1
 doi: null
-title: Electric-field tunable spin texture in dual-gated HfS$_2$/graphene van der
-  Waals heterostructures
+title: Electric-field tunable spin texture in dual-gated HfS$_2$/graphene van der Waals heterostructures
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-21'
@@ -31,6 +30,85 @@ id: CAND-20261022-0057
 harvested_date: '2026-10-22'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-25'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At 100 K, the spin diffusion coefficient Ds in pristine graphene at Vbg = 0 V is 0.019
+      m2 s−1.
+    reason: the statement contains the number 100, which none of its quotes contain
+    quotes:
+    - The fitting gives a spin polarization 𝑃 = 0.07, spin diffusion length 𝜆𝑠 = 1.01 𝜇m, spin diffusion
+      coefficient 𝐷𝑠 = 0.019 m2 s−1 , and spin lifetime 𝜏𝑠 = 5.4 × 10−11 s .
+    - Nonlocal Hanle spin precession traces measured at 300 K in the pristine graphene region at 𝑉𝑏𝑔 =
+      0 V.
+    - Spin-transport characterization of the pristine graphene reference channel.
+    - in the pristine graphene region at 𝑉𝑏𝑔 = 0 V.
+  - statement: The effective spin Hall angle θSHE fit for the SHE component at Vbg = 0 V, Vtg = −1 V is
+      0.012 ± 0.006.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The black
+      solid curve in Fig. 3g shows the fit of the SHE component us'''
+    quotes:
+    - The black solid curve in Fig. 3g shows the fit of the SHE component using the spin precession diffusion
+      model, yielding an effective spin Hall angle of 𝜃SHE = 0.012 ± 0.006, spin-diffusion coefficient
+      𝐷𝑠 = (2.8 ± 0.3) × 10−3𝑚2𝑠−1 and the sp
+    - The black solid curve in Fig. 3g shows the fit of the SHE component using the spin precession diffusion
+      model
+    - d, 𝑉bg = 0 V, 𝑉tg = −1 V
+    - corresponding to a spin diffusion length in the proximitized graphene of 𝜆𝑠prox = 306 ± 20 nm
+  - statement: The spin lifetime τs for the proximitized graphene at Vbg = 0 V, Vtg = −1 V is 33.3 ± 3.1
+      ps.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - the spin lifetime 𝜏𝑠 = 33.3 ± 3.1 𝑝𝑠
+    - The black solid curve in Fig. 3g shows the fit of the SHE component using the spin precession diffusion
+      model
+    - d, 𝑉bg = 0 V, 𝑉tg = −1 V
+    - corresponding to a spin diffusion length in the proximitized graphene of 𝜆𝑠prox = 306 ± 20 nm
+  - statement: The spin diffusion length in proximitized graphene at Vbg = 0 V, Vtg = −1 V is 306 ± 20
+      nm.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - corresponding to a spin diffusion length in the proximitized graphene of 𝜆𝑠prox = 306 ± 20 nm
+    - The black solid curve in Fig. 3g shows the fit of the SHE component using the spin precession diffusion
+      model
+    - d, 𝑉bg = 0 V, 𝑉tg = −1 V
+  - statement: The effective Rashba-related conversion efficiency αREE at Vbg = 50 V, Vtg = −3 V is 0.007
+      ± 0.003.
+    reason: the statement contains the number 50, which none of its quotes contain
+    quotes:
+    - together with effective Rashba-related conversion efficiencies of 𝛼REE = 0.007 ± 0.003
+    - Fitting the symmetry-resolved components plotted with the solid black lines in Fig. 3h
+    - e, 𝑉bg = 50 V, 𝑉tg = −3 V
+  - statement: The unconventional Rashba-Edelstein conversion efficiency αUREE at Vbg = 50 V, Vtg = −3
+      V is 0.004 ± 0.003.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''and 𝛼UREE
+      = 0.004 ± 0.003 .'''
+    quotes:
+    - and 𝛼UREE = 0.004 ± 0.003 .
+    - Fitting the symmetry-resolved components plotted with the solid black lines in Fig. 3h
+    - e, 𝑉bg = 50 V, 𝑉tg = −3 V
+  - statement: The maximum extracted spin Hall effect signal amplitude ΔRSHE reaches 0.71 mΩ at Vbg =
+      10 V and Vtg = −1 V.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - The extracted Δ𝑅SHE follows this trajectory and reaches its maximum value of 0.71 mΩ at 𝑉bg = 10
+      V and 𝑉tg = −1 V.
+    - at 𝑉bg = 10 V and 𝑉tg = −1 V.
+  - statement: The spin Hall effect signal amplitude ΔRSHE at Vbg = 50 V and Vtg = −3 V decreases to 0.46
+      mΩ.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - At the high-gate-bias point 𝑉bg = 50 Vand 𝑉tg = −3 V, Δ𝑅SHE decreases to 0.46 mΩ.
+    - At the high-gate-bias point 𝑉bg = 50 Vand 𝑉tg = −3 V
+  tokens:
+    input: 25508
+    output: 3227
+  fetched_chars: 77321
