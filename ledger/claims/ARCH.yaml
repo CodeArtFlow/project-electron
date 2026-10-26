@@ -4460,3 +4460,269 @@ claims:
     conditions:
       component: FIGFLEX
       benchmark: Llama-3.1-8B
+- id: CLM-ARCH-0154
+  topic: ARCH
+  statement: TranSAGE achieves up to 2.41x higher throughput over commercial GPU/NPU baselines.
+  sources:
+  - SRC-00227
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: commercial GPU/NPU baselines
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 2.41
+      unit: x
+    si_base:
+      value: 2.41
+      unit: dimensionless
+    display:
+      value: 241.0
+      unit: percent
+    conditions:
+      baseline: commercial GPU/NPU baselines
+- id: CLM-ARCH-0155
+  topic: ARCH
+  statement: TranSAGE achieves up to 13.04x higher energy efficiency over commercial GPU/NPU baselines.
+  sources:
+  - SRC-00227
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: commercial GPU/NPU baselines
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 13.04
+      unit: x
+    si_base:
+      value: 13.04
+      unit: dimensionless
+    display:
+      value: 1304.0
+      unit: percent
+    conditions:
+      baseline: commercial GPU/NPU baselines
+- id: CLM-ARCH-0156
+  topic: ARCH
+  statement: Compared with state-of-the-art accelerator generators, TranSAGE achieves up to 11.33x higher
+    throughput.
+  sources:
+  - SRC-00227
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: state-of-the-art accelerator generators
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 11.33
+      unit: x
+    si_base:
+      value: 11.33
+      unit: dimensionless
+    display:
+      value: 1133.0
+      unit: percent
+    conditions:
+      baseline: state-of-the-art accelerator generators
+- id: CLM-ARCH-0157
+  topic: ARCH
+  statement: Compared with state-of-the-art accelerator generators, TranSAGE achieves up to 6.07x higher
+    energy efficiency.
+  sources:
+  - SRC-00227
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: state-of-the-art accelerator generators
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 6.07
+      unit: x
+    si_base:
+      value: 6.07
+      unit: dimensionless
+    display:
+      value: 607.0
+      unit: percent
+    conditions:
+      baseline: state-of-the-art accelerator generators
+- id: CLM-ARCH-0158
+  topic: ARCH
+  statement: The synthesized PARIS 784-lane INT8 core occupies an area of 0.008701 mm2.
+  sources:
+  - SRC-00230
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    process: 45 nm
+    fclk: 100 MHz
+    lanes: 784-lane
+    precision: INT8
+  quantity:
+    quantity: area_die
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.008701
+      unit: mm2
+    si_base:
+      value: 8.701e-09
+      unit: m^2
+    display:
+      value: 0.008701
+      unit: mm^2
+    conditions:
+      process: 45 nm
+      fclk: 100 MHz
+      lanes: 784-lane
+      precision: INT8
+- id: CLM-ARCH-0159
+  topic: ARCH
+  statement: The 784-lane INT8 core completes an inner product in 88 cycles.
+  sources:
+  - SRC-00230
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    lanes: 784-lane
+    precision: INT8
+- id: CLM-ARCH-0160
+  topic: ARCH
+  statement: PARIS achieves a speedup of 240.44× over a matched reused-MSDF implementation on Model A.
+  sources:
+  - SRC-00230
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: matched reused-MSDF implementation
+- id: CLM-ARCH-0161
+  topic: ARCH
+  statement: PARIS achieves a speedup of 180.47× over a matched reused-MSDF implementation on Model B.
+  sources:
+  - SRC-00230
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: matched reused-MSDF implementation
+- id: CLM-ARCH-0162
+  topic: ARCH
+  statement: The 16-engine accelerator delivers a projected throughput of 24.33 GOPS.
+  sources:
+  - SRC-00230
+  grade: B
+  credibility: unknown
+  evidence_type: projected
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    operating_assumption: immediate weight availability
+    architecture: 16-engine accelerator
+- id: CLM-ARCH-0163
+  topic: ARCH
+  statement: A 256-engine RTL implementation completes Model A in 259 cycles.
+  sources:
+  - SRC-00230
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    architecture: 256-engine RTL implementation
+    model: Model A

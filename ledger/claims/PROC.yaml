@@ -1253,3 +1253,164 @@ claims:
       unit: percent
     conditions:
       model: polymer-brush
+- id: CLM-PROC-0038
+  topic: PROC
+  statement: The laser system operating repetition rate is 610 kHz.
+  sources:
+  - SRC-00231
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    component: laser system
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 610.0
+      unit: kHz
+    si_base:
+      value: 610000.0
+      unit: Hz
+    display:
+      value: 0.0006100000000000001
+      unit: GHz
+    conditions:
+      component: laser system
+- id: CLM-PROC-0039
+  topic: PROC
+  statement: At a landing energy of 10 eV, the de Broglie wavelength is approximately 3.88 Å.
+  sources:
+  - SRC-00231
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    landing_energy: 10 eV
+  quantity:
+    quantity: wavelength
+    bound: exact
+    approximate: true
+    as_published:
+      value: 3.88
+      unit: Å
+    si_base:
+      value: 3.88e-10
+      unit: m
+    display:
+      value: 0.000388
+      unit: um
+    conditions:
+      landing_energy: 10 eV
+- id: CLM-PROC-0040
+  topic: PROC
+  statement: In a 70 nm-thick region of a 1T-TaS2 flake, edge contrast modulation contains fast wavefronts
+    at a frequency of 18 GHz.
+  sources:
+  - SRC-00231
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    material: 1T-TaS2 flake
+    flake_thickness: 70 nm
+    wavefront_type: fast wavefronts
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 18.0
+      unit: GHz
+    si_base:
+      value: 18000000000.0
+      unit: Hz
+    display:
+      value: 18.0
+      unit: GHz
+    conditions:
+      material: 1T-TaS2 flake
+      flake_thickness: 70 nm
+      wavefront_type: fast wavefronts
+- id: CLM-PROC-0041
+  topic: PROC
+  statement: In a 70 nm-thick region of a 1T-TaS2 flake, edge contrast modulation contains a slower mode
+    at a frequency of approximately 8 GHz.
+  sources:
+  - SRC-00231
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    material: 1T-TaS2 flake
+    flake_thickness: 70 nm
+    wavefront_type: slower mode
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: true
+    as_published:
+      value: 8.0
+      unit: GHz
+    si_base:
+      value: 8000000000.0
+      unit: Hz
+    display:
+      value: 8.0
+      unit: GHz
+    conditions:
+      material: 1T-TaS2 flake
+      flake_thickness: 70 nm
+      wavefront_type: slower mode
+- id: CLM-PROC-0042
+  topic: PROC
+  statement: The calculated longitudinal sound velocity along the crystallographic c axis of 1T-TaS2 is
+    approximately 2.38 km s-1.
+  sources:
+  - SRC-00231
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    crystallographic_axis: c axis

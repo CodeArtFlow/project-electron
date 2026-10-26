@@ -1,0 +1,87 @@
+id: SRC-00231
+title: Electron Wavefronts Capture Nanoscale Movies of Hypersound at Surfaces
+doi: null
+arxiv_id: 2610.32419v1
+url: https://arxiv.org/abs/2610.32419v1
+venue_id: arxiv_api
+authors:
+- name: Johannes Otto
+  affiliation: null
+  corresponding: null
+- name: Leon Brauns
+  affiliation: null
+  corresponding: null
+- name: Benjamin Schroeder
+  affiliation: null
+  corresponding: null
+- name: Claus Ropers
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-23'
+retrieved_date: '2026-10-26'
+access: full_text
+read_scope: Automated reading. The full PDF text (58,983 characters, 22 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.32419v1 on
+  2026-10-26. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The output of a laser system operating at 610 kHz repetition rate is split into ultrashort
+  pump and probe pulses.”
+
+  “At a landing energy of10eV, the de Broglie wavelengthλ0 is approximately3.88Å.”
+
+  “The first measurements focus on a70nm-thick region of a 1T-TaS2 flake”
+
+  “The contrast modulation reaches20 %and comprises repeatedly launched fast wavefronts (f = 18 GHz, v
+  = 4.7 km s−1) together with a slower mode of higher amplitude at a frequencyf≈ 8 GHz.”
+
+  “repeatedly launched fast wavefronts (f = 18 GHz, v = 4.7 km s−1)”
+
+  “together with a slower mode of higher amplitude at a frequencyf≈ 8 GHz.”
+
+  “Using the literature stiffnessC33 and mass densityρ, we calculate the longitudinal sound velocityvc
+  = √C33/ρ≈ 2.38 km s−1 along the crystallographicc axis.”
+
+  “along the crystallographicc axis.”'
+method_summary: '“By converting a conventional low-energy electron microscope[30,31] to pulsed operation,
+  we combine nanometre-scale imaging with the pronounced surface sensitivity of few-electronvolt electrons.”
+
+  “We introduce ultrafast low-energy electron microscopy (ULEEM), exploiting the intrinsic surface sensitivity
+  of few-electronvolt electrons.”
+
+  “The generation and propagation of laser-induced elastic waves are modeled by solving the coupled transient
+  heat-conduction and linear elastodynamic equations in COMSOL Multiphysics 6.3 using a two-dimensional
+  plane-strain finite-element model.”'
+limitations: “In conventional electron and optical microscopy, phase variations of the wavefront are not
+  directly visible in the intensity of an idealized (aberration-free) in-focus image.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 18693
+    output: 2654
+  claims_accepted: 5
+  claims_rejected: 2
+  rejected:
+  - statement: At a spatial frequency of 8.1 µm-1, the observed contrast corresponds to a peak surface
+      corrugation amplitude of approximately 35 pm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''At the dominant
+      spatial frequencyqm = 8.1 µm−1, the observed4.3 %contr'''
+    quotes:
+    - At the dominant spatial frequencyqm = 8.1 µm−1, the observed4.3 %contrast corresponds to a peak
+      surface corrugation amplitude of approximately35pm through using the modelled contrast-transfer
+      function (Fig. 2e), which demonstrates sensitivi
+  - statement: The ULEEM measurements are performed under ultrahigh-vacuum conditions at a pressure of
+      about 5×10-10 mbar.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Measurements
+      are performed under ultrahigh-vacuum conditions at a pres'''
+    quotes:
+    - Measurements are performed under ultrahigh-vacuum conditions at a pressure of about5×10−10 mbar.
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (measured: 4, simulated:
+  1). This field records the majority (measured); trust each claim''s own evidence_type over this one.'

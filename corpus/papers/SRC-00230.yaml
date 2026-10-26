@@ -1,0 +1,85 @@
+id: SRC-00230
+title: 'PARIS: Parallel Arithmetic Reduction and Integrated Selection for MSDF Inner Products'
+doi: null
+arxiv_id: 2610.32410v1
+url: https://arxiv.org/abs/2610.32410v1
+venue_id: arxiv_api
+authors:
+- name: Malik Zohaib Nisar
+  affiliation: null
+  corresponding: null
+- name: Ic-Pyo Hong
+  affiliation: null
+  corresponding: null
+- name: Dorit Merhof
+  affiliation: null
+  corresponding: null
+- name: Muhammad Usman
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-23'
+retrieved_date: '2026-10-26'
+access: full_text
+read_scope: Automated reading. The full PDF text (21,957 characters, 7 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.32410v1 on
+  2026-10-26. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Synthesized in 45 nm at 100 MHz, the 784-lane INT8 core occupies 0.008701 mm2 and completes
+  an inner product in 88 cycles.”
+
+  “Evaluation on two MNIST multilayer perceptrons demonstrates arithmetic-workload speedups of 240.44×
+  and 180.47× over a matched reused-MSDF implementation, reducing arithmetic energy by 98.89% and 98.58%,
+  respectively.”
+
+  “Assuming immediate weight availability, it delivers a projected throughput of 24.33 GOPS and an estimated
+  energy efficiency of 1,581.14 GOPS/W at unchanged mapped power.”
+
+  “A synthesized 16-engine accelerator occupies 0.90273 mm 2 and meets the 100 MHz timing constraint.”
+
+  “A separate 256-engine RTL implementation completes Model A in 259 cycles, demonstrating output-parallel
+  scalability.”'
+method_summary: '“Synthesized in 45 nm at 100 MHz, the 784-lane INT8 core occupies 0.008701 mm2 and completes
+  an inner product in 88 cycles.”
+
+  “PARIS and the reference design were synthesized using Synopsys Design Compiler with the Nangate 45-nm
+  library at 1.1 V , and 100 MHz.”
+
+  “Power is estimated from mapped gate-level activity using four images per model and library leakage,
+  excluding physical implementation effects.”'
+limitations: '“Evaluation uses a preloaded behavioral operand producer, excluding storage and transfer
+  costs from the reported core results.”
+
+  “assuming continuous operand delivery and excluding cross-tile accumulation and layer-transition overhead.”
+
+  “Assuming immediate weight availability, it delivers a projected throughput of 24.33 GOPS and an estimated
+  energy efficiency of 1,581.14 GOPS/W at unchanged mapped power.”
+
+  “These savings represent modeled arithmetic-cycle reductions rather than measured energy savings.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 8717
+    output: 3349
+  claims_accepted: 6
+  claims_rejected: 2
+  rejected:
+  - statement: A synthesized 16-engine accelerator occupies an area of 0.90273 mm2.
+    reason: 'unit conversion refused: area_die: could not parse 0.90273 ''mm 2'': Unit expression cannot
+      have a scaling factor.'
+    quotes:
+    - A synthesized 16-engine accelerator occupies 0.90273 mm 2 and meets the 100 MHz timing constraint.
+  - statement: The 16-engine accelerator has an estimated energy efficiency of 1,581.14 GOPS/W.
+    reason: the statement contains the number 16, which none of its quotes contain
+    quotes:
+    - Assuming immediate weight availability, it delivers a projected throughput of 24.33 GOPS and an
+      estimated energy efficiency of 1,581.14 GOPS/W at unchanged mapped power.
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (projected: 1, simulated:
+  5). This field records the majority (simulated); trust each claim''s own evidence_type over this one.'

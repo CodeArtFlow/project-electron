@@ -1,0 +1,115 @@
+id: SRC-00224
+title: Interface Control of Second-Harmonic Generation in Layered CuInP2S6 via PbZr0.2Ti0.8O3 Domain Wall
+doi: null
+arxiv_id: 2610.32228v1
+url: https://arxiv.org/abs/2610.32228v1
+venue_id: arxiv_api
+authors:
+- name: Dawei Li
+  affiliation: null
+  corresponding: null
+- name: Juhe Liu
+  affiliation: null
+  corresponding: null
+- name: Yifei Hao
+  affiliation: null
+  corresponding: null
+- name: Qiuchen Wu
+  affiliation: null
+  corresponding: null
+- name: Xi Huang
+  affiliation: null
+  corresponding: null
+- name: Jesse Stebbing
+  affiliation: null
+  corresponding: null
+- name: Xinyi Hou
+  affiliation: null
+  corresponding: null
+- name: Gaolei Zhao
+  affiliation: null
+  corresponding: null
+- name: Kun Wang
+  affiliation: null
+  corresponding: null
+- name: Yongfeng Lu
+  affiliation: null
+  corresponding: null
+- name: Xia Hong
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-23'
+retrieved_date: '2026-10-26'
+access: full_text
+read_scope: Automated reading. The full PDF text (38,112 characters, 18 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.32228v1 on
+  2026-10-26. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: “The CIPS unit cell has the lattice parameters of a = 6.096 Å, b = 10.565 Å, c = 13.623 Å, and
+  β = 107.10° , and contains two adjacent layers.”
+method_summary: '“CIPS flakes are mechanically exfoliated from the bulk crystals (Supplemental Materials)
+  and transferred onto the target substrates (e.g., SiO 2/Si, gold, and PZT).”
+
+  “Next, we investigate the SHG responses in CIPS using a home-made nonlinear optical microscope (Supplemental
+  Materials ).”
+
+  “We deposit epitaxial 50 nm (001) PZT thin film on 10 nm La 0.67Sr0.33MnO3 (LSMO) buffered SrTiO 3 (STO)
+  substrate (step 1).”
+
+  “Circular domain patterns are then written on the PZT film via conductive AFM tip (step 2).”'
+limitations: “For thinner CIPS flakes with diminishing SHG signal, the polar axis cannot be determined
+  prior to transfer.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14605
+    output: 2756
+  claims_accepted: 1
+  claims_rejected: 5
+  rejected:
+  - statement: The coercive voltage for polarization down (Vtip > 0 V) on a CIPS flake of approximately
+      16 nm thickness transferred onto a gold substrate is 4.5 V.
+    reason: '[qualifier_dropped] the statement says the value is approximate but quantity.approximate
+      is false. Record the qualifier the source used - UnitEngine.record(..., bound=..., approximate=...).'
+    quotes:
+    - Figures 1(c)-1(d) show the piezoresponse force microscopy (PFM) switching hysteresis of phase and
+      amplitude responses taken on a CIPS flake (~16 nm) transferred onto the gold substrate , where the
+      coercive voltages for polarization down (Vt
+    - where the coercive voltages for polarization down (Vtip > 0 V) and up (Vtip < 0 V) are 4.5 V and
+      -5.2 V, respectively.
+  - statement: The coercive voltage for polarization up (Vtip < 0 V) on a CIPS flake of approximately
+      16 nm thickness transferred onto a gold substrate is -5.2 V.
+    reason: '[qualifier_dropped] the statement says the value is approximate but quantity.approximate
+      is false. Record the qualifier the source used - UnitEngine.record(..., bound=..., approximate=...).'
+    quotes:
+    - Figures 1(c)-1(d) show the piezoresponse force microscopy (PFM) switching hysteresis of phase and
+      amplitude responses taken on a CIPS flake (~16 nm) transferred onto the gold substrate , where the
+      coercive voltages for polarization down (Vt
+    - where the coercive voltages for polarization down (Vtip > 0 V) and up (Vtip < 0 V) are 4.5 V and
+      -5.2 V, respectively.
+  - statement: The wavelength of the femtosecond laser incident light used for SHG measurements is 800
+      nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The femtosecond
+      laser (wavelength: 800 nm) as an incident light propag'''
+    quotes:
+    - 'The femtosecond laser (wavelength: 800 nm) as an incident light propagates along z direction, perpendicular
+      to the sample surface, and the SHG signal (wavelength: 400 nm) is collected in reflection mode.'
+  - statement: The wavelength of the collected SHG signal is 400 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The femtosecond
+      laser (wavelength: 800 nm) as an incident light propag'''
+    quotes:
+    - 'The femtosecond laser (wavelength: 800 nm) as an incident light propagates along z direction, perpendicular
+      to the sample surface, and the SHG signal (wavelength: 400 nm) is collected in reflection mode.'
+  - statement: The excitation laser power applied for SHG mapping of the 16 nm CIPS/PZT sample is 25 mW.
+    reason: the statement contains the number 16, which none of its quotes contain
+    quotes:
+    - 'The excitation laser power: 20 mW for (b, c) and 25 mW for (d, e).'
+    - (d) 16 nm CIPS/PZT
+corrections: []

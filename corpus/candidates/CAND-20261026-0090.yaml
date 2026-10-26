@@ -22,6 +22,50 @@ id: CAND-20261026-0090
 harvested_date: '2026-10-26'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-26'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At 0.5 K and an incident photon TAM projection mγ = 1, the calculated desired-OAM fraction
+      η1 for InSb is 87%.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - 'At 0.5 K, the m γ = 1 distribution is strongly concentrated in the desired OAM channel: η 1 = 87%'
+    - Within a single-valley effective-mass model of surface photoemission, we calculate OAM-resolved
+      spectra for GaAs, InSb, InAs 0.34Sb0.66, and Hg 0.76Cd0.24Te irradiated by twisted photons with
+      Laguerre–Gaussian–like momentum profile.
+    - For the three narrow-gap materials (InSb,
+    - At 0.5 K
+  - statement: At 0.5 K and an incident photon TAM projection mγ = 1, the calculated desired-OAM fraction
+      η1 for InAs0.34Sb0.66 is 91%.
+    reason: the statement contains the number 34, which none of its quotes contain
+    quotes:
+    - The middle pair of rows in Fig. 3 demonstrates the strong localization of the spectra around the
+      desired channels for m γ = 1 and 5 at T = 0.5 K. Their desired- OAM fractions are 91% and 66%
+    - Within a single-valley effective-mass model of surface photoemission, we calculate OAM-resolved
+      spectra for GaAs, InSb, InAs 0.34Sb0.66, and Hg 0.76Cd0.24Te irradiated by twisted photons with
+      Laguerre–Gaussian–like momentum profile.
+    - InAs 0.34Sb0.66
+    - T = 0.5 K
+  - statement: At 0.5 K and an incident photon TAM projection mγ = 1, the calculated desired-OAM fraction
+      η1 for Hg0.76Cd0.24Te is 91%.
+    reason: the statement contains the number 76, which none of its quotes contain
+    quotes:
+    - 'The lower pair of rows in Fig. 3 shows that at T = 0.5 K, Hg 0.76Cd0.24Te gives the narrowest m
+      γ = 1 distribution among the cases considered: η 1 = 91%'
+    - Within a single-valley effective-mass model of surface photoemission, we calculate OAM-resolved
+      spectra for GaAs, InSb, InAs 0.34Sb0.66, and Hg 0.76Cd0.24Te irradiated by twisted photons with
+      Laguerre–Gaussian–like momentum profile.
+    - Hg 0.76Cd0.24Te
+    - T = 0.5 K
+  tokens:
+    input: 22401
+    output: 1571
+  fetched_chars: 69087

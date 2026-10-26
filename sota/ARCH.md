@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-25.
+Topic code `ARCH`. Last reviewed 2026-10-26.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -39,6 +39,10 @@ Topic code `ARCH`. Last reviewed 2026-10-25.
 - **4.68 mm^2** — FIGLUT has a chip area of 4.68 mm2.
   - `CLM-ARCH-0148` · component FIGLUT, process NanGate 15 nm technology, fclk 1 GHz, activation_format FP16 · grade B · credibility unknown · simulated · as of 2026-10-21
   - sources: SRC-00220
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- **0.008701 mm^2** — The synthesized PARIS 784-lane INT8 core occupies an area of 0.008701 mm2.
+  - `CLM-ARCH-0158` · process 45 nm, fclk 100 MHz, lanes 784-lane, precision INT8 · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00230
   - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
 
 ### energy
@@ -425,6 +429,26 @@ Topic code `ARCH`. Last reviewed 2026-10-25.
   - `CLM-ARCH-0143` · baseline baseline · grade B · credibility unknown · simulated · as of 2026-10-22
   - sources: SRC-00216
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The 784-lane INT8 core completes an inner product in 88 cycles.
+  - `CLM-ARCH-0159` · lanes 784-lane, precision INT8 · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00230
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- PARIS achieves a speedup of 240.44× over a matched reused-MSDF implementation on Model A.
+  - `CLM-ARCH-0160` · baseline matched reused-MSDF implementation · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00230
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- PARIS achieves a speedup of 180.47× over a matched reused-MSDF implementation on Model B.
+  - `CLM-ARCH-0161` · baseline matched reused-MSDF implementation · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00230
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The 16-engine accelerator delivers a projected throughput of 24.33 GOPS.
+  - `CLM-ARCH-0162` · operating_assumption immediate weight availability, architecture 16-engine accelerator · grade B · credibility unknown · projected · as of 2026-10-23
+  - sources: SRC-00230
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- A 256-engine RTL implementation completes Model A in 259 cycles.
+  - `CLM-ARCH-0163` · architecture 256-engine RTL implementation, model Model A · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00230
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -598,6 +622,22 @@ Topic code `ARCH`. Last reviewed 2026-10-25.
   - `CLM-ARCH-0139` · process 15nm, fclk 1GHz · grade B · credibility unknown · simulated · as of 2026-10-22
   - sources: SRC-00216
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≤ 241 percent** — TranSAGE achieves up to 2.41x higher throughput over commercial GPU/NPU baselines.
+  - `CLM-ARCH-0154` · baseline commercial GPU/NPU baselines · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00227
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ 1304 percent** — TranSAGE achieves up to 13.04x higher energy efficiency over commercial GPU/NPU baselines.
+  - `CLM-ARCH-0155` · baseline commercial GPU/NPU baselines · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00227
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ 1133 percent** — Compared with state-of-the-art accelerator generators, TranSAGE achieves up to 11.33x higher throughput.
+  - `CLM-ARCH-0156` · baseline state-of-the-art accelerator generators · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00227
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ 607 percent** — Compared with state-of-the-art accelerator generators, TranSAGE achieves up to 6.07x higher energy efficiency.
+  - `CLM-ARCH-0157` · baseline state-of-the-art accelerator generators · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00227
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -701,6 +741,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 153
-- grades: {'B': 153}
-- distinct sources: 49
+- claims: 163
+- grades: {'B': 163}
+- distinct sources: 51

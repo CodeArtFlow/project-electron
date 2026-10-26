@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-25.
+Topic code `MAT`. Last reviewed 2026-10-26.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -297,6 +297,22 @@ Topic code `MAT`. Last reviewed 2026-10-25.
 - **0.34 nm** — The calculated Bohr radius for the boron acceptor is 0.34 nm.
   - `CLM-MAT-0202` · static_dielectric_constant ~ 5.7, ionization_energy 0.37 eV · grade B · credibility unknown · simulated · as of 2026-10-22
   - sources: SRC-00212
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈24 nm** — At room temperature, the estimated nonlocal charge transport length scale for silver is approximately 24 nm.
+  - `CLM-MAT-0204` · material Ag, temperature room temperature · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00226
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈18 nm** — At room temperature, the estimated nonlocal length scale for copper is approximately 18 nm.
+  - `CLM-MAT-0205` · material Cu, temperature room temperature · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00226
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈17 nm** — At room temperature, the estimated nonlocal length scale for gold is approximately 17 nm.
+  - `CLM-MAT-0206` · material Au, temperature room temperature · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00226
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈8 nm** — At room temperature, aluminum has an estimated nonlocal length scale of approximately 8 nm.
+  - `CLM-MAT-0207` · material Al, temperature room temperature · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00226
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### power
@@ -677,6 +693,14 @@ Topic code `MAT`. Last reviewed 2026-10-25.
   - `CLM-MAT-0185` · material_phase h-BN, method DFT calculations · grade B · credibility unknown · simulated · as of 2026-10-22
   - sources: SRC-00206
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The A1 peak in the Te single crystal is approximately 66 times higher in intensity than the intrinsic P2 peak in MnTe at 1.8 K.
+  - `CLM-MAT-0203` · temperature 1.8 K · grade B · credibility unknown · measured · as of 2026-10-23
+  - sources: SRC-00225
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The full width at half maximum of the single Lorentzian fit to the 2D Raman peak of monolayer graphene is 22.70 cm⁻¹.
+  - `CLM-MAT-0211` · grade B · credibility unknown · measured · as of 2026-10-23
+  - sources: SRC-00232
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -732,6 +756,10 @@ Topic code `MAT`. Last reviewed 2026-10-25.
   - `CLM-MAT-0198` · method DFT calculations, location X valleys · grade B · credibility unknown · simulated · as of 2026-10-22
   - sources: SRC-00211
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈1 percent** — Internal strain changes the flexo-BPVE response by about 1% under a strain gradient eta_yxx for monolayer black phosphorus.
+  - `CLM-MAT-0208` · material monolayer black phosphorus (bP) · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00228
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -781,6 +809,14 @@ Topic code `MAT`. Last reviewed 2026-10-25.
   - `CLM-MAT-0142` · measurement_setup STM measurements · grade B · credibility unknown · measured · as of 2026-10-14
   - sources: SRC-00163
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **-270.55 degC** — The estimated superconducting transition temperature for unstrained monolayer CsTi3Bi5 is 2.6 K.
+  - `CLM-MAT-0209` · equation Allen-Dynes modified McMillan equation · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00229
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **-269.95 degC** — Under optimal tensile strain of +2%, the superconducting transition temperature estimated from the temperature dependence of the gap is 3.2 K.
+  - `CLM-MAT-0210` · strain +2%, method anisotropic Migdal-Eliashberg equations · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00229
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### thermal conductivity
 
@@ -1008,6 +1044,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 202
-- grades: {'B': 202}
-- distinct sources: 73
+- claims: 211
+- grades: {'B': 211}
+- distinct sources: 78

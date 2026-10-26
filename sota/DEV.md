@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-10-25.
+Topic code `DEV`. Last reviewed 2026-10-26.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -80,6 +80,13 @@ Topic code `DEV`. Last reviewed 2026-10-25.
   - `CLM-DEV-0073` · wavelength 488 nm · grade B · credibility unknown · measured · as of 2026-10-16
   - sources: SRC-00183
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+
+### power density
+
+- **3.1e-05 W/mm^2** — In the long-base p+-n device with a 300 µm n-base width under 0.05 A/cm2 current density, the ohmic power dissipation in the base is 0.0031 W/cm2 according to the extended theory.
+  - `CLM-DEV-0079` · structure long-base p+-n device, n_base_width 300 𝜇𝜇m, framework extended theory · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00222
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### pressure
 
@@ -241,6 +248,10 @@ Topic code `DEV`. Last reviewed 2026-10-25.
   - `CLM-DEV-0065` · grade B · credibility unknown · simulated · as of 2026-10-14
   - sources: SRC-00151
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- For components assigned to n = 7 and n = 8 in Device B, the FWHM-normalized peak separation RFWHM7,8 is 2.15 ± 0.03.
+  - `CLM-DEV-0080` · device Device B, photon_number_pair n = 7 and n = 8 · grade B · credibility unknown · measured · as of 2026-10-23
+  - sources: SRC-00223
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -313,6 +324,10 @@ Topic code `DEV`. Last reviewed 2026-10-25.
   - `CLM-DEV-0066` · software MATLAB Deep Learning Toolbox · grade B · credibility unknown · simulated · as of 2026-10-15
   - sources: SRC-00154
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **2260 ns** — For the n-type base with an excess carrier boundary concentration of 1016 cm-3, the extended theory calculates a minority-carrier base transit time of 2.26 µs when the n-base width is 500 µm.
+  - `CLM-DEV-0078` · injection_level high injection (𝛿𝛿0 = 1016 cm-3) · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00222
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -346,6 +361,6 @@ _None._
 
 ## Evidence base
 
-- claims: 74
-- grades: {'B': 74}
-- distinct sources: 30
+- claims: 77
+- grades: {'B': 77}
+- distinct sources: 32

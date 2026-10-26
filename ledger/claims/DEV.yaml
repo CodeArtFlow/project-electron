@@ -2089,3 +2089,95 @@ claims:
       sample: NbN/AlN/FePt
       temperature: 4.5 K
       stripe_orientation: θ = 90°
+- id: CLM-DEV-0078
+  topic: DEV
+  statement: For the n-type base with an excess carrier boundary concentration of 1016 cm-3, the extended
+    theory calculates a minority-carrier base transit time of 2.26 µs when the n-base width is 500 µm.
+  sources:
+  - SRC-00222
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    injection_level: high injection (𝛿𝛿0 = 1016 cm-3)
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 2.26e-06
+      unit: s
+    si_base:
+      value: 2.26e-06
+      unit: s
+    display:
+      value: 2259.9999999999995
+      unit: ns
+    conditions:
+      injection_level: high injection (𝛿𝛿0 = 1016 cm-3)
+- id: CLM-DEV-0079
+  topic: DEV
+  statement: In the long-base p+-n device with a 300 µm n-base width under 0.05 A/cm2 current density,
+    the ohmic power dissipation in the base is 0.0031 W/cm2 according to the extended theory.
+  sources:
+  - SRC-00222
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    structure: long-base p+-n device
+    n_base_width: 300 𝜇𝜇m
+    framework: extended theory
+  quantity:
+    quantity: power_density
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.0031
+      unit: W/cm2
+    si_base:
+      value: 31.0
+      unit: W/m^2
+    display:
+      value: 3.1e-05
+      unit: W/mm^2
+    conditions:
+      structure: long-base p+-n device
+      n_base_width: 300 𝜇𝜇m
+      framework: extended theory
+- id: CLM-DEV-0080
+  topic: DEV
+  statement: For components assigned to n = 7 and n = 8 in Device B, the FWHM-normalized peak separation
+    RFWHM7,8 is 2.15 ± 0.03.
+  sources:
+  - SRC-00223
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    device: Device B
+    photon_number_pair: n = 7 and n = 8

@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-25.
+Topic code `PHOT`. Last reviewed 2026-10-26.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -142,6 +142,10 @@ Topic code `PHOT`. Last reviewed 2026-10-25.
 - **≈20000 nm** — In the 20-armed spiral metasurface, the unstructured central area extends over about 20 µm.
   - `CLM-PHOT-0097` · spiral_arms 20 · grade B · credibility unknown · measured · as of 2026-10-22
   - sources: SRC-00213
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.6096 nm** — The CIPS unit cell has a lattice parameter a of 6.096 Å.
+  - `CLM-PHOT-0108` · material CIPS unit cell · grade B · credibility unknown · measured · as of 2026-10-23
+  - sources: SRC-00224
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
@@ -286,6 +290,30 @@ Topic code `PHOT`. Last reviewed 2026-10-25.
 - Raw two-photon interference visibility is 41% for time windows longer than 4 ns.
   - `CLM-PHOT-0093` · time_window longer than 4 ns · grade B · credibility unknown · measured · as of 2026-10-22
   - sources: SRC-00210
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Cs2NaLuCl6:Ho3+ microcrystals achieve a switch-on photoswitching contrast of 46.3 dB at room temperature.
+  - `CLM-PHOT-0102` · wavelength 660 nm · grade B · credibility unknown · measured · as of 2026-10-23
+  - sources: SRC-00221
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Cs2NaInCl6:Ho3+ ANPs exhibit a switch-on photoswitching contrast of 23.7 dB at room temperature.
+  - `CLM-PHOT-0103` · temperature room temperature, wavelength 660 nm · grade B · credibility unknown · measured · as of 2026-10-23
+  - sources: SRC-00221
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Cs2NaInCl6:Ho3+ ANPs show a switch-on pump intensity threshold of 206 kW·cm-2 on average.
+  - `CLM-PHOT-0104` · grade B · credibility unknown · measured · as of 2026-10-23
+  - sources: SRC-00221
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Cs2NaInCl6:Ho3+ ANPs exhibit a hysteresis width of 46 kW·cm-2 on average.
+  - `CLM-PHOT-0105` · material Cs2NaInCl6:Ho3+ ANPs · grade B · credibility unknown · measured · as of 2026-10-23
+  - sources: SRC-00221
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Cs2NaInCl6:Ho3+ microcrystals exhibit a switch-on pump intensity threshold of 125 kW·cm-2.
+  - `CLM-PHOT-0106` · grade B · credibility unknown · measured · as of 2026-10-23
+  - sources: SRC-00221
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Cs2NaInCl6:Ho3+ microcrystals exhibit a hysteresis width of 40 kW·cm-2.
+  - `CLM-PHOT-0107` · material Cs2NaInCl6:Ho3+ microcrystalline sample · grade B · credibility unknown · measured · as of 2026-10-23
+  - sources: SRC-00221
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
@@ -481,6 +509,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 101
-- grades: {'B': 94, 'A': 7}
-- distinct sources: 34
+- claims: 108
+- grades: {'B': 101, 'A': 7}
+- distinct sources: 36

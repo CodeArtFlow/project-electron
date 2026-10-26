@@ -1,0 +1,101 @@
+id: SRC-00229
+title: Strain-tunable van Hove singularity and superconducting dome in monolayer kagome metal CsTi$_3$Bi$_5$
+doi: null
+arxiv_id: 2610.32359v1
+url: https://arxiv.org/abs/2610.32359v1
+venue_id: arxiv_api
+authors:
+- name: Run Lv
+  affiliation: null
+  corresponding: null
+- name: Wenqian Tu
+  affiliation: null
+  corresponding: null
+- name: Dingfu Shao
+  affiliation: null
+  corresponding: null
+- name: Yuping Sun
+  affiliation: null
+  corresponding: null
+- name: Wenjian Lu
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-23'
+retrieved_date: '2026-10-26'
+access: full_text
+read_scope: Automated reading. The full PDF text (21,731 characters, 5 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.32359v1 on
+  2026-10-26. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“the estimated superconducting transition temperature (TC) is 2.6 K.”
+
+  “Based on the Allen-Dynes modified McMillan equation”
+
+  “Solving the anisotropic Migdal-Eliashberg equations at different temperatures gives the temperature
+  dependence of ∆ nk, from which we estimateT C = 3.2 K, close to theT C estimated by the Allen-Dynes
+  modified McMillan equation.”
+
+  “under the optimal tensile strain (ε= +2%)”
+
+  “Solving the anisotropic Migdal-Eliashberg equations at different temperatures”'
+method_summary: '“The first-principles calculations based on density functional theory were performed
+  using the Quantum ESPRESSO package [21, 22].”
+
+  “The superconducting gaps were calculated using the EPW code [26].”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 8991
+    output: 2088
+  claims_accepted: 2
+  claims_rejected: 4
+  rejected:
+  - statement: The superconducting transition temperature reaches a maximum of 3.6 K at an optimal tensile
+      strain of +2%.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Furthermore, the superconducting transition temperatureT C exhibits a dome-shaped dependence on
+      strain, reaching a maximum of 3.6 K at an optimal tensile strain ofε= +2%.
+    - Here, we systematically investigate the influence of biaxial mechanical strain (ε) on the electronic
+      structure and superconductivity of monolayer CsTi 3Bi5 using first-principles calculations.
+    - monolayer CsTi 3Bi5
+    - ε= +2%
+  - statement: At a tensile strain of -4%, the estimated superconducting transition temperature is 0.3
+      K.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - rises from 0.3 K at -4% to a maximum of 3.6 K at +2%, and then falls to 1.2 K at +6%.
+    - As summarized in Fig. 3(d),T C, estimated using the Allen-Dynes modified McMillan equation, rises
+      from 0.3 K at -4% to a maximum of 3.6 K at +2%, and then falls to 1.2 K at +6%.
+    - monolayer CsTi 3Bi5
+    - at -4%
+  - statement: At a tensile strain of +6%, the estimated superconducting transition temperature falls
+      to 1.2 K.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - rises from 0.3 K at -4% to a maximum of 3.6 K at +2%, and then falls to 1.2 K at +6%.
+    - As summarized in Fig. 3(d),T C, estimated using the Allen-Dynes modified McMillan equation, rises
+      from 0.3 K at -4% to a maximum of 3.6 K at +2%, and then falls to 1.2 K at +6%.
+    - monolayer CsTi 3Bi5
+    - at +6%
+  - statement: Under an optimal tensile strain of +2%, the average superconducting gap magnitude is 0.35
+      meV.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - The average superconducting gap magnitude is 0.35 meV, with an orbital-dependent and anisotropic
+      distribution.
+    - Here, we systematically investigate the influence of biaxial mechanical strain (ε) on the electronic
+      structure and superconductivity of monolayer CsTi 3Bi5 using first-principles calculations.
+    - monolayer CsTi 3Bi5
+    - atε= +2%
+corrections: []

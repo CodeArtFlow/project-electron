@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-10-25.
+Topic code `PROC`. Last reviewed 2026-10-26.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -23,6 +23,18 @@ Topic code `PROC`. Last reviewed 2026-10-25.
   - `CLM-PROC-0033` · holder_type four-channel configuration, metric -3 dB bandwidth · grade B · credibility unknown · measured · as of 2026-10-15
   - sources: SRC-00152
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **0.00061 GHz** — The laser system operating repetition rate is 610 kHz.
+  - `CLM-PROC-0038` · component laser system · grade B · credibility unknown · measured · as of 2026-10-23
+  - sources: SRC-00231
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **18 GHz** — In a 70 nm-thick region of a 1T-TaS2 flake, edge contrast modulation contains fast wavefronts at a frequency of 18 GHz.
+  - `CLM-PROC-0040` · material 1T-TaS2 flake, flake_thickness 70 nm, wavefront_type fast wavefronts · grade B · credibility unknown · measured · as of 2026-10-23
+  - sources: SRC-00231
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- **≈8 GHz** — In a 70 nm-thick region of a 1T-TaS2 flake, edge contrast modulation contains a slower mode at a frequency of approximately 8 GHz.
+  - `CLM-PROC-0041` · material 1T-TaS2 flake, flake_thickness 70 nm, wavefront_type slower mode · grade B · credibility unknown · measured · as of 2026-10-23
+  - sources: SRC-00231
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
 
 ### length device
 
@@ -85,6 +97,10 @@ Topic code `PROC`. Last reviewed 2026-10-25.
   - `CLM-PROC-0034` · slit_width 330 µm, method finite-element modelling · grade B · credibility unknown · simulated · as of 2026-10-15
   - sources: SRC-00152
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The calculated longitudinal sound velocity along the crystallographic c axis of 1T-TaS2 is approximately 2.38 km s-1.
+  - `CLM-PROC-0042` · crystallographic_axis c axis · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00231
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -188,6 +204,13 @@ Topic code `PROC`. Last reviewed 2026-10-25.
   - sources: SRC-00037
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
+### wavelength
+
+- **≈0.000388 um** — At a landing energy of 10 eV, the de Broglie wavelength is approximately 3.88 Å.
+  - `CLM-PROC-0039` · landing_energy 10 eV · grade B · credibility unknown · measured · as of 2026-10-23
+  - sources: SRC-00231
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+
 ## Live contradictions in this layer
 
 Shown here, not in an appendix: a reader of this page must see the disagreement without navigating elsewhere.
@@ -249,6 +272,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 37
-- grades: {'B': 37}
-- distinct sources: 12
+- claims: 42
+- grades: {'B': 42}
+- distinct sources: 13

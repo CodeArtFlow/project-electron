@@ -1,0 +1,65 @@
+id: SRC-00228
+title: Flexo-Photoresponses from First Principles
+doi: null
+arxiv_id: 2610.32341v1
+url: https://arxiv.org/abs/2610.32341v1
+venue_id: arxiv_api
+authors:
+- name: Zhichao Guo
+  affiliation: null
+  corresponding: null
+- name: Hua Wang
+  affiliation: null
+  corresponding: null
+- name: Haowei Xu
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-23'
+retrieved_date: '2026-10-26'
+access: full_text
+read_scope: Automated reading. The full PDF text (32,642 characters, 7 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.32341v1 on
+  2026-10-26. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“For the strain-gradient component and frequency range considered here, internal strain changes
+  the flexo-BPVE response by only about 1 %.”
+
+  “monolayer black phosphorus (bP)”'
+method_summary: “Utilizing a real-space Wannier basis, our formulation treats the electronic structure
+  [27], electron-phonon coupling [28, 29], and nonlinear optical responses [30, 31] on an equal footing.”
+limitations: '“Note that here we do not consider the relaxation of atom positions under strain gradient
+  (i.e., the clamped-ion approximation), so that all atoms within a unit cell follow the same displacement
+  field.”
+
+  “In the present implementation, we introduce a phenomenological electron linewidthζ= 20 meV to regularize
+  the numerical divergence whenϵ nk ≈ϵ m,k+q.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 11765
+    output: 1051
+  claims_accepted: 1
+  claims_rejected: 2
+  rejected:
+  - statement: The allowed flexo-BPVE coefficients of cSi reach 10-4 to 10-3 m*uA/V^2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The allowed
+      flexo-BPVE coefficients ofcSi reach 10 −4 ∼10 −3 m·µA/V2.'''
+    quotes:
+    - The allowed flexo-BPVE coefficients ofcSi reach 10 −4 ∼10 −3 m·µA/V2.
+    - cSi
+    - flexo-BPVE
+  - statement: The allowed components of the flexo-SHG susceptibility for cSTO are of order 10-5 m*pm/V.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The allowed
+      components of the flexo-SHG susceptibility are of order 10'''
+    quotes:
+    - The allowed components of the flexo-SHG susceptibility are of order 10 −5 m·pm/V.
+    - cSTO
+    - flexo-SHG susceptibility
+corrections: []

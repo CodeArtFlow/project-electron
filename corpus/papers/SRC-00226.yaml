@@ -1,0 +1,72 @@
+id: SRC-00226
+title: Nonlocal Thermoelectric Transport in Degenerate Electron Systems
+doi: null
+arxiv_id: 2610.32272v1
+url: https://arxiv.org/abs/2610.32272v1
+venue_id: arxiv_api
+authors:
+- name: Albert Beardo
+  affiliation: null
+  corresponding: null
+- name: Adrián Ramos-Martín
+  affiliation: null
+  corresponding: null
+- name: Jordi Tur-Prats
+  affiliation: null
+  corresponding: null
+- name: F. Xavier Alvarez
+  affiliation: null
+  corresponding: null
+- name: Juan Camacho
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-23'
+retrieved_date: '2026-10-26'
+access: full_text
+read_scope: Automated reading. The full PDF text (118,901 characters, 29 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.32272v1 on
+  2026-10-26. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“At room temperature, representative values are ℓ ≃ 24, 18, and 17 nm for Ag, Cu, and Au, respectively,
+  while Al gives a smaller value, ℓ ≃ 8 nm because of its shorter resistive relaxation time.”
+
+  “These estimates show that nonlocal length scales of several to a few tens of nanometers are expected
+  even in ordinary metals outside the strongly collective regime.”'
+method_summary: '“We develop the Flux Derivative Formalism (FDF), a kinetic framework that provides a
+  systematic route from the Boltzmann equation to nonlocal constitutive equations.”
+
+  “For each periodic unit cell we solve Eqs. (23) and (24), imposing a temperature difference ∆T between
+  two opposite terminals and the diffuse-wall conditions (25)–(26) at the pore surfaces.”'
+limitations: “The FDF approach is expected to remain accurate provided the neglected higher-order spatial
+  and temporal variations remain comparatively small, i.e., when the transport length scales of interest
+  are not much shorter than the electronic mean free path.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 36591
+    output: 2402
+  claims_accepted: 4
+  claims_rejected: 2
+  rejected:
+  - statement: The copper material parameters used for the thermal model calculations at room temperature
+      are a bulk thermal conductivity of 400 W m^-1 K^-1 and a nonlocal the
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - For copper at room temperature, we use the intrinsic parameters κ Cu = 400 W m−1K−1 and ℓ q = 17.4
+      nm [29]
+    - The FDF predictions are compared with experimental data [29, 30]
+  - statement: The nickel parameters used in the nonlocal transport calculation are a thermal conductivity
+      of 87.9 W m^-1 K^-1 and a nonlocal length scale of 2.7 nm.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - For nickel we use κ Ni = 87.9 W m−1K−1 and ℓ q = 2.7 nm [29].
+    - The calculated apparent conductivity decreases systematically as the pore size is reduced, in agreement
+      with the experimental data of Barako et al. [29], as shown in Fig. 1(b,c).
+corrections: []

@@ -1,0 +1,89 @@
+id: SRC-00222
+title: 'A Self-Consistent Two-Carrier Drift-Diffusion Framework for p-n Junctions: Extended Diode Equation,
+  Power Dissipation, and Base Transit Time'
+doi: null
+arxiv_id: 2610.32112v1
+url: https://arxiv.org/abs/2610.32112v1
+venue_id: arxiv_api
+authors:
+- name: Jianhong Yang
+  affiliation: null
+  corresponding: null
+- name: Tinglan Li
+  affiliation: null
+  corresponding: null
+- name: Gonghao Sun
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-23'
+retrieved_date: '2026-10-26'
+access: full_text
+read_scope: Automated reading. The full PDF text (74,873 characters, 38 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.32112v1 on
+  2026-10-26. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“500 4.4 5.03 × 103 3.52 × 103 1.43 2.26 × 10−6 1.35 × 10−5 0.17”
+
+  “Table 2. Minority-carrier boundary velocity and base transit time at high injection (𝛿𝛿0 = 1016 cm-3),
+  extended versus classical theory.”
+
+  “All analytical evaluations in this paper use the single parameter set of Table 3 [51-53] (Si, 300 K;
+  asymmetric p+–n junction).”
+
+  “0.05 0.0247 0.0031 0.0005 13%”
+
+  “Table 1. Power partition in the long-base p+-n device (𝑊𝑊𝑛𝑛 = 300 𝜇𝜇m, extended theory).”'
+method_summary: “All analytical evaluations in this paper use the single parameter set of Table 3 [51-53]
+  (Si, 300 K; asymmetric p+–n junction).”
+limitations: '“(i) SCR generation–recombination is neglected in the closure (Sec. VI A), as in the classical
+  theory”
+
+  “(ii) Frozen ambipolar coefficients : the closed form pairs the exact, injection -dependent boundary
+  excess with transport coefficients evaluated at their low -injection limits.”
+
+  “(iii) Neglected ambipolar drift: the perturbative elimination of 𝜇𝜇𝑎𝑎𝐸𝐸 𝑑𝑑𝛿𝛿/𝑑𝑑𝑥𝑥 (Sec. III A) is bounded
+  in closed form: the associated ambipolar Péclet number satisfies |Pe𝑎𝑎| ≤ 1/4(𝑏𝑏 + 1) ≈ 6% for Si, peaking
+  at 𝛿𝛿0 ≈ 0.75 𝑛𝑛0 and vanishing in both injection limits (Appendix A)”
+
+  “(iv) Constant material parameters: bias -independent 𝜇𝜇 and 𝜏𝜏 are used throughout; at the highest
+  injections, mobility degradation, Auger recombination, and self-heating (neglected here) would increase
+  the base drops, so the ohmic drop reported in Sec. VII is a lower bound to what a fully coupled electro-
+  thermal model would give [8,9,41].”
+
+  “(v) Structure idealization : uniformly doped, abrupt, one -dimensional junctions are assumed; graded
+  bases, heterojunctions, and two-dimensional effects are outside the present scope, as are organic and
+  disordered semiconductors, for which the dielectric- relaxation bound of Sec. II would have to be re-examined.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 28973
+    output: 2353
+  claims_accepted: 2
+  claims_rejected: 2
+  rejected:
+  - statement: For an n-base width of 35 µm at an excess carrier boundary concentration of 1016 cm-3,
+      the extended theory gives a minority-carrier base transit time of 0.253 µ
+    reason: the statement contains the number 0.253, which none of its quotes contain
+    quotes:
+    - 35 6.6 7.45 × 103 4.64 × 103 1.61 2.53 × 10−7 4.29 × 10−7 0.59
+    - All analytical evaluations in this paper use the single parameter set of Table 3 [51-53] (Si, 300
+      K; asymmetric p+–n junction).
+    - Table 2. Minority-carrier boundary velocity and base transit time at high injection (𝛿𝛿0 = 1016
+      cm-3), extended versus classical theory.
+  - statement: Under a current density of 46 A/cm2 in the 300 µm n-base long-base p+-n device, the extended
+      theory determines an ohmic base dissipation of 327 W/cm2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''46 38.7 327
+      4.1 90%'''
+    quotes:
+    - 46 38.7 327 4.1 90%
+    - All analytical evaluations in this paper use the single parameter set of Table 3 [51-53] (Si, 300
+      K; asymmetric p+–n junction).
+    - Table 1. Power partition in the long-base p+-n device (𝑊𝑊𝑛𝑛 = 300 𝜇𝜇m, extended theory).
+corrections: []

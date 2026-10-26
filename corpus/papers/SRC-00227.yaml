@@ -1,0 +1,104 @@
+id: SRC-00227
+title: 'TranSAGE: Automating Spatial Accelerator Generation for Large-Scale Transformer Models'
+doi: null
+arxiv_id: 2610.32279v1
+url: https://arxiv.org/abs/2610.32279v1
+venue_id: arxiv_api
+authors:
+- name: Chi Zhang
+  affiliation: null
+  corresponding: null
+- name: Yi Sun
+  affiliation: null
+  corresponding: null
+- name: Weichuang Zhang
+  affiliation: null
+  corresponding: null
+- name: Quan Chen
+  affiliation: null
+  corresponding: null
+- name: Jieru Zhao
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-23'
+retrieved_date: '2026-10-26'
+access: full_text
+read_scope: Automated reading. The full PDF text (98,591 characters, 20 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.32279v1 on
+  2026-10-26. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Evaluations on four representative LLMs demonstrate that TranSAGE achieves up to 2.41× higher
+  throughput and 13.04× higher energy efficiency over commercial GPU/NPU baselines.”
+
+  “commercial GPU/NPU baselines”
+
+  “Compared with state-of-the-art accelerator generators, TranSAGE achieves up to 11.33× higher throughput
+  and 6.07×higher energy efficiency.”
+
+  “state-of-the-art accelerator generators”'
+method_summary: '“Evaluations on four representative LLMs demonstrate that TranSAGE achieves up to 2.41×
+  higher throughput and 13.04× higher energy efficiency over commercial GPU/NPU baselines.”
+
+  “We model the baselines using Timeloop and Accelergy [37], which support accelerator architectures and
+  SRAM/-DRAM modeling.”
+
+  “For each architecture, we perform mapping exploration using Timeloop and select the mapping that minimizes
+  EDP under the same optimization criteria and search cost, reporting corresponding performance results.”
+
+  “Since Timeloop does not support modeling multiple pipelined operations, we extract latency from our
+  performance model for generated accelerators and combine it with energy estimates from Accelergy to
+  obtain the final metrics.”
+
+  “All TranSAGE configurations run at 1 GHz using a 45 nm technology model, with parameters summarized
+  in Appendix B. We use DeepScaleTool [43] to scale energy estimates to 8 nm for Orin NX and 7 nm for
+  A100 and Ascend 910B3.”'
+limitations: '“First, its physical compute, storage, and interconnect resources are fixed after generation.”
+
+  “Second, TranSAGE optimizes single-chip architectures.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 32924
+    output: 2532
+  claims_accepted: 4
+  claims_rejected: 4
+  rejected:
+  - statement: The area overhead due to reconfiguration reaches at most 0.11%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''As shown
+      in Figure 10 (c), the area overhead due to reconfigura-tion i'''
+    quotes:
+    - As shown in Figure 10 (c), the area overhead due to reconfigura-tion is negligible across all evaluated
+      models and configura-tions, reaching at most 0.11%.
+    - reconfigura-tion
+  - statement: TranSAGE achieves up to 96.15% effective BF16 arithmetic utilization on the prefill workload
+      under the edge configuration.
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - TranSAGE achieves up to 96.15% and 90.20% utilization on the prefill workload under the edge and
+      server configurations, respectively.
+    - BF16
+    - prefill workload
+    - edge and server configurations, respectively.
+  - statement: TranSAGE achieves up to 90.20% utilization on the prefill workload under the server configuration.
+    reason: the value 90.2 does not appear in any of the claim's quotes
+    quotes:
+    - TranSAGE achieves up to 96.15% and 90.20% utilization on the prefill workload under the edge and
+      server configurations, respectively.
+    - prefill workload
+    - edge and server configurations, respectively.
+  - statement: TranSAGE configurations run at an operating frequency of 1 GHz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - All TranSAGE configurations run at 1 GHz using a 45 nm technology model, with parameters summarized
+      in Appendix B.
+    - 45 nm technology model
+corrections: []

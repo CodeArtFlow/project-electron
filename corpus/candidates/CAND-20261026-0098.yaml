@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.32052v1
 doi: null
-title: A Resource-Efficient and Precision-Scalable FPGA Accelerator for Spiking Neural
-  Networks Using Minifloat Arithmetic
+title: A Resource-Efficient and Precision-Scalable FPGA Accelerator for Spiking Neural Networks Using
+  Minifloat Arithmetic
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-23'
@@ -23,6 +23,94 @@ id: CAND-20261026-0098
 harvested_date: '2026-10-26'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-26'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The E8M23 design achieves an estimated maximum operating frequency of 226.603 MHz on an
+      XCU250 FPGA.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - TABLE II POST-ROUTEFPGA COMPARISON ONXCU250 FormatF max (MHz) WNS (ns) CLBs LUTs FFs DSPs BRAM/URAM
+      Dynamic Power (W) E8M23 226.603 0.587 2158 3990 9094 4 0/0 0.298
+    - TABLE II POST-ROUTEFPGA COMPARISON ONXCU250
+    - E8M23 226.603 0.587 2158 3990 9094 4 0/0 0.298
+    - POST-ROUTEFPGA COMPARISON ONXCU250
+  - statement: The E5M10 configuration operates at an estimated maximum frequency of 256.937 MHz on an
+      XCU250 FPGA.
+    reason: the statement contains the number 50, which none of its quotes contain
+    quotes:
+    - TABLE II POST-ROUTEFPGA COMPARISON ONXCU250 FormatF max (MHz) WNS (ns) CLBs LUTs FFs DSPs BRAM/URAM
+      Dynamic Power (W) E8M23 226.603 0.587 2158 3990 9094 4 0/0 0.298 E5M10 256.937 1.108 776 2253 4819
+      2 0/0 0.196
+    - TABLE II POST-ROUTEFPGA COMPARISON ONXCU250
+    - E5M10 256.937 1.108 776 2253 4819 2 0/0 0.196
+    - POST-ROUTEFPGA COMPARISON ONXCU250
+  - statement: The E5M6 configuration achieves an estimated maximum operating frequency of 268.528 MHz
+      on an XCU250 FPGA.
+    reason: the statement contains the number 50, which none of its quotes contain
+    quotes:
+    - TABLE II POST-ROUTEFPGA COMPARISON ONXCU250 FormatF max (MHz) WNS (ns) CLBs LUTs FFs DSPs BRAM/URAM
+      Dynamic Power (W) E8M23 226.603 0.587 2158 3990 9094 4 0/0 0.298 E5M10 256.937 1.108 776 2253 4819
+      2 0/0 0.196 E5M6 268.528 1.276 665 1818 3
+    - TABLE II POST-ROUTEFPGA COMPARISON ONXCU250
+    - E5M6 268.528 1.276 665 1818 3717 2 0/0 0.161
+    - POST-ROUTEFPGA COMPARISON ONXCU250
+  - statement: The E4M3 configuration operates at an estimated maximum operating frequency of 262.605
+      MHz on an XCU250 FPGA.
+    reason: the statement contains the number 50, which none of its quotes contain
+    quotes:
+    - TABLE II POST-ROUTEFPGA COMPARISON ONXCU250 FormatF max (MHz) WNS (ns) CLBs LUTs FFs DSPs BRAM/URAM
+      Dynamic Power (W) E8M23 226.603 0.587 2158 3990 9094 4 0/0 0.298 E5M10 256.937 1.108 776 2253 4819
+      2 0/0 0.196 E5M6 268.528 1.276 665 1818 3
+    - TABLE II POST-ROUTEFPGA COMPARISON ONXCU250
+    - E4M3 262.605 1.192 464 1339 2618 2 0/0 0.147
+    - POST-ROUTEFPGA COMPARISON ONXCU250
+  - statement: The E8M23 design consumes an estimated dynamic power of 0.298 W on the target XCU250 FPGA.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - TABLE II POST-ROUTEFPGA COMPARISON ONXCU250 FormatF max (MHz) WNS (ns) CLBs LUTs FFs DSPs BRAM/URAM
+      Dynamic Power (W) E8M23 226.603 0.587 2158 3990 9094 4 0/0 0.298
+    - TABLE II POST-ROUTEFPGA COMPARISON ONXCU250
+    - E8M23 226.603 0.587 2158 3990 9094 4 0/0 0.298
+    - POST-ROUTEFPGA COMPARISON ONXCU250
+  - statement: The E5M10 implementation achieves an estimated dynamic power consumption of 0.196 W on
+      an XCU250 FPGA.
+    reason: the statement contains the number 50, which none of its quotes contain
+    quotes:
+    - TABLE II POST-ROUTEFPGA COMPARISON ONXCU250 FormatF max (MHz) WNS (ns) CLBs LUTs FFs DSPs BRAM/URAM
+      Dynamic Power (W) E8M23 226.603 0.587 2158 3990 9094 4 0/0 0.298 E5M10 256.937 1.108 776 2253 4819
+      2 0/0 0.196
+    - TABLE II POST-ROUTEFPGA COMPARISON ONXCU250
+    - E5M10 256.937 1.108 776 2253 4819 2 0/0 0.196
+    - POST-ROUTEFPGA COMPARISON ONXCU250
+  - statement: The E5M6 configuration results in an estimated dynamic power consumption of 0.161 W on
+      an XCU250 FPGA.
+    reason: the statement contains the number 50, which none of its quotes contain
+    quotes:
+    - TABLE II POST-ROUTEFPGA COMPARISON ONXCU250 FormatF max (MHz) WNS (ns) CLBs LUTs FFs DSPs BRAM/URAM
+      Dynamic Power (W) E8M23 226.603 0.587 2158 3990 9094 4 0/0 0.298 E5M10 256.937 1.108 776 2253 4819
+      2 0/0 0.196 E5M6 268.528 1.276 665 1818 3
+    - TABLE II POST-ROUTEFPGA COMPARISON ONXCU250
+    - E5M6 268.528 1.276 665 1818 3717 2 0/0 0.161
+    - POST-ROUTEFPGA COMPARISON ONXCU250
+  - statement: The E4M3 implementation achieves an estimated dynamic power of 0.147 W on an XCU250 FPGA.
+    reason: the statement contains the number 50, which none of its quotes contain
+    quotes:
+    - TABLE II POST-ROUTEFPGA COMPARISON ONXCU250 FormatF max (MHz) WNS (ns) CLBs LUTs FFs DSPs BRAM/URAM
+      Dynamic Power (W) E8M23 226.603 0.587 2158 3990 9094 4 0/0 0.298 E5M10 256.937 1.108 776 2253 4819
+      2 0/0 0.196 E5M6 268.528 1.276 665 1818 3
+    - TABLE II POST-ROUTEFPGA COMPARISON ONXCU250
+    - E4M3 262.605 1.192 464 1339 2618 2 0/0 0.147
+    - POST-ROUTEFPGA COMPARISON ONXCU250
+  tokens:
+    input: 8837
+    output: 3835
+  fetched_chars: 26914
