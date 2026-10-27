@@ -1,6 +1,6 @@
 # EDA — state of the art
 
-Topic code `EDA`. Last reviewed 2026-10-26.
+Topic code `EDA`. Last reviewed 2026-10-27.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -55,12 +55,23 @@ Topic code `EDA`. Last reviewed 2026-10-26.
   - sources: SRC-00045
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
+### time
+
+- **1.35e+08 ns** — The JasperGold runtime was measured at 135 ms for the cache coherence module.
+  - `CLM-EDA-0011` · tool JasperGold, module cache coherence module · grade B · credibility unknown · measured · as of 2026-10-23
+  - sources: SRC-00235
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **1.273e+09 ns** — The JasperGold runtime was measured at 1273 ms for the L1 Bus Interface module.
+  - `CLM-EDA-0012` · tool JasperGold, module L1 Bus Interface module · grade B · credibility unknown · measured · as of 2026-10-23
+  - sources: SRC-00235
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+
 ## Live contradictions in this layer
 
 _None._
 
 ## Evidence base
 
-- claims: 10
-- grades: {'B': 10}
-- distinct sources: 4
+- claims: 12
+- grades: {'B': 12}
+- distinct sources: 5

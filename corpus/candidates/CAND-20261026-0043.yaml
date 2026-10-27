@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.32744v1
 doi: null
-title: Integrated elliptical III-V nanopillar arrays on silicon for dual photodetection
-  and light emission
+title: Integrated elliptical III-V nanopillar arrays on silicon for dual photodetection and light emission
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-23'
@@ -30,6 +29,54 @@ id: CAND-20261026-0043
 harvested_date: '2026-10-26'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-27'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The III-V-on-Si elliptical nanopillar arrays achieve a responsivity of 0.55 A/W at an operating
+      wavelength of 830 nm.
+    reason: 'unit conversion refused: current: cannot convert 0.55 A/W to A - Cannot convert from ''ampere
+      / watt'' ([current] * [time] ** 3 / [mass] / [length] ** 2) to ''ampere'' ([current]). A dimens'
+    quotes:
+    - The nanoarray devices demonstrate highly efficient broadband photodetection from visible to near-infrared
+      wavelengths, reaching a responsivity of 0.55 A/W at 830 nm.
+    - reaching a responsivity of 0.55 A/W at 830 nm.
+    - O ur highest responsivity nanopillar arrays reach 0.55 A/W in the 800 nm – 900 nm range at 4 V
+  - statement: Under modulated light at 830 nm and a reverse bias voltage of -4 V, the fall times calculated
+      from a monoexponential fit of the single pulse decay curves fall w
+    reason: the quote says 'up to'/'within'/'at most' before the number but bound is not upper_bound
+    quotes:
+    - In Figure 3c, we plot the fall times calculated from a monoexponential fit of the decay curves obtained
+      with several tested nanopillar arrays, across dx and px. The calculated values fall within the 150
+      ns − 430 ns range
+    - Dynamic photoresponse characteristics of the tested III-V-on-Si elliptical nanopillar arrays at
+      830 nm.
+    - Determined fall times for each tested nanopillar array ( Pin = 2.5 mW and Vbias = −4 V) against
+      dx and px.
+  - statement: Under forward bias, the III-V-on-Si nanopillar array with dx = 150 nm and px = 2 exhibits
+      an electroluminescence emission peak centered at 862 nm.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - Figure 4a presents the emission spectra of one of the tested nanopillar arrays (dx = 150 nm and
+      px = 2), across a range of applied voltages (3.5 V – 5 V). The emission peak at 862 nm matches the
+      room -temperature band-edge transition of the
+    - Electroluminescence (EL) emission spectra of an array having dx = 150 nm and px = 2 (1:4 axial ratio)
+  - statement: The maximum differential efficiency coefficient alpha reaches 2 counts s-1 um-2 uA-2 in
+      the nanopillar array configured with dx = 200 nm and px = 2.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''counts s -1 μm-2 μA-2''
+      is not one of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare
+      numbe'
+    quotes:
+    - with the maximum value of 2 counts s-1 μm-2 μA-2 being reached with dx = 200 nm and px = 2.
+    - with dx = 200 nm and px = 2.
+  tokens:
+    input: 13815
+    output: 1894
+  fetched_chars: 40815

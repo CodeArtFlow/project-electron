@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-10-26.
+Topic code `DEV`. Last reviewed 2026-10-27.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -263,6 +263,10 @@ Topic code `DEV`. Last reviewed 2026-10-26.
   - `CLM-DEV-0070` · wavelength 455 nm · grade B · credibility unknown · measured · as of 2026-10-15
   - sources: SRC-00157
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ 7 percent** — At equal delivered throughput, TDD-DVM with POLITE consumes up to 7% less power than full drain voltage under POLITE.
+  - `CLM-DEV-0081` · link_adaptation POLITE · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00238
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -361,6 +365,6 @@ _None._
 
 ## Evidence base
 
-- claims: 77
-- grades: {'B': 77}
-- distinct sources: 32
+- claims: 78
+- grades: {'B': 78}
+- distinct sources: 33

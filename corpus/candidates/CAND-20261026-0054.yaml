@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.32632v1
 doi: null
-title: 'Toward Open ISA Supercomputing: A Comparative Study of RISC-V, Arm, and x86
-  Architectures on HPC Workloads'
+title: 'Toward Open ISA Supercomputing: A Comparative Study of RISC-V, Arm, and x86 Architectures on HPC
+  Workloads'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-23'
@@ -33,6 +33,58 @@ id: CAND-20261026-0054
 harvested_date: '2026-10-26'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-27'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The SG2044 processor achieves a single-core FP64 performance of 8.02 GFLOP/s.
+    reason: the statement contains the number 044, which none of its quotes contain
+    quotes:
+    - TheSG2044reaches8.02GFLOP/s of FP64 performance and 7.8 GB/s of memory bandwidth per core, increasing
+      to 294 GFLOP/s and 107 GB/s at 64 cores.
+    - Ourwork providesan evaluationof contemporary HPCRISC-V, Arm,and x86processors usingacommonsoftwarestackandmethodology.
+  - statement: The SG2044 processor achieves a single-core memory bandwidth of 7.8 GB/s.
+    reason: the statement contains the number 044, which none of its quotes contain
+    quotes:
+    - TheSG2044reaches8.02GFLOP/s of FP64 performance and 7.8 GB/s of memory bandwidth per core, increasing
+      to 294 GFLOP/s and 107 GB/s at 64 cores.
+    - Ourwork providesan evaluationof contemporary HPCRISC-V, Arm,and x86processors usingacommonsoftwarestackandmethodology.
+  - statement: The SG2044 processor achieves 294 GFLOP/s of FP64 performance at 64 cores.
+    reason: the statement contains the number 044, which none of its quotes contain
+    quotes:
+    - TheSG2044reaches8.02GFLOP/s of FP64 performance and 7.8 GB/s of memory bandwidth per core, increasing
+      to 294 GFLOP/s and 107 GB/s at 64 cores.
+    - Ourwork providesan evaluationof contemporary HPCRISC-V, Arm,and x86processors usingacommonsoftwarestackandmethodology.
+    - increasing to 294 GFLOP/s and 107 GB/s at 64 cores.
+  - statement: The SG2044 processor achieves 107 GB/s of memory bandwidth at 64 cores.
+    reason: the statement contains the number 044, which none of its quotes contain
+    quotes:
+    - TheSG2044reaches8.02GFLOP/s of FP64 performance and 7.8 GB/s of memory bandwidth per core, increasing
+      to 294 GFLOP/s and 107 GB/s at 64 cores.
+    - Ourwork providesan evaluationof contemporary HPCRISC-V, Arm,and x86processors usingacommonsoftwarestackandmethodology.
+    - increasing to 294 GFLOP/s and 107 GB/s at 64 cores.
+  - statement: The SG2044 platform achieves 17.4 tok/s throughput in LLM decode at 64 cores.
+    reason: the statement contains the number 044, which none of its quotes contain
+    quotes:
+    - while also providing higher throughput than the Intel platform (17.4 tok/s vs. 14.0 tok/s).
+    - Ourwork providesan evaluationof contemporary HPCRISC-V, Arm,and x86processors usingacommonsoftwarestackandmethodology.
+    - In particular, for LLM inference decode, the SG2044 at 64 cores achieves the highest relative scaling
+    - the SG2044 at 64 cores achieves the highest relative scaling
+  - statement: The Intel platform achieves 14.0 tok/s throughput in LLM decode.
+    reason: 'unit conversion refused: throughput_tool: could not parse 14.0 ''tok/s'': ''tok'' is not
+      defined in the unit registry'
+    quotes:
+    - while also providing higher throughput than the Intel platform (17.4 tok/s vs. 14.0 tok/s).
+    - Ourwork providesan evaluationof contemporary HPCRISC-V, Arm,and x86processors usingacommonsoftwarestackandmethodology.
+    - In particular, for LLM inference decode, the SG2044 at 64 cores achieves the highest relative scaling
+  tokens:
+    input: 30118
+    output: 2491
+  fetched_chars: 92651

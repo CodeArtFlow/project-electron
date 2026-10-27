@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-26.
+Topic code `MAT`. Last reviewed 2026-10-27.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -314,6 +314,26 @@ Topic code `MAT`. Last reviewed 2026-10-26.
   - `CLM-MAT-0207` · material Al, temperature room temperature · grade B · credibility unknown · simulated · as of 2026-10-23
   - sources: SRC-00226
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **12.9 nm** — The NbN layer thickness determined by XRR for sample D_60s after 60 s oxygen plasma treatment is 12.9 nm.
+  - `CLM-MAT-0212` · sample D_60s, treatment_time 60s · grade B · credibility unknown · measured · as of 2026-10-23
+  - sources: SRC-00233
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈0.9 nm** — An interfacial dead-layer thickness of approximately 9 Å per interface is obtained from the magnetic dead-layer analysis using the conventional model.
+  - `CLM-MAT-0213` · temperature 300 K · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00234
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈2.7 nm** — Model-based extrapolation yields an anisotropy crossover thickness tc of approximately 27 Å.
+  - `CLM-MAT-0214` · model tc = −2Ks/Kv · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00234
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.309 nm** — The optimized primitive lattice constant a0 of depleted monolayer MoSSe-S is 3.09 Å.
+  - `CLM-MAT-0215` · material MoSSe-S, parameter a0 · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00236
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- **0.296 nm** — The optimized primitive lattice constant a0 of depleted monolayer MoSSe-Se is 2.96 Å.
+  - `CLM-MAT-0216` · material MoSSe-Se, parameter a0 · grade B · credibility unknown · simulated · as of 2026-10-23
+  - sources: SRC-00236
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -1044,6 +1064,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 211
-- grades: {'B': 211}
-- distinct sources: 78
+- claims: 216
+- grades: {'B': 216}
+- distinct sources: 81

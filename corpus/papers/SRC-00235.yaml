@@ -1,0 +1,60 @@
+id: SRC-00235
+title: 'Automated Multi-Line Bug Repair Using Model Checker Aided LLMs: A Case Study on RISC-V Processors'
+doi: null
+arxiv_id: 2610.32597v1
+url: https://arxiv.org/abs/2610.32597v1
+venue_id: arxiv_api
+authors:
+- name: Debleena Das
+  affiliation: null
+  corresponding: null
+- name: Chandan Kumar Jha
+  affiliation: null
+  corresponding: null
+- name: Muhammad Hassan
+  affiliation: null
+  corresponding: null
+- name: Rolf Drechsler
+  affiliation: null
+  corresponding: null
+- name: Ansuman Banerjee
+  affiliation: null
+  corresponding: null
+- name: Subhra K. Das
+  affiliation: null
+  corresponding: null
+- name: Amlan Chakrabarti
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-23'
+retrieved_date: '2026-10-27'
+access: full_text
+read_scope: Automated reading. The full PDF text (42,377 characters, 7 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.32597v1 on
+  2026-10-27. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: “The JasperGold runtime ranges from 135ms in the cache coherence module to 1273ms in the L1
+  Bus Interface module.”
+method_summary: '“We use JasperGold [30] as the formal verification tool and GPT-5.5 [32] as the LLM.”
+
+  “First, the user asks the LLM to generate the patch only from the buggy code. Second, we provide the
+  failing assertions in addition to the buggy code to aid in the correction process. In both steps, the
+  proposed patch is always formally verified using a model checker.”'
+limitations: “If the assertion coverage is low, it may not always be possible to get failing assertions
+  that can aid in localization.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 13562
+    output: 909
+  claims_accepted: 2
+  claims_rejected: 0
+  rejected: []
+corrections: []

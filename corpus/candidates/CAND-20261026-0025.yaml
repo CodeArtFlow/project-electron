@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.32901v1
 doi: null
-title: 'Configuration-Independent Low-Energy Gaps in Graphene Nanoribbons: A $δ$-Scatterer
-  Transfer-Matrix Approach'
+title: 'Configuration-Independent Low-Energy Gaps in Graphene Nanoribbons: A $δ$-Scatterer Transfer-Matrix
+  Approach'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-23'
@@ -24,6 +24,28 @@ id: CAND-20261026-0025
 harvested_date: '2026-10-26'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-27'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For positive scatterer strength γδ > 0, the low-energy transport gap opens and grows linearly
+      with the scatterer strength as ∆ = 0.364265 γδ identically for arm
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - for γδ > 0a low-energy transport gap opens and grows linearly with the scatterer strength,∆ = 0.364265
+      γδ, identically for arm-chair and zig-zag edges.
+    - 'Section III presents the numerical results: the resonant transmission structure as a function of
+      the number of unit cells, the opening of the band gap as a function of the scatterer strengthγδ,
+      and the scaling relations extracted for the ar'
+    - identically for arm-chair and zig-zag edges.
+  tokens:
+    input: 14016
+    output: 672
+  fetched_chars: 39577

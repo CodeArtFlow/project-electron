@@ -300,3 +300,73 @@ claims:
     verified_quotes: 3
   conditions:
     design: AHB2APB
+- id: CLM-EDA-0011
+  topic: EDA
+  statement: The JasperGold runtime was measured at 135 ms for the cache coherence module.
+  sources:
+  - SRC-00235
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-27'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    tool: JasperGold
+    module: cache coherence module
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 135.0
+      unit: ms
+    si_base:
+      value: 0.135
+      unit: s
+    display:
+      value: 135000000.0
+      unit: ns
+    conditions:
+      tool: JasperGold
+      module: cache coherence module
+- id: CLM-EDA-0012
+  topic: EDA
+  statement: The JasperGold runtime was measured at 1273 ms for the L1 Bus Interface module.
+  sources:
+  - SRC-00235
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-23'
+  created: '2026-10-27'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    tool: JasperGold
+    module: L1 Bus Interface module
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1273.0
+      unit: ms
+    si_base:
+      value: 1.2730000000000001
+      unit: s
+    display:
+      value: 1273000000.0
+      unit: ns
+    conditions:
+      tool: JasperGold
+      module: L1 Bus Interface module

@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**9333 pair(s)** as of 2026-10-26.
+**10001 pair(s)** as of 2026-10-27.
 
 ## `area_die` (11 pair(s))
 
@@ -146,7 +146,7 @@ _and 224 more_
 
 _and 320 more_
 
-## `length_device` (2772 pair(s))
+## `length_device` (3117 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -191,7 +191,7 @@ _and 320 more_
 | `CLM-MAT-0059` = 1000 nm | `CLM-MAT-0136` = 0.006 nm | 100% | region=pristine zone, temperature=1.5 K | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-MAT-0059` = 1000 nm | `CLM-MAT-0137` = 0.011 nm | 100% | region=pristine zone, temperature=1.5 K | superlattice_layer_n=3, superlattice_layer_m=5 |
 
-_and 2732 more_
+_and 3077 more_
 
 ## `power` (204 pair(s))
 
@@ -246,12 +246,13 @@ _and 164 more_
 |---|---|---|---|---|
 | `CLM-DEV-0079` = 3.1e-05 W/mm^2 | `CLM-MAT-0026` = 4.8e-07 W/mm^2 | 98% | structure=long-base p+-n device, n_base_width=300 𝜇𝜇m, framework=extended theory | environment=ambient |
 
-## `relative_deviation` (4444 pair(s))
+## `relative_deviation` (4683 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-EDA-0003` = 60 percent | `CLM-MAT-0111` = -60 percent | 200% | benchmark_circuit=LDO benchmark, framework=proposed method | sample=B1-1 |
 | `CLM-EDA-0004` = 60 percent | `CLM-MAT-0111` = -60 percent | 200% | circuit=most complex circuit, framework=proposed framework | sample=B1-1 |
+| `CLM-MAT-0111` = -60 percent | `CLM-PROC-0044` = 59.9 percent | 200% | sample=B1-1 | voltage=8 VAg/AgCl, material=1 μm n-type GaN |
 | `CLM-ARCH-0089` = 64.2 percent | `CLM-MAT-0111` = -60 percent | 193% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0112` = 66.8 percent | 190% | sample=B1-1 | baseline=pure two-dimensional Coulomb reference, benchmark_protocol=high-field-calibrated |
 | `CLM-ARCH-0090` = 67.5 percent | `CLM-MAT-0111` = -60 percent | 189% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
@@ -289,9 +290,8 @@ _and 164 more_
 | `CLM-ARCH-0084` = 34 percent | `CLM-MAT-0111` = -60 percent | 157% | platform=Arrow, application=Sparse point cloud processing | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0198` = 34 percent | 157% | sample=B1-1 | method=DFT calculations, location=X valleys |
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0064` = 31 percent | 152% | sample=B1-1 | disorder_type=radius disorder |
-| `CLM-ARCH-0137` = 30 percent | `CLM-MAT-0111` = -60 percent | 150% | baseline=Adam5000 | sample=B1-1 |
 
-_and 4404 more_
+_and 4643 more_
 
 ## `temperature` (211 pair(s))
 
@@ -360,7 +360,7 @@ _and 171 more_
 |---|---|---|---|---|
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0007` = 3100 W/(m*K) | 99% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | temperature=room-temperature, sample_13c_concentration=~0.00024% |
 
-## `time` (767 pair(s))
+## `time` (851 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -370,6 +370,8 @@ _and 171 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0131` = 1.115e+07 ns | 100% | device_type=FTJ, architecture=Naive | device=NVIDIA GeForce RTX 5080, form=hoisted, decode=LUT |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0153` = 3.72e+09 ns | 100% | device_type=FTJ, architecture=Naive | component=FIGFLEX, benchmark=Llama-3.1-8B |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-DEV-0066` = 6e+10 ns | 100% | device_type=FTJ, architecture=Naive | software=MATLAB Deep Learning Toolbox |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0011` = 1.35e+08 ns | 100% | device_type=FTJ, architecture=Naive | tool=JasperGold, module=cache coherence module |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0012` = 1.273e+09 ns | 100% | device_type=FTJ, architecture=Naive | tool=JasperGold, module=L1 Bus Interface module |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0119` = 0.00029 ns | 100% | device_type=FTJ, architecture=Naive | material=MAPbBr3, measurement_method=Time-resolved optical Kerr-effect measurements |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0120` = 0.0007 ns | 100% | device_type=FTJ, architecture=Naive | measurement_method=Time-resolved optical Kerr-effect measurements |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0123` = 0.00015 ns | 100% | device_type=FTJ, architecture=Naive | measurement_method=Multidimensional coherent spectroscopy |
@@ -387,6 +389,8 @@ _and 171 more_
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0131` = 1.115e+07 ns | 100% | device_type=FTJ, architecture=Merged | device=NVIDIA GeForce RTX 5080, form=hoisted, decode=LUT |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0153` = 3.72e+09 ns | 100% | device_type=FTJ, architecture=Merged | component=FIGFLEX, benchmark=Llama-3.1-8B |
 | `CLM-ARCH-0013` = 162 ns | `CLM-DEV-0066` = 6e+10 ns | 100% | device_type=FTJ, architecture=Merged | software=MATLAB Deep Learning Toolbox |
+| `CLM-ARCH-0013` = 162 ns | `CLM-EDA-0011` = 1.35e+08 ns | 100% | device_type=FTJ, architecture=Merged | tool=JasperGold, module=cache coherence module |
+| `CLM-ARCH-0013` = 162 ns | `CLM-EDA-0012` = 1.273e+09 ns | 100% | device_type=FTJ, architecture=Merged | tool=JasperGold, module=L1 Bus Interface module |
 | `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0119` = 0.00029 ns | 100% | device_type=FTJ, architecture=Merged | material=MAPbBr3, measurement_method=Time-resolved optical Kerr-effect measurements |
 | `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0120` = 0.0007 ns | 100% | device_type=FTJ, architecture=Merged | measurement_method=Time-resolved optical Kerr-effect measurements |
 | `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0123` = 0.00015 ns | 100% | device_type=FTJ, architecture=Merged | measurement_method=Multidimensional coherent spectroscopy |
@@ -400,12 +404,8 @@ _and 171 more_
 | `CLM-ARCH-0013` = 162 ns | `CLM-PROC-0005` = 5.79e+09 ns | 100% | device_type=FTJ, architecture=Merged | hardware=NVIDIA RTX PRO 6000 Blackwell GPU, implementation_type=full-resolution implementation |
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-ARCH-0020` = 1.4e+07 ns | 100% | device_type=FTJ, architecture=Symmetry | concurrency_n_a=48, design=our design with tiering, component=end-to-end time-between-tokens (TBT) |
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-ARCH-0021` = 2.7e+07 ns | 100% | device_type=FTJ, architecture=Symmetry | concurrency_n_a=128, design=our design with tiering |
-| `CLM-ARCH-0014` = 153.5 ns | `CLM-ARCH-0130` = 1.036e+07 ns | 100% | device_type=FTJ, architecture=Symmetry | device=NVIDIA GeForce RTX 5080, form=direct, decode=ALU |
-| `CLM-ARCH-0014` = 153.5 ns | `CLM-ARCH-0131` = 1.115e+07 ns | 100% | device_type=FTJ, architecture=Symmetry | device=NVIDIA GeForce RTX 5080, form=hoisted, decode=LUT |
-| `CLM-ARCH-0014` = 153.5 ns | `CLM-ARCH-0153` = 3.72e+09 ns | 100% | device_type=FTJ, architecture=Symmetry | component=FIGFLEX, benchmark=Llama-3.1-8B |
-| `CLM-ARCH-0014` = 153.5 ns | `CLM-DEV-0066` = 6e+10 ns | 100% | device_type=FTJ, architecture=Symmetry | software=MATLAB Deep Learning Toolbox |
 
-_and 727 more_
+_and 811 more_
 
 ## `voltage` (21 pair(s))
 

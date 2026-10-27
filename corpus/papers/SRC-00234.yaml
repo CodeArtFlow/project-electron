@@ -1,0 +1,106 @@
+id: SRC-00234
+title: Magnetic Anisotropy and Magnetization Dynamics in Si/Ni Multilayers Probed by FMR and VSM Magnetometry
+doi: null
+arxiv_id: 2610.32565v1
+url: https://arxiv.org/abs/2610.32565v1
+venue_id: arxiv_api
+authors:
+- name: Dushyant Singh
+  affiliation: null
+  corresponding: null
+- name: Subha Maity
+  affiliation: null
+  corresponding: null
+- name: Tharundev V
+  affiliation: null
+  corresponding: null
+- name: Subhavenkadesh SS
+  affiliation: null
+  corresponding: null
+- name: Vigneshwari SR
+  affiliation: null
+  corresponding: null
+- name: Krista R. Khiangte
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-23'
+retrieved_date: '2026-10-27'
+access: full_text
+read_scope: Automated reading. The full PDF text (46,358 characters, 10 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.32565v1 on
+  2026-10-27. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Magnetic dead-layer analysis yields an interfacial dead-layer thickness of approximately 9
+  Å per interface, accounting for the suppressed magnetization in thinner Ni layers.”
+
+  “The intercept gives δ ≈ 9 Å, slightly exceeding the value reported for discontinuous Si/Ni MLs [33].”
+
+  “the variation of Ms.tNi with tNi at 300 K is plotted in Fig. 3 and fitted with a straight line.”
+
+  “The corresponding crossover thickness, tc, at which the effective anisotropy changes sign, is determined
+  by tc = −2Ks/Kv, giving tc ≈ 27 Å.”
+
+  “This value should be interpreted as a model-based extrapolation rather than direct evidence of a reorientation
+  transition, as the continuous layer approximation may become unreliable for the thinnest samples.”'
+method_summary: '“Magnetic hysteresis measurements were performed at room temperature using a vibrating
+  sample magnetometer (VSM) integrated into a Physical Property Measurement System (PPMS; Quantum Design,
+  USA).”
+
+  “Dynamic magnetic properties were investigated using a JES-FA200 electron spin resonance spectrometer
+  (JEOL) operating at 9.443 GHz.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16719
+    output: 1964
+  claims_accepted: 2
+  claims_rejected: 4
+  rejected:
+  - statement: The extrapolated magnetization M0 for the magnetically active Ni region at 300 K is approximately
+      500 emu cm−3.
+    reason: 'unit conversion refused: current: could not parse 500.0 ''emu cm−3'': ''emu'' is not defined
+      in the unit registry'
+    quotes:
+    - The slope gives an extrapolated magnetization of M0 ≈ 500 emu cm−3, consistent with the value reported
+      for Ni/V MLs at 300 K by Abid et al. [37] and comparable to the bulk Ni magnetization of 484 emu
+      cm−3 [34].
+    - the variation of Ms.tNi with tNi at 300 K is plotted in Fig. 3 and fitted with a straight line.
+  - statement: Phenomenological linear fitting yields an interfacial anisotropy constant KS of +0.17 erg
+      cm−2.
+    reason: 'unit conversion refused: energy: could not parse 0.17 ''erg cm−2'': ''cm−2'' is not defined
+      in the unit registry'
+    quotes:
+    - Quantitative anisotropy analysis yields an interfacial anisotropy constant of KS = +0.17 erg cm−2,
+      favouring perpendicular magnetization, and a volume anisotropy constant of KV = −1.23 × 106 erg
+      cm−3, favouring in-plane alignment, with an e
+    - The phenomenological model predicts a linear dependence, yielding an interfacial anisotropy constant
+      of Ks = 0.17 erg cm−2 and a volume anisotropy contribution of Kv = −1.23 × 106 erg cm−3.
+    - while the solid line denotes the linear fit obtained using Eq. (7).
+    - for the [Si(40 Å)/Ni(tNi Å)]20 MLs at 300 K.
+  - statement: The linear fit predicts a volume anisotropy constant KV of −1.23 × 106 erg cm−3.
+    reason: 'unit conversion refused: energy: could not parse -1230000.0 ''erg cm−3'': ''cm−3'' is not
+      defined in the unit registry'
+    quotes:
+    - The phenomenological model predicts a linear dependence, yielding an interfacial anisotropy constant
+      of Ks = 0.17 erg cm−2 and a volume anisotropy contribution of Kv = −1.23 × 106 erg cm−3.
+    - while the solid line denotes the linear fit obtained using Eq. (7).
+    - for the [Si(40 Å)/Ni(tNi Å)]20 MLs at 300 K.
+  - statement: A coercive field Hc of approximately 34 Oe is measured at room temperature for the sample
+      with a Ni layer thickness tNi of 20 Å.
+    reason: 'unit conversion refused: current: cannot convert 34.0 Oe to A - Cannot convert from ''oersted''
+      ([mass] ** 0.5 / [length] ** 0.5 / [time]) to ''ampere'' ([current]). A dimensional mismatch '
+    quotes:
+    - A coercivity of approximately 34 Oe is obtained for the sample with tNi = 20 Å.
+    - Magnetic hysteresis measurements were performed at room temperature using a vibrating sample magnetometer
+      (VSM) integrated into a Physical Property Measurement System (PPMS; Quantum Design, USA).
+    - for the sample with tNi = 20 Å.
+    - Magnetic hysteresis measurements were performed at room temperature
+corrections: []

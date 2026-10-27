@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-10-26.
+Topic code `PROC`. Last reviewed 2026-10-27.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -185,6 +185,16 @@ Topic code `PROC`. Last reviewed 2026-10-26.
   - `CLM-PROC-0037` · model polymer-brush · grade B · credibility unknown · simulated · as of 2026-10-21
   - sources: SRC-00195
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **15.5 percent** — A bulk porosity of 15.5% was obtained for 25%-NaOH in the mixed NaOH-Na2C2O4 electrolyte system.
+  - `CLM-PROC-0043` · voltage 8 VAg/AgCl, material 1 μm n-type GaN · grade B · credibility unknown · measured · as of 2026-10-23
+  - sources: SRC-00237
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0095 — see the open register
+- **59.9 percent** — A bulk porosity of 59.9% was obtained for 50%-NaOH in the mixed NaOH-Na2C2O4 electrolyte system.
+  - `CLM-PROC-0044` · voltage 8 VAg/AgCl, material 1 μm n-type GaN · grade B · credibility unknown · measured · as of 2026-10-23
+  - sources: SRC-00237
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0095 — see the open register
 
 ### temperature
 
@@ -269,9 +279,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0057` — relative_deviation: _unexamined; classification pending_
   - claims: CLM-PROC-0028, CLM-PROC-0029
   - missing data: `not yet named`
+- `CFL-0095` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-PROC-0043, CLM-PROC-0044
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 42
-- grades: {'B': 42}
-- distinct sources: 13
+- claims: 44
+- grades: {'B': 44}
+- distinct sources: 14
