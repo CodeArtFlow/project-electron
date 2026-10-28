@@ -2215,3 +2215,55 @@ claims:
       unit: percent
     conditions:
       link_adaptation: POLITE
+- id: CLM-DEV-0082
+  topic: DEV
+  statement: An anisotropic magnetoresistance signal ∆ρ/ρ⊥ of 0.66% was measured on the full-film NiFe/Co/Gd
+    stack with a current of 10 mA applied along the hard axis.
+  sources:
+  - SRC-00241
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-28'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    current: 10 mA
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.66
+      unit: '%'
+    si_base:
+      value: 0.006600000000000001
+      unit: dimensionless
+    display:
+      value: 0.66
+      unit: percent
+    conditions:
+      current: 10 mA
+- id: CLM-DEV-0083
+  topic: DEV
+  statement: The longitudinal amplitude mode has a gap frequency corresponding to a gap of sqrt(2*|alpha|/mp).
+  sources:
+  - SRC-00242
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-28'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    mode: longitudinal amplitude mode

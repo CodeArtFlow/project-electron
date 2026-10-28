@@ -1,0 +1,101 @@
+id: SRC-00243
+title: 'Spatial localization of magnetic-branch force contrasts in substitutional Mn-doped Ge: A first-principles
+  study'
+doi: null
+arxiv_id: 2610.36740v1
+url: https://arxiv.org/abs/2610.36740v1
+venue_id: arxiv_api
+authors:
+- name: ChienHsu Chen
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-27'
+retrieved_date: '2026-10-28'
+access: full_text
+read_scope: Automated reading. The full PDF text (33,352 characters, 15 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.36740v1 on
+  2026-10-28. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Tight SCF 0.3489 36.8 0.99994 0.99992 1.08”
+
+  “Tightening the electronic threshold by 100-fold preserves magnetic ordering and the leading si te,
+  while the force-contrast vector changes by 1.08% despite a nearly unchanged energy gap.”
+
+  “Calculations use Quantum ESPRESSO pw.x 7.5 [9,10], collinear spin-polarized PBE [11], and scalar -relativistic
+  ultrasoft pseudopotentials from PSLibrary [13].”'
+method_summary: “Calculations use Quantum ESPRESSO pw.x 7.5 [9,10], collinear spin-polarized PBE [11],
+  and scalar -relativistic ultrasoft pseudopotentials from PSLibrary [13].”
+limitations: “The results identify coordination -associated localization of magnetic -branch force contrasts
+  within the frozen model, without establishing relaxed distortions, full numerical convergence or a unique
+  exchange mechanism.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 11183
+    output: 2651
+  claims_accepted: 1
+  claims_rejected: 6
+  rejected:
+  - statement: For the unshifted 1NN geometry, the reference AFM-minus-FM variational gap is approximately
+      -568.8 meV per 64-site cell.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''1NN -568.8'''
+    quotes:
+    - 1NN -568.8
+    - Calculations use Quantum ESPRESSO pw.x 7.5 [9,10], collinear spin-polarized PBE [11], and scalar
+      -relativistic ultrasoft pseudopotentials from PSLibrary [13].
+    - Table 1. AFM-minus-FM variational gaps (meV per 64-site cell). Reference, mesh and cutoff columns
+      originate in v9.
+  - statement: For the unshifted 2NN geometry, the reference AFM-minus-FM variational gap is +132.0 meV
+      per 64-site cell.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''2NN +132.0'''
+    quotes:
+    - 2NN +132.0
+    - Calculations use Quantum ESPRESSO pw.x 7.5 [9,10], collinear spin-polarized PBE [11], and scalar
+      -relativistic ultrasoft pseudopotentials from PSLibrary [13].
+    - Table 1. AFM-minus-FM variational gaps (meV per 64-site cell). Reference, mesh and cutoff columns
+      originate in v9.
+  - statement: For the unshifted 1NN geometry under reference settings, the FM radial generalized force
+      Q_FM is +0.4357 eV/Å.
+    reason: 'unit conversion refused: current: cannot convert 0.4357 eV/Å to A - Cannot convert from ''electron_volt
+      / angstrom'' ([mass] * [length] / [time] ** 2) to ''ampere'' ([current]). A dimension'
+    quotes:
+    - Reference 1NN +0.4357 -0.5103 +0.9460
+    - Calculations use Quantum ESPRESSO pw.x 7.5 [9,10], collinear spin-polarized PBE [11], and scalar
+      -relativistic ultrasoft pseudopotentials from PSLibrary [13].
+    - 𝑄FM
+  - statement: For the unshifted 1NN geometry under reference settings, the AFM radial generalized force
+      Q_AFM is -0.5103 eV/Å.
+    reason: 'unit conversion refused: current: cannot convert -0.5103 eV/Å to A - Cannot convert from
+      ''electron_volt / angstrom'' ([mass] * [length] / [time] ** 2) to ''ampere'' ([current]). A dimensio'
+    quotes:
+    - Reference 1NN +0.4357 -0.5103 +0.9460
+    - Calculations use Quantum ESPRESSO pw.x 7.5 [9,10], collinear spin-polarized PBE [11], and scalar
+      -relativistic ultrasoft pseudopotentials from PSLibrary [13].
+    - 𝑄AFM
+  - statement: For the unshifted 2NN geometry, the reference AFM-minus-FM force-contrast norm for Ge#5
+      is 0.3484 eV/Å.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - Reference 0.3484 36.8 1.00000 1.00000 0
+    - Calculations use Quantum ESPRESSO pw.x 7.5 [9,10], collinear spin-polarized PBE [11], and scalar
+      -relativistic ultrasoft pseudopotentials from PSLibrary [13].
+    - Ge#5 norm
+    - Table 3. Unshifted 2NN force-contrast metrics.
+  - statement: In the reference setting at h = 0.05 Å, the bridge-gap direct-force derivative D_f is -0.34844
+      eV/Å.
+    reason: 'unit conversion refused: current: cannot convert -0.34844 eV/Å to A - Cannot convert from
+      ''electron_volt / angstrom'' ([mass] * [length] / [time] ** 2) to ''ampere'' ([current]). A dimensi'
+    quotes:
+    - Reference -0.34835 -0.34844 0.0000929 0.0267
+    - Calculations use Quantum ESPRESSO pw.x 7.5 [9,10], collinear spin-polarized PBE [11], and scalar
+      -relativistic ultrasoft pseudopotentials from PSLibrary [13].
+    - Table 4. Bridge-gap derivatives at h = 0.05 Å.
+    - 𝐷𝑓
+corrections: []

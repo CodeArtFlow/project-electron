@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.36659v1
 doi: null
-title: Where Does the Anion-Redox Hole Go? Reliability of Open-Shell Projection-Based
-  Embedding for Li-Rich Cathodes, from DFT Environments to Quantum Solvers
+title: Where Does the Anion-Redox Hole Go? Reliability of Open-Shell Projection-Based Embedding for Li-Rich
+  Cathodes, from DFT Environments to Quantum Solvers
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-27'
@@ -24,6 +24,77 @@ id: CAND-20261028-0109
 harvested_date: '2026-10-28'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-28'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The maximum O-O Mayer bond order across all 82 production runs of point-charge-embedded
+      delithiated Li2-xMnO3 clusters is at most 0.24.
+    reason: the statement contains the number 82, which none of its quotes contain
+    quotes:
+    - In every setting the lowest SCF state places the hole on an oxygen pair, and no O–O bond forms (Mayer
+      bond order≤0.24).
+    - Li2−xMnO3
+    - point-charge-embedded clusters
+    - Mayer bond order
+  - statement: At the PBE+U geometry, the pair oxygen distance in delithiated Li2-xMnO3 (x=1, cfg07) is
+      2.58 Å.
+    reason: the statement contains the number 7, which none of its quotes contain
+    quotes:
+    - In the production cell (x= 1, cfg07) the pair is 2.58 Å apart
+    - x= 1
+    - cfg07
+    - PBE+U geometry
+  - statement: Under HSE06 geometry relaxation, the pair oxygen distance in delithiated Li2-xMnO3 (x=1,
+      cfg07) contracts to 2.41 Å.
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - In cfg07 the target O pair contracts from 2.581 to 2.409 Å
+    - x= 1
+    - cfg07
+    - HSE06
+  - statement: An extended state search using an ECP anneal and cross-seeding changes the pair-oxygen
+      spin by up to 0.45 e.
+    reason: 'unit conversion refused: current: cannot convert 0.45 e to A - Cannot convert from ''elementary_charge''
+      ([current] * [time]) to ''ampere'' ([current]). A dimensional mismatch means the val'
+    quotes:
+    - An extended state search found lower states, missed by the initial search, for two of the seven
+      functionals, changing a pair-oxygen spin by up to 0.45 e.
+    - extended state search
+    - pair-oxygen spin
+  - statement: In the active region holding only the oxygen pair (R1), the active-space integer spin projection
+      choice is worth up to 0.26 e for DFT+U and HSE06 at their own g
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - For DFT+U and HSE06 at their own geometries, spin spreads across the active/environment boundary,
+      so the integer spin projection of the active space becomes a choice worth up to 0.26 e when the
+      active region holds only the oxygen pair
+    - holds only the oxygen pair
+    - DFT+U and HSE06 at their own geometries
+  - statement: In the active region that adds two Mn neighbors (R2), the active-space integer spin projection
+      choice is worth at most 0.09 e for DFT+U and HSE06 at their own g
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - and≤0.09 e in the region that adds its two Mn neighbors (R2).
+    - adds its two Mn neighbors (R2)
+    - DFT+U and HSE06 at their own geometries
+  - statement: Across all 82 production runs, DMRG changes a pair-oxygen spin relative to the embedded
+      mean field by a median of 0.02 to 0.04 e.
+    reason: 'unit conversion refused: current: cannot convert 0.02 e to A - Cannot convert from ''elementary_charge''
+      ([current] * [time]) to ''ampere'' ([current]). A dimensional mismatch means the val'
+    quotes:
+    - Across all 82 production runs the embedded mean field already gives the same hole (DMRG changes
+      a pair-oxygen spin by a median of 0.02–0.04 e and never reverses it)
+    - all 82 production runs
+    - DMRG changes a pair-oxygen spin
+  tokens:
+    input: 32998
+    output: 2678
+  fetched_chars: 98148

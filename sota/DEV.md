@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-10-27.
+Topic code `DEV`. Last reviewed 2026-10-28.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -252,6 +252,10 @@ Topic code `DEV`. Last reviewed 2026-10-27.
   - `CLM-DEV-0080` · device Device B, photon_number_pair n = 7 and n = 8 · grade B · credibility unknown · measured · as of 2026-10-23
   - sources: SRC-00223
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The longitudinal amplitude mode has a gap frequency corresponding to a gap of sqrt(2*|alpha|/mp).
+  - `CLM-DEV-0083` · mode longitudinal amplitude mode · grade B · credibility unknown · simulated · as of 2026-10-27
+  - sources: SRC-00242
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -266,6 +270,10 @@ Topic code `DEV`. Last reviewed 2026-10-27.
 - **≤ 7 percent** — At equal delivered throughput, TDD-DVM with POLITE consumes up to 7% less power than full drain voltage under POLITE.
   - `CLM-DEV-0081` · link_adaptation POLITE · grade B · credibility unknown · simulated · as of 2026-10-23
   - sources: SRC-00238
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.66 percent** — An anisotropic magnetoresistance signal ∆ρ/ρ⊥ of 0.66% was measured on the full-film NiFe/Co/Gd stack with a current of 10 mA applied along the hard axis.
+  - `CLM-DEV-0082` · current 10 mA · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00241
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature
@@ -365,6 +373,6 @@ _None._
 
 ## Evidence base
 
-- claims: 78
-- grades: {'B': 78}
-- distinct sources: 33
+- claims: 80
+- grades: {'B': 80}
+- distinct sources: 35

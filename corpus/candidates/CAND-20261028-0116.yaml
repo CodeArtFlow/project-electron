@@ -25,6 +25,66 @@ id: CAND-20261028-0116
 harvested_date: '2026-10-28'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-28'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Protecting 16 of 115 structural units in a representative J48 detector reduces predicted
+      maximum recall loss from 60.1 to 3.3 percentage points.
+    reason: the statement contains the number 8, which none of its quotes contain
+    quotes:
+    - For a representative J48 detector, protecting 16 of 115 structural units reduces predicted maximum
+      recall loss from 60.1 to 3.3 percentage points.
+    - The simulation evaluates 453,174 decision stuck-at and selected parameter bit-flip events on a 7,400-instance.
+    - protecting 16 of 115 structural units
+  - statement: In a 4-HPC J48 decision tree, 3.9% of the 3,910 fault sites cause evasion.
+    reason: the statement contains the number 8, which none of its quotes contain
+    quotes:
+    - In a 4-HPC J48 decision tree, only 3.9% of the 3,910 fault sites cause evasion, while 51.5% are
+      silent; the worst single fault drops malware recall from 97.0% to 36.9%.
+    - The simulation evaluates 453,174 decision stuck-at and selected parameter bit-flip events on a 7,400-instance.
+    - 3,910 fault sites
+  - statement: The worst single fault in a 4-HPC J48 decision tree drops malware recall from 97.0% to
+      36.9%.
+    reason: the statement contains the number 8, which none of its quotes contain
+    quotes:
+    - In a 4-HPC J48 decision tree, only 3.9% of the 3,910 fault sites cause evasion, while 51.5% are
+      silent; the worst single fault drops malware recall from 97.0% to 36.9%.
+    - The simulation evaluates 453,174 decision stuck-at and selected parameter bit-flip events on a 7,400-instance.
+    - drops malware recall from 97.0% to 36.9%
+  - statement: Reducing the counter budget from 16 to 2 increases the critical-fault fraction for SGD
+      from 18.8% to 46.7%.
+    reason: the statement contains the number 16, which none of its quotes contain
+    quotes:
+    - Among function-based detectors, reducing the counter budget from sixteen to two increases the critical-fault
+      fraction from 18.8% to 46.7% for SGD, from 23.5% to 33.3% for SMO, and from 14.1% to 33.3% for Logistic.
+    - The simulation evaluates 453,174 decision stuck-at and selected parameter bit-flip events on a 7,400-instance.
+    - increases the critical-fault fraction from 18.8% to 46.7% for SGD
+    - reducing the counter budget from sixteen to two
+  - statement: Root comparator faults reduce recall by an average of 19.5 percentage points.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''percentage points''
+      is not one of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare
+      number wo'
+    quotes:
+    - On average, a root fault reduces recall by 19.5 percentage points, with a maximum reduction of 60
+      points.
+    - The simulation evaluates 453,174 decision stuck-at and selected parameter bit-flip events on a 7,400-instance.
+  - statement: In the 4-HPC single MLP detector, 22.58% of evaluated faults are critical.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''MLP | 22.58
+      | 0.09 | 0.00'''
+    quotes:
+    - MLP | 22.58 | 0.09 | 0.00
+    - The simulation evaluates 453,174 decision stuck-at and selected parameter bit-flip events on a 7,400-instance.
+    - MLP
+    - TABLE II OBSERVED CRITICAL-FAULT PERCENTAGES AT FOUR HPCs
+  tokens:
+    input: 15328
+    output: 2517
+  fetched_chars: 49424

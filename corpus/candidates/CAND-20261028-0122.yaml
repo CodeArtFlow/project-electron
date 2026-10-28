@@ -30,6 +30,33 @@ id: CAND-20261028-0122
 harvested_date: '2026-10-28'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-28'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The effective spin Hall angle in Ni/c-plane CoSn bilayer is 0.484 ± 0.005.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The effective
+      spin Hall angle in the Ni/c-plane CoSn bilayer is found '''
+    quotes:
+    - The effective spin Hall angle in the Ni/c-plane CoSn bilayer is found to be θSH = 0 .484 ± 0.005,
+      where the error represents the uncertainty of the fitting.
+    - tF M is the thickness of the Ni layer (5 nm).
+    - top of a 35 nm CoSn film.
+  - statement: The effective spin Hall angle in Ni/Pt(111) is 0.0436 ± 0.0003.
+    reason: the statement contains the number 0.0436, which none of its quotes contain
+    quotes:
+    - Figure 3f shows the damping-like torque as a function of current density for Ni/Pt(111) (5/20 nm).
+      This yields an effective spin Hall angle of θSH = 0 .0436 ± 0.0003.
+    - Figure 3f shows the damping-like torque as a function of current density for Ni/Pt(111) (5/20 nm).
+    - Ni/Pt(111) (5/20 nm).
+  tokens:
+    input: 12224
+    output: 1170
+  fetched_chars: 33221

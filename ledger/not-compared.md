@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**10001 pair(s)** as of 2026-10-27.
+**10254 pair(s)** as of 2026-10-28.
 
 ## `area_die` (11 pair(s))
 
@@ -99,7 +99,7 @@ _and 224 more_
 | `CLM-ARCH-0016` = 1.22 x | `CLM-MEM-0025` = 3.7 x | 67% | device=B200, benchmark=GroupGEMM | baseline=SoA mappings |
 | `CLM-ARCH-0005` = 1.32 x | `CLM-MEM-0025` = 3.7 x | 64% | process=TSMC 16nm FinFET, comparison=sinusoidal vs trapezoidal power-clock, gate_at_maximum=XOR/XNOR, vclk_at_maximum=0.5 V, fclk_at_maximum=384 MHz | baseline=SoA mappings |
 
-## `frequency` (360 pair(s))
+## `frequency` (418 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -126,10 +126,14 @@ _and 224 more_
 | `CLM-ARCH-0073` = 0.5 GHz | `CLM-ARCH-0152` = 6.49e+04 GHz | 100% | process=45 nm | component=FIGFLEX, activation_format=FP16 |
 | `CLM-ARCH-0073` = 0.5 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | process=45 nm | wavelength=400 nm |
 | `CLM-ARCH-0073` = 0.5 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | process=45 nm | component=stabilized CW laser, frequency_offset=10 kHz |
+| `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-EDA-0014` = 0.22 GHz | 100% | component=FIGFLEX, activation_format=FP16 | configuration=CPI-optimized |
+| `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-EDA-0015` = 0.25 GHz | 100% | component=FIGFLEX, activation_format=FP16 | configuration=area-optimized |
 | `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-MAT-0148` = 0.001756 GHz | 100% | component=FIGFLEX, activation_format=FP16 | transition=f-g |
 | `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | component=FIGFLEX, activation_format=FP16 | wavelength=400 nm |
 | `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | component=FIGFLEX, activation_format=FP16 | angle_of_incidence=0° to 30°, rotation_angle=90° |
 | `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | component=FIGFLEX, activation_format=FP16 | device=Ho3+-doped fluoride glass waveguide laser |
+| `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-EDA-0014` = 0.22 GHz | 100% | component=FIGFLEX, activation_format=FP16 | configuration=CPI-optimized |
+| `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-EDA-0015` = 0.25 GHz | 100% | component=FIGFLEX, activation_format=FP16 | configuration=area-optimized |
 | `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-MAT-0148` = 0.001756 GHz | 100% | component=FIGFLEX, activation_format=FP16 | transition=f-g |
 | `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | component=FIGFLEX, activation_format=FP16 | wavelength=400 nm |
 | `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | component=FIGFLEX, activation_format=FP16 | angle_of_incidence=0° to 30°, rotation_angle=90° |
@@ -139,12 +143,8 @@ _and 224 more_
 | `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | magnetic_field=8.1 T, frequency=1.9 THz | device=Ho3+-doped fluoride glass waveguide laser |
 | `CLM-DEV-0012` = 370 GHz | `CLM-PROC-0038` = 0.00061 GHz | 100% | magnetic_field=8.1 T, frequency=1.9 THz | component=laser system |
 | `CLM-DEV-0013` = 180 GHz | `CLM-MAT-0148` = 0.001756 GHz | 100% | magnetic_field=7.5 T, frequency=2.2 THz | transition=f-g |
-| `CLM-DEV-0013` = 180 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | magnetic_field=7.5 T, frequency=2.2 THz | wavelength=400 nm |
-| `CLM-DEV-0013` = 180 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | magnetic_field=7.5 T, frequency=2.2 THz | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-DEV-0013` = 180 GHz | `CLM-PROC-0038` = 0.00061 GHz | 100% | magnetic_field=7.5 T, frequency=2.2 THz | component=laser system |
-| `CLM-DEV-0072` = 7 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | measurement_method=BLS spectra | wavelength=400 nm |
 
-_and 320 more_
+_and 378 more_
 
 ## `length_device` (3117 pair(s))
 
@@ -246,7 +246,7 @@ _and 164 more_
 |---|---|---|---|---|
 | `CLM-DEV-0079` = 3.1e-05 W/mm^2 | `CLM-MAT-0026` = 4.8e-07 W/mm^2 | 98% | structure=long-base p+-n device, n_base_width=300 𝜇𝜇m, framework=extended theory | environment=ambient |
 
-## `relative_deviation` (4683 pair(s))
+## `relative_deviation` (4878 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -291,7 +291,7 @@ _and 164 more_
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0198` = 34 percent | 157% | sample=B1-1 | method=DFT calculations, location=X valleys |
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0064` = 31 percent | 152% | sample=B1-1 | disorder_type=radius disorder |
 
-_and 4643 more_
+_and 4838 more_
 
 ## `temperature` (211 pair(s))
 

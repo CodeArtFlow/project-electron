@@ -1,0 +1,119 @@
+id: SRC-00239
+title: Optically gated transduction enables silicon electrical readout of mid-infrared light
+doi: null
+arxiv_id: 2610.36475v1
+url: https://arxiv.org/abs/2610.36475v1
+venue_id: arxiv_api
+authors:
+- name: Shutao Zhang
+  affiliation: null
+  corresponding: null
+- name: Jiaqing Shen
+  affiliation: null
+  corresponding: null
+- name: Chongwu Wang
+  affiliation: null
+  corresponding: null
+- name: Jiahui Xu
+  affiliation: null
+  corresponding: null
+- name: Wei Chen
+  affiliation: null
+  corresponding: null
+- name: Qing Yang Steve Wu
+  affiliation: null
+  corresponding: null
+- name: Yan Liu
+  affiliation: null
+  corresponding: null
+- name: Xie Yuen Gok
+  affiliation: null
+  corresponding: null
+- name: Febiana Tjiptoharsono
+  affiliation: null
+  corresponding: null
+- name: Xiaogang Liu
+  affiliation: null
+  corresponding: null
+- name: Qi Jie Wang
+  affiliation: null
+  corresponding: null
+- name: Joel K. W. Yang
+  affiliation: null
+  corresponding: null
+- name: Jinfeng Zhu
+  affiliation: null
+  corresponding: null
+- name: Zhaogang Dong
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-27'
+retrieved_date: '2026-10-28'
+access: full_text
+read_scope: Automated reading. The full PDF text (50,474 characters, 23 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.36475v1 on
+  2026-10-28. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“At zero bias, the 𝐿𝐺-only responsivity reached 26.0 mA W⁻¹.”
+
+  “The light gate 𝐿𝐺 at the wavelength of 740 nm excites the Nd3+ ensemble and establishes a baseline
+  photocurrent in silicon.”
+
+  “The corresponding MIR modulation responsivity was 103 μA W⁻¹.”
+
+  “A 740 nm light beam operates as a gate to establish an electrically accessible state”
+
+  “where (𝑅𝑀𝐼𝑅) is the gate-dependent MIR modulation responsivity and (𝜆𝑀𝐼𝑅 =6.8 𝜇𝑚).”
+
+  “Under 𝐿𝑀-only illumination, the current remained close to the dark level, with a responsivity of approximately
+  1 μA W⁻¹”
+
+  “At the wavelength of 6.8 μm, the photon energy is approximately 0.18 eV”
+
+  “The 𝐿𝐺-written state exhibited a response time of approximately 50 ms, demonstrating rapid optical
+  writing and recovery of the silicon readout channel”
+
+  “The 𝐿𝐺-written state exhibited a response time of approximately 50 ms”
+
+  “The faster component shows a rise time of 90.1 ms and a recovery time of 50.9 ms”'
+method_summary: '“The simulations of reflectance spectra and electric field distribution were carried
+  out using the Finite-Difference Time Domain (FDTD) Solutions, ANSYS Inc. software.”
+
+  “Current–voltage and transient photocurrent measurements were performed using a computer-controlled
+  dual-channel source meter (Keysight B2912A), which was used to apply the electrical bias and record
+  the device current.”'
+limitations: “The MIR-induced spectral redistribution was characterized separately on a transmissive substrate
+  because the Al/p-Si device does not support the required MIR transmission geometry.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16301
+    output: 2661
+  claims_accepted: 6
+  claims_rejected: 2
+  rejected:
+  - statement: Simultaneous 740 nm gate and 6.8 μm MIR light illumination at zero bias produces a differential
+      photocurrent of 103.335 nA.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - Simultaneous 𝐿𝐺 and 𝐿𝑀 illumination generated an additional current of 103.335 nA at zero bias.
+    - A 740 nm light beam operates as a gate to establish an electrically accessible state
+    - At the wavelength of 6.8 μm, the photon energy is approximately 0.18 eV
+  - statement: Under fixed 740 nm excitation at 1.0 μW power and 6.8 μm MIR power of 1 mW, the emission
+      intensity ratio I806/I866 increases from 0.09 to 1.02.
+    reason: the statement contains the number 06, which none of its quotes contain
+    quotes:
+    - Under a fixed 740 -nm excitation power of 1.0 μW and an incident 6.8-μm MIR power of 1 mW at the
+      sample, the Nd3+ emission exhibits pronounced spectral redistribution (Fig. 1e). The 806-nm emission
+      increases while the 866-nm emission decrea
+    - Under a fixed 740 -nm excitation power of 1.0 μW
+    - and an incident 6.8-μm MIR power of 1 mW
+    - and an incident 6.8-μm MIR power of 1 mW at the sample
+corrections: []

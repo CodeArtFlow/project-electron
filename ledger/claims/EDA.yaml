@@ -370,3 +370,126 @@ claims:
     conditions:
       tool: JasperGold
       module: L1 Bus Interface module
+- id: CLM-EDA-0013
+  topic: EDA
+  statement: The CPI-optimized configuration achieves 1.221 cycles per instruction on aggregate across
+    eight benchmarks.
+  sources:
+  - SRC-00240
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-28'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    configuration: CPI-optimized
+- id: CLM-EDA-0014
+  topic: EDA
+  statement: The CPI-optimized configuration reaches a maximum operating frequency of 220 MHz.
+  sources:
+  - SRC-00240
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-28'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    configuration: CPI-optimized
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 220.0
+      unit: MHz
+    si_base:
+      value: 220000000.0
+      unit: Hz
+    display:
+      value: 0.22
+      unit: GHz
+    conditions:
+      configuration: CPI-optimized
+- id: CLM-EDA-0015
+  topic: EDA
+  statement: The area-optimized configuration achieves an operating frequency of 250 MHz.
+  sources:
+  - SRC-00240
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-28'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    configuration: area-optimized
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 250.0
+      unit: MHz
+    si_base:
+      value: 250000000.0
+      unit: Hz
+    display:
+      value: 0.25
+      unit: GHz
+    conditions:
+      configuration: area-optimized
+- id: CLM-EDA-0016
+  topic: EDA
+  statement: The algorithmic HLS baseline achieves 4.000 cycles per instruction.
+  sources:
+  - SRC-00240
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-28'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    configuration: algorithmic HLS baseline
+- id: CLM-EDA-0017
+  topic: EDA
+  statement: The Ibex reference core achieves 1.575 cycles per instruction at 242 MHz on the aggregate
+    benchmark suite.
+  sources:
+  - SRC-00240
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-28'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    configuration: Ibex reference
+    fclk: 242 MHz

@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.36468v1
 doi: null
-title: 'Beyond Geometry: Hole-Edge Atomic Configuration as a Design Variable in Graphyne
-  Kirigami'
+title: 'Beyond Geometry: Hole-Edge Atomic Configuration as a Design Variable in Graphyne Kirigami'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-27'
@@ -23,6 +22,80 @@ id: CAND-20261028-0127
 harvested_date: '2026-10-28'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-28'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Removing two carbon atoms at selected hole-edge sites of GYK12 increases the yield strain
+      by 10%.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - For GYK12 and GYK21,ε yield increases by10% and15%, respectively.
+    - MD simulations were performed using the open-source LAMMPS package.84
+    - Removing two carbon atoms at selected edge sites further raises the yield strain by up to 35%
+  - statement: Removing two carbon atoms at selected hole-edge sites of GYK21 increases the yield strain
+      by 15%.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - For GYK12 and GYK21,ε yield increases by10% and15%, respectively.
+    - MD simulations were performed using the open-source LAMMPS package.84
+    - Removing two carbon atoms at selected edge sites further raises the yield strain by up to 35%
+  - statement: Applying the atomic modification to both types of cut in GYK11 produces a 35% increase
+      in yield strain.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - Applying the atomic modification to both types of cut produces a35% increase inεyield.
+    - MD simulations were performed using the open-source LAMMPS package.84
+    - The largest enhancement occurs for GYK 11, in which both the internal and edge cuts contain acetylenic
+      linkages.
+  - statement: Removing carbon atoms at selected hole-edge sites reduces the yield stress of GYK12 by
+      7.5%.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - This extension of the elastic range is accompanied by a reduction inσyield (Figure 6f), with decreases
+      of7.5% and 5.8%, for GYK12 and GYK11 respectively, whereas GYK21 shows only a1.0% reduction.
+    - MD simulations were performed using the open-source LAMMPS package.84
+    - with decreases of7.5% and 5.8%, for GYK12 and GYK11 respectively
+  - statement: Removing carbon atoms at selected hole-edge sites reduces the yield stress of GYK11 by
+      5.8%.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - This extension of the elastic range is accompanied by a reduction inσyield (Figure 6f), with decreases
+      of7.5% and 5.8%, for GYK12 and GYK11 respectively, whereas GYK21 shows only a1.0% reduction.
+    - MD simulations were performed using the open-source LAMMPS package.84
+    - with decreases of7.5% and 5.8%, for GYK12 and GYK11 respectively
+  - statement: Removing carbon atoms at selected hole-edge sites reduces the yield stress of GYK21 by
+      1.0%.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - whereas GYK21 shows only a1.0% reduction.
+    - MD simulations were performed using the open-source LAMMPS package.84
+  - statement: The yield strain of the GYK12 structure with 3 unit cells is 0.527.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - Figure 3b shows the correspondingεyield as a function of the number of cells, increasing from 0.527
+      to 0.569 for structures with 3 and 7 cells, respectively.
+    - MD simulations were performed using the open-source LAMMPS package.84
+    - for the GYK12 structure, increasing the number of cells produces a systematic shift in the stress-strain
+      curves.
+    - for structures with 3 and 7 cells, respectively.
+  - statement: The yield strain of the GYK12 structure with 7 unit cells is 0.569.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - Figure 3b shows the correspondingεyield as a function of the number of cells, increasing from 0.527
+      to 0.569 for structures with 3 and 7 cells, respectively.
+    - MD simulations were performed using the open-source LAMMPS package.84
+    - for the GYK12 structure, increasing the number of cells produces a systematic shift in the stress-strain
+      curves.
+    - for structures with 3 and 7 cells, respectively.
+  tokens:
+    input: 27649
+    output: 1959
+  fetched_chars: 74377

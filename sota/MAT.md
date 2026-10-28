@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-27.
+Topic code `MAT`. Last reviewed 2026-10-28.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -721,6 +721,14 @@ Topic code `MAT`. Last reviewed 2026-10-27.
   - `CLM-MAT-0211` · grade B · credibility unknown · measured · as of 2026-10-23
   - sources: SRC-00232
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The THz amplitude of the ZnO/Ni/Pt heterostructure is increased by up to approximately 2.8 times compared with the Ni/Pt reference.
+  - `CLM-MAT-0218` · layer_structure ZnO/Ni/Pt · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00244
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The THz time-domain signal amplitude of ZnO(40 nm)/Ni(3 nm)/Pt(3 nm) is approximately 2.5 times larger than that of the Ni(3 nm)/Pt(3 nm) bilayer.
+  - `CLM-MAT-0219` · trilayer_configuration ZnO(40 nm)/Ni(3 nm)/Pt(3 nm) · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00244
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -780,6 +788,10 @@ Topic code `MAT`. Last reviewed 2026-10-27.
   - `CLM-MAT-0208` · material monolayer black phosphorus (bP) · grade B · credibility unknown · simulated · as of 2026-10-23
   - sources: SRC-00228
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1.08 percent** — Tightening the electronic threshold by 100-fold causes a relative change in the force-contrast vector of 1.08%.
+  - `CLM-MAT-0217` · setting Tight SCF, parameter_change Tightening the electronic threshold by 100-fold · grade B · credibility unknown · simulated · as of 2026-10-27
+  - sources: SRC-00243
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -1064,6 +1076,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 216
-- grades: {'B': 216}
-- distinct sources: 81
+- claims: 219
+- grades: {'B': 219}
+- distinct sources: 83

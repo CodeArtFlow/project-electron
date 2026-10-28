@@ -6082,3 +6082,77 @@ claims:
     conditions:
       material: MoSSe-Se
       parameter: a0
+- id: CLM-MAT-0217
+  topic: MAT
+  statement: Tightening the electronic threshold by 100-fold causes a relative change in the force-contrast
+    vector of 1.08%.
+  sources:
+  - SRC-00243
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-28'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    setting: Tight SCF
+    parameter_change: Tightening the electronic threshold by 100-fold
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.08
+      unit: '%'
+    si_base:
+      value: 0.0108
+      unit: dimensionless
+    display:
+      value: 1.08
+      unit: percent
+    conditions:
+      setting: Tight SCF
+      parameter_change: Tightening the electronic threshold by 100-fold
+- id: CLM-MAT-0218
+  topic: MAT
+  statement: The THz amplitude of the ZnO/Ni/Pt heterostructure is increased by up to approximately 2.8
+    times compared with the Ni/Pt reference.
+  sources:
+  - SRC-00244
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-28'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    layer_structure: ZnO/Ni/Pt
+- id: CLM-MAT-0219
+  topic: MAT
+  statement: The THz time-domain signal amplitude of ZnO(40 nm)/Ni(3 nm)/Pt(3 nm) is approximately 2.5
+    times larger than that of the Ni(3 nm)/Pt(3 nm) bilayer.
+  sources:
+  - SRC-00244
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-28'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    trilayer_configuration: ZnO(40 nm)/Ni(3 nm)/Pt(3 nm)

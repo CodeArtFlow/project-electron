@@ -1,10 +1,21 @@
 # EDA — state of the art
 
-Topic code `EDA`. Last reviewed 2026-10-27.
+Topic code `EDA`. Last reviewed 2026-10-28.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
 ## Current position
+
+### frequency
+
+- **0.22 GHz** — The CPI-optimized configuration reaches a maximum operating frequency of 220 MHz.
+  - `CLM-EDA-0014` · configuration CPI-optimized · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00240
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.25 GHz** — The area-optimized configuration achieves an operating frequency of 250 MHz.
+  - `CLM-EDA-0015` · configuration area-optimized · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00240
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -27,6 +38,18 @@ Topic code `EDA`. Last reviewed 2026-10-27.
   - `CLM-EDA-0010` · design AHB2APB · grade B · credibility unknown · measured · as of 2026-10-15
   - sources: SRC-00156
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The CPI-optimized configuration achieves 1.221 cycles per instruction on aggregate across eight benchmarks.
+  - `CLM-EDA-0013` · configuration CPI-optimized · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00240
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The algorithmic HLS baseline achieves 4.000 cycles per instruction.
+  - `CLM-EDA-0016` · configuration algorithmic HLS baseline · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00240
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The Ibex reference core achieves 1.575 cycles per instruction at 242 MHz on the aggregate benchmark suite.
+  - `CLM-EDA-0017` · configuration Ibex reference, fclk 242 MHz · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00240
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -72,6 +95,6 @@ _None._
 
 ## Evidence base
 
-- claims: 12
-- grades: {'B': 12}
-- distinct sources: 5
+- claims: 17
+- grades: {'B': 17}
+- distinct sources: 6

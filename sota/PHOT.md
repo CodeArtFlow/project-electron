@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-27.
+Topic code `PHOT`. Last reviewed 2026-10-28.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -315,6 +315,30 @@ Topic code `PHOT`. Last reviewed 2026-10-27.
   - `CLM-PHOT-0107` · material Cs2NaInCl6:Ho3+ microcrystalline sample · grade B · credibility unknown · measured · as of 2026-10-23
   - sources: SRC-00221
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- At zero bias, the device under 740 nm gate light excitation reaches a responsivity of 26.0 mA W⁻¹.
+  - `CLM-PHOT-0109` · bias_voltage zero bias, excitation_wavelength 740 nm, light_condition 𝐿𝐺-only · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00239
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The device demonstrates a mid-infrared modulation responsivity of 103 μA W⁻¹ under simultaneous gate and MIR illumination.
+  - `CLM-PHOT-0110` · gate_wavelength 740 nm, mir_wavelength 6.8 μm · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00239
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Under 6.8 μm MIR-only illumination, the responsivity is approximately 1 μA W⁻¹.
+  - `CLM-PHOT-0111` · light_condition 𝐿𝑀-only illumination, mir_wavelength 6.8 μm · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00239
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The rapid optical writing and recovery response time of the gate-written state is approximately 50 ms.
+  - `CLM-PHOT-0112` · light_condition 𝐿𝐺-written state · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00239
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The faster transient component of the MIR-modulated response exhibits a rise time of 90.1 ms.
+  - `CLM-PHOT-0113` · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00239
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The faster transient component of the MIR-modulated response exhibits a recovery time of 50.9 ms.
+  - `CLM-PHOT-0114` · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00239
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -509,6 +533,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 108
-- grades: {'B': 101, 'A': 7}
-- distinct sources: 36
+- claims: 114
+- grades: {'B': 107, 'A': 7}
+- distinct sources: 37

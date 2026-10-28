@@ -1,0 +1,108 @@
+id: SRC-00241
+title: Laser-Induced 90-Degree Magnetization Switching for Single-Element 2D Sensing
+doi: null
+arxiv_id: 2610.36530v1
+url: https://arxiv.org/abs/2610.36530v1
+venue_id: arxiv_api
+authors:
+- name: Floris J. F. van Riel
+  affiliation: null
+  corresponding: null
+- name: Niels F. L. van Kempen
+  affiliation: null
+  corresponding: null
+- name: Bert Koopmans
+  affiliation: null
+  corresponding: null
+- name: Diana C. Leitao
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-27'
+retrieved_date: '2026-10-28'
+access: full_text
+read_scope: Automated reading. The full PDF text (44,542 characters, 11 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.36530v1 on
+  2026-10-28. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“An AMR signal of ∆ρ/ρ ⊥ = (ρ∥ −ρ ⊥)/ρ⊥ = 0.66 % was measured between the resistivity in the
+  parallelρ ∥ and perpendicularρ ⊥ configurations of current and magnetization.”
+
+  “We used a Keithley 2400 sourcemeter to apply a 10 mA current through the outer set of probes and simultaneously
+  detect the voltage between two inner probes.”'
+method_summary: '“The devices were fabricated using physical vapor deposition (magnetron sputtering and
+  electron-beam evaporation) and four electron-beam lithography steps with transfer via etching and lift-off.”
+
+  “AMR was measured with a four-probe resistance measurement, i.e., with a current applied along the hard
+  axis and the voltage measured along the same axis (see inset in Fig. 1d).”'
+limitations: “All measurements to some degree suffered from linear drift, which we corrected for during
+  data processing in Fig. 1d and subsequent figures in this work.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 15222
+    output: 2829
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: The patterned device exhibits a longitudinal AMR relative resistance change ∆ρ/ρ⊥ of 0.022%
+      in a 100 mT rotating magnetic field with a 1 mA current.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - For AMR we find a relative resistance change of ∆ρ/ρ ⊥ = 0.022 %.
+    - We also measured angular dependence of both the longitudinal AMR and the transverse PHE resistance
+      in a rotating magnetic field of 100 mT strong enough to keep the device saturated along the field
+      direction, shown in Fig. 2b.
+    - A current of 1 mA was used.
+  - statement: The patterned device exhibits a transverse PHE relative resistance change ∆ρ/ρ⊥ of 0.034%
+      in a 100 mT rotating magnetic field with a 1 mA current.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - For PHE we find a value of ∆ρ/ρ ⊥ = 0.034 %.
+    - We also measured angular dependence of both the longitudinal AMR and the transverse PHE resistance
+      in a rotating magnetic field of 100 mT strong enough to keep the device saturated along the field
+      direction, shown in Fig. 2b.
+    - A current of 1 mA was used.
+  - statement: The device switching field Hswitch is measured to be 3.2 mT.
+    reason: 'unit conversion refused: resistance: cannot convert 3.2 mT to ohm - Cannot convert from ''millitesla''
+      ([mass] / [time] ** 2 / [current]) to ''ohm'' ([mass] * [length] ** 2 / [time] ** 3 / '
+    quotes:
+    - The switching fieldH switch = 3.2 mT is indicated.
+    - Measurement of the longitudinal AMR (ρ xx) and transversal PHE (ρxy) resistivity changes.
+  - statement: The laser pulse width at half intensity used for excitation is 100 fs.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''programmed
+      to output single pulses with Gaussian temporal profile (100'''
+    quotes:
+    - programmed to output single pulses with Gaussian temporal profile (100 fs width at half intensity)
+      and an energy per pulse of around 2µJ at 700 nm wavelength.
+    - around 2µJ at 700 nm wavelength.
+  - statement: The laser wavelength used for excitation is 700 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''programmed
+      to output single pulses with Gaussian temporal profile (100'''
+    quotes:
+    - programmed to output single pulses with Gaussian temporal profile (100 fs width at half intensity)
+      and an energy per pulse of around 2µJ at 700 nm wavelength.
+    - 100 fs width at half intensity
+  - statement: Toggle switching is observed for laser fluences above approximately 10 mJ cm−2.
+    reason: 'unit conversion refused: power_density: could not parse 10.0 ''mJ cm−2'': ''cm−2'' is not
+      defined in the unit registry'
+    quotes:
+    - Toggle switching was observed for laser fluences above approximately 10 mJ cm−2, which means that
+      the laser pulse energy should be tuned such that the fluence at a distance of 4µm from the center
+      is at least 10 mJ cm−2 or more.
+    - Toggle switching was observed for laser fluences above approximately 10 mJ cm−2
+  - statement: The alternating current frequency used for PHE measurement during 90 degree switching demonstration
+      is 579.4 Hz at 100 µA.
+    reason: the statement contains the number 90, which none of its quotes contain
+    quotes:
+    - We measure PHE with an alternating current (I= 100µA at 579.4 Hz) and an SR830 lock-in amplifier
+      to filter out as much noise as possible and minimize Joule heating.
+    - I= 100µA at 579.4 Hz
+    - We measure PHE with an alternating current (I= 100µA at 579.4 Hz) and an SR830 lock-in amplifier
+corrections: []
