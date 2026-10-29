@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.37402v1
 doi: null
-title: Electric Field-Induced Hole- and Electron-Type Flat Bands in Twisted Double
-  Bilayer Graphene
+title: Electric Field-Induced Hole- and Electron-Type Flat Bands in Twisted Double Bilayer Graphene
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-27'
@@ -35,6 +34,57 @@ id: CAND-20261028-0048
 harvested_date: '2026-10-28'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-29'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: In the 6.0° tDBG device, the peak-to-peak hybridization gap is 180 meV at a gate voltage
+      of 0 V.
+    reason: the statement contains the number 6.0, which none of its quotes contain
+    quotes:
+    - shows that an increasing electric field (and thus displacement field) drives an increase in ∆ from
+      around 180 to 210 meV.
+    - To directly visualize how an out-of-plane electric field modifies interlayer hybridization in tDBG,
+      we first compare ARPES dispersions of the 6.0 ◦ device along the K T−K B cut at different gate voltages
+      as shown in Fig. 3(a).
+  - statement: In the 6.0° tDBG device, the peak-to-peak hybridization gap increases to 210 meV as the
+      gate voltage is increased.
+    reason: the statement contains the number 6.0, which none of its quotes contain
+    quotes:
+    - shows that an increasing electric field (and thus displacement field) drives an increase in ∆ from
+      around 180 to 210 meV.
+    - To directly visualize how an out-of-plane electric field modifies interlayer hybridization in tDBG,
+      we first compare ARPES dispersions of the 6.0 ◦ device along the K T−K B cut at different gate voltages
+      as shown in Fig. 3(a).
+  - statement: For the 6.0° tDBG device, the two sets of bands around the K-points are separated in energy
+      by 0.4 eV.
+    reason: the statement contains the number 6.0, which none of its quotes contain
+    quotes:
+    - For each bilayer in the heterostructure, we observe two sets of bands separated in energy by 0.4
+      eV around the K-points.
+    - To directly visualize how an out-of-plane electric field modifies interlayer hybridization in tDBG,
+      we first compare ARPES dispersions of the 6.0 ◦ device along the K T−K B cut at different gate voltages
+      as shown in Fig. 3(a).
+  - statement: For the 6.0° tDBG device, the photoemission intensity from the top AB layer is 14 times
+      higher than that from the lower AB layer.
+    reason: the statement contains the number 6.0, which none of its quotes contain
+    quotes:
+    - The ARPES intensity emerging from the top AB layer is 14 times higher than in the lower AB layer
+      due to the short inelastic mean free path of photoexcited electrons with kinetic energy around 40
+      eV.
+    - To directly visualize how an out-of-plane electric field modifies interlayer hybridization in tDBG,
+      we first compare ARPES dispersions of the 6.0 ◦ device along the K T−K B cut at different gate voltages
+      as shown in Fig. 3(a).
+    - due to the short inelastic mean free path of photoexcited electrons with kinetic energy around 40
+      eV.
+  tokens:
+    input: 13588
+    output: 1505
+  fetched_chars: 39165

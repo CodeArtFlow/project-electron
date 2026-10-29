@@ -6156,3 +6156,295 @@ claims:
     verified_quotes: 3
   conditions:
     trilayer_configuration: ZnO(40 nm)/Ni(3 nm)/Pt(3 nm)
+- id: CLM-MAT-0220
+  topic: MAT
+  statement: At zero magnetic field, the ratio between the non-reciprocal and reciprocal part of resistivity
+    in CoTa3S6 induced by non-coplanar antiferromagnetic order is approximately 3.1x10^-12 m^2/A.
+  sources:
+  - SRC-00246
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    mechanism: non-coplanar antiferromagnetic order
+- id: CLM-MAT-0221
+  topic: MAT
+  statement: Irida-graphane has a hydrogenation energy of -0.53 eV/H relative to irida-graphene and molecular
+    hydrogen.
+  sources:
+  - SRC-00248
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MAT-0222
+  topic: MAT
+  statement: Irida-graphane has an in-plane stiffness of approximately 156 N/m along both the x- and y-directions.
+  sources:
+  - SRC-00248
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MAT-0223
+  topic: MAT
+  statement: The maximum critical power density reached approximately 140 MW/cm2.
+  sources:
+  - SRC-00250
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    material: TiNx/Ti/TiNx
+  quantity:
+    quantity: power_density
+    bound: upper_bound
+    approximate: true
+    as_published:
+      value: 140.0
+      unit: MW/cm2
+    si_base:
+      value: 1400000000000.0
+      unit: W/m^2
+    display:
+      value: 1400000.0
+      unit: W/mm^2
+    conditions:
+      material: TiNx/Ti/TiNx
+- id: CLM-MAT-0224
+  topic: MAT
+  statement: Upon reactivation after cooling from a 24 h test at 90% critical power, the mean relative
+    deviation for the three investigated widths was 2.17%.
+  sources:
+  - SRC-00250
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    power_level: 90% of the critical value
+    test_duration: 24 h
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 2.17
+      unit: '%'
+    si_base:
+      value: 0.0217
+      unit: dimensionless
+    display:
+      value: 2.17
+      unit: percent
+    conditions:
+      power_level: 90% of the critical value
+      test_duration: 24 h
+- id: CLM-MAT-0225
+  topic: MAT
+  statement: The patterned hematite film thickness is 40 nm.
+  sources:
+  - SRC-00252
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: α-Fe 2O3
+    substrate: sapphire (Al2O3)
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 40.0
+      unit: nm
+    si_base:
+      value: 4.0e-08
+      unit: m
+    display:
+      value: 39.99999999999999
+      unit: nm
+    conditions:
+      material: α-Fe 2O3
+      substrate: sapphire (Al2O3)
+- id: CLM-MAT-0226
+  topic: MAT
+  statement: The microdisks patterned from the hematite film have a diameter of 3 µm.
+  sources:
+  - SRC-00252
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    component: microdisk
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 3.0
+      unit: µm
+    si_base:
+      value: 3.0e-06
+      unit: m
+    display:
+      value: 2999.9999999999995
+      unit: nm
+    conditions:
+      component: microdisk
+- id: CLM-MAT-0227
+  topic: MAT
+  statement: The stripline antenna used for driving coherent magnons has a width of 3 µm.
+  sources:
+  - SRC-00252
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    component: stripline antenna
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 3.0
+      unit: µm
+    si_base:
+      value: 3.0e-06
+      unit: m
+    display:
+      value: 2999.9999999999995
+      unit: nm
+    conditions:
+      component: stripline antenna
+- id: CLM-MAT-0228
+  topic: MAT
+  statement: The average frequency-domain linewidth extracted from thermal BLS spectra over the investigated
+    magnetic field range is approximately 2.5 GHz.
+  sources:
+  - SRC-00252
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    component: α-Fe2O3 microdisk
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: true
+    as_published:
+      value: 2.5
+      unit: GHz
+    si_base:
+      value: 2500000000.0
+      unit: Hz
+    display:
+      value: 2.5
+      unit: GHz
+    conditions:
+      component: α-Fe2O3 microdisk
+- id: CLM-MAT-0229
+  topic: MAT
+  statement: Under strong microwave driving at 128 mW power, finite-element simulations indicate a local
+    temperature rise of only approximately 5 K.
+  sources:
+  - SRC-00252
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    p_mw: 128 mW
+    simulation_type: finite-element simulations
+  quantity:
+    quantity: temperature_delta
+    bound: upper_bound
+    approximate: true
+    as_published:
+      value: 5.0
+      unit: K
+    si_base:
+      value: 5.0
+      unit: K
+    display:
+      value: 5.0
+      unit: K
+    conditions:
+      p_mw: 128 mW
+      simulation_type: finite-element simulations

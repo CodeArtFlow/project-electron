@@ -4726,3 +4726,171 @@ claims:
   conditions:
     architecture: 256-engine RTL implementation
     model: Model A
+- id: CLM-ARCH-0164
+  topic: ARCH
+  statement: The on-chip classifier running on TEXEL achieved a classification accuracy of 74.6%.
+  sources:
+  - SRC-00245
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    processor: TEXEL
+    experiment: hazardous gas detection
+- id: CLM-ARCH-0165
+  topic: ARCH
+  statement: The TEXEL on-chip classifier consumed an average dynamic energy of 482 nJ per inference.
+  sources:
+  - SRC-00245
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    processor: TEXEL
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 482.0
+      unit: nJ
+    si_base:
+      value: 4.82e-07
+      unit: J
+    display:
+      value: 481999999.99999994
+      unit: fJ
+    conditions:
+      processor: TEXEL
+- id: CLM-ARCH-0166
+  topic: ARCH
+  statement: The TEXEL neuromorphic processor exhibited approximately 27 µW of static power consumption.
+  sources:
+  - SRC-00245
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    processor: TEXEL
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: true
+    as_published:
+      value: 27.0
+      unit: µW
+    si_base:
+      value: 2.7e-05
+      unit: W
+    display:
+      value: 2.7e-05
+      unit: W
+    conditions:
+      processor: TEXEL
+- id: CLM-ARCH-0167
+  topic: ARCH
+  statement: The linear SVM baseline achieved a test accuracy of 0.923 on the single-gas dataset.
+  sources:
+  - SRC-00245
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-ARCH-0168
+  topic: ARCH
+  statement: The linear SVM baseline achieved a test accuracy of 0.563 on the binary-mixture dataset.
+  sources:
+  - SRC-00245
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-ARCH-0169
+  topic: ARCH
+  statement: The RBF SVM baseline achieved a test accuracy of 0.800 on the binary-mixture dataset.
+  sources:
+  - SRC-00245
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-ARCH-0170
+  topic: ARCH
+  statement: At 80 MHz, the MVP reduces ConvSNN classifier latency by 62.3%.
+  sources:
+  - SRC-00249
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    frequency: 80 MHz
+    model: ConvSNN
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 62.3
+      unit: '%'
+    si_base:
+      value: 0.623
+      unit: dimensionless
+    display:
+      value: 62.3
+      unit: percent
+    conditions:
+      frequency: 80 MHz
+      model: ConvSNN

@@ -1,0 +1,123 @@
+id: SRC-00247
+title: Spin-Orbit-Torque-Driven Recurrent Motion of Synthetic Antiferromagnetic Skyrmions for Magnetic
+  Clocking
+doi: null
+arxiv_id: 2610.37014v1
+url: https://arxiv.org/abs/2610.37014v1
+venue_id: arxiv_api
+authors:
+- name: Sayan Mathur
+  affiliation: null
+  corresponding: null
+- name: Payal Bhattacharjee
+  affiliation: null
+  corresponding: null
+- name: Saswati Barman
+  affiliation: null
+  corresponding: null
+- name: Anjan Barman
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-27'
+retrieved_date: '2026-10-29'
+access: full_text
+read_scope: Automated reading. The full PDF text (75,497 characters, 26 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.37014v1 on
+  2026-10-29. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“whereas at D = 3.7 mJ/m², they increased to 22.17 nm and 22.21 nm, respectively.”
+
+  “constant coupling strength of σRKKY = –0.2 mJ/m²”
+
+  “To elucidate the role of iDMI in determining the static characteristics of skyrmions in SAF nanostrips,
+  we conduct micromagnetic simulations by systematically varying the iDMI strength from 1 mJ/m² to 4 mJ/m²
+  in 0.1 mJ/m² steps.”'
+method_summary: “An open-source GPU-accelerated micromagnetic simulator, mumax 3,42,43 is employed to
+  compute the magnetization dynamics of magnetic skyrmion based on the Landau –Lifshitz– Gilbert (LLG)
+  equation.44,45 Utilizing the finite-difference method, it solves the LLG equation numerically to yield
+  micromagnetic simulation results.”
+limitations: '“All micromagnetic simulations are conducted at 0 K, with thermal fluctuations disregarded.
+  This method enables the isolation of the inherent effects of SOT, RKKY coupling, and iDMI on the stability
+  and dynamics of SAF skyrmions without the need for extra stochastic contributions.”
+
+  “The current work focuses on the deterministic dynamics of SAF skyrmions at 0 K in perfect defect -free
+  structures. Thermal fluctuations may affect the long -term transport behavior, depinning thresholds,
+  deformation, and stability of the skyrmions.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 22870
+    output: 2575
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: The maximum average velocity reached by the SAF skyrmions under spin-orbit torque in micromagnetic
+      simulations is 380 m/s when the iDMI is 3.5 mJ/m² and the hea
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - the velocities show a monotonic rise with current density, irrespective of the DMI values that are
+      investigated, and reach as high as 𝑣= 380 m/s when iDMI = 3.5 mJ/m² and 𝐽𝐻𝑀 =1×1011𝐴/𝑚2.
+    - Using micromagnetic simulations, we investigate the combined effects of interfacial Dzyaloshinskii
+      -Moriya interaction and interlayer Ruderman -Kittel- Kasuya-Yosida exchange coupling, delineating
+      the parameter space in which coupled Néel -
+    - iDMI = 3.5 mJ/m²
+    - 𝐽𝐻𝑀 =1×1011𝐴/𝑚2
+  - statement: Micromagnetic simulations identify a critical current density of 5×10⁷ A/m², which represents
+      the minimum applied current required to maintain translational sky
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - We determine a critical current density 𝐽𝑐 = 5×107 A/m², which is the minimum applied current necessary
+      to maintain translational motion with a non -zero time -averaged velocity.
+    - Using micromagnetic simulations, we investigate the combined effects of interfacial Dzyaloshinskii
+      -Moriya interaction and interlayer Ruderman -Kittel- Kasuya-Yosida exchange coupling, delineating
+      the parameter space in which coupled Néel -
+    - minimum applied current necessary to maintain translational motion with a non -zero time -averaged
+      velocity.
+  - statement: For an iDMI value of 2.4 mJ/m² with RKKY exchange coupling fixed at -0.2 mJ/m², the equilibrium
+      skyrmion radius in the upper ferromagnetic layer is 2.76 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''at D = 2.4
+      mJ/m², the radii in the upper and lower layers are 2.76 nm '''
+    quotes:
+    - at D = 2.4 mJ/m², the radii in the upper and lower layers are 2.76 nm and 3.19 nm, respectively
+    - To elucidate the role of iDMI in determining the static characteristics of skyrmions in SAF nanostrips,
+      we conduct micromagnetic simulations by systematically varying the iDMI strength from 1 mJ/m² to
+      4 mJ/m² in 0.1 mJ/m² steps.
+    - D = 2.4 mJ/m²
+    - radii in the upper and lower layers are 2.76 nm and 3.19 nm, respectively
+  - statement: For an iDMI value of 2.4 mJ/m² with RKKY exchange coupling fixed at -0.2 mJ/m², the equilibrium
+      skyrmion radius in the lower ferromagnetic layer is 3.19 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''at D = 2.4
+      mJ/m², the radii in the upper and lower layers are 2.76 nm '''
+    quotes:
+    - at D = 2.4 mJ/m², the radii in the upper and lower layers are 2.76 nm and 3.19 nm, respectively
+    - To elucidate the role of iDMI in determining the static characteristics of skyrmions in SAF nanostrips,
+      we conduct micromagnetic simulations by systematically varying the iDMI strength from 1 mJ/m² to
+      4 mJ/m² in 0.1 mJ/m² steps.
+    - D = 2.4 mJ/m²
+    - radii in the upper and lower layers are 2.76 nm and 3.19 nm, respectively
+  - statement: Analytical performance estimates for the proposed SAF skyrmion clock predict an energy
+      consumption per clock cycle of approximately 0.53 fJ.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''𝐸cycle≈0.53\u2009fJ'''
+    quotes:
+    - 𝐸cycle≈0.53 fJ
+    - The analytical estimates presented in Appendix B predict a sub-femtojoule energy consumption per
+      clock cycle, underscoring the energy -efficient nature of the proposed architecture.
+    - Proposed SAF-skyrmion clock
+    - 𝑓=3.8×108 Hz
+  - statement: Analytical performance estimates calculate a volumetric power dissipation due to Joule
+      heating of 0.2 µW for the active volume of the proposed SAF skyrmion cloc
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''𝑃=0.2\u2009𝜇W'''
+    quotes:
+    - 𝑃=0.2 𝜇W
+    - The analytical estimates presented in Appendix B predict a sub-femtojoule energy consumption per
+      clock cycle, underscoring the energy -efficient nature of the proposed architecture.
+    - 𝐽=1×1011 A m−2
+    - 𝜌=2×10−7 Ω m
+corrections: []

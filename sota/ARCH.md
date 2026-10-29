@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-28.
+Topic code `ARCH`. Last reviewed 2026-10-29.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -51,6 +51,10 @@ Topic code `ARCH`. Last reviewed 2026-10-28.
   - `CLM-ARCH-0075` · architecture eight-output accelerator with shared activation delivery · grade B · credibility unknown · projected · as of 2026-10-08
   - sources: SRC-00115
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **4.82e+08 fJ** — The TEXEL on-chip classifier consumed an average dynamic energy of 482 nJ per inference.
+  - `CLM-ARCH-0165` · processor TEXEL · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00245
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### energy advantage ratio
 
@@ -150,6 +154,10 @@ Topic code `ARCH`. Last reviewed 2026-10-28.
   - sources: SRC-00220
   - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0093 — see the open register
+- **≈2.7e-05 W** — The TEXEL neuromorphic processor exhibited approximately 27 µW of static power consumption.
+  - `CLM-ARCH-0166` · processor TEXEL · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00245
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### qualitative
 
@@ -449,6 +457,22 @@ Topic code `ARCH`. Last reviewed 2026-10-28.
   - `CLM-ARCH-0163` · architecture 256-engine RTL implementation, model Model A · grade B · credibility unknown · simulated · as of 2026-10-23
   - sources: SRC-00230
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The on-chip classifier running on TEXEL achieved a classification accuracy of 74.6%.
+  - `CLM-ARCH-0164` · processor TEXEL, experiment hazardous gas detection · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00245
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The linear SVM baseline achieved a test accuracy of 0.923 on the single-gas dataset.
+  - `CLM-ARCH-0167` · grade B · credibility unknown · simulated · as of 2026-10-27
+  - sources: SRC-00245
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The linear SVM baseline achieved a test accuracy of 0.563 on the binary-mixture dataset.
+  - `CLM-ARCH-0168` · grade B · credibility unknown · simulated · as of 2026-10-27
+  - sources: SRC-00245
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The RBF SVM baseline achieved a test accuracy of 0.800 on the binary-mixture dataset.
+  - `CLM-ARCH-0169` · grade B · credibility unknown · simulated · as of 2026-10-27
+  - sources: SRC-00245
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -638,6 +662,10 @@ Topic code `ARCH`. Last reviewed 2026-10-28.
   - `CLM-ARCH-0157` · baseline state-of-the-art accelerator generators · grade B · credibility unknown · simulated · as of 2026-10-23
   - sources: SRC-00227
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **62.3 percent** — At 80 MHz, the MVP reduces ConvSNN classifier latency by 62.3%.
+  - `CLM-ARCH-0170` · frequency 80 MHz, model ConvSNN · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00249
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -741,6 +769,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 163
-- grades: {'B': 163}
-- distinct sources: 51
+- claims: 170
+- grades: {'B': 170}
+- distinct sources: 53

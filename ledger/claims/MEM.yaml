@@ -1140,3 +1140,70 @@ claims:
       platform: Jetson Orin Nano
       threshold: '550'
       verification_stage: Single function verification
+- id: CLM-MEM-0040
+  topic: MEM
+  statement: The DFT binding energy per Cu for the 10% Cu structure is -0.18 eV.
+  sources:
+  - SRC-00251
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    method: DFT
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: -0.18
+      unit: eV
+    si_base:
+      value: -2.8839179412e-20
+      unit: J
+    display:
+      value: -2.8839179411999996e-05
+      unit: fJ
+    conditions:
+      method: DFT
+- id: CLM-MEM-0041
+  topic: MEM
+  statement: Under a positive bias of 2.5 V, the average switching time following a RESET operation that
+    created a 2 nm gap in the filament is 55 µs.
+  sources:
+  - SRC-00251
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-27'
+  created: '2026-10-29'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    gap_size: 2 nm
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: true
+    as_published:
+      value: 55.0
+      unit: µs
+    si_base:
+      value: 5.4999999999999995e-05
+      unit: s
+    display:
+      value: 54999.999999999985
+      unit: ns
+    conditions:
+      gap_size: 2 nm

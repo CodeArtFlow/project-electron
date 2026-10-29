@@ -1,0 +1,114 @@
+id: SRC-00249
+title: Hardware-Matched Spiking Neural Networks for Real-Time Purkinje Cell Spike Classification
+doi: null
+arxiv_id: 2610.37104v1
+url: https://arxiv.org/abs/2610.37104v1
+venue_id: arxiv_api
+authors:
+- name: Arooba Farhan
+  affiliation: null
+  corresponding: null
+- name: Afsah Syed
+  affiliation: null
+  corresponding: null
+- name: Muhammad Fahd Ibrahim Bhatti
+  affiliation: null
+  corresponding: null
+- name: Muhammad Areeb Khalid Kidwai
+  affiliation: null
+  corresponding: null
+- name: Muhammad Ahsan Salar Khan
+  affiliation: null
+  corresponding: null
+- name: Vincenzo Romano
+  affiliation: null
+  corresponding: null
+- name: Muhammad Ali Siddiqi
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-27'
+retrieved_date: '2026-10-29'
+access: full_text
+read_scope: Automated reading. The full PDF text (25,160 characters, 5 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.37104v1 on
+  2026-10-29. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“At equal clock (80 MHz), the MVP reduces classifier latency from 2.465 ms to 0.929 ms (62.3%)”
+
+  “MVP acceleration reduces ConvSNN latency by 62.3%”
+
+  “Battery life was estimated from current measured with the Energy Profiler”'
+method_summary: '“Table III reports post-layout results from LibreLane in SKY130 at a 100 ns clock period.”
+
+  “Table II compares classification latency on the Cortex-M33 alone with MVP-assisted execution.”
+
+  “Battery life was estimated from current measured with the Energy Profiler, including the classification
+  and detector workloads and the average current of the ADC and STT-RAM [21] (Fig. 4).”'
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 9476
+    output: 2657
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: In SKY130 post-layout, the StreamSNN classifier occupies an area of 0.173 mm2.
+    reason: the statement contains the number 30, which none of its quotes contain
+    quotes:
+    - In SKY130, StreamSNN occupies 0.173 mm2
+    - Table III reports post-layout results from LibreLane in SKY130 at a 100 ns clock period.
+    - Classifier
+  - statement: In SKY130 post-layout at a 100 ns clock period, the whole chip occupies an area of 1.59
+      mm2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Whole chip'''
+    quotes:
+    - Whole chip
+    - '1.59'
+    - Table III reports post-layout results from LibreLane in SKY130 at a 100 ns clock period.
+    - TABLE III ASIC RESULTS IN SKY130 AT A 100 NS CLOCK PERIOD.
+  - statement: In SKY130 post-layout, StreamSNN classifier consumes 0.46 µJ per event.
+    reason: the statement contains the number 30, which none of its quotes contain
+    quotes:
+    - and consumes 0.46µJ per event
+    - Table III reports post-layout results from LibreLane in SKY130 at a 100 ns clock period.
+    - In SKY130, StreamSNN occupies 0.173 mm2 and consumes 0.46µJ per event
+    - Classifier
+  - statement: In SKY130 post-layout, the StreamSNN classifier power consumption is 2.30 mW.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''2.30'''
+    quotes:
+    - '2.30'
+    - Table III reports post-layout results from LibreLane in SKY130 at a 100 ns clock period.
+    - TABLE III ASIC RESULTS IN SKY130 AT A 100 NS CLOCK PERIOD.
+    - Classifier
+  - statement: On the EFM32PG28 microcontroller at 80 MHz, MVP acceleration reduces ConvSNN latency to
+      0.9286 ms.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''0.9286'''
+    quotes:
+    - '0.9286'
+    - Battery life was estimated from current measured with the Energy Profiler
+    - ConvSNN is deployed on the Silicon Labs EFM32PG28
+    - '80'
+  - statement: On the EFM32PG28 microcontroller at 80 MHz without MVP, ConvSNN inference latency is 2.465
+      ms.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''2.465'''
+    quotes:
+    - '2.465'
+    - Battery life was estimated from current measured with the Energy Profiler
+    - ConvSNN is deployed on the Silicon Labs EFM32PG28
+    - '80'
+  - statement: In SKY130 post-layout, the StreamSNN classifier latency is 0.20 ms.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''0.20'''
+    quotes:
+    - '0.20'
+    - Table III reports post-layout results from LibreLane in SKY130 at a 100 ns clock period.
+    - TABLE III ASIC RESULTS IN SKY130 AT A 100 NS CLOCK PERIOD.
+    - Classifier
+corrections: []

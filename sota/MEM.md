@@ -1,6 +1,6 @@
 # Memory — state of the art
 
-Topic code `MEM`. Last reviewed 2026-10-28.
+Topic code `MEM`. Last reviewed 2026-10-29.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -12,6 +12,10 @@ Topic code `MEM`. Last reviewed 2026-10-28.
   - `CLM-MEM-0018` · temperature 100 K, measurement_method ARPES · grade B · credibility unknown · measured · as of 2026-10-14
   - sources: SRC-00148
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **-2.88392e-05 fJ** — The DFT binding energy per Cu for the 10% Cu structure is -0.18 eV.
+  - `CLM-MEM-0040` · method DFT · grade B · credibility unknown · simulated · as of 2026-10-27
+  - sources: SRC-00251
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### energy advantage ratio
 
@@ -189,6 +193,10 @@ Topic code `MEM`. Last reviewed 2026-10-28.
   - sources: SRC-00143
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0060 — see the open register
+- **≈55000 ns** — Under a positive bias of 2.5 V, the average switching time following a RESET operation that created a 2 nm gap in the filament is 55 µs.
+  - `CLM-MEM-0041` · gap_size 2 nm · grade B · credibility unknown · simulated · as of 2026-10-27
+  - sources: SRC-00251
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -219,6 +227,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 39
-- grades: {'B': 39}
-- distinct sources: 13
+- claims: 41
+- grades: {'B': 41}
+- distinct sources: 14

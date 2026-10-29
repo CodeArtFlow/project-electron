@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-10-28.
+Topic code `DEV`. Last reviewed 2026-10-29.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -64,6 +64,14 @@ Topic code `DEV`. Last reviewed 2026-10-28.
 - **≈100 nm** — The spin-coated PEDOT:PSS layer thickness is approximately 100 nm.
   - `CLM-DEV-0068` · material PEDOT:PSS · grade B · credibility unknown · measured · as of 2026-10-15
   - sources: SRC-00155
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **22.17 nm** — For an iDMI value of 3.7 mJ/m² with RKKY exchange coupling fixed at -0.2 mJ/m², the skyrmion radius in the upper ferromagnetic layer reaches 22.17 nm.
+  - `CLM-DEV-0084` · rkky_coupling -0.2 mJ/m² · grade B · credibility unknown · simulated · as of 2026-10-27
+  - sources: SRC-00247
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **22.21 nm** — For an iDMI value of 3.7 mJ/m² with RKKY exchange coupling fixed at -0.2 mJ/m², the skyrmion radius in the lower ferromagnetic layer reaches 22.21 nm.
+  - `CLM-DEV-0085` · rkky_coupling -0.2 mJ/m² · grade B · credibility unknown · simulated · as of 2026-10-27
+  - sources: SRC-00247
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
@@ -373,6 +381,6 @@ _None._
 
 ## Evidence base
 
-- claims: 80
-- grades: {'B': 80}
-- distinct sources: 35
+- claims: 82
+- grades: {'B': 82}
+- distinct sources: 36

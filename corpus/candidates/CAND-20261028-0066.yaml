@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.37168v1
 doi: null
-title: Channel-Differentiated Topological Charge Flips and Formation of Janus Bound
-  States in the Continuum in Single-Layer Photonic Lattices
+title: Channel-Differentiated Topological Charge Flips and Formation of Janus Bound States in the Continuum
+  in Single-Layer Photonic Lattices
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-27'
@@ -23,6 +23,70 @@ id: CAND-20261028-0066
 harvested_date: '2026-10-28'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-29'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: In the vertically symmetric photonic lattice (with epsilon_c = epsilon_s = 2.1316, epsilon_avg
+      = 12, delta_epsilon = 1, and t = 0.5 * Lambda) at the fourth stop
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''ρF1 (band
+      flip) 0.2419645'''
+    quotes:
+    - ρF1 (band flip) 0.2419645
+    - calculated by RCW A and FEM.
+    - vertically symmetric lattice (ϵc =ϵ s = 2.1316,ϵ avg = 12,∆ϵ= 1,t= 0.5Λ)
+    - fourth stop band
+  - statement: In the vertically symmetric photonic lattice at the fourth stop band, the merging-induced
+      charge flip point rho_F3 occurs at rho = 0.523078 according to RCWA ca
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''ρF3 (merging)
+      0.523078'''
+    quotes:
+    - ρF3 (merging) 0.523078
+    - calculated by RCW A and FEM.
+    - vertically symmetric lattice (ϵc =ϵ s = 2.1316,ϵ avg = 12,∆ϵ= 1,t= 0.5Λ)
+    - fourth stop band
+  - statement: For the vertically asymmetric lattice (with epsilon_c = 1, epsilon_s = 2.1316, epsilon_avg
+      = 12, delta_epsilon = 1, and t = 0.5 * Lambda) at the fourth stop ban
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''width 3.955×10
+      −3'''
+    quotes:
+    - width 3.955×10 −3
+    - calculated by RCW A and FEM.
+    - vertically asymmetric lattice (ϵc = 1,ϵ s = 2.1316,ϵ avg = 12,∆ϵ= 1,t= 0.5Λ)
+    - fourth stop band
+  - statement: For the vertically asymmetric lattice near the first band flip at delta_epsilon = 1 (fourth
+      stop band), RCWA calculates the Janus window width delta_rho_J1 to b
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''1.8×10 −7'''
+    quotes:
+    - 1.8×10 −7
+    - calculated by RCWA.
+    - '1'
+    - near the three band flips,ρBF1 < ρBF2 < ρBF3
+  - statement: For a 1D silicon zero-contrast grating on SiO2 at the second stop band (t = 0.1 * Lambda,
+      h = 0.4 * Lambda), the downward channel flips charge at rho = 0.350478
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - The downward channel flips atρ= 0.35048
+    - calculated by RCWA.
+    - silicon ZCGs on SiO2 with an air cover
+    - second stop band
+  - statement: 'For a 1D silicon zero-contrast grating on SiO2 at the second stop band (t = 0.1 * Lambda,
+      h = 0.4 * Lambda), RCWA gives a Janus window width of 0.06207 in duty '
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''width 6.207×10
+      −2'''
+    quotes:
+    - width 6.207×10 −2
+    - calculated by RCW A and FEM.
+    - 1D Si ZCGs of Fig. 6
+    - second stop band
+  tokens:
+    input: 38844
+    output: 2647
+  fetched_chars: 96952

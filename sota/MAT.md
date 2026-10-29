@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-28.
+Topic code `MAT`. Last reviewed 2026-10-29.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -123,6 +123,10 @@ Topic code `MAT`. Last reviewed 2026-10-28.
 - **1e-06 GHz** — The laser beam operates at a repetition rate of 1 kHz.
   - `CLM-MAT-0153` · wavelength 400 nm · grade B · credibility unknown · measured · as of 2026-10-16
   - sources: SRC-00174
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈2.5 GHz** — The average frequency-domain linewidth extracted from thermal BLS spectra over the investigated magnetic field range is approximately 2.5 GHz.
+  - `CLM-MAT-0228` · component α-Fe2O3 microdisk · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00252
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### length device
@@ -334,6 +338,18 @@ Topic code `MAT`. Last reviewed 2026-10-28.
   - `CLM-MAT-0216` · material MoSSe-Se, parameter a0 · grade B · credibility unknown · simulated · as of 2026-10-23
   - sources: SRC-00236
   - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- **40 nm** — The patterned hematite film thickness is 40 nm.
+  - `CLM-MAT-0225` · material α-Fe 2O3, substrate sapphire (Al2O3) · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00252
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **3000 nm** — The microdisks patterned from the hematite film have a diameter of 3 µm.
+  - `CLM-MAT-0226` · component microdisk · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00252
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **3000 nm** — The stripline antenna used for driving coherent magnons has a width of 3 µm.
+  - `CLM-MAT-0227` · component stripline antenna · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00252
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -361,6 +377,10 @@ Topic code `MAT`. Last reviewed 2026-10-28.
 - **4.8e-07 W/mm^2** — The 2-inch-round tunable coating generates a power density of 0.48 W/m2 at noon time in ambient condition.
   - `CLM-MAT-0026` · environment ambient · grade B · credibility unknown · measured · as of 2026-09-29
   - sources: SRC-00048
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ ≈1.4e+06 W/mm^2** — The maximum critical power density reached approximately 140 MW/cm2.
+  - `CLM-MAT-0223` · material TiNx/Ti/TiNx · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00250
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### qualitative
@@ -729,6 +749,18 @@ Topic code `MAT`. Last reviewed 2026-10-28.
   - `CLM-MAT-0219` · trilayer_configuration ZnO(40 nm)/Ni(3 nm)/Pt(3 nm) · grade B · credibility unknown · measured · as of 2026-10-27
   - sources: SRC-00244
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- At zero magnetic field, the ratio between the non-reciprocal and reciprocal part of resistivity in CoTa3S6 induced by non-coplanar antiferromagnetic order is approximately 3.1x10^-12 m^2/A.
+  - `CLM-MAT-0220` · mechanism non-coplanar antiferromagnetic order · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00246
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Irida-graphane has a hydrogenation energy of -0.53 eV/H relative to irida-graphene and molecular hydrogen.
+  - `CLM-MAT-0221` · grade B · credibility unknown · simulated · as of 2026-10-27
+  - sources: SRC-00248
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Irida-graphane has an in-plane stiffness of approximately 156 N/m along both the x- and y-directions.
+  - `CLM-MAT-0222` · grade B · credibility unknown · simulated · as of 2026-10-27
+  - sources: SRC-00248
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -792,6 +824,10 @@ Topic code `MAT`. Last reviewed 2026-10-28.
   - `CLM-MAT-0217` · setting Tight SCF, parameter_change Tightening the electronic threshold by 100-fold · grade B · credibility unknown · simulated · as of 2026-10-27
   - sources: SRC-00243
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **2.17 percent** — Upon reactivation after cooling from a 24 h test at 90% critical power, the mean relative deviation for the three investigated widths was 2.17%.
+  - `CLM-MAT-0224` · power_level 90% of the critical value, test_duration 24 h · grade B · credibility unknown · measured · as of 2026-10-27
+  - sources: SRC-00250
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -848,6 +884,13 @@ Topic code `MAT`. Last reviewed 2026-10-28.
 - **-269.95 degC** — Under optimal tensile strain of +2%, the superconducting transition temperature estimated from the temperature dependence of the gap is 3.2 K.
   - `CLM-MAT-0210` · strain +2%, method anisotropic Migdal-Eliashberg equations · grade B · credibility unknown · simulated · as of 2026-10-23
   - sources: SRC-00229
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+
+### temperature delta
+
+- **≤ ≈5 K** — Under strong microwave driving at 128 mW power, finite-element simulations indicate a local temperature rise of only approximately 5 K.
+  - `CLM-MAT-0229` · p_mw 128 mW, simulation_type finite-element simulations · grade B · credibility unknown · simulated · as of 2026-10-27
+  - sources: SRC-00252
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### thermal conductivity
@@ -1076,6 +1119,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 219
-- grades: {'B': 219}
-- distinct sources: 83
+- claims: 229
+- grades: {'B': 229}
+- distinct sources: 87

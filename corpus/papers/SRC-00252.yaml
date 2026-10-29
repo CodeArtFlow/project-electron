@@ -1,0 +1,128 @@
+id: SRC-00252
+title: 'Magnons in α-Fe2O3 microdisks: from thermal to coherent excitation'
+doi: null
+arxiv_id: 2610.37205v1
+url: https://arxiv.org/abs/2610.37205v1
+venue_id: arxiv_api
+authors:
+- name: Jinlong Wang
+  affiliation: null
+  corresponding: null
+- name: Katharina Müller
+  affiliation: null
+  corresponding: null
+- name: Haishen Peng
+  affiliation: null
+  corresponding: null
+- name: Janine Gückelhorn
+  affiliation: null
+  corresponding: null
+- name: Wenjie Song
+  affiliation: null
+  corresponding: null
+- name: Lutong Sheng
+  affiliation: null
+  corresponding: null
+- name: Jilei Chen
+  affiliation: null
+  corresponding: null
+- name: Song Liu
+  affiliation: null
+  corresponding: null
+- name: Dapeng Yu
+  affiliation: null
+  corresponding: null
+- name: Stephan Geprägs
+  affiliation: null
+  corresponding: null
+- name: Matthias Althammer
+  affiliation: null
+  corresponding: null
+- name: Haiming Yu
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-27'
+retrieved_date: '2026-10-29'
+access: full_text
+read_scope: Automated reading. The full PDF text (28,757 characters, 6 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.37205v1 on
+  2026-10-29. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Epitaxial 40 nm thickα-Fe 2O3 thin films are grown on (0001)-oriented single-crystalline sapphire
+  (Al2O3) substrates via pulsed laser deposition [Fig. 1(b)], with growth parameters detailed in our previous
+  work 39.”
+
+  “The high crystalline quality of the films is confirmed by high-resolution X-ray diffraction (see supplementary
+  material (SM)).”
+
+  “To reduce the influence of large-scale magnetic inhomogeneity and enable the characterization of individual
+  magnetic structures, the films are patterned into microdisks with a diameter of 3µm [Fig. 1(c)].”
+
+  “SEM image of a representativeα-Fe 2O3 microdisk (scale bar: 1µm).”
+
+  “For coherent magnon excitation, a 3µm wide Ti(3 nm)/Au(80 nm) stripline antenna is deposited adjacent
+  to the microdisk, with an edge-to-edge separation of 0.5µm, and connected to a vector network analyzer
+  (VNA).”
+
+  “As shown in Fig. 2(c), the measured linewidth remains of the same order over most of the investigated
+  field range, with an average value of approximately 2.5 GHz, corresponding to αeff ≈4.5×10 −5.”
+
+  “Thermal magnon spectra of a representativeα-Fe2O3 microdisk (disk 1) measured at various in-plane magnetic
+  fieldsH ext.”
+
+  “To assess whether the observed hardening can arise from microwave-induced heating, finite-element simulations
+  are performed and indicate a local temperature rise of only∼5 K at the highest microwave power (see
+  SM).”
+
+  “microwave power ranging from 4 to 128 mW.”
+
+  “finite-element simulations are performed and indicate a local temperature rise of only∼5 K at the highest
+  microwave power (see SM).”'
+method_summary: '“We use micro-focused Brillouin light scattering (BLS) to investigate the thermal and
+  coherent magnon spectra of individual disks.”
+
+  “The microwave current injected into the stripline generates a dynamic magnetic fieldh rf, driving the
+  coherent precession of the hematite spins.”'
+limitations: “We note that the measured BLS linewidth also contains unresolved extrinsic broadening contributions
+  such as finite wavevector acceptance, instrumental resolution, and residual magnetic inhomogeneities.
+  Therefore, the extracted value should be regarded as an upper estimate of the effective damping parameter.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 10751
+    output: 2772
+  claims_accepted: 5
+  claims_rejected: 3
+  rejected:
+  - statement: The laser spot size used in the BLS measurements has a diameter of 2 µm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The laser is focused into a 2µm diameter spot on the microdisk.
+    - Magnon characterization is performed using inelastic BLS with a 532 nm single-frequency green laser.
+  - statement: The wavelength of the green laser used for BLS measurements is 532 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Magnon characterization is performed using inelastic BLS with a 532 nm single-frequency green laser.
+  - statement: The distance separating the stripline antenna from the hematite microdisk edge-to-edge
+      is 0.5 µm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - For coherent magnon excitation, a 3µm wide Ti(3 nm)/Au(80 nm) stripline antenna is deposited adjacent
+      to the microdisk, with an edge-to-edge separation of 0.5µm, and connected to a vector network analyzer
+      (VNA).
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (measured: 4, simulated:
+  1). This field records the majority (measured); trust each claim''s own evidence_type over this one.'

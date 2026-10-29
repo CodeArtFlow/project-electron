@@ -1,0 +1,96 @@
+id: SRC-00251
+title: Cu intercalation and field-driven filament formation in vertically aligned MoS$_2$ memristors
+doi: null
+arxiv_id: 2610.37152v1
+url: https://arxiv.org/abs/2610.37152v1
+venue_id: arxiv_api
+authors:
+- name: Touko Lehenkari
+  affiliation: null
+  corresponding: null
+- name: Hannu-Pekka Komsa
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-27'
+retrieved_date: '2026-10-29'
+access: full_text
+read_scope: Automated reading. The full PDF text (69,557 characters, 16 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.37152v1 on
+  2026-10-29. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“followed by 10% Cu structure with a−0.18 eV binding energy per Cu.”
+
+  “The DFT results of the most favorable structures”
+
+  “The DFT results of the most favorable structures (7.7%, 10.0%, 11.1%, 12.2%) are marked in with black
+  crosses.”
+
+  “When using a positive bias of 2.5 V, corresponding to the same magnitude as in electroforming, we found
+  the average switching time of 55µs with a standard deviation of 27µs.”
+
+  “made gaps of 2 nm to the filaments”
+
+  “To estimate the switching times after an initial SET operation, we made gaps of 2 nm to the filaments
+  formed via voltage cycling”'
+method_summary: '“We use density-functional theory results to fine-tune a machine learning force field,
+  and the most important physical phenomena are further distilled into multi-particle kinetic Monte Carlo
+  simulations.”
+
+  “The DFT calculations were performed with the Vienna Ab-initio Simulation Package (VASP) [43, 44] within
+  projector-augmented wave scheme [45].”'
+limitations: “As the simulations become more computationally expensive with larger simulation boxes, we
+  cannot quite reach the device scales of some of the realized memristors [12, 14], yet we can reach the
+  25 nm film thickness used in some devices [13].”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 21442
+    output: 1953
+  claims_accepted: 2
+  claims_rejected: 4
+  rejected:
+  - statement: The DFT binding energy per Cu for the most stable enumerated structure at 11% Cu concentration
+      (MoS2Cu0.11) is -0.21 eV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The best
+      structure is found at 11% (3 Cu atoms in 2×2×1 supercell of 2'''
+    quotes:
+    - The best structure is found at 11% (3 Cu atoms in 2×2×1 supercell of 2H-MoS2) with a DFT binding
+      energy of−0.21 eV per Cu
+    - The DFT results of the most favorable structures (7.7%, 10.0%, 11.1%, 12.2%) are marked in with
+      black crosses.
+    - MoS2Cu0.11
+    - DFT binding energy of−0.21 eV per Cu
+  - statement: The fine-tuned machine-learned force field achieved a mean absolute error of 7 meV for
+      binding energy per Cu compared to DFT calculations.
+    reason: the value 0.007 does not appear in any of the claim's quotes
+    quotes:
+    - Overall, the mean absolute error decreased to just 7 meV, showing a substantial improvement over
+      the foundation model.
+    - The results for two- and three-Cu structures, obtained using the FT-MLFF as well as the foundation
+      model MatterSim-v1.0.0-5M, are compared against DFT in Fig.1c
+    - The fine-tuned model also reproduces the properties of single Cu atoms
+  - statement: The mean average error between the dimer expansion and the fine-tuned machine-learned force
+      field calculated binding energies for four-Cu clusters is 4 meV.
+    reason: the value 0.004 does not appear in any of the claim's quotes
+    quotes:
+    - The mean average error between the methods is just 4 meV with all the structures calculated.
+    - The FT-MLFF binding energies are compared against binding energies calculated with the dimer expansion
+      in Fig. 4b.
+    - randomly generated clusters containing four Cu atoms
+  - statement: For a 25 nm device pre-conditioned via alternating voltage sweeps of 2.5 V for 1 ms, kinetic
+      Monte Carlo simulations achieved filament formation in an average t
+    reason: the statement contains the number 25, which none of its quotes contain
+    quotes:
+    - We performed 10 simulation runs and achieved filament formation in 39 ms on average, corresponding
+      to roughly 20 cycles.
+    - the structures were formed using alternative sweeps of 2.5 V for 1 ms for a 25 nm device.
+    - alternative sweeps of 2.5 V
+    - 2.5 V for 1 ms
+corrections: []

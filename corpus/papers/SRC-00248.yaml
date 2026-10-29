@@ -1,0 +1,81 @@
+id: SRC-00248
+title: 'First-Principles Investigation of Irida-Graphane: A Wide-Band-Gap Semiconductor Derived from Irida-Graphene'
+doi: null
+arxiv_id: 2610.37095v1
+url: https://arxiv.org/abs/2610.37095v1
+venue_id: arxiv_api
+authors:
+- name: Djardiel S. Gomes
+  affiliation: null
+  corresponding: null
+- name: Isaac M. Félix
+  affiliation: null
+  corresponding: null
+- name: Marcelo L. Pereira Junior
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-27'
+retrieved_date: '2026-10-29'
+access: full_text
+read_scope: Automated reading. The full PDF text (48,420 characters, 15 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.37095v1 on
+  2026-10-29. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The hydrogenation energy of −0.53 eV/H indicates that the hydrogenation of irida-graphene
+  from molecular hydrogen is exothermic.”
+
+  “First-principles calculations were performed using the SIESTA code, 47,48 which is based on the DFT
+  formalism.”
+
+  “We obtain an in-plane stiﬀness of ap- proximately 156 N/m along both the x- and y-directions and an
+  in-plane bulk modulus of 77 N/m.”'
+method_summary: '“First-principles calculations were performed using the SIESTA code, 47,48 which is based
+  on the DFT formalism.”
+
+  “Given that GGA/PBE systematically underestimates the electronic band gap, additional calculations of
+  the electronic and optical properties were carried out using the hybrid Heyd-Scuseria-Ernzerhof (HSE06)
+  functional 52 as implemented in the HONPAS package.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 18091
+    output: 2108
+  claims_accepted: 2
+  claims_rejected: 3
+  rejected:
+  - statement: Irida-graphane has an indirect band gap of 4.68 eV calculated at the PBE level.
+    reason: 'unit conversion refused: voltage: cannot convert 4.68 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** '
+    quotes:
+    - The band gap is 4.68 eV at the PBE level and 6.0 eV with the HSE06 functional, and the smallest
+      direct gap, located at the Γ point, is 5.39 eV at the PBE level.
+    - Irida-graphane is mechanically isotropic, with an in-plane stiﬀness of approximately 156 N/m, a
+      Poisson’s ratio of approximately 0.1, and critical strains of ap- proximately 20%. Hydrogenation
+      transforms the metallic parent structure into a
+  - statement: Irida-graphane has an indirect band gap of 6.0 eV calculated with the HSE06 functional.
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - The band gap is 4.68 eV at the PBE level and 6.0 eV with the HSE06 functional, and the smallest
+      direct gap, located at the Γ point, is 5.39 eV at the PBE level.
+    - Irida-graphane is mechanically isotropic, with an in-plane stiﬀness of approximately 156 N/m, a
+      Poisson’s ratio of approximately 0.1, and critical strains of ap- proximately 20%. Hydrogenation
+      transforms the metallic parent structure into a
+  - statement: Irida-graphane has a smallest direct gap of 5.39 eV at the Γ point calculated at the PBE
+      level.
+    reason: 'unit conversion refused: voltage: cannot convert 5.39 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** '
+    quotes:
+    - The band gap is 4.68 eV at the PBE level and 6.0 eV with the HSE06 functional, and the smallest
+      direct gap, located at the Γ point, is 5.39 eV at the PBE level.
+    - Irida-graphane is mechanically isotropic, with an in-plane stiﬀness of approximately 156 N/m, a
+      Poisson’s ratio of approximately 0.1, and critical strains of ap- proximately 20%. Hydrogenation
+      transforms the metallic parent structure into a
+corrections: []

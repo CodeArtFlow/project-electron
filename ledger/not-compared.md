@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**10254 pair(s)** as of 2026-10-28.
+**10981 pair(s)** as of 2026-10-29.
 
 ## `area_die` (11 pair(s))
 
@@ -40,52 +40,52 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0077` = 4 mA | 85% | process_step=current ramp-down | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° |
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0075` = 1.5 mA | 60% | process_step=current ramp-down | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° |
 
-## `energy` (264 pair(s))
+## `energy` (312 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-MAT-0048` = 185 meV | `CLM-MEM-0040` = -180 meV | 197% | material=LiFePO4 | method=DFT |
 | `CLM-MAT-0078` = 4810 meV | `CLM-MAT-0172` = -5090 meV | 194% | defect_complex=VAl(ON)3, model=DFT | material=MLBP |
+| `CLM-MAT-0002` = 200 meV | `CLM-MEM-0040` = -180 meV | 190% | mechanism=optical phonon | method=DFT |
+| `CLM-MAT-0200` = 200 meV | `CLM-MEM-0040` = -180 meV | 190% | band=2.3 eV emission, impurity_content=<0.1 ppm | method=DFT |
 | `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0172` = -5090 meV | 185% | defect_complex=VAl(ON)3 | material=MLBP |
+| `CLM-MAT-0104` = 220 meV | `CLM-MEM-0040` = -180 meV | 182% | measurement=RIXS, absorption_edge=Fe L3 edge | method=DFT |
+| `CLM-MAT-0049` = 296 meV | `CLM-MEM-0040` = -180 meV | 161% | material=LiFePO4 | method=DFT |
+| `CLM-MAT-0050` = 102 meV | `CLM-MEM-0040` = -180 meV | 157% | material=Li6PS5Cl | method=DFT |
+| `CLM-MEM-0040` = -2.884e-05 fJ | `CLM-PROC-0031` = 1.458e-05 fJ | 151% | method=DFT | error_metric=root-mean-square deviation per formula unit |
+| `CLM-MAT-0201` = 370 meV | `CLM-MEM-0040` = -180 meV | 149% | band=2.3 eV emission, impurity_content=<0.1 ppm | method=DFT |
 | `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0172` = -5090 meV | 140% | synthesis_condition=Nitrogen-rich | material=MLBP |
 | `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0172` = -5090 meV | 139% | synthesis_condition=Nitrogen-rich | material=MLBP |
 | `CLM-MAT-0014` = 1940 meV | `CLM-MAT-0172` = -5090 meV | 138% | synthesis_condition=Nitrogen-rich | material=MLBP |
+| `CLM-MEM-0018` = 8.011e-05 fJ | `CLM-MEM-0040` = -2.884e-05 fJ | 136% | temperature=100 K, measurement_method=ARPES | method=DFT |
 | `CLM-MAT-0051` = 1801 meV | `CLM-MAT-0172` = -5090 meV | 135% | axis=c | material=MLBP |
+| `CLM-MAT-0001` = 59.8 meV | `CLM-MEM-0040` = -180 meV | 133% | mechanism=surface polar phonon, substrate=SiO2 | method=DFT |
 | `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0172` = -5090 meV | 126% | synthesis_condition=Nitrogen-rich | material=MLBP |
+| `CLM-MAT-0013` = 1340 meV | `CLM-MEM-0040` = -180 meV | 113% | synthesis_condition=Nitrogen-rich | method=DFT |
+| `CLM-MAT-0051` = 1801 meV | `CLM-MEM-0040` = -180 meV | 110% | axis=c | method=DFT |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MEM-0018` = 500 meV | 110% | material=MLBP | temperature=100 K, measurement_method=ARPES |
+| `CLM-MAT-0014` = 1940 meV | `CLM-MEM-0040` = -180 meV | 109% | synthesis_condition=Nitrogen-rich | method=DFT |
+| `CLM-MAT-0015` = 1980 meV | `CLM-MEM-0040` = -180 meV | 109% | synthesis_condition=Nitrogen-rich | method=DFT |
+| `CLM-MAT-0016` = 2020 meV | `CLM-MEM-0040` = -180 meV | 109% | synthesis_condition=Nitrogen-rich | method=DFT |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0201` = 370 meV | 107% | material=MLBP | band=2.3 eV emission, impurity_content=<0.1 ppm |
 | `CLM-MAT-0104` = 220 meV | `CLM-MAT-0172` = -5090 meV | 104% | measurement=RIXS, absorption_edge=Fe L3 edge | material=MLBP |
+| `CLM-MAT-0077` = 4330 meV | `CLM-MEM-0040` = -180 meV | 104% | defect_complex=VAl(ON)3 | method=DFT |
 | `CLM-MAT-0002` = 200 meV | `CLM-MAT-0172` = -5090 meV | 104% | mechanism=optical phonon | material=MLBP |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0200` = 200 meV | 104% | material=MLBP | band=2.3 eV emission, impurity_content=<0.1 ppm |
+| `CLM-MAT-0078` = 4810 meV | `CLM-MEM-0040` = -180 meV | 104% | defect_complex=VAl(ON)3, model=DFT | method=DFT |
 | `CLM-MAT-0172` = -5090 meV | `CLM-PROC-0031` = 91 meV | 102% | material=MLBP | error_metric=root-mean-square deviation per formula unit |
+| `CLM-MAT-0115` = 2.22 meV | `CLM-MEM-0040` = -180 meV | 101% | state=3p | method=DFT |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0172` = -5090 meV | 101% | mechanism=surface polar phonon, substrate=SiO2 | material=MLBP |
 | `CLM-MAT-0113` = 15.9 meV | `CLM-MAT-0172` = -5090 meV | 100% | method=three-band nearest-neighbor exciton-geometric calculation | material=MLBP |
+| `CLM-MAT-0114` = 0.13 meV | `CLM-MEM-0040` = -180 meV | 100% | material=WSe2 | method=DFT |
 | `CLM-MAT-0115` = 2.22 meV | `CLM-MAT-0172` = -5090 meV | 100% | state=3p | material=MLBP |
 | `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0001` = 9.581e-06 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | mechanism=surface polar phonon, substrate=SiO2 |
 | `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0002` = 3.204e-05 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | mechanism=optical phonon |
 | `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0013` = 0.0002147 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | synthesis_condition=Nitrogen-rich |
 | `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0014` = 0.0003108 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | synthesis_condition=Nitrogen-rich |
 | `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0015` = 0.0003172 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | synthesis_condition=Nitrogen-rich |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0016` = 0.0003236 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | synthesis_condition=Nitrogen-rich |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0048` = 2.964e-05 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | material=LiFePO4 |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0049` = 4.742e-05 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | material=LiFePO4 |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0050` = 1.634e-05 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | material=Li6PS5Cl |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0051` = 0.0002886 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | axis=c |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0077` = 0.0006937 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | defect_complex=VAl(ON)3 |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0078` = 0.0007706 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | defect_complex=VAl(ON)3, model=DFT |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0085` = 8.54e-06 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | material=CrSiCN4, method=PBE+SOC |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0086` = 8.395e-06 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | material=CrGeCN4, method=PBE+SOC |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0104` = 3.525e-05 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | measurement=RIXS, absorption_edge=Fe L3 edge |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0113` = 2.547e-06 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | method=three-band nearest-neighbor exciton-geometric calculation |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0114` = 2.083e-08 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | material=WSe2 |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0115` = 3.557e-07 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | state=3p |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0172` = -0.0008155 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | material=MLBP |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0200` = 3.204e-05 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | band=2.3 eV emission, impurity_content=<0.1 ppm |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0201` = 5.928e-05 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | band=2.3 eV emission, impurity_content=<0.1 ppm |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MEM-0018` = 8.011e-05 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | temperature=100 K, measurement_method=ARPES |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-PROC-0031` = 1.458e-05 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | error_metric=root-mean-square deviation per formula unit |
-| `CLM-LITHO-0002` = 1e+12 fJ | `CLM-MAT-0001` = 9.581e-06 fJ | 100% | component=near-infrared laser pulse | mechanism=surface polar phonon, substrate=SiO2 |
 
-_and 224 more_
+_and 272 more_
 
 ## `energy_advantage_ratio` (7 pair(s))
 
@@ -99,7 +99,7 @@ _and 224 more_
 | `CLM-ARCH-0016` = 1.22 x | `CLM-MEM-0025` = 3.7 x | 67% | device=B200, benchmark=GroupGEMM | baseline=SoA mappings |
 | `CLM-ARCH-0005` = 1.32 x | `CLM-MEM-0025` = 3.7 x | 64% | process=TSMC 16nm FinFET, comparison=sinusoidal vs trapezoidal power-clock, gate_at_maximum=XOR/XNOR, vclk_at_maximum=0.5 V, fclk_at_maximum=384 MHz | baseline=SoA mappings |
 
-## `frequency` (418 pair(s))
+## `frequency` (442 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -144,9 +144,9 @@ _and 224 more_
 | `CLM-DEV-0012` = 370 GHz | `CLM-PROC-0038` = 0.00061 GHz | 100% | magnetic_field=8.1 T, frequency=1.9 THz | component=laser system |
 | `CLM-DEV-0013` = 180 GHz | `CLM-MAT-0148` = 0.001756 GHz | 100% | magnetic_field=7.5 T, frequency=2.2 THz | transition=f-g |
 
-_and 378 more_
+_and 402 more_
 
-## `length_device` (3117 pair(s))
+## `length_device` (3508 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -191,9 +191,9 @@ _and 378 more_
 | `CLM-MAT-0059` = 1000 nm | `CLM-MAT-0136` = 0.006 nm | 100% | region=pristine zone, temperature=1.5 K | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-MAT-0059` = 1000 nm | `CLM-MAT-0137` = 0.011 nm | 100% | region=pristine zone, temperature=1.5 K | superlattice_layer_n=3, superlattice_layer_m=5 |
 
-_and 3077 more_
+_and 3468 more_
 
-## `power` (204 pair(s))
+## `power` (226 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -212,11 +212,13 @@ _and 3077 more_
 | `CLM-ARCH-0009` = 26.8 mW | `CLM-MAT-0190` = 5.6e-09 mW | 100% | architecture=MiX-INT4, array_size=512-MAC, process=28nm, frequency=500 MHz | channel_material=(PEA)2PbI4 |
 | `CLM-ARCH-0009` = 26.8 mW | `CLM-MAT-0191` = 5e-08 mW | 100% | architecture=MiX-INT4, array_size=512-MAC, process=28nm, frequency=500 MHz | device_type=drop-cast control devices |
 | `CLM-ARCH-0009` = 26.8 mW | `CLM-PHOT-0068` = 0.00024 mW | 100% | architecture=MiX-INT4, array_size=512-MAC, process=28nm, frequency=500 MHz | operating_point=3 mW total trapping-beam power |
+| `CLM-ARCH-0037` = 787 mW | `CLM-ARCH-0166` = 0.027 mW | 100% | component=synthesized SRAM-PIM subsystem | processor=TEXEL |
 | `CLM-ARCH-0037` = 787 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | component=synthesized SRAM-PIM subsystem | benchmark_circuit=BGR, framework=AgenticSizing |
 | `CLM-ARCH-0037` = 787 mW | `CLM-MAT-0189` = 2e-10 mW | 100% | component=synthesized SRAM-PIM subsystem | channel_material=(PEA)2PbI4, vds=5 V |
 | `CLM-ARCH-0037` = 787 mW | `CLM-MAT-0190` = 5.6e-09 mW | 100% | component=synthesized SRAM-PIM subsystem | channel_material=(PEA)2PbI4 |
 | `CLM-ARCH-0037` = 787 mW | `CLM-MAT-0191` = 5e-08 mW | 100% | component=synthesized SRAM-PIM subsystem | device_type=drop-cast control devices |
 | `CLM-ARCH-0037` = 787 mW | `CLM-PHOT-0068` = 0.00024 mW | 100% | component=synthesized SRAM-PIM subsystem | operating_point=3 mW total trapping-beam power |
+| `CLM-ARCH-0038` = 9599 mW | `CLM-ARCH-0166` = 0.027 mW | 100% | component=added compute and buffer logic in HBM-PIM | processor=TEXEL |
 | `CLM-ARCH-0038` = 9599 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | component=added compute and buffer logic in HBM-PIM | benchmark_circuit=BGR, framework=AgenticSizing |
 | `CLM-ARCH-0038` = 9599 mW | `CLM-MAT-0189` = 2e-10 mW | 100% | component=added compute and buffer logic in HBM-PIM | channel_material=(PEA)2PbI4, vds=5 V |
 | `CLM-ARCH-0038` = 9599 mW | `CLM-MAT-0190` = 5.6e-09 mW | 100% | component=added compute and buffer logic in HBM-PIM | channel_material=(PEA)2PbI4 |
@@ -231,14 +233,12 @@ _and 3077 more_
 | `CLM-ARCH-0114` = 3.55 mW | `CLM-MAT-0189` = 2e-10 mW | 100% | component=PIM Chunk List, location=DRAM chip | channel_material=(PEA)2PbI4, vds=5 V |
 | `CLM-ARCH-0114` = 3.55 mW | `CLM-MAT-0190` = 5.6e-09 mW | 100% | component=PIM Chunk List, location=DRAM chip | channel_material=(PEA)2PbI4 |
 | `CLM-ARCH-0114` = 3.55 mW | `CLM-MAT-0191` = 5e-08 mW | 100% | component=PIM Chunk List, location=DRAM chip | device_type=drop-cast control devices |
+| `CLM-ARCH-0149` = 4020 mW | `CLM-ARCH-0166` = 0.027 mW | 100% | component=FIGFLEX, toggle_rate=0.2, activation_format=FP16, precision=INT4 | processor=TEXEL |
 | `CLM-ARCH-0149` = 4020 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | component=FIGFLEX, toggle_rate=0.2, activation_format=FP16, precision=INT4 | benchmark_circuit=BGR, framework=AgenticSizing |
 | `CLM-ARCH-0149` = 4020 mW | `CLM-MAT-0189` = 2e-10 mW | 100% | component=FIGFLEX, toggle_rate=0.2, activation_format=FP16, precision=INT4 | channel_material=(PEA)2PbI4, vds=5 V |
 | `CLM-ARCH-0149` = 4020 mW | `CLM-MAT-0190` = 5.6e-09 mW | 100% | component=FIGFLEX, toggle_rate=0.2, activation_format=FP16, precision=INT4 | channel_material=(PEA)2PbI4 |
-| `CLM-ARCH-0149` = 4020 mW | `CLM-MAT-0191` = 5e-08 mW | 100% | component=FIGFLEX, toggle_rate=0.2, activation_format=FP16, precision=INT4 | device_type=drop-cast control devices |
-| `CLM-ARCH-0149` = 4020 mW | `CLM-PHOT-0068` = 0.00024 mW | 100% | component=FIGFLEX, toggle_rate=0.2, activation_format=FP16, precision=INT4 | operating_point=3 mW total trapping-beam power |
-| `CLM-ARCH-0150` = 6670 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | component=FIGFLEX, benchmark=Llama-3.1-8B, activation_format=FP16, interface=HBM3E | benchmark_circuit=BGR, framework=AgenticSizing |
 
-_and 164 more_
+_and 186 more_
 
 ## `power_density` (1 pair(s))
 
@@ -246,13 +246,14 @@ _and 164 more_
 |---|---|---|---|---|
 | `CLM-DEV-0079` = 3.1e-05 W/mm^2 | `CLM-MAT-0026` = 4.8e-07 W/mm^2 | 98% | structure=long-base p+-n device, n_base_width=300 𝜇𝜇m, framework=extended theory | environment=ambient |
 
-## `relative_deviation` (4878 pair(s))
+## `relative_deviation` (5073 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-EDA-0003` = 60 percent | `CLM-MAT-0111` = -60 percent | 200% | benchmark_circuit=LDO benchmark, framework=proposed method | sample=B1-1 |
 | `CLM-EDA-0004` = 60 percent | `CLM-MAT-0111` = -60 percent | 200% | circuit=most complex circuit, framework=proposed framework | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-PROC-0044` = 59.9 percent | 200% | sample=B1-1 | voltage=8 VAg/AgCl, material=1 μm n-type GaN |
+| `CLM-ARCH-0170` = 62.3 percent | `CLM-MAT-0111` = -60 percent | 196% | frequency=80 MHz, model=ConvSNN | sample=B1-1 |
 | `CLM-ARCH-0089` = 64.2 percent | `CLM-MAT-0111` = -60 percent | 193% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0112` = 66.8 percent | 190% | sample=B1-1 | baseline=pure two-dimensional Coulomb reference, benchmark_protocol=high-field-calibrated |
 | `CLM-ARCH-0090` = 67.5 percent | `CLM-MAT-0111` = -60 percent | 189% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
@@ -289,9 +290,8 @@ _and 164 more_
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0022` = 100 percent | 160% | sample=B1-1 | device_technology=printed Ag/ZnO/Au ECM memristors |
 | `CLM-ARCH-0084` = 34 percent | `CLM-MAT-0111` = -60 percent | 157% | platform=Arrow, application=Sparse point cloud processing | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0198` = 34 percent | 157% | sample=B1-1 | method=DFT calculations, location=X valleys |
-| `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0064` = 31 percent | 152% | sample=B1-1 | disorder_type=radius disorder |
 
-_and 4838 more_
+_and 5033 more_
 
 ## `temperature` (211 pair(s))
 
@@ -340,7 +340,7 @@ _and 4838 more_
 
 _and 171 more_
 
-## `temperature_delta` (9 pair(s))
+## `temperature_delta` (12 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -349,10 +349,13 @@ _and 171 more_
 | `CLM-DEV-0024` = 30.4 K | `CLM-PHOT-0037` = 0.11 K | 100% | gate_bias_vgs=-2.7 V | cavity_length=20 µm, beam_shape=circular, incident_power=1.09 mW |
 | `CLM-DEV-0034` = 3 K | `CLM-PHOT-0091` = 281.6 K | 99% | time_after_cooling_onset=10 s | device=microdisk, pump_power=12.4 mW |
 | `CLM-DEV-0034` = 3 K | `CLM-PHOT-0086` = 275.2 K | 99% | time_after_cooling_onset=10 s | external_pump_power=300 μW |
+| `CLM-MAT-0229` = 5 K | `CLM-PHOT-0091` = 281.6 K | 98% | p_mw=128 mW, simulation_type=finite-element simulations | device=microdisk, pump_power=12.4 mW |
+| `CLM-MAT-0229` = 5 K | `CLM-PHOT-0086` = 275.2 K | 98% | p_mw=128 mW, simulation_type=finite-element simulations | external_pump_power=300 μW |
 | `CLM-DEV-0034` = 3 K | `CLM-PHOT-0037` = 0.11 K | 96% | time_after_cooling_onset=10 s | cavity_length=20 µm, beam_shape=circular, incident_power=1.09 mW |
 | `CLM-DEV-0024` = 30.4 K | `CLM-DEV-0034` = 3 K | 90% | gate_bias_vgs=-2.7 V | time_after_cooling_onset=10 s |
 | `CLM-DEV-0024` = 30.4 K | `CLM-PHOT-0091` = 281.6 K | 89% | gate_bias_vgs=-2.7 V | device=microdisk, pump_power=12.4 mW |
 | `CLM-DEV-0024` = 30.4 K | `CLM-PHOT-0086` = 275.2 K | 89% | gate_bias_vgs=-2.7 V | external_pump_power=300 μW |
+| `CLM-DEV-0024` = 30.4 K | `CLM-MAT-0229` = 5 K | 84% | gate_bias_vgs=-2.7 V | p_mw=128 mW, simulation_type=finite-element simulations |
 
 ## `thermal_conductivity` (1 pair(s))
 
@@ -360,7 +363,7 @@ _and 171 more_
 |---|---|---|---|---|
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0007` = 3100 W/(m*K) | 99% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | temperature=room-temperature, sample_13c_concentration=~0.00024% |
 
-## `time` (851 pair(s))
+## `time` (895 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -405,7 +408,7 @@ _and 171 more_
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-ARCH-0020` = 1.4e+07 ns | 100% | device_type=FTJ, architecture=Symmetry | concurrency_n_a=48, design=our design with tiering, component=end-to-end time-between-tokens (TBT) |
 | `CLM-ARCH-0014` = 153.5 ns | `CLM-ARCH-0021` = 2.7e+07 ns | 100% | device_type=FTJ, architecture=Symmetry | concurrency_n_a=128, design=our design with tiering |
 
-_and 811 more_
+_and 855 more_
 
 ## `voltage` (21 pair(s))
 

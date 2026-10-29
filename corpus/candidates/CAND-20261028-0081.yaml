@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.37033v1
 doi: null
-title: 'p-DCIM: A 28nm Probabilistic SRAM DCIM based Ising Machine for Near-Memory
-  Context Selection in LLM-RAG Pipeline'
+title: 'p-DCIM: A 28nm Probabilistic SRAM DCIM based Ising Machine for Near-Memory Context Selection in
+  LLM-RAG Pipeline'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-27'
@@ -27,6 +27,87 @@ id: CAND-20261028-0081
 harvested_date: '2026-10-28'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-29'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The fabricated p-DCIM macro occupies 0.16 mm2 of area.
+    reason: 'unit conversion refused: area_die: could not parse 0.16 ''mm 2'': Unit expression cannot
+      have a scaling factor.'
+    quotes:
+    - The macro is taped-out in a 28 nm process [0.16mm 2,0.41mW]
+    - 28 nm process
+    - p-DCIM
+  - statement: The fabricated macro operates at a clock frequency of 500 MHz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The fabricated macro occupies 0.16 mm2, operates at 500 MHz, and consumes approximately 0.41 mW
+      in probabilistic operation.
+    - p-DCIM
+  - statement: In deterministic mode, the p-DCIM macro active power is measured to be 0.406 mW.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - 'The measured active power is similar in the two operating modes: 0.406 mW in deterministic mode
+      and 0.413 mW in probabilistic mode, as shown in Fig. 2(f).'
+    - deterministic mode
+    - p-DCIM
+  - statement: In probabilistic mode, the p-DCIM macro active power is measured to be 0.413 mW.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - 'The measured active power is similar in the two operating modes: 0.406 mW in deterministic mode
+      and 0.413 mW in probabilistic mode, as shown in Fig. 2(f).'
+    - probabilistic mode
+    - p-DCIM
+  - statement: The supply voltage for deterministic operation is set to 0.9 V.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Deterministic operation is performed at V DDM = 0.9 V, where the SRAM operates reliably and pseudo-read-induced
+      disturbances are suppressed.
+    - Deterministic operation
+    - V DDM
+  - statement: The selected operating supply voltage V DDM for probabilistic mode is 0.6 V.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The dashed line marks the selected 0.6 V operating point.
+    - We therefore operate the SRAM at a fixed V DDM = 0.6 V, where the pseudo-read disturbance is relatively
+      stable, and control the effective annealing strength digitally through the number of coefficient
+      magnitude planes exposed to pseudo-read
+    - V DDM
+    - SRAM
+  - statement: Context selection for the evaluated workload takes approximately 2.2 ms.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - At the evaluated operating point, context selection requires approximately 2.2 ms and 0.9 µJ, while
+      maintaining answer quality competitive with LLM-based set-selection baselines.
+    - context selection
+  - statement: Context selection energy per query is estimated at approximately 0.9 µJ.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - At the evaluated operating point, context selection requires approximately 2.2 ms and 0.9 µJ, while
+      maintaining answer quality competitive with LLM-based set-selection baselines.
+    - context selection
+  tokens:
+    input: 14572
+    output: 2437
+  fetched_chars: 54317
