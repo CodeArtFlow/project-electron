@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-10-29.
+Topic code `ARCH`. Last reviewed 2026-10-31.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -113,6 +113,10 @@ Topic code `ARCH`. Last reviewed 2026-10-29.
   - sources: SRC-00220
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0094 — see the open register
+- **0.001 GHz** — The clock frequency of the comparator is 1 MHz.
+  - `CLM-ARCH-0176` · component comparator · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00262
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -473,6 +477,38 @@ Topic code `ARCH`. Last reviewed 2026-10-29.
   - `CLM-ARCH-0169` · grade B · credibility unknown · simulated · as of 2026-10-27
   - sources: SRC-00245
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- RV2GC achieves an online execution speedup over ARM2GC of 4,042.58x on the SHA3-256 workload.
+  - `CLM-ARCH-0171` · workload SHA3-256 · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00256
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The total layout area of the comparator integrated with the gain calibration circuit is 142 µm × 47 µm.
+  - `CLM-ARCH-0177` · layout_length 142 µm, layout_width 47 µm · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00262
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- In SPECspeed 2017, Caerus achieves a geomean speedup of 8.3%.
+  - `CLM-ARCH-0178` · benchmark SPECspeed 2017, design Caerus · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00265
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- In SPECspeed 2017, Caerus outperforms Berti by 2.0%.
+  - `CLM-ARCH-0179` · benchmark SPECspeed 2017, design Caerus · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00265
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Caerus outperforms BertiGO by 1.5%.
+  - `CLM-ARCH-0180` · baseline BertiGO · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00265
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- BertiGO improves on Berti by 0.5%.
+  - `CLM-ARCH-0181` · design BertiGO · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00265
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- CaerusL2 deployed in the L2C without an L1D prefetcher achieves a 10.0% speedup in SPECspeed 2017.
+  - `CLM-ARCH-0182` · benchmark SPECspeed 2017, design CaerusL2, location L2C without an L1D prefetcher · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00265
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- Caerus achieves a 9.6% geomean speedup across 55 randomly selected 8-core heterogeneous workload mixes.
+  - `CLM-ARCH-0183` · workload 55 randomly selected 8-core heterogeneous workload mixes, design Caerus · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00265
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -666,6 +702,10 @@ Topic code `ARCH`. Last reviewed 2026-10-29.
   - `CLM-ARCH-0170` · frequency 80 MHz, model ConvSNN · grade B · credibility unknown · measured · as of 2026-10-27
   - sources: SRC-00249
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≥ 71.3 percent** — Evaluator work other than protected-gate processing accounts for 71.3% to 93.2% of ARM2GC's measured runtime.
+  - `CLM-ARCH-0174` · system ARM2GC, benchmark_set nine benchmarks · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00256
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -725,6 +765,18 @@ Topic code `ARCH`. Last reviewed 2026-10-29.
   - `CLM-ARCH-0135` · case 7-bit factorization · grade B · credibility unknown · measured · as of 2026-10-22
   - sources: SRC-00214
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **8.0396e+10 ns** — Mini-Transformer executes 3,411,714 dynamic instructions online in 80.396 s.
+  - `CLM-ARCH-0172` · program Mini-Transformer, dynamic_instructions 3,411,714 · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00256
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **1.78015e+11 ns** — Mini-ResNet achieves an online execution time of 178.015 s over 11,022,541 dynamic instructions.
+  - `CLM-ARCH-0173` · program Mini-ResNet, dynamic_instructions 11,022,541 · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00256
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **2.14 ns** — The 32-bit MRUD MAC achieves a delay of 2.14 ns.
+  - `CLM-ARCH-0175` · process FreePDK 45nm · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00258
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -769,6 +821,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 170
-- grades: {'B': 170}
-- distinct sources: 53
+- claims: 183
+- grades: {'B': 183}
+- distinct sources: 57

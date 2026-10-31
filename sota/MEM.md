@@ -1,6 +1,6 @@
 # Memory — state of the art
 
-Topic code `MEM`. Last reviewed 2026-10-29.
+Topic code `MEM`. Last reviewed 2026-10-31.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -16,6 +16,14 @@ Topic code `MEM`. Last reviewed 2026-10-29.
   - `CLM-MEM-0040` · method DFT · grade B · credibility unknown · simulated · as of 2026-10-27
   - sources: SRC-00251
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈50000 fJ** — For RESET operations in the PCM cell, an average energy consumption of approximately 50 pJ was observed using a 10 ns voltage pulse width.
+  - `CLM-MEM-0042` · voltage_pulse_width 10 ns, operation RESET operations, device PCM · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00257
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **≈675 fJ** — An average energy consumption of about 0.675 pJ was observed for SET operations using a 10 ns voltage pulse width in the PCM device.
+  - `CLM-MEM-0043` · voltage_pulse_width 10 ns, operation SET operations, device PCM · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00257
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### energy advantage ratio
 
@@ -45,6 +53,10 @@ Topic code `MEM`. Last reviewed 2026-10-29.
   - sources: SRC-00118
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0050, CFL-0051 — see the open register
+- **≈10 nm** — The conventional ST-FMR analysis shows an apparent sign reversal of the extracted efficiency at a Pt thickness of approximately 10 nm.
+  - `CLM-MEM-0047` · material_stack CoFeB/Pt, analysis_method Conventional ST-FMR analysis · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00264
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### qualitative
 
@@ -100,6 +112,10 @@ Topic code `MEM`. Last reviewed 2026-10-29.
   - `CLM-MEM-0037` · grade B · credibility unknown · measured · as of 2026-10-21
   - sources: SRC-00203
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Weight noise reduces SDMI reconstruction similarity by 35.7%.
+  - `CLM-MEM-0046` · baseline memristive baseline · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00259
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -162,6 +178,14 @@ Topic code `MEM`. Last reviewed 2026-10-29.
   - `CLM-MEM-0039` · platform Jetson Orin Nano, threshold 550, verification_stage Single function verification · grade B · credibility unknown · measured · as of 2026-10-21
   - sources: SRC-00218
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **95.33 percent** — The PCMO RRAM artificial spiking neuron achieved an accuracy of 95.33% when identifying Fisher's Iris flower dataset in an SNN architecture.
+  - `CLM-MEM-0044` · dataset Fisher’s Iris flower dataset, architecture SNN architecture, device Pr0.7Ca0.3MnO3 (PCMO) RRAM · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00257
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **96 percent** — An ideal LIF neuron shows an accuracy of 96% on Fisher's Iris flower dataset.
+  - `CLM-MEM-0045` · model ideal LIF neuron, dataset Fisher’s Iris flower dataset · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00257
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### resistance
 
@@ -227,6 +251,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 41
-- grades: {'B': 41}
-- distinct sources: 14
+- claims: 47
+- grades: {'B': 47}
+- distinct sources: 17

@@ -22,6 +22,38 @@ id: CAND-20261030-0090
 harvested_date: '2026-10-30'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-31'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For an ABA graphene island under a displacement field of ∆1 = 0 meV and a relative island
+      area of η = 0.11, the relative deviation of the linear band energy gap
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - Supplementary Figure 7. Scaling of band-structure features as a function of system size. The relative
+      area ( η) is kept constant, while the island size ( ℓI) is increased. Linear fits are shown for
+      features exhibiting a linear dependence on
+    - ABA Δ1 = 0meV η = 0.11
+    - Δ1 = 0meV
+    - η = 0.11
+  - statement: For an ABC graphene island under a displacement field of ∆1 = 10 meV and a relative island
+      area of η = 0.44, the relative change in trigonal warping kext reache
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - Supplementary Figure 7. Scaling of band-structure features as a function of system size. The relative
+      area ( η) is kept constant, while the island size ( ℓI) is increased. Linear fits are shown for
+      features exhibiting a linear dependence on
+    - ABC Δ1 = 10meV η = 0.44
+    - Δ1 = 10meV
+    - η = 0.44
+  tokens:
+    input: 17082
+    output: 1199
+  fetched_chars: 48347

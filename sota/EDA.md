@@ -1,10 +1,17 @@
 # EDA — state of the art
 
-Topic code `EDA`. Last reviewed 2026-10-29.
+Topic code `EDA`. Last reviewed 2026-10-31.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
 ## Current position
+
+### current
+
+- **0.02 mA** — The short-channel BMR bias circuit provides a reference current of 20.0 µA at the typical-typical corner.
+  - `CLM-EDA-0018` · circuit BMR, corner tt · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00254
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### frequency
 
@@ -95,6 +102,6 @@ _None._
 
 ## Evidence base
 
-- claims: 17
-- grades: {'B': 17}
-- distinct sources: 6
+- claims: 18
+- grades: {'B': 18}
+- distinct sources: 7

@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-29.
+Topic code `MAT`. Last reviewed 2026-10-31.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -761,6 +761,30 @@ Topic code `MAT`. Last reviewed 2026-10-29.
   - `CLM-MAT-0222` · grade B · credibility unknown · simulated · as of 2026-10-27
   - sources: SRC-00248
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The average film thickness of the GFO thin film deposited on FTO is ~100.6 nm.
+  - `CLM-MAT-0231` · substrate FTO · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00261
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The negative coercive voltage of the GFO thin film measured via PFM is ~ 0.31 V.
+  - `CLM-MAT-0232` · measurement_method PFM · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00261
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The positive coercive voltage of the GFO thin film measured via PFM is ~1.07 V.
+  - `CLM-MAT-0233` · measurement_method PFM · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00261
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The electrical conductivity of the GFO thin film is approximately 2.38 × 10−4 Ω−1m−1 at 100 Hz.
+  - `CLM-MAT-0234` · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00261
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- A magnetodielectric coefficient of 2.3% is obtained for the GFO thin film under a magnetic field of 0.1 kOe at 100 kHz.
+  - `CLM-MAT-0235` · magnetic_field 0.1 kOe · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00261
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The CFS-YS detection limit was approximately two orders of magnitude lower than that of DPYS when comparing the spectra with shifted onsets.
+  - `CLM-MAT-0236` · technique CFS-YS, baseline_technique DPYS · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00263
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -962,6 +986,10 @@ Topic code `MAT`. Last reviewed 2026-10-29.
   - `CLM-MAT-0199` · band 2.8 eV band, boron_concentration 0.2 ppm · grade B · credibility unknown · measured · as of 2026-10-22
   - sources: SRC-00212
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈0.00015 ns** — The overall temporal resolution of the measurement setup is approximately 150 fs.
+  - `CLM-MAT-0230` · parameter overall temporal resolution · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00260
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -1119,6 +1147,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 229
-- grades: {'B': 229}
-- distinct sources: 87
+- claims: 236
+- grades: {'B': 236}
+- distinct sources: 90

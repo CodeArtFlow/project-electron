@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2610.39770v1
 doi: null
-title: 'Growth and morphology of core-shell nanowires incorporating dissimilar hexagonal
-  semiconductors: the case of InAs-ZnTe'
+title: 'Growth and morphology of core-shell nanowires incorporating dissimilar hexagonal semiconductors:
+  the case of InAs-ZnTe'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-29'
@@ -27,6 +27,82 @@ id: CAND-20261030-0062
 harvested_date: '2026-10-30'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-31'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For sample S80-12 with an InAs core radius of 12 nm and an integrated lateral flux of 80
+      nm, the measured ZnTe shell thickness along the m-direction is 15 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''S80-12 12
+      80 15'''
+    quotes:
+    - S80-12 12 80 15
+    - Table I. List of samples, with measured core radius, shell integrated flux , and measured shell
+      thickness (all in nm).
+  - statement: For sample S80-22 with an InAs core radius of 22 nm and an integrated flux of 80 nm grown
+      at 320°C, the measured shell thickness along the m-direction is 21 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''S80-22 22
+      80 21'''
+    quotes:
+    - S80-22 22 80 21
+    - Table I. List of samples, with measured core radius, shell integrated flux , and measured shell
+      thickness (all in nm).
+    - The shell growth temperature 320°C is with a lateral flux 2.7 nm/min, except otherwise indicated
+      in the last column.
+  - statement: For sample S80-25 with an InAs core radius of 25 nm and an integrated flux of 80 nm grown
+      at 350°C, the measured shell thickness along the m-direction is 14 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''S80-25 25
+      80 14 350°C'''
+    quotes:
+    - S80-25 25 80 14 350°C
+    - Table I. List of samples, with measured core radius, shell integrated flux , and measured shell
+      thickness (all in nm).
+  - statement: For sample S40-55 with an InAs core radius of 55 nm and an integrated flux of 40 nm, the
+      measured shell thickness along the m-direction is 16 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''S40-55 55
+      40 16'''
+    quotes:
+    - S40-55 55 40 16
+    - Table I. List of samples, with measured core radius, shell integrated flux , and measured shell
+      thickness (all in nm).
+  - statement: For sample S40-56 with an InAs core radius of 56 nm and an integrated flux of 40 nm, the
+      measured shell thickness along the m-direction is 19 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''S40-56 56
+      40 19'''
+    quotes:
+    - S40-56 56 40 19
+    - Table I. List of samples, with measured core radius, shell integrated flux , and measured shell
+      thickness (all in nm).
+  - statement: For sample S20-37 with an InAs core radius of 37 nm and an integrated flux of 20 nm, the
+      measured shell thickness along the m-direction is 8 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''S20-37 37
+      20 8'''
+    quotes:
+    - S20-37 37 20 8
+    - Table I. List of samples, with measured core radius, shell integrated flux , and measured shell
+      thickness (all in nm).
+  - statement: For sample S20-16 with an InAs core radius of 16 nm and an integrated flux of 20 nm grown
+      at a rate of 1.4 nm/min, the measured shell thickness along the m-dire
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - S20-16 16 20 6 1.4 nm/min, ex-situ
+    - Table I. List of samples, with measured core radius, shell integrated flux , and measured shell
+      thickness (all in nm).
+  - statement: For sample S1-42 with an InAs core radius of 42 nm and an integrated flux of 0.6 nm grown
+      at 340°C and 0.3 nm/min, the measured shell thickness along the m-dire
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - S1-42 42 0.6 0.4 340°C, 0.3 nm/min
+    - Table I. List of samples, with measured core radius, shell integrated flux , and measured shell
+      thickness (all in nm).
+  tokens:
+    input: 18281
+    output: 3430
+  fetched_chars: 55723

@@ -24,6 +24,58 @@ id: CAND-20261030-0076
 harvested_date: '2026-10-30'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-31'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The calculated zero-phonon line energy for the excited state of the I4HBC(+) complex is
+      1128 meV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - By optimizing the geometry of the excited state of I4HBC(+) using cDFT, we have calculatedtheZPLenergytobe1128meVaftercorrection(seeTableS5).
+    - By optimizing the geometry of the excited state of I4HBC(+) using cDFT
+    - using cDFT
+  - statement: The calculated energy barrier between two HBC sites of the I4HBC(+) defect is 0.49 eV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - As shown in Fig. 3, the barrier between two HBC sites, as obtained by a three-image CI-NEB calculation
+      with the PBE functional,is0.49eV.
+    - as obtained by a three-image CI-NEB calculation with the PBE functional,is0.49eV.
+    - migration paths of HBC(+)
+    - as obtained by a three-image CI-NEB calculation with the PBE functional
+  - statement: The formation energy released when I4HBC is formed from isolated HBC(0) and I4 is 0.22
+      eV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The formation ofthisI4HBCcomplexfromisolatedHBC(0)andI4,willrelease0.22eV,soHwouldeasilyget trapped
+      at I4.
+    - The formation ofthisI4HBCcomplexfromisolatedHBC(0)andI4,willrelease0.22eV
+    - The formation ofthisI4HBCcomplexfromisolatedHBC(0)andI4
+  - statement: For the I[001]H2HBC0 defect, the calculated vertical charge transition level E(+/0) is
+      0.06 eV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The I[001]H2HBC0 defect produces an EMT (effective mass theory) shallow donor state indeed, with
+      a calculated vertical CTL of 0.06 eV.
+    - with a calculated vertical CTL of 0.06 eV.
+    - The I[001]H2HBC0 defect
+    - vertical CTL
+  tokens:
+    input: 19189
+    output: 1379
+  fetched_chars: 51323

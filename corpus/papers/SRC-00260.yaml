@@ -1,0 +1,141 @@
+id: SRC-00260
+title: Observation of light-induced topological state in graphene
+doi: null
+arxiv_id: 2610.39695v1
+url: https://arxiv.org/abs/2610.39695v1
+venue_id: arxiv_api
+authors:
+- name: Sotirios Fragkos
+  affiliation: null
+  corresponding: null
+- name: Ann Chantal Goutier
+  affiliation: null
+  corresponding: null
+- name: Umberto Dellasette
+  affiliation: null
+  corresponding: null
+- name: Dominique Descamps
+  affiliation: null
+  corresponding: null
+- name: Stéphane Petit
+  affiliation: null
+  corresponding: null
+- name: Wiebke Bennecke
+  affiliation: null
+  corresponding: null
+- name: Philip Hofmann
+  affiliation: null
+  corresponding: null
+- name: Marcel Reutzel
+  affiliation: null
+  corresponding: null
+- name: Stefan Mathias
+  affiliation: null
+  corresponding: null
+- name: Yann Mairesse
+  affiliation: null
+  corresponding: null
+- name: Michael Schüler
+  affiliation: null
+  corresponding: null
+- name: Samuel Beaulieu
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-29'
+retrieved_date: '2026-10-31'
+access: full_text
+read_scope: Automated reading. The full PDF text (56,605 characters, 43 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.39695v1 on
+  2026-10-31. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The overall tem- poral resolution was approximately 150 fs.”
+
+  “overall tem- poral resolution”'
+method_summary: '“Here, we combine circular-dichroic time-resolved extreme-ultraviolet momentum microscopy
+  10 with ab initio theory to investigate graphene driven by circularly polarized light.”
+
+  “The laser source was a high-repetition-rate Yb fiber laser (166 kHz, 1030 nm, 135 fs, 50 W; Amplitude
+  Laser Group).”
+
+  “The ninth harmonic of the 515 nm driving field, corresponding to a photon energy of 21.6 eV , was selected
+  using reflections from Sc/SiC multilayer XUV mirrors (NTTAT) in combination with a 200 nm-thick Sn filter
+  (Luxel).”'
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 17923
+    output: 2529
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: Under an incident pump fluence of 3.5 mJ/cm2 (electric field amplitude of 4000 kV/cm),
+      the pump pulse has a duration of 135 fs and a photon energy of 1.2 eV.
+    reason: 'unit conversion refused: power_density: cannot convert 3.5 mJ/cm2 to W/m^2 - Cannot convert
+      from ''millijoule / centimeter ** 2'' ([mass] / [time] ** 2) to ''watt / meter ** 2'' ([mass] /
+      ['
+    quotes:
+    - In a nutshell, a polarization-tunable infrared pump pulse (1.2 eV , 135 fs, incident fluence 3.5
+      mJ/cm2) drives monolayer graphene
+    - Upon s-polarized pump, time-reversal symmetry is preserved, leaving the dichroism essentially unchanged
+      from its equilibrium behavior (Fig. 1d), with no additional feature emerging around the Dirac point.
+      In contrast, circularly polarized p
+    - The incident fluence is∼3.5 mJ/cm 2, i.e.,∼4000 kV/cm.
+    - 1.2 eV
+  - statement: The probe pulse has a photon energy of 21.6 eV.
+    reason: 'unit conversion refused: voltage: cannot convert 21.6 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** '
+    quotes:
+    - while a polarization-tunable XUV probe pulse (21.6 eV) ejects photoelectrons.
+    - The ninth harmonic of the 515 nm driving field, corresponding to a photon energy of 21.6 eV , was
+      selected using reflections from Sc/SiC multilayer XUV mirrors (NTTAT) in combination with a 200
+      nm-thick Sn filter (Luxel).
+    - XUV probe pulse
+  - statement: The base pressure during photoemission measurements was 2×10−10 mbar.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Measurements were con- ducted at room temperature under a base pressure of 2×10 −10 mbar.
+    - room temperature
+  - statement: The epitaxial graphene sample has monolayer coverage exceeding 95%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''According
+      to the manufacturer, optical inspection con- firmed a monola'''
+    quotes:
+    - According to the manufacturer, optical inspection con- firmed a monolayer coverage exceeding95%,
+      with bilayer graphene inclusions at5%.
+    - monolayer epitaxial graphene sample on SiC
+  - statement: In the theoretical Green's function calculation, the conduction band coupling strength
+      is set to 0.25 eV.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - The latter is described by a wide-band fermionic bath with a cou- pling strength ofγ= 0.25eV for
+      the conduction band andγ= 0.125eV for the valence band.
+    - The simulations of the trARPES signal at pump-probe overlap were carried out using the non-equilibrium
+      Green’s function formalism, specifically the Floquet steady-state approach described in ref. 48.
+    - conduction band
+    - cou- pling strength ofγ
+  - statement: In the Green's function calculation, the valence band coupling strength is 0.125 eV.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - The latter is described by a wide-band fermionic bath with a cou- pling strength ofγ= 0.25eV for
+      the conduction band andγ= 0.125eV for the valence band.
+    - The simulations of the trARPES signal at pump-probe overlap were carried out using the non-equilibrium
+      Green’s function formalism, specifically the Floquet steady-state approach described in ref. 48.
+    - valence band
+    - cou- pling strength ofγ
+  - statement: A chemical potential of 0.5 eV is used in the simulation to emulate sample doping.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - A chemical potential ofµ= 0.5eV s used to emulate the doping of the sample.
+    - The simulations of the trARPES signal at pump-probe overlap were carried out using the non-equilibrium
+      Green’s function formalism, specifically the Floquet steady-state approach described in ref. 48.
+    - chemical potential ofµ
+corrections: []

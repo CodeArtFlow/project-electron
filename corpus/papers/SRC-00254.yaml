@@ -1,0 +1,83 @@
+id: SRC-00254
+title: 'OPERA: OPamp Design by an Expert-Taught Reasoning Agent, from Specifications to Layout'
+doi: null
+arxiv_id: 2610.39395v1
+url: https://arxiv.org/abs/2610.39395v1
+venue_id: arxiv_api
+authors:
+- name: Vishal Saxena
+  affiliation: null
+  corresponding: null
+- name: Soumyajit Mandal
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-29'
+retrieved_date: '2026-10-31'
+access: full_text
+read_scope: Automated reading. The full PDF text (25,323 characters, 5 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.39395v1 on
+  2026-10-31. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: “The short-channel BMR [20] provides a 20.0µA reference at tt (19.1 to 21.3 over corners), with
+  loop PM 72.4 to 74.6 ◦.”
+method_summary: '“The agent studied the author’s lecture slides [20] and the gm/ID literature [21], then
+  characterized the SKY130 low-V th devices at the planned finger width (3.11µm NMOS, 2.48µm PMOS), and
+  built lookup tables of current density,f T ,g mro, and capacitance againstg m/ID for severalLat five
+  process corners.”
+
+  “The designer taught the agent the six steps designers fol- low [21] (Fig. 1, panel 3):”'
+limitations: '“One limit remains: at fs, 70 ◦C the weakest cascode is 23 to 63 mV into triode in five
+  designs, yet all targets are met.”
+
+  “Three first extractions missed the PM (FC 57.2, telescopic 53.3, FC two-stage 59.4 ◦); shorter sourceL
+  (FC, 1.0µm), shorter cascodeL(telescopic, 0.6µm) and Rz =3.7 kΩ(FC two-stage) fixed them.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 10880
+    output: 3099
+  claims_accepted: 1
+  claims_rejected: 5
+  rejected:
+  - statement: The extracted netlist of the 5T OTA layout achieves a minimum unity-gain frequency of 66.5
+      MHz across 15 PVT corners.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - S15T OTA 496 89.2% 0/0✓ 31.1–31.8 81.8–83.5 66.5–74.3 34.3
+    - TABLE V LAYOUTS ANDPOST-LAYOUTRESULTS(SKY130, EXTRACTEDRANDC, IDEALR z ANDC c, 15 CORNERS)
+    - All amplifiers target open-loopf un ≥50 MHz withC L = 1 pF
+    - VDD = 1.8 V
+  - statement: The S2FC 2-stage layout area is 3570 µm2.
+    reason: 'unit conversion refused: area_die: could not parse 3570.0 ''µm 2'': Unit expression cannot
+      have a scaling factor.'
+    quotes:
+    - S2FC 2-stage c 3570 66.9% 0/0✓ 63.2–68.3 62.1–70.7 53.7–68.0 27.9
+  - statement: The final layout of the S2FC 2-stage opamp occupies an area of 2688 µm2.
+    reason: 'unit conversion refused: area_die: could not parse 2688.0 ''µm 2'': Unit expression cannot
+      have a scaling factor.'
+    quotes:
+    - PEX is from the final layout (2688µm 2, 59.7%).
+    - cArea and utilization of Fig. 2(b); PEX is from the final layout (2688µm 2, 59.7%).
+  - statement: The extracted netlist of the S2FC 2-stage opamp achieves a minimum unity-gain frequency
+      of 53.7 MHz across 15 PVT corners.
+    reason: the statement contains the number 15, which none of its quotes contain
+    quotes:
+    - S2FC 2-stage c 3570 66.9% 0/0✓ 63.2–68.3 62.1–70.7 53.7–68.0 27.9
+    - TABLE V LAYOUTS ANDPOST-LAYOUTRESULTS(SKY130, EXTRACTEDRANDC, IDEALR z ANDC c, 15 CORNERS)
+    - All amplifiers target open-loopf un ≥50 MHz withC L = 1 pF
+    - VDD = 1.8 V
+  - statement: The post-layout extracted netlist of the S2Tele. 2-stage opamp achieves a worst-edge slew
+      rate of 30.5 V/µs across 15 PVT corners.
+    reason: the statement contains the number 15, which none of its quotes contain
+    quotes:
+    - S2Tele. 2-stage 2893 57.3% 0/0✓ 68.5–78.0 63.1–72.7 71.1–89.5 30.5
+    - TABLE V LAYOUTS ANDPOST-LAYOUTRESULTS(SKY130, EXTRACTEDRANDC, IDEALR z ANDC c, 15 CORNERS)
+    - 'SR: worst edge.'
+corrections: []

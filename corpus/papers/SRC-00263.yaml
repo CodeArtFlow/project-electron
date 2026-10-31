@@ -1,0 +1,84 @@
+id: SRC-00263
+title: 'Direct Observation of Electron Trapping States in SiO$_2$ by Constant-Final-State Photoelectron
+  Yield Spectroscopy: Insights into the Electron-Transfer Model of Contact Electrification'
+doi: null
+arxiv_id: 2610.39748v1
+url: https://arxiv.org/abs/2610.39748v1
+venue_id: arxiv_api
+authors:
+- name: Renjiro Shibuya
+  affiliation: null
+  corresponding: null
+- name: Manato Tateno
+  affiliation: null
+  corresponding: null
+- name: Runa Hoshikawa
+  affiliation: null
+  corresponding: null
+- name: Tomohiro Ishibashi
+  affiliation: null
+  corresponding: null
+- name: Hirohiko Fukagawa
+  affiliation: null
+  corresponding: null
+- name: Hisao Ishii
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-29'
+retrieved_date: '2026-10-31'
+access: full_text
+read_scope: Automated reading. The full PDF text (33,732 characters, 14 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.39748v1 on
+  2026-10-31. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The CFS-YS detection limit was approximately two and four orders of magnitude lower than that
+  of DPYS in Figures S2(a) and S2(b), respectively, demonstrating the higher sensitivity of CFS-YS.”
+
+  “Figure 3 shows the CFS-YS spectra before and after electron-beam irradiation, which negatively charged
+  the sample and populated electron traps.”'
+method_summary: '“Constant -final-state photoelectron yield spectroscopy (CFS-YS),16,17 which measures
+  photoelectron yield at a fixed kinetic energy while varying photon energy, detects weak spectral features
+  with a higher signal-to-noise ratio than HS-UPS.”
+
+  “For HS-UPS, monochromatic photons at 7.7 eV irradiated the sample, and an electrostatic hemispherical
+  electron analyzer (PSP RESOLVE120) measured the kinetic energy distribution of emitted photoelectrons.
+  The same setup was used for CFS-YS.”
+
+  “The charging simulations calculated charge transfer at the metal/SiO₂ interface under thermal equilibrium
+  using the occupied DOS measured by CFS-YS.”'
+limitations: “However, the simulations assumed thermal equilibrium, whereas actual CE may involve nonequilibrium
+  processes.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 11073
+    output: 1436
+  claims_accepted: 1
+  claims_rejected: 2
+  rejected:
+  - statement: The CFS-YS detection limit was approximately four orders of magnitude lower than that of
+      DPYS when assuming a SiO2 VBM of 10.3 eV.
+    reason: the statement contains the number 10.3, which none of its quotes contain
+    quotes:
+    - The CFS-YS detection limit was approximately two and four orders of magnitude lower than that of
+      DPYS in Figures S2(a) and S2(b), respectively, demonstrating the higher sensitivity of CFS-YS.
+    - Figure 3 shows the CFS-YS spectra before and after electron-beam irradiation, which negatively charged
+      the sample and populated electron traps.
+  - statement: The estimated charge penetration depth in SiO2 from the charging simulations was approximately
+      10 nm.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - The estimated charge penetration depth was approximately 10 nm, consistent with the ~30 nm upper
+      limit reported for Mg/SiO₂ contacts by Labadz et al., 26 suggesting that charge accumulates near
+      the SiO₂ surface.
+    - Figure 5(b) shows charge-density profiles in SiO₂ in contact with metals of different work functions,
+      plotted against depth from the SiO₂ surface.
+    - Finally, we performed charging simulations to assess the electron-transfer model for CE.
+corrections: []

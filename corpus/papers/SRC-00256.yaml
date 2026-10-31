@@ -1,0 +1,103 @@
+id: SRC-00256
+title: 'RV2GC: Reconstructing the Garbling Boundary in a RISC-V Garbled Processor'
+doi: null
+arxiv_id: 2610.39572v1
+url: https://arxiv.org/abs/2610.39572v1
+venue_id: arxiv_api
+authors:
+- name: Zixiao Feng
+  affiliation: null
+  corresponding: null
+- name: Xiaolin Li
+  affiliation: null
+  corresponding: null
+- name: Chenglu Jin
+  affiliation: null
+  corresponding: null
+- name: Wei Yan
+  affiliation: null
+  corresponding: null
+- name: Yong Zhang
+  affiliation: null
+  corresponding: null
+- name: Hongwei Liu
+  affiliation: null
+  corresponding: null
+- name: Yong Liu
+  affiliation: null
+  corresponding: null
+- name: Qinfen Hao
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-29'
+retrieved_date: '2026-10-31'
+access: full_text
+read_scope: Automated reading. The full PDF text (63,361 characters, 12 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.39572v1 on
+  2026-10-31. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“SHA3-256 0.032 326.066 10,219.83× 0.091 368.845 4,042.58×”
+
+  “Across nine benchmarks, measured ARM2GC-to-RV2GC runtime ratios range from 12.81 to 4,043.”
+
+  “Mini-Transformer Attention, residual, FFN 3,411,714 80.396”
+
+  “Experiments run on an Intel Core i7-14650HX with 15 GiB of memory and Ubuntu 22.04, with TCP loopback
+  communication between the parties.”
+
+  “Mini-ResNet Convolution, residual, pooling 11,022,541 178.015”
+
+  “Our profile of nine benchmarks shows that evaluator work other than protected-gate processing accounts
+  for 71.3–93.2% of ARM2GC’s measured runtime, including netlist traversal and associated management.”'
+method_summary: '“Experiments run on an Intel Core i7-14650HX with 15 GiB of memory and Ubuntu 22.04,
+  with TCP loopback communication between the parties.”
+
+  “RV32 programs are compiled with RISC-V GCC 15.2.0 at -O2, and instruction circuits are synthesized
+  with Yosys 0.9.”
+
+  “RV2GC and ARM2GC share the underlying garbling implementation and use 128-bit wire labels.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 18845
+    output: 3132
+  claims_accepted: 4
+  claims_rejected: 4
+  rejected:
+  - statement: The mul protected-circuit topology in RV2GC has 3,386 gates, which corresponds to 2.044%
+      of the 256-byte Amber processor gate count and 0.393% of the 4,096-byte
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''In terms
+      of circuit size, the largest listed instruction circuit has 3'''
+    quotes:
+    - In terms of circuit size, the largest listed instruction circuit has 3,386 gates, corresponding
+      to 2.044% and 0.393% of the 256-byte and 4,096-byte Amber processors, respectively.
+    - mul 3,386 2.044% 0.393%
+  - statement: RV2GC completes the online execution of Mult32 in 0.065 s compared to 0.829 s for ARM2GC,
+      representing a speedup of 12.81x.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - Mult32 0.001 0.591 751.59× 0.065 0.829 12.81×
+    - Across nine benchmarks, measured ARM2GC-to-RV2GC runtime ratios range from 12.81 to 4,043.
+  - statement: The ARM2GC Amber 4,096-byte processor has a gate count of 860,536 gates.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Amber 4096-B
+      860,536 — 100%'''
+    quotes:
+    - Amber 4096-B 860,536 — 100%
+    - HDL synthesis produces Boolean instruction netlists for software garbling and evaluation
+  - statement: Protected-gate processing contributes 1.0% to 4.2% of ARM2GC's measured runtime.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Our profile attributes 1.0–4.2% of measured runtime to protected-gate processing and 71.3–93.2%
+      to the remaining evaluator work, including traversal, public-value propagation, state copying, and
+      gate management.
+corrections: []

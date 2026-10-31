@@ -1,0 +1,78 @@
+id: SRC-00257
+title: Non-Volatile Memory Devices for Neuromorphic Computing
+doi: null
+arxiv_id: 2610.39625v1
+url: https://arxiv.org/abs/2610.39625v1
+venue_id: arxiv_api
+authors:
+- name: Debasis Das
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-29'
+retrieved_date: '2026-10-31'
+access: full_text
+read_scope: Automated reading. The full PDF text (70,605 characters, 19 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.39625v1 on
+  2026-10-31. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Using a 10 ns voltage pulse width, they observed an average energy consumption of approximately
+  50 pJ for RESET operations and only about 0.675 pJ for SET operations, highlighting PCM devices as promising
+  candidates for high-speed, low-energy neuromorphic computing with online unsupervised learning.”
+
+  “Using a 10 ns voltage pulse width, they observed an average energy consumption of approximately 50
+  pJ for RESET operations”
+
+  “they observed an average energy consumption of approximately 50 pJ for RESET operations”
+
+  “highlighting PCM devices as promising candidates”
+
+  “and only about 0.675 pJ for SET operations”
+
+  “They used this artificial spiking neuron in a SNN architecture to identify Fisher’s Iris flower dataset,
+  which shows an accuracy of 95.33%, compared to an ideal LIF neuron’s 96% accuracy.”
+
+  “to identify Fisher’s Iris flower dataset, which shows an accuracy of 95.33%”
+
+  “They used this artificial spiking neuron in a SNN architecture”
+
+  “Lashkare et. al. [37] demonstrated Pr0.7Ca0.3MnO3 (PCMO) RRAM can be utilized to mimic the IF functionality.”
+
+  “compared to an ideal LIF neuron’s 96% accuracy.”'
+method_summary: '“Kuzum et. al. [29] demonstrated the fabricated PCM cell can achieve multiple intermediate
+  states between its highest and lowest resistance values.”
+
+  “Using a 10 ns voltage pulse width, they observed an average energy consumption of approximately 50
+  pJ for RESET operations and only about 0.675 pJ for SET operations”
+
+  “Lashkare et. al. [37] demonstrated Pr0.7Ca0.3MnO3 (PCMO) RRAM can be utilized to mimic the IF functionality.”
+
+  “They used this artificial spiking neuron in a SNN architecture to identify Fisher’s Iris flower dataset,
+  which shows an accuracy of 95.33%, compared to an ideal LIF neuron’s 96% accuracy.”'
+limitations: '“Despite showing hundreds of conducting levels, state-of-the-art RRAM devices show nonlinear
+  and asymmetric weight update (conductance) characteristics while programmed under identical pulses.”
+
+  “However, despite their promising attributes, skyrmions suffer from the skyrmion Hall effect [56], causing
+  them to deviate from a straight path”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 19672
+    output: 2187
+  claims_accepted: 4
+  claims_rejected: 1
+  rejected:
+  - statement: The laboratory-fabricated PCM cell achieved an endurance of roughly 10^7 cycles.
+    reason: the value 1e+07 does not appear in any of the claim's quotes
+    quotes:
+    - Their laboratory-fabricated device exhibited an endurance of∼10 7 cycles, proving the reliability
+      of such PCM based synapse in the neuromorphic system.
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (measured: 2, simulated:
+  2). This field records the majority (measured); trust each claim''s own evidence_type over this one.'

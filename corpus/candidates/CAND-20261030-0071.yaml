@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.39694v1
 doi: null
-title: Exceptional Superconducting Interfaces between Graphene and Atomic Chains in
-  A15-MoRe
+title: Exceptional Superconducting Interfaces between Graphene and Atomic Chains in A15-MoRe
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-29'
@@ -35,6 +34,40 @@ id: CAND-20261030-0071
 harvested_date: '2026-10-30'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-31'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The lattice mismatch between the 1D chains in the A15 (100) plane and the graphene zigzag
+      edge is 0.6%.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - As plotted in Fig. 5e, the lattice mismatch between the 1D chains in the A15 (100) plane and the
+      graphene zigzag edge is remarkably low at 0.6%.
+    - Figure 5e summarizes the calculated minimum lattice mismatch between each MoRe atomic row and the
+      graphene edge.
+    - the lattice mismatch between the 1D chains in the A15 (100) plane and the graphene zigzag edge is
+      remarkably low at 0.6%.
+  - statement: The interatomic spacing of the one-dimensional atomic chains in the A15 structure has a
+      lattice mismatch of less than 1% with graphene zigzag edges.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - Notably, we discovered that the interatomic spacing of the one -dimensional (1D) atomic chains inherent
+      to the A15 structure exhibits a nearly perfect match—with less than 1% mismatch—to the lattice constant
+      of the graphene zigzag edges.
+    - Figure 5e summarizes the calculated minimum lattice mismatch between each MoRe atomic row and the
+      graphene edge.
+    - the interatomic spacing of the one -dimensional (1D) atomic chains inherent to the A15 structure
+      exhibits a nearly perfect match—with less than 1% mismatch—to the lattice constant of the graphene
+      zigzag edges.
+  tokens:
+    input: 14496
+    output: 887
+  fetched_chars: 44646

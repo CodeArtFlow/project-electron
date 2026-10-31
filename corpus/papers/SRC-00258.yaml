@@ -1,0 +1,97 @@
+id: SRC-00258
+title: 'MRUD: Maximally Redundant Unsigned Digit Number Systems for High-Performance Arithmetic Units'
+doi: null
+arxiv_id: 2610.39638v1
+url: https://arxiv.org/abs/2610.39638v1
+venue_id: arxiv_api
+authors:
+- name: Samaneh Rahimi
+  affiliation: null
+  corresponding: null
+- name: Ali Azarpeyvand
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-29'
+retrieved_date: '2026-10-31'
+access: full_text
+read_scope: Automated reading. The full PDF text (61,448 characters, 23 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.39638v1 on
+  2026-10-31. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“For 32-bit operands, the MRUD MAC achieves a delay of 2.14 ns”
+
+  “FreePDK 45nm standard-cell library”
+
+  “Table 5 summarizes the synthesis and simulation results.”'
+method_summary: “All experimental results were obtained using Synopsys Design Compiler 2018, ModelSim
+  SE 2020.4, and the FreePDK 45nm standard-cell library”
+limitations: “Although MRUD incurs moderate area overhead, the performance gains justify this trade-off.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 23836
+    output: 2709
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: The 32-bit MRUD MAC achieves a throughput of 152.6 MOPS.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''throughput
+      of 152.6 MOPS'''
+    quotes:
+    - throughput of 152.6 MOPS
+    - Table 5 summarizes the synthesis and simulation results.
+    - MRUD MAC
+    - For 32-bit operands
+  - statement: The 32-bit MRUD MAC operates at a maximum frequency of 461 MHz.
+    reason: the statement contains the number 32, which none of its quotes contain
+    quotes:
+    - This translates to a maximum frequency of 461 MHz
+    - Table 5 summarizes the synthesis and simulation results.
+    - MRUD MAC
+    - For 32-bit operands
+  - statement: The 32-bit MRUD MAC occupies an area of 9365.59 µm².
+    reason: the statement contains the number 9365.59, which none of its quotes contain
+    quotes:
+    - The area overhead of the MRUD MAC (9,365.59µm² for 32-bit)
+    - Table 5 summarizes the synthesis and simulation results.
+    - MRUD MAC
+    - for 32-bit
+  - statement: The 32-bit MRUD MAC consumes 4925 µW of power.
+    reason: the statement contains the number 32, which none of its quotes contain
+    quotes:
+    - power consumption is higher (4,925µW
+    - Table 5 summarizes the synthesis and simulation results.
+    - MRUD MAC
+    - for 32-bit
+  - statement: The 32x32 signed BBR-MRUD multiplier achieves a delay of 1.64 ns.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Table 4'''
+    quotes:
+    - Table 4
+    - BBR-MRUD 1.64
+    - All experimental results were obtained using Synopsys Design Compiler 2018, ModelSim SE 2020.4,
+      and the FreePDK 45nm standard-cell library
+    - BBR-MRUD
+  - statement: The 8x8 signed MRUD RRR multiplier achieves a delay of 1.95 ns.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Table 3'''
+    quotes:
+    - Table 3
+    - Signed MRUD 1.95(↓16%)
+    - All experimental results were obtained using Synopsys Design Compiler 2018, ModelSim SE 2020.4,
+      and the FreePDK 45nm standard-cell library
+    - Signed MRUD
+  - statement: The 8x8 unsigned MRUD RRR multiplier achieves an area of 10800.13 µm².
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Table 3'''
+    quotes:
+    - Table 3
+    - Unsigned MRUD 1.99(↓15%) 503 10800.13(↓26%)
+    - All experimental results were obtained using Synopsys Design Compiler 2018, ModelSim SE 2020.4,
+      and the FreePDK 45nm standard-cell library
+    - Unsigned MRUD
+corrections: []

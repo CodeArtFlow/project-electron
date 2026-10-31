@@ -1207,3 +1207,206 @@ claims:
       unit: ns
     conditions:
       gap_size: 2 nm
+- id: CLM-MEM-0042
+  topic: MEM
+  statement: For RESET operations in the PCM cell, an average energy consumption of approximately 50 pJ
+    was observed using a 10 ns voltage pulse width.
+  sources:
+  - SRC-00257
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    voltage_pulse_width: 10 ns
+    operation: RESET operations
+    device: PCM
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: true
+    as_published:
+      value: 50.0
+      unit: pJ
+    si_base:
+      value: 5.0e-11
+      unit: J
+    display:
+      value: 49999.99999999999
+      unit: fJ
+    conditions:
+      voltage_pulse_width: 10 ns
+      operation: RESET operations
+      device: PCM
+- id: CLM-MEM-0043
+  topic: MEM
+  statement: An average energy consumption of about 0.675 pJ was observed for SET operations using a 10
+    ns voltage pulse width in the PCM device.
+  sources:
+  - SRC-00257
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    voltage_pulse_width: 10 ns
+    operation: SET operations
+    device: PCM
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: true
+    as_published:
+      value: 0.675
+      unit: pJ
+    si_base:
+      value: 6.750000000000001e-13
+      unit: J
+    display:
+      value: 675.0
+      unit: fJ
+    conditions:
+      voltage_pulse_width: 10 ns
+      operation: SET operations
+      device: PCM
+- id: CLM-MEM-0044
+  topic: MEM
+  statement: The PCMO RRAM artificial spiking neuron achieved an accuracy of 95.33% when identifying Fisher's
+    Iris flower dataset in an SNN architecture.
+  sources:
+  - SRC-00257
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    dataset: Fisher’s Iris flower dataset
+    architecture: SNN architecture
+    device: Pr0.7Ca0.3MnO3 (PCMO) RRAM
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 95.33
+      unit: '%'
+    si_base:
+      value: 0.9533
+      unit: dimensionless
+    display:
+      value: 95.33
+      unit: percent
+    conditions:
+      dataset: Fisher’s Iris flower dataset
+      architecture: SNN architecture
+      device: Pr0.7Ca0.3MnO3 (PCMO) RRAM
+- id: CLM-MEM-0045
+  topic: MEM
+  statement: An ideal LIF neuron shows an accuracy of 96% on Fisher's Iris flower dataset.
+  sources:
+  - SRC-00257
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    model: ideal LIF neuron
+    dataset: Fisher’s Iris flower dataset
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 96.0
+      unit: '%'
+    si_base:
+      value: 0.96
+      unit: dimensionless
+    display:
+      value: 96.0
+      unit: percent
+    conditions:
+      model: ideal LIF neuron
+      dataset: Fisher’s Iris flower dataset
+- id: CLM-MEM-0046
+  topic: MEM
+  statement: Weight noise reduces SDMI reconstruction similarity by 35.7%.
+  sources:
+  - SRC-00259
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    baseline: memristive baseline
+- id: CLM-MEM-0047
+  topic: MEM
+  statement: The conventional ST-FMR analysis shows an apparent sign reversal of the extracted efficiency
+    at a Pt thickness of approximately 10 nm.
+  sources:
+  - SRC-00264
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material_stack: CoFeB/Pt
+    analysis_method: Conventional ST-FMR analysis
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 10.0
+      unit: nm
+    si_base:
+      value: 1.0e-08
+      unit: m
+    display:
+      value: 9.999999999999998
+      unit: nm
+    conditions:
+      material_stack: CoFeB/Pt
+      analysis_method: Conventional ST-FMR analysis

@@ -493,3 +493,39 @@ claims:
   conditions:
     configuration: Ibex reference
     fclk: 242 MHz
+- id: CLM-EDA-0018
+  topic: EDA
+  statement: The short-channel BMR bias circuit provides a reference current of 20.0 µA at the typical-typical
+    corner.
+  sources:
+  - SRC-00254
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    circuit: BMR
+    corner: tt
+  quantity:
+    quantity: current
+    bound: exact
+    approximate: false
+    as_published:
+      value: 20.0
+      unit: µA
+    si_base:
+      value: 1.9999999999999998e-05
+      unit: A
+    display:
+      value: 0.019999999999999997
+      unit: mA
+    conditions:
+      circuit: BMR
+      corner: tt

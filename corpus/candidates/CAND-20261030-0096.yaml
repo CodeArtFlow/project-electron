@@ -32,6 +32,101 @@ id: CAND-20261030-0096
 harvested_date: '2026-10-30'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-10-31'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: FP-ExAO reduces the isolated linewidth to 88.8 nm at a writing depth of 160 µm in photoresist.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''In STED nanolithography,
+      FP-ExAO reduces the minimum written linewidth'''
+    quotes:
+    - In STED nanolithography, FP-ExAO reduces the minimum written linewidth from 251.1 nm without correction
+      to 88.8 nm at a depth of 160 µm in photoresist.
+    - At a writing depth of 160 µm, FP -ExAO reduced the isolated linewidth to 88.8 nm, compared with
+      128.4 nm using metrics -based AO and 251.1 nm without correction, enabling sub -100 nm fabrication
+      deep inside the photoresist (Fig. 6a).
+    - 160 µm in photoresist
+    - FP-ExAO reduces the minimum written linewidth
+  - statement: Without correction, the isolated written linewidth at a depth of 160 µm in photoresist
+      is 251.1 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - At a writing depth of 160 µm, FP -ExAO reduced the isolated linewidth to 88.8 nm, compared with
+      128.4 nm using metrics -based AO and 251.1 nm without correction, enabling sub -100 nm fabrication
+      deep inside the photoresist (Fig. 6a).
+    - writing depth of 160 µm
+    - 251.1 nm without correction
+    - photoresist (Fig. 6a)
+  - statement: Using metrics-based AO, the isolated written linewidth at a depth of 160 µm in photoresist
+      is 128.4 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - At a writing depth of 160 µm, FP -ExAO reduced the isolated linewidth to 88.8 nm, compared with
+      128.4 nm using metrics -based AO and 251.1 nm without correction, enabling sub -100 nm fabrication
+      deep inside the photoresist (Fig. 6a).
+    - writing depth of 160 µm
+    - metrics -based AO
+    - photoresist (Fig. 6a)
+  - statement: FP-ExAO with cascaded DMs achieves a lateral localization precision of 14 nm in 3D SMLM
+      imaging of TOM20-labelled mitochondria.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - With FP-ExAO using cascaded DMs, localization precision reached 14 nm laterally and 53 nm axially,
+      and Fourier ring correlation (FRC) resolution improved from 127.1 nm without AO to 66.7 nm (Extended
+      Fig. 6a).
+    - FP-ExAO using cascaded DMs
+    - 14 nm laterally
+    - TOM20 -labelled mitochondria in COS -7 cells
+  - statement: FP-ExAO with cascaded DMs achieves an axial localization precision of 53 nm in 3D SMLM
+      imaging of TOM20-labelled mitochondria.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - With FP-ExAO using cascaded DMs, localization precision reached 14 nm laterally and 53 nm axially,
+      and Fourier ring correlation (FRC) resolution improved from 127.1 nm without AO to 66.7 nm (Extended
+      Fig. 6a).
+    - FP-ExAO using cascaded DMs
+    - 53 nm axially
+    - TOM20 -labelled mitochondria in COS -7 cells
+  - statement: FP-ExAO achieves imaging to 160 µm depth in brain tissue.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''FP-ExAO enables
+      imaging to 160≉µm depth in brain tissue and beyond 60≉'''
+    quotes:
+    - FP-ExAO enables imaging to 160≉µm depth in brain tissue and beyond 60≉µm in kidney tissue
+    - In three-dimensional (3D) single molecule localization microscopy (SMLM), FP-ExAO enables imaging
+      to 160≉µm depth in brain tissue and beyond 60≉µm in kidney tissue
+    - FP-ExAO enables imaging
+    - brain tissue
+  - statement: FP-ExAO enables imaging beyond 60 µm depth in kidney tissue.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''FP-ExAO reaches
+      imaging depths of 160≉µm in brain tissue and more than'''
+    quotes:
+    - FP-ExAO reaches imaging depths of 160≉µm in brain tissue and more than 60≉µm in kidney tissue over
+      a 75≉µm × 75≉µm corrected field of view
+    - FP-ExAO reaches imaging depths
+    - kidney tissue
+  - statement: FP-ExAO achieves a lateral localization precision of 16.3 nm at a depth of 63.4 µm in nephrin-labelled
+      mouse kidney tissue.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''FP-ExAO achieved
+      a lateral localization precision of 16.3≉nm and impro'''
+    quotes:
+    - At a depth of 63.4 µm, FP-ExAO preserved continuous, meandering nephrin-positive structures across
+      both the center and edges of the field
+    - FP-ExAO achieved a lateral localization precision of 16.3≉nm and improved FRC resolution from 61.7≉nm
+      without AO to 49.2≉nm (Extended Fig. 6e).
+    - depth of 63.4 µm
+    - FP-ExAO achieved
+  tokens:
+    input: 27329
+    output: 3683
+  fetched_chars: 90184

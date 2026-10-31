@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-29.
+Topic code `PHOT`. Last reviewed 2026-10-31.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -146,6 +146,14 @@ Topic code `PHOT`. Last reviewed 2026-10-29.
 - **0.6096 nm** — The CIPS unit cell has a lattice parameter a of 6.096 Å.
   - `CLM-PHOT-0108` · material CIPS unit cell · grade B · credibility unknown · measured · as of 2026-10-23
   - sources: SRC-00224
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈33000 nm** — The passive interference region of the fabricated silicon-photonic VPEP encoding core measures approximately 33 μm in width.
+  - `CLM-PHOT-0115` · dimension width · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00253
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈147000 nm** — The passive interference region of the fabricated silicon-photonic VPEP encoding core measures approximately 147 μm in length.
+  - `CLM-PHOT-0116` · dimension length · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00253
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
@@ -339,6 +347,26 @@ Topic code `PHOT`. Last reviewed 2026-10-29.
   - `CLM-PHOT-0114` · grade B · credibility unknown · measured · as of 2026-10-27
   - sources: SRC-00239
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- For the Iris classification dataset, VPEP + LogReg achieves a mean macro-F1 score of 1.00000.
+  - `CLM-PHOT-0117` · dataset Iris, operating_temperature 35 °C · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00253
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The experimental third-harmonic circular dichroism of the chiral metasurface reaches −0.98.
+  - `CLM-PHOT-0119` · device fabricated chiral metasurface · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00255
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The measured degree of circular polarization of the third-harmonic output under circularly polarized excitation reaches 0.83 at resonance.
+  - `CLM-PHOT-0120` · operating_point at resonance · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00255
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The measured effective nonlinear Q-factor of the chiral metasurface is approximately 140.
+  - `CLM-PHOT-0121` · excitation_state LCP and LP excitation · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00255
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The measured linear transmission spectrum at normal incidence exhibits a chiral resonance with a Q-factor of 127.
+  - `CLM-PHOT-0122` · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00255
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -374,6 +402,10 @@ Topic code `PHOT`. Last reviewed 2026-10-29.
   - `CLM-PHOT-0101` · circuit_design Design B · grade B · credibility unknown · measured · as of 2026-10-21
   - sources: SRC-00217
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **6.41 percent** — For information encoding and recovery with a 26-symbol set size using a single-hidden-layer MLP decoder, VPEP achieves a character error rate of 6.41%.
+  - `CLM-PHOT-0118` · symbol_set_size C = 26, operating_temperature 35 °C · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00253
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
 
 ### sensitivity advantage ratio
 
@@ -533,6 +565,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 114
-- grades: {'B': 107, 'A': 7}
-- distinct sources: 37
+- claims: 122
+- grades: {'B': 115, 'A': 7}
+- distinct sources: 39

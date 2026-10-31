@@ -4894,3 +4894,328 @@ claims:
     conditions:
       frequency: 80 MHz
       model: ConvSNN
+- id: CLM-ARCH-0171
+  topic: ARCH
+  statement: RV2GC achieves an online execution speedup over ARM2GC of 4,042.58x on the SHA3-256 workload.
+  sources:
+  - SRC-00256
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    workload: SHA3-256
+- id: CLM-ARCH-0172
+  topic: ARCH
+  statement: Mini-Transformer executes 3,411,714 dynamic instructions online in 80.396 s.
+  sources:
+  - SRC-00256
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    program: Mini-Transformer
+    dynamic_instructions: 3,411,714
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 80.396
+      unit: s
+    si_base:
+      value: 80.396
+      unit: s
+    display:
+      value: 80395999999.99998
+      unit: ns
+    conditions:
+      program: Mini-Transformer
+      dynamic_instructions: 3,411,714
+- id: CLM-ARCH-0173
+  topic: ARCH
+  statement: Mini-ResNet achieves an online execution time of 178.015 s over 11,022,541 dynamic instructions.
+  sources:
+  - SRC-00256
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    program: Mini-ResNet
+    dynamic_instructions: 11,022,541
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 178.015
+      unit: s
+    si_base:
+      value: 178.015
+      unit: s
+    display:
+      value: 178014999999.99997
+      unit: ns
+    conditions:
+      program: Mini-ResNet
+      dynamic_instructions: 11,022,541
+- id: CLM-ARCH-0174
+  topic: ARCH
+  statement: Evaluator work other than protected-gate processing accounts for 71.3% to 93.2% of ARM2GC's
+    measured runtime.
+  sources:
+  - SRC-00256
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    system: ARM2GC
+    benchmark_set: nine benchmarks
+  quantity:
+    quantity: relative_deviation
+    bound: lower_bound
+    approximate: false
+    as_published:
+      value: 71.3
+      unit: '%'
+    si_base:
+      value: 0.713
+      unit: dimensionless
+    display:
+      value: 71.3
+      unit: percent
+    conditions:
+      system: ARM2GC
+      benchmark_set: nine benchmarks
+- id: CLM-ARCH-0175
+  topic: ARCH
+  statement: The 32-bit MRUD MAC achieves a delay of 2.14 ns.
+  sources:
+  - SRC-00258
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    process: FreePDK 45nm
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 2.14
+      unit: ns
+    si_base:
+      value: 2.14e-09
+      unit: s
+    display:
+      value: 2.1399999999999997
+      unit: ns
+    conditions:
+      process: FreePDK 45nm
+- id: CLM-ARCH-0176
+  topic: ARCH
+  statement: The clock frequency of the comparator is 1 MHz.
+  sources:
+  - SRC-00262
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    component: comparator
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.0
+      unit: MHz
+    si_base:
+      value: 1000000.0
+      unit: Hz
+    display:
+      value: 0.001
+      unit: GHz
+    conditions:
+      component: comparator
+- id: CLM-ARCH-0177
+  topic: ARCH
+  statement: The total layout area of the comparator integrated with the gain calibration circuit is 142
+    µm × 47 µm.
+  sources:
+  - SRC-00262
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    layout_length: 142 µm
+    layout_width: 47 µm
+- id: CLM-ARCH-0178
+  topic: ARCH
+  statement: In SPECspeed 2017, Caerus achieves a geomean speedup of 8.3%.
+  sources:
+  - SRC-00265
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    benchmark: SPECspeed 2017
+    design: Caerus
+- id: CLM-ARCH-0179
+  topic: ARCH
+  statement: In SPECspeed 2017, Caerus outperforms Berti by 2.0%.
+  sources:
+  - SRC-00265
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    benchmark: SPECspeed 2017
+    design: Caerus
+- id: CLM-ARCH-0180
+  topic: ARCH
+  statement: Caerus outperforms BertiGO by 1.5%.
+  sources:
+  - SRC-00265
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: BertiGO
+- id: CLM-ARCH-0181
+  topic: ARCH
+  statement: BertiGO improves on Berti by 0.5%.
+  sources:
+  - SRC-00265
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    design: BertiGO
+- id: CLM-ARCH-0182
+  topic: ARCH
+  statement: CaerusL2 deployed in the L2C without an L1D prefetcher achieves a 10.0% speedup in SPECspeed
+    2017.
+  sources:
+  - SRC-00265
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    benchmark: SPECspeed 2017
+    design: CaerusL2
+    location: L2C without an L1D prefetcher
+- id: CLM-ARCH-0183
+  topic: ARCH
+  statement: Caerus achieves a 9.6% geomean speedup across 55 randomly selected 8-core heterogeneous workload
+    mixes.
+  sources:
+  - SRC-00265
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-10-31'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    workload: 55 randomly selected 8-core heterogeneous workload mixes
+    design: Caerus

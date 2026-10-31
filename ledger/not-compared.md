@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**10981 pair(s)** as of 2026-10-29.
+**11863 pair(s)** as of 2026-10-31.
 
 ## `area_die` (11 pair(s))
 
@@ -22,17 +22,24 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-ARCH-0147` = 3.97 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 50% | component=AxCore, process=NanGate 15 nm technology, fclk=1 GHz, activation_format=FP16 | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
 | `CLM-ARCH-0148` = 4.68 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 42% | component=FIGLUT, process=NanGate 15 nm technology, fclk=1 GHz, activation_format=FP16 | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
 
-## `current` (13 pair(s))
+## `current` (20 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-DEV-0028` = 0.6 mA | `CLM-MAT-0069` = 2e-06 mA | 100% | process_step=current ramp-down | temperature=10 mK |
 | `CLM-DEV-0057` = 30 mA | `CLM-MAT-0069` = 2e-06 mA | 100% | switching_regime=small switching current | temperature=10 mK |
 | `CLM-DEV-0058` = 40 mA | `CLM-MAT-0069` = 2e-06 mA | 100% | switching_regime=large switching current | temperature=10 mK |
+| `CLM-EDA-0018` = 0.02 mA | `CLM-MAT-0069` = 2e-06 mA | 100% | circuit=BMR, corner=tt | temperature=10 mK |
+| `CLM-DEV-0058` = 40 mA | `CLM-EDA-0018` = 0.02 mA | 100% | switching_regime=large switching current | circuit=BMR, corner=tt |
+| `CLM-DEV-0057` = 30 mA | `CLM-EDA-0018` = 0.02 mA | 100% | switching_regime=small switching current | circuit=BMR, corner=tt |
+| `CLM-DEV-0077` = 4 mA | `CLM-EDA-0018` = 0.02 mA | 100% | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° | circuit=BMR, corner=tt |
+| `CLM-DEV-0075` = 1.5 mA | `CLM-EDA-0018` = 0.02 mA | 99% | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° | circuit=BMR, corner=tt |
 | `CLM-DEV-0036` = 0.558 mA | `CLM-DEV-0058` = 40 mA | 99% | temperature=2 K, state=after light irradiation | switching_regime=large switching current |
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0058` = 40 mA | 98% | process_step=current ramp-down | switching_regime=large switching current |
 | `CLM-DEV-0036` = 0.558 mA | `CLM-DEV-0057` = 30 mA | 98% | temperature=2 K, state=after light irradiation | switching_regime=small switching current |
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0057` = 30 mA | 98% | process_step=current ramp-down | switching_regime=small switching current |
+| `CLM-DEV-0028` = 0.6 mA | `CLM-EDA-0018` = 0.02 mA | 97% | process_step=current ramp-down | circuit=BMR, corner=tt |
+| `CLM-DEV-0036` = 0.558 mA | `CLM-EDA-0018` = 0.02 mA | 96% | temperature=2 K, state=after light irradiation | circuit=BMR, corner=tt |
 | `CLM-DEV-0058` = 40 mA | `CLM-DEV-0075` = 1.5 mA | 96% | switching_regime=large switching current | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° |
 | `CLM-DEV-0057` = 30 mA | `CLM-DEV-0075` = 1.5 mA | 95% | switching_regime=small switching current | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° |
 | `CLM-DEV-0058` = 40 mA | `CLM-DEV-0077` = 4 mA | 90% | switching_regime=large switching current | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° |
@@ -40,7 +47,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0077` = 4 mA | 85% | process_step=current ramp-down | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° |
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0075` = 1.5 mA | 60% | process_step=current ramp-down | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° |
 
-## `energy` (312 pair(s))
+## `energy` (366 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -85,7 +92,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0014` = 0.0003108 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | synthesis_condition=Nitrogen-rich |
 | `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0015` = 0.0003172 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | synthesis_condition=Nitrogen-rich |
 
-_and 272 more_
+_and 326 more_
 
 ## `energy_advantage_ratio` (7 pair(s))
 
@@ -99,10 +106,11 @@ _and 272 more_
 | `CLM-ARCH-0016` = 1.22 x | `CLM-MEM-0025` = 3.7 x | 67% | device=B200, benchmark=GroupGEMM | baseline=SoA mappings |
 | `CLM-ARCH-0005` = 1.32 x | `CLM-MEM-0025` = 3.7 x | 64% | process=TSMC 16nm FinFET, comparison=sinusoidal vs trapezoidal power-clock, gate_at_maximum=XOR/XNOR, vclk_at_maximum=0.5 V, fclk_at_maximum=384 MHz | baseline=SoA mappings |
 
-## `frequency` (442 pair(s))
+## `frequency` (465 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-ARCH-0042` = 25.9 GHz | `CLM-ARCH-0176` = 0.001 GHz | 100% | platform=optical PPLN module | component=comparator |
 | `CLM-ARCH-0042` = 25.9 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | platform=optical PPLN module | wavelength=400 nm |
 | `CLM-ARCH-0042` = 25.9 GHz | `CLM-PROC-0038` = 0.00061 GHz | 100% | platform=optical PPLN module | component=laser system |
 | `CLM-ARCH-0043` = 0.0006 GHz | `CLM-ARCH-0151` = 4.34e+04 GHz | 100% | platform=integrated phononic device | component=FIGFLEX, activation_format=FP16 |
@@ -138,21 +146,22 @@ _and 272 more_
 | `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | component=FIGFLEX, activation_format=FP16 | wavelength=400 nm |
 | `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | component=FIGFLEX, activation_format=FP16 | angle_of_incidence=0° to 30°, rotation_angle=90° |
 | `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | component=FIGFLEX, activation_format=FP16 | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-DEV-0012` = 370 GHz | `CLM-MAT-0148` = 0.001756 GHz | 100% | magnetic_field=8.1 T, frequency=1.9 THz | transition=f-g |
-| `CLM-DEV-0012` = 370 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | magnetic_field=8.1 T, frequency=1.9 THz | wavelength=400 nm |
-| `CLM-DEV-0012` = 370 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | magnetic_field=8.1 T, frequency=1.9 THz | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-DEV-0012` = 370 GHz | `CLM-PROC-0038` = 0.00061 GHz | 100% | magnetic_field=8.1 T, frequency=1.9 THz | component=laser system |
-| `CLM-DEV-0013` = 180 GHz | `CLM-MAT-0148` = 0.001756 GHz | 100% | magnetic_field=7.5 T, frequency=2.2 THz | transition=f-g |
+| `CLM-ARCH-0176` = 0.001 GHz | `CLM-DEV-0012` = 370 GHz | 100% | component=comparator | magnetic_field=8.1 T, frequency=1.9 THz |
+| `CLM-ARCH-0176` = 0.001 GHz | `CLM-DEV-0013` = 180 GHz | 100% | component=comparator | magnetic_field=7.5 T, frequency=2.2 THz |
+| `CLM-ARCH-0176` = 0.001 GHz | `CLM-MAT-0150` = 5000 GHz | 100% | component=comparator | material=monolayer MoTe2, phonon_mode=A1g |
+| `CLM-ARCH-0176` = 0.001 GHz | `CLM-PHOT-0036` = 121 GHz | 100% | component=comparator | sample_size=22 measured devices |
 
-_and 402 more_
+_and 425 more_
 
-## `length_device` (3508 pair(s))
+## `length_device` (3773 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-DEV-0053` = 1.61 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | parameter=ts | material=GaN, growth_method=ammonothermal |
 | `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | parameter=ts | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | parameter=ts | chip_thickness=4-mm |
+| `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0115` = 3.3e+04 nm | 100% | parameter=ts | dimension=width |
+| `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0116` = 1.47e+05 nm | 100% | parameter=ts | dimension=length |
 | `CLM-DEV-0068` = 100 nm | `CLM-MAT-0138` = 0.005 nm | 100% | material=PEDOT:PSS | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-DEV-0068` = 100 nm | `CLM-MAT-0140` = 0.005 nm | 100% | material=PEDOT:PSS | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-LITHO-0001` = 500 nm | `CLM-MAT-0135` = 0.013 nm | 100% | material=crystalline silicon membrane | superlattice_layer_n=3, superlattice_layer_m=5 |
@@ -166,32 +175,30 @@ _and 402 more_
 | `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=Sb monolayer on SiC(0001) | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | material=Sb monolayer on SiC(0001) | chip_thickness=4-mm |
 | `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0097` = 2e+04 nm | 100% | material=Sb monolayer on SiC(0001) | spiral_arms=20 |
+| `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0115` = 3.3e+04 nm | 100% | material=Sb monolayer on SiC(0001) | dimension=width |
+| `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0116` = 1.47e+05 nm | 100% | material=Sb monolayer on SiC(0001) | dimension=length |
 | `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0004` = 7000 nm | 100% | material=Sb monolayer on SiC(0001) | parameter=signal-ground electrode spacing |
 | `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=Sb monolayer on SiC(0001) | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | material=Sb monolayer on SiC(0001) | chip_thickness=4-mm |
 | `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0097` = 2e+04 nm | 100% | material=Sb monolayer on SiC(0001) | spiral_arms=20 |
+| `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0115` = 3.3e+04 nm | 100% | material=Sb monolayer on SiC(0001) | dimension=width |
+| `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0116` = 1.47e+05 nm | 100% | material=Sb monolayer on SiC(0001) | dimension=length |
 | `CLM-MAT-0020` = 6.4 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | regime=partially-reconstructed | material=GaN, growth_method=ammonothermal |
 | `CLM-MAT-0020` = 6.4 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | regime=partially-reconstructed | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0020` = 6.4 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | regime=partially-reconstructed | chip_thickness=4-mm |
+| `CLM-MAT-0020` = 6.4 nm | `CLM-PHOT-0116` = 1.47e+05 nm | 100% | regime=partially-reconstructed | dimension=length |
 | `CLM-MAT-0023` = 3.5 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | state=X2sA | material=GaN, growth_method=ammonothermal |
 | `CLM-MAT-0023` = 3.5 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | state=X2sA | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0023` = 3.5 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | state=X2sA | chip_thickness=4-mm |
+| `CLM-MAT-0023` = 3.5 nm | `CLM-PHOT-0116` = 1.47e+05 nm | 100% | state=X2sA | dimension=length |
 | `CLM-MAT-0024` = 6.4 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | state=X2sA | material=GaN, growth_method=ammonothermal |
 | `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | state=X2sA | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | state=X2sA | chip_thickness=4-mm |
+| `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0116` = 1.47e+05 nm | 100% | state=X2sA | dimension=length |
 | `CLM-MAT-0029` = 0.5291 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=bulk CeN | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0029` = 0.5291 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | material=bulk CeN | chip_thickness=4-mm |
-| `CLM-MAT-0029` = 0.5291 nm | `CLM-PHOT-0097` = 2e+04 nm | 100% | material=bulk CeN | spiral_arms=20 |
-| `CLM-MAT-0037` = 14.6 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | material=TiN, property=GL coherence length | chip_thickness=4-mm |
-| `CLM-MAT-0040` = 0.5 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | fermi_velocity=7×105 ms−1, model=Drude model | material=GaN, growth_method=ammonothermal |
-| `CLM-MAT-0040` = 0.5 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | fermi_velocity=7×105 ms−1, model=Drude model | substrate_material=glass cover slip, sample_type=flat surface |
-| `CLM-MAT-0040` = 0.5 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | fermi_velocity=7×105 ms−1, model=Drude model | chip_thickness=4-mm |
-| `CLM-MAT-0040` = 0.5 nm | `CLM-PHOT-0097` = 2e+04 nm | 100% | fermi_velocity=7×105 ms−1, model=Drude model | spiral_arms=20 |
-| `CLM-MAT-0059` = 1000 nm | `CLM-MAT-0135` = 0.013 nm | 100% | region=pristine zone, temperature=1.5 K | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-MAT-0059` = 1000 nm | `CLM-MAT-0136` = 0.006 nm | 100% | region=pristine zone, temperature=1.5 K | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-MAT-0059` = 1000 nm | `CLM-MAT-0137` = 0.011 nm | 100% | region=pristine zone, temperature=1.5 K | superlattice_layer_n=3, superlattice_layer_m=5 |
 
-_and 3468 more_
+_and 3733 more_
 
 ## `power` (226 pair(s))
 
@@ -246,7 +253,7 @@ _and 186 more_
 |---|---|---|---|---|
 | `CLM-DEV-0079` = 3.1e-05 W/mm^2 | `CLM-MAT-0026` = 4.8e-07 W/mm^2 | 98% | structure=long-base p+-n device, n_base_width=300 𝜇𝜇m, framework=extended theory | environment=ambient |
 
-## `relative_deviation` (5073 pair(s))
+## `relative_deviation` (5429 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -257,6 +264,7 @@ _and 186 more_
 | `CLM-ARCH-0089` = 64.2 percent | `CLM-MAT-0111` = -60 percent | 193% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0112` = 66.8 percent | 190% | sample=B1-1 | baseline=pure two-dimensional Coulomb reference, benchmark_protocol=high-field-calibrated |
 | `CLM-ARCH-0090` = 67.5 percent | `CLM-MAT-0111` = -60 percent | 189% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
+| `CLM-ARCH-0174` = 71.3 percent | `CLM-MAT-0111` = -60 percent | 184% | system=ARM2GC, benchmark_set=nine benchmarks | sample=B1-1 |
 | `CLM-ARCH-0097` = 72 percent | `CLM-MAT-0111` = -60 percent | 183% | training_dataset=CloudLab, evaluation_dataset=Lambda | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0039` = 49.85 percent | 183% | sample=B1-1 | platform=Jetson Orin Nano, threshold=550, verification_stage=Single function verification |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0026` = 75.7 percent | 179% | sample=B1-1 | placement=conventional |
@@ -279,6 +287,8 @@ _and 186 more_
 | `CLM-DEV-0069` = 38 percent | `CLM-MAT-0111` = -60 percent | 163% | wavelength=365 nm, batch=batch A, operating_voltage=0 V | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0012` = 95 percent | 163% | sample=B1-1 | encoding_scheme=differential encoding, benchmark=MNIST |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0023` = 95 percent | 163% | sample=B1-1 | device_technology=printed Ag/ZnO/Au ECM memristors |
+| `CLM-MAT-0111` = -60 percent | `CLM-MEM-0044` = 95.33 percent | 163% | sample=B1-1 | dataset=Fisher’s Iris flower dataset, architecture=SNN architecture, device=Pr0.7Ca0.3MnO3 (PCMO) RRAM |
+| `CLM-MAT-0111` = -60 percent | `CLM-MEM-0045` = 96 percent | 162% | sample=B1-1 | model=ideal LIF neuron, dataset=Fisher’s Iris flower dataset |
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0063` = 37 percent | 162% | sample=B1-1 | disorder_type=radius disorder |
 | `CLM-ARCH-0077` = 36.86 percent | `CLM-MAT-0111` = -60 percent | 161% | framework=RAPID-DNN, fault_configuration=mixed random fault configuration, baseline=fault-agnostic baseline | sample=B1-1 |
 | `CLM-ARCH-0040` = 97.93 percent | `CLM-MAT-0111` = -60 percent | 161% | frequency=7 GHz, component=graded magnetic spacer | sample=B1-1 |
@@ -287,11 +297,8 @@ _and 186 more_
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0038` = 99.69 percent | 160% | sample=B1-1 | platform=Jetson Orin Nano, threshold=550, verification_stage=Group verification |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0116` = 100 percent | 160% | sample=B1-1 | system=2D square-lattice tight-binding model |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0124` = 36 percent | 160% | sample=B1-1 | elastic_constant=C22, rotation_direction=from y to x |
-| `CLM-MAT-0111` = -60 percent | `CLM-MEM-0022` = 100 percent | 160% | sample=B1-1 | device_technology=printed Ag/ZnO/Au ECM memristors |
-| `CLM-ARCH-0084` = 34 percent | `CLM-MAT-0111` = -60 percent | 157% | platform=Arrow, application=Sparse point cloud processing | sample=B1-1 |
-| `CLM-MAT-0111` = -60 percent | `CLM-MAT-0198` = 34 percent | 157% | sample=B1-1 | method=DFT calculations, location=X valleys |
 
-_and 5033 more_
+_and 5389 more_
 
 ## `temperature` (211 pair(s))
 
@@ -363,7 +370,7 @@ _and 171 more_
 |---|---|---|---|---|
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0007` = 3100 W/(m*K) | 99% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | temperature=room-temperature, sample_13c_concentration=~0.00024% |
 
-## `time` (895 pair(s))
+## `time` (1072 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -372,6 +379,8 @@ _and 171 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0130` = 1.036e+07 ns | 100% | device_type=FTJ, architecture=Naive | device=NVIDIA GeForce RTX 5080, form=direct, decode=ALU |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0131` = 1.115e+07 ns | 100% | device_type=FTJ, architecture=Naive | device=NVIDIA GeForce RTX 5080, form=hoisted, decode=LUT |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0153` = 3.72e+09 ns | 100% | device_type=FTJ, architecture=Naive | component=FIGFLEX, benchmark=Llama-3.1-8B |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0172` = 8.04e+10 ns | 100% | device_type=FTJ, architecture=Naive | program=Mini-Transformer, dynamic_instructions=3,411,714 |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0173` = 1.78e+11 ns | 100% | device_type=FTJ, architecture=Naive | program=Mini-ResNet, dynamic_instructions=11,022,541 |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-DEV-0066` = 6e+10 ns | 100% | device_type=FTJ, architecture=Naive | software=MATLAB Deep Learning Toolbox |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0011` = 1.35e+08 ns | 100% | device_type=FTJ, architecture=Naive | tool=JasperGold, module=cache coherence module |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0012` = 1.273e+09 ns | 100% | device_type=FTJ, architecture=Naive | tool=JasperGold, module=L1 Bus Interface module |
@@ -381,6 +390,7 @@ _and 171 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0127` = 0.0003 ns | 100% | device_type=FTJ, architecture=Naive | feature=XA |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0170` = 0.002 ns | 100% | device_type=FTJ, architecture=Naive | state=bright exciton |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0197` = 0.000603 ns | 100% | device_type=FTJ, architecture=Naive | material=SnSe, excitation_helicity=σ+ |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0230` = 0.00015 ns | 100% | device_type=FTJ, architecture=Naive | parameter=overall temporal resolution |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PHOT-0025` = 4e+06 ns | 100% | device_type=FTJ, architecture=Naive | illumination=random speckle illumination |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PHOT-0048` = 8.29e+10 ns | 100% | device_type=FTJ, architecture=Naive | algorithm=DBS, cores=128 cores |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PHOT-0073` = 0.0004 ns | 100% | device_type=FTJ, architecture=Naive | material=ITO film |
@@ -391,6 +401,8 @@ _and 171 more_
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0130` = 1.036e+07 ns | 100% | device_type=FTJ, architecture=Merged | device=NVIDIA GeForce RTX 5080, form=direct, decode=ALU |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0131` = 1.115e+07 ns | 100% | device_type=FTJ, architecture=Merged | device=NVIDIA GeForce RTX 5080, form=hoisted, decode=LUT |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0153` = 3.72e+09 ns | 100% | device_type=FTJ, architecture=Merged | component=FIGFLEX, benchmark=Llama-3.1-8B |
+| `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0172` = 8.04e+10 ns | 100% | device_type=FTJ, architecture=Merged | program=Mini-Transformer, dynamic_instructions=3,411,714 |
+| `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0173` = 1.78e+11 ns | 100% | device_type=FTJ, architecture=Merged | program=Mini-ResNet, dynamic_instructions=11,022,541 |
 | `CLM-ARCH-0013` = 162 ns | `CLM-DEV-0066` = 6e+10 ns | 100% | device_type=FTJ, architecture=Merged | software=MATLAB Deep Learning Toolbox |
 | `CLM-ARCH-0013` = 162 ns | `CLM-EDA-0011` = 1.35e+08 ns | 100% | device_type=FTJ, architecture=Merged | tool=JasperGold, module=cache coherence module |
 | `CLM-ARCH-0013` = 162 ns | `CLM-EDA-0012` = 1.273e+09 ns | 100% | device_type=FTJ, architecture=Merged | tool=JasperGold, module=L1 Bus Interface module |
@@ -400,15 +412,10 @@ _and 171 more_
 | `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0127` = 0.0003 ns | 100% | device_type=FTJ, architecture=Merged | feature=XA |
 | `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0170` = 0.002 ns | 100% | device_type=FTJ, architecture=Merged | state=bright exciton |
 | `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0197` = 0.000603 ns | 100% | device_type=FTJ, architecture=Merged | material=SnSe, excitation_helicity=σ+ |
+| `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0230` = 0.00015 ns | 100% | device_type=FTJ, architecture=Merged | parameter=overall temporal resolution |
 | `CLM-ARCH-0013` = 162 ns | `CLM-PHOT-0025` = 4e+06 ns | 100% | device_type=FTJ, architecture=Merged | illumination=random speckle illumination |
-| `CLM-ARCH-0013` = 162 ns | `CLM-PHOT-0048` = 8.29e+10 ns | 100% | device_type=FTJ, architecture=Merged | algorithm=DBS, cores=128 cores |
-| `CLM-ARCH-0013` = 162 ns | `CLM-PHOT-0073` = 0.0004 ns | 100% | device_type=FTJ, architecture=Merged | material=ITO film |
-| `CLM-ARCH-0013` = 162 ns | `CLM-PKG-0002` = 2.499e+08 ns | 100% | device_type=FTJ, architecture=Merged | model=Qwen3-1.7B, channels=16 channels, erase_latency=2000 µs |
-| `CLM-ARCH-0013` = 162 ns | `CLM-PROC-0005` = 5.79e+09 ns | 100% | device_type=FTJ, architecture=Merged | hardware=NVIDIA RTX PRO 6000 Blackwell GPU, implementation_type=full-resolution implementation |
-| `CLM-ARCH-0014` = 153.5 ns | `CLM-ARCH-0020` = 1.4e+07 ns | 100% | device_type=FTJ, architecture=Symmetry | concurrency_n_a=48, design=our design with tiering, component=end-to-end time-between-tokens (TBT) |
-| `CLM-ARCH-0014` = 153.5 ns | `CLM-ARCH-0021` = 2.7e+07 ns | 100% | device_type=FTJ, architecture=Symmetry | concurrency_n_a=128, design=our design with tiering |
 
-_and 855 more_
+_and 1032 more_
 
 ## `voltage` (21 pair(s))
 

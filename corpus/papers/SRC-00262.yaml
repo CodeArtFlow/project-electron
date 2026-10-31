@@ -1,0 +1,103 @@
+id: SRC-00262
+title: Implementation and Validation of Mismatch-Tolerant High-Gain OTA with a Calibrated Negative Conductance
+  Load
+doi: null
+arxiv_id: 2610.39699v1
+url: https://arxiv.org/abs/2610.39699v1
+venue_id: arxiv_api
+authors:
+- name: Mayank Aggarwal
+  affiliation: null
+  corresponding: null
+- name: Naveen Kadayinti
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-29'
+retrieved_date: '2026-10-31'
+access: full_text
+read_scope: Automated reading. The full PDF text (21,577 characters, 6 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.39699v1 on
+  2026-10-31. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“A strong-arm latch-based Sense Amplifier (SA) [8], [9], with the improved slave latch reported
+  in [10]. is used as the comparator, with a clock frequency of 1 MHz and a power supply voltage Vdd of
+  1.2 V olts, and the design is optimized for minimum offset.”
+
+  “is used as the comparator, with a clock frequency of 1 MHz”
+
+  “The complete calibration circuitry is implemented and evaluated through post-layout simulations.”
+
+  “The complete layout is 142µm×47µm.”'
+method_summary: “The complete calibration circuitry is implemented and evaluated through post-layout simulations.”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 7271
+    output: 2409
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: Before calibration, the measured standard deviation of the comparator offset is 4.11 mV
+      across 1000 Monte Carlo mismatch samples.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The comparator
+      is evaluated using 1000 Monte Carlo mis-match samples.'''
+    quotes:
+    - The comparator is evaluated using 1000 Monte Carlo mis-match samples.
+    - Before calibration, the measured standard deviation isσ= 4.11mV , corresponding to a4σworst-case
+      offset of 16.44 mV , as shown in Fig. 9(a).
+    - Post-Layout Monte-Carlo simulation results before (a) and after (b) offset calibration of the comparator
+    - in 65-nm CMOS.
+  - statement: After calibration, the comparator offset standard deviation is reduced to 132 µV in post-layout
+      simulation.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The resulting mean offset is 307µV , with a standard deviation of 132µV and a worst-case offset
+      of 625µV , all of which are below the required 1.19 mV limit.
+    - Post-Layout Monte-Carlo simulation results before (a) and after (b) offset calibration of the comparator
+    - in 65-nm CMOS.
+    - The post-calibration results are shown in Fig. 9(b).
+  - statement: The maximum observed post-calibration offset of the comparator is 625 µV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The resulting mean offset is 307µV , with a standard deviation of 132µV and a worst-case offset
+      of 625µV , all of which are below the required 1.19 mV limit.
+    - Post-Layout Monte-Carlo simulation results before (a) and after (b) offset calibration of the comparator
+    - in 65-nm CMOS.
+    - The post-calibration results are shown in Fig. 9(b).
+  - statement: The supply voltage Vdd for the comparator is 1.2 V.
+    reason: 'unit conversion refused: voltage: could not parse 1.2 ''V olts'': ''olts'' is not defined
+      in the unit registry'
+    quotes:
+    - A strong-arm latch-based Sense Amplifier (SA) [8], [9], with the improved slave latch reported in
+      [10]. is used as the comparator, with a clock frequency of 1 MHz and a power supply voltage Vdd
+      of 1.2 V olts, and the design is optimized for
+    - The complete calibration circuitry is implemented and evaluated through post-layout simulations.
+    - is used as the comparator, with a clock frequency of 1 MHz and a power supply voltage Vdd of 1.2
+      V olts
+  - statement: The calibrated OTA achieves a simulated DC gain of 60 dB.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''This work'''
+    quotes:
+    - TABLE I COMPARISON OF THEOTAUSED IN THIS WORK WITH PREVIOUSLY REPORTED ARCHITECTURES.
+    - This work
+    - '60'
+    - The complete calibration circuitry is implemented and evaluated through post-layout simulations.
+  - statement: The total power consumption of the proposed OTA architecture in this work is 0.45 mW.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''This work'''
+    quotes:
+    - TABLE I COMPARISON OF THEOTAUSED IN THIS WORK WITH PREVIOUSLY REPORTED ARCHITECTURES.
+    - This work
+    - '0.45'
+    - The complete calibration circuitry is implemented and evaluated through post-layout simulations.
+corrections: []

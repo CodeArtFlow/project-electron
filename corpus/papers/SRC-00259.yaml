@@ -1,0 +1,94 @@
+id: SRC-00259
+title: Hardware-Aware Model Inversion in Memristive Spiking Neural Networks
+doi: null
+arxiv_id: 2610.39688v1
+url: https://arxiv.org/abs/2610.39688v1
+venue_id: arxiv_api
+authors:
+- name: Pablo Sorrentino
+  affiliation: null
+  corresponding: null
+- name: Fernando M. Quintana
+  affiliation: null
+  corresponding: null
+- name: Erika Covi
+  affiliation: null
+  corresponding: null
+- name: Fatih Turkmen
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-29'
+retrieved_date: '2026-10-31'
+access: full_text
+read_scope: Automated reading. The full PDF text (90,838 characters, 15 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.39688v1 on
+  2026-10-31. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Synaptic Weight noise 78.9 -17.0 0.211±0.004 -35.7”
+
+  “In particular, selected threshold perturbations increase reconstruction similarity by up to 51.8% relative
+  to the memristive baseline, whereas weight noise reduces it by 35.7%.”
+
+  “All experiments are conducted in simulation using public benchmark datasets.”'
+method_summary: '“We use SDMI consistently across the SNN model, its memristive SNN, and the same memristive
+  SNN under additional hardware perturbations.”
+
+  “SDMI combines surrogate gradients with Expectation over Transformation (EOT) to handle discrete spiking
+  dynamics and average over stochastic hardware and spike realizations.”'
+limitations: '“Our study provides a simulation-based characterization of model-inversion susceptibility
+  in compact memristive SNNs and does not constitute physical-chip validation or demonstrate a chip-specific
+  fault-injection mechanism.”
+
+  “The quantitative results are specific to the evaluated SNN architectures, datasets, modeled ReRAM configuration,
+  and perturbation ranges.”
+
+  “In addition, SSIM and PSNR quantify class-representative reconstruction fidelity and do not establish
+  exact recovery of individual training records.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 25405
+    output: 1683
+  claims_accepted: 1
+  claims_rejected: 4
+  rejected:
+  - statement: At comparable accuracy levels, neuron-threshold perturbations increase reconstruction fidelity,
+      measured by SSIM, by up to 51.8%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''At comparable
+      accuracy levels, neuron-threshold perturbations increase'''
+    quotes:
+    - At comparable accuracy levels, neuron-threshold perturbations increase reconstruction fidelity,
+      measured by SSIM, by up to 51.8%, whereas spike-level perturbations primarily degrade utility without
+      consistently improving reconstruction.
+    - All experiments are conducted in simulation using public benchmark datasets.
+  - statement: Neuron-level perturbations increase reconstructed-image similarity by up to 51.8% relative
+      to the memristive baseline.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''In particular,
+      neuron-level perturbations increase reconstructed-image'''
+    quotes:
+    - 'In particular, neuron-level perturbations increase reconstructed-image similarity by up to 51.8%
+      relative to the memristive baseline, whereas spike-level perturbations can produce comparable accuracy
+      degradation without corresponding gains '
+    - All experiments are conducted in simulation using public benchmark datasets.
+  - statement: The differential ReRAM conductance range is 1 to 1000 µS.
+    reason: 'unit conversion refused: sheet_resistance: cannot convert 1000.0 𝜇S to ohm - Cannot convert
+      from ''microsiemens'' ([current] ** 2 * [time] ** 3 / [mass] / [length] ** 2) to ''ohm'' ([mass] '
+    quotes:
+    - Signed synaptic weights 𝑊𝑖,𝑗 are represented using differential conductance pairs(𝐺+𝑖,𝑗,𝐺−𝑖,𝑗),
+      with conductance values restricted to1–1000 𝜇S.
+    - All experiments are conducted in simulation using public benchmark datasets.
+  - statement: Under the memristive threshold shift condition, accuracy is 70.2% and SSIM is 0.498, representing
+      a 51.8% increase in SSIM over the baseline.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - Neuron Threshold shift 70.2 -25.7 0.498±0.004 +51.8
+    - All experiments are conducted in simulation using public benchmark datasets.
+    - For MNIST, the memristive baseline yields SSIM 0.328.
+corrections: []

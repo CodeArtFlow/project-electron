@@ -1,0 +1,96 @@
+id: SRC-00253
+title: Versatile Photonic Encoding Platform with Selectable Back Ends for Automotive Edge Processing
+doi: null
+arxiv_id: 2610.39337v1
+url: https://arxiv.org/abs/2610.39337v1
+venue_id: arxiv_api
+authors:
+- name: Isamu Takai
+  affiliation: null
+  corresponding: null
+- name: Makoto Nakai
+  affiliation: null
+  corresponding: null
+- name: Ayana Mizuno
+  affiliation: null
+  corresponding: null
+- name: Atsutaka Miyamichi
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-29'
+retrieved_date: '2026-10-31'
+access: full_text
+read_scope: Automated reading. The full PDF text (86,499 characters, 21 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.39337v1 on
+  2026-10-31. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“In the present prototype, the interference region measures approximately 33 μm in width and
+  147 μm in length.”
+
+  “the interference region measures approximately 33 μm in width and 147 μm in length.”
+
+  “VPEP + LogReg nevertheless achieves a macro-F1 score of 1.0 for Iris.”
+
+  “Iris [44] 150 4 5 3 Accuracy 0.95533 0.03665 1.00000 0.00000 0.04467 Macro-F1 0.95512 0.03686 1.00000
+  0.00000 0.04488”
+
+  “During all experiments, the chip temperature is maintained at 35 °C using a Peltier temperature controller.”
+
+  “Without reconfiguring the photonic core, the same chip is experimentally evaluate d across four representative
+  functions relevant to automotive edge systems”
+
+  “For information encoding and recovery, a lightweight nonlinear decoder reconstructs four -character
+  (32-bit) inputs from 17- channel encoded outputs with approximately 94% character accuracy for a 26-symbol
+  set.”
+
+  “For example, at C = 26 (lowercase letters), the MLP achieves a CER of 6.41% (approximately 94% character
+  accuracy)”
+
+  “26 (lowercase) (a-z) 200k LDA 34.02 0.10 79.46 0.15 LogReg 29.29 0.12 73.50 0.18 MLP(1×128) 6.41 0.19
+  21.47 0.56”'
+method_summary: '“During all experiments, the chip temperature is maintained at 35 °C using a Peltier
+  temperature controller.”
+
+  “The drive vector u is generated digitally on the PC and converted into 32 analog drive voltages by
+  a 32-channel, 16-bit digital-to-analog converter (DAC). These voltages drive the PM array, and the resulting
+  phase-modulated optical signals propagate through the fixed photonic encoding core. After on-chip photodetection,
+  the 17-channel analog encoded outputs z ∈ ℝ17 are digitized by an 18-bit analog-to-digital converter
+  (ADC).”'
+limitations: '“The temperature dependence, long-term drift, operational repeatability, and device-to-device
+  variation have not yet been systematically characterized.”
+
+  “The thermo-optic PMs used in the present prototype, in particular, were not optimized for low -power
+  operation.”
+
+  “The MVR is 6.1%, indicating that local non -monotonic steps remain despite the low overall reconstruction
+  error.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 26869
+    output: 2591
+  claims_accepted: 4
+  claims_rejected: 1
+  rejected:
+  - statement: For analog-to-digital conversion using 3 quantization levels per photodetector channel
+      and LinReg + 1D LUT with 1024 bins, the best configuration achieves an in
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''%FS'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a uni'
+    quotes:
+    - For analog-to-digital conversion, the best configuration achieves an in-sample normalized root-mean-square
+      error of approximately 0.75% of full scale.
+    - Among the evaluated configurations, L = 3 with LinReg + 1D LUT using 1024 bins achieves the lowest
+      NRMSE, approximately 0.75%FS.
+    - Without reconfiguring the photonic core, the same chip is experimentally evaluate d across four
+      representative functions relevant to automotive edge systems
+    - During all experiments, the chip temperature is maintained at 35 °C using a Peltier temperature
+      controller.
+corrections: []
