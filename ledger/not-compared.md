@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**11863 pair(s)** as of 2026-10-31.
+**12710 pair(s)** as of 2026-11-01.
 
 ## `area_die` (11 pair(s))
 
@@ -47,7 +47,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0077` = 4 mA | 85% | process_step=current ramp-down | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° |
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0075` = 1.5 mA | 60% | process_step=current ramp-down | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° |
 
-## `energy` (366 pair(s))
+## `energy` (393 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -92,7 +92,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0014` = 0.0003108 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | synthesis_condition=Nitrogen-rich |
 | `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0015` = 0.0003172 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | synthesis_condition=Nitrogen-rich |
 
-_and 326 more_
+_and 353 more_
 
 ## `energy_advantage_ratio` (7 pair(s))
 
@@ -153,7 +153,7 @@ _and 326 more_
 
 _and 425 more_
 
-## `length_device` (3773 pair(s))
+## `length_device` (4118 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -198,7 +198,7 @@ _and 425 more_
 | `CLM-MAT-0029` = 0.5291 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=bulk CeN | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0029` = 0.5291 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | material=bulk CeN | chip_thickness=4-mm |
 
-_and 3733 more_
+_and 4078 more_
 
 ## `power` (226 pair(s))
 
@@ -253,7 +253,7 @@ _and 186 more_
 |---|---|---|---|---|
 | `CLM-DEV-0079` = 3.1e-05 W/mm^2 | `CLM-MAT-0026` = 4.8e-07 W/mm^2 | 98% | structure=long-base p+-n device, n_base_width=300 𝜇𝜇m, framework=extended theory | environment=ambient |
 
-## `relative_deviation` (5429 pair(s))
+## `relative_deviation` (5744 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -298,7 +298,7 @@ _and 186 more_
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0116` = 100 percent | 160% | sample=B1-1 | system=2D square-lattice tight-binding model |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0124` = 36 percent | 160% | sample=B1-1 | elastic_constant=C22, rotation_direction=from y to x |
 
-_and 5389 more_
+_and 5704 more_
 
 ## `temperature` (211 pair(s))
 
@@ -370,7 +370,7 @@ _and 171 more_
 |---|---|---|---|---|
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0007` = 3100 W/(m*K) | 99% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | temperature=room-temperature, sample_13c_concentration=~0.00024% |
 
-## `time` (1072 pair(s))
+## `time` (1170 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -391,6 +391,8 @@ _and 171 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0170` = 0.002 ns | 100% | device_type=FTJ, architecture=Naive | state=bright exciton |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0197` = 0.000603 ns | 100% | device_type=FTJ, architecture=Naive | material=SnSe, excitation_helicity=σ+ |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0230` = 0.00015 ns | 100% | device_type=FTJ, architecture=Naive | parameter=overall temporal resolution |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0237` = 8.5e+09 ns | 100% | device_type=FTJ, architecture=Naive | spacer_cation=FPEA |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0238` = 3.5e+09 ns | 100% | device_type=FTJ, architecture=Naive | spacer_cation=FBZA |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PHOT-0025` = 4e+06 ns | 100% | device_type=FTJ, architecture=Naive | illumination=random speckle illumination |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PHOT-0048` = 8.29e+10 ns | 100% | device_type=FTJ, architecture=Naive | algorithm=DBS, cores=128 cores |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PHOT-0073` = 0.0004 ns | 100% | device_type=FTJ, architecture=Naive | material=ITO film |
@@ -412,36 +414,55 @@ _and 171 more_
 | `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0127` = 0.0003 ns | 100% | device_type=FTJ, architecture=Merged | feature=XA |
 | `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0170` = 0.002 ns | 100% | device_type=FTJ, architecture=Merged | state=bright exciton |
 | `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0197` = 0.000603 ns | 100% | device_type=FTJ, architecture=Merged | material=SnSe, excitation_helicity=σ+ |
-| `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0230` = 0.00015 ns | 100% | device_type=FTJ, architecture=Merged | parameter=overall temporal resolution |
-| `CLM-ARCH-0013` = 162 ns | `CLM-PHOT-0025` = 4e+06 ns | 100% | device_type=FTJ, architecture=Merged | illumination=random speckle illumination |
 
-_and 1032 more_
+_and 1130 more_
 
-## `voltage` (21 pair(s))
+## `voltage` (83 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-MAT-0247` = -1.96 V | `CLM-MEM-0011` = 2.32 V | 184% | substituent=−H | device=Ag/TiOx/NiOx/p++-Si device, operation=SET voltage (V SET) |
+| `CLM-DEV-0027` = 1.53 V | `CLM-MAT-0247` = -1.96 V | 178% | device_type=VO2 thin film device, temperature=330 K, transition_type=reset | substituent=−H |
+| `CLM-MAT-0099` = 0.53 V | `CLM-MAT-0247` = -1.96 V | 127% | charging_voltage=0.6 V versus Ag/AgCl | substituent=−H |
+| `CLM-DEV-0067` = 0.47 V | `CLM-MAT-0247` = -1.96 V | 124% | device_architecture=Gr/n-Si, illumination=AM 1.5G, 100 mW cm⁻² | substituent=−H |
+| `CLM-MAT-0100` = 0.38 V | `CLM-MAT-0247` = -1.96 V | 119% | charging_voltage=0.6 V versus Ag/AgCl | substituent=−H |
+| `CLM-DEV-0026` = 12.65 V | `CLM-MAT-0247` = -1.96 V | 115% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | substituent=−H |
+| `CLM-DEV-0006` = 85 V | `CLM-MAT-0247` = -1.96 V | 102% | incident_peak_electric_field=150 kV/cm | substituent=−H |
 | `CLM-DEV-0006` = 85 V | `CLM-MAT-0064` = 1.5e-07 V | 100% | incident_peak_electric_field=150 kV/cm | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 |
 | `CLM-DEV-0067` = 0.47 V | `CLM-MAT-0064` = 1.5e-07 V | 100% | device_architecture=Gr/n-Si, illumination=AM 1.5G, 100 mW cm⁻² | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 |
 | `CLM-MAT-0064` = 1.5e-07 V | `CLM-MAT-0099` = 0.53 V | 100% | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 | charging_voltage=0.6 V versus Ag/AgCl |
 | `CLM-MAT-0064` = 1.5e-07 V | `CLM-MAT-0100` = 0.38 V | 100% | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 | charging_voltage=0.6 V versus Ag/AgCl |
+| `CLM-MAT-0064` = 1.5e-07 V | `CLM-MAT-0240` = 0.9 V | 100% | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 | substituent=−F |
+| `CLM-MAT-0064` = 1.5e-07 V | `CLM-MAT-0241` = 1.4 V | 100% | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 | substituent=−I |
+| `CLM-MAT-0064` = 1.5e-07 V | `CLM-MAT-0242` = 1.95 V | 100% | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 | substituent=−Cl |
+| `CLM-MAT-0064` = 1.5e-07 V | `CLM-MAT-0243` = 1.1 V | 100% | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 | substituent=−ONO2 |
+| `CLM-MAT-0064` = 1.5e-07 V | `CLM-MAT-0244` = 1.4 V | 100% | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 | substituent=−ONO |
+| `CLM-MAT-0064` = 1.5e-07 V | `CLM-MAT-0245` = 1.63 V | 100% | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 | substituent=−OSO2CF3 |
+| `CLM-MAT-0064` = 1.5e-07 V | `CLM-MAT-0246` = 1.99 V | 100% | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 | substituent=−O (BA) |
+| `CLM-MAT-0064` = 1.5e-07 V | `CLM-MAT-0247` = -1.96 V | 100% | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 | substituent=−H |
 | `CLM-DEV-0006` = 85 V | `CLM-MAT-0100` = 0.38 V | 100% | incident_peak_electric_field=150 kV/cm | charging_voltage=0.6 V versus Ag/AgCl |
 | `CLM-DEV-0006` = 85 V | `CLM-DEV-0067` = 0.47 V | 99% | incident_peak_electric_field=150 kV/cm | device_architecture=Gr/n-Si, illumination=AM 1.5G, 100 mW cm⁻² |
 | `CLM-DEV-0006` = 85 V | `CLM-MAT-0099` = 0.53 V | 99% | incident_peak_electric_field=150 kV/cm | charging_voltage=0.6 V versus Ag/AgCl |
+| `CLM-DEV-0006` = 85 V | `CLM-MAT-0240` = 0.9 V | 99% | incident_peak_electric_field=150 kV/cm | substituent=−F |
+| `CLM-DEV-0006` = 85 V | `CLM-MAT-0243` = 1.1 V | 99% | incident_peak_electric_field=150 kV/cm | substituent=−ONO2 |
+| `CLM-DEV-0006` = 85 V | `CLM-MAT-0241` = 1.4 V | 98% | incident_peak_electric_field=150 kV/cm | substituent=−I |
+| `CLM-DEV-0006` = 85 V | `CLM-MAT-0244` = 1.4 V | 98% | incident_peak_electric_field=150 kV/cm | substituent=−ONO |
 | `CLM-DEV-0006` = 85 V | `CLM-DEV-0027` = 1.53 V | 98% | incident_peak_electric_field=150 kV/cm | device_type=VO2 thin film device, temperature=330 K, transition_type=reset |
+| `CLM-DEV-0006` = 85 V | `CLM-MAT-0245` = 1.63 V | 98% | incident_peak_electric_field=150 kV/cm | substituent=−OSO2CF3 |
+| `CLM-DEV-0006` = 85 V | `CLM-MAT-0242` = 1.95 V | 98% | incident_peak_electric_field=150 kV/cm | substituent=−Cl |
+| `CLM-DEV-0006` = 85 V | `CLM-MAT-0246` = 1.99 V | 98% | incident_peak_electric_field=150 kV/cm | substituent=−O (BA) |
 | `CLM-DEV-0006` = 85 V | `CLM-MEM-0011` = 2.32 V | 97% | incident_peak_electric_field=150 kV/cm | device=Ag/TiOx/NiOx/p++-Si device, operation=SET voltage (V SET) |
 | `CLM-DEV-0026` = 12.65 V | `CLM-MAT-0100` = 0.38 V | 97% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | charging_voltage=0.6 V versus Ag/AgCl |
 | `CLM-DEV-0026` = 12.65 V | `CLM-DEV-0067` = 0.47 V | 96% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | device_architecture=Gr/n-Si, illumination=AM 1.5G, 100 mW cm⁻² |
 | `CLM-DEV-0026` = 12.65 V | `CLM-MAT-0099` = 0.53 V | 96% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | charging_voltage=0.6 V versus Ag/AgCl |
+| `CLM-DEV-0026` = 12.65 V | `CLM-MAT-0240` = 0.9 V | 93% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | substituent=−F |
+| `CLM-DEV-0026` = 12.65 V | `CLM-MAT-0243` = 1.1 V | 91% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | substituent=−ONO2 |
+| `CLM-DEV-0026` = 12.65 V | `CLM-MAT-0241` = 1.4 V | 89% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | substituent=−I |
+| `CLM-DEV-0026` = 12.65 V | `CLM-MAT-0244` = 1.4 V | 89% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | substituent=−ONO |
+| `CLM-DEV-0026` = 12.65 V | `CLM-MAT-0245` = 1.63 V | 87% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | substituent=−OSO2CF3 |
 | `CLM-DEV-0006` = 85 V | `CLM-DEV-0026` = 12.65 V | 85% | incident_peak_electric_field=150 kV/cm | device_type=VO2 thin film device, temperature=330 K, transition_type=set |
-| `CLM-MAT-0100` = 0.38 V | `CLM-MEM-0011` = 2.32 V | 84% | charging_voltage=0.6 V versus Ag/AgCl | device=Ag/TiOx/NiOx/p++-Si device, operation=SET voltage (V SET) |
-| `CLM-DEV-0026` = 12.65 V | `CLM-MEM-0011` = 2.32 V | 82% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | device=Ag/TiOx/NiOx/p++-Si device, operation=SET voltage (V SET) |
-| `CLM-DEV-0067` = 0.47 V | `CLM-MEM-0011` = 2.32 V | 80% | device_architecture=Gr/n-Si, illumination=AM 1.5G, 100 mW cm⁻² | device=Ag/TiOx/NiOx/p++-Si device, operation=SET voltage (V SET) |
-| `CLM-MAT-0099` = 0.53 V | `CLM-MEM-0011` = 2.32 V | 77% | charging_voltage=0.6 V versus Ag/AgCl | device=Ag/TiOx/NiOx/p++-Si device, operation=SET voltage (V SET) |
-| `CLM-DEV-0027` = 1.53 V | `CLM-MAT-0100` = 0.38 V | 75% | device_type=VO2 thin film device, temperature=330 K, transition_type=reset | charging_voltage=0.6 V versus Ag/AgCl |
-| `CLM-DEV-0027` = 1.53 V | `CLM-DEV-0067` = 0.47 V | 69% | device_type=VO2 thin film device, temperature=330 K, transition_type=reset | device_architecture=Gr/n-Si, illumination=AM 1.5G, 100 mW cm⁻² |
-| `CLM-DEV-0027` = 1.53 V | `CLM-MAT-0099` = 0.53 V | 65% | device_type=VO2 thin film device, temperature=330 K, transition_type=reset | charging_voltage=0.6 V versus Ag/AgCl |
-| `CLM-DEV-0027` = 1.53 V | `CLM-MEM-0011` = 2.32 V | 34% | device_type=VO2 thin film device, temperature=330 K, transition_type=reset | device=Ag/TiOx/NiOx/p++-Si device, operation=SET voltage (V SET) |
+
+_and 43 more_
 
 ## `wavelength` (248 pair(s))
 

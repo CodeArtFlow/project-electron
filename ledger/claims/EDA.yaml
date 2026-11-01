@@ -529,3 +529,74 @@ claims:
     conditions:
       circuit: BMR
       corner: tt
+- id: CLM-EDA-0019
+  topic: EDA
+  statement: The post-layout simulation of the SAR ADC placed using Ours achieves an SNDR of 34.3717 dB.
+  sources:
+  - SRC-00267
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-11-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    method: Ours
+    input_frequency: 117.1875 kHz
+- id: CLM-EDA-0020
+  topic: EDA
+  statement: The post-layout simulation of the SAR ADC placed using Ours yields an ENOB of 5.4172 bit.
+  sources:
+  - SRC-00267
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-11-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    method: Ours
+- id: CLM-EDA-0021
+  topic: EDA
+  statement: For the SAR ADC, Ours reduces placement area by 16.77% relative to MAGICAL.
+  sources:
+  - SRC-00267
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-11-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-EDA-0022
+  topic: EDA
+  statement: For the flat LDO, Ours reduces maximum output deviation by 9.36% relative to MAGICAL.
+  sources:
+  - SRC-00267
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-11-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    method: Ours

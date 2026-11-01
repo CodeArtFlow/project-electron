@@ -1,0 +1,100 @@
+id: SRC-00267
+title: 'LAMP: LLM-Driven Analog Placement through Adaptive Tool Composition'
+doi: null
+arxiv_id: 2610.39882v1
+url: https://arxiv.org/abs/2610.39882v1
+venue_id: arxiv_api
+authors:
+- name: Zecheng Xu
+  affiliation: null
+  corresponding: null
+- name: Guanhua Chen
+  affiliation: null
+  corresponding: null
+- name: Yumao Wu
+  affiliation: null
+  corresponding: null
+- name: Keren Zhu
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-29'
+retrieved_date: '2026-11-01'
+access: full_text
+read_scope: Automated reading. The full PDF text (22,887 characters, 5 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.39882v1 on
+  2026-11-01. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Ours 34.3717 5.4172 48.1905 96.991”
+
+  “117.1875 kHz differential sinusoidal input”
+
+  “Post-layout simulation is performed using Spectre with the extracted DUT in the corresponding circuit
+  testbench.”
+
+  “Ours reduces area by 16.77% relative to MAGICAL”
+
+  “Ours reduces maximum output deviation by 9.36% and area by 12.23% relative to MAGICAL”
+
+  “Ours reduces maximum output deviation”'
+method_summary: '“All electrical measurements use the TT model corner at 27 ◦C.”
+
+  “For the SAR ADC, we use deterministic transient simulations with a 40 MHz clock and a 117.1875 kHz
+  differential sinusoidal input. A 1024-point coherent FFT of the reconstructed output provides SNDR,
+  ENOB, and SFDR.”
+
+  “For the LDO, we use a 10 pF output capacitor and a 1–100–1 mA load pulse with 1 µs rise and fall times.”
+
+  “To assess main-loop stability, we measure phase margin (PM) using Spectre STB with a probe between
+  VOUT and feedback resistor R7 and report the smaller value at 1 and 100 mA.”
+
+  “PSRR at 1 MHz, measured at a static load of 100 mA, quantifies supply ripple rejection.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 7719
+    output: 2922
+  claims_accepted: 4
+  claims_rejected: 4
+  rejected:
+  - statement: The SAR ADC placement area achieved by Ours is 96.991 103 µm2.
+    reason: the statement contains the number 103, which none of its quotes contain
+    quotes:
+    - Ours 34.3717 5.4172 48.1905 96.991
+    - Post-layout simulation is performed using Spectre with the extracted DUT in the corresponding circuit
+      testbench.
+    - (a) SAR ADC
+    - SMIC 180 nm
+  - statement: The LDO placement area achieved by Ours is 229.813 103 µm2.
+    reason: the statement contains the number 103, which none of its quotes contain
+    quotes:
+    - Ours 1664.220 63.950 −1.6081 229.813
+    - Post-layout simulation is performed using Spectre with the extracted DUT in the corresponding circuit
+      testbench.
+    - (b) LDO
+    - SMIC 180 nm
+  - statement: The post-layout simulation of the LDO placed using Ours shows a PSRR of -1.6081 dB at 1
+      MHz.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - Ours 1664.220 63.950 −1.6081 229.813
+    - Post-layout simulation is performed using Spectre with the extracted DUT in the corresponding circuit
+      testbench.
+    - (b) LDO
+    - PSRR @ 1 MHz(dB)
+  - statement: The SAR ADC placement area achieved by MAGICAL is 116.532 103 µm2.
+    reason: the statement contains the number 103, which none of its quotes contain
+    quotes:
+    - MAGICAL 31.9218 5.0103 44.4624 116.532
+    - Post-layout simulation is performed using Spectre with the extracted DUT in the corresponding circuit
+      testbench.
+    - (a) SAR ADC
+    - SMIC 180 nm
+corrections: []

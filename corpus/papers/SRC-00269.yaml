@@ -1,0 +1,100 @@
+id: SRC-00269
+title: A physics-informed uncertainty-aware surrogate for $p$-$n$ junction diodes
+doi: null
+arxiv_id: 2610.39993v1
+url: https://arxiv.org/abs/2610.39993v1
+venue_id: arxiv_api
+authors:
+- name: Suchita Kulkarni
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-29'
+retrieved_date: '2026-11-01'
+access: full_text
+read_scope: Automated reading. The full PDF text (82,030 characters, 35 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.39993v1 on
+  2026-11-01. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“For the one-dimensional symmetric junction surrogate, we obtain 0.11% medianL 1 error on the
+  electrostatic po- tential, and 1.5% and 0.61% on the electron and hole densities.”
+
+  “one-dimensional symmetric junction surrogate”'
+method_summary: “Ground truth is generated with the open-source TCAD solver DEVSIM 3 [19], solving the
+  steady-state drift–diffusion system for a silicon p–n diode atT=300 K (U t =25.89 mV, ni =10 10 cm−3,ε=11.7ε
+  0) with constant mobilitiesµ n =1417 andµ p =470.5 cm 2/V s and equal lifetimesτ n =τ p =10 −5 s [11].”
+limitations: '“Below it, in the stiff corner of high doping and long devices (W dep ∼20 nm), the errors
+  are 10–20 times larger than in the central bins and only about 1% of the devices fall there, too few
+  to calibrate, so we report no interval.”
+
+  “Extrapolating in voltage degrades beyond that range, to a median error of 25% up to the built-in potential
+  against 1.9% inside it, and it fails above the built-in potential, where the device enters a regime
+  absent from the training data.”
+
+  “The scope of the study is limited. The detailed analysis covers one doping family, a symmetric abrupt
+  junction with a fixed relative smearing of the doping, constant mobility, long lifetimes and forward
+  bias only.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 28221
+    output: 3062
+  claims_accepted: 3
+  claims_rejected: 5
+  rejected:
+  - statement: The median relative error of the terminal current prediction on 246 test devices is 0.70%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''ˆJRO 0.70
+      0.21 1.4'''
+    quotes:
+    - ˆJRO 0.70 0.21 1.4
+    - Quantity Test (246 devices) Training (27 devices) Held-out (3 devices)
+    - Scalar QoIs (relative error)
+    - Table 3. Median percent error of the ensemble against DEVSIM for the test, training and held-out
+      devices.
+  - statement: The median relative error of the depletion width prediction on 246 test devices is 1.4%.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Depletion widthW 1.4 0.96 1.1
+    - Quantity Test (246 devices) Training (27 devices) Held-out (3 devices)
+    - Scalar QoIs (relative error)
+    - Table 3. Median percent error of the ensemble against DEVSIM for the test, training and held-out
+      devices.
+  - statement: The median relative error of the peak field prediction on 246 test devices is 0.39%.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Peak fieldE peak 0.39 0.20 0.25
+    - Quantity Test (246 devices) Training (27 devices) Held-out (3 devices)
+    - Scalar QoIs (relative error)
+    - Table 3. Median percent error of the ensemble against DEVSIM for the test, training and held-out
+      devices.
+  - statement: Extrapolation in voltage beyond the training range up to the built-in potential degrades
+      to a median error of 25%.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Between the end of the training range andV bi the median error of the readout is 25% against 1.9%
+      inside the training range.
+    - Extrapolation in Fig. 8, we show the six network median error for the extrapolation dataset.
+    - Between the end of the training range andV bi
+    - median error of the readout
+  - statement: The median relative error of the readout terminal current inside the training range is
+      1.9%.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Between the end of the training range andV bi the median error of the readout is 25% against 1.9%
+      inside the training range.
+    - In Fig. 8, we show the six network median error for the extrapolation dataset.
+    - inside the training range
+    - median error of the readout
+corrections: []

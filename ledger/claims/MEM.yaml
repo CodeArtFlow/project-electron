@@ -1410,3 +1410,70 @@ claims:
     conditions:
       material_stack: CoFeB/Pt
       analysis_method: Conventional ST-FMR analysis
+- id: CLM-MEM-0048
+  topic: MEM
+  statement: Die-level read and SLC write energy is 0.45 pJ/bit.
+  sources:
+  - SRC-00271
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-11-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    operation: die-level read and SLC write
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.45
+      unit: pJ/bit
+    si_base:
+      value: 4.5e-13
+      unit: J
+    display:
+      value: 449.99999999999994
+      unit: fJ
+    conditions:
+      operation: die-level read and SLC write
+- id: CLM-MEM-0049
+  topic: MEM
+  statement: NORmal consumes 8.1x to 17.8x less memory subsystem energy per token than Mobile HBF.
+  sources:
+  - SRC-00271
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-11-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+- id: CLM-MEM-0050
+  topic: MEM
+  statement: NORmal is 2.8x to 6.3x faster than Mobile HBF on sessions beyond 256K tokens.
+  sources:
+  - SRC-00271
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-11-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    context_length: beyond 256K tokens

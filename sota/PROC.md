@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-10-31.
+Topic code `PROC`. Last reviewed 2026-11-01.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -86,6 +86,18 @@ Topic code `PROC`. Last reviewed 2026-10-31.
   - `CLM-PROC-0036` · parameterization_type slab-style · grade B · credibility unknown · simulated · as of 2026-10-21
   - sources: SRC-00195
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **2260 nm** — The GaN layer thickness determined from FTIR measurements for sample S1 is 2.26 µm.
+  - `CLM-PROC-0045` · sample S1, layer GaN · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00272
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **610 nm** — The GaN layer thickness determined from FTIR measurements for sample S3 is 0.61 µm.
+  - `CLM-PROC-0046` · sample S3, layer GaN · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00272
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **1060 nm** — The GaN layer thickness determined from FTIR measurements for sample S6 is 1.06 µm.
+  - `CLM-PROC-0047` · sample S6, layer GaN · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00272
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### qualitative
 
@@ -285,6 +297,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 44
-- grades: {'B': 44}
-- distinct sources: 14
+- claims: 47
+- grades: {'B': 47}
+- distinct sources: 15

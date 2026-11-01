@@ -23,6 +23,55 @@ id: CAND-20261030-0047
 harvested_date: '2026-10-30'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-01'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The n = 1 phase microcrystalline powder exhibits an average PL decay lifetime of 4.90 ns.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - n = 1 410 0.957 1.006 0.043 4.556 - - 4.90
+    - Time-resolved PL decay curves with multi-exponential fits “Ȝex = 371 nm).
+  - statement: The n = 2 phase microcrystalline powder shows an average PL decay lifetime of 6.40 ns.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - n = 2 442 0.9945 5.78 0.0021 46.32 0.0033 167.44 6.40
+    - Time-resolved PL decay curves with multi-exponential fits “Ȝex = 371 nm).
+  - statement: The n = 3 phase microcrystalline powder exhibits an average PL decay lifetime of 22.89
+      ns.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - n = 3 473 0.1950 0.06 0.3689 2.45 0.4362 50.36 22.89
+    - Time-resolved PL decay curves with multi-exponential fits “Ȝex = 371 nm).
+  - statement: The pellets pressed from perovskite powders were fabricated under a pressure of 200 MPa.
+    reason: the quote says the number is approximate but approximate is false
+    quotes:
+    - The pellets were pressed at a pressure of 200 MPa, and their dimensions were 5 mm diameter (see
+      Figure 3, insets) and around 200 µm height (Fig. S16-S18).
+  - statement: The height of the pressed pellets is approximately 200 µm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The pellets were pressed at a pressure of 200 MPa, and their dimensions were 5 mm diameter (see
+      Figure 3, insets) and around 200 µm height (Fig. S16-S18).
+  - statement: The n = 1 phase pellet exhibits a responsivity below 1 mA/W.
+    reason: 'unit conversion refused: current_drive: cannot convert 1.0 mA/W to A/m - Cannot convert from
+      ''milliampere / watt'' ([current] * [time] ** 3 / [mass] / [length] ** 2) to ''ampere / meter'' '
+    quotes:
+    - Upon illumination at a bias of 5V, we observe a fast photoresponse (Figure 3ɫ) with rise and fall
+      times on a timescale of tens of milliseconds, and low responsivity below 1 mA/W.
+    - 'We first address the electrical and photoconductive properties of pellets fabricated from the phase-pure
+      powders. We find that the n = 1 phase pellets show a much lower dark current compared to the n =
+      2 and n = 3 phases, with nearly ohmic '
+  tokens:
+    input: 14785
+    output: 2231
+  fetched_chars: 43509

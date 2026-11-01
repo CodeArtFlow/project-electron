@@ -25,6 +25,92 @@ id: CAND-20261030-0040
 harvested_date: '2026-10-30'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-01'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Softmax computation on Hexagon v79 HVX reaches 526.6 GOPS at sequence lengths from 3072
+      to 16384 tokens, achieving 85% of its 619 GOPS compute ceiling.
+    reason: the statement contains the number 9, which none of its quotes contain
+    quotes:
+    - Specifically, softmax throughput increases as the sequence length grows from 64 to 3072 tokens,
+      then plateaus at approximately 526.6 GOPS for sequence lengths up to 16384 tokens, reaching 85%
+      of the 619 GOPS HVX compute ceiling.
+    - Figure 8b shows the roofline model for HVX on Hexagon v79 alongside softmax throughput.
+    - OnePlus 13T
+    - Hexagon v79
+  - statement: For a sequence length of 1024 tokens, softmax on HVX takes 1.87 ms of the total 2.76 ms
+      FlashAttention kernel latency on Hexagon v79.
+    reason: the statement contains the number 9, which none of its quotes contain
+    quotes:
+    - For an input of 1024 tokens, softmax on HVX takes 1.87 ms out of the 2.76 ms kernel latency, compared
+      with only 0.28 ms for matrix computation on HMX.
+    - Figure 8a shows the latency breakdown of matrix computation, softmax computation, and output processing
+      within a FlashAttention kernel during prefill on Hexagon v79.
+    - Hexagon v79
+    - FlashAttention kernel
+  - statement: Softmax computation on the DPU accounts for 66.5% of the full-attention step latency on
+      RK3588 RKNPU.
+    reason: the statement contains the number 588, which none of its quotes contain
+    quotes:
+    - Specifically, softmax computation on the DPU accounts for 66.5% of the step latency, compared with
+      16.9% for matrix multiplications on the CNA.
+    - Figure 9 shows the latency breakdown of full attention on RKNPU.
+    - Orange Pi 5 Plus
+    - RK3588 RKNPU
+  - statement: At a sequence length of 1024 tokens, the GDN kernel on Hexagon v79 delivers 0.29x the speed
+      of the Adreno GPU baseline.
+    reason: the statement contains the number 1024, which none of its quotes contain
+    quotes:
+    - In contrast, the HVX GDN kernel delivers approximately 30% and 71% lower throughput on Hexagon v79
+      and v73, respectively, relative to MNN OpenCL’s chunked GEMM-based GDN implementation on Adreno.
+    - At a sequence length of 1024 tokens, Figure 11a shows that Hexagon NPUs accelerate matrix multiplication
+      and convolution by 6.3–11.4× and full attention by 2.7–6.4× over the Adreno GPU baseline.
+    - Hexagon v79
+    - Adreno
+  - statement: HMX utilization reaches only 3.8% to 3.9% during FP16 GDN kernel execution on Hexagon NPU.
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - As a result, HMX utilization is only 3.8–3.9%, while HVX instruction counts rise roughly linearly
+      with sequence length and are dominated by conversion, ALU, and load/store operations, as demonstrated
+      in Figure 11c.
+    - Figure 11c profiles the FP16 HMX kernel.
+    - Hexagon NPU
+    - HMX
+  - statement: At a 4096-token context, SmolVLM2-500M achieves 60.5 tokens/s decode throughput on the
+      CPU.
+    reason: 'unit conversion refused: throughput_tool: could not parse 60.5 ''tokens/s'': ''tokens'' is
+      not defined in the unit registry'
+    quotes:
+    - With the context length of 4096, SmolVLM2-500M achieves 60.5 tokens/s on two Oryon Prime CPU cores
+      using MNN while 39.9 tokens/s on the Hexagon NPU using GenieX.
+    - Figure 13 shows that neither backend consistently decodes faster across the tested deployments.
+    - SmolVLM2-500M
+    - '4096'
+  - statement: At a 4096-token context, Gemma4-E2B achieves 24.3 tokens/s decode throughput on the NPU.
+    reason: the statement contains the number 4096, which none of its quotes contain
+    quotes:
+    - 'For Gemma4-E2B, the NPU is faster: 24.3 tokens/s and 10.4 tokens/s on the CPU.'
+    - Figure 13 shows that neither backend consistently decodes faster across the tested deployments.
+    - Gemma4-E2B
+    - NPU
+  - statement: InternVL3.5-1B achieves 32.5% accuracy on MME-RealWorld at an input resolution of 784 pixels.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - For example, on MME-RealWorld, InternVL3.5-1B reaches 32.5% accuracy at 784 pixels, compared to
+      30.7% at 672 pixels (Figure 17).
+    - To identify sweet resolutions, we evaluate six VLMs with native preprocessing, comparing TTFT across
+      device–backend stacks in Figure 16 with accuracy on the ten benchmarks of § 3.1 in Figure 17.
+    - InternVL3.5-1B
+    - MME-RealWorld
+  tokens:
+    input: 35388
+    output: 3279
+  fetched_chars: 103767

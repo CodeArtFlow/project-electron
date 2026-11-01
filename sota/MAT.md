@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-10-31.
+Topic code `MAT`. Last reviewed 2026-11-01.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -785,6 +785,10 @@ Topic code `MAT`. Last reviewed 2026-10-31.
   - `CLM-MAT-0236` · technique CFS-YS, baseline_technique DPYS · grade B · credibility unknown · measured · as of 2026-10-29
   - sources: SRC-00263
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The root mean squared roughness of FPEA perovskite films decreased from 39 nm to 18 nm upon addition of the NH4SCN additive.
+  - `CLM-MAT-0239` · spacer_cation FPEA · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00268
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -990,6 +994,14 @@ Topic code `MAT`. Last reviewed 2026-10-31.
   - `CLM-MAT-0230` · parameter overall temporal resolution · grade B · credibility unknown · measured · as of 2026-10-29
   - sources: SRC-00260
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **8.5e+09 ns** — The addition of NH4SCN delays the photoluminescence onset time during spin-coating by 8.5 s for the FPEA system.
+  - `CLM-MAT-0237` · spacer_cation FPEA · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00268
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **3.5e+09 ns** — The addition of NH4SCN delays the photoluminescence emission by 3.5 s for the FBZA system during spin-coating.
+  - `CLM-MAT-0238` · spacer_cation FBZA · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00268
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -1007,6 +1019,38 @@ Topic code `MAT`. Last reviewed 2026-10-31.
   - sources: SRC-00117
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0048 — see the open register
+- **0.9 V** — The chemisorption potential for −F functionalisation of monolayer graphene is 0.9 ± 0.04 V vs Fc/Fc+.
+  - `CLM-MAT-0240` · substituent −F · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00270
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1.4 V** — The chemisorption potential for −I functionalisation of monolayer graphene is 1.4 ± 0.06 V vs Fc/Fc+.
+  - `CLM-MAT-0241` · substituent −I · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00270
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1.95 V** — The chemisorption potential for −Cl functionalisation of monolayer graphene is 1.95 ± 0.1 V vs Fc/Fc+.
+  - `CLM-MAT-0242` · substituent −Cl · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00270
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1.1 V** — The chemisorption potential for −ONO2 functionalisation of monolayer graphene is 1.1 ± 0.1 V vs Fc/Fc+.
+  - `CLM-MAT-0243` · substituent −ONO2 · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00270
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1.4 V** — The chemisorption potential for −ONO functionalisation of monolayer graphene is 1.4 ± 0.06 V vs Fc/Fc+.
+  - `CLM-MAT-0244` · substituent −ONO · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00270
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1.63 V** — The chemisorption potential for −OSO2CF3 functionalisation of monolayer graphene is 1.63 ± 0.06 V vs Fc/Fc+.
+  - `CLM-MAT-0245` · substituent −OSO2CF3 · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00270
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1.99 V** — The chemisorption potential for −O (BA) functionalisation of monolayer graphene is 1.99 ± 0.05 V vs Fc/Fc+.
+  - `CLM-MAT-0246` · substituent −O (BA) · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00270
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **-1.96 V** — The chemisorption potential for hydrogenation (−H) of monolayer graphene is -1.96 ± 0.08 V vs Fc/Fc+.
+  - `CLM-MAT-0247` · substituent −H · grade B · credibility unknown · measured · as of 2026-10-29
+  - sources: SRC-00270
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### wavelength
 
@@ -1147,6 +1191,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 236
-- grades: {'B': 236}
-- distinct sources: 90
+- claims: 247
+- grades: {'B': 247}
+- distinct sources: 92

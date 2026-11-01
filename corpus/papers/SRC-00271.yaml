@@ -1,0 +1,129 @@
+id: SRC-00271
+title: 'NORmal: Architecting 3D Ferroelectric NOR Flash as Main Memory -- From Co-Fabricated BEOL Arrays
+  to 200B-Class Multi-Agent LLMs in a Smartphone'
+doi: null
+arxiv_id: 2610.40000v1
+url: https://arxiv.org/abs/2610.40000v1
+venue_id: arxiv_api
+authors:
+- name: Zhuoran Li
+  affiliation: null
+  corresponding: null
+- name: Chen Gu
+  affiliation: null
+  corresponding: null
+- name: Zhuohang Bian
+  affiliation: null
+  corresponding: null
+- name: Haochen Yu
+  affiliation: null
+  corresponding: null
+- name: Yibo Zhao
+  affiliation: null
+  corresponding: null
+- name: Xuxiao Yang
+  affiliation: null
+  corresponding: null
+- name: Zhaori Cong
+  affiliation: null
+  corresponding: null
+- name: Jinshan Yue
+  affiliation: null
+  corresponding: null
+- name: Qing Luo
+  affiliation: null
+  corresponding: null
+- name: Di Geng
+  affiliation: null
+  corresponding: null
+- name: Ling Li
+  affiliation: null
+  corresponding: null
+- name: Youwei Zhuo
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-29'
+retrieved_date: '2026-11-01'
+access: full_text
+read_scope: Automated reading. The full PDF text (68,485 characters, 13 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.40000v1 on
+  2026-11-01. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Because sense amplifiers, write drivers, and the LPDDR6 bridge logic sit directly beneath
+  the vertical bitlines, measured array sensing and calibrated SPICE/CACTI modeling of the CuA peripherals
+  and PHY keep die-level read and SLC write energy at 0.45 pJ/bit,18×below HBF read energy.”
+
+  “keep die-level read and SLC write energy at 0.45 pJ/bit,18×below HBF read energy.”
+
+  “measured array sensing and calibrated SPICE/CACTI modeling of the CuA peripherals and PHY keep die-level
+  read and SLC write energy at 0.45 pJ/bit,18×below HBF read energy.”
+
+  “In serving-level simulation on production agent traces,NORmalis8 .9×–28.0× faster than UFS offloading,
+  within 0.4% of an unlimited-DRAM ideal, and 2.8×–6.3× faster than HBF on sessions beyond 256K tokens,
+  with8.1×–17.8×less memory energy per token.”
+
+  “Fig. 7(b) shows thatNORmalreduces memory subsystem energy to0.016–0.068 J/tok, an11 .3×–27.0× reduction
+  over UFS 5.0and an8 .1×–17.8× reduction over Mobile HBF(0.13–0.92 J/tok).”
+
+  “On the 62 long-horizon tasks exceeding 256K context tokens (256K–962K, Fig. 9(b)),NORmalis Base across
+  all four workloads: Mobile HBF takes2.78×–6.33× longer(6.33× onQwen 27B,3 .21× onQwen 35B,3 .71× onGLM
+  5.3, and 2.78× onMulti-Agent), and UFS 5.0 takes8 .20×–31.31× longer.”
+
+  “2.8×–6.3× faster than HBF on sessions beyond 256K tokens”'
+method_summary: '“Measured cell and array characterization [1, 9] shows that both cell types sense in
+  under 7.5 ns. Array sensing, CuA peripheral settling, and the LPDDR6 PHY total 25–35 ns, fitting within𝑡𝑅𝐶𝐷+𝑅𝐿
+  .”
+
+  “We evaluateNORmalwith a full-stack serving simulator that replays single-agent and multi-agent sessions.”'
+limitations: '“FeNOR shares the bus’s 153.6 GB/s instead of adding a link as HBF does, and in return it
+  provides writable capacity, sub-picojoule access, and unmodified SoC hardware.”
+
+  “Because 3-bit MLC threshold drift accelerates with temperature, placing the FeNOR stack atop an 85◦C
+  SoC in a conventional package-on-package (PoP) layout degrades state retention.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 24695
+    output: 3003
+  claims_accepted: 3
+  claims_rejected: 4
+  rejected:
+  - statement: Both cell types sense in under 7.5 ns.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Measured cell and array characterization [1, 9] shows that both cell types sense in under 7.5 ns.
+  - statement: The MLC array exhibits a 4.6 V memory window that separates eight threshold states.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The MLC array opens a 4.6 V memory window that separates eight threshold states (Fig. 2h).
+  - statement: Single-cell SLC writes take 100 ns.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - DG SLC switches a single cell in place in 100 ns without block erase, endures more than 1011 P/E
+      cycles, and is insensitive to drift, so it suits persistent KV appends.
+  - statement: In serving-level simulation, NORmal achieves an 8.9x to 28.0x end-to-end throughput speedup
+      over UFS 5.0.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''By executing
+      weights in place from MLC and retaining long-horizon KV c'''
+    quotes:
+    - In serving-level simulation on production agent traces,NORmalis8 .9×–28.0× faster than UFS offloading,
+      within 0.4% of an unlimited-DRAM ideal, and 2.8×–6.3× faster than HBF on sessions beyond 256K tokens,
+      with8.1×–17.8×less memory energy pe
+    - 'By executing weights in place from MLC and retaining long-horizon KV caches in SLC at LPDDR6 bus
+      speed,NORmalachieves 6.50–37.26 tok/s, delivering an8.9×–28.0× end-to-end speedup over UFS 5.0(26
+      .1× onFlash Next,28 .0× onGLM 5.3, and21 .4× '
+    - In serving-level simulation on production agent traces,NORmalis8 .9×–28.0× faster than UFS offloading
+corrections: []

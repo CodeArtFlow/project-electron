@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-10-31.
+Topic code `DEV`. Last reviewed 2026-11-01.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -283,6 +283,21 @@ Topic code `DEV`. Last reviewed 2026-10-31.
   - `CLM-DEV-0082` · current 10 mA · grade B · credibility unknown · measured · as of 2026-10-27
   - sources: SRC-00241
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.11 percent** — For the one-dimensional symmetric junction surrogate, the median relative L1 error on the electrostatic potential is 0.11%.
+  - `CLM-DEV-0086` · surrogate_type one-dimensional symmetric junction surrogate · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00269
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0096, CFL-0097 — see the open register
+- **1.5 percent** — For the one-dimensional symmetric junction surrogate, the median relative L1 error on the electron density is 1.5%.
+  - `CLM-DEV-0087` · surrogate_type one-dimensional symmetric junction surrogate · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00269
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0096, CFL-0098 — see the open register
+- **0.61 percent** — For the one-dimensional symmetric junction surrogate, the median relative L1 error on the hole density is 0.61%.
+  - `CLM-DEV-0088` · surrogate_type one-dimensional symmetric junction surrogate · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00269
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0097, CFL-0098 — see the open register
 
 ### temperature
 
@@ -377,10 +392,20 @@ Topic code `DEV`. Last reviewed 2026-10-31.
 
 ## Live contradictions in this layer
 
-_None._
+Shown here, not in an appendix: a reader of this page must see the disagreement without navigating elsewhere.
+
+- `CFL-0096` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-DEV-0086, CLM-DEV-0087
+  - missing data: `not yet named`
+- `CFL-0097` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-DEV-0086, CLM-DEV-0088
+  - missing data: `not yet named`
+- `CFL-0098` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-DEV-0087, CLM-DEV-0088
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 82
-- grades: {'B': 82}
-- distinct sources: 36
+- claims: 85
+- grades: {'B': 85}
+- distinct sources: 37

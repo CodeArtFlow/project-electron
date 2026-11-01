@@ -1,6 +1,6 @@
 # Memory — state of the art
 
-Topic code `MEM`. Last reviewed 2026-10-31.
+Topic code `MEM`. Last reviewed 2026-11-01.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -24,6 +24,10 @@ Topic code `MEM`. Last reviewed 2026-10-31.
   - `CLM-MEM-0043` · voltage_pulse_width 10 ns, operation SET operations, device PCM · grade B · credibility unknown · measured · as of 2026-10-29
   - sources: SRC-00257
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **450 fJ** — Die-level read and SLC write energy is 0.45 pJ/bit.
+  - `CLM-MEM-0048` · operation die-level read and SLC write · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00271
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### energy advantage ratio
 
@@ -115,6 +119,14 @@ Topic code `MEM`. Last reviewed 2026-10-31.
 - Weight noise reduces SDMI reconstruction similarity by 35.7%.
   - `CLM-MEM-0046` · baseline memristive baseline · grade B · credibility unknown · simulated · as of 2026-10-29
   - sources: SRC-00259
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- NORmal consumes 8.1x to 17.8x less memory subsystem energy per token than Mobile HBF.
+  - `CLM-MEM-0049` · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00271
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- NORmal is 2.8x to 6.3x faster than Mobile HBF on sessions beyond 256K tokens.
+  - `CLM-MEM-0050` · context_length beyond 256K tokens · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00271
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
@@ -251,6 +263,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 47
-- grades: {'B': 47}
-- distinct sources: 17
+- claims: 50
+- grades: {'B': 50}
+- distinct sources: 18

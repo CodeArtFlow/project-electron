@@ -1,6 +1,6 @@
 # EDA — state of the art
 
-Topic code `EDA`. Last reviewed 2026-10-31.
+Topic code `EDA`. Last reviewed 2026-11-01.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -57,6 +57,22 @@ Topic code `EDA`. Last reviewed 2026-10-31.
   - `CLM-EDA-0017` · configuration Ibex reference, fclk 242 MHz · grade B · credibility unknown · measured · as of 2026-10-27
   - sources: SRC-00240
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The post-layout simulation of the SAR ADC placed using Ours achieves an SNDR of 34.3717 dB.
+  - `CLM-EDA-0019` · method Ours, input_frequency 117.1875 kHz · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00267
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The post-layout simulation of the SAR ADC placed using Ours yields an ENOB of 5.4172 bit.
+  - `CLM-EDA-0020` · method Ours · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00267
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- For the SAR ADC, Ours reduces placement area by 16.77% relative to MAGICAL.
+  - `CLM-EDA-0021` · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00267
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- For the flat LDO, Ours reduces maximum output deviation by 9.36% relative to MAGICAL.
+  - `CLM-EDA-0022` · method Ours · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00267
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -102,6 +118,6 @@ _None._
 
 ## Evidence base
 
-- claims: 18
-- grades: {'B': 18}
-- distinct sources: 7
+- claims: 22
+- grades: {'B': 22}
+- distinct sources: 8

@@ -26,6 +26,68 @@ id: CAND-20261030-0060
 harvested_date: '2026-10-30'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-01'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The C60 intermolecular distance in the intermixed phase is 1.47 nm.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - The extracted intermolecular distances of C60 for the intermixed phase (1.47±0.02 nm) are considerably
+      larger than those in the close-packed phases (1.00±0.03 nm).
+  - statement: The intermolecular distance of C60 in the close-packed phases is 1.00 nm.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - The extracted intermolecular distances of C60 for the intermixed phase (1.47±0.02 nm) are considerably
+      larger than those in the close-packed phases (1.00±0.03 nm).
+  - statement: The relative height difference between dim 3-fold and bright 2-fold C60 molecules is around
+      0.08 nm.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - Relative height difference (Δ z) of around 0.08 nm between the dim 3 -fold and bright 2-fold molecules
+      can be attributed to adsorption of the dim molecules on reconstructed sites.
+  - statement: The full width at half maximum of the LCPD profile across a C60 molecule in a stripe is
+      2.1 nm.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - When considering the LCPD profile across a C 60 molecule in a stripe, the full width at half maximum
+      (FWHM) is broader (2.1 nm) than the actual size of a C 60 molecule (≈ 0.7 nm) .
+  - statement: The calculated adsorption energy for an unreconstructed C60 monomer from DFT at a 600 eV
+      cutoff is 2.9 eV.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - Eads / eV (Ecut = 600 eV) 2.9 3.0 5.5 6.2
+    - Model C60 monomer unreconstructed C60 monomer reconstructed C60 dimer unreconstructed C60 dimer
+      reconstructed
+  - statement: The calculated adsorption energy for a reconstructed C60 monomer from DFT at a 600 eV cutoff
+      is 3.0 eV.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - Eads / eV (Ecut = 600 eV) 2.9 3.0 5.5 6.2
+    - Model C60 monomer unreconstructed C60 monomer reconstructed C60 dimer unreconstructed C60 dimer
+      reconstructed
+  - statement: The calculated adsorption energy for an unreconstructed C60 dimer from DFT at a 600 eV
+      cutoff is 5.5 eV.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - Eads / eV (Ecut = 600 eV) 2.9 3.0 5.5 6.2
+    - Model C60 monomer unreconstructed C60 monomer reconstructed C60 dimer unreconstructed C60 dimer
+      reconstructed
+  - statement: The calculated adsorption energy for a reconstructed C60 dimer from DFT at a 600 eV cutoff
+      is 6.2 eV.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - Eads / eV (Ecut = 600 eV) 2.9 3.0 5.5 6.2
+    - Model C60 monomer unreconstructed C60 monomer reconstructed C60 dimer unreconstructed C60 dimer
+      reconstructed
+  tokens:
+    input: 21825
+    output: 2990
+  fetched_chars: 60046

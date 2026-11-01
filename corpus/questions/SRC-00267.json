@@ -1,0 +1,71 @@
+{
+  "arxiv_id": "2610.39882v1",
+  "claims": {
+    "CLM-EDA-0019": {
+      "evidence_spans": [
+        "Ours 34.3717 5.4172 48.1905 96.991",
+        "Ours 34.3717 5.4172 48.1905 96.991",
+        "117.1875 kHz differential sinusoidal input",
+        "Post-layout simulation is performed using Spectre with the extracted DUT in the corresponding circuit testbench."
+      ],
+      "statement": "The post-layout simulation of the SAR ADC placed using Ours achieves an SNDR of 34.3717 dB.",
+      "terms": [
+        "SAR",
+        "ADC",
+        "SNDR",
+        "dB"
+      ]
+    },
+    "CLM-EDA-0020": {
+      "evidence_spans": [
+        "Ours 34.3717 5.4172 48.1905 96.991",
+        "Ours 34.3717 5.4172 48.1905 96.991",
+        "Post-layout simulation is performed using Spectre with the extracted DUT in the corresponding circuit testbench."
+      ],
+      "statement": "The post-layout simulation of the SAR ADC placed using Ours yields an ENOB of 5.4172 bit.",
+      "terms": [
+        "SAR",
+        "ADC",
+        "ENOB"
+      ]
+    },
+    "CLM-EDA-0021": {
+      "evidence_spans": [
+        "Ours reduces area by 16.77% relative to MAGICAL",
+        "Post-layout simulation is performed using Spectre with the extracted DUT in the corresponding circuit testbench."
+      ],
+      "statement": "For the SAR ADC, Ours reduces placement area by 16.77% relative to MAGICAL.",
+      "terms": [
+        "ADC"
+      ]
+    },
+    "CLM-EDA-0022": {
+      "evidence_spans": [
+        "Ours reduces maximum output deviation by 9.36% and area by 12.23% relative to MAGICAL",
+        "Ours reduces maximum output deviation",
+        "Post-layout simulation is performed using Spectre with the extracted DUT in the corresponding circuit testbench."
+      ],
+      "statement": "For the flat LDO, Ours reduces maximum output deviation by 9.36% relative to MAGICAL.",
+      "terms": [
+        "LDO"
+      ]
+    }
+  },
+  "extra_quotes": [
+    "All electrical measurements use the TT model corner at 27 ◦C.",
+    "For the SAR ADC, we use deterministic transient simulations with a 40 MHz clock and a 117.1875 kHz differential sinusoidal input. A 1024-point coherent FFT of the reconstructed output provides SNDR, ENOB, and SFDR.",
+    "For the LDO, we use a 10 pF output capacitor and a 1–100–1 mA load pulse with 1 µs rise and fall times.",
+    "To assess main-loop stability, we measure phase margin (PM) using Spectre STB with a probe between VOUT and feedback resistor R7 and report the smaller value at 1 and 100 mA.",
+    "PSRR at 1 MHz, measured at a static load of 100 mA, quantifies supply ripple rejection."
+  ],
+  "generated": "2026-11-01",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00267",
+  "text_chars": 22887,
+  "text_sha256": "3af0d94001874fb841772f2263995679a72c1f66cf377f6524ec323edbad0f1c"
+}

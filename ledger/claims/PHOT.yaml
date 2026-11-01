@@ -3500,3 +3500,39 @@ claims:
     model: gemini-3.6-flash
     prompt_version: reader-v5
     verified_quotes: 2
+- id: CLM-PHOT-0123
+  topic: PHOT
+  statement: At a target distance of 30 mm with a 2 µm target waist, waveguide birefringence causes a
+    transverse walk-off separation of approximately 4.2 µm between the TE and TM channels.
+  sources:
+  - SRC-00266
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-29'
+  created: '2026-11-01'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    target_distance: 30 mm
+    target_waist: 2 µm
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 4.2
+      unit: µm
+    si_base:
+      value: 4.2e-06
+      unit: m
+    display:
+      value: 4199.999999999999
+      unit: nm
+    conditions:
+      target_distance: 30 mm
+      target_waist: 2 µm

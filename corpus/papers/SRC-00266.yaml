@@ -1,0 +1,74 @@
+id: SRC-00266
+title: Integrated Circular Polarisation Beam Shaper Based on Tilted Waveguide Bragg Gratings
+doi: null
+arxiv_id: 2610.39860v1
+url: https://arxiv.org/abs/2610.39860v1
+venue_id: arxiv_api
+authors:
+- name: Joel Warner
+  affiliation: null
+  corresponding: null
+- name: William J. Hughes
+  affiliation: null
+  corresponding: null
+- name: James C. Gates
+  affiliation: null
+  corresponding: null
+- name: Peter Horak
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-29'
+retrieved_date: '2026-11-01'
+access: full_text
+read_scope: Automated reading. The full PDF text (51,710 characters, 14 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.39860v1 on
+  2026-11-01. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The centroid separation increases linearly with distance, reaching dsp ≈ 4.2 µm at 30 mm,
+  slightly exceeding twice the 2 µm beam radius, at which point the two beams no longer overlap and Reff
+  falls to zero.”
+
+  “reaching dsp ≈ 4.2 µm at 30 mm, slightly exceeding twice the 2 µm beam radius, at which point the two
+  beams no longer overlap and Reff falls to zero.”'
+method_summary: “By developing a full three-dimensional analytical model of the scattering process together
+  with numerical simulations to design and evaluate the emitted field, we show that tilted waveguide Bragg
+  gratings can act as integrated polarisation beam shapers.”
+limitations: '“We find that scattering two co-propagating, orthogonally polarised pumps on a single grating
+  is fundamentally limited: waveguide birefringence and the difference in scattering efficiency prevent
+  full polarisation control.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14926
+    output: 1743
+  claims_accepted: 1
+  claims_rejected: 2
+  rejected:
+  - statement: For a single-grating configuration designed for the TE pump at 99% depletion, the usable
+      circular beam area for a 2 µm target waist at a target distance of 30 m
+    reason: the value 0 does not appear in any of the claim's quotes
+    quotes:
+    - The 1%-depletion points (circles) closely follow the analytical walk-off prediction of Eq. (18).
+    - The centroid separation increases linearly with distance, reaching dsp ≈ 4.2 µm at 30 mm, slightly
+      exceeding twice the 2 µm beam radius, at which point the two beams no longer overlap and Reff falls
+      to zero.
+    - Section IV analyses the single-TBG architecture.
+    - reaching dsp ≈ 4.2 µm at 30 mm, slightly exceeding twice the 2 µm beam radius, at which point the
+      two beams no longer overlap and Reff falls to zero.
+  - statement: At 99% depletion and a target distance of 30 mm, increasing the target waist causes the
+      usable circular beam area fraction Reff / wtar to saturate at approximat
+    reason: the value 0.4 does not appear in any of the claim's quotes
+    quotes:
+    - At 99% depletion the usable fraction also rises but saturates at Reff /wtar ≈ 0.40, an area of only
+      16% of the ideal, and does not improve with further widening.
+    - To maintain constant interaction length, depletion, and walk-off separation dsp, we keep the on-chip
+      beam size constant but design gratings to focus on wider spot sizes at increasing distances, such
+      that the cross section at the constant di
+corrections: []

@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-10-31.
+Topic code `PHOT`. Last reviewed 2026-11-01.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -155,6 +155,10 @@ Topic code `PHOT`. Last reviewed 2026-10-31.
   - `CLM-PHOT-0116` · dimension length · grade B · credibility unknown · measured · as of 2026-10-29
   - sources: SRC-00253
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈4200 nm** — At a target distance of 30 mm with a 2 µm target waist, waveguide birefringence causes a transverse walk-off separation of approximately 4.2 µm between the TE and TM channels.
+  - `CLM-PHOT-0123` · target_distance 30 mm, target_waist 2 µm · grade B · credibility unknown · simulated · as of 2026-10-29
+  - sources: SRC-00266
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -565,6 +569,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 122
-- grades: {'B': 115, 'A': 7}
-- distinct sources: 39
+- claims: 123
+- grades: {'B': 116, 'A': 7}
+- distinct sources: 40
