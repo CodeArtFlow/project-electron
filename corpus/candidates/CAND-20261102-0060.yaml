@@ -1,9 +1,8 @@
 source: arxiv
 arxiv_id: 2610.41571v1
 doi: null
-title: 'Universal model of the growth of III-V tetrahedral semiconductors on polar
-  surfaces: pyramids and glue atoms. II. Adsorption of nonmetal atoms (N, P, As, and
-  Sb) on Ga-terminated surfaces'
+title: 'Universal model of the growth of III-V tetrahedral semiconductors on polar surfaces: pyramids
+  and glue atoms. II. Adsorption of nonmetal atoms (N, P, As, and Sb) on Ga-terminated surfaces'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-30'
@@ -24,6 +23,29 @@ id: CAND-20261102-0060
 harvested_date: '2026-11-02'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-02'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The detachment energy barrier of a single Ga atom from a clean Ga-terminated GaAs surface
+      is calculated to be 2.87 eV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The lowest value is for GaAs, reaching ∆𝐸𝐷𝐹𝑇𝑑𝑒𝑡 (𝐺𝑎𝐴𝑠/𝐺𝑎) = 2.87 𝑒𝑉.
+    - The ab init io calculations were used to determine the energy difference between a clean or nonmetal
+      -covered surface and a slab with a single detached Ga atom
+    - clean surface
+    - ∆𝐸𝐷𝐹𝑇𝑑𝑒𝑡 (𝐺𝑎𝐴𝑠/𝐺𝑎)
+  tokens:
+    input: 17986
+    output: 514
+  fetched_chars: 53241

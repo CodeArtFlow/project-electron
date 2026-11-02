@@ -1,0 +1,112 @@
+id: SRC-00273
+title: Dual-rate optical frequency comb based on a cylindrical microresonator with a nanoscale radius
+  variation
+doi: null
+arxiv_id: 2610.41315v1
+url: https://arxiv.org/abs/2610.41315v1
+venue_id: arxiv_api
+authors:
+- name: Alena Kolesnikova
+  affiliation: null
+  corresponding: null
+- name: Andrey Gelash
+  affiliation: null
+  corresponding: null
+- name: Ilya Vatnik
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-30'
+retrieved_date: '2026-11-02'
+access: full_text
+read_scope: Automated reading. The full PDF text (30,008 characters, 7 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.41315v1 on
+  2026-11-02. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The anharmonicity coefficient α = 0.25 provides positive axial mode dispersion D (2)ax /(2π)
+  = 8.8 MHz, which is necessary for the modulation instability of axial modes [26].”
+
+  “anharmonicity coefficient α = 0.25”
+
+  “numerical solution of the eigenvalue problem for Eq. (2)”
+
+  “In addition, we note that the axial repetition rate of the 2D soliton ∆ν ax = 6 GHz, which corresponds
+  to the axial free spectral range.”
+
+  “FIG. 5. Dual-rate optical frequency comb of the 2D DKS with azimuthal repetition rate ∆ν az = 329 GHz
+  and axial sideband repetition rate ∆ν ax = 6 GHz.”
+
+  “pump detuning ∆ 0/(2π) = 27 MHz”
+
+  “In our example, we generate 2D DKS with an azimuthal rate of approximately 329 GHz and an axial rate
+  of 6 GHz, which can be adjusted on demand by selecting the appropriate resonator geometry”'
+method_summary: '“To describe the 2D nonlinear dynamics, we derived nonlinearly coupled equations for
+  the amplitudes of axial modes Aq(θ, t) under the assumption that the spatial distribution of the field
+  does not depend on the number of the azimuthal mode for large m em(r)≡e(r), Zm,q(z)≡Zq(z).”
+
+  “Solving the eigenvalue problem of Eq. (2), we find the spatial distribution of modes Zl(z), with the
+  help of which the effective volumes of modes Vijkl and the coupling coefficients of the taper with axial
+  modes κ(c)l were determined, and also resonant frequencies ωml from the values of which the free spectral
+  range D(1)l and the second-order dispersion of azimuthal modes D(2)l were calculated (see Table I for
+  detailed values).”'
+limitations: “To describe the axial distribution localized in a microresonator, we neglect the losses
+  due to radiation escaping into the continuous spectrum, scattering at infinity, and consider only the
+  discrete set of localized axial modes.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 10915
+    output: 2331
+  claims_accepted: 2
+  claims_rejected: 4
+  rejected:
+  - statement: The axial free spectral range Δax / (2π) for the simulated SNAP microresonator with three
+      axial modes is 6 GHz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - This radius variation contains three axial modes with axial number q = 0,1,2 (corresponding l =
+      1,0,−1, ωm0 > ωm2) and the free spectral range ∆ ax/(2π) = 6 GHz.
+    - numerical solution of the eigenvalue problem for Eq. (2)
+    - three axial modes with axial number q = 0,1,2
+    - free spectral range ∆ ax/(2π) = 6 GHz
+  - statement: The azimuthal free spectral range D(1)l / (2π) for the axial mode l = 1 is 329.1103 GHz.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''l= 1 l= 0
+      l=−1'''
+    quotes:
+    - l= 1 l= 0 l=−1
+    - D(1)l /2π,GHz 329.1103 329.1077 329.1076
+    - Solving the eigenvalue problem of Eq. (2), we find the spatial distribution of modes Z l(z)... and
+      also resonant frequencies ω ml from the values of which the free spectral range D (1)l ... were
+      calculated (see Table I for detailed values).
+    - l= 1
+  - statement: The second order dispersion of azimuthal modes D(2)l / (2π) for the axial mode l = 0 is
+      254 kHz.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''l= 1 l= 0
+      l=−1'''
+    quotes:
+    - l= 1 l= 0 l=−1
+    - D(2)l /2π,kHz 239 254 256
+    - Solving the eigenvalue problem of Eq. (2), we find the spatial distribution of modes Z l(z)... and
+      also resonant frequencies ω ml from the values of which the free spectral range D (1)l and the second-order
+      dispersion of azimuthal modes D (
+    - l= 0
+  - statement: The azimuthal repetition rate Δνaz of the generated 2D DKS optical frequency comb is approximately
+      329 GHz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - At the system output, we obtain an optical frequency comb with a repetition rate of approximately
+      ∆νaz = 329 GHz, produced by azimuthal rotation of the 2D soliton.
+    - In our example, we generate 2D DKS with an azimuthal rate of approximately 329 GHz and an axial
+      rate of 6 GHz, which can be adjusted on demand by selecting the appropriate resonator geometry
+    - repetition rate of approximately ∆νaz = 329 GHz, produced by azimuthal rotation of the 2D soliton
+corrections: []

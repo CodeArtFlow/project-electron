@@ -3536,3 +3536,71 @@ claims:
     conditions:
       target_distance: 30 mm
       target_waist: 2 µm
+- id: CLM-PHOT-0124
+  topic: PHOT
+  statement: The second order axial mode dispersion D(2)ax / (2π) for the simulated SNAP microresonator
+    with α = 0.25 is 8.8 MHz.
+  sources:
+  - SRC-00273
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-30'
+  created: '2026-11-02'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    anharmonicity_coefficient: '0.25'
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 8.8
+      unit: MHz
+    si_base:
+      value: 8800000.0
+      unit: Hz
+    display:
+      value: 0.0088
+      unit: GHz
+    conditions:
+      anharmonicity_coefficient: '0.25'
+- id: CLM-PHOT-0125
+  topic: PHOT
+  statement: The axial sideband repetition rate Δνax of the generated 2D DKS dual-rate optical frequency
+    comb is 6 GHz.
+  sources:
+  - SRC-00273
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-10-30'
+  created: '2026-11-02'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    pump_detuning: 27 MHz
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 6.0
+      unit: GHz
+    si_base:
+      value: 6000000000.0
+      unit: Hz
+    display:
+      value: 6.0
+      unit: GHz
+    conditions:
+      pump_detuning: 27 MHz

@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-11-01.
+Topic code `PROC`. Last reviewed 2026-11-02.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -98,6 +98,20 @@ Topic code `PROC`. Last reviewed 2026-11-01.
   - `CLM-PROC-0047` · sample S6, layer GaN · grade B · credibility unknown · measured · as of 2026-10-29
   - sources: SRC-00272
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **0.0308 nm** — The standard deviation reconstructed from the experimental CBED pattern of monolayer graphene is 0.308 Å.
+  - `CLM-PROC-0048` · sample monolayer graphene · grade B · credibility unknown · measured · as of 2026-10-30
+  - sources: SRC-00275
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.0229 nm** — From the experimental CBED pattern of twisted bilayer graphene-hBN, the reconstructed standard deviation for the graphene layer is 0.229 Å.
+  - `CLM-PROC-0049` · sample twisted bilayer graphene-hBN · grade B · credibility unknown · measured · as of 2026-10-30
+  - sources: SRC-00275
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0102 — see the open register
+- **0.0244 nm** — From the experimental CBED pattern of twisted bilayer graphene-hBN, the reconstructed standard deviation for the hBN layer is 0.244 Å.
+  - `CLM-PROC-0050` · sample twisted bilayer graphene-hBN · grade B · credibility unknown · measured · as of 2026-10-30
+  - sources: SRC-00275
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0102 — see the open register
 
 ### qualitative
 
@@ -294,9 +308,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0095` — relative_deviation: _unexamined; classification pending_
   - claims: CLM-PROC-0043, CLM-PROC-0044
   - missing data: `not yet named`
+- `CFL-0102` — length_device: _unexamined; classification pending_
+  - claims: CLM-PROC-0049, CLM-PROC-0050
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 47
-- grades: {'B': 47}
-- distinct sources: 15
+- claims: 50
+- grades: {'B': 50}
+- distinct sources: 16

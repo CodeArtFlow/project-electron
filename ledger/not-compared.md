@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**12710 pair(s)** as of 2026-11-01.
+**13477 pair(s)** as of 2026-11-02.
 
 ## `area_die` (11 pair(s))
 
@@ -106,7 +106,7 @@ _and 353 more_
 | `CLM-ARCH-0016` = 1.22 x | `CLM-MEM-0025` = 3.7 x | 67% | device=B200, benchmark=GroupGEMM | baseline=SoA mappings |
 | `CLM-ARCH-0005` = 1.32 x | `CLM-MEM-0025` = 3.7 x | 64% | process=TSMC 16nm FinFET, comparison=sinusoidal vs trapezoidal power-clock, gate_at_maximum=XOR/XNOR, vclk_at_maximum=0.5 V, fclk_at_maximum=384 MHz | baseline=SoA mappings |
 
-## `frequency` (465 pair(s))
+## `frequency` (531 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -140,20 +140,20 @@ _and 353 more_
 | `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | component=FIGFLEX, activation_format=FP16 | wavelength=400 nm |
 | `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | component=FIGFLEX, activation_format=FP16 | angle_of_incidence=0° to 30°, rotation_angle=90° |
 | `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | component=FIGFLEX, activation_format=FP16 | device=Ho3+-doped fluoride glass waveguide laser |
+| `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-PHOT-0124` = 0.0088 GHz | 100% | component=FIGFLEX, activation_format=FP16 | anharmonicity_coefficient=0.25 |
 | `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-EDA-0014` = 0.22 GHz | 100% | component=FIGFLEX, activation_format=FP16 | configuration=CPI-optimized |
 | `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-EDA-0015` = 0.25 GHz | 100% | component=FIGFLEX, activation_format=FP16 | configuration=area-optimized |
 | `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-MAT-0148` = 0.001756 GHz | 100% | component=FIGFLEX, activation_format=FP16 | transition=f-g |
 | `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | component=FIGFLEX, activation_format=FP16 | wavelength=400 nm |
 | `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | component=FIGFLEX, activation_format=FP16 | angle_of_incidence=0° to 30°, rotation_angle=90° |
 | `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | component=FIGFLEX, activation_format=FP16 | device=Ho3+-doped fluoride glass waveguide laser |
+| `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-PHOT-0124` = 0.0088 GHz | 100% | component=FIGFLEX, activation_format=FP16 | anharmonicity_coefficient=0.25 |
 | `CLM-ARCH-0176` = 0.001 GHz | `CLM-DEV-0012` = 370 GHz | 100% | component=comparator | magnetic_field=8.1 T, frequency=1.9 THz |
 | `CLM-ARCH-0176` = 0.001 GHz | `CLM-DEV-0013` = 180 GHz | 100% | component=comparator | magnetic_field=7.5 T, frequency=2.2 THz |
-| `CLM-ARCH-0176` = 0.001 GHz | `CLM-MAT-0150` = 5000 GHz | 100% | component=comparator | material=monolayer MoTe2, phonon_mode=A1g |
-| `CLM-ARCH-0176` = 0.001 GHz | `CLM-PHOT-0036` = 121 GHz | 100% | component=comparator | sample_size=22 measured devices |
 
-_and 425 more_
+_and 491 more_
 
-## `length_device` (4118 pair(s))
+## `length_device` (4377 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -171,6 +171,8 @@ _and 425 more_
 | `CLM-LITHO-0001` = 500 nm | `CLM-MAT-0139` = 0.007 nm | 100% | material=crystalline silicon membrane | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-LITHO-0001` = 500 nm | `CLM-MAT-0140` = 0.005 nm | 100% | material=crystalline silicon membrane | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-LITHO-0001` = 500 nm | `CLM-PHOT-0057` = 0.024 nm | 100% | material=crystalline silicon membrane | measurement_duration=exceeding 15.5 hours |
+| `CLM-LITHO-0001` = 500 nm | `CLM-PROC-0049` = 0.0229 nm | 100% | material=crystalline silicon membrane | sample=twisted bilayer graphene-hBN |
+| `CLM-LITHO-0001` = 500 nm | `CLM-PROC-0050` = 0.0244 nm | 100% | material=crystalline silicon membrane | sample=twisted bilayer graphene-hBN |
 | `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0004` = 7000 nm | 100% | material=Sb monolayer on SiC(0001) | parameter=signal-ground electrode spacing |
 | `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=Sb monolayer on SiC(0001) | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | material=Sb monolayer on SiC(0001) | chip_thickness=4-mm |
@@ -195,10 +197,8 @@ _and 425 more_
 | `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | state=X2sA | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | state=X2sA | chip_thickness=4-mm |
 | `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0116` = 1.47e+05 nm | 100% | state=X2sA | dimension=length |
-| `CLM-MAT-0029` = 0.5291 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=bulk CeN | substrate_material=glass cover slip, sample_type=flat surface |
-| `CLM-MAT-0029` = 0.5291 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | material=bulk CeN | chip_thickness=4-mm |
 
-_and 4078 more_
+_and 4337 more_
 
 ## `power` (226 pair(s))
 
@@ -253,7 +253,7 @@ _and 186 more_
 |---|---|---|---|---|
 | `CLM-DEV-0079` = 3.1e-05 W/mm^2 | `CLM-MAT-0026` = 4.8e-07 W/mm^2 | 98% | structure=long-base p+-n device, n_base_width=300 𝜇𝜇m, framework=extended theory | environment=ambient |
 
-## `relative_deviation` (5744 pair(s))
+## `relative_deviation` (6186 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -264,11 +264,13 @@ _and 186 more_
 | `CLM-ARCH-0089` = 64.2 percent | `CLM-MAT-0111` = -60 percent | 193% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0112` = 66.8 percent | 190% | sample=B1-1 | baseline=pure two-dimensional Coulomb reference, benchmark_protocol=high-field-calibrated |
 | `CLM-ARCH-0090` = 67.5 percent | `CLM-MAT-0111` = -60 percent | 189% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
+| `CLM-MAT-0111` = -60 percent | `CLM-MAT-0252` = 53 percent | 188% | sample=B1-1 | band=NNN, coupling=Λ A, correlation_length=ξ ¯kF = 4 |
 | `CLM-ARCH-0174` = 71.3 percent | `CLM-MAT-0111` = -60 percent | 184% | system=ARM2GC, benchmark_set=nine benchmarks | sample=B1-1 |
 | `CLM-ARCH-0097` = 72 percent | `CLM-MAT-0111` = -60 percent | 183% | training_dataset=CloudLab, evaluation_dataset=Lambda | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0039` = 49.85 percent | 183% | sample=B1-1 | platform=Jetson Orin Nano, threshold=550, verification_stage=Single function verification |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0026` = 75.7 percent | 179% | sample=B1-1 | placement=conventional |
 | `CLM-EDA-0007` = 76 percent | `CLM-MAT-0111` = -60 percent | 179% | model=Non-cyclic + Node prediction model | sample=B1-1 |
+| `CLM-MAT-0111` = -60 percent | `CLM-MAT-0251` = 47 percent | 178% | sample=B1-1 | band=NN, coupling=Λ A, correlation_length=ξ ¯kF = 4 |
 | `CLM-ARCH-0049` = 46 percent | `CLM-MAT-0111` = -60 percent | 177% | mechanism=uniform iteration offsets | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0186` = 46 percent | 177% | sample=B1-1 | indium_composition=13.5%, geometry=fixed pristine-GaN geometry |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0188` = 46 percent | 177% | sample=B1-1 | indium_composition=22%, baseline=pristine GaN |
@@ -295,10 +297,8 @@ _and 186 more_
 | `CLM-ARCH-0018` = 98 percent | `CLM-MAT-0111` = -60 percent | 161% | concurrency_n_a=48, set_type=hot set | sample=B1-1 |
 | `CLM-ARCH-0100` = 36.2 percent | `CLM-MAT-0111` = -60 percent | 160% | correction_type=uncorrected | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0038` = 99.69 percent | 160% | sample=B1-1 | platform=Jetson Orin Nano, threshold=550, verification_stage=Group verification |
-| `CLM-MAT-0111` = -60 percent | `CLM-MAT-0116` = 100 percent | 160% | sample=B1-1 | system=2D square-lattice tight-binding model |
-| `CLM-MAT-0111` = -60 percent | `CLM-MAT-0124` = 36 percent | 160% | sample=B1-1 | elastic_constant=C22, rotation_direction=from y to x |
 
-_and 5704 more_
+_and 6146 more_
 
 ## `temperature` (211 pair(s))
 

@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-01.
+Topic code `MAT`. Last reviewed 2026-11-02.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -789,6 +789,38 @@ Topic code `MAT`. Last reviewed 2026-11-01.
   - `CLM-MAT-0239` · spacer_cation FPEA · grade B · credibility unknown · measured · as of 2026-10-29
   - sources: SRC-00268
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The DFT calculation with PBEJsJrLO functional yields an ab initio bandgap of 1.77 eV for GaN.
+  - `CLM-MAT-0253` · grade B · credibility unknown · simulated · as of 2026-10-30
+  - sources: SRC-00276
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The DFT calculation with GGA-1/2 Ferreira correction yields an ab initio bandgap of 3.51 eV for GaN.
+  - `CLM-MAT-0254` · grade B · credibility unknown · simulated · as of 2026-10-30
+  - sources: SRC-00276
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The ab initio DFT calculation using PBEJsJrLO functional yields an indirect bandgap of 1.66 eV for GaP.
+  - `CLM-MAT-0255` · grade B · credibility unknown · simulated · as of 2026-10-30
+  - sources: SRC-00276
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The ab initio calculation using the GGA-1/2 Ferreira scheme results in a direct bandgap of 2.74 eV for GaP.
+  - `CLM-MAT-0256` · grade B · credibility unknown · simulated · as of 2026-10-30
+  - sources: SRC-00276
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The ab initio calculation using PBEJsJrLO functional yields a direct narrow band gap of 0.28 eV for GaAs.
+  - `CLM-MAT-0257` · grade B · credibility unknown · simulated · as of 2026-10-30
+  - sources: SRC-00276
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The ab initio calculation of the dissociation energy of the N2 diatomic molecule yields 9.86 eV.
+  - `CLM-MAT-0258` · grade B · credibility unknown · simulated · as of 2026-10-30
+  - sources: SRC-00276
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The ab initio calculation of the dissociation energy of the P2 diatomic molecule yields 5.15 eV.
+  - `CLM-MAT-0259` · grade B · credibility unknown · simulated · as of 2026-10-30
+  - sources: SRC-00276
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The theoretical ab initio calculation for the dissociation energy of the As2 diatomic molecule yields 4.13 eV.
+  - `CLM-MAT-0260` · grade B · credibility unknown · simulated · as of 2026-10-30
+  - sources: SRC-00276
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -856,6 +888,29 @@ Topic code `MAT`. Last reviewed 2026-11-01.
   - `CLM-MAT-0224` · power_level 90% of the critical value, test_duration 24 h · grade B · credibility unknown · measured · as of 2026-10-27
   - sources: SRC-00250
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **13.3 percent** — On the NN band with ΛA and ξ kF_bar = 4, the amplitude ratio R* at which s changes sign is equal to 0.133.
+  - `CLM-MAT-0248` · band NN, coupling Λ A, correlation_length ξ ¯kF = 4 · grade B · credibility unknown · simulated · as of 2026-10-30
+  - sources: SRC-00274
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0099, CFL-0100 — see the open register
+- **1.02 percent** — On the NN band with ΛA and ξ kF_bar = 16, the amplitude ratio R* at which s changes sign is equal to 0.0102.
+  - `CLM-MAT-0249` · band NN, coupling Λ A · grade B · credibility unknown · simulated · as of 2026-10-30
+  - sources: SRC-00274
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0099, CFL-0101 — see the open register
+- **≤ 500 percent** — On the reference bands at ξ kF_bar = 4, the full slope is up to 5.0 for ΛG.
+  - `CLM-MAT-0250` · coupling Λ G, correlation_length ξ ¯kF = 4 · grade B · credibility unknown · simulated · as of 2026-10-30
+  - sources: SRC-00274
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **47 percent** — For ΛA, the plateau retains 0.47 of the band ratio on NN at ξ kF_bar = 4.
+  - `CLM-MAT-0251` · band NN, coupling Λ A, correlation_length ξ ¯kF = 4 · grade B · credibility unknown · simulated · as of 2026-10-30
+  - sources: SRC-00274
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0100, CFL-0101 — see the open register
+- **53 percent** — For ΛA, the plateau retains 0.53 of the band ratio on NNN at ξ kF_bar = 4.
+  - `CLM-MAT-0252` · band NNN, coupling Λ A, correlation_length ξ ¯kF = 4 · grade B · credibility unknown · simulated · as of 2026-10-30
+  - sources: SRC-00274
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -1188,9 +1243,18 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0088` — energy: _unexamined; classification pending_
   - claims: CLM-MAT-0200, CLM-MAT-0201
   - missing data: `not yet named`
+- `CFL-0099` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-MAT-0248, CLM-MAT-0249
+  - missing data: `not yet named`
+- `CFL-0100` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-MAT-0248, CLM-MAT-0251
+  - missing data: `not yet named`
+- `CFL-0101` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-MAT-0249, CLM-MAT-0251
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 247
-- grades: {'B': 247}
-- distinct sources: 92
+- claims: 260
+- grades: {'B': 260}
+- distinct sources: 94

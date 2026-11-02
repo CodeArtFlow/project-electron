@@ -1,0 +1,123 @@
+id: SRC-00275
+title: Potentials of individual atoms by convergent beam electron diffraction
+doi: null
+arxiv_id: 2610.41513v1
+url: https://arxiv.org/abs/2610.41513v1
+venue_id: arxiv_api
+authors:
+- name: Tatiana Latychevskaia
+  affiliation: null
+  corresponding: null
+- name: Colin Robert Woods
+  affiliation: null
+  corresponding: null
+- name: Yi Bo Wang
+  affiliation: null
+  corresponding: null
+- name: Matthew Holwill
+  affiliation: null
+  corresponding: null
+- name: Eric Prestat
+  affiliation: null
+  corresponding: null
+- name: Sara Mustafi
+  affiliation: null
+  corresponding: null
+- name: Sarah J. Haigh
+  affiliation: null
+  corresponding: null
+- name: Kostya S. Novoselov
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-30'
+retrieved_date: '2026-11-02'
+access: full_text
+read_scope: Automated reading. The full PDF text (37,057 characters, 17 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.41513v1 on
+  2026-11-02. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The following parameters of the Gaussian distribution were reconstructed by the proposed method
+  : p  0.308 Å and 0  0.156 rad, which compares well to the t heoretically calculated values mentioned
+  above: p  0.252 Å and 0  0.217 rad.”
+
+  “The e xperimental CBED pattern of monolayer graphene is shown in Fig. 2a .”
+
+  “The following parameters of the Gaussian distribution were reconstructed by the proposed method : p
+   0.308 Å and 0  0.156 rad”
+
+  “By using the quantitative analysis, we obtain p  0.229 Å and 0  0.189 rad for the graphene layer
+  and p  0.244 Å and 0  0.162 rad for the hBN layer.”
+
+  “The e xperimental CBED pattern of twisted bilayer graphene -hBN is shown in Fig. 2b.”
+
+  “By using the quantitative analysis, we obtain p  0.229 Å and 0  0.189 rad for the graphene layer”'
+method_summary: '“In order t o demonstrate this , we simulated CBED patterns and extracted the atomic
+  scattering parameters from such patterns.”
+
+  “CBED was realized in a probe side ab erration corrected scanning TEM at an accellerating voltage o
+  f 80 keV and a convergence semiangle,  , of ~6 – 8 mrad.”'
+limitations: “The main source of the mismatch is the noise, and the presence of the ripples or adsorbates
+  on the graphene surface which lead to the intensity variations within CBED spots, as it can be seen
+  in the CBED pattern shown in Fig. 2a.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 13891
+    output: 2938
+  claims_accepted: 3
+  claims_rejected: 5
+  rejected:
+  - statement: The maximal phase shift of an electron beam of 80 keV calculated at radial position of
+      0.1 Å is 0.217 rad for carbon.
+    reason: 'unit conversion refused: voltage: cannot convert 80.0 keV to V - Cannot convert from ''kiloelectron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time'
+    quotes:
+    - 'Using these, the maximal phase shift of an electron beam of 80 keV calculated at radial position
+      of 0.1 Å amounts to: 0.217 rad for carbon and 0.214 rad for hBN (calculated as an average of 0.190
+      rad for B and 0.238 rad for N).'
+    - 0.217 rad for carbon
+    - radial position of 0.1 Å
+  - statement: At 80 keV, molybdenum has a phase shift amplitude of 0.969 rad.
+    reason: 'unit conversion refused: voltage: cannot convert 80.0 keV to V - Cannot convert from ''kiloelectron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time'
+    quotes:
+    - This could include higher atomic number atoms, such as molybdenum ( 0  0.969 rad at 80 keV) or
+      tungsten ( 0  1.415 rad at 80keV) , or for other atoms in transition metal dichalcoge nide (TMD)
+      structures.
+    - molybdenum ( 0  0.969 rad at 80 keV)
+  - statement: At 80 keV, tungsten has a phase shift amplitude of 1.415 rad.
+    reason: 'unit conversion refused: voltage: cannot convert 80.0 keV to V - Cannot convert from ''kiloelectron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time'
+    quotes:
+    - This could include higher atomic number atoms, such as molybdenum ( 0  0.969 rad at 80 keV) or
+      tungsten ( 0  1.415 rad at 80keV) , or for other atoms in transition metal dichalcoge nide (TMD)
+      structures.
+    - tungsten ( 0  1.415 rad at 80keV)
+  - statement: For a simulated CBED pattern with a phase shift amplitude of 1.5 rad, the reconstructed
+      phase shifting amplitude mismatch reaches 0.04 rad.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''rad'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a uni'
+    quotes:
+    - The reconstructed phase shifting amplitudes 0 slightly deviated from the original values , with
+      the mismatch increasing towards higher 0 , reaching a mismatch of 0.04 rad for 0  1.5 rad, as
+      illustrated in Fig. 1e.
+    - 0  1.5 rad
+  - statement: Reconstruction on the overlapping areas of CBED disks in a twisted bilayer system yields
+      a standard deviation of 0.295 Å.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - By using quantitative analysis on the areas where the CBED disks overlap, the following parameters
+      were recovered p  0.295 Å and 0  0.153 rad.
+    - For a twisted bilayer system, interference pattern is observed in the regions where the CBED disks
+      overlap.
+corrections: []

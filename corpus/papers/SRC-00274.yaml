@@ -1,0 +1,73 @@
+id: SRC-00274
+title: Spin conservation protects the altermagnetic spin-splitter current from critical scattering
+doi: null
+arxiv_id: 2610.41419v1
+url: https://arxiv.org/abs/2610.41419v1
+venue_id: arxiv_api
+authors:
+- name: Yunxi Jiang
+  affiliation: null
+  corresponding: null
+- name: Hao Yu
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-10-30'
+retrieved_date: '2026-11-02'
+access: full_text
+read_scope: Automated reading. The full PDF text (37,303 characters, 9 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2610.41419v1 on
+  2026-11-02. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“On NN, the amplitude ratio at which s changes sign is R ∗ = −s L/sT , equal to 0.133 for Λ
+  A at ξ ¯kF = 4 and 0.0102 at 16 [Fig. 2(b) and Supplemental Material Sec. S2].”
+
+  “We have solved the Boltzmann equation with the full collision operator of quasistatic magnetic fluctuations,
+  including its change with the magnetic order, and compared it with lifetime and transport time approximations
+  built from the same scattering [22, 23].”
+
+  “On the reference bands at ξ ¯kF = 4, the full slope is 1.4 to 2.4 for Λ A and up to 5.0 for Λ G.”
+
+  “For Λ A, the plateau retains 0.47 of the band ratio on NN and 0.53 on NNN at ξ ¯kF = 4, and 0.35 and
+  0.37 at 16.”'
+method_summary: “We have solved the Boltzmann equation with the full collision operator of quasistatic
+  magnetic fluctuations, including its change with the magnetic order, and compared it with lifetime and
+  transport time approximations built from the same scattering [22, 23].”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 13920
+    output: 4194
+  claims_accepted: 5
+  claims_rejected: 3
+  rejected:
+  - statement: In the parabolic band at K = 0.1 and a = 3, the full calculation yields Q = 0.675 for ΛA.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - At K = 0.1 and a = 3, the full calculation gives Q = 0.675 for Λ A, whereas collisions on the unsplit
+      bands give 1.34.
+    - Parabolic band. In the parabolic band, u x = b v x with b = d 0 / µ 0 .
+  - statement: For collisions on the unsplit bands in the parabolic band at K = 0.1 and a = 3, Q is equal
+      to 1.34.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - At K = 0.1 and a = 3, the full calculation gives Q = 0.675 for Λ A, whereas collisions on the unsplit
+      bands give 1.34.
+    - Parabolic band. In the parabolic band, u x = b v x with b = d 0 / µ 0 .
+  - statement: In Table S1, the full initial slope s for NN with ΛA and R = 1 is equal to 1.64.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''NNA1 1.64
+      0.52 -0.26 -1.57'''
+    quotes:
+    - TABLE S1. Initial slopess= lim x→0 Y /xfrom the first order rates for the seven band, coupling and
+      bath combinations of the disorder series.
+    - NNA1 1.64 0.52 -0.26 -1.57
+    - TT and LT denote transport time and lifetime, and the last column uses collisions on the unsplit
+      bands.
+corrections: []

@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-01.
+Topic code `PHOT`. Last reviewed 2026-11-02.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -59,6 +59,14 @@ Topic code `PHOT`. Last reviewed 2026-11-01.
   - `CLM-PHOT-0061` · corner_radius 1.4 mm · grade B · credibility unknown · measured · as of 2026-10-08
   - sources: SRC-00121
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.0088 GHz** — The second order axial mode dispersion D(2)ax / (2π) for the simulated SNAP microresonator with α = 0.25 is 8.8 MHz.
+  - `CLM-PHOT-0124` · anharmonicity_coefficient 0.25 · grade B · credibility unknown · simulated · as of 2026-10-30
+  - sources: SRC-00273
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **6 GHz** — The axial sideband repetition rate Δνax of the generated 2D DKS dual-rate optical frequency comb is 6 GHz.
+  - `CLM-PHOT-0125` · pump_detuning 27 MHz · grade B · credibility unknown · simulated · as of 2026-10-30
+  - sources: SRC-00273
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### length device
 
@@ -569,6 +577,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 123
-- grades: {'B': 116, 'A': 7}
-- distinct sources: 40
+- claims: 125
+- grades: {'B': 118, 'A': 7}
+- distinct sources: 41

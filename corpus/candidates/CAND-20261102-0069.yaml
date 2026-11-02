@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2610.41462v1
 doi: null
-title: Strong-Field-Driven Non-Linear Vibronic Coupling in an Asymmetric Donor-Acceptor
-  Oligomer
+title: Strong-Field-Driven Non-Linear Vibronic Coupling in an Asymmetric Donor-Acceptor Oligomer
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-10-30'
@@ -24,6 +23,52 @@ id: CAND-20261102-0069
 harvested_date: '2026-11-02'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-02'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Under weak-field conditions at I = 1 GW cm^-2 (η ≈ 0.005) with fixed nuclei, the time-averaged
+      fragment charge variation on A2(3F) is approximately +0.020 e, wh
+    reason: the value 0.02 does not appear in any of the claim's quotes
+    quotes:
+    - 'Under weak-field conditions (I= 1 GW cm −2,η≈0.005), the fixed-nuclei simulations reveal the expected
+      trend (Figure 1b, light blue shaded area): the central donor is depleted (⟨∆qD⟩t <0), while electronic
+      charge preferentially accumulates o'
+    - the fixed-nuclei simulations reveal the expected trend
+    - I= 1 GW cm −2
+    - η≈0.005
+  - statement: With moving nuclei at an intensity of 1 TW cm^-2, donor depletion scores up to -0.103 e.
+    reason: 'unit conversion refused: current: cannot convert -0.103 e to A - Cannot convert from ''elementary_charge''
+      ([current] * [time]) to ''ampere'' ([current]). A dimensional mismatch means the v'
+    quotes:
+    - Across the non-perturbative regime, the central donor undergoes persistent depletion (scoring up
+      to−0.103eatI= 1 TW cm −2)
+    - I= 1 TW cm −2
+    - moving nuclei
+    - central donor
+  - statement: At 5 TW cm^-2 with moving nuclei, the time-averaged charge accumulation on A2(3F) reaches
+      +0.074 e, compared to approximately +0.04 e in the clamped-nuclei scen
+    reason: 'unit conversion refused: current: cannot convert 0.074 e to A - Cannot convert from ''elementary_charge''
+      ([current] * [time]) to ''ampere'' ([current]). A dimensional mismatch means the va'
+    quotes:
+    - At5 TW cm −2, nuclear motion nearly doubles the time-averaged accumulation on A2(3F)relative to
+      the clamped-nuclei scenario (+0.074evs.≈+0.04e, a factor of≈1.9)
+    - 5 TW cm −2
+    - nuclear motion
+    - A2(3F)
+  - statement: The laser driving frequency used in the real-time dynamics simulations is set to 1.80 eV.
+    reason: the value 1.8 does not appear in any of the claim's quotes
+    quotes:
+    - For the real-time dynamics, the central driving frequency was set toℏωL = 1.80 eV
+    - central driving frequency
+  tokens:
+    input: 12509
+    output: 1740
+  fetched_chars: 37543
