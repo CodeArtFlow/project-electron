@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-02.
+Topic code `MAT`. Last reviewed 2026-11-03.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -109,6 +109,29 @@ Topic code `MAT`. Last reviewed 2026-11-02.
   - sources: SRC-00212
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0088 — see the open register
+- **0.128174 fJ** — The kinetic cutoff energy used in DFT calculations was 800 eV.
+  - `CLM-MAT-0262` · calculation_method DFT relaxations · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00277
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.000948809 fJ** — The calculated desorption barrier for nitrogen adatoms to the atomic state on the GaN surface is 5.922 eV.
+  - `CLM-MAT-0274` · desorption_state atomic · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00282
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.000159417 fJ** — The calculated desorption barrier for nitrogen adatoms to the molecular state on the GaN surface is 0.995 eV.
+  - `CLM-MAT-0275` · desorption_state molecular · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00282
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0103, CFL-0104 — see the open register
+- **0.000479692 fJ** — The calculated desorption barrier for phosphorus adatoms to the molecular state on the GaP surface is 2.994 eV.
+  - `CLM-MAT-0276` · desorption_state molecular · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00282
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0103, CFL-0105 — see the open register
+- **0.000446847 fJ** — The calculated desorption barrier for arsenic adatoms to the molecular state on the GaAs surface is 2.789 eV.
+  - `CLM-MAT-0277` · desorption_state molecular · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00282
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0104, CFL-0105 — see the open register
 
 ### frequency
 
@@ -350,6 +373,10 @@ Topic code `MAT`. Last reviewed 2026-11-02.
   - `CLM-MAT-0227` · component stripline antenna · grade B · credibility unknown · measured · as of 2026-10-27
   - sources: SRC-00252
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.377 nm** — From the (200) XRD peak of the MgO/IrMn3(10 nm)/Ti(2 nm) sample, a lattice parameter of a = 0.377 nm was extracted.
+  - `CLM-MAT-0278` · sample MgO/IrMn3(10 nm)/Ti(2 nm), peak (200) · grade B · credibility unknown · measured · as of 2026-11-02
+  - sources: SRC-00285
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -821,6 +848,58 @@ Topic code `MAT`. Last reviewed 2026-11-02.
   - `CLM-MAT-0260` · grade B · credibility unknown · simulated · as of 2026-10-30
   - sources: SRC-00276
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The indirect band gap of the VOCl2 monolayer in the ferroelectric +P state is calculated to be 1.39 eV.
+  - `CLM-MAT-0264` · material VOCl2 monolayer, ferroelectric_state +P state · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00278
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The in-plane lattice constant of the VOCl2 monolayer along the x-axis is calculated to be 6.8 Å.
+  - `CLM-MAT-0265` · material VOCl2 monolayer · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00278
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The in-plane lattice constant of the VOCl2 monolayer along the y-axis is calculated to be 7.6 Å.
+  - `CLM-MAT-0266` · material VOCl2 monolayer · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00278
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The V-V distance along the x-axis in the VOCl2 monolayer is 3.4 Å.
+  - `CLM-MAT-0267` · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00278
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The V-V distance along the y-axis in the VOCl2 monolayer is 3.8 Å.
+  - `CLM-MAT-0268` · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00278
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The vertical distance between upper and lower Cl layers in the VOCl2 monolayer is 3.3 Å.
+  - `CLM-MAT-0269` · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00278
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- At a time of 4 ps along the 300 K NVE trajectory, the cumulative average of the second-order conductivity σ(2)zzz for (BA)2CsPb2Br7 reaches -6.85 × 10^-6 A/V^2.
+  - `CLM-MAT-0271` · material (BA)2CsPb2Br7, temperature 300 K, ensemble NVE, time 4 ps, component σ(2)zzz · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00279
+  - ⚙ automated extraction (gemini-3.6-flash; 7 quote(s) verified verbatim against the paper)
+- In zero-field MD simulations, the zero-field tracer diffusion coefficient of amorphous Li3PO4 yields an activation energy of 0.453 ± 0.018 eV.
+  - `CLM-MAT-0272` · temperature_range between 650 and 900 K · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00280
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- In zero-field MD simulations, the zero-field tracer diffusion coefficient of crystalline Li3PO4 with Li vacancies yields an activation energy of 0.491 ± 0.009 eV.
+  - `CLM-MAT-0273` · temperature_range between 900 and 1400 K · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00280
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- At a temperature of 10 K, the coercivity of the IrMn3(10 nm)/Py(6 nm)/Ti(2 nm) sample reaches -125 Oe.
+  - `CLM-MAT-0280` · temperature 10 K, sample IrMn3(10 nm)/Py(6 nm)/Ti(2 nm) · grade B · credibility unknown · measured · as of 2026-11-02
+  - sources: SRC-00285
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- ST2M achieves a structural validity of 96.37%.
+  - `CLM-MAT-0283` · model ST2M · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00286
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Under known pattern conditioning, ST2M achieves a relaxed stable, unique, and novel (S.U.N.) rate of 23.86%.
+  - `CLM-MAT-0284` · pattern_condition known patterns · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00286
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- ST2M achieves a compositional validity of 84.04%.
+  - `CLM-MAT-0285` · model ST2M · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00286
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -912,6 +991,19 @@ Topic code `MAT`. Last reviewed 2026-11-02.
   - sources: SRC-00274
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
+### resistance
+
+- **6.59 ohm** — The AMR amplitude ΔRIrMn3/Pt at the IrMn3/Pt interface is 6.59 Ω.
+  - `CLM-MAT-0281` · interface IrMn3/Pt, temperature 10 K, dc_current 0.1 mA · grade B · credibility unknown · measured · as of 2026-11-02
+  - sources: SRC-00285
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0106 — see the open register
+- **0.0039 ohm** — The AMR amplitude ΔRIrMn3/Py at the IrMn3/Py interface is 0.0039 Ω.
+  - `CLM-MAT-0282` · temperature 10 K, dc_current 0.1 mA · grade B · credibility unknown · measured · as of 2026-11-02
+  - sources: SRC-00285
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0106 — see the open register
+
 ### temperature
 
 - **-123.15 degC** — The temperature used in the acoustic phonon scattering calculation is 150 K.
@@ -968,6 +1060,18 @@ Topic code `MAT`. Last reviewed 2026-11-02.
   - `CLM-MAT-0210` · strain +2%, method anisotropic Migdal-Eliashberg equations · grade B · credibility unknown · simulated · as of 2026-10-23
   - sources: SRC-00229
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **26.85 degC** — Molecular dynamics simulations were performed for two STO layers twisted by 4.62° at a temperature of 300 K.
+  - `CLM-MAT-0261` · twist_angle 4.62°, method MD simulations · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00277
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **750 degC** — High-temperature annealing was performed at 750 °C for 2 h under an oxygen atmosphere.
+  - `CLM-MAT-0263` · atmosphere oxygen atmosphere (oxygen pressure regulated to 0.4 MPa) · grade B · credibility unknown · measured · as of 2026-11-02
+  - sources: SRC-00277
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **106.85 degC** — The blocking temperature of the IrMn3(10 nm)/Py bilayer is 380 K.
+  - `CLM-MAT-0279` · sample_layer IrMn3(10 nm)/Py bilayer · grade B · credibility unknown · measured · as of 2026-11-02
+  - sources: SRC-00285
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature delta
 
@@ -1105,6 +1209,10 @@ Topic code `MAT`. Last reviewed 2026-11-02.
 - **-1.96 V** — The chemisorption potential for hydrogenation (−H) of monolayer graphene is -1.96 ± 0.08 V vs Fc/Fc+.
   - `CLM-MAT-0247` · substituent −H · grade B · credibility unknown · measured · as of 2026-10-29
   - sources: SRC-00270
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **2.94e-06 V** — The quadratic Hall voltage Vy under transverse open-circuit conditions for the peak BCD value is projected to be 2.94 µV.
+  - `CLM-MAT-0270` · operating_condition transverse open-circuit conditions · grade B · credibility unknown · projected · as of 2026-11-02
+  - sources: SRC-00278
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### wavelength
@@ -1252,9 +1360,21 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0101` — relative_deviation: _unexamined; classification pending_
   - claims: CLM-MAT-0249, CLM-MAT-0251
   - missing data: `not yet named`
+- `CFL-0103` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0275, CLM-MAT-0276
+  - missing data: `not yet named`
+- `CFL-0104` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0275, CLM-MAT-0277
+  - missing data: `not yet named`
+- `CFL-0105` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0276, CLM-MAT-0277
+  - missing data: `not yet named`
+- `CFL-0106` — resistance: _unexamined; classification pending_
+  - claims: CLM-MAT-0281, CLM-MAT-0282
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 260
-- grades: {'B': 260}
-- distinct sources: 94
+- claims: 285
+- grades: {'B': 285}
+- distinct sources: 101

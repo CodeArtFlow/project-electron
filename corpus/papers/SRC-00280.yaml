@@ -1,0 +1,81 @@
+id: SRC-00280
+title: Collective dipole effects amplify field-driven ion transport in amorphous Li$_3$PO$_4$
+doi: null
+arxiv_id: 2611.02617v1
+url: https://arxiv.org/abs/2611.02617v1
+venue_id: arxiv_api
+authors:
+- name: Haruka Doyu
+  affiliation: null
+  corresponding: null
+- name: Anh Khoa Augustin Lu
+  affiliation: null
+  corresponding: null
+- name: Satoshi Watanabe
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-02'
+retrieved_date: '2026-11-03'
+access: full_text
+read_scope: Automated reading. The full PDF text (69,982 characters, 20 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.02617v1 on
+  2026-11-03. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“with ∆H am = 0.453±0.018 eV and ∆H cry = 0.491±0.009 eV.”
+
+  “Zero-field MD simulations were performed between 650 and 900 K for the amorphous phase and between
+  900 and 1400 K for the crystal, with three independent runs per temperature.”'
+method_summary: '“We use molecular dynamics with a machine-learned interatomic potential and a machine-learned
+  Born-effective-charge model to measure Li mobility in amorphous Li 3PO4 and in a crystal with Li vacancies,
+  from the linear to the strongly nonlinear regime.”
+
+  “Canonical (NVT) MD simulations were performed with the Atomic Simulation Environment (ASE) [37] using
+  a 1 fs time step and a Nos´ e-Hoover thermostat [38] with a 100 fs coupling constant.”'
+limitations: '“The BEC tensors are evaluated at zero field. The coupling to the field is therefore linear,
+  and higher-order electronic polarization is not included.”
+
+  “Correlated or dynamically stabilized events are thus not fully represented in the hopping model.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 22167
+    output: 2385
+  claims_accepted: 2
+  claims_rejected: 3
+  rejected:
+  - statement: At an electric field along z of Ez = 0.0075 V/Å at 900 K, the reference mobility of amorphous
+      Li3PO4 is (2.71 ± 0.07) × 10^-4 cm^2/(V s).
+    reason: '[missing_required_conditions] mobility requires temperature, carrier_type; missing carrier_type'
+    quotes:
+    - Alongzwe obtainµ 0,am = (2.71±0.07)×10 −4 and µ0,cry = (0.87±0.04)×10 −4 cm2/(V s).
+    - We measure Li transport at 900 K under applied electric fields, starting from equilibrated snapshots
+      of the zero-field MD (SM).
+    - The lowest field probed, 0.0075 V/ ˚A, lies nearly in the linear regime of the measured field dependence
+      [Fig. 1].
+  - statement: At an electric field along z of Ez = 0.0075 V/Å at 900 K, the reference mobility along
+      z of crystalline Li3PO4 with Li vacancies is (0.87 ± 0.04) × 10^-4 cm^2/(
+    reason: the value 8.7e-05 does not appear in any of the claim's quotes
+    quotes:
+    - Alongzwe obtainµ 0,am = (2.71±0.07)×10 −4 and µ0,cry = (0.87±0.04)×10 −4 cm2/(V s).
+    - We measure Li transport at 900 K under applied electric fields, starting from equilibrated snapshots
+      of the zero-field MD (SM).
+    - The production systems are an amorphous Li384P128O512 cell (SM) and a crystalline Li 352P128O512
+      reference containing 8.3% Li vacancies.
+    - The lowest field probed, 0.0075 V/ ˚A, lies nearly in the linear regime of the measured field dependence
+      [Fig. 1].
+  - statement: Averaging over the three field directions of the anisotropic crystal at Ez = 0.0075 V/Å
+      at 900 K gives a reference mobility of (0.65 ± 0.02) × 10^-4 cm^2/(V s).
+    reason: the statement contains the number 0.0075, which none of its quotes contain
+    quotes:
+    - Averaging over the three field directions of the anisotropic crystal gives (0.65±0.02)×10 −4 cm2/(V
+      s) (SM).
+    - We measure Li transport at 900 K under applied electric fields, starting from equilibrated snapshots
+      of the zero-field MD (SM).
+corrections: []

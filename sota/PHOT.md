@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-02.
+Topic code `PHOT`. Last reviewed 2026-11-03.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -379,6 +379,26 @@ Topic code `PHOT`. Last reviewed 2026-11-02.
   - `CLM-PHOT-0122` · grade B · credibility unknown · measured · as of 2026-10-29
   - sources: SRC-00255
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- At a 40 nm strip thickness, Sb2S3 switches beta2 by a median of 181 ps2 km-1.
+  - `CLM-PHOT-0126` · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00281
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Sb2Se3 reaches a comparable switching contrast at a median modal loss of 5.6 dB cm-1.
+  - `CLM-PHOT-0127` · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00281
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- At an unseen film thickness, the surrogate model's error is 8.3 ps2 km-1 rather than 13.0 ps2 km-1.
+  - `CLM-PHOT-0128` · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00281
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- With a bare test ring and a second ring carrying a crystalline strip, 96.8% of the dies are trimmed into +/- 25 ps2 km-1.
+  - `CLM-PHOT-0129` · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00281
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Eigenmode expansion shows that junctions add at most 1.24 ps2 km-1 to beta2 for the four-segment device in pattern 1111.
+  - `CLM-PHOT-0130` · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00281
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -577,6 +597,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 125
-- grades: {'B': 118, 'A': 7}
-- distinct sources: 41
+- claims: 130
+- grades: {'B': 123, 'A': 7}
+- distinct sources: 42

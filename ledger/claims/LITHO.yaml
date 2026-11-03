@@ -131,3 +131,69 @@ claims:
       unit: percent
     conditions:
       photon_energy: 30 eV
+- id: CLM-LITHO-0005
+  topic: LITHO
+  statement: The illuminated collimated Gaussian beam has a 1/e2 intensity radius of 3 mm at the SLM plane.
+  sources:
+  - SRC-00284
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-02'
+  created: '2026-11-03'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    beam_profile: Gaussian
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 3.0
+      unit: mm
+    si_base:
+      value: 0.003
+      unit: m
+    display:
+      value: 2999999.9999999995
+      unit: nm
+    conditions:
+      beam_profile: Gaussian
+- id: CLM-LITHO-0006
+  topic: LITHO
+  statement: The lens following the SLM has a focal length of 200 mm.
+  sources:
+  - SRC-00284
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-02'
+  created: '2026-11-03'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    component: lens
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 200.0
+      unit: mm
+    si_base:
+      value: 0.2
+      unit: m
+    display:
+      value: 200000000.0
+      unit: nm
+    conditions:
+      component: lens

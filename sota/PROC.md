@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-11-02.
+Topic code `PROC`. Last reviewed 2026-11-03.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -127,6 +127,26 @@ Topic code `PROC`. Last reviewed 2026-11-02.
   - `CLM-PROC-0042` · crystallographic_axis c axis · grade B · credibility unknown · simulated · as of 2026-10-23
   - sources: SRC-00231
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- For case 2 N2 dissociation on the GaN(0001̅) surface with a coverage of 7 Ga adatoms, the DFT dissociation energy barrier is 2.944 eV.
+  - `CLM-PROC-0051` · surface GaN(0001̅), pyramid_orientation case 2, ga_coverage 7 Ga adatoms · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00283
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The DFT dissociation energy calculated for the N2 molecule is 9.756 eV.
+  - `CLM-PROC-0052` · species N2 molecule · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00283
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The DFT energy gain for a pair of N glue atoms on the GaN(0001̅) surface is 1.171 eV at a Ga coverage of 7 adatoms in case 2.
+  - `CLM-PROC-0053` · surface GaN(0001̅), pyramid_orientation case 2 · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00283
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The DFT energy gain for a pair of N glue atoms on the GaN(0001̅) surface is 2.186 eV at a Ga coverage of 12 adatoms in case 2.
+  - `CLM-PROC-0054` · surface GaN(0001̅), pyramid_orientation case 2, ga_coverage 12 adatoms · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00283
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The DFT dissociation energy of P2 diatomic molecules is 5.15 eV.
+  - `CLM-PROC-0055` · grade B · credibility unknown · simulated · as of 2026-11-02
+  - sources: SRC-00283
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -314,6 +334,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 50
-- grades: {'B': 50}
-- distinct sources: 16
+- claims: 55
+- grades: {'B': 55}
+- distinct sources: 17

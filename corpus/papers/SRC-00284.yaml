@@ -1,0 +1,129 @@
+id: SRC-00284
+title: Phase-locked beam splitting with continuously tunable intensity ratio using stochastic phase masks
+doi: null
+arxiv_id: 2611.02755v1
+url: https://arxiv.org/abs/2611.02755v1
+venue_id: arxiv_api
+authors:
+- name: Melvin Redon
+  affiliation: null
+  corresponding: null
+- name: Titouan Gadeyne
+  affiliation: null
+  corresponding: null
+- name: Gaspard Beaufort
+  affiliation: null
+  corresponding: null
+- name: Saga Westerberg
+  affiliation: null
+  corresponding: null
+- name: Vartika Vishnoi
+  affiliation: null
+  corresponding: null
+- name: Peter Smorenburg
+  affiliation: null
+  corresponding: null
+- name: Anne-Lise Viotti
+  affiliation: null
+  corresponding: null
+- name: Thierry Ruchon
+  affiliation: null
+  corresponding: null
+- name: Cord L. Arnold
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-02'
+retrieved_date: '2026-11-03'
+access: full_text
+read_scope: Automated reading. The full PDF text (60,024 characters, 24 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.02755v1 on
+  2026-11-03. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The SLM is illuminated at near-normal incidence by a collimated Gaussian beam of 1/e2 intensity
+  radius w SLM = 3 mm, well within the active aperture, with its polarization aligned to the modulation
+  axis of the liquid crystal.”
+
+  “collimated Gaussian beam of 1/e2 intensity radius w SLM = 3 mm”
+
+  “A lens of focal length f = 200 mm placed after the SLM performs the Fraunhofer transform of the reflected
+  field onto the camera, giving the focal field”
+
+  “A lens of focal length f = 200 mm placed after the SLM”'
+method_summary: '“The SLM aperture is divided into square patches, each randomly assigned to one of three
+  phase ramps that steer light to three independent foci: two phase-locked beams and a dump that takes
+  up the surplus power.”
+
+  “We observe the beams in the focal plane of a lens.”
+
+  “A lens of focal length f = 200 mm placed after the SLM performs the Fraunhofer transform of the reflected
+  field onto the camera, giving the focal field”
+
+  “To verify this experimentally, we set α = 1/2 and βB = 0, and scan βA from 0 to 1, for which Eq. (8)
+  predicts IA/IB = 1 − βA.”
+
+  “To compare with this ensemble average, we experimentally generate N = 100 independent random masks
+  per patch size and record the focal intensity for each.”'
+limitations: '“The error bar is set by the signal-to-noise ratio of the fringe peak, and therefore grows
+  as the fringes lose contrast. Beyond βA = 0.7 focus A is too weak for the fringes to hold contrast,
+  and those points (open markers) are excluded from the rms deviation quoted above.”
+
+  “The targeted parameters α, βA, βB are continuous: they set assignment probabilities rather than displayed
+  phase levels, and how closely a given draw realizes them is limited by the number of patches under the
+  beam, i.e. by the seed-to-seed spread above.”
+
+  “The cost of the random encoding is the halo, which carries a fraction 1 − ∑c ξ2c of the total power
+  Ptot.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 21900
+    output: 2374
+  claims_accepted: 2
+  claims_rejected: 4
+  rejected:
+  - statement: At a working wavelength of 1030 nm, the Santec SLM-300 phase-only LCoS spatial light modulator
+      has a pixel pitch of 8 µm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The experiments
+      use a reflective phase-only liquid-crystal-on-silicon '''
+    quotes:
+    - The experiments use a reflective phase-only liquid-crystal-on-silicon (LCoS) SLM (Santec SLM-300,
+      1920 × 1200 pixels, pixel pitch p = 8 µm, phase modulation depth 2π) at the working wavelength λ
+      = 1030 nm.
+    - Santec SLM-300, 1920 × 1200 pixels, pixel pitch p = 8 µm, phase modulation depth 2π
+    - pixel pitch p = 8 µm
+  - statement: The unshaped beam's diffraction-limited focus has a calculated 1/e2 intensity radius of
+      approximately 20 µm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - For an unshaped beam, the diffraction-limited focus has a 1/e2 intensity radius w0 = λf/(πw SLM)
+      ≈ 20 µm.
+    - For an unshaped beam
+    - f = 200 mm
+    - w SLM = 3 mm
+  - statement: The relative phase between the two foci remains constant within 48 mrad rms across the
+      attenuation scan of focus A.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''mrad'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a un'
+    quotes:
+    - The relative phase stays constant to within 48 mrad rms across the scan [Fig. 2(b)], so attenuating
+      one channel does not shift the phase of the pair.
+    - we set α = 1/2 and βB = 0, and scan βA from 0 to 1
+  - statement: The operating window of patch size s is bounded between s = 4 and s = 16.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The shaded
+      band marks the operating window s ≈ 4–16, bounded below by '''
+    quotes:
+    - The shaded band marks the operating window s ≈ 4–16, bounded below by this loss and above by the
+      seed-to-seed spread of Sec. 6.1, which appears here as the growing scatter of the points at large
+      s.
+    - The shaded band marks the operating window s ≈ 4–16
+corrections: []

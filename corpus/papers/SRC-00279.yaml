@@ -1,0 +1,52 @@
+id: SRC-00279
+title: Nonadiabatic molecular dynamics simulation with external field
+doi: null
+arxiv_id: 2611.02606v1
+url: https://arxiv.org/abs/2611.02606v1
+venue_id: arxiv_api
+authors:
+- name: Chengji Li
+  affiliation: null
+  corresponding: null
+- name: Fan Zheng
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-02'
+retrieved_date: '2026-11-03'
+access: full_text
+read_scope: Automated reading. The full PDF text (79,070 characters, 52 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.02606v1 on
+  2026-11-03. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“At 300 K, the cumulative average remains close to a finite value over most of the sampled
+  trajectory and reaches −6.85 × 10−6 A/V2 at 4 ps.”
+
+  “As the main nonlinear-response application, we investigate the 2D hybrid perovskite (BA)2CsPb2Br7,
+  where BA = C 4H9NH+3 .”
+
+  “Figure 3A presents the σ(2)zzz values obtained along the 300K and 450 K NVE trajectories.”
+
+  “The second-order conductivity σ(2)zzz is then extracted from this response.”'
+method_summary: “Our CPA-NAMD-extF method is implemented based on the pseudopotential plane-wave Quantum
+  ESPRESSO (QE) package.”
+limitations: '“Since the velocity gauge and the finite number of states are used for electronic dynamics,
+  it suffers from the common problem that some contributions from states outside the truncated adiabatic
+  states cannot be fully described.”
+
+  “The current method is therefore most reliable in the relatively weak field regime.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 26070
+    output: 857
+  claims_accepted: 1
+  claims_rejected: 0
+  rejected: []
+corrections: []

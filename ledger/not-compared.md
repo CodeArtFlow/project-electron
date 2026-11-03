@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**13477 pair(s)** as of 2026-11-02.
+**13993 pair(s)** as of 2026-11-03.
 
 ## `area_die` (11 pair(s))
 
@@ -47,7 +47,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0077` = 4 mA | 85% | process_step=current ramp-down | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° |
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0075` = 1.5 mA | 60% | process_step=current ramp-down | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° |
 
-## `energy` (393 pair(s))
+## `energy` (547 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -55,10 +55,13 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-MAT-0078` = 4810 meV | `CLM-MAT-0172` = -5090 meV | 194% | defect_complex=VAl(ON)3, model=DFT | material=MLBP |
 | `CLM-MAT-0002` = 200 meV | `CLM-MEM-0040` = -180 meV | 190% | mechanism=optical phonon | method=DFT |
 | `CLM-MAT-0200` = 200 meV | `CLM-MEM-0040` = -180 meV | 190% | band=2.3 eV emission, impurity_content=<0.1 ppm | method=DFT |
+| `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0274` = 5922 meV | 186% | material=MLBP | desorption_state=atomic |
 | `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0172` = -5090 meV | 185% | defect_complex=VAl(ON)3 | material=MLBP |
 | `CLM-MAT-0104` = 220 meV | `CLM-MEM-0040` = -180 meV | 182% | measurement=RIXS, absorption_edge=Fe L3 edge | method=DFT |
 | `CLM-MAT-0049` = 296 meV | `CLM-MEM-0040` = -180 meV | 161% | material=LiFePO4 | method=DFT |
+| `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0276` = 2994 meV | 159% | material=MLBP | desorption_state=molecular |
 | `CLM-MAT-0050` = 102 meV | `CLM-MEM-0040` = -180 meV | 157% | material=Li6PS5Cl | method=DFT |
+| `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0277` = 2789 meV | 155% | material=MLBP | desorption_state=molecular |
 | `CLM-MEM-0040` = -2.884e-05 fJ | `CLM-PROC-0031` = 1.458e-05 fJ | 151% | method=DFT | error_metric=root-mean-square deviation per formula unit |
 | `CLM-MAT-0201` = 370 meV | `CLM-MEM-0040` = -180 meV | 149% | band=2.3 eV emission, impurity_content=<0.1 ppm | method=DFT |
 | `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0172` = -5090 meV | 140% | synthesis_condition=Nitrogen-rich | material=MLBP |
@@ -68,6 +71,8 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-MAT-0051` = 1801 meV | `CLM-MAT-0172` = -5090 meV | 135% | axis=c | material=MLBP |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MEM-0040` = -180 meV | 133% | mechanism=surface polar phonon, substrate=SiO2 | method=DFT |
 | `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0172` = -5090 meV | 126% | synthesis_condition=Nitrogen-rich | material=MLBP |
+| `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0275` = 995 meV | 120% | material=MLBP | desorption_state=molecular |
+| `CLM-MAT-0275` = 995 meV | `CLM-MEM-0040` = -180 meV | 118% | desorption_state=molecular | method=DFT |
 | `CLM-MAT-0013` = 1340 meV | `CLM-MEM-0040` = -180 meV | 113% | synthesis_condition=Nitrogen-rich | method=DFT |
 | `CLM-MAT-0051` = 1801 meV | `CLM-MEM-0040` = -180 meV | 110% | axis=c | method=DFT |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MEM-0018` = 500 meV | 110% | material=MLBP | temperature=100 K, measurement_method=ARPES |
@@ -75,24 +80,19 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-MAT-0015` = 1980 meV | `CLM-MEM-0040` = -180 meV | 109% | synthesis_condition=Nitrogen-rich | method=DFT |
 | `CLM-MAT-0016` = 2020 meV | `CLM-MEM-0040` = -180 meV | 109% | synthesis_condition=Nitrogen-rich | method=DFT |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0201` = 370 meV | 107% | material=MLBP | band=2.3 eV emission, impurity_content=<0.1 ppm |
+| `CLM-MAT-0277` = 2789 meV | `CLM-MEM-0040` = -180 meV | 106% | desorption_state=molecular | method=DFT |
+| `CLM-MAT-0276` = 2994 meV | `CLM-MEM-0040` = -180 meV | 106% | desorption_state=molecular | method=DFT |
 | `CLM-MAT-0104` = 220 meV | `CLM-MAT-0172` = -5090 meV | 104% | measurement=RIXS, absorption_edge=Fe L3 edge | material=MLBP |
 | `CLM-MAT-0077` = 4330 meV | `CLM-MEM-0040` = -180 meV | 104% | defect_complex=VAl(ON)3 | method=DFT |
 | `CLM-MAT-0002` = 200 meV | `CLM-MAT-0172` = -5090 meV | 104% | mechanism=optical phonon | material=MLBP |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0200` = 200 meV | 104% | material=MLBP | band=2.3 eV emission, impurity_content=<0.1 ppm |
 | `CLM-MAT-0078` = 4810 meV | `CLM-MEM-0040` = -180 meV | 104% | defect_complex=VAl(ON)3, model=DFT | method=DFT |
+| `CLM-MAT-0274` = 5922 meV | `CLM-MEM-0040` = -180 meV | 103% | desorption_state=atomic | method=DFT |
 | `CLM-MAT-0172` = -5090 meV | `CLM-PROC-0031` = 91 meV | 102% | material=MLBP | error_metric=root-mean-square deviation per formula unit |
 | `CLM-MAT-0115` = 2.22 meV | `CLM-MEM-0040` = -180 meV | 101% | state=3p | method=DFT |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0172` = -5090 meV | 101% | mechanism=surface polar phonon, substrate=SiO2 | material=MLBP |
-| `CLM-MAT-0113` = 15.9 meV | `CLM-MAT-0172` = -5090 meV | 100% | method=three-band nearest-neighbor exciton-geometric calculation | material=MLBP |
-| `CLM-MAT-0114` = 0.13 meV | `CLM-MEM-0040` = -180 meV | 100% | material=WSe2 | method=DFT |
-| `CLM-MAT-0115` = 2.22 meV | `CLM-MAT-0172` = -5090 meV | 100% | state=3p | material=MLBP |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0001` = 9.581e-06 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | mechanism=surface polar phonon, substrate=SiO2 |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0002` = 3.204e-05 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | mechanism=optical phonon |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0013` = 0.0002147 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | synthesis_condition=Nitrogen-rich |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0014` = 0.0003108 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | synthesis_condition=Nitrogen-rich |
-| `CLM-ARCH-0075` = 1.67e+12 fJ | `CLM-MAT-0015` = 0.0003172 fJ | 100% | architecture=eight-output accelerator with shared activation delivery | synthesis_condition=Nitrogen-rich |
 
-_and 353 more_
+_and 507 more_
 
 ## `energy_advantage_ratio` (7 pair(s))
 
@@ -153,17 +153,26 @@ _and 353 more_
 
 _and 491 more_
 
-## `length_device` (4377 pair(s))
+## `length_device` (4660 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-DEV-0053` = 1.61 nm | `CLM-LITHO-0005` = 3e+06 nm | 100% | parameter=ts | beam_profile=Gaussian |
+| `CLM-DEV-0053` = 1.61 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | parameter=ts | component=lens |
 | `CLM-DEV-0053` = 1.61 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | parameter=ts | material=GaN, growth_method=ammonothermal |
 | `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | parameter=ts | substrate_material=glass cover slip, sample_type=flat surface |
 | `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | parameter=ts | chip_thickness=4-mm |
 | `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0115` = 3.3e+04 nm | 100% | parameter=ts | dimension=width |
 | `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0116` = 1.47e+05 nm | 100% | parameter=ts | dimension=length |
+| `CLM-DEV-0068` = 100 nm | `CLM-LITHO-0005` = 3e+06 nm | 100% | material=PEDOT:PSS | beam_profile=Gaussian |
+| `CLM-DEV-0068` = 100 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | material=PEDOT:PSS | component=lens |
 | `CLM-DEV-0068` = 100 nm | `CLM-MAT-0138` = 0.005 nm | 100% | material=PEDOT:PSS | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-DEV-0068` = 100 nm | `CLM-MAT-0140` = 0.005 nm | 100% | material=PEDOT:PSS | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-DEV-0084` = 22.17 nm | `CLM-LITHO-0005` = 3e+06 nm | 100% | rkky_coupling=-0.2 mJ/m² | beam_profile=Gaussian |
+| `CLM-DEV-0084` = 22.17 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | rkky_coupling=-0.2 mJ/m² | component=lens |
+| `CLM-DEV-0085` = 22.21 nm | `CLM-LITHO-0005` = 3e+06 nm | 100% | rkky_coupling=-0.2 mJ/m² | beam_profile=Gaussian |
+| `CLM-DEV-0085` = 22.21 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | rkky_coupling=-0.2 mJ/m² | component=lens |
+| `CLM-LITHO-0001` = 500 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | material=crystalline silicon membrane | component=lens |
 | `CLM-LITHO-0001` = 500 nm | `CLM-MAT-0135` = 0.013 nm | 100% | material=crystalline silicon membrane | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-LITHO-0001` = 500 nm | `CLM-MAT-0136` = 0.006 nm | 100% | material=crystalline silicon membrane | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-LITHO-0001` = 500 nm | `CLM-MAT-0137` = 0.011 nm | 100% | material=crystalline silicon membrane | superlattice_layer_n=3, superlattice_layer_m=5 |
@@ -173,32 +182,23 @@ _and 491 more_
 | `CLM-LITHO-0001` = 500 nm | `CLM-PHOT-0057` = 0.024 nm | 100% | material=crystalline silicon membrane | measurement_duration=exceeding 15.5 hours |
 | `CLM-LITHO-0001` = 500 nm | `CLM-PROC-0049` = 0.0229 nm | 100% | material=crystalline silicon membrane | sample=twisted bilayer graphene-hBN |
 | `CLM-LITHO-0001` = 500 nm | `CLM-PROC-0050` = 0.0244 nm | 100% | material=crystalline silicon membrane | sample=twisted bilayer graphene-hBN |
-| `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0004` = 7000 nm | 100% | material=Sb monolayer on SiC(0001) | parameter=signal-ground electrode spacing |
-| `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=Sb monolayer on SiC(0001) | substrate_material=glass cover slip, sample_type=flat surface |
-| `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | material=Sb monolayer on SiC(0001) | chip_thickness=4-mm |
-| `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0097` = 2e+04 nm | 100% | material=Sb monolayer on SiC(0001) | spiral_arms=20 |
-| `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0115` = 3.3e+04 nm | 100% | material=Sb monolayer on SiC(0001) | dimension=width |
-| `CLM-MAT-0017` = 0.284 nm | `CLM-PHOT-0116` = 1.47e+05 nm | 100% | material=Sb monolayer on SiC(0001) | dimension=length |
-| `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0004` = 7000 nm | 100% | material=Sb monolayer on SiC(0001) | parameter=signal-ground electrode spacing |
-| `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | material=Sb monolayer on SiC(0001) | substrate_material=glass cover slip, sample_type=flat surface |
-| `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | material=Sb monolayer on SiC(0001) | chip_thickness=4-mm |
-| `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0097` = 2e+04 nm | 100% | material=Sb monolayer on SiC(0001) | spiral_arms=20 |
-| `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0115` = 3.3e+04 nm | 100% | material=Sb monolayer on SiC(0001) | dimension=width |
-| `CLM-MAT-0018` = 0.327 nm | `CLM-PHOT-0116` = 1.47e+05 nm | 100% | material=Sb monolayer on SiC(0001) | dimension=length |
-| `CLM-MAT-0020` = 6.4 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | regime=partially-reconstructed | material=GaN, growth_method=ammonothermal |
-| `CLM-MAT-0020` = 6.4 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | regime=partially-reconstructed | substrate_material=glass cover slip, sample_type=flat surface |
-| `CLM-MAT-0020` = 6.4 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | regime=partially-reconstructed | chip_thickness=4-mm |
-| `CLM-MAT-0020` = 6.4 nm | `CLM-PHOT-0116` = 1.47e+05 nm | 100% | regime=partially-reconstructed | dimension=length |
-| `CLM-MAT-0023` = 3.5 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | state=X2sA | material=GaN, growth_method=ammonothermal |
-| `CLM-MAT-0023` = 3.5 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | state=X2sA | substrate_material=glass cover slip, sample_type=flat surface |
-| `CLM-MAT-0023` = 3.5 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | state=X2sA | chip_thickness=4-mm |
-| `CLM-MAT-0023` = 3.5 nm | `CLM-PHOT-0116` = 1.47e+05 nm | 100% | state=X2sA | dimension=length |
-| `CLM-MAT-0024` = 6.4 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | state=X2sA | material=GaN, growth_method=ammonothermal |
-| `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | state=X2sA | substrate_material=glass cover slip, sample_type=flat surface |
-| `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | state=X2sA | chip_thickness=4-mm |
-| `CLM-MAT-0024` = 6.4 nm | `CLM-PHOT-0116` = 1.47e+05 nm | 100% | state=X2sA | dimension=length |
+| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0017` = 0.284 nm | 100% | beam_profile=Gaussian | material=Sb monolayer on SiC(0001) |
+| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0018` = 0.327 nm | 100% | beam_profile=Gaussian | material=Sb monolayer on SiC(0001) |
+| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0020` = 6.4 nm | 100% | beam_profile=Gaussian | regime=partially-reconstructed |
+| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0023` = 3.5 nm | 100% | beam_profile=Gaussian | state=X2sA |
+| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0024` = 6.4 nm | 100% | beam_profile=Gaussian | state=X2sA |
+| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0029` = 0.5291 nm | 100% | beam_profile=Gaussian | material=bulk CeN |
+| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0037` = 14.6 nm | 100% | beam_profile=Gaussian | material=TiN, property=GL coherence length |
+| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0039` = 42.9 nm | 100% | beam_profile=Gaussian | measurement=neutron reflectivity, material=TiN |
+| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0040` = 0.5 nm | 100% | beam_profile=Gaussian | fermi_velocity=7×105 ms−1, model=Drude model |
+| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0052` = 23 nm | 100% | beam_profile=Gaussian | characterization_method=AFM |
+| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0060` = 101.7 nm | 100% | beam_profile=Gaussian | sample=Sample A |
+| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0063` = 10.7 nm | 100% | beam_profile=Gaussian | device=D1 |
+| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0068` = 14.5 nm | 100% | beam_profile=Gaussian | method=estimated from the carrier density at the SDP |
+| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0081` = 0.98 nm | 100% | beam_profile=Gaussian | material=CrSb |
+| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0097` = 1.915 nm | 100% | beam_profile=Gaussian | feature=alternating stacking of PEDOT and PSS |
 
-_and 4337 more_
+_and 4620 more_
 
 ## `power` (226 pair(s))
 
@@ -300,7 +300,14 @@ _and 186 more_
 
 _and 6146 more_
 
-## `temperature` (211 pair(s))
+## `resistance` (2 pair(s))
+
+| Claim A | Claim B | Gap | A's conditions | B's conditions |
+|---|---|---|---|---|
+| `CLM-MAT-0282` = 0.0039 ohm | `CLM-MEM-0001` = 900 ohm | 100% | temperature=10 K, dc_current=0.1 mA | resistance_state=high-resistance state |
+| `CLM-MAT-0281` = 6.59 ohm | `CLM-MEM-0001` = 900 ohm | 99% | interface=IrMn3/Pt, temperature=10 K, dc_current=0.1 mA | resistance_state=high-resistance state |
+
+## `temperature` (272 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -316,12 +323,15 @@ _and 6146 more_
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0101` = -155.1 degC | 155% | time_after_cooling_onset=10 s | material=bulk FePS3 crystal, magnetic_field=0.5 T |
 | `CLM-MAT-0003` = 150 K | `CLM-MAT-0102` = -81 K | 154% | calculation=acoustic phonon scattering | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0101` = -155.1 degC | 153% | time_after_cooling_onset=10 s | material=bulk FePS3 crystal, magnetic_field=0.5 T |
+| `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0279` = 106.9 degC | 152% | relaxation_temperature=TLIESST | sample_layer=IrMn3(10 nm)/Py bilayer |
 | `CLM-MAT-0091` = 160 K | `CLM-MAT-0102` = -81 K | 151% | pressure=ambient pressure, magnetic_field=0.05 T | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-DEV-0035` = -204.1 degC | 142% | time_after_cooling_onset=10 s | relaxation_temperature=TLIESST |
+| `CLM-DEV-0076` = -257.6 degC | `CLM-MAT-0279` = 106.9 degC | 141% | sample=NbN/I/FePt | sample_layer=IrMn3(10 nm)/Py bilayer |
 | `CLM-MAT-0004` = 200 K | `CLM-MAT-0102` = -81 K | 140% | calculation=optical phonon and surface polar phonon scattering | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-DEV-0035` = -204.1 degC | 140% | time_after_cooling_onset=10 s | relaxation_temperature=TLIESST |
 | `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0093` = 76.85 degC | 138% | relaxation_temperature=TLIESST | magnetic_field=0.05 T |
 | `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0004` = -73.15 degC | 135% | temperature_control_system=VAHEAT system | calculation=optical phonon and surface polar phonon scattering |
+| `CLM-DEV-0076` = -257.6 degC | `CLM-MAT-0263` = 750 degC | 134% | sample=NbN/I/FePt | atmosphere=oxygen atmosphere (oxygen pressure regulated to 0.4 MPa) |
 | `CLM-DEV-0076` = -257.6 degC | `CLM-MEM-0019` = 768.9 degC | 134% | sample=NbN/I/FePt | model=realistic multi-orbital model of YCl, onsite_hubbard_parameter=0.9 eV |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-DEV-0076` = -257.6 degC | 133% | time_after_cooling_onset=10 s | sample=NbN/I/FePt |
 | `CLM-MAT-0092` = 250 K | `CLM-MAT-0102` = -81 K | 132% | pressure=ambient pressure, magnetic_field=0.05 T | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region |
@@ -336,16 +346,13 @@ _and 6146 more_
 | `CLM-DEV-0076` = -257.6 degC | `CLM-MAT-0093` = 76.85 degC | 130% | sample=NbN/I/FePt | magnetic_field=0.05 T |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0092` = -23.15 degC | 128% | time_after_cooling_onset=10 s | pressure=ambient pressure, magnetic_field=0.05 T |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0092` = -23.15 degC | 127% | time_after_cooling_onset=10 s | pressure=ambient pressure, magnetic_field=0.05 T |
+| `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0263` = 750 degC | 127% | relaxation_temperature=TLIESST | atmosphere=oxygen atmosphere (oxygen pressure regulated to 0.4 MPa) |
+| `CLM-MAT-0102` = -81 K | `CLM-MAT-0261` = 300 K | 127% | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region | twist_angle=4.62°, method=MD simulations |
 | `CLM-MAT-0102` = -81 K | `CLM-PROC-0001` = 300 K | 127% | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region | thermal_model=Debye model |
 | `CLM-MAT-0102` = -81 K | `CLM-PHOT-0085` = 302.1 K | 127% | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region | external_pump_power=300 μW |
 | `CLM-DEV-0035` = -204.1 degC | `CLM-MEM-0019` = 768.9 degC | 127% | relaxation_temperature=TLIESST | model=realistic multi-orbital model of YCl, onsite_hubbard_parameter=0.9 eV |
-| `CLM-DEV-0035` = -204.1 degC | `CLM-MEM-0020` = 801.9 degC | 125% | relaxation_temperature=TLIESST | method=Hartree-Fock approximation |
-| `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0102` = -354.1 degC | 124% | time_after_cooling_onset=10 s | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region |
-| `CLM-MAT-0093` = 350 K | `CLM-MAT-0102` = -81 K | 123% | magnetic_field=0.05 T | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region |
-| `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0102` = -354.1 degC | 123% | time_after_cooling_onset=10 s | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region |
-| `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0091` = -113.1 degC | 122% | temperature_control_system=VAHEAT system | pressure=ambient pressure, magnetic_field=0.05 T |
 
-_and 171 more_
+_and 232 more_
 
 ## `temperature_delta` (12 pair(s))
 
@@ -417,7 +424,7 @@ _and 171 more_
 
 _and 1130 more_
 
-## `voltage` (83 pair(s))
+## `voltage` (99 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -429,7 +436,11 @@ _and 1130 more_
 | `CLM-DEV-0026` = 12.65 V | `CLM-MAT-0247` = -1.96 V | 115% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | substituent=−H |
 | `CLM-DEV-0006` = 85 V | `CLM-MAT-0247` = -1.96 V | 102% | incident_peak_electric_field=150 kV/cm | substituent=−H |
 | `CLM-DEV-0006` = 85 V | `CLM-MAT-0064` = 1.5e-07 V | 100% | incident_peak_electric_field=150 kV/cm | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 |
+| `CLM-DEV-0006` = 85 V | `CLM-MAT-0270` = 2.94e-06 V | 100% | incident_peak_electric_field=150 kV/cm | operating_condition=transverse open-circuit conditions |
+| `CLM-DEV-0026` = 12.65 V | `CLM-MAT-0270` = 2.94e-06 V | 100% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | operating_condition=transverse open-circuit conditions |
+| `CLM-DEV-0027` = 1.53 V | `CLM-MAT-0270` = 2.94e-06 V | 100% | device_type=VO2 thin film device, temperature=330 K, transition_type=reset | operating_condition=transverse open-circuit conditions |
 | `CLM-DEV-0067` = 0.47 V | `CLM-MAT-0064` = 1.5e-07 V | 100% | device_architecture=Gr/n-Si, illumination=AM 1.5G, 100 mW cm⁻² | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 |
+| `CLM-DEV-0067` = 0.47 V | `CLM-MAT-0270` = 2.94e-06 V | 100% | device_architecture=Gr/n-Si, illumination=AM 1.5G, 100 mW cm⁻² | operating_condition=transverse open-circuit conditions |
 | `CLM-MAT-0064` = 1.5e-07 V | `CLM-MAT-0099` = 0.53 V | 100% | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 | charging_voltage=0.6 V versus Ag/AgCl |
 | `CLM-MAT-0064` = 1.5e-07 V | `CLM-MAT-0100` = 0.38 V | 100% | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 | charging_voltage=0.6 V versus Ag/AgCl |
 | `CLM-MAT-0064` = 1.5e-07 V | `CLM-MAT-0240` = 0.9 V | 100% | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 | substituent=−F |
@@ -440,29 +451,25 @@ _and 1130 more_
 | `CLM-MAT-0064` = 1.5e-07 V | `CLM-MAT-0245` = 1.63 V | 100% | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 | substituent=−OSO2CF3 |
 | `CLM-MAT-0064` = 1.5e-07 V | `CLM-MAT-0246` = 1.99 V | 100% | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 | substituent=−O (BA) |
 | `CLM-MAT-0064` = 1.5e-07 V | `CLM-MAT-0247` = -1.96 V | 100% | temperature=250 K, vtg=6 V, vbg=8.5 V, device=D1 | substituent=−H |
+| `CLM-MAT-0099` = 0.53 V | `CLM-MAT-0270` = 2.94e-06 V | 100% | charging_voltage=0.6 V versus Ag/AgCl | operating_condition=transverse open-circuit conditions |
+| `CLM-MAT-0100` = 0.38 V | `CLM-MAT-0270` = 2.94e-06 V | 100% | charging_voltage=0.6 V versus Ag/AgCl | operating_condition=transverse open-circuit conditions |
+| `CLM-MAT-0240` = 0.9 V | `CLM-MAT-0270` = 2.94e-06 V | 100% | substituent=−F | operating_condition=transverse open-circuit conditions |
+| `CLM-MAT-0241` = 1.4 V | `CLM-MAT-0270` = 2.94e-06 V | 100% | substituent=−I | operating_condition=transverse open-circuit conditions |
+| `CLM-MAT-0242` = 1.95 V | `CLM-MAT-0270` = 2.94e-06 V | 100% | substituent=−Cl | operating_condition=transverse open-circuit conditions |
+| `CLM-MAT-0243` = 1.1 V | `CLM-MAT-0270` = 2.94e-06 V | 100% | substituent=−ONO2 | operating_condition=transverse open-circuit conditions |
+| `CLM-MAT-0244` = 1.4 V | `CLM-MAT-0270` = 2.94e-06 V | 100% | substituent=−ONO | operating_condition=transverse open-circuit conditions |
+| `CLM-MAT-0245` = 1.63 V | `CLM-MAT-0270` = 2.94e-06 V | 100% | substituent=−OSO2CF3 | operating_condition=transverse open-circuit conditions |
+| `CLM-MAT-0246` = 1.99 V | `CLM-MAT-0270` = 2.94e-06 V | 100% | substituent=−O (BA) | operating_condition=transverse open-circuit conditions |
+| `CLM-MAT-0247` = -1.96 V | `CLM-MAT-0270` = 2.94e-06 V | 100% | substituent=−H | operating_condition=transverse open-circuit conditions |
+| `CLM-MAT-0270` = 2.94e-06 V | `CLM-MEM-0011` = 2.32 V | 100% | operating_condition=transverse open-circuit conditions | device=Ag/TiOx/NiOx/p++-Si device, operation=SET voltage (V SET) |
 | `CLM-DEV-0006` = 85 V | `CLM-MAT-0100` = 0.38 V | 100% | incident_peak_electric_field=150 kV/cm | charging_voltage=0.6 V versus Ag/AgCl |
 | `CLM-DEV-0006` = 85 V | `CLM-DEV-0067` = 0.47 V | 99% | incident_peak_electric_field=150 kV/cm | device_architecture=Gr/n-Si, illumination=AM 1.5G, 100 mW cm⁻² |
 | `CLM-DEV-0006` = 85 V | `CLM-MAT-0099` = 0.53 V | 99% | incident_peak_electric_field=150 kV/cm | charging_voltage=0.6 V versus Ag/AgCl |
 | `CLM-DEV-0006` = 85 V | `CLM-MAT-0240` = 0.9 V | 99% | incident_peak_electric_field=150 kV/cm | substituent=−F |
 | `CLM-DEV-0006` = 85 V | `CLM-MAT-0243` = 1.1 V | 99% | incident_peak_electric_field=150 kV/cm | substituent=−ONO2 |
 | `CLM-DEV-0006` = 85 V | `CLM-MAT-0241` = 1.4 V | 98% | incident_peak_electric_field=150 kV/cm | substituent=−I |
-| `CLM-DEV-0006` = 85 V | `CLM-MAT-0244` = 1.4 V | 98% | incident_peak_electric_field=150 kV/cm | substituent=−ONO |
-| `CLM-DEV-0006` = 85 V | `CLM-DEV-0027` = 1.53 V | 98% | incident_peak_electric_field=150 kV/cm | device_type=VO2 thin film device, temperature=330 K, transition_type=reset |
-| `CLM-DEV-0006` = 85 V | `CLM-MAT-0245` = 1.63 V | 98% | incident_peak_electric_field=150 kV/cm | substituent=−OSO2CF3 |
-| `CLM-DEV-0006` = 85 V | `CLM-MAT-0242` = 1.95 V | 98% | incident_peak_electric_field=150 kV/cm | substituent=−Cl |
-| `CLM-DEV-0006` = 85 V | `CLM-MAT-0246` = 1.99 V | 98% | incident_peak_electric_field=150 kV/cm | substituent=−O (BA) |
-| `CLM-DEV-0006` = 85 V | `CLM-MEM-0011` = 2.32 V | 97% | incident_peak_electric_field=150 kV/cm | device=Ag/TiOx/NiOx/p++-Si device, operation=SET voltage (V SET) |
-| `CLM-DEV-0026` = 12.65 V | `CLM-MAT-0100` = 0.38 V | 97% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | charging_voltage=0.6 V versus Ag/AgCl |
-| `CLM-DEV-0026` = 12.65 V | `CLM-DEV-0067` = 0.47 V | 96% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | device_architecture=Gr/n-Si, illumination=AM 1.5G, 100 mW cm⁻² |
-| `CLM-DEV-0026` = 12.65 V | `CLM-MAT-0099` = 0.53 V | 96% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | charging_voltage=0.6 V versus Ag/AgCl |
-| `CLM-DEV-0026` = 12.65 V | `CLM-MAT-0240` = 0.9 V | 93% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | substituent=−F |
-| `CLM-DEV-0026` = 12.65 V | `CLM-MAT-0243` = 1.1 V | 91% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | substituent=−ONO2 |
-| `CLM-DEV-0026` = 12.65 V | `CLM-MAT-0241` = 1.4 V | 89% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | substituent=−I |
-| `CLM-DEV-0026` = 12.65 V | `CLM-MAT-0244` = 1.4 V | 89% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | substituent=−ONO |
-| `CLM-DEV-0026` = 12.65 V | `CLM-MAT-0245` = 1.63 V | 87% | device_type=VO2 thin film device, temperature=330 K, transition_type=set | substituent=−OSO2CF3 |
-| `CLM-DEV-0006` = 85 V | `CLM-DEV-0026` = 12.65 V | 85% | incident_peak_electric_field=150 kV/cm | device_type=VO2 thin film device, temperature=330 K, transition_type=set |
 
-_and 43 more_
+_and 59 more_
 
 ## `wavelength` (248 pair(s))
 

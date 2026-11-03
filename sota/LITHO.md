@@ -1,6 +1,6 @@
 # Lithography — state of the art
 
-Topic code `LITHO`. Last reviewed 2026-11-02.
+Topic code `LITHO`. Last reviewed 2026-11-03.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -18,6 +18,14 @@ Topic code `LITHO`. Last reviewed 2026-11-02.
 - **500 nm** — The device was fabricated on a crystalline silicon membrane with a thickness of 0.5 μm.
   - `CLM-LITHO-0001` · material crystalline silicon membrane · grade B · credibility unknown · measured · as of 2026-10-20
   - sources: SRC-00189
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **3e+06 nm** — The illuminated collimated Gaussian beam has a 1/e2 intensity radius of 3 mm at the SLM plane.
+  - `CLM-LITHO-0005` · beam_profile Gaussian · grade B · credibility unknown · measured · as of 2026-11-02
+  - sources: SRC-00284
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **2e+08 nm** — The lens following the SLM has a focal length of 200 mm.
+  - `CLM-LITHO-0006` · component lens · grade B · credibility unknown · measured · as of 2026-11-02
+  - sources: SRC-00284
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
@@ -40,6 +48,6 @@ _None._
 
 ## Evidence base
 
-- claims: 4
-- grades: {'B': 4}
-- distinct sources: 1
+- claims: 6
+- grades: {'B': 6}
+- distinct sources: 2

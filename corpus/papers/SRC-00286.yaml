@@ -1,0 +1,93 @@
+id: SRC-00286
+title: Site-orbit masked twin-branch Transformer for symmetry-constrained crystal generation
+doi: null
+arxiv_id: 2611.02906v1
+url: https://arxiv.org/abs/2611.02906v1
+venue_id: arxiv_api
+authors:
+- name: Junchi Liu
+  affiliation: null
+  corresponding: null
+- name: Haoran Si
+  affiliation: null
+  corresponding: null
+- name: Luo Yan
+  affiliation: null
+  corresponding: null
+- name: Sergei Tretiak
+  affiliation: null
+  corresponding: null
+- name: Liujiang Zhou
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-02'
+retrieved_date: '2026-11-03'
+access: full_text
+read_scope: Automated reading. The full PDF text (77,849 characters, 51 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.02906v1 on
+  2026-11-03. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“In our experiments, ST2M achieves a structural validity of 96.37%.”
+
+  “ST2M achieves a structural validity of 96.37%.”
+
+  “For known patterns in dataset, 23.86% of generated structures simultaneously satisfy stability, uniqueness,
+  and novelty criteria, representing a relative improvement of 68.15% over the best-performing baseline.”
+
+  “For known patterns in dataset, 23.86% of generated structures simultaneously satisfy stability, uniqueness,
+  and novelty criteria”
+
+  “As results show, ST2M achieves structural and compositional validities of 96.37% and 84.04%, respectively.”
+
+  “ST2M achieves structural and compositional validities of 96.37% and 84.04%, respectively.”'
+method_summary: '“First-principles calculations identify a total of 21 previously unreported stable structures
+  among selected candidates with low predicted energies.”
+
+  “We calculate the E hull by surrogate model and compare the two generated populations in Figure 2c.”'
+limitations: “The current framework nevertheless generates crystal structures without conditioning on
+  target properties or prescribed elemental combinations. It therefore does not yet support inverse design
+  in which a desired material property guides structure generation.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 23330
+    output: 1646
+  claims_accepted: 3
+  claims_rejected: 3
+  rejected:
+  - statement: Under unknown pattern conditioning, ST2M achieves a relaxed S.U.N. rate of 14.01%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''ST2Munknown
+      | 14.01%'''
+    quotes:
+    - ST2Munknown | 14.01%
+    - T able 1Stability and S.U.N. statistics of generated structures. All percentages are relative to
+      the full generated population.
+    - ST2Munknown
+  - statement: DFT calculations show Cl6Cs2LiRh generated from a known Wyckoff pattern has an indirect
+      PBE band gap of 1.88 eV.
+    reason: 'unit conversion refused: voltage: cannot convert 1.88 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** '
+    quotes:
+    - Cl 6Cs2LiRh has an indirect PBE gap of 1.88 eV
+    - 'Electronic calculations identify two semiconductors: Cl 6Cs2LiRh has an indirect PBE gap of 1.88
+      eV, while CrF 3 has a direct gap of 1.13 eV with both band edges at Γ along the sampled path (Supplementary
+      Figure 29c).'
+    - indirect PBE gap of 1.88 eV
+  - statement: DFT calculations show CrF3 generated from an unknown Wyckoff pattern has a direct PBE band
+      gap of 1.13 eV.
+    reason: 'unit conversion refused: voltage: cannot convert 1.13 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** '
+    quotes:
+    - while CrF 3 has a direct gap of 1.13 eV
+    - 'Electronic calculations identify two semiconductors: Cl 6Cs2LiRh has an indirect PBE gap of 1.88
+      eV, while CrF 3 has a direct gap of 1.13 eV with both band edges at Γ along the sampled path (Supplementary
+      Figure 29c).'
+    - CrF 3 has a direct gap of 1.13 eV
+corrections: []
