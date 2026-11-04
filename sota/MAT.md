@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-03.
+Topic code `MAT`. Last reviewed 2026-11-04.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -132,6 +132,24 @@ Topic code `MAT`. Last reviewed 2026-11-03.
   - sources: SRC-00282
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0104, CFL-0105 — see the open register
+- **≥ 0.000480653 fJ** — Isolated two-electron bi-Si3 traps have depths ranging from 3.0 eV to 4.4 eV below the CBM.
+  - `CLM-MAT-0290` · trap_type isolated bi-Si3 · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00292
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≥ 0.000448609 fJ** — Isolated bi-Ed two-electron traps have trap depths of 2.8 eV to 3.5 eV below the CBM.
+  - `CLM-MAT-0291` · trap_type isolated bi-Ed · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00292
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.000179444 fJ** — Fitting the experimental TC/xeff on K yields fitting parameter a = 1.12 eV (a/kB = 13000 K).
+  - `CLM-MAT-0294` · fit_function Eq. ( 13), experimental_data_source Ref. [ 6] · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00294
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0107 — see the open register
+- **7.85067e-05 fJ** — Fitting the experimental TC/xeff on K yields fitting parameter b = 0.49 eV (b/kB = 5700 K).
+  - `CLM-MAT-0295` · fit_function Eq. ( 13), experimental_data_source Ref. [ 6] · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00294
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0107 — see the open register
 
 ### frequency
 
@@ -376,6 +394,10 @@ Topic code `MAT`. Last reviewed 2026-11-03.
 - **0.377 nm** — From the (200) XRD peak of the MgO/IrMn3(10 nm)/Ti(2 nm) sample, a lattice parameter of a = 0.377 nm was extracted.
   - `CLM-MAT-0278` · sample MgO/IrMn3(10 nm)/Ti(2 nm), peak (200) · grade B · credibility unknown · measured · as of 2026-11-02
   - sources: SRC-00285
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≤ 2.2 nm** — Under mechanical strain, the Berry curvature dipole of As@MBP reaches a maximum of 22 Å.
+  - `CLM-MAT-0286` · material As@MBP, strain mechanical strain · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00289
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### power
@@ -900,6 +922,18 @@ Topic code `MAT`. Last reviewed 2026-11-03.
   - `CLM-MAT-0285` · model ST2M · grade B · credibility unknown · simulated · as of 2026-11-02
   - sources: SRC-00286
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- By tuning the gate voltage U, perfect valley diode rectification with a valley diode efficiency ηVD of 100% can be achieved.
+  - `CLM-MAT-0287` · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00290
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- At ζ = 0.1, the forward critical current is approximately 0.5 (in units of eΔ/ℏ), while the magnitude of the backward critical current exceeds 1 (in units of eΔ/ℏ).
+  - `CLM-MAT-0288` · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00290
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- For ζ = 0.1, the net forward critical current magnitude |Jc+v| is more than three times larger than Jc-v.
+  - `CLM-MAT-0289` · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00290
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1072,6 +1106,14 @@ Topic code `MAT`. Last reviewed 2026-11-03.
   - `CLM-MAT-0279` · sample_layer IrMn3(10 nm)/Py bilayer · grade B · credibility unknown · measured · as of 2026-11-02
   - sources: SRC-00285
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈-133.15 degC** — The theoretical model estimates the Curie temperature TC to be about 140 K at its maximum for a Mn content x of 0.03.
+  - `CLM-MAT-0292` · mn_content 0.03, acceptor_binding_energy_e0 96.9 meV · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00294
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈-73.15 degC** — The theoretical calculation gives a Curie temperature TC value of about 200 K for a Mn content x of 0.1 at maximum compensation degree K = Kmax.
+  - `CLM-MAT-0293` · mn_content 0.1, compensation_degree Kmax · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00294
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### temperature delta
 
@@ -1372,9 +1414,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0106` — resistance: _unexamined; classification pending_
   - claims: CLM-MAT-0281, CLM-MAT-0282
   - missing data: `not yet named`
+- `CFL-0107` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0294, CLM-MAT-0295
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 285
-- grades: {'B': 285}
-- distinct sources: 101
+- claims: 295
+- grades: {'B': 295}
+- distinct sources: 105

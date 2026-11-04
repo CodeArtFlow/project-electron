@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-03.
+Topic code `ARCH`. Last reviewed 2026-11-04.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -706,6 +706,22 @@ Topic code `ARCH`. Last reviewed 2026-11-03.
   - `CLM-ARCH-0174` · system ARM2GC, benchmark_set nine benchmarks · grade B · credibility unknown · measured · as of 2026-10-29
   - sources: SRC-00256
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≤ 104 percent** — A single HyPAIC system improves E2E system throughput by up to 1.04x during 1T MoE model inference compared to the aggregate performance of eight baseline systems without HBF.
+  - `CLM-ARCH-0184` · baseline eight baseline systems without HBF · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00287
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ 359 percent** — A single HyPAIC system improves TDP-normalized throughput by up to 3.59x during 1T MoE model inference compared to eight baseline systems without HBF.
+  - `CLM-ARCH-0185` · baseline eight baseline systems without HBF · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00287
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ 400 percent** — For small model inference, HyPAIC increases the maximum number of concurrent tasks maintaining at least 50 decode tokens per second per task by up to 4x.
+  - `CLM-ARCH-0186` · performance_threshold 50 decode tokens per second per task · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00287
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈70 percent** — For the elementwise chain workload, dynamic-shape compilation reduces cumulative shape-transition cost by approximately 70%.
+  - `CLM-ARCH-0187` · workload elementwise graph, technique Symbolic dynamic compilation · grade B · credibility unknown · measured · as of 2026-11-03
+  - sources: SRC-00288
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -777,6 +793,14 @@ Topic code `ARCH`. Last reviewed 2026-11-03.
   - `CLM-ARCH-0175` · process FreePDK 45nm · grade B · credibility unknown · simulated · as of 2026-10-29
   - sources: SRC-00258
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **3.24e+10 ns** — Wolfpine completes the matmul_single_core benchmark in 32.4 seconds.
+  - `CLM-ARCH-0188` · benchmark matmul_single_core, simulator Wolfpine · grade B · credibility unknown · measured · as of 2026-11-03
+  - sources: SRC-00295
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **7.2e+09 ns** — ttsim completes the matmul_single_core benchmark in 7.2 seconds.
+  - `CLM-ARCH-0189` · benchmark matmul_single_core, simulator ttsim · grade B · credibility unknown · measured · as of 2026-11-03
+  - sources: SRC-00295
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -821,6 +845,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 183
-- grades: {'B': 183}
-- distinct sources: 57
+- claims: 189
+- grades: {'B': 189}
+- distinct sources: 60

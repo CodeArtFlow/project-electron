@@ -1789,3 +1789,219 @@ claims:
     model: gemini-3.6-flash
     prompt_version: reader-v5
     verified_quotes: 2
+- id: CLM-PROC-0056
+  topic: PROC
+  statement: Including charge-transfer kinetics reduces the fraction of anodic current through Ge to 0.07%.
+  sources:
+  - SRC-00291
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-03'
+  created: '2026-11-04'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    boundary_type: charge-transfer kinetics
+    electrolyte_conductivity: 10 S m−1
+- id: CLM-PROC-0057
+  topic: PROC
+  statement: The decay length λ of the current feeding the front through the electrolyte-filled gap is
+    approximately 1.7 µm.
+  sources:
+  - SRC-00291
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-03'
+  created: '2026-11-04'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-PROC-0058
+  topic: PROC
+  statement: VP-DDBM predicts phase and concentration evolution approximately 73x faster than the phase-field
+    solver.
+  sources:
+  - SRC-00293
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-03'
+  created: '2026-11-04'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    surrogate_model: VP-DDBM
+    baseline_model: phase-field solver
+  quantity:
+    quantity: energy_advantage_ratio
+    bound: exact
+    approximate: true
+    as_published:
+      value: 73.0
+      unit: x
+    si_base:
+      value: 73.0
+      unit: dimensionless
+    display:
+      value: 73.0
+      unit: dimensionless
+    conditions:
+      surrogate_model: VP-DDBM
+      baseline_model: phase-field solver
+- id: CLM-PROC-0059
+  topic: PROC
+  statement: The median phase-field runtime for an advancement of 750 phase-field Euler steps is 46.29
+    s.
+  sources:
+  - SRC-00293
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-03'
+  created: '2026-11-04'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    step_interval: 750 phase-field Euler steps
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 46.29
+      unit: s
+    si_base:
+      value: 46.29
+      unit: s
+    display:
+      value: 46289999999.99999
+      unit: ns
+    conditions:
+      step_interval: 750 phase-field Euler steps
+- id: CLM-PROC-0060
+  topic: PROC
+  statement: The runtime for deterministic U-Net for an advancement of 750 phase-field Euler steps is
+    0.111 s.
+  sources:
+  - SRC-00293
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-03'
+  created: '2026-11-04'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    model: deterministic U-Net
+    step_interval: 750 phase-field Euler steps
+    hardware: single AMD MI250X Graphics Compute Die (GCD) of LUMI
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.111
+      unit: s
+    si_base:
+      value: 0.111
+      unit: s
+    display:
+      value: 110999999.99999999
+      unit: ns
+    conditions:
+      model: deterministic U-Net
+      step_interval: 750 phase-field Euler steps
+      hardware: single AMD MI250X Graphics Compute Die (GCD) of LUMI
+- id: CLM-PROC-0061
+  topic: PROC
+  statement: The runtime for VP-DDBM using five DBIM network evaluations for an advancement of 750 phase-field
+    Euler steps is 0.634 s.
+  sources:
+  - SRC-00293
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-03'
+  created: '2026-11-04'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    model: VP-DDBM using five DBIM network evaluations
+    step_interval: 750 phase-field Euler steps
+    hardware: single AMD MI250X Graphics Compute Die (GCD) of LUMI
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.634
+      unit: s
+    si_base:
+      value: 0.634
+      unit: s
+    display:
+      value: 633999999.9999999
+      unit: ns
+    conditions:
+      model: VP-DDBM using five DBIM network evaluations
+      step_interval: 750 phase-field Euler steps
+      hardware: single AMD MI250X Graphics Compute Die (GCD) of LUMI
+- id: CLM-PROC-0062
+  topic: PROC
+  statement: Deterministic U-Net achieves a wall-clock speedup of approximately 417x over the phase-field
+    solver.
+  sources:
+  - SRC-00293
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-03'
+  created: '2026-11-04'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    surrogate_model: deterministic U-Net
+  quantity:
+    quantity: energy_advantage_ratio
+    bound: exact
+    approximate: true
+    as_published:
+      value: 417.0
+      unit: x
+    si_base:
+      value: 417.0
+      unit: dimensionless
+    display:
+      value: 417.0
+      unit: dimensionless
+    conditions:
+      surrogate_model: deterministic U-Net

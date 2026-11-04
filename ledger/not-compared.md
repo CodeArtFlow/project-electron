@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**13993 pair(s)** as of 2026-11-03.
+**14586 pair(s)** as of 2026-11-04.
 
 ## `area_die` (11 pair(s))
 
@@ -47,7 +47,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0077` = 4 mA | 85% | process_step=current ramp-down | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° |
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0075` = 1.5 mA | 60% | process_step=current ramp-down | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° |
 
-## `energy` (547 pair(s))
+## `energy` (667 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -59,52 +59,64 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0172` = -5090 meV | 185% | defect_complex=VAl(ON)3 | material=MLBP |
 | `CLM-MAT-0104` = 220 meV | `CLM-MEM-0040` = -180 meV | 182% | measurement=RIXS, absorption_edge=Fe L3 edge | method=DFT |
 | `CLM-MAT-0049` = 296 meV | `CLM-MEM-0040` = -180 meV | 161% | material=LiFePO4 | method=DFT |
+| `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0290` = 3000 meV | 159% | material=MLBP | trap_type=isolated bi-Si3 |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0276` = 2994 meV | 159% | material=MLBP | desorption_state=molecular |
 | `CLM-MAT-0050` = 102 meV | `CLM-MEM-0040` = -180 meV | 157% | material=Li6PS5Cl | method=DFT |
+| `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0291` = 2800 meV | 155% | material=MLBP | trap_type=isolated bi-Ed |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0277` = 2789 meV | 155% | material=MLBP | desorption_state=molecular |
 | `CLM-MEM-0040` = -2.884e-05 fJ | `CLM-PROC-0031` = 1.458e-05 fJ | 151% | method=DFT | error_metric=root-mean-square deviation per formula unit |
 | `CLM-MAT-0201` = 370 meV | `CLM-MEM-0040` = -180 meV | 149% | band=2.3 eV emission, impurity_content=<0.1 ppm | method=DFT |
 | `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0172` = -5090 meV | 140% | synthesis_condition=Nitrogen-rich | material=MLBP |
 | `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0172` = -5090 meV | 139% | synthesis_condition=Nitrogen-rich | material=MLBP |
 | `CLM-MAT-0014` = 1940 meV | `CLM-MAT-0172` = -5090 meV | 138% | synthesis_condition=Nitrogen-rich | material=MLBP |
+| `CLM-MAT-0295` = 490 meV | `CLM-MEM-0040` = -180 meV | 137% | fit_function=Eq. ( 13), experimental_data_source=Ref. [ 6] | method=DFT |
 | `CLM-MEM-0018` = 8.011e-05 fJ | `CLM-MEM-0040` = -2.884e-05 fJ | 136% | temperature=100 K, measurement_method=ARPES | method=DFT |
 | `CLM-MAT-0051` = 1801 meV | `CLM-MAT-0172` = -5090 meV | 135% | axis=c | material=MLBP |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MEM-0040` = -180 meV | 133% | mechanism=surface polar phonon, substrate=SiO2 | method=DFT |
 | `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0172` = -5090 meV | 126% | synthesis_condition=Nitrogen-rich | material=MLBP |
+| `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0294` = 1120 meV | 122% | material=MLBP | fit_function=Eq. ( 13), experimental_data_source=Ref. [ 6] |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0275` = 995 meV | 120% | material=MLBP | desorption_state=molecular |
 | `CLM-MAT-0275` = 995 meV | `CLM-MEM-0040` = -180 meV | 118% | desorption_state=molecular | method=DFT |
+| `CLM-MAT-0294` = 1120 meV | `CLM-MEM-0040` = -180 meV | 116% | fit_function=Eq. ( 13), experimental_data_source=Ref. [ 6] | method=DFT |
 | `CLM-MAT-0013` = 1340 meV | `CLM-MEM-0040` = -180 meV | 113% | synthesis_condition=Nitrogen-rich | method=DFT |
 | `CLM-MAT-0051` = 1801 meV | `CLM-MEM-0040` = -180 meV | 110% | axis=c | method=DFT |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MEM-0018` = 500 meV | 110% | material=MLBP | temperature=100 K, measurement_method=ARPES |
+| `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0295` = 490 meV | 110% | material=MLBP | fit_function=Eq. ( 13), experimental_data_source=Ref. [ 6] |
 | `CLM-MAT-0014` = 1940 meV | `CLM-MEM-0040` = -180 meV | 109% | synthesis_condition=Nitrogen-rich | method=DFT |
 | `CLM-MAT-0015` = 1980 meV | `CLM-MEM-0040` = -180 meV | 109% | synthesis_condition=Nitrogen-rich | method=DFT |
 | `CLM-MAT-0016` = 2020 meV | `CLM-MEM-0040` = -180 meV | 109% | synthesis_condition=Nitrogen-rich | method=DFT |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0201` = 370 meV | 107% | material=MLBP | band=2.3 eV emission, impurity_content=<0.1 ppm |
 | `CLM-MAT-0277` = 2789 meV | `CLM-MEM-0040` = -180 meV | 106% | desorption_state=molecular | method=DFT |
+| `CLM-MAT-0291` = 2800 meV | `CLM-MEM-0040` = -180 meV | 106% | trap_type=isolated bi-Ed | method=DFT |
 | `CLM-MAT-0276` = 2994 meV | `CLM-MEM-0040` = -180 meV | 106% | desorption_state=molecular | method=DFT |
+| `CLM-MAT-0290` = 3000 meV | `CLM-MEM-0040` = -180 meV | 106% | trap_type=isolated bi-Si3 | method=DFT |
 | `CLM-MAT-0104` = 220 meV | `CLM-MAT-0172` = -5090 meV | 104% | measurement=RIXS, absorption_edge=Fe L3 edge | material=MLBP |
-| `CLM-MAT-0077` = 4330 meV | `CLM-MEM-0040` = -180 meV | 104% | defect_complex=VAl(ON)3 | method=DFT |
-| `CLM-MAT-0002` = 200 meV | `CLM-MAT-0172` = -5090 meV | 104% | mechanism=optical phonon | material=MLBP |
-| `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0200` = 200 meV | 104% | material=MLBP | band=2.3 eV emission, impurity_content=<0.1 ppm |
-| `CLM-MAT-0078` = 4810 meV | `CLM-MEM-0040` = -180 meV | 104% | defect_complex=VAl(ON)3, model=DFT | method=DFT |
-| `CLM-MAT-0274` = 5922 meV | `CLM-MEM-0040` = -180 meV | 103% | desorption_state=atomic | method=DFT |
-| `CLM-MAT-0172` = -5090 meV | `CLM-PROC-0031` = 91 meV | 102% | material=MLBP | error_metric=root-mean-square deviation per formula unit |
-| `CLM-MAT-0115` = 2.22 meV | `CLM-MEM-0040` = -180 meV | 101% | state=3p | method=DFT |
-| `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0172` = -5090 meV | 101% | mechanism=surface polar phonon, substrate=SiO2 | material=MLBP |
 
-_and 507 more_
+_and 627 more_
 
-## `energy_advantage_ratio` (7 pair(s))
+## `energy_advantage_ratio` (19 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-ARCH-0016` = 1.22 x | `CLM-PROC-0062` = 417 x | 100% | device=B200, benchmark=GroupGEMM | surrogate_model=deterministic U-Net |
+| `CLM-ARCH-0005` = 1.32 x | `CLM-PROC-0062` = 417 x | 100% | process=TSMC 16nm FinFET, comparison=sinusoidal vs trapezoidal power-clock, gate_at_maximum=XOR/XNOR, vclk_at_maximum=0.5 V, fclk_at_maximum=384 MHz | surrogate_model=deterministic U-Net |
 | `CLM-ARCH-0016` = 1.22 x | `CLM-ARCH-0022` = 169.1 x | 99% | device=B200, benchmark=GroupGEMM | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch |
 | `CLM-ARCH-0005` = 1.32 x | `CLM-ARCH-0022` = 169.1 x | 99% | process=TSMC 16nm FinFET, comparison=sinusoidal vs trapezoidal power-clock, gate_at_maximum=XOR/XNOR, vclk_at_maximum=0.5 V, fclk_at_maximum=384 MHz | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch |
+| `CLM-ARCH-0004` = 3.83 x | `CLM-PROC-0062` = 417 x | 99% | process=TSMC 16nm FinFET, comparison=single-gate PFAL vs static CMOS, power_clock=trapezoidal, operating_point=minimum-energy points of the parameter sweep (Table 2) | surrogate_model=deterministic U-Net |
+| `CLM-ARCH-0002` = 5 x | `CLM-PROC-0062` = 417 x | 99% | process=TSMC 16nm FinFET, comparison=PFAL vs static CMOS, operating_point=most favorable operating point, vclk=1 V, fclk=100 MHz | surrogate_model=deterministic U-Net |
+| `CLM-ARCH-0006` = 5.3 x | `CLM-PROC-0062` = 417 x | 99% | process=TSMC 16nm FinFET, comparison=4-bit Brent-Kung CLA adder vs architecture-matched static CMOS estimate, power_clock=triangular | surrogate_model=deterministic U-Net |
+| `CLM-ARCH-0016` = 1.22 x | `CLM-PROC-0058` = 73 x | 98% | device=B200, benchmark=GroupGEMM | surrogate_model=VP-DDBM, baseline_model=phase-field solver |
+| `CLM-ARCH-0005` = 1.32 x | `CLM-PROC-0058` = 73 x | 98% | process=TSMC 16nm FinFET, comparison=sinusoidal vs trapezoidal power-clock, gate_at_maximum=XOR/XNOR, vclk_at_maximum=0.5 V, fclk_at_maximum=384 MHz | surrogate_model=VP-DDBM, baseline_model=phase-field solver |
 | `CLM-ARCH-0004` = 3.83 x | `CLM-ARCH-0022` = 169.1 x | 98% | process=TSMC 16nm FinFET, comparison=single-gate PFAL vs static CMOS, power_clock=trapezoidal, operating_point=minimum-energy points of the parameter sweep (Table 2) | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch |
 | `CLM-ARCH-0002` = 5 x | `CLM-ARCH-0022` = 169.1 x | 97% | process=TSMC 16nm FinFET, comparison=PFAL vs static CMOS, operating_point=most favorable operating point, vclk=1 V, fclk=100 MHz | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch |
 | `CLM-ARCH-0006` = 5.3 x | `CLM-ARCH-0022` = 169.1 x | 97% | process=TSMC 16nm FinFET, comparison=4-bit Brent-Kung CLA adder vs architecture-matched static CMOS estimate, power_clock=triangular | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch |
+| `CLM-ARCH-0004` = 3.83 x | `CLM-PROC-0058` = 73 x | 95% | process=TSMC 16nm FinFET, comparison=single-gate PFAL vs static CMOS, power_clock=trapezoidal, operating_point=minimum-energy points of the parameter sweep (Table 2) | surrogate_model=VP-DDBM, baseline_model=phase-field solver |
+| `CLM-ARCH-0002` = 5 x | `CLM-PROC-0058` = 73 x | 93% | process=TSMC 16nm FinFET, comparison=PFAL vs static CMOS, operating_point=most favorable operating point, vclk=1 V, fclk=100 MHz | surrogate_model=VP-DDBM, baseline_model=phase-field solver |
+| `CLM-ARCH-0006` = 5.3 x | `CLM-PROC-0058` = 73 x | 93% | process=TSMC 16nm FinFET, comparison=4-bit Brent-Kung CLA adder vs architecture-matched static CMOS estimate, power_clock=triangular | surrogate_model=VP-DDBM, baseline_model=phase-field solver |
 | `CLM-ARCH-0016` = 1.22 x | `CLM-MEM-0025` = 3.7 x | 67% | device=B200, benchmark=GroupGEMM | baseline=SoA mappings |
 | `CLM-ARCH-0005` = 1.32 x | `CLM-MEM-0025` = 3.7 x | 64% | process=TSMC 16nm FinFET, comparison=sinusoidal vs trapezoidal power-clock, gate_at_maximum=XOR/XNOR, vclk_at_maximum=0.5 V, fclk_at_maximum=384 MHz | baseline=SoA mappings |
+| `CLM-ARCH-0022` = 169.1 x | `CLM-PROC-0062` = 417 x | 59% | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch | surrogate_model=deterministic U-Net |
+| `CLM-ARCH-0022` = 169.1 x | `CLM-PROC-0058` = 73 x | 57% | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch | surrogate_model=VP-DDBM, baseline_model=phase-field solver |
 
 ## `frequency` (531 pair(s))
 
@@ -153,7 +165,7 @@ _and 507 more_
 
 _and 491 more_
 
-## `length_device` (4660 pair(s))
+## `length_device` (4713 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -198,7 +210,7 @@ _and 491 more_
 | `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0081` = 0.98 nm | 100% | beam_profile=Gaussian | material=CrSb |
 | `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0097` = 1.915 nm | 100% | beam_profile=Gaussian | feature=alternating stacking of PEDOT and PSS |
 
-_and 4620 more_
+_and 4673 more_
 
 ## `power` (226 pair(s))
 
@@ -253,7 +265,7 @@ _and 186 more_
 |---|---|---|---|---|
 | `CLM-DEV-0079` = 3.1e-05 W/mm^2 | `CLM-MAT-0026` = 4.8e-07 W/mm^2 | 98% | structure=long-base p+-n device, n_base_width=300 𝜇𝜇m, framework=extended theory | environment=ambient |
 
-## `relative_deviation` (6186 pair(s))
+## `relative_deviation` (6299 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -265,6 +277,7 @@ _and 186 more_
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0112` = 66.8 percent | 190% | sample=B1-1 | baseline=pure two-dimensional Coulomb reference, benchmark_protocol=high-field-calibrated |
 | `CLM-ARCH-0090` = 67.5 percent | `CLM-MAT-0111` = -60 percent | 189% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0252` = 53 percent | 188% | sample=B1-1 | band=NNN, coupling=Λ A, correlation_length=ξ ¯kF = 4 |
+| `CLM-ARCH-0187` = 70 percent | `CLM-MAT-0111` = -60 percent | 186% | workload=elementwise graph, technique=Symbolic dynamic compilation | sample=B1-1 |
 | `CLM-ARCH-0174` = 71.3 percent | `CLM-MAT-0111` = -60 percent | 184% | system=ARM2GC, benchmark_set=nine benchmarks | sample=B1-1 |
 | `CLM-ARCH-0097` = 72 percent | `CLM-MAT-0111` = -60 percent | 183% | training_dataset=CloudLab, evaluation_dataset=Lambda | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0039` = 49.85 percent | 183% | sample=B1-1 | platform=Jetson Orin Nano, threshold=550, verification_stage=Single function verification |
@@ -296,9 +309,8 @@ _and 186 more_
 | `CLM-ARCH-0040` = 97.93 percent | `CLM-MAT-0111` = -60 percent | 161% | frequency=7 GHz, component=graded magnetic spacer | sample=B1-1 |
 | `CLM-ARCH-0018` = 98 percent | `CLM-MAT-0111` = -60 percent | 161% | concurrency_n_a=48, set_type=hot set | sample=B1-1 |
 | `CLM-ARCH-0100` = 36.2 percent | `CLM-MAT-0111` = -60 percent | 160% | correction_type=uncorrected | sample=B1-1 |
-| `CLM-MAT-0111` = -60 percent | `CLM-MEM-0038` = 99.69 percent | 160% | sample=B1-1 | platform=Jetson Orin Nano, threshold=550, verification_stage=Group verification |
 
-_and 6146 more_
+_and 6259 more_
 
 ## `resistance` (2 pair(s))
 
@@ -307,19 +319,24 @@ _and 6146 more_
 | `CLM-MAT-0282` = 0.0039 ohm | `CLM-MEM-0001` = 900 ohm | 100% | temperature=10 K, dc_current=0.1 mA | resistance_state=high-resistance state |
 | `CLM-MAT-0281` = 6.59 ohm | `CLM-MEM-0001` = 900 ohm | 99% | interface=IrMn3/Pt, temperature=10 K, dc_current=0.1 mA | resistance_state=high-resistance state |
 
-## `temperature` (272 pair(s))
+## `temperature` (316 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0092` = -23.15 degC | 191% | temperature_control_system=VAHEAT system | pressure=ambient pressure, magnetic_field=0.05 T |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0004` = -73.15 degC | 189% | time_after_cooling_onset=10 s | calculation=optical phonon and surface polar phonon scattering |
+| `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0293` = -73.15 degC | 189% | time_after_cooling_onset=10 s | mn_content=0.1, compensation_degree=Kmax |
 | `CLM-DEV-0076` = -257.6 degC | `CLM-MAT-0053` = 230 degC | 189% | sample=NbN/I/FePt | synthesis_approach=phosphine-free colloidal approach |
 | `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0053` = 230 degC | 189% | relaxation_temperature=TLIESST | synthesis_approach=phosphine-free colloidal approach |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0004` = -73.15 degC | 186% | time_after_cooling_onset=10 s | calculation=optical phonon and surface polar phonon scattering |
+| `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0293` = -73.15 degC | 186% | time_after_cooling_onset=10 s | mn_content=0.1, compensation_degree=Kmax |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0091` = -113.1 degC | 175% | time_after_cooling_onset=10 s | pressure=ambient pressure, magnetic_field=0.05 T |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0091` = -113.1 degC | 172% | time_after_cooling_onset=10 s | pressure=ambient pressure, magnetic_field=0.05 T |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0003` = -123.1 degC | 169% | time_after_cooling_onset=10 s | calculation=acoustic phonon scattering |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0003` = -123.1 degC | 166% | time_after_cooling_onset=10 s | calculation=acoustic phonon scattering |
+| `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0292` = -133.1 degC | 164% | time_after_cooling_onset=10 s | mn_content=0.03, acceptor_binding_energy_e0=96.9 meV |
+| `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0292` = -133.1 degC | 161% | time_after_cooling_onset=10 s | mn_content=0.03, acceptor_binding_energy_e0=96.9 meV |
+| `CLM-MAT-0102` = -81 K | `CLM-MAT-0292` = 140 K | 158% | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region | mn_content=0.03, acceptor_binding_energy_e0=96.9 meV |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0101` = -155.1 degC | 155% | time_after_cooling_onset=10 s | material=bulk FePS3 crystal, magnetic_field=0.5 T |
 | `CLM-MAT-0003` = 150 K | `CLM-MAT-0102` = -81 K | 154% | calculation=acoustic phonon scattering | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0101` = -155.1 degC | 153% | time_after_cooling_onset=10 s | material=bulk FePS3 crystal, magnetic_field=0.5 T |
@@ -328,9 +345,11 @@ _and 6146 more_
 | `CLM-DEV-0033` = 84.85 degC | `CLM-DEV-0035` = -204.1 degC | 142% | time_after_cooling_onset=10 s | relaxation_temperature=TLIESST |
 | `CLM-DEV-0076` = -257.6 degC | `CLM-MAT-0279` = 106.9 degC | 141% | sample=NbN/I/FePt | sample_layer=IrMn3(10 nm)/Py bilayer |
 | `CLM-MAT-0004` = 200 K | `CLM-MAT-0102` = -81 K | 140% | calculation=optical phonon and surface polar phonon scattering | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region |
+| `CLM-MAT-0102` = -81 K | `CLM-MAT-0293` = 200 K | 140% | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region | mn_content=0.1, compensation_degree=Kmax |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-DEV-0035` = -204.1 degC | 140% | time_after_cooling_onset=10 s | relaxation_temperature=TLIESST |
 | `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0093` = 76.85 degC | 138% | relaxation_temperature=TLIESST | magnetic_field=0.05 T |
 | `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0004` = -73.15 degC | 135% | temperature_control_system=VAHEAT system | calculation=optical phonon and surface polar phonon scattering |
+| `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0293` = -73.15 degC | 135% | temperature_control_system=VAHEAT system | mn_content=0.1, compensation_degree=Kmax |
 | `CLM-DEV-0076` = -257.6 degC | `CLM-MAT-0263` = 750 degC | 134% | sample=NbN/I/FePt | atmosphere=oxygen atmosphere (oxygen pressure regulated to 0.4 MPa) |
 | `CLM-DEV-0076` = -257.6 degC | `CLM-MEM-0019` = 768.9 degC | 134% | sample=NbN/I/FePt | model=realistic multi-orbital model of YCl, onsite_hubbard_parameter=0.9 eV |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-DEV-0076` = -257.6 degC | 133% | time_after_cooling_onset=10 s | sample=NbN/I/FePt |
@@ -344,15 +363,8 @@ _and 6146 more_
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0210` = -269.9 degC | 130% | time_after_cooling_onset=10 s | strain=+2%, method=anisotropic Migdal-Eliashberg equations |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0209` = -270.5 degC | 130% | time_after_cooling_onset=10 s | equation=Allen-Dynes modified McMillan equation |
 | `CLM-DEV-0076` = -257.6 degC | `CLM-MAT-0093` = 76.85 degC | 130% | sample=NbN/I/FePt | magnetic_field=0.05 T |
-| `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0092` = -23.15 degC | 128% | time_after_cooling_onset=10 s | pressure=ambient pressure, magnetic_field=0.05 T |
-| `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0092` = -23.15 degC | 127% | time_after_cooling_onset=10 s | pressure=ambient pressure, magnetic_field=0.05 T |
-| `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0263` = 750 degC | 127% | relaxation_temperature=TLIESST | atmosphere=oxygen atmosphere (oxygen pressure regulated to 0.4 MPa) |
-| `CLM-MAT-0102` = -81 K | `CLM-MAT-0261` = 300 K | 127% | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region | twist_angle=4.62°, method=MD simulations |
-| `CLM-MAT-0102` = -81 K | `CLM-PROC-0001` = 300 K | 127% | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region | thermal_model=Debye model |
-| `CLM-MAT-0102` = -81 K | `CLM-PHOT-0085` = 302.1 K | 127% | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region | external_pump_power=300 μW |
-| `CLM-DEV-0035` = -204.1 degC | `CLM-MEM-0019` = 768.9 degC | 127% | relaxation_temperature=TLIESST | model=realistic multi-orbital model of YCl, onsite_hubbard_parameter=0.9 eV |
 
-_and 232 more_
+_and 276 more_
 
 ## `temperature_delta` (12 pair(s))
 
@@ -377,7 +389,7 @@ _and 232 more_
 |---|---|---|---|---|
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0007` = 3100 W/(m*K) | 99% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | temperature=room-temperature, sample_13c_concentration=~0.00024% |
 
-## `time` (1170 pair(s))
+## `time` (1421 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -388,6 +400,8 @@ _and 232 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0153` = 3.72e+09 ns | 100% | device_type=FTJ, architecture=Naive | component=FIGFLEX, benchmark=Llama-3.1-8B |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0172` = 8.04e+10 ns | 100% | device_type=FTJ, architecture=Naive | program=Mini-Transformer, dynamic_instructions=3,411,714 |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0173` = 1.78e+11 ns | 100% | device_type=FTJ, architecture=Naive | program=Mini-ResNet, dynamic_instructions=11,022,541 |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0188` = 3.24e+10 ns | 100% | device_type=FTJ, architecture=Naive | benchmark=matmul_single_core, simulator=Wolfpine |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0189` = 7.2e+09 ns | 100% | device_type=FTJ, architecture=Naive | benchmark=matmul_single_core, simulator=ttsim |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-DEV-0066` = 6e+10 ns | 100% | device_type=FTJ, architecture=Naive | software=MATLAB Deep Learning Toolbox |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0011` = 1.35e+08 ns | 100% | device_type=FTJ, architecture=Naive | tool=JasperGold, module=cache coherence module |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0012` = 1.273e+09 ns | 100% | device_type=FTJ, architecture=Naive | tool=JasperGold, module=L1 Bus Interface module |
@@ -405,6 +419,9 @@ _and 232 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PHOT-0073` = 0.0004 ns | 100% | device_type=FTJ, architecture=Naive | material=ITO film |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PKG-0002` = 2.499e+08 ns | 100% | device_type=FTJ, architecture=Naive | model=Qwen3-1.7B, channels=16 channels, erase_latency=2000 µs |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PROC-0005` = 5.79e+09 ns | 100% | device_type=FTJ, architecture=Naive | hardware=NVIDIA RTX PRO 6000 Blackwell GPU, implementation_type=full-resolution implementation |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-PROC-0059` = 4.629e+10 ns | 100% | device_type=FTJ, architecture=Naive | step_interval=750 phase-field Euler steps |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-PROC-0060` = 1.11e+08 ns | 100% | device_type=FTJ, architecture=Naive | model=deterministic U-Net, step_interval=750 phase-field Euler steps, hardware=single AMD MI250X Graphics Compute Die (GCD) of LUMI |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-PROC-0061` = 6.34e+08 ns | 100% | device_type=FTJ, architecture=Naive | model=VP-DDBM using five DBIM network evaluations, step_interval=750 phase-field Euler steps, hardware=single AMD MI250X Graphics Compute Die (GCD) of LUMI |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0020` = 1.4e+07 ns | 100% | device_type=FTJ, architecture=Merged | concurrency_n_a=48, design=our design with tiering, component=end-to-end time-between-tokens (TBT) |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0021` = 2.7e+07 ns | 100% | device_type=FTJ, architecture=Merged | concurrency_n_a=128, design=our design with tiering |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0130` = 1.036e+07 ns | 100% | device_type=FTJ, architecture=Merged | device=NVIDIA GeForce RTX 5080, form=direct, decode=ALU |
@@ -412,17 +429,12 @@ _and 232 more_
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0153` = 3.72e+09 ns | 100% | device_type=FTJ, architecture=Merged | component=FIGFLEX, benchmark=Llama-3.1-8B |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0172` = 8.04e+10 ns | 100% | device_type=FTJ, architecture=Merged | program=Mini-Transformer, dynamic_instructions=3,411,714 |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0173` = 1.78e+11 ns | 100% | device_type=FTJ, architecture=Merged | program=Mini-ResNet, dynamic_instructions=11,022,541 |
+| `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0188` = 3.24e+10 ns | 100% | device_type=FTJ, architecture=Merged | benchmark=matmul_single_core, simulator=Wolfpine |
+| `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0189` = 7.2e+09 ns | 100% | device_type=FTJ, architecture=Merged | benchmark=matmul_single_core, simulator=ttsim |
 | `CLM-ARCH-0013` = 162 ns | `CLM-DEV-0066` = 6e+10 ns | 100% | device_type=FTJ, architecture=Merged | software=MATLAB Deep Learning Toolbox |
 | `CLM-ARCH-0013` = 162 ns | `CLM-EDA-0011` = 1.35e+08 ns | 100% | device_type=FTJ, architecture=Merged | tool=JasperGold, module=cache coherence module |
-| `CLM-ARCH-0013` = 162 ns | `CLM-EDA-0012` = 1.273e+09 ns | 100% | device_type=FTJ, architecture=Merged | tool=JasperGold, module=L1 Bus Interface module |
-| `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0119` = 0.00029 ns | 100% | device_type=FTJ, architecture=Merged | material=MAPbBr3, measurement_method=Time-resolved optical Kerr-effect measurements |
-| `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0120` = 0.0007 ns | 100% | device_type=FTJ, architecture=Merged | measurement_method=Time-resolved optical Kerr-effect measurements |
-| `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0123` = 0.00015 ns | 100% | device_type=FTJ, architecture=Merged | measurement_method=Multidimensional coherent spectroscopy |
-| `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0127` = 0.0003 ns | 100% | device_type=FTJ, architecture=Merged | feature=XA |
-| `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0170` = 0.002 ns | 100% | device_type=FTJ, architecture=Merged | state=bright exciton |
-| `CLM-ARCH-0013` = 162 ns | `CLM-MAT-0197` = 0.000603 ns | 100% | device_type=FTJ, architecture=Merged | material=SnSe, excitation_helicity=σ+ |
 
-_and 1130 more_
+_and 1381 more_
 
 ## `voltage` (99 pair(s))
 

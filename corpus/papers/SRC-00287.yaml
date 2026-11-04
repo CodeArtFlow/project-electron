@@ -1,0 +1,108 @@
+id: SRC-00287
+title: 'HyPAIC: Personal AI Computer with High Bandwidth Flash for High Performance Trillion-Parameter
+  LLM Inference'
+doi: null
+arxiv_id: 2611.04144v1
+url: https://arxiv.org/abs/2611.04144v1
+venue_id: arxiv_api
+authors:
+- name: Minho Ha
+  affiliation: null
+  corresponding: null
+- name: Myunghyun Rhee
+  affiliation: null
+  corresponding: null
+- name: Euiseok Kim
+  affiliation: null
+  corresponding: null
+- name: Hoshik Kim
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-03'
+retrieved_date: '2026-11-04'
+access: full_text
+read_scope: Automated reading. The full PDF text (70,065 characters, 14 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.04144v1 on
+  2026-11-04. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Through simulation-based evaluation, we demonstrate that a single Hy- PAIC improves end-to-end
+  (E2E) system throughput by up to 1.04×and TDP-normalized throughput by up to 3.59×during 1T MoE model
+  inference, compared with the aggregate performance of eight baseline systems without HBF.”
+
+  “eight baseline systems without HBF”
+
+  “For small model inference, HyPAIC increases the maximum number of concurrent tasks that maintain at
+  least 50 decode tokens per second per task by up to 4×, significantly enhancing both user experience
+  and productivity.”
+
+  “50 decode tokens per second per task”'
+method_summary: '“Through simulation-based evaluation, we demonstrate that a single Hy- PAIC improves
+  end-to-end (E2E) system throughput by up to 1.04×and TDP-normalized throughput by up to 3.59×during
+  1T MoE model inference, compared with the aggregate performance of eight baseline systems without HBF.”
+
+  “For our architecture-level simulation, we have extended NVIDIA AIConfigurator [63]. We add DGX Spark
+  and HyPAIC sys- tem models to AIConfigurator v0.11.0 and implement a heterogeneous-memory operation
+  mechanism where the KV cache is stored in LPDDR5x and weights are stored in HBF.”'
+limitations: “Although HBF specifications are still evolving, this study demonstrates that integrating
+  HBF into PAICs provides strong architectural synergy.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 24067
+    output: 3028
+  claims_accepted: 3
+  claims_rejected: 5
+  rejected:
+  - statement: HyPAIC reaches a maximum of 546.47 E2E TPS for Qwen3.5-35B-A3B.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - However, if HBF is applied, a maximum of 546.47 E2E TPS can be achieved.
+    - For our architecture-level simulation, we have extended NVIDIA AIConfigurator [63].
+    - 'Qwen3.5-35B-A3B:'
+    - if HBF is applied
+  - statement: Compared to the Kimi K2.5 baseline requiring 8 DGX Sparks, TDP-normalized throughput of
+      HyPAIC is improved by up to 3.59x.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - However, compared to the Kimi K2.5 baseline which requires 8 DGX Sparks, TDP-normalized throughput
+      is improved by up to 3.59×.
+    - For our architecture-level simulation, we have extended NVIDIA AIConfigurator [63].
+    - Kimi K2.5
+    - 8 DGX Sparks
+  - statement: At 32K/2K input/output sequence length for Kimi K2.5, E2E TDP-normalized throughput is
+      improved by 2.56x.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - Even at 32K/2K, where there is no significant performance improvement in E2E TPS, E2E TDP-normalized
+      throughput is improved by 2.56×.
+    - For our architecture-level simulation, we have extended NVIDIA AIConfigurator [63].
+    - 32K/2K
+    - Kimi K2.5
+  - statement: For Qwen3.5-35B-A3B, HyPAIC achieves up to 2.88x higher E2E TPS/W while supporting comparable
+      decode TPS.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - In the case of Qwen3.5-35B-A3B, using HyPAIC delivers up to 2.88×higher E2E TPS/W while supporting
+      comparable decode TPS.
+    - For our architecture-level simulation, we have extended NVIDIA AIConfigurator [63].
+    - Qwen3.5-35B-A3B
+    - HyPAIC
+  - statement: When the expert prefetch hit rate is 20%, performance degrades by at most 8.12% in the
+      2K/32K case.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Even though the expert prefetch hit rate is only 20%, performance degrades by at most 8.12% (2K/32K
+      case, Fig. 15).
+    - For our architecture-level simulation, we have extended NVIDIA AIConfigurator [63].
+    - 20%
+    - 2K/32K
+corrections: []

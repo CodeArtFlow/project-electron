@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-11-03.
+Topic code `PROC`. Last reviewed 2026-11-04.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -12,6 +12,17 @@ Topic code `PROC`. Last reviewed 2026-11-03.
   - `CLM-PROC-0031` · error_metric root-mean-square deviation per formula unit · grade B · credibility unknown · simulated · as of 2026-10-13
   - sources: SRC-00137
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+
+### energy advantage ratio
+
+- **≈73 ×** — VP-DDBM predicts phase and concentration evolution approximately 73x faster than the phase-field solver.
+  - `CLM-PROC-0058` · surrogate_model VP-DDBM, baseline_model phase-field solver · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00293
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈417 ×** — Deterministic U-Net achieves a wall-clock speedup of approximately 417x over the phase-field solver.
+  - `CLM-PROC-0062` · surrogate_model deterministic U-Net · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00293
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### frequency
 
@@ -147,6 +158,14 @@ Topic code `PROC`. Last reviewed 2026-11-03.
   - `CLM-PROC-0055` · grade B · credibility unknown · simulated · as of 2026-11-02
   - sources: SRC-00283
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Including charge-transfer kinetics reduces the fraction of anodic current through Ge to 0.07%.
+  - `CLM-PROC-0056` · boundary_type charge-transfer kinetics, electrolyte_conductivity 10 S m−1 · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00291
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The decay length λ of the current feeding the front through the electrolyte-filled gap is approximately 1.7 µm.
+  - `CLM-PROC-0057` · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00291
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -259,6 +278,21 @@ Topic code `PROC`. Last reviewed 2026-11-03.
   - `CLM-PROC-0005` · hardware NVIDIA RTX PRO 6000 Blackwell GPU, implementation_type full-resolution implementation · grade B · credibility unknown · measured · as of 2026-09-25
   - sources: SRC-00037
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **4.629e+10 ns** — The median phase-field runtime for an advancement of 750 phase-field Euler steps is 46.29 s.
+  - `CLM-PROC-0059` · step_interval 750 phase-field Euler steps · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00293
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0108, CFL-0109 — see the open register
+- **1.11e+08 ns** — The runtime for deterministic U-Net for an advancement of 750 phase-field Euler steps is 0.111 s.
+  - `CLM-PROC-0060` · model deterministic U-Net, step_interval 750 phase-field Euler steps, hardware single AMD MI250X Graphics Compute Die (GCD) of LUMI · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00293
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0108 — see the open register
+- **6.34e+08 ns** — The runtime for VP-DDBM using five DBIM network evaluations for an advancement of 750 phase-field Euler steps is 0.634 s.
+  - `CLM-PROC-0061` · model VP-DDBM using five DBIM network evaluations, step_interval 750 phase-field Euler steps, hardware single AMD MI250X Graphics Compute Die (GCD) of LUMI · grade B · credibility unknown · simulated · as of 2026-11-03
+  - sources: SRC-00293
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0109 — see the open register
 
 ### wavelength
 
@@ -331,9 +365,15 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0102` — length_device: _unexamined; classification pending_
   - claims: CLM-PROC-0049, CLM-PROC-0050
   - missing data: `not yet named`
+- `CFL-0108` — time: _unexamined; classification pending_
+  - claims: CLM-PROC-0059, CLM-PROC-0060
+  - missing data: `not yet named`
+- `CFL-0109` — time: _unexamined; classification pending_
+  - claims: CLM-PROC-0059, CLM-PROC-0061
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 55
-- grades: {'B': 55}
-- distinct sources: 17
+- claims: 62
+- grades: {'B': 62}
+- distinct sources: 19

@@ -1,0 +1,68 @@
+id: SRC-00293
+title: Surrogate Models for Stochastic Al-Cu Phase-Field Solidification
+doi: null
+arxiv_id: 2611.04695v1
+url: https://arxiv.org/abs/2611.04695v1
+venue_id: arxiv_api
+authors:
+- name: Simon Savukoski
+  affiliation: null
+  corresponding: null
+- name: Tatu Pinomaa
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-03'
+retrieved_date: '2026-11-04'
+access: full_text
+read_scope: Automated reading. The full PDF text (24,014 characters, 9 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.04695v1 on
+  2026-11-04. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“VP-DDBM predicts the phase and concentration evolution approximately 73× faster than the phase-field
+  solver”
+
+  “For an equivalent advancement of 750 phase-field Euler steps, the median phase-field runtime is 46.29
+  s”
+
+  “For an equivalent advancement of 750 phase-field Euler steps, the median phase-field runtime is 46.29
+  s, compared with 0.111 s for the deterministic U-Net”
+
+  “compared with 0.111 s for the deterministic U-Net”
+
+  “For an equivalent advancement of 750 phase-field Euler steps”
+
+  “Surrogate inference was measured at batch size one on a single AMD MI250X Graphics Compute Die (GCD)
+  of LUMI [27, 28].”
+
+  “0.634 s for VP-DDBM using five DBIM network evaluations.”
+
+  “these values correspond to wall-clock speedups of approximately 417×”'
+method_summary: '“The dataset contains 70 independently generated phase-field trajectories on a uniform
+  512×768 grid.”
+
+  “For the wall-clock comparison, the phase-field solver was timed on 12 CPU nodes of CSC’s Mahti supercomputer
+  using 1,536 MPI ranks, corresponding to one rank per physical core. Surrogate inference was measured
+  at batch size one on a single AMD MI250X Graphics Compute Die (GCD) of LUMI [27, 28]. Timings compare
+  advancement over the same 750-step interval.”'
+limitations: '“Because stochastic perturbations can shift individual branches over long horizons, these
+  physical quantities are interpreted together with qualitative spatial comparisons rather than exact
+  pixel-wise similarity.”
+
+  “Future work should evaluate the model across a broader range of thermal histories and processing conditions
+  relevant to additive manufacturing.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 9055
+    output: 2039
+  claims_accepted: 5
+  claims_rejected: 0
+  rejected: []
+corrections: []

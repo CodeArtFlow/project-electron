@@ -1,0 +1,29 @@
+{
+  "arxiv_id": "2611.04273v1",
+  "claims": {
+    "CLM-ARCH-0187": {
+      "evidence_spans": [
+        "reducing cumulative shape-transition cost by approximately 70%.",
+        "To isolate shape handling, we run the elementwise graph at four previously unseen leading dimensions",
+        "Symbolic dynamic compilation costs 0.757 s for the first shape and less than 0.2 ms for each subsequent first call, reducing cumulative shape-transition cost by approximately 70%.",
+        "To isolate shape handling, we run the elementwise graph at four previously unseen leading dimensions (2,304, 3,584, 5,632, and 7,168), holding the second dimension at 1,024."
+      ],
+      "statement": "For the elementwise chain workload, dynamic-shape compilation reduces cumulative shape-transition cost by approximately 70%.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "Experiments run on one NVIDIA RTX A6000 GPU using Python 3.10.15, PyTorch 2.3.1, CUDA 12.1, cuDNN 8.9.2, and Triton 2.3.1. For each execution mode, we perform 10 warm-up iterations followed by 50 measured iterations. GPU latency is measured using synchronized CUDA events and reported as the median; the interquartile ranges were narrow (at most 2.9% of the median).",
+    "Results should not be interpreted as a leaderboard among TVM, XLA, TensorRT, or other systems, nor generalized to end-to-end models, training, other hardware, or other software versions."
+  ],
+  "generated": "2026-11-04",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00288",
+  "text_chars": 103501,
+  "text_sha256": "eb23ead4d973b995a87602ef2fe84abc7daab5cc1cf2172e8bbffe202df549c5"
+}

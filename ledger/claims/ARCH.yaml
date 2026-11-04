@@ -5219,3 +5219,211 @@ claims:
   conditions:
     workload: 55 randomly selected 8-core heterogeneous workload mixes
     design: Caerus
+- id: CLM-ARCH-0184
+  topic: ARCH
+  statement: A single HyPAIC system improves E2E system throughput by up to 1.04x during 1T MoE model
+    inference compared to the aggregate performance of eight baseline systems without HBF.
+  sources:
+  - SRC-00287
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-03'
+  created: '2026-11-04'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: eight baseline systems without HBF
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 1.04
+      unit: x
+    si_base:
+      value: 1.04
+      unit: dimensionless
+    display:
+      value: 104.0
+      unit: percent
+    conditions:
+      baseline: eight baseline systems without HBF
+- id: CLM-ARCH-0185
+  topic: ARCH
+  statement: A single HyPAIC system improves TDP-normalized throughput by up to 3.59x during 1T MoE model
+    inference compared to eight baseline systems without HBF.
+  sources:
+  - SRC-00287
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-03'
+  created: '2026-11-04'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: eight baseline systems without HBF
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 3.59
+      unit: x
+    si_base:
+      value: 3.59
+      unit: dimensionless
+    display:
+      value: 359.0
+      unit: percent
+    conditions:
+      baseline: eight baseline systems without HBF
+- id: CLM-ARCH-0186
+  topic: ARCH
+  statement: For small model inference, HyPAIC increases the maximum number of concurrent tasks maintaining
+    at least 50 decode tokens per second per task by up to 4x.
+  sources:
+  - SRC-00287
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-03'
+  created: '2026-11-04'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    performance_threshold: 50 decode tokens per second per task
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 4.0
+      unit: x
+    si_base:
+      value: 4.0
+      unit: dimensionless
+    display:
+      value: 400.0
+      unit: percent
+    conditions:
+      performance_threshold: 50 decode tokens per second per task
+- id: CLM-ARCH-0187
+  topic: ARCH
+  statement: For the elementwise chain workload, dynamic-shape compilation reduces cumulative shape-transition
+    cost by approximately 70%.
+  sources:
+  - SRC-00288
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-03'
+  created: '2026-11-04'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    workload: elementwise graph
+    technique: Symbolic dynamic compilation
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: true
+    as_published:
+      value: 70.0
+      unit: '%'
+    si_base:
+      value: 0.7000000000000001
+      unit: dimensionless
+    display:
+      value: 70.0
+      unit: percent
+    conditions:
+      workload: elementwise graph
+      technique: Symbolic dynamic compilation
+- id: CLM-ARCH-0188
+  topic: ARCH
+  statement: Wolfpine completes the matmul_single_core benchmark in 32.4 seconds.
+  sources:
+  - SRC-00295
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-03'
+  created: '2026-11-04'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    benchmark: matmul_single_core
+    simulator: Wolfpine
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 32.4
+      unit: s
+    si_base:
+      value: 32.4
+      unit: s
+    display:
+      value: 32399999999.999996
+      unit: ns
+    conditions:
+      benchmark: matmul_single_core
+      simulator: Wolfpine
+- id: CLM-ARCH-0189
+  topic: ARCH
+  statement: ttsim completes the matmul_single_core benchmark in 7.2 seconds.
+  sources:
+  - SRC-00295
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-03'
+  created: '2026-11-04'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    benchmark: matmul_single_core
+    simulator: ttsim
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 7.2
+      unit: s
+    si_base:
+      value: 7.2
+      unit: s
+    display:
+      value: 7199999999.999999
+      unit: ns
+    conditions:
+      benchmark: matmul_single_core
+      simulator: ttsim

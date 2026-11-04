@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.04222v1
 doi: null
-title: 'GC-MoE: Overlapping Expert-Parallel Token Dispatch with FP8/FP4 Grouped GEMM
-  via CUDA Green Contexts'
+title: 'GC-MoE: Overlapping Expert-Parallel Token Dispatch with FP8/FP4 Grouped GEMM via CUDA Green Contexts'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-03'
@@ -24,6 +23,25 @@ id: CAND-20261104-0099
 harvested_date: '2026-11-04'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-04'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: GC-MoE reserves 20 SMs on B300 for dispatch.
+    reason: the statement contains the number 00, which none of its quotes contain
+    quotes:
+    - GC-MoE reserves only 20 of 148 SMs on B300 for dispatch.
+    - On eight H20 GPUs GC-MoE accelerates DeepSeek-V4.1-Flash decode by 1.188× on average on both the
+      routed and shared-expert suites (peaks 1.296× and 1.353×, respectively); on eight B300 GPUs it accelerates
+      GLM-5.2 and DeepSeek-V4.1-Flash by 1
+  tokens:
+    input: 25713
+    output: 860
+  fetched_chars: 78831

@@ -1,0 +1,100 @@
+id: SRC-00295
+title: A RISC-V Simulator for the Tenstorrent Tensix Architecture
+doi: null
+arxiv_id: 2611.04740v1
+url: https://arxiv.org/abs/2611.04740v1
+venue_id: arxiv_api
+authors:
+- name: Nick Brown
+  affiliation: null
+  corresponding: null
+- name: Daniyal Arshad
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-03'
+retrieved_date: '2026-11-04'
+access: full_text
+read_scope: Automated reading. The full PDF text (56,140 characters, 11 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.04740v1 on
+  2026-11-04. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“matmul_single_core32.4 7.2 9.3×2.1×”
+
+  “Table VI reports wall-clock time per benchmark for both Wolfpine and Tenstorrent’sttsim.”
+
+  “Simulator results are measured on a 12th Gen Intel Core i7-12700H (16 logical CPUs) with 48 GiB of
+  RAM, and CPython 3.12.13.”'
+method_summary: '“Table V reports accuracy of results for our benchmarks across the p150 Blackhole and
+  both simulators.”
+
+  “Table VI reports wall-clock time per benchmark for both Wolfpine and Tenstorrent’sttsim.”'
+limitations: '“This is because unlike the other operations, integer divide requires a varying number of
+  cycles between 6 and 33 depending on the operands. Wolfpine models this range in its data but the cost
+  model always assumes the low end.”
+
+  “We also report the slowdown of each simulator compared to running the same benchmark on the p150 Blackhole
+  hardware, where it can be seen our simulator is between 3.5 and 192 times slower than the hardware.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16423
+    output: 3140
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: The RISC-V L1 load operation on the p150 Blackhole takes an average of 8.098 cycles.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''RISC-V L1
+      load 8.098 8.001.2'''
+    quotes:
+    - RISC-V L1 load 8.098 8.001.2
+    - All hardware runs are on a p150 Blackhole and is is measured over iterations of a loop of varying
+      sizes.
+  - statement: Wolfpine's cost model predicts 8.00 cycles for the RISC-V L1 load operation.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''RISC-V L1
+      load 8.098 8.001.2'''
+    quotes:
+    - RISC-V L1 load 8.098 8.001.2
+    - Table II reports, for a set of operations, the hardware-measured average cycles per operation and
+      the Wolfpine’s predicted number of cycles based on our cost model.
+  - statement: The percentage error of Wolfpine's cost model prediction for the RISC-V L1 load operation
+      is 1.2%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''RISC-V L1
+      load 8.098 8.001.2'''
+    quotes:
+    - RISC-V L1 load 8.098 8.001.2
+    - Table II reports, for a set of operations, the hardware-measured average cycles per operation and
+      the Wolfpine’s predicted number of cycles based on our cost model. Also reported is the simulator’s
+      percentage error.
+  - statement: Wolfpine incurs a 9.3x slowdown compared to the p150 Blackhole hardware on the matmul_single_core
+      benchmark.
+    reason: the statement contains the number 50, which none of its quotes contain
+    quotes:
+    - matmul_single_core32.4 7.2 9.3×2.1×
+    - We also report the slowdown of each simulator compared to running the same benchmark on the p150
+      Blackhole hardware
+    - TABLE VI PERFORMANCE OFWOLFPINE AGAINSTTENSTORRENT’S TTSIM AND SLOWDOWN OF BOTH OF THESE SIMULATORS
+      COMPARED TO RUNNING ON P150 BLACKHOLE HARDWARE.
+  - statement: ttsim incurs a 2.1x slowdown compared to the p150 Blackhole hardware on the matmul_single_core
+      benchmark.
+    reason: the statement contains the number 50, which none of its quotes contain
+    quotes:
+    - matmul_single_core32.4 7.2 9.3×2.1×
+    - We also report the slowdown of each simulator compared to running the same benchmark on the p150
+      Blackhole hardware
+    - TABLE VI PERFORMANCE OFWOLFPINE AGAINSTTENSTORRENT’S TTSIM AND SLOWDOWN OF BOTH OF THESE SIMULATORS
+      COMPARED TO RUNNING ON P150 BLACKHOLE HARDWARE.
+  - statement: The error between Wolfpine's predicted runtime and the p150 Blackhole hardware runtime
+      for Nekbone total execution is 3.9%.
+    reason: the statement contains the number 50, which none of its quotes contain
+    quotes:
+    - Total 60,066 44.49 62,509 46.303.9
+    - TABLE VIII NEKBONE(4ELEMENTS,16 3,SINGLETENSIX CORE)PREDICTED CYCLES AND RUNTIME AGAINST THAT MEASURED
+      ON P150 BLACKHOLE HARDWARE.
+corrections: []

@@ -1,0 +1,79 @@
+id: SRC-00291
+title: Interfacial Hole Accumulation Enables Selective Free-Surface Formation in Ge-on-Si
+doi: null
+arxiv_id: 2611.04589v1
+url: https://arxiv.org/abs/2611.04589v1
+venue_id: arxiv_api
+authors:
+- name: Youcef A Bioud
+  affiliation: null
+  corresponding: null
+- name: Meriem Bouchilaoun
+  affiliation: null
+  corresponding: null
+- name: Waldemar Schreiber
+  affiliation: null
+  corresponding: null
+- name: Redouane Amrar
+  affiliation: null
+  corresponding: null
+- name: Gilles Patriarche
+  affiliation: null
+  corresponding: null
+- name: Ali Soltani
+  affiliation: null
+  corresponding: null
+- name: Stefan Janz
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-03'
+retrieved_date: '2026-11-04'
+access: full_text
+read_scope: Automated reading. The full PDF text (9,987 characters, 3 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.04589v1 on
+  2026-11-04. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“whereas hole-limited charge transfer reduces this fraction to 0.07%, independently of the
+  electrolyte conductivity.”
+
+  “With charge-transfer kinetics, this fraction falls to 0.07% [Fig. 2(b)]”
+
+  “FIGURE 2. Simulated current-density distributions (σel = 10 S m−1) for (a) an ohmic boundary and (b)
+  charge-transfer kinetics.”
+
+  “decays over λ = (σelhrct)1/2, i.e., λ ≈ 1.7 µm for h = 1.5 nm.”'
+method_summary: No method quote was verified. The method is not established by this record.
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 5304
+    output: 1400
+  claims_accepted: 2
+  claims_rejected: 2
+  rejected:
+  - statement: With an ohmic boundary description, 77% of the anodic current is driven through Ge.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''With an ohmic
+      description, an ohmic description would drive 77% of the'''
+    quotes:
+    - With an ohmic description, an ohmic description would drive 77% of the anodic current through Ge
+    - With an ohmic boundary and realistic conductivities, 77% of the anodic current leaves through the
+      Ge sidewall, because σGe exceeds σel [Fig. 2(a)]
+    - FIGURE 2. Simulated current-density distributions (σel = 10 S m−1) for (a) an ohmic boundary and
+      (b) charge-transfer kinetics.
+  - statement: The valence-band offset accumulates holes on the Ge side up to approximately 1019 cm−3.
+    reason: the value 1e+19 does not appear in any of the claim's quotes
+    quotes:
+    - The valence-band offset accumulates holes on the Ge side up to ~1019 cm−3 within a self-limited
+      nanometric layer
+    - producing an accumulation layer with pint ≈ 1.0 × 10 19 cm−3 at the interface
+    - The Poisson calculation shows that the valence-band offset transfers holes from p +-Si into Ge,
+      producing an accumulation layer with pint ≈ 1.0 × 10 19 cm−3 at the interface
+corrections: []
