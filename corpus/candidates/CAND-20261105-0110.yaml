@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.06004v1
 doi: null
-title: 'The quantized Hall effect knows which way the current flows: mirror covariance
-  and rectification in a laterally asymmetric Hall bar'
+title: 'The quantized Hall effect knows which way the current flows: mirror covariance and rectification
+  in a laterally asymmetric Hall bar'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-04'
@@ -22,6 +22,37 @@ id: CAND-20261105-0110
 harvested_date: '2026-11-05'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-05'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: In self-consistent calculations of a laterally asymmetric Hall bar at filing factor 2.5
+      and magnetic field 5.98 T, reversing the current direction from +I to -I
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - Self-consistent calculations show the soft-edge strip widening from 69 to 106 nm on current reversal
+    - At ν(0) = 2.5, kT = 5 × 10 −3 EcF and eVH = ±0.2 EcF = ±2.6 meV (I ≃ 0.2 µA), the soft-edge strip
+      measures 106, 81 and 69 nm at −I, I → 0 and +I, while the hard-edge strip stays at 56 nm.
+    - Table 2 Computed response of the hard–soft bar at ν(0) = 2.5, i.e. ℏω c = 10.34 meV and B = 5.98
+      T
+    - B = 5.98 T
+  - statement: Under self-consistent calculation at magnetic field 5.98 T and filling factor 2.5, reversing
+      the current direction from +I to -I changes the computed Hall resis
+    reason: the statement contains the number 5.98, which none of its quotes contain
+    quotes:
+    - moving the Hall resistance from 0.940 to0.999994h/2e 2 within a bounded window in magnetic field.
+    - −I −0.2004 −0.2000 106 56 0.999994 1.2 × 10 −6
+    - +I 0.2001 0.1877 69 56 0.9396 1.2 × 10 −2
+    - Self-consistent calculations show the soft-edge strip widening from 69 to 106 nm on current reversal,
+      moving the Hall resistance from 0.940 to0.999994h/2e 2 within a bounded window in magnetic field.
+  tokens:
+    input: 33064
+    output: 1349
+  fetched_chars: 104106

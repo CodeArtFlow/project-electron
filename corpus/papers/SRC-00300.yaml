@@ -1,0 +1,108 @@
+id: SRC-00300
+title: 'Phantom: Temporal Caching for Diffusion Models'
+doi: null
+arxiv_id: 2611.06019v1
+url: https://arxiv.org/abs/2611.06019v1
+venue_id: arxiv_api
+authors:
+- name: Yuzhe Fu
+  affiliation: null
+  corresponding: null
+- name: Cong Guo
+  affiliation: null
+  corresponding: null
+- name: Zishan Shao
+  affiliation: null
+  corresponding: null
+- name: Bowen Duan
+  affiliation: null
+  corresponding: null
+- name: Chiyue Wei
+  affiliation: null
+  corresponding: null
+- name: Haoxuan Shan
+  affiliation: null
+  corresponding: null
+- name: Ting Jiang
+  affiliation: null
+  corresponding: null
+- name: Hancheng Ye
+  affiliation: null
+  corresponding: null
+- name: Jonathan Ku
+  affiliation: null
+  corresponding: null
+- name: Changchun Zhou
+  affiliation: null
+  corresponding: null
+- name: Hai "Helen" Li
+  affiliation: null
+  corresponding: null
+- name: Yiran Chen
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-04'
+retrieved_date: '2026-11-05'
+access: full_text
+read_scope: Automated reading. The full PDF text (72,505 characters, 13 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.06019v1 on
+  2026-11-05. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Table II summarizes the hardware characteristics ofPhantom, which occupies 88.69 mm 2 and
+  consumes 283.8 W under the DiT-256 workload at 28nm, with a breakdown in Fig. 10(c).”
+
+  “SRAM area and energy are modeled with CACTI [40] and DRAM energy with DRAMSim3 [41].”'
+method_summary: '“All designs are implemented in SystemVerilog and synthesized with Synopsys Design Compiler
+  in TSMC 28nm at 1GHz.”
+
+  “SRAM area and energy are modeled with CACTI [40] and DRAM energy with DRAMSim3 [41]. To evaluate architectural
+  performance, we develop a cycle-accurate simulator based on the open-source framework [42], which models
+  cycle counts and memory accesses using real network data and is validated against RTL simulation.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 22342
+    output: 1614
+  claims_accepted: 1
+  claims_rejected: 3
+  rejected:
+  - statement: Phantom achieves a average speedup of 4.0x over GPUs and prior accelerators.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''×'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - Evaluations on modern diffusion models show thatPhantomachieves an average 4.0×speedup and 5.5×energy
+      saving over GPUs and prior accelerators while preserving generation quality.
+    - To evaluate architectural performance, we develop a cycle-accurate simulator based on the open-source
+      framework [42], which models cycle counts and memory accesses using real network data and is validated
+      against RTL simulation.
+    - All designs are implemented in SystemVerilog and synthesized with Synopsys Design Compiler in TSMC
+      28nm at 1GHz.
+  - statement: Phantom achieves an average 5.5x energy saving over GPUs and prior accelerators.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''×'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - Evaluations on modern diffusion models show thatPhantomachieves an average 4.0×speedup and 5.5×energy
+      saving over GPUs and prior accelerators while preserving generation quality.
+    - SRAM area and energy are modeled with CACTI [40] and DRAM energy with DRAMSim3 [41].
+    - All designs are implemented in SystemVerilog and synthesized with Synopsys Design Compiler in TSMC
+      28nm at 1GHz.
+  - statement: Phantom occupies an area of 88.69 mm2 in 28nm technology.
+    reason: 'unit conversion refused: area_die: could not parse 88.69 ''mm 2'': Unit expression cannot
+      have a scaling factor.'
+    quotes:
+    - Table II summarizes the hardware characteristics ofPhantom, which occupies 88.69 mm 2 and consumes
+      283.8 W under the DiT-256 workload at 28nm, with a breakdown in Fig. 10(c).
+    - All designs are implemented in SystemVerilog and synthesized with Synopsys Design Compiler in TSMC
+      28nm at 1GHz.
+    - Shared Config. 1 GHz, GDDR6 @ 819 GB/s, 28 nm
+corrections: []

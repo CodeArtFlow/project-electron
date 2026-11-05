@@ -1,0 +1,115 @@
+id: SRC-00302
+title: 'TauLang: A Language and Compiler for Space-Time Programming on Statically Scheduled Accelerators'
+doi: null
+arxiv_id: 2611.06079v1
+url: https://arxiv.org/abs/2611.06079v1
+venue_id: arxiv_api
+authors:
+- name: Xuxiao Yang
+  affiliation: null
+  corresponding: null
+- name: Junchi Wu
+  affiliation: null
+  corresponding: null
+- name: Feiyang Wu
+  affiliation: null
+  corresponding: null
+- name: Zhuoran Li
+  affiliation: null
+  corresponding: null
+- name: Shuo Tao
+  affiliation: null
+  corresponding: null
+- name: Dongyi Fan
+  affiliation: null
+  corresponding: null
+- name: Yiming Zhang
+  affiliation: null
+  corresponding: null
+- name: Keqin Luo
+  affiliation: null
+  corresponding: null
+- name: Xingrui Gao
+  affiliation: null
+  corresponding: null
+- name: Xuehai Qian
+  affiliation: null
+  corresponding: null
+- name: Youwei Zhuo
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-04'
+retrieved_date: '2026-11-05'
+access: full_text
+read_scope: Automated reading. The full PDF text (74,630 characters, 14 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.06079v1 on
+  2026-11-05. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Adding one to three pins per kernel matches untimed latency within one cycle and cuts compile
+  time by1.72×.”
+
+  “Explicit time pins cut compile time by1 .72× in geometric mean and by up to3.50× on AXPY, while matching
+  the untimed latency on 28 of the 30 instances and staying within one cycle of it on 8- and 16-row Jacobi-2D.”
+
+  “Adding one to three pins per kernel”
+
+  “We measure all kernels on our cycle-accurate simulator, whose instruction latencies and issue intervals
+  come from our 93-slice SystemVerilog RTL and match the published TSP parameters [2].”
+
+  “As shown in Figure 10, even though CP-SAT proves every fixed-placement schedule optimal for its given
+  placement, fixed placement still increases latency across all 30 instances by1.24× in geometric mean
+  (ranging from1.02× to1.92×) compared to the cluster flow, which factors the1.40× speedup of §8.2 into1.13×
+  from the ILP scheduler and1 .24× from joint placement.”'
+method_summary: “We measure all kernels on our cycle-accurate simulator, whose instruction latencies and
+  issue intervals come from our 93-slice SystemVerilog RTL and match the published TSP parameters [2].”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 23205
+    output: 1760
+  claims_accepted: 3
+  claims_rejected: 3
+  rejected:
+  - statement: Across ten kernels at three sizes each, joint search in the cluster flow achieves a geometric-mean
+      latency speedup of 1.40x over the space-first flow.
+    reason: the statement contains the number 1.40, which none of its quotes contain
+    quotes:
+    - Across ten kernels from BLAS, PolyBench, ResNet, and Transformer layers at three sizes each, joint
+      search achieves a1 .40× geometric-mean latency speedup (up to2.22×) over the space-first flow, which
+      fixes placement before scheduling greedi
+    - We measure all kernels on our cycle-accurate simulator, whose instruction latencies and issue intervals
+      come from our 93-slice SystemVerilog RTL and match the published TSP parameters [2].
+    - over the space-first flow, which fixes placement before scheduling greedily.
+    - Across ten kernels from BLAS, PolyBench, ResNet, and Transformer layers at three sizes each
+  - statement: Joint search in the cluster flow achieves a maximum latency speedup of up to 2.22x over
+      the space-first flow.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''×'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - Across ten kernels from BLAS, PolyBench, ResNet, and Transformer layers at three sizes each, joint
+      search achieves a1 .40× geometric-mean latency speedup (up to2.22×) over the space-first flow, which
+      fixes placement before scheduling greedi
+    - We measure all kernels on our cycle-accurate simulator, whose instruction latencies and issue intervals
+      come from our 93-slice SystemVerilog RTL and match the published TSP parameters [2].
+    - over the space-first flow, which fixes placement before scheduling greedily.
+  - statement: Sweeping two schedule parameters of a flow-matching kernel yields Pareto-optimal schedules
+      that trade up to 237 cycles of first-item latency for 498 cycles of w
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Sweeping
+      two schedule parameters of a flow-matching kernel yields eigh'''
+    quotes:
+    - Sweeping two schedule parameters of a flow-matching kernel yields eight Pareto-optimal schedules
+      among those compiled, which trade up to 237 cycles of first-item latency for 498 cycles of whole-output
+      time.
+    - We measure all kernels on our cycle-accurate simulator, whose instruction latencies and issue intervals
+      come from our 93-slice SystemVerilog RTL and match the published TSP parameters [2].
+    - flow-matching kernel
+corrections: []

@@ -1,6 +1,6 @@
 # Packaging — state of the art
 
-Topic code `PKG`. Last reviewed 2026-11-04.
+Topic code `PKG`. Last reviewed 2026-11-05.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 

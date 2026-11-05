@@ -23,6 +23,55 @@ id: CAND-20261105-0098
 harvested_date: '2026-11-05'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-05'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Enabling the VPMOD switch increases SPICE simulation time by up to 17% for large FeFET
+      memory arrays.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Disabling polarization logic in the model via a VPMOD switch reduces simulation time for large memory
+      arrays by up to 17%.
+    - all of our simulations were performed with a regular commercial SPICE simulator using our NN-based
+      Verilog-A FeFET model.
+    - via a VPMOD switch
+    - for large memory arrays
+  - statement: The electrical characterization chuck temperature was held at 300 K during FeFET device
+      measurement.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Using an MPI TS3000-SE wafer probe station, we have loaded a 300 mmwafer onto the thermally controlled
+      chuck, which is held at 300 K.
+    - To collect the measurement data that forms the foundation of the training dataset, we have measured
+      a 7µm×10µm (width×length ) FeFET fabricated in a 28 nmprocess (see Figure 3).
+    - MPI TS3000-SE wafer probe station, we have loaded a 300 mmwafer onto the thermally controlled chuck
+  - statement: The SPICE transient simulation time for an M=512 array size is 886 s when VPMOD is off.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''512'''
+    quotes:
+    - '512'
+    - '886'
+    - VPMOD off
+    - 'Fig. 10: SPICE simulation time for M×M memory arrays with the Verilog-A NN-based FeFET model.'
+  - statement: The SPICE transient simulation time for an M=512 array size is 737 s when VPMOD is on.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''512'''
+    quotes:
+    - '512'
+    - '737'
+    - VPMOD on
+    - 'Fig. 10: SPICE simulation time for M×M memory arrays with the Verilog-A NN-based FeFET model.'
+  tokens:
+    input: 11744
+    output: 1422
+  fetched_chars: 36890

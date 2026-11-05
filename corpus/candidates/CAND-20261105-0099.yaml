@@ -23,6 +23,36 @@ id: CAND-20261105-0099
 harvested_date: '2026-11-05'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-05'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Across the 12,205 sampled matrices, the Gain-D (GD) method failed for 31 instances.
+    reason: the value 1e-08 does not appear in any of the claim's quotes
+    quotes:
+    - Across the 12 205 sampled matrices, the GD method failed for 31 instances, whereas our WG method
+      failed for only 3
+    - evaluation of its performance requires numerical simulations of Eqs. 2 and 4 with larger system
+      sizes and comparison to established benchmarks.
+    - the GD method failed for 31 instances
+    - Across the 12 205 sampled matrices
+  - statement: Across the 12,205 sampled matrices, the waveguide (WG) method failed for 3 instances.
+    reason: the value 1e-08 does not appear in any of the claim's quotes
+    quotes:
+    - Across the 12 205 sampled matrices, the GD method failed for 31 instances, whereas our WG method
+      failed for only 3
+    - evaluation of its performance requires numerical simulations of Eqs. 2 and 4 with larger system
+      sizes and comparison to established benchmarks.
+    - whereas our WG method failed for only 3
+    - Across the 12 205 sampled matrices
+  tokens:
+    input: 16873
+    output: 982
+  fetched_chars: 55379

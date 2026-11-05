@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-11-04.
+Topic code `DEV`. Last reviewed 2026-11-05.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -363,6 +363,21 @@ Topic code `DEV`. Last reviewed 2026-11-04.
   - `CLM-DEV-0078` · injection_level high injection (𝛿𝛿0 = 1016 cm-3) · grade B · credibility unknown · simulated · as of 2026-10-23
   - sources: SRC-00222
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.007 ns** — The instrument response time constant (full-width at half maximum) of the time-resolved quantum infrared spectroscopy system is 7.0 ± 0.4 ps.
+  - `CLM-DEV-0089` · sample SESAM · grade B · credibility unknown · measured · as of 2026-11-04
+  - sources: SRC-00296
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0113, CFL-0114 — see the open register
+- **0.0081 ns** — The fast recovery time of carrier dynamics in the SESAM is 8.1 ± 1.3 ps.
+  - `CLM-DEV-0090` · sample SESAM, decay_component fast recovery time 𝜏1 · grade B · credibility unknown · measured · as of 2026-11-04
+  - sources: SRC-00296
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0113 — see the open register
+- **0.0779 ns** — The slow recovery time of carrier dynamics in the SESAM is 77.9 ± 8.3 ps.
+  - `CLM-DEV-0091` · sample SESAM, decay_component slow recovery time 𝜏2 · grade B · credibility unknown · measured · as of 2026-11-04
+  - sources: SRC-00296
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0114 — see the open register
 
 ### voltage
 
@@ -403,9 +418,15 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0098` — relative_deviation: _unexamined; classification pending_
   - claims: CLM-DEV-0087, CLM-DEV-0088
   - missing data: `not yet named`
+- `CFL-0113` — time: _unexamined; classification pending_
+  - claims: CLM-DEV-0089, CLM-DEV-0090
+  - missing data: `not yet named`
+- `CFL-0114` — time: _unexamined; classification pending_
+  - claims: CLM-DEV-0089, CLM-DEV-0091
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 85
-- grades: {'B': 85}
-- distinct sources: 37
+- claims: 88
+- grades: {'B': 88}
+- distinct sources: 38

@@ -1,0 +1,107 @@
+id: SRC-00301
+title: 'PIMROP: A Feasibility Study of Return-Oriented Programming on Commercial Processing-in-Memory
+  Architectures'
+doi: null
+arxiv_id: 2611.06036v1
+url: https://arxiv.org/abs/2611.06036v1
+venue_id: arxiv_api
+authors:
+- name: William C. Tegge
+  affiliation: null
+  corresponding: null
+- name: Shouzhi Fang
+  affiliation: null
+  corresponding: null
+- name: Alex K. Jones
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-04'
+retrieved_date: '2026-11-05'
+access: full_text
+read_scope: Automated reading. The full PDF text (58,262 characters, 11 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.06036v1 on
+  2026-11-05. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“In the runtime library alone we discover 317 indirect-branch terminators and 517 non-trivial
+  gadgets covering all five canonical ROP primitive classes, and we find gadgets in every one of 13 PrIM
+  benchmarks [5].”
+
+  “We run on the UPMEM DPU functional simulator (no physical PIM hardware) using the UPMEM SDK 2023.1.0
+  from the CMU-SAFARI mirror [ 13], driven by the stock dpu-upmem-dpurte-clang and llvm-objdump 12.0.0
+  .”
+
+  “Its dynamic cost is therefore bounded by the return fraction times CPI, which comes out under 8% on
+  the median kernel.”
+
+  “A conservative software emulation of the same semantics would add five extra instructions per round
+  trip, inflating the committed .text by roughly 40% at the median.”'
+method_summary: “We run on the UPMEM DPU functional simulator (no physical PIM hardware) using the UPMEM
+  SDK 2023.1.0 from the CMU-SAFARI mirror [ 13], driven by the stock dpu-upmem-dpurte-clang and llvm-objdump
+  12.0.0 .”
+limitations: '“Our results come from the UPMEM functional simulator rather than a physical DIMM.”
+
+  “Our scanner parses llvm-objdump text rather than decoding raw bytes, so a gadget the disassembler fails
+  to render would be missed; this makes our counts a lower bound.”
+
+  “The functional simulator does not model cycle timing.”
+
+  “We report bounds rather than a cycle-accurate measurement because the UPMEM functional simulator exposes
+  only committed-instruction counts [ 13], and a cycle-level DPU model is itself future work (Section
+  IX).”'
+evidence_type: projected
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 17880
+    output: 2366
+  claims_accepted: 3
+  claims_rejected: 4
+  rejected:
+  - statement: The transparent host-style bounds-check wrapper is silently inactive on 12 of 12 measured
+      PrIM kernels.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''the transparent
+      host-style bounds-check wrapper is silently inactive o'''
+    quotes:
+    - the transparent host-style bounds-check wrapper is silently inactive on 12 of 12 PrIM kernels we
+      measured.
+    - We compare the two .text instruction counts from llvm-objdump -d to see whether a bounds check was
+      emitted at all.
+    - compiling each kernel twice with the stock upmem toolchain ( dpu-upmem-dpurte-clang 2023.1.0, -O2,
+      -c, no linker required)
+    - once without the wrapper and once with safe_mram.h -included so every mram_read/mram_write macro
+      expands to the fortified form.
+  - statement: The bounds-checked DMA wrapper on vuln_dpu increases code size by 2 instructions.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''There the
+      wrapper emits a single jgeu r0, 257, <fail> (DPU’s combined '''
+    quotes:
+    - 'There the wrapper emits a single jgeu r0, 257, <fail> (DPU’s combined compare-and-branch) plus
+      one extra instruction to materialize the fail-handler target: a two-instruction increase, 1.5% of
+      the 130-instruction baseline.'
+    - We compare the two .text instruction counts from llvm-objdump -d to see whether a bounds check was
+      emitted at all.
+    - The only kernel in our set where the transparent form fires is vuln_dpu, whose overflowed buffer
+      is a 32-byte stack array that __builtin_object_size resolves without help.
+  - statement: The maximum added IRAM instruction overhead to add bounds-checked DMA across the entire
+      PrIM suite is 12 instructions.
+    reason: the statement contains the number 12, which none of its quotes contain
+    quotes:
+    - Scaling from the six runtime-length sites across PrIM identified in Section III, the IRAM budget
+      for a working platform-wide default is at most twelve added instructions across the entire suite,
+      negligible against the 4,096-instruction IRAM
+  - statement: The median fraction of static text instructions across twelve PrIM kernels that are call
+      or jump r23 is near 8%.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - Across the twelve PrIM kernels, their combined share of static.texthas a median near 8%.
+    - We report bounds rather than a cycle-accurate measurement because the UPMEM functional simulator
+      exposes only committed-instruction counts [ 13], and a cycle-level DPU model is itself future work
+      (Section IX).
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (projected: 2, simulated:
+  1). This field records the majority (projected); trust each claim''s own evidence_type over this one.'

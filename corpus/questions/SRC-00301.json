@@ -1,0 +1,48 @@
+{
+  "arxiv_id": "2611.06036v1",
+  "claims": {
+    "CLM-ARCH-0191": {
+      "evidence_spans": [
+        "In the runtime library alone we discover 317 indirect-branch terminators and 517 non-trivial gadgets covering all five canonical ROP primitive classes, and we find gadgets in every one of 13 PrIM benchmarks [5].",
+        "We run on the UPMEM DPU functional simulator (no physical PIM hardware) using the UPMEM SDK 2023.1.0 from the CMU-SAFARI mirror [ 13], driven by the stock dpu-upmem-dpurte-clang and llvm-objdump 12.0.0 ."
+      ],
+      "statement": "Scanning librt.a yields 517 non-trivial gadgets.",
+      "terms": []
+    },
+    "CLM-ARCH-0192": {
+      "evidence_spans": [
+        "Its dynamic cost is therefore bounded by the return fraction times CPI, which comes out under 8% on the median kernel.",
+        "Its dynamic cost is therefore bounded by the return fraction times CPI, which comes out under 8% on the median kernel.",
+        "Its dynamic cost is therefore bounded by the return fraction times CPI, which comes out under 8% on the median kernel."
+      ],
+      "statement": "Hardware shadow return-index protection is projected to add an upper bound of 8% dynamic overhead on the median kernel.",
+      "terms": []
+    },
+    "CLM-ARCH-0193": {
+      "evidence_spans": [
+        "A conservative software emulation of the same semantics would add five extra instructions per round trip, inflating the committed .text by roughly 40% at the median.",
+        "A conservative software emulation of the same semantics would add five extra instructions per round trip, inflating the committed .text by roughly 40% at the median.",
+        "A conservative software emulation of the same semantics would add five extra instructions per round trip, inflating the committed .text by roughly 40% at the median."
+      ],
+      "statement": "Software emulation of hardware shadow stack semantics inflates committed .text by approximately 40% at the median.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "We run on the UPMEM DPU functional simulator (no physical PIM hardware) using the UPMEM SDK 2023.1.0 from the CMU-SAFARI mirror [ 13], driven by the stock dpu-upmem-dpurte-clang and llvm-objdump 12.0.0 .",
+    "Our results come from the UPMEM functional simulator rather than a physical DIMM.",
+    "Our scanner parses llvm-objdump text rather than decoding raw bytes, so a gadget the disassembler fails to render would be missed; this makes our counts a lower bound.",
+    "The functional simulator does not model cycle timing.",
+    "We report bounds rather than a cycle-accurate measurement because the UPMEM functional simulator exposes only committed-instruction counts [ 13], and a cycle-level DPU model is itself future work (Section IX)."
+  ],
+  "generated": "2026-11-05",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00301",
+  "text_chars": 58262,
+  "text_sha256": "9a11d227fd8888639698643dc7c8d61469cc14de57ff2e25d518f0b839b096a5"
+}

@@ -1,0 +1,108 @@
+id: SRC-00298
+title: 'Ferroelectricity and Peierls transition in MOI$_2$ (M=Ta, Nb): a first-principle analysis'
+doi: null
+arxiv_id: 2611.05836v1
+url: https://arxiv.org/abs/2611.05836v1
+venue_id: arxiv_api
+authors:
+- name: Carmel Dansou
+  affiliation: null
+  corresponding: null
+- name: Charles Paillard
+  affiliation: null
+  corresponding: null
+- name: Laurent Bellaiche
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-04'
+retrieved_date: '2026-11-05'
+access: full_text
+read_scope: Automated reading. The full PDF text (40,596 characters, 12 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.05836v1 on
+  2026-11-05. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“(i) a Γ polar modePat −1.63 THz, driven by Nb displacement along the polar axis;”
+
+  “The harmonic phonon spectrum of the NbOI 2 “4-atoms cell” (See Fig.2c) shows three main modes”
+
+  “First-principles calculations were carried out with the Viennaab initioSimulation Package (V ASP) [22,
+  23].”
+
+  “(iii) the Peierls modeδ, also atA, at−7.24 THz, corre- sponding to Nb–Nb chain dimerization.”'
+method_summary: '“First-principles calculations were carried out with the Viennaab initioSimulation Package
+  (V ASP) [22, 23].”
+
+  “Exchange and correlation were treated within the Perdew–Burke–Ernzerhof generalized-gradient approximation
+  [24], and the projector-augmented-wave (PA W) method was used [25].”
+
+  “Harmonic force constants were obtained with the finite-displacement method as implemented in Phonopy
+  [27].”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14798
+    output: 3075
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: For NbOI2, the calculated Landau harmonic stiffness a_P of the polar mode is -2.6 eV/A^2.
+    reason: 'unit conversion refused: energy: cannot convert -2.6 eV/˚A2 to J - Cannot convert from ''electron_volt
+      / angstrom ** 2'' ([mass] / [time] ** 2) to ''joule'' ([mass] * [length] ** 2 / [time]'
+    quotes:
+    - TABLE I. Computed Landau coefficients of Eq. (1). Harmonic stiffnessesa i in eV/˚A2; quartic coefficientsb
+      i and biquadratic couplingsλ ij in eV/˚A4.
+    - aP aη aδ bP bη bδ λP η λδP λδη NbOI2 −2.6 +0.6−34.9 +1.0×10 3 +0.5×10 3 +6.2×10 3 +1155 +12−20
+    - We extract all co- efficients of Eq. (1) from frozen-mode density-functional theory (DFT) calculations
+      on the undimerized parent (methods are detailed in SM).
+    - NbOI2 −2.6 +0.6−34.9 +1.0×10 3 +0.5×10 3 +6.2×10 3 +1155 +12−20
+  - statement: For NbOI2, the calculated biquadratic coupling lambda_P_eta between the polar and antipolar
+      modes is +1155 eV/A^4.
+    reason: 'unit conversion refused: energy: cannot convert 1155.0 eV/ ˚A4 to J - Cannot convert from
+      ''electron_volt / angstrom ** 4'' ([mass] / [time] ** 2 / [length] ** 2) to ''joule'' ([mass] *
+      [le'
+    quotes:
+    - the repulsive interaction between the polar and antipolar modes,λ P η = +1155 eV/ ˚A4,
+    - We extract all co- efficients of Eq. (1) from frozen-mode density-functional theory (DFT) calculations
+      on the undimerized parent (methods are detailed in SM).
+    - Table I summarizes the results for both NbOI 2 and isostructural TaOI2.
+  - statement: In the 4-atom cell of TaOI2, the Peierls instability occurs at -5.9 THz.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - The phonon spectrum of of TaOI 2 retains the deep Peierls instability (−5.9 THz)
+    - First-principles calculations were carried out with the Viennaab initioSimulation Package (V ASP)
+      [22, 23].
+    - 4-atom cell structure
+  - statement: For TaOI2, the calculated Landau biquadratic coupling lambda_delta_P between the Peierls
+      and polar modes is -54 eV/A^4.
+    reason: 'unit conversion refused: energy: cannot convert -54.0 eV/˚A4 to J - Cannot convert from ''electron_volt
+      / angstrom ** 4'' ([mass] / [time] ** 2 / [length] ** 2) to ''joule'' ([mass] * [leng'
+    quotes:
+    - Strikingly,λ δP changes signfrom +12 eV/ ˚A4 (competitive) in NbOI2 to −54 eV/˚A4 (cooperative)
+      in TaOI 2.
+    - We extract all co- efficients of Eq. (1) from frozen-mode density-functional theory (DFT) calculations
+      on the undimerized parent (methods are detailed in SM).
+    - −54 eV/˚A4 (cooperative) in TaOI 2.
+  - statement: In the eight-atom cell, the Peierls-condensed structure opens an electronic band gap of
+      0.65 eV for NbOI2.
+    reason: 'unit conversion refused: voltage: cannot convert 0.65 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** '
+    quotes:
+    - The 8-atom cells open gaps of 0.65 eV (NbOI2) and 0.90 eV (TaOI 2).
+    - First-principles calculations were carried out with the Viennaab initioSimulation Package (V ASP)
+      [22, 23].
+  - statement: In the eight-atom cell, the Peierls-condensed structure opens an electronic band gap of
+      0.90 eV for TaOI2.
+    reason: the value 0.9 does not appear in any of the claim's quotes
+    quotes:
+    - The 8-atom cells open gaps of 0.65 eV (NbOI2) and 0.90 eV (TaOI 2).
+    - First-principles calculations were carried out with the Viennaab initioSimulation Package (V ASP)
+      [22, 23].
+corrections: []

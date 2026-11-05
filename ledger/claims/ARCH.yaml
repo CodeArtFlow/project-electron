@@ -5427,3 +5427,143 @@ claims:
     conditions:
       benchmark: matmul_single_core
       simulator: ttsim
+- id: CLM-ARCH-0190
+  topic: ARCH
+  statement: Phantom consumes 283.8 W under the DiT-256 workload.
+  sources:
+  - SRC-00300
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-04'
+  created: '2026-11-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    benchmark: DiT-256 workload
+    process: 28nm
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 283.8
+      unit: W
+    si_base:
+      value: 283.8
+      unit: W
+    display:
+      value: 283.8
+      unit: W
+    conditions:
+      benchmark: DiT-256 workload
+      process: 28nm
+- id: CLM-ARCH-0191
+  topic: ARCH
+  statement: Scanning librt.a yields 517 non-trivial gadgets.
+  sources:
+  - SRC-00301
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-04'
+  created: '2026-11-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-ARCH-0192
+  topic: ARCH
+  statement: Hardware shadow return-index protection is projected to add an upper bound of 8% dynamic
+    overhead on the median kernel.
+  sources:
+  - SRC-00301
+  grade: B
+  credibility: unknown
+  evidence_type: projected
+  status: active
+  as_of: '2026-11-04'
+  created: '2026-11-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    workload: median kernel
+- id: CLM-ARCH-0193
+  topic: ARCH
+  statement: Software emulation of hardware shadow stack semantics inflates committed .text by approximately
+    40% at the median.
+  sources:
+  - SRC-00301
+  grade: B
+  credibility: unknown
+  evidence_type: projected
+  status: active
+  as_of: '2026-11-04'
+  created: '2026-11-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    implementation: software emulation
+- id: CLM-ARCH-0194
+  topic: ARCH
+  statement: Adding one to three pins per kernel reduces compile time by a geometric-mean factor of 1.72x.
+  sources:
+  - SRC-00302
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-04'
+  created: '2026-11-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    pin_count: one to three pins per kernel
+- id: CLM-ARCH-0195
+  topic: ARCH
+  statement: Explicit time pins reduce compile time on AXPY by up to 3.50x.
+  sources:
+  - SRC-00302
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-04'
+  created: '2026-11-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-ARCH-0196
+  topic: ARCH
+  statement: Fixed placement increases schedule latency across all 30 instances by a geometric-mean factor
+    of 1.24x compared to the cluster flow.
+  sources:
+  - SRC-00302
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-04'
+  created: '2026-11-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2

@@ -1,0 +1,108 @@
+id: SRC-00297
+title: Atomic-Scale Phonon Engineering for Enhanced Thermal Transport in Wafer-Scale-Bonded $β$-Ga$_{2}$O$_{3}$/SiC
+  Heterostructures
+doi: null
+arxiv_id: 2611.05810v1
+url: https://arxiv.org/abs/2611.05810v1
+venue_id: arxiv_api
+authors:
+- name: J. Liu
+  affiliation: null
+  corresponding: null
+- name: R. Mao
+  affiliation: null
+  corresponding: null
+- name: Z. Liu
+  affiliation: null
+  corresponding: null
+- name: Y. Yin
+  affiliation: null
+  corresponding: null
+- name: S. Li
+  affiliation: null
+  corresponding: null
+- name: F. Sun
+  affiliation: null
+  corresponding: null
+- name: B. Liu
+  affiliation: null
+  corresponding: null
+- name: Z. Wang
+  affiliation: null
+  corresponding: null
+- name: P. Gao
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-04'
+retrieved_date: '2026-11-05'
+access: full_text
+read_scope: Automated reading. The full PDF text (50,176 characters, 29 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.05810v1 on
+  2026-11-05. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“the measured fracture stress of approximately 5 -6 MPa represents only a lower bound for the
+  interfacial bond strength.”
+
+  “Tensile testing consistently resulted in cohesive cleavage within the β -Ga2O3 bulk”
+
+  “With such an interface, finite-element simulations predict that the channel hotspot temperature of
+  β -Ga2O3 metal-oxide-semiconductor field-effect transistors (MOSFETs) drops by about 50 K at 4 W mm-1
+  relative to the device without the Si interlayer .”
+
+  “drops by about 50 K at 4 W mm-1 relative to the device without the Si interlayer .”
+
+  “finite-element simulations predict that the channel hotspot temperature of β -Ga2O3 metal-oxide-semiconductor
+  field-effect transistors (MOSFETs) drops by about 50 K at 4 W mm-1 relative to the device without the
+  Si interlayer .”'
+method_summary: '“Using scanning transmission electron microscopy (STEM) with electron energy-loss spectroscopy
+  (EELS), we find that the presence of the very thin Si interlayer enhances the overlap of the phonon
+  density of states (PDOS) across the interface”
+
+  “Time-domain thermoreflectance (TDTR) measurements give an ITC of ~165 MW m-2 K-1”
+
+  “With such an interface, finite-element simulations predict that the channel hotspot temperature of
+  β -Ga2O3 metal-oxide-semiconductor field-effect transistors (MOSFETs) drops by about 50 K at 4 W mm-1
+  relative to the device without the Si interlayer .”'
+limitations: “However, the effect of the Si interlayer thickness has not yet been systematically resolved,
+  partly because precise control of an ultrathin buried layer during bonding remains experimentally challenging.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 18886
+    output: 1818
+  claims_accepted: 2
+  claims_rejected: 3
+  rejected:
+  - statement: The interfacial thermal conductance of the GaOSiC-Si-A sample is measured to be 165 MW
+      m-2 K-1.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''With the
+      Si interlayer, the ITC of GaOSiC -Si-A increased to 165 MW m-'''
+    quotes:
+    - With the Si interlayer, the ITC of GaOSiC -Si-A increased to 165 MW m-2 K-1
+    - TDTR measurements give an ITC of ~165 MW m-2 K-1
+  - statement: The interfacial thermal conductance of the directly bonded and annealed GaOSiC-A sample
+      is measured to be 86 MW m-2 K-1.
+    reason: 'unit conversion refused: thermal_conductivity: cannot convert 86.0 MW m-2 K-1 to W/(m*K)
+      - Cannot convert from ''megawatt / meter ** 2 / kelvin'' ([mass] / [time] ** 3 / [temperature])
+      to'
+    quotes:
+    - The directly bonded and annealed GaOSiC-A interface exhibited an ITC of 86 MW m-2 K-1 (Figure 4a).
+  - statement: The thermal boundary resistance for GaOSiC-Si-A is measured to be approximately 6.06 m2
+      K GW-1.
+    reason: 'unit conversion refused: resistance: cannot convert 6.06 m2 K GW-1 to ohm - Cannot convert
+      from ''meter ** 2 * kelvin / gigawatt'' ([temperature] * [time] ** 3 / [mass]) to ''ohm'' ([mass] '
+    quotes:
+    - The best fit yielded a TBR of approximately 6.06 m2 K GW-1, corresponding to an ITC of 165 MW m
+      -2 K-1.
+    - TDTR measurement curve for GaOSiC-Si-A. The best fit yielded a TBR of approximately 6.06 m2 K GW-1
+    - TDTR measurement curve for GaOSiC-Si-A.
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (measured: 1, simulated:
+  1). This field records the majority (measured); trust each claim''s own evidence_type over this one.'

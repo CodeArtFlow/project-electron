@@ -1,0 +1,71 @@
+id: SRC-00299
+title: Symmetry-Selective Shift Current in Polar Multidomain Superlattices
+doi: null
+arxiv_id: 2611.05990v1
+url: https://arxiv.org/abs/2611.05990v1
+venue_id: arxiv_api
+authors:
+- name: Tomoaki Kameda
+  affiliation: null
+  corresponding: null
+- name: Kosuke Nagashio
+  affiliation: null
+  corresponding: null
+- name: Katsunori Wakabayashi
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-04'
+retrieved_date: '2026-11-05'
+access: full_text
+read_scope: Automated reading. The full PDF text (83,210 characters, 21 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.05990v1 on
+  2026-11-05. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Panel (a) shows that Re[ σxxx] = −Re[σyyy ] for single domain 1○.”
+
+  “By contrast, panels (b) and (c) show that Re[σxxx] = Re[σyyy ] for single domains 2○ and 3○, respectively.”'
+method_summary: No method quote was verified. The method is not established by this record.
+limitations: “The square-lattice model is not a material-speciﬁc Hamiltonian for SnS.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 28771
+    output: 1876
+  claims_accepted: 2
+  claims_rejected: 4
+  rejected:
+  - statement: For the head-to-tail arrangement with domain width N = 1, the maximum value of Re[σxxx]/σ2D0
+      is approximately 0.05.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - For the supercells considered here, the maximum value of Re[σxxx]/σ2D0 for the head-to-tail arrangement
+      is approximately 0.05, roughly seven times smaller than the single-domain maximum ( ≃ 0.34).
+    - head-to-tail arrangement
+    - N = 1 in the main text
+  - statement: 'For the domain width N = 1, the maximum value of Re[σxxx]/σ2D0 in the head-to-tail arrangement
+      is roughly seven times smaller than the single-domain maximum of '
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - For the supercells considered here, the maximum value of Re[σxxx]/σ2D0 for the head-to-tail arrangement
+      is approximately 0.05, roughly seven times smaller than the single-domain maximum ( ≃ 0.34).
+    - single-domain maximum
+  - statement: For the head-to-tail arrangement, the dominant extremum of Re[σxxx]/σ2D0 is +0.047 at N
+      = 1, −0.574 at N = 5, and −0.503 at N = 10.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - The dominant extremum of Re[ σxxx]/σ2D0 is +0.047 at N = 1, −0.574 at N = 5, and −0.503 at N = 10.
+    - Head-to-tail.
+  - statement: For the head-to-head supercell at N = 10, the peak value of Re[σyyy]/σ2D0 is 0.252.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - The corresponding head-to-head peak is 0.252 at N = 10.
+    - head-to-head peak
+    - N = 10
+corrections: []

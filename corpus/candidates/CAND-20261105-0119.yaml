@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.05946v1
 doi: null
-title: Temperature-Dependent Ion Dynamics in Argyrodite Superionic Conductor Li$_{6}$PS$_{5}$Cl
-  with Fine-Tuned MACE Foundation Model
+title: Temperature-Dependent Ion Dynamics in Argyrodite Superionic Conductor Li$_{6}$PS$_{5}$Cl with Fine-Tuned
+  MACE Foundation Model
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-04'
@@ -24,6 +24,46 @@ id: CAND-20261105-0119
 harvested_date: '2026-11-05'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-05'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The fine-tuned MACE foundation energy model achieved a root-mean-squared-error for energy
+      of 0.05903 meV/atom.
+    reason: the statement contains the number 0.05903, which none of its quotes contain
+    quotes:
+    - In total, 400 epochs i of fine-tuning were performed with the final model reaching 5.903×10 −2 meV/atom
+      in the root-mean-squared-error (RMSE) for energy, 11.30 meV/ ˚A for atomic forces and6.860×10 −2
+      meV/A3 for stress.
+    - All AIMD frames from both the equilibration and production trajectories were used for fine-tuning
+      the MACE foundation energy model (omat-0-medium), 14 with 5% of the data reserved for validation.
+    - In total, 400 epochs i of fine-tuning were performed
+  - statement: The fine-tuned MACE foundation energy model reached an atomic force RMSE of 11.30 meV/Å.
+    reason: the value 11.3 does not appear in any of the claim's quotes
+    quotes:
+    - In total, 400 epochs i of fine-tuning were performed with the final model reaching 5.903×10 −2 meV/atom
+      in the root-mean-squared-error (RMSE) for energy, 11.30 meV/ ˚A for atomic forces and6.860×10 −2
+      meV/A3 for stress.
+    - All AIMD frames from both the equilibration and production trajectories were used for fine-tuning
+      the MACE foundation energy model (omat-0-medium), 14 with 5% of the data reserved for validation.
+    - In total, 400 epochs i of fine-tuning were performed
+  - statement: The fine-tuned MACE model achieved a stress RMSE of 0.06860 meV/A3.
+    reason: the statement contains the number 0.06860, which none of its quotes contain
+    quotes:
+    - In total, 400 epochs i of fine-tuning were performed with the final model reaching 5.903×10 −2 meV/atom
+      in the root-mean-squared-error (RMSE) for energy, 11.30 meV/ ˚A for atomic forces and6.860×10 −2
+      meV/A3 for stress.
+    - All AIMD frames from both the equilibration and production trajectories were used for fine-tuning
+      the MACE foundation energy model (omat-0-medium), 14 with 5% of the data reserved for validation.
+    - In total, 400 epochs i of fine-tuning were performed
+  tokens:
+    input: 18956
+    output: 1683
+  fetched_chars: 62705

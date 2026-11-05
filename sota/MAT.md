@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-04.
+Topic code `MAT`. Last reviewed 2026-11-05.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -169,6 +169,14 @@ Topic code `MAT`. Last reviewed 2026-11-04.
   - `CLM-MAT-0228` · component α-Fe2O3 microdisk · grade B · credibility unknown · measured · as of 2026-10-27
   - sources: SRC-00252
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **-1630 GHz** — In the four-atom primitive cell of NbOI2, the polar mode P is located at -1.63 THz.
+  - `CLM-MAT-0298` · material NbOI2, cell_type 4-atoms cell, mode polar mode P · grade B · credibility unknown · simulated · as of 2026-11-04
+  - sources: SRC-00298
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **-7240 GHz** — In the four-atom cell of NbOI2, the Peierls mode delta at the zone boundary point A is located at -7.24 THz.
+  - `CLM-MAT-0299` · material NbOI2, cell_type 4-atoms cell, mode Peierls mode δ · grade B · credibility unknown · simulated · as of 2026-11-04
+  - sources: SRC-00298
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### length device
 
@@ -430,6 +438,13 @@ Topic code `MAT`. Last reviewed 2026-11-04.
 - **≤ ≈1.4e+06 W/mm^2** — The maximum critical power density reached approximately 140 MW/cm2.
   - `CLM-MAT-0223` · material TiNx/Ti/TiNx · grade B · credibility unknown · measured · as of 2026-10-27
   - sources: SRC-00250
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+
+### pressure
+
+- **≥ ≈3.75031e+07 mTorr** — The measured fracture stress of the Si-assisted SAB bonded samples is approximately 5 to 6 MPa.
+  - `CLM-MAT-0296` · measurement Tensile testing · grade B · credibility unknown · measured · as of 2026-11-04
+  - sources: SRC-00297
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### qualitative
@@ -934,6 +949,14 @@ Topic code `MAT`. Last reviewed 2026-11-04.
   - `CLM-MAT-0289` · grade B · credibility unknown · simulated · as of 2026-11-03
   - sources: SRC-00290
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- In the single-domain conﬁguration 1○, the real part of σxxx equals the negative real part of σyyy.
+  - `CLM-MAT-0300` · grade B · credibility unknown · simulated · as of 2026-11-04
+  - sources: SRC-00299
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- In single-domain conﬁgurations 2○ and 3○, the real part of σxxx equals the real part of σyyy.
+  - `CLM-MAT-0301` · grade B · credibility unknown · simulated · as of 2026-11-04
+  - sources: SRC-00299
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1121,6 +1144,10 @@ Topic code `MAT`. Last reviewed 2026-11-04.
   - `CLM-MAT-0229` · p_mw 128 mW, simulation_type finite-element simulations · grade B · credibility unknown · simulated · as of 2026-10-27
   - sources: SRC-00252
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈50 K** — Finite-element simulations show that the channel hotspot temperature of the beta-Ga2O3 MOSFET drops by about 50 K at 4 W mm-1 with the Si interlayer.
+  - `CLM-MAT-0297` · dissipated_power 4 W mm-1 · grade B · credibility unknown · simulated · as of 2026-11-04
+  - sources: SRC-00297
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### thermal conductivity
 
@@ -1420,6 +1447,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 295
-- grades: {'B': 295}
-- distinct sources: 105
+- claims: 301
+- grades: {'B': 301}
+- distinct sources: 108

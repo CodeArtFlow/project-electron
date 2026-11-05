@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**14586 pair(s)** as of 2026-11-04.
+**14830 pair(s)** as of 2026-11-05.
 
 ## `area_die` (11 pair(s))
 
@@ -118,52 +118,52 @@ _and 627 more_
 | `CLM-ARCH-0022` = 169.1 x | `CLM-PROC-0062` = 417 x | 59% | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch | surrogate_model=deterministic U-Net |
 | `CLM-ARCH-0022` = 169.1 x | `CLM-PROC-0058` = 73 x | 57% | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch | surrogate_model=VP-DDBM, baseline_model=phase-field solver |
 
-## `frequency` (531 pair(s))
+## `frequency` (591 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
-| `CLM-ARCH-0042` = 25.9 GHz | `CLM-ARCH-0176` = 0.001 GHz | 100% | platform=optical PPLN module | component=comparator |
-| `CLM-ARCH-0042` = 25.9 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | platform=optical PPLN module | wavelength=400 nm |
-| `CLM-ARCH-0042` = 25.9 GHz | `CLM-PROC-0038` = 0.00061 GHz | 100% | platform=optical PPLN module | component=laser system |
-| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-ARCH-0151` = 4.34e+04 GHz | 100% | platform=integrated phononic device | component=FIGFLEX, activation_format=FP16 |
-| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-ARCH-0152` = 6.49e+04 GHz | 100% | platform=integrated phononic device | component=FIGFLEX, activation_format=FP16 |
-| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-DEV-0012` = 370 GHz | 100% | platform=integrated phononic device | magnetic_field=8.1 T, frequency=1.9 THz |
-| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-DEV-0013` = 180 GHz | 100% | platform=integrated phononic device | magnetic_field=7.5 T, frequency=2.2 THz |
-| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-MAT-0150` = 5000 GHz | 100% | platform=integrated phononic device | material=monolayer MoTe2, phonon_mode=A1g |
-| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0001` = 18.98 GHz | 100% | platform=integrated phononic device | component=single ring cavity, parameter=FSR |
-| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0003` = 15.41 GHz | 100% | platform=integrated phononic device | component=photonic molecule, mode_spacing=Ω2 |
-| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0036` = 121 GHz | 100% | platform=integrated phononic device | sample_size=22 measured devices |
-| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0049` = 267 GHz | 100% | platform=integrated phononic device | signal_type=measured phase noise |
-| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | platform=integrated phononic device | component=stabilized CW laser, frequency_offset=10 kHz |
-| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0051` = 230 GHz | 100% | platform=integrated phononic device | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
-| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PHOT-0052` = 320 GHz | 100% | platform=integrated phononic device | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
-| `CLM-ARCH-0043` = 0.0006 GHz | `CLM-PROC-0040` = 18 GHz | 100% | platform=integrated phononic device | material=1T-TaS2 flake, flake_thickness=70 nm, wavefront_type=fast wavefronts |
-| `CLM-ARCH-0070` = 0.556 GHz | `CLM-ARCH-0151` = 4.34e+04 GHz | 100% | process_node=TSMC 28 nm | component=FIGFLEX, activation_format=FP16 |
-| `CLM-ARCH-0070` = 0.556 GHz | `CLM-ARCH-0152` = 6.49e+04 GHz | 100% | process_node=TSMC 28 nm | component=FIGFLEX, activation_format=FP16 |
-| `CLM-ARCH-0070` = 0.556 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | process_node=TSMC 28 nm | wavelength=400 nm |
-| `CLM-ARCH-0070` = 0.556 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | process_node=TSMC 28 nm | component=stabilized CW laser, frequency_offset=10 kHz |
-| `CLM-ARCH-0073` = 0.5 GHz | `CLM-ARCH-0151` = 4.34e+04 GHz | 100% | process=45 nm | component=FIGFLEX, activation_format=FP16 |
-| `CLM-ARCH-0073` = 0.5 GHz | `CLM-ARCH-0152` = 6.49e+04 GHz | 100% | process=45 nm | component=FIGFLEX, activation_format=FP16 |
-| `CLM-ARCH-0073` = 0.5 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | process=45 nm | wavelength=400 nm |
-| `CLM-ARCH-0073` = 0.5 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 100% | process=45 nm | component=stabilized CW laser, frequency_offset=10 kHz |
-| `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-EDA-0014` = 0.22 GHz | 100% | component=FIGFLEX, activation_format=FP16 | configuration=CPI-optimized |
-| `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-EDA-0015` = 0.25 GHz | 100% | component=FIGFLEX, activation_format=FP16 | configuration=area-optimized |
-| `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-MAT-0148` = 0.001756 GHz | 100% | component=FIGFLEX, activation_format=FP16 | transition=f-g |
-| `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | component=FIGFLEX, activation_format=FP16 | wavelength=400 nm |
-| `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | component=FIGFLEX, activation_format=FP16 | angle_of_incidence=0° to 30°, rotation_angle=90° |
-| `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | component=FIGFLEX, activation_format=FP16 | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-PHOT-0124` = 0.0088 GHz | 100% | component=FIGFLEX, activation_format=FP16 | anharmonicity_coefficient=0.25 |
-| `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-EDA-0014` = 0.22 GHz | 100% | component=FIGFLEX, activation_format=FP16 | configuration=CPI-optimized |
-| `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-EDA-0015` = 0.25 GHz | 100% | component=FIGFLEX, activation_format=FP16 | configuration=area-optimized |
-| `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-MAT-0148` = 0.001756 GHz | 100% | component=FIGFLEX, activation_format=FP16 | transition=f-g |
-| `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-MAT-0153` = 1e-06 GHz | 100% | component=FIGFLEX, activation_format=FP16 | wavelength=400 nm |
-| `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-PHOT-0024` = 0.03 GHz | 100% | component=FIGFLEX, activation_format=FP16 | angle_of_incidence=0° to 30°, rotation_angle=90° |
-| `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-PHOT-0056` = 0.0048 GHz | 100% | component=FIGFLEX, activation_format=FP16 | device=Ho3+-doped fluoride glass waveguide laser |
-| `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-PHOT-0124` = 0.0088 GHz | 100% | component=FIGFLEX, activation_format=FP16 | anharmonicity_coefficient=0.25 |
-| `CLM-ARCH-0176` = 0.001 GHz | `CLM-DEV-0012` = 370 GHz | 100% | component=comparator | magnetic_field=8.1 T, frequency=1.9 THz |
-| `CLM-ARCH-0176` = 0.001 GHz | `CLM-DEV-0013` = 180 GHz | 100% | component=comparator | magnetic_field=7.5 T, frequency=2.2 THz |
+| `CLM-DEV-0012` = 370 GHz | `CLM-MAT-0298` = -1630 GHz | 123% | magnetic_field=8.1 T, frequency=1.9 THz | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P |
+| `CLM-MAT-0298` = -1630 GHz | `CLM-PHOT-0052` = 320 GHz | 120% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
+| `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-MAT-0299` = -7240 GHz | 117% | component=FIGFLEX, activation_format=FP16 | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ |
+| `CLM-MAT-0298` = -1630 GHz | `CLM-PHOT-0049` = 267 GHz | 116% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | signal_type=measured phase noise |
+| `CLM-MAT-0298` = -1630 GHz | `CLM-PHOT-0051` = 230 GHz | 114% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
+| `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-MAT-0299` = -7240 GHz | 111% | component=FIGFLEX, activation_format=FP16 | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ |
+| `CLM-DEV-0013` = 180 GHz | `CLM-MAT-0298` = -1630 GHz | 111% | magnetic_field=7.5 T, frequency=2.2 THz | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P |
+| `CLM-MAT-0298` = -1630 GHz | `CLM-PHOT-0036` = 121 GHz | 107% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | sample_size=22 measured devices |
+| `CLM-DEV-0012` = 370 GHz | `CLM-MAT-0299` = -7240 GHz | 105% | magnetic_field=8.1 T, frequency=1.9 THz | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ |
+| `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0052` = 320 GHz | 104% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
+| `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-MAT-0298` = -1630 GHz | 104% | component=FIGFLEX, activation_format=FP16 | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P |
+| `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 104% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | component=stabilized CW laser, frequency_offset=10 kHz |
+| `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0049` = 267 GHz | 104% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | signal_type=measured phase noise |
+| `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0051` = 230 GHz | 103% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
+| `CLM-ARCH-0152` = 6.49e+04 GHz | `CLM-MAT-0298` = -1630 GHz | 103% | component=FIGFLEX, activation_format=FP16 | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P |
+| `CLM-DEV-0013` = 180 GHz | `CLM-MAT-0299` = -7240 GHz | 102% | magnetic_field=7.5 T, frequency=2.2 THz | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ |
+| `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0036` = 121 GHz | 102% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | sample_size=22 measured devices |
+| `CLM-ARCH-0042` = 25.9 GHz | `CLM-MAT-0298` = -1630 GHz | 102% | platform=optical PPLN module | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P |
+| `CLM-MAT-0298` = -1630 GHz | `CLM-PHOT-0001` = 18.98 GHz | 101% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | component=single ring cavity, parameter=FSR |
+| `CLM-MAT-0298` = -1630 GHz | `CLM-PHOT-0003` = 15.41 GHz | 101% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | component=photonic molecule, mode_spacing=Ω2 |
+| `CLM-MAT-0298` = -1630 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 101% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | component=stabilized CW laser, frequency_offset=10 kHz |
+| `CLM-MAT-0298` = -1630 GHz | `CLM-PROC-0032` = 7.9 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | holder_type=two-channel holder, chip_type=Si/Si3N4 chip, metric=-3 dB bandwidth |
+| `CLM-MAT-0298` = -1630 GHz | `CLM-PHOT-0061` = 7.48 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | corner_radius=1.4 mm |
+| `CLM-DEV-0072` = 7 GHz | `CLM-MAT-0298` = -1630 GHz | 100% | measurement_method=BLS spectra | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P |
+| `CLM-MAT-0298` = -1630 GHz | `CLM-PHOT-0125` = 6 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | pump_detuning=27 MHz |
+| `CLM-ARCH-0042` = 25.9 GHz | `CLM-MAT-0299` = -7240 GHz | 100% | platform=optical PPLN module | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ |
+| `CLM-MAT-0298` = -1630 GHz | `CLM-PROC-0033` = 4.5 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | holder_type=four-channel configuration, metric=-3 dB bandwidth |
+| `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0001` = 18.98 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | component=single ring cavity, parameter=FSR |
+| `CLM-MAT-0298` = -1630 GHz | `CLM-PHOT-0002` = 3.57 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | component=photonic molecule, mode_spacing=Ω1 |
+| `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0003` = 15.41 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | component=photonic molecule, mode_spacing=Ω2 |
+| `CLM-MAT-0228` = 2.5 GHz | `CLM-MAT-0298` = -1630 GHz | 100% | component=α-Fe2O3 microdisk | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P |
+| `CLM-MAT-0299` = -7240 GHz | `CLM-PROC-0032` = 7.9 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | holder_type=two-channel holder, chip_type=Si/Si3N4 chip, metric=-3 dB bandwidth |
+| `CLM-DEV-0072` = 7 GHz | `CLM-MAT-0299` = -7240 GHz | 100% | measurement_method=BLS spectra | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ |
+| `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0061` = 7.48 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | corner_radius=1.4 mm |
+| `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0125` = 6 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | pump_detuning=27 MHz |
+| `CLM-MAT-0299` = -7240 GHz | `CLM-PROC-0033` = 4.5 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | holder_type=four-channel configuration, metric=-3 dB bandwidth |
+| `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0002` = 3.57 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | component=photonic molecule, mode_spacing=Ω1 |
+| `CLM-ARCH-0070` = 0.556 GHz | `CLM-MAT-0298` = -1630 GHz | 100% | process_node=TSMC 28 nm | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P |
+| `CLM-ARCH-0073` = 0.5 GHz | `CLM-MAT-0298` = -1630 GHz | 100% | process=45 nm | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P |
+| `CLM-MAT-0228` = 2.5 GHz | `CLM-MAT-0299` = -7240 GHz | 100% | component=α-Fe2O3 microdisk | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ |
 
-_and 491 more_
+_and 551 more_
 
 ## `length_device` (4713 pair(s))
 
@@ -212,7 +212,7 @@ _and 491 more_
 
 _and 4673 more_
 
-## `power` (226 pair(s))
+## `power` (245 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -248,6 +248,7 @@ _and 4673 more_
 | `CLM-ARCH-0071` = 370.1 mW | `CLM-MAT-0190` = 5.6e-09 mW | 100% | process_node=TSMC 28 nm | channel_material=(PEA)2PbI4 |
 | `CLM-ARCH-0071` = 370.1 mW | `CLM-MAT-0191` = 5e-08 mW | 100% | process_node=TSMC 28 nm | device_type=drop-cast control devices |
 | `CLM-ARCH-0071` = 370.1 mW | `CLM-PHOT-0068` = 0.00024 mW | 100% | process_node=TSMC 28 nm | operating_point=3 mW total trapping-beam power |
+| `CLM-ARCH-0114` = 3.55 mW | `CLM-ARCH-0190` = 2.838e+05 mW | 100% | component=PIM Chunk List, location=DRAM chip | benchmark=DiT-256 workload, process=28nm |
 | `CLM-ARCH-0114` = 3.55 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | component=PIM Chunk List, location=DRAM chip | benchmark_circuit=BGR, framework=AgenticSizing |
 | `CLM-ARCH-0114` = 3.55 mW | `CLM-MAT-0189` = 2e-10 mW | 100% | component=PIM Chunk List, location=DRAM chip | channel_material=(PEA)2PbI4, vds=5 V |
 | `CLM-ARCH-0114` = 3.55 mW | `CLM-MAT-0190` = 5.6e-09 mW | 100% | component=PIM Chunk List, location=DRAM chip | channel_material=(PEA)2PbI4 |
@@ -255,15 +256,20 @@ _and 4673 more_
 | `CLM-ARCH-0149` = 4020 mW | `CLM-ARCH-0166` = 0.027 mW | 100% | component=FIGFLEX, toggle_rate=0.2, activation_format=FP16, precision=INT4 | processor=TEXEL |
 | `CLM-ARCH-0149` = 4020 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | component=FIGFLEX, toggle_rate=0.2, activation_format=FP16, precision=INT4 | benchmark_circuit=BGR, framework=AgenticSizing |
 | `CLM-ARCH-0149` = 4020 mW | `CLM-MAT-0189` = 2e-10 mW | 100% | component=FIGFLEX, toggle_rate=0.2, activation_format=FP16, precision=INT4 | channel_material=(PEA)2PbI4, vds=5 V |
-| `CLM-ARCH-0149` = 4020 mW | `CLM-MAT-0190` = 5.6e-09 mW | 100% | component=FIGFLEX, toggle_rate=0.2, activation_format=FP16, precision=INT4 | channel_material=(PEA)2PbI4 |
 
-_and 186 more_
+_and 205 more_
 
 ## `power_density` (1 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-DEV-0079` = 3.1e-05 W/mm^2 | `CLM-MAT-0026` = 4.8e-07 W/mm^2 | 98% | structure=long-base p+-n device, n_base_width=300 𝜇𝜇m, framework=extended theory | environment=ambient |
+
+## `pressure` (1 pair(s))
+
+| Claim A | Claim B | Gap | A's conditions | B's conditions |
+|---|---|---|---|---|
+| `CLM-DEV-0064` = 6e-06 torr | `CLM-MAT-0296` = 3.75e+04 torr | 100% | temperature=room temperature | measurement=Tensile testing |
 
 ## `relative_deviation` (6299 pair(s))
 
@@ -366,22 +372,28 @@ _and 6259 more_
 
 _and 276 more_
 
-## `temperature_delta` (12 pair(s))
+## `temperature_delta` (18 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-PHOT-0037` = 0.11 K | `CLM-PHOT-0086` = 275.2 K | 100% | cavity_length=20 µm, beam_shape=circular, incident_power=1.09 mW | external_pump_power=300 μW |
 | `CLM-PHOT-0037` = 0.11 K | `CLM-PHOT-0091` = 281.6 K | 100% | cavity_length=20 µm, beam_shape=circular, incident_power=1.09 mW | device=microdisk, pump_power=12.4 mW |
+| `CLM-MAT-0297` = 50 K | `CLM-PHOT-0037` = 0.11 K | 100% | dissipated_power=4 W mm-1 | cavity_length=20 µm, beam_shape=circular, incident_power=1.09 mW |
 | `CLM-DEV-0024` = 30.4 K | `CLM-PHOT-0037` = 0.11 K | 100% | gate_bias_vgs=-2.7 V | cavity_length=20 µm, beam_shape=circular, incident_power=1.09 mW |
 | `CLM-DEV-0034` = 3 K | `CLM-PHOT-0091` = 281.6 K | 99% | time_after_cooling_onset=10 s | device=microdisk, pump_power=12.4 mW |
 | `CLM-DEV-0034` = 3 K | `CLM-PHOT-0086` = 275.2 K | 99% | time_after_cooling_onset=10 s | external_pump_power=300 μW |
 | `CLM-MAT-0229` = 5 K | `CLM-PHOT-0091` = 281.6 K | 98% | p_mw=128 mW, simulation_type=finite-element simulations | device=microdisk, pump_power=12.4 mW |
 | `CLM-MAT-0229` = 5 K | `CLM-PHOT-0086` = 275.2 K | 98% | p_mw=128 mW, simulation_type=finite-element simulations | external_pump_power=300 μW |
 | `CLM-DEV-0034` = 3 K | `CLM-PHOT-0037` = 0.11 K | 96% | time_after_cooling_onset=10 s | cavity_length=20 µm, beam_shape=circular, incident_power=1.09 mW |
+| `CLM-DEV-0034` = 3 K | `CLM-MAT-0297` = 50 K | 94% | time_after_cooling_onset=10 s | dissipated_power=4 W mm-1 |
 | `CLM-DEV-0024` = 30.4 K | `CLM-DEV-0034` = 3 K | 90% | gate_bias_vgs=-2.7 V | time_after_cooling_onset=10 s |
+| `CLM-MAT-0229` = 5 K | `CLM-MAT-0297` = 50 K | 90% | p_mw=128 mW, simulation_type=finite-element simulations | dissipated_power=4 W mm-1 |
 | `CLM-DEV-0024` = 30.4 K | `CLM-PHOT-0091` = 281.6 K | 89% | gate_bias_vgs=-2.7 V | device=microdisk, pump_power=12.4 mW |
 | `CLM-DEV-0024` = 30.4 K | `CLM-PHOT-0086` = 275.2 K | 89% | gate_bias_vgs=-2.7 V | external_pump_power=300 μW |
 | `CLM-DEV-0024` = 30.4 K | `CLM-MAT-0229` = 5 K | 84% | gate_bias_vgs=-2.7 V | p_mw=128 mW, simulation_type=finite-element simulations |
+| `CLM-MAT-0297` = 50 K | `CLM-PHOT-0091` = 281.6 K | 82% | dissipated_power=4 W mm-1 | device=microdisk, pump_power=12.4 mW |
+| `CLM-MAT-0297` = 50 K | `CLM-PHOT-0086` = 275.2 K | 82% | dissipated_power=4 W mm-1 | external_pump_power=300 μW |
+| `CLM-DEV-0024` = 30.4 K | `CLM-MAT-0297` = 50 K | 39% | gate_bias_vgs=-2.7 V | dissipated_power=4 W mm-1 |
 
 ## `thermal_conductivity` (1 pair(s))
 
@@ -389,7 +401,7 @@ _and 276 more_
 |---|---|---|---|---|
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0007` = 3100 W/(m*K) | 99% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | temperature=room-temperature, sample_13c_concentration=~0.00024% |
 
-## `time` (1421 pair(s))
+## `time` (1579 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -403,6 +415,7 @@ _and 276 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0188` = 3.24e+10 ns | 100% | device_type=FTJ, architecture=Naive | benchmark=matmul_single_core, simulator=Wolfpine |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0189` = 7.2e+09 ns | 100% | device_type=FTJ, architecture=Naive | benchmark=matmul_single_core, simulator=ttsim |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-DEV-0066` = 6e+10 ns | 100% | device_type=FTJ, architecture=Naive | software=MATLAB Deep Learning Toolbox |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-DEV-0089` = 0.007 ns | 100% | device_type=FTJ, architecture=Naive | sample=SESAM |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0011` = 1.35e+08 ns | 100% | device_type=FTJ, architecture=Naive | tool=JasperGold, module=cache coherence module |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0012` = 1.273e+09 ns | 100% | device_type=FTJ, architecture=Naive | tool=JasperGold, module=L1 Bus Interface module |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0119` = 0.00029 ns | 100% | device_type=FTJ, architecture=Naive | material=MAPbBr3, measurement_method=Time-resolved optical Kerr-effect measurements |
@@ -432,9 +445,8 @@ _and 276 more_
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0188` = 3.24e+10 ns | 100% | device_type=FTJ, architecture=Merged | benchmark=matmul_single_core, simulator=Wolfpine |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0189` = 7.2e+09 ns | 100% | device_type=FTJ, architecture=Merged | benchmark=matmul_single_core, simulator=ttsim |
 | `CLM-ARCH-0013` = 162 ns | `CLM-DEV-0066` = 6e+10 ns | 100% | device_type=FTJ, architecture=Merged | software=MATLAB Deep Learning Toolbox |
-| `CLM-ARCH-0013` = 162 ns | `CLM-EDA-0011` = 1.35e+08 ns | 100% | device_type=FTJ, architecture=Merged | tool=JasperGold, module=cache coherence module |
 
-_and 1381 more_
+_and 1539 more_
 
 ## `voltage` (99 pair(s))
 

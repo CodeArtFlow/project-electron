@@ -8219,3 +8219,179 @@ claims:
     conditions:
       fit_function: Eq. ( 13)
       experimental_data_source: Ref. [ 6]
+- id: CLM-MAT-0296
+  topic: MAT
+  statement: The measured fracture stress of the Si-assisted SAB bonded samples is approximately 5 to
+    6 MPa.
+  sources:
+  - SRC-00297
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-04'
+  created: '2026-11-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    measurement: Tensile testing
+  quantity:
+    quantity: pressure
+    bound: lower_bound
+    approximate: true
+    as_published:
+      value: 5.0
+      unit: MPa
+    si_base:
+      value: 5000000.0
+      unit: Pa
+    display:
+      value: 37503084.13520849
+      unit: mTorr
+    conditions:
+      measurement: Tensile testing
+- id: CLM-MAT-0297
+  topic: MAT
+  statement: Finite-element simulations show that the channel hotspot temperature of the beta-Ga2O3 MOSFET
+    drops by about 50 K at 4 W mm-1 with the Si interlayer.
+  sources:
+  - SRC-00297
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-04'
+  created: '2026-11-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    dissipated_power: 4 W mm-1
+  quantity:
+    quantity: temperature_delta
+    bound: exact
+    approximate: true
+    as_published:
+      value: 50.0
+      unit: K
+    si_base:
+      value: 50.0
+      unit: K
+    display:
+      value: 50.0
+      unit: K
+    conditions:
+      dissipated_power: 4 W mm-1
+- id: CLM-MAT-0298
+  topic: MAT
+  statement: In the four-atom primitive cell of NbOI2, the polar mode P is located at -1.63 THz.
+  sources:
+  - SRC-00298
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-04'
+  created: '2026-11-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    material: NbOI2
+    cell_type: 4-atoms cell
+    mode: polar mode P
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: -1.63
+      unit: THz
+    si_base:
+      value: -1630000000000.0
+      unit: Hz
+    display:
+      value: -1630.0
+      unit: GHz
+    conditions:
+      material: NbOI2
+      cell_type: 4-atoms cell
+      mode: polar mode P
+- id: CLM-MAT-0299
+  topic: MAT
+  statement: In the four-atom cell of NbOI2, the Peierls mode delta at the zone boundary point A is located
+    at -7.24 THz.
+  sources:
+  - SRC-00298
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-04'
+  created: '2026-11-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    material: NbOI2
+    cell_type: 4-atoms cell
+    mode: Peierls mode δ
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: -7.24
+      unit: THz
+    si_base:
+      value: -7240000000000.0
+      unit: Hz
+    display:
+      value: -7240.0
+      unit: GHz
+    conditions:
+      material: NbOI2
+      cell_type: 4-atoms cell
+      mode: Peierls mode δ
+- id: CLM-MAT-0300
+  topic: MAT
+  statement: In the single-domain conﬁguration 1○, the real part of σxxx equals the negative real part
+    of σyyy.
+  sources:
+  - SRC-00299
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-04'
+  created: '2026-11-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MAT-0301
+  topic: MAT
+  statement: In single-domain conﬁgurations 2○ and 3○, the real part of σxxx equals the real part of σyyy.
+  sources:
+  - SRC-00299
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-04'
+  created: '2026-11-05'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2

@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-04.
+Topic code `ARCH`. Last reviewed 2026-11-05.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -124,14 +124,17 @@ Topic code `ARCH`. Last reviewed 2026-11-04.
   - `CLM-ARCH-0007` · component 1024-MAC Systolic Array, architecture MiX-INT4g16, array_size 1024-MAC, process 28nm, frequency 500 MHz · grade B · credibility unknown · simulated · as of 2026-09-17
   - sources: SRC-00005
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0110 — see the open register
 - **0.0318 W** — The 512-MAC systolic array for MiX-INT4g16 consumes 31.8 mW of power in 28nm at 500 MHz.
   - `CLM-ARCH-0008` · architecture MiX-INT4g16, array_size 512-MAC, process 28nm, frequency 500 MHz · grade B · credibility unknown · simulated · as of 2026-09-17
   - sources: SRC-00005
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0111 — see the open register
 - **0.0268 W** — The 512-MAC systolic array for MiX-INT4 consumes 26.8 mW of power in 28nm at 500 MHz.
   - `CLM-ARCH-0009` · architecture MiX-INT4, array_size 512-MAC, process 28nm, frequency 500 MHz · grade B · credibility unknown · simulated · as of 2026-09-17
   - sources: SRC-00005
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0112 — see the open register
 - **0.787 W** — The synthesized SRAM-PIM subsystem consumes 0.787 W of power.
   - `CLM-ARCH-0037` · component synthesized SRAM-PIM subsystem · grade B · credibility unknown · simulated · as of 2026-09-28
   - sources: SRC-00044
@@ -162,6 +165,11 @@ Topic code `ARCH`. Last reviewed 2026-11-04.
   - `CLM-ARCH-0166` · processor TEXEL · grade B · credibility unknown · measured · as of 2026-10-27
   - sources: SRC-00245
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **283.8 W** — Phantom consumes 283.8 W under the DiT-256 workload.
+  - `CLM-ARCH-0190` · benchmark DiT-256 workload, process 28nm · grade B · credibility unknown · simulated · as of 2026-11-04
+  - sources: SRC-00300
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0110, CFL-0111, CFL-0112 — see the open register
 
 ### qualitative
 
@@ -509,6 +517,30 @@ Topic code `ARCH`. Last reviewed 2026-11-04.
   - `CLM-ARCH-0183` · workload 55 randomly selected 8-core heterogeneous workload mixes, design Caerus · grade B · credibility unknown · simulated · as of 2026-10-29
   - sources: SRC-00265
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Scanning librt.a yields 517 non-trivial gadgets.
+  - `CLM-ARCH-0191` · grade B · credibility unknown · simulated · as of 2026-11-04
+  - sources: SRC-00301
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Hardware shadow return-index protection is projected to add an upper bound of 8% dynamic overhead on the median kernel.
+  - `CLM-ARCH-0192` · workload median kernel · grade B · credibility unknown · projected · as of 2026-11-04
+  - sources: SRC-00301
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Software emulation of hardware shadow stack semantics inflates committed .text by approximately 40% at the median.
+  - `CLM-ARCH-0193` · implementation software emulation · grade B · credibility unknown · projected · as of 2026-11-04
+  - sources: SRC-00301
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Adding one to three pins per kernel reduces compile time by a geometric-mean factor of 1.72x.
+  - `CLM-ARCH-0194` · pin_count one to three pins per kernel · grade B · credibility unknown · simulated · as of 2026-11-04
+  - sources: SRC-00302
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Explicit time pins reduce compile time on AXPY by up to 3.50x.
+  - `CLM-ARCH-0195` · grade B · credibility unknown · simulated · as of 2026-11-04
+  - sources: SRC-00302
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Fixed placement increases schedule latency across all 30 instances by a geometric-mean factor of 1.24x compared to the cluster flow.
+  - `CLM-ARCH-0196` · grade B · credibility unknown · simulated · as of 2026-11-04
+  - sources: SRC-00302
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -842,9 +874,18 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0094` — frequency: _unexamined; classification pending_
   - claims: CLM-ARCH-0151, CLM-ARCH-0152
   - missing data: `not yet named`
+- `CFL-0110` — power: _unexamined; classification pending_
+  - claims: CLM-ARCH-0007, CLM-ARCH-0190
+  - missing data: `not yet named`
+- `CFL-0111` — power: _unexamined; classification pending_
+  - claims: CLM-ARCH-0008, CLM-ARCH-0190
+  - missing data: `not yet named`
+- `CFL-0112` — power: _unexamined; classification pending_
+  - claims: CLM-ARCH-0009, CLM-ARCH-0190
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 189
-- grades: {'B': 189}
-- distinct sources: 60
+- claims: 196
+- grades: {'B': 196}
+- distinct sources: 63
