@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-11-05.
+Topic code `PROC`. Last reviewed 2026-11-06.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -123,6 +123,20 @@ Topic code `PROC`. Last reviewed 2026-11-05.
   - sources: SRC-00275
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0102 — see the open register
+- **≤ ≈1500 nm** — The laser fabrication of vibrating microcavities leads to a surface bulging height of up to 1.5 µm.
+  - `CLM-PROC-0063` · process single ultrashort laser pulses · grade B · credibility unknown · measured · as of 2026-11-05
+  - sources: SRC-00308
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1540 nm** — The dome of the microcavity formed by a single pulse at a peak fluence of F = 603 ± 30 mJ/cm2 features a maximum height of h = 1.54 µm.
+  - `CLM-PROC-0064` · peak_fluence 603 ± 30 mJ/cm2 · grade B · credibility unknown · measured · as of 2026-11-05
+  - sources: SRC-00308
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0115 — see the open register
+- **25200 nm** — The microcavity formed at a peak fluence of F = 603 ± 30 mJ/cm2 has a radius of r = 25.2 µm.
+  - `CLM-PROC-0065` · peak_fluence 603 ± 30 mJ/cm2, measurement_method AFM · grade B · credibility unknown · measured · as of 2026-11-05
+  - sources: SRC-00308
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0115 — see the open register
 
 ### qualitative
 
@@ -371,9 +385,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0109` — time: _unexamined; classification pending_
   - claims: CLM-PROC-0059, CLM-PROC-0061
   - missing data: `not yet named`
+- `CFL-0115` — length_device: _unexamined; classification pending_
+  - claims: CLM-PROC-0064, CLM-PROC-0065
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 62
-- grades: {'B': 62}
-- distinct sources: 19
+- claims: 65
+- grades: {'B': 65}
+- distinct sources: 20

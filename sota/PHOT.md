@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-05.
+Topic code `PHOT`. Last reviewed 2026-11-06.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -167,6 +167,10 @@ Topic code `PHOT`. Last reviewed 2026-11-05.
   - `CLM-PHOT-0123` · target_distance 30 mm, target_waist 2 µm · grade B · credibility unknown · simulated · as of 2026-10-29
   - sources: SRC-00266
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **500000 nm** — The experimental pumping length L is 500 μm for each elementary channel.
+  - `CLM-PHOT-0131` · channel_type elementary channel · grade B · credibility unknown · measured · as of 2026-11-05
+  - sources: SRC-00305
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -562,6 +566,10 @@ Topic code `PHOT`. Last reviewed 2026-11-05.
   - `CLM-PHOT-0099` · mo_coupling_coefficient 0 · grade B · credibility unknown · simulated · as of 2026-10-22
   - sources: SRC-00215
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≥ 0.274 um** — The 500 µm design-rule counter-diabatic coupler maintains greater than 99% supermode transfer over a 274 nm wavelength range.
+  - `CLM-PHOT-0132` · length_device 500µm, design_type design-rule coupler, minimum_edge_gap 1.05µm · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00307
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -597,6 +605,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 130
-- grades: {'B': 123, 'A': 7}
-- distinct sources: 42
+- claims: 132
+- grades: {'B': 125, 'A': 7}
+- distinct sources: 44

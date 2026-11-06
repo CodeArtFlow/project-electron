@@ -2005,3 +2005,107 @@ claims:
       unit: dimensionless
     conditions:
       surrogate_model: deterministic U-Net
+- id: CLM-PROC-0063
+  topic: PROC
+  statement: The laser fabrication of vibrating microcavities leads to a surface bulging height of up
+    to 1.5 µm.
+  sources:
+  - SRC-00308
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    process: single ultrashort laser pulses
+  quantity:
+    quantity: length_device
+    bound: upper_bound
+    approximate: true
+    as_published:
+      value: 1.5
+      unit: µm
+    si_base:
+      value: 1.5e-06
+      unit: m
+    display:
+      value: 1499.9999999999998
+      unit: nm
+    conditions:
+      process: single ultrashort laser pulses
+- id: CLM-PROC-0064
+  topic: PROC
+  statement: The dome of the microcavity formed by a single pulse at a peak fluence of F = 603 ± 30 mJ/cm2
+    features a maximum height of h = 1.54 µm.
+  sources:
+  - SRC-00308
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    peak_fluence: 603 ± 30 mJ/cm2
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.54
+      unit: µm
+    si_base:
+      value: 1.5399999999999999e-06
+      unit: m
+    display:
+      value: 1539.9999999999998
+      unit: nm
+    conditions:
+      peak_fluence: 603 ± 30 mJ/cm2
+- id: CLM-PROC-0065
+  topic: PROC
+  statement: The microcavity formed at a peak fluence of F = 603 ± 30 mJ/cm2 has a radius of r = 25.2
+    µm.
+  sources:
+  - SRC-00308
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    peak_fluence: 603 ± 30 mJ/cm2
+    measurement_method: AFM
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 25.2
+      unit: µm
+    si_base:
+      value: 2.52e-05
+      unit: m
+    display:
+      value: 25199.999999999996
+      unit: nm
+    conditions:
+      peak_fluence: 603 ± 30 mJ/cm2
+      measurement_method: AFM

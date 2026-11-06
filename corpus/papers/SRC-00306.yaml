@@ -1,0 +1,126 @@
+id: SRC-00306
+title: 'CAMP: Context-Aware Mapping and Placement for LLMs on 3D-IMC Arrays'
+doi: null
+arxiv_id: 2611.07707v1
+url: https://arxiv.org/abs/2611.07707v1
+venue_id: arxiv_api
+authors:
+- name: Orhun Görkem
+  affiliation: null
+  corresponding: null
+- name: Athanasios Vasilopoulos
+  affiliation: null
+  corresponding: null
+- name: Georgios Pagonis
+  affiliation: null
+  corresponding: null
+- name: Victoria Clerico
+  affiliation: null
+  corresponding: null
+- name: Hadjer Benmeziane
+  affiliation: null
+  corresponding: null
+- name: Irem Boybat
+  affiliation: null
+  corresponding: null
+- name: Hsinyu Tsai
+  affiliation: null
+  corresponding: null
+- name: Abu Sebastian
+  affiliation: null
+  corresponding: null
+- name: William Andrew Simon
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-05'
+retrieved_date: '2026-11-06'
+access: full_text
+read_scope: Automated reading. The full PDF text (95,168 characters, 20 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.07707v1 on
+  2026-11-06. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“improving 3D-IMC compute utilization from 42.4% to 60.3%”
+
+  “Results are obtained by combining GPU-profiled attention benchmarks with a Torch-integrated 3D-IMC
+  simulator.”'
+method_summary: '“CAMP is an offline, software-based solution requiring no hardware changes and improving
+  3D-IMC compute utilization from 42.4% to 60.3%, delivering up to 2.0× higher 3D-IMC throughput and 1.74×
+  higher end-to-end throughput over state-of-the-art mapping algorithms.”
+
+  “Results are obtained by combining GPU-profiled attention benchmarks with a Torch-integrated 3D-IMC
+  simulator.”'
+limitations: “The runtime of the proposed algorithm, however, scales quadratically with the number of
+  MVMs being mapped.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 32042
+    output: 2750
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: CAMP delivers up to 2.0× higher 3D-IMC throughput over state-of-the-art mapping algorithms.
+    reason: 'unit conversion refused: throughput_tool: could not parse 2.0 ''×'': missing operand'
+    quotes:
+    - delivering up to 2.0× higher 3D-IMC throughput and 1.74× higher end-to-end throughput over state-of-the-art
+      mapping algorithms.
+    - Results are obtained by combining GPU-profiled attention benchmarks with a Torch-integrated 3D-IMC
+      simulator.
+  - statement: CAMP delivers up to 1.74× higher end-to-end throughput over state-of-the-art mapping algorithms.
+    reason: 'unit conversion refused: throughput_tool: could not parse 1.74 ''×'': missing operand'
+    quotes:
+    - delivering up to 2.0× higher 3D-IMC throughput and 1.74× higher end-to-end throughput over state-of-the-art
+      mapping algorithms.
+    - Results are obtained by combining GPU-profiled attention benchmarks with a Torch-integrated 3D-IMC
+      simulator.
+  - statement: CAMP achieves an average throughput speedup of 1.10x for Mixtral inference at a batch size
+      of 1.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''For MoE-based
+      LLMs, however, EP provides an additional source of paral'''
+    quotes:
+    - For MoE-based LLMs, however, EP provides an additional source of parallelism even in single-batch
+      workloads. Consequently, the full-compute bound projects a modest1.15× speedup for Mixtral inference,
+      whileCAMP achieves an average throughput
+    - Results are obtained by combining GPU-profiled attention benchmarks with a Torch-integrated 3D-IMC
+      simulator.
+    - Mixtral inference
+    - single-batch workloads
+  - statement: CAMP reaches up to 1.14x throughput speedup for Mixtral inference at a batch size of 1.
+    reason: the statement contains the number 1.14, which none of its quotes contain
+    quotes:
+    - whileCAMP achieves an average throughput speedup of1 .10×, reaching up to1 .14× depending on the
+      experts activated by the batch.
+    - Results are obtained by combining GPU-profiled attention benchmarks with a Torch-integrated 3D-IMC
+      simulator.
+    - Mixtral inference
+    - single-batch workloads
+  - statement: Throughput gains reach 2.0× for Qwen 72B using CAMP at larger batch sizes.
+    reason: 'unit conversion refused: throughput_tool: could not parse 2.0 ''×'': missing operand'
+    quotes:
+    - Throughput gains reach1.95× for Llama 8B,1.91× for Llama 70B, and2.0× for Qwen 72B.
+    - Results are obtained by combining GPU-profiled attention benchmarks with a Torch-integrated 3D-IMC
+      simulator.
+    - and2.0× for Qwen 72B.
+    - CAMP eliminates a majority of the throughput gap
+  - statement: For Mixtral, CAMP achieves a 1.71× average throughput speedup at larger batch sizes.
+    reason: 'unit conversion refused: throughput_tool: could not parse 1.71 ''×'': missing operand'
+    quotes:
+    - For Mixtral, CAMP achieves a 1.71× average speedup and up to a1.84× maximum speedup.
+    - Results are obtained by combining GPU-profiled attention benchmarks with a Torch-integrated 3D-IMC
+      simulator.
+    - For Mixtral, CAMP achieves a 1.71× average speedup
+  - statement: CAMP achieves up to a 1.84× maximum throughput speedup for Mixtral at larger batch sizes.
+    reason: 'unit conversion refused: throughput_tool: could not parse 1.84 ''×'': missing operand'
+    quotes:
+    - For Mixtral, CAMP achieves a 1.71× average speedup and up to a1.84× maximum speedup.
+    - Results are obtained by combining GPU-profiled attention benchmarks with a Torch-integrated 3D-IMC
+      simulator.
+    - For Mixtral, CAMP achieves a 1.71× average speedup
+corrections: []

@@ -3687,3 +3687,74 @@ claims:
     model: gemini-3.6-flash
     prompt_version: reader-v5
     verified_quotes: 2
+- id: CLM-PHOT-0131
+  topic: PHOT
+  statement: The experimental pumping length L is 500 μm for each elementary channel.
+  sources:
+  - SRC-00305
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    channel_type: elementary channel
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 500.0
+      unit: μm
+    si_base:
+      value: 0.0005
+      unit: m
+    display:
+      value: 499999.99999999994
+      unit: nm
+    conditions:
+      channel_type: elementary channel
+- id: CLM-PHOT-0132
+  topic: PHOT
+  statement: The 500 µm design-rule counter-diabatic coupler maintains greater than 99% supermode transfer
+    over a 274 nm wavelength range.
+  sources:
+  - SRC-00307
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    length_device: 500µm
+    design_type: design-rule coupler
+    minimum_edge_gap: 1.05µm
+  quantity:
+    quantity: wavelength
+    bound: lower_bound
+    approximate: false
+    as_published:
+      value: 274.0
+      unit: nm
+    si_base:
+      value: 2.74e-07
+      unit: m
+    display:
+      value: 0.27399999999999997
+      unit: um
+    conditions:
+      length_device: 500µm
+      design_type: design-rule coupler
+      minimum_edge_gap: 1.05µm

@@ -5567,3 +5567,69 @@ claims:
     model: gemini-3.6-flash
     prompt_version: reader-v5
     verified_quotes: 2
+- id: CLM-ARCH-0197
+  topic: ARCH
+  statement: Memory fit updates incur a 1.2% overhead of OS kernel notification processing.
+  sources:
+  - SRC-00303
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    process_type: OS kernel notification processing
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.2
+      unit: '%'
+    si_base:
+      value: 0.012
+      unit: dimensionless
+    display:
+      value: 1.2
+      unit: percent
+    conditions:
+      process_type: OS kernel notification processing
+- id: CLM-ARCH-0198
+  topic: ARCH
+  statement: CAMP improves average 3D-IMC compute utilization from 42.4% to 60.3%.
+  sources:
+  - SRC-00306
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-06'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline_utilization: 42.4%
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 60.3
+      unit: '%'
+    si_base:
+      value: 0.603
+      unit: dimensionless
+    display:
+      value: 60.3
+      unit: percent
+    conditions:
+      baseline_utilization: 42.4%

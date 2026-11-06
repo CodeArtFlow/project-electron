@@ -1,0 +1,122 @@
+id: SRC-00308
+title: 'Laser fabrication of vibrating microcavities on silicon: Formation dynamics and frequency tunability'
+doi: null
+arxiv_id: 2611.07742v1
+url: https://arxiv.org/abs/2611.07742v1
+venue_id: arxiv_api
+authors:
+- name: Belen Valiente
+  affiliation: null
+  corresponding: null
+- name: Gonzalo Gomez-Munoz
+  affiliation: null
+  corresponding: null
+- name: Mario Garcia-Lechuga
+  affiliation: null
+  corresponding: null
+- name: Irene Solana
+  affiliation: null
+  corresponding: null
+- name: Fernando Agulló-Rueda
+  affiliation: null
+  corresponding: null
+- name: David Grojo
+  affiliation: null
+  corresponding: null
+- name: Angel Rodriguez-Fernandez
+  affiliation: null
+  corresponding: null
+- name: Javier Solis
+  affiliation: null
+  corresponding: null
+- name: Jan Siegel
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-05'
+retrieved_date: '2026-11-06'
+access: full_text
+read_scope: Automated reading. The full PDF text (76,645 characters, 24 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.07742v1 on
+  2026-11-06. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“leading to the formation of a microcavity accompan ied by a surface bulging up to 1.5 µm.”
+
+  “exposing our material system to single ultrashort laser pulses above the evaporation threshold of Si”
+
+  “The formation dynamics of the microcavities has been investigated by time-resolved optical probe techniques.”
+
+  “The dome features a maximum height of h = 1.54 µm and a radius of r = 25.2 µm.”
+
+  “Topography map of a microcavity fabrication by a single pulse at F = 603 ± 30 mJ/cm2 measured by AFM.”
+
+  “The topography of selected microcavities has been characterized by atomic force microscopy (AFM) (Park
+  Systems, XE7) in non-contact mode.”'
+method_summary: “Ultrafast pump -probe microscopy resolves the initial stages of substrate melting, the
+  onset of layer expansi on followed by relaxation.”
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 22625
+    output: 2844
+  claims_accepted: 3
+  claims_rejected: 5
+  rejected:
+  - statement: The amorphization threshold fluence Fam for Si covered by thermal oxide is 150 ± 8 mJ/cm2.
+    reason: '[missing_required_conditions] euv_dose requires resist; missing resist'
+    quotes:
+    - This representation also allows to precisely determine the amorphization threshold by taking the
+      intersection of the fitted line with the x -axis (= diameter equals zero), yielding Fam = 150 ±
+      8 mJ/cm2.
+    - This representation allows to evaluate to which extent the spatial laser intensity distribution
+      at the sample plane is Gaussian, as proposed by Liu 27.
+    - The strategy for the fabrication of FLD microcavities in STO samples (Si wafer covered by 1.0 m
+      thick SiO2 layer)
+  - statement: The threshold fluence for cavity formation Fcav is 362 ± 18 mJ/cm2.
+    reason: '[missing_required_conditions] euv_dose requires resist; missing resist'
+    quotes:
+    - Also included in Fig. 2( b) is a plot of the square of the diameter of the microcavity region dcav2
+      (green symbols). Also here, the data points can be fitted to a straight line, whose intersection
+      with the x -axis yields the threshold fluen
+    - Optical microscopy images of a series of microcavities fabricated by single laser pulses at increasing
+      fluences (specified by labels) , using LED2 = 810 nm as illumination wavelength.
+    - The strategy for the fabrication of FLD microcavities in STO samples (Si wafer covered by 1.0 m
+      thick SiO2 layer)
+  - statement: The measured main vibration frequency fmain of a prefabricated circular microcavity under
+      re-excitation is 13.2 MHz at a fabrication fluence of F = 403 mJ/cm2.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - Fig. 5(e) shows the corresponding FFT traces, yielding main frequencies fmain = 13.2 MHz for the
+      lower fluence, and fmain = 7.8 MHz for the higher fluence.
+    - Fig. 5(d) shows real time reflectivity measurement upon centered re -excitation at normal incidence
+      of an identical elliptical cavity as the one studied in sections 2.2 and 2.3.
+    - Fig. 5(c) shows microscope images of two selected cavities for F = 403 mJ/cm2 and F = 498 mJ/cm2.
+    - We have performed re -excitation studies on selected circular cavities fabricated at different fluences
+  - statement: The measured main vibration frequency fmain of a circular microcavity fabricated at F =
+      498 mJ/cm2 is 7.8 MHz.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - Fig. 5(e) shows the corresponding FFT traces, yielding main frequencies fmain = 13.2 MHz for the
+      lower fluence, and fmain = 7.8 MHz for the higher fluence.
+    - Corresponding reflectivity evolutions of the two prefabricated cavities shown in (c), using colinear
+      fs laser re-excitation at low fluences .
+    - Fig. 5(c) shows microscope images of two selected cavities for F = 403 mJ/cm2 and F = 498 mJ/cm2.
+    - We have performed re -excitation studies on selected circular cavities fabricated at different fluences
+  - statement: The quality factor Q of the oscillation for the circular cavity fabricated at F = 403 mJ/cm2
+      is approximately 47.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit '''' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit e'
+    quotes:
+    - For the two cases of circular cavities, the obtained values are Q403mJ/cm2  47 and Q498mJ/cm2 
+      33.
+    - It should be pointed out that the quality factor of these oscillations Q = fmain /  fmain, with
+       fmain being the FWHM width, is rather high.
+corrections: []

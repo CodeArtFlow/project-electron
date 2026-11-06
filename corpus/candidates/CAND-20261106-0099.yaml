@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.07564v1
 doi: null
-title: Experimental demonstration of dual-polarization nonreciprocal thermal emission
-  at moderate magnetic fields
+title: Experimental demonstration of dual-polarization nonreciprocal thermal emission at moderate magnetic
+  fields
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-05'
@@ -29,6 +29,45 @@ id: CAND-20261106-0099
 harvested_date: '2026-11-06'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-06'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: 'At an angle of incidence of 57.3 deg and an applied magnetic field of 0.48 T, the structure
+      exhibits a measured difference in absorptivity between +B and -B of '
+    reason: the statement contains the number 57.3, which none of its quotes contain
+    quotes:
+    - Under a 0.48 T field from a permanent Halbach array, this structure exhibits a difference in absorptivity
+      between +Band−Bof 0.035 in both TE and TM polarization at 16.6µm.
+    - Under a 0.48 T field from a permanent Halbach array
+    - at 16.6µm
+    - in both TE and TM polarization
+  - statement: At an angle of incidence of 57.3 deg and a magnetic field of 0.48 T, the measured TM polarization
+      nonreciprocity peaks at 0.067 near 17.1 um.
+    reason: the statement contains the number 57.3, which none of its quotes contain
+    quotes:
+    - For the TM polarization η is positive across the band and peaks at 0.067 near 17.1µm.
+    - We first measure the absorptivity in the TM and TE polarization for ±B at θ = 57.3 ◦
+    - For the TM polarization
+    - near 17.1µm
+  - statement: The simulated TM polarization nonreciprocity peak reaches a magnitude of 0.129 across all
+      angles of incidence at 0.48 T.
+    reason: the statement contains the number 0.48, which none of its quotes contain
+    quotes:
+    - For the TM polarization the simulated nonreciprocity peak occurs near 17µm across all angles of
+      incidence and has a peak magnitude of 0.129.
+    - The simulated nonreciprocity for the range of angles is shown as color maps for each polarization
+      in Fig. 3 (a)
+    - For the TM polarization
+    - near 17µm
+  tokens:
+    input: 9044
+    output: 1407
+  fetched_chars: 24889

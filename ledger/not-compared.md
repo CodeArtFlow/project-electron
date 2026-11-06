@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**14830 pair(s)** as of 2026-11-05.
+**15391 pair(s)** as of 2026-11-06.
 
 ## `area_die` (11 pair(s))
 
@@ -165,7 +165,7 @@ _and 627 more_
 
 _and 551 more_
 
-## `length_device` (4713 pair(s))
+## `length_device` (5042 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -176,14 +176,17 @@ _and 551 more_
 | `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | parameter=ts | chip_thickness=4-mm |
 | `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0115` = 3.3e+04 nm | 100% | parameter=ts | dimension=width |
 | `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0116` = 1.47e+05 nm | 100% | parameter=ts | dimension=length |
+| `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0131` = 5e+05 nm | 100% | parameter=ts | channel_type=elementary channel |
 | `CLM-DEV-0068` = 100 nm | `CLM-LITHO-0005` = 3e+06 nm | 100% | material=PEDOT:PSS | beam_profile=Gaussian |
 | `CLM-DEV-0068` = 100 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | material=PEDOT:PSS | component=lens |
 | `CLM-DEV-0068` = 100 nm | `CLM-MAT-0138` = 0.005 nm | 100% | material=PEDOT:PSS | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-DEV-0068` = 100 nm | `CLM-MAT-0140` = 0.005 nm | 100% | material=PEDOT:PSS | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-DEV-0084` = 22.17 nm | `CLM-LITHO-0005` = 3e+06 nm | 100% | rkky_coupling=-0.2 mJ/m² | beam_profile=Gaussian |
 | `CLM-DEV-0084` = 22.17 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | rkky_coupling=-0.2 mJ/m² | component=lens |
+| `CLM-DEV-0084` = 22.17 nm | `CLM-PHOT-0131` = 5e+05 nm | 100% | rkky_coupling=-0.2 mJ/m² | channel_type=elementary channel |
 | `CLM-DEV-0085` = 22.21 nm | `CLM-LITHO-0005` = 3e+06 nm | 100% | rkky_coupling=-0.2 mJ/m² | beam_profile=Gaussian |
 | `CLM-DEV-0085` = 22.21 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | rkky_coupling=-0.2 mJ/m² | component=lens |
+| `CLM-DEV-0085` = 22.21 nm | `CLM-PHOT-0131` = 5e+05 nm | 100% | rkky_coupling=-0.2 mJ/m² | channel_type=elementary channel |
 | `CLM-LITHO-0001` = 500 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | material=crystalline silicon membrane | component=lens |
 | `CLM-LITHO-0001` = 500 nm | `CLM-MAT-0135` = 0.013 nm | 100% | material=crystalline silicon membrane | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-LITHO-0001` = 500 nm | `CLM-MAT-0136` = 0.006 nm | 100% | material=crystalline silicon membrane | superlattice_layer_n=3, superlattice_layer_m=5 |
@@ -206,11 +209,8 @@ _and 551 more_
 | `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0052` = 23 nm | 100% | beam_profile=Gaussian | characterization_method=AFM |
 | `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0060` = 101.7 nm | 100% | beam_profile=Gaussian | sample=Sample A |
 | `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0063` = 10.7 nm | 100% | beam_profile=Gaussian | device=D1 |
-| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0068` = 14.5 nm | 100% | beam_profile=Gaussian | method=estimated from the carrier density at the SDP |
-| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0081` = 0.98 nm | 100% | beam_profile=Gaussian | material=CrSb |
-| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0097` = 1.915 nm | 100% | beam_profile=Gaussian | feature=alternating stacking of PEDOT and PSS |
 
-_and 4673 more_
+_and 5002 more_
 
 ## `power` (245 pair(s))
 
@@ -271,13 +271,14 @@ _and 205 more_
 |---|---|---|---|---|
 | `CLM-DEV-0064` = 6e-06 torr | `CLM-MAT-0296` = 3.75e+04 torr | 100% | temperature=room temperature | measurement=Tensile testing |
 
-## `relative_deviation` (6299 pair(s))
+## `relative_deviation` (6526 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-EDA-0003` = 60 percent | `CLM-MAT-0111` = -60 percent | 200% | benchmark_circuit=LDO benchmark, framework=proposed method | sample=B1-1 |
 | `CLM-EDA-0004` = 60 percent | `CLM-MAT-0111` = -60 percent | 200% | circuit=most complex circuit, framework=proposed framework | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-PROC-0044` = 59.9 percent | 200% | sample=B1-1 | voltage=8 VAg/AgCl, material=1 μm n-type GaN |
+| `CLM-ARCH-0198` = 60.3 percent | `CLM-MAT-0111` = -60 percent | 200% | baseline_utilization=42.4% | sample=B1-1 |
 | `CLM-ARCH-0170` = 62.3 percent | `CLM-MAT-0111` = -60 percent | 196% | frequency=80 MHz, model=ConvSNN | sample=B1-1 |
 | `CLM-ARCH-0089` = 64.2 percent | `CLM-MAT-0111` = -60 percent | 193% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0112` = 66.8 percent | 190% | sample=B1-1 | baseline=pure two-dimensional Coulomb reference, benchmark_protocol=high-field-calibrated |
@@ -314,9 +315,8 @@ _and 205 more_
 | `CLM-ARCH-0077` = 36.86 percent | `CLM-MAT-0111` = -60 percent | 161% | framework=RAPID-DNN, fault_configuration=mixed random fault configuration, baseline=fault-agnostic baseline | sample=B1-1 |
 | `CLM-ARCH-0040` = 97.93 percent | `CLM-MAT-0111` = -60 percent | 161% | frequency=7 GHz, component=graded magnetic spacer | sample=B1-1 |
 | `CLM-ARCH-0018` = 98 percent | `CLM-MAT-0111` = -60 percent | 161% | concurrency_n_a=48, set_type=hot set | sample=B1-1 |
-| `CLM-ARCH-0100` = 36.2 percent | `CLM-MAT-0111` = -60 percent | 160% | correction_type=uncorrected | sample=B1-1 |
 
-_and 6259 more_
+_and 6486 more_
 
 ## `resistance` (2 pair(s))
 
@@ -495,7 +495,7 @@ _and 1539 more_
 
 _and 59 more_
 
-## `wavelength` (248 pair(s))
+## `wavelength` (253 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -540,4 +540,4 @@ _and 59 more_
 | `CLM-PHOT-0040` = 0.785 um | `CLM-PROC-0039` = 0.000388 um | 100% | source=diode laser | landing_energy=10 eV |
 | `CLM-PHOT-0055` = 2.062 um | `CLM-PKG-0003` = 0.001 um | 100% | device=Ho3+-doped fluoride glass waveguide laser | injection_current=9 mA, sample_type=D-DLAT sample |
 
-_and 208 more_
+_and 213 more_

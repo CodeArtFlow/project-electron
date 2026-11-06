@@ -1,0 +1,120 @@
+id: SRC-00303
+title: 'Memory Fit: Architectural Support for Page Placement by Learning Models of Good Behavior'
+doi: null
+arxiv_id: 2611.07506v1
+url: https://arxiv.org/abs/2611.07506v1
+venue_id: arxiv_api
+authors:
+- name: Chun Deng
+  affiliation: null
+  corresponding: null
+- name: Hui Sub Shim
+  affiliation: null
+  corresponding: null
+- name: Evan Laufer
+  affiliation: null
+  corresponding: null
+- name: Anna Eaton
+  affiliation: null
+  corresponding: null
+- name: David Tennenhouse
+  affiliation: null
+  corresponding: null
+- name: Tsachy Weissman
+  affiliation: null
+  corresponding: null
+- name: Philip Levis
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-05'
+retrieved_date: '2026-11-06'
+access: full_text
+read_scope: Automated reading. The full PDF text (93,999 characters, 19 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.07506v1 on
+  2026-11-06. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Memory fit requires only 64 bits of state per 4 KiB page and can be updated on every main-memory
+  access with only a 1.2% overhead of OS kernel notification processing.”
+
+  “We have implemented memory fit and STM in a BOOMv3 RISC-V processor running Linux 6.6.”'
+method_summary: '“We have implemented memory fit and STM in a BOOMv3 RISC-V FPGA processor and incorporated
+  support in Linux 6.6.”
+
+  “We use the FireSim prototype described in Section 4 and compare STM with Linux TPP [15].”'
+limitations: '“Exploring memory fit for large (2MB) and huge (1GB) pages is future work.”
+
+  “A Small BOOM core, running at 18MHz, cannot generate enough traffic to saturate the FPGA host’s HBM
+  or introduce significant queueing at the HBM interface.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 25660
+    output: 2958
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: Memory fit requires only 64 bits of state per 4 KiB page.
+    reason: 'unit conversion refused: transistor_density: cannot convert 64.0 bits to 1/m^2 - Cannot convert
+      from ''bit'' (dimensionless) to ''1 / meter ** 2'' (1 / [length] ** 2). A dimensional mismatc'
+    quotes:
+    - Memory fit requires only 64 bits of state per 4 KiB page and can be updated on every main-memory
+      access with only a 1.2% overhead of OS kernel notification processing.
+    - We have implemented memory fit and STM in a BOOMv3 RISC-V processor running Linux 6.6.
+  - statement: For Redis with equal DRAM and PCM capacities in a placement replay, placements selected
+      by memory fit recover 80% of the performance gap.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - For Redis with equal DRAM and PCM capacities, placements selected by memory fit recover 80% of the
+      performance gap, versus 19% for TPP, in a placement replay.
+    - Using this implementation, we evaluate STM against Linux TPP using extended GUPS, Redis, and a memory-access
+      workload derived from llama.cpp.
+  - statement: In a placement replay for Redis with equal DRAM and PCM capacities, Linux TPP recovers
+      19% of the performance gap.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - For Redis with equal DRAM and PCM capacities, placements selected by memory fit recover 80% of the
+      performance gap, versus 19% for TPP, in a placement replay.
+    - Using this implementation, we evaluate STM against Linux TPP using extended GUPS, Redis, and a memory-access
+      workload derived from llama.cpp.
+  - statement: Coalescing reduces interrupts by 46.0%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Coalescing
+      reduces interrupts by 46.0% (Figure 14(a)).'''
+    quotes:
+    - Coalescing reduces interrupts by 46.0% (Figure 14(a)).
+    - Using this implementation, we evaluate STM against Linux TPP using extended GUPS, Redis, and a memory-access
+      workload derived from llama.cpp.
+    - To measure the impact of these features, we measure performance on the extended-GUPS workload with
+      fixed placement and migration disabled.
+  - statement: Low-pass filtering reduces decision notifications by 83.9%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Low-pass
+      filtering reduces decision notifications by 83.9%, with coale'''
+    quotes:
+    - Low-pass filtering reduces decision notifications by 83.9%, with coalescing enabled in both runs
+      (Figure 14(b)).
+    - Using this implementation, we evaluate STM against Linux TPP using extended GUPS, Redis, and a memory-access
+      workload derived from llama.cpp.
+    - with coalescing enabled in both runs (Figure 14(b)).
+    - To measure the impact of these features, we measure performance on the extended-GUPS workload with
+      fixed placement and migration disabled.
+  - statement: Fit achieves a 6.0% throughput gain over TPP on Redis at 50% DRAM capacity.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Redis 50%
+      6.0%'''
+    quotes:
+    - Redis 50% 6.0%
+    - Table 2 reports throughput gains from the same fixed-work runs as Figures 9 and 11, computed from
+      the ratio of TPP’s completion time to Fit’s.
+  - statement: Fit achieves a 13.3% throughput gain over TPP on llama.cpp at 25% DRAM capacity.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''llama.cpp
+      25% 13.3%'''
+    quotes:
+    - llama.cpp 25% 13.3%
+    - Table 2 reports throughput gains from the same fixed-work runs as Figures 9 and 11, computed from
+      the ratio of TPP’s completion time to Fit’s.
+corrections: []

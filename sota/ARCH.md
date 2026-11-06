@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-05.
+Topic code `ARCH`. Last reviewed 2026-11-06.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -754,6 +754,14 @@ Topic code `ARCH`. Last reviewed 2026-11-05.
   - `CLM-ARCH-0187` · workload elementwise graph, technique Symbolic dynamic compilation · grade B · credibility unknown · measured · as of 2026-11-03
   - sources: SRC-00288
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **1.2 percent** — Memory fit updates incur a 1.2% overhead of OS kernel notification processing.
+  - `CLM-ARCH-0197` · process_type OS kernel notification processing · grade B · credibility unknown · measured · as of 2026-11-05
+  - sources: SRC-00303
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **60.3 percent** — CAMP improves average 3D-IMC compute utilization from 42.4% to 60.3%.
+  - `CLM-ARCH-0198` · baseline_utilization 42.4% · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00306
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -886,6 +894,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 196
-- grades: {'B': 196}
-- distinct sources: 63
+- claims: 198
+- grades: {'B': 198}
+- distinct sources: 65

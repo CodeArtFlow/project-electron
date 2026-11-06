@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-05.
+Topic code `MAT`. Last reviewed 2026-11-06.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -957,6 +957,22 @@ Topic code `MAT`. Last reviewed 2026-11-05.
   - `CLM-MAT-0301` · grade B · credibility unknown · simulated · as of 2026-11-04
   - sources: SRC-00299
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The confinement depth of the WS2 intralayer exciton in the WS2/WSe2 heterostructure is 57.02 meV.
+  - `CLM-MAT-0302` · material_system WS2/WSe2 heterostructure, exciton_type intralayer WS2 exciton · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00304
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The initial effective exciton temperature drops from 171.8 K to 99.3 K within 1.2 ps.
+  - `CLM-MAT-0303` · delay_time 1.2 ps, temperature 81 K · grade B · credibility unknown · measured · as of 2026-11-05
+  - sources: SRC-00304
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- At a population delay time T = 5.0 ps, the effective temperature increases to 110.4 K.
+  - `CLM-MAT-0304` · population_delay_t 5.0 ps, temperature 81 K · grade B · credibility unknown · measured · as of 2026-11-05
+  - sources: SRC-00304
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- At a population delay T = 3.2 ps, the Boltzmann fit to the degeneracy-corrected intensities yields an effective temperature Teff of 106.7 K.
+  - `CLM-MAT-0305` · population_delay_t 3.2 ps · grade B · credibility unknown · measured · as of 2026-11-05
+  - sources: SRC-00304
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1447,6 +1463,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 301
-- grades: {'B': 301}
-- distinct sources: 108
+- claims: 305
+- grades: {'B': 305}
+- distinct sources: 109
