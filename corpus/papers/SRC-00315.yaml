@@ -1,0 +1,84 @@
+id: SRC-00315
+title: Analytical Modeling of the Admittance Tensor of Periodic Elliptical Meta-Atoms
+doi: null
+arxiv_id: 2611.08166v1
+url: https://arxiv.org/abs/2611.08166v1
+venue_id: arxiv_api
+authors:
+- name: Thomas Fromentèze
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-05'
+retrieved_date: '2026-11-07'
+access: full_text
+read_scope: Automated reading. The full PDF text (64,251 characters, 13 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.08166v1 on
+  2026-11-07. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“A wideband response takes from minutes to tens of minutes with a periodic full-wave solver,
+  while the proposed model evaluates it in a few tens of milliseconds on the same workstation, roughly
+  three orders of magnitude faster.”
+
+  “while the proposed model evaluates it in a few tens of milliseconds on the same workstation, roughly
+  three orders of magnitude faster.”'
+method_summary: '“This paper presents, to the author’s knowledge, the first analytical model, restricted
+  to elliptical meta-atoms on a uniform lattice.”
+
+  “The Galerkin method is applied directly to the geometry of the patches, without spatial meshing.”
+
+  “An affine transformation maps any rotated ellipse onto the unit disk, so that a single formulation
+  covers every configuration.”
+
+  “As a reference, a full-wave periodic Method of Moments (MoM) solver was implemented for planar metallic
+  patches on a grounded dielectric slab.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 23076
+    output: 1899
+  claims_accepted: 1
+  claims_rejected: 4
+  rejected:
+  - statement: For a strongly elongated patch rotated by 45 degrees on Rogers RO3010, the proposed analytical
+      model predicts the fundamental resonance at 20.7 GHz.
+    reason: the statement contains the number 45, which none of its quotes contain
+    quotes:
+    - In panel (a), the model places the fundamental resonance at 20.7 GHz, within 0.5 GHz of the MoM
+      value of 20.2 GHz
+    - rotated by ψ = 45 ◦
+    - high-permittivity Rogers RO3010
+    - Ae = 1.60 mm
+  - statement: The periodic Method of Moments (MoM) reference solver places the fundamental resonance
+      of the strongly elongated patch rotated by 45 degrees on Rogers RO3010 at
+    reason: the statement contains the number 45, which none of its quotes contain
+    quotes:
+    - In panel (a), the model places the fundamental resonance at 20.7 GHz, within 0.5 GHz of the MoM
+      value of 20.2 GHz
+    - within 0.5 GHz of the MoM value of 20.2 GHz
+    - rotated by ψ = 45 ◦
+    - high-permittivity Rogers RO3010
+  - statement: For an elongated patch (Ae = 1.60 mm, Be = 0.53 mm) on RO4003C substrate, the proposed
+      analytical model predicts the major-axis resonant pole at 33.7 GHz.
+    reason: the statement contains the number 1.60, which none of its quotes contain
+    quotes:
+    - The proposed model places this resonant pole at 33.7 GHz, against 33.6 GHz for the MoM
+    - Ae = 1.60 mm
+    - Be = 0.53 mm
+    - RO4003C
+  - statement: For an elongated patch (Ae = 1.60 mm, Be = 0.53 mm) on RO4003C substrate, the MoM reference
+      solver gives the major-axis resonant pole at 33.6 GHz.
+    reason: the statement contains the number 1.60, which none of its quotes contain
+    quotes:
+    - The proposed model places this resonant pole at 33.7 GHz, against 33.6 GHz for the MoM
+    - against 33.6 GHz for the MoM
+    - Ae = 1.60 mm
+    - Be = 0.53 mm
+corrections: []

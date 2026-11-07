@@ -1,0 +1,108 @@
+id: SRC-00311
+title: Key role of orbital exchange in CoO magnetism
+doi: null
+arxiv_id: 2611.08065v1
+url: https://arxiv.org/abs/2611.08065v1
+venue_id: arxiv_api
+authors:
+- name: Leonid V. Pourovskii
+  affiliation: null
+  corresponding: null
+- name: Yuriy Mokrousov
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-05'
+retrieved_date: '2026-11-07'
+access: full_text
+read_scope: Automated reading. The full PDF text (74,851 characters, 18 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.08065v1 on
+  2026-11-07. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: “Solving the calculated effective Hamiltonian (1) in a single-site mean-field approximation
+  (see Methods), we obtain a single phase transition atT N = 460 K to a collinear AFM structure shown
+  in Fig. 1 that closely agrees with the one proposed by Ref. [21] on the basis of neutron diffraction
+  measurements.”
+method_summary: '“Here, we derive a full low-energy effective Hamiltonian for CoO, including orbital exchange
+  terms, using an ab initio force-theorem approach based on DFT+dynamical mean-field theory.”
+
+  “First, the electronic structure of paramagnetic CoO was calculated using DFTTools implementation [77–79]
+  of DFT+DMFT provided by the TRIQS library [80] together with the Wien2k DFT code [81] and the Hubbard-I
+  implementation provided by the MagInt package [82].”
+
+  “The calculatedab initioeffective Hamiltonian (1) was solved in a single-site mean-field approximation
+  using the ”McPhase” [89] package together with an in-house module for the single-site mean-field problem.”'
+limitations: '“The theoreticalT N is overestimated by 56% compared to the experimental one of 294 K, as
+  expected for a mean-field approach.”
+
+  “Our effective Hamiltonian is apparently also insufficient to properly describe it, although some qualitative
+  features of the experimental spectrum are present in Fig. 2.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 25279
+    output: 3544
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: The effective spin-orbit coupling constant extracted from the ab initio level splitting
+      is 16.8 meV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The effective
+      SOC constant,λ= 16.8 meV, extracted from the ab initio l'''
+    quotes:
+    - The effective SOC constant,λ= 16.8 meV, extracted from the ab initio level splitting, is in excellent
+      agreement with the experimental value of 16 meV [35].
+    - The ground-state multiplets on different Co sites are in addition coupled by IEI.
+  - statement: The calculated total Co magnetic moment in the monoclinic collinear AFM phase is 3.80 mu_B.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The total
+      Co magnetic moment of 3.80µ B composed of spin and orbital c'''
+    quotes:
+    - The total Co magnetic moment of 3.80µ B composed of spin and orbital contributions of 2.62µ B and
+      1.18µ B, respectively, is tilted by the angleϕ= 17.5 ◦ with respect to the pseudocubic⟨001⟩direction
+  - statement: The calculated spin contribution to the Co magnetic moment is 2.62 mu_B.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The total
+      Co magnetic moment of 3.80µ B composed of spin and orbital c'''
+    quotes:
+    - The total Co magnetic moment of 3.80µ B composed of spin and orbital contributions of 2.62µ B and
+      1.18µ B, respectively, is tilted by the angleϕ= 17.5 ◦ with respect to the pseudocubic⟨001⟩direction
+  - statement: The calculated orbital contribution to the Co magnetic moment is 1.18 mu_B.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The total
+      Co magnetic moment of 3.80µ B composed of spin and orbital c'''
+    quotes:
+    - The total Co magnetic moment of 3.80µ B composed of spin and orbital contributions of 2.62µ B and
+      1.18µ B, respectively, is tilted by the angleϕ= 17.5 ◦ with respect to the pseudocubic⟨001⟩direction
+  - statement: The calculated diagonal antiferroic coupling between L^2(z^2) quadrupoles for the nearest-neighbor
+      bond vector [1/2, 1/2, 0] is 10.10 meV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''L2(z2)L 2(z2)
+      10.10 2.31'''
+    quotes:
+    - In particular, the diagonal antiferroic coupling betweenL 2(z2) quadrupoles reaches 10 meV, while
+      the other orbital-quadrupole IEI are of comparable magnitude.
+    - 'Supplementary Table I: Intersite exchange interactions for the NN vectorR= [1/2,1/2,0] and the
+      NNN vectorR= [1,0,0], in meV.'
+    - L2(z2)L 2(z2) 10.10 2.31
+  - statement: The calculated next-nearest-neighbor spin-spin intersite exchange interaction is 80.06
+      meV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''S(Q)S(Q)
+      7.05 80.06'''
+    quotes:
+    - The antiferromagnetic NNN spin-spin IEI of about 80 meV is by far the largest interaction, as expected.
+    - 'Supplementary Table I: Intersite exchange interactions for the NN vectorR= [1/2,1/2,0] and the
+      NNN vectorR= [1,0,0], in meV.'
+    - S(Q)S(Q) 7.05 80.06
+  - statement: The calculated lowest excitation band of the dynamical susceptibility in the AFII ground
+      state is gaped from the ground state by 24 meV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The lowest band is separated from the ground state by an excitation gap of 24 meV.
+    - Subsequently, we calculate the full dynamical susceptibility for the AFII ground state within the
+      random phase approximation, see Methods.
+corrections: []

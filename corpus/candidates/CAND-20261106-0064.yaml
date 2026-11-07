@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.08019v1
 doi: null
-title: 'Zero-Point Renormalization Reshapes the Shift Current: The Role of Electron-Phonon
-  Coupling'
+title: 'Zero-Point Renormalization Reshapes the Shift Current: The Role of Electron-Phonon Coupling'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-05'
@@ -27,6 +26,92 @@ id: CAND-20261106-0064
 harvested_date: '2026-11-06'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-07'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Without EPC, monolayer MoS2 exhibits a calculated direct band gap of 1.68 eV at the K point.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Figure 2(a) displays the calculated band structure of monolayer MoS2, with a direct band gap of
+      ~1.68 eV at K point.
+    - monolayer MoS2
+    - at K point
+    - without (black dashed) EPC
+  - statement: Without EPC, the single-particle shift current conductivity peak reaches a maximum value
+      of 22 nm·μA/V² for photon energies above 2.6 eV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''For ℏω >
+      2.6 eV, the optical transitions involving deeper bands contri'''
+    quotes:
+    - For ℏω > 2.6 eV, the optical transitions involving deeper bands contribute substantially, yielding
+      a maximum σ_yxx^(2) of ~22 nm·δA/V².
+    - Figure 2(a) displays the calculated band structure of monolayer MoS2, with a direct band gap of
+      ~1.68 eV at K point.
+    - For ℏω > 2.6 eV
+    - σ_yxx^(2)
+  - statement: At 0 K, zero-point renormalization reduces the band gap of monolayer MoS2 from 1.68 eV
+      to 1.60 eV.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - it reduces the band gap from 1.68 to 1.60 eV, a mere ~80 meV (~5.0% of the original gap).
+    - To assess the impact of EPC on SC, we have calculated the EPC-renormalized spectral function of
+      monolayer MoS2 at zero temperature.
+    - at T = 0 K
+    - monolayer MoS2
+  - statement: The zero-point renormalization reduces the band gap of monolayer MoS2 by 80 meV.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - it reduces the band gap from 1.68 to 1.60 eV, a mere ~80 meV (~5.0% of the original gap).
+    - To assess the impact of EPC on SC, we have calculated the EPC-renormalized spectral function of
+      monolayer MoS2 at zero temperature.
+    - at T = 0 K
+    - monolayer MoS2
+  - statement: Peak α in the band-renormalized shift current spectrum occurs at a photon energy of 2.06
+      eV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Figure 3(c)
+      maps the resulting q-resolved contribution to σ_yxx,BR^(2)'''
+    quotes:
+    - Figure 3(c) maps the resulting q-resolved contribution to σ_yxx,BR^(2) across the BZ at the peak
+      photon energies, i.e., 2.06, 2.18, and 2.38 eV for peaks α , β , and γ , respectively.
+    - peaks α
+    - monolayer MoS2
+  - statement: Peak β in the band-renormalized shift current spectrum occurs at a photon energy of 2.18
+      eV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Figure 3(c)
+      maps the resulting q-resolved contribution to σ_yxx,BR^(2)'''
+    quotes:
+    - Figure 3(c) maps the resulting q-resolved contribution to σ_yxx,BR^(2) across the BZ at the peak
+      photon energies, i.e., 2.06, 2.18, and 2.38 eV for peaks α , β , and γ , respectively.
+    - β
+    - monolayer MoS2
+  - statement: Peak γ in the band-renormalized shift current spectrum occurs at a photon energy of 2.38
+      eV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Figure 3(c)
+      maps the resulting q-resolved contribution to σ_yxx,BR^(2)'''
+    quotes:
+    - Figure 3(c) maps the resulting q-resolved contribution to σ_yxx,BR^(2) across the BZ at the peak
+      photon energies, i.e., 2.06, 2.18, and 2.38 eV for peaks α , β , and γ , respectively.
+    - γ
+    - monolayer MoS2
+  - statement: Varying biaxial strain from +1.0% to -1.0% shifts the calculated BRSC spectrum of monolayer
+      MoS2 by approximately 0.2 eV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''As shown
+      in Fig. 4(a), varying the biaxial strain ε from +1.0% (tensil'''
+    quotes:
+    - As shown in Fig. 4(a), varying the biaxial strain ε from +1.0% (tensile) to −1.0% (compressive)
+      shifts the σ_yxx,BR^(2) spectrum by ~0.2 eV;
+    - varying the biaxial strain ε from +1.0% (tensile) to −1.0% (compressive)
+    - monolayer MoS2
+  tokens:
+    input: 18371
+    output: 3331
+  fetched_chars: 40163

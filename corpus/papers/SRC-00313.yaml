@@ -1,0 +1,130 @@
+id: SRC-00313
+title: 'Thermal Inverse Design: Tailoring the Transient Response of Resistive Micro-Heaters'
+doi: null
+arxiv_id: 2611.08098v1
+url: https://arxiv.org/abs/2611.08098v1
+venue_id: arxiv_api
+authors:
+- name: Muzhang Huang
+  affiliation: null
+  corresponding: null
+- name: Junhe Zhang
+  affiliation: null
+  corresponding: null
+- name: Khoi Phuong Dao
+  affiliation: null
+  corresponding: null
+- name: Juejun Hu
+  affiliation: null
+  corresponding: null
+- name: Hyun Jung Kim
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-05'
+retrieved_date: '2026-11-07'
+access: full_text
+read_scope: Automated reading. The full PDF text (52,816 characters, 27 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.08098v1 on
+  2026-11-07. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The smallest filament-segment width in the final inverse-designed heater is 280.6 nm, and
+  the smallest edge-to-edge spacing between neighboring filaments is 502.3 nm.”
+
+  “These dimensions are substantially larger than the corresponding values of 280.6 nm and 502.3 nm in
+  the 1µm-cell design, demonstrating the improvement in fabrication tolerance obtained by increasing the
+  cell size.”
+
+  “The updated powers are converted into a new linewidth map using Eqs. (9)–(13), after which the nonlinear
+  electrothermal model is solved again.”'
+method_summary: “Finally, the complete layout is evaluated using nonlinear transient electrothermal finite-element
+  method (FEM) simulations to account for temperature-dependent material properties and geometry-induced
+  current redistribution.”
+limitations: “In the present work, the groups are selected with human intervention based on the expected
+  symmetries and heat-loss pathways.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14128
+    output: 3485
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: The inverse-designed heater with 1 µm cells achieves an RMSEfield of 3.3 K within the target
+      region at t = 13 µs under an electrical input power of approximatel
+    reason: the quote says 'up to'/'within'/'at most' before the number but bound is not upper_bound
+    quotes:
+    - Within the target region, the RMSE field is 3.3 K for the inverse-designed heater, compared with
+      90.1 K for the reference heater.
+    - The forward model uses a silicon-on-insulator stack comprising a 0.22µm silicon device layer, a
+      2µm buried oxide layer, and a 20µm silicon substrate.
+    - The square heater uses 1µm×1µm cells, which provide finer spatial sampling and smaller local temperature
+      oscillations.
+    - The temperature fields are evaluated att= 13µs at the mid-plane of the silicon device layer.
+  - statement: The reference heater with uniform doping exhibits an RMSEfield of 90.1 K within the target
+      region under an electrical input power of approximately 1.23 W at t =
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''K'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - Within the target region, the RMSE field is 3.3 K for the inverse-designed heater, compared with
+      90.1 K for the reference heater.
+    - The forward model uses a silicon-on-insulator stack comprising a 0.22µm silicon device layer, a
+      2µm buried oxide layer, and a 20µm silicon substrate.
+    - The temperature fields are evaluated att= 13µs at the mid-plane of the silicon device layer.
+    - The voltage applied to the reference heater is adjusted so that the two heaters operate at nearly
+      identical electrical input powers of approximately 1.23 W.
+  - statement: The 2 µm-cell inverse-designed heater in the 1D1R architecture achieves an RMSEfield of
+      4.8 K within the target region at t = 13 µs.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - Within the target region, the RMSEfield is 4.8 K, and the maximum positive and negative deviations
+      are +18.0 K and −6.9 K, respectively.
+    - In the electrothermal model, this strip is assigned an effective conductivity equal to one tenth
+      of the conductivity used for the doped heater region.
+    - TABLE I. Comparison of the two inverse-designed heaters targeting a uniform temperature distribution
+      at 13µs. ... 2µm-cell heater in 1D1R architecture
+    - A 30 V pulse is applied to the complete series-connected structure, and the temperature field is
+      evaluated att= 13µs.
+  - statement: The minimum filament width of the final layout for the 2 µm-cell heater in the 1D1R architecture
+      is 614.3 nm.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - The final layout has a minimum filament-segment width of 614.3 nm and a minimum edge-to-edge spacing
+      of 756.6 nm.
+    - The updated powers are converted into a new linewidth map using Eqs. (9)–(13), after which the nonlinear
+      electrothermal model is solved again.
+    - TABLE I. Comparison of the two inverse-designed heaters targeting a uniform temperature distribution
+      at 13µs. ... 2µm-cell heater in 1D1R architecture
+    - Compared with the 1µm cells used in Sec. III A, the larger cells provide greater minimum linewidth
+      and spacing, although they also increase the local temperature variation between the center of each
+      filament and the space between neighborin
+  - statement: ' The minimum edge-to-edge spacing of the final layout for the 2 µm-cell heater in the
+      1D1R architecture is 756.6 nm.'
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - The final layout has a minimum filament-segment width of 614.3 nm and a minimum edge-to-edge spacing
+      of 756.6 nm.
+    - The updated powers are converted into a new linewidth map using Eqs. (9)–(13), after which the nonlinear
+      electrothermal model is solved again.
+    - TABLE I. Comparison of the two inverse-designed heaters targeting a uniform temperature distribution
+      at 13µs. ... 2µm-cell heater in 1D1R architecture
+    - Compared with the 1µm cells used in Sec. III A, the larger cells provide greater minimum linewidth
+      and spacing, although they also increase the local temperature variation between the center of each
+      filament and the space between neighborin
+  - statement: The linear-gradient heater design achieves an RMSEfield of 9.1 K within the target region
+      at t = 13 µs.
+    reason: the quote says 'up to'/'within'/'at most' before the number but bound is not upper_bound
+    quotes:
+    - Within the target region, RMSE field is 9.1 K, and the maximum positive and negative deviations
+      from the prescribed linear target are +28.7 K and−8.5 K, respectively.
+    - Figure 6 shows the final electrothermal simulation result att= 13µs.
+    - The third example demonstrates the generation of a prescribed nonuniform temperature distribution.
+    - The heater retains the 70µm×50µm dimensions and 33×23 design-cell arrangement used in Sec. III B.
+corrections: []

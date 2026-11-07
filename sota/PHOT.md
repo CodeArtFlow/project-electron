@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-06.
+Topic code `PHOT`. Last reviewed 2026-11-07.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -67,6 +67,18 @@ Topic code `PHOT`. Last reviewed 2026-11-06.
   - `CLM-PHOT-0125` · pump_detuning 27 MHz · grade B · credibility unknown · simulated · as of 2026-10-30
   - sources: SRC-00273
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **8.23 GHz** — The even-parity interface resonance of the SSPP waveguide occurs at 8.23 GHz.
+  - `CLM-PHOT-0134` · mode even-parity interface resonance, structure SSPP waveguide comprising two topologically distinct domains · grade B · credibility unknown · measured · as of 2026-11-05
+  - sources: SRC-00314
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **7.06 GHz** — An even-parity bulk mode of the SSPP waveguide is observed at 7.06 GHz in near-field measurements.
+  - `CLM-PHOT-0135` · mode even-parity bulk mode, structure SSPP waveguide · grade B · credibility unknown · measured · as of 2026-11-05
+  - sources: SRC-00314
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **8.234 GHz** — The EP eigenstate near-field distribution was measured at 8.234 GHz in the coupled SSPP waveguide system.
+  - `CLM-PHOT-0136` · structure coupled SSPP waveguides · grade B · credibility unknown · measured · as of 2026-11-05
+  - sources: SRC-00314
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### length device
 
@@ -170,6 +182,10 @@ Topic code `PHOT`. Last reviewed 2026-11-06.
 - **500000 nm** — The experimental pumping length L is 500 μm for each elementary channel.
   - `CLM-PHOT-0131` · channel_type elementary channel · grade B · credibility unknown · measured · as of 2026-11-05
   - sources: SRC-00305
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈456 nm** — Focused ion beam cross-section scanning electron microscopy yields an estimated bonding gap width of 456 nm for a SESAM bonded to a glass substrate.
+  - `CLM-PHOT-0133` · substrate glass substrate · grade B · credibility unknown · measured · as of 2026-11-05
+  - sources: SRC-00310
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
@@ -403,6 +419,10 @@ Topic code `PHOT`. Last reviewed 2026-11-06.
   - `CLM-PHOT-0130` · grade B · credibility unknown · simulated · as of 2026-11-02
   - sources: SRC-00281
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The proposed analytical Jacobi-Galerkin model evaluates a wideband response in a few tens of milliseconds on the workstation, which is roughly three orders of magnitude faster than a periodic full-wave solver.
+  - `CLM-PHOT-0137` · grade B · credibility unknown · measured · as of 2026-11-05
+  - sources: SRC-00315
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -605,6 +625,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 132
-- grades: {'B': 125, 'A': 7}
-- distinct sources: 44
+- claims: 137
+- grades: {'B': 130, 'A': 7}
+- distinct sources: 47

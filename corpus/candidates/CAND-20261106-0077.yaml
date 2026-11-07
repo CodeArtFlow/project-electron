@@ -30,6 +30,32 @@ id: CAND-20261106-0077
 harvested_date: '2026-11-06'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-07'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The quantum carrier mobility in 2D-Gr/Sr/SiC is 850 cm2 V-1 s-1.
+    reason: '[missing_required_conditions] mobility requires temperature, carrier_type; missing temperature,
+      carrier_type'
+    quotes:
+    - Analysis of the oscillations suggests that the quantum carrier mobilities in the two Gr/Sr/SiC systems
+      differ significantly, from 850 cm2 V-1 s-1 in 2D-Gr/Sr/SiC to 120 cm2 V-1 s-1 in 3D-Gr/Sr/SiC.
+    - 850 cm2 V-1 s-1 in 2D-Gr/Sr/SiC
+  - statement: The quantum carrier mobility in 3D-Gr/Sr/SiC is 120 cm2 V-1 s-1.
+    reason: '[missing_required_conditions] mobility requires temperature, carrier_type; missing temperature,
+      carrier_type'
+    quotes:
+    - Analysis of the oscillations suggests that the quantum carrier mobilities in the two Gr/Sr/SiC systems
+      differ significantly, from 850 cm2 V-1 s-1 in 2D-Gr/Sr/SiC to 120 cm2 V-1 s-1 in 3D-Gr/Sr/SiC.
+    - 120 cm2 V-1 s-1 in 3D-Gr/Sr/SiC
+  tokens:
+    input: 14639
+    output: 895
+  fetched_chars: 39694

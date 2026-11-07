@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-11-06.
+Topic code `DEV`. Last reviewed 2026-11-07.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -73,6 +73,16 @@ Topic code `DEV`. Last reviewed 2026-11-06.
   - `CLM-DEV-0085` · rkky_coupling -0.2 mJ/m² · grade B · credibility unknown · simulated · as of 2026-10-27
   - sources: SRC-00247
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **280.6 nm** — The smallest filament-segment width in the final inverse-designed 1 µm-cell heater layout is 280.6 nm.
+  - `CLM-DEV-0092` · cell_size 1 µm · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00313
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0116 — see the open register
+- **502.3 nm** — The smallest edge-to-edge spacing between neighboring filaments in the complete inverse-designed 1 µm-cell heater layout is 502.3 nm.
+  - `CLM-DEV-0093` · cell_size 1 µm · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00313
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0116 — see the open register
 
 ### power
 
@@ -424,9 +434,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0114` — time: _unexamined; classification pending_
   - claims: CLM-DEV-0089, CLM-DEV-0091
   - missing data: `not yet named`
+- `CFL-0116` — length_device: _unexamined; classification pending_
+  - claims: CLM-DEV-0092, CLM-DEV-0093
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 88
-- grades: {'B': 88}
-- distinct sources: 38
+- claims: 90
+- grades: {'B': 90}
+- distinct sources: 39

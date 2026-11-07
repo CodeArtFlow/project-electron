@@ -2541,3 +2541,71 @@ claims:
     conditions:
       sample: SESAM
       decay_component: slow recovery time 𝜏2
+- id: CLM-DEV-0092
+  topic: DEV
+  statement: The smallest filament-segment width in the final inverse-designed 1 µm-cell heater layout
+    is 280.6 nm.
+  sources:
+  - SRC-00313
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    cell_size: 1 µm
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 280.6
+      unit: nm
+    si_base:
+      value: 2.8060000000000006e-07
+      unit: m
+    display:
+      value: 280.6
+      unit: nm
+    conditions:
+      cell_size: 1 µm
+- id: CLM-DEV-0093
+  topic: DEV
+  statement: The smallest edge-to-edge spacing between neighboring filaments in the complete inverse-designed
+    1 µm-cell heater layout is 502.3 nm.
+  sources:
+  - SRC-00313
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-07'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    cell_size: 1 µm
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 502.3
+      unit: nm
+    si_base:
+      value: 5.023e-07
+      unit: m
+    display:
+      value: 502.3
+      unit: nm
+    conditions:
+      cell_size: 1 µm

@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.08147v1
 doi: null
-title: 'MCUFlowNet: Hardware-Aware Neural Architecture Search for Optical Flow on
-  Microcontrollers'
+title: 'MCUFlowNet: Hardware-Aware Neural Architecture Search for Optical Flow on Microcontrollers'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-05'
@@ -23,6 +22,68 @@ id: CAND-20261106-0048
 harvested_date: '2026-11-06'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-07'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: MCUFlowNet-S runs at a measured latency of 93.2 ms on the Grove Vision AI V2 board.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - MCUFlowNet-S 6.50 1170 93.2 51.5 0.77
+    - Latencies in Tables III and IV are measured on the board with TensorFlow Lite Micro [27], excluding
+      image capture and pre- and post-processing.
+    - INT8 MODELS ON GROVE VISION AI V2 AT 160×208.
+  - statement: MCUFlowNet-L runs at a measured latency of 163.6 ms on the Grove Vision AI V2 board.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - MCUFlowNet-L 6.36 1170 163.6 45.4 0.87
+    - Latencies in Tables III and IV are measured on the board with TensorFlow Lite Micro [27], excluding
+      image capture and pre- and post-processing.
+    - INT8 MODELS ON GROVE VISION AI V2 AT 160×208.
+  - statement: Retrained EdgeFlowNet runs at a measured latency of 164.3 ms on the Grove Vision AI V2
+      board.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - EdgeFlowNet (retrained) 6.40 1430 164.3 41.8 0.92
+    - Latencies in Tables III and IV are measured on the board with TensorFlow Lite Micro [27], excluding
+      image capture and pre- and post-processing.
+    - INT8 MODELS ON GROVE VISION AI V2 AT 160×208.
+  - statement: MCUFlowNet-S has a Vela-estimated peak SRAM of 1170 KiB at 160×208 resolution.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - MCUFlowNet-S 6.50 1170 93.2 51.5 0.77
+    - 'SRAM: VELA-ESTIMATED PEAK.'
+    - INT8 MODELS ON GROVE VISION AI V2 AT 160×208.
+  - statement: Retrained EdgeFlowNet has a Vela-estimated peak SRAM of 1430 KiB at 160×208 resolution.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - EdgeFlowNet (retrained) 6.40 1430 164.3 41.8 0.92
+    - 'SRAM: VELA-ESTIMATED PEAK.'
+    - INT8 MODELS ON GROVE VISION AI V2 AT 160×208.
+  - statement: The retrained PIDNet-S model runs at a measured latency of 188.6 ms on the Grove Vision
+      AI V2 board.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - PIDNet-S (retrained) 55.23±0.55 188.6
+    - Latencies in Tables III and IV are measured on the board with TensorFlow Lite Micro [27], excluding
+      image capture and pre- and post-processing.
+    - INT8 SEGMENTATION ON GROVE VISION AI V2 AT 160×320
+  - statement: The fast searched segmentation subnet runs at a measured latency of 138.9 ms on the Grove
+      Vision AI V2 board.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - Searched (fast) 54.22±0.68 138.9
+    - Latencies in Tables III and IV are measured on the board with TensorFlow Lite Micro [27], excluding
+      image capture and pre- and post-processing.
+    - INT8 SEGMENTATION ON GROVE VISION AI V2 AT 160×320
+  tokens:
+    input: 11009
+    output: 3042
+  fetched_chars: 27702

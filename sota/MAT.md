@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-06.
+Topic code `MAT`. Last reviewed 2026-11-07.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -150,6 +150,18 @@ Topic code `MAT`. Last reviewed 2026-11-06.
   - sources: SRC-00294
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0107 — see the open register
+- **1.44036e-05 fJ** — The calculated magnetic energy difference ΔE for the adsorbed Cr dimer on the P↑ polarization state is 89.9 meV.
+  - `CLM-MAT-0306` · polarization_state P↑ · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00309
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ ≈0.000320435 fJ** — For SmNiO3/BaTiO3 superlattices with insulating nickelate, the unhappy polarization orientation is disfavored by approximately 2 eV relative to the happy orientation.
+  - `CLM-MAT-0312` · superlattice SmNiO3/BaTiO3 · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00312
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **2.08283e-05 fJ** — Relaxation of metallic SmNiO3 bulk unit cell under strain yields a calculated band gap of 0.13 eV.
+  - `CLM-MAT-0313` · material SmNiO3 · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00312
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### frequency
 
@@ -973,6 +985,22 @@ Topic code `MAT`. Last reviewed 2026-11-06.
   - `CLM-MAT-0305` · population_delay_t 3.2 ps · grade B · credibility unknown · measured · as of 2026-11-05
   - sources: SRC-00304
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- In bulk insulating BiNiO3, the Bi3+ polyhedral volume is 50.4 Å^3.
+  - `CLM-MAT-0308` · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00312
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- In bulk insulating BiNiO3, the Bi5+ polyhedral volume is 46.7 Å^3.
+  - `CLM-MAT-0309` · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00312
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- In bulk insulating BiNiO3, the Ni ions have a magnetic moment of approximately +/- 1.7 mu_B.
+  - `CLM-MAT-0310` · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00312
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Bulk BaTiO3 strained to NdGaO3 has a calculated spontaneous polarization of 51.4 µC cm^-2.
+  - `CLM-MAT-0311` · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00312
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1153,6 +1181,10 @@ Topic code `MAT`. Last reviewed 2026-11-06.
   - `CLM-MAT-0293` · mn_content 0.1, compensation_degree Kmax · grade B · credibility unknown · simulated · as of 2026-11-03
   - sources: SRC-00294
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **186.85 degC** — The single-site mean-field solution of the calculated effective Hamiltonian yields a Neel temperature of 460 K for CoO.
+  - `CLM-MAT-0307` · property T N · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00311
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature delta
 
@@ -1463,6 +1495,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 305
-- grades: {'B': 305}
-- distinct sources: 109
+- claims: 313
+- grades: {'B': 313}
+- distinct sources: 112

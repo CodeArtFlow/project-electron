@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**15391 pair(s)** as of 2026-11-06.
+**15919 pair(s)** as of 2026-11-07.
 
 ## `area_die` (11 pair(s))
 
@@ -47,7 +47,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0077` = 4 mA | 85% | process_step=current ramp-down | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° |
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0075` = 1.5 mA | 60% | process_step=current ramp-down | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° |
 
-## `energy` (667 pair(s))
+## `energy` (752 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -58,6 +58,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0274` = 5922 meV | 186% | material=MLBP | desorption_state=atomic |
 | `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0172` = -5090 meV | 185% | defect_complex=VAl(ON)3 | material=MLBP |
 | `CLM-MAT-0104` = 220 meV | `CLM-MEM-0040` = -180 meV | 182% | measurement=RIXS, absorption_edge=Fe L3 edge | method=DFT |
+| `CLM-MAT-0313` = 130 meV | `CLM-MEM-0040` = -180 meV | 172% | material=SmNiO3 | method=DFT |
 | `CLM-MAT-0049` = 296 meV | `CLM-MEM-0040` = -180 meV | 161% | material=LiFePO4 | method=DFT |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0290` = 3000 meV | 159% | material=MLBP | trap_type=isolated bi-Si3 |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0276` = 2994 meV | 159% | material=MLBP | desorption_state=molecular |
@@ -65,6 +66,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0291` = 2800 meV | 155% | material=MLBP | trap_type=isolated bi-Ed |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0277` = 2789 meV | 155% | material=MLBP | desorption_state=molecular |
 | `CLM-MEM-0040` = -2.884e-05 fJ | `CLM-PROC-0031` = 1.458e-05 fJ | 151% | method=DFT | error_metric=root-mean-square deviation per formula unit |
+| `CLM-MAT-0306` = 89.9 meV | `CLM-MEM-0040` = -180 meV | 150% | polarization_state=P↑ | method=DFT |
 | `CLM-MAT-0201` = 370 meV | `CLM-MEM-0040` = -180 meV | 149% | band=2.3 eV emission, impurity_content=<0.1 ppm | method=DFT |
 | `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0172` = -5090 meV | 140% | synthesis_condition=Nitrogen-rich | material=MLBP |
 | `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0172` = -5090 meV | 139% | synthesis_condition=Nitrogen-rich | material=MLBP |
@@ -89,10 +91,8 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-MAT-0277` = 2789 meV | `CLM-MEM-0040` = -180 meV | 106% | desorption_state=molecular | method=DFT |
 | `CLM-MAT-0291` = 2800 meV | `CLM-MEM-0040` = -180 meV | 106% | trap_type=isolated bi-Ed | method=DFT |
 | `CLM-MAT-0276` = 2994 meV | `CLM-MEM-0040` = -180 meV | 106% | desorption_state=molecular | method=DFT |
-| `CLM-MAT-0290` = 3000 meV | `CLM-MEM-0040` = -180 meV | 106% | trap_type=isolated bi-Si3 | method=DFT |
-| `CLM-MAT-0104` = 220 meV | `CLM-MAT-0172` = -5090 meV | 104% | measurement=RIXS, absorption_edge=Fe L3 edge | material=MLBP |
 
-_and 627 more_
+_and 712 more_
 
 ## `energy_advantage_ratio` (19 pair(s))
 
@@ -118,7 +118,7 @@ _and 627 more_
 | `CLM-ARCH-0022` = 169.1 x | `CLM-PROC-0062` = 417 x | 59% | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch | surrogate_model=deterministic U-Net |
 | `CLM-ARCH-0022` = 169.1 x | `CLM-PROC-0058` = 73 x | 57% | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch | surrogate_model=VP-DDBM, baseline_model=phase-field solver |
 
-## `frequency` (591 pair(s))
+## `frequency` (689 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -143,6 +143,7 @@ _and 627 more_
 | `CLM-MAT-0298` = -1630 GHz | `CLM-PHOT-0001` = 18.98 GHz | 101% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | component=single ring cavity, parameter=FSR |
 | `CLM-MAT-0298` = -1630 GHz | `CLM-PHOT-0003` = 15.41 GHz | 101% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | component=photonic molecule, mode_spacing=Ω2 |
 | `CLM-MAT-0298` = -1630 GHz | `CLM-PHOT-0050` = 1.94e+05 GHz | 101% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | component=stabilized CW laser, frequency_offset=10 kHz |
+| `CLM-MAT-0298` = -1630 GHz | `CLM-PHOT-0136` = 8.234 GHz | 101% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | structure=coupled SSPP waveguides |
 | `CLM-MAT-0298` = -1630 GHz | `CLM-PROC-0032` = 7.9 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | holder_type=two-channel holder, chip_type=Si/Si3N4 chip, metric=-3 dB bandwidth |
 | `CLM-MAT-0298` = -1630 GHz | `CLM-PHOT-0061` = 7.48 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | corner_radius=1.4 mm |
 | `CLM-DEV-0072` = 7 GHz | `CLM-MAT-0298` = -1630 GHz | 100% | measurement_method=BLS spectra | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P |
@@ -153,6 +154,7 @@ _and 627 more_
 | `CLM-MAT-0298` = -1630 GHz | `CLM-PHOT-0002` = 3.57 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | component=photonic molecule, mode_spacing=Ω1 |
 | `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0003` = 15.41 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | component=photonic molecule, mode_spacing=Ω2 |
 | `CLM-MAT-0228` = 2.5 GHz | `CLM-MAT-0298` = -1630 GHz | 100% | component=α-Fe2O3 microdisk | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P |
+| `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0136` = 8.234 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | structure=coupled SSPP waveguides |
 | `CLM-MAT-0299` = -7240 GHz | `CLM-PROC-0032` = 7.9 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | holder_type=two-channel holder, chip_type=Si/Si3N4 chip, metric=-3 dB bandwidth |
 | `CLM-DEV-0072` = 7 GHz | `CLM-MAT-0299` = -7240 GHz | 100% | measurement_method=BLS spectra | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ |
 | `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0061` = 7.48 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | corner_radius=1.4 mm |
@@ -160,12 +162,10 @@ _and 627 more_
 | `CLM-MAT-0299` = -7240 GHz | `CLM-PROC-0033` = 4.5 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | holder_type=four-channel configuration, metric=-3 dB bandwidth |
 | `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0002` = 3.57 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | component=photonic molecule, mode_spacing=Ω1 |
 | `CLM-ARCH-0070` = 0.556 GHz | `CLM-MAT-0298` = -1630 GHz | 100% | process_node=TSMC 28 nm | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P |
-| `CLM-ARCH-0073` = 0.5 GHz | `CLM-MAT-0298` = -1630 GHz | 100% | process=45 nm | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P |
-| `CLM-MAT-0228` = 2.5 GHz | `CLM-MAT-0299` = -7240 GHz | 100% | component=α-Fe2O3 microdisk | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ |
 
-_and 551 more_
+_and 649 more_
 
-## `length_device` (5042 pair(s))
+## `length_device` (5360 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -187,30 +187,30 @@ _and 551 more_
 | `CLM-DEV-0085` = 22.21 nm | `CLM-LITHO-0005` = 3e+06 nm | 100% | rkky_coupling=-0.2 mJ/m² | beam_profile=Gaussian |
 | `CLM-DEV-0085` = 22.21 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | rkky_coupling=-0.2 mJ/m² | component=lens |
 | `CLM-DEV-0085` = 22.21 nm | `CLM-PHOT-0131` = 5e+05 nm | 100% | rkky_coupling=-0.2 mJ/m² | channel_type=elementary channel |
+| `CLM-DEV-0092` = 280.6 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | cell_size=1 µm | component=lens |
+| `CLM-DEV-0092` = 280.6 nm | `CLM-MAT-0135` = 0.013 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-DEV-0092` = 280.6 nm | `CLM-MAT-0136` = 0.006 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-DEV-0092` = 280.6 nm | `CLM-MAT-0137` = 0.011 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-DEV-0092` = 280.6 nm | `CLM-MAT-0138` = 0.005 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-DEV-0092` = 280.6 nm | `CLM-MAT-0139` = 0.007 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-DEV-0092` = 280.6 nm | `CLM-MAT-0140` = 0.005 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-DEV-0093` = 502.3 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | cell_size=1 µm | component=lens |
+| `CLM-DEV-0093` = 502.3 nm | `CLM-MAT-0135` = 0.013 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-DEV-0093` = 502.3 nm | `CLM-MAT-0136` = 0.006 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-DEV-0093` = 502.3 nm | `CLM-MAT-0137` = 0.011 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-DEV-0093` = 502.3 nm | `CLM-MAT-0138` = 0.005 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-DEV-0093` = 502.3 nm | `CLM-MAT-0139` = 0.007 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-DEV-0093` = 502.3 nm | `CLM-MAT-0140` = 0.005 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-DEV-0093` = 502.3 nm | `CLM-PHOT-0057` = 0.024 nm | 100% | cell_size=1 µm | measurement_duration=exceeding 15.5 hours |
+| `CLM-DEV-0093` = 502.3 nm | `CLM-PROC-0049` = 0.0229 nm | 100% | cell_size=1 µm | sample=twisted bilayer graphene-hBN |
+| `CLM-DEV-0093` = 502.3 nm | `CLM-PROC-0050` = 0.0244 nm | 100% | cell_size=1 µm | sample=twisted bilayer graphene-hBN |
 | `CLM-LITHO-0001` = 500 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | material=crystalline silicon membrane | component=lens |
 | `CLM-LITHO-0001` = 500 nm | `CLM-MAT-0135` = 0.013 nm | 100% | material=crystalline silicon membrane | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-LITHO-0001` = 500 nm | `CLM-MAT-0136` = 0.006 nm | 100% | material=crystalline silicon membrane | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-LITHO-0001` = 500 nm | `CLM-MAT-0137` = 0.011 nm | 100% | material=crystalline silicon membrane | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-LITHO-0001` = 500 nm | `CLM-MAT-0138` = 0.005 nm | 100% | material=crystalline silicon membrane | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-LITHO-0001` = 500 nm | `CLM-MAT-0139` = 0.007 nm | 100% | material=crystalline silicon membrane | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-LITHO-0001` = 500 nm | `CLM-MAT-0140` = 0.005 nm | 100% | material=crystalline silicon membrane | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-LITHO-0001` = 500 nm | `CLM-PHOT-0057` = 0.024 nm | 100% | material=crystalline silicon membrane | measurement_duration=exceeding 15.5 hours |
-| `CLM-LITHO-0001` = 500 nm | `CLM-PROC-0049` = 0.0229 nm | 100% | material=crystalline silicon membrane | sample=twisted bilayer graphene-hBN |
-| `CLM-LITHO-0001` = 500 nm | `CLM-PROC-0050` = 0.0244 nm | 100% | material=crystalline silicon membrane | sample=twisted bilayer graphene-hBN |
-| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0017` = 0.284 nm | 100% | beam_profile=Gaussian | material=Sb monolayer on SiC(0001) |
-| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0018` = 0.327 nm | 100% | beam_profile=Gaussian | material=Sb monolayer on SiC(0001) |
-| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0020` = 6.4 nm | 100% | beam_profile=Gaussian | regime=partially-reconstructed |
-| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0023` = 3.5 nm | 100% | beam_profile=Gaussian | state=X2sA |
-| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0024` = 6.4 nm | 100% | beam_profile=Gaussian | state=X2sA |
-| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0029` = 0.5291 nm | 100% | beam_profile=Gaussian | material=bulk CeN |
-| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0037` = 14.6 nm | 100% | beam_profile=Gaussian | material=TiN, property=GL coherence length |
-| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0039` = 42.9 nm | 100% | beam_profile=Gaussian | measurement=neutron reflectivity, material=TiN |
-| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0040` = 0.5 nm | 100% | beam_profile=Gaussian | fermi_velocity=7×105 ms−1, model=Drude model |
-| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0052` = 23 nm | 100% | beam_profile=Gaussian | characterization_method=AFM |
-| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0060` = 101.7 nm | 100% | beam_profile=Gaussian | sample=Sample A |
-| `CLM-LITHO-0005` = 3e+06 nm | `CLM-MAT-0063` = 10.7 nm | 100% | beam_profile=Gaussian | device=D1 |
 
-_and 5002 more_
+_and 5320 more_
 
 ## `power` (245 pair(s))
 
@@ -325,10 +325,11 @@ _and 6486 more_
 | `CLM-MAT-0282` = 0.0039 ohm | `CLM-MEM-0001` = 900 ohm | 100% | temperature=10 K, dc_current=0.1 mA | resistance_state=high-resistance state |
 | `CLM-MAT-0281` = 6.59 ohm | `CLM-MEM-0001` = 900 ohm | 99% | interface=IrMn3/Pt, temperature=10 K, dc_current=0.1 mA | resistance_state=high-resistance state |
 
-## `temperature` (316 pair(s))
+## `temperature` (343 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0307` = 186.9 degC | 192% | relaxation_temperature=TLIESST | property=T N |
 | `CLM-DEV-0017` = 25.35 degC | `CLM-MAT-0092` = -23.15 degC | 191% | temperature_control_system=VAHEAT system | pressure=ambient pressure, magnetic_field=0.05 T |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0004` = -73.15 degC | 189% | time_after_cooling_onset=10 s | calculation=optical phonon and surface polar phonon scattering |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0293` = -73.15 degC | 189% | time_after_cooling_onset=10 s | mn_content=0.1, compensation_degree=Kmax |
@@ -337,6 +338,7 @@ _and 6486 more_
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0004` = -73.15 degC | 186% | time_after_cooling_onset=10 s | calculation=optical phonon and surface polar phonon scattering |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0293` = -73.15 degC | 186% | time_after_cooling_onset=10 s | mn_content=0.1, compensation_degree=Kmax |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0091` = -113.1 degC | 175% | time_after_cooling_onset=10 s | pressure=ambient pressure, magnetic_field=0.05 T |
+| `CLM-DEV-0076` = -257.6 degC | `CLM-MAT-0307` = 186.9 degC | 173% | sample=NbN/I/FePt | property=T N |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0091` = -113.1 degC | 172% | time_after_cooling_onset=10 s | pressure=ambient pressure, magnetic_field=0.05 T |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0003` = -123.1 degC | 169% | time_after_cooling_onset=10 s | calculation=acoustic phonon scattering |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0003` = -123.1 degC | 166% | time_after_cooling_onset=10 s | calculation=acoustic phonon scattering |
@@ -367,10 +369,8 @@ _and 6486 more_
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0209` = -270.5 degC | 131% | time_after_cooling_onset=10 s | equation=Allen-Dynes modified McMillan equation |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0142` = -264.1 degC | 131% | time_after_cooling_onset=10 s | measurement_setup=STM measurements |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0210` = -269.9 degC | 130% | time_after_cooling_onset=10 s | strain=+2%, method=anisotropic Migdal-Eliashberg equations |
-| `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0209` = -270.5 degC | 130% | time_after_cooling_onset=10 s | equation=Allen-Dynes modified McMillan equation |
-| `CLM-DEV-0076` = -257.6 degC | `CLM-MAT-0093` = 76.85 degC | 130% | sample=NbN/I/FePt | magnetic_field=0.05 T |
 
-_and 276 more_
+_and 303 more_
 
 ## `temperature_delta` (18 pair(s))
 

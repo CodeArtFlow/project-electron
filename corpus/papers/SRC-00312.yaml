@@ -1,0 +1,88 @@
+id: SRC-00312
+title: 'The polar discontinuity picture in nickelate superlattices: comparison of the insulating and metallic
+  phases'
+doi: null
+arxiv_id: 2611.08067v1
+url: https://arxiv.org/abs/2611.08067v1
+venue_id: arxiv_api
+authors:
+- name: Edith Simmen
+  affiliation: null
+  corresponding: null
+- name: Jonathan Amara
+  affiliation: null
+  corresponding: null
+- name: Philippe Ghosez
+  affiliation: null
+  corresponding: null
+- name: Nicola A. Spaldin
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-05'
+retrieved_date: '2026-11-07'
+access: full_text
+read_scope: Automated reading. The full PDF text (53,211 characters, 11 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.08067v1 on
+  2026-11-07. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“resulting in a greater volume for Bi 3+ (V Bi3+ = 50.4 ˚A 3 ) compared to Bi 5+ (V Bi5+ =
+  46.7 ˚A 3 ).”
+
+  “All Ni ions have a magnetic moment of∼ ±1.7µB, consistent with a Ni 2+ state [35, 47, 48, 52].”
+
+  “We obtain polar distortions in the BaTiO 3 bulk slab of the same magnitude as those in bulk polar BaTiO
+  3 strained to NdGaO3 (Pbulk, BaTiO3 = 51.4µC cm−2, calculated using the Berry-phase method [56, 57]).”
+
+  “calculated using the Berry-phase method [56, 57]”
+
+  “The unhappy orientation is not stable and energetically disfavored by∼2 eV compared to the happy orientation.”
+
+  “SmNiO 3/BaTiO3 superlattices”
+
+  “We refer to our previous publication for a more detailed discussion of the results [27] and will only
+  highlight the commonalities and differences here.”
+
+  “During relaxation of the metallic SmNiO 3 bulk unit cell, we obtain Jahn-Teller distortions, which
+  do not occur experimentally in the metallic phase, and a small gap of 0.13 eV.”
+
+  “metallic SmNiO 3 bulk unit cell”'
+method_summary: “We calculated the properties of the bulk unit cells and BiNiO 3/BaTiO3 or SmNiO 3/BaTiO3
+  superlattices with density-functional theory using the V ASP package [37, 38] and the workflows for
+  V ASP from atomate2 [39].”
+limitations: “Second, the screening charges are not induced by rigid shifts of the band and instead, the
+  screening charges are transferred into specific Bi-s, Ni-dand O-p states.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 17704
+    output: 2477
+  claims_accepted: 6
+  claims_rejected: 2
+  rejected:
+  - statement: Bulk insulating BiNiO3 in the P-1 phase exhibits a calculated band gap of 0.53 eV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''We find a
+      band gap of 0.53 eV in agreement with previous DFT studies ['''
+    quotes:
+    - We find a band gap of 0.53 eV in agreement with previous DFT studies [35, 47] and close to experimental
+      findings [51].
+    - 'Bulk BiNiO 3:'
+    - insulatingP ¯1
+  - statement: For BiNiO3/BaTiO3 superlattices, the unhappy polarization orientation has a higher energy
+      than the happy orientation by 1.1 eV when relaxing only interfacial la
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - We find a higher energy than for the happy orientation (∆E= 1.1 eV) when relaxing only the interfacial
+      BaTiO 3 and BiNiO3 layers.
+    - in our DFT calculations for the studied BaTiO 3 thickness.
+    - BiNiO 3/BaTiO3
+    - The opposite, ‘unhappy’ orientation is energetically disfavored
+corrections: []

@@ -25,6 +25,78 @@ id: CAND-20261106-0051
 harvested_date: '2026-11-06'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-07'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For the robust silicon metagrating design v4 s2, the +1-order transmitted efficiency for
+      x-polarized light at 1550 nm is 80.6% using RCWA.
+    reason: 'unit conversion refused: efficiency_compute: cannot convert 80.6 % to 1/J - Cannot convert
+      from ''percent'' (dimensionless) to ''1 / joule'' ([time] ** 2 / [mass] / [length] ** 2). A dimens'
+    quotes:
+    - Metagrating v4 s2η +1, x pol. (%) 80.6 80.1
+    - RCW A at the highest truncation ([70,12] and [84,7])
+    - Silicon metagrating deflecting unpolarized 1550 nm light by 50 ◦.
+  - statement: For the robust silicon metagrating design v4 s2, the +1-order transmitted efficiency for
+      x-polarized light at 1550 nm is 80.1% using 3D FDTD.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - Metagrating v4 s2η +1, x pol. (%) 80.6 80.1
+    - FDTD at the highest resolution (60 and 50 px/µm)
+    - Silicon metagrating deflecting unpolarized 1550 nm light by 50 ◦.
+  - statement: For the robust silicon metagrating design v4 s2, the +1-order transmitted efficiency for
+      y-polarized light at 1550 nm is 63.6% using RCWA.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''η+1, y pol.
+      (%) 63.6 62.8'''
+    quotes:
+    - η+1, y pol. (%) 63.6 62.8
+    - Metagrating v4 s2η +1, x pol. (%) 80.6 80.1
+    - RCW A at the highest truncation ([70,12] and [84,7])
+    - Silicon metagrating deflecting unpolarized 1550 nm light by 50 ◦.
+  - statement: For the robust silicon metagrating design v4 s2, the +1-order transmitted efficiency for
+      y-polarized light at 1550 nm is 62.8% using 3D FDTD.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''η+1, y pol.
+      (%) 63.6 62.8'''
+    quotes:
+    - η+1, y pol. (%) 63.6 62.8
+    - Metagrating v4 s2η +1, x pol. (%) 80.6 80.1
+    - FDTD at the highest resolution (60 and 50 px/µm)
+    - Silicon metagrating deflecting unpolarized 1550 nm light by 50 ◦.
+  - statement: The 12-meta-atom supercell achieves an x-polarized +1-order transmitted efficiency of 88.1%
+      in RCWA at [84,7] Fourier truncation.
+    reason: 'unit conversion refused: efficiency_compute: cannot convert 88.1 % to 1/J - Cannot convert
+      from ''percent'' (dimensionless) to ''1 / joule'' ([time] ** 2 / [mass] / [length] ** 2). A dimens'
+    quotes:
+    - Supercell, N. of meta-atoms 12η +1, x pol. (%) 88.1 89.2
+    - RCW A at the highest truncation ([70,12] and [84,7])
+  - statement: The 12-meta-atom supercell achieves an x-polarized +1-order transmitted efficiency of 89.2%
+      in 3D FDTD at 50 px/µm resolution.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - Supercell, N. of meta-atoms 12η +1, x pol. (%) 88.1 89.2
+    - FDTD at the highest resolution (60 and 50 px/µm)
+  - statement: The NA 0.50 metalens achieves a focusing efficiency of 77.3% in 3D FDTD simulation.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - Metalens, NA 0.50 focusing eff. (%) 81.7 77.3
+    - 3D FDTD (30 px/µm)
+  - statement: The dimerized grating TM quasi-BIC mode achieves a quality factor Q of 971 at resolution
+      320 px/µm in 2D FDTD simulation.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit '''' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit e'
+    quotes:
+    - 320 1549.49 971 commensurate
+    - TM quasi-BIC at 1550 nm in a dimerized Si grating on SiO 2.
+    - FDTD resolution study of the quasi-BIC (Meep, harmonic inversion, TM).
+  tokens:
+    input: 27600
+    output: 3864
+  fetched_chars: 82640
