@@ -8672,3 +8672,78 @@ claims:
       unit: fJ
     conditions:
       material: SmNiO3
+- id: CLM-MAT-0314
+  topic: MAT
+  statement: When the saturation magnetization is normal to the interface, the spin swapping efficiency
+    achieves a value greater than or equal to 50% for Ge.
+  sources:
+  - SRC-00323
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-04'
+  created: '2026-11-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: Ge
+    magnetization_orientation: normal to the interface
+- id: CLM-MAT-0315
+  topic: MAT
+  statement: When the saturation magnetization is parallel to the interface, the spin swapping efficiency
+    achieves a value greater than or equal to 20% for Ge.
+  sources:
+  - SRC-00323
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-04'
+  created: '2026-11-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: Ge
+    magnetization_orientation: parallel to the interface
+- id: CLM-MAT-0316
+  topic: MAT
+  statement: The spin-split-off band energy splitting at the Γ point λ for Ge is 290 meV.
+  sources:
+  - SRC-00323
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-04'
+  created: '2026-11-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: Ge
+    k_point: Γ point
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 290.0
+      unit: meV
+    si_base:
+      value: 4.6463122385999995e-20
+      unit: J
+    display:
+      value: 4.646312238599999e-05
+      unit: fJ
+    conditions:
+      material: Ge
+      k_point: Γ point

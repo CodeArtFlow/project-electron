@@ -1,0 +1,78 @@
+id: SRC-00319
+title: 'SensorGuard-RV: Sensor-to-Register Data Protection for Resource-Constrained RISC-V Devices'
+doi: null
+arxiv_id: 2611.08380v1
+url: https://arxiv.org/abs/2611.08380v1
+venue_id: arxiv_api
+authors:
+- name: Hamid Noori
+  affiliation: null
+  corresponding: null
+- name: Carlton Shepherd
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-05'
+retrieved_date: '2026-11-08'
+access: full_text
+read_scope: Automated reading. The full PDF text (62,444 characters, 10 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.08380v1 on
+  2026-11-08. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The added logic (3,155 LUTs and 2,215 registers; 5.0% and 1.7% of the device) is dominated
+  by the Ascon engine and preserves the 100 MHz clock, while estimated power rises from 118 to 368 mW.”
+
+  “These modules occupy 5.0% of the XC7A100T’s 63,400 LUTs and 1.7% of its 126,800 flip-flops.”
+
+  “Latency is measured with a Vivado Integrated Logic Analyzer (ILA), whereas resource, timing, and full-system
+  power results come from separate non-instrumented post-implementation builds.”
+
+  “Power is estimated in Vivado using identical estimation and switching-activity settings for both systems;
+  no board-level power measurements are reported.”'
+method_summary: '“Our developed prototype extends NEORV32 v1.12.8.3 on a Digilent Nexys A7-100T board
+  with a Xilinx Artix-7 XC7A100T FPGA.”
+
+  “Latency is measured with a Vivado Integrated Logic Analyzer (ILA), whereas resource, timing, and full-system
+  power results come from separate non-instrumented post-implementation builds.”'
+limitations: '“The prototype leaves NEORV32’s DMA controller disabled, requiring software to copy each
+  protected packet from the wrapper to data memory and then load it into the CFU.”
+
+  “In the prototype, the key is fixed in the FPGA configuration; a deployment would protect it with bitstream
+  encryption or derive the key from a PUF [15], and would need per-device key provisioning.”
+
+  “Lastly, the prototype holds one four-byte accelerometer packet at a time.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 18049
+    output: 2450
+  claims_accepted: 4
+  claims_rejected: 2
+  rejected:
+  - statement: At a 100 MHz clock frequency, the protected sample acquisition to register delivery takes
+      5,191 cycles (51.91 μs).
+    reason: the statement contains the number 51.91, which none of its quotes contain
+    quotes:
+    - At 100 MHz, a protected sample reaches a register in 5,191 cycles (51.9 𝜇s), of which the two Ascon
+      authenticated encryption engines account for 30.
+    - Latency is measured with a Vivado Integrated Logic Analyzer (ILA), whereas resource, timing, and
+      full-system power results come from separate non-instrumented post-implementation builds.
+    - We implement SensorGuard-RV on the NEORV32 core with an ADXL362 SPI accelerometer on an Artix-7
+      FPGA.
+  - statement: The protected loop sustains 19,015 transactions/s under continuous operation.
+    reason: the value 19015 does not appear in any of the claim's quotes
+    quotes:
+    - Because fixed-function acquisition removes per-byte software polling, the protected loop sustains
+      19,015 transactions/s, 5.3% above a software-driven SPI baseline.
+    - Latency is measured with a Vivado Integrated Logic Analyzer (ILA), whereas resource, timing, and
+      full-system power results come from separate non-instrumented post-implementation builds.
+    - At the baseline clock frequency of 100 MHz, acquisition through verified delivery takes 51.91𝜇s,
+      and the complete processing loop sustains 19,015 protected transactions/s—5.31% above the software-driven
+      SPI baseline under the same configura
+corrections: []

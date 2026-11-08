@@ -1,0 +1,91 @@
+id: SRC-00320
+title: 'Scaling Up Analog CIM: A Simulation Framework for Topology-Aware Mapping'
+doi: null
+arxiv_id: 2611.08399v1
+url: https://arxiv.org/abs/2611.08399v1
+venue_id: arxiv_api
+authors:
+- name: Yuxin Ren
+  affiliation: null
+  corresponding: null
+- name: Danella Zhao
+  affiliation: null
+  corresponding: null
+- name: Huanrui Yang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-05'
+retrieved_date: '2026-11-08'
+access: full_text
+read_scope: Automated reading. The full PDF text (45,868 characters, 9 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.08399v1 on
+  2026-11-08. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Isobar reproduces the measured latency increase with chiplet separation, with only 5.1% relative
+  error in the latency ratio between the most separated and adjacent placements”
+
+  “in the latency ratio between the most separated and adjacent placements”
+
+  “Gemma-7B 8 1,898.7 11.45 166×”
+
+  “CIM values are simulated dynamic energy.”'
+method_summary: “Isobar derives communication from CIM decompositions and heterogeneous execution, analyzes
+  the resulting contention on shared links and ports based on physical placement, and thereby constructs
+  a latency and dynamic-energy model that connects feasible mapping choices to their consequences.”
+limitations: “Once a fixed-bandwidth interface becomes the bottleneck, further increases in B cannot shorten
+  that stage.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14961
+    output: 2709
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: For Gemma-7B prefill, Isobar-guided mapping reduces communication time by 23.3% relative
+      to the strongest baseline.
+    reason: the value -23.3 does not appear in any of the claim's quotes
+    quotes:
+    - For Gemma-7B prefill, Isobar-guided mapping reduces communication time by 23.3% and end-to-end latency
+      by 18.6% relative to the strongest baseline.
+  - statement: For Gemma-7B prefill, Isobar-guided mapping reduces end-to-end latency by 18.6% relative
+      to the strongest baseline.
+    reason: the value -18.6 does not appear in any of the claim's quotes
+    quotes:
+    - For Gemma-7B prefill, Isobar-guided mapping reduces communication time by 23.3% and end-to-end latency
+      by 18.6% relative to the strongest baseline.
+  - statement: Incremental evaluation takes from 1.4 ms to 15.9 ms across deployments with 512 to 2200
+      CIM dies.
+    reason: the statement contains the number 2200, which none of its quotes contain
+    quotes:
+    - Across deployments with 512–2,200 CIM dies, incremental evaluation takes 1.4–15.9 ms, achieving
+      a 26–38×speedup over full evaluation (Fig. 3(c)).
+  - statement: Incremental evaluation achieves a 26x to 38x speedup over full evaluation across deployments
+      with 512 to 2200 CIM dies.
+    reason: the statement contains the number 2200, which none of its quotes contain
+    quotes:
+    - Across deployments with 512–2,200 CIM dies, incremental evaluation takes 1.4–15.9 ms, achieving
+      a 26–38×speedup over full evaluation (Fig. 3(c)).
+    - achieving a 26–38×speedup over full evaluation (Fig. 3(c)).
+  - statement: For Gemma-7B prefill, Isobar search achieves a 0.65% reduction in dynamic energy relative
+      to the best baseline.
+    reason: the value -0.65 does not appear in any of the claim's quotes
+    quotes:
+    - Figure 5(b) shows that this latency improvement is accompanied by a 0.65% reduction in dynamic energy
+      relative to the same baseline.
+    - 'Fig. 5. Topology-aware mapping benefits for Gemma-7B prefill:'
+    - relative to the same baseline.
+  - statement: Simulated dynamic energy for OPT-13B with 8 macros/die is 58.6 J per inference request.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''OPT-13B 8
+      5,473.7 58.6 193×'''
+    quotes:
+    - OPT-13B 8 5,473.7 58.6 193×
+    - CIM values are simulated dynamic energy.
+corrections: []

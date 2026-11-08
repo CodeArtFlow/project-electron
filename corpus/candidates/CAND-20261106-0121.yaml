@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.07243v1
 doi: null
-title: Dispersive Corrections to Electromagnetic Energy and Power Flux Are Imprints
-  of Eliminated Degrees of Freedom
+title: Dispersive Corrections to Electromagnetic Energy and Power Flux Are Imprints of Eliminated Degrees
+  of Freedom
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-04'
@@ -23,6 +23,26 @@ id: CAND-20261106-0121
 harvested_date: '2026-11-06'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-08'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At a fixed collision rate of 0.1 omega_p, the hydrodynamic model yields an attenuation
+      constant calculation for a longitudinal wave.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''ωp'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - Figure 3(c) is computed at ν/ωp = 0.1 with ω swept over 1.002 ωp ≤ω≤ 2.6 ωp, the complex root k
+      of Eq. (58) being selected by Imk > 0.
+  tokens:
+    input: 31042
+    output: 842
+  fetched_chars: 103005

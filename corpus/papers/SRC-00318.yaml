@@ -1,0 +1,100 @@
+id: SRC-00318
+title: Should You Split Decode? Disaggregation Across Future Models and Accelerators
+doi: null
+arxiv_id: 2611.08299v1
+url: https://arxiv.org/abs/2611.08299v1
+venue_id: arxiv_api
+authors:
+- name: Ramyad Hadidi
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-05'
+retrieved_date: '2026-11-08'
+access: full_text
+read_scope: Automated reading. The full PDF text (112,850 characters, 17 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.08299v1 on
+  2026-11-08. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Re-optimizing mappings and pool sizes on the same hardware cuts early commitment’s median
+  normalized goodput loss from 36% to 9%.”
+
+  “We present SILICONFORGE, a calibrated model that varies the serving decomposition and hardware assignment
+  independently.”
+
+  “With decode mappings fixed, doubling memory bandwidth cuts TPOT by 39–49%, while doubling FLOPs cuts
+  it by at most 1.8%.”
+
+  “KV-heavy GQA-MoE on photonic fabric gives the largest P/D+AFD margin,+8.1% (Figure 4c).”'
+method_summary: '“We present SILICONFORGE, a calibrated model that varies the serving decomposition and
+  hardware assignment independently.”
+
+  “SILICONFORGEmodels compute and memory costs, communication, and pipeline overlap (§II-B–§II-C, §V-A).
+  Queueing converts the resulting service times into goodput, while an event-driven simulation checks
+  the queueing model.”
+
+  “For each pool, SILICONFORGEmodels FLOPs, bytes, state, feasibility, service time, and token throughput.”'
+limitations: '“A margin passes our two-part test only if its nominal magnitude exceeds the 9% envelope
+  and its sign holds at every tested specification corner.”
+
+  “Under the main rule (Figure 12a), every range spans both signs; no headline comparison is decided.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 39137
+    output: 3260
+  claims_accepted: 3
+  claims_rejected: 5
+  rejected:
+  - statement: With decode mappings fixed, doubling memory bandwidth reduces TPOT by between 39% and 49%.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - With decode mappings fixed, doubling memory bandwidth cuts TPOT by 39–49%, while doubling FLOPs
+      cuts it by at most 1.8%.
+    - We present SILICONFORGE, a calibrated model that varies the serving decomposition and hardware assignment
+      independently.
+  - statement: Adding the attention/FFN boundary on one class alters SLO goodput per kW by between -10.4%
+      and +8.1% relative to P/D under 128 kW.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - Under the revised model and 128 kW, adding the attention/FFN boundary on one class moves SLO goodput
+      per kW by−10.4%to+8.1%, and role-specific placement changes little.
+    - We present SILICONFORGE, a calibrated model that varies the serving decomposition and hardware assignment
+      independently.
+  - statement: For expert-heavy MoE on photonic fabric, role-specific placement improves P/D+AFD's margin
+      by 5.8 points.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''points'' is not one
+      of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a '
+    quotes:
+    - For example, expert-heavy MoE on photonic fabric selects a GPU FFN pool under AFD+. Its margin improves
+      by5.8points (Figure 4a).
+    - We present SILICONFORGE, a calibrated model that varies the serving decomposition and hardware assignment
+      independently.
+  - statement: Under 128 kW nominal co-optimization, P/D+AFD and P/D remain within the 9% envelope in
+      579 of 768 cells.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - Co-optimized at 128 kW, P/D+AFD and P/D stay within the 9% envelope in 579 of 768 cells; finer P/D
+      pools preserve 18 of 101 P/D+AFD leads beyond it and 86 of 88 P/D leads.
+    - We present SILICONFORGE, a calibrated model that varies the serving decomposition and hardware assignment
+      independently.
+  - statement: Re-optimizing mappings and pool sizes within existing hardware reduces the median loss
+      of scenario-best SLO goodput from 35.7% to 9.3%.
+    reason: the quote says 'up to'/'within'/'at most' before the number but bound is not upper_bound
+    quotes:
+    - With comparisons and axes weighted equally, the median loss is 35.7% of scenario-best SLO goodput
+      per kW (per unit on the objective axis). Re-optimizing mappings and pool sizes within the existing
+      hardware cuts this loss to 9.3%.
+    - We present SILICONFORGE, a calibrated model that varies the serving decomposition and hardware assignment
+      independently.
+    - Re-optimizing mappings and pool sizes within the existing hardware cuts this loss to 9.3%.
+    - With comparisons and axes weighted equally, the median loss is 35.7% of scenario-best SLO goodput
+      per kW (per unit on the objective axis).
+corrections: []

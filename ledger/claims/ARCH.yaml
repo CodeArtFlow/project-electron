@@ -5633,3 +5633,350 @@ claims:
       unit: percent
     conditions:
       baseline_utilization: 42.4%
+- id: CLM-ARCH-0199
+  topic: ARCH
+  statement: Re-optimizing mappings and pool sizes on the same hardware reduces the median normalized
+    goodput loss of early commitment from 36% to 9%.
+  sources:
+  - SRC-00318
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    mitigation_strategy: Re-optimizing mappings and pool sizes on the same hardware
+    baseline_loss: 36%
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 9.0
+      unit: '%'
+    si_base:
+      value: 0.09
+      unit: dimensionless
+    display:
+      value: 9.0
+      unit: percent
+    conditions:
+      mitigation_strategy: Re-optimizing mappings and pool sizes on the same hardware
+      baseline_loss: 36%
+- id: CLM-ARCH-0200
+  topic: ARCH
+  statement: With decode mappings fixed, doubling FLOPs cuts TPOT by at most 1.8%.
+  sources:
+  - SRC-00318
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    decode_mappings: fixed
+    hardware_change: doubling FLOPs
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 1.8
+      unit: '%'
+    si_base:
+      value: 0.018000000000000002
+      unit: dimensionless
+    display:
+      value: 1.8000000000000003
+      unit: percent
+    conditions:
+      decode_mappings: fixed
+      hardware_change: doubling FLOPs
+- id: CLM-ARCH-0201
+  topic: ARCH
+  statement: KV-heavy GQA-MoE on photonic fabric yields a P/D+AFD margin of +8.1%.
+  sources:
+  - SRC-00318
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    model_direction: KV-heavy GQA-MoE
+    fabric: photonic fabric
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 8.1
+      unit: '%'
+    si_base:
+      value: 0.081
+      unit: dimensionless
+    display:
+      value: 8.1
+      unit: percent
+    conditions:
+      model_direction: KV-heavy GQA-MoE
+      fabric: photonic fabric
+- id: CLM-ARCH-0202
+  topic: ARCH
+  statement: The added protection logic uses 3,155 LUTs on the FPGA target device.
+  sources:
+  - SRC-00319
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device: XC7A100T
+- id: CLM-ARCH-0203
+  topic: ARCH
+  statement: The added protection logic uses 2,215 registers on the FPGA target device.
+  sources:
+  - SRC-00319
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device: XC7A100T
+- id: CLM-ARCH-0204
+  topic: ARCH
+  statement: Estimated full-system power for the baseline design is 118 mW.
+  sources:
+  - SRC-00319
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    tool: Vivado
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 118.0
+      unit: mW
+    si_base:
+      value: 0.11800000000000001
+      unit: W
+    display:
+      value: 0.11800000000000001
+      unit: W
+    conditions:
+      tool: Vivado
+- id: CLM-ARCH-0205
+  topic: ARCH
+  statement: Estimated full-system power for SensorGuard-RV is 368 mW.
+  sources:
+  - SRC-00319
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    tool: Vivado
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 368.0
+      unit: mW
+    si_base:
+      value: 0.368
+      unit: W
+    display:
+      value: 0.368
+      unit: W
+    conditions:
+      tool: Vivado
+- id: CLM-ARCH-0206
+  topic: ARCH
+  statement: Isobar reproduces the measured latency increase with chiplet separation with a relative error
+    of 5.1% in the latency ratio.
+  sources:
+  - SRC-00320
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    benchmark: latency ratio between the most separated and adjacent placements
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 5.1
+      unit: '%'
+    si_base:
+      value: 0.051
+      unit: dimensionless
+    display:
+      value: 5.1
+      unit: percent
+    conditions:
+      benchmark: latency ratio between the most separated and adjacent placements
+- id: CLM-ARCH-0207
+  topic: ARCH
+  statement: Simulated dynamic energy for Gemma-7B with 8 macros/die is 11.45 J per inference request.
+  sources:
+  - SRC-00320
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    model: Gemma-7B
+    macros_per_die: '8'
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 11.45
+      unit: J
+    si_base:
+      value: 11.45
+      unit: J
+    display:
+      value: 1.1449999999999998e+16
+      unit: fJ
+    conditions:
+      model: Gemma-7B
+      macros_per_die: '8'
+- id: CLM-ARCH-0208
+  topic: ARCH
+  statement: In a 28-nm post-synthesis implementation, the saturating popcount adder tree has a critical
+    path delay of 1.58 ns.
+  sources:
+  - SRC-00321
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    process: 28 nm
+    component: Saturating Popcount Adder Tree
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.58
+      unit: ns
+    si_base:
+      value: 1.5800000000000001e-09
+      unit: s
+    display:
+      value: 1.5799999999999998
+      unit: ns
+    conditions:
+      process: 28 nm
+      component: Saturating Popcount Adder Tree
+- id: CLM-ARCH-0209
+  topic: ARCH
+  statement: In a 28-nm post-synthesis implementation, the 384 instances of XOR trees consume 0.3 mW of
+    power.
+  sources:
+  - SRC-00321
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    process: 28 nm
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.3
+      unit: mW
+    si_base:
+      value: 0.0003
+      unit: W
+    display:
+      value: 0.0003
+      unit: W
+    conditions:
+      process: 28 nm

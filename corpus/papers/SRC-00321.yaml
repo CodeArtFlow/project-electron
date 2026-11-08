@@ -1,0 +1,104 @@
+id: SRC-00321
+title: Core-Lock Scheduling for 5G NR LDPC Decoders
+doi: null
+arxiv_id: 2611.08400v1
+url: https://arxiv.org/abs/2611.08400v1
+venue_id: arxiv_api
+authors:
+- name: N. Papageorgiou
+  affiliation: null
+  corresponding: null
+- name: V. Paliouras
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-05'
+retrieved_date: '2026-11-08'
+access: full_text
+read_scope: Automated reading. The full PDF text (22,496 characters, 4 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.08400v1 on
+  2026-11-08. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“TABLE I POST-SYNTHESISRESULTS AT28 nm”
+
+  “Saturating Popcount Adder Tree 3539 1.58 ns 0.4 mW”
+
+  “POST-SYNTHESISRESULTS AT28 nm”
+
+  “Saturating Popcount Adder Tree”
+
+  “384 inst. XOR Trees 5765 0.16 ns 0.3 mW”'
+method_summary: “We evaluate the proposed architecture using a Cadence synthesis flow and a commercial
+  28-nm standard-cell library.”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 8714
+    output: 2340
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: The core-only network achieves a 76% reduction in shifter network area compared with an
+      estimated fully parallel full-matrix checker.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Compared
+      with an estimated fully parallel full-matrix checker, the cor'''
+    quotes:
+    - Compared with an estimated fully parallel full-matrix checker, the core-only approach yields a 76%
+      reduction in shifter network area and a 73% reduction in XOR gate count.
+    - TABLE I POST-SYNTHESISRESULTS AT28 nm
+    - Compared with an estimated fully parallel full-matrix checker
+    - shifter network area
+  - statement: The core-only approach reduces the XOR gate count by 73% compared to an estimated fully
+      parallel full-matrix checker.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Compared
+      with an estimated fully parallel full-matrix checker, the cor'''
+    quotes:
+    - Compared with an estimated fully parallel full-matrix checker, the core-only approach yields a 76%
+      reduction in shifter network area and a 73% reduction in XOR gate count.
+    - TABLE I POST-SYNTHESISRESULTS AT28 nm
+    - Compared with an estimated fully parallel full-matrix checker
+    - XOR gate count
+  - statement: In a 28-nm post-synthesis implementation, a single 384-bit barrel shifter occupies an area
+      of 3921 µm².
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''384-bit BR
+      3921 1 ns 0.24 mW'''
+    quotes:
+    - TABLE I POST-SYNTHESISRESULTS AT28 nm
+    - 384-bit BR 3921 1 ns 0.24 mW
+    - POST-SYNTHESISRESULTS AT28 nm
+    - 384-bit BR
+  - statement: In a 28-nm post-synthesis implementation, a single 384-bit barrel shifter consumes 0.24
+      mW of power.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''384-bit BR
+      3921 1 ns 0.24 mW'''
+    quotes:
+    - TABLE I POST-SYNTHESISRESULTS AT28 nm
+    - 384-bit BR 3921 1 ns 0.24 mW
+    - POST-SYNTHESISRESULTS AT28 nm
+    - 384-bit BR
+  - statement: In a 28-nm post-synthesis implementation, the dedicated saturating popcount adder tree
+      occupies 3539 µm² of area.
+    reason: 'unit conversion refused: area_die: could not parse 3539.0 ''µm 2'': Unit expression cannot
+      have a scaling factor.'
+    quotes:
+    - TABLE I POST-SYNTHESISRESULTS AT28 nm
+    - Saturating Popcount Adder Tree 3539 1.58 ns 0.4 mW
+    - POST-SYNTHESISRESULTS AT28 nm
+    - Saturating Popcount Adder Tree
+  - statement: In a 28-nm post-synthesis evaluation, the 384 instances of XOR trees occupy 5765 µm² of
+      area.
+    reason: 'unit conversion refused: area_die: could not parse 5765.0 ''µm 2'': Unit expression cannot
+      have a scaling factor.'
+    quotes:
+    - TABLE I POST-SYNTHESISRESULTS AT28 nm
+    - 384 inst. XOR Trees 5765 0.16 ns 0.3 mW
+    - POST-SYNTHESISRESULTS AT28 nm
+    - 384 inst. XOR Trees
+corrections: []

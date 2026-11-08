@@ -1,0 +1,104 @@
+id: SRC-00317
+title: Machine learning classification of dynamical phases in a driven nonlinear Su-Schrieffer-Heeger
+  lattice
+doi: null
+arxiv_id: 2611.08287v1
+url: https://arxiv.org/abs/2611.08287v1
+venue_id: arxiv_api
+authors:
+- name: Chukwunaedum Patrick Izediuno
+  affiliation: null
+  corresponding: null
+- name: Ghada H. Alharbi
+  affiliation: null
+  corresponding: null
+- name: Stephan Wong
+  affiliation: null
+  corresponding: null
+- name: Zeeshan Ahmad
+  affiliation: null
+  corresponding: null
+- name: Sunae So
+  affiliation: null
+  corresponding: null
+- name: Minkyung Kim
+  affiliation: null
+  corresponding: null
+- name: Sang Soon Oh
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-05'
+retrieved_date: '2026-11-08'
+access: full_text
+read_scope: Automated reading. The full PDF text (58,186 characters, 13 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.08287v1 on
+  2026-11-08. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“the CNN reaches 98.0% held-out accuracy”
+
+  “Trained on 70% of the reference labels, the CNN reproduces the reference diagram closely [Fig. 3(b)],
+  with a held-out accuracy of 97.96% (22 of 1080 points misclassified).”
+
+  “Trained on 70% of the reference labels”
+
+  “We apply four classifiers to the same simulated data (Table I)”'
+method_summary: “Each trajectory starts from a near-symmetric state with a 1% imbalance between a + 0
+  and a − 0 , and is integrated with a fourth-order Runge-Kutta scheme (step δt = 0.02) up to t f = 120.”
+limitations: “Its main limitations are that it merges periodic and chaotic switching and that single discovery
+  runs fragment oscillatory phases”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 18236
+    output: 1686
+  claims_accepted: 1
+  claims_rejected: 4
+  rejected:
+  - statement: The aDMD library-building method achieved an adjusted Rand index of 0.916 against the heuristic
+      reference diagram.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - while the two label-free methods reach adjusted Rand indices (ARIs) of 0.916 and 0.947, respectively
+    - The consensus of the three orders contains 60 regimes and reaches ARI = 0.916 against the reference
+    - We apply four classifiers to the same simulated data (Table I)
+    - an unsupervised library-building scheme based on augmented dynamic mode decomposition (aDMD)
+  - statement: The aDMD + GMM method achieved an adjusted Rand index of 0.947 against the heuristic reference
+      diagram.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - while the two label-free methods reach adjusted Rand indices (ARIs) of 0.916 and 0.947, respectively
+    - The aDMD + GMM method [Fig. 3(d)] uses 9 of its 30 available mixture components and reaches ARI
+      = 0.947
+    - We apply four classifiers to the same simulated data (Table I)
+    - an unsupervised Gaussian mixture model (GMM) on four dynamical invariants that include an aDMD reconstruction
+      error.
+  - statement: The ConvAE + IDEC baseline achieved an adjusted Rand index of 0.375 against the heuristic
+      reference.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The ConvAE + IDEC baseline, which learns its own representation from the raw intensities and is
+      even given the number of phases, reaches only ARI = 0.375 (Table II)
+    - We apply four classifiers to the same simulated data (Table I)
+    - The ConvAE + IDEC baseline
+  - statement: The integration run for each trajectory uses a Runge-Kutta step size of 0.02 up to a final
+      time of tf = 120.
+    reason: the quote says 'up to'/'within'/'at most' before the number but bound is not upper_bound
+    quotes:
+    - and is integrated with a fourth-order Runge-Kutta scheme (step δt = 0.02) up to t f = 120.
+    - We apply four classifiers to the same simulated data (Table I)
+    - fourth-order Runge-Kutta scheme
+    - step δt = 0.02
+corrections: []

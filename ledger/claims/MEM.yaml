@@ -1477,3 +1477,40 @@ claims:
     verified_quotes: 4
   conditions:
     context_length: beyond 256K tokens
+- id: CLM-MEM-0051
+  topic: MEM
+  statement: The average tunnel magnetoresistance of the control device is 80.2%.
+  sources:
+  - SRC-00322
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device_configuration: control
+- id: CLM-MEM-0052
+  topic: MEM
+  statement: When experimental device-to-device variation is included, the neural network inference accuracy
+    on the MNIST dataset is 48.6%.
+  sources:
+  - SRC-00322
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device_to_device_variation: included

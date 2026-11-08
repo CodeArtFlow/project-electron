@@ -1,0 +1,73 @@
+id: SRC-00316
+title: 'Zirah: A Post-Quantum True Random Number Generator Hardware Signer With an Avalanche Noise'
+doi: null
+arxiv_id: 2611.08200v1
+url: https://arxiv.org/abs/2611.08200v1
+venue_id: arxiv_api
+authors:
+- name: Muhammad Shaheer Bin Junaid
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-05'
+retrieved_date: '2026-11-08'
+access: full_text
+read_scope: Automated reading. The full PDF text (85,624 characters, 28 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.08200v1 on
+  2026-11-08. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“At 168 MHz the masked signature took a median of 157 ms over 20 runs and a complete signing
+  operation under 0.8 s”
+
+  “a complete signing operation”'
+method_summary: '“All measurements come from one DevEBox with one Board A and one Board B, taken in Karachi
+  on 5 November 2026 over about two hours, at a room temperature that was not recorded.”
+
+  “The raw samples were captured with zirah capture, which asks the firmware for unconditioned ADC values,
+  and assessed with NIST’s own SP 800-90B tool.”'
+limitations: '“I make no claim that Zirah resists side-channel or fault attacks, and the evidence would
+  not support one.”
+
+  “The entropy results describe one board, one transistor, one session and one supply.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 25433
+    output: 1512
+  claims_accepted: 1
+  claims_rejected: 3
+  rejected:
+  - statement: NIST's SP 800-90B tool assessed 6.898 bits of min-entropy per byte on the non-IID track
+      for 1,000,000 raw samples of the avalanche noise source.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''NIST’s SP
+      800-90B tool rejected the IID assumption for 1,000,000 raw s'''
+    quotes:
+    - NIST’s SP 800-90B tool rejected the IID assumption for 1,000,000 raw samples and assessed 6.898
+      bits of min-entropy per byte on the non-IID track, against the 1 bit the firmware credits
+    - 1,000,000 raw samples
+    - on the non-IID track
+    - NIST’s SP 800-90B tool
+  - statement: At 168 MHz, the masked signature took a median of 157 ms over 20 runs.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - At 168 MHz the masked signature took a median of 157 ms over 20 runs
+    - At 168 MHz
+    - over 20 runs
+    - a median of 157 ms
+  - statement: The signer matched the pq-crystals reference in 1,976 checks natively and on an emulated
+      Cortex-M4.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - the signer matched the pq-crystals reference in 1,976 checks natively and on an emulated Cortex-M4.
+    - and the leakage results come from an instruction-level emulator and nothing here is certified.
+    - in 1,976 checks
+    - on an emulated Cortex-M4
+corrections: []

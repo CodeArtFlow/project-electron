@@ -2609,3 +2609,36 @@ claims:
       unit: nm
     conditions:
       cell_size: 1 µm
+- id: CLM-DEV-0094
+  topic: DEV
+  statement: At 168 MHz, a complete signing operation took under 0.8 s.
+  sources:
+  - SRC-00316
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    operation: complete signing operation
+  quantity:
+    quantity: time
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 0.8
+      unit: s
+    si_base:
+      value: 0.8
+      unit: s
+    display:
+      value: 800000000.0
+      unit: ns
+    conditions:
+      operation: complete signing operation

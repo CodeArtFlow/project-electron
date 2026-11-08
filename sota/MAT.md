@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-07.
+Topic code `MAT`. Last reviewed 2026-11-08.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -150,6 +150,10 @@ Topic code `MAT`. Last reviewed 2026-11-07.
   - sources: SRC-00294
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0107 — see the open register
+- **4.64631e-05 fJ** — The spin-split-off band energy splitting at the Γ point λ for Ge is 290 meV.
+  - `CLM-MAT-0316` · material Ge, k_point Γ point · grade B · credibility unknown · simulated · as of 2026-11-04
+  - sources: SRC-00323
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 - **1.44036e-05 fJ** — The calculated magnetic energy difference ΔE for the adsorbed Cr dimer on the P↑ polarization state is 89.9 meV.
   - `CLM-MAT-0306` · polarization_state P↑ · grade B · credibility unknown · simulated · as of 2026-11-05
   - sources: SRC-00309
@@ -969,6 +973,14 @@ Topic code `MAT`. Last reviewed 2026-11-07.
   - `CLM-MAT-0301` · grade B · credibility unknown · simulated · as of 2026-11-04
   - sources: SRC-00299
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- When the saturation magnetization is normal to the interface, the spin swapping efficiency achieves a value greater than or equal to 50% for Ge.
+  - `CLM-MAT-0314` · material Ge, magnetization_orientation normal to the interface · grade B · credibility unknown · simulated · as of 2026-11-04
+  - sources: SRC-00323
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- When the saturation magnetization is parallel to the interface, the spin swapping efficiency achieves a value greater than or equal to 20% for Ge.
+  - `CLM-MAT-0315` · material Ge, magnetization_orientation parallel to the interface · grade B · credibility unknown · simulated · as of 2026-11-04
+  - sources: SRC-00323
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 - The confinement depth of the WS2 intralayer exciton in the WS2/WSe2 heterostructure is 57.02 meV.
   - `CLM-MAT-0302` · material_system WS2/WSe2 heterostructure, exciton_type intralayer WS2 exciton · grade B · credibility unknown · simulated · as of 2026-11-05
   - sources: SRC-00304
@@ -1495,6 +1507,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 313
-- grades: {'B': 313}
-- distinct sources: 112
+- claims: 316
+- grades: {'B': 316}
+- distinct sources: 113

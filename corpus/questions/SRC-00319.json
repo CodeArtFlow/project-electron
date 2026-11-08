@@ -1,0 +1,64 @@
+{
+  "arxiv_id": "2611.08380v1",
+  "claims": {
+    "CLM-ARCH-0202": {
+      "evidence_spans": [
+        "The added logic (3,155 LUTs and 2,215 registers; 5.0% and 1.7% of the device) is dominated by the Ascon engine and preserves the 100 MHz clock, while estimated power rises from 118 to 368 mW.",
+        "These modules occupy 5.0% of the XC7A100T’s 63,400 LUTs and 1.7% of its 126,800 flip-flops.",
+        "Latency is measured with a Vivado Integrated Logic Analyzer (ILA), whereas resource, timing, and full-system power results come from separate non-instrumented post-implementation builds."
+      ],
+      "statement": "The added protection logic uses 3,155 LUTs on the FPGA target device.",
+      "terms": [
+        "FPGA"
+      ]
+    },
+    "CLM-ARCH-0203": {
+      "evidence_spans": [
+        "The added logic (3,155 LUTs and 2,215 registers; 5.0% and 1.7% of the device) is dominated by the Ascon engine and preserves the 100 MHz clock, while estimated power rises from 118 to 368 mW.",
+        "These modules occupy 5.0% of the XC7A100T’s 63,400 LUTs and 1.7% of its 126,800 flip-flops.",
+        "Latency is measured with a Vivado Integrated Logic Analyzer (ILA), whereas resource, timing, and full-system power results come from separate non-instrumented post-implementation builds."
+      ],
+      "statement": "The added protection logic uses 2,215 registers on the FPGA target device.",
+      "terms": [
+        "FPGA"
+      ]
+    },
+    "CLM-ARCH-0204": {
+      "evidence_spans": [
+        "The added logic (3,155 LUTs and 2,215 registers; 5.0% and 1.7% of the device) is dominated by the Ascon engine and preserves the 100 MHz clock, while estimated power rises from 118 to 368 mW.",
+        "Power is estimated in Vivado using identical estimation and switching-activity settings for both systems; no board-level power measurements are reported.",
+        "Power is estimated in Vivado using identical estimation and switching-activity settings for both systems; no board-level power measurements are reported."
+      ],
+      "statement": "Estimated full-system power for the baseline design is 118 mW.",
+      "terms": []
+    },
+    "CLM-ARCH-0205": {
+      "evidence_spans": [
+        "The added logic (3,155 LUTs and 2,215 registers; 5.0% and 1.7% of the device) is dominated by the Ascon engine and preserves the 100 MHz clock, while estimated power rises from 118 to 368 mW.",
+        "Power is estimated in Vivado using identical estimation and switching-activity settings for both systems; no board-level power measurements are reported.",
+        "Power is estimated in Vivado using identical estimation and switching-activity settings for both systems; no board-level power measurements are reported."
+      ],
+      "statement": "Estimated full-system power for SensorGuard-RV is 368 mW.",
+      "terms": [
+        "SensorGuard-RV"
+      ]
+    }
+  },
+  "extra_quotes": [
+    "Our developed prototype extends NEORV32 v1.12.8.3 on a Digilent Nexys A7-100T board with a Xilinx Artix-7 XC7A100T FPGA.",
+    "Latency is measured with a Vivado Integrated Logic Analyzer (ILA), whereas resource, timing, and full-system power results come from separate non-instrumented post-implementation builds.",
+    "The prototype leaves NEORV32’s DMA controller disabled, requiring software to copy each protected packet from the wrapper to data memory and then load it into the CFU.",
+    "In the prototype, the key is fixed in the FPGA configuration; a deployment would protect it with bitstream encryption or derive the key from a PUF [15], and would need per-device key provisioning.",
+    "Lastly, the prototype holds one four-byte accelerometer packet at a time."
+  ],
+  "generated": "2026-11-08",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00319",
+  "text_chars": 62444,
+  "text_sha256": "06e35f5bc0c92984c248c9e4d3c2b5f22c3b780a113ac0884874b17454e8b60c"
+}

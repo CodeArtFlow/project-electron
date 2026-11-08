@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-07.
+Topic code `ARCH`. Last reviewed 2026-11-08.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -54,6 +54,10 @@ Topic code `ARCH`. Last reviewed 2026-11-07.
 - **4.82e+08 fJ** — The TEXEL on-chip classifier consumed an average dynamic energy of 482 nJ per inference.
   - `CLM-ARCH-0165` · processor TEXEL · grade B · credibility unknown · measured · as of 2026-10-27
   - sources: SRC-00245
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **1.145e+16 fJ** — Simulated dynamic energy for Gemma-7B with 8 macros/die is 11.45 J per inference request.
+  - `CLM-ARCH-0207` · model Gemma-7B, macros_per_die 8 · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00320
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### energy advantage ratio
@@ -170,6 +174,20 @@ Topic code `ARCH`. Last reviewed 2026-11-07.
   - sources: SRC-00300
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0110, CFL-0111, CFL-0112 — see the open register
+- **0.118 W** — Estimated full-system power for the baseline design is 118 mW.
+  - `CLM-ARCH-0204` · tool Vivado · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00319
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0117 — see the open register
+- **0.368 W** — Estimated full-system power for SensorGuard-RV is 368 mW.
+  - `CLM-ARCH-0205` · tool Vivado · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00319
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0117 — see the open register
+- **0.0003 W** — In a 28-nm post-synthesis implementation, the 384 instances of XOR trees consume 0.3 mW of power.
+  - `CLM-ARCH-0209` · process 28 nm · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00321
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### qualitative
 
@@ -541,6 +559,14 @@ Topic code `ARCH`. Last reviewed 2026-11-07.
   - `CLM-ARCH-0196` · grade B · credibility unknown · simulated · as of 2026-11-04
   - sources: SRC-00302
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The added protection logic uses 3,155 LUTs on the FPGA target device.
+  - `CLM-ARCH-0202` · device XC7A100T · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00319
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The added protection logic uses 2,215 registers on the FPGA target device.
+  - `CLM-ARCH-0203` · device XC7A100T · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00319
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -762,6 +788,22 @@ Topic code `ARCH`. Last reviewed 2026-11-07.
   - `CLM-ARCH-0198` · baseline_utilization 42.4% · grade B · credibility unknown · simulated · as of 2026-11-05
   - sources: SRC-00306
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **9 percent** — Re-optimizing mappings and pool sizes on the same hardware reduces the median normalized goodput loss of early commitment from 36% to 9%.
+  - `CLM-ARCH-0199` · mitigation_strategy Re-optimizing mappings and pool sizes on the same hardware, baseline_loss 36% · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00318
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≤ 1.8 percent** — With decode mappings fixed, doubling FLOPs cuts TPOT by at most 1.8%.
+  - `CLM-ARCH-0200` · decode_mappings fixed, hardware_change doubling FLOPs · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00318
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **8.1 percent** — KV-heavy GQA-MoE on photonic fabric yields a P/D+AFD margin of +8.1%.
+  - `CLM-ARCH-0201` · model_direction KV-heavy GQA-MoE, fabric photonic fabric · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00318
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≤ 5.1 percent** — Isobar reproduces the measured latency increase with chiplet separation with a relative error of 5.1% in the latency ratio.
+  - `CLM-ARCH-0206` · benchmark latency ratio between the most separated and adjacent placements · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00320
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -841,6 +883,10 @@ Topic code `ARCH`. Last reviewed 2026-11-07.
   - `CLM-ARCH-0189` · benchmark matmul_single_core, simulator ttsim · grade B · credibility unknown · measured · as of 2026-11-03
   - sources: SRC-00295
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **1.58 ns** — In a 28-nm post-synthesis implementation, the saturating popcount adder tree has a critical path delay of 1.58 ns.
+  - `CLM-ARCH-0208` · process 28 nm, component Saturating Popcount Adder Tree · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00321
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -891,9 +937,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0112` — power: _unexamined; classification pending_
   - claims: CLM-ARCH-0009, CLM-ARCH-0190
   - missing data: `not yet named`
+- `CFL-0117` — power: _unexamined; classification pending_
+  - claims: CLM-ARCH-0204, CLM-ARCH-0205
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 198
-- grades: {'B': 198}
-- distinct sources: 65
+- claims: 209
+- grades: {'B': 209}
+- distinct sources: 69

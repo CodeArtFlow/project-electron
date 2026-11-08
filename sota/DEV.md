@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-11-07.
+Topic code `DEV`. Last reviewed 2026-11-08.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -388,6 +388,10 @@ Topic code `DEV`. Last reviewed 2026-11-07.
   - sources: SRC-00296
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0114 — see the open register
+- **≤ 8e+08 ns** — At 168 MHz, a complete signing operation took under 0.8 s.
+  - `CLM-DEV-0094` · operation complete signing operation · grade B · credibility unknown · measured · as of 2026-11-05
+  - sources: SRC-00316
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -440,6 +444,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 90
-- grades: {'B': 90}
-- distinct sources: 39
+- claims: 91
+- grades: {'B': 91}
+- distinct sources: 40

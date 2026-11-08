@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.06167v1
 doi: null
-title: BIC-Engineered Silicon Nitride Microring Resonators Enabled by an Etch-Free
-  Laser-Writing Approach
+title: BIC-Engineered Silicon Nitride Microring Resonators Enabled by an Etch-Free Laser-Writing Approach
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-04'
@@ -27,6 +26,88 @@ id: CAND-20261105-0091
 harvested_date: '2026-11-05'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-08'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The effective index of the TM-like guided mode at a ridge width of 2.25 µm is 1.742.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The ridge laterally confines a TM-like guided mode, whose dominant electric field𝐸 𝑦 is normal to
+      the film and concentrated in the Si3N4 beneath the ridge, with effective index𝑛TM =1.742 at𝑤=2.25µ
+      m
+    - with effective index𝑛TM =1.742 at𝑤=2.25µ m [Fig. 1(b)].
+    - guided transverse-magnetic mode
+    - at𝑤=2.25µ m
+  - statement: The laser-written straight waveguides achieve a measured propagation loss of approximately
+      1.5 dB/cm near the BIC width.
+    reason: 'unit conversion refused: resistance: cannot convert 1.5 dB/cm to ohm - Cannot convert from
+      ''decibel / centimeter'' to ''ohm'' - In source units, offset unit used in multiplicative context.'
+    quotes:
+    - Laser-written waveguides follow the predicted width dependence of the loss, reaching approximately
+      1.5 dB/cm near the BIC, where non-radiative loss dominates.
+    - Laser-written waveguides
+    - near the BIC
+  - statement: The lowest propagation loss measured for straight laser-written waveguides is approximately
+      1.6 dB/cm at a width of approximately 2.3 µm.
+    reason: 'unit conversion refused: resistance: cannot convert 1.6 dB/cm to ohm - Cannot convert from
+      ''decibel / centimeter'' to ''ohm'' - In source units, offset unit used in multiplicative context.'
+    quotes:
+    - The lowest measured loss, approximately 1.6 dB/cm, occurs at𝑤≈2.3µ m, coincident with the first
+      predicted BIC.
+    - The triangles in Fig. 2(b) show propagation losses of straight laser-written waveguides measured
+      by the top-scattering method (Methods).
+    - straight laser-written waveguides
+    - occurs at𝑤≈2.3µ m
+  - statement: The fabricated microring resonator exhibits a loaded quality factor up to 1.6×10^4.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - A microring designed on a radius-selected BIC band exhibits loaded quality factors up to 1.6×104
+    - Two resonances measured in this way are shown in Fig. 4(e), (f).
+    - A microring designed on a radius-selected BIC band
+  - statement: Under an over-coupled assignment, the microring resonator achieves an intrinsic quality
+      factor of 3.3×10^5.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - and, under the over-coupled assignment supported by a coupler model, an intrinsic quality factor
+      of 3.3×105.
+    - Two resonances measured in this way are shown in Fig. 4(e), (f).
+    - microring
+    - under the over-coupled assignment
+  - statement: The measured microring resonator has a free spectral range of approximately 171 GHz between
+      1515 and 1602 nm.
+    reason: the value 1.71e+11 does not appear in any of the claim's quotes
+    quotes:
+    - The broadband spectrum [Fig. 4(b)] shows a single regular resonance family between 1515 and 1602
+      nm with a free spectral range (FSR) of about 171 GHz (1.35 nm at 1540 nm).
+    - The characterized microring
+    - 𝑅=128µ m
+    - 𝑤=2.3µ m
+  - statement: The resonance of the microring resonator at 1543 nm exhibits a linewidth of 12 GHz.
+    reason: the value 1.2e+10 does not appear in any of the claim's quotes
+    quotes:
+    - The resonance at 1543 nm has a linewidth of 12 GHz, giving𝑄load =𝜈 0/Δ𝜈≈1.6×10 4, and an extinction
+      of 0.9 dB
+    - Two resonances measured in this way are shown in Fig. 4(e), (f).
+    - The resonance at 1543 nm
+    - microring
+  - statement: The resonance of the microring resonator at 1536 nm exhibits a linewidth of 16.7 GHz.
+    reason: the value 1.67e+10 does not appear in any of the claim's quotes
+    quotes:
+    - the resonance at 1536 nm has a linewidth of 16.7 GHz (𝑄load≈1.2×10 4) and a deeper extinction.
+    - Two resonances measured in this way are shown in Fig. 4(e), (f).
+    - the resonance at 1536 nm
+    - microring
+  tokens:
+    input: 19414
+    output: 2677
+  fetched_chars: 63305

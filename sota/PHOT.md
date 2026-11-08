@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-07.
+Topic code `PHOT`. Last reviewed 2026-11-08.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -462,6 +462,10 @@ Topic code `PHOT`. Last reviewed 2026-11-07.
   - `CLM-PHOT-0118` · symbol_set_size C = 26, operating_temperature 35 °C · grade B · credibility unknown · measured · as of 2026-10-29
   - sources: SRC-00253
   - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- **97.96 percent** — The supervised CNN classifier achieved a held-out accuracy of 97.96% when trained on 70% of the heuristic reference labels.
+  - `CLM-PHOT-0138` · training_fraction 70% · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00317
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### sensitivity advantage ratio
 
@@ -625,6 +629,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 137
-- grades: {'B': 130, 'A': 7}
-- distinct sources: 47
+- claims: 138
+- grades: {'B': 131, 'A': 7}
+- distinct sources: 48

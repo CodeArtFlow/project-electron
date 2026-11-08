@@ -3914,3 +3914,37 @@ claims:
     model: gemini-3.6-flash
     prompt_version: reader-v5
     verified_quotes: 2
+- id: CLM-PHOT-0138
+  topic: PHOT
+  statement: The supervised CNN classifier achieved a held-out accuracy of 97.96% when trained on 70%
+    of the heuristic reference labels.
+  sources:
+  - SRC-00317
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-05'
+  created: '2026-11-08'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    training_fraction: 70%
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 97.96
+      unit: '%'
+    si_base:
+      value: 0.9795999999999999
+      unit: dimensionless
+    display:
+      value: 97.96
+      unit: percent
+    conditions:
+      training_fraction: 70%

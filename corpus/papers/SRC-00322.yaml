@@ -1,0 +1,107 @@
+id: SRC-00322
+title: Synaptic Multi-Weight Wafer-Scale Domain Wall Magnetic Tunnel Junctions Driven by Spin Orbit Torque
+doi: null
+arxiv_id: 2611.08405v1
+url: https://arxiv.org/abs/2611.08405v1
+venue_id: arxiv_api
+authors:
+- name: Nicholas Zogbi
+  affiliation: null
+  corresponding: null
+- name: Domenico Giuliano
+  affiliation: null
+  corresponding: null
+- name: Vaishnavi Kateel
+  affiliation: null
+  corresponding: null
+- name: Van Dai Nguyen
+  affiliation: null
+  corresponding: null
+- name: Jyotirmoy Chatterjee
+  affiliation: null
+  corresponding: null
+- name: Alvaro Palomino
+  affiliation: null
+  corresponding: null
+- name: Robert Carpenter
+  affiliation: null
+  corresponding: null
+- name: Siddharth Rao
+  affiliation: null
+  corresponding: null
+- name: Jean Anne C. Incorvia
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-05'
+retrieved_date: '2026-11-08'
+access: full_text
+read_scope: Automated reading. The full PDF text (43,640 characters, 18 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.08405v1 on
+  2026-11-08. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The average tunnel magnetoresistance (TMR) values are 80.2%, 44.8%, 39.1%, and 30.5% for the
+  control, L350, L400, and L600, respectively.”
+
+  “60 nm diameter MTJ is used as the control”
+
+  “When experimental device-to-device variation is included, the accuracy is 48.6%.”
+
+  “When experimental device-to-device variation is included”'
+method_summary: '“All measurements were performed using a pulse measure scheme with the parameters shown
+  in Table 1.”
+
+  “Using COMSOL, the resulting current distribution in the free layer (J STT) and on the surface of the
+  heavy metal (JSOT) was simulated in the L350 device, with the results shown in Fig. 3a.”
+
+  “To test the impact of the leakage current and stray field, micromagnetic simulations of the device
+  were performed.”
+
+  “To evaluate the suitability of these devices as synaptic elements, we modeled a crossbar array using
+  the experimentally measured device data to test performance on a pretrained MNIST dataset, with the
+  architecture shown in Fig. 5a.”'
+limitations: “When experimental device-to-device variation is included, the accuracy is 48.6%.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 13708
+    output: 1731
+  claims_accepted: 2
+  claims_rejected: 4
+  rejected:
+  - statement: The average tunnel magnetoresistance of the L350 device configuration is 44.8%.
+    reason: the statement contains the number 50, which none of its quotes contain
+    quotes:
+    - The average tunnel magnetoresistance (TMR) values are 80.2%, 44.8%, 39.1%, and 30.5% for the control,
+      L350, L400, and L600, respectively.
+    - MTJ lengths of 350 nm
+  - statement: The average tunnel magnetoresistance of the L400 device configuration is 39.1%.
+    reason: the statement contains the number 00, which none of its quotes contain
+    quotes:
+    - The average tunnel magnetoresistance (TMR) values are 80.2%, 44.8%, 39.1%, and 30.5% for the control,
+      L350, L400, and L600, respectively.
+    - 400 nm
+  - statement: The average tunnel magnetoresistance of the L600 device configuration is 30.5%.
+    reason: the statement contains the number 00, which none of its quotes contain
+    quotes:
+    - The average tunnel magnetoresistance (TMR) values are 80.2%, 44.8%, 39.1%, and 30.5% for the control,
+      L350, L400, and L600, respectively.
+    - 600 nm
+  - statement: Implementation of measured multi-weight devices in a neural network achieves an inference
+      accuracy of 96.1% on the MNIST dataset if all devices provide the same
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Implementation
+      of the measured multi-weight devices in a neural networ'''
+    quotes:
+    - Implementation of the measured multi-weight devices in a neural network yields a 96.1% inference
+      accuracy using the MNIST dataset if all devices provide the same number of multi-weight states.
+    - MNIST dataset
+    - if all devices provide the same number of multi-weight states.
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (measured: 1, simulated:
+  1). This field records the majority (measured); trust each claim''s own evidence_type over this one.'

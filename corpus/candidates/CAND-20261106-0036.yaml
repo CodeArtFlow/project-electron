@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.08328v1
 doi: null
-title: Reprogrammable polaritonic skyrmion and meron lattices based on the phase-change
-  material In$_3$SbTe$_2$
+title: Reprogrammable polaritonic skyrmion and meron lattices based on the phase-change material In$_3$SbTe$_2$
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-05'
@@ -31,6 +30,38 @@ id: CAND-20261106-0036
 harvested_date: '2026-11-06'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-08'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At an incident wavenumber of 1470 cm-1, the hexagonal polaritonic topological lattice site
+      size is 239 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Owing to the polariton dispersion, the lattice site size decreases from 239 nm for the hexagonal
+      structure at 1470 cm-1 to 168 nm at 1500 cm-1.
+    - 1470 cm-1
+    - hexagonal structure
+  - statement: At an incident wavenumber of 1500 cm-1, the hexagonal polaritonic topological lattice site
+      size decreases to 168 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Owing to the polariton dispersion, the lattice site size decreases from 239 nm for the hexagonal
+      structure at 1470 cm-1 to 168 nm at 1500 cm-1.
+    - 1500 cm-1
+    - hexagonal structure
+  tokens:
+    input: 17474
+    output: 882
+  fetched_chars: 55114

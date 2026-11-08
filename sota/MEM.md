@@ -1,6 +1,6 @@
 # Memory — state of the art
 
-Topic code `MEM`. Last reviewed 2026-11-07.
+Topic code `MEM`. Last reviewed 2026-11-08.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -128,6 +128,14 @@ Topic code `MEM`. Last reviewed 2026-11-07.
   - `CLM-MEM-0050` · context_length beyond 256K tokens · grade B · credibility unknown · simulated · as of 2026-10-29
   - sources: SRC-00271
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The average tunnel magnetoresistance of the control device is 80.2%.
+  - `CLM-MEM-0051` · device_configuration control · grade B · credibility unknown · measured · as of 2026-11-05
+  - sources: SRC-00322
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- When experimental device-to-device variation is included, the neural network inference accuracy on the MNIST dataset is 48.6%.
+  - `CLM-MEM-0052` · device_to_device_variation included · grade B · credibility unknown · simulated · as of 2026-11-05
+  - sources: SRC-00322
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -263,6 +271,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 50
-- grades: {'B': 50}
-- distinct sources: 18
+- claims: 52
+- grades: {'B': 52}
+- distinct sources: 19

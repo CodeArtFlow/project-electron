@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**15919 pair(s)** as of 2026-11-07.
+**16654 pair(s)** as of 2026-11-08.
 
 ## `area_die` (11 pair(s))
 
@@ -47,7 +47,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0077` = 4 mA | 85% | process_step=current ramp-down | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° |
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0075` = 1.5 mA | 60% | process_step=current ramp-down | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° |
 
-## `energy` (752 pair(s))
+## `energy` (825 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -59,6 +59,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0172` = -5090 meV | 185% | defect_complex=VAl(ON)3 | material=MLBP |
 | `CLM-MAT-0104` = 220 meV | `CLM-MEM-0040` = -180 meV | 182% | measurement=RIXS, absorption_edge=Fe L3 edge | method=DFT |
 | `CLM-MAT-0313` = 130 meV | `CLM-MEM-0040` = -180 meV | 172% | material=SmNiO3 | method=DFT |
+| `CLM-MAT-0316` = 290 meV | `CLM-MEM-0040` = -180 meV | 162% | material=Ge, k_point=Γ point | method=DFT |
 | `CLM-MAT-0049` = 296 meV | `CLM-MEM-0040` = -180 meV | 161% | material=LiFePO4 | method=DFT |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0290` = 3000 meV | 159% | material=MLBP | trap_type=isolated bi-Si3 |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0276` = 2994 meV | 159% | material=MLBP | desorption_state=molecular |
@@ -90,9 +91,8 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0201` = 370 meV | 107% | material=MLBP | band=2.3 eV emission, impurity_content=<0.1 ppm |
 | `CLM-MAT-0277` = 2789 meV | `CLM-MEM-0040` = -180 meV | 106% | desorption_state=molecular | method=DFT |
 | `CLM-MAT-0291` = 2800 meV | `CLM-MEM-0040` = -180 meV | 106% | trap_type=isolated bi-Ed | method=DFT |
-| `CLM-MAT-0276` = 2994 meV | `CLM-MEM-0040` = -180 meV | 106% | desorption_state=molecular | method=DFT |
 
-_and 712 more_
+_and 785 more_
 
 ## `energy_advantage_ratio` (19 pair(s))
 
@@ -212,7 +212,7 @@ _and 649 more_
 
 _and 5320 more_
 
-## `power` (245 pair(s))
+## `power` (312 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -238,6 +238,7 @@ _and 5320 more_
 | `CLM-ARCH-0037` = 787 mW | `CLM-MAT-0191` = 5e-08 mW | 100% | component=synthesized SRAM-PIM subsystem | device_type=drop-cast control devices |
 | `CLM-ARCH-0037` = 787 mW | `CLM-PHOT-0068` = 0.00024 mW | 100% | component=synthesized SRAM-PIM subsystem | operating_point=3 mW total trapping-beam power |
 | `CLM-ARCH-0038` = 9599 mW | `CLM-ARCH-0166` = 0.027 mW | 100% | component=added compute and buffer logic in HBM-PIM | processor=TEXEL |
+| `CLM-ARCH-0038` = 9599 mW | `CLM-ARCH-0209` = 0.3 mW | 100% | component=added compute and buffer logic in HBM-PIM | process=28 nm |
 | `CLM-ARCH-0038` = 9599 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | component=added compute and buffer logic in HBM-PIM | benchmark_circuit=BGR, framework=AgenticSizing |
 | `CLM-ARCH-0038` = 9599 mW | `CLM-MAT-0189` = 2e-10 mW | 100% | component=added compute and buffer logic in HBM-PIM | channel_material=(PEA)2PbI4, vds=5 V |
 | `CLM-ARCH-0038` = 9599 mW | `CLM-MAT-0190` = 5.6e-09 mW | 100% | component=added compute and buffer logic in HBM-PIM | channel_material=(PEA)2PbI4 |
@@ -255,9 +256,8 @@ _and 5320 more_
 | `CLM-ARCH-0114` = 3.55 mW | `CLM-MAT-0191` = 5e-08 mW | 100% | component=PIM Chunk List, location=DRAM chip | device_type=drop-cast control devices |
 | `CLM-ARCH-0149` = 4020 mW | `CLM-ARCH-0166` = 0.027 mW | 100% | component=FIGFLEX, toggle_rate=0.2, activation_format=FP16, precision=INT4 | processor=TEXEL |
 | `CLM-ARCH-0149` = 4020 mW | `CLM-EDA-0002` = 0.000106 mW | 100% | component=FIGFLEX, toggle_rate=0.2, activation_format=FP16, precision=INT4 | benchmark_circuit=BGR, framework=AgenticSizing |
-| `CLM-ARCH-0149` = 4020 mW | `CLM-MAT-0189` = 2e-10 mW | 100% | component=FIGFLEX, toggle_rate=0.2, activation_format=FP16, precision=INT4 | channel_material=(PEA)2PbI4, vds=5 V |
 
-_and 205 more_
+_and 272 more_
 
 ## `power_density` (1 pair(s))
 
@@ -271,7 +271,7 @@ _and 205 more_
 |---|---|---|---|---|
 | `CLM-DEV-0064` = 6e-06 torr | `CLM-MAT-0296` = 3.75e+04 torr | 100% | temperature=room temperature | measurement=Tensile testing |
 
-## `relative_deviation` (6526 pair(s))
+## `relative_deviation` (7057 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -314,9 +314,9 @@ _and 205 more_
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0063` = 37 percent | 162% | sample=B1-1 | disorder_type=radius disorder |
 | `CLM-ARCH-0077` = 36.86 percent | `CLM-MAT-0111` = -60 percent | 161% | framework=RAPID-DNN, fault_configuration=mixed random fault configuration, baseline=fault-agnostic baseline | sample=B1-1 |
 | `CLM-ARCH-0040` = 97.93 percent | `CLM-MAT-0111` = -60 percent | 161% | frequency=7 GHz, component=graded magnetic spacer | sample=B1-1 |
-| `CLM-ARCH-0018` = 98 percent | `CLM-MAT-0111` = -60 percent | 161% | concurrency_n_a=48, set_type=hot set | sample=B1-1 |
+| `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0138` = 97.96 percent | 161% | sample=B1-1 | training_fraction=70% |
 
-_and 6486 more_
+_and 7017 more_
 
 ## `resistance` (2 pair(s))
 
@@ -401,7 +401,7 @@ _and 303 more_
 |---|---|---|---|---|
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0007` = 3100 W/(m*K) | 99% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | temperature=room-temperature, sample_13c_concentration=~0.00024% |
 
-## `time` (1579 pair(s))
+## `time` (1643 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -446,7 +446,7 @@ _and 303 more_
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0189` = 7.2e+09 ns | 100% | device_type=FTJ, architecture=Merged | benchmark=matmul_single_core, simulator=ttsim |
 | `CLM-ARCH-0013` = 162 ns | `CLM-DEV-0066` = 6e+10 ns | 100% | device_type=FTJ, architecture=Merged | software=MATLAB Deep Learning Toolbox |
 
-_and 1539 more_
+_and 1603 more_
 
 ## `voltage` (99 pair(s))
 

@@ -23,6 +23,45 @@ id: CAND-20261105-0097
 harvested_date: '2026-11-05'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-08'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At T=5 K and B=0.01 T, the built-in potential e|Vbi| of a CL = -1 | CR = +1 Chern homojunction
+      is approximately 46.4 meV.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - For instance, Fig. 5 shows that, at T=5 K, the CL = −1|C R = +1 junction gives e|V bi|≃ 46.4 meV
+      ≃ 0.93∆ at B=0.01 T.
+    - T=5 K
+    - CL = −1|C R = +1 junction
+    - B=0.01 T
+  - statement: For a Chern-Chern junction with CL = -1 and CR = +1, the calculated built-in potential
+      Vbi is approximately 49.7 mV under a background source amplitude |ceff| =
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - with Vbi ≃ 49.7 mV for the Chern–Chern junction and V bi ≃ 52.6 mV for the parabolic junction.
+    - Figure 10 compares the self-consistently calculated charge density profile of a Chern junction with
+      that of a junction made from doped conventional (non topological) parabolic band semiconductors.
+    - Chern–Chern junction
+    - T=6.25 K
+  - statement: For a conventional parabolic-band junction matched to a Chern junction with E_g = 50 meV
+      and m*/m_e = 0.0847, the calculated built-in potential Vbi is approxima
+    reason: the statement contains the number 50, which none of its quotes contain
+    quotes:
+    - with Vbi ≃ 49.7 mV for the Chern–Chern junction and V bi ≃ 52.6 mV for the parabolic junction.
+    - Figure 10 compares the self-consistently calculated charge density profile of a Chern junction with
+      that of a junction made from doped conventional (non topological) parabolic band semiconductors.
+    - parabolic junction
+    - T=6.25 K
+  tokens:
+    input: 35442
+    output: 1425
+  fetched_chars: 102310
