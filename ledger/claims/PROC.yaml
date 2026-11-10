@@ -2109,3 +2109,104 @@ claims:
     conditions:
       peak_fluence: 603 ± 30 mJ/cm2
       measurement_method: AFM
+- id: CLM-PROC-0066
+  topic: PROC
+  statement: The maximum measurable surface inclination of the ring-light system reaches 84.6° using a
+    4× objective with NA = 0.20.
+  sources:
+  - SRC-00326
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    system: ring-light system
+    objective_magnification: 4×
+    numerical_aperture: '0.20'
+- id: CLM-PROC-0067
+  topic: PROC
+  statement: The maximum measurable surface inclination for OS-SIM is 30.6° using a 4× objective with
+    NA = 0.20.
+  sources:
+  - SRC-00326
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    system: OS-SIM
+    objective_magnification: 4×
+    numerical_aperture: '0.20'
+- id: CLM-PROC-0068
+  topic: PROC
+  statement: The system captured pin sidewall angles up to 78.1° in the chip pin experiment.
+  sources:
+  - SRC-00326
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    sample: chip pins
+    objective_magnification: '4'
+- id: CLM-PROC-0069
+  topic: PROC
+  statement: The typical reconstruction time for an image size of 2000*2000 pixels with 160 layers is
+    91.66 s using the iterative SFF algorithm in MATLAB on an AMD Ryzen 5 3600X CPU.
+  sources:
+  - SRC-00326
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    image_size: 2000*2000 pixels
+    layers: '160'
+    algorithm: iterative SFF algorithm
+    cpu: AMD Ryzen 5 3600X CPU
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 91.66
+      unit: s
+    si_base:
+      value: 91.66
+      unit: s
+    display:
+      value: 91659999999.99998
+      unit: ns
+    conditions:
+      image_size: 2000*2000 pixels
+      layers: '160'
+      algorithm: iterative SFF algorithm
+      cpu: AMD Ryzen 5 3600X CPU

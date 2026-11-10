@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-11-08.
+Topic code `DEV`. Last reviewed 2026-11-10.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -342,6 +342,26 @@ Topic code `DEV`. Last reviewed 2026-11-08.
   - `CLM-DEV-0034` · time_after_cooling_onset 10 s · grade B · credibility unknown · measured · as of 2026-10-06
   - sources: SRC-00089
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1.35 K** — The temperature rise caused by applying the AC current to the Pt injector at 2 K was estimated to be 1.35 K.
+  - `CLM-DEV-0095` · component Pt injector · grade B · credibility unknown · simulated · as of 2026-11-09
+  - sources: SRC-00325
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0118, CFL-0119, CFL-0120 — see the open register
+- **0.96 K** — The temperature rise caused by applying the AC current to the Pt injector at 3 K was estimated to be 0.96 K.
+  - `CLM-DEV-0096` · component Pt injector · grade B · credibility unknown · simulated · as of 2026-11-09
+  - sources: SRC-00325
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0118, CFL-0121, CFL-0122 — see the open register
+- **0.75 K** — The temperature rise caused by applying the AC current to the Pt injector at 4 K was estimated to be 0.75 K.
+  - `CLM-DEV-0097` · component Pt injector · grade B · credibility unknown · simulated · as of 2026-11-09
+  - sources: SRC-00325
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0119, CFL-0121, CFL-0123 — see the open register
+- **0.71 K** — The temperature rise caused by applying the AC current to the Pt injector at 5 K was estimated to be 0.71 K.
+  - `CLM-DEV-0098` · component Pt injector · grade B · credibility unknown · simulated · as of 2026-11-09
+  - sources: SRC-00325
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0120, CFL-0122, CFL-0123 — see the open register
 
 ### time
 
@@ -441,9 +461,27 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0116` — length_device: _unexamined; classification pending_
   - claims: CLM-DEV-0092, CLM-DEV-0093
   - missing data: `not yet named`
+- `CFL-0118` — temperature_delta: _unexamined; classification pending_
+  - claims: CLM-DEV-0095, CLM-DEV-0096
+  - missing data: `not yet named`
+- `CFL-0119` — temperature_delta: _unexamined; classification pending_
+  - claims: CLM-DEV-0095, CLM-DEV-0097
+  - missing data: `not yet named`
+- `CFL-0120` — temperature_delta: _unexamined; classification pending_
+  - claims: CLM-DEV-0095, CLM-DEV-0098
+  - missing data: `not yet named`
+- `CFL-0121` — temperature_delta: _unexamined; classification pending_
+  - claims: CLM-DEV-0096, CLM-DEV-0097
+  - missing data: `not yet named`
+- `CFL-0122` — temperature_delta: _unexamined; classification pending_
+  - claims: CLM-DEV-0096, CLM-DEV-0098
+  - missing data: `not yet named`
+- `CFL-0123` — temperature_delta: _unexamined; classification pending_
+  - claims: CLM-DEV-0097, CLM-DEV-0098
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 91
-- grades: {'B': 91}
-- distinct sources: 40
+- claims: 95
+- grades: {'B': 95}
+- distinct sources: 41

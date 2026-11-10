@@ -5980,3 +5980,69 @@ claims:
       unit: W
     conditions:
       process: 28 nm
+- id: CLM-ARCH-0210
+  topic: ARCH
+  statement: AscSpMM reduces matrix-input storage by an average of 48.24%.
+  sources:
+  - SRC-00327
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    metric: matrix-input storage
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: true
+    as_published:
+      value: 48.24
+      unit: '%'
+    si_base:
+      value: 0.48240000000000005
+      unit: dimensionless
+    display:
+      value: 48.24
+      unit: percent
+    conditions:
+      metric: matrix-input storage
+- id: CLM-ARCH-0211
+  topic: ARCH
+  statement: AscSpMM reduces peak HBM footprint by an average of 22.98%.
+  sources:
+  - SRC-00327
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    metric: peak HBM footprint
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: true
+    as_published:
+      value: 22.98
+      unit: '%'
+    si_base:
+      value: 0.2298
+      unit: dimensionless
+    display:
+      value: 22.98
+      unit: percent
+    conditions:
+      metric: peak HBM footprint

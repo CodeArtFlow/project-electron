@@ -1,0 +1,83 @@
+id: SRC-00328
+title: Scalable Bayesian Optimization for Efficient Exploration of Moire Patterns
+doi: null
+arxiv_id: 2611.12010v1
+url: https://arxiv.org/abs/2611.12010v1
+venue_id: arxiv_api
+authors:
+- name: Panagiotis Krokidas
+  affiliation: null
+  corresponding: null
+- name: Christos Lazaridis
+  affiliation: null
+  corresponding: null
+- name: Vassilis Sioros
+  affiliation: null
+  corresponding: null
+- name: Efi-Maria Papia
+  affiliation: null
+  corresponding: null
+- name: Vassilios Constantoudis
+  affiliation: null
+  corresponding: null
+- name: George Giannakopoulos
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-09'
+retrieved_date: '2026-11-10'
+access: full_text
+read_scope: Automated reading. The full PDF text (24,772 characters, 5 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.12010v1 on
+  2026-11-10. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Random sampling identifies the global optimum only after 533,012 evaluations, requiring approximately
+  31 hours”
+
+  “Random sampling identifies the global optimum only after 533,012 evaluations”
+
+  “Distribution of the Jain fairness index across the 600,000-sample Moir´e dataset.”
+
+  “All calculations, including the creation of the Moir ´e dataset, calculation of the Jain fairness index
+  for each conformation, and the BO runs, were carried out on a Windows desktop equipped with an Intel
+  Core i9 processor, 64 GB of RAM, and an NVIDIA RTX 3070 Ti GPU.”
+
+  “Gaussian Process-based BO becomes impractical due to GPU memory exhaustion after 290 acquired samples.”
+
+  “In contrast, FruBO with CatBoost identifies the global optimum after 1,470 acquired samples and approximately
+  1.15 hours.”
+
+  “the optimal solution (corresponding to the six-layer conformation with the highest Jain fairness index,
+  which is 0.5716)”
+
+  “the six-layer conformation with the highest Jain fairness index, which is 0.5716”'
+method_summary: '“To construct the optimization problem, we generate synthetic multilayer Moir´e configurations
+  by stacking six hexagonal mesh layers with independently controlled rotational angles.”
+
+  “The final dataset consists of 600,000 unique six-layer rotational configurations, forming a large discrete
+  design space with high combinatorial complexity.”
+
+  “In this work, BO is driven by theqLog Expected Improvement (qLogEI) acquisition function, a batch variant
+  of the Expected Improvement (EI) criterion, with 10 points sampled per iteration.”
+
+  “Among the models already implemented in FruBO, we evaluated CatBoost [24]. Since CatBoost does not
+  inherently estimate predictive uncertainty, uncertainty was approximated using a query-by-committee
+  strategy comprising five independently trained CatBoost models initialized with different random seeds.”'
+limitations: “In contrast, applying BO with the traditional Gaussian Process (GP) (specifically the baseline
+  GP from GPyTorch [25]) surrogate proved impractical, as the steadily increasing memory consumption exhausted
+  the available GPU resources after only 290 acquired samples (Fig. 3(e)).”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 8135
+    output: 2108
+  claims_accepted: 6
+  claims_rejected: 0
+  rejected: []
+corrections: []

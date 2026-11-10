@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.12185v1
 doi: null
-title: Phonon emission due to dc-driven electron heating in a two-dimensional electron
-  gas containing artificial scatterers
+title: Phonon emission due to dc-driven electron heating in a two-dimensional electron gas containing
+  artificial scatterers
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-09'
@@ -28,6 +28,34 @@ id: CAND-20261110-0070
 harvested_date: '2026-11-10'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-10'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At liquid helium temperatures, the 2DEG electron density is 2.64×10 15 m−2.
+    reason: 'unit conversion refused: transistor_density: could not parse 2640000000000000.0 ''m−2'':
+      ''m−2'' is not defined in the unit registry'
+    quotes:
+    - At liquid helium temperatures, the electron density is n e = 2.64×10 15 m−2 and the mobility µ≈650
+      m 2/Vs, corresponding to a Fermi velocity of vF ≈2.22×10 5 m/s.
+    - The measurements are performed on a GaAs/Al0.315Ga0.685As heterostructure with a 2DEG located 150
+      nm below the surface at the single heterointerface.
+  - statement: At liquid helium temperatures, the mobility is approximately 650 m 2/Vs.
+    reason: 'unit conversion refused: mobility: could not parse 650.0 ''m 2/Vs'': Unit expression cannot
+      have a scaling factor.'
+    quotes:
+    - At liquid helium temperatures, the electron density is n e = 2.64×10 15 m−2 and the mobility µ≈650
+      m 2/Vs, corresponding to a Fermi velocity of vF ≈2.22×10 5 m/s.
+    - The measurements are performed on a GaAs/Al0.315Ga0.685As heterostructure with a 2DEG located 150
+      nm below the surface at the single heterointerface.
+  tokens:
+    input: 16259
+    output: 910
+  fetched_chars: 45432

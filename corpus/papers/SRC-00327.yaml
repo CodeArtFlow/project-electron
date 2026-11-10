@@ -1,0 +1,100 @@
+id: SRC-00327
+title: 'AscSpMM: Efficient SpMM on Ascend NPUs via Pipelined Vector-Cube Collaboration'
+doi: null
+arxiv_id: 2611.11823v1
+url: https://arxiv.org/abs/2611.11823v1
+venue_id: arxiv_api
+authors:
+- name: Fei Li
+  affiliation: null
+  corresponding: null
+- name: Haoxin Li
+  affiliation: null
+  corresponding: null
+- name: Kehong Liu
+  affiliation: null
+  corresponding: null
+- name: Yanzi Zhou
+  affiliation: null
+  corresponding: null
+- name: Weiguo Wu
+  affiliation: null
+  corresponding: null
+- name: Shiqiang Nie
+  affiliation: null
+  corresponding: null
+- name: Jinyu Wang
+  affiliation: null
+  corresponding: null
+- name: Song Liu
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-09'
+retrieved_date: '2026-11-10'
+access: full_text
+read_scope: Automated reading. The full PDF text (68,563 characters, 13 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.11823v1 on
+  2026-11-10. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“It reduces matrix-input storage and peak HBM footprint by 48.24% and 22.98% on average”
+
+  “We evaluate ASCSPMM on an Ascend 910B3 NPU server and an NVIDIA A100 GPU server.”'
+method_summary: No method quote was verified. The method is not established by this record.
+limitations: “Some configurations therefore remain below the 1× break-even point at 90% sparsity.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 23756
+    output: 2570
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: AscSpMM achieves a geometric-mean speedup of 2.36x over Ascend GEMM across 48 controlled
+      workloads on an Ascend 910B3 NPU.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''On an Ascend
+      910B3, AscSpMM achieves geometric-mean speedups of 2.36× '''
+    quotes:
+    - On an Ascend 910B3, AscSpMM achieves geometric-mean speedups of 2.36× over GEMM
+    - We evaluate ASCSPMM on an Ascend 910B3 NPU server and an NVIDIA A100 GPU server.
+    - ASCSPMMSPEEDUPS OVER SPARSE BASELINES ACROSS48WORKLOADS.
+  - statement: AscSpMM achieves a geometric-mean speedup of 19.92x over NeutronSparse across 48 controlled
+      workloads on an Ascend 910B3 NPU.
+    reason: the statement contains the number 910, which none of its quotes contain
+    quotes:
+    - 19.92× over an existing SpMM implementation
+    - We evaluate ASCSPMM on an Ascend 910B3 NPU server and an NVIDIA A100 GPU server.
+    - On an Ascend 910B3, AscSpMM achieves geometric-mean speedups of 2.36× over GEMM
+    - NeutronSparse 48 4819.92×1.08–154.78
+  - statement: AscSpMM achieves a geometric-mean speedup of 5.82x over cuSPARSE on an A100 GPU across
+      48 controlled workloads.
+    reason: the statement contains the number 00, which none of its quotes contain
+    quotes:
+    - 5.82× over cuSPARSE on an A100
+    - We evaluate ASCSPMM on an Ascend 910B3 NPU server and an NVIDIA A100 GPU server.
+    - ASCSPMMSPEEDUPS OVER SPARSE BASELINES ACROSS48WORKLOADS.
+  - statement: AscSpMM achieves a maximum estimated effective throughput of 17.56 TFLOPS on an 8192x8192x8192
+      matrix.
+    reason: the statement contains the number 8192, which none of its quotes contain
+    quotes:
+    - The maximum is 17.56 TFLOPS on the 81923 matrix.
+    - We evaluate ASCSPMM on an Ascend 910B3 NPU server and an NVIDIA A100 GPU server.
+  - statement: AscSpMM achieves a geometric-mean end-to-end inference speedup of 2.00x in TorchNPU.
+    reason: the value 2 does not appear in any of the claim's quotes
+    quotes:
+    - The geometric-mean speedups are 2.00× in TorchNPU and 1.32× in MindSpore
+    - We evaluate ASCSPMM on an Ascend 910B3 NPU server and an NVIDIA A100 GPU server.
+  - statement: AscSpMM achieves a geometric-mean end-to-end inference speedup of 1.32x in MindSpore.
+    reason: 'unit conversion refused: energy_advantage_ratio is dimensionless; unit ''×'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a u'
+    quotes:
+    - The geometric-mean speedups are 2.00× in TorchNPU and 1.32× in MindSpore
+    - We evaluate ASCSPMM on an Ascend 910B3 NPU server and an NVIDIA A100 GPU server.
+corrections: []

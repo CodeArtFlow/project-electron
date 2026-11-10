@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-08.
+Topic code `ARCH`. Last reviewed 2026-11-10.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -804,6 +804,14 @@ Topic code `ARCH`. Last reviewed 2026-11-08.
   - `CLM-ARCH-0206` · benchmark latency ratio between the most separated and adjacent placements · grade B · credibility unknown · simulated · as of 2026-11-05
   - sources: SRC-00320
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈48.24 percent** — AscSpMM reduces matrix-input storage by an average of 48.24%.
+  - `CLM-ARCH-0210` · metric matrix-input storage · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00327
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈22.98 percent** — AscSpMM reduces peak HBM footprint by an average of 22.98%.
+  - `CLM-ARCH-0211` · metric peak HBM footprint · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00327
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -943,6 +951,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 209
-- grades: {'B': 209}
-- distinct sources: 69
+- claims: 211
+- grades: {'B': 211}
+- distinct sources: 70

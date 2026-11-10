@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.11765v1
 doi: null
-title: 'Strain-dependent Dynamics of Interactions of Iodine-vacancy pairs in CsPbI3:
-  A DFT and Machine-Learning Molecular Dynamics Study'
+title: 'Strain-dependent Dynamics of Interactions of Iodine-vacancy pairs in CsPbI3: A DFT and Machine-Learning
+  Molecular Dynamics Study'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-09'
@@ -24,6 +24,34 @@ id: CAND-20261110-0098
 harvested_date: '2026-11-10'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-10'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For a 2x2x2 supercell size with lattice parameter L = 12.77 Å in unstrained CsPbI3, the
+      absolute difference between DFT and SevenNet-0 MLFF interaction energies
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''12.77 +0.052
+      +0.119 0.068'''
+    quotes:
+    - 12.77 +0.052 +0.119 0.068
+    - Table I. DFT and MLFF interaction energies of a representative in-plane vacancy pair in unstrained
+      CsPbI3 for two supercell (2 × 2 × 2 and 4 × 4 × 4) sizes with lattice parameter 𝐿.
+  - statement: For a 4x4x4 supercell size with lattice parameter L = 25.54 Å in unstrained CsPbI3, the
+      absolute difference between DFT and SevenNet-0 MLFF interaction energies
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''25.54 +0.124
+      +0.133 0.009'''
+    quotes:
+    - 25.54 +0.124 +0.133 0.009
+    - Table I. DFT and MLFF interaction energies of a representative in-plane vacancy pair in unstrained
+      CsPbI3 for two supercell (2 × 2 × 2 and 4 × 4 × 4) sizes with lattice parameter 𝐿.
+  tokens:
+    input: 12080
+    output: 1392
+  fetched_chars: 41187

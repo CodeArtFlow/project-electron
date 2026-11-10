@@ -1,0 +1,59 @@
+id: SRC-00324
+title: 'Silinx: An Open, Browser-Based HDL Design Platform for Teaching Digital Systems on FPGA Boards'
+doi: null
+arxiv_id: 2611.11741v1
+url: https://arxiv.org/abs/2611.11741v1
+venue_id: arxiv_api
+authors:
+- name: Pedro Malo
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-09'
+retrieved_date: '2026-11-10'
+access: full_text
+read_scope: Automated reading. The full PDF text (28,663 characters, 6 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.11741v1 on
+  2026-11-10. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“On AMD’s 73 Vitis HLS introductory examples, all 73 pass C simulation, synthesis and co-simulation.”
+
+  “AMD’s 73 Vitis HLS introductory examples”
+
+  “Against ISE at the same optimization goal, the open flow uses 15% fewer slices with 14% shorter critical
+  paths when optimizing for area”
+
+  “geometric means over 45 open-source designs built by both flows”
+
+  “The results were measured on 8 November 2026 (Silinx 15.22.1, ISE 14.7); the full tables are in the
+  repository (docs/QUALITY.md).”
+
+  “and 21% fewer slices with 8% shorter critical paths when optimizing for speed (geometric means over
+  45 open-source designs built by both flows).”'
+method_summary: “Both critical paths are measured by ISE’s trce on the routed design.”
+limitations: '“The open toolchain supports the Spartan-3E boards (Basys2, Nexys2), the Spartan-6 boards
+  (Nexys3, Atlys) and the iCEBreaker; other boards still need ISE through the local server, and further
+  families are planned.”
+
+  “The Spartan-6 flow does not yet cover clock managers’ configurations beyond those measured.”
+
+  “Speed results are below ISE’s at the Fast goal, and the remaining critical-path gap at Speed lies in
+  routing.”
+
+  “The shipped device descriptions are still the ones computed from an ISE report; the measured descriptions
+  of the Spartan-3E dies, which avoid that dependence, pass the same checks but do not yet replace them.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 10415
+    output: 2126
+  claims_accepted: 5
+  claims_rejected: 0
+  rejected: []
+corrections: []

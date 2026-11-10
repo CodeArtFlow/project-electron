@@ -1,6 +1,6 @@
 # EDA — state of the art
 
-Topic code `EDA`. Last reviewed 2026-11-08.
+Topic code `EDA`. Last reviewed 2026-11-10.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -73,6 +73,26 @@ Topic code `EDA`. Last reviewed 2026-11-08.
   - `CLM-EDA-0022` · method Ours · grade B · credibility unknown · simulated · as of 2026-10-29
   - sources: SRC-00267
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- On 73 introductory examples from Vitis HLS, all 73 examples pass C simulation, synthesis, and co-simulation in Silinx HLS.
+  - `CLM-EDA-0023` · benchmark_suite 73 Vitis HLS introductory examples · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00324
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- When optimizing for area, the open flow uses 15% fewer slices compared to ISE across 45 open-source designs.
+  - `CLM-EDA-0024` · benchmark_set 45 open-source designs · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00324
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- When optimizing for area, the open flow achieves 14% shorter critical paths compared to ISE across 45 open-source designs.
+  - `CLM-EDA-0025` · benchmark_set 45 open-source designs · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00324
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- When optimizing for speed, the open flow uses 21% fewer slices compared to ISE across 45 open-source designs.
+  - `CLM-EDA-0026` · benchmark_set 45 open-source designs · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00324
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- When optimizing for speed, the open flow achieves 8% shorter critical paths compared to ISE across 45 open-source designs.
+  - `CLM-EDA-0027` · benchmark_set 45 open-source designs · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00324
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -118,6 +138,6 @@ _None._
 
 ## Evidence base
 
-- claims: 22
-- grades: {'B': 22}
-- distinct sources: 8
+- claims: 27
+- grades: {'B': 27}
+- distinct sources: 9

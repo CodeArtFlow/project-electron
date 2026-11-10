@@ -3948,3 +3948,37 @@ claims:
       unit: percent
     conditions:
       training_fraction: 70%
+- id: CLM-PHOT-0139
+  topic: PHOT
+  statement: Under lossless metal substrate conditions, the maximum simulated absorptance achieved by
+    the first-order SEP is at most 99.98%.
+  sources:
+  - SRC-00329
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    component: first-order SEP
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 99.98
+      unit: '%'
+    si_base:
+      value: 0.9998
+      unit: dimensionless
+    display:
+      value: 99.98
+      unit: percent
+    conditions:
+      component: first-order SEP

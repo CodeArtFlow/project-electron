@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-08.
+Topic code `MAT`. Last reviewed 2026-11-10.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -1013,6 +1013,22 @@ Topic code `MAT`. Last reviewed 2026-11-08.
   - `CLM-MAT-0311` · grade B · credibility unknown · simulated · as of 2026-11-05
   - sources: SRC-00312
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Random sampling required 533,012 evaluations to find the optimal Jain fairness index.
+  - `CLM-MAT-0317` · method Random sampling, dataset 600,000-sample Moir´e dataset · grade B · credibility unknown · simulated · as of 2026-11-09
+  - sources: SRC-00328
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- BO using a Gaussian Process surrogate model exhausted GPU memory after acquiring 290 samples.
+  - `CLM-MAT-0319` · method Gaussian Process-based BO · grade B · credibility unknown · simulated · as of 2026-11-09
+  - sources: SRC-00328
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- FruBO with CatBoost identified the global optimum after 1,470 acquired samples.
+  - `CLM-MAT-0320` · method FruBO with CatBoost, dataset 600,000-sample Moir´e dataset · grade B · credibility unknown · simulated · as of 2026-11-09
+  - sources: SRC-00328
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The highest Jain fairness index optimal solution in the six-layer conformation dataset is 0.5716.
+  - `CLM-MAT-0322` · conformation six-layer conformation · grade B · credibility unknown · simulated · as of 2026-11-09
+  - sources: SRC-00328
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1290,6 +1306,14 @@ Topic code `MAT`. Last reviewed 2026-11-08.
   - `CLM-MAT-0238` · spacer_cation FBZA · grade B · credibility unknown · measured · as of 2026-10-29
   - sources: SRC-00268
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈1.116e+14 ns** — Random sampling required approximately 31 hours to identify the global optimum.
+  - `CLM-MAT-0318` · method Random sampling, dataset 600,000-sample Moir´e dataset · grade B · credibility unknown · simulated · as of 2026-11-09
+  - sources: SRC-00328
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈4.14e+12 ns** — FruBO with CatBoost identified the global optimum in approximately 1.15 hours.
+  - `CLM-MAT-0321` · method FruBO with CatBoost, dataset 600,000-sample Moir´e dataset · grade B · credibility unknown · simulated · as of 2026-11-09
+  - sources: SRC-00328
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -1507,6 +1531,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 316
-- grades: {'B': 316}
-- distinct sources: 113
+- claims: 322
+- grades: {'B': 322}
+- distinct sources: 114

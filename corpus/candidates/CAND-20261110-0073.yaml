@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.12154v1
 doi: null
-title: Silicon and silicon nitride photonic ring resonator arrays for photonic trimming
-  metrology
+title: Silicon and silicon nitride photonic ring resonator arrays for photonic trimming metrology
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-09'
@@ -22,6 +21,28 @@ id: CAND-20261110-0073
 harvested_date: '2026-11-10'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-10'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The maximum coupling efficiency from the lensed fiber to the SiNx tapered waveguide is
+      about 45%.
+    reason: 'unit conversion refused: efficiency_compute: cannot convert 45.0 % to 1/J - Cannot convert
+      from ''percent'' (dimensionless) to ''1 / joule'' ([time] ** 2 / [mass] / [length] ** 2). A dimens'
+    quotes:
+    - With the use of the taper, the maximum coupling efficiency from the fiber is about 45%.
+    - Representation of coupling efficiency in simulation.
+    - SiNx tapered waveguide end as it couples a 2.5 µm spot size beam from an OZ-optics lensed fiber
+      at 14.2 µm working distance.
+    - 2.5 µm spot size beam from an OZ-optics lensed fiber at 14.2 µm working distance.
+  tokens:
+    input: 13593
+    output: 674
+  fetched_chars: 42003

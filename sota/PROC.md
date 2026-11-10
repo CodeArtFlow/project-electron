@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-11-08.
+Topic code `PROC`. Last reviewed 2026-11-10.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -180,6 +180,18 @@ Topic code `PROC`. Last reviewed 2026-11-08.
   - `CLM-PROC-0057` · grade B · credibility unknown · simulated · as of 2026-11-03
   - sources: SRC-00291
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The maximum measurable surface inclination of the ring-light system reaches 84.6° using a 4× objective with NA = 0.20.
+  - `CLM-PROC-0066` · system ring-light system, objective_magnification 4×, numerical_aperture 0.20 · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00326
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The maximum measurable surface inclination for OS-SIM is 30.6° using a 4× objective with NA = 0.20.
+  - `CLM-PROC-0067` · system OS-SIM, objective_magnification 4×, numerical_aperture 0.20 · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00326
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The system captured pin sidewall angles up to 78.1° in the chip pin experiment.
+  - `CLM-PROC-0068` · sample chip pins, objective_magnification 4 · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00326
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -307,6 +319,10 @@ Topic code `PROC`. Last reviewed 2026-11-08.
   - sources: SRC-00293
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0109 — see the open register
+- **9.166e+10 ns** — The typical reconstruction time for an image size of 2000*2000 pixels with 160 layers is 91.66 s using the iterative SFF algorithm in MATLAB on an AMD Ryzen 5 3600X CPU.
+  - `CLM-PROC-0069` · image_size 2000*2000 pixels, layers 160, algorithm iterative SFF algorithm, cpu AMD Ryzen 5 3600X CPU · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00326
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
 
 ### wavelength
 
@@ -391,6 +407,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 65
-- grades: {'B': 65}
-- distinct sources: 20
+- claims: 69
+- grades: {'B': 69}
+- distinct sources: 21

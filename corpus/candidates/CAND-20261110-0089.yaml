@@ -21,6 +21,66 @@ id: CAND-20261110-0089
 harvested_date: '2026-11-10'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-10'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For a planar geometry, the anti-Hermitian bath self-energy per unit area in a TE propagating
+      channel is -iϵ0c^2k.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Πr ∞,s =−iϵ
+      0c2k,'''
+    quotes:
+    - The eigenvalue in the in-plane direction perpendicular toq ⊥ (TE) is−iϵ 0c2k; in the direction parallel
+      toq ⊥ (TM), it is−iϵ 0c2k2 0/k.
+    - Πr ∞,s =−iϵ 0c2k,
+    - 'We develop four complementary approaches to deriving the bath self-energy: infinitesimal environmental
+      absorption, semi-infinite leads, inversion of the free Green’s function, and sesquilinear forms
+      with outgoing radiation boundary conditio'
+    - A planar geometry is not merely the scalar one- dimensional problem repeated for three Cartesian
+      com- ponents.
+  - statement: For a planar geometry, the anti-Hermitian bath self-energy per unit area in a TM propagating
+      channel is -iϵ0c^2k0^2/k.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Πr ∞,p =−iϵ
+      0c2 k2 0 k ,'''
+    quotes:
+    - The eigenvalue in the in-plane direction perpendicular toq ⊥ (TE) is−iϵ 0c2k; in the direction parallel
+      toq ⊥ (TM), it is−iϵ 0c2k2 0/k.
+    - Πr ∞,p =−iϵ 0c2 k2 0 k ,
+    - 'We develop four complementary approaches to deriving the bath self-energy: infinitesimal environmental
+      absorption, semi-infinite leads, inversion of the free Green’s function, and sesquilinear forms
+      with outgoing radiation boundary conditio'
+    - A planar geometry is not merely the scalar one- dimensional problem repeated for three Cartesian
+      com- ponents.
+  - statement: The one-dimensional bath self-energy per endpoint is -iϵ0cω for positive frequency.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Πr ∞,1D =−iϵ
+      0cω(ω >0),'''
+    quotes:
+    - The bath self-energyper endpointis therefore−iϵ 0cω.
+    - Πr ∞,1D =−iϵ 0cω(ω >0),
+    - 'We develop four complementary approaches to deriving the bath self-energy: infinitesimal environmental
+      absorption, semi-infinite leads, inversion of the free Green’s function, and sesquilinear forms
+      with outgoing radiation boundary conditio'
+    - The one-dimensional bath self-energy isQ R/2 =−iϵ 0cω.
+  - statement: The local radiative bath self-energy per unit surface area for a spherical boundary in
+      the radiation zone is -iϵ0cω(I - RR^T).
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Thus the
+      local radiative bath self-energy,per unit surface area, is Πr'''
+    quotes:
+    - Thus the local radiative bath self-energy,per unit surface area, is Πr ∞,SR =−iϵ 0cω I− ˆR ˆRT .
+    - Πr ∞,SR =−iϵ 0cωPR.
+    - 'We develop four complementary approaches to deriving the bath self-energy: infinitesimal environmental
+      absorption, semi-infinite leads, inversion of the free Green’s function, and sesquilinear forms
+      with outgoing radiation boundary conditio'
+    - The spherical boundary construction was used previously in photon NEGF transport calculations [8]
+      and developed systematically in Ref. [11].
+  tokens:
+    input: 28163
+    output: 1754
+  fetched_chars: 91173

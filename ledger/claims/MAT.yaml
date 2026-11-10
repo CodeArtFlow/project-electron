@@ -8747,3 +8747,148 @@ claims:
     conditions:
       material: Ge
       k_point: Γ point
+- id: CLM-MAT-0317
+  topic: MAT
+  statement: Random sampling required 533,012 evaluations to find the optimal Jain fairness index.
+  sources:
+  - SRC-00328
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    method: Random sampling
+    dataset: 600,000-sample Moir´e dataset
+- id: CLM-MAT-0318
+  topic: MAT
+  statement: Random sampling required approximately 31 hours to identify the global optimum.
+  sources:
+  - SRC-00328
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    method: Random sampling
+    dataset: 600,000-sample Moir´e dataset
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: true
+    as_published:
+      value: 31.0
+      unit: hours
+    si_base:
+      value: 111600.0
+      unit: s
+    display:
+      value: 111599999999999.98
+      unit: ns
+    conditions:
+      method: Random sampling
+      dataset: 600,000-sample Moir´e dataset
+- id: CLM-MAT-0319
+  topic: MAT
+  statement: BO using a Gaussian Process surrogate model exhausted GPU memory after acquiring 290 samples.
+  sources:
+  - SRC-00328
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    method: Gaussian Process-based BO
+- id: CLM-MAT-0320
+  topic: MAT
+  statement: FruBO with CatBoost identified the global optimum after 1,470 acquired samples.
+  sources:
+  - SRC-00328
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    method: FruBO with CatBoost
+    dataset: 600,000-sample Moir´e dataset
+- id: CLM-MAT-0321
+  topic: MAT
+  statement: FruBO with CatBoost identified the global optimum in approximately 1.15 hours.
+  sources:
+  - SRC-00328
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    method: FruBO with CatBoost
+    dataset: 600,000-sample Moir´e dataset
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: true
+    as_published:
+      value: 1.15
+      unit: hours
+    si_base:
+      value: 4140.0
+      unit: s
+    display:
+      value: 4139999999999.9995
+      unit: ns
+    conditions:
+      method: FruBO with CatBoost
+      dataset: 600,000-sample Moir´e dataset
+- id: CLM-MAT-0322
+  topic: MAT
+  statement: The highest Jain fairness index optimal solution in the six-layer conformation dataset is
+    0.5716.
+  sources:
+  - SRC-00328
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-10'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    conformation: six-layer conformation

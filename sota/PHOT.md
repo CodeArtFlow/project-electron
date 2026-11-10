@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-08.
+Topic code `PHOT`. Last reviewed 2026-11-10.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -466,6 +466,10 @@ Topic code `PHOT`. Last reviewed 2026-11-08.
   - `CLM-PHOT-0138` · training_fraction 70% · grade B · credibility unknown · simulated · as of 2026-11-05
   - sources: SRC-00317
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≤ 99.98 percent** — Under lossless metal substrate conditions, the maximum simulated absorptance achieved by the first-order SEP is at most 99.98%.
+  - `CLM-PHOT-0139` · component first-order SEP · grade B · credibility unknown · simulated · as of 2026-11-09
+  - sources: SRC-00329
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### sensitivity advantage ratio
 
@@ -629,6 +633,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 138
-- grades: {'B': 131, 'A': 7}
-- distinct sources: 48
+- claims: 139
+- grades: {'B': 132, 'A': 7}
+- distinct sources: 49

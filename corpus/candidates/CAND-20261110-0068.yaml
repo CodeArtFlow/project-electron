@@ -22,6 +22,35 @@ id: CAND-20261110-0068
 harvested_date: '2026-11-10'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-10'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Monolayer stanene exhibits a relaxed lattice constant of 4.698 Å.
+    reason: the statement contains the number 4.698, which none of its quotes contain
+    quotes:
+    - We consider the relaxed structural geometry of stanene, with the lattice constant a0 = 4 .698 Å
+      and the buckling height ∆z = 0 .86 Å
+  - statement: Monolayer stanene exhibits a relaxed buckling height of 0.86 Å.
+    reason: the statement contains the number 0.86, which none of its quotes contain
+    quotes:
+    - We consider the relaxed structural geometry of stanene, with the lattice constant a0 = 4 .698 Å
+      and the buckling height ∆z = 0 .86 Å
+  - statement: The SOC splitting parameter ∆SO in the sp3 tight-binding model for monolayer stanene is
+      0.672 eV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''∆SO 0.672'''
+    quotes:
+    - TABLE I. Parameters of the sp3 tight-binding model used in the present calculations [ 103], where
+      all energy parameters are in eV.
+    - ∆SO 0.672
+  tokens:
+    input: 19865
+    output: 1068
+  fetched_chars: 54937

@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**16654 pair(s)** as of 2026-11-08.
+**17110 pair(s)** as of 2026-11-10.
 
 ## `area_die` (11 pair(s))
 
@@ -271,7 +271,7 @@ _and 272 more_
 |---|---|---|---|---|
 | `CLM-DEV-0064` = 6e-06 torr | `CLM-MAT-0296` = 3.75e+04 torr | 100% | temperature=room temperature | measurement=Tensile testing |
 
-## `relative_deviation` (7057 pair(s))
+## `relative_deviation` (7305 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -288,6 +288,7 @@ _and 272 more_
 | `CLM-ARCH-0174` = 71.3 percent | `CLM-MAT-0111` = -60 percent | 184% | system=ARM2GC, benchmark_set=nine benchmarks | sample=B1-1 |
 | `CLM-ARCH-0097` = 72 percent | `CLM-MAT-0111` = -60 percent | 183% | training_dataset=CloudLab, evaluation_dataset=Lambda | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0039` = 49.85 percent | 183% | sample=B1-1 | platform=Jetson Orin Nano, threshold=550, verification_stage=Single function verification |
+| `CLM-ARCH-0210` = 48.24 percent | `CLM-MAT-0111` = -60 percent | 180% | metric=matrix-input storage | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0026` = 75.7 percent | 179% | sample=B1-1 | placement=conventional |
 | `CLM-EDA-0007` = 76 percent | `CLM-MAT-0111` = -60 percent | 179% | model=Non-cyclic + Node prediction model | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0251` = 47 percent | 178% | sample=B1-1 | band=NN, coupling=Λ A, correlation_length=ξ ¯kF = 4 |
@@ -314,9 +315,8 @@ _and 272 more_
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0063` = 37 percent | 162% | sample=B1-1 | disorder_type=radius disorder |
 | `CLM-ARCH-0077` = 36.86 percent | `CLM-MAT-0111` = -60 percent | 161% | framework=RAPID-DNN, fault_configuration=mixed random fault configuration, baseline=fault-agnostic baseline | sample=B1-1 |
 | `CLM-ARCH-0040` = 97.93 percent | `CLM-MAT-0111` = -60 percent | 161% | frequency=7 GHz, component=graded magnetic spacer | sample=B1-1 |
-| `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0138` = 97.96 percent | 161% | sample=B1-1 | training_fraction=70% |
 
-_and 7017 more_
+_and 7265 more_
 
 ## `resistance` (2 pair(s))
 
@@ -372,28 +372,52 @@ _and 7017 more_
 
 _and 303 more_
 
-## `temperature_delta` (18 pair(s))
+## `temperature_delta` (42 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-PHOT-0037` = 0.11 K | `CLM-PHOT-0086` = 275.2 K | 100% | cavity_length=20 µm, beam_shape=circular, incident_power=1.09 mW | external_pump_power=300 μW |
 | `CLM-PHOT-0037` = 0.11 K | `CLM-PHOT-0091` = 281.6 K | 100% | cavity_length=20 µm, beam_shape=circular, incident_power=1.09 mW | device=microdisk, pump_power=12.4 mW |
 | `CLM-MAT-0297` = 50 K | `CLM-PHOT-0037` = 0.11 K | 100% | dissipated_power=4 W mm-1 | cavity_length=20 µm, beam_shape=circular, incident_power=1.09 mW |
+| `CLM-DEV-0098` = 0.71 K | `CLM-PHOT-0091` = 281.6 K | 100% | component=Pt injector | device=microdisk, pump_power=12.4 mW |
+| `CLM-DEV-0098` = 0.71 K | `CLM-PHOT-0086` = 275.2 K | 100% | component=Pt injector | external_pump_power=300 μW |
+| `CLM-DEV-0097` = 0.75 K | `CLM-PHOT-0086` = 275.2 K | 100% | component=Pt injector | external_pump_power=300 μW |
+| `CLM-DEV-0097` = 0.75 K | `CLM-PHOT-0091` = 281.6 K | 100% | component=Pt injector | device=microdisk, pump_power=12.4 mW |
+| `CLM-DEV-0096` = 0.96 K | `CLM-PHOT-0091` = 281.6 K | 100% | component=Pt injector | device=microdisk, pump_power=12.4 mW |
+| `CLM-DEV-0096` = 0.96 K | `CLM-PHOT-0086` = 275.2 K | 100% | component=Pt injector | external_pump_power=300 μW |
 | `CLM-DEV-0024` = 30.4 K | `CLM-PHOT-0037` = 0.11 K | 100% | gate_bias_vgs=-2.7 V | cavity_length=20 µm, beam_shape=circular, incident_power=1.09 mW |
+| `CLM-DEV-0095` = 1.35 K | `CLM-PHOT-0091` = 281.6 K | 100% | component=Pt injector | device=microdisk, pump_power=12.4 mW |
+| `CLM-DEV-0095` = 1.35 K | `CLM-PHOT-0086` = 275.2 K | 100% | component=Pt injector | external_pump_power=300 μW |
 | `CLM-DEV-0034` = 3 K | `CLM-PHOT-0091` = 281.6 K | 99% | time_after_cooling_onset=10 s | device=microdisk, pump_power=12.4 mW |
 | `CLM-DEV-0034` = 3 K | `CLM-PHOT-0086` = 275.2 K | 99% | time_after_cooling_onset=10 s | external_pump_power=300 μW |
+| `CLM-DEV-0098` = 0.71 K | `CLM-MAT-0297` = 50 K | 99% | component=Pt injector | dissipated_power=4 W mm-1 |
+| `CLM-DEV-0097` = 0.75 K | `CLM-MAT-0297` = 50 K | 98% | component=Pt injector | dissipated_power=4 W mm-1 |
 | `CLM-MAT-0229` = 5 K | `CLM-PHOT-0091` = 281.6 K | 98% | p_mw=128 mW, simulation_type=finite-element simulations | device=microdisk, pump_power=12.4 mW |
 | `CLM-MAT-0229` = 5 K | `CLM-PHOT-0086` = 275.2 K | 98% | p_mw=128 mW, simulation_type=finite-element simulations | external_pump_power=300 μW |
+| `CLM-DEV-0096` = 0.96 K | `CLM-MAT-0297` = 50 K | 98% | component=Pt injector | dissipated_power=4 W mm-1 |
+| `CLM-DEV-0024` = 30.4 K | `CLM-DEV-0098` = 0.71 K | 98% | gate_bias_vgs=-2.7 V | component=Pt injector |
+| `CLM-DEV-0024` = 30.4 K | `CLM-DEV-0097` = 0.75 K | 98% | gate_bias_vgs=-2.7 V | component=Pt injector |
+| `CLM-DEV-0095` = 1.35 K | `CLM-MAT-0297` = 50 K | 97% | component=Pt injector | dissipated_power=4 W mm-1 |
+| `CLM-DEV-0024` = 30.4 K | `CLM-DEV-0096` = 0.96 K | 97% | gate_bias_vgs=-2.7 V | component=Pt injector |
 | `CLM-DEV-0034` = 3 K | `CLM-PHOT-0037` = 0.11 K | 96% | time_after_cooling_onset=10 s | cavity_length=20 µm, beam_shape=circular, incident_power=1.09 mW |
+| `CLM-DEV-0024` = 30.4 K | `CLM-DEV-0095` = 1.35 K | 96% | gate_bias_vgs=-2.7 V | component=Pt injector |
 | `CLM-DEV-0034` = 3 K | `CLM-MAT-0297` = 50 K | 94% | time_after_cooling_onset=10 s | dissipated_power=4 W mm-1 |
+| `CLM-DEV-0095` = 1.35 K | `CLM-PHOT-0037` = 0.11 K | 92% | component=Pt injector | cavity_length=20 µm, beam_shape=circular, incident_power=1.09 mW |
 | `CLM-DEV-0024` = 30.4 K | `CLM-DEV-0034` = 3 K | 90% | gate_bias_vgs=-2.7 V | time_after_cooling_onset=10 s |
 | `CLM-MAT-0229` = 5 K | `CLM-MAT-0297` = 50 K | 90% | p_mw=128 mW, simulation_type=finite-element simulations | dissipated_power=4 W mm-1 |
 | `CLM-DEV-0024` = 30.4 K | `CLM-PHOT-0091` = 281.6 K | 89% | gate_bias_vgs=-2.7 V | device=microdisk, pump_power=12.4 mW |
 | `CLM-DEV-0024` = 30.4 K | `CLM-PHOT-0086` = 275.2 K | 89% | gate_bias_vgs=-2.7 V | external_pump_power=300 μW |
+| `CLM-DEV-0096` = 0.96 K | `CLM-PHOT-0037` = 0.11 K | 89% | component=Pt injector | cavity_length=20 µm, beam_shape=circular, incident_power=1.09 mW |
+| `CLM-DEV-0097` = 0.75 K | `CLM-PHOT-0037` = 0.11 K | 85% | component=Pt injector | cavity_length=20 µm, beam_shape=circular, incident_power=1.09 mW |
+| `CLM-DEV-0098` = 0.71 K | `CLM-PHOT-0037` = 0.11 K | 85% | component=Pt injector | cavity_length=20 µm, beam_shape=circular, incident_power=1.09 mW |
 | `CLM-DEV-0024` = 30.4 K | `CLM-MAT-0229` = 5 K | 84% | gate_bias_vgs=-2.7 V | p_mw=128 mW, simulation_type=finite-element simulations |
 | `CLM-MAT-0297` = 50 K | `CLM-PHOT-0091` = 281.6 K | 82% | dissipated_power=4 W mm-1 | device=microdisk, pump_power=12.4 mW |
 | `CLM-MAT-0297` = 50 K | `CLM-PHOT-0086` = 275.2 K | 82% | dissipated_power=4 W mm-1 | external_pump_power=300 μW |
-| `CLM-DEV-0024` = 30.4 K | `CLM-MAT-0297` = 50 K | 39% | gate_bias_vgs=-2.7 V | dissipated_power=4 W mm-1 |
+| `CLM-DEV-0034` = 3 K | `CLM-DEV-0098` = 0.71 K | 76% | time_after_cooling_onset=10 s | component=Pt injector |
+| `CLM-DEV-0034` = 3 K | `CLM-DEV-0097` = 0.75 K | 75% | time_after_cooling_onset=10 s | component=Pt injector |
+| `CLM-DEV-0034` = 3 K | `CLM-DEV-0096` = 0.96 K | 68% | time_after_cooling_onset=10 s | component=Pt injector |
+
+_and 2 more_
 
 ## `thermal_conductivity` (1 pair(s))
 
@@ -401,7 +425,7 @@ _and 303 more_
 |---|---|---|---|---|
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0007` = 3100 W/(m*K) | 99% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | temperature=room-temperature, sample_13c_concentration=~0.00024% |
 
-## `time` (1643 pair(s))
+## `time` (1827 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -427,6 +451,8 @@ _and 303 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0230` = 0.00015 ns | 100% | device_type=FTJ, architecture=Naive | parameter=overall temporal resolution |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0237` = 8.5e+09 ns | 100% | device_type=FTJ, architecture=Naive | spacer_cation=FPEA |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0238` = 3.5e+09 ns | 100% | device_type=FTJ, architecture=Naive | spacer_cation=FBZA |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0318` = 1.116e+14 ns | 100% | device_type=FTJ, architecture=Naive | method=Random sampling, dataset=600,000-sample Moir´e dataset |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0321` = 4.14e+12 ns | 100% | device_type=FTJ, architecture=Naive | method=FruBO with CatBoost, dataset=600,000-sample Moir´e dataset |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PHOT-0025` = 4e+06 ns | 100% | device_type=FTJ, architecture=Naive | illumination=random speckle illumination |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PHOT-0048` = 8.29e+10 ns | 100% | device_type=FTJ, architecture=Naive | algorithm=DBS, cores=128 cores |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PHOT-0073` = 0.0004 ns | 100% | device_type=FTJ, architecture=Naive | material=ITO film |
@@ -435,6 +461,7 @@ _and 303 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PROC-0059` = 4.629e+10 ns | 100% | device_type=FTJ, architecture=Naive | step_interval=750 phase-field Euler steps |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PROC-0060` = 1.11e+08 ns | 100% | device_type=FTJ, architecture=Naive | model=deterministic U-Net, step_interval=750 phase-field Euler steps, hardware=single AMD MI250X Graphics Compute Die (GCD) of LUMI |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PROC-0061` = 6.34e+08 ns | 100% | device_type=FTJ, architecture=Naive | model=VP-DDBM using five DBIM network evaluations, step_interval=750 phase-field Euler steps, hardware=single AMD MI250X Graphics Compute Die (GCD) of LUMI |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-PROC-0069` = 9.166e+10 ns | 100% | device_type=FTJ, architecture=Naive | image_size=2000*2000 pixels, layers=160, algorithm=iterative SFF algorithm, cpu=AMD Ryzen 5 3600X CPU |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0020` = 1.4e+07 ns | 100% | device_type=FTJ, architecture=Merged | concurrency_n_a=48, design=our design with tiering, component=end-to-end time-between-tokens (TBT) |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0021` = 2.7e+07 ns | 100% | device_type=FTJ, architecture=Merged | concurrency_n_a=128, design=our design with tiering |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0130` = 1.036e+07 ns | 100% | device_type=FTJ, architecture=Merged | device=NVIDIA GeForce RTX 5080, form=direct, decode=ALU |
@@ -442,11 +469,8 @@ _and 303 more_
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0153` = 3.72e+09 ns | 100% | device_type=FTJ, architecture=Merged | component=FIGFLEX, benchmark=Llama-3.1-8B |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0172` = 8.04e+10 ns | 100% | device_type=FTJ, architecture=Merged | program=Mini-Transformer, dynamic_instructions=3,411,714 |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0173` = 1.78e+11 ns | 100% | device_type=FTJ, architecture=Merged | program=Mini-ResNet, dynamic_instructions=11,022,541 |
-| `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0188` = 3.24e+10 ns | 100% | device_type=FTJ, architecture=Merged | benchmark=matmul_single_core, simulator=Wolfpine |
-| `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0189` = 7.2e+09 ns | 100% | device_type=FTJ, architecture=Merged | benchmark=matmul_single_core, simulator=ttsim |
-| `CLM-ARCH-0013` = 162 ns | `CLM-DEV-0066` = 6e+10 ns | 100% | device_type=FTJ, architecture=Merged | software=MATLAB Deep Learning Toolbox |
 
-_and 1603 more_
+_and 1787 more_
 
 ## `voltage` (99 pair(s))
 
