@@ -1,6 +1,6 @@
 # EDA — state of the art
 
-Topic code `EDA`. Last reviewed 2026-11-10.
+Topic code `EDA`. Last reviewed 2026-11-11.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -93,6 +93,34 @@ Topic code `EDA`. Last reviewed 2026-11-10.
   - `CLM-EDA-0027` · benchmark_set 45 open-source designs · grade B · credibility unknown · measured · as of 2026-11-09
   - sources: SRC-00324
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Dr. RTL achieves an average improvement of 21.3% in worst negative slack (WNS) across 20 designs.
+  - `CLM-EDA-0028` · tool Dr. RTL, dataset_size 20 designs · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00333
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Dr. RTL achieves an average improvement of 16.9% in total negative slack (TNS) across 20 designs.
+  - `CLM-EDA-0029` · tool Dr. RTL, dataset_size 20 designs · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00333
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Dr. RTL achieves an average area reduction of 5.8% across 20 designs.
+  - `CLM-EDA-0030` · tool Dr. RTL, dataset_size 20 designs · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00333
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- E-Layout reports an average improvement of 6.07% in total negative slack (TNS) across nine designs.
+  - `CLM-EDA-0031` · tool E-Layout · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00333
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- E-Layout reports an average improvement of 2.29% in worst negative slack (WNS) across nine designs.
+  - `CLM-EDA-0032` · tool E-Layout · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00333
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- E-Layout achieves an average area reduction of 1.07% across nine designs.
+  - `CLM-EDA-0033` · tool E-Layout · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00333
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- CircuitProver reduces average proof rounds from 9.2 to 4.6.
+  - `CLM-EDA-0034` · tool CircuitProver · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00333
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -120,6 +148,45 @@ Topic code `EDA`. Last reviewed 2026-11-10.
   - `CLM-EDA-0007` · model Non-cyclic + Node prediction model · grade B · credibility unknown · simulated · as of 2026-09-29
   - sources: SRC-00045
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **21.3 percent** — Dr. RTL achieves an average WNS improvement of 21.3% over commercial synthesis on 20 human-written RTL designs.
+  - `CLM-EDA-0035` · framework Dr. RTL, design_count 20 human-written RTL designs · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00334
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0127, CFL-0128 — see the open register
+- **16.9 percent** — Dr. RTL achieves an average TNS improvement of 16.9% over commercial synthesis across 20 human-written RTL designs.
+  - `CLM-EDA-0036` · framework Dr. RTL, design_count 20 human-written RTL designs · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00334
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0127, CFL-0129 — see the open register
+- **5.8 percent** — Dr. RTL achieves an average area reduction of 5.8% over commercial synthesis across 20 human-written RTL designs.
+  - `CLM-EDA-0037` · framework Dr. RTL, design_count 20 human-written RTL designs · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00334
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0128, CFL-0129 — see the open register
+- **7.4 percent** — Commercial synthesis tuning improves average WNS by 7.4% across eight designs.
+  - `CLM-EDA-0038` · method commercial synthesis tuning · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00334
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0130 — see the open register
+- **11.1 percent** — Commercial synthesis tuning improves average TNS by 11.1% across eight designs.
+  - `CLM-EDA-0039` · method commercial synthesis tuning · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00334
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0130 — see the open register
+- **18.7 percent** — Open-source algorithm discovery reduces area-delay product by 18.7% across eight designs.
+  - `CLM-EDA-0040` · method open-source algorithm discovery · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00334
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **10.6 percent** — Algorithm discovery achieves an average reduction of 10.6% in area relative to agent-tuned Yosys+ABC.
+  - `CLM-EDA-0041` · method algorithm discovery, baseline agent-tuned Yosys+ABC · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00334
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0131 — see the open register
+- **9.1 percent** — Algorithm discovery achieves an average delay reduction of 9.1% relative to agent-tuned Yosys+ABC.
+  - `CLM-EDA-0042` · method algorithm discovery, baseline agent-tuned Yosys+ABC · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00334
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0131 — see the open register
 
 ### time
 
@@ -134,10 +201,26 @@ Topic code `EDA`. Last reviewed 2026-11-10.
 
 ## Live contradictions in this layer
 
-_None._
+Shown here, not in an appendix: a reader of this page must see the disagreement without navigating elsewhere.
+
+- `CFL-0127` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-EDA-0035, CLM-EDA-0036
+  - missing data: `not yet named`
+- `CFL-0128` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-EDA-0035, CLM-EDA-0037
+  - missing data: `not yet named`
+- `CFL-0129` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-EDA-0036, CLM-EDA-0037
+  - missing data: `not yet named`
+- `CFL-0130` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-EDA-0038, CLM-EDA-0039
+  - missing data: `not yet named`
+- `CFL-0131` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-EDA-0041, CLM-EDA-0042
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 27
-- grades: {'B': 27}
-- distinct sources: 9
+- claims: 42
+- grades: {'B': 42}
+- distinct sources: 11

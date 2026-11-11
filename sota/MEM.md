@@ -1,6 +1,6 @@
 # Memory — state of the art
 
-Topic code `MEM`. Last reviewed 2026-11-10.
+Topic code `MEM`. Last reviewed 2026-11-11.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 

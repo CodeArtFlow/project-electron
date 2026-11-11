@@ -1,0 +1,110 @@
+id: SRC-00336
+title: 'Exploiting What NVIDIA Profilers Hide: Fast and Accurate Analytical GPU Performance Modeling'
+doi: null
+arxiv_id: 2611.13762v1
+url: https://arxiv.org/abs/2611.13762v1
+venue_id: arxiv_api
+authors:
+- name: Ziwen Wang
+  affiliation: null
+  corresponding: null
+- name: Qi Luo
+  affiliation: null
+  corresponding: null
+- name: Kunlin Li
+  affiliation: null
+  corresponding: null
+- name: Changxi Liu
+  affiliation: null
+  corresponding: null
+- name: Dongsheng Wang
+  affiliation: null
+  corresponding: null
+- name: Yun Chen
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-10'
+retrieved_date: '2026-11-11'
+access: full_text
+read_scope: Automated reading. The full PDF text (77,837 characters, 13 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.13762v1 on
+  2026-11-11. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Our evaluation on hardware configurations of nine NVIDIA GPUs shows that ForeSight predicts
+  kernel execution time with a mean absolute percentage error (MAPE) of 8.3%, compared with 14.1% for
+  the best baseline.”
+
+  “ForeSight predicts kernel execution time with a mean absolute percentage error (MAPE) of 8.3%”
+
+  “mean absolute percentage error (MAPE) of 8.3%”
+
+  “hardware configurations of nine NVIDIA GPUs”
+
+  “For a Llama-3.1-8B shape with batch size 16 and context length 8,192, the kernel takes 359 𝜇s on H20.”
+
+  “This makes the kernel 11% faster, reducing runtime from 359𝜇s to 319𝜇s.”
+
+  “vLLM’s FlashAttention-3 (FA3) decode kernel.”
+
+  “balance the tiles across the SMs.”
+
+  “On each C1, ForeSight replays the CTAs with its queueing model, whereas Accel-Sim simulates the trace
+  cycle by cycle, and GCoM and AMALI analyze the trace of every warp. ForeSight is faster than all three,
+  with a median of 26 s on one CPU core to predict a workload on one C1, against 1272 s for Accel-Sim
+  and 40 s and 108 s for GCoM and AMALI.”
+
+  “ForeSight is faster than all three, with a median of 26 s”
+
+  “ForeSight is faster than all three, with a median of 26 s on one CPU core to predict a workload on
+  one C1, against 1272 s for Accel-Sim and 40 s and 108 s for GCoM and AMALI.”'
+method_summary: '“Our evaluation on hardware configurations of nine NVIDIA GPUs shows that ForeSight predicts
+  kernel execution time with a mean absolute percentage error (MAPE) of 8.3%, compared with 14.1% for
+  the best baseline.”
+
+  “It runs 49× faster than the cycle-level simulator Accel-Sim and faster than interval-based models such
+  as GCoM.”
+
+  “With the aid of ForeSight, we explore configurations derived from the H20 GPU for LLM inference and
+  find one with 1.78×its performance/cost.”'
+limitations: “On some MIG instances and on another GPU, vLLM selects a different kernel or grid for a
+  workload, and we evaluate only the workloads whose kernel and grid stay the same.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 24127
+    output: 2550
+  claims_accepted: 3
+  claims_rejected: 3
+  rejected:
+  - statement: ForeSight predicts the end-to-end execution time of LLM inference on vLLM with a MAPE of
+      2.0%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''ForeSight
+      also predicts the end-to-end execution time of LLM inference'''
+    quotes:
+    - ForeSight also predicts the end-to-end execution time of LLM inference on vLLM with a MAPE of 2.0%.
+    - vLLM
+    - LLM inference
+    - MAPE of 2.0%
+  - statement: FA3 decode kernel runtime decreases to 223 us when using FP8 attention instead of BF16.
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - This reduces the runtime from 359𝜇s to 223𝜇s, by 38%.
+    - FA3 is a persistent kernel
+    - on H20.
+    - run the attention in FP8 instead of BF16
+  - statement: ForeSight profile collection takes a median of 170 s per workload on H20.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - On H20, ForeSight collects its profile faster than Accel-Sim’s tracer collects the trace, with a
+      median of 170 s against 233 s per workload.
+    - ForeSight collects its profile
+    - On H20
+    - with a median of 170 s
+corrections: []

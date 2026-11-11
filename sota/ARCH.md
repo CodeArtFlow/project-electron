@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-10.
+Topic code `ARCH`. Last reviewed 2026-11-11.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -812,6 +812,28 @@ Topic code `ARCH`. Last reviewed 2026-11-10.
   - `CLM-ARCH-0211` · metric peak HBM footprint · grade B · credibility unknown · measured · as of 2026-11-09
   - sources: SRC-00327
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **8.3 percent** — ForeSight predicts kernel execution time with a MAPE of 8.3% across target configurations of nine NVIDIA GPUs.
+  - `CLM-ARCH-0215` · model ForeSight, metric MAPE, hardware_scope hardware configurations of nine NVIDIA GPUs · grade B · credibility unknown · measured · as of 2026-11-10
+  - sources: SRC-00336
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+
+### sensitivity advantage ratio
+
+- **4.95** — Tri-Stack-PIM achieves a geometric-mean speedup of 4.95x over the GPU-only baseline across all evaluated workloads, attention mechanisms, and batch sizes.
+  - `CLM-ARCH-0212` · scope across all three attention mechanisms and batch sizes · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00332
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0124, CFL-0125 — see the open register
+- **2.57** — Tri-Stack-PIM achieves a geometric-mean speedup of 2.57x over AttAcc across all evaluated attention mechanisms and batch sizes.
+  - `CLM-ARCH-0213` · scope across all three attention mechanisms and batch sizes · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00332
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0124, CFL-0126 — see the open register
+- **1.68** — Tri-Stack-PIM achieves a geometric-mean speedup of 1.68x over H2-LLM across all evaluated attention mechanisms and batch sizes.
+  - `CLM-ARCH-0214` · scope across all three attention mechanisms and batch sizes · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00332
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0125, CFL-0126 — see the open register
 
 ### time
 
@@ -895,6 +917,14 @@ Topic code `ARCH`. Last reviewed 2026-11-10.
   - `CLM-ARCH-0208` · process 28 nm, component Saturating Popcount Adder Tree · grade B · credibility unknown · simulated · as of 2026-11-05
   - sources: SRC-00321
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **319000 ns** — FA3 decode kernel runtime decreases from 359 us to 319 us after balancing tiles across SMs.
+  - `CLM-ARCH-0216` · kernel FlashAttention-3 (FA3) decode kernel, optimization balance the tiles across the SMs · grade B · credibility unknown · measured · as of 2026-11-10
+  - sources: SRC-00336
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **≈2.6e+10 ns** — ForeSight takes a median of 26 s on one CPU core to predict a workload on one target configuration.
+  - `CLM-ARCH-0217` · model ForeSight · grade B · credibility unknown · measured · as of 2026-11-10
+  - sources: SRC-00336
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -948,9 +978,18 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0117` — power: _unexamined; classification pending_
   - claims: CLM-ARCH-0204, CLM-ARCH-0205
   - missing data: `not yet named`
+- `CFL-0124` — sensitivity_advantage_ratio: _unexamined; classification pending_
+  - claims: CLM-ARCH-0212, CLM-ARCH-0213
+  - missing data: `not yet named`
+- `CFL-0125` — sensitivity_advantage_ratio: _unexamined; classification pending_
+  - claims: CLM-ARCH-0212, CLM-ARCH-0214
+  - missing data: `not yet named`
+- `CFL-0126` — sensitivity_advantage_ratio: _unexamined; classification pending_
+  - claims: CLM-ARCH-0213, CLM-ARCH-0214
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 211
-- grades: {'B': 211}
-- distinct sources: 70
+- claims: 217
+- grades: {'B': 217}
+- distinct sources: 72

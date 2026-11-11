@@ -22,6 +22,104 @@ id: CAND-20261111-0118
 harvested_date: '2026-11-11'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-11'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For two Li atoms on graphene, at a separation distance of 2.88 Å, the Li configuration
+      energy is 136.8 meV per Li above the fully separated configuration.
+    reason: 'unit conversion refused: energy: could not parse 136.8 ''meV per Li'': ''Li'' is not defined
+      in the unit registry'
+    quotes:
+    - at a distance of 2.88 Å, the Li configuration is still 136.8 meV per Li above the fully separated
+      configuration.
+    - herein, we use first -principles calculations on graphene to examine the electronic origin of Li
+      and Na clustering.
+    - Clustering tendency between 2 Li/Na atoms on the graphene surface
+    - at a distance of 2.88 Å
+  - statement: For two Li atoms on graphene, the configuration at a distance of 2.88 Å is 2.6 meV per
+      Li lower in energy than the configuration at 4.31 Å.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Importantly,
+      while the closest Li cluster configuration (2.88 Å) is le'''
+    quotes:
+    - Importantly, while the closest Li cluster configuration (2.88 Å) is less stable than the separated
+      configuration, it is 2.6 meV per Li lower than the next one at 4.31 Å
+    - herein, we use first -principles calculations on graphene to examine the electronic origin of Li
+      and Na clustering.
+    - Clustering tendency between 2 Li/Na atoms on the graphene surface
+    - closest Li cluster configuration (2.88 Å) is less stable than the separated configuration, it is
+      2.6 meV per Li lower than the next one at 4.31 Å
+  - statement: For 2 well-separated Li atoms on graphene, the main metal-associated states lie 0.88 eV
+      above the Fermi level.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - Specifically, for well-separated Li and Na atoms, the main metal-associated states lie 0.88 and
+      0.14 eV above the Fermi level, respectively, and remain unoccupied.
+    - herein, we use first -principles calculations on graphene to examine the electronic origin of Li
+      and Na clustering.
+    - well-separated Li and Na atoms
+    - above the Fermi level
+  - statement: For 2 well-separated Na atoms on graphene, the main metal-associated states lie 0.14 eV
+      above the Fermi level.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - Specifically, for well-separated Li and Na atoms, the main metal-associated states lie 0.88 and
+      0.14 eV above the Fermi level, respectively, and remain unoccupied.
+    - herein, we use first -principles calculations on graphene to examine the electronic origin of Li
+      and Na clustering.
+    - well-separated Li and Na atoms
+    - above the Fermi level
+  - statement: Aligned to a vacuum reference, the main Li-associated states in the connected 2-atom Li
+      cluster state appear at -3.97 eV.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - show distinctly that the main Li -associated states in the connected state appear at -3.97 eV, while
+      the corresponding main Na states are at -4.27 eV.
+    - herein, we use first -principles calculations on graphene to examine the electronic origin of Li
+      and Na clustering.
+    - main Li -associated states
+    - in the connected state
+  - statement: Aligned to a vacuum reference, the main Na-associated states in the connected 2-atom Na
+      cluster state appear at -4.27 eV.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - show distinctly that the main Li -associated states in the connected state appear at -3.97 eV, while
+      the corresponding main Na states are at -4.27 eV.
+    - herein, we use first -principles calculations on graphene to examine the electronic origin of Li
+      and Na clustering.
+    - corresponding main Na states
+    - in the connected state
+  - statement: The clustering energy for connected Li3 on graphene is +53.7 meV/Li relative to the separated
+      configuration.
+    reason: 'unit conversion refused: energy: could not parse 53.7 ''meV/Li'': ''Li'' is not defined in
+      the unit registry'
+    quotes:
+    - The comparison of relative clustering energetics for 2 and 3 Li atoms suggests that increasing Li
+      concentration reduces (makes more favorable) the clustering energy from +136.8 meV/Li to +53.7 meV/Li.
+    - from +53.7 meV/Li for the connected Li3 configuration to -62.4 meV/Li for Li4, then to -104.1 and
+      -145.4 meV/Li for Li 5 and Li 6, respectively.
+    - herein, we use first -principles calculations on graphene to examine the electronic origin of Li
+      and Na clustering.
+    - connected Li3 configuration
+  - statement: The clustering energy for connected Li4 on graphene is -62.4 meV/Li relative to the separated
+      configuration.
+    reason: 'unit conversion refused: energy: could not parse -62.4 ''meV/Li'': ''Li'' is not defined
+      in the unit registry'
+    quotes:
+    - from +53.7 meV/Li for the connected Li3 configuration to -62.4 meV/Li for Li4, then to -104.1 and
+      -145.4 meV/Li for Li 5 and Li 6, respectively.
+    - herein, we use first -principles calculations on graphene to examine the electronic origin of Li
+      and Na clustering.
+    - for Li4
+    - with respect to the most separated metal -atom configuration
+  tokens:
+    input: 10369
+    output: 2717
+  fetched_chars: 32039

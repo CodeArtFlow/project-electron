@@ -695,3 +695,414 @@ claims:
     verified_quotes: 3
   conditions:
     benchmark_set: 45 open-source designs
+- id: CLM-EDA-0028
+  topic: EDA
+  statement: Dr. RTL achieves an average improvement of 21.3% in worst negative slack (WNS) across 20
+    designs.
+  sources:
+  - SRC-00333
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    tool: Dr. RTL
+    dataset_size: 20 designs
+- id: CLM-EDA-0029
+  topic: EDA
+  statement: Dr. RTL achieves an average improvement of 16.9% in total negative slack (TNS) across 20
+    designs.
+  sources:
+  - SRC-00333
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    tool: Dr. RTL
+    dataset_size: 20 designs
+- id: CLM-EDA-0030
+  topic: EDA
+  statement: Dr. RTL achieves an average area reduction of 5.8% across 20 designs.
+  sources:
+  - SRC-00333
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    tool: Dr. RTL
+    dataset_size: 20 designs
+- id: CLM-EDA-0031
+  topic: EDA
+  statement: E-Layout reports an average improvement of 6.07% in total negative slack (TNS) across nine
+    designs.
+  sources:
+  - SRC-00333
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    tool: E-Layout
+- id: CLM-EDA-0032
+  topic: EDA
+  statement: E-Layout reports an average improvement of 2.29% in worst negative slack (WNS) across nine
+    designs.
+  sources:
+  - SRC-00333
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    tool: E-Layout
+- id: CLM-EDA-0033
+  topic: EDA
+  statement: E-Layout achieves an average area reduction of 1.07% across nine designs.
+  sources:
+  - SRC-00333
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    tool: E-Layout
+- id: CLM-EDA-0034
+  topic: EDA
+  statement: CircuitProver reduces average proof rounds from 9.2 to 4.6.
+  sources:
+  - SRC-00333
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    tool: CircuitProver
+- id: CLM-EDA-0035
+  topic: EDA
+  statement: Dr. RTL achieves an average WNS improvement of 21.3% over commercial synthesis on 20 human-written
+    RTL designs.
+  sources:
+  - SRC-00334
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    framework: Dr. RTL
+    design_count: 20 human-written RTL designs
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 21.3
+      unit: '%'
+    si_base:
+      value: 0.21300000000000002
+      unit: dimensionless
+    display:
+      value: 21.3
+      unit: percent
+    conditions:
+      framework: Dr. RTL
+      design_count: 20 human-written RTL designs
+- id: CLM-EDA-0036
+  topic: EDA
+  statement: Dr. RTL achieves an average TNS improvement of 16.9% over commercial synthesis across 20
+    human-written RTL designs.
+  sources:
+  - SRC-00334
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    framework: Dr. RTL
+    design_count: 20 human-written RTL designs
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 16.9
+      unit: '%'
+    si_base:
+      value: 0.16899999999999998
+      unit: dimensionless
+    display:
+      value: 16.9
+      unit: percent
+    conditions:
+      framework: Dr. RTL
+      design_count: 20 human-written RTL designs
+- id: CLM-EDA-0037
+  topic: EDA
+  statement: Dr. RTL achieves an average area reduction of 5.8% over commercial synthesis across 20 human-written
+    RTL designs.
+  sources:
+  - SRC-00334
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    framework: Dr. RTL
+    design_count: 20 human-written RTL designs
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 5.8
+      unit: '%'
+    si_base:
+      value: 0.057999999999999996
+      unit: dimensionless
+    display:
+      value: 5.8
+      unit: percent
+    conditions:
+      framework: Dr. RTL
+      design_count: 20 human-written RTL designs
+- id: CLM-EDA-0038
+  topic: EDA
+  statement: Commercial synthesis tuning improves average WNS by 7.4% across eight designs.
+  sources:
+  - SRC-00334
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    method: commercial synthesis tuning
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 7.4
+      unit: '%'
+    si_base:
+      value: 0.07400000000000001
+      unit: dimensionless
+    display:
+      value: 7.400000000000001
+      unit: percent
+    conditions:
+      method: commercial synthesis tuning
+- id: CLM-EDA-0039
+  topic: EDA
+  statement: Commercial synthesis tuning improves average TNS by 11.1% across eight designs.
+  sources:
+  - SRC-00334
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    method: commercial synthesis tuning
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 11.1
+      unit: '%'
+    si_base:
+      value: 0.111
+      unit: dimensionless
+    display:
+      value: 11.1
+      unit: percent
+    conditions:
+      method: commercial synthesis tuning
+- id: CLM-EDA-0040
+  topic: EDA
+  statement: Open-source algorithm discovery reduces area-delay product by 18.7% across eight designs.
+  sources:
+  - SRC-00334
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    method: open-source algorithm discovery
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 18.7
+      unit: '%'
+    si_base:
+      value: 0.187
+      unit: dimensionless
+    display:
+      value: 18.7
+      unit: percent
+    conditions:
+      method: open-source algorithm discovery
+- id: CLM-EDA-0041
+  topic: EDA
+  statement: Algorithm discovery achieves an average reduction of 10.6% in area relative to agent-tuned
+    Yosys+ABC.
+  sources:
+  - SRC-00334
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    method: algorithm discovery
+    baseline: agent-tuned Yosys+ABC
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 10.6
+      unit: '%'
+    si_base:
+      value: 0.106
+      unit: dimensionless
+    display:
+      value: 10.6
+      unit: percent
+    conditions:
+      method: algorithm discovery
+      baseline: agent-tuned Yosys+ABC
+- id: CLM-EDA-0042
+  topic: EDA
+  statement: Algorithm discovery achieves an average delay reduction of 9.1% relative to agent-tuned Yosys+ABC.
+  sources:
+  - SRC-00334
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    method: algorithm discovery
+    baseline: agent-tuned Yosys+ABC
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 9.1
+      unit: '%'
+    si_base:
+      value: 0.091
+      unit: dimensionless
+    display:
+      value: 9.1
+      unit: percent
+    conditions:
+      method: algorithm discovery
+      baseline: agent-tuned Yosys+ABC

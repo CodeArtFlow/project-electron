@@ -1,0 +1,99 @@
+id: SRC-00332
+title: 'Tri-Stack-PIM: A Heterogeneous Multi-Die 3D-Integrated Processing-in-Memory Architecture for Efficient
+  LLM Inference'
+doi: null
+arxiv_id: 2611.13644v1
+url: https://arxiv.org/abs/2611.13644v1
+venue_id: arxiv_api
+authors:
+- name: Shuao Jia
+  affiliation: null
+  corresponding: null
+- name: Zichao Ling
+  affiliation: null
+  corresponding: null
+- name: Chen Bai
+  affiliation: null
+  corresponding: null
+- name: Kang Zhao
+  affiliation: null
+  corresponding: null
+- name: Jianwang Zhai
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-10'
+retrieved_date: '2026-11-11'
+access: full_text
+read_scope: Automated reading. The full PDF text (70,689 characters, 11 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.13644v1 on
+  2026-11-11. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Tri-Stack-PIM achieves geometric-mean speedups of 4.95×, 2.57×, and 1.68× across all three
+  attention mechanisms and batch sizes over a graphics processing unit (GPU) baseline, AttAcc, and H2-LLM,
+  respectively.”
+
+  “across all three attention mechanisms and batch sizes”
+
+  “Our Cycle-accurate simulation extends Ramulator 2 [26].”'
+method_summary: '“Our Cycle-accurate simulation extends Ramulator 2 [26].”
+
+  “The Base-Die compute tile is synthesized with the ASAP7 process design kit (PDK) [ 9]”
+
+  “The Buffer-Die SRE is synthesized with NanGate 45 nm PDK [27]”
+
+  “On-chip SRAMs are modeled with FinCACTI [ 35]”
+
+  “We perform a steady-state thermal simulation with HotSpot-7.0 in detailed_3D grid mode [14, 17]”'
+limitations: “Accommodating this altered channel would necessitate PHY intellectual property (IP) re-design—an
+  NRE and qualification expense that Eq. (2) does not capture. We leave quantification of this overhead
+  to future work.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 23596
+    output: 2172
+  claims_accepted: 3
+  claims_rejected: 4
+  rejected:
+  - statement: UBAR scheduler recovers up to 90% of the cycles that an in-order policy would forfeit.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - recovering up to 90% of the cycles that an in-order policy would forfeit.
+    - Our Cycle-accurate simulation extends Ramulator 2 [26].
+    - an in-order policy
+  - statement: Under full load, the total three-die stack power is 11.97 W.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The total stack power under full load is11.97 W.
+    - We perform a steady-state thermal simulation with HotSpot-7.0 in detailed_3D grid mode [14, 17]
+    - under full load
+  - statement: With advanced liquid cooling, the DRAM die exhibits a peak steady-state temperature of
+      63.74 °C under thermal simulation.
+    reason: 'unit conversion refused: temperature: could not parse 63.74 ''◦C'': ''◦C'' is not defined
+      in the unit registry'
+    quotes:
+    - Peak temperatures (DRAM / buffer / base) are63.74/63 .75/62 .63◦C with liquid cooling
+    - We perform a steady-state thermal simulation with HotSpot-7.0 in detailed_3D grid mode [14, 17]
+    - (DRAM / buffer / base)
+    - liquid cooling
+  - statement: With microfluidic cooling, the base die exhibits a peak steady-state temperature of 60.76
+      °C under thermal simulation.
+    reason: 'unit conversion refused: temperature: could not parse 60.76 ''◦C'': ''◦C'' is not defined
+      in the unit registry'
+    quotes:
+    - and61 .90/61 .91/ 60.76◦Cwith microfluidic cooling.
+    - We perform a steady-state thermal simulation with HotSpot-7.0 in detailed_3D grid mode [14, 17]
+    - (DRAM / buffer / base)
+    - microfluidic cooling
+corrections: []

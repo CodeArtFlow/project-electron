@@ -1,0 +1,93 @@
+id: SRC-00337
+title: Structural and electronic properties of (Hf,Zr)O$_2$ phases from first principles
+doi: null
+arxiv_id: 2611.13817v1
+url: https://arxiv.org/abs/2611.13817v1
+venue_id: arxiv_api
+authors:
+- name: Sibghatullah Khan
+  affiliation: null
+  corresponding: null
+- name: Hannu-Pekka Komsa
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-10'
+retrieved_date: '2026-11-11'
+access: full_text
+read_scope: Automated reading. The full PDF text (75,138 characters, 31 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.13817v1 on
+  2026-11-11. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“For example, in the case of HZO, dielectric constants calculated using PBE, r2SCAN, and HSE06
+  functionals are 120.9, 66.4, and 56.4, respectively.”
+
+  “Electronic gap 6.03∼5.83 5.63”
+
+  “TABLE I. Indirect and direct band gaps for m-phase calculated with different levels of theory and comparison
+  to experimental values determined using different methods.”
+
+  “T renorm. (300 K) -0.24 -0.25 -0.30 -0.31”
+
+  “Electronic gap is obtained by summing up indirect HSE+G0W0 band gap and temperature renormalization
+  (T renorm. at 300 K).”'
+method_summary: '“All density-functional theory calculations were carried out within the projector-augmented
+  wave framework as implemented in V ASP [25, 26]. We benchmark PBE[27], r2SCAN[28], and HSE06[29, 30]
+  exchange-correlation functionals.”
+
+  “TCAD simulations were carried out using Sentaurus to model the ferroelectric capacitor behavior [36,
+  37].”'
+limitations: '“Consequently, we are ignoring few of the higher energy phases proposed in the literature
+  [12].”
+
+  “The PBE and r2SCAN band gaps are clearly underestimated, as expected.”
+
+  “First, the above-mentioned problems in converging GW calculations.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 34273
+    output: 2713
+  claims_accepted: 2
+  claims_rejected: 4
+  rejected:
+  - statement: The calculated PBE lattice constant a for monoclinic HfO2 is 5.147 Å.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - PBE 0.000 5.147 5.199 5.329 140.56
+    - Tables S1, S2, and S3 give energy with respect to the monoclinic-phase (in eV/formula unit), lattice
+      constants (in Å, half-size in orthorhombic phases), and cell volume (in Å 3, half-size in orthorhombic
+      phases) from DFT calculations with a
+    - 'TABLE S1: Lattice parameters and energy differences of HfO 2 phases.'
+    - m-phase
+  - statement: The HSE06 indirect band gap for monoclinic HfO2 is calculated to be 5.67 eV.
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - HSE06 5.67 5.76 5.42 5.51 5.28 5.35
+    - TABLE I. Indirect and direct band gaps for m-phase calculated with different levels of theory and
+      comparison to experimental values determined using different methods.
+    - HfO2 HZO ZrO 2
+    - indir dir indir dir indir dir
+  - statement: The average static dielectric constant calculated with HSE06 for monoclinic HfO2 is 12.0.
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - HSE06 13.6+4.3 12.3+4.3 9.9+4.1 12.0+4.2
+    - Numerical values for calculated dielectric constants are collected in Tables S4, S5 and S6, for
+      all phases and functionals.
+    - 'TABLE S4: Dielectric constants of HfO 2 phases.'
+    - m-phase
+  - statement: The calculated direct band gap for cubic HfO2 using PBE is 3.794 eV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''PBE 3.794
+      3.794 -0.203'''
+    quotes:
+    - PBE 3.794 3.794 -0.203
+    - Numerical values of the band gaps are collected in Tables S7, S8, and S9.
+    - 'TABLE S7: Band gaps of HfO 2 phases.'
+    - c-phase
+corrections: []

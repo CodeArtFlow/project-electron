@@ -6046,3 +6046,211 @@ claims:
       unit: percent
     conditions:
       metric: peak HBM footprint
+- id: CLM-ARCH-0212
+  topic: ARCH
+  statement: Tri-Stack-PIM achieves a geometric-mean speedup of 4.95x over the GPU-only baseline across
+    all evaluated workloads, attention mechanisms, and batch sizes.
+  sources:
+  - SRC-00332
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    scope: across all three attention mechanisms and batch sizes
+  quantity:
+    quantity: sensitivity_advantage_ratio
+    bound: exact
+    approximate: false
+    as_published:
+      value: 4.95
+      unit: x
+    si_base:
+      value: 4.95
+      unit: dimensionless
+    display:
+      value: 4.95
+      unit: dimensionless
+    conditions:
+      scope: across all three attention mechanisms and batch sizes
+- id: CLM-ARCH-0213
+  topic: ARCH
+  statement: Tri-Stack-PIM achieves a geometric-mean speedup of 2.57x over AttAcc across all evaluated
+    attention mechanisms and batch sizes.
+  sources:
+  - SRC-00332
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    scope: across all three attention mechanisms and batch sizes
+  quantity:
+    quantity: sensitivity_advantage_ratio
+    bound: exact
+    approximate: false
+    as_published:
+      value: 2.57
+      unit: x
+    si_base:
+      value: 2.57
+      unit: dimensionless
+    display:
+      value: 2.57
+      unit: dimensionless
+    conditions:
+      scope: across all three attention mechanisms and batch sizes
+- id: CLM-ARCH-0214
+  topic: ARCH
+  statement: Tri-Stack-PIM achieves a geometric-mean speedup of 1.68x over H2-LLM across all evaluated
+    attention mechanisms and batch sizes.
+  sources:
+  - SRC-00332
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    scope: across all three attention mechanisms and batch sizes
+  quantity:
+    quantity: sensitivity_advantage_ratio
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.68
+      unit: x
+    si_base:
+      value: 1.68
+      unit: dimensionless
+    display:
+      value: 1.68
+      unit: dimensionless
+    conditions:
+      scope: across all three attention mechanisms and batch sizes
+- id: CLM-ARCH-0215
+  topic: ARCH
+  statement: ForeSight predicts kernel execution time with a MAPE of 8.3% across target configurations
+    of nine NVIDIA GPUs.
+  sources:
+  - SRC-00336
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    model: ForeSight
+    metric: MAPE
+    hardware_scope: hardware configurations of nine NVIDIA GPUs
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 8.3
+      unit: '%'
+    si_base:
+      value: 0.083
+      unit: dimensionless
+    display:
+      value: 8.3
+      unit: percent
+    conditions:
+      model: ForeSight
+      metric: MAPE
+      hardware_scope: hardware configurations of nine NVIDIA GPUs
+- id: CLM-ARCH-0216
+  topic: ARCH
+  statement: FA3 decode kernel runtime decreases from 359 us to 319 us after balancing tiles across SMs.
+  sources:
+  - SRC-00336
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    kernel: FlashAttention-3 (FA3) decode kernel
+    optimization: balance the tiles across the SMs
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 319.0
+      unit: 𝜇s
+    si_base:
+      value: 0.000319
+      unit: s
+    display:
+      value: 318999.99999999994
+      unit: ns
+    conditions:
+      kernel: FlashAttention-3 (FA3) decode kernel
+      optimization: balance the tiles across the SMs
+- id: CLM-ARCH-0217
+  topic: ARCH
+  statement: ForeSight takes a median of 26 s on one CPU core to predict a workload on one target configuration.
+  sources:
+  - SRC-00336
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    model: ForeSight
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: true
+    as_published:
+      value: 26.0
+      unit: s
+    si_base:
+      value: 26.0
+      unit: s
+    display:
+      value: 25999999999.999996
+      unit: ns
+    conditions:
+      model: ForeSight

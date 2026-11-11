@@ -1,0 +1,52 @@
+{
+  "arxiv_id": "2611.13762v1",
+  "claims": {
+    "CLM-ARCH-0215": {
+      "evidence_spans": [
+        "Our evaluation on hardware configurations of nine NVIDIA GPUs shows that ForeSight predicts kernel execution time with a mean absolute percentage error (MAPE) of 8.3%, compared with 14.1% for the best baseline.",
+        "ForeSight predicts kernel execution time with a mean absolute percentage error (MAPE) of 8.3%",
+        "mean absolute percentage error (MAPE) of 8.3%",
+        "hardware configurations of nine NVIDIA GPUs",
+        "Our evaluation on hardware configurations of nine NVIDIA GPUs shows that ForeSight predicts kernel execution time with a mean absolute percentage error (MAPE) of 8.3%, compared with 14.1% for the best baseline."
+      ],
+      "statement": "ForeSight predicts kernel execution time with a MAPE of 8.3% across target configurations of nine NVIDIA GPUs.",
+      "terms": []
+    },
+    "CLM-ARCH-0216": {
+      "evidence_spans": [
+        "For a Llama-3.1-8B shape with batch size 16 and context length 8,192, the kernel takes 359 𝜇s on H20.",
+        "This makes the kernel 11% faster, reducing runtime from 359𝜇s to 319𝜇s.",
+        "vLLM’s FlashAttention-3 (FA3) decode kernel.",
+        "balance the tiles across the SMs.",
+        "This makes the kernel 11% faster, reducing runtime from 359𝜇s to 319𝜇s."
+      ],
+      "statement": "FA3 decode kernel runtime decreases from 359 us to 319 us after balancing tiles across SMs.",
+      "terms": []
+    },
+    "CLM-ARCH-0217": {
+      "evidence_spans": [
+        "On each C1, ForeSight replays the CTAs with its queueing model, whereas Accel-Sim simulates the trace cycle by cycle, and GCoM and AMALI analyze the trace of every warp. ForeSight is faster than all three, with a median of 26 s on one CPU core to predict a workload on one C1, against 1272 s for Accel-Sim and 40 s and 108 s for GCoM and AMALI.",
+        "ForeSight is faster than all three, with a median of 26 s",
+        "ForeSight is faster than all three, with a median of 26 s on one CPU core to predict a workload on one C1, against 1272 s for Accel-Sim and 40 s and 108 s for GCoM and AMALI."
+      ],
+      "statement": "ForeSight takes a median of 26 s on one CPU core to predict a workload on one target configuration.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "Our evaluation on hardware configurations of nine NVIDIA GPUs shows that ForeSight predicts kernel execution time with a mean absolute percentage error (MAPE) of 8.3%, compared with 14.1% for the best baseline.",
+    "It runs 49× faster than the cycle-level simulator Accel-Sim and faster than interval-based models such as GCoM.",
+    "With the aid of ForeSight, we explore configurations derived from the H20 GPU for LLM inference and find one with 1.78×its performance/cost.",
+    "On some MIG instances and on another GPU, vLLM selects a different kernel or grid for a workload, and we evaluate only the workloads whose kernel and grid stay the same."
+  ],
+  "generated": "2026-11-11",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00336",
+  "text_chars": 77837,
+  "text_sha256": "39facabc6dc65f963b32625c72e034b2d0907896bf1543e1975d24cd2ecaa607"
+}

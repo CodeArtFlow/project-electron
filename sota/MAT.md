@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-10.
+Topic code `MAT`. Last reviewed 2026-11-11.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -166,6 +166,26 @@ Topic code `MAT`. Last reviewed 2026-11-10.
   - `CLM-MAT-0313` · material SmNiO3 · grade B · credibility unknown · simulated · as of 2026-11-05
   - sources: SRC-00312
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **-6.40871e-10 fJ** — The effective exchange field hRuOx induced by the RuOx interface is calculated to be -0.004 meV.
+  - `CLM-MAT-0326` · given_hgdn 0.13 meV · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00331
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.000118561 fJ** — For the electron-doped O/O bilayer with Kekulé distortion strength ∆0 = 0.1, the out-of-phase plasmon gap ∆ is 0.74 eV.
+  - `CLM-MAT-0327` · kekule_distortion_strength 0.1 · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00335
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.000160218 fJ** — For the electron-doped O/O bilayer with Kekulé distortion strength ∆0 = 0.2, the out-of-phase plasmon gap ∆ is 1.0 eV.
+  - `CLM-MAT-0328` · kekule_distortion_strength 0.2 · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00335
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.000209885 fJ** — For the electron-doped O/O bilayer with Kekulé distortion strength ∆0 = 0.3, the out-of-phase plasmon gap ∆ is 1.31 eV.
+  - `CLM-MAT-0329` · kekule_distortion_strength 0.3 · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00335
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.000902025 fJ** — The electronic gap for m-phase ZrO2 calculated at 300 K is 5.63 eV.
+  - `CLM-MAT-0331` · phase m-phase, temperature 300 K · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00337
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### frequency
 
@@ -1029,6 +1049,10 @@ Topic code `MAT`. Last reviewed 2026-11-10.
   - `CLM-MAT-0322` · conformation six-layer conformation · grade B · credibility unknown · simulated · as of 2026-11-09
   - sources: SRC-00328
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The total average static dielectric constant for tetragonal HZO calculated using PBE is 120.9.
+  - `CLM-MAT-0330` · material HZO, functional PBE · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00337
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1213,6 +1237,10 @@ Topic code `MAT`. Last reviewed 2026-11-10.
   - `CLM-MAT-0307` · property T N · grade B · credibility unknown · simulated · as of 2026-11-05
   - sources: SRC-00311
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈-233.15 degC** — The Curie temperature of GdN is approximately 40 K.
+  - `CLM-MAT-0325` · material GdN · grade B · credibility unknown · measured · as of 2026-11-10
+  - sources: SRC-00331
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature delta
 
@@ -1224,6 +1252,10 @@ Topic code `MAT`. Last reviewed 2026-11-10.
   - `CLM-MAT-0297` · dissipated_power 4 W mm-1 · grade B · credibility unknown · simulated · as of 2026-11-04
   - sources: SRC-00297
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **-0.008 K** — The superconducting transition temperature difference ΔTc between antiparallel and parallel configurations after field cooling at 9 T is -8 mK.
+  - `CLM-MAT-0324` · field_cooling_field +9 T, current_density 5.38  108 A/m2, current_direction [001] · grade B · credibility unknown · measured · as of 2026-11-10
+  - sources: SRC-00331
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### thermal conductivity
 
@@ -1314,6 +1346,10 @@ Topic code `MAT`. Last reviewed 2026-11-10.
   - `CLM-MAT-0321` · method FruBO with CatBoost, dataset 600,000-sample Moir´e dataset · grade B · credibility unknown · simulated · as of 2026-11-09
   - sources: SRC-00328
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **2.592e+14 ns** — The demagnetization procedure was carried out for a duration of 72 hours.
+  - `CLM-MAT-0323` · demagnetization_protocol AC demagnetization · grade B · credibility unknown · measured · as of 2026-11-10
+  - sources: SRC-00330
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -1531,6 +1567,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 322
-- grades: {'B': 322}
-- distinct sources: 114
+- claims: 331
+- grades: {'B': 331}
+- distinct sources: 118

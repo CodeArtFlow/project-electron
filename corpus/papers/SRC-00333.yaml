@@ -1,0 +1,73 @@
+id: SRC-00333
+title: Agentic AI Meets Formal Verification in the Era of Agentic Hardware Development
+doi: null
+arxiv_id: 2611.13705v1
+url: https://arxiv.org/abs/2611.13705v1
+venue_id: arxiv_api
+authors:
+- name: Wenji Fang
+  affiliation: null
+  corresponding: null
+- name: Yuchao Wu
+  affiliation: null
+  corresponding: null
+- name: Jing Wang
+  affiliation: null
+  corresponding: null
+- name: Zhiyao Xie
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-10'
+retrieved_date: '2026-11-11'
+access: full_text
+read_scope: Automated reading. The full PDF text (49,948 characters, 9 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.13705v1 on
+  2026-11-11. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Across 20 designs, Dr. RTL achieves average improvements of 21.3% in worst negative slack
+  (WNS) and 16.9% in total negative slack (TNS), together with a 5.8% area reduction and an 86% SEC pass
+  rate [13].”
+
+  “E-Layout reports average improvements of 6.07% in TNS and 2.29% in WNS, together with a 1.07% area
+  reduction across nine designs [12].”
+
+  “CircuitProver [ 46] completes all 63 evaluated tasks, compared with 58 for its baseline, while reducing
+  average proof rounds from 9.2 to 4.6.”'
+method_summary: '“Our AssertLLM2 [41] benchmark evaluates assertion quality across 83 designs through
+  syntax checking, formal verification, coverage analysis, and mutation testing.”
+
+  “CircuitProver [ 46] combines hardware-aware proof planning with a reusable Lean library for circuit
+  property verification.”
+
+  “CorrectRTL [39] introduces an SVA-based self-correction framework for LLM-generated RTL.”
+
+  “Dr. RTL [13] uses timing reports and EDA feedback to guide agentic RTL transformations, with sequential
+  equivalence checking (SEC) validating functional correctness.”'
+limitations: '“Claude Sonnet 4.5 achieves 93.04% syntax success and 65.65% structural reach, but only
+  23.30% proof coverage and an 11.69% bug-kill ratio.”
+
+  “The main challenges include accurate root-cause diagnosis, efficient repair search, and sufficient
+  specification coverage to prevent incomplete or misleading fixes.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 13342
+    output: 2986
+  claims_accepted: 7
+  claims_rejected: 1
+  rejected:
+  - statement: CorrectRTL improves the Pass@1 score from 20.5% to 49.0% on the ScaleBench benchmark.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''CorrectRTL
+      improves Pass@1 from 20.5% to 49.0% on the 200-design Scale'''
+    quotes:
+    - CorrectRTL improves Pass@1 from 20.5% to 49.0% on the 200-design ScaleBench benchmark, with correctness
+      independently evaluated through sequential equivalence checking [39].
+    - 200-design ScaleBench benchmark
+corrections: []

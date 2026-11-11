@@ -8892,3 +8892,297 @@ claims:
     verified_quotes: 3
   conditions:
     conformation: six-layer conformation
+- id: CLM-MAT-0323
+  topic: MAT
+  statement: The demagnetization procedure was carried out for a duration of 72 hours.
+  sources:
+  - SRC-00330
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    demagnetization_protocol: AC demagnetization
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 72.0
+      unit: hours
+    si_base:
+      value: 259200.0
+      unit: s
+    display:
+      value: 259199999999999.97
+      unit: ns
+    conditions:
+      demagnetization_protocol: AC demagnetization
+- id: CLM-MAT-0324
+  topic: MAT
+  statement: The superconducting transition temperature difference ΔTc between antiparallel and parallel
+    configurations after field cooling at 9 T is -8 mK.
+  sources:
+  - SRC-00331
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    field_cooling_field: +9 T
+    current_density: 5.38  108 A/m2
+    current_direction: '[001]'
+  quantity:
+    quantity: temperature_delta
+    bound: exact
+    approximate: false
+    as_published:
+      value: -8.0
+      unit: mK
+    si_base:
+      value: -0.008
+      unit: K
+    display:
+      value: -0.008
+      unit: K
+    conditions:
+      field_cooling_field: +9 T
+      current_density: 5.38  108 A/m2
+      current_direction: '[001]'
+- id: CLM-MAT-0325
+  topic: MAT
+  statement: The Curie temperature of GdN is approximately 40 K.
+  sources:
+  - SRC-00331
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    material: GdN
+  quantity:
+    quantity: temperature
+    bound: exact
+    approximate: true
+    as_published:
+      value: 40.0
+      unit: K
+    si_base:
+      value: 40.0
+      unit: K
+    display:
+      value: -233.14999999999998
+      unit: degC
+    conditions:
+      material: GdN
+- id: CLM-MAT-0326
+  topic: MAT
+  statement: The effective exchange field hRuOx induced by the RuOx interface is calculated to be -0.004
+    meV.
+  sources:
+  - SRC-00331
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    given_hgdn: 0.13 meV
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: -0.004
+      unit: meV
+    si_base:
+      value: -6.408706536e-25
+      unit: J
+    display:
+      value: -6.408706535999999e-10
+      unit: fJ
+    conditions:
+      given_hgdn: 0.13 meV
+- id: CLM-MAT-0327
+  topic: MAT
+  statement: For the electron-doped O/O bilayer with Kekulé distortion strength ∆0 = 0.1, the out-of-phase
+    plasmon gap ∆ is 0.74 eV.
+  sources:
+  - SRC-00335
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    kekule_distortion_strength: '0.1'
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.74
+      unit: eV
+    si_base:
+      value: 1.1856107091599998e-19
+      unit: J
+    display:
+      value: 0.00011856107091599997
+      unit: fJ
+    conditions:
+      kekule_distortion_strength: '0.1'
+- id: CLM-MAT-0328
+  topic: MAT
+  statement: For the electron-doped O/O bilayer with Kekulé distortion strength ∆0 = 0.2, the out-of-phase
+    plasmon gap ∆ is 1.0 eV.
+  sources:
+  - SRC-00335
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    kekule_distortion_strength: '0.2'
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.0
+      unit: eV
+    si_base:
+      value: 1.602176634e-19
+      unit: J
+    display:
+      value: 0.00016021766339999996
+      unit: fJ
+    conditions:
+      kekule_distortion_strength: '0.2'
+- id: CLM-MAT-0329
+  topic: MAT
+  statement: For the electron-doped O/O bilayer with Kekulé distortion strength ∆0 = 0.3, the out-of-phase
+    plasmon gap ∆ is 1.31 eV.
+  sources:
+  - SRC-00335
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    kekule_distortion_strength: '0.3'
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.31
+      unit: eV
+    si_base:
+      value: 2.09885139054e-19
+      unit: J
+    display:
+      value: 0.00020988513905399996
+      unit: fJ
+    conditions:
+      kekule_distortion_strength: '0.3'
+- id: CLM-MAT-0330
+  topic: MAT
+  statement: The total average static dielectric constant for tetragonal HZO calculated using PBE is 120.9.
+  sources:
+  - SRC-00337
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: HZO
+    functional: PBE
+- id: CLM-MAT-0331
+  topic: MAT
+  statement: The electronic gap for m-phase ZrO2 calculated at 300 K is 5.63 eV.
+  sources:
+  - SRC-00337
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-11'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    phase: m-phase
+    temperature: 300 K
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 5.63
+      unit: eV
+    si_base:
+      value: 9.020254449419999e-19
+      unit: J
+    display:
+      value: 0.0009020254449419998
+      unit: fJ
+    conditions:
+      phase: m-phase
+      temperature: 300 K
