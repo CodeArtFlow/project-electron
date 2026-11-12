@@ -6254,3 +6254,83 @@ claims:
       unit: ns
     conditions:
       model: ForeSight
+- id: CLM-ARCH-0218
+  topic: ARCH
+  statement: GemAtlas reduces the overall average mean absolute percentage error (MAPE) across four GPUs
+    from 31.69% to 22.24%.
+  sources:
+  - SRC-00338
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-12'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    framework: GemAtlas
+    metric: mean absolute percentage error (MAPE)
+    scope: average across four GPUs
+    baseline: 31.69%
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 22.24
+      unit: '%'
+    si_base:
+      value: 0.2224
+      unit: dimensionless
+    display:
+      value: 22.24
+      unit: percent
+    conditions:
+      framework: GemAtlas
+      metric: mean absolute percentage error (MAPE)
+      scope: average across four GPUs
+      baseline: 31.69%
+- id: CLM-ARCH-0219
+  topic: ARCH
+  statement: GemAtlas reduces the mean absolute percentage error (MAPE) for real-world LLM operators from
+    34.04% to 23.98%.
+  sources:
+  - SRC-00338
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-12'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    framework: GemAtlas
+    metric: MAPE
+    workload: real-world LLM operators
+    baseline: 34.04%
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 23.98
+      unit: '%'
+    si_base:
+      value: 0.2398
+      unit: dimensionless
+    display:
+      value: 23.98
+      unit: percent
+    conditions:
+      framework: GemAtlas
+      metric: MAPE
+      workload: real-world LLM operators
+      baseline: 34.04%

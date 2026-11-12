@@ -1,0 +1,124 @@
+id: SRC-00341
+title: Good Practices for Measuring the Interfacial Dzyaloshinskii-Moriya Interaction by Brillouin Light
+  Scattering and Magneto-Optical Kerr Effect
+doi: null
+arxiv_id: 2611.14405v1
+url: https://arxiv.org/abs/2611.14405v1
+venue_id: arxiv_api
+authors:
+- name: Marco Madami
+  affiliation: null
+  corresponding: null
+- name: Silvia Tacchi
+  affiliation: null
+  corresponding: null
+- name: Adriano Di Pietro
+  affiliation: null
+  corresponding: null
+- name: Alessandro Magni
+  affiliation: null
+  corresponding: null
+- name: Giovanni Gandini
+  affiliation: null
+  corresponding: null
+- name: Christian Rinaldi
+  affiliation: null
+  corresponding: null
+- name: Giovanni Carlotti
+  affiliation: null
+  corresponding: null
+- name: Gianfranco Durin
+  affiliation: null
+  corresponding: null
+- name: Johannes Hertel
+  affiliation: null
+  corresponding: null
+- name: Maximilian Lederer
+  affiliation: null
+  corresponding: null
+- name: Christopher H. Marrows
+  affiliation: null
+  corresponding: null
+- name: Vito Puliafito
+  affiliation: null
+  corresponding: null
+- name: Michaela Kuepferling
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-10'
+retrieved_date: '2026-11-12'
+access: full_text
+read_scope: Automated reading. The full PDF text (46,051 characters, 21 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.14405v1 on
+  2026-11-12. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Using the measured values (with their respective standard uncertainty (type B))Ms = 1.20±0.09MA/m
+  (corrected for proximity effects [19]),γ= 194±4GHz/T, andk= 16.7±0.2rad/µm, we obtainD=−0.68±0.11mJ/m
+  2.”
+
+  “As an example, Fig. 2 shows two BLS spectra measured on a Ta(5 nm)/Pt(3 nm)/Co(0.8 nm)/Ir(1 nm)/Ta(3
+  nm) (Pt/Co/Ir) multilayer sample.”
+
+  “AnidenticalspatialanalysiswasperformedonaTa(5nm)/Pt(3nm)/Co(0.8nm)/Ta(3nm) (Pt/Co) sample, which lacks
+  the top Ir layer (Fig. 3b). As expected [18], omitting Ir increases the interfacial iDMI constant by
+  roughly 50% (D=−0.98±0.05mJ/m 2).”
+
+  “AnidenticalspatialanalysiswasperformedonaTa(5nm)/Pt(3nm)/Co(0.8nm)/Ta(3nm) (Pt/Co) sample, which lacks
+  the top Ir layer (Fig. 3b).”
+
+  “for the present HZO/Co/Pt dataset it givesD energy = 0.46±0.02 mJ/m 2, approximately38% below the BLS
+  result of0.75±0.07 mJ/m 2.”
+
+  “Including DW elasticity through the field-dependent DW stiffness [35] instead brings the MOKE-derived
+  value (Dstiffness = 0.86±0.05 mJ/m 2) into agreement with BLS.”
+
+  “for the present HZO/Co/Pt dataset”'
+method_summary: '“Brillouin light scattering measurements were performed using a monochromatic light source
+  (λ= 532nm) provided by a single-mode diode-pumped solid-state laser.”
+
+  “Analysis of the backscattered light was conducted via a Sandercock-type (3+3)-pass tandem Fabry–Perot
+  interferometer.”
+
+  “To measure asymmetric bubble expansion, a standard wide-field MOKE microscope is used, configured to
+  apply simultaneous in-plane (IP) and out-of-plane (OOP) magnetic fields.”'
+limitations: “A fundamental challenge for both MOKE evaluation techniques is the absence of a single,
+  universally accepted analytical model for chiral DW dynamics in the creep regime [31,34].”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 15687
+    output: 2749
+  claims_accepted: 4
+  claims_rejected: 2
+  rejected:
+  - statement: The weighted average D value is 0.75 ± 0.07 mJ/m2 for a continuous HZO(10 nm)/Co(0.7 nm)/Pt(6
+      nm) film measured by BLS.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - Spectra for the continuous film required 3–4 hours of integration per spectrum due to broader linewidths
+      and lower signal-to-noise ratios, resulting in slightly higher individual combined standard uncertainties,
+      with a weighted average ofD=
+    - 'Finally, weinvestigatedCMOS-compatibleheterostructuresconsistingofCo/Ptdeposited onaferroelectricHafniumZirconiumOxide(HZO)layer:
+      as-grownHZO(10nm)/Co(0.7nm)/Pt(6nm) 2. Measurements were carried out both on continuous films (seven
+      locations'
+    - Spectra for the continuous film required 3–4 hours of integration per spectrum due to broader linewidths
+      and lower signal-to-noise ratios
+  - statement: The weighted average D value is 0.75 ± 0.11 mJ/m2 for patterned HZO(10 nm)/Co(0.7 nm)/Pt(6
+      nm) pads measured by BLS.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The patterned
+      pads yielded a slightly higher relative combined standar'''
+    quotes:
+    - The patterned pads yielded a slightly higher relative combined standard uncertainty of 15-20%, while
+      maintaining the same weighted averageDvalue as the continuous film.
+    - and on400µm× 400µm square pads patterned by optical lithography and ion beam etching (five locations)
+      (Fig. 3c,d).
+    - 'Figure 3: MeasuredDvalues at various surface locations (black) and weighted averages (red) for
+      (a) Pt/Co/Ir, (b) Pt/Co, (c) continuous as-grown HZO/Co/Pt, and (d) patterned HZO/Co/Pt pads.'
+corrections: []

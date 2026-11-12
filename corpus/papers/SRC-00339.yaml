@@ -1,0 +1,114 @@
+id: SRC-00339
+title: 'TAPCO-G: LLM-Guided Design-Adaptive Timing and Power Co-Optimization with Graph-Based Physical
+  Priors'
+doi: null
+arxiv_id: 2611.13931v1
+url: https://arxiv.org/abs/2611.13931v1
+venue_id: arxiv_api
+authors:
+- name: Wuqian Tang
+  affiliation: null
+  corresponding: null
+- name: Zixiao Wang
+  affiliation: null
+  corresponding: null
+- name: Che-Chien Lin
+  affiliation: null
+  corresponding: null
+- name: Fong-Hua Fu
+  affiliation: null
+  corresponding: null
+- name: Laura Angélica Shion-Korsak
+  affiliation: null
+  corresponding: null
+- name: Xinyun Zhang
+  affiliation: null
+  corresponding: null
+- name: Bei Yu
+  affiliation: null
+  corresponding: null
+- name: Chun-Yao Wang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-10'
+retrieved_date: '2026-11-12'
+access: full_text
+read_scope: Automated reading. The full PDF text (89,635 characters, 27 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.13931v1 on
+  2026-11-12. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“On AES, leakage drops by88.1%(96.3→ 11.5𝜇W, contributing+44.029points) and total power drops
+  by40.0%(432.0→ 259.0 mW, contributing+20.018dynamic-power points) while TNS also improves from −12.44to
+  −12.15 ns.”
+
+  “On AES, leakage drops by88.1%(96.3→ 11.5𝜇W, contributing+44.029points)”
+
+  “total power drops by40.0%(432.0→ 259.0 mW, contributing+20.018dynamic-power points)”
+
+  “On AES, leakage drops by88.1%(96.3→ 11.5𝜇W, contributing+44.029points) and total power drops by40.0%(432.0→
+  259.0 mW”
+
+  “Table 5. Singleton prediction fidelity across77independent physical replacement probes on AES (45probes)
+  and NVDLA-M (32probes), comparing myopic local estimation, uncoupled graph propagation, and the full
+  TAPCO-G graph model with driver-load coupling.”
+
+  “AES Full Graph Model (TAPCO-G) 0.0185 42/45(93.3%)”
+
+  “AES Full Graph Model (TAPCO-G) 0.0185 42/45(93.3%) 8/8(100.0%)”'
+method_summary: “All implementations are evaluated using the official contest signoff flow based onOpenROAD
+  andOpenSTA[ 2, 40].”
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 31022
+    output: 3113
+  claims_accepted: 3
+  claims_rejected: 4
+  rejected:
+  - statement: TAPCO-G beats CERBERUS on all eight ASAP7 benchmarks with a mean quality score gain of
+      5.516 points.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''points'' is not one
+      of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a '
+    quotes:
+    - TAPCO-Gproduced placement-legal, logic-equivalent implementations and outscoredCERBERUSon all eight
+      ASAP7 benchmarks from the MLCAD 2026 Contest, with a mean quality score gain of5.516points, and
+      scored 21.648points higher thanTAPCOon avera
+    - all eight ASAP7 benchmarks from the MLCAD 2026 Contest
+    - outscoredCERBERUSon all eight ASAP7 benchmarks
+    - mean quality score gain of5.516points
+  - statement: TAPCO-G scored 21.648 points higher than TAPCO on average across four valid benchmark designs.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''points'' is not one
+      of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a '
+    quotes:
+    - TAPCO-Gproduced placement-legal, logic-equivalent implementations and outscoredCERBERUSon all eight
+      ASAP7 benchmarks from the MLCAD 2026 Contest, with a mean quality score gain of5.516points, and
+      scored 21.648points higher thanTAPCOon avera
+    - scored 21.648points higher thanTAPCOon average.
+    - Mean (4 Valid) 10.634−16.75127.348 42.65748.996+21.648+6.339
+  - statement: On the Ariane benchmark, TAPCO-G reduced setup TNS by 92.0%, achieving a final TNS of -602.92
+      ns.
+    reason: the statement contains the number 92.0, which none of its quotes contain
+    quotes:
+    - slashing Ariane’s TNS by92 .0% (−7568.43→− 602.92 ns,+27.610timing points)
+    - (−7568.43→− 602.92 ns
+  - statement: Enabling graph propagation on combinational replacements on NVDLA-M increased the number
+      of accepted replacements from 39 to 188 within a 256-action budget.
+    reason: '[qualifier_dropped] the statement is a bound but quantity.bound is ''exact''. Record the
+      qualifier the source used - UnitEngine.record(..., bound=..., approximate=...).'
+    quotes:
+    - Table 6. Matched component ablations of the inner-loop physical priors under identical initial checkpoints,
+      binaries, and root-action budgets.
+    - Graph Prop. (COMB) NVDLA-M 256 39→188(4.82×) 42.284 43.448 +1.164
+    - Graph Prop. (COMB)
+    - Graph Prop. (COMB) NVDLA-M 256 39→188(4.82×)
+corrections: []

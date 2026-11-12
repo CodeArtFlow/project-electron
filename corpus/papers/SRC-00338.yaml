@@ -1,0 +1,120 @@
+id: SRC-00338
+title: Uncovering the Memory Hierarchy of Modern NVIDIA GPUs for Accurate Simulation
+doi: null
+arxiv_id: 2611.13860v1
+url: https://arxiv.org/abs/2611.13860v1
+venue_id: arxiv_api
+authors:
+- name: Ziwen Wang
+  affiliation: null
+  corresponding: null
+- name: Jiapeng Zhou
+  affiliation: null
+  corresponding: null
+- name: Changxi Liu
+  affiliation: null
+  corresponding: null
+- name: Dongsheng Wang
+  affiliation: null
+  corresponding: null
+- name: Yun Chen
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-10'
+retrieved_date: '2026-11-12'
+access: full_text
+read_scope: Automated reading. The full PDF text (81,357 characters, 14 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.13860v1 on
+  2026-11-12. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The final results demonstrate that GemAtlas reduces the mean absolute percentage error (MAPE)
+  from 31.69% to 22.24% on average across four GPUs.”
+
+  “We integrate these discovered micro-architecture details into the state-of-the-art GPU simulation framework.
+  The final results demonstrate that GemAtlas reduces the mean absolute percentage error (MAPE) from 31.69%
+  to 22.24% on average across four GPUs.”
+
+  “Specifically, GemAtlas reduces the MAPE from 34.04% to 23.98% for real-world LLM operators.”
+
+  “We integrate these discovered micro-architecture details into the state-of-the-art GPU simulation framework.
+  The final results demonstrate that GemAtlas reduces the mean absolute percentage error (MAPE) from 31.69%
+  to 22.24% on average across four GPUs. Specifically, GemAtlas reduces the MAPE from 34.04% to 23.98%
+  for real-world LLM operators.”'
+method_summary: '“By developing fine-grained SASS-level benchmarking, we expose critical, previously undocumented
+  micro-architectural details across different cache levels”
+
+  “Direct SASS programming enables two key capabilities for microarchitectural characterization. First,
+  explicit control of scoreboarding allows us to serialize dependent operations and measure memory latency
+  with cycle-level precision. Second, fixed instruction streams ensure deterministic code footprints,
+  which are critical for isolating cache behaviors.”
+
+  “We integrate the recovered mechanisms into AccelSim [26], a widely used GPU simulator, and validate
+  the model against four GPUs (H20, H100, A800, and RTX 4090) using GemAtlas-Bench”'
+limitations: '“Because NVIDIA L2 indexing uses physical addresses while user programs observe only virtual
+  addresses, fully recovering the indexing hash is impossible. We therefore restrict our recovery to a
+  128 MiB virtual address window”
+
+  “In contrast, the physical placement of the IMC/DCC cache cannot be directly determined due to limitations
+  in the current SASS assembler tool.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 28160
+    output: 3248
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: On memory-sensitive workloads, GemAtlas reduces the mean absolute percentage error (MAPE)
+      from 36.33% to 20.61%.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - particularly large gains for memory-sensitive workloads, whose MAPE decreases from 36.33% to 20.61%.
+    - To validate our findings and evaluate their impact, we incorporate them into AccelSim, a widely
+      used GPU simulator [18], [26]. Evaluation on a benchmark suite spanning traditional GPU benchmarks
+      and real-world LLM operators shows substantia
+    - 'In summary, GemAtlas makes the following contributions:'
+  - statement: The L1 data cache hit latency measured with SASS probe on H20 is 31 cycles.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - 31-cycle hit latency measured with the SASS probe in Listing 1.
+    - We use H20 as the primary platform for presenting results... 31-cycle hit latency measured with
+      the SASS probe in Listing 1.
+    - We use H20 as the primary platform for presenting results
+    - IV. L1 DATA CACHE
+  - statement: The measured local L2 hit latency on H20 is approximately 276 cycles.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - Local and remote L2 hits take∼276 and∼446 cycles
+    - Using the SASS probe in Listing 1, we measure the latency of L2 hits and HBM accesses through the
+      local partition, which connects to the probing SM’s GPC, and through the remote one.
+    - We use H20 as the primary platform for presenting results
+  - statement: The measured remote L2 hit latency on H20 is approximately 446 cycles.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - Local and remote L2 hits take∼276 and∼446 cycles
+    - Using the SASS probe in Listing 1, we measure the latency of L2 hits and HBM accesses through the
+      local partition, which connects to the probing SM’s GPC, and through the remote one.
+    - We use H20 as the primary platform for presenting results
+  - statement: The measured hit latency of the Immediate Constant Cache (IMC) path is 2 cycles.
+    reason: 'unit conversion refused: time: cannot convert 2.0 cycles to s - Cannot convert from ''turn''
+      (dimensionless) to ''second'' ([time]). A dimensional mismatch means the value was recorded agai'
+    quotes:
+    - We measure their cache hit latencies as 2, 15, and 25 cycles, respectively.
+    - Immediate operands encoded in instructions (e.g.,MOV) use the Immediate Constant Cache (IMC) path,ULDCuses
+      the Data Constant Cache (DCC) path, and standardLDCuses the Indexed Constant Cache (IDC) path. We
+      measure their cache hit latencies a
+  - statement: The measured hit latency of the GPC Constant Cache (GCC) is 57 cycles.
+    reason: 'unit conversion refused: time: cannot convert 57.0 cycle to s - Cannot convert from ''turn''
+      (dimensionless) to ''second'' ([time]). A dimensional mismatch means the value was recorded agai'
+    quotes:
+    - When a constant load misses the SM-level caches, we observe a 57-cycle latency. This indicates a
+      hit in the GPC Constant Cache (GCC)
+    - This indicates a hit in the GPC Constant Cache (GCC)
+corrections: []

@@ -21,6 +21,38 @@ id: CAND-20261111-0101
 harvested_date: '2026-11-11'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-12'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At the intermittent reference crossing n = 14, physical-coordinate numerical quadrature
+      matches the finite-mode shell and exterior energies within a relative er
+    reason: the value 1e-13 does not appear in any of the claim's quotes
+    quotes:
+    - At the intermittent crossing n = 14, physical-coordinate quadrature agrees with the finite-mode
+      shell and exterior energies to relative error below 10 −13 on the tested meshes (40–160 radial and
+      128–512 angular nodes).
+    - At the intermittent crossing n = 14
+    - (40–160 radial and 128–512 angular nodes)
+  - statement: The normalized exterior energy quotient on the critical radius curve approaches 0.198412
+      at the last computed value in Figure 5.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The last computed value on the critical-radius curve in Figure 5 (right) is 0.198412, close to the
+      dashed horizontal line representing this limit.
+    - r=1.587 (critical)
+    - 'Intermittency: p = 0.75'
+    - α = 1
+  tokens:
+    input: 41546
+    output: 1081
+  fetched_chars: 107013

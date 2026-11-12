@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.13937v1
 doi: null
-title: Chiral magnon Kerr interaction from linear and nonlinear Meissner screening
-  in ferromagnet--superconductor bilayers
+title: Chiral magnon Kerr interaction from linear and nonlinear Meissner screening in ferromagnet--superconductor
+  bilayers
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-10'
@@ -23,6 +23,51 @@ id: CAND-20261111-0100
 harvested_date: '2026-11-11'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-12'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: 'For a bare-film yttrium iron garnet at the anisotropy-compensation point µ0Meff = 0, with
+      wave vector |k| = 1.81 rad/µm and volume Vm = 25 µm^3, the calculated '
+    reason: the value 0.00062 does not appear in any of the claim's quotes
+    quotes:
+    - At |k| = 1.81 rad/µm and volume V m = 25 µm 3, the bare-film Kerr coefficient is Kbare/(2π) ≃ +0.62
+      mHz.
+    - For yttrium iron garnet gated by dirty niobium, we predict a significant renormalization of the
+      Kerr effect by superconductors, with the resulting Kerr contribution strongly chiral in the Damon–Eshbach
+      configuration.
+    - For yttrium iron garnet gated by dirty niobium
+    - anisotropy-compensation point µ 0Meff = 0
+  - statement: For a dirty niobium-gated yttrium iron garnet heterostructure at the anisotropy-compensation
+      point µ0Meff = 0, with |k| = 1.81 rad/µm and volume Vm = 25 µm^3, s
+    reason: the statement contains the number 1.81, which none of its quotes contain
+    quotes:
+    - Superconducting screening changes it to K/(2π) ≃ −0.87 and +0.59 mHz for the +k and −k spin-wave
+      modes, respectively
+    - For yttrium iron garnet gated by dirty niobium, we predict a significant renormalization of the
+      Kerr effect by superconductors, with the resulting Kerr contribution strongly chiral in the Damon–Eshbach
+      configuration.
+    - For yttrium iron garnet gated by dirty niobium
+    - anisotropy-compensation point µ 0Meff = 0
+  - statement: For a dirty niobium-gated yttrium iron garnet heterostructure at the anisotropy-compensation
+      point µ0Meff = 0, with |k| = 1.81 rad/µm and volume Vm = 25 µm^3, s
+    reason: the statement contains the number 1.81, which none of its quotes contain
+    quotes:
+    - Superconducting screening changes it to K/(2π) ≃ −0.87 and +0.59 mHz for the +k and −k spin-wave
+      modes, respectively
+    - For yttrium iron garnet gated by dirty niobium, we predict a significant renormalization of the
+      Kerr effect by superconductors, with the resulting Kerr contribution strongly chiral in the Damon–Eshbach
+      configuration.
+    - For yttrium iron garnet gated by dirty niobium
+    - anisotropy-compensation point µ 0Meff = 0
+  tokens:
+    input: 29334
+    output: 1846
+  fetched_chars: 77140

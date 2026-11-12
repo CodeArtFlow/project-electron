@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-11.
+Topic code `ARCH`. Last reviewed 2026-11-12.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -816,6 +816,16 @@ Topic code `ARCH`. Last reviewed 2026-11-11.
   - `CLM-ARCH-0215` · model ForeSight, metric MAPE, hardware_scope hardware configurations of nine NVIDIA GPUs · grade B · credibility unknown · measured · as of 2026-11-10
   - sources: SRC-00336
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0132 — see the open register
+- **22.24 percent** — GemAtlas reduces the overall average mean absolute percentage error (MAPE) across four GPUs from 31.69% to 22.24%.
+  - `CLM-ARCH-0218` · framework GemAtlas, metric mean absolute percentage error (MAPE), scope average across four GPUs, baseline 31.69% · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00338
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- **23.98 percent** — GemAtlas reduces the mean absolute percentage error (MAPE) for real-world LLM operators from 34.04% to 23.98%.
+  - `CLM-ARCH-0219` · framework GemAtlas, metric MAPE, workload real-world LLM operators, baseline 34.04% · grade B · credibility unknown · simulated · as of 2026-11-10
+  - sources: SRC-00338
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0132 — see the open register
 
 ### sensitivity advantage ratio
 
@@ -987,9 +997,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0126` — sensitivity_advantage_ratio: _unexamined; classification pending_
   - claims: CLM-ARCH-0213, CLM-ARCH-0214
   - missing data: `not yet named`
+- `CFL-0132` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-ARCH-0215, CLM-ARCH-0219
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 217
-- grades: {'B': 217}
-- distinct sources: 72
+- claims: 219
+- grades: {'B': 219}
+- distinct sources: 73

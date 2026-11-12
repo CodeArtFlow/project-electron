@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-11.
+Topic code `MAT`. Last reviewed 2026-11-12.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -1053,6 +1053,26 @@ Topic code `MAT`. Last reviewed 2026-11-11.
   - `CLM-MAT-0330` · material HZO, functional PBE · grade B · credibility unknown · simulated · as of 2026-11-10
   - sources: SRC-00337
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Compacting the GO_300 ºC_S3 sample under a load of 10 tons increases its thermal conductivity by approximately 37% near 100 K.
+  - `CLM-MAT-0332` · grade B · credibility unknown · measured · as of 2026-11-10
+  - sources: SRC-00340
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The interfacial Dzyaloshinskii-Moriya interaction constant D is -0.68 ± 0.11 mJ/m2 for a Ta(5 nm)/Pt(3 nm)/Co(0.8 nm)/Ir(1 nm)/Ta(3 nm) multilayer measured by BLS.
+  - `CLM-MAT-0333` · sample Ta(5 nm)/Pt(3 nm)/Co(0.8 nm)/Ir(1 nm)/Ta(3 nm), method BLS · grade B · credibility unknown · measured · as of 2026-11-10
+  - sources: SRC-00341
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The interfacial Dzyaloshinskii-Moriya interaction constant D is -0.98 ± 0.05 mJ/m2 for a Ta(5 nm)/Pt(3 nm)/Co(0.8 nm)/Ta(3 nm) sample measured by BLS.
+  - `CLM-MAT-0334` · sample Ta(5nm)/Pt(3nm)/Co(0.8nm)/Ta(3nm) · grade B · credibility unknown · measured · as of 2026-11-10
+  - sources: SRC-00341
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The D value derived from MOKE measurements using the domain wall energy model is 0.46 ± 0.02 mJ/m2 for HZO/Co/Pt.
+  - `CLM-MAT-0335` · sample HZO/Co/Pt · grade B · credibility unknown · measured · as of 2026-11-10
+  - sources: SRC-00341
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The D value derived from MOKE measurements using the domain wall stiffness model is 0.86 ± 0.05 mJ/m2 for HZO/Co/Pt.
+  - `CLM-MAT-0336` · sample HZO/Co/Pt · grade B · credibility unknown · measured · as of 2026-11-10
+  - sources: SRC-00341
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1567,6 +1587,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 331
-- grades: {'B': 331}
-- distinct sources: 118
+- claims: 336
+- grades: {'B': 336}
+- distinct sources: 120

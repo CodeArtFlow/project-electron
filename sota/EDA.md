@@ -1,6 +1,6 @@
 # EDA — state of the art
 
-Topic code `EDA`. Last reviewed 2026-11-11.
+Topic code `EDA`. Last reviewed 2026-11-12.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -187,6 +187,21 @@ Topic code `EDA`. Last reviewed 2026-11-11.
   - sources: SRC-00334
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0131 — see the open register
+- **88.1 percent** — On the AES benchmark, TAPCO-G reduced standard-cell leakage power by 88.1%, lowering leakage from 96.3 uW to 11.5 uW.
+  - `CLM-EDA-0043` · design AES · grade B · credibility unknown · measured · as of 2026-11-10
+  - sources: SRC-00339
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0133, CFL-0134 — see the open register
+- **40 percent** — On the AES benchmark, TAPCO-G reduced total power by 40.0%, from 432.0 mW to 259.0 mW.
+  - `CLM-EDA-0044` · design AES · grade B · credibility unknown · measured · as of 2026-11-10
+  - sources: SRC-00339
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0133, CFL-0135 — see the open register
+- **93.3 percent** — Across 45 physical probes on AES, TAPCO-G's full graph model achieved a sign accuracy of 93.3%.
+  - `CLM-EDA-0045` · design AES · grade B · credibility unknown · measured · as of 2026-11-10
+  - sources: SRC-00339
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0134, CFL-0135 — see the open register
 
 ### time
 
@@ -218,9 +233,18 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0131` — relative_deviation: _unexamined; classification pending_
   - claims: CLM-EDA-0041, CLM-EDA-0042
   - missing data: `not yet named`
+- `CFL-0133` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-EDA-0043, CLM-EDA-0044
+  - missing data: `not yet named`
+- `CFL-0134` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-EDA-0043, CLM-EDA-0045
+  - missing data: `not yet named`
+- `CFL-0135` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-EDA-0044, CLM-EDA-0045
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 42
-- grades: {'B': 42}
-- distinct sources: 11
+- claims: 45
+- grades: {'B': 45}
+- distinct sources: 12

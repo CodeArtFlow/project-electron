@@ -1106,3 +1106,104 @@ claims:
     conditions:
       method: algorithm discovery
       baseline: agent-tuned Yosys+ABC
+- id: CLM-EDA-0043
+  topic: EDA
+  statement: On the AES benchmark, TAPCO-G reduced standard-cell leakage power by 88.1%, lowering leakage
+    from 96.3 uW to 11.5 uW.
+  sources:
+  - SRC-00339
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-12'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    design: AES
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 88.1
+      unit: '%'
+    si_base:
+      value: 0.881
+      unit: dimensionless
+    display:
+      value: 88.1
+      unit: percent
+    conditions:
+      design: AES
+- id: CLM-EDA-0044
+  topic: EDA
+  statement: On the AES benchmark, TAPCO-G reduced total power by 40.0%, from 432.0 mW to 259.0 mW.
+  sources:
+  - SRC-00339
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-12'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    design: AES
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 40.0
+      unit: '%'
+    si_base:
+      value: 0.4
+      unit: dimensionless
+    display:
+      value: 40.0
+      unit: percent
+    conditions:
+      design: AES
+- id: CLM-EDA-0045
+  topic: EDA
+  statement: Across 45 physical probes on AES, TAPCO-G's full graph model achieved a sign accuracy of
+    93.3%.
+  sources:
+  - SRC-00339
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-10'
+  created: '2026-11-12'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    design: AES
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 93.3
+      unit: '%'
+    si_base:
+      value: 0.9329999999999999
+      unit: dimensionless
+    display:
+      value: 93.3
+      unit: percent
+    conditions:
+      design: AES
