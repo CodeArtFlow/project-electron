@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.16308v1
 doi: null
-title: 'ORCHID-SAGE: Fully Reproducible CALPHAD Assessment from Evidence to Phase
-  Diagram'
+title: 'ORCHID-SAGE: Fully Reproducible CALPHAD Assessment from Evidence to Phase Diagram'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-12'
@@ -22,6 +21,77 @@ id: CAND-20261113-0087
 harvested_date: '2026-11-13'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-13'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The eutectic temperature of the Cr–Ni system in the resulting model is 1614 K.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The resulting model places the eutectic at 1614 K, compared with 1618 K in the ORCHID record
+    - Cr–Ni
+    - eutectic
+    - resulting model
+  - statement: The top temperature of stability for CrNi2 in the resulting model is 860 K.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - and the top of CrNi2 at 860 K, compared with 863 K (16 K) in a record that has so far been read
+      by a single reader (Fig. 11d).
+    - CrNi2
+    - top of CrNi2
+  - statement: The energy scale assigned to an excluded phase certainty tier is 10 J/mol of atoms when
+      the state lies more than three uncertainties away from any observed fiel
+    reason: 'unit conversion refused: energy: cannot convert 10.0 J/mol to J - Cannot convert from ''joule
+      / mole'' ([mass] * [length] ** 2 / [time] ** 2 / [substance]) to ''joule'' ([mass] * [length] *'
+    quotes:
+    - A scale of 10 J/mol of atoms is assigned when the state lies more than three uncertainties away
+      from any observed field or boundary of the phase and no source reports the phase there
+    - more than three uncertainties away from any observed field or boundary of the phase
+  - statement: An energy scale of 50 J/mol is assigned when the state lies closer or the exclusion rests
+      on a single source.
+    reason: 'unit conversion refused: energy: cannot convert 50.0 J/mol to J - Cannot convert from ''joule
+      / mole'' ([mass] * [length] ** 2 / [time] ** 2 / [substance]) to ''joule'' ([mass] * [length] *'
+    quotes:
+    - a scale of 50 J/mol when the state lies closer or the exclusion rests on a single source
+    - when the state lies closer or the exclusion rests on a single source
+  - statement: An energy scale of 100 J/mol is assigned when the state is adjacent to the boundary of
+      the phase or the exclusion is assumed from a diagram or contested.
+    reason: 'unit conversion refused: energy: cannot convert 100.0 J/mol to J - Cannot convert from ''joule
+      / mole'' ([mass] * [length] ** 2 / [time] ** 2 / [substance]) to ''joule'' ([mass] * [length] '
+    quotes:
+    - and a scale of 100 J/mol when the state is adjacent to the boundary of the phase or the exclusion
+      is assumed from a diagram or contested.
+    - when the state is adjacent to the boundary of the phase or the exclusion is assumed from a diagram
+      or contested.
+  - statement: The AI agent regeneration of the assessment took 2 h 38 min.
+    reason: the value 2.63333 does not appear in any of the claim's quotes
+    quotes:
+    - This regeneration required 46 turns and 2 h 38 min, at a cost of US$1.64 in model usage.
+    - Claude Opus 5.5
+    - Mac Studio
+    - The second regeneration was carried out by an AI agent
+  - statement: The chemical spinodal of the metastable bcc gap reaches a maximum temperature of 1385 K
+      in the final model.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The chemical spinodal of this gap reaches 1385 K at xNi = 0.22
+    - bcc solution
+    - xNi = 0.22
+    - chemical spinodal of this gap
+  tokens:
+    input: 34261
+    output: 2355
+  fetched_chars: 118058

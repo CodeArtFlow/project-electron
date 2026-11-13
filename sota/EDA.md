@@ -1,6 +1,6 @@
 # EDA — state of the art
 
-Topic code `EDA`. Last reviewed 2026-11-12.
+Topic code `EDA`. Last reviewed 2026-11-13.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -121,6 +121,18 @@ Topic code `EDA`. Last reviewed 2026-11-12.
   - `CLM-EDA-0034` · tool CircuitProver · grade B · credibility unknown · simulated · as of 2026-11-10
   - sources: SRC-00333
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Under multi-impairment stress with an 8-bit MZM configuration, a VCSEL array optical source achieves 97.0% photonic inference accuracy on the MNIST MLP dataset.
+  - `CLM-EDA-0046` · experiment E4, benchmark MNIST MLP, modulator MZM, control_precision 8 bits, source_organization VCSEL Array · grade B · credibility unknown · simulated · as of 2026-11-12
+  - sources: SRC-00345
+  - ⚙ automated extraction (gemini-3.6-flash; 7 quote(s) verified verbatim against the paper)
+- Under multi-impairment stress with an 8-bit MZM configuration, a single-laser parallel fanout optical source achieves 44.5% photonic inference accuracy on the MNIST MLP dataset.
+  - `CLM-EDA-0047` · experiment E4, benchmark MNIST MLP, modulator MZM, control_precision 8 bits, source_organization Single-Laser Parallel Fanout · grade B · credibility unknown · simulated · as of 2026-11-12
+  - sources: SRC-00345
+  - ⚙ automated extraction (gemini-3.6-flash; 7 quote(s) verified verbatim against the paper)
+- Under multi-impairment stress with an 8-bit MZM configuration, a single-laser time-serialized optical source achieves 77.0% photonic inference accuracy on the MNIST MLP dataset.
+  - `CLM-EDA-0048` · experiment E4, benchmark MNIST MLP, modulator MZM, control_precision 8 bits, source_organization Single-Laser Time-Serialized · grade B · credibility unknown · simulated · as of 2026-11-12
+  - sources: SRC-00345
+  - ⚙ automated extraction (gemini-3.6-flash; 7 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -245,6 +257,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 45
-- grades: {'B': 45}
-- distinct sources: 12
+- claims: 48
+- grades: {'B': 48}
+- distinct sources: 13

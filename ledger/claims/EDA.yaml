@@ -1207,3 +1207,72 @@ claims:
       unit: percent
     conditions:
       design: AES
+- id: CLM-EDA-0046
+  topic: EDA
+  statement: Under multi-impairment stress with an 8-bit MZM configuration, a VCSEL array optical source
+    achieves 97.0% photonic inference accuracy on the MNIST MLP dataset.
+  sources:
+  - SRC-00345
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-12'
+  created: '2026-11-13'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 7
+  conditions:
+    experiment: E4
+    benchmark: MNIST MLP
+    modulator: MZM
+    control_precision: 8 bits
+    source_organization: VCSEL Array
+- id: CLM-EDA-0047
+  topic: EDA
+  statement: Under multi-impairment stress with an 8-bit MZM configuration, a single-laser parallel fanout
+    optical source achieves 44.5% photonic inference accuracy on the MNIST MLP dataset.
+  sources:
+  - SRC-00345
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-12'
+  created: '2026-11-13'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 7
+  conditions:
+    experiment: E4
+    benchmark: MNIST MLP
+    modulator: MZM
+    control_precision: 8 bits
+    source_organization: Single-Laser Parallel Fanout
+- id: CLM-EDA-0048
+  topic: EDA
+  statement: Under multi-impairment stress with an 8-bit MZM configuration, a single-laser time-serialized
+    optical source achieves 77.0% photonic inference accuracy on the MNIST MLP dataset.
+  sources:
+  - SRC-00345
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-12'
+  created: '2026-11-13'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 7
+  conditions:
+    experiment: E4
+    benchmark: MNIST MLP
+    modulator: MZM
+    control_precision: 8 bits
+    source_organization: Single-Laser Time-Serialized

@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.16363v1
 doi: null
-title: Vector-Space Projection and Unified Complex-Valued Acceleration for Scaling
-  Matrix-Based Brain-Inspired Representations
+title: Vector-Space Projection and Unified Complex-Valued Acceleration for Scaling Matrix-Based Brain-Inspired
+  Representations
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-12'
@@ -27,6 +27,53 @@ id: CAND-20261113-0085
 harvested_date: '2026-11-13'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-13'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The GHRR ASIC prototype fabricated in a 28 nm process occupies an area of 4.77 mm2.
+    reason: the statement contains the number 28, which none of its quotes contain
+    quotes:
+    - 'Table 1: Hardware Specifications Parameter Total Area Max Power Frequency Peak Throughput Value
+      4.77 mm2 4.22 W 1.00 GHz 1.54 TFLOPS'
+    - In this section, we implement the custom GHRR accelerator as a register-transfer level (RTL) design
+      in Chisel, enabling modular and flexible architectural configurations. Functional verification is
+      conducted using Verilator 5.009, and the d
+    - 28 nm ASIC
+    - custom GHRR accelerator
+  - statement: The maximum power consumption of the GHRR ASIC system is 4.22 W at a frequency of 1.00
+      GHz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - 'Table 1: Hardware Specifications Parameter Total Area Max Power Frequency Peak Throughput Value
+      4.77 mm2 4.22 W 1.00 GHz 1.54 TFLOPS'
+    - In this section, we implement the custom GHRR accelerator as a register-transfer level (RTL) design
+      in Chisel, enabling modular and flexible architectural configurations. Functional verification is
+      conducted using Verilator 5.009, and the d
+    - 1.00 GHz
+    - 28 nm ASIC
+  - statement: The GHRR ASIC design operates at a clock frequency of 1.00 GHz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - 'Table 1: Hardware Specifications Parameter Total Area Max Power Frequency Peak Throughput Value
+      4.77 mm2 4.22 W 1.00 GHz 1.54 TFLOPS'
+    - In this section, we implement the custom GHRR accelerator as a register-transfer level (RTL) design
+      in Chisel, enabling modular and flexible architectural configurations. Functional verification is
+      conducted using Verilator 5.009, and the d
+    - 28 nm ASIC
+    - custom GHRR accelerator
+  tokens:
+    input: 13368
+    output: 1327
+  fetched_chars: 39411

@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.16380v1
 doi: null
-title: Dynamic Tunneling a Prior Phenomenon to Intermediate Resistive States in Defect
-  Engineered Mn-SrTiO3 RRAM Devices
+title: Dynamic Tunneling a Prior Phenomenon to Intermediate Resistive States in Defect Engineered Mn-SrTiO3
+  RRAM Devices
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-12'
@@ -26,6 +26,59 @@ id: CAND-20261113-0083
 harvested_date: '2026-11-13'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-13'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The Pt/SMTO/Pt RRAM devices exhibit an ON/OFF resistance ratio exceeding 100 for over 1000
+      cycles.
+    reason: the statement contains the number 100, which none of its quotes contain
+    quotes:
+    - All fabricated RRAM devices demonstrates bipolar filamentary switching with set (filament formation)
+      in negative bias creating an LRS.
+    - Though STO based RRAM polarity is highly sensitive to the set voltage, all fabricated devices irrespective
+      of thickness exhibited stable bipolar RS with ON/OFF ratio of 102 beyond 103 cycles retaining the
+      resistive hysteresis as seen in Fig
+    - 'In this study, a probe station (Make: Lake Shore, cryotronics) equipped with two tungsten probes
+      of 25μm tip radius was used to obtain the RS behavior of SMTO active layer of varying thickness
+      with symmetric Pt electrodes, having a MIM devi'
+    - Pt/SMTO/Pt device
+  - statement: The retention of memory states in the fabricated SMTO RRAM devices was measured to be beyond
+      1000 seconds at a read voltage of 0.1 V.
+    reason: the statement contains the number 1000, which none of its quotes contain
+    quotes:
+    - Retention is evaluated by monitoring the resistance ratio between HRS and LRS and was conducted
+      over 103 seconds at a read voltage of 0.1 V and is shown in Figure 8.
+    - read voltage of 0.1 V
+  - statement: The growth rate of SMTO thin films deposited by pulsed laser deposition was estimated to
+      be approximately 0.53 Å/pulse.
+    reason: 'unit conversion refused: length_device: could not parse 0.53 ''Å/pulse'': ''pulse'' is not
+      defined in the unit registry'
+    quotes:
+    - The thickness of SMTO layer scales up linearly with the number of pulses indicating a consistent
+      and precise thickness control over films deposited using PLD with the controlled growth rate of
+      ~0.53Å/pulse estimated from Figure S1.
+    - 'Cross sectional image captured with field emission scanning electron microscope (FESEM) shown in
+      Figure 1(a) and (b) captures the morphology and thickness of the SMTO layers grown on platinized
+      silicon (Pt-Si) substrate with 8000 (SMTO450) '
+    - deposited using PLD
+    - SMTO layer
+  - statement: The calculated resistance values in both HRS and LRS from the numerical simulation agree
+      with experimental data to better than 0.4%.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Resistance in both HRS and LRS agree with the experiment data to better than 0.4%.
+    - An iterative fitting was carried out between experimental and simulation data to derive the device
+      conduction parameters and were tabulated in Table S2.
+    - two-junction filaments model
+  tokens:
+    input: 20995
+    output: 1490
+  fetched_chars: 61326

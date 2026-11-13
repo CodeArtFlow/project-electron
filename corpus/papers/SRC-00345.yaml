@@ -1,0 +1,103 @@
+id: SRC-00345
+title: 'PISim: A Unified Photonic Inference Simulator for Hardware-Aware Cross-Layer Design-Space Exploration'
+doi: null
+arxiv_id: 2611.16522v1
+url: https://arxiv.org/abs/2611.16522v1
+venue_id: arxiv_api
+authors:
+- name: Andreas Falkenberg
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-12'
+retrieved_date: '2026-11-13'
+access: full_text
+read_scope: Automated reading. The full PDF text (39,675 characters, 8 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.16522v1 on
+  2026-11-13. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“VCSEL Array (97.0%): Achieves near-ideal accuracy (within 0.1% of the 97.1% reference) even
+  under full E3 stress.”
+
+  “Experiment E4 isolates the architectural impact of optical source organization by holding the workload
+  (MNIST MLP), modulator (MZM), detection mode (incoherent), precision (8 bits), and combined E3 stress
+  profile (σshot = σRIN = σdrift = 0.01, ER = 30 dB, Lins = 3 dB) completely fixed while varying only
+  the optical source topology.”
+
+  “Single-Laser Parallel Fanout (44.5%): Suffers an accuracy penalty of 52.5 percentage points relative
+  to the VCSEL array arising, under the modeled simulation conditions, from the combined effect of 1/N
+  optical power partitioning (reducing detected signal power relative to shot noise and extinction floor)
+  and spatially correlated RIN perturbing all vector elements coherently.”
+
+  “Single-Laser Time-Serialized (77.0%): Outperforms parallel fanout by +32.5% because full master laser
+  power P0 is delivered to a single active channel per time slot without 1/N power division, mitigating
+  shot-noise degradation while still experiencing temporal RIN and drift across sequential steps.”'
+method_summary: '“We present PISim, a unified Photonic Inference Simulator that couples pretrained deep
+  neural network execution with physics-based models of six accelerator architecture families, six electro-optic
+  modulator technologies, four optical source organizations, and direct or coherent readout schemes.”
+
+  “PISim implements an analytical schedule accounting model that decomposes end-to-end inference into
+  five explicit stages for a matrix-vector tile of size W × H mapped onto an array of physical emitter
+  width Nw and Ntiles parallel tiles”'
+limitations: '“Here, normalized parameters such as σRIN = 0.01 (as well as σshot = 0.01 and σdrift = 0.01)
+  are controlled, dimensionless simulation sensitivity parameters and should not be interpreted as calibrated
+  physical measurements from a specific laser or photonic device.”
+
+  “Crosstalk, nonlinear optical effects, speckle, and phase noise remain disabled.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 12580
+    output: 4491
+  claims_accepted: 3
+  claims_rejected: 4
+  rejected:
+  - statement: Under clean operating conditions without physical impairments, the thin-film LiNbO3 MZM,
+      silicon microring resonator, and surface-normal QCSE micro-pad configur
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''In Experiment
+      E1, we compare three distinct electro-optic modulator te'''
+    quotes:
+    - In Experiment E1, we compare three distinct electro-optic modulator technologies—Thin-Film LiNbO3
+      MZM, Silicon Microring Resonator (Ring), and Surface-Normal QCSE Micro-Pad—under clean operating
+      conditions (all stochastic noise, drift, loss
+    - All three modulator architectures achieve 97.1% photonic inference accuracy, matching the 97.1%
+      ideal floating-point reference with zero degradation.
+    - specifically, we evaluate PISim using a pretrained 3-layer MNIST MLP (784 → 64 → 10; 50,816 weight
+      bytes) across 1,000 test samples (indices 0–999) with deterministic PRNG seed 33.
+  - statement: The modeled VCSEL or parallel laser with MZM achieves an inference throughput of 19.584
+      million inferences/s at an array width of 128 channels.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - 128 19.584 M/s 19.584 M/s 12.545 M/s
+    - Experiment E5 evaluates analytically modeled interface-limited system throughput across emitter-array
+      widths Nw ∈ {32, 64, 128} for the MNIST MLP (50,816 bytes weight memory) across VCSEL/MZM, single-laser
+      parallel/MZM, and single-laser ser
+    - VCSEL / MZM
+    - Array Width (Nw ) {32, 64, 128} channels (E5)
+  - statement: The modeled minimum amortized per-sample latency for spatial parallel array configurations
+      (VCSEL / MZM and Parallel Laser / MZM) at peak throughput is 51.06 ns
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Min Latency 51.06 ns 51.06 ns 79.71 ns
+    - Experiment E5 evaluates analytically modeled interface-limited system throughput across emitter-array
+      widths Nw ∈ {32, 64, 128} for the MNIST MLP (50,816 bytes weight memory) across VCSEL/MZM, single-laser
+      parallel/MZM, and single-laser ser
+    - VCSEL / MZM
+    - for the MNIST MLP (50,816 bytes weight memory)
+  - statement: The modeled minimum amortized per-sample latency for the time-serialized laser / MZM configuration
+      at peak throughput is 79.71 ns.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Min Latency 51.06 ns 51.06 ns 79.71 ns
+    - Experiment E5 evaluates analytically modeled interface-limited system throughput across emitter-array
+      widths Nw ∈ {32, 64, 128} for the MNIST MLP (50,816 bytes weight memory) across VCSEL/MZM, single-laser
+      parallel/MZM, and single-laser ser
+    - Serialized Laser / MZM
+    - for the MNIST MLP (50,816 bytes weight memory)
+corrections: []

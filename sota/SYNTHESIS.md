@@ -1,6 +1,6 @@
 # The field, as our corpus knows it
 
-Generated 2026-11-12 from the claim ledger.
+Generated 2026-11-13 from the claim ledger.
 
 > **Read this as a description of our corpus, not of the field.** Every number below counts what we have read and extracted. A layer with no claims means we have not read anything for it — never that nothing is happening there.
 
@@ -8,7 +8,7 @@ Generated 2026-11-12 from the claim ledger.
 
 | Layer | Claims | Read |
 |---|---|---|
-| Materials (`MAT`) | 336 | yes |
+| Materials (`MAT`) | 341 | yes |
 | Devices (`DEV`) | 95 | yes |
 | Lithography (`LITHO`) | 6 | yes |
 | Process (`PROC`) | 69 | yes |
@@ -16,25 +16,25 @@ Generated 2026-11-12 from the claim ledger.
 | Memory (`MEM`) | 52 | yes |
 | Architecture (`ARCH`) | 219 | yes |
 | Photonics (`PHOT`) | 139 | yes |
-| EDA (`EDA`) | 45 | yes |
+| EDA (`EDA`) | 48 | yes |
 | Economics (`ECON`) | 0 | **nothing yet** |
 
-9 of 10 layers have any claim at all. 341 source record(s) read; 3098 candidate(s) queued unread.
+9 of 10 layers have any claim at all. 345 source record(s) read; 3158 candidate(s) queued unread.
 
 ## Evidence quality
 
 | Grade | Claims |
 |---|---|
 | A | 7 |
-| B | 968 |
+| B | 976 |
 | C | 0 |
 | D | 0 |
 | E | 0 |
 
 | Evidence type | Claims |
 |---|---|
-| simulated | 485 |
-| measured | 480 |
+| simulated | 490 |
+| measured | 483 |
 | projected | 10 |
 
 ## Where the corpus disagrees with itself
@@ -45,6 +45,6 @@ Generated 2026-11-12 from the claim ledger.
 
 - Nothing about **Economics** — no claims extracted for those layers.
 
-- 3098 candidate(s) sit unread. Until they are read, absence of a claim here is absence of reading, not absence of evidence.
+- 3158 candidate(s) sit unread. Until they are read, absence of a claim here is absence of reading, not absence of evidence.
 
 - Nothing about any paper with no legal open-access copy. That exclusion is a property of our access policy, and it is tracked as `access-blocked`.

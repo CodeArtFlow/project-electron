@@ -9280,3 +9280,151 @@ claims:
     verified_quotes: 3
   conditions:
     sample: HZO/Co/Pt
+- id: CLM-MAT-0337
+  topic: MAT
+  statement: Under high beam fluxes, extending the growth time to 60 minutes increases the length of the
+    nanowires to about 2.4 μm.
+  sources:
+  - SRC-00342
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-12'
+  created: '2026-11-13'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    growth_time: 60 minutes
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 2.4
+      unit: μm
+    si_base:
+      value: 2.4e-06
+      unit: m
+    display:
+      value: 2399.9999999999995
+      unit: nm
+    conditions:
+      growth_time: 60 minutes
+- id: CLM-MAT-0338
+  topic: MAT
+  statement: Under reduced beam fluxes (In BEP = 1.53×10-7 mbar, Sb BEP = 2.43×10-7 mbar), prolonging
+    the growth time from 25 to 60 minutes increases the nanowire length to a maximum of about 2.6 μm.
+  sources:
+  - SRC-00342
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-12'
+  created: '2026-11-13'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    growth_time: 60 minutes
+    in_bep: 1.53×10-7 mbar
+    sb_bep: 2.43×10-7 mbar
+  quantity:
+    quantity: length_device
+    bound: upper_bound
+    approximate: true
+    as_published:
+      value: 2.6
+      unit: μm
+    si_base:
+      value: 2.6e-06
+      unit: m
+    display:
+      value: 2600.0
+      unit: nm
+    conditions:
+      growth_time: 60 minutes
+      in_bep: 1.53×10-7 mbar
+      sb_bep: 2.43×10-7 mbar
+- id: CLM-MAT-0339
+  topic: MAT
+  statement: At 300 K, the calculated CTE along the a axis of PbTiO3 is 10.44×10−6 K−1.
+  sources:
+  - SRC-00343
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-12'
+  created: '2026-11-13'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    material: PbTiO3
+    axis: a axis
+    temperature: 300 K
+- id: CLM-MAT-0340
+  topic: MAT
+  statement: At 300 K, the calculated CTE along the c axis of PbTiO3 is -24.03×10−6 K−1.
+  sources:
+  - SRC-00343
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-12'
+  created: '2026-11-13'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    material: PbTiO3
+    axis: c axis
+    temperature: 300 K
+- id: CLM-MAT-0341
+  topic: MAT
+  statement: The extracted coupling strength g between interlayer and intralayer excitons for AB stacking
+    is 3.3 ± 0.5 meV.
+  sources:
+  - SRC-00344
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-12'
+  created: '2026-11-13'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    stacking: AB
+    temperature: 5 K
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 3.3
+      unit: meV
+    si_base:
+      value: 5.287182892199999e-22
+      unit: J
+    display:
+      value: 5.287182892199998e-07
+      unit: fJ
+    conditions:
+      stacking: AB
+      temperature: 5 K

@@ -1,0 +1,111 @@
+id: SRC-00344
+title: Ferroelectric control of exciton photoluminescence in rhombohedrally stacked bilayer WSe$_2$
+doi: null
+arxiv_id: 2611.16475v1
+url: https://arxiv.org/abs/2611.16475v1
+venue_id: arxiv_api
+authors:
+- name: Wenlong Zhong
+  affiliation: null
+  corresponding: null
+- name: Kenji Watanabe
+  affiliation: null
+  corresponding: null
+- name: Takashi Taniguchi
+  affiliation: null
+  corresponding: null
+- name: Xiaoxiang Xi
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-12'
+retrieved_date: '2026-11-13'
+access: full_text
+read_scope: Automated reading. The full PDF text (42,360 characters, 22 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.16475v1 on
+  2026-11-13. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“For AB, the corresponding values are g = 3.3 ± 0.5 meV, |µ| = 0.64 ± 0.20 e · nm, and δ0 =
+  −17.2±5.4 meV.”
+
+  “the sample temperature was 5 K unless specified otherwise.”'
+method_summary: '“We tuned the excitons using a dual-gated device (Figure 2a).”
+
+  “To probe local switching dynamics, we fixed the laser spot in Region 3 and performed field-dependent
+  PL spectroscopy.”
+
+  “We model the hybridization using an effective two-level Hamiltonian,”'
+limitations: '“At larger twist angles, lattice reconstruction can produce mixed AB and BA microdomains
+  that complicate quantitative analysis”
+
+  “The faint continuations of the PL branches in Figures 3a and 3c may originate from small pinned domains
+  within the optical spot.”
+
+  “No clear evidence of such hybridization is observed for XL, whereas the enhanced XH intensity at high
+  fields and anomalies in its energy and linewidth near E iii-iv ex suggest possible hybridization.”
+
+  “The resonant enhancement weakens at higher temperature due to thermal broadening”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 17021
+    output: 2787
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: The built-in out-of-plane electric field in the R-stacked WSe2 bilayer is 0.091 V/nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''From ∆ϵ ≈
+      64.7 meV, we obtain Ein ≈ 0.091 V/nm, corresponding to an in'''
+    quotes:
+    - From ∆ϵ ≈ 64.7 meV, we obtain Ein ≈ 0.091 V/nm, corresponding to an interlayer potential difference
+      of 59.2 mV.
+    - Ferroelectric control of exciton photoluminescence in rhombohedrally stacked bilayer WSe2
+    - the sample temperature was 5 K unless specified otherwise.
+  - statement: The coercive field in the forward sweep is approximately 0.033 V/nm.
+    reason: 'unit conversion refused: voltage: cannot convert 0.033 V/nm to V - Cannot convert from ''volt
+      / nanometer'' ([mass] * [length] / [time] ** 3 / [current]) to ''volt'' ([mass] * [length] ** 2'
+    quotes:
+    - In the forward sweep, the coercive field was Ef c ≈ 0.033 V/nm.
+    - the sample temperature was 5 K unless specified otherwise.
+  - statement: The first coercive field in the backward sweep is approximately -0.019 V/nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''In the backward
+      sweep, two jumps occurred at E b c1 ≈ −0.019 V/nm and '''
+    quotes:
+    - In the backward sweep, two jumps occurred at E b c1 ≈ −0.019 V/nm and Eb c2 ≈ −0.033 V/nm,
+    - the sample temperature was 5 K unless specified otherwise.
+  - statement: The second coercive field in the backward sweep is approximately -0.033 V/nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''In the backward
+      sweep, two jumps occurred at E b c1 ≈ −0.019 V/nm and '''
+    quotes:
+    - In the backward sweep, two jumps occurred at E b c1 ≈ −0.019 V/nm and Eb c2 ≈ −0.033 V/nm,
+    - the sample temperature was 5 K unless specified otherwise.
+  - statement: The extracted coupling strength g between interlayer and intralayer excitons for BA stacking
+      is 3.4 ± 0.5 meV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''For BA, the
+      fits yield g = 3.4 ± 0.5 meV, |µ| = 0.64 ± 0.21 e · nm, an'''
+    quotes:
+    - For BA, the fits yield g = 3.4 ± 0.5 meV, |µ| = 0.64 ± 0.21 e · nm, and δ0 = −17.4 ± 5.7 meV.
+    - the sample temperature was 5 K unless specified otherwise.
+  - statement: The characteristic field |E*| for strongest exciton hybridization is 0.027 V/nm.
+    reason: 'unit conversion refused: voltage: cannot convert 0.027 V/nm to V - Cannot convert from ''volt
+      / nanometer'' ([mass] * [length] / [time] ** 3 / [current]) to ''volt'' ([mass] * [length] ** 2'
+    quotes:
+    - The analysis also yields the characteristic field |E∗| = |δ0/µ| = 0.027 V/nm for the strongest hybridization,
+      consistent with the experimental observation.
+    - the sample temperature was 5 K unless specified otherwise.
+  - statement: The relative angular offset between reference regions of the constituent layers is approximately
+      0.5°.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Polarization-resolved
+      second-harmonic generation (SHG) 42 measured in '''
+    quotes:
+    - Polarization-resolved second-harmonic generation (SHG) 42 measured in the non-overlapping regions
+      of the constituent layers (Figure 1b) yields a relative angular offset of approximately 0.5◦ between
+      these reference regions
+    - Polarization-resolved SHG from the top and bottom monolayers at 300 K.
+corrections: []

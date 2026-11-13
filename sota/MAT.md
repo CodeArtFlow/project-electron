@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-12.
+Topic code `MAT`. Last reviewed 2026-11-13.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -185,6 +185,10 @@ Topic code `MAT`. Last reviewed 2026-11-12.
 - **0.000902025 fJ** — The electronic gap for m-phase ZrO2 calculated at 300 K is 5.63 eV.
   - `CLM-MAT-0331` · phase m-phase, temperature 300 K · grade B · credibility unknown · simulated · as of 2026-11-10
   - sources: SRC-00337
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **5.28718e-07 fJ** — The extracted coupling strength g between interlayer and intralayer excitons for AB stacking is 3.3 ± 0.5 meV.
+  - `CLM-MAT-0341` · stacking AB, temperature 5 K · grade B · credibility unknown · measured · as of 2026-11-12
+  - sources: SRC-00344
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### frequency
@@ -443,6 +447,14 @@ Topic code `MAT`. Last reviewed 2026-11-12.
   - `CLM-MAT-0286` · material As@MBP, strain mechanical strain · grade B · credibility unknown · simulated · as of 2026-11-03
   - sources: SRC-00289
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈2400 nm** — Under high beam fluxes, extending the growth time to 60 minutes increases the length of the nanowires to about 2.4 μm.
+  - `CLM-MAT-0337` · growth_time 60 minutes · grade B · credibility unknown · measured · as of 2026-11-12
+  - sources: SRC-00342
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ ≈2600 nm** — Under reduced beam fluxes (In BEP = 1.53×10-7 mbar, Sb BEP = 2.43×10-7 mbar), prolonging the growth time from 25 to 60 minutes increases the nanowire length to a maximum of about 2.6 μm.
+  - `CLM-MAT-0338` · growth_time 60 minutes, in_bep 1.53×10-7 mbar, sb_bep 2.43×10-7 mbar · grade B · credibility unknown · measured · as of 2026-11-12
+  - sources: SRC-00342
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -1073,6 +1085,14 @@ Topic code `MAT`. Last reviewed 2026-11-12.
   - `CLM-MAT-0336` · sample HZO/Co/Pt · grade B · credibility unknown · measured · as of 2026-11-10
   - sources: SRC-00341
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- At 300 K, the calculated CTE along the a axis of PbTiO3 is 10.44×10−6 K−1.
+  - `CLM-MAT-0339` · material PbTiO3, axis a axis, temperature 300 K · grade B · credibility unknown · simulated · as of 2026-11-12
+  - sources: SRC-00343
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- At 300 K, the calculated CTE along the c axis of PbTiO3 is -24.03×10−6 K−1.
+  - `CLM-MAT-0340` · material PbTiO3, axis c axis, temperature 300 K · grade B · credibility unknown · simulated · as of 2026-11-12
+  - sources: SRC-00343
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1587,6 +1607,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 336
-- grades: {'B': 336}
-- distinct sources: 120
+- claims: 341
+- grades: {'B': 341}
+- distinct sources: 123

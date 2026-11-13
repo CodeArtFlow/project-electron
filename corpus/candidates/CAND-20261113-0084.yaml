@@ -26,6 +26,70 @@ id: CAND-20261113-0084
 harvested_date: '2026-11-13'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-13'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: 750.sealcrypto_r on the ref workload on the x86 Sapphire Rapids platform achieves an IPC
+      of 4.56.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''750.sealcrypto_r
+      Homomorphic encryption 2,390 4.56 12.5 5.6 3.4 0.51 0'''
+    quotes:
+    - 750.sealcrypto_r Homomorphic encryption 2,390 4.56 12.5 5.6 3.4 0.51 0.01 0.75 0.05 3.1 2.3 759
+      18.7
+    - 'We characterize CPU2026 on real hardware at three levels: programs, phases, and samples.'
+    - Table II summarizes the whole-run behavior of all 52 benchmarks on the ref workload on the x86 platform.
+    - TABLE II WHOLE-RUN CHARACTERISTICS OF SPEC CPU2026 (REF WORKLOAD, SINGLE COPY/THREAD, SAPPHIRE RAPIDS,
+      GCC 15.2.0).
+  - statement: 800.pot3d_s on the ref workload on Sapphire Rapids runs at an IPC of 0.35.
+    reason: 'unit conversion refused: current: could not parse 0.35 ''IPC'': ''IPC'' is not defined in
+      the unit registry'
+    quotes:
+    - 800.pot3d_s Solar physics 2,071 0.35 32.9 8.3 6.9 0.01 0.01 119.06 70.43 1.9 0.4 7.4 90.3
+    - 'We characterize CPU2026 on real hardware at three levels: programs, phases, and samples.'
+    - TABLE II WHOLE-RUN CHARACTERISTICS OF SPEC CPU2026 (REF WORKLOAD, SINGLE COPY/THREAD, SAPPHIRE RAPIDS,
+      GCC 15.2.0).
+  - statement: Compiling 706.stockfish_r with GCC 15 compared to GCC 13 reduces its instruction count
+      to a ratio of 0.208.
+    reason: the statement contains the number 15, which none of its quotes contain
+    quotes:
+    - 706.stockfish_r 0.208 0.501 0.420
+    - 'We characterize CPU2026 on real hardware at three levels: programs, phases, and samples.'
+    - TABLE IV RATIO OF GCC 15 TO GCC 13 (CHANGES ABOVE 10%).
+  - statement: Choosing representatives by measured CPI keeps SimPoint's error within 2.6% for every input.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Keeping SimPoint’s clusters but choosing each representative by measured CPI brings every input
+      within 2.6%, so the error comes from the choice of representatives, not from the clustering.
+    - Keeping SimPoint’s clusters but choosing each representative by measured CPI brings every input
+      within 2.6%
+  - statement: SimPoint's CPI error on input 772.marian_r/2 reaches +42.9% under default settings.
+    reason: the quote says 'at least'/'more than' before the number but bound is not lower_bound
+    quotes:
+    - 'Five inputs are off by more than 10%: 772.marian_r/2 (+42.9%), 772.marian_r/1 (+14.7%), 708.sqlite_r/1
+      (+13.3%), 729.abc_r/5 (−12.6%), and 721.gcc_r/2 (+10.1%).'
+    - 772.marian_r/2 (+42.9%)
+    - With its default settings, SimPoint picks the number of clusters for each input automatically
+  - statement: Changing the random seed causes the CPI error of input 736.ocio_r/1 to vary across a range
+      of 58 percentage points.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''points'' is not one
+      of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a '
+    quotes:
+    - the widest, 736.ocio_r/1, spans 58 points, from −12% to +46%, although its default run is within
+      0.1%.
+    - 736.ocio_r/1, spans 58 points
+    - We repeated the clustering of every input with five seeds
+  tokens:
+    input: 20518
+    output: 2690
+  fetched_chars: 55134
