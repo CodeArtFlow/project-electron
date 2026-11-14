@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.16917v1
 doi: null
-title: Enhancing optomechanical oscillation amplitude and frequency comb bandwidth
-  by intensity-modulated driving
+title: Enhancing optomechanical oscillation amplitude and frequency comb bandwidth by intensity-modulated
+  driving
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-12'
@@ -23,6 +23,29 @@ id: CAND-20261113-0029
 harvested_date: '2026-11-13'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-14'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: 'For a mechanical mode with resonance frequency 10 GHz and quality factor 10000, numerical
+      integration shows that modulation enhances the mechanical oscillation '
+    reason: the statement contains the number 10000, which none of its quotes contain
+    quotes:
+    - Numerical integration of the full equations of motion confirms the enhancement across two decades
+      of cooperativity and sideband-resolution ratios from 0.1 to 10.
+    - The mechanical mode has frequency Ωm/2π = 10 GHz, damping Γm/2π = 1 MHz (quality factor Qm = Ωm/Γm
+      = 104) and effective mass m = 235 fg
+    - To verify and quantify the enhancement that intensity modulation should yield according to Section
+      II, we perform numerical integration of Eqs. (1) and (2).
+    - quality factor Qm = Ωm/Γm = 104
+  tokens:
+    input: 26241
+    output: 791
+  fetched_chars: 77216

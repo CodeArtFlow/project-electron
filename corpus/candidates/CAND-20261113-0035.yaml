@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.16852v1
 doi: null
-title: Interfacial Effects of Thermal Reorganization on Charge and Spin Transport
-  in Organic Spin Valves
+title: Interfacial Effects of Thermal Reorganization on Charge and Spin Transport in Organic Spin Valves
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-12'
@@ -34,6 +33,97 @@ id: CAND-20261113-0035
 harvested_date: '2026-11-13'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-14'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The thermal transition temperature Tc of T2-(NDI-T2)2-2EH is 204.9 °C.
+    reason: 'unit conversion refused: temperature: could not parse 204.9 ''◦C'': ''◦C'' is not defined
+      in the unit registry'
+    quotes:
+    - The molecular structure and thermal transition temperature (Tc = 204.9 ◦C) of T2-(NDI-T2)2-2EH are
+      shown in Figure 1a [32].
+    - The thermal behavior of T2-(NDI-T2)2-2EH was examined using a DSC 2500 calorimeter (TA Instruments)
+      under nitrogen, following the previously reported measurement procedure [32].
+    - T2-(NDI-T2)2-2EH
+  - statement: The as-cast T2-(NDI-T2)2-2EH film exhibits an RMS roughness of 0.91 nm.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - the as-cast film exhibited a relatively smooth and uniform surface without clearly resolved domains,
+      with root mean square (RMS) roughness and profile roughness parameter Ra showing values of 0.91
+      and 0.72 nm, respectively.
+    - AFM topography was acquired under ambient conditions using a SmartSPM 1000 system (AIST-NT) equipped
+      with an NSG10 cantilever with a nominal tip radius of 10 nm.
+    - as-cast film
+    - T2-(NDI-T2)2-2EH
+  - statement: After in situ annealing, the RMS roughness of the T2-(NDI-T2)2-2EH film increases to 1.31
+      nm.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - After annealing, the surface morphology reorganized into distinct elongated domains, accompanied
+      by an increase in the RMS and Ra roughness to 1.31 and 0.99 nm, respectively (Figure 1b,c).
+    - AFM topography was acquired under ambient conditions using a SmartSPM 1000 system (AIST-NT) equipped
+      with an NSG10 cantilever with a nominal tip radius of 10 nm.
+    - in situ annealing at 208 ◦C for 10 min.
+    - T2-(NDI-T2)2-2EH
+  - statement: The effective vertical conductivity of the as-cast T2-(NDI-T2)2-2EH electron-only device
+      is 3.63 × 10^-8 S cm^-1.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - the conductivity increases from 3.63 × 10−8 to 1.32 × 10−6 Scm−1 after annealing
+    - Room-temperature current density–voltage (J–V) characteristics were measured under nitrogen using
+      a Keithley 236 SourceMeter.
+    - As-cast 3.63 × 10−8
+    - organic-layer thickness of 34 nm
+  - statement: After annealing, the effective vertical conductivity of the T2-(NDI-T2)2-2EH electron-only
+      device increases to 1.32 × 10^-6 S cm^-1.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - the conductivity increases from 3.63 × 10−8 to 1.32 × 10−6 Scm−1 after annealing, corresponding
+      to an approximately 36-fold enhancement (Table 1).
+    - Room-temperature current density–voltage (J–V) characteristics were measured under nitrogen using
+      a Keithley 236 SourceMeter.
+    - Annealing was performed at 208 °C for 10min.
+    - organic-layer thickness of 34 nm
+  - statement: The 3 K resistance of the as-cast directly evaporated organic spin valve is 4.25 kΩ.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The as-cast directly evaporated device has a resistance of approximately 4.25 kΩ at 3 K
+    - Temperature-dependent resistance measurements were performed from 3 to 300 K.
+    - at 3 K
+    - directly evaporated device
+  - statement: After annealing, the resistance at 3 K of the directly evaporated organic spin valve increases
+      to 1230 kΩ.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - After annealing, its resistance reaches approximately 1230 kΩ at 3 K, corresponding to an approximately
+      290-fold increase (Table 1).
+    - Temperature-dependent resistance measurements were performed from 3 to 300 K.
+    - at 3 K
+    - Directly evaporated
+  - statement: The 3 K resistance of the as-cast transferred organic spin valve is 26.5 kΩ.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The transferred device exhibits a higher and more strongly temperature-dependent resistance in the
+      as-cast state, increasing from approximately 7.5 kΩ at 300 K to 26.5 kΩ at 3 K, as shown more clearly
+      in the inset of Figure 3c.
+    - Temperature-dependent resistance measurements were performed from 3 to 300 K.
+    - at 3 K
+    - Transferred OSV
+  tokens:
+    input: 12632
+    output: 2865
+  fetched_chars: 40551

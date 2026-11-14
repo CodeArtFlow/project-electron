@@ -9428,3 +9428,73 @@ claims:
     conditions:
       stacking: AB
       temperature: 5 K
+- id: CLM-MAT-0342
+  topic: MAT
+  statement: The superconducting transition temperature Tc of the single layer FeSe/SrTiO3 film measured
+    by ARPES is approximately 60 K.
+  sources:
+  - SRC-00346
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-12'
+  created: '2026-11-14'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    measurement_method: angle resolved photoemission spectroscopy (ARPES)
+  quantity:
+    quantity: temperature
+    bound: exact
+    approximate: true
+    as_published:
+      value: 60.0
+      unit: K
+    si_base:
+      value: 60.0
+      unit: K
+    display:
+      value: -213.14999999999998
+      unit: degC
+    conditions:
+      measurement_method: angle resolved photoemission spectroscopy (ARPES)
+- id: CLM-MAT-0343
+  topic: MAT
+  statement: The energy resolution of the tunneling spectroscopy measurements taken at 400 mK is 0.36
+    meV.
+  sources:
+  - SRC-00346
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-12'
+  created: '2026-11-14'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    temperature: 400 mK
+    calibration_material: Pb
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.36
+      unit: meV
+    si_base:
+      value: 5.7678358824e-23
+      unit: J
+    display:
+      value: 5.767835882399999e-08
+      unit: fJ
+    conditions:
+      temperature: 400 mK
+      calibration_material: Pb

@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**19393 pair(s)** as of 2026-11-13.
+**19616 pair(s)** as of 2026-11-14.
 
 ## `area_die` (11 pair(s))
 
@@ -47,7 +47,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0077` = 4 mA | 85% | process_step=current ramp-down | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° |
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0075` = 1.5 mA | 60% | process_step=current ramp-down | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° |
 
-## `energy` (1088 pair(s))
+## `energy` (1284 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -77,6 +77,9 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-MEM-0018` = 8.011e-05 fJ | `CLM-MEM-0040` = -2.884e-05 fJ | 136% | temperature=100 K, measurement_method=ARPES | method=DFT |
 | `CLM-MAT-0051` = 1801 meV | `CLM-MAT-0172` = -5090 meV | 135% | axis=c | material=MLBP |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MEM-0040` = -180 meV | 133% | mechanism=surface polar phonon, substrate=SiO2 | method=DFT |
+| `CLM-DEV-0100` = 0.0002515 fJ | `CLM-MAT-0172` = -0.0008155 fJ | 131% | heterostructure=Ta(1.5 nm)/Py(3 nm)/Au(2 nm) | material=MLBP |
+| `CLM-DEV-0099` = 0.0002451 fJ | `CLM-MAT-0172` = -0.0008155 fJ | 130% | heterostructure=Ta(1.5 nm)/Py(3 nm)/Au(2 nm) | material=MLBP |
+| `CLM-DEV-0101` = 0.0002419 fJ | `CLM-MAT-0172` = -0.0008155 fJ | 130% | heterostructure=Ta(1.5 nm)/Py(3 nm)/Au(2 nm) | material=MLBP |
 | `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0172` = -5090 meV | 126% | synthesis_condition=Nitrogen-rich | material=MLBP |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0329` = 1310 meV | 126% | material=MLBP | kekule_distortion_strength=0.3 |
 | `CLM-MAT-0327` = 740 meV | `CLM-MEM-0040` = -180 meV | 124% | kekule_distortion_strength=0.1 | method=DFT |
@@ -88,11 +91,8 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-MAT-0294` = 1120 meV | `CLM-MEM-0040` = -180 meV | 116% | fit_function=Eq. ( 13), experimental_data_source=Ref. [ 6] | method=DFT |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0327` = 740 meV | 115% | material=MLBP | kekule_distortion_strength=0.1 |
 | `CLM-MAT-0329` = 1310 meV | `CLM-MEM-0040` = -180 meV | 114% | kekule_distortion_strength=0.3 | method=DFT |
-| `CLM-MAT-0013` = 1340 meV | `CLM-MEM-0040` = -180 meV | 113% | synthesis_condition=Nitrogen-rich | method=DFT |
-| `CLM-MAT-0051` = 1801 meV | `CLM-MEM-0040` = -180 meV | 110% | axis=c | method=DFT |
-| `CLM-MAT-0172` = -5090 meV | `CLM-MEM-0018` = 500 meV | 110% | material=MLBP | temperature=100 K, measurement_method=ARPES |
 
-_and 1048 more_
+_and 1244 more_
 
 ## `energy_advantage_ratio` (19 pair(s))
 
@@ -336,7 +336,7 @@ _and 8936 more_
 | `CLM-ARCH-0212` = 4.95 dimensionless | `CLM-PHOT-0017` = 13.5 dimensionless | 63% | scope=across all three attention mechanisms and batch sizes | target_gas=NO2, comparison=dual-narrowband thermal emitter vs conventional blackbody source |
 | `CLM-ARCH-0212` = 4.95 dimensionless | `CLM-PHOT-0016` = 12.2 dimensionless | 59% | scope=across all three attention mechanisms and batch sizes | target_gas=CH4, comparison=dual-narrowband thermal emitter vs conventional blackbody source |
 
-## `temperature` (367 pair(s))
+## `temperature` (394 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -349,6 +349,7 @@ _and 8936 more_
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0004` = -73.15 degC | 186% | time_after_cooling_onset=10 s | calculation=optical phonon and surface polar phonon scattering |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0293` = -73.15 degC | 186% | time_after_cooling_onset=10 s | mn_content=0.1, compensation_degree=Kmax |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0091` = -113.1 degC | 175% | time_after_cooling_onset=10 s | pressure=ambient pressure, magnetic_field=0.05 T |
+| `CLM-MAT-0102` = -81 K | `CLM-MAT-0342` = 60 K | 174% | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region | measurement_method=angle resolved photoemission spectroscopy (ARPES) |
 | `CLM-DEV-0076` = -257.6 degC | `CLM-MAT-0307` = 186.9 degC | 173% | sample=NbN/I/FePt | property=T N |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0091` = -113.1 degC | 172% | time_after_cooling_onset=10 s | pressure=ambient pressure, magnetic_field=0.05 T |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0003` = -123.1 degC | 169% | time_after_cooling_onset=10 s | calculation=acoustic phonon scattering |
@@ -366,6 +367,8 @@ _and 8936 more_
 | `CLM-MAT-0004` = 200 K | `CLM-MAT-0102` = -81 K | 140% | calculation=optical phonon and surface polar phonon scattering | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region |
 | `CLM-MAT-0102` = -81 K | `CLM-MAT-0293` = 200 K | 140% | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region | mn_content=0.1, compensation_degree=Kmax |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-DEV-0035` = -204.1 degC | 140% | time_after_cooling_onset=10 s | relaxation_temperature=TLIESST |
+| `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0342` = -213.1 degC | 140% | time_after_cooling_onset=10 s | measurement_method=angle resolved photoemission spectroscopy (ARPES) |
+| `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0342` = -213.1 degC | 138% | time_after_cooling_onset=10 s | measurement_method=angle resolved photoemission spectroscopy (ARPES) |
 | `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0093` = 76.85 degC | 138% | relaxation_temperature=TLIESST | magnetic_field=0.05 T |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0325` = -233.1 degC | 136% | time_after_cooling_onset=10 s | material=GdN |
 | `CLM-DEV-0032` = 81.85 degC | `CLM-MAT-0325` = -233.1 degC | 135% | time_after_cooling_onset=10 s | material=GdN |
@@ -377,11 +380,8 @@ _and 8936 more_
 | `CLM-MAT-0092` = 250 K | `CLM-MAT-0102` = -81 K | 132% | pressure=ambient pressure, magnetic_field=0.05 T | material=bulk FePS3 crystal, paramagnetic_region=paramagnetic region |
 | `CLM-DEV-0076` = -257.6 degC | `CLM-MEM-0020` = 801.9 degC | 132% | sample=NbN/I/FePt | method=Hartree-Fock approximation |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0142` = -264.1 degC | 132% | time_after_cooling_onset=10 s | measurement_setup=STM measurements |
-| `CLM-DEV-0032` = 81.85 degC | `CLM-DEV-0076` = -257.6 degC | 132% | time_after_cooling_onset=10 s | sample=NbN/I/FePt |
-| `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0210` = -269.9 degC | 131% | time_after_cooling_onset=10 s | strain=+2%, method=anisotropic Migdal-Eliashberg equations |
-| `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0209` = -270.5 degC | 131% | time_after_cooling_onset=10 s | equation=Allen-Dynes modified McMillan equation |
 
-_and 327 more_
+_and 354 more_
 
 ## `temperature_delta` (52 pair(s))
 

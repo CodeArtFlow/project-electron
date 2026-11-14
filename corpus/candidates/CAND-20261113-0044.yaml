@@ -23,6 +23,98 @@ id: CAND-20261113-0044
 harvested_date: '2026-11-13'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-14'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The clamped linear electro-optic coefficient rη,2D xx,x for monolayer SnS is ~33 pm/V in
+      the absence of an external electric field.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''pm/V'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a un'
+    quotes:
+    - In the absence of external electric field, the rη,2D xx,x coefficients for SnS and SnSe are ∼33
+      and ∼57 pm/V, respectively.
+    - The clamped electro-optic coefficients for SnS and SnSe are calculated by density-functional perturbation
+      theory, with both electronic and ionic contributions.
+  - statement: The clamped linear electro-optic coefficient rη,2D xx,x for monolayer SnSe is ~57 pm/V
+      in the absence of an external electric field.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''pm/V'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a un'
+    quotes:
+    - In the absence of external electric field, the rη,2D xx,x coefficients for SnS and SnSe are ∼33
+      and ∼57 pm/V, respectively.
+    - The clamped electro-optic coefficients for SnS and SnSe are calculated by density-functional perturbation
+      theory, with both electronic and ionic contributions.
+  - statement: Under an electric field of 2.5 MV/cm applied along its polarization direction (θ = 0°),
+      the clamped electro-optic coefficient rη,2D xx,x for monolayer SnS is ~1
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - Such electro-optic coefficients become ∼19 for SnS and ∼21 for SnSe, when applying an electric field
+      of 2.5 MV/cm along their polarization directions (i.e., θ = 0◦).
+    - The clamped electro-optic coefficients for SnS and SnSe are calculated by density-functional perturbation
+      theory, with both electronic and ionic contributions.
+    - when applying an electric field of 2.5 MV/cm along their polarization directions (i.e., θ = 0◦).
+  - statement: Under an electric field of 2.5 MV/cm applied along its polarization direction (θ = 0°),
+      the clamped electro-optic coefficient rη,2D xx,x for monolayer SnSe is ~
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - Such electro-optic coefficients become ∼19 for SnS and ∼21 for SnSe, when applying an electric field
+      of 2.5 MV/cm along their polarization directions (i.e., θ = 0◦).
+    - The clamped electro-optic coefficients for SnS and SnSe are calculated by density-functional perturbation
+      theory, with both electronic and ionic contributions.
+    - when applying an electric field of 2.5 MV/cm along their polarization directions (i.e., θ = 0◦).
+  - statement: The linear electro-optic coefficient rη,2D xx,x of monolayer SnSe increases to ~436 pm/V
+      at θ ≈ 49° under an electric field of 2.5 MV/cm.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''pm/V'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a un'
+    quotes:
+    - The divergent behavior of rη,2D xx,x is observed in SnSe, with a sharp increase from ∼136 pm/V at
+      θ ≈ 48◦ to ∼436 pm/V at θ ≈ 49◦.
+    - We investigate the ferroelectric and electro-optic behaviors of SnS and SnSe by first-principles
+      simulations.
+    - The magnitude of the electric field is 2.5 MV/cm.
+  - statement: In bulk KNbO3 without an applied electric field, the rη xx,x electro-optic coefficient
+      is ~21 pm/V.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''pm/V'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a un'
+    quotes:
+    - These values are much larger than ∼21 pm/V for KNbO3 and ∼9 pm/V for BaTiO3—the rη xx,x coefficients
+      obtained without applied electric fields.
+    - Yet, we can still investigate the θ-dependent Pockels responses in BaTiO3 and KNbO3 by first-principles
+      simulations.
+  - statement: In bulk BaTiO3 without an applied electric field, the rη xx,x electro-optic coefficient
+      is ~9 pm/V.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''pm/V'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a un'
+    quotes:
+    - These values are much larger than ∼21 pm/V for KNbO3 and ∼9 pm/V for BaTiO3—the rη xx,x coefficients
+      obtained without applied electric fields.
+    - Yet, we can still investigate the θ-dependent Pockels responses in BaTiO3 and KNbO3 by first-principles
+      simulations.
+  - statement: Under an electric field of 0.3 MV/cm, the electro-optic rη xx,x coefficient for bulk KNbO3
+      is enhanced to ~226 pm/V at θ ≈ 38°.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''pm/V'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a un'
+    quotes:
+    - When changing the θ angle, the rη xx,x coefficients for KNbO3 and BaTiO3 can be enhanced to ∼226
+      (at θ ≈ 38◦) and ∼140 pm/V (at θ ≈ 55◦), respectively.
+    - Yet, we can still investigate the θ-dependent Pockels responses in BaTiO3 and KNbO3 by first-principles
+      simulations.
+    - The magnitude of the electric field is fixed at 0.3 MV/cm.
+  tokens:
+    input: 11148
+    output: 3792
+  fetched_chars: 28038

@@ -1,0 +1,92 @@
+id: SRC-00347
+title: Ultracompact and Nonvolatile On-chip Switch Based on DBS and PSO Algorithms
+doi: null
+arxiv_id: 2611.16855v1
+url: https://arxiv.org/abs/2611.16855v1
+venue_id: arxiv_api
+authors:
+- name: Sanaz Zarei
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-12'
+retrieved_date: '2026-11-14'
+access: full_text
+read_scope: Automated reading. The full PDF text (18,801 characters, 6 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.16855v1 on
+  2026-11-14. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The device has a small footprint of only 6.3µm×31µm.”
+
+  “A 1×2 photonic switch based on silicon-on-insulator (SOI)-Sb2Se3 hybrid platform is inverse-designed
+  using direct binary search (DBS) and particle swarm optimization (PSO) algorithms.”
+
+  “The device has a small footprint of only 6.3µm×31µm. At the wavelength of 1550nm, it exhibits an insertion
+  loss of less than 0.96dB, and its crosstalk is measured to be less than -12dB within the three-dimensional
+  (3D) finite-difference time-domain (FDTD) simulations.”'
+method_summary: '“These diagrams are produced by the commercial software package Lumerical FDTD.”
+
+  “For both optimizations, the 2.5D variational FDTD solver (varFDTD) of Lumerical Mode Solution is utilized
+  for structural modeling and the obtained results are verified with Lumerical 3D FDTD (Fig. 2(b) and
+  Fig. 3(b)).”'
+limitations: '“It should be noted that both design rounds were performed within a metasystem composed
+  of five phase-change metasurfaces in the SOI platform without the presence of tapers and waveguides
+  and any confinement imposed by the switch body. This is because the varFDTD simulation time for such
+  metasystem is much shorter than the simulation time of the complete 1×2 switch module shown in Fig.
+  1(a).”
+
+  “By transferring the finally optimized metasystem into the 1×2 switch module shown in Fig. 1(a), the
+  total transmission of the system enhances (the FOM decreases to 0.7395), however, the performance of
+  the system as a switch degrades, because of the increment of transmission through each output taper/waveguide
+  at both states.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 7142
+    output: 1997
+  claims_accepted: 1
+  claims_rejected: 4
+  rejected:
+  - statement: At a wavelength of 1550nm, the insertion loss in the amorphous state is 0.96dB based on
+      3D FDTD simulation results.
+    reason: 'unit conversion refused: power: cannot convert 0.96 dB to W - Cannot convert from ''decibel''
+      (dimensionless) to ''watt'' ([mass] * [length] ** 2 / [time] ** 3). A dimensional mismatch mean'
+    quotes:
+    - The final ILs calculated from the following equation at both amorphous and crystalline states are
+      0.96dB and 0.45dB (based on 3D FDTD results), respectively.
+    - at both amorphous and crystalline states are 0.96dB and 0.45dB
+    - At the wavelength of 1550nm, it exhibits an insertion loss of less than 0.96dB
+    - (based on 3D FDTD results)
+  - statement: The insertion loss in the crystalline state is 0.45dB based on 3D FDTD simulation results.
+    reason: 'unit conversion refused: power: cannot convert 0.45 dB to W - Cannot convert from ''decibel''
+      (dimensionless) to ''watt'' ([mass] * [length] ** 2 / [time] ** 3). A dimensional mismatch mean'
+    quotes:
+    - The final ILs calculated from the following equation at both amorphous and crystalline states are
+      0.96dB and 0.45dB (based on 3D FDTD results), respectively.
+    - at both amorphous and crystalline states are 0.96dB and 0.45dB
+    - (based on 3D FDTD results)
+  - statement: The calculated crosstalk at the amorphous state is approximately -12dB from 3D FDTD simulation
+      results.
+    reason: 'unit conversion refused: power: cannot convert -12.0 dB to W - Cannot convert from ''decibel''
+      (dimensionless) to ''watt'' ([mass] * [length] ** 2 / [time] ** 3). A dimensional mismatch mea'
+    quotes:
+    - Also, the computed CTs based on equation (3) are approximately -12dB at amorphous state and -15dB
+      at crystalline state (calculated from 3D FDTD results).
+    - approximately -12dB at amorphous state
+    - (calculated from 3D FDTD results)
+  - statement: The calculated crosstalk at the crystalline state is approximately -15dB based on 3D FDTD
+      simulation results.
+    reason: 'unit conversion refused: power: cannot convert -15.0 dB to W - Cannot convert from ''decibel''
+      (dimensionless) to ''watt'' ([mass] * [length] ** 2 / [time] ** 3). A dimensional mismatch mea'
+    quotes:
+    - Also, the computed CTs based on equation (3) are approximately -12dB at amorphous state and -15dB
+      at crystalline state (calculated from 3D FDTD results).
+    - -15dB at crystalline state
+    - (calculated from 3D FDTD results)
+corrections: []

@@ -6334,3 +6334,21 @@ claims:
       metric: MAPE
       workload: real-world LLM operators
       baseline: 34.04%
+- id: CLM-ARCH-0220
+  topic: ARCH
+  statement: Across 90 within-input repeated comparisons, the event coverage is at least 0.9999999827.
+  sources:
+  - SRC-00349
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-12'
+  created: '2026-11-14'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    comparisons_count: '90'

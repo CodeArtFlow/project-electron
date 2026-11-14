@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-13.
+Topic code `PHOT`. Last reviewed 2026-11-14.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -423,6 +423,26 @@ Topic code `PHOT`. Last reviewed 2026-11-13.
   - `CLM-PHOT-0137` · grade B · credibility unknown · measured · as of 2026-11-05
   - sources: SRC-00315
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The 1×2 photonic switch has a footprint of 6.3µm×31µm.
+  - `CLM-PHOT-0140` · device_type 1×2 photonic switch · grade B · credibility unknown · simulated · as of 2026-11-12
+  - sources: SRC-00347
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The insertion loss of the optimized switch is 0.94dB at the amorphous state.
+  - `CLM-PHOT-0141` · grade B · credibility unknown · simulated · as of 2026-11-12
+  - sources: SRC-00348
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The insertion loss of the optimized switch is 1.1dB at the crystalline state.
+  - `CLM-PHOT-0142` · grade B · credibility unknown · simulated · as of 2026-11-12
+  - sources: SRC-00348
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The computed extinction ratio is approximately 11dB at the amorphous state.
+  - `CLM-PHOT-0143` · grade B · credibility unknown · simulated · as of 2026-11-12
+  - sources: SRC-00348
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The computed extinction ratio is 11.6dB at the crystalline state.
+  - `CLM-PHOT-0144` · grade B · credibility unknown · simulated · as of 2026-11-12
+  - sources: SRC-00348
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -633,6 +653,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 139
-- grades: {'B': 132, 'A': 7}
-- distinct sources: 49
+- claims: 144
+- grades: {'B': 137, 'A': 7}
+- distinct sources: 51

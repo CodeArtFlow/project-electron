@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-13.
+Topic code `ARCH`. Last reviewed 2026-11-14.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -567,6 +567,10 @@ Topic code `ARCH`. Last reviewed 2026-11-13.
   - `CLM-ARCH-0203` · device XC7A100T · grade B · credibility unknown · simulated · as of 2026-11-05
   - sources: SRC-00319
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Across 90 within-input repeated comparisons, the event coverage is at least 0.9999999827.
+  - `CLM-ARCH-0220` · comparisons_count 90 · grade B · credibility unknown · measured · as of 2026-11-12
+  - sources: SRC-00349
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1003,6 +1007,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 219
-- grades: {'B': 219}
-- distinct sources: 73
+- claims: 220
+- grades: {'B': 220}
+- distinct sources: 74

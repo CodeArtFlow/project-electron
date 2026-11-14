@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-11-13.
+Topic code `DEV`. Last reviewed 2026-11-14.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -39,6 +39,21 @@ Topic code `DEV`. Last reviewed 2026-11-13.
   - `CLM-DEV-0077` · sample NbN/AlN/FePt, temperature 4.5 K, stripe_orientation θ = 90° · grade B · credibility unknown · measured · as of 2026-10-22
   - sources: SRC-00204
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+
+### energy
+
+- **0.000245133 fJ** — The emitted photoluminescence peak energy for monolayer MoSe2 on the Ta(1.5 nm)/Py(3 nm)/Au(2 nm) heterostructure (flake 1, M1) is 1.53(7) eV.
+  - `CLM-DEV-0099` · heterostructure Ta(1.5 nm)/Py(3 nm)/Au(2 nm) · grade B · credibility unknown · measured · as of 2026-11-12
+  - sources: SRC-00350
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.000251542 fJ** — The photoluminescence peak energy for monolayer MoSe2 on the Ta(1.5 nm)/Py(3 nm)/Au(2 nm) heterostructure (flake 2, M2) is 1.57(8) eV.
+  - `CLM-DEV-0100` · heterostructure Ta(1.5 nm)/Py(3 nm)/Au(2 nm) · grade B · credibility unknown · measured · as of 2026-11-12
+  - sources: SRC-00350
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.000241929 fJ** — The photoluminescence peak energy for monolayer MoSe2 on the Ta(1.5 nm)/Py(3 nm)/Au(2 nm) heterostructure (flake 3, M3) is 1.51(2) eV.
+  - `CLM-DEV-0101` · heterostructure Ta(1.5 nm)/Py(3 nm)/Au(2 nm) · grade B · credibility unknown · measured · as of 2026-11-12
+  - sources: SRC-00350
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### frequency
 
@@ -482,6 +497,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 95
-- grades: {'B': 95}
-- distinct sources: 41
+- claims: 98
+- grades: {'B': 98}
+- distinct sources: 42

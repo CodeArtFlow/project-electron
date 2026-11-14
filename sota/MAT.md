@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-13.
+Topic code `MAT`. Last reviewed 2026-11-14.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -189,6 +189,10 @@ Topic code `MAT`. Last reviewed 2026-11-13.
 - **5.28718e-07 fJ** — The extracted coupling strength g between interlayer and intralayer excitons for AB stacking is 3.3 ± 0.5 meV.
   - `CLM-MAT-0341` · stacking AB, temperature 5 K · grade B · credibility unknown · measured · as of 2026-11-12
   - sources: SRC-00344
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **5.76784e-08 fJ** — The energy resolution of the tunneling spectroscopy measurements taken at 400 mK is 0.36 meV.
+  - `CLM-MAT-0343` · temperature 400 mK, calibration_material Pb · grade B · credibility unknown · measured · as of 2026-11-12
+  - sources: SRC-00346
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### frequency
@@ -1281,6 +1285,10 @@ Topic code `MAT`. Last reviewed 2026-11-13.
   - `CLM-MAT-0325` · material GdN · grade B · credibility unknown · measured · as of 2026-11-10
   - sources: SRC-00331
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈-213.15 degC** — The superconducting transition temperature Tc of the single layer FeSe/SrTiO3 film measured by ARPES is approximately 60 K.
+  - `CLM-MAT-0342` · measurement_method angle resolved photoemission spectroscopy (ARPES) · grade B · credibility unknown · measured · as of 2026-11-12
+  - sources: SRC-00346
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature delta
 
@@ -1607,6 +1615,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 341
-- grades: {'B': 341}
-- distinct sources: 123
+- claims: 343
+- grades: {'B': 343}
+- distinct sources: 124

@@ -1,0 +1,76 @@
+id: SRC-00349
+title: Control-Flow Profiling for Workload Representativeness
+doi: null
+arxiv_id: 2611.16889v1
+url: https://arxiv.org/abs/2611.16889v1
+venue_id: arxiv_api
+authors:
+- name: Mahesh Madhav
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-12'
+retrieved_date: '2026-11-14'
+access: full_text
+read_scope: Automated reading. The full PDF text (60,539 characters, 11 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.16889v1 on
+  2026-11-14. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Across the five BranchProf families, the 90 within-input comparisons have event coverage of
+  at least 0.9999999827 and TVD at most 0.000159.”
+
+  “the 90 within-input comparisons have event coverage of at least 0.9999999827”'
+method_summary: '“Across the two suites’ train and rate-reference collections, the median slowdown ranges
+  from 45.4× to 48.5×; the CPU2017 refrate median is 46.6×, and CPU2026 refrate is 45.6×.”
+
+  “We repeated both train and refrate profile collection three times for three CPU2026 workloads with
+  large train/reference fidelity gaps: 729.abc, 735.gem5, and 777.zstd.”'
+limitations: '“The method is therefore appropriate for proxy/full-workload, train/reference, or configuration/input
+  comparisons, but not for comparing independently built binaries without additional symbolization or
+  normalization.”
+
+  “This is a targeted single-threaded replication study, rather than a claim that every workload or multithreaded
+  execution has the same determinism.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 18235
+    output: 2137
+  claims_accepted: 1
+  claims_rejected: 5
+  rejected:
+  - statement: The median slowdown of BranchProf for CPU2017 train collection is 48.5x.
+    reason: the statement contains the number 017, which none of its quotes contain
+    quotes:
+    - Across the two suites’ train and rate-reference collections, the median slowdown ranges from 45.4×
+      to 48.5×; the CPU2017 refrate median is 46.6×, and CPU2026 refrate is 45.6×.
+    - CPU2017 train 33 45.0×/ 48.5× –
+    - geomean/median
+  - statement: The median slowdown of BranchProf for CPU2017 refrate collection is 46.6x.
+    reason: the statement contains the number 017, which none of its quotes contain
+    quotes:
+    - the CPU2017 refrate median is 46.6×
+    - CPU2017 refrate 23 35.9×/ 46.6× –
+  - statement: The median slowdown of BranchProf for CPU2026 train collection is 45.4x.
+    reason: the statement contains the number 026, which none of its quotes contain
+    quotes:
+    - CPU2026 train 31 53.8×/ 45.4× 1.75×/ 1.48×
+    - geomean/median
+  - statement: The median slowdown of BranchProf for CPU2026 refrate collection is 45.6x.
+    reason: the statement contains the number 026, which none of its quotes contain
+    quotes:
+    - and CPU2026 refrate is 45.6×.
+    - CPU2026 refrate 26 45.9×/ 45.6× 1.33×/ 1.07×
+  - statement: The evaluation platform processor frequency is 3.2 GHz.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Frequency
+      3.2 GHz'''
+    quotes:
+    - Frequency 3.2 GHz
+    - Processor AmpereOne A192-32X [3, 8]
+corrections: []
