@@ -1,0 +1,31 @@
+{
+  "arxiv_id": "2611.17097v1",
+  "claims": {
+    "CLM-PKG-0012": {
+      "evidence_spans": [
+        "On DeepSeek-V4-Pro, weights (105.5 GB/GPU) crowd out KV capacity in the 128 GB baseline",
+        "delivering 1.57× the throughput at 0.58× the energy per token (41.4 vs. 39.9 ms TBT) while saving 8.44 PB (82%) of cluster HBM.",
+        "OBM (DP-attn. + EP) stores no weights locally",
+        "On DeepSeek-V4-Pro, weights (105.5 GB/GPU) crowd out KV capacity in the 128 GB baseline",
+        "On DeepSeek-V4-Pro, weights (105.5 GB/GPU) crowd out KV capacity in the 128 GB baseline"
+      ],
+      "statement": "Under split-port OBM (DP-attn. + EP) with equal KV capacity on DeepSeek-V4-Pro, cluster weight HBM is reduced by 8.44 PB (82%) relative to the HBM baseline.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "We model a datacenter cluster of 80, 000 H100-compute-class accelerators organized into 10, 000 8-accelerator HGX-style chassis (N = 8, grouped into 400 pods of 25 chassis).",
+    "We simulated this policy over 2,000 decode steps (two seeds), with every context growing by one token per step and finished requests replaced by new ones.",
+    "Under split-port EP, the same skew would send about 1,540 of the chassis’s 1,928 tokens to one expert, far above b∗ = 263, so the accelerator holding it would miss weights. The solution is for the OBM weights server to dynamically replicate hot experts across all ports. We have not studied this as it is an on-line optimization and we leave it for future work."
+  ],
+  "generated": "2026-11-15",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00352",
+  "text_chars": 72040,
+  "text_sha256": "f6c44045bb679552b57239dc7fbdd78c476d0e804e4859e698a78e01ab318e68"
+}

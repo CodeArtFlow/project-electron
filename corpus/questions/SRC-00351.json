@@ -1,0 +1,43 @@
+{
+  "arxiv_id": "2611.17042v1",
+  "claims": {
+    "CLM-ARCH-0221": {
+      "evidence_spans": [
+        "The clearest evidence is VeriLoRA: across input lengths 64–2048, opening the weights takes approximately 11.5 s (7B) or 12.4 s (13B), varying by less than 1%, while opening the intermediate tensors grows from 6.2 to 54.6 s and from 6.7 to 67.7 s.",
+        "The clearest evidence is VeriLoRA",
+        "across input lengths 64–2048",
+        "opening the weights takes approximately 11.5 s (7B)",
+        "and add original measurements of six provers and seven kernels to identify which costs matter in practice."
+      ],
+      "statement": "Opening fixed weights in VeriLoRA 7B takes approximately 11.5 seconds across input lengths from 64 to 2048 tokens.",
+      "terms": []
+    },
+    "CLM-ARCH-0222": {
+      "evidence_spans": [
+        "The clearest evidence is VeriLoRA: across input lengths 64–2048, opening the weights takes approximately 11.5 s (7B) or 12.4 s (13B), varying by less than 1%, while opening the intermediate tensors grows from 6.2 to 54.6 s and from 6.7 to 67.7 s.",
+        "The clearest evidence is VeriLoRA",
+        "across input lengths 64–2048",
+        "opening the weights takes approximately 11.5 s (7B) or 12.4 s (13B)",
+        "and add original measurements of six provers and seven kernels to identify which costs matter in practice."
+      ],
+      "statement": "Opening fixed weights in VeriLoRA 13B takes approximately 12.4 seconds across input lengths from 64 to 2048 tokens.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "To connect the breakdowns to hardware, we also benchmark the seven kernels of Layer 3 in isolation, using GPU libraries [52], [65] or reference implementations, and place each on a roofline built from measured rather than vendor-specified roofs.",
+    "A shared server (five NVIDIA A100-PCIE-40GB cards; dual Xeon Gold 6248R, 96 logical cores) ran the kernel micro-benchmarks, the zkLLM breakdowns and the CPU-only provers; an exclusively used server (one A100-PCIE-80GB card of the same architecture; 192-core host) ran VeriLoRA, DeepProve, the commitment comparison and the engineering waterfall.",
+    "W4 runs on a single-threaded CPU prover with small networks and indicates trends only.",
+    "Capacity (Q4) is observed at two points, 40 and 80 GB, not as a continuous comparison."
+  ],
+  "generated": "2026-11-15",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00351",
+  "text_chars": 89015,
+  "text_sha256": "ff3fa3b0ad79151de08fb903fb21697f9cb21423145e5e0eb394b7c0e7d49a42"
+}

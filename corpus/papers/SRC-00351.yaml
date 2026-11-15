@@ -1,0 +1,94 @@
+id: SRC-00351
+title: 'Infrastructure for Verifiable AI: Where Proof Costs Go and How Hardware Can Help'
+doi: null
+arxiv_id: 2611.17042v1
+url: https://arxiv.org/abs/2611.17042v1
+venue_id: arxiv_api
+authors:
+- name: Yihan Xia
+  affiliation: null
+  corresponding: null
+- name: Wenxin Xu
+  affiliation: null
+  corresponding: null
+- name: Taotao Wang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-12'
+retrieved_date: '2026-11-15'
+access: full_text
+read_scope: Automated reading. The full PDF text (89,015 characters, 16 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.17042v1 on
+  2026-11-15. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The clearest evidence is VeriLoRA: across input lengths 64–2048, opening the weights takes
+  approximately 11.5 s (7B) or 12.4 s (13B), varying by less than 1%, while opening the intermediate tensors
+  grows from 6.2 to 54.6 s and from 6.7 to 67.7 s.”
+
+  “The clearest evidence is VeriLoRA”
+
+  “across input lengths 64–2048”
+
+  “opening the weights takes approximately 11.5 s (7B)”
+
+  “and add original measurements of six provers and seven kernels to identify which costs matter in practice.”
+
+  “opening the weights takes approximately 11.5 s (7B) or 12.4 s (13B)”'
+method_summary: '“To connect the breakdowns to hardware, we also benchmark the seven kernels of Layer
+  3 in isolation, using GPU libraries [52], [65] or reference implementations, and place each on a roofline
+  built from measured rather than vendor-specified roofs.”
+
+  “A shared server (five NVIDIA A100-PCIE-40GB cards; dual Xeon Gold 6248R, 96 logical cores) ran the
+  kernel micro-benchmarks, the zkLLM breakdowns and the CPU-only provers; an exclusively used server (one
+  A100-PCIE-80GB card of the same architecture; 192-core host) ran VeriLoRA, DeepProve, the commitment
+  comparison and the engineering waterfall.”'
+limitations: '“W4 runs on a single-threaded CPU prover with small networks and indicates trends only.”
+
+  “Capacity (Q4) is observed at two points, 40 and 80 GB, not as a continuous comparison.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 28653
+    output: 2387
+  claims_accepted: 2
+  claims_rejected: 3
+  rejected:
+  - statement: 'The 13B LoRA fine-tuning step at an input length of 2048 tokens allocates 45.0 GB of memory
+      as reported by the prover and completes in 327 seconds on the 80 GB '
+    reason: the statement contains the number 00, which none of its quotes contain
+    quotes:
+    - The 13B LoRA step at input length 2048 needs 45.0 GB by the prover’s own account (56.2 GB sampled
+      externally), so this configuration exceeds the 40 GB card’s capacity but completes in 327 s on the
+      80 GB device.
+    - and add original measurements of six provers and seven kernels to identify which costs matter in
+      practice.
+    - The 13B LoRA step at input length 2048
+    - at input length 2048
+  - statement: zkLLM proving time per layer increases from 33.6 s to 47.8 s when the prompt input length
+      increases from 1024 to 2048 tokens.
+    reason: the statement contains the number 1024, which none of its quotes contain
+    quotes:
+    - 'zkLLM shows a related shift in cost shares: doubling the input length raises proving time by 1.42×
+      (33.6 to 47.8 s) yet lowers the opening share by 10 percentage points.'
+    - and add original measurements of six provers and seven kernels to identify which costs matter in
+      practice.
+    - zkLLM shows a related shift in cost shares
+    - 33.6 to 47.8 s
+  - statement: The optimized engineering waterfall for zkLLM on a 1024-token prompt reaches a median proof
+      time of 29.0 seconds.
+    reason: the statement contains the number 1024, which none of its quotes contain
+    quotes:
+    - Fig. 7 shows a nearly unchanged aggregate proving time, from 29.1 s to 29.0 s, across this optimization
+      sequence.
+    - and add original measurements of six provers and seven kernels to identify which costs matter in
+      practice.
+    - zkLLM case study
+    - zkLLM · W1, 1024 tok
+corrections: []

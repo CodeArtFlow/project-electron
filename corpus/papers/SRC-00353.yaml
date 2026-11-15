@@ -1,0 +1,116 @@
+id: SRC-00353
+title: 'LazyWeights: Decode-on-Demand Edge LLMs'
+doi: null
+arxiv_id: 2611.17108v1
+url: https://arxiv.org/abs/2611.17108v1
+venue_id: arxiv_api
+authors:
+- name: Arnab Sanyal
+  affiliation: null
+  corresponding: null
+- name: Gourav Datta
+  affiliation: null
+  corresponding: null
+- name: Sandeep P. Chinchali
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-12'
+retrieved_date: '2026-11-15'
+access: full_text
+read_scope: Automated reading. The full PDF text (40,351 characters, 7 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.17108v1 on
+  2026-11-15. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“On the Nano, LazyWeights needs 58–64% less time and 53–57% less energy per token than CPU
+  llama.cpp”
+
+  “greedy, and 70–76% less time and 69–76% less energy with speculation in both.”
+
+  “The unit’s latency and energy are projections from measured device numbers and pre-layout synthesis,
+  not a fabricated SoC”'
+method_summary: '“A bit-exact 0.21 mm2 ASIC decoder unit (1 GHz, 7 nm) cuts Orin latency and energy per
+  token by up to 36% and 38% (54% and 44% with prompt-lookup speculation).”
+
+  “the ASIC decoder unit runs bit-exact on a Zynq UltraScale+ FPGA (AMD ZCU102).”
+
+  “Synthesis: Yosys/ABC, OpenROAD, OpenSTA, ASAP7 RVT TT, logic synthesis (pre-layout).”
+
+  “128 new tokens for each of 6 prompts (32 for streamed Mistral-7B on the Nano); energy integrated from
+  the module input rail, idle included; Orin clocks pinned (MAXN SUPER).”'
+limitations: '“The unit’s latency and energy are projections from measured device numbers and pre-layout
+  synthesis, not a fabricated SoC; the FPGA shows bit- and cycle-exact decoding, but at FPGA clocks, not
+  1 GHz.”
+
+  “For streamed Mistral-7B the twin is no proxy for the unit”
+
+  “We did not evaluate Llama-3 or Qwen3, which quantize worse [23], or long contexts, where the uncoded
+  fp16 KV cache dilutes the saving”'
+evidence_type: projected
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16182
+    output: 3185
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: The ASIC decoder unit synthesized on ASAP7 RVT TT at 1 GHz occupies an area of 0.206 mm2
+      for four engines.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''four engines
+      (0.206 mm2)'''
+    quotes:
+    - four engines (0.206 mm2)
+    - ASAP7 RVT TT, logic synthesis (pre-layout).
+    - 1 GHz, close to the Orin’s 1.02 GHz GPU clock
+  - statement: On the Jetson Orin Nano Super, LazyWeights with the decoder unit reduces latency per token
+      by up to 36% greedy and up to 54% with prompt-lookup speculation.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - A bit-exact 0.21 mm2 ASIC decoder unit (1 GHz, 7 nm) cuts Orin latency and energy per token by up
+      to 36% and 38% (54% and 44% with prompt-lookup speculation).
+    - The unit’s latency and energy are projections from measured device numbers and pre-layout synthesis,
+      not a fabricated SoC
+    - cuts Orin latency and energy per token
+    - by up to 36% and 38% (54% and 44% with prompt-lookup speculation).
+  - statement: On the Jetson Orin Nano Super, LazyWeights with the decoder unit reduces energy per token
+      by up to 38% greedy and up to 44% with prompt-lookup speculation.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - A bit-exact 0.21 mm2 ASIC decoder unit (1 GHz, 7 nm) cuts Orin latency and energy per token by up
+      to 36% and 38% (54% and 44% with prompt-lookup speculation).
+    - The unit’s latency and energy are projections from measured device numbers and pre-layout synthesis,
+      not a fabricated SoC
+    - cuts Orin latency and energy per token
+    - by up to 36% and 38% (54% and 44% with prompt-lookup speculation).
+  - statement: On the Jetson Nano, software-decoded streamed Mistral-7B runs 6.6× faster with LazyWeights
+      at 3.89 bits per weight at a 1% perplexity budget.
+    reason: 'unit conversion refused: time: could not parse 6.6 ''×'': missing operand'
+    quotes:
+    - and runs a streamed Mistral-7B 6.6× faster at 3.89 bits per weight.
+    - at ≤1%, LazyWeights is 6.6× faster than llama.cpp at 4.5× less energy, even decoding in software.
+    - On the Nano, LazyWeights needs 58–64% less time
+    - streamed Mistral-7B
+  - statement: An ASAP7 RVT TT synthesis of a single engine (32 comparator lanes plus arbiter) at 1 GHz
+      consumes 115.7 mW.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Engine 51,550
+      115.7 – – – –'''
+    quotes:
+    - Engine 51,550 115.7 – – – –
+    - 'Shaded: Engine = 32 comparator lanes + arbiter.'
+    - 'TABLE V Decoder blocks, logic synthesis (pre-layout): ASAP7 RVT TT at 1 GHz'
+    - ASAP7 RVT TT at 1 GHz
+  - statement: On the AMD ZCU102 FPGA implementation operating at 112.5 MHz full rate, the fabric (VCCINT)
+      draws 3.7 W.
+    reason: the statement contains the number 02, which none of its quotes contain
+    quotes:
+    - the fabric (VCCINT) draws 0.88 W idle plus 3.7 W at full rate, 0.26 nJ per weight.
+    - On the ZCU102, four engines close timing at 112.5 MHz
+    - four engines close timing at 112.5 MHz
+    - 3.7 W at full rate
+corrections: []

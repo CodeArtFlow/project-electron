@@ -1,0 +1,136 @@
+id: SRC-00354
+title: Thin-film lithium niobate integrated photonics at 493 nm
+doi: null
+arxiv_id: 2611.14474v1
+url: https://arxiv.org/abs/2611.14474v1
+venue_id: arxiv_api
+authors:
+- name: Nicholas Achuthan
+  affiliation: null
+  corresponding: null
+- name: Letícia Magalhães
+  affiliation: null
+  corresponding: null
+- name: Xudong Li
+  affiliation: null
+  corresponding: null
+- name: Hugo Voncken
+  affiliation: null
+  corresponding: null
+- name: Hana Warner
+  affiliation: null
+  corresponding: null
+- name: Sophie Ding
+  affiliation: null
+  corresponding: null
+- name: Andrea Cordaro
+  affiliation: null
+  corresponding: null
+- name: Xinrui Zhu
+  affiliation: null
+  corresponding: null
+- name: Keith Powell
+  affiliation: null
+  corresponding: null
+- name: Anna Shelton
+  affiliation: null
+  corresponding: null
+- name: Dylan Renaud
+  affiliation: null
+  corresponding: null
+- name: Daniel Assumpcao
+  affiliation: null
+  corresponding: null
+- name: Xiangying Zuo
+  affiliation: null
+  corresponding: null
+- name: Michael Pushkarsky
+  affiliation: null
+  corresponding: null
+- name: Amirhassan Shams-Ansari
+  affiliation: null
+  corresponding: null
+- name: Marko Lončar
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-10'
+retrieved_date: '2026-11-15'
+access: full_text
+read_scope: Automated reading. The full PDF text (53,347 characters, 18 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.14474v1 on
+  2026-11-15. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Single-mode (250 nm top width) racetrack resonators exhibit intrinsic quality factors ofQi
+  ≈ 5.1× 105 and a corresponding propagation loss of 2.9± 0.2 dB/cm (Fig. 2(a), bottom).”
+
+  “Thin-film lithium niobate integrated photonics at 493 nm”
+
+  “The optimum on-chip device has a multimode interaction lengthLMMI = 34µm and excess insertion loss
+  of 0.5 dB [Fig. 2(c)].”
+
+  “Specifically, we use a series of cascaded 1× 2 MMI pairs, up to 60 MMIs (30 pairs).”
+
+  “Grating couplers, which are used for coupling light on and off the chip in the MMI study, reach a peak
+  efficiency of−4.8 dB/grating for an optimized pitch of 274 nm and duty cycle of 55% [Fig. 2(c), inset].”
+
+  “Driving a 3 mm long modulator at 1 MHz, we measure a half-wave voltage of Vπ = 1.50 V, corresponding
+  to a voltage-length product of VπL = 450 mV·cm for an electrode gap of 3 µm [Fig. 4(a)].”'
+method_summary: '“Single-mode (250 nm top width) racetrack resonators exhibit intrinsic quality factors
+  ofQi ≈ 5.1× 105 and a corresponding propagation loss of 2.9± 0.2 dB/cm (Fig. 2(a), bottom).”
+
+  “The optimum on-chip device has a multimode interaction lengthLMMI = 34µm and excess insertion loss
+  of 0.5 dB [Fig. 2(c)].”
+
+  “Grating couplers, which are used for coupling light on and off the chip in the MMI study, reach a peak
+  efficiency of−4.8 dB/grating for an optimized pitch of 274 nm and duty cycle of 55% [Fig. 2(c), inset].”
+
+  “Driving a 3 mm long modulator at 1 MHz, we measure a half-wave voltage of Vπ = 1.50 V, corresponding
+  to a voltage-length product of VπL = 450 mV·cm for an electrode gap of 3 µm [Fig. 4(a)].”'
+limitations: '“No 3 dB roll-off is observed within the measurement range, demonstrating an electro-optic
+  bandwidth exceeding 50 GHz, limited by the available RF source.”
+
+  “Although we do not yet operate these devices with trapped ions, they form the building blocks of the
+  multichannel control architecture in Fig. 1(b), and our results identify the challenges that remain
+  before such integration.”
+
+  “photorefraction and substrate uniformity remain key challenges to scaling.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16655
+    output: 2795
+  claims_accepted: 4
+  claims_rejected: 2
+  rejected:
+  - statement: Segmented traveling-wave phase modulators demonstrate an electro-optic bandwidth exceeding
+      50 GHz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The measured response exhibits no 3 dB roll-off within the available measurement range, demonstrating
+      an electro-optic bandwidth exceeding 50 GHz [Fig. 3(c)].
+    - To maximize the bandwidth of the TFLN EOM, we employ a segmented electrode design [Fig. 3(b)], which
+      has been shown to greatly reduce RF loss by mitigating Ohmic losses due to current crowding [37].
+    - To overcome detector bandwidth limitations, we characterize the frequency-dependent electro-optic
+      response of the segmented phase modulators through measurements of the generated optical sidebands.
+  - statement: Sweeping the heater bias on an MMI-based 3 mm long amplitude modulator yields a maximum
+      extinction ratio of 20.4 dB.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''By sweeping
+      the heater bias, we measure the transfer function of the m'''
+    quotes:
+    - By sweeping the heater bias, we measure the transfer function of the modulator and obtain a maximum
+      extinction ratio of 20.4 dB [Fig. 4(a), inset].
+    - 'Inset: the extinction ratio of an MMI-based, 3 mm long modulator is measured by sweeping the power
+      delivered to an integrated microheater above one waveguide arm, reaching an extinction ratio of
+      20.4 dB.'
+    - Push-pull, MMI-based amplitude modulators are characterized using a similar experimental setup,
+      with an additional DC source used to control the thermo-optic bias through an integrated microheater.
+corrections: []

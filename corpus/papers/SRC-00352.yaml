@@ -1,0 +1,97 @@
+id: SRC-00352
+title: 'Broadcast, Don''t Replicate: Eliminating Weight HBM in Datacenter LLM Serving'
+doi: null
+arxiv_id: 2611.17097v1
+url: https://arxiv.org/abs/2611.17097v1
+venue_id: arxiv_api
+authors:
+- name: Hannah Atmer
+  affiliation: null
+  corresponding: null
+- name: Yuan Yao
+  affiliation: null
+  corresponding: null
+- name: Thiemo Voigt
+  affiliation: null
+  corresponding: null
+- name: Stefanos Kaxiras
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-12'
+retrieved_date: '2026-11-15'
+access: full_text
+read_scope: Automated reading. The full PDF text (72,040 characters, 13 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.17097v1 on
+  2026-11-15. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“On DeepSeek-V4-Pro, weights (105.5 GB/GPU) crowd out KV capacity in the 128 GB baseline”
+
+  “delivering 1.57× the throughput at 0.58× the energy per token (41.4 vs. 39.9 ms TBT) while saving 8.44
+  PB (82%) of cluster HBM.”
+
+  “OBM (DP-attn. + EP) stores no weights locally”'
+method_summary: '“We model a datacenter cluster of 80, 000 H100-compute-class accelerators organized into
+  10, 000 8-accelerator HGX-style chassis (N = 8, grouped into 400 pods of 25 chassis).”
+
+  “We simulated this policy over 2,000 decode steps (two seeds), with every context growing by one token
+  per step and finished requests replaced by new ones.”'
+limitations: “Under split-port EP, the same skew would send about 1,540 of the chassis’s 1,928 tokens
+  to one expert, far above b∗ = 263, so the accelerator holding it would miss weights. The solution is
+  for the OBM weights server to dynamically replicate hot experts across all ports. We have not studied
+  this as it is an on-line optimization and we leave it for future work.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 23624
+    output: 3329
+  claims_accepted: 1
+  claims_rejected: 6
+  rejected:
+  - statement: Under split-port OBM (DP-attn. + EP) on DeepSeek-V4-Pro with equal KV capacity, the total
+      decode energy per token is 0.073 J/token, which is 0.58× that of the H
+    reason: 'unit conversion refused: energy: could not parse 0.073 ''J/token'': ''token'' is not defined
+      in the unit registry'
+    quotes:
+    - OBM (DP-attn. + EP) 1,984 41.4 478.8 35.0 0.034 0.039 0.073 1.57× 0.58× 0.8 TB 8.44 PB (82%)
+    - DeepSeek-V4-Pro
+  - statement: Under split-port OBM (DP-attn. + EP) on DeepSeek-V4-Pro with equal KV capacity, the overall
+      cluster decode throughput reaches 478.8 M tok/s, which is 1.57× that
+    reason: 'unit conversion refused: energy: could not parse 478.8 ''M tok/s'': ''tok'' is not defined
+      in the unit registry'
+    quotes:
+    - OBM (DP-attn. + EP) 1,984 41.4 478.8 35.0 0.034 0.039 0.073 1.57× 0.58× 0.8 TB 8.44 PB (82%)
+    - DeepSeek-V4-Pro
+  - statement: Under split-port OBM (TP) on Llama-3.1-405B with equal KV capacity, the total decode energy
+      per token is 0.493 J/token, which is 0.90× that of the HBM baseline.
+    reason: the statement contains the number 3.1, which none of its quotes contain
+    quotes:
+    - OBM (TP) 248 23.6 105.2 51.9 0.163 0.329 0.493 0.96× 0.90× 0.4 TB 4.05 PB (40%)
+    - Llama-3.1-405B
+  - statement: Under split-port OBM (DP-attn. + EP) on Llama-4-Maverick with equal KV capacity, cluster
+      weight HBM is reduced by 4.00 PB (39%) relative to the baseline.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - OBM (DP-attn. + EP) 1,928 41.0 470.7 29.1 0.037 0.025 0.062 0.97× 0.90× 0.4 TB 4.00 PB (39%)
+    - Llama-4-Maverick
+  - statement: Under split-port OBM (TP) on Llama-3.1-405B with equal KV capacity, cluster weight HBM
+      is reduced by 4.05 PB (40%) relative to the baseline.
+    reason: the statement contains the number 3.1, which none of its quotes contain
+    quotes:
+    - OBM (TP) 248 23.6 105.2 51.9 0.163 0.329 0.493 0.96× 0.90× 0.4 TB 4.05 PB (40%)
+    - Llama-3.1-405B
+  - statement: For an NVIDIA H100 SXM accelerator fed at 3.2 TB/s bandwidth from fiber, the arithmetic
+      intensity knee corresponds to a b* threshold of 309 tokens per weight pa
+    reason: the statement contains the number 00, which none of its quotes contain
+    quotes:
+    - H100 SXM INT8/FP8 1,979 TOPS 3.35 295 309
+    - H100 SXM
+    - INT8/FP8
+    - 3.2 TB/s fiber
+corrections: []

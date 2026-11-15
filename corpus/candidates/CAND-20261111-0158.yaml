@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.13319v1
 doi: null
-title: Multicomponent Isotope Engineering of Phonon Polaritons in Hexagonal Boron
-  Nitride
+title: Multicomponent Isotope Engineering of Phonon Polaritons in Hexagonal Boron Nitride
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-09'
@@ -29,6 +28,65 @@ id: CAND-20261111-0158
 harvested_date: '2026-11-11'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-15'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The maximum measured figure of merit for h10B15N is approximately 34.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - The largest measured FOM values are approximately 34 for h10B15N
+    - h10B15N
+  - statement: The maximum measured figure of merit for h11B15N is approximately 33.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''33 for h11B15N'''
+    quotes:
+    - 33 for h11B15N
+    - The largest measured FOM values are approximately 34 for h10B15N and 33 for h11B15N
+    - h11B15N
+  - statement: The in-plane transverse optic phonon frequency of h10B15N extracted from far-field reflectance
+      fit is 1374 cm-1.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - The in-plane TO phonon frequency is 1374 cm-1 in h10B15N
+    - Using a single oscillator dielectric fit to the reflectance of each sample, we obtained the complex
+      permittivity spectra
+    - h10B15N
+    - in-plane TO phonon frequency
+  - statement: The in-plane transverse optic phonon frequency of h11B15N extracted from dielectric fit
+      is 1339 cm-1.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - compared with 1339 cm-1 in h11B15N
+    - Using a single oscillator dielectric fit to the reflectance of each sample, we obtained the complex
+      permittivity spectra
+    - h11B15N
+    - in-plane TO phonon frequency
+  - statement: The polariton wavelength for a 51 nm thick h10B15N crystal measured at 1446 cm-1 is approximately
+      1580 nm.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - At their respective measurement conditions, the 51 nm thick h10B15N crystal measured at 1446 cm-1
+      supports a polariton wavelength of approximately 1580 nm
+    - h10B15N
+    - 51 nm thick
+    - 1446 cm-1
+  - statement: The polariton wavelength for a 57 nm thick h11B15N crystal measured at 1406 cm-1 is approximately
+      1460 nm.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - whereas the 57 nm thick h11B15N crystal measured at 1406 cm-1 supports polariton wavelength of approximately
+      1460 nm
+    - h11B15N
+    - 57 nm thick
+    - 1406 cm-1
+  tokens:
+    input: 14683
+    output: 1867
+  fetched_chars: 41290

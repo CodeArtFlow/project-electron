@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**19616 pair(s)** as of 2026-11-14.
+**20093 pair(s)** as of 2026-11-15.
 
 ## `area_die` (11 pair(s))
 
@@ -22,30 +22,46 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-ARCH-0147` = 3.97 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 50% | component=AxCore, process=NanGate 15 nm technology, fclk=1 GHz, activation_format=FP16 | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
 | `CLM-ARCH-0148` = 4.68 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 42% | component=FIGLUT, process=NanGate 15 nm technology, fclk=1 GHz, activation_format=FP16 | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
 
-## `current` (20 pair(s))
+## `current` (36 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-DEV-0028` = 0.6 mA | `CLM-MAT-0069` = 2e-06 mA | 100% | process_step=current ramp-down | temperature=10 mK |
 | `CLM-DEV-0057` = 30 mA | `CLM-MAT-0069` = 2e-06 mA | 100% | switching_regime=small switching current | temperature=10 mK |
 | `CLM-DEV-0058` = 40 mA | `CLM-MAT-0069` = 2e-06 mA | 100% | switching_regime=large switching current | temperature=10 mK |
+| `CLM-MAT-0069` = 2e-06 mA | `CLM-PHOT-0149` = 90 mA | 100% | temperature=10 mK | device_variant=original LD |
+| `CLM-MAT-0069` = 2e-06 mA | `CLM-PHOT-0150` = 118 mA | 100% | temperature=10 mK | device_variant=RLD |
 | `CLM-EDA-0018` = 0.02 mA | `CLM-MAT-0069` = 2e-06 mA | 100% | circuit=BMR, corner=tt | temperature=10 mK |
+| `CLM-EDA-0018` = 0.02 mA | `CLM-PHOT-0149` = 90 mA | 100% | circuit=BMR, corner=tt | device_variant=original LD |
+| `CLM-EDA-0018` = 0.02 mA | `CLM-PHOT-0150` = 118 mA | 100% | circuit=BMR, corner=tt | device_variant=RLD |
 | `CLM-DEV-0058` = 40 mA | `CLM-EDA-0018` = 0.02 mA | 100% | switching_regime=large switching current | circuit=BMR, corner=tt |
 | `CLM-DEV-0057` = 30 mA | `CLM-EDA-0018` = 0.02 mA | 100% | switching_regime=small switching current | circuit=BMR, corner=tt |
+| `CLM-DEV-0036` = 0.558 mA | `CLM-PHOT-0150` = 118 mA | 100% | temperature=2 K, state=after light irradiation | device_variant=RLD |
 | `CLM-DEV-0077` = 4 mA | `CLM-EDA-0018` = 0.02 mA | 100% | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° | circuit=BMR, corner=tt |
+| `CLM-DEV-0028` = 0.6 mA | `CLM-PHOT-0150` = 118 mA | 99% | process_step=current ramp-down | device_variant=RLD |
+| `CLM-DEV-0036` = 0.558 mA | `CLM-PHOT-0149` = 90 mA | 99% | temperature=2 K, state=after light irradiation | device_variant=original LD |
+| `CLM-DEV-0028` = 0.6 mA | `CLM-PHOT-0149` = 90 mA | 99% | process_step=current ramp-down | device_variant=original LD |
+| `CLM-DEV-0075` = 1.5 mA | `CLM-PHOT-0150` = 118 mA | 99% | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° | device_variant=RLD |
 | `CLM-DEV-0075` = 1.5 mA | `CLM-EDA-0018` = 0.02 mA | 99% | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° | circuit=BMR, corner=tt |
 | `CLM-DEV-0036` = 0.558 mA | `CLM-DEV-0058` = 40 mA | 99% | temperature=2 K, state=after light irradiation | switching_regime=large switching current |
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0058` = 40 mA | 98% | process_step=current ramp-down | switching_regime=large switching current |
+| `CLM-DEV-0075` = 1.5 mA | `CLM-PHOT-0149` = 90 mA | 98% | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° | device_variant=original LD |
 | `CLM-DEV-0036` = 0.558 mA | `CLM-DEV-0057` = 30 mA | 98% | temperature=2 K, state=after light irradiation | switching_regime=small switching current |
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0057` = 30 mA | 98% | process_step=current ramp-down | switching_regime=small switching current |
 | `CLM-DEV-0028` = 0.6 mA | `CLM-EDA-0018` = 0.02 mA | 97% | process_step=current ramp-down | circuit=BMR, corner=tt |
+| `CLM-DEV-0077` = 4 mA | `CLM-PHOT-0150` = 118 mA | 97% | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° | device_variant=RLD |
 | `CLM-DEV-0036` = 0.558 mA | `CLM-EDA-0018` = 0.02 mA | 96% | temperature=2 K, state=after light irradiation | circuit=BMR, corner=tt |
 | `CLM-DEV-0058` = 40 mA | `CLM-DEV-0075` = 1.5 mA | 96% | switching_regime=large switching current | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° |
+| `CLM-DEV-0077` = 4 mA | `CLM-PHOT-0149` = 90 mA | 96% | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° | device_variant=original LD |
 | `CLM-DEV-0057` = 30 mA | `CLM-DEV-0075` = 1.5 mA | 95% | switching_regime=small switching current | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° |
 | `CLM-DEV-0058` = 40 mA | `CLM-DEV-0077` = 4 mA | 90% | switching_regime=large switching current | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° |
 | `CLM-DEV-0057` = 30 mA | `CLM-DEV-0077` = 4 mA | 87% | switching_regime=small switching current | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° |
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0077` = 4 mA | 85% | process_step=current ramp-down | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° |
+| `CLM-DEV-0057` = 30 mA | `CLM-PHOT-0150` = 118 mA | 75% | switching_regime=small switching current | device_variant=RLD |
+| `CLM-DEV-0057` = 30 mA | `CLM-PHOT-0149` = 90 mA | 67% | switching_regime=small switching current | device_variant=original LD |
+| `CLM-DEV-0058` = 40 mA | `CLM-PHOT-0150` = 118 mA | 66% | switching_regime=large switching current | device_variant=RLD |
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0075` = 1.5 mA | 60% | process_step=current ramp-down | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° |
+| `CLM-DEV-0058` = 40 mA | `CLM-PHOT-0149` = 90 mA | 56% | switching_regime=large switching current | device_variant=original LD |
 
 ## `energy` (1284 pair(s))
 
@@ -118,10 +134,12 @@ _and 1244 more_
 | `CLM-ARCH-0022` = 169.1 x | `CLM-PROC-0062` = 417 x | 59% | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch | surrogate_model=deterministic U-Net |
 | `CLM-ARCH-0022` = 169.1 x | `CLM-PROC-0058` = 73 x | 57% | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch | surrogate_model=VP-DDBM, baseline_model=phase-field solver |
 
-## `frequency` (689 pair(s))
+## `frequency` (769 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-MAT-0299` = -7240 GHz | `CLM-MAT-0349` = 3600 GHz | 150% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | energy_range=~45.9 – 46.3 eV, edge=Re O2 edge |
+| `CLM-MAT-0298` = -1630 GHz | `CLM-MAT-0349` = 3600 GHz | 145% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | energy_range=~45.9 – 46.3 eV, edge=Re O2 edge |
 | `CLM-DEV-0012` = 370 GHz | `CLM-MAT-0298` = -1630 GHz | 123% | magnetic_field=8.1 T, frequency=1.9 THz | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P |
 | `CLM-MAT-0298` = -1630 GHz | `CLM-PHOT-0052` = 320 GHz | 120% | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P | frequency_offset=10 kHz, signal_type=measured phase-noise levels |
 | `CLM-ARCH-0151` = 4.34e+04 GHz | `CLM-MAT-0299` = -7240 GHz | 117% | component=FIGFLEX, activation_format=FP16 | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ |
@@ -160,10 +178,8 @@ _and 1244 more_
 | `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0061` = 7.48 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | corner_radius=1.4 mm |
 | `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0125` = 6 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | pump_detuning=27 MHz |
 | `CLM-MAT-0299` = -7240 GHz | `CLM-PROC-0033` = 4.5 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | holder_type=four-channel configuration, metric=-3 dB bandwidth |
-| `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0002` = 3.57 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | component=photonic molecule, mode_spacing=Ω1 |
-| `CLM-ARCH-0070` = 0.556 GHz | `CLM-MAT-0298` = -1630 GHz | 100% | process_node=TSMC 28 nm | material=NbOI2, cell_type=4-atoms cell, mode=polar mode P |
 
-_and 649 more_
+_and 729 more_
 
 ## `length_device` (5481 pair(s))
 
@@ -271,7 +287,7 @@ _and 272 more_
 |---|---|---|---|---|
 | `CLM-DEV-0064` = 6e-06 torr | `CLM-MAT-0296` = 3.75e+04 torr | 100% | temperature=room temperature | measurement=Tensile testing |
 
-## `relative_deviation` (8976 pair(s))
+## `relative_deviation` (9160 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -279,10 +295,12 @@ _and 272 more_
 | `CLM-EDA-0004` = 60 percent | `CLM-MAT-0111` = -60 percent | 200% | circuit=most complex circuit, framework=proposed framework | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-PROC-0044` = 59.9 percent | 200% | sample=B1-1 | voltage=8 VAg/AgCl, material=1 μm n-type GaN |
 | `CLM-ARCH-0198` = 60.3 percent | `CLM-MAT-0111` = -60 percent | 200% | baseline_utilization=42.4% | sample=B1-1 |
+| `CLM-ARCH-0223` = 58 percent | `CLM-MAT-0111` = -60 percent | 197% | mode=greedy | sample=B1-1 |
 | `CLM-ARCH-0170` = 62.3 percent | `CLM-MAT-0111` = -60 percent | 196% | frequency=80 MHz, model=ConvSNN | sample=B1-1 |
 | `CLM-ARCH-0089` = 64.2 percent | `CLM-MAT-0111` = -60 percent | 193% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0112` = 66.8 percent | 190% | sample=B1-1 | baseline=pure two-dimensional Coulomb reference, benchmark_protocol=high-field-calibrated |
 | `CLM-ARCH-0090` = 67.5 percent | `CLM-MAT-0111` = -60 percent | 189% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
+| `CLM-ARCH-0224` = 53 percent | `CLM-MAT-0111` = -60 percent | 188% | mode=greedy | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0252` = 53 percent | 188% | sample=B1-1 | band=NNN, coupling=Λ A, correlation_length=ξ ¯kF = 4 |
 | `CLM-ARCH-0187` = 70 percent | `CLM-MAT-0111` = -60 percent | 186% | workload=elementwise graph, technique=Symbolic dynamic compilation | sample=B1-1 |
 | `CLM-ARCH-0174` = 71.3 percent | `CLM-MAT-0111` = -60 percent | 184% | system=ARM2GC, benchmark_set=nine benchmarks | sample=B1-1 |
@@ -313,10 +331,8 @@ _and 272 more_
 | `CLM-DEV-0069` = 38 percent | `CLM-MAT-0111` = -60 percent | 163% | wavelength=365 nm, batch=batch A, operating_voltage=0 V | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0012` = 95 percent | 163% | sample=B1-1 | encoding_scheme=differential encoding, benchmark=MNIST |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0023` = 95 percent | 163% | sample=B1-1 | device_technology=printed Ag/ZnO/Au ECM memristors |
-| `CLM-MAT-0111` = -60 percent | `CLM-MEM-0044` = 95.33 percent | 163% | sample=B1-1 | dataset=Fisher’s Iris flower dataset, architecture=SNN architecture, device=Pr0.7Ca0.3MnO3 (PCMO) RRAM |
-| `CLM-MAT-0111` = -60 percent | `CLM-MEM-0045` = 96 percent | 162% | sample=B1-1 | model=ideal LIF neuron, dataset=Fisher’s Iris flower dataset |
 
-_and 8936 more_
+_and 9120 more_
 
 ## `resistance` (2 pair(s))
 
@@ -436,7 +452,7 @@ _and 12 more_
 |---|---|---|---|---|
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0007` = 3100 W/(m*K) | 99% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | temperature=room-temperature, sample_13c_concentration=~0.00024% |
 
-## `time` (2015 pair(s))
+## `time` (2212 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -450,6 +466,8 @@ _and 12 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0188` = 3.24e+10 ns | 100% | device_type=FTJ, architecture=Naive | benchmark=matmul_single_core, simulator=Wolfpine |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0189` = 7.2e+09 ns | 100% | device_type=FTJ, architecture=Naive | benchmark=matmul_single_core, simulator=ttsim |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0217` = 2.6e+10 ns | 100% | device_type=FTJ, architecture=Naive | model=ForeSight |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0221` = 1.15e+10 ns | 100% | device_type=FTJ, architecture=Naive | prover=VeriLoRA, input_length_range=64–2048, operation=opening the weights |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0222` = 1.24e+10 ns | 100% | device_type=FTJ, architecture=Naive | prover=VeriLoRA, input_length_range=64–2048, operation=opening the weights |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-DEV-0066` = 6e+10 ns | 100% | device_type=FTJ, architecture=Naive | software=MATLAB Deep Learning Toolbox |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-DEV-0089` = 0.007 ns | 100% | device_type=FTJ, architecture=Naive | sample=SESAM |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0011` = 1.35e+08 ns | 100% | device_type=FTJ, architecture=Naive | tool=JasperGold, module=cache coherence module |
@@ -466,6 +484,7 @@ _and 12 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0318` = 1.116e+14 ns | 100% | device_type=FTJ, architecture=Naive | method=Random sampling, dataset=600,000-sample Moir´e dataset |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0321` = 4.14e+12 ns | 100% | device_type=FTJ, architecture=Naive | method=FruBO with CatBoost, dataset=600,000-sample Moir´e dataset |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0323` = 2.592e+14 ns | 100% | device_type=FTJ, architecture=Naive | demagnetization_protocol=AC demagnetization |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0348` = 0.0008 ns | 100% | device_type=FTJ, architecture=Naive | edge=Re O2 edge, energy_range=~44–45 eV |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PHOT-0025` = 4e+06 ns | 100% | device_type=FTJ, architecture=Naive | illumination=random speckle illumination |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PHOT-0048` = 8.29e+10 ns | 100% | device_type=FTJ, architecture=Naive | algorithm=DBS, cores=128 cores |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PHOT-0073` = 0.0004 ns | 100% | device_type=FTJ, architecture=Naive | material=ITO film |
@@ -477,11 +496,8 @@ _and 12 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PROC-0069` = 9.166e+10 ns | 100% | device_type=FTJ, architecture=Naive | image_size=2000*2000 pixels, layers=160, algorithm=iterative SFF algorithm, cpu=AMD Ryzen 5 3600X CPU |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0020` = 1.4e+07 ns | 100% | device_type=FTJ, architecture=Merged | concurrency_n_a=48, design=our design with tiering, component=end-to-end time-between-tokens (TBT) |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0021` = 2.7e+07 ns | 100% | device_type=FTJ, architecture=Merged | concurrency_n_a=128, design=our design with tiering |
-| `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0130` = 1.036e+07 ns | 100% | device_type=FTJ, architecture=Merged | device=NVIDIA GeForce RTX 5080, form=direct, decode=ALU |
-| `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0131` = 1.115e+07 ns | 100% | device_type=FTJ, architecture=Merged | device=NVIDIA GeForce RTX 5080, form=hoisted, decode=LUT |
-| `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0153` = 3.72e+09 ns | 100% | device_type=FTJ, architecture=Merged | component=FIGFLEX, benchmark=Llama-3.1-8B |
 
-_and 1975 more_
+_and 2172 more_
 
 ## `voltage` (99 pair(s))
 

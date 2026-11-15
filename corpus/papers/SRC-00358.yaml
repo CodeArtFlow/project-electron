@@ -1,0 +1,132 @@
+id: SRC-00358
+title: Ultrafast Hole Transport and Electron Localization in Superatomic Re$_{6}$Se$_{8}$Cl$_{2}$
+doi: null
+arxiv_id: 2611.13363v1
+url: https://arxiv.org/abs/2611.13363v1
+venue_id: arxiv_api
+authors:
+- name: Jocelyn L. Mendes-Antaya
+  affiliation: null
+  corresponding: null
+- name: Ye-Jin Kim
+  affiliation: null
+  corresponding: null
+- name: Jonathan M. Michelsen
+  affiliation: null
+  corresponding: null
+- name: Jessica Yu
+  affiliation: null
+  corresponding: null
+- name: Shoushou He
+  affiliation: null
+  corresponding: null
+- name: Xavier Roy
+  affiliation: null
+  corresponding: null
+- name: Hanzhe Liu
+  affiliation: null
+  corresponding: null
+- name: Scott K. Cushing
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-09'
+retrieved_date: '2026-11-15'
+access: full_text
+read_scope: Automated reading. The full PDF text (48,482 characters, 21 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.13363v1 on
+  2026-11-15. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The spectral shift associated with hole thermalization in the VBs occurs on a timescale of
+  0.8 ± 0.2 ps, with an energy shift of ~0.4 eV (Fig. 2d).”
+
+  “Kinetic trace of hot hole thermalization at the Re O2 edge averaged across ~44–45 eV.”
+
+  “In our experiment, a 3.1 eV (400 nm) excitation pulse generates electron-hole pairs across the band
+  gap of single crystalline Re6Se8Cl2.”
+
+  “The oscillation period is measured to be 270 fs, which corresponds to 3.6 THz as shown in panel b.”
+
+  “a, Kinetic profile of intensity oscillation averaged across ~45.9 – 46.3 eV, fitted with a sine function
+  (dashed red line).”
+
+  “We measure phonon oscillations in our transient XUV absorption spectra at the Re O2 edge (Fig. 2a).”'
+method_summary: '“In our experiment, a 3.1 eV (400 nm) excitation pulse generates electron-hole pairs
+  across the band gap of single crystalline Re6Se8Cl2.”
+
+  “The resulting carrier dynamics are probed by a broadband XUV pulse in a 10° grazing incidence reflection
+  geometry.”
+
+  “The XUV pulse simultaneously measures the Re O2 and Se M4,5 edges, revealing the local chemical environment
+  around Re and Se sites, as shown in Figures 2 and 3, respectively.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14960
+    output: 2992
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: The indirect band gap of Re6Se8Cl2 is calculated to be 1.2 eV.
+    reason: 'unit conversion refused: voltage: cannot convert 1.2 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** 3'
+    quotes:
+    - The calculated projected density of states (PDOS) using density functional theory (DFT) predicts
+      an indirect band gap (Eg) of 1.2 eV as shown in Figure 1b, similar to measured and reported values
+      (see the Supplementary Information for detai
+  - statement: The spectral shift associated with hole thermalization in the valence bands produces an
+      energy shift of approximately 0.4 eV.
+    reason: 'unit conversion refused: voltage: cannot convert 0.4 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** 3'
+    quotes:
+    - The spectral shift associated with hole thermalization in the VBs occurs on a timescale of 0.8 ±
+      0.2 ps, with an energy shift of ~0.4 eV (Fig. 2d).
+    - In our experiment, a 3.1 eV (400 nm) excitation pulse generates electron-hole pairs across the band
+      gap of single crystalline Re6Se8Cl2.
+    - Kinetic trace of hot hole thermalization at the Re O2 edge averaged across ~44–45 eV.
+  - statement: Thermalization of holes at the Se M5 edge feature at ~56.5 eV has a time constant of 0.9
+      ± 0.2 ps.
+    reason: '[qualifier_dropped] the statement says the value is approximate but quantity.approximate
+      is false. Record the qualifier the source used - UnitEngine.record(..., bound=..., approximate=...).'
+    quotes:
+    - The feature at ~56.5 eV attributed to a Se 3d5/2 transition to the VB has a time constant of 0.9
+      ± 0.2 ps (red).
+    - In our experiment, a 3.1 eV (400 nm) excitation pulse generates electron-hole pairs across the band
+      gap of single crystalline Re6Se8Cl2.
+  - statement: The intensity feature at ~57.5 eV associated with a Se 3d3/2 transition to the VB increases
+      with a time constant of 0.7 ± 0.3 ps.
+    reason: '[qualifier_dropped] the statement says the value is approximate but quantity.approximate
+      is false. Record the qualifier the source used - UnitEngine.record(..., bound=..., approximate=...).'
+    quotes:
+    - The feature at ~57.5 eV associated with a Se 3d3/2 transition to the VB increases in intensity with
+      a time constant of 0.7 ± 0.3 ps (yellow).
+    - In our experiment, a 3.1 eV (400 nm) excitation pulse generates electron-hole pairs across the band
+      gap of single crystalline Re6Se8Cl2.
+  - statement: Electrons in the CB at ~59.3 eV at the Se edge have a thermalization time constant of 0.8
+      ± 0.4 ps.
+    reason: the quote says the number is approximate but approximate is false
+    quotes:
+    - The electrons in the CB at ~59.3 eV have a thermalization time constant of 0.8 ± 0.4.
+    - In our experiment, a 3.1 eV (400 nm) excitation pulse generates electron-hole pairs across the band
+      gap of single crystalline Re6Se8Cl2.
+    - Kinetic profiles for thermalization of holes and electrons at Se sites.
+  - statement: The measured phonon oscillation period at the Re O2 edge averaged across ~45.9–46.3 eV
+      is 270 fs.
+    reason: '[qualifier_dropped] the statement says the value is approximate but quantity.approximate
+      is false. Record the qualifier the source used - UnitEngine.record(..., bound=..., approximate=...).'
+    quotes:
+    - The oscillation period is measured to be 270 fs, which corresponds to 3.6 THz as shown in panel
+      b.
+    - In our experiment, a 3.1 eV (400 nm) excitation pulse generates electron-hole pairs across the band
+      gap of single crystalline Re6Se8Cl2.
+    - a, Kinetic profile of intensity oscillation averaged across ~45.9 – 46.3 eV, fitted with a sine
+      function (dashed red line).
+    - We measure phonon oscillations in our transient XUV absorption spectra at the Re O2 edge (Fig. 2a).
+corrections: []

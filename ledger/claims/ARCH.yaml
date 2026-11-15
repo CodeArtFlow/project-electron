@@ -6352,3 +6352,147 @@ claims:
     verified_quotes: 3
   conditions:
     comparisons_count: '90'
+- id: CLM-ARCH-0221
+  topic: ARCH
+  statement: Opening fixed weights in VeriLoRA 7B takes approximately 11.5 seconds across input lengths
+    from 64 to 2048 tokens.
+  sources:
+  - SRC-00351
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-12'
+  created: '2026-11-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    prover: VeriLoRA
+    input_length_range: 64–2048
+    operation: opening the weights
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: true
+    as_published:
+      value: 11.5
+      unit: s
+    si_base:
+      value: 11.5
+      unit: s
+    display:
+      value: 11499999999.999998
+      unit: ns
+    conditions:
+      prover: VeriLoRA
+      input_length_range: 64–2048
+      operation: opening the weights
+- id: CLM-ARCH-0222
+  topic: ARCH
+  statement: Opening fixed weights in VeriLoRA 13B takes approximately 12.4 seconds across input lengths
+    from 64 to 2048 tokens.
+  sources:
+  - SRC-00351
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-12'
+  created: '2026-11-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    prover: VeriLoRA
+    input_length_range: 64–2048
+    operation: opening the weights
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: true
+    as_published:
+      value: 12.4
+      unit: s
+    si_base:
+      value: 12.4
+      unit: s
+    display:
+      value: 12399999999.999998
+      unit: ns
+    conditions:
+      prover: VeriLoRA
+      input_length_range: 64–2048
+      operation: opening the weights
+- id: CLM-ARCH-0223
+  topic: ARCH
+  statement: On the Jetson Nano, LazyWeights with the unit takes 58–64% less time per token than CPU llama.cpp
+    under greedy decoding.
+  sources:
+  - SRC-00353
+  grade: B
+  credibility: unknown
+  evidence_type: projected
+  status: active
+  as_of: '2026-11-12'
+  created: '2026-11-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    mode: greedy
+  quantity:
+    quantity: relative_deviation
+    bound: lower_bound
+    approximate: false
+    as_published:
+      value: 58.0
+      unit: '%'
+    si_base:
+      value: 0.58
+      unit: dimensionless
+    display:
+      value: 57.99999999999999
+      unit: percent
+    conditions:
+      mode: greedy
+- id: CLM-ARCH-0224
+  topic: ARCH
+  statement: On the Jetson Nano, LazyWeights with the unit consumes 53–57% less energy per token than
+    CPU llama.cpp under greedy decoding.
+  sources:
+  - SRC-00353
+  grade: B
+  credibility: unknown
+  evidence_type: projected
+  status: active
+  as_of: '2026-11-12'
+  created: '2026-11-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    mode: greedy
+  quantity:
+    quantity: relative_deviation
+    bound: lower_bound
+    approximate: false
+    as_published:
+      value: 53.0
+      unit: '%'
+    si_base:
+      value: 0.53
+      unit: dimensionless
+    display:
+      value: 53.0
+      unit: percent
+    conditions:
+      mode: greedy

@@ -1,10 +1,21 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-14.
+Topic code `PHOT`. Last reviewed 2026-11-15.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
 ## Current position
+
+### current
+
+- **90 mA** — The original unimplemented AlGaInP laser diode exhibits a threshold current of 90 mA.
+  - `CLM-PHOT-0149` · device_variant original LD · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00357
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **118 mA** — The FIB-milled random laser diode exhibits a threshold current of 118 mA.
+  - `CLM-PHOT-0150` · device_variant RLD · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00357
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### frequency
 
@@ -423,6 +434,22 @@ Topic code `PHOT`. Last reviewed 2026-11-14.
   - `CLM-PHOT-0137` · grade B · credibility unknown · measured · as of 2026-11-05
   - sources: SRC-00315
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Single-mode racetrack resonators at 493 nm wavelength exhibit a propagation loss of 2.9 ± 0.2 dB/cm.
+  - `CLM-PHOT-0145` · wavelength 493 nm, waveguide_top_width 250 nm, device racetrack resonators · grade B · credibility unknown · measured · as of 2026-11-10
+  - sources: SRC-00354
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- An optimum 1x2 MMI splitter with a 34 µm interaction length exhibits an excess insertion loss of 0.5 dB.
+  - `CLM-PHOT-0146` · interaction_length 34 µm, component 1× 2 MMI · grade B · credibility unknown · measured · as of 2026-11-10
+  - sources: SRC-00354
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Optimized grating couplers achieve a peak efficiency of -4.8 dB per grating.
+  - `CLM-PHOT-0147` · grating_pitch 274 nm, duty_cycle 55% · grade B · credibility unknown · measured · as of 2026-11-10
+  - sources: SRC-00354
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- A 3 mm long amplitude modulator achieves a half-wave voltage-length product of 450 mV·cm at 1 MHz.
+  - `CLM-PHOT-0148` · device_length 3 mm, drive_frequency 1 MHz, electrode_gap 3 µm · grade B · credibility unknown · measured · as of 2026-11-10
+  - sources: SRC-00354
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 - The 1×2 photonic switch has a footprint of 6.3µm×31µm.
   - `CLM-PHOT-0140` · device_type 1×2 photonic switch · grade B · credibility unknown · simulated · as of 2026-11-12
   - sources: SRC-00347
@@ -653,6 +680,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 144
-- grades: {'B': 137, 'A': 7}
-- distinct sources: 51
+- claims: 150
+- grades: {'B': 143, 'A': 7}
+- distinct sources: 53

@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.14495v1
 doi: null
-title: 'SkipLane: Write-Once, Conflict-Free Accumulation for Zero-Skipping CNN Engines
-  on FPGAs'
+title: 'SkipLane: Write-Once, Conflict-Free Accumulation for Zero-Skipping CNN Engines on FPGAs'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-10'
@@ -23,6 +22,59 @@ id: CAND-20261111-0065
 harvested_date: '2026-11-11'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-15'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Six engines run at a clock frequency of 140 MHz on a PYNQ-Z2 board using 21,082 LUTs.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Six engines
+      meet 140 MHz on a PYNQ-Z2 in 21.1k LUTs and run LeNet-5 bi'''
+    quotes:
+    - Six engines meet 140 MHz on a PYNQ-Z2 in 21.1k LUTs and run LeNet-5 bit-exact on the board
+    - this work (routed) 21,082 19,013 81 54
+    - 140 MHz (alone and in system) / 0.61 W (est.)
+    - TABLE IV IMPLEMENTATION ON XC7Z020 (SIX ENGINES)
+  - statement: The full design utilizes 21,082 LUTs on the xc7z020 target.
+    reason: the statement contains the number 20, which none of its quotes contain
+    quotes:
+    - this work (routed) 21,082 19,013 81 54
+    - The full design (Table IV) is implemented in Vivado 2023.2 on the xc7z020-1, out of context.
+    - TABLE IV IMPLEMENTATION ON XC7Z020 (SIX ENGINES)
+  - statement: The full design consumes an estimated power of 0.61 W on the xc7z020 platform.
+    reason: the statement contains the number 20, which none of its quotes contain
+    quotes:
+    - 140 MHz (alone and in system) / 0.61 W (est.)
+    - TABLE IV IMPLEMENTATION ON XC7Z020 (SIX ENGINES)
+  - statement: For conv1 of LeNet-5 running on the board, the engine execution cycle count is 425 cycles.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - conv1 824 425 1.94× 824 / 5.49 612 / 4.37 1.26×
+    - Board counters, means over 100 digits (all 1,700 sparse passes bit-exact).
+    - engine∗ (cycles) dense sparse speedup
+    - TABLE V LENET-5 (3×3 KERNELS) ON THE PYNQ-Z2, 100 MNIST TEST DIGITS
+  - statement: End-to-end execution time for conv1 of LeNet-5 in sparse mode is 4.37 µs on the board.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - conv1 824 425 1.94× 824 / 5.49 612 / 4.37 1.26×
+    - Board counters, means over 100 digits (all 1,700 sparse passes bit-exact).
+    - end to end (cycles / µs)
+    - 612 / 4.37
+  - statement: At 0.51 activation sparsity, the proposed engine takes 9,583 cycles in RTL simulation on
+      128×128 inputs.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''s 0 0.25
+      0.51 0.69 0.80 0.90'''
+    quotes:
+    - s 0 0.25 0.51 0.69 0.80 0.90
+    - this work (B=4) 17,055 13,603 9,583 6,503 4,866 4,603
+    - ACCUMULATOR ABLATION AT 128×128, ONE ENGINE (CYCLES)
+  tokens:
+    input: 11056
+    output: 2383
+  fetched_chars: 26402

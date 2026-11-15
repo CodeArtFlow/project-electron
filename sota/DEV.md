@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-11-14.
+Topic code `DEV`. Last reviewed 2026-11-15.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -68,6 +68,10 @@ Topic code `DEV`. Last reviewed 2026-11-14.
 - **≈7 GHz** — BLS measurements on top of the Pt bar under DC gate currents detect a dominant mode near 7 GHz.
   - `CLM-DEV-0072` · measurement_method BLS spectra · grade B · credibility unknown · measured · as of 2026-10-16
   - sources: SRC-00183
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **3.04e-05 GHz** — The FEA simulation predicts a resonance frequency of 30.4 kHz for the thin-film TFE P3F LN transducer.
+  - `CLM-DEV-0102` · device_type TFE P3F LN transducer · grade B · credibility unknown · simulated · as of 2026-11-09
+  - sources: SRC-00356
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### length device
@@ -289,6 +293,30 @@ Topic code `DEV`. Last reviewed 2026-11-14.
   - `CLM-DEV-0083` · mode longitudinal amplitude mode · grade B · credibility unknown · simulated · as of 2026-10-27
   - sources: SRC-00242
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The FEA simulation yields a peak out-of-plane displacement of 19.5 µm/V at 30.4 kHz.
+  - `CLM-DEV-0103` · grade B · credibility unknown · simulated · as of 2026-11-09
+  - sources: SRC-00356
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The measured static capacitance C0 of the fabricated device is 17 pF.
+  - `CLM-DEV-0104` · setup on an elevated, grounded metallic pedestal · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00356
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- LDV measurements demonstrate a peak out-of-plane displacement of 8.5 µm/V at resonance.
+  - `CLM-DEV-0105` · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00356
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The quasi-static peak out-of-plane displacement measured at 5 kHz is 145 nm/V.
+  - `CLM-DEV-0106` · frequency 5 kHz · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00356
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The open-circuit sensitivity (SOC) at 5 kHz is 1.4 mV/Pa.
+  - `CLM-DEV-0107` · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00356
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- With the back-cavity effect present, the open-circuit sensitivity (SOC) at 5 kHz is 0.78 mV/Pa.
+  - `CLM-DEV-0108` · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00356
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -497,6 +525,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 98
-- grades: {'B': 98}
-- distinct sources: 42
+- claims: 105
+- grades: {'B': 105}
+- distinct sources: 43

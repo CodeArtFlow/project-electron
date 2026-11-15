@@ -1,0 +1,42 @@
+{
+  "arxiv_id": "2611.17108v1",
+  "claims": {
+    "CLM-ARCH-0223": {
+      "evidence_spans": [
+        "On the Nano, LazyWeights needs 58–64% less time and 53–57% less energy per token than CPU llama.cpp",
+        "greedy, and 70–76% less time and 69–76% less energy with speculation in both.",
+        "The unit’s latency and energy are projections from measured device numbers and pre-layout synthesis, not a fabricated SoC"
+      ],
+      "statement": "On the Jetson Nano, LazyWeights with the unit takes 58–64% less time per token than CPU llama.cpp under greedy decoding.",
+      "terms": []
+    },
+    "CLM-ARCH-0224": {
+      "evidence_spans": [
+        "On the Nano, LazyWeights needs 58–64% less time and 53–57% less energy per token than CPU llama.cpp",
+        "greedy, and 70–76% less time and 69–76% less energy with speculation in both.",
+        "The unit’s latency and energy are projections from measured device numbers and pre-layout synthesis, not a fabricated SoC"
+      ],
+      "statement": "On the Jetson Nano, LazyWeights with the unit consumes 53–57% less energy per token than CPU llama.cpp under greedy decoding.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "A bit-exact 0.21 mm2 ASIC decoder unit (1 GHz, 7 nm) cuts Orin latency and energy per token by up to 36% and 38% (54% and 44% with prompt-lookup speculation).",
+    "the ASIC decoder unit runs bit-exact on a Zynq UltraScale+ FPGA (AMD ZCU102).",
+    "Synthesis: Yosys/ABC, OpenROAD, OpenSTA, ASAP7 RVT TT, logic synthesis (pre-layout).",
+    "128 new tokens for each of 6 prompts (32 for streamed Mistral-7B on the Nano); energy integrated from the module input rail, idle included; Orin clocks pinned (MAXN SUPER).",
+    "The unit’s latency and energy are projections from measured device numbers and pre-layout synthesis, not a fabricated SoC; the FPGA shows bit- and cycle-exact decoding, but at FPGA clocks, not 1 GHz.",
+    "For streamed Mistral-7B the twin is no proxy for the unit",
+    "We did not evaluate Llama-3 or Qwen3, which quantize worse [23], or long contexts, where the uncoded fp16 KV cache dilutes the saving"
+  ],
+  "generated": "2026-11-15",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00353",
+  "text_chars": 40351,
+  "text_sha256": "6e72846143fcd903b3af86eb698ae75f6df09339eeac9bac5acaa23356a0ca12"
+}

@@ -1,6 +1,6 @@
 # Packaging — state of the art
 
-Topic code `PKG`. Last reviewed 2026-11-14.
+Topic code `PKG`. Last reviewed 2026-11-15.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -40,6 +40,10 @@ Topic code `PKG`. Last reviewed 2026-11-14.
   - `CLM-PKG-0011` · grade B · credibility unknown · measured · as of 2026-10-22
   - sources: SRC-00208
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Under split-port OBM (DP-attn. + EP) with equal KV capacity on DeepSeek-V4-Pro, cluster weight HBM is reduced by 8.44 PB (82%) relative to the HBM baseline.
+  - `CLM-PKG-0012` · system OBM (DP-attn. + EP), model DeepSeek-V4-Pro · grade B · credibility unknown · simulated · as of 2026-11-12
+  - sources: SRC-00352
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -68,6 +72,6 @@ _None._
 
 ## Evidence base
 
-- claims: 11
-- grades: {'B': 11}
-- distinct sources: 3
+- claims: 12
+- grades: {'B': 12}
+- distinct sources: 4

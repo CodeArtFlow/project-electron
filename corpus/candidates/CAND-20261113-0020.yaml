@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.17037v1
 doi: null
-title: UV and deep-UV ultrafast harmonic generation enhanced by resonant gold nano-pillar
-  metasurface
+title: UV and deep-UV ultrafast harmonic generation enhanced by resonant gold nano-pillar metasurface
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-12'
@@ -29,6 +28,85 @@ id: CAND-20261113-0020
 harvested_date: '2026-11-13'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-15'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: 3D finite-element simulations indicate that at an angle of incidence of 17° and a pump
+      wavelength of 800 nm, the resonant SHG from the gold nanopillar metasurfa
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - The theoretical predictions suggest that resonant SHG produces a peak conversion efficiency of 87.7676*10SH
+      SH FF P P  (Fig. 2(c))
+    - resonant SHG produces a peak conversion efficiency
+    - 17B 
+    - illuminated by pump of 800 nm
+  - statement: 3D numerical simulations predict that for a 17° incident angle and 800 nm pump, resonant
+      THG reaches a peak conversion efficiency of 1.0878e-7.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - The resonant THG reaches a peak conversion efficiency of 7*1. 08 78TH TH FF P P  (Fig. 2(d))
+    - The resonant THG reaches a peak conversion efficiency
+    - 17B 
+    - illuminated by pump of 800 nm
+  - statement: Under TM-polarized pump illumination at an angle of incidence of 16° and a pump wavelength
+      of 795 nm, the measured peak SHG conversion efficiency of the gold na
+    reason: the statement contains the number 16, which none of its quotes contain
+    quotes:
+    - the spectral measurement of the resonant SHG shows a peak conversion efficiency of 82.09958*10SH
+      TH FF P P 
+    - 16A 
+    - 795A nm 
+    - '395'
+  - statement: At an angle of incidence of 17° and a resonant pump wavelength of 806 nm, the experimental
+      peak SHG conversion efficiency is 2.35165e-8.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''82.35165*10\uf02d'''
+    quotes:
+    - 82.35165*10
+    - Experimental measurements of total SHG at 16A  , 17B  , and 18C  angles of incidence
+    - 17B 
+    - 806B nm 
+  - statement: At an incidence angle of 18° and a pump wavelength of 815 nm, the measured peak SHG conversion
+      efficiency is 2.61595e-8.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''82.61595*10\uf02d'''
+    quotes:
+    - 82.61595*10
+    - Experimental measurements of total SHG at 16A  , 17B  , and 18C  angles of incidence
+    - 18C 
+    - 815C nm 
+  - statement: Under pump illumination at a 16° angle of incidence and a resonant pump wavelength of 795
+      nm, the spectral measurement of resonant THG demonstrates a peak conve
+    reason: the statement contains the number 16, which none of its quotes contain
+    quotes:
+    - the spectral measurement of the resonant THG shows a peak conversion efficiency of 74.17152*10TH
+      TH FF P P 
+    - 16A 
+    - 795A nm 
+    - '262.33'
+  - statement: At a 17° angle of incidence and a pump wavelength of 806 nm, the measured peak THG conversion
+      efficiency is 2.9107e-7.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''72.9107*10\uf02d'''
+    quotes:
+    - 72.9107*10
+    - experimental measurements of total THG at 16A  , 17B  , and 18C  angles of incidence
+    - 17B 
+    - 806B nm 
+  - statement: At an 18° angle of incidence and an 815 nm pump wavelength, the experimental peak THG conversion
+      efficiency is 3.3253e-7.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''73.3253*10\uf02d'''
+    quotes:
+    - 73.3253*10
+    - experimental measurements of total THG at 16A  , 17B  , and 18C  angles of incidence
+    - 18C 
+    - 815C nm 
+  tokens:
+    input: 16370
+    output: 3362
+  fetched_chars: 54137

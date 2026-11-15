@@ -246,3 +246,23 @@ claims:
     model: gemini-3.6-flash
     prompt_version: reader-v5
     verified_quotes: 2
+- id: CLM-PKG-0012
+  topic: PKG
+  statement: Under split-port OBM (DP-attn. + EP) with equal KV capacity on DeepSeek-V4-Pro, cluster weight
+    HBM is reduced by 8.44 PB (82%) relative to the HBM baseline.
+  sources:
+  - SRC-00352
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-12'
+  created: '2026-11-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    system: OBM (DP-attn. + EP)
+    model: DeepSeek-V4-Pro

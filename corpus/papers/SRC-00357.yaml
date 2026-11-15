@@ -1,0 +1,93 @@
+id: SRC-00357
+title: Hysteresis and mode switching in FIB engineered random laser diodes
+doi: null
+arxiv_id: 2611.13328v1
+url: https://arxiv.org/abs/2611.13328v1
+venue_id: arxiv_api
+authors:
+- name: Andrea Martínez Pacheco
+  affiliation: null
+  corresponding: null
+- name: Sara Rodríguez Corvillo
+  affiliation: null
+  corresponding: null
+- name: Alberto Rivera-Calzada
+  affiliation: null
+  corresponding: null
+- name: Antonio Consoli
+  affiliation: null
+  corresponding: null
+- name: Jacobo Santamaría
+  affiliation: null
+  corresponding: null
+- name: Cefe López
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-09'
+retrieved_date: '2026-11-15'
+access: full_text
+read_scope: Automated reading. The full PDF text (53,597 characters, 14 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.13328v1 on
+  2026-11-15. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The original LD (see Section 1 in Supplementary Information) has a ITH = 90 mA”
+
+  “The RLD has a threshold current ITH = 118 mA and an efficiency slope of 0.14 W/A”'
+method_summary: “The RLD is placed on a laser diode mount and temperature and current controlled via PC.
+  The output power is measured with a calibrated photodiode and the emission spectrum with a spectrometer
+  with a resolution of 0.15 nm.”
+limitations: “Although different milling ratios and slot depths can be implemented, we restrict the present
+  study to a single milling ratio and a fixed slot depth for simplicity.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 15635
+    output: 2265
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: The original unimplemented laser diode demonstrates an efficiency slope of 0.98 W/A.
+    reason: 'unit conversion refused: current_drive: cannot convert 0.98 W/A to A/m - Cannot convert from
+      ''watt / ampere'' ([mass] * [length] ** 2 / [time] ** 3 / [current]) to ''ampere / meter'' ([cur'
+    quotes:
+    - The original LD (see Section 1 in Supplementary Information) has a ITH = 90 mA, efficiency slope
+      of 0.98 W/A and ηD = 51 %.
+  - statement: The original unimplemented laser diode achieves a differential quantum efficiency of 51%.
+    reason: 'unit conversion refused: efficiency_compute: cannot convert 51.0 % to 1/J - Cannot convert
+      from ''percent'' (dimensionless) to ''1 / joule'' ([time] ** 2 / [mass] / [length] ** 2). A dimens'
+    quotes:
+    - The original LD (see Section 1 in Supplementary Information) has a ITH = 90 mA, efficiency slope
+      of 0.98 W/A and ηD = 51 %.
+  - statement: The FIB-milled random laser diode exhibits an efficiency slope of 0.14 W/A.
+    reason: 'unit conversion refused: current_drive: cannot convert 0.14 W/A to A/m - Cannot convert from
+      ''watt / ampere'' ([mass] * [length] ** 2 / [time] ** 3 / [current]) to ''ampere / meter'' ([cur'
+    quotes:
+    - The RLD has a threshold current ITH = 118 mA and an efficiency slope of 0.14 W/A, which corresponds
+      to a differential quantum efficiency, ηD = 7 %.
+    - The RLD has a threshold current ITH = 118 mA and an efficiency slope of 0.14 W/A
+  - statement: The FIB-milled random laser diode has a differential quantum efficiency of 7%.
+    reason: 'unit conversion refused: efficiency_compute: cannot convert 7.0 % to 1/J - Cannot convert
+      from ''percent'' (dimensionless) to ''1 / joule'' ([time] ** 2 / [mass] / [length] ** 2). A dimensi'
+    quotes:
+    - which corresponds to a differential quantum efficiency, ηD = 7 %.
+    - The RLD has a threshold current ITH = 118 mA and an efficiency slope of 0.14 W/A
+  - statement: The mean downward switching current IDOWN in the RLD hysteresis loop is 200.6 mA.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - their ensembles, denoted as IDOWN and IUP, yield mean values of 200.6 mA and 192.6 mA.
+  - statement: The mean upward switching current IUP in the RLD hysteresis loop is 192.6 mA.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - their ensembles, denoted as IDOWN and IUP, yield mean values of 200.6 mA and 192.6 mA.
+corrections: []

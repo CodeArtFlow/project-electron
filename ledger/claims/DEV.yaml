@@ -2880,3 +2880,138 @@ claims:
       unit: fJ
     conditions:
       heterostructure: Ta(1.5 nm)/Py(3 nm)/Au(2 nm)
+- id: CLM-DEV-0102
+  topic: DEV
+  statement: The FEA simulation predicts a resonance frequency of 30.4 kHz for the thin-film TFE P3F LN
+    transducer.
+  sources:
+  - SRC-00356
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device_type: TFE P3F LN transducer
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 30.4
+      unit: kHz
+    si_base:
+      value: 30400.0
+      unit: Hz
+    display:
+      value: 3.04e-05
+      unit: GHz
+    conditions:
+      device_type: TFE P3F LN transducer
+- id: CLM-DEV-0103
+  topic: DEV
+  statement: The FEA simulation yields a peak out-of-plane displacement of 19.5 µm/V at 30.4 kHz.
+  sources:
+  - SRC-00356
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-DEV-0104
+  topic: DEV
+  statement: The measured static capacitance C0 of the fabricated device is 17 pF.
+  sources:
+  - SRC-00356
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    setup: on an elevated, grounded metallic pedestal
+- id: CLM-DEV-0105
+  topic: DEV
+  statement: LDV measurements demonstrate a peak out-of-plane displacement of 8.5 µm/V at resonance.
+  sources:
+  - SRC-00356
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-DEV-0106
+  topic: DEV
+  statement: The quasi-static peak out-of-plane displacement measured at 5 kHz is 145 nm/V.
+  sources:
+  - SRC-00356
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    frequency: 5 kHz
+- id: CLM-DEV-0107
+  topic: DEV
+  statement: The open-circuit sensitivity (SOC) at 5 kHz is 1.4 mV/Pa.
+  sources:
+  - SRC-00356
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-DEV-0108
+  topic: DEV
+  statement: With the back-cavity effect present, the open-circuit sensitivity (SOC) at 5 kHz is 0.78
+    mV/Pa.
+  sources:
+  - SRC-00356
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-09'
+  created: '2026-11-15'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2

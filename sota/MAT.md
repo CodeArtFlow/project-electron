@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-14.
+Topic code `MAT`. Last reviewed 2026-11-15.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -221,6 +221,10 @@ Topic code `MAT`. Last reviewed 2026-11-14.
   - `CLM-MAT-0299` · material NbOI2, cell_type 4-atoms cell, mode Peierls mode δ · grade B · credibility unknown · simulated · as of 2026-11-04
   - sources: SRC-00298
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **3600 GHz** — The phonon intensity oscillation frequency observed at the Re O2 edge corresponds to 3.6 THz.
+  - `CLM-MAT-0349` · energy_range ~45.9 – 46.3 eV, edge Re O2 edge · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00358
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### length device
 
@@ -1065,6 +1069,22 @@ Topic code `MAT`. Last reviewed 2026-11-14.
   - `CLM-MAT-0322` · conformation six-layer conformation · grade B · credibility unknown · simulated · as of 2026-11-09
   - sources: SRC-00328
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The Stark slope of the high-energy interlayer exciton in 5L 2H-WSe2 decreases to 0.0848 e·nm.
+  - `CLM-MAT-0344` · layer_thickness 5L · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00355
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The Stark slope of the high-energy interlayer exciton in 6L 2H-WSe2 decreases to 0.107 e·nm.
+  - `CLM-MAT-0345` · layer_thickness 6L · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00355
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- In 5L 2H-WSe2, the corrected charge separation distance of the high-energy interlayer exciton is 1.98 Å.
+  - `CLM-MAT-0346` · layer_thickness 5L · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00355
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- In 6L 2H-WSe2, the corrected charge separation distance of the high-energy interlayer exciton is 2.50 Å.
+  - `CLM-MAT-0347` · layer_thickness 6L · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00355
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 - The total average static dielectric constant for tetragonal HZO calculated using PBE is 120.9.
   - `CLM-MAT-0330` · material HZO, functional PBE · grade B · credibility unknown · simulated · as of 2026-11-10
   - sources: SRC-00337
@@ -1394,6 +1414,10 @@ Topic code `MAT`. Last reviewed 2026-11-14.
   - `CLM-MAT-0321` · method FruBO with CatBoost, dataset 600,000-sample Moir´e dataset · grade B · credibility unknown · simulated · as of 2026-11-09
   - sources: SRC-00328
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **0.0008 ns** — Hot hole thermalization at the Re O2 edge occurs on a timescale of 0.8 ± 0.2 ps.
+  - `CLM-MAT-0348` · edge Re O2 edge, energy_range ~44–45 eV · grade B · credibility unknown · measured · as of 2026-11-09
+  - sources: SRC-00358
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 - **2.592e+14 ns** — The demagnetization procedure was carried out for a duration of 72 hours.
   - `CLM-MAT-0323` · demagnetization_protocol AC demagnetization · grade B · credibility unknown · measured · as of 2026-11-10
   - sources: SRC-00330
@@ -1615,6 +1639,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 343
-- grades: {'B': 343}
-- distinct sources: 124
+- claims: 349
+- grades: {'B': 349}
+- distinct sources: 126

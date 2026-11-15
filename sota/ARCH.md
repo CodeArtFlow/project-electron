@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-14.
+Topic code `ARCH`. Last reviewed 2026-11-15.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -830,6 +830,14 @@ Topic code `ARCH`. Last reviewed 2026-11-14.
   - sources: SRC-00338
   - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0132 — see the open register
+- **≥ 58 percent** — On the Jetson Nano, LazyWeights with the unit takes 58–64% less time per token than CPU llama.cpp under greedy decoding.
+  - `CLM-ARCH-0223` · mode greedy · grade B · credibility unknown · projected · as of 2026-11-12
+  - sources: SRC-00353
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≥ 53 percent** — On the Jetson Nano, LazyWeights with the unit consumes 53–57% less energy per token than CPU llama.cpp under greedy decoding.
+  - `CLM-ARCH-0224` · mode greedy · grade B · credibility unknown · projected · as of 2026-11-12
+  - sources: SRC-00353
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### sensitivity advantage ratio
 
@@ -939,6 +947,14 @@ Topic code `ARCH`. Last reviewed 2026-11-14.
   - `CLM-ARCH-0217` · model ForeSight · grade B · credibility unknown · measured · as of 2026-11-10
   - sources: SRC-00336
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈1.15e+10 ns** — Opening fixed weights in VeriLoRA 7B takes approximately 11.5 seconds across input lengths from 64 to 2048 tokens.
+  - `CLM-ARCH-0221` · prover VeriLoRA, input_length_range 64–2048, operation opening the weights · grade B · credibility unknown · measured · as of 2026-11-12
+  - sources: SRC-00351
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **≈1.24e+10 ns** — Opening fixed weights in VeriLoRA 13B takes approximately 12.4 seconds across input lengths from 64 to 2048 tokens.
+  - `CLM-ARCH-0222` · prover VeriLoRA, input_length_range 64–2048, operation opening the weights · grade B · credibility unknown · measured · as of 2026-11-12
+  - sources: SRC-00351
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -1007,6 +1023,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 220
-- grades: {'B': 220}
-- distinct sources: 74
+- claims: 224
+- grades: {'B': 224}
+- distinct sources: 76
