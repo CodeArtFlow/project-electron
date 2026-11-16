@@ -33,6 +33,63 @@ id: CAND-20261116-0134
 harvested_date: '2026-11-16'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-16'
+  reason: the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The DIMM-level measurements are conducted at a temperature of 85 °C.
+    reason: 'unit conversion refused: temperature: cannot convert 85.0 ° C to K - Cannot convert from
+      ''degree * coulomb'' ([current] * [time]) to ''kelvin'' ([temperature]). A dimensional mismatch
+      mean'
+    quotes:
+    - The DIMM-level measurements are performed at 85 ° C, with a 4-s retention interval used as the reference
+      condition.
+    - The DIMM-level measurements are performed at 85 ° C
+  - statement: Under RowHammer stress protocol, 8 × 10^7 activations are applied with tRAS of 36 ns and
+      tRP of 14 ns.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - RowHammer consists of repeated short ACT–PRE cycles with t RAS =36 ns and t RP =14 ns, for 8× 107
+      activations.
+    - RowHammer consists of repeated short ACT–PRE cycles
+    - for 8× 107 activations.
+    - t RP =14 ns
+  - statement: Under RowPress protocol, the aggressor ON time tRAS is extended to 70.2 μs with 5.68 ×
+      10^4 activations.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - RowPress retains the ACT–PRE sequence but extends the aggressor ON time to 70.2 μs, followed by
+      the same 14-ns precharge interval, for 5.68× 104 activations.
+    - RowPress retains the ACT–PRE sequence
+    - for 5.68× 104 activations.
+    - followed by the same 14-ns precharge interval
+  - statement: The measured OFF-state current is approximately ninefold higher under SA-held bitline bias
+      (0 V) relative to the precharged condition (0.5 V) at VG = −0.2 V.
+    reason: the statement contains the number 0.5, which none of its quotes contain
+    quotes:
+    - For a physical high storage state, changing the bitline bias from VCORE/2 (precharged) to 0 V (SA-held)
+      increases the OFF-state current by approximately ninefold at VG = −0.2 V, as indicated by our device
+      measurements and fitted characteris
+    - at VG = −0.2 V
+    - changing the bitline bias from VCORE/2 (precharged)
+    - to 0 V (SA-held)
+  - statement: 'The representative wordline-coupling simulation uses a wordline resistance RWL of 1 kΩ,
+      a storage node capacitance CSN of 10 fF, and a coupling parameter CC of '
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - The representative wordline-coupling configuration uses 1.25-ns rise and fall times, V PP = 2.5
+      V , V BBW = - 0.2 V , RWL = 1 kΩ, CSN = 10 fF and a nominal coupling parameter CC = 515 fF.
+    - V PP = 2.5 V
+    - V BBW = - 0.2 V
+    - CSN = 10 fF
+  tokens:
+    input: 14057
+    output: 2268
+  fetched_chars: 52337

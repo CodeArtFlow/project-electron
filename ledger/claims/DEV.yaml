@@ -3015,3 +3015,75 @@ claims:
     model: gemini-3.6-flash
     prompt_version: reader-v5
     verified_quotes: 2
+- id: CLM-DEV-0109
+  topic: DEV
+  statement: Omitting the charge neutrality constraint distorts the electrostatic potential near the central
+    region of tested device structures by 0.68 eV to 1.88 eV.
+  sources:
+  - SRC-00359
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-13'
+  created: '2026-11-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-DEV-0110
+  topic: DEV
+  statement: The residual compensation model corrects a potential mismatch of 0.16 eV to 0.46 eV in the
+    central region of tested device structures.
+  sources:
+  - SRC-00359
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-13'
+  created: '2026-11-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-DEV-0111
+  topic: DEV
+  statement: DeltaChargeNet requires an inference time of 4160 seconds on a structure containing 10648
+    atoms using an NVIDIA RTX 3090 Ti GPU.
+  sources:
+  - SRC-00359
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-13'
+  created: '2026-11-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    atom_count: 10648 atoms
+    gpu: NVIDIA RTX 3090 Ti GPU (24 GB)
+    system: Hg0.5Cd0.5Te cubic supercells
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 4160.0
+      unit: seconds
+    si_base:
+      value: 4160.0
+      unit: s
+    display:
+      value: 4159999999999.9995
+      unit: ns
+    conditions:
+      atom_count: 10648 atoms
+      gpu: NVIDIA RTX 3090 Ti GPU (24 GB)
+      system: Hg0.5Cd0.5Te cubic supercells

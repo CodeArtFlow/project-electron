@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-15.
+Topic code `PHOT`. Last reviewed 2026-11-16.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -89,6 +89,10 @@ Topic code `PHOT`. Last reviewed 2026-11-15.
 - **8.234 GHz** — The EP eigenstate near-field distribution was measured at 8.234 GHz in the coupled SSPP waveguide system.
   - `CLM-PHOT-0136` · structure coupled SSPP waveguides · grade B · credibility unknown · measured · as of 2026-11-05
   - sources: SRC-00314
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈5 GHz** — The realistic metacrystal based on split-ring metaatoms exhibits a Dirac-point frequency of approximately 5 GHz in the microwave regime.
+  - `CLM-PHOT-0152` · regime microwave regime · grade B · credibility unknown · simulated · as of 2026-11-13
+  - sources: SRC-00365
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### length device
@@ -517,6 +521,10 @@ Topic code `PHOT`. Last reviewed 2026-11-15.
   - `CLM-PHOT-0139` · component first-order SEP · grade B · credibility unknown · simulated · as of 2026-11-09
   - sources: SRC-00329
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **97.1 percent** — At 1500 K, the optimized emitter structure suppresses 97.1% of the incident-blackbody-equivalent sub-bandgap power.
+  - `CLM-PHOT-0151` · emitter_temperature 1500 K, emitter_type optimized structure · grade B · credibility unknown · simulated · as of 2026-11-13
+  - sources: SRC-00360
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### sensitivity advantage ratio
 
@@ -680,6 +688,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 150
-- grades: {'B': 143, 'A': 7}
-- distinct sources: 53
+- claims: 152
+- grades: {'B': 145, 'A': 7}
+- distinct sources: 55

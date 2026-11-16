@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-15",
+  "date": "2026-11-16",
   "model": "gemini-3.5-flash-lite",
   "extract_model": "gemini-3.6-flash",
   "prompt_version": "reader-v5",
@@ -10,887 +10,869 @@
   },
   "papers": [
     {
-      "candidate": "CAND-20261113-0020",
+      "candidate": "CAND-20261116-0139",
+      "decision": "out_of_scope",
+      "reason": "The paper investigates fundamental condensed matter physics phenomena using the Su-Schrieffer-Heeger model and topo-electrical circuits, rather than semiconductor devices or technology.",
+      "chars": 50909,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0138",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on mechanical properties, dislocation dynamics, and alloy design of refractory high-entropy alloys for high-temperature applications, which is outside semiconductor research.",
+      "chars": 51357,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0137",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on a constitutive model for the plastic flow and dislocation dynamics of body-centered cubic metals, which is general materials mechanics rather than semiconductor-specific research.",
+      "chars": 69552,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0136",
+      "decision": "read",
+      "reason": "",
+      "chars": 62463,
+      "claims": [
+        "CLM-DEV-0109",
+        "CLM-DEV-0110",
+        "CLM-DEV-0111"
+      ],
+      "rejected": [
+        {
+          "statement": "The maximum error in the band energy for bulk Hg1-xCdxTe calculated using DeltaChargeNet and FP-TB-MTO is below 10 meV.",
+          "reason": "unit conversion refused: relative_deviation is dimensionless; unit 'meV' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a uni",
+          "quotes": [
+            "The maximum error in the band energy for the bulk is below 10 meV for bulk Hg1\u2212xCdxTe.",
+            "for bulk Hg1\u2212xCdxTe."
+          ]
+        },
+        {
+          "statement": "With both charge neutrality constraint and residual compensation model, the ML-based layer-resolved potential energy profile agrees with fully self-consistent D",
+          "reason": "unit conversion refused: relative_deviation is dimensionless; unit 'eV' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit",
+          "quotes": [
+            "With both, the ML-based layer-resolved potential energy profile, including the interface potential steps and the bulk-like plateau, agrees closely with fully self-consistent DFT, with a maximum deviation below 0.1 eV.",
+            "agrees closely with fully self-consistent DFT"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261116-0135",
+      "decision": "too_long",
+      "reason": "142,975 characters exceeds the 120,000 budget; not truncated",
+      "chars": 142975,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0134",
+      "decision": "no_claims",
+      "reason": "the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader may do better",
+      "chars": 52337,
+      "claims": [],
+      "rejected": [
+        {
+          "statement": "The DIMM-level measurements are conducted at a temperature of 85 \u00b0C.",
+          "reason": "unit conversion refused: temperature: cannot convert 85.0 \u00b0 C to K - Cannot convert from 'degree * coulomb' ([current] * [time]) to 'kelvin' ([temperature]). A dimensional mismatch mean",
+          "quotes": [
+            "The DIMM-level measurements are performed at 85 \u00b0 C, with a 4-s retention interval used as the reference condition.",
+            "The DIMM-level measurements are performed at 85 \u00b0 C"
+          ]
+        },
+        {
+          "statement": "Under RowHammer stress protocol, 8 \u00d7 10^7 activations are applied with tRAS of 36 ns and tRP of 14 ns.",
+          "reason": "the statement contains the number 10, which none of its quotes contain",
+          "quotes": [
+            "RowHammer consists of repeated short ACT\u2013PRE cycles with t RAS =36 ns and t RP =14 ns, for 8\u00d7 107 activations.",
+            "RowHammer consists of repeated short ACT\u2013PRE cycles",
+            "for 8\u00d7 107 activations.",
+            "t RP =14 ns"
+          ]
+        },
+        {
+          "statement": "Under RowPress protocol, the aggressor ON time tRAS is extended to 70.2 \u03bcs with 5.68 \u00d7 10^4 activations.",
+          "reason": "the statement contains the number 10, which none of its quotes contain",
+          "quotes": [
+            "RowPress retains the ACT\u2013PRE sequence but extends the aggressor ON time to 70.2 \u03bcs, followed by the same 14-ns precharge interval, for 5.68\u00d7 104 activations.",
+            "RowPress retains the ACT\u2013PRE sequence",
+            "for 5.68\u00d7 104 activations.",
+            "followed by the same 14-ns precharge interval"
+          ]
+        },
+        {
+          "statement": "The measured OFF-state current is approximately ninefold higher under SA-held bitline bias (0 V) relative to the precharged condition (0.5 V) at VG = \u22120.2 V.",
+          "reason": "the statement contains the number 0.5, which none of its quotes contain",
+          "quotes": [
+            "For a physical high storage state, changing the bitline bias from VCORE/2 (precharged) to 0 V (SA-held) increases the OFF-state current by approximately ninefold at VG = \u22120.2 V, as indicated by our device measurements and fitted characteris",
+            "at VG = \u22120.2 V",
+            "changing the bitline bias from VCORE/2 (precharged)",
+            "to 0 V (SA-held)"
+          ]
+        },
+        {
+          "statement": "The representative wordline-coupling simulation uses a wordline resistance RWL of 1 k\u03a9, a storage node capacitance CSN of 10 fF, and a coupling parameter CC of ",
+          "reason": "[compound_statement] statement appears to join two falsifiable assertions - split it",
+          "quotes": [
+            "The representative wordline-coupling configuration uses 1.25-ns rise and fall times, V PP = 2.5 V , V BBW = - 0.2 V , RWL = 1 k\u03a9, CSN = 10 fF and a nominal coupling parameter CC = 515 fF.",
+            "V PP = 2.5 V",
+            "V BBW = - 0.2 V",
+            "CSN = 10 fF"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261116-0133",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on fundamental magnetism and spin-wave statistics in thermally activated magnetic transitions, which is out of the scope of semiconductor research.",
+      "chars": 30926,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0132",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on wireless communications and antenna array positioning algorithms, which are outside the scope of semiconductor research.",
+      "chars": 72705,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0131",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on wireless communications and beam selection algorithms for reconfigurable intelligent surfaces rather than semiconductor devices or hardware fabrication.",
+      "chars": 26025,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0130",
+      "decision": "too_long",
+      "reason": "275,101 characters exceeds the 120,000 budget; not truncated",
+      "chars": 275101,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0129",
+      "decision": "out_of_scope",
+      "reason": "This paper focuses on sequence design for delay-Doppler estimation in wireless communications and radar sensing using Riemannian optimization, which is out of scope for semiconductor research.",
+      "chars": 30674,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0128",
+      "decision": "read",
+      "reason": "",
+      "chars": 41630,
+      "claims": [
+        "CLM-PHOT-0151"
+      ],
+      "rejected": [
+        {
+          "statement": "At an emitter temperature of 1500 K, the modeled radiative-to-electrical conversion efficiency of the optimized selective emitter structure reaches 47.0%.",
+          "reason": "unit conversion refused: efficiency_compute: cannot convert 47.0 % to 1/J - Cannot convert from 'percent' (dimensionless) to '1 / joule' ([time] ** 2 / [mass] / [length] ** 2). A dimens",
+          "quotes": [
+            "At an emitter temperature of 1500 K, the optimized structure suppresses 97.1% of the incident-blackbody-equivalent sub-bandgap power at the source; a further 1.9% is returned to the emitter by the cell, leaving 1.0% absorbed parasitically i",
+            "The resulting modeled radiative-to-electrical conversion efficiency reaches 47.0%",
+            "At an emitter temperature of 1500 K",
+            "the optimized structure suppresses 97.1% of the incident-blackbody-equivalent sub-bandgap power at the source"
+          ]
+        },
+        {
+          "statement": "At an emitter temperature of 1500 K, the modeled conversion efficiency for a SiC emitter paired with the cell is 30.8%.",
+          "reason": "unit conversion refused: efficiency_compute: cannot convert 30.8 % to 1/J - Cannot convert from 'percent' (dimensionless) to '1 / joule' ([time] ** 2 / [mass] / [length] ** 2). A dimens",
+          "quotes": [
+            "The resulting modeled radiative-to-electrical conversion efficiency reaches 47.0%, compared with 30.8% for a SiC emitter paired with the same cell, while maintaining a comparable maximum electrical power density.",
+            "The resulting modeled radiative-to-electrical conversion efficiency reaches 47.0%, compared with 30.8% for a SiC emitter paired with the same cell",
+            "for a SiC emitter paired with the same cell",
+            "At an emitter temperature of 1500 K"
+          ]
+        },
+        {
+          "statement": "At an emitter temperature of 1300 K, the efficiency of the optimized emitter is 43.1%.",
+          "reason": "unit conversion refused: efficiency_compute: cannot convert 43.1 % to 1/J - Cannot convert from 'percent' (dimensionless) to '1 / joule' ([time] ** 2 / [mass] / [length] ** 2). A dimens",
+          "quotes": [
+            "The efficiency of the optimized emitter is 17.7% at 900 K, 34.7% at 1100 K, 43.1% at 1300 K, and 47.0% at 1500 K [Figure 4(a)].",
+            "43.1% at 1300 K",
+            "The efficiency of the optimized emitter is"
+          ]
+        },
+        {
+          "statement": "At an emitter temperature of 1100 K, the efficiency of the optimized emitter is 34.7%.",
+          "reason": "unit conversion refused: efficiency_compute: cannot convert 34.7 % to 1/J - Cannot convert from 'percent' (dimensionless) to '1 / joule' ([time] ** 2 / [mass] / [length] ** 2). A dimens",
+          "quotes": [
+            "The efficiency of the optimized emitter is 17.7% at 900 K, 34.7% at 1100 K, 43.1% at 1300 K, and 47.0% at 1500 K [Figure 4(a)].",
+            "34.7% at 1100 K",
+            "The efficiency of the optimized emitter is"
+          ]
+        },
+        {
+          "statement": "At 1500 K, the optimized emitter yields a maximum output power density of 1.24 W cm\u207b\u00b2.",
+          "reason": "unit conversion refused: power_density: could not parse 1.24 'W cm\u207b\u00b2': 'cm\u22122' is not defined in the unit registry",
+          "quotes": [
+            "The maximum output power densities are also similar, 1.27 and 1.24 W cm\u207b\u00b2, respectively.",
+            "Figures 3(c) and 3(d) show the current density and output power density versus voltage at 1500 K.",
+            "for (d) the optimized emitter."
+          ]
+        },
+        {
+          "statement": "Adding a 20 nm HfO2 capping layer on top and a 20 nm HfO2 layer between the last Si layer and W reduces the efficiency at 1500 K to 46.1%.",
+          "reason": "unit conversion refused: efficiency_compute: cannot convert 46.1 % to 1/J - Cannot convert from 'percent' (dimensionless) to '1 / joule' ([time] ** 2 / [mass] / [length] ** 2). A dimens",
+          "quotes": [
+            "Adding a 20 nm HfO\u2082 capping layer on top and a 20 nm HfO2 layer between the last Si layer and W reduces the efficiency at 1500 K only from 47.0% to 46.1% and the output power density from 1.24 to 1.13 W cm\u207b\u00b2.",
+            "Adding a 20 nm HfO\u2082 capping layer on top and a 20 nm HfO2 layer between the last Si layer and W reduces the efficiency at 1500 K only from 47.0% to 46.1%",
+            "Adding a 20 nm HfO\u2082 capping layer on top and a 20 nm HfO2 layer between the last Si layer and W",
+            "reduces the efficiency at 1500 K"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261116-0127",
+      "decision": "out_of_scope",
+      "reason": "The paper investigates lithium-ion transport and grain boundary dynamics in Li2O for battery applications, which is outside the scope of semiconductor devices and manufacturing.",
+      "chars": 67187,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0126",
+      "decision": "out_of_scope",
+      "reason": "The paper studies the fundamental physics and chemistry of molecular crystals (coronene) under high pressure and is not focused on semiconductor device applications or fabrication.",
+      "chars": 53665,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0125",
+      "decision": "out_of_scope",
+      "reason": "The paper is a theoretical physics study on superconductivity in bilayer nickelates, which falls under condensed matter physics and is out of scope for semiconductor research.",
+      "chars": 44727,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0124",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on software-defined radio systems, firmware integration, and network stacks for wireless research, rather than semiconductor device physics, materials, or chip manufacturing.",
+      "chars": 76838,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0123",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on quantum information hardware and single-photon emitters in monolayer materials, which is classified as out of scope.",
+      "chars": 40459,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0122",
+      "decision": "read",
+      "reason": "",
+      "chars": 62537,
+      "claims": [
+        "CLM-MAT-0350",
+        "CLM-MAT-0351",
+        "CLM-MAT-0352",
+        "CLM-MAT-0353",
+        "CLM-MAT-0354"
+      ],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0121",
+      "decision": "out_of_scope",
+      "reason": "The paper is about a biomedical sensor for glucose monitoring, which falls outside the scope of semiconductor research.",
+      "chars": 76265,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0120",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on general length measurement and dimensional metrology using spectral domain interferometry rather than semiconductor-specific manufacturing or devices.",
+      "chars": 29006,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0119",
+      "decision": "read",
+      "reason": "",
+      "chars": 72348,
+      "claims": [
+        "CLM-ARCH-0225"
+      ],
+      "rejected": [
+        {
+          "statement": "CHARMING with int4xint4 fixed-point in-memory computation reduces per-layer energy by up to 7.6%.",
+          "reason": "the value -7.6 does not appear in any of the claim's quotes",
+          "quotes": [
+            "With int4\u00d7 int4 fixed-point in-memory computation, CHARMING re- duces per-layer energy by up to 7.6% and improves energy-delay product by up to 24.7%, while maintaining accuracy similar to a 32-bit floating-point baseline.",
+            "We estimate CHARMING\u2019s total energy by combining the measured VCK5000 board energy with the simulated IMCU energy.",
+            "With int4\u00d7 int4 fixed-point in-memory computation",
+            "saves up to 7.6% energy (5.5\u20137.6%) during prefill"
+          ]
+        },
+        {
+          "statement": "CHARMING with int4xint4 precision improves energy-delay product by up to 24.7% during prefill.",
+          "reason": "the value -24.7 does not appear in any of the claim's quotes",
+          "quotes": [
+            "With int4\u00d7 int4 fixed-point in-memory computation, CHARMING re- duces per-layer energy by up to 7.6% and improves energy-delay product by up to 24.7%, while maintaining accuracy similar to a 32-bit floating-point baseline.",
+            "We estimate CHARMING\u2019s total energy by combining the measured VCK5000 board energy with the simulated IMCU energy.",
+            "With int4\u00d7 int4 fixed-point in-memory computation",
+            "and lowers EDP by 17.8\u201324.7%."
+          ]
+        },
+        {
+          "statement": "CHARMING improves prefill performance over AIE-only acceleration by up to 23.6%.",
+          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'simulated')",
+          "quotes": [
+            "CHARMING improves prefill performance by up to 23.6% and decode performance by up to 44% over AIE-only acceleration.",
+            "We characterize ACU execution and data movement using hardware measurements and IMCU execution using cycle-level simulation, combining their execution times under this concurrency assumption.",
+            "CHARMING improves prefill performance",
+            "over AIE-only acceleration."
+          ]
+        },
+        {
+          "statement": "CHARMING achieves up to 44% decode performance improvement over AIE-only acceleration.",
+          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'simulated')",
+          "quotes": [
+            "CHARMING improves prefill performance by up to 23.6% and decode performance by up to 44% over AIE-only acceleration.",
+            "We characterize ACU execution and data movement using hardware measurements and IMCU execution using cycle-level simulation, combining their execution times under this concurrency assumption.",
+            "decode performance by up to 44%",
+            "over AIE-only acceleration."
+          ]
+        },
+        {
+          "statement": "CHARMING reduces per-layer data movement by 9.4% to 22.8% across models and precisions.",
+          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'simulated')",
+          "quotes": [
+            "Consequently, CHARMING reduces data movement per layer by 9.4\u201322.8% across models and precisions, correspond- ing to 2.2\u20138.9 GB for models with 8K tokens and 39\u2013126 GB for WAN 2.2 and Qwen3 with 32K tokens (Figure 12a).",
+            "We characterize ACU execution and data movement using hardware measurements and IMCU execution using cycle-level simulation, combining their execution times under this concurrency assumption.",
+            "CHARMING reduces data movement per layer by 9.4\u201322.8% across models and precisions"
+          ]
+        },
+        {
+          "statement": "During decode, CHARMING saves between 4.9% and 27.9% energy.",
+          "reason": "the value -4.9 does not appear in any of the claim's quotes",
+          "quotes": [
+            "During decode, CHARMING saves 4.9\u201327.9% energy and lowers EDP by 10.3\u201349.8%.",
+            "We estimate CHARMING\u2019s total energy by combining the measured VCK5000 board energy with the simulated IMCU energy.",
+            "During decode, CHARMING saves 4.9\u201327.9% energy"
+          ]
+        },
+        {
+          "statement": "Equations 3-7 fit within 5.1% of every simulated latency for the IMCU performance model.",
+          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
+          "quotes": [
+            "We fit the constants of Equations 6 and 7 to simulated per-head latencies for \ud835\udc34\u2208{4, 5}, \ud835\udc35\u2208{4, 5, 6} and \ud835\udc3e \u2208[64, 32768]. Equations 3\u20137 then lie within 5.1% of every simulated latency.",
+            "\ud835\udc34\u2208{4, 5}",
+            "\ud835\udc35\u2208{4, 5, 6}",
+            "\ud835\udc3e \u2208[64, 32768]"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261116-0118",
+      "decision": "read",
+      "reason": "",
+      "chars": 75460,
+      "claims": [
+        "CLM-ARCH-0226",
+        "CLM-ARCH-0227",
+        "CLM-ARCH-0228",
+        "CLM-ARCH-0229"
+      ],
+      "rejected": [
+        {
+          "statement": "Elasticy achieves 92.59% memory-roofline attainment on a Llama 3-8B decode layer.",
+          "reason": "the statement contains the number 92.59, which none of its quotes contain",
+          "quotes": [
+            "On a Llama 3-8B decode layer, Elasticy achieves 92.6% of its roofline performance, compared to 69.7% on an H100.",
+            "We implement the Elasticy RDA in Bluespec SystemVerilog [17] and simulate with Bluespec\u2019s cycle-accurate Bluesim simulator.",
+            "Llama 3\u20138B"
+          ]
+        },
+        {
+          "statement": "Elasticy speeds up kernel pairs by up to 1.42x via dynamic resource re-assignment.",
+          "reason": "unit conversion refused: energy_advantage_ratio is dimensionless; unit '\u00d7' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a u",
+          "quotes": [
+            "Elasticy\u2019s distributed runtime scheduler overlaps dependent kernels, speeding up kernel pairs by up to 1.42\u00d7.",
+            "We implement the Elasticy RDA in Bluespec SystemVerilog [17] and simulate with Bluespec\u2019s cycle-accurate Bluesim simulator."
+          ]
+        },
+        {
+          "statement": "Elasticy achieves 96.50% memory-roofline attainment on DFlash decode.",
+          "reason": "the value 96.5 does not appear in any of the claim's quotes",
+          "quotes": [
+            "DFlash 1 256 16 96.50 51.54 1.00\u00d7 15.23\u00d7",
+            "We implement the Elasticy RDA in Bluespec SystemVerilog [17] and simulate with Bluespec\u2019s cycle-accurate Bluesim simulator.",
+            "Table 5: Roofline attainment, speedup, and Area-Delay-Product (ADP) of single LLM layers during decode."
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261116-0117",
+      "decision": "read",
+      "reason": "",
+      "chars": 63612,
+      "claims": [
+        "CLM-ARCH-0230",
+        "CLM-ARCH-0231",
+        "CLM-ARCH-0232",
+        "CLM-ARCH-0233",
+        "CLM-ARCH-0234"
+      ],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0116",
       "decision": "no_claims",
       "reason": "the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 54137,
+      "chars": 60433,
       "claims": [],
       "rejected": [
         {
-          "statement": "3D finite-element simulations indicate that at an angle of incidence of 17\u00b0 and a pump wavelength of 800 nm, the resonant SHG from the gold nanopillar metasurfa",
-          "reason": "the statement contains the number 3, which none of its quotes contain",
+          "statement": "Class CA achieves a total Information Processing Capacity of 19.29 at its optimal control parameters.",
+          "reason": "unit conversion refused: relative_deviation is dimensionless; unit '' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit e",
           "quotes": [
-            "The theoretical predictions suggest that resonant SHG produces a peak conversion efficiency of 87.7676*10SH SH FF P P\uf068 \uf02d\uf03d\uf03d (Fig. 2(c))",
-            "resonant SHG produces a peak conversion efficiency",
-            "17B\uf071 \uf03d",
-            "illuminated by pump of 800 nm"
+            "the perfectly matched Class CA achieves the highest nonlinear capacity (16.28) and the highest total capacity (19.29)",
+            "The TDRC system is modelled using the complete Maxwell-Bloch equations with a 4th-order Runge-Kutta (RK4) integration scheme.",
+            "the highest total capacity (19.29)"
           ]
         },
         {
-          "statement": "3D numerical simulations predict that for a 17\u00b0 incident angle and 800 nm pump, resonant THG reaches a peak conversion efficiency of 1.0878e-7.",
-          "reason": "the statement contains the number 3, which none of its quotes contain",
+          "statement": "Class CA achieves a nonlinear Information Processing Capacity of 16.28 at its optimal control parameters.",
+          "reason": "unit conversion refused: relative_deviation is dimensionless; unit '' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit e",
           "quotes": [
-            "The resonant THG reaches a peak conversion efficiency of 7*1. 08 78TH TH FF P P\uf068 \uf02d\uf03d\uf03d (Fig. 2(d))",
-            "The resonant THG reaches a peak conversion efficiency",
-            "17B\uf071 \uf03d",
-            "illuminated by pump of 800 nm"
+            "the perfectly matched Class CA achieves the highest nonlinear capacity (16.28) and the highest total capacity (19.29)",
+            "The TDRC system is modelled using the complete Maxwell-Bloch equations with a 4th-order Runge-Kutta (RK4) integration scheme.",
+            "the highest nonlinear capacity (16.28)"
           ]
         },
         {
-          "statement": "Under TM-polarized pump illumination at an angle of incidence of 16\u00b0 and a pump wavelength of 795 nm, the measured peak SHG conversion efficiency of the gold na",
-          "reason": "the statement contains the number 16, which none of its quotes contain",
+          "statement": "Class A achieves a linear Information Processing Capacity of 4.70 at its optimal control parameters.",
+          "reason": "the value 4.7 does not appear in any of the claim's quotes",
           "quotes": [
-            "the spectral measurement of the resonant SHG shows a peak conversion efficiency of 82.09958*10SH TH FF P P\uf068 \uf02d\uf03d\uf03d",
-            "16A\uf071 \uf03d",
-            "795A nm\uf06c \uf03d",
-            "395"
+            "whereas Class A exhibits the highest linear capacity (4.70).",
+            "The TDRC system is modelled using the complete Maxwell-Bloch equations with a 4th-order Runge-Kutta (RK4) integration scheme.",
+            "highest linear capacity (4.70)"
           ]
         },
         {
-          "statement": "At an angle of incidence of 17\u00b0 and a resonant pump wavelength of 806 nm, the experimental peak SHG conversion efficiency is 2.35165e-8.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): '82.35165*10\\uf02d'",
+          "statement": "Class CA achieves an NRMSE of 0.0506 on the Lorenz prediction task under the unified physical baseline.",
+          "reason": "unit conversion refused: relative_deviation is dimensionless; unit '' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit e",
           "quotes": [
-            "82.35165*10\uf02d",
-            "Experimental measurements of total SHG at 16A\uf071 \uf03d , 17B\uf071 \uf03d , and 18C\uf071 \uf03d angles of incidence",
-            "17B\uf071 \uf03d",
-            "806B nm\uf06c \uf03d"
+            "Class CA dominates the higher-dimensional Lorenz (0.0506)",
+            "The TDRC system is modelled using the complete Maxwell-Bloch equations with a 4th-order Runge-Kutta (RK4) integration scheme.",
+            "higher-dimensional Lorenz (0.0506)"
           ]
         },
         {
-          "statement": "At an incidence angle of 18\u00b0 and a pump wavelength of 815 nm, the measured peak SHG conversion efficiency is 2.61595e-8.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): '82.61595*10\\uf02d'",
+          "statement": "Class CA achieves an NRMSE of 0.4251 on the experimental Santa Fe prediction task under the unified physical baseline.",
+          "reason": "unit conversion refused: relative_deviation is dimensionless; unit '' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit e",
           "quotes": [
-            "82.61595*10\uf02d",
-            "Experimental measurements of total SHG at 16A\uf071 \uf03d , 17B\uf071 \uf03d , and 18C\uf071 \uf03d angles of incidence",
-            "18C\uf071 \uf03d",
-            "815C nm\uf06c \uf03d"
+            "and the experimental Santa Fe (0.4251) tasks.",
+            "The TDRC system is modelled using the complete Maxwell-Bloch equations with a 4th-order Runge-Kutta (RK4) integration scheme.",
+            "Class CA dominates the higher-dimensional Lorenz (0.0506) and the experimental Santa Fe (0.4251) tasks.",
+            "experimental Santa Fe (0.4251)"
           ]
         },
         {
-          "statement": "Under pump illumination at a 16\u00b0 angle of incidence and a resonant pump wavelength of 795 nm, the spectral measurement of resonant THG demonstrates a peak conve",
-          "reason": "the statement contains the number 16, which none of its quotes contain",
+          "statement": "Class A achieves an NRMSE of 0.47 under spontaneous emission noise at a spontaneous emission factor of 10^-1.",
+          "reason": "unit conversion refused: relative_deviation is dimensionless; unit '' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit e",
           "quotes": [
-            "the spectral measurement of the resonant THG shows a peak conversion efficiency of 74.17152*10TH TH FF P P\uf068 \uf02d\uf03d\uf03d",
-            "16A\uf071 \uf03d",
-            "795A nm\uf06c \uf03d",
-            "262.33"
+            "Class A retains the lowest NRMSE (0.47) even at the extreme limit of the spontaneous emission factor \u03b2 = 10\u22121",
+            "The TDRC system is modelled using the complete Maxwell-Bloch equations with a 4th-order Runge-Kutta (RK4) integration scheme.",
+            "spontaneous emission factor \u03b2 = 10\u22121"
           ]
         },
         {
-          "statement": "At a 17\u00b0 angle of incidence and a pump wavelength of 806 nm, the measured peak THG conversion efficiency is 2.9107e-7.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): '72.9107*10\\uf02d'",
+          "statement": "Class B achieves an NRMSE of 0.98 under spontaneous emission noise at a spontaneous emission factor of 10^-1.",
+          "reason": "the statement contains the number 10, which none of its quotes contain",
           "quotes": [
-            "72.9107*10\uf02d",
-            "experimental measurements of total THG at 16A\uf071 \uf03d , 17B\uf071 \uf03d , and 18C\uf071 \uf03d angles of incidence",
-            "17B\uf071 \uf03d",
-            "806B nm\uf06c \uf03d"
+            "whereas the long-carrier Class B suffers a systematic degradation (0.98).",
+            "The TDRC system is modelled using the complete Maxwell-Bloch equations with a 4th-order Runge-Kutta (RK4) integration scheme.",
+            "spontaneous emission factor \u03b2 = 10\u22121"
           ]
         },
         {
-          "statement": "At an 18\u00b0 angle of incidence and an 815 nm pump wavelength, the experimental peak THG conversion efficiency is 3.3253e-7.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): '73.3253*10\\uf02d'",
+          "statement": "Class CB achieves an NRMSE of 0.78 under spontaneous emission noise at a spontaneous emission factor of 10^-1.",
+          "reason": "the statement contains the number 10, which none of its quotes contain",
           "quotes": [
-            "73.3253*10\uf02d",
-            "experimental measurements of total THG at 16A\uf071 \uf03d , 17B\uf071 \uf03d , and 18C\uf071 \uf03d angles of incidence",
-            "18C\uf071 \uf03d",
-            "815C nm\uf06c \uf03d"
+            "A residual T2-mediated benefit of approximately 20% persists in the slow-carrier Class CB (0.78 vs. 0.98).",
+            "The TDRC system is modelled using the complete Maxwell-Bloch equations with a 4th-order Runge-Kutta (RK4) integration scheme.",
+            "Class CB (0.78 vs. 0.98).",
+            "\u03b2noise = 10\u22121"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261113-0019",
+      "candidate": "CAND-20261116-0115",
+      "decision": "out_of_scope",
+      "reason": "The paper studies fluid dynamics and optofluidic control of liquid jet curvature using laser-induced cavitation, which is out of scope for semiconductor research.",
+      "chars": 61474,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0114",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on machine learning-based fault detection and protection in electrical power grids, which is outside the scope of semiconductor research.",
+      "chars": 40980,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0113",
       "decision": "read",
       "reason": "",
-      "chars": 89015,
+      "chars": 40569,
       "claims": [
-        "CLM-ARCH-0221",
-        "CLM-ARCH-0222"
+        "CLM-PHOT-0152"
+      ],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0112",
+      "decision": "out_of_scope",
+      "reason": "This paper focuses on fundamental condensed matter physics and quantum phase fluctuations in a moir\u00e9 flatband superconductor rather than semiconductor devices, materials, or manufacturing.",
+      "chars": 48698,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0111",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on theoretical electromagnetic wave propagation in fully anisotropic waveguides rather than semiconductor research.",
+      "chars": 38737,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261116-0110",
+      "decision": "read",
+      "reason": "",
+      "chars": 81300,
+      "claims": [
+        "CLM-ARCH-0235"
       ],
       "rejected": [
         {
-          "statement": "The 13B LoRA fine-tuning step at an input length of 2048 tokens allocates 45.0 GB of memory as reported by the prover and completes in 327 seconds on the 80 GB ",
-          "reason": "the statement contains the number 00, which none of its quotes contain",
+          "statement": "Dual-stage Diffusion reduces computation cost by up to 92.7% while maintaining comparable perceptual quality.",
+          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
           "quotes": [
-            "The 13B LoRA step at input length 2048 needs 45.0 GB by the prover\u2019s own account (56.2 GB sampled externally), so this configuration exceeds the 40 GB card\u2019s capacity but completes in 327 s on the 80 GB device.",
-            "and add original measurements of six provers and seven kernels to identify which costs matter in practice.",
-            "The 13B LoRA step at input length 2048",
-            "at input length 2048"
+            "Experimental results show that Dual-stage Diffusion maintains comparable perceptual quality while reducing computation cost by up to 92.7%.",
+            "Dual-stage Diffusion"
           ]
         },
         {
-          "statement": "zkLLM proving time per layer increases from 33.6 s to 47.8 s when the prompt input length increases from 1024 to 2048 tokens.",
-          "reason": "the statement contains the number 1024, which none of its quotes contain",
+          "statement": "Compared to NPU+DRAM, cUFS+PIM improves coding throughput by 2.32x on average.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Compared with NPU+DRAM and near-data-processing design such as SmartSS'",
           "quotes": [
-            "zkLLM shows a related shift in cost shares: doubling the input length raises proving time by 1.42\u00d7 (33.6 to 47.8 s) yet lowers the opening share by 10 percentage points.",
-            "and add original measurements of six provers and seven kernels to identify which costs matter in practice.",
-            "zkLLM shows a related shift in cost shares",
-            "33.6 to 47.8 s"
+            "Compared with NPU+DRAM and near-data-processing design such as SmartSSD, cUFS+PIM improves coding throughput by 2.32\u00d7 and 2.91\u00d7 on average, respectively.",
+            "NPU+DRAM",
+            "cUFS+PIM"
           ]
         },
         {
-          "statement": "The optimized engineering waterfall for zkLLM on a 1024-token prompt reaches a median proof time of 29.0 seconds.",
-          "reason": "the statement contains the number 1024, which none of its quotes contain",
+          "statement": "Compared to SmartSSD, cUFS+PIM improves coding throughput by 2.91x on average.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Compared with NPU+DRAM and near-data-processing design such as SmartSS'",
           "quotes": [
-            "Fig. 7 shows a nearly unchanged aggregate proving time, from 29.1 s to 29.0 s, across this optimization sequence.",
-            "and add original measurements of six provers and seven kernels to identify which costs matter in practice.",
-            "zkLLM case study",
-            "zkLLM \u00b7 W1, 1024 tok"
+            "Compared with NPU+DRAM and near-data-processing design such as SmartSSD, cUFS+PIM improves coding throughput by 2.32\u00d7 and 2.91\u00d7 on average, respectively.",
+            "SmartSSD",
+            "cUFS+PIM"
+          ]
+        },
+        {
+          "statement": "On the Jetson Orin emulation platform, the proposed architecture improves encoder throughput by 1.79x.",
+          "reason": "unit conversion refused: throughput_tool: could not parse 1.79 '\u00d7': missing operand",
+          "quotes": [
+            "Fig. 12(a) shows that on the Jetson Orin platform, our architecture improves the throughput of the encoder and decoder by 1.79\u00d7 and 1.72\u00d7, respectively.",
+            "Jetson Orin platform",
+            "encoder"
+          ]
+        },
+        {
+          "statement": "On the Jetson Orin emulation platform, the proposed architecture improves decoder throughput by 1.72x.",
+          "reason": "unit conversion refused: throughput_tool: could not parse 1.72 '\u00d7': missing operand",
+          "quotes": [
+            "Fig. 12(a) shows that on the Jetson Orin platform, our architecture improves the throughput of the encoder and decoder by 1.79\u00d7 and 1.72\u00d7, respectively.",
+            "Jetson Orin platform",
+            "decoder"
+          ]
+        },
+        {
+          "statement": "cUFS and TECU introduce an area overhead of 3.05 mm2.",
+          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'simulated')",
+          "quotes": [
+            "cUFS and TECU introduce a total area overhead of 3.05 mm2 and a power overhead of 0.64 W.",
+            "We synthesize the newly added PHY and TECU modules using Synopsys Design Compiler with the UMC 28nm technology library to estimate area and active power.",
+            "UMC 28nm technology library",
+            "cUFS and TECU"
+          ]
+        },
+        {
+          "statement": "cUFS and TECU introduce a power overhead of 0.64 W.",
+          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'simulated')",
+          "quotes": [
+            "cUFS and TECU introduce a total area overhead of 3.05 mm2 and a power overhead of 0.64 W.",
+            "We synthesize the newly added PHY and TECU modules using Synopsys Design Compiler with the UMC 28nm technology library to estimate area and active power.",
+            "UMC 28nm technology library",
+            "cUFS and TECU"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261113-0018",
+      "candidate": "CAND-20261116-0109",
+      "decision": "no_claims",
+      "reason": "the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader may do better",
+      "chars": 40786,
+      "claims": [],
+      "rejected": [
+        {
+          "statement": "The saturation magnetization of the Cu(2) sample measured using a vibrating sample magnetometer is 1.59 MA/m.",
+          "reason": "unit conversion refused: current: cannot convert 1.59 MA/m to A - Cannot convert from 'megaampere / meter' ([current] / [length]) to 'ampere' ([current]). A dimensional mismatch means t",
+          "quotes": [
+            "Table 1 Magnetic parameters of the samples \uf06d0Hc \uf06d0Ha Ms Keff \uf044 \uf06d0HK \uf06d0HD (mT) (T) (MA/m) (MJ/m3) (nm) (mT) (mT) Cu(2) 11 1.2 1.59 0.94 5.2 59 27",
+            "Magnetic hysteresis loops were measured using a vibrating sample magnetometer (Lakeshore) with applied fields up to 2.2 T.",
+            "Cu(2) 11 1.2 1.59 0.94 5.2 59 27"
+          ]
+        },
+        {
+          "statement": "The DW anisotropy field of the Cu(2) sample is approximately 59 mT.",
+          "reason": "unit conversion refused: current: cannot convert 59.0 mT to A - Cannot convert from 'millitesla' ([mass] / [time] ** 2 / [current]) to 'ampere' ([current]). A dimensional mismatch means",
+          "quotes": [
+            "Table 1 Magnetic parameters of the samples \uf06d0Hc \uf06d0Ha Ms Keff \uf044 \uf06d0HK \uf06d0HD (mT) (T) (MA/m) (MJ/m3) (nm) (mT) (mT) Cu(2) 11 1.2 1.59 0.94 5.2 59 27",
+            "The DW anisotropy field, HK, was calculated following Ref. [23]:",
+            "Cu(2) 11 1.2 1.59 0.94 5.2 59 27"
+          ]
+        },
+        {
+          "statement": "The saturation magnetization of the Cu(4) sample measured using a vibrating sample magnetometer is 1.57 MA/m.",
+          "reason": "unit conversion refused: current: cannot convert 1.57 MA/m to A - Cannot convert from 'megaampere / meter' ([current] / [length]) to 'ampere' ([current]). A dimensional mismatch means t",
+          "quotes": [
+            "Table 1 Magnetic parameters of the samples \uf06d0Hc \uf06d0Ha Ms Keff \uf044 \uf06d0HK \uf06d0HD (mT) (T) (MA/m) (MJ/m3) (nm) (mT) (mT) Cu(2) 11 1.2 1.59 0.94 5.2 59 27 Cu(4) 13.5 1.06 1.57 0.83 5.5 56 30",
+            "Magnetic hysteresis loops were measured using a vibrating sample magnetometer (Lakeshore) with applied fields up to 2.2 T.",
+            "Cu(4) 13.5 1.06 1.57 0.83 5.5 56 30"
+          ]
+        },
+        {
+          "statement": "The saturation magnetization of the Cu(7) sample measured using a vibrating sample magnetometer is 1.57 MA/m.",
+          "reason": "unit conversion refused: current: cannot convert 1.57 MA/m to A - Cannot convert from 'megaampere / meter' ([current] / [length]) to 'ampere' ([current]). A dimensional mismatch means t",
+          "quotes": [
+            "Table 1 Magnetic parameters of the samples \uf06d0Hc \uf06d0Ha Ms Keff \uf044 \uf06d0HK \uf06d0HD (mT) (T) (MA/m) (MJ/m3) (nm) (mT) (mT) Cu(2) 11 1.2 1.59 0.94 5.2 59 27 Cu(4) 13.5 1.06 1.57 0.83 5.5 56 30 Cu(7) 19 1.05 1.57 0.82 5.5 55 32",
+            "Magnetic hysteresis loops were measured using a vibrating sample magnetometer (Lakeshore) with applied fields up to 2.2 T.",
+            "Cu(7) 19 1.05 1.57 0.82 5.5 55 32"
+          ]
+        },
+        {
+          "statement": "The velocity ratio between right- and left-handed domain walls in the Cu(7) sample reaches approximately 50000 in the creep regime.",
+          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'measured')",
+          "quotes": [
+            "We observe a dramatic enhancement of the asymmetry between the velocities of DWs with opposite chirality in the creep regime, reaching a velocity ratio of approximately 50000 in the sample with a 7-nm-thick Cu buffer layer.",
+            "Magnetic-domain structures were imaged using a magneto-optical Kerr-effect (MOKE) microscope (Evico-Magnetics) equipped with a custom-built large OOP coil, an OOP microcoil, and an IP electromagnet.",
+            "sample with a 7-nm-thick Cu buffer layer",
+            "creep regime"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261116-0108",
       "decision": "out_of_scope",
-      "reason": "This paper is about optical physics and the generation of vector light modes using waveplates and spatial light modulators, which is outside the scope of semiconductor research.",
-      "chars": 27204,
+      "reason": "The paper focuses on the environmental and energy footprint of AI video generation services, which is outside the scope of semiconductor manufacturing or device research.",
+      "chars": 113862,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261113-0017",
+      "candidate": "CAND-20261116-0107",
       "decision": "out_of_scope",
-      "reason": "The paper is about machine learning uncertainty quantification and conformal risk control, which is outside the scope of semiconductor research.",
-      "chars": 102201,
+      "reason": "The paper discusses radio frequency (RF) signal processing and source separation algorithms for wireless communications, which is out of scope for semiconductor research.",
+      "chars": 29427,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261113-0016",
+      "candidate": "CAND-20261116-0106",
       "decision": "out_of_scope",
-      "reason": "The paper discusses fundamental physics of time-modulated metasurfaces, thermal radiation, and nonreciprocity rather than semiconductor devices, materials, or manufacturing.",
-      "chars": 44375,
+      "reason": "The paper discusses the theoretical and philosophical paradigm of Transformer models in artificial intelligence rather than semiconductor hardware, circuits, or fabrication processes.",
+      "chars": 40759,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261113-0015",
+      "candidate": "CAND-20261116-0105",
       "decision": "out_of_scope",
-      "reason": "The paper studies the high-pressure behavior of liquid water and ice using inelastic X-ray scattering, which is outside the scope of semiconductor research.",
-      "chars": 33506,
+      "reason": "The paper discusses fundamental optical phenomena such as Berry phase and topological bound states in M\u00f6bius resonators, which fall under optics and pure physics rather than semiconductor research.",
+      "chars": 67346,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261113-0014",
+      "candidate": "CAND-20261116-0104",
       "decision": "read",
       "reason": "",
-      "chars": 72040,
+      "chars": 69775,
       "claims": [
-        "CLM-PKG-0012"
+        "CLM-MAT-0355",
+        "CLM-MAT-0356",
+        "CLM-MAT-0357"
       ],
       "rejected": [
         {
-          "statement": "Under split-port OBM (DP-attn. + EP) on DeepSeek-V4-Pro with equal KV capacity, the total decode energy per token is 0.073 J/token, which is 0.58\u00d7 that of the H",
-          "reason": "unit conversion refused: energy: could not parse 0.073 'J/token': 'token' is not defined in the unit registry",
+          "statement": "The ordering temperature Tc of Pr0.5Ca1.5MnO4 is 320 K.",
+          "reason": "the statement contains the number 5, which none of its quotes contain",
           "quotes": [
-            "OBM (DP-attn. + EP) 1,984 41.4 478.8 35.0 0.034 0.039 0.073 1.57\u00d7 0.58\u00d7 0.8 TB 8.44 PB (82%)",
-            "DeepSeek-V4-Pro"
+            "In particular, the layered Ruddlesden-Popper systems Pr0.5Ca1.5MnO4 and PrCa2Mn2O7 at half doping exhibit much higher transition temperatures for the formation of charge and orbital ordered phases of Tc = 320 K and Tc up to 370 K, respectiv",
+            "transition temperatures for the formation of charge and orbital ordered phases of Tc = 320 K"
           ]
         },
         {
-          "statement": "Under split-port OBM (DP-attn. + EP) on DeepSeek-V4-Pro with equal KV capacity, the overall cluster decode throughput reaches 478.8 M tok/s, which is 1.57\u00d7 that",
-          "reason": "unit conversion refused: energy: could not parse 478.8 'M tok/s': 'tok' is not defined in the unit registry",
+          "statement": "The measured out-of-plane lattice parameter af,o for a 300 nm thick PrCa2Mn2O7 film is 5.388 \u00c5.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'af,o 5.388\u00b10.01\u02daA'",
           "quotes": [
-            "OBM (DP-attn. + EP) 1,984 41.4 478.8 35.0 0.034 0.039 0.073 1.57\u00d7 0.58\u00d7 0.8 TB 8.44 PB (82%)",
-            "DeepSeek-V4-Pro"
+            "af,o 5.388\u00b10.01\u02daA",
+            "\u03b8 \u2212 2\u03b8 measurements (XRD) are performed on a tilted sample at high intensity orientations ((220)-plane \u03c8 = 44.73 and for the (115)-plane \u03c8 = 59.835 ), see Figure S.?? and Figure S.??, which allowed the determination of in-plane lattice para",
+            "300 nm PrCa2Mn2O7 film."
           ]
         },
         {
-          "statement": "Under split-port OBM (TP) on Llama-3.1-405B with equal KV capacity, the total decode energy per token is 0.493 J/token, which is 0.90\u00d7 that of the HBM baseline.",
-          "reason": "the statement contains the number 3.1, which none of its quotes contain",
+          "statement": "The measured in-plane lattice parameter bf,i for a 300 nm thick PrCa2Mn2O7 film is 5.469 \u00c5.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'bf,i 5.469\u00b10.095\u02daA'",
           "quotes": [
-            "OBM (TP) 248 23.6 105.2 51.9 0.163 0.329 0.493 0.96\u00d7 0.90\u00d7 0.4 TB 4.05 PB (40%)",
-            "Llama-3.1-405B"
+            "bf,i 5.469\u00b10.095\u02daA",
+            "\u03b8 \u2212 2\u03b8 measurements (XRD) are performed on a tilted sample at high intensity orientations ((220)-plane \u03c8 = 44.73 and for the (115)-plane \u03c8 = 59.835 ), see Figure S.?? and Figure S.??, which allowed the determination of in-plane lattice para",
+            "300 nm PrCa2Mn2O7 film."
           ]
         },
         {
-          "statement": "Under split-port OBM (DP-attn. + EP) on Llama-4-Maverick with equal KV capacity, cluster weight HBM is reduced by 4.00 PB (39%) relative to the baseline.",
-          "reason": "the statement contains the number 4, which none of its quotes contain",
+          "statement": "The absorption spectrum of Pr0.5Ca1.5MnO4 shows peak B at 1.351 eV.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Pr0.5Ca1.5MnO4'",
           "quotes": [
-            "OBM (DP-attn. + EP) 1,928 41.0 470.7 29.1 0.037 0.025 0.062 0.97\u00d7 0.90\u00d7 0.4 TB 4.00 PB (39%)",
-            "Llama-4-Maverick"
+            "Pr0.5Ca1.5MnO4",
+            "Peak B 1.351 eV",
+            "Both spectra can be fitted using a model with three Gaussian peaks and the peak positions are summarized in Table V."
           ]
         },
         {
-          "statement": "Under split-port OBM (TP) on Llama-3.1-405B with equal KV capacity, cluster weight HBM is reduced by 4.05 PB (40%) relative to the baseline.",
-          "reason": "the statement contains the number 3.1, which none of its quotes contain",
+          "statement": "The absorption spectrum of PrCa2Mn2O7 shows peak B at 1.353 eV.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'PrCa2Mn2O7'",
           "quotes": [
-            "OBM (TP) 248 23.6 105.2 51.9 0.163 0.329 0.493 0.96\u00d7 0.90\u00d7 0.4 TB 4.05 PB (40%)",
-            "Llama-3.1-405B"
-          ]
-        },
-        {
-          "statement": "For an NVIDIA H100 SXM accelerator fed at 3.2 TB/s bandwidth from fiber, the arithmetic intensity knee corresponds to a b* threshold of 309 tokens per weight pa",
-          "reason": "the statement contains the number 00, which none of its quotes contain",
-          "quotes": [
-            "H100 SXM INT8/FP8 1,979 TOPS 3.35 295 309",
-            "H100 SXM",
-            "INT8/FP8",
-            "3.2 TB/s fiber"
+            "PrCa2Mn2O7",
+            "1.353 eV",
+            "Both spectra can be fitted using a model with three Gaussian peaks and the peak positions are summarized in Table V.",
+            "Peak B 1.353 eV"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261113-0013",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on cryogenic detector readout electronics for scientific sensors, which is outside the scope of semiconductor devices and integrated circuits.",
-      "chars": 18642,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261113-0012",
+      "candidate": "CAND-20261116-0103",
       "decision": "read",
       "reason": "",
-      "chars": 40351,
+      "chars": 46087,
       "claims": [
-        "CLM-ARCH-0223",
-        "CLM-ARCH-0224"
+        "CLM-MAT-0358"
       ],
       "rejected": [
         {
-          "statement": "The ASIC decoder unit synthesized on ASAP7 RVT TT at 1 GHz occupies an area of 0.206 mm2 for four engines.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'four engines (0.206 mm2)'",
+          "statement": "The MOVPE overgrowth under N2/H2 carrier gas mixture yields a GaN mu-platelet ensemble with a mean diameter of approximately 2 um and a standard deviation of 0.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Theplatelet\u2019sdi-ameter distribution is with(1.9\u00b1 0.4) \u00b5m the narrowest'",
           "quotes": [
-            "four engines (0.206 mm2)",
-            "ASAP7 RVT TT, logic synthesis (pre-layout).",
-            "1 GHz, close to the Orin\u2019s 1.02 GHz GPU clock"
+            "Theplatelet\u2019sdi-ameter distribution is with(1.9\u00b1 0.4) \u00b5m the narrowest among all grown ensembles.",
+            "with a 1:1 mixture of N2 and H2 carrier gases",
+            "carried out at a substrate temperature of 925\u25e6C",
+            "in presence of 0.01sccm SiH4."
           ]
         },
         {
-          "statement": "On the Jetson Orin Nano Super, LazyWeights with the decoder unit reduces latency per token by up to 36% greedy and up to 54% with prompt-lookup speculation.",
-          "reason": "[compound_statement] statement appears to join two falsifiable assertions - split it",
+          "statement": "Current-voltage measurements between a single Si-doped GaN mu-platelet and the TiN substrate exhibit a maximum current of approximately 20 mA at 1.0 V.",
+          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
           "quotes": [
-            "A bit-exact 0.21 mm2 ASIC decoder unit (1 GHz, 7 nm) cuts Orin latency and energy per token by up to 36% and 38% (54% and 44% with prompt-lookup speculation).",
-            "The unit\u2019s latency and energy are projections from measured device numbers and pre-layout synthesis, not a fabricated SoC",
-            "cuts Orin latency and energy per token",
-            "by up to 36% and 38% (54% and 44% with prompt-lookup speculation)."
+            "A quasi-linear relationship is found with a maximum current of\u2248 20mA at 1.0V, indicating an ohmic contact between theGaNandtheTiNlayer.",
+            "at 1.0V",
+            "with one probe nee-dleplacedonalarge,Si-dopedGaN\ud835\udf07-platelet (cf. Figure3(b), left panel) and the second one remaining on the TiN layer."
           ]
         },
         {
-          "statement": "On the Jetson Orin Nano Super, LazyWeights with the decoder unit reduces energy per token by up to 38% greedy and up to 44% with prompt-lookup speculation.",
-          "reason": "[compound_statement] statement appears to join two falsifiable assertions - split it",
+          "statement": "An omega-scan across the (0002) reflection of the coalesced GaN layer grown by MOVPE on TiN yields an XRD rocking curve full-width at half maximum of 0.57 degre",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'A full-width at half maximum (FWHM) of 0.57\u25e6 is found for an \ud835\udf14-scan ac'",
           "quotes": [
-            "A bit-exact 0.21 mm2 ASIC decoder unit (1 GHz, 7 nm) cuts Orin latency and energy per token by up to 36% and 38% (54% and 44% with prompt-lookup speculation).",
-            "The unit\u2019s latency and energy are projections from measured device numbers and pre-layout synthesis, not a fabricated SoC",
-            "cuts Orin latency and energy per token",
-            "by up to 36% and 38% (54% and 44% with prompt-lookup speculation)."
-          ]
-        },
-        {
-          "statement": "On the Jetson Nano, software-decoded streamed Mistral-7B runs 6.6\u00d7 faster with LazyWeights at 3.89 bits per weight at a 1% perplexity budget.",
-          "reason": "unit conversion refused: time: could not parse 6.6 '\u00d7': missing operand",
-          "quotes": [
-            "and runs a streamed Mistral-7B 6.6\u00d7 faster at 3.89 bits per weight.",
-            "at \u22641%, LazyWeights is 6.6\u00d7 faster than llama.cpp at 4.5\u00d7 less energy, even decoding in software.",
-            "On the Nano, LazyWeights needs 58\u201364% less time",
-            "streamed Mistral-7B"
-          ]
-        },
-        {
-          "statement": "An ASAP7 RVT TT synthesis of a single engine (32 comparator lanes plus arbiter) at 1 GHz consumes 115.7 mW.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Engine 51,550 115.7 \u2013 \u2013 \u2013 \u2013'",
-          "quotes": [
-            "Engine 51,550 115.7 \u2013 \u2013 \u2013 \u2013",
-            "Shaded: Engine = 32 comparator lanes + arbiter.",
-            "TABLE V Decoder blocks, logic synthesis (pre-layout): ASAP7 RVT TT at 1 GHz",
-            "ASAP7 RVT TT at 1 GHz"
-          ]
-        },
-        {
-          "statement": "On the AMD ZCU102 FPGA implementation operating at 112.5 MHz full rate, the fabric (VCCINT) draws 3.7 W.",
-          "reason": "the statement contains the number 02, which none of its quotes contain",
-          "quotes": [
-            "the fabric (VCCINT) draws 0.88 W idle plus 3.7 W at full rate, 0.26 nJ per weight.",
-            "On the ZCU102, four engines close timing at 112.5 MHz",
-            "four engines close timing at 112.5 MHz",
-            "3.7 W at full rate"
+            "A full-width at half maximum (FWHM) of 0.57\u25e6 is found for an \ud835\udf14-scan across the (0002) reflection, much narrower than the corresponding FWHM of the initial seed nanowire sample of 2.1\u25e6",
+            "across the (0002) reflection",
+            "yielding a coalesced GaN layer."
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261113-0011",
+      "candidate": "CAND-20261116-0102",
       "decision": "out_of_scope",
-      "reason": "The paper focuses on acoustically driven motion of single biomolecules on hBN surfaces for nanofluidic and biophysical applications rather than semiconductor devices or integrated circuits.",
-      "chars": 56373,
+      "reason": "The paper focuses on railway operations, specifically the train unit shunting problem and workforce assignment, which is unrelated to semiconductor research.",
+      "chars": 43478,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261113-0010",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on theoretical quantum scattering and fermion counting statistics in mesoscopic conductors and cold atoms, which falls under quantum physics rather than semiconductor research.",
-      "chars": 38295,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261113-0009",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on discrete-variable mechanical design of origami metamaterials, which is unrelated to semiconductor research.",
-      "chars": 49025,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261113-0008",
-      "decision": "out_of_scope",
-      "reason": "The paper is a condensed matter physics study on topological moire systems and quantum Hall effects, which is out of scope for semiconductor manufacturing or device research.",
-      "chars": 91420,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261113-0007",
-      "decision": "out_of_scope",
-      "reason": "This paper is about fundamental condensed matter physics concerning phonon-induced magnetization and optical properties in insulators, rather than semiconductor devices or technology.",
-      "chars": 54855,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261113-0006",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on quantum key distribution (QKD) hardware and cryptography, which falls under quantum information theory and out of scope for semiconductor research.",
-      "chars": 44763,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261113-0005",
-      "decision": "out_of_scope",
-      "reason": "This paper focuses on quantum key distribution (QKD) and quantum communication networks, which falls under quantum information theory and out of scope for semiconductor research.",
-      "chars": 60827,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261113-0004",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on SiC-BN ceramic composites for high-temperature structural applications in extreme conditions, which is out of scope for semiconductor research.",
-      "chars": 95199,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261113-0003",
+      "candidate": "CAND-20261116-0101",
       "decision": "too_long",
-      "reason": "155,826 characters exceeds the 120,000 budget; not truncated",
-      "chars": 155826,
+      "reason": "374,719 characters exceeds the 120,000 budget; not truncated",
+      "chars": 374719,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261113-0002",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on quantum metrology and quantum batteries in a hyperfine-coupled spin system, which falls under quantum information theory and fundamental physics rather than semiconductor research.",
-      "chars": 62525,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261113-0001",
-      "decision": "out_of_scope",
-      "reason": "This paper is about fundamental condensed matter physics concerning antiferromagnetic magnons in nickel oxide and does not involve semiconductor devices, materials for electronics, or semiconductor manufacturing processes.",
-      "chars": 75250,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261111-0070",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on optomechanical instability and back-action-evading measurements in cavity optomechanics, which belongs to physics rather than semiconductor research.",
-      "chars": 42682,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261111-0069",
-      "decision": "out_of_scope",
-      "reason": "The paper is about power systems and grid contingency analysis, which is outside the scope of semiconductor research.",
-      "chars": 29548,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261111-0068",
-      "decision": "out_of_scope",
-      "reason": "The paper investigates the fundamental magnetic properties and spin dynamics of a van der Waals antiferromagnet material, which is out of scope as it does not relate to semiconductor devices, fabrication, or microelectronics.",
-      "chars": 74460,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261111-0067",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on optical reflectance measurements of materials for noble-element particle detectors, which is outside the scope of semiconductor devices and manufacturing.",
-      "chars": 64800,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261111-0066",
-      "decision": "read",
-      "reason": "",
-      "chars": 53347,
-      "claims": [
-        "CLM-PHOT-0145",
-        "CLM-PHOT-0146",
-        "CLM-PHOT-0147",
-        "CLM-PHOT-0148"
-      ],
-      "rejected": [
-        {
-          "statement": "Segmented traveling-wave phase modulators demonstrate an electro-optic bandwidth exceeding 50 GHz.",
-          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
-          "quotes": [
-            "The measured response exhibits no 3 dB roll-off within the available measurement range, demonstrating an electro-optic bandwidth exceeding 50 GHz [Fig. 3(c)].",
-            "To maximize the bandwidth of the TFLN EOM, we employ a segmented electrode design [Fig. 3(b)], which has been shown to greatly reduce RF loss by mitigating Ohmic losses due to current crowding [37].",
-            "To overcome detector bandwidth limitations, we characterize the frequency-dependent electro-optic response of the segmented phase modulators through measurements of the generated optical sidebands."
-          ]
-        },
-        {
-          "statement": "Sweeping the heater bias on an MMI-based 3 mm long amplitude modulator yields a maximum extinction ratio of 20.4 dB.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'By sweeping the heater bias, we measure the transfer function of the m'",
-          "quotes": [
-            "By sweeping the heater bias, we measure the transfer function of the modulator and obtain a maximum extinction ratio of 20.4 dB [Fig. 4(a), inset].",
-            "Inset: the extinction ratio of an MMI-based, 3 mm long modulator is measured by sweeping the power delivered to an integrated microheater above one waveguide arm, reaching an extinction ratio of 20.4 dB.",
-            "Push-pull, MMI-based amplitude modulators are characterized using a similar experimental setup, with an additional DC source used to control the thermo-optic bias through an integrated microheater."
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261111-0065",
-      "decision": "no_claims",
-      "reason": "the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 26402,
-      "claims": [],
-      "rejected": [
-        {
-          "statement": "Six engines run at a clock frequency of 140 MHz on a PYNQ-Z2 board using 21,082 LUTs.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Six engines meet 140 MHz on a PYNQ-Z2 in 21.1k LUTs and run LeNet-5 bi'",
-          "quotes": [
-            "Six engines meet 140 MHz on a PYNQ-Z2 in 21.1k LUTs and run LeNet-5 bit-exact on the board",
-            "this work (routed) 21,082 19,013 81 54",
-            "140 MHz (alone and in system) / 0.61 W (est.)",
-            "TABLE IV IMPLEMENTATION ON XC7Z020 (SIX ENGINES)"
-          ]
-        },
-        {
-          "statement": "The full design utilizes 21,082 LUTs on the xc7z020 target.",
-          "reason": "the statement contains the number 20, which none of its quotes contain",
-          "quotes": [
-            "this work (routed) 21,082 19,013 81 54",
-            "The full design (Table IV) is implemented in Vivado 2023.2 on the xc7z020-1, out of context.",
-            "TABLE IV IMPLEMENTATION ON XC7Z020 (SIX ENGINES)"
-          ]
-        },
-        {
-          "statement": "The full design consumes an estimated power of 0.61 W on the xc7z020 platform.",
-          "reason": "the statement contains the number 20, which none of its quotes contain",
-          "quotes": [
-            "140 MHz (alone and in system) / 0.61 W (est.)",
-            "TABLE IV IMPLEMENTATION ON XC7Z020 (SIX ENGINES)"
-          ]
-        },
-        {
-          "statement": "For conv1 of LeNet-5 running on the board, the engine execution cycle count is 425 cycles.",
-          "reason": "the statement contains the number 5, which none of its quotes contain",
-          "quotes": [
-            "conv1 824 425 1.94\u00d7 824 / 5.49 612 / 4.37 1.26\u00d7",
-            "Board counters, means over 100 digits (all 1,700 sparse passes bit-exact).",
-            "engine\u2217 (cycles) dense sparse speedup",
-            "TABLE V LENET-5 (3\u00d73 KERNELS) ON THE PYNQ-Z2, 100 MNIST TEST DIGITS"
-          ]
-        },
-        {
-          "statement": "End-to-end execution time for conv1 of LeNet-5 in sparse mode is 4.37 \u00b5s on the board.",
-          "reason": "the statement contains the number 5, which none of its quotes contain",
-          "quotes": [
-            "conv1 824 425 1.94\u00d7 824 / 5.49 612 / 4.37 1.26\u00d7",
-            "Board counters, means over 100 digits (all 1,700 sparse passes bit-exact).",
-            "end to end (cycles / \u00b5s)",
-            "612 / 4.37"
-          ]
-        },
-        {
-          "statement": "At 0.51 activation sparsity, the proposed engine takes 9,583 cycles in RTL simulation on 128\u00d7128 inputs.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 's 0 0.25 0.51 0.69 0.80 0.90'",
-          "quotes": [
-            "s 0 0.25 0.51 0.69 0.80 0.90",
-            "this work (B=4) 17,055 13,603 9,583 6,503 4,866 4,603",
-            "ACCUMULATOR ABLATION AT 128\u00d7128, ONE ENGINE (CYCLES)"
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261111-0164",
-      "decision": "out_of_scope",
-      "reason": "The paper discusses electric field measurements in atmospheric-pressure air spark discharges using femtosecond EFISH, which is related to plasma diagnostics and physics rather than semiconductor research.",
-      "chars": 23852,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261111-0163",
-      "decision": "out_of_scope",
-      "reason": "The paper studies fundamental physics of one-dimensional quantum fluids using neutron scattering on helium confined in porous materials, which is outside semiconductor research.",
-      "chars": 29168,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261111-0162",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on semantic communication and radio resource allocation for wireless networks, which is out of scope for semiconductor research.",
-      "chars": 34527,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261111-0161",
-      "decision": "out_of_scope",
-      "reason": "The paper discusses gas optics and high-power laser beam steering using molecular gases, which is outside the scope of semiconductor research.",
-      "chars": 34458,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261111-0160",
-      "decision": "read",
-      "reason": "",
-      "chars": 68236,
-      "claims": [
-        "CLM-MAT-0344",
-        "CLM-MAT-0345",
-        "CLM-MAT-0346",
-        "CLM-MAT-0347"
-      ],
-      "rejected": [
-        {
-          "statement": "The Stark slope of the high-energy interlayer exciton in 4L 2H-WSe2 is estimated to be 0.165 e\u00b7nm.",
-          "reason": "the statement contains the number 2, which none of its quotes contain",
-          "quotes": [
-            "In 4L, the Stark slope and net charge separation distance of the h-IX are estimated to be 0.165 e\u00b7nm and 3.85 \u00c5.",
-            "We measured the PL spectra and the Stark effect of pristine 3L\u20136L 2H-WSe\u2082 (Fig. 1).",
-            "pristine 3L\u20136L 2H-WSe\u2082"
-          ]
-        },
-        {
-          "statement": "In 4L 2H-WSe2, the corrected charge separation distance of the high-energy interlayer exciton is estimated to be 3.85 \u00c5.",
-          "reason": "the statement contains the number 2, which none of its quotes contain",
-          "quotes": [
-            "In 4L, the Stark slope and net charge separation distance of the h-IX are estimated to be 0.165 e\u00b7nm and 3.85 \u00c5.",
-            "We measured the PL spectra and the Stark effect of pristine 3L\u20136L 2H-WSe\u2082 (Fig. 1).",
-            "pristine 3L\u20136L 2H-WSe\u2082"
-          ]
-        },
-        {
-          "statement": "In GW-BSE calculations, the window-summed squared transition dipoles increase by a factor of 1.46 from 4L to 6L 2H-WSe2.",
-          "reason": "the statement contains the number 2, which none of its quotes contain",
-          "quotes": [
-            "The window-summed squared transition dipoles increase by a factor of 1.46 from 4L to 6L.",
-            "To determine the microscopic origin of the thickness-dependent h-IX brightening, we performed spinor GW\u2013BSE calculations for 4L and 6L 2H-WSe2 (Supplementary Section S4).",
-            "GW\u2013BSE calculations reveal mixed intralayer and interlayer configurations",
-            "4L and 6L 2H-WSe2"
-          ]
-        },
-        {
-          "statement": "The window-summed squared transition dipole strength of interlayer-dominated states increases by a factor of 4.60 from 4L to 6L 2H-WSe2 in GW-BSE calculations.",
-          "reason": "the statement contains the number 6, which none of its quotes contain",
-          "quotes": [
-            "Their summed strength increases by a factor of 4.60, comparable in scale to the observed 4-5-fold PL enhancement.",
-            "To determine the microscopic origin of the thickness-dependent h-IX brightening, we performed spinor GW\u2013BSE calculations for 4L and 6L 2H-WSe2 (Supplementary Section S4).",
-            "GW\u2013BSE calculations reveal mixed intralayer and interlayer configurations",
-            "4L and 6L 2H-WSe2"
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261111-0159",
-      "decision": "read",
-      "reason": "",
-      "chars": 38773,
-      "claims": [
-        "CLM-DEV-0102",
-        "CLM-DEV-0103",
-        "CLM-DEV-0104",
-        "CLM-DEV-0105",
-        "CLM-DEV-0106",
-        "CLM-DEV-0107",
-        "CLM-DEV-0108"
-      ],
-      "rejected": [
-        {
-          "statement": "The measured resonance frequency of the TFE P3F LN transducer is 33.4 kHz.",
-          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
-          "quotes": [
-            "The resulting data revealed a well-defined resonance at 33.4 kHz with an extracted k2 eff of 3% and a C0 of 17 pF, in line with the simulated value from Fig. 5.",
-            "The fabricated device was measured with a Zurich MFIA impedance analyzer and a Polytec laser Doppler vibrometer (LDV)",
-            "on a grounded elevated plate"
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261111-0158",
-      "decision": "no_claims",
-      "reason": "the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 41290,
-      "claims": [],
-      "rejected": [
-        {
-          "statement": "The maximum measured figure of merit for h10B15N is approximately 34.",
-          "reason": "the statement contains the number 0, which none of its quotes contain",
-          "quotes": [
-            "The largest measured FOM values are approximately 34 for h10B15N",
-            "h10B15N"
-          ]
-        },
-        {
-          "statement": "The maximum measured figure of merit for h11B15N is approximately 33.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): '33 for h11B15N'",
-          "quotes": [
-            "33 for h11B15N",
-            "The largest measured FOM values are approximately 34 for h10B15N and 33 for h11B15N",
-            "h11B15N"
-          ]
-        },
-        {
-          "statement": "The in-plane transverse optic phonon frequency of h10B15N extracted from far-field reflectance fit is 1374 cm-1.",
-          "reason": "the statement contains the number 0, which none of its quotes contain",
-          "quotes": [
-            "The in-plane TO phonon frequency is 1374 cm-1 in h10B15N",
-            "Using a single oscillator dielectric fit to the reflectance of each sample, we obtained the complex permittivity spectra",
-            "h10B15N",
-            "in-plane TO phonon frequency"
-          ]
-        },
-        {
-          "statement": "The in-plane transverse optic phonon frequency of h11B15N extracted from dielectric fit is 1339 cm-1.",
-          "reason": "the statement contains the number 5, which none of its quotes contain",
-          "quotes": [
-            "compared with 1339 cm-1 in h11B15N",
-            "Using a single oscillator dielectric fit to the reflectance of each sample, we obtained the complex permittivity spectra",
-            "h11B15N",
-            "in-plane TO phonon frequency"
-          ]
-        },
-        {
-          "statement": "The polariton wavelength for a 51 nm thick h10B15N crystal measured at 1446 cm-1 is approximately 1580 nm.",
-          "reason": "the statement contains the number 0, which none of its quotes contain",
-          "quotes": [
-            "At their respective measurement conditions, the 51 nm thick h10B15N crystal measured at 1446 cm-1 supports a polariton wavelength of approximately 1580 nm",
-            "h10B15N",
-            "51 nm thick",
-            "1446 cm-1"
-          ]
-        },
-        {
-          "statement": "The polariton wavelength for a 57 nm thick h11B15N crystal measured at 1406 cm-1 is approximately 1460 nm.",
-          "reason": "the statement contains the number 5, which none of its quotes contain",
-          "quotes": [
-            "whereas the 57 nm thick h11B15N crystal measured at 1406 cm-1 supports polariton wavelength of approximately 1460 nm",
-            "h11B15N",
-            "57 nm thick",
-            "1406 cm-1"
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261111-0157",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on wireless channel modeling and generative AI for radio-propagation data, which is out of scope for semiconductor research.",
-      "chars": 62203,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261111-0156",
-      "decision": "read",
-      "reason": "",
-      "chars": 53597,
-      "claims": [
-        "CLM-PHOT-0149",
-        "CLM-PHOT-0150"
-      ],
-      "rejected": [
-        {
-          "statement": "The original unimplemented laser diode demonstrates an efficiency slope of 0.98 W/A.",
-          "reason": "unit conversion refused: current_drive: cannot convert 0.98 W/A to A/m - Cannot convert from 'watt / ampere' ([mass] * [length] ** 2 / [time] ** 3 / [current]) to 'ampere / meter' ([cur",
-          "quotes": [
-            "The original LD (see Section 1 in Supplementary Information) has a ITH = 90 mA, efficiency slope of 0.98 W/A and \u03b7D = 51 %."
-          ]
-        },
-        {
-          "statement": "The original unimplemented laser diode achieves a differential quantum efficiency of 51%.",
-          "reason": "unit conversion refused: efficiency_compute: cannot convert 51.0 % to 1/J - Cannot convert from 'percent' (dimensionless) to '1 / joule' ([time] ** 2 / [mass] / [length] ** 2). A dimens",
-          "quotes": [
-            "The original LD (see Section 1 in Supplementary Information) has a ITH = 90 mA, efficiency slope of 0.98 W/A and \u03b7D = 51 %."
-          ]
-        },
-        {
-          "statement": "The FIB-milled random laser diode exhibits an efficiency slope of 0.14 W/A.",
-          "reason": "unit conversion refused: current_drive: cannot convert 0.14 W/A to A/m - Cannot convert from 'watt / ampere' ([mass] * [length] ** 2 / [time] ** 3 / [current]) to 'ampere / meter' ([cur",
-          "quotes": [
-            "The RLD has a threshold current ITH = 118 mA and an efficiency slope of 0.14 W/A, which corresponds to a differential quantum efficiency, \u03b7D = 7 %.",
-            "The RLD has a threshold current ITH = 118 mA and an efficiency slope of 0.14 W/A"
-          ]
-        },
-        {
-          "statement": "The FIB-milled random laser diode has a differential quantum efficiency of 7%.",
-          "reason": "unit conversion refused: efficiency_compute: cannot convert 7.0 % to 1/J - Cannot convert from 'percent' (dimensionless) to '1 / joule' ([time] ** 2 / [mass] / [length] ** 2). A dimensi",
-          "quotes": [
-            "which corresponds to a differential quantum efficiency, \u03b7D = 7 %.",
-            "The RLD has a threshold current ITH = 118 mA and an efficiency slope of 0.14 W/A"
-          ]
-        },
-        {
-          "statement": "The mean downward switching current IDOWN in the RLD hysteresis loop is 200.6 mA.",
-          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
-          "quotes": [
-            "their ensembles, denoted as IDOWN and IUP, yield mean values of 200.6 mA and 192.6 mA."
-          ]
-        },
-        {
-          "statement": "The mean upward switching current IUP in the RLD hysteresis loop is 192.6 mA.",
-          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
-          "quotes": [
-            "their ensembles, denoted as IDOWN and IUP, yield mean values of 200.6 mA and 192.6 mA."
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261111-0155",
-      "decision": "out_of_scope",
-      "reason": "The paper discusses nonlinear light scattering from dilute-gas density gratings within the framework of atomic and molecular physics, which is out of scope for semiconductor research.",
-      "chars": 65209,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261111-0154",
-      "decision": "no_claims",
-      "reason": "evidence type not established by a verifiable quote (or 'mixed'); no claims extracted, a human reader is needed",
-      "chars": 30990,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261111-0153",
-      "decision": "out_of_scope",
-      "reason": "The paper discusses fundamental quantum materials and topological charge density waves, which is out of scope for semiconductor device, circuit, or fabrication research.",
-      "chars": 98184,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261111-0152",
-      "decision": "read",
-      "reason": "",
-      "chars": 48482,
-      "claims": [
-        "CLM-MAT-0348",
-        "CLM-MAT-0349"
-      ],
-      "rejected": [
-        {
-          "statement": "The indirect band gap of Re6Se8Cl2 is calculated to be 1.2 eV.",
-          "reason": "unit conversion refused: voltage: cannot convert 1.2 eV to V - Cannot convert from 'electron_volt' ([mass] * [length] ** 2 / [time] ** 2) to 'volt' ([mass] * [length] ** 2 / [time] ** 3",
-          "quotes": [
-            "The calculated projected density of states (PDOS) using density functional theory (DFT) predicts an indirect band gap (Eg) of 1.2 eV as shown in Figure 1b, similar to measured and reported values (see the Supplementary Information for detai"
-          ]
-        },
-        {
-          "statement": "The spectral shift associated with hole thermalization in the valence bands produces an energy shift of approximately 0.4 eV.",
-          "reason": "unit conversion refused: voltage: cannot convert 0.4 eV to V - Cannot convert from 'electron_volt' ([mass] * [length] ** 2 / [time] ** 2) to 'volt' ([mass] * [length] ** 2 / [time] ** 3",
-          "quotes": [
-            "The spectral shift associated with hole thermalization in the VBs occurs on a timescale of 0.8 \u00b1 0.2 ps, with an energy shift of ~0.4 eV (Fig. 2d).",
-            "In our experiment, a 3.1 eV (400 nm) excitation pulse generates electron-hole pairs across the band gap of single crystalline Re6Se8Cl2.",
-            "Kinetic trace of hot hole thermalization at the Re O2 edge averaged across ~44\u201345 eV."
-          ]
-        },
-        {
-          "statement": "Thermalization of holes at the Se M5 edge feature at ~56.5 eV has a time constant of 0.9 \u00b1 0.2 ps.",
-          "reason": "[qualifier_dropped] the statement says the value is approximate but quantity.approximate is false. Record the qualifier the source used - UnitEngine.record(..., bound=..., approximate=...).",
-          "quotes": [
-            "The feature at ~56.5 eV attributed to a Se 3d5/2 transition to the VB has a time constant of 0.9 \u00b1 0.2 ps (red).",
-            "In our experiment, a 3.1 eV (400 nm) excitation pulse generates electron-hole pairs across the band gap of single crystalline Re6Se8Cl2."
-          ]
-        },
-        {
-          "statement": "The intensity feature at ~57.5 eV associated with a Se 3d3/2 transition to the VB increases with a time constant of 0.7 \u00b1 0.3 ps.",
-          "reason": "[qualifier_dropped] the statement says the value is approximate but quantity.approximate is false. Record the qualifier the source used - UnitEngine.record(..., bound=..., approximate=...).",
-          "quotes": [
-            "The feature at ~57.5 eV associated with a Se 3d3/2 transition to the VB increases in intensity with a time constant of 0.7 \u00b1 0.3 ps (yellow).",
-            "In our experiment, a 3.1 eV (400 nm) excitation pulse generates electron-hole pairs across the band gap of single crystalline Re6Se8Cl2."
-          ]
-        },
-        {
-          "statement": "Electrons in the CB at ~59.3 eV at the Se edge have a thermalization time constant of 0.8 \u00b1 0.4 ps.",
-          "reason": "the quote says the number is approximate but approximate is false",
-          "quotes": [
-            "The electrons in the CB at ~59.3 eV have a thermalization time constant of 0.8 \u00b1 0.4.",
-            "In our experiment, a 3.1 eV (400 nm) excitation pulse generates electron-hole pairs across the band gap of single crystalline Re6Se8Cl2.",
-            "Kinetic profiles for thermalization of holes and electrons at Se sites."
-          ]
-        },
-        {
-          "statement": "The measured phonon oscillation period at the Re O2 edge averaged across ~45.9\u201346.3 eV is 270 fs.",
-          "reason": "[qualifier_dropped] the statement says the value is approximate but quantity.approximate is false. Record the qualifier the source used - UnitEngine.record(..., bound=..., approximate=...).",
-          "quotes": [
-            "The oscillation period is measured to be 270 fs, which corresponds to 3.6 THz as shown in panel b.",
-            "In our experiment, a 3.1 eV (400 nm) excitation pulse generates electron-hole pairs across the band gap of single crystalline Re6Se8Cl2.",
-            "a, Kinetic profile of intensity oscillation averaged across ~45.9 \u2013 46.3 eV, fitted with a sine function (dashed red line).",
-            "We measure phonon oscillations in our transient XUV absorption spectra at the Re O2 edge (Fig. 2a)."
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261111-0151",
-      "decision": "out_of_scope",
-      "reason": "The paper describes a provenance-preserving assistant for triple-axis neutron scattering experiments, which is unrelated to semiconductor research.",
-      "chars": 87533,
+      "candidate": "CAND-20261116-0100",
+      "decision": "too_long",
+      "reason": "122,537 characters exceeds the 120,000 budget; not truncated",
+      "chars": 122537,
       "claims": [],
       "rejected": []
     }
   ],
   "counts": {
-    "no_claims": 4,
-    "read": 8,
-    "out_of_scope": 27,
-    "too_long": 1
+    "out_of_scope": 23,
+    "read": 10,
+    "too_long": 4,
+    "no_claims": 3
   },
-  "claims_accepted": 24,
-  "claims_rejected": 54,
+  "claims_accepted": 25,
+  "claims_rejected": 51,
   "tokens": {
-    "input": 231656,
-    "output": 33132
+    "input": 270700,
+    "output": 29340
   },
   "stop_reason": "paper_cap",
-  "seconds": 383.7,
-  "cost_usd": 0.277811,
+  "seconds": 389.9,
+  "cost_usd": 0.294868,
   "budget": {
     "monthly_cap_usd": 10.0,
-    "spent_month_usd": 3.390958,
-    "spent_today_usd": 0.277811,
-    "allowance_today_usd": 0.430428,
-    "remaining_today_usd": 0.152617,
-    "run_usd": 0.277811,
-    "run_calls": 51,
+    "spent_month_usd": 3.685826,
+    "spent_today_usd": 0.294868,
+    "allowance_today_usd": 0.440603,
+    "remaining_today_usd": 0.145735,
+    "run_usd": 0.294868,
+    "run_calls": 49,
     "run_unknown_calls": 0,
     "price_table_retrieved": "2026-09-21",
-    "price_table_age_days": 55
+    "price_table_age_days": 56
   },
   "errors": 0
 }

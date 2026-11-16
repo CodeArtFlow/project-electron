@@ -4211,3 +4211,73 @@ claims:
       unit: mA
     conditions:
       device_variant: RLD
+- id: CLM-PHOT-0151
+  topic: PHOT
+  statement: At 1500 K, the optimized emitter structure suppresses 97.1% of the incident-blackbody-equivalent
+    sub-bandgap power.
+  sources:
+  - SRC-00360
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-13'
+  created: '2026-11-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    emitter_temperature: 1500 K
+    emitter_type: optimized structure
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 97.1
+      unit: '%'
+    si_base:
+      value: 0.971
+      unit: dimensionless
+    display:
+      value: 97.1
+      unit: percent
+    conditions:
+      emitter_temperature: 1500 K
+      emitter_type: optimized structure
+- id: CLM-PHOT-0152
+  topic: PHOT
+  statement: The realistic metacrystal based on split-ring metaatoms exhibits a Dirac-point frequency
+    of approximately 5 GHz in the microwave regime.
+  sources:
+  - SRC-00365
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-13'
+  created: '2026-11-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    regime: microwave regime
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: true
+    as_published:
+      value: 5.0
+      unit: GHz
+    si_base:
+      value: 5000000000.0
+      unit: Hz
+    display:
+      value: 5.0
+      unit: GHz
+    conditions:
+      regime: microwave regime

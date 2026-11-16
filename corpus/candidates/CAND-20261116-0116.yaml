@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.17843v1
 doi: null
-title: Polarization Lifetime as a Design Axis for Task-Adaptive Photonic Reservoir
-  Computing
+title: Polarization Lifetime as a Design Axis for Task-Adaptive Photonic Reservoir Computing
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-13'
@@ -23,6 +22,99 @@ id: CAND-20261116-0116
 harvested_date: '2026-11-16'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-16'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Class CA achieves a total Information Processing Capacity of 19.29 at its optimal control
+      parameters.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit '''' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit e'
+    quotes:
+    - the perfectly matched Class CA achieves the highest nonlinear capacity (16.28) and the highest total
+      capacity (19.29)
+    - The TDRC system is modelled using the complete Maxwell-Bloch equations with a 4th-order Runge-Kutta
+      (RK4) integration scheme.
+    - the highest total capacity (19.29)
+  - statement: Class CA achieves a nonlinear Information Processing Capacity of 16.28 at its optimal control
+      parameters.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit '''' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit e'
+    quotes:
+    - the perfectly matched Class CA achieves the highest nonlinear capacity (16.28) and the highest total
+      capacity (19.29)
+    - The TDRC system is modelled using the complete Maxwell-Bloch equations with a 4th-order Runge-Kutta
+      (RK4) integration scheme.
+    - the highest nonlinear capacity (16.28)
+  - statement: Class A achieves a linear Information Processing Capacity of 4.70 at its optimal control
+      parameters.
+    reason: the value 4.7 does not appear in any of the claim's quotes
+    quotes:
+    - whereas Class A exhibits the highest linear capacity (4.70).
+    - The TDRC system is modelled using the complete Maxwell-Bloch equations with a 4th-order Runge-Kutta
+      (RK4) integration scheme.
+    - highest linear capacity (4.70)
+  - statement: Class CA achieves an NRMSE of 0.0506 on the Lorenz prediction task under the unified physical
+      baseline.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit '''' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit e'
+    quotes:
+    - Class CA dominates the higher-dimensional Lorenz (0.0506)
+    - The TDRC system is modelled using the complete Maxwell-Bloch equations with a 4th-order Runge-Kutta
+      (RK4) integration scheme.
+    - higher-dimensional Lorenz (0.0506)
+  - statement: Class CA achieves an NRMSE of 0.4251 on the experimental Santa Fe prediction task under
+      the unified physical baseline.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit '''' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit e'
+    quotes:
+    - and the experimental Santa Fe (0.4251) tasks.
+    - The TDRC system is modelled using the complete Maxwell-Bloch equations with a 4th-order Runge-Kutta
+      (RK4) integration scheme.
+    - Class CA dominates the higher-dimensional Lorenz (0.0506) and the experimental Santa Fe (0.4251)
+      tasks.
+    - experimental Santa Fe (0.4251)
+  - statement: Class A achieves an NRMSE of 0.47 under spontaneous emission noise at a spontaneous emission
+      factor of 10^-1.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit '''' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit e'
+    quotes:
+    - Class A retains the lowest NRMSE (0.47) even at the extreme limit of the spontaneous emission factor
+      β = 10−1
+    - The TDRC system is modelled using the complete Maxwell-Bloch equations with a 4th-order Runge-Kutta
+      (RK4) integration scheme.
+    - spontaneous emission factor β = 10−1
+  - statement: Class B achieves an NRMSE of 0.98 under spontaneous emission noise at a spontaneous emission
+      factor of 10^-1.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - whereas the long-carrier Class B suffers a systematic degradation (0.98).
+    - The TDRC system is modelled using the complete Maxwell-Bloch equations with a 4th-order Runge-Kutta
+      (RK4) integration scheme.
+    - spontaneous emission factor β = 10−1
+  - statement: Class CB achieves an NRMSE of 0.78 under spontaneous emission noise at a spontaneous emission
+      factor of 10^-1.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - A residual T2-mediated benefit of approximately 20% persists in the slow-carrier Class CB (0.78
+      vs. 0.98).
+    - The TDRC system is modelled using the complete Maxwell-Bloch equations with a 4th-order Runge-Kutta
+      (RK4) integration scheme.
+    - Class CB (0.78 vs. 0.98).
+    - βnoise = 10−1
+  tokens:
+    input: 17191
+    output: 2600
+  fetched_chars: 60433

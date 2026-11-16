@@ -1,0 +1,59 @@
+{
+  "arxiv_id": "2611.17798v1",
+  "claims": {
+    "CLM-ARCH-0226": {
+      "evidence_spans": [
+        "On evaluated GEMMs, the DLSM reduces total off-chip traffic by up to 61.4% relative to the best evaluated cache configuration, with no additional burden of programmer-managed memory.",
+        "On evaluated GEMMs, the DLSM reduces total off-chip traffic by up to 61.4% relative to the best evaluated cache configuration, with no additional burden of programmer-managed memory.",
+        "On evaluated GEMMs, the DLSM reduces total off-chip traffic by up to 61.4% relative to the best evaluated cache configuration, with no additional burden of programmer-managed memory.",
+        "We implement the Elasticy RDA in Bluespec SystemVerilog [17] and simulate with Bluespec’s cycle-accurate Bluesim simulator."
+      ],
+      "statement": "Elasticy's distributed linked streaming memory reduces total off-chip traffic by up to 61.4% relative to the best evaluated cache configuration on evaluated GEMMs.",
+      "terms": []
+    },
+    "CLM-ARCH-0227": {
+      "evidence_spans": [
+        "Elasticy delivers 152 TFLOPS of BF16 compute at 242.49 W in 16 nm at 1 GHz, or 0.63 TFLOPS/W.",
+        "Elasticy delivers 152 TFLOPS of BF16 compute at 242.49 W in 16 nm at 1 GHz, or 0.63 TFLOPS/W.",
+        "Elasticy delivers 152 TFLOPS of BF16 compute at 242.49 W in 16 nm at 1 GHz, or 0.63 TFLOPS/W.",
+        "We synthesize Elasticy using the Synopsys Design Compiler with a 16 nm technology library; each SMO memory is implemented using dual-port SRAMs."
+      ],
+      "statement": "Elasticy's synthesized total fabric power is 242.49 W at 1 GHz.",
+      "terms": []
+    },
+    "CLM-ARCH-0228": {
+      "evidence_spans": [
+        "Mamba-1.4B 1 N/A 1 82.32 36.14 0.99× 9.03×",
+        "Mamba-1.4B 1 N/A 1 82.32 36.14 0.99× 9.03×",
+        "We implement the Elasticy RDA in Bluespec SystemVerilog [17] and simulate with Bluespec’s cycle-accurate Bluesim simulator."
+      ],
+      "statement": "Elasticy achieves 82.32% memory-roofline attainment on Mamba-1.4B decode.",
+      "terms": []
+    },
+    "CLM-ARCH-0229": {
+      "evidence_spans": [
+        "Qwen MoE 16 128–1920† 1 75.23 73.06 1.14× 12.00×",
+        "Qwen MoE 16 128–1920† 1 75.23 73.06 1.14× 12.00×",
+        "We implement the Elasticy RDA in Bluespec SystemVerilog [17] and simulate with Bluespec’s cycle-accurate Bluesim simulator."
+      ],
+      "statement": "Elasticy achieves 75.23% memory-roofline attainment on Qwen MoE decode.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "We implement the Elasticy RDA in Bluespec SystemVerilog [17] and simulate with Bluespec’s cycle-accurate Bluesim simulator.",
+    "We synthesize Elasticy using the Synopsys Design Compiler with a 16 nm technology library; each SMO memory is implemented using dual-port SRAMs.",
+    "The current memory organization addresses whole tiles, requiring these transformations to process one row or column at a time. This serialization adds latency and leaves the memory bandwidth underutilized.",
+    "However, we note that the current Elasticy implementation leaves spilled data off-chip after a read, so repeated reads incur repeated off-chip transfers."
+  ],
+  "generated": "2026-11-16",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00363",
+  "text_chars": 75460,
+  "text_sha256": "7fbced674c0f46ebfce2407865c1cb6b4d6207b7934e0dddfc01fd804f2e7519"
+}

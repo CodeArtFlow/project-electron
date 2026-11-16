@@ -1,0 +1,94 @@
+id: SRC-00368
+title: Epitaxial integration of GaN $μ$-platelets and thin films on metallic TiN using a hybrid approach
+doi: null
+arxiv_id: 2611.17986v1
+url: https://arxiv.org/abs/2611.17986v1
+venue_id: arxiv_api
+authors:
+- name: Philipp M. John
+  affiliation: null
+  corresponding: null
+- name: Thomas Auzelle
+  affiliation: null
+  corresponding: null
+- name: Pierre-Marie Coulon
+  affiliation: null
+  corresponding: null
+- name: Blandine Alloing
+  affiliation: null
+  corresponding: null
+- name: Ileana Florea
+  affiliation: null
+  corresponding: null
+- name: Mikel Gómez Ruiz
+  affiliation: null
+  corresponding: null
+- name: Jonas Lähnemann
+  affiliation: null
+  corresponding: null
+- name: Lutz Geelhaar
+  affiliation: null
+  corresponding: null
+- name: Oliver Brandt
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-13'
+retrieved_date: '2026-11-16'
+access: full_text
+read_scope: Automated reading. The full PDF text (46,087 characters, 15 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.17986v1 on
+  2026-11-16. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“the corresponding FWHM of the initial seed nanowire sample of 2.1◦”
+
+  “MBE-grown, self-assembled GaN nanowire seeds with a number density of 300 µm−2”'
+method_summary: “The morphology of the grown GaN structures is analyzed with scanning electron microscopy
+  (SEM) and atomic force microscopy (AFM).”
+limitations: “Hence, growthonnanowireensembleswithnarrower length distributions and/or an increase of
+  overgrowth thickness is necessary to further reduce the surface roughness of such coalesced GaN layers
+  on TiN.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 18495
+    output: 1649
+  claims_accepted: 1
+  claims_rejected: 3
+  rejected:
+  - statement: The MOVPE overgrowth under N2/H2 carrier gas mixture yields a GaN mu-platelet ensemble
+      with a mean diameter of approximately 2 um and a standard deviation of 0.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Theplatelet’sdi-ameter
+      distribution is with(1.9± 0.4) µm the narrowest'''
+    quotes:
+    - Theplatelet’sdi-ameter distribution is with(1.9± 0.4) µm the narrowest among all grown ensembles.
+    - with a 1:1 mixture of N2 and H2 carrier gases
+    - carried out at a substrate temperature of 925◦C
+    - in presence of 0.01sccm SiH4.
+  - statement: Current-voltage measurements between a single Si-doped GaN mu-platelet and the TiN substrate
+      exhibit a maximum current of approximately 20 mA at 1.0 V.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - A quasi-linear relationship is found with a maximum current of≈ 20mA at 1.0V, indicating an ohmic
+      contact between theGaNandtheTiNlayer.
+    - at 1.0V
+    - with one probe nee-dleplacedonalarge,Si-dopedGaN𝜇-platelet (cf. Figure3(b), left panel) and the
+      second one remaining on the TiN layer.
+  - statement: An omega-scan across the (0002) reflection of the coalesced GaN layer grown by MOVPE on
+      TiN yields an XRD rocking curve full-width at half maximum of 0.57 degre
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''A full-width
+      at half maximum (FWHM) of 0.57◦ is found for an 𝜔-scan ac'''
+    quotes:
+    - A full-width at half maximum (FWHM) of 0.57◦ is found for an 𝜔-scan across the (0002) reflection,
+      much narrower than the corresponding FWHM of the initial seed nanowire sample of 2.1◦
+    - across the (0002) reflection
+    - yielding a coalesced GaN layer.
+corrections: []

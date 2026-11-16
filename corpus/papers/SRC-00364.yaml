@@ -1,0 +1,66 @@
+id: SRC-00364
+title: 'SIMTurn: Lightweight Divergent Subgroup Scheduling for Intra-Warp Synchronization'
+doi: null
+arxiv_id: 2611.17827v1
+url: https://arxiv.org/abs/2611.17827v1
+venue_id: arxiv_api
+authors:
+- name: Nikhil Rout
+  affiliation: null
+  corresponding: null
+- name: Joe Samuel Rosh
+  affiliation: null
+  corresponding: null
+- name: Blaise Tine
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-13'
+retrieved_date: '2026-11-16'
+access: full_text
+read_scope: Automated reading. The full PDF text (63,612 characters, 13 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.17827v1 on
+  2026-11-16. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Across warp widths from 4 to 32 threads, SIMTurn adds 17–24% scheduler area relative to IPDOM,
+  compared with 39–91% for ITS.”
+
+  “warp widths from 4 to 32 threads”
+
+  “On kernels with genuine cross-subgroup parallelism, SIMTurn tracks ITS closely and is up to 2.7× faster
+  than a software-serialized IPDOM baseline.”
+
+  “On kernels with genuine cross-subgroup parallelism”
+
+  “software-serialized IPDOM baseline”
+
+  “On control workloads that never need cross-subgroup progress, it stays within 8% of IPDOM’s runtime.”
+
+  “On control workloads that never need cross-subgroup progress”
+
+  “It meets the 800 MHz target at every width, with a maximum frequency within 7% of IPDOM’s.”'
+method_summary: '“We evaluate our implemented SIMTurn design using Vortex RTL simulation [38], based on
+  Verilator [36].”
+
+  “We synthesize the warp scheduler for IPDOM, SIMTurn, and a full per-thread ITS baseline through Yosys
+  with OpenSTA for timing and power, mapped to the open ASAP7 (7 nm, LVT) PDK at an 800 MHz target clock.”'
+limitations: '“First, a workload whose live subgroup count exceeds the pool capacity 𝐾 stalls, as ATM
+  does for 𝐾≤ 8.”
+
+  “Second, a wait that avoids the forms recognized by MayBlock, such as polling a plain load or calling
+  through a function pointer, gets no vx_yield.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 19308
+    output: 1464
+  claims_accepted: 5
+  claims_rejected: 0
+  rejected: []
+corrections: []

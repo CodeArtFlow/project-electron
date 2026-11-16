@@ -1,0 +1,118 @@
+id: SRC-00360
+title: An Inverse-Designed Multilayer Selective Emitter for High-Efficiency Thermophotovoltaics
+doi: null
+arxiv_id: 2611.17675v1
+url: https://arxiv.org/abs/2611.17675v1
+venue_id: arxiv_api
+authors:
+- name: Md Anwar Hosen
+  affiliation: null
+  corresponding: null
+- name: Kavyashree Keremane
+  affiliation: null
+  corresponding: null
+- name: Bed Poudel
+  affiliation: null
+  corresponding: null
+- name: Linxiao Zhu
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-13'
+retrieved_date: '2026-11-16'
+access: full_text
+read_scope: Automated reading. The full PDF text (41,630 characters, 17 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.17675v1 on
+  2026-11-16. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“At an emitter temperature of 1500 K, the optimized structure suppresses 97.1% of the incident-blackbody-equivalent
+  sub-bandgap power at the source”
+
+  “At an emitter temperature of 1500 K”
+
+  “the optimized structure suppresses”'
+method_summary: '“We optimize an emitter consisting of 16-layer aperiodic MgO/Si coating on tungsten,
+  for coupling to a GaSb cell with an antireflection coating and an Au mirror.”
+
+  “A detailed-balance framework incorporates polarization- and angle-resolved emissivity, multiple reflections,
+  and Auger nonradiative recombination.”
+
+  “We model the spectral, directional emissivity of the emitter 𝜀",$(𝜔,𝜃) and the absorptivity of the
+  cell 𝜀%,$(𝜔,𝜃) for transverse-electric (TE) and transverse-magnetic (TM) polarizations (p=TE,TM), using
+  the scattering-matrix formalism.40”'
+limitations: “The melting point of bulk Si is 1687 K 47, so the results at 1700 K mainly illustrate the
+  trend, and practical operation of this material system is limited to lower temperatures.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16244
+    output: 2771
+  claims_accepted: 1
+  claims_rejected: 6
+  rejected:
+  - statement: At an emitter temperature of 1500 K, the modeled radiative-to-electrical conversion efficiency
+      of the optimized selective emitter structure reaches 47.0%.
+    reason: 'unit conversion refused: efficiency_compute: cannot convert 47.0 % to 1/J - Cannot convert
+      from ''percent'' (dimensionless) to ''1 / joule'' ([time] ** 2 / [mass] / [length] ** 2). A dimens'
+    quotes:
+    - At an emitter temperature of 1500 K, the optimized structure suppresses 97.1% of the incident-blackbody-equivalent
+      sub-bandgap power at the source; a further 1.9% is returned to the emitter by the cell, leaving
+      1.0% absorbed parasitically i
+    - The resulting modeled radiative-to-electrical conversion efficiency reaches 47.0%
+    - At an emitter temperature of 1500 K
+    - the optimized structure suppresses 97.1% of the incident-blackbody-equivalent sub-bandgap power
+      at the source
+  - statement: At an emitter temperature of 1500 K, the modeled conversion efficiency for a SiC emitter
+      paired with the cell is 30.8%.
+    reason: 'unit conversion refused: efficiency_compute: cannot convert 30.8 % to 1/J - Cannot convert
+      from ''percent'' (dimensionless) to ''1 / joule'' ([time] ** 2 / [mass] / [length] ** 2). A dimens'
+    quotes:
+    - The resulting modeled radiative-to-electrical conversion efficiency reaches 47.0%, compared with
+      30.8% for a SiC emitter paired with the same cell, while maintaining a comparable maximum electrical
+      power density.
+    - The resulting modeled radiative-to-electrical conversion efficiency reaches 47.0%, compared with
+      30.8% for a SiC emitter paired with the same cell
+    - for a SiC emitter paired with the same cell
+    - At an emitter temperature of 1500 K
+  - statement: At an emitter temperature of 1300 K, the efficiency of the optimized emitter is 43.1%.
+    reason: 'unit conversion refused: efficiency_compute: cannot convert 43.1 % to 1/J - Cannot convert
+      from ''percent'' (dimensionless) to ''1 / joule'' ([time] ** 2 / [mass] / [length] ** 2). A dimens'
+    quotes:
+    - The efficiency of the optimized emitter is 17.7% at 900 K, 34.7% at 1100 K, 43.1% at 1300 K, and
+      47.0% at 1500 K [Figure 4(a)].
+    - 43.1% at 1300 K
+    - The efficiency of the optimized emitter is
+  - statement: At an emitter temperature of 1100 K, the efficiency of the optimized emitter is 34.7%.
+    reason: 'unit conversion refused: efficiency_compute: cannot convert 34.7 % to 1/J - Cannot convert
+      from ''percent'' (dimensionless) to ''1 / joule'' ([time] ** 2 / [mass] / [length] ** 2). A dimens'
+    quotes:
+    - The efficiency of the optimized emitter is 17.7% at 900 K, 34.7% at 1100 K, 43.1% at 1300 K, and
+      47.0% at 1500 K [Figure 4(a)].
+    - 34.7% at 1100 K
+    - The efficiency of the optimized emitter is
+  - statement: At 1500 K, the optimized emitter yields a maximum output power density of 1.24 W cm⁻².
+    reason: 'unit conversion refused: power_density: could not parse 1.24 ''W cm⁻²'': ''cm−2'' is not
+      defined in the unit registry'
+    quotes:
+    - The maximum output power densities are also similar, 1.27 and 1.24 W cm⁻², respectively.
+    - Figures 3(c) and 3(d) show the current density and output power density versus voltage at 1500 K.
+    - for (d) the optimized emitter.
+  - statement: Adding a 20 nm HfO2 capping layer on top and a 20 nm HfO2 layer between the last Si layer
+      and W reduces the efficiency at 1500 K to 46.1%.
+    reason: 'unit conversion refused: efficiency_compute: cannot convert 46.1 % to 1/J - Cannot convert
+      from ''percent'' (dimensionless) to ''1 / joule'' ([time] ** 2 / [mass] / [length] ** 2). A dimens'
+    quotes:
+    - Adding a 20 nm HfO₂ capping layer on top and a 20 nm HfO2 layer between the last Si layer and W
+      reduces the efficiency at 1500 K only from 47.0% to 46.1% and the output power density from 1.24
+      to 1.13 W cm⁻².
+    - Adding a 20 nm HfO₂ capping layer on top and a 20 nm HfO2 layer between the last Si layer and W
+      reduces the efficiency at 1500 K only from 47.0% to 46.1%
+    - Adding a 20 nm HfO₂ capping layer on top and a 20 nm HfO2 layer between the last Si layer and W
+    - reduces the efficiency at 1500 K
+corrections: []

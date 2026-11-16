@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-15.
+Topic code `ARCH`. Last reviewed 2026-11-16.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -188,6 +188,14 @@ Topic code `ARCH`. Last reviewed 2026-11-15.
   - `CLM-ARCH-0209` · process 28 nm · grade B · credibility unknown · simulated · as of 2026-11-05
   - sources: SRC-00321
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **242.49 W** — Elasticy's synthesized total fabric power is 242.49 W at 1 GHz.
+  - `CLM-ARCH-0227` · process 16 nm, frequency 1 GHz · grade B · credibility unknown · simulated · as of 2026-11-13
+  - sources: SRC-00363
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈3.23 W** — The combined power of cUFS, TECU, and PIM components is approximately 3.23 W.
+  - `CLM-ARCH-0235` · components cUFS, TECU, and PIM components · grade B · credibility unknown · simulated · as of 2026-11-13
+  - sources: SRC-00366
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### qualitative
 
@@ -571,6 +579,30 @@ Topic code `ARCH`. Last reviewed 2026-11-15.
   - `CLM-ARCH-0220` · comparisons_count 90 · grade B · credibility unknown · measured · as of 2026-11-12
   - sources: SRC-00349
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The maximum accuracy loss of attention-only 8-bit quantization relative to the FP32 baseline on Llama-2-13B is 0.9 percentage points.
+  - `CLM-ARCH-0225` · grade B · credibility unknown · measured · as of 2026-11-13
+  - sources: SRC-00362
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- SIMTurn adds 17–24% scheduler-area overhead relative to IPDOM across warp widths from 4 to 32 threads.
+  - `CLM-ARCH-0230` · warp_width_range 4 to 32 threads · grade B · credibility unknown · simulated · as of 2026-11-13
+  - sources: SRC-00364
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- ITS adds 39–91% scheduler-area overhead relative to IPDOM across warp widths from 4 to 32 threads.
+  - `CLM-ARCH-0231` · warp_width_range 4 to 32 threads · grade B · credibility unknown · simulated · as of 2026-11-13
+  - sources: SRC-00364
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- SIMTurn achieves up to a 2.7x speedup over a software-serialized IPDOM baseline on kernels with cross-subgroup parallelism.
+  - `CLM-ARCH-0232` · workload_type kernels with genuine cross-subgroup parallelism, comparison_baseline software-serialized IPDOM baseline · grade B · credibility unknown · simulated · as of 2026-11-13
+  - sources: SRC-00364
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- SIMTurn stays within 8% of IPDOM's runtime on workloads that never need cross-subgroup progress.
+  - `CLM-ARCH-0233` · workload_type control workloads that never need cross-subgroup progress · grade B · credibility unknown · simulated · as of 2026-11-13
+  - sources: SRC-00364
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- SIMTurn's max frequency is within 7% of IPDOM's target frequency under ASIC synthesis.
+  - `CLM-ARCH-0234` · grade B · credibility unknown · simulated · as of 2026-11-13
+  - sources: SRC-00364
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -838,6 +870,18 @@ Topic code `ARCH`. Last reviewed 2026-11-15.
   - `CLM-ARCH-0224` · mode greedy · grade B · credibility unknown · projected · as of 2026-11-12
   - sources: SRC-00353
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ 61.4 percent** — Elasticy's distributed linked streaming memory reduces total off-chip traffic by up to 61.4% relative to the best evaluated cache configuration on evaluated GEMMs.
+  - `CLM-ARCH-0226` · workload GEMMs, component DLSM · grade B · credibility unknown · simulated · as of 2026-11-13
+  - sources: SRC-00363
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **82.32 percent** — Elasticy achieves 82.32% memory-roofline attainment on Mamba-1.4B decode.
+  - `CLM-ARCH-0228` · model Mamba-1.4B · grade B · credibility unknown · simulated · as of 2026-11-13
+  - sources: SRC-00363
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **75.23 percent** — Elasticy achieves 75.23% memory-roofline attainment on Qwen MoE decode.
+  - `CLM-ARCH-0229` · model Qwen MoE · grade B · credibility unknown · simulated · as of 2026-11-13
+  - sources: SRC-00363
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### sensitivity advantage ratio
 
@@ -1023,6 +1067,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 224
-- grades: {'B': 224}
-- distinct sources: 76
+- claims: 235
+- grades: {'B': 235}
+- distinct sources: 80

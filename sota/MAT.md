@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-15.
+Topic code `MAT`. Last reviewed 2026-11-16.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -1117,6 +1117,30 @@ Topic code `MAT`. Last reviewed 2026-11-15.
   - `CLM-MAT-0340` · material PbTiO3, axis c axis, temperature 300 K · grade B · credibility unknown · simulated · as of 2026-11-12
   - sources: SRC-00343
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The measured bulk black phosphorus charge carrier diffusion coefficient along the armchair axis is 16.5 cm2/s.
+  - `CLM-MAT-0350` · crystallographic_axis armchair · grade B · credibility unknown · measured · as of 2026-11-13
+  - sources: SRC-00361
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The measured bulk black phosphorus charge carrier diffusion coefficient along the zigzag axis is 3.0 cm2/s.
+  - `CLM-MAT-0351` · crystallographic_axis zigzag · grade B · credibility unknown · measured · as of 2026-11-13
+  - sources: SRC-00361
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The measured monolayer black phosphorus exciton diffusion coefficient along the armchair direction is 45.5 cm2/s.
+  - `CLM-MAT-0352` · carrier_type exciton · grade B · credibility unknown · measured · as of 2026-11-13
+  - sources: SRC-00361
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The measured monolayer black phosphorus exciton diffusion coefficient along the zigzag direction is 6.9 cm2/s.
+  - `CLM-MAT-0353` · carrier_type exciton · grade B · credibility unknown · measured · as of 2026-11-13
+  - sources: SRC-00361
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- First-principles calculations yield a peak exciton diffusivity of 27 cm2/s along the armchair axis for monolayer black phosphorus.
+  - `CLM-MAT-0354` · grade B · credibility unknown · simulated · as of 2026-11-13
+  - sources: SRC-00361
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The initial MBE-grown GaN seed nanowires with a density of 300 µm-2 exhibit an XRD rocking curve FWHM of 2.1 degrees.
+  - `CLM-MAT-0358` · sample MBE-grown, self-assembled GaN nanowire seeds · grade B · credibility unknown · measured · as of 2026-11-13
+  - sources: SRC-00368
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1309,6 +1333,14 @@ Topic code `MAT`. Last reviewed 2026-11-15.
   - `CLM-MAT-0342` · measurement_method angle resolved photoemission spectroscopy (ARPES) · grade B · credibility unknown · measured · as of 2026-11-12
   - sources: SRC-00346
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ 96.85 degC** — The ordering temperature Tc of PrCa2Mn2O7 reaches up to 370 K.
+  - `CLM-MAT-0355` · material PrCa2Mn2O7 · grade B · credibility unknown · measured · as of 2026-11-13
+  - sources: SRC-00367
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **-33.15 degC** — The ordering temperature Tc of half doped Pr1-xCaxMnO3 (PCMO) is 240 K.
+  - `CLM-MAT-0356` · material Pr1−xCaxMnO3 (PCMO) · grade B · credibility unknown · measured · as of 2026-11-13
+  - sources: SRC-00367
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature delta
 
@@ -1496,6 +1528,10 @@ Topic code `MAT`. Last reviewed 2026-11-15.
   - `CLM-MAT-0195` · material (PEA)2PbI4 · grade B · credibility unknown · measured · as of 2026-10-22
   - sources: SRC-00209
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.00015406 um** — The X-ray wavelength used in the XRD measurements is 1.5406 Å.
+  - `CLM-MAT-0357` · source Cu-Anode, equipment Bruker D8 equipped with a monochromator · grade B · credibility unknown · measured · as of 2026-11-13
+  - sources: SRC-00367
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -1639,6 +1675,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 349
-- grades: {'B': 349}
-- distinct sources: 126
+- claims: 358
+- grades: {'B': 358}
+- distinct sources: 129

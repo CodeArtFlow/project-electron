@@ -1,0 +1,138 @@
+id: SRC-00362
+title: 'CHARMING: Parallel Edge AI Acceleration Across Tensor Processing and In-Memory Computation'
+doi: null
+arxiv_id: 2611.17785v1
+url: https://arxiv.org/abs/2611.17785v1
+venue_id: arxiv_api
+authors:
+- name: Md Omar Faruque
+  affiliation: null
+  corresponding: null
+- name: Jingang Jin
+  affiliation: null
+  corresponding: null
+- name: João Paulo C. de Lima
+  affiliation: null
+  corresponding: null
+- name: Shouzhi Fang
+  affiliation: null
+  corresponding: null
+- name: William C. Tegge
+  affiliation: null
+  corresponding: null
+- name: Peipei Zhou
+  affiliation: null
+  corresponding: null
+- name: Qinru Qiu
+  affiliation: null
+  corresponding: null
+- name: Alex K. Jones
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-13'
+retrieved_date: '2026-11-16'
+access: full_text
+read_scope: Automated reading. The full PDF text (72,348 characters, 12 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.17785v1 on
+  2026-11-16. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Restricting the quantization scope to attention is effectively lossless across all three models:
+  Llama-3.1-8B matches its FP32 baseline (85.8% vs. 85.8%), while Llama-2-13B and Mixtral-8x7B lose only
+  0.9 and 1.5 percentage points, respectively.”
+
+  “We use NVIDIA H200, PyTorch 2.14 and CUDA 13 for all quantization evaluation experiments.”'
+method_summary: '“We validate CHARMING end-to-end in hardware on AMD Versal VCK5000 and Alveo U200 platforms
+  and evaluate LLM and video-generation models across multiple precisions using measured hardware results
+  and simulation of the latest in-memory compute hardware.”
+
+  “We use a full hardware emulation approach to validate our designs and we use a mixture of hardware
+  execution and simulation for performance and energy characterization [23, 41].”
+
+  “We fit the constants of Equations 6 and 7 to simulated per-head latencies for 𝐴∈{4, 5}, 𝐵∈{4, 5, 6}
+  and 𝐾 ∈[64, 32768]. Equations 3–7 then lie within 5.1% of every simulated latency.”'
+limitations: '“CHARMING uses simulation only for in-memory execution as the extensions required for state-of-the-art
+  in-DRAM computation are not available in commercial hardware.”
+
+  “Because the two units run concurrently, each stage costs the longer of its two paths, and the head-split
+  optimizer balances them.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 24236
+    output: 2921
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: CHARMING with int4xint4 fixed-point in-memory computation reduces per-layer energy by up
+      to 7.6%.
+    reason: the value -7.6 does not appear in any of the claim's quotes
+    quotes:
+    - With int4× int4 fixed-point in-memory computation, CHARMING re- duces per-layer energy by up to
+      7.6% and improves energy-delay product by up to 24.7%, while maintaining accuracy similar to a 32-bit
+      floating-point baseline.
+    - We estimate CHARMING’s total energy by combining the measured VCK5000 board energy with the simulated
+      IMCU energy.
+    - With int4× int4 fixed-point in-memory computation
+    - saves up to 7.6% energy (5.5–7.6%) during prefill
+  - statement: CHARMING with int4xint4 precision improves energy-delay product by up to 24.7% during prefill.
+    reason: the value -24.7 does not appear in any of the claim's quotes
+    quotes:
+    - With int4× int4 fixed-point in-memory computation, CHARMING re- duces per-layer energy by up to
+      7.6% and improves energy-delay product by up to 24.7%, while maintaining accuracy similar to a 32-bit
+      floating-point baseline.
+    - We estimate CHARMING’s total energy by combining the measured VCK5000 board energy with the simulated
+      IMCU energy.
+    - With int4× int4 fixed-point in-memory computation
+    - and lowers EDP by 17.8–24.7%.
+  - statement: CHARMING improves prefill performance over AIE-only acceleration by up to 23.6%.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - CHARMING improves prefill performance by up to 23.6% and decode performance by up to 44% over AIE-only
+      acceleration.
+    - We characterize ACU execution and data movement using hardware measurements and IMCU execution using
+      cycle-level simulation, combining their execution times under this concurrency assumption.
+    - CHARMING improves prefill performance
+    - over AIE-only acceleration.
+  - statement: CHARMING achieves up to 44% decode performance improvement over AIE-only acceleration.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - CHARMING improves prefill performance by up to 23.6% and decode performance by up to 44% over AIE-only
+      acceleration.
+    - We characterize ACU execution and data movement using hardware measurements and IMCU execution using
+      cycle-level simulation, combining their execution times under this concurrency assumption.
+    - decode performance by up to 44%
+    - over AIE-only acceleration.
+  - statement: CHARMING reduces per-layer data movement by 9.4% to 22.8% across models and precisions.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Consequently, CHARMING reduces data movement per layer by 9.4–22.8% across models and precisions,
+      correspond- ing to 2.2–8.9 GB for models with 8K tokens and 39–126 GB for WAN 2.2 and Qwen3 with
+      32K tokens (Figure 12a).
+    - We characterize ACU execution and data movement using hardware measurements and IMCU execution using
+      cycle-level simulation, combining their execution times under this concurrency assumption.
+    - CHARMING reduces data movement per layer by 9.4–22.8% across models and precisions
+  - statement: During decode, CHARMING saves between 4.9% and 27.9% energy.
+    reason: the value -4.9 does not appear in any of the claim's quotes
+    quotes:
+    - During decode, CHARMING saves 4.9–27.9% energy and lowers EDP by 10.3–49.8%.
+    - We estimate CHARMING’s total energy by combining the measured VCK5000 board energy with the simulated
+      IMCU energy.
+    - During decode, CHARMING saves 4.9–27.9% energy
+  - statement: Equations 3-7 fit within 5.1% of every simulated latency for the IMCU performance model.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - We fit the constants of Equations 6 and 7 to simulated per-head latencies for 𝐴∈{4, 5}, 𝐵∈{4, 5,
+      6} and 𝐾 ∈[64, 32768]. Equations 3–7 then lie within 5.1% of every simulated latency.
+    - 𝐴∈{4, 5}
+    - 𝐵∈{4, 5, 6}
+    - 𝐾 ∈[64, 32768]
+corrections: []

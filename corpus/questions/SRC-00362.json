@@ -1,0 +1,30 @@
+{
+  "arxiv_id": "2611.17785v1",
+  "claims": {
+    "CLM-ARCH-0225": {
+      "evidence_spans": [
+        "Restricting the quantization scope to attention is effectively lossless across all three models: Llama-3.1-8B matches its FP32 baseline (85.8% vs. 85.8%), while Llama-2-13B and Mixtral-8x7B lose only 0.9 and 1.5 percentage points, respectively.",
+        "We use NVIDIA H200, PyTorch 2.14 and CUDA 13 for all quantization evaluation experiments."
+      ],
+      "statement": "The maximum accuracy loss of attention-only 8-bit quantization relative to the FP32 baseline on Llama-2-13B is 0.9 percentage points.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "We validate CHARMING end-to-end in hardware on AMD Versal VCK5000 and Alveo U200 platforms and evaluate LLM and video-generation models across multiple precisions using measured hardware results and simulation of the latest in-memory compute hardware.",
+    "We use a full hardware emulation approach to validate our designs and we use a mixture of hardware execution and simulation for performance and energy characterization [23, 41].",
+    "We fit the constants of Equations 6 and 7 to simulated per-head latencies for 𝐴∈{4, 5}, 𝐵∈{4, 5, 6} and 𝐾 ∈[64, 32768]. Equations 3–7 then lie within 5.1% of every simulated latency.",
+    "CHARMING uses simulation only for in-memory execution as the extensions required for state-of-the-art in-DRAM computation are not available in commercial hardware.",
+    "Because the two units run concurrently, each stage costs the longer of its two paths, and the head-split optimizer balances them."
+  ],
+  "generated": "2026-11-16",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00362",
+  "text_chars": 72348,
+  "text_sha256": "f9adfbbf3cc04a802f1282e4a48c1bc7f4b086c600f4269e727c2117467e06b5"
+}

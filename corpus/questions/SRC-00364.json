@@ -1,0 +1,71 @@
+{
+  "arxiv_id": "2611.17827v1",
+  "claims": {
+    "CLM-ARCH-0230": {
+      "evidence_spans": [
+        "Across warp widths from 4 to 32 threads, SIMTurn adds 17–24% scheduler area relative to IPDOM, compared with 39–91% for ITS.",
+        "warp widths from 4 to 32 threads",
+        "Across warp widths from 4 to 32 threads, SIMTurn adds 17–24% scheduler area relative to IPDOM, compared with 39–91% for ITS."
+      ],
+      "statement": "SIMTurn adds 17–24% scheduler-area overhead relative to IPDOM across warp widths from 4 to 32 threads.",
+      "terms": []
+    },
+    "CLM-ARCH-0231": {
+      "evidence_spans": [
+        "Across warp widths from 4 to 32 threads, SIMTurn adds 17–24% scheduler area relative to IPDOM, compared with 39–91% for ITS.",
+        "warp widths from 4 to 32 threads",
+        "Across warp widths from 4 to 32 threads, SIMTurn adds 17–24% scheduler area relative to IPDOM, compared with 39–91% for ITS."
+      ],
+      "statement": "ITS adds 39–91% scheduler-area overhead relative to IPDOM across warp widths from 4 to 32 threads.",
+      "terms": []
+    },
+    "CLM-ARCH-0232": {
+      "evidence_spans": [
+        "On kernels with genuine cross-subgroup parallelism, SIMTurn tracks ITS closely and is up to 2.7× faster than a software-serialized IPDOM baseline.",
+        "On kernels with genuine cross-subgroup parallelism",
+        "software-serialized IPDOM baseline",
+        "On kernels with genuine cross-subgroup parallelism, SIMTurn tracks ITS closely and is up to 2.7× faster than a software-serialized IPDOM baseline."
+      ],
+      "statement": "SIMTurn achieves up to a 2.7x speedup over a software-serialized IPDOM baseline on kernels with cross-subgroup parallelism.",
+      "terms": []
+    },
+    "CLM-ARCH-0233": {
+      "evidence_spans": [
+        "On control workloads that never need cross-subgroup progress, it stays within 8% of IPDOM’s runtime.",
+        "On control workloads that never need cross-subgroup progress",
+        "On control workloads that never need cross-subgroup progress, it stays within 8% of IPDOM’s runtime."
+      ],
+      "statement": "SIMTurn stays within 8% of IPDOM's runtime on workloads that never need cross-subgroup progress.",
+      "terms": [
+        "SIMTurn"
+      ]
+    },
+    "CLM-ARCH-0234": {
+      "evidence_spans": [
+        "It meets the 800 MHz target at every width, with a maximum frequency within 7% of IPDOM’s.",
+        "It meets the 800 MHz target at every width, with a maximum frequency within 7% of IPDOM’s."
+      ],
+      "statement": "SIMTurn's max frequency is within 7% of IPDOM's target frequency under ASIC synthesis.",
+      "terms": [
+        "SIMTurn",
+        "ASIC"
+      ]
+    }
+  },
+  "extra_quotes": [
+    "We evaluate our implemented SIMTurn design using Vortex RTL simulation [38], based on Verilator [36].",
+    "We synthesize the warp scheduler for IPDOM, SIMTurn, and a full per-thread ITS baseline through Yosys with OpenSTA for timing and power, mapped to the open ASAP7 (7 nm, LVT) PDK at an 800 MHz target clock.",
+    "First, a workload whose live subgroup count exceeds the pool capacity 𝐾 stalls, as ATM does for 𝐾≤ 8.",
+    "Second, a wait that avoids the forms recognized by MayBlock, such as polling a plain load or calling through a function pointer, gets no vx_yield."
+  ],
+  "generated": "2026-11-16",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00364",
+  "text_chars": 63612,
+  "text_sha256": "91fd389537beffc0f29dd40952100709c4629c9b26c6d9f1eb354899d3135dc8"
+}

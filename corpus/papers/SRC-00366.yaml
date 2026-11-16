@@ -1,0 +1,125 @@
+id: SRC-00366
+title: 'DiffusionSSD: Achieving Extreme Visual Compression with Dual-stage Diffusion and Cross-level Near-Data
+  Processing'
+doi: null
+arxiv_id: 2611.17908v1
+url: https://arxiv.org/abs/2611.17908v1
+venue_id: arxiv_api
+authors:
+- name: Kuai Yu
+  affiliation: null
+  corresponding: null
+- name: Wen Li
+  affiliation: null
+  corresponding: null
+- name: Shengwen Liang
+  affiliation: null
+  corresponding: null
+- name: Jie Zhang
+  affiliation: null
+  corresponding: null
+- name: Ying Wang
+  affiliation: null
+  corresponding: null
+- name: Huawei Li
+  affiliation: null
+  corresponding: null
+- name: Xin Yao
+  affiliation: null
+  corresponding: null
+- name: Renhai Chen
+  affiliation: null
+  corresponding: null
+- name: Gong Zhang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-13'
+retrieved_date: '2026-11-16'
+access: full_text
+read_scope: Automated reading. The full PDF text (81,300 characters, 15 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.17908v1 on
+  2026-11-16. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The combined power of the cUFS, TECU, and PIM components is approximately 3.23 W, comparable
+  to the approximately 3.27 W of near-Flash logic per package in [64].”
+
+  “cUFS, TECU, and PIM components”
+
+  “Based on the energy/power models described above and the simulator configuration, we simulate workload
+  execution and derive the average runtime power consumption.”'
+method_summary: “We therefore develop a SCALESim-style simulator [51] to evaluate the target cUFS–PIM
+  system.”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 27071
+    output: 2398
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: Dual-stage Diffusion reduces computation cost by up to 92.7% while maintaining comparable
+      perceptual quality.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Experimental results show that Dual-stage Diffusion maintains comparable perceptual quality while
+      reducing computation cost by up to 92.7%.
+    - Dual-stage Diffusion
+  - statement: Compared to NPU+DRAM, cUFS+PIM improves coding throughput by 2.32x on average.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Compared
+      with NPU+DRAM and near-data-processing design such as SmartSS'''
+    quotes:
+    - Compared with NPU+DRAM and near-data-processing design such as SmartSSD, cUFS+PIM improves coding
+      throughput by 2.32× and 2.91× on average, respectively.
+    - NPU+DRAM
+    - cUFS+PIM
+  - statement: Compared to SmartSSD, cUFS+PIM improves coding throughput by 2.91x on average.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Compared
+      with NPU+DRAM and near-data-processing design such as SmartSS'''
+    quotes:
+    - Compared with NPU+DRAM and near-data-processing design such as SmartSSD, cUFS+PIM improves coding
+      throughput by 2.32× and 2.91× on average, respectively.
+    - SmartSSD
+    - cUFS+PIM
+  - statement: On the Jetson Orin emulation platform, the proposed architecture improves encoder throughput
+      by 1.79x.
+    reason: 'unit conversion refused: throughput_tool: could not parse 1.79 ''×'': missing operand'
+    quotes:
+    - Fig. 12(a) shows that on the Jetson Orin platform, our architecture improves the throughput of the
+      encoder and decoder by 1.79× and 1.72×, respectively.
+    - Jetson Orin platform
+    - encoder
+  - statement: On the Jetson Orin emulation platform, the proposed architecture improves decoder throughput
+      by 1.72x.
+    reason: 'unit conversion refused: throughput_tool: could not parse 1.72 ''×'': missing operand'
+    quotes:
+    - Fig. 12(a) shows that on the Jetson Orin platform, our architecture improves the throughput of the
+      encoder and decoder by 1.79× and 1.72×, respectively.
+    - Jetson Orin platform
+    - decoder
+  - statement: cUFS and TECU introduce an area overhead of 3.05 mm2.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - cUFS and TECU introduce a total area overhead of 3.05 mm2 and a power overhead of 0.64 W.
+    - We synthesize the newly added PHY and TECU modules using Synopsys Design Compiler with the UMC 28nm
+      technology library to estimate area and active power.
+    - UMC 28nm technology library
+    - cUFS and TECU
+  - statement: cUFS and TECU introduce a power overhead of 0.64 W.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - cUFS and TECU introduce a total area overhead of 3.05 mm2 and a power overhead of 0.64 W.
+    - We synthesize the newly added PHY and TECU modules using Synopsys Design Compiler with the UMC 28nm
+      technology library to estimate area and active power.
+    - UMC 28nm technology library
+    - cUFS and TECU
+corrections: []

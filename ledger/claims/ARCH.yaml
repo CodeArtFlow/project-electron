@@ -6496,3 +6496,282 @@ claims:
       unit: percent
     conditions:
       mode: greedy
+- id: CLM-ARCH-0225
+  topic: ARCH
+  statement: The maximum accuracy loss of attention-only 8-bit quantization relative to the FP32 baseline
+    on Llama-2-13B is 0.9 percentage points.
+  sources:
+  - SRC-00362
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-13'
+  created: '2026-11-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-ARCH-0226
+  topic: ARCH
+  statement: Elasticy's distributed linked streaming memory reduces total off-chip traffic by up to 61.4%
+    relative to the best evaluated cache configuration on evaluated GEMMs.
+  sources:
+  - SRC-00363
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-13'
+  created: '2026-11-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    workload: GEMMs
+    component: DLSM
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 61.4
+      unit: '%'
+    si_base:
+      value: 0.614
+      unit: dimensionless
+    display:
+      value: 61.4
+      unit: percent
+    conditions:
+      workload: GEMMs
+      component: DLSM
+- id: CLM-ARCH-0227
+  topic: ARCH
+  statement: Elasticy's synthesized total fabric power is 242.49 W at 1 GHz.
+  sources:
+  - SRC-00363
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-13'
+  created: '2026-11-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    process: 16 nm
+    frequency: 1 GHz
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 242.49
+      unit: W
+    si_base:
+      value: 242.49
+      unit: W
+    display:
+      value: 242.49
+      unit: W
+    conditions:
+      process: 16 nm
+      frequency: 1 GHz
+- id: CLM-ARCH-0228
+  topic: ARCH
+  statement: Elasticy achieves 82.32% memory-roofline attainment on Mamba-1.4B decode.
+  sources:
+  - SRC-00363
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-13'
+  created: '2026-11-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    model: Mamba-1.4B
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 82.32
+      unit: '%'
+    si_base:
+      value: 0.8231999999999999
+      unit: dimensionless
+    display:
+      value: 82.32
+      unit: percent
+    conditions:
+      model: Mamba-1.4B
+- id: CLM-ARCH-0229
+  topic: ARCH
+  statement: Elasticy achieves 75.23% memory-roofline attainment on Qwen MoE decode.
+  sources:
+  - SRC-00363
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-13'
+  created: '2026-11-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    model: Qwen MoE
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 75.23
+      unit: '%'
+    si_base:
+      value: 0.7523000000000001
+      unit: dimensionless
+    display:
+      value: 75.23
+      unit: percent
+    conditions:
+      model: Qwen MoE
+- id: CLM-ARCH-0230
+  topic: ARCH
+  statement: SIMTurn adds 17–24% scheduler-area overhead relative to IPDOM across warp widths from 4 to
+    32 threads.
+  sources:
+  - SRC-00364
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-13'
+  created: '2026-11-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    warp_width_range: 4 to 32 threads
+- id: CLM-ARCH-0231
+  topic: ARCH
+  statement: ITS adds 39–91% scheduler-area overhead relative to IPDOM across warp widths from 4 to 32
+    threads.
+  sources:
+  - SRC-00364
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-13'
+  created: '2026-11-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    warp_width_range: 4 to 32 threads
+- id: CLM-ARCH-0232
+  topic: ARCH
+  statement: SIMTurn achieves up to a 2.7x speedup over a software-serialized IPDOM baseline on kernels
+    with cross-subgroup parallelism.
+  sources:
+  - SRC-00364
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-13'
+  created: '2026-11-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    workload_type: kernels with genuine cross-subgroup parallelism
+    comparison_baseline: software-serialized IPDOM baseline
+- id: CLM-ARCH-0233
+  topic: ARCH
+  statement: SIMTurn stays within 8% of IPDOM's runtime on workloads that never need cross-subgroup progress.
+  sources:
+  - SRC-00364
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-13'
+  created: '2026-11-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    workload_type: control workloads that never need cross-subgroup progress
+- id: CLM-ARCH-0234
+  topic: ARCH
+  statement: SIMTurn's max frequency is within 7% of IPDOM's target frequency under ASIC synthesis.
+  sources:
+  - SRC-00364
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-13'
+  created: '2026-11-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-ARCH-0235
+  topic: ARCH
+  statement: The combined power of cUFS, TECU, and PIM components is approximately 3.23 W.
+  sources:
+  - SRC-00366
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-13'
+  created: '2026-11-16'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    components: cUFS, TECU, and PIM components
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: true
+    as_published:
+      value: 3.23
+      unit: W
+    si_base:
+      value: 3.23
+      unit: W
+    display:
+      value: 3.23
+      unit: W
+    conditions:
+      components: cUFS, TECU, and PIM components

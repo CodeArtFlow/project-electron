@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.17932v1
 doi: null
-title: Influence of interfacial roughness amplitude and periodicity on giant chiral
-  asymmetry of domain wall mobility in epitaxial Cu/Pd/Co/Pd(111) films
+title: Influence of interfacial roughness amplitude and periodicity on giant chiral asymmetry of domain
+  wall mobility in epitaxial Cu/Pd/Co/Pd(111) films
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-13'
@@ -27,6 +27,68 @@ id: CAND-20261116-0109
 harvested_date: '2026-11-16'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-16'
+  reason: the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The saturation magnetization of the Cu(2) sample measured using a vibrating sample magnetometer
+      is 1.59 MA/m.
+    reason: 'unit conversion refused: current: cannot convert 1.59 MA/m to A - Cannot convert from ''megaampere
+      / meter'' ([current] / [length]) to ''ampere'' ([current]). A dimensional mismatch means t'
+    quotes:
+    - Table 1 Magnetic parameters of the samples 0Hc 0Ha Ms Keff  0HK 0HD (mT) (T) (MA/m) (MJ/m3)
+      (nm) (mT) (mT) Cu(2) 11 1.2 1.59 0.94 5.2 59 27
+    - Magnetic hysteresis loops were measured using a vibrating sample magnetometer (Lakeshore) with applied
+      fields up to 2.2 T.
+    - Cu(2) 11 1.2 1.59 0.94 5.2 59 27
+  - statement: The DW anisotropy field of the Cu(2) sample is approximately 59 mT.
+    reason: 'unit conversion refused: current: cannot convert 59.0 mT to A - Cannot convert from ''millitesla''
+      ([mass] / [time] ** 2 / [current]) to ''ampere'' ([current]). A dimensional mismatch means'
+    quotes:
+    - Table 1 Magnetic parameters of the samples 0Hc 0Ha Ms Keff  0HK 0HD (mT) (T) (MA/m) (MJ/m3)
+      (nm) (mT) (mT) Cu(2) 11 1.2 1.59 0.94 5.2 59 27
+    - 'The DW anisotropy field, HK, was calculated following Ref. [23]:'
+    - Cu(2) 11 1.2 1.59 0.94 5.2 59 27
+  - statement: The saturation magnetization of the Cu(4) sample measured using a vibrating sample magnetometer
+      is 1.57 MA/m.
+    reason: 'unit conversion refused: current: cannot convert 1.57 MA/m to A - Cannot convert from ''megaampere
+      / meter'' ([current] / [length]) to ''ampere'' ([current]). A dimensional mismatch means t'
+    quotes:
+    - Table 1 Magnetic parameters of the samples 0Hc 0Ha Ms Keff  0HK 0HD (mT) (T) (MA/m) (MJ/m3)
+      (nm) (mT) (mT) Cu(2) 11 1.2 1.59 0.94 5.2 59 27 Cu(4) 13.5 1.06 1.57 0.83 5.5 56 30
+    - Magnetic hysteresis loops were measured using a vibrating sample magnetometer (Lakeshore) with applied
+      fields up to 2.2 T.
+    - Cu(4) 13.5 1.06 1.57 0.83 5.5 56 30
+  - statement: The saturation magnetization of the Cu(7) sample measured using a vibrating sample magnetometer
+      is 1.57 MA/m.
+    reason: 'unit conversion refused: current: cannot convert 1.57 MA/m to A - Cannot convert from ''megaampere
+      / meter'' ([current] / [length]) to ''ampere'' ([current]). A dimensional mismatch means t'
+    quotes:
+    - Table 1 Magnetic parameters of the samples 0Hc 0Ha Ms Keff  0HK 0HD (mT) (T) (MA/m) (MJ/m3)
+      (nm) (mT) (mT) Cu(2) 11 1.2 1.59 0.94 5.2 59 27 Cu(4) 13.5 1.06 1.57 0.83 5.5 56 30 Cu(7) 19 1.05
+      1.57 0.82 5.5 55 32
+    - Magnetic hysteresis loops were measured using a vibrating sample magnetometer (Lakeshore) with applied
+      fields up to 2.2 T.
+    - Cu(7) 19 1.05 1.57 0.82 5.5 55 32
+  - statement: The velocity ratio between right- and left-handed domain walls in the Cu(7) sample reaches
+      approximately 50000 in the creep regime.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - We observe a dramatic enhancement of the asymmetry between the velocities of DWs with opposite chirality
+      in the creep regime, reaching a velocity ratio of approximately 50000 in the sample with a 7-nm-thick
+      Cu buffer layer.
+    - Magnetic-domain structures were imaged using a magneto-optical Kerr-effect (MOKE) microscope (Evico-Magnetics)
+      equipped with a custom-built large OOP coil, an OOP microcoil, and an IP electromagnet.
+    - sample with a 7-nm-thick Cu buffer layer
+    - creep regime
+  tokens:
+    input: 13937
+    output: 1918
+  fetched_chars: 40786

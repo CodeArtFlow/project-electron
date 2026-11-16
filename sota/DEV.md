@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-11-15.
+Topic code `DEV`. Last reviewed 2026-11-16.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -317,6 +317,14 @@ Topic code `DEV`. Last reviewed 2026-11-15.
   - `CLM-DEV-0108` · grade B · credibility unknown · measured · as of 2026-11-09
   - sources: SRC-00356
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Omitting the charge neutrality constraint distorts the electrostatic potential near the central region of tested device structures by 0.68 eV to 1.88 eV.
+  - `CLM-DEV-0109` · grade B · credibility unknown · simulated · as of 2026-11-13
+  - sources: SRC-00359
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The residual compensation model corrects a potential mismatch of 0.16 eV to 0.46 eV in the central region of tested device structures.
+  - `CLM-DEV-0110` · grade B · credibility unknown · simulated · as of 2026-11-13
+  - sources: SRC-00359
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -455,6 +463,10 @@ Topic code `DEV`. Last reviewed 2026-11-15.
   - `CLM-DEV-0094` · operation complete signing operation · grade B · credibility unknown · measured · as of 2026-11-05
   - sources: SRC-00316
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **4.16e+12 ns** — DeltaChargeNet requires an inference time of 4160 seconds on a structure containing 10648 atoms using an NVIDIA RTX 3090 Ti GPU.
+  - `CLM-DEV-0111` · atom_count 10648 atoms, gpu NVIDIA RTX 3090 Ti GPU (24 GB), system Hg0.5Cd0.5Te cubic supercells · grade B · credibility unknown · simulated · as of 2026-11-13
+  - sources: SRC-00359
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -525,6 +537,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 105
-- grades: {'B': 105}
-- distinct sources: 43
+- claims: 108
+- grades: {'B': 108}
+- distinct sources: 44
