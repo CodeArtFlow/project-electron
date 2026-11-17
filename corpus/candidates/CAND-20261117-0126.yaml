@@ -21,6 +21,26 @@ id: CAND-20261117-0126
 harvested_date: '2026-11-17'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-17'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For the NEC Express5800, the harmonic mean reported from SPECrates data is 19% higher than
+      that of the Supermicro 5019C-WR.
+    reason: the statement contains the number 800, which none of its quotes contain
+    quotes:
+    - yet the NEC achieves a 19% higher harmonic mean
+    - based on [3], data from [5].
+    - For instance, the Supermicro 5019C-WR has a slightly higher arithmetic mean than the NEC Express5800,
+      yet the NEC achieves a 19% higher harmonic mean
+  tokens:
+    input: 12291
+    output: 592
+  fetched_chars: 37781

@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-16.
+Topic code `MAT`. Last reviewed 2026-11-17.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -1141,6 +1141,26 @@ Topic code `MAT`. Last reviewed 2026-11-16.
   - `CLM-MAT-0358` · sample MBE-grown, self-assembled GaN nanowire seeds · grade B · credibility unknown · measured · as of 2026-11-13
   - sources: SRC-00368
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Chunked evaluation of 64,000,000 Si atoms with forces in single precision used 47.5 GB peak GPU memory.
+  - `CLM-MAT-0359` · model AFF-r2SCAN-smooth, precision single precision, system Si, atom_count 64,000,000, forces yes, hardware_tasks 6 (6) · grade B · credibility unknown · measured · as of 2026-11-16
+  - sources: SRC-00372
+  - ⚙ automated extraction (gemini-3.6-flash; 8 quote(s) verified verbatim against the paper)
+- Chunked evaluation of 2,000,376,000 Si atoms with forces in single precision used 46.6 GB peak GPU memory.
+  - `CLM-MAT-0360` · model AFF-r2SCAN-smooth, precision single precision, system Si, atom_count 2,000,376,000, forces yes, hardware_tasks 9 (20) · grade B · credibility unknown · measured · as of 2026-11-16
+  - sources: SRC-00372
+  - ⚙ automated extraction (gemini-3.6-flash; 8 quote(s) verified verbatim against the paper)
+- For the 0.56° twisted CrI3 trilayer, structural relaxation reduces the switching barrier from 12.2 to 3.79 meV/f.u.
+  - `CLM-MAT-0361` · system twisted CrI3 trilayer · grade B · credibility unknown · simulated · as of 2026-11-16
+  - sources: SRC-00376
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- In the 0.56° twisted CrI3 trilayer, force-driven simulations yield a critical force of 0.08 nN.
+  - `CLM-MAT-0362` · system twisted CrI3 trilayer · grade B · credibility unknown · simulated · as of 2026-11-16
+  - sources: SRC-00376
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Interlayer sliding in a 0.56° twisted BN trilayer can be mechanically driven by a lateral force of 0.013 nN.
+  - `CLM-MAT-0363` · system twisted BN trilayer · grade B · credibility unknown · simulated · as of 2026-11-16
+  - sources: SRC-00376
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1675,6 +1695,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 358
-- grades: {'B': 358}
-- distinct sources: 129
+- claims: 363
+- grades: {'B': 363}
+- distinct sources: 131

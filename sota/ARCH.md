@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-16.
+Topic code `ARCH`. Last reviewed 2026-11-17.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -603,6 +603,26 @@ Topic code `ARCH`. Last reviewed 2026-11-16.
   - `CLM-ARCH-0234` · grade B · credibility unknown · simulated · as of 2026-11-13
   - sources: SRC-00364
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- RescuCore achieves a speedup ranging from 1.4x to 9.4x during prefill compared with conventional GPU execution.
+  - `CLM-ARCH-0236` · baseline conventional GPU execution · grade B · credibility unknown · simulated · as of 2026-11-16
+  - sources: SRC-00369
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- RescuCore reduces energy consumption during prefill by 1.4x to 5.0x compared with conventional GPU execution.
+  - `CLM-ARCH-0237` · baseline conventional GPU execution · grade B · credibility unknown · simulated · as of 2026-11-16
+  - sources: SRC-00369
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- RescuCore achieves a speedup ranging from 1.3x to 2.8x during autoregressive decoding compared with conventional GPU execution.
+  - `CLM-ARCH-0238` · phase autoregressive decoding, baseline conventional GPU execution · grade B · credibility unknown · simulated · as of 2026-11-16
+  - sources: SRC-00369
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- RescuCore achieves a reduction in energy consumption ranging from 1.2x to 2.6x during autoregressive decoding compared with conventional GPU execution.
+  - `CLM-ARCH-0239` · phase autoregressive decoding, baseline conventional GPU execution · grade B · credibility unknown · simulated · as of 2026-11-16
+  - sources: SRC-00369
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The combination of doubling the register file capacity and halving instruction latencies yields at most a 1.36x speedup.
+  - `CLM-ARCH-0241` · baseline A100 architecture · grade B · credibility unknown · simulated · as of 2026-11-16
+  - sources: SRC-00369
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -882,6 +902,14 @@ Topic code `ARCH`. Last reviewed 2026-11-16.
   - `CLM-ARCH-0229` · model Qwen MoE · grade B · credibility unknown · simulated · as of 2026-11-13
   - sources: SRC-00363
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ ≈85 percent** — In controlled comparisons on commercial smartphones, DroidPrefill reduces per-step inference latency by up to 85.0%.
+  - `CLM-ARCH-0242` · baseline T3A+, system DroidPrefill · grade B · credibility unknown · measured · as of 2026-11-16
+  - sources: SRC-00375
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≤ ≈24.6 percent** — In controlled comparisons on commercial smartphones, DroidPrefill improves task success rate by up to 24.6%.
+  - `CLM-ARCH-0243` · baseline T3A+ · grade B · credibility unknown · measured · as of 2026-11-16
+  - sources: SRC-00375
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### sensitivity advantage ratio
 
@@ -999,6 +1027,10 @@ Topic code `ARCH`. Last reviewed 2026-11-16.
   - `CLM-ARCH-0222` · prover VeriLoRA, input_length_range 64–2048, operation opening the weights · grade B · credibility unknown · measured · as of 2026-11-12
   - sources: SRC-00351
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **14200 ns** — The optimized CUDA implementation achieves a decoding latency of 14.2 µs, representing a 3.4x speedup over the released implementation.
+  - `CLM-ARCH-0240` · implementation hand-fused CUDA kernels, baseline released implementation · grade B · credibility unknown · measured · as of 2026-11-16
+  - sources: SRC-00369
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -1067,6 +1099,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 235
-- grades: {'B': 235}
-- distinct sources: 80
+- claims: 243
+- grades: {'B': 243}
+- distinct sources: 82

@@ -4281,3 +4281,109 @@ claims:
       unit: GHz
     conditions:
       regime: microwave regime
+- id: CLM-PHOT-0153
+  topic: PHOT
+  statement: At a wavelength of 1653.9 nm, the QBIC#1 mode achieves a circular dichroism of 0.995.
+  sources:
+  - SRC-00374
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-16'
+  created: '2026-11-17'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    mode: QBIC#1
+    wavelength: 1653.9 nm
+    in_plane_asymmetry_parameter: '0.91'
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.995
+      unit: dimensionless
+    si_base:
+      value: 0.995
+      unit: dimensionless
+    display:
+      value: 99.5
+      unit: percent
+    conditions:
+      mode: QBIC#1
+      wavelength: 1653.9 nm
+      in_plane_asymmetry_parameter: '0.91'
+- id: CLM-PHOT-0154
+  topic: PHOT
+  statement: At an in-plane asymmetry parameter of 0.91, the QBIC#1 mode maintains a Q-factor of 1083.
+  sources:
+  - SRC-00374
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-16'
+  created: '2026-11-17'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    in_plane_asymmetry_parameter: '0.91'
+    out_of_plane_asymmetry_parameter: '0.28'
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1083.0
+      unit: dimensionless
+    si_base:
+      value: 1083.0
+      unit: dimensionless
+    display:
+      value: 108300.0
+      unit: percent
+    conditions:
+      in_plane_asymmetry_parameter: '0.91'
+      out_of_plane_asymmetry_parameter: '0.28'
+- id: CLM-PHOT-0155
+  topic: PHOT
+  statement: At an in-plane asymmetry parameter of 0.75, the central wavelength of strong coupling is
+    located at 1642.5 nm.
+  sources:
+  - SRC-00374
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-16'
+  created: '2026-11-17'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    in_plane_asymmetry_parameter: '0.75'
+  quantity:
+    quantity: wavelength
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1642.5
+      unit: nm
+    si_base:
+      value: 1.6425000000000002e-06
+      unit: m
+    display:
+      value: 1.6425
+      unit: um
+    conditions:
+      in_plane_asymmetry_parameter: '0.75'

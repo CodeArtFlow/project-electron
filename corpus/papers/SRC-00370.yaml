@@ -1,0 +1,110 @@
+id: SRC-00370
+title: Rashba Effect and Type-III Broken-Gap Band Alignment in MoTe$_2$/HfS$_2$ van der Waals Heterostructures
+  for Tunnel Field-Effect Transistors
+doi: null
+arxiv_id: 2611.20491v1
+url: https://arxiv.org/abs/2611.20491v1
+venue_id: arxiv_api
+authors:
+- name: Daniel S. Lopes
+  affiliation: null
+  corresponding: null
+- name: Bruno P. e Silva
+  affiliation: null
+  corresponding: null
+- name: Diego R. da Costa
+  affiliation: null
+  corresponding: null
+- name: Alexandre C. Dias
+  affiliation: null
+  corresponding: null
+- name: Rodrigo G. Amorim
+  affiliation: null
+  corresponding: null
+- name: Teldo A. S. Pereira
+  affiliation: null
+  corresponding: null
+- name: Jeanlex S. de Sousa
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-16'
+retrieved_date: '2026-11-17'
+access: full_text
+read_scope: Automated reading. The full PDF text (97,718 characters, 33 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.20491v1 on
+  2026-11-17. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: “For the vdWH–IV configuration, we obtained dint = 3.158Åand dMo−Hf = 6.427Å.”
+method_summary: '“All first-principles calculations were performed using the Vienna Ab Initio Simulation
+  Package (VASP) [3–7] within the projector-augmented wave (PAW) method [8].”
+
+  “Electronic band structures of the MoTe2/HfS2 vdWH under external electric fields ranging from −5 to
+  5 V/nm, calculated using the PBE+SOC approach.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 33304
+    output: 2472
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: The isolated MoTe2 monolayer exhibits a direct band gap of 0.90 eV at the K point under
+      1.5% lattice strain.
+    reason: the value 0.9 does not appear in any of the claim's quotes
+    quotes:
+    - Figure 1(d) shows the band structure of 1L–MoTe2, which exhibits a direct band gap of 0.90 eV at
+      the K point.
+    - The electronic band structures were calculated within the PBE functional including spin–orbit coupling
+      (PBE+SOC).
+    - The reduction can be attributed to the small lattice strain (∼ 1.5%) introduced during the construction
+      of the heterostructure, together with the inclusion of SOC effects.
+  - statement: The isolated HfS2 monolayer has an indirect band gap of 0.96 eV under 1.5% lattice strain.
+    reason: 'unit conversion refused: voltage: cannot convert 0.96 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** '
+    quotes:
+    - In contrast, Fig. 1(e) displays the band structure of 1L–HfS2, characterized by an indirect band
+      gap of 0.96 eV.
+    - The electronic band structures were calculated within the PBE functional including spin–orbit coupling
+      (PBE+SOC).
+    - The reduction can be attributed to the small lattice strain (∼ 1.5%) introduced during the construction
+      of the heterostructure, together with the inclusion of SOC effects.
+  - statement: The unstrained MoTe2 monolayer exhibits a band gap of 1.01 eV.
+    reason: 'unit conversion refused: voltage: cannot convert 1.01 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** '
+    quotes:
+    - In this case, the calculated band gaps are 1.01 eV for 1L–MoTe2 and 1.18 eV for 1L–HfS2, in closer
+      agreement with previous theoretical reports [51, 52].
+    - To verify this interpretation, we additionally calculated the band structures of the unstrained
+      monolayers, shown in Figs. S5(a)–(b) of the SI [49].
+  - statement: The unstrained HfS2 monolayer exhibits a band gap of 1.18 eV.
+    reason: 'unit conversion refused: voltage: cannot convert 1.18 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] ** '
+    quotes:
+    - In this case, the calculated band gaps are 1.01 eV for 1L–MoTe2 and 1.18 eV for 1L–HfS2, in closer
+      agreement with previous theoretical reports [51, 52].
+    - To verify this interpretation, we additionally calculated the band structures of the unstrained
+      monolayers, shown in Figs. S5(a)–(b) of the SI [49].
+  - statement: The vdWH-IV stacking configuration of the MoTe2/HfS2 heterostructure exhibits a binding
+      energy of -26.430 meV/Å2.
+    reason: the value -26.43 does not appear in any of the claim's quotes
+    quotes:
+    - The analysis of both E − EvdWH−IV and Eb reveals that the vdWH–IV stacking configuration is the
+      energetically most favorable structure, exhibiting a binding energy of −26.430 meV/Å2.
+  - statement: Under PBE+SOC, the CBM-VBM energy difference for the most stable MoTe2/HfS2 vdWH-IV structure
+      is -0.048 eV.
+    reason: 'unit conversion refused: voltage: cannot convert -0.048 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] *'
+    quotes:
+    - When SOC is included, the energy difference between the CBM and VBM is ∆ECBM−VBM = −0.048 eV, indicating
+      a finite overlap between the conduction- and valence-band edges.
+    - Figure 1(f) presents the electronic band structure of the most stable MoTe2/HfS2 heterostructure
+      (vdWH–IV).
+corrections: []

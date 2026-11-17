@@ -1,0 +1,120 @@
+id: SRC-00371
+title: Polarization-Resilient Plasmonic Nanoantenna Arrays for Fiber-Coupled Terahertz Spectroscopy with
+  Record-high Dynamic Range
+doi: null
+arxiv_id: 2611.20500v1
+url: https://arxiv.org/abs/2611.20500v1
+venue_id: arxiv_api
+authors:
+- name: Xinghe Jiang
+  affiliation: null
+  corresponding: null
+- name: Anika Tabassum
+  affiliation: null
+  corresponding: null
+- name: Fanqi Shen
+  affiliation: null
+  corresponding: null
+- name: Ali Jabbari
+  affiliation: null
+  corresponding: null
+- name: Mona Jarrahi
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-16'
+retrieved_date: '2026-11-17'
+access: full_text
+read_scope: Automated reading. The full PDF text (56,903 characters, 35 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.20500v1 on
+  2026-11-17. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Furthermore, a stable optical coupling efficiency of 83% was maintained throughout the optical
+  scan range.”
+
+  “(k) Optical coupling efficiency to the hollow-core ARF at different delay-line positions.”'
+method_summary: '“Using the bias electric field and optical absorption distributions, we numerically calculate
+  the time-domain radiated terahertz field for different optical polarizations from the time -dependent
+  photocurrent (see Methods section).”
+
+  “To experimentally verify this prediction, we measured the THz-TDS spectra while varying the polarization
+  angle at a fixed optical power incident on the plasmonic terahertz source.”
+
+  “A pair of off -axis gold -coated parabolic mirrors, each with a focal length of 2 inches, is used to
+  collimate the generated terahertz radiation and focus it onto the terahertz detector.”'
+limitations: “The small discrepancy between the numerical and experimental results is attributed to carrier
+  screening, which is not accounted for in our theoretical model.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 17083
+    output: 2879
+  claims_accepted: 1
+  claims_rejected: 6
+  rejected:
+  - statement: The hollow-core ARF-coupled plasmonic nanoantenna array source generates 2.1 mW of terahertz
+      radiation power.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Record-high terahertz power levels exceeding 2.1 mW were achieved, surpassing those previously demonstrated
+      by fiber-coupled pulsed terahertz sources despite operating at an order of magnitude lower bias
+      volta ge.
+    - Figure 3a shows the terahertz power radiated by the plasmonic nanoantenna array source at different
+      optical power levels and bias voltages, measured using a cali brated pyroelectric detector (PTB
+      19, THz 30).
+    - Figure 3. (a) Radiated terahertz power of the hollow-core ARF-coupled plasmonic nanoantenna arrays
+      as a function of the optical power and bias voltage.
+  - statement: The hollow-core ARF-coupled THz-TDS system achieves a peak dynamic range of 145 dB.
+    reason: the statement contains the number 145, which none of its quotes contain
+    quotes:
+    - The peak dynamic range increases from 118 dB to 14 5 dB as the number of acquired traces increases
+      from 1 to 1,000, corresponding to acquisition times ranging from 0.19 to 190 s.
+    - Figure 4a shows the terahertz spectra obtained using the fiber -coupled THz-TDS system as a function
+      of the number of acquired traces.
+    - The optical pump and probe powers driving the terahertz source and detector were set to 600 and
+      150 mW, respectively, to maximize the system dynamic range within a total optical power budget of
+      900 mW
+  - statement: The calculated terahertz spectral amplitude at 1 THz for the plasmonic terahertz source
+      is 1.6 dB lower for parallel polarization than for orthogonal polarizati
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''dB'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - Figure 1e shows the resulting spectral amplitude at 1 THz as a function of the optical polarization
+      angle for an optical pump pulse with a full width at ha lf maximum of 100 fs, predicting a 1.6 dB
+      lower spectral amplitude for parallel pola
+  - statement: The measured terahertz spectral amplitude at 1 THz for the plasmonic terahertz source is
+      1.4 dB below its maximum for parallel polarization.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The measured
+      amplitude at 1 THz is 1.4 dB below its maximum for parall'''
+    quotes:
+    - The measured amplitude at 1 THz is 1.4 dB below its maximum for parallel polarization, in close
+      agreement with the numerical predictions.
+    - To experimentally verify this prediction, we measured the THz-TDS spectra while varying the polarization
+      angle at a fixed optical power incident on the plasmonic terahertz source.
+  - statement: The calculated terahertz spectral amplitude at 1 THz for the plasmonic terahertz detector
+      is 0.9 dB lower for parallel polarization than for orthogonal polariza
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''dB'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - Figure 2e shows the resulting spectral amplitude at 1 THz as a function of the optical polarization
+      angle for an incident terahertz pulse with a full width at half maximum of 0.6 ps, predicting a
+      0.9 dB lower spectral amplitude for parallel
+  - statement: The measured terahertz spectral amplitude at 1 THz for the plasmonic terahertz detector
+      is 0.8 dB below its maximum for parallel polarization.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - The measured amplitude at 1 THz is 0.8 dB below its maximum for parallel polarization, in close
+      agreement with the numerical predictions.
+    - To experimentally verify this prediction, we measured THz-TDS spectra while varying the polarization
+      angle at a fixed optical power incident on the plasmonic terahertz detector.
+corrections: []

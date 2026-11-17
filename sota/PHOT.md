@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-16.
+Topic code `PHOT`. Last reviewed 2026-11-17.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -525,6 +525,16 @@ Topic code `PHOT`. Last reviewed 2026-11-16.
   - `CLM-PHOT-0151` · emitter_temperature 1500 K, emitter_type optimized structure · grade B · credibility unknown · simulated · as of 2026-11-13
   - sources: SRC-00360
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **99.5 percent** — At a wavelength of 1653.9 nm, the QBIC#1 mode achieves a circular dichroism of 0.995.
+  - `CLM-PHOT-0153` · mode QBIC#1, wavelength 1653.9 nm, in_plane_asymmetry_parameter 0.91 · grade B · credibility unknown · simulated · as of 2026-11-16
+  - sources: SRC-00374
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0137 — see the open register
+- **108300 percent** — At an in-plane asymmetry parameter of 0.91, the QBIC#1 mode maintains a Q-factor of 1083.
+  - `CLM-PHOT-0154` · in_plane_asymmetry_parameter 0.91, out_of_plane_asymmetry_parameter 0.28 · grade B · credibility unknown · simulated · as of 2026-11-16
+  - sources: SRC-00374
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0137 — see the open register
 
 ### sensitivity advantage ratio
 
@@ -653,6 +663,10 @@ Topic code `PHOT`. Last reviewed 2026-11-16.
   - `CLM-PHOT-0132` · length_device 500µm, design_type design-rule coupler, minimum_edge_gap 1.05µm · grade B · credibility unknown · simulated · as of 2026-11-05
   - sources: SRC-00307
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **1.6425 um** — At an in-plane asymmetry parameter of 0.75, the central wavelength of strong coupling is located at 1642.5 nm.
+  - `CLM-PHOT-0155` · in_plane_asymmetry_parameter 0.75 · grade B · credibility unknown · simulated · as of 2026-11-16
+  - sources: SRC-00374
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -685,9 +699,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0092` — length_device: _unexamined; classification pending_
   - claims: CLM-PHOT-0095, CLM-PHOT-0096
   - missing data: `not yet named`
+- `CFL-0137` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-PHOT-0153, CLM-PHOT-0154
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 152
-- grades: {'B': 145, 'A': 7}
-- distinct sources: 55
+- claims: 155
+- grades: {'B': 148, 'A': 7}
+- distinct sources: 56

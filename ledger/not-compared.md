@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**20729 pair(s)** as of 2026-11-16.
+**21688 pair(s)** as of 2026-11-17.
 
 ## `area_die` (11 pair(s))
 
@@ -181,7 +181,7 @@ _and 1244 more_
 
 _and 769 more_
 
-## `length_device` (5481 pair(s))
+## `length_device` (5696 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -220,13 +220,13 @@ _and 769 more_
 | `CLM-DEV-0093` = 502.3 nm | `CLM-PHOT-0057` = 0.024 nm | 100% | cell_size=1 µm | measurement_duration=exceeding 15.5 hours |
 | `CLM-DEV-0093` = 502.3 nm | `CLM-PROC-0049` = 0.0229 nm | 100% | cell_size=1 µm | sample=twisted bilayer graphene-hBN |
 | `CLM-DEV-0093` = 502.3 nm | `CLM-PROC-0050` = 0.0244 nm | 100% | cell_size=1 µm | sample=twisted bilayer graphene-hBN |
-| `CLM-LITHO-0001` = 500 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | material=crystalline silicon membrane | component=lens |
-| `CLM-LITHO-0001` = 500 nm | `CLM-MAT-0135` = 0.013 nm | 100% | material=crystalline silicon membrane | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-LITHO-0001` = 500 nm | `CLM-MAT-0136` = 0.006 nm | 100% | material=crystalline silicon membrane | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-LITHO-0001` = 500 nm | `CLM-MAT-0137` = 0.011 nm | 100% | material=crystalline silicon membrane | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-LITHO-0001` = 500 nm | `CLM-MAT-0138` = 0.005 nm | 100% | material=crystalline silicon membrane | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-DEV-0112` = 0.3158 nm | `CLM-LITHO-0005` = 3e+06 nm | 100% | stacking_configuration=vdWH-IV | beam_profile=Gaussian |
+| `CLM-DEV-0112` = 0.3158 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | stacking_configuration=vdWH-IV | component=lens |
+| `CLM-DEV-0112` = 0.3158 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | stacking_configuration=vdWH-IV | material=GaN, growth_method=ammonothermal |
+| `CLM-DEV-0112` = 0.3158 nm | `CLM-PHOT-0004` = 7000 nm | 100% | stacking_configuration=vdWH-IV | parameter=signal-ground electrode spacing |
+| `CLM-DEV-0112` = 0.3158 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | stacking_configuration=vdWH-IV | substrate_material=glass cover slip, sample_type=flat surface |
 
-_and 5441 more_
+_and 5656 more_
 
 ## `power` (361 pair(s))
 
@@ -287,7 +287,7 @@ _and 321 more_
 |---|---|---|---|---|
 | `CLM-DEV-0064` = 6e-06 torr | `CLM-MAT-0296` = 3.75e+04 torr | 100% | temperature=room temperature | measurement=Tensile testing |
 
-## `relative_deviation` (9582 pair(s))
+## `relative_deviation` (10214 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -316,6 +316,7 @@ _and 321 more_
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0188` = 46 percent | 177% | sample=B1-1 | indium_composition=22%, baseline=pristine GaN |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0031` = 79.2 percent | 176% | sample=B1-1 | workload=six full-trace streams, hardware_configuration=six 3D DRAM organizations, method=TileDRAM |
 | `CLM-ARCH-0228` = 82.32 percent | `CLM-MAT-0111` = -60 percent | 173% | model=Mamba-1.4B | sample=B1-1 |
+| `CLM-DEV-0114` = 83 percent | `CLM-MAT-0111` = -60 percent | 172% | component=hollow-core ARF | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0032` = 84.9 percent | 171% | sample=B1-1 | memory_technology=filamentary memristor |
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0005` = 85 percent | 171% | sample=B1-1 | dataset=Iris test set |
 | `CLM-EDA-0005` = 86.4 percent | `CLM-MAT-0111` = -60 percent | 169% | model=Cyclic Edge prediction model | sample=B1-1 |
@@ -330,9 +331,8 @@ _and 321 more_
 | `CLM-EDA-0045` = 93.3 percent | `CLM-MAT-0111` = -60 percent | 164% | design=AES | sample=B1-1 |
 | `CLM-ARCH-0096` = 93.6 percent | `CLM-MAT-0111` = -60 percent | 164% | classifier=XGBoost, evaluation_method=five-fold cross-validation | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0059` = 94.4 percent | 164% | sample=B1-1 | route=Fourier route |
-| `CLM-DEV-0069` = 38 percent | `CLM-MAT-0111` = -60 percent | 163% | wavelength=365 nm, batch=batch A, operating_voltage=0 V | sample=B1-1 |
 
-_and 9542 more_
+_and 10174 more_
 
 ## `resistance` (2 pair(s))
 
@@ -452,7 +452,7 @@ _and 12 more_
 |---|---|---|---|---|
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0007` = 3100 W/(m*K) | 99% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | temperature=room-temperature, sample_13c_concentration=~0.00024% |
 
-## `time` (2281 pair(s))
+## `time` (2368 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -497,7 +497,7 @@ _and 12 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-PROC-0069` = 9.166e+10 ns | 100% | device_type=FTJ, architecture=Naive | image_size=2000*2000 pixels, layers=160, algorithm=iterative SFF algorithm, cpu=AMD Ryzen 5 3600X CPU |
 | `CLM-ARCH-0013` = 162 ns | `CLM-ARCH-0020` = 1.4e+07 ns | 100% | device_type=FTJ, architecture=Merged | concurrency_n_a=48, design=our design with tiering, component=end-to-end time-between-tokens (TBT) |
 
-_and 2241 more_
+_and 2328 more_
 
 ## `voltage` (99 pair(s))
 
@@ -546,7 +546,7 @@ _and 2241 more_
 
 _and 59 more_
 
-## `wavelength` (277 pair(s))
+## `wavelength` (302 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -575,6 +575,7 @@ _and 59 more_
 | `CLM-MAT-0357` = 0.0001541 um | `CLM-PHOT-0071` = 1.24 um | 100% | source=Cu-Anode, equipment=Bruker D8 equipped with a monochromator | material=ITO |
 | `CLM-MAT-0357` = 0.0001541 um | `CLM-PHOT-0072` = 1.22 um | 100% | source=Cu-Anode, equipment=Bruker D8 equipped with a monochromator | polarization=x-polarization, incident_angle=normal incidence |
 | `CLM-MAT-0357` = 0.0001541 um | `CLM-PHOT-0083` = 1.55 um | 100% | source=Cu-Anode, equipment=Bruker D8 equipped with a monochromator | permittivity_diagonal_term=4.75, material=Bi-substituted yttrium iron garnet (Bi:YIG) |
+| `CLM-MAT-0357` = 0.0001541 um | `CLM-PHOT-0155` = 1.643 um | 100% | source=Cu-Anode, equipment=Bruker D8 equipped with a monochromator | in_plane_asymmetry_parameter=0.75 |
 | `CLM-PHOT-0011` = 3.26 um | `CLM-PROC-0039` = 0.000388 um | 100% | target_gas=CH4, method=TMM/FDTD inverse design (MOPSO) | landing_energy=10 eV |
 | `CLM-PHOT-0012` = 6.3 um | `CLM-PROC-0039` = 0.000388 um | 100% | target_gas=NO2, method=TMM/FDTD inverse design (MOPSO) | landing_energy=10 eV |
 | `CLM-PHOT-0013` = 3.26 um | `CLM-PROC-0039` = 0.000388 um | 100% | target_gas=CH4, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | landing_energy=10 eV |
@@ -583,12 +584,11 @@ _and 59 more_
 | `CLM-PHOT-0071` = 1.24 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | material=ITO | mo_coupling_coefficient=0 |
 | `CLM-PHOT-0072` = 1.22 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | polarization=x-polarization, incident_angle=normal incidence | mo_coupling_coefficient=0 |
 | `CLM-PHOT-0083` = 1.55 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | permittivity_diagonal_term=4.75, material=Bi-substituted yttrium iron garnet (Bi:YIG) | mo_coupling_coefficient=0 |
+| `CLM-PHOT-0099` = 2.03e+04 um | `CLM-PHOT-0155` = 1.643 um | 100% | mo_coupling_coefficient=0 | in_plane_asymmetry_parameter=0.75 |
 | `CLM-MAT-0166` = 0.679 um | `CLM-MAT-0357` = 0.0001541 um | 100% | material=MoS₂, excitation_wavelength=532 nm | source=Cu-Anode, equipment=Bruker D8 equipped with a monochromator |
 | `CLM-MAT-0357` = 0.0001541 um | `CLM-PHOT-0087` = 0.7757 um | 100% | source=Cu-Anode, equipment=Bruker D8 equipped with a monochromator | fundamental_pump_wavelength=1551.42 nm |
 | `CLM-PHOT-0011` = 3.26 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | target_gas=CH4, method=TMM/FDTD inverse design (MOPSO) | mo_coupling_coefficient=0 |
 | `CLM-PHOT-0012` = 6.3 um | `CLM-PKG-0003` = 0.001 um | 100% | target_gas=NO2, method=TMM/FDTD inverse design (MOPSO) | injection_current=9 mA, sample_type=D-DLAT sample |
 | `CLM-PHOT-0013` = 3.26 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | target_gas=CH4, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | mo_coupling_coefficient=0 |
-| `CLM-PHOT-0014` = 6.3 um | `CLM-PKG-0003` = 0.001 um | 100% | target_gas=NO2, structure=fabricated aperiodic Si/SiO2 multilayer on 100 nm TiN, 10 cm diameter | injection_current=9 mA, sample_type=D-DLAT sample |
-| `CLM-PHOT-0055` = 2.062 um | `CLM-PROC-0039` = 0.000388 um | 100% | device=Ho3+-doped fluoride glass waveguide laser | landing_energy=10 eV |
 
-_and 237 more_
+_and 262 more_

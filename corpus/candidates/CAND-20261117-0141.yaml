@@ -24,6 +24,70 @@ id: CAND-20261117-0141
 harvested_date: '2026-11-17'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-17'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The total capacitance of BM2 clock mesh straps is 34.1 aF/μm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''BM2 160 288
+      100 1.4 2.2'''
+    quotes:
+    - 'Table 3: Capacitance of clock mesh straps on candidate layers'
+    - BM2 160 288 100 1.4 2.2
+    - '34.1'
+    - To support the selection, Raphael [18] is applied to accurately extract the capacitances of BM1,
+      BM2, and BM3, as well as those of M3 and M4 in frontside for comparison.
+  - statement: The total capacitance of BM3 clock mesh straps is 26.7 aF/μm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''BM3 160 273
+      100 1.4 2.2'''
+    quotes:
+    - 'Table 3: Capacitance of clock mesh straps on candidate layers'
+    - BM3 160 273 100 1.4 2.2
+    - '26.7'
+    - To support the selection, Raphael [18] is applied to accurately extract the capacitances of BM1,
+      BM2, and BM3, as well as those of M3 and M4 in frontside for comparison.
+  - statement: The maximum local clock latency of the tv80 benchmark circuit using the proposed backside
+      CDN is 43.4 ps.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - 'Table 4: Performance comparison on four circuits'
+    - Max local clock latency* [ps] 51.1 50.5 40.9 43.4
+    - We use PrimeTime [19] for timing analysis
+    - tv80
+  - statement: The maximum IR-drop of the NVDLA benchmark circuit using the proposed backside CDN is 38.1
+      mV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Max IR-drop
+      [mV] 38.2 41.8 56.8 38.1'''
+    quotes:
+    - 'Table 4: Performance comparison on four circuits'
+    - Max IR-drop [mV] 38.2 41.8 56.8 38.1
+    - PowerWurzel [2] for power analysis, and Voltus [4] for static IR-drop analysis.
+    - NVDLA
+  - statement: The mesh net switching power of NVDLA using the proposed backside CDN is 1774 μW.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Mesh net
+      switching [𝜇W] 3561 2886 2847 1774'''
+    quotes:
+    - 'Table 4: Performance comparison on four circuits'
+    - Mesh net switching [𝜇W] 3561 2886 2847 1774
+    - PowerWurzel [2] for power analysis
+    - NVDLA
+  - statement: The total clock power of the SHA3 benchmark circuit using the proposed backside CDN is
+      3027 μW.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Total clock
+      power [𝜇W] 3078 3053 3042 3027'''
+    quotes:
+    - 'Table 4: Performance comparison on four circuits'
+    - Total clock power [𝜇W] 3078 3053 3042 3027
+    - PowerWurzel [2] for power analysis
+    - SHA3
+  tokens:
+    input: 12839
+    output: 2227
+  fetched_chars: 33139

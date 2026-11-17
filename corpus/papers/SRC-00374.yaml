@@ -1,0 +1,80 @@
+id: SRC-00374
+title: High-quality intrinsic circular dichroism in silicon-based bound states in the continuum metasurfaces
+  via strong coupling
+doi: null
+arxiv_id: 2611.20740v1
+url: https://arxiv.org/abs/2611.20740v1
+venue_id: arxiv_api
+authors:
+- name: Leyi Zhu
+  affiliation: null
+  corresponding: null
+- name: Tian Sang
+  affiliation: null
+  corresponding: null
+- name: Guanhua Yang
+  affiliation: null
+  corresponding: null
+- name: Chenyang Wang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-16'
+retrieved_date: '2026-11-17'
+access: full_text
+read_scope: Automated reading. The full PDF text (33,278 characters, 16 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.20740v1 on
+  2026-11-17. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“QBIC#1 achieves a near-perfect CD of 0.995 at 1653.9 nm”
+
+  “At α = 0.91, QBIC#1 achieves a near-perfect CD of 0.995 at 1653.9 nm”
+
+  “All numerical simulations were performed using the commercial software COMSOL Multiphysics, which is
+  based on the finite element method (FEM).”
+
+  “At α = 0.91, the mode maintains a high Q-factor of 1083 while achieving the aforementioned CD value.”
+
+  “evolution of the GMR (TE) and QBIC#1 (TM 1) modes as a function of the parameter α, with β fixed at
+  0.28.”
+
+  “at α = 0.75, the central wavelength of strong coupling is located at 1642.5 nm”'
+method_summary: “All numerical simulations were performed using the commercial software COMSOL Multiphysics,
+  which is based on the finite element method (FEM).”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 11687
+    output: 1905
+  claims_accepted: 3
+  claims_rejected: 2
+  rejected:
+  - statement: Under an out-of-plane asymmetry parameter of 0.28 and an in-plane asymmetry parameter of
+      0.75, the Rabi splitting energy valley is 3.16 meV.
+    reason: the statement contains the number 0.28, which none of its quotes contain
+    quotes:
+    - corresponding to a Rabi splitting energy valley of 3.16 meV.
+    - All numerical simulations were performed using the commercial software COMSOL Multiphysics, which
+      is based on the finite element method (FEM).
+    - at α = 0.75, the central wavelength of strong coupling is located at 1642.5 nm, corresponding to
+      a Rabi splitting energy valley of 3.16 meV.
+    - 'Under β = 0.28:'
+  - statement: The maximum Rabi splitting energy of the system approaches 7 meV under different in-plane
+      asymmetry parameter values.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Calculation results indicate that the maximum Rabi splitting energy of this system approaches 7
+      meV under different α values.
+    - All numerical simulations were performed using the commercial software COMSOL Multiphysics, which
+      is based on the finite element method (FEM).
+    - 'Under β = 0.28:'
+corrections: []

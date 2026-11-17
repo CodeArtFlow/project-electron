@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.20658v1
 doi: null
-title: Lock-in phase evidence for the electro-optic effect of interfacial water on
-  ITO electrodes
+title: Lock-in phase evidence for the electro-optic effect of interfacial water on ITO electrodes
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-16'
@@ -25,6 +24,33 @@ id: CAND-20261117-0121
 harvested_date: '2026-11-17'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-17'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For electrode 1 at a working-electrode potential of 0.433 V, the real part of ΔT/T reaches
+      a minimum of -0.19 × 10^-4 between zero crossings.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''It crosses
+      zero at 415 nm and 426 nm and reaches a minimum of−0.19× 10'''
+    quotes:
+    - The phase of the spectrum for electrode 1 at 𝑉WE = 0.433 V is shown in black in Fig. 2c.
+    - It crosses zero at 415 nm and 426 nm and reaches a minimum of−0.19× 10−4 between them.
+    - Figure 2. (a) Real part, (b) imaginary part, and (c) phase of Δ𝑇/𝑇 for electrode 1 (21 Hz, 𝑉ac =
+      1.6 Vpp, function generator DC offset 0 V, 𝑉WE = 0.433 V).
+  - statement: The ITO film working electrode thickness is 300 ± 20 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The working electrode (WE) was an ITO film (300± 20nm thick) on a quartz substrate.
+  tokens:
+    input: 6873
+    output: 1093
+  fetched_chars: 16821

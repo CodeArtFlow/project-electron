@@ -1,0 +1,102 @@
+id: SRC-00375
+title: Building Fully On-Device GUI Agents with Mobile NPUs
+doi: null
+arxiv_id: 2611.20772v1
+url: https://arxiv.org/abs/2611.20772v1
+venue_id: arxiv_api
+authors:
+- name: Zhe Dong
+  affiliation: null
+  corresponding: null
+- name: Guanyu Cai
+  affiliation: null
+  corresponding: null
+- name: Yuchen Jiang
+  affiliation: null
+  corresponding: null
+- name: Jiliang Wang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-16'
+retrieved_date: '2026-11-17'
+access: full_text
+read_scope: Automated reading. The full PDF text (66,629 characters, 12 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.20772v1 on
+  2026-11-17. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Experiments on commercial smartphones show that, in controlled comparisons with the autoregressive
+  T3A+ baseline, DroidPrefill reduces per-step inference latency by up to 85.0%, while improving task
+  success rate by up to 24.6%.”
+
+  “controlled comparisons with the autoregressive T3A+ baseline”
+
+  “DroidPrefill reduces per-step inference latency by up to 85.0%”'
+method_summary: '“The complete DroidPrefill agent runtime executes on a physical Xiaomi 17 smartphone
+  powered by a Qualcomm Snapdragon 8 Elite Gen 5 SoC.”
+
+  “For model inference, we evaluate two runtime paths provided by GenieX on the smartphone NPU. The first
+  uses the GenieX QAIRT runtime (QAIRT) with precompiled W4A16 bundles through the QNN HTP backend. The
+  second uses the GenieX llama.cpp runtime (llama.cpp) with Q4_0 GGUF models configured for the Hexagon
+  NPU.”'
+limitations: '“First, fully on-device deployment currently relies on compact and quantized models with
+  bounded context, which limits semantic reasoning and long-horizon planning on difficult GUI tasks.”
+
+  “Second, DroidPrefill primarily relies on accessibility-based UI representations, which may be incomplete
+  for visually rich or custom-rendered interfaces.”
+
+  “Third, SPAD currently depends on manually calibrated confidence thresholds and action eligibility rules,
+  while the bounded state ledger may still lose information in very long tasks.”
+
+  “Finally, our evaluation focuses on Qualcomm smartphone NPUs and uses representative rather than benchmark-scale
+  real-device validation.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 18900
+    output: 2821
+  claims_accepted: 2
+  claims_rejected: 4
+  rejected:
+  - statement: At the 128-token operating point, QAIRT/W4A16 on the smartphone NPU reaches a prompt prefill
+      throughput of 1,473 tokens/s.
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - At the 128-token operating point, QAIRT/W4A16 reaches 1,473 prompt tokens/s but only 17.9 decoded
+      tokens/s, an 82.3× ratio.
+    - 'Figure 2: Prefill–decode measurements for Qwen3-4B-Instruct-2507.'
+    - QAIRT/W4A16 reaches 1,473 prompt tokens/s
+    - 1,473 prompt tokens/s
+  - statement: Under the A11y-only QAIRT/W4A16 setup, DroidPrefill-A11y achieves an average per-step inference
+      latency of 4.6 s.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - The resulting inference latency decreases from 24.2 s to 4.6 s per step, an 80.8% reduction and
+      a 5.2× speedup.
+    - DroidPrefill-A11y Qwen3-4B-Instruct QAIRT W4A16 23.0 3.6 1830.4 26.7 4.6
+    - Under the A11y-only QAIRT/W4A16 setting
+  - statement: Under the A11y-only QAIRT/W4A16 setting, T3A+ has an average per-step inference latency
+      of 24.2 s.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - The resulting inference latency decreases from 24.2 s to 4.6 s per step, an 80.8% reduction and
+      a 5.2× speedup.
+    - T3A+ Qwen3-4B-Instruct QAIRT W4A16 10.7 0.0 4023.0 318.6 24.2
+    - Under the A11y-only QAIRT/W4A16 setting
+  - statement: For physical smartphone deployment running representative RealMobile tasks, DroidPrefill
+      achieves an average end-to-end step latency of 5.0 s.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Across real-device
+      tasks, DroidPrefill achieves an average end-to-end '''
+    quotes:
+    - Across real-device tasks, DroidPrefill achieves an average end-to-end step latency of 5.0 s, including
+      both model inference and physical-device interaction overhead.
+    - DroidPrefill achieves an average end-to-end step latency of 5.0 s
+    - representative tasks from RealMobile [4]
+    - deploy the complete pipeline on a physical smartphone
+corrections: []

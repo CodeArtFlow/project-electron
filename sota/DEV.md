@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-11-16.
+Topic code `DEV`. Last reviewed 2026-11-17.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -102,6 +102,16 @@ Topic code `DEV`. Last reviewed 2026-11-16.
   - sources: SRC-00313
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0116 — see the open register
+- **0.3158 nm** — The vdWH-IV configuration of the MoTe2/HfS2 heterostructure has an interlayer distance of 3.158 Å.
+  - `CLM-DEV-0112` · stacking_configuration vdWH-IV · grade B · credibility unknown · simulated · as of 2026-11-16
+  - sources: SRC-00370
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0136 — see the open register
+- **0.6427 nm** — The vdWH-IV configuration of the MoTe2/HfS2 heterostructure has a Mo-Hf separation distance of 6.427 Å.
+  - `CLM-DEV-0113` · stacking_configuration vdWH-IV · grade B · credibility unknown · simulated · as of 2026-11-16
+  - sources: SRC-00370
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0136 — see the open register
 
 ### power
 
@@ -359,6 +369,10 @@ Topic code `DEV`. Last reviewed 2026-11-16.
   - sources: SRC-00269
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0097, CFL-0098 — see the open register
+- **83 percent** — The optical coupling efficiency to the hollow-core ARF remains 83% throughout the optical delay line scan range.
+  - `CLM-DEV-0114` · component hollow-core ARF · grade B · credibility unknown · measured · as of 2026-11-16
+  - sources: SRC-00371
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -534,9 +548,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0123` — temperature_delta: _unexamined; classification pending_
   - claims: CLM-DEV-0097, CLM-DEV-0098
   - missing data: `not yet named`
+- `CFL-0136` — length_device: _unexamined; classification pending_
+  - claims: CLM-DEV-0112, CLM-DEV-0113
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 108
-- grades: {'B': 108}
-- distinct sources: 44
+- claims: 111
+- grades: {'B': 111}
+- distinct sources: 46

@@ -1,0 +1,42 @@
+{
+  "arxiv_id": "2611.20772v1",
+  "claims": {
+    "CLM-ARCH-0242": {
+      "evidence_spans": [
+        "Experiments on commercial smartphones show that, in controlled comparisons with the autoregressive T3A+ baseline, DroidPrefill reduces per-step inference latency by up to 85.0%, while improving task success rate by up to 24.6%.",
+        "controlled comparisons with the autoregressive T3A+ baseline",
+        "DroidPrefill reduces per-step inference latency by up to 85.0%",
+        "Experiments on commercial smartphones show that, in controlled comparisons with the autoregressive T3A+ baseline, DroidPrefill reduces per-step inference latency by up to 85.0%, while improving task success rate by up to 24.6%."
+      ],
+      "statement": "In controlled comparisons on commercial smartphones, DroidPrefill reduces per-step inference latency by up to 85.0%.",
+      "terms": []
+    },
+    "CLM-ARCH-0243": {
+      "evidence_spans": [
+        "Experiments on commercial smartphones show that, in controlled comparisons with the autoregressive T3A+ baseline, DroidPrefill reduces per-step inference latency by up to 85.0%, while improving task success rate by up to 24.6%.",
+        "controlled comparisons with the autoregressive T3A+ baseline",
+        "Experiments on commercial smartphones show that, in controlled comparisons with the autoregressive T3A+ baseline, DroidPrefill reduces per-step inference latency by up to 85.0%, while improving task success rate by up to 24.6%."
+      ],
+      "statement": "In controlled comparisons on commercial smartphones, DroidPrefill improves task success rate by up to 24.6%.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "The complete DroidPrefill agent runtime executes on a physical Xiaomi 17 smartphone powered by a Qualcomm Snapdragon 8 Elite Gen 5 SoC.",
+    "For model inference, we evaluate two runtime paths provided by GenieX on the smartphone NPU. The first uses the GenieX QAIRT runtime (QAIRT) with precompiled W4A16 bundles through the QNN HTP backend. The second uses the GenieX llama.cpp runtime (llama.cpp) with Q4_0 GGUF models configured for the Hexagon NPU.",
+    "First, fully on-device deployment currently relies on compact and quantized models with bounded context, which limits semantic reasoning and long-horizon planning on difficult GUI tasks.",
+    "Second, DroidPrefill primarily relies on accessibility-based UI representations, which may be incomplete for visually rich or custom-rendered interfaces.",
+    "Third, SPAD currently depends on manually calibrated confidence thresholds and action eligibility rules, while the bounded state ledger may still lose information in very long tasks.",
+    "Finally, our evaluation focuses on Qualcomm smartphone NPUs and uses representative rather than benchmark-scale real-device validation."
+  ],
+  "generated": "2026-11-17",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00375",
+  "text_chars": 66629,
+  "text_sha256": "499f3bef69c2fee27e5f67388555a9226a77fd0940fb1ace7115c78cef496a54"
+}

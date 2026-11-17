@@ -2210,3 +2210,74 @@ claims:
       layers: '160'
       algorithm: iterative SFF algorithm
       cpu: AMD Ryzen 5 3600X CPU
+- id: CLM-PROC-0070
+  topic: PROC
+  statement: For 47 experimental thin-film samples, Unified-FiLM achieved a sample-averaged mean absolute
+    error of 0.047 for refractive index.
+  sources:
+  - SRC-00373
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-16'
+  created: '2026-11-17'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    model: Unified-FiLM
+    sample_set: 47 thin-film samples
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.047
+      unit: dimensionless
+    si_base:
+      value: 0.047
+      unit: dimensionless
+    display:
+      value: 4.7
+      unit: percent
+    conditions:
+      model: Unified-FiLM
+      sample_set: 47 thin-film samples
+- id: CLM-PROC-0071
+  topic: PROC
+  statement: Unified-FiLM completed each experimental thin-film analysis in under 2 s.
+  sources:
+  - SRC-00373
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-16'
+  created: '2026-11-17'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    model: Unified-FiLM
+    sample_set: 47 thin-film samples
+  quantity:
+    quantity: time
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 2.0
+      unit: s
+    si_base:
+      value: 2.0
+      unit: s
+    display:
+      value: 1999999999.9999998
+      unit: ns
+    conditions:
+      model: Unified-FiLM
+      sample_set: 47 thin-film samples

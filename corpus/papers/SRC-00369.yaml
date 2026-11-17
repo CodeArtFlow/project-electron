@@ -1,0 +1,96 @@
+id: SRC-00369
+title: Integrated GPU Core for Mamba-3
+doi: null
+arxiv_id: 2611.20409v1
+url: https://arxiv.org/abs/2611.20409v1
+venue_id: arxiv_api
+authors:
+- name: Shiva Raja
+  affiliation: null
+  corresponding: null
+- name: William Desueza
+  affiliation: null
+  corresponding: null
+- name: Ajay Joshi
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-16'
+retrieved_date: '2026-11-17'
+access: full_text
+read_scope: Automated reading. The full PDF text (112,499 characters, 25 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.20409v1 on
+  2026-11-17. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Compared with conventional GPU execution, RescuCore achieves 1.4×–9.4× speedup and 1.4×–5.0×
+  reduction in energy consumption during prefill, and 1.3×–2.8× speedup and 1.2×–2.6× reduction in en-
+  ergy consumption during autoregressive decoding.”
+
+  “Compared with conventional GPU execution”
+
+  “We evaluate RescuCore on representative Mamba-3 hybrid models using cycle-accurate Accel-Sim simulation,
+  RTL synthesis for area estimation, and synthesis-informed AccelWattch power modeling.”
+
+  “during autoregressive decoding”
+
+  “This reduces decoding latency to 14.2 µs, a 3.4× speedup over the released implementation.”
+
+  “hand-fused CUDA kernels for the complete MIMO decoding path”
+
+  “over the released implementation”
+
+  “execute them on an NVIDIA A100 80GB GPU at B = 1”
+
+  “combining reduced instruction latency with a doubled register file yields at most 1.36× speedup.”
+
+  “modifications to the A100 architecture”
+
+  “To assess whether additional hardware resources can recover this lost efficiency, we simulate several
+  modifications to the A100 architecture”'
+method_summary: '“We evaluate RescuCore on representative Mamba-3 hybrid models using cycle-accurate Accel-Sim
+  simulation, RTL synthesis for area estimation, and synthesis-informed AccelWattch power modeling.”
+
+  “We synthesize the RescuCore RTL using Cadence Genus with the 45nm FreePDK45 library [34], scaling the
+  resulting area and power estimates to 7nm for comparison with an NVIDIA A100 GPU.”'
+limitations: '“Although evaluated on NVIDIA GPUs, the proposed architecture is applicable to other GPUs.”
+
+  “Although training is included in our workload characterization, RescuCore specifically targets inference
+  acceleration.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 30435
+    output: 2577
+  claims_accepted: 6
+  claims_rejected: 2
+  rejected:
+  - statement: Selecting BF16 limits the estimated area overhead to 5.9% of an A100 die for a configuration
+      with state size 32 and MIMO rank 4.
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - After exploring multiple numerical representations, we select BF16 to preserve model accuracy while
+      limiting the estimated area overhead to 5.9% of an A100 die for configuration with state size 32
+      and MIMO rank 4.
+    - RTL synthesis for area estimation
+    - select BF16
+    - state size 32
+  - statement: RescuCore reduces decoding latency to 10.4 µs, providing a 1.4x speedup over fused CUDA
+      and 4.7x over the released implementation.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - By executing the dependent operations in a dedicated pipelined datapath while retaining projections
+      on existing GPU units, RescuCore reduces decod- ing latency to 10.4 µs, providing 1.4× speedup over
+      fused CUDA and 4.7× over the released im
+    - With RescuCore, the modeled latency of the complete Mamba-3 layer, including the GPU projections,
+      is 10.4 µs.
+    - RescuCore reduces decod- ing latency
+    - over fused CUDA
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (measured: 1, simulated:
+  5). This field records the majority (simulated); trust each claim''s own evidence_type over this one.'

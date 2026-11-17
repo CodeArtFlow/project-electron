@@ -27,6 +27,36 @@ id: CAND-20261117-0131
 harvested_date: '2026-11-17'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-17'
+  reason: the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The calculated band gap of TiNCl from ab initio density functional calculations is 0.623
+      eV.
+    reason: 'unit conversion refused: voltage: cannot convert 0.623 eV to V - Cannot convert from ''electron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [time] **'
+    quotes:
+    - The calculated band gap is 0.623 eV, which is smaller than the experimental value of 1.27 eV.
+    - Figure 5 shows the calculated electronic band structure. The calculated band gap is 0.623 eV, which
+      is smaller than the experimental value of 1.27 eV.
+    - Ab initio density functional calculations for the α form of TiNCl were performed with Quantum Espresso
+      package [19, 20].
+  - statement: The experimental band gap of TiNCl obtained from PL analysis at 6 K is 1.27 eV.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - The calculated band gap is 0.623 eV, which is smaller than the experimental value of 1.27 eV.
+    - Photoluminescence (PL) spectra were measured using a continuous-wave laser at 405 nm over a temperature
+      range of 6–300 K, with an excitation intensity of 2.4 W/cm2 at the sample.
+    - and Eexp g (6 K) is the experimental band gap obtained from the PL analysis at 6 K.
+    - Anomalous temperature dependence of the band gap in TiNCl
+  tokens:
+    input: 13276
+    output: 974
+  fetched_chars: 39046

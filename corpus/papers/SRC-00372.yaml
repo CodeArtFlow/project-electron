@@ -1,0 +1,87 @@
+id: SRC-00372
+title: Scaling a Universal Graph Neural Network Force Field to Billions of Atoms on Desk-Side GPUs
+doi: null
+arxiv_id: 2611.20585v1
+url: https://arxiv.org/abs/2611.20585v1
+venue_id: arxiv_api
+authors:
+- name: Jaehyung Lee
+  affiliation: null
+  corresponding: null
+- name: Kamal Choudhary
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-16'
+retrieved_date: '2026-11-17'
+access: full_text
+read_scope: Automated reading. The full PDF text (32,799 characters, 20 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.20585v1 on
+  2026-11-17. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Si 64,000,000 yes 6 (6) 106,054 47.5 2.34”
+
+  “Table 1: Chunked evaluations with AFF-r2SCAN-smooth on GB10s, in single precision.”
+
+  “Si 2,000,376,000 yes 9 (20) 104,194 46.6 72.3”'
+method_summary: '“We first measured the largest pristine Si cell that one GB10 evaluates as a single graph.”
+
+  “Table 1: Chunked evaluations with AFF-r2SCAN-smooth on GB10s, in single precision.”'
+limitations: '“This last run measures size and cost and gives no biological result, because the model
+  was trained on inorganic materials and has not been validated on biomolecules.”
+
+  “Second, the decomposition evaluates a fixed configuration: molecular dynamics at scale needs the pieces
+  exchanged between steps, as in LAMMPS.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 11950
+    output: 4721
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: Evaluating 216,000 Si atoms with forces as a single graph on one GB10 using AFF-r2SCAN-smooth
+      with layer checkpointing required 0.550 MB/atom.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - 216,000 with layer checkpointing (0.550 MB/atom, 10.2 s; 119 GB of the 130.7 GB available, so the
+      next size, 238,328 atoms, would not fit)
+    - We first measured the largest pristine Si cell that one GB10 evaluates as a single graph.
+  - statement: Evaluating 216,000 Si atoms with forces as a single graph on one GB10 took 10.2 s using
+      layer checkpointing.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - 216,000 with layer checkpointing (0.550 MB/atom, 10.2 s; 119 GB of the 130.7 GB available, so the
+      next size, 238,328 atoms, would not fit)
+    - We first measured the largest pristine Si cell that one GB10 evaluates as a single graph.
+  - statement: Chunked evaluation of 8,000,000 Si atoms with forces in single precision required 0.29
+      GB10-hours total.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - Si 8,000,000 yes 1 (1) 106,067 47.5 0.29
+    - 'Table 1: Chunked evaluations with AFF-r2SCAN-smooth on GB10s, in single precision.'
+  - statement: Chunked evaluation of 1,000,000,000 Si atoms with forces in single precision across 8 GB10s
+      with 12 tasks required 43.2 GB10-hours total.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - Si 1,000,000,000 yes 8 (12) 71,578 31.9 43.2
+    - 'Table 1: Chunked evaluations with AFF-r2SCAN-smooth on GB10s, in single precision.'
+  - statement: Evaluating the 102,361,540 atom Si/SiO2/Al gate stack with forces on 3 GB10s with 6 tasks
+      required 10.7 GB10-hours total.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - Si/SiO2/Al gate stack 102,361,540 yes 3 (6) 39,059 52.8 10.7
+    - 'Table 1: Chunked evaluations with AFF-r2SCAN-smooth on GB10s, in single precision.'
+  - statement: Evaluating the 1,066,628 atom STMV virus in water with forces required 0.92 GB10-hours
+      on 1 GB10 with 1 task.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - STMV virus in water 1,066,628 yes 1 (1) 22,263 58.3 0.92
+    - 'Table 1: Chunked evaluations with AFF-r2SCAN-smooth on GB10s, in single precision.'
+corrections: []

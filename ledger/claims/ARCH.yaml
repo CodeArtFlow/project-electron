@@ -6775,3 +6775,206 @@ claims:
       unit: W
     conditions:
       components: cUFS, TECU, and PIM components
+- id: CLM-ARCH-0236
+  topic: ARCH
+  statement: RescuCore achieves a speedup ranging from 1.4x to 9.4x during prefill compared with conventional
+    GPU execution.
+  sources:
+  - SRC-00369
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-16'
+  created: '2026-11-17'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: conventional GPU execution
+- id: CLM-ARCH-0237
+  topic: ARCH
+  statement: RescuCore reduces energy consumption during prefill by 1.4x to 5.0x compared with conventional
+    GPU execution.
+  sources:
+  - SRC-00369
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-16'
+  created: '2026-11-17'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: conventional GPU execution
+- id: CLM-ARCH-0238
+  topic: ARCH
+  statement: RescuCore achieves a speedup ranging from 1.3x to 2.8x during autoregressive decoding compared
+    with conventional GPU execution.
+  sources:
+  - SRC-00369
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-16'
+  created: '2026-11-17'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    phase: autoregressive decoding
+    baseline: conventional GPU execution
+- id: CLM-ARCH-0239
+  topic: ARCH
+  statement: RescuCore achieves a reduction in energy consumption ranging from 1.2x to 2.6x during autoregressive
+    decoding compared with conventional GPU execution.
+  sources:
+  - SRC-00369
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-16'
+  created: '2026-11-17'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    phase: autoregressive decoding
+    baseline: conventional GPU execution
+- id: CLM-ARCH-0240
+  topic: ARCH
+  statement: The optimized CUDA implementation achieves a decoding latency of 14.2 µs, representing a
+    3.4x speedup over the released implementation.
+  sources:
+  - SRC-00369
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-16'
+  created: '2026-11-17'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    implementation: hand-fused CUDA kernels
+    baseline: released implementation
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 14.2
+      unit: µs
+    si_base:
+      value: 1.4199999999999998e-05
+      unit: s
+    display:
+      value: 14199.999999999996
+      unit: ns
+    conditions:
+      implementation: hand-fused CUDA kernels
+      baseline: released implementation
+- id: CLM-ARCH-0241
+  topic: ARCH
+  statement: The combination of doubling the register file capacity and halving instruction latencies
+    yields at most a 1.36x speedup.
+  sources:
+  - SRC-00369
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-16'
+  created: '2026-11-17'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: A100 architecture
+- id: CLM-ARCH-0242
+  topic: ARCH
+  statement: In controlled comparisons on commercial smartphones, DroidPrefill reduces per-step inference
+    latency by up to 85.0%.
+  sources:
+  - SRC-00375
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-16'
+  created: '2026-11-17'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    baseline: T3A+
+    system: DroidPrefill
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: true
+    as_published:
+      value: 85.0
+      unit: '%'
+    si_base:
+      value: 0.85
+      unit: dimensionless
+    display:
+      value: 85.0
+      unit: percent
+    conditions:
+      baseline: T3A+
+      system: DroidPrefill
+- id: CLM-ARCH-0243
+  topic: ARCH
+  statement: In controlled comparisons on commercial smartphones, DroidPrefill improves task success rate
+    by up to 24.6%.
+  sources:
+  - SRC-00375
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-16'
+  created: '2026-11-17'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: T3A+
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: true
+    as_published:
+      value: 24.6
+      unit: '%'
+    si_base:
+      value: 0.24600000000000002
+      unit: dimensionless
+    display:
+      value: 24.6
+      unit: percent
+    conditions:
+      baseline: T3A+

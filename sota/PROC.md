@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-11-16.
+Topic code `PROC`. Last reviewed 2026-11-17.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -286,6 +286,10 @@ Topic code `PROC`. Last reviewed 2026-11-16.
   - sources: SRC-00237
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0095 — see the open register
+- **4.7 percent** — For 47 experimental thin-film samples, Unified-FiLM achieved a sample-averaged mean absolute error of 0.047 for refractive index.
+  - `CLM-PROC-0070` · model Unified-FiLM, sample_set 47 thin-film samples · grade B · credibility unknown · measured · as of 2026-11-16
+  - sources: SRC-00373
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -323,6 +327,10 @@ Topic code `PROC`. Last reviewed 2026-11-16.
   - `CLM-PROC-0069` · image_size 2000*2000 pixels, layers 160, algorithm iterative SFF algorithm, cpu AMD Ryzen 5 3600X CPU · grade B · credibility unknown · measured · as of 2026-11-09
   - sources: SRC-00326
   - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- **≤ 2e+09 ns** — Unified-FiLM completed each experimental thin-film analysis in under 2 s.
+  - `CLM-PROC-0071` · model Unified-FiLM, sample_set 47 thin-film samples · grade B · credibility unknown · measured · as of 2026-11-16
+  - sources: SRC-00373
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### wavelength
 
@@ -407,6 +415,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 69
-- grades: {'B': 69}
-- distinct sources: 21
+- claims: 71
+- grades: {'B': 71}
+- distinct sources: 22
