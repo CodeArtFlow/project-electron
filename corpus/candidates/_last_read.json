@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-17",
+  "date": "2026-11-18",
   "model": "gemini-3.5-flash-lite",
   "extract_model": "gemini-3.6-flash",
   "prompt_version": "reader-v5",
@@ -10,786 +10,951 @@
   },
   "papers": [
     {
-      "candidate": "CAND-20261117-0142",
-      "decision": "read",
-      "reason": "",
-      "chars": 112499,
-      "claims": [
-        "CLM-ARCH-0236",
-        "CLM-ARCH-0237",
-        "CLM-ARCH-0238",
-        "CLM-ARCH-0239",
-        "CLM-ARCH-0240",
-        "CLM-ARCH-0241"
-      ],
-      "rejected": [
-        {
-          "statement": "Selecting BF16 limits the estimated area overhead to 5.9% of an A100 die for a configuration with state size 32 and MIMO rank 4.",
-          "reason": "the statement contains the number 6, which none of its quotes contain",
-          "quotes": [
-            "After exploring multiple numerical representations, we select BF16 to preserve model accuracy while limiting the estimated area overhead to 5.9% of an A100 die for configuration with state size 32 and MIMO rank 4.",
-            "RTL synthesis for area estimation",
-            "select BF16",
-            "state size 32"
-          ]
-        },
-        {
-          "statement": "RescuCore reduces decoding latency to 10.4 \u00b5s, providing a 1.4x speedup over fused CUDA and 4.7x over the released implementation.",
-          "reason": "[compound_statement] statement appears to join two falsifiable assertions - split it",
-          "quotes": [
-            "By executing the dependent operations in a dedicated pipelined datapath while retaining projections on existing GPU units, RescuCore reduces decod- ing latency to 10.4 \u00b5s, providing 1.4\u00d7 speedup over fused CUDA and 4.7\u00d7 over the released im",
-            "With RescuCore, the modeled latency of the complete Mamba-3 layer, including the GPU projections, is 10.4 \u00b5s.",
-            "RescuCore reduces decod- ing latency",
-            "over fused CUDA"
-          ]
-        }
-      ]
+      "candidate": "CAND-20261118-0127",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on floor-level localization and tracking algorithms for construction sites using IoT devices, which is out of scope for semiconductor research.",
+      "chars": 55003,
+      "claims": [],
+      "rejected": []
     },
     {
-      "candidate": "CAND-20261117-0141",
+      "candidate": "CAND-20261118-0126",
+      "decision": "out_of_scope",
+      "reason": "The paper studies microwave hinge states in a dielectric photonic crystal, which falls under basic optics and topological photonics rather than semiconductor devices or integrated circuits.",
+      "chars": 25007,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0125",
+      "decision": "out_of_scope",
+      "reason": "The paper studies fundamental topological physics in nonlinear lattices and circuit analogues rather than semiconductor research or practical device applications.",
+      "chars": 52388,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0124",
+      "decision": "out_of_scope",
+      "reason": "This paper is about the fundamental theoretical physics of the intrinsic second-order nonlinear Hall effect in quantum materials, which falls under pure condensed matter physics rather than semiconductor device engineering or technology.",
+      "chars": 47467,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0123",
+      "decision": "out_of_scope",
+      "reason": "The paper is focused on quantum error correction circuits and quantum computing simulation, which falls under out-of-scope quantum computing hardware and quantum information theory.",
+      "chars": 43302,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0122",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on software fault injection and reliability issues in large language model (LLM) serving systems rather than semiconductor hardware, devices, or manufacturing processes.",
+      "chars": 46674,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0121",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on mathematical modeling of fracture mechanics and variational diffuse-crack models in solid mechanics, which is out of scope for semiconductor research.",
+      "chars": 48711,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0120",
       "decision": "no_claims",
-      "reason": "the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 33139,
+      "reason": "the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader may do better",
+      "chars": 65603,
       "claims": [],
       "rejected": [
         {
-          "statement": "The total capacitance of BM2 clock mesh straps is 34.1 aF/\u03bcm.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'BM2 160 288 100 1.4 2.2'",
+          "statement": "The linear optical parameters extracted from the fitting of the ITO sample lead to a fitted \u03f5\u221e of 3.99, a plasma frequency \u03c9p of 3.07 \u00d7 10^15 rad/s, and a colli",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Within this limit, we fit the standard Drude model to the ITO permitti'",
           "quotes": [
-            "Table 3: Capacitance of clock mesh straps on candidate layers",
-            "BM2 160 288 100 1.4 2.2",
-            "34.1",
-            "To support the selection, Raphael [18] is applied to accurately extract the capacitances of BM1, BM2, and BM3, as well as those of M3 and M4 in frontside for comparison."
+            "Within this limit, we fit the standard Drude model to the ITO permittivity of [41] and find \u03f5\u221e = 3.99, \u03c9p = 3.07 \u00d7 1015rad/s, \u03b3D = 1.29 \u00d7 1014s\u22121.",
+            "The linear properties of the ITO film were determined through fitting of the linear permittivity provided by [41].",
+            "Within this limit, we fit the standard Drude model to the ITO permittivity of [41]"
           ]
         },
         {
-          "statement": "The total capacitance of BM3 clock mesh straps is 26.7 aF/\u03bcm.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'BM3 160 273 100 1.4 2.2'",
+          "statement": "Using the Kane-band model of the conduction band energy profile for the ITO film, the Fermi level EF is identified as 1.34 eV, the carrier density ne as 1.13 \u00d7 ",
+          "reason": "the statement contains the number 10, which none of its quotes contain",
           "quotes": [
-            "Table 3: Capacitance of clock mesh straps on candidate layers",
-            "BM3 160 273 100 1.4 2.2",
-            "26.7",
-            "To support the selection, Raphael [18] is applied to accurately extract the capacitances of BM1, BM2, and BM3, as well as those of M3 and M4 in frontside for comparison."
+            "The result identifies EF = 1.34 eV, ne = 1.13 \u00d7 1021cm\u22123 and mDrude e = 0.388me.",
+            "Taking: E = ... we gradually increase the Fermi energy and evaluate the carrier density and average effective mass using the definition from [76]",
+            "With the Drude properties known, we can then leverage the Kane-band model of the conduction band energy profile to uniquely determine the Fermi-level of the material for a given scattering rate.",
+            "with mKane e = 0.2me and C = 0.3497eV\u22121"
           ]
         },
         {
-          "statement": "The maximum local clock latency of the tv80 benchmark circuit using the proposed backside CDN is 43.4 ps.",
-          "reason": "the statement contains the number 0, which none of its quotes contain",
+          "statement": "For an ITO layer with thermo-optic nonlinearity under 1 TW/cm^2 incident intensity, adding a Kerr nonlinearity with \u03c7(3)b = 10^-19 m^2/V^2 results in a transmis",
+          "reason": "the statement contains the number 1, which none of its quotes contain",
           "quotes": [
-            "Table 4: Performance comparison on four circuits",
-            "Max local clock latency* [ps] 51.1 50.5 40.9 43.4",
-            "We use PrimeTime [19] for timing analysis",
-            "tv80"
+            "Despite that, we observe transmissivity (reflectivity) changes of only \u223c 1.65% (\u223c 0.21%) with respect to the case with only a thermo-optic nonlinearity, i.e., \u223c 5-fold (\u223c 50-fold) smaller changes.",
+            "When we include the effect of the Kerr nonlinearity in the ITO layer, a clear instantaneous change is observed on the background of the thermo-optic nonlinearity (Fig. 4(b)).",
+            "we set \u03c7(3) b = 10\u221219m2/V2",
+            "at the central probe frequency \u03c9probe for incident intensity of 1 TW/cm2"
           ]
         },
         {
-          "statement": "The maximum IR-drop of the NVDLA benchmark circuit using the proposed backside CDN is 38.1 mV.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Max IR-drop [mV] 38.2 41.8 56.8 38.1'",
+          "statement": "Under an incident intensity of 1 TW/cm^2, adding a Kerr nonlinearity coefficient of \u03c7(3)b = 10^-19 m^2/V^2 to the ITO layer yields a reflectivity change of appr",
+          "reason": "the statement contains the number 1, which none of its quotes contain",
           "quotes": [
-            "Table 4: Performance comparison on four circuits",
-            "Max IR-drop [mV] 38.2 41.8 56.8 38.1",
-            "PowerWurzel [2] for power analysis, and Voltus [4] for static IR-drop analysis.",
-            "NVDLA"
-          ]
-        },
-        {
-          "statement": "The mesh net switching power of NVDLA using the proposed backside CDN is 1774 \u03bcW.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Mesh net switching [\ud835\udf07W] 3561 2886 2847 1774'",
-          "quotes": [
-            "Table 4: Performance comparison on four circuits",
-            "Mesh net switching [\ud835\udf07W] 3561 2886 2847 1774",
-            "PowerWurzel [2] for power analysis",
-            "NVDLA"
-          ]
-        },
-        {
-          "statement": "The total clock power of the SHA3 benchmark circuit using the proposed backside CDN is 3027 \u03bcW.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Total clock power [\ud835\udf07W] 3078 3053 3042 3027'",
-          "quotes": [
-            "Table 4: Performance comparison on four circuits",
-            "Total clock power [\ud835\udf07W] 3078 3053 3042 3027",
-            "PowerWurzel [2] for power analysis",
-            "SHA3"
+            "Despite that, we observe transmissivity (reflectivity) changes of only \u223c 1.65% (\u223c 0.21%) with respect to the case with only a thermo-optic nonlinearity, i.e., \u223c 5-fold (\u223c 50-fold) smaller changes.",
+            "When we include the effect of the Kerr nonlinearity in the ITO layer, a clear instantaneous change is observed on the background of the thermo-optic nonlinearity (Fig. 4(b)).",
+            "we set \u03c7(3) b = 10\u221219m2/V2",
+            "at the central probe frequency \u03c9probe for incident intensity of 1 TW/cm2"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261117-0140",
-      "decision": "out_of_scope",
-      "reason": "This paper focuses on synthetic data generation and LiDAR 3D object detection for autonomous driving/traffic monitoring, which is out of scope for semiconductor research.",
-      "chars": 35085,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261117-0139",
-      "decision": "out_of_scope",
-      "reason": "The paper discusses quantum geometric spectroscopy using Schr\u00f6dinger cat states of light, which falls under quantum physics rather than semiconductor research.",
-      "chars": 86725,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261117-0138",
-      "decision": "out_of_scope",
-      "reason": "This paper is about improving clinical scalp EEG analysis using intracranial EEG priors, which belongs to biomedical signal processing and life sciences rather than semiconductor research.",
-      "chars": 70930,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261117-0137",
-      "decision": "out_of_scope",
-      "reason": "This paper focuses on wireless communications, antenna positioning, and integrated sensing and communication (ISAC) algorithms rather than semiconductor research.",
-      "chars": 66303,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261117-0136",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on an optimization framework for optical skyrmionic polarimetry related to quantum information and optics, which is outside the scope of semiconductor manufacturing, devices, or design.",
-      "chars": 53977,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261117-0135",
-      "decision": "out_of_scope",
-      "reason": "The paper is out of scope as it focuses on wireless communications and antenna systems for 6G networks rather than semiconductor devices or integrated circuits.",
-      "chars": 73846,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261117-0134",
-      "decision": "out_of_scope",
-      "reason": "The paper investigates electromagnetic scattering and absorption bounds for coated spheres in applied physics, which is out of scope for semiconductor research.",
-      "chars": 57204,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261117-0133",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on antenna arrays and target detection for radar/communications systems rather than semiconductor devices or integrated circuits.",
-      "chars": 66881,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261117-0132",
-      "decision": "read",
-      "reason": "",
-      "chars": 97718,
-      "claims": [
-        "CLM-DEV-0112",
-        "CLM-DEV-0113"
-      ],
-      "rejected": [
-        {
-          "statement": "The isolated MoTe2 monolayer exhibits a direct band gap of 0.90 eV at the K point under 1.5% lattice strain.",
-          "reason": "the value 0.9 does not appear in any of the claim's quotes",
-          "quotes": [
-            "Figure 1(d) shows the band structure of 1L\u2013MoTe2, which exhibits a direct band gap of 0.90 eV at the K point.",
-            "The electronic band structures were calculated within the PBE functional including spin\u2013orbit coupling (PBE+SOC).",
-            "The reduction can be attributed to the small lattice strain (\u223c 1.5%) introduced during the construction of the heterostructure, together with the inclusion of SOC effects."
-          ]
-        },
-        {
-          "statement": "The isolated HfS2 monolayer has an indirect band gap of 0.96 eV under 1.5% lattice strain.",
-          "reason": "unit conversion refused: voltage: cannot convert 0.96 eV to V - Cannot convert from 'electron_volt' ([mass] * [length] ** 2 / [time] ** 2) to 'volt' ([mass] * [length] ** 2 / [time] ** ",
-          "quotes": [
-            "In contrast, Fig. 1(e) displays the band structure of 1L\u2013HfS2, characterized by an indirect band gap of 0.96 eV.",
-            "The electronic band structures were calculated within the PBE functional including spin\u2013orbit coupling (PBE+SOC).",
-            "The reduction can be attributed to the small lattice strain (\u223c 1.5%) introduced during the construction of the heterostructure, together with the inclusion of SOC effects."
-          ]
-        },
-        {
-          "statement": "The unstrained MoTe2 monolayer exhibits a band gap of 1.01 eV.",
-          "reason": "unit conversion refused: voltage: cannot convert 1.01 eV to V - Cannot convert from 'electron_volt' ([mass] * [length] ** 2 / [time] ** 2) to 'volt' ([mass] * [length] ** 2 / [time] ** ",
-          "quotes": [
-            "In this case, the calculated band gaps are 1.01 eV for 1L\u2013MoTe2 and 1.18 eV for 1L\u2013HfS2, in closer agreement with previous theoretical reports [51, 52].",
-            "To verify this interpretation, we additionally calculated the band structures of the unstrained monolayers, shown in Figs. S5(a)\u2013(b) of the SI [49]."
-          ]
-        },
-        {
-          "statement": "The unstrained HfS2 monolayer exhibits a band gap of 1.18 eV.",
-          "reason": "unit conversion refused: voltage: cannot convert 1.18 eV to V - Cannot convert from 'electron_volt' ([mass] * [length] ** 2 / [time] ** 2) to 'volt' ([mass] * [length] ** 2 / [time] ** ",
-          "quotes": [
-            "In this case, the calculated band gaps are 1.01 eV for 1L\u2013MoTe2 and 1.18 eV for 1L\u2013HfS2, in closer agreement with previous theoretical reports [51, 52].",
-            "To verify this interpretation, we additionally calculated the band structures of the unstrained monolayers, shown in Figs. S5(a)\u2013(b) of the SI [49]."
-          ]
-        },
-        {
-          "statement": "The vdWH-IV stacking configuration of the MoTe2/HfS2 heterostructure exhibits a binding energy of -26.430 meV/\u00c52.",
-          "reason": "the value -26.43 does not appear in any of the claim's quotes",
-          "quotes": [
-            "The analysis of both E \u2212 EvdWH\u2212IV and Eb reveals that the vdWH\u2013IV stacking configuration is the energetically most favorable structure, exhibiting a binding energy of \u221226.430 meV/\u00c52."
-          ]
-        },
-        {
-          "statement": "Under PBE+SOC, the CBM-VBM energy difference for the most stable MoTe2/HfS2 vdWH-IV structure is -0.048 eV.",
-          "reason": "unit conversion refused: voltage: cannot convert -0.048 eV to V - Cannot convert from 'electron_volt' ([mass] * [length] ** 2 / [time] ** 2) to 'volt' ([mass] * [length] ** 2 / [time] *",
-          "quotes": [
-            "When SOC is included, the energy difference between the CBM and VBM is \u2206ECBM\u2212VBM = \u22120.048 eV, indicating a finite overlap between the conduction- and valence-band edges.",
-            "Figure 1(f) presents the electronic band structure of the most stable MoTe2/HfS2 heterostructure (vdWH\u2013IV)."
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261117-0131",
+      "candidate": "CAND-20261118-0119",
       "decision": "no_claims",
-      "reason": "the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 39046,
+      "reason": "the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader may do better",
+      "chars": 67749,
       "claims": [],
       "rejected": [
         {
-          "statement": "The calculated band gap of TiNCl from ab initio density functional calculations is 0.623 eV.",
-          "reason": "unit conversion refused: voltage: cannot convert 0.623 eV to V - Cannot convert from 'electron_volt' ([mass] * [length] ** 2 / [time] ** 2) to 'volt' ([mass] * [length] ** 2 / [time] **",
+          "statement": "In CHGNet structural relaxations of ~600-atom cells, the mean energy difference \u0394E per atom between N625 and C600 for A1 is +5.87 meV atom\u22121.",
+          "reason": "the statement contains the number 25, which none of its quotes contain",
           "quotes": [
-            "The calculated band gap is 0.623 eV, which is smaller than the experimental value of 1.27 eV.",
-            "Figure 5 shows the calculated electronic band structure. The calculated band gap is 0.623 eV, which is smaller than the experimental value of 1.27 eV.",
-            "Ab initio density functional calculations for the \u03b1 form of TiNCl were performed with Quantum Espresso package [19, 20]."
+            "A1 12.17 10.46 0.67 0.29 21.16 19.10 +5.87 1.16 1.37",
+            "For the HEPOs, values are means over 100 configurations per composition and cell for CHGNet-relaxed structures.",
+            "\u0394E is the energy difference per atom between the cells (N625 \u2212 C600)."
           ]
         },
         {
-          "statement": "The experimental band gap of TiNCl obtained from PL analysis at 6 K is 1.27 eV.",
-          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'measured')",
+          "statement": "In CHGNet calculations of ~600-atom cells, the mean energy difference \u0394E per atom between N625 and C600 for B2 is +7.34 meV atom\u22121.",
+          "reason": "the statement contains the number 25, which none of its quotes contain",
           "quotes": [
-            "The calculated band gap is 0.623 eV, which is smaller than the experimental value of 1.27 eV.",
-            "Photoluminescence (PL) spectra were measured using a continuous-wave laser at 405 nm over a temperature range of 6\u2013300 K, with an excitation intensity of 2.4 W/cm2 at the sample.",
-            "and Eexp g (6 K) is the experimental band gap obtained from the PL analysis at 6 K.",
-            "Anomalous temperature dependence of the band gap in TiNCl"
+            "B2 11.98 10.17 0.83 0.32 19.66 16.58 +7.34 0.81 0.50",
+            "For the HEPOs, values are means over 100 configurations per composition and cell for CHGNet-relaxed structures.",
+            "\u0394E is the energy difference per atom between the cells (N625 \u2212 C600)."
+          ]
+        },
+        {
+          "statement": "For CaTiO3 in ~600-atom cells relaxed with CHGNet, the energy difference per atom \u0394E between N625 and C600 is +20.24 meV atom\u22121.",
+          "reason": "the statement contains the number 25, which none of its quotes contain",
+          "quotes": [
+            "CaTiO3 15.65 13.25 0.87 0.31 25.87 22.67 +20.24 \u2014 \u2014",
+            "Values for CaTiO3 and BaZrO3 are for one structure per cell.",
+            "\u0394E is the energy difference per atom between the cells (N625 \u2212 C600).",
+            "For the HEPOs, values are means over 100 configurations per composition and cell for CHGNet-relaxed structures."
+          ]
+        },
+        {
+          "statement": "In CHGNet calculations of ~600-atom cells, the mean oxygen vacancy formation energy Ev \u2212 \u03bcO for B2 in C600 is 9.446 eV.",
+          "reason": "the statement contains the number 600, which none of its quotes contain",
+          "quotes": [
+            "B2 9.446 9.088 \u22120.358 \u00b1 0.021 \u22120.072 \u00b1 0.005",
+            "Values are Ev \u2212 \u03bcO (eV) calculated with CHGNet.",
+            "Ev \u2212 \u03bcO (eV) C600 N625",
+            "Oxygen vacancy formation energies in the ~600-atom cells."
+          ]
+        },
+        {
+          "statement": "In CHGNet calculations of ~600-atom cells, the mean oxygen vacancy formation energy Ev \u2212 \u03bcO for B2 in N625 is 9.088 eV.",
+          "reason": "the statement contains the number 600, which none of its quotes contain",
+          "quotes": [
+            "B2 9.446 9.088 \u22120.358 \u00b1 0.021 \u22120.072 \u00b1 0.005",
+            "Values are Ev \u2212 \u03bcO (eV) calculated with CHGNet.",
+            "Ev \u2212 \u03bcO (eV) C600 N625",
+            "Oxygen vacancy formation energies in the ~600-atom cells."
+          ]
+        },
+        {
+          "statement": "In DFT calculations at ~200 atoms, the mean absolute error (MAE) between CHGNet and DFT for tilt coherence F in commensurate cells is 0.014.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'The mean absolute errors (MAEs) between CHGNet and DFT were 0.014 and '",
+          "quotes": [
+            "The mean absolute errors (MAEs) between CHGNet and DFT were 0.014 and 0.030 for F in the commensurate and non-commensurate cells, respectively",
+            "To validate the CHGNet results, we relaxed one configuration per composition and cell with DFT for the 13 compositions at ~200 atoms and compared the results with those of CHGNet for the same configurations (Fig. S2).",
+            "in the commensurate and non-commensurate cells, respectively",
+            "0.014 and 0.030 for F in the commensurate and non-commensurate cells, respectively"
+          ]
+        },
+        {
+          "statement": "In DFT calculations at ~200 atoms, the mean absolute error (MAE) for \u0394E between CHGNet and DFT is 1.34 meV atom\u22121.",
+          "reason": "unit conversion refused: energy: could not parse 1.34 'meV atom\u22121': 'atom\u22121' is not defined in the unit registry",
+          "quotes": [
+            "\u0394E ranged from 0.51 to 16.9 meV atom\u22121 with DFT and from 0.12 to 13.7 meV atom\u22121 with CHGNet, with an MAE of 1.34 meV atom\u22121.",
+            "To validate the CHGNet results, we relaxed one configuration per composition and cell with DFT for the 13 compositions at ~200 atoms and compared the results with those of CHGNet for the same configurations (Fig. S2).",
+            "The mean absolute errors (MAEs) between CHGNet and DFT",
+            "the 13 compositions at ~200 atoms"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261117-0130",
+      "candidate": "CAND-20261118-0118",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on wireless communication systems and antenna positioning algorithms rather than semiconductor research.",
+      "chars": 29335,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0117",
       "decision": "read",
       "reason": "",
-      "chars": 56903,
+      "chars": 55157,
       "claims": [
-        "CLM-DEV-0114"
+        "CLM-EDA-0049",
+        "CLM-EDA-0050",
+        "CLM-EDA-0051",
+        "CLM-EDA-0052",
+        "CLM-EDA-0053"
       ],
       "rejected": [
         {
-          "statement": "The hollow-core ARF-coupled plasmonic nanoantenna array source generates 2.1 mW of terahertz radiation power.",
+          "statement": "PVTSizing 2.0 with GPT-5.6 Terra reduces mean runtime by 18.8% on MS-OTA relative to the standalone optimizer.",
+          "reason": "the statement contains the number 2.0, which none of its quotes contain",
+          "quotes": [
+            "GPT-5.6 Terra reduces mean runtime by 18.8% and samples by 17.1%, while GPT-6 Astra achieves larger reductions of 39.9% and 35.4%, respectively.",
+            "The experiments were conducted on a server running CentOS 7.9, equipped with two 16-core Intel Xeon Gold 6246R processors at 3.40 GHz and 256 GiB of memory.",
+            "GPT-5.6 Terra reduces mean runtime by 18.8% and samples by 17.1%",
+            "TABLE V KNOWLEDGE INJECTION ON MS-OTA"
+          ]
+        },
+        {
+          "statement": "PVTSizing 2.0 with GPT-5.6 Terra reduces samples by 17.1% on MS-OTA relative to the standalone optimizer.",
+          "reason": "the statement contains the number 2.0, which none of its quotes contain",
+          "quotes": [
+            "GPT-5.6 Terra reduces mean runtime by 18.8% and samples by 17.1%, while GPT-6 Astra achieves larger reductions of 39.9% and 35.4%, respectively.",
+            "The experiments were conducted on a server running CentOS 7.9, equipped with two 16-core Intel Xeon Gold 6246R processors at 3.40 GHz and 256 GiB of memory.",
+            "GPT-5.6 Terra reduces mean runtime by 18.8% and samples by 17.1%",
+            "TABLE V KNOWLEDGE INJECTION ON MS-OTA"
+          ]
+        },
+        {
+          "statement": "The full PVTSizing 2.0 method achieves an expected time of 1.211 h on MS-OTA.",
+          "reason": "the statement contains the number 2.0, which none of its quotes contain",
+          "quotes": [
+            "Under this convention, the full optimizer has the lowest expected time, 1.211 h, compared with 4.280 h without loss-guided training and 3.719 h without local refinement.",
+            "The experiments were conducted on a server running CentOS 7.9, equipped with two 16-core Intel Xeon Gold 6246R processors at 3.40 GHz and 256 GiB of memory.",
+            "Full method (PVTSizing 2.0)",
+            "TABLE IV ABLATION OF THE OPTIMIZER COMPONENTS ON MS-OTA"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261118-0116",
+      "decision": "read",
+      "reason": "",
+      "chars": 58969,
+      "claims": [
+        "CLM-MAT-0364"
+      ],
+      "rejected": [
+        {
+          "statement": "At 0 GPa pressure, the relaxed lattice parameter of F-43m GaAs calculated using PBEsol is 5.659 \u00c5.",
+          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'simulated')",
+          "quotes": [
+            "Phase (space group) Pressure (GPa) Lattice parameters (unit cell) Atom positions (Wyckoff)",
+            "F \u00af43m (216) PBEsol 0 a = b = c = 5.659 \u02daA \u03b1 = \u03b2 = \u03b3 = 90\u25e6",
+            "F \u00af43m (216) PBEsol",
+            "0"
+          ]
+        },
+        {
+          "statement": "The calculated PBEsol volume collapse at the zinc blende to Cmcm transition near 12 GPa is approximately 17.5%.",
+          "reason": "the statement contains the number 12, which none of its quotes contain",
+          "quotes": [
+            "The initial zinc blende to Cmcm transition is accompanied by a volume reduction of approximately 17.5% and metallization within the PBEsol description.",
+            "zinc blende to Cmcm transition",
+            "PBEsol description"
+          ]
+        },
+        {
+          "statement": "At 0 GPa pressure, the calculated PBEsol band gap of ZB GaAs is approximately 0.38 eV.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'At 0 GPa, the ZB phase exhibits a direct band gap, with both the valen'",
+          "quotes": [
+            "At 0 GPa, the ZB phase exhibits a direct band gap, with both the valence-band maximum and conduction-band minimum located at \u0393-point (See Fig. S4 of SM [25]). The calculated band gap is approximately 0.38 eV.",
+            "The calculated band gap is approximately 0.38 eV.",
+            "At 0 GPa",
+            "ZB phase"
+          ]
+        },
+        {
+          "statement": "At 0 GPa, the calculated PBEsol bulk modulus B for the F-43m phase of GaAs is 69.62 GPa.",
+          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'simulated')",
+          "quotes": [
+            "Phase (space group) Pressure (GPa) Cij (GPa) B (GPa) E (GPa) G (GPa) \u03bd",
+            "F \u00af43m (216) PBEsol 0 C11 = 109.61 C12 = 49.63 C44 = 54.11 69.62 106.36 42.70 0.25",
+            "F \u00af43m (216) PBEsol",
+            "0"
+          ]
+        },
+        {
+          "statement": "At 0 GPa, the calculated PBEsol Young's modulus E for the F-43m phase of GaAs is 106.36 GPa.",
+          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'simulated')",
+          "quotes": [
+            "Phase (space group) Pressure (GPa) Cij (GPa) B (GPa) E (GPa) G (GPa) \u03bd",
+            "F \u00af43m (216) PBEsol 0 C11 = 109.61 C12 = 49.63 C44 = 54.11 69.62 106.36 42.70 0.25",
+            "F \u00af43m (216) PBEsol",
+            "0"
+          ]
+        },
+        {
+          "statement": "At 0 GPa, the calculated PBEsol shear modulus G for the F-43m phase of GaAs is 42.70 GPa.",
+          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'simulated')",
+          "quotes": [
+            "Phase (space group) Pressure (GPa) Cij (GPa) B (GPa) E (GPa) G (GPa) \u03bd",
+            "F \u00af43m (216) PBEsol 0 C11 = 109.61 C12 = 49.63 C44 = 54.11 69.62 106.36 42.70 0.25",
+            "F \u00af43m (216) PBEsol",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261118-0115",
+      "decision": "out_of_scope",
+      "reason": "The paper is a theoretical physics study on non-Hermitian quasicrystals and localization transitions, which falls outside the scope of semiconductor research.",
+      "chars": 54101,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0114",
+      "decision": "out_of_scope",
+      "reason": "The paper discusses transmission electron microscopy techniques primarily focused on biological cryo-EM and phase contrast imaging of weak biological structures, which is out of scope for semiconductor research.",
+      "chars": 89164,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0113",
+      "decision": "out_of_scope",
+      "reason": "The paper describes a dual-comb spectroscopy system using fiber ring resonators and electro-optic phase modulation for optical sensing applications, which is outside the scope of semiconductor devices and manufacturing.",
+      "chars": 33935,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0112",
+      "decision": "read",
+      "reason": "",
+      "chars": 49107,
+      "claims": [
+        "CLM-PHOT-0156"
+      ],
+      "rejected": [
+        {
+          "statement": "In the passive waveguide array simulation, the mean loss rate is 0.025 mm\u22121.",
+          "reason": "unit conversion refused: defect_density: could not parse 0.025 'mm\u22121': 'mm\u22121' is not defined in the unit registry",
+          "quotes": [
+            "The mean loss rate, \ud835\udee4 = 0.025 \ud835\udc5a\ud835\udc5a\u22121, corresponds to 0.43 \ud835\udc51\ud835\udc35/\ud835\udc5a\ud835\udc5a in a fully lossy guide",
+            "The full-wave simulations of Sec. 3 solve Maxwell\u2019s equations for a two-dimensional array of slab waveguides with the beam-envelope method of COMSOL Multiphysics."
+          ]
+        },
+        {
+          "statement": "In a fully lossy guide within the passive array simulation, the loss rate is 0.43 dB/mm.",
+          "reason": "unit conversion refused: defect_density: cannot convert 0.43 dB/mm to 1/m^2 - Cannot convert from 'decibel / millimeter' to '1 / meter ** 2' - In source units, offset unit used in multi",
+          "quotes": [
+            "The mean loss rate, \ud835\udee4 = 0.025 \ud835\udc5a\ud835\udc5a\u22121, corresponds to 0.43 \ud835\udc51\ud835\udc35/\ud835\udc5a\ud835\udc5a in a fully lossy guide",
+            "The full-wave simulations of Sec. 3 solve Maxwell\u2019s equations for a two-dimensional array of slab waveguides with the beam-envelope method of COMSOL Multiphysics.",
+            "0.43 \ud835\udc51\ud835\udc35/\ud835\udc5a\ud835\udc5a in a fully lossy guide"
+          ]
+        },
+        {
+          "statement": "The passive waveguide array simulation models waveguides at a wavelength of 633 nm.",
           "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
           "quotes": [
-            "Record-high terahertz power levels exceeding 2.1 mW were achieved, surpassing those previously demonstrated by fiber-coupled pulsed terahertz sources despite operating at an order of magnitude lower bias volta ge.",
-            "Figure 3a shows the terahertz power radiated by the plasmonic nanoantenna array source at different optical power levels and bias voltages, measured using a cali brated pyroelectric detector (PTB 19, THz 30).",
-            "Figure 3. (a) Radiated terahertz power of the hollow-core ARF-coupled plasmonic nanoantenna arrays as a function of the optical power and bias voltage."
+            "We consider an array of 60 single-mode slab waveguides with a weak index contrast typical of femtosecond written glass waveguides, at a wavelength of 633 \ud835\udc5b\ud835\udc5a",
+            "The full-wave simulations of Sec. 3 solve Maxwell\u2019s equations for a two-dimensional array of slab waveguides with the beam-envelope method of COMSOL Multiphysics."
           ]
         },
         {
-          "statement": "The hollow-core ARF-coupled THz-TDS system achieves a peak dynamic range of 145 dB.",
-          "reason": "the statement contains the number 145, which none of its quotes contain",
+          "statement": "The strong coupling between neighboring slab waveguides in the simulated array is 0.6 mm\u22121.",
+          "reason": "unit conversion refused: defect_density: could not parse 0.6 'mm\u22121': 'mm\u22121' is not defined in the unit registry",
           "quotes": [
-            "The peak dynamic range increases from 118 dB to 14 5 dB as the number of acquired traces increases from 1 to 1,000, corresponding to acquisition times ranging from 0.19 to 190 s.",
-            "Figure 4a shows the terahertz spectra obtained using the fiber -coupled THz-TDS system as a function of the number of acquired traces.",
-            "The optical pump and probe powers driving the terahertz source and detector were set to 600 and 150 mW, respectively, to maximize the system dynamic range within a total optical power budget of 900 mW"
+            "The gaps between neighboring guides (named A and B) alternate between two values, giving strong and weak couplings of 0.6 \ud835\udc5a\ud835\udc5a\u22121 and 0.4 \ud835\udc5a\ud835\udc5a\u22121.",
+            "The full-wave simulations of Sec. 3 solve Maxwell\u2019s equations for a two-dimensional array of slab waveguides with the beam-envelope method of COMSOL Multiphysics.",
+            "giving strong and weak couplings of 0.6 \ud835\udc5a\ud835\udc5a\u22121 and 0.4 \ud835\udc5a\ud835\udc5a\u22121."
           ]
         },
         {
-          "statement": "The calculated terahertz spectral amplitude at 1 THz for the plasmonic terahertz source is 1.6 dB lower for parallel polarization than for orthogonal polarizati",
-          "reason": "unit conversion refused: relative_deviation is dimensionless; unit 'dB' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit",
+          "statement": "The weak coupling between neighboring slab waveguides in the simulated array is 0.4 mm\u22121.",
+          "reason": "unit conversion refused: defect_density: could not parse 0.4 'mm\u22121': 'mm\u22121' is not defined in the unit registry",
           "quotes": [
-            "Figure 1e shows the resulting spectral amplitude at 1 THz as a function of the optical polarization angle for an optical pump pulse with a full width at ha lf maximum of 100 fs, predicting a 1.6 dB lower spectral amplitude for parallel pola"
+            "The gaps between neighboring guides (named A and B) alternate between two values, giving strong and weak couplings of 0.6 \ud835\udc5a\ud835\udc5a\u22121 and 0.4 \ud835\udc5a\ud835\udc5a\u22121.",
+            "The full-wave simulations of Sec. 3 solve Maxwell\u2019s equations for a two-dimensional array of slab waveguides with the beam-envelope method of COMSOL Multiphysics.",
+            "giving strong and weak couplings of 0.6 \ud835\udc5a\ud835\udc5a\u22121 and 0.4 \ud835\udc5a\ud835\udc5a\u22121."
           ]
         },
         {
-          "statement": "The measured terahertz spectral amplitude at 1 THz for the plasmonic terahertz source is 1.4 dB below its maximum for parallel polarization.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'The measured amplitude at 1 THz is 1.4 dB below its maximum for parall'",
+          "statement": "The refractive index contrast \u0394n of the slab waveguides in the full-wave simulation is 1.2 \u00d7 10\u22123.",
+          "reason": "unit conversion refused: relative_deviation is dimensionless; unit '' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit e",
           "quotes": [
-            "The measured amplitude at 1 THz is 1.4 dB below its maximum for parallel polarization, in close agreement with the numerical predictions.",
-            "To experimentally verify this prediction, we measured the THz-TDS spectra while varying the polarization angle at a fixed optical power incident on the plasmonic terahertz source."
+            "with refractive index \ud835\udc5bclad + \ud835\udee5\ud835\udc5b, where \ud835\udc5bclad = 1.457 and \ud835\udee5\ud835\udc5b = 1.2 \u00d7 10\u22123",
+            "We solve Maxwell\u2019s equations with the beam-envelope method of COMSOL Multiphysics",
+            "where \ud835\udc5bclad = 1.457 and \ud835\udee5\ud835\udc5b = 1.2 \u00d7 10\u22123"
           ]
         },
         {
-          "statement": "The calculated terahertz spectral amplitude at 1 THz for the plasmonic terahertz detector is 0.9 dB lower for parallel polarization than for orthogonal polariza",
-          "reason": "unit conversion refused: relative_deviation is dimensionless; unit 'dB' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit",
+          "statement": "The simulated waveguide array sample length is 60 mm.",
+          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
           "quotes": [
-            "Figure 2e shows the resulting spectral amplitude at 1 THz as a function of the optical polarization angle for an incident terahertz pulse with a full width at half maximum of 0.6 ps, predicting a 0.9 dB lower spectral amplitude for parallel"
-          ]
-        },
-        {
-          "statement": "The measured terahertz spectral amplitude at 1 THz for the plasmonic terahertz detector is 0.8 dB below its maximum for parallel polarization.",
-          "reason": "this claim's own evidence_type was not established by a verifiable quote (got 'measured')",
-          "quotes": [
-            "The measured amplitude at 1 THz is 0.8 dB below its maximum for parallel polarization, in close agreement with the numerical predictions.",
-            "To experimentally verify this prediction, we measured THz-TDS spectra while varying the polarization angle at a fixed optical power incident on the plasmonic terahertz detector."
+            "We use \ud835\udc67\ud835\udc58 = 30 mm, \ud835\udf0f = 6 mm, and a sample length \ud835\udc3f = 60 mm.",
+            "We solve Maxwell\u2019s equations with the beam-envelope method of COMSOL Multiphysics",
+            "sample length \ud835\udc3f = 60 mm."
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261117-0129",
+      "candidate": "CAND-20261118-0111",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on neutronic-thermal hydraulic coupling for nuclear reactors using OpenMOC and OpenFOAM, which is outside the domain of semiconductor research.",
+      "chars": 57755,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0110",
       "decision": "read",
       "reason": "",
-      "chars": 32799,
+      "chars": 41268,
       "claims": [
-        "CLM-MAT-0359",
-        "CLM-MAT-0360"
+        "CLM-MAT-0365",
+        "CLM-MAT-0366",
+        "CLM-MAT-0367"
       ],
       "rejected": [
         {
-          "statement": "Evaluating 216,000 Si atoms with forces as a single graph on one GB10 using AFF-r2SCAN-smooth with layer checkpointing required 0.550 MB/atom.",
-          "reason": "the statement contains the number 0, which none of its quotes contain",
+          "statement": "For AlP with LDA optimized lattice parameter (5.435 \u00c5), the calculated ion-clamped dielectric constant using finite field within the PAW method in VASP is 8.34.",
+          "reason": "[qualifier_dropped] the statement is a bound but quantity.bound is 'exact'. Record the qualifier the source used - UnitEngine.record(..., bound=..., approximate=...).",
           "quotes": [
-            "216,000 with layer checkpointing (0.550 MB/atom, 10.2 s; 119 GB of the 130.7 GB available, so the next size, 238,328 atoms, would not fit)",
-            "We first measured the largest pristine Si cell that one GB10 evaluates as a single graph."
+            "TABLE II. Computed lattice parameters a, Born effective charges Z\u2217, ion-clamped (\u03f5\u221e) and unclamped (\u03f50) dielectric constants, ion-clamped quadratic dielectric susceptibility\u03c7(2) xyz (in pm/V), and ion-clamped (c0 xyz) and unclamped (cxyz) p",
+            "Finite field (This work, Opt.) 5.435 2.21 8.34 10.48 43 \u221267.77 4.77",
+            "AlP",
+            "5.435"
           ]
         },
         {
-          "statement": "Evaluating 216,000 Si atoms with forces as a single graph on one GB10 took 10.2 s using layer checkpointing.",
-          "reason": "the statement contains the number 0, which none of its quotes contain",
+          "statement": "For AgNbO3, when an electric field of 7 MV/cm is applied along the b axis, the calculated polarization abruptly increases to 53.8 \u00b5C/cm2.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'As the electric field is increased to the critical value of 7 MV/cm, t'",
           "quotes": [
-            "216,000 with layer checkpointing (0.550 MB/atom, 10.2 s; 119 GB of the 130.7 GB available, so the next size, 238,328 atoms, would not fit)",
-            "We first measured the largest pristine Si cell that one GB10 evaluates as a single graph."
+            "As the electric field is increased to the critical value of 7 MV/cm, the polarization abruptly increases to a large value of 53.8 \u00b5C/cm2, indicating the phase transition to the Pmc21 phase [Fig. 2(b)].",
+            "AgNbO3",
+            "7 MV/cm"
           ]
         },
         {
-          "statement": "Chunked evaluation of 8,000,000 Si atoms with forces in single precision required 0.29 GB10-hours total.",
-          "reason": "the statement contains the number 0, which none of its quotes contain",
+          "statement": "When the electric field is removed, AgNbO3 remains in the ferroelectric state with a calculated polarization of 46.0 \u00b5C/cm2.",
+          "reason": "unit conversion refused: relative_deviation is dimensionless; unit '\u00b5C/cm2' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a ",
           "quotes": [
-            "Si 8,000,000 yes 1 (1) 106,067 47.5 0.29",
-            "Table 1: Chunked evaluations with AFF-r2SCAN-smooth on GB10s, in single precision."
-          ]
-        },
-        {
-          "statement": "Chunked evaluation of 1,000,000,000 Si atoms with forces in single precision across 8 GB10s with 12 tasks required 43.2 GB10-hours total.",
-          "reason": "the statement contains the number 0, which none of its quotes contain",
-          "quotes": [
-            "Si 1,000,000,000 yes 8 (12) 71,578 31.9 43.2",
-            "Table 1: Chunked evaluations with AFF-r2SCAN-smooth on GB10s, in single precision."
-          ]
-        },
-        {
-          "statement": "Evaluating the 102,361,540 atom Si/SiO2/Al gate stack with forces on 3 GB10s with 6 tasks required 10.7 GB10-hours total.",
-          "reason": "the statement contains the number 0, which none of its quotes contain",
-          "quotes": [
-            "Si/SiO2/Al gate stack 102,361,540 yes 3 (6) 39,059 52.8 10.7",
-            "Table 1: Chunked evaluations with AFF-r2SCAN-smooth on GB10s, in single precision."
-          ]
-        },
-        {
-          "statement": "Evaluating the 1,066,628 atom STMV virus in water with forces required 0.92 GB10-hours on 1 GB10 with 1 task.",
-          "reason": "the statement contains the number 0, which none of its quotes contain",
-          "quotes": [
-            "STMV virus in water 1,066,628 yes 1 (1) 22,263 58.3 0.92",
-            "Table 1: Chunked evaluations with AFF-r2SCAN-smooth on GB10s, in single precision."
+            "when the electric field is removed, the obtained ferroelectric Pmc21 phase does not relax back to the original antiferroelectric Pbcm phase, but remains in the ferroelectric state with a slightly reduced polarization of 46.0 \u00b5C/cm2.",
+            "AgNbO3",
+            "when the electric field is removed"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261117-0128",
-      "decision": "too_long",
-      "reason": "433,796 characters exceeds the 120,000 budget; not truncated",
-      "chars": 433796,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261117-0127",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on electrocatalytic water oxidation and materials chemistry of perovskite oxides rather than semiconductor devices or electronics.",
-      "chars": 68115,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261117-0126",
-      "decision": "no_claims",
-      "reason": "the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 37781,
-      "claims": [],
-      "rejected": [
-        {
-          "statement": "For the NEC Express5800, the harmonic mean reported from SPECrates data is 19% higher than that of the Supermicro 5019C-WR.",
-          "reason": "the statement contains the number 800, which none of its quotes contain",
-          "quotes": [
-            "yet the NEC achieves a 19% higher harmonic mean",
-            "based on [3], data from [5].",
-            "For instance, the Supermicro 5019C-WR has a slightly higher arithmetic mean than the NEC Express5800, yet the NEC achieves a 19% higher harmonic mean"
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261117-0125",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on quantum computing algorithms (Grover search and amplitude amplification) and quantum channel dynamics, which fall under quantum computing hardware and information theory rather than semiconductor research.",
-      "chars": 72693,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261117-0124",
-      "decision": "out_of_scope",
-      "reason": "The paper describes a 3-D printed dielectric polarization converter for satellite communications, which is an RF antenna component rather than semiconductor research.",
-      "chars": 34318,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261117-0123",
-      "decision": "out_of_scope",
-      "reason": "This paper investigates fundamental condensed matter physics, specifically the molecular-orbital origin of weak orbital ferromagnetism and the anomalous Hall effect in a kagome antiferromagnet, which is out of scope for semiconductor research.",
-      "chars": 57806,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261117-0122",
+      "candidate": "CAND-20261118-0109",
       "decision": "no_claims",
       "reason": "evidence type not established by a verifiable quote (or 'mixed'); no claims extracted, a human reader is needed",
-      "chars": 39171,
+      "chars": 71567,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261117-0121",
+      "candidate": "CAND-20261118-0108",
       "decision": "no_claims",
-      "reason": "the verifier rejected all 2 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 16821,
+      "reason": "the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader may do better",
+      "chars": 21055,
       "claims": [],
       "rejected": [
         {
-          "statement": "For electrode 1 at a working-electrode potential of 0.433 V, the real part of \u0394T/T reaches a minimum of -0.19 \u00d7 10^-4 between zero crossings.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'It crosses zero at 415 nm and 426 nm and reaches a minimum of\u22120.19\u00d7 10'",
+          "statement": "On mmbench across 20 independent runs under an 18-simulation budget, KD-DSE (full) achieves a mean hypervolume of 0.6843.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'On mmbench, KD-DSE outperforms the state-of-the-art MicroEvo [8] with '",
           "quotes": [
-            "The phase of the spectrum for electrode 1 at \ud835\udc49WE = 0.433 V is shown in black in Fig. 2c.",
-            "It crosses zero at 415 nm and 426 nm and reaches a minimum of\u22120.19\u00d7 10\u22124 between them.",
-            "Figure 2. (a) Real part, (b) imaginary part, and (c) phase of \u0394\ud835\udc47/\ud835\udc47 for electrode 1 (21 Hz, \ud835\udc49ac = 1.6 Vpp, function generator DC offset 0 V, \ud835\udc49WE = 0.433 V)."
+            "On mmbench, KD-DSE outperforms the state-of-the-art MicroEvo [8] with both higher hypervolume (HV, 0.6843 vs. 0.6529)",
+            "KD-DSE (full) 0.6843\u00b10.0348 (0.7378)",
+            "The experiments run on gem5 v25.1.0.1 [14] and McPAT v1.3 [15], where gem5 statistics feed the McPAT templates that produce power and area.",
+            "Each run uses a budget of 18 configurations"
           ]
         },
         {
-          "statement": "The ITO film working electrode thickness is 300 \u00b1 20 nm.",
-          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
+          "statement": "On mmbench across 20 independent runs under an 18-simulation budget, KD-DSE (full) achieves a mean ADRS of 0.1011.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'On mmbench, KD-DSE outperforms the state-of-the-art MicroEvo [8] with '",
           "quotes": [
-            "The working electrode (WE) was an ITO film (300\u00b1 20nm thick) on a quartz substrate."
+            "On mmbench, KD-DSE outperforms the state-of-the-art MicroEvo [8] with both higher hypervolume (HV, 0.6843 vs. 0.6529) and lower average distance to the reference set (ADRS, 0.1011 vs. 0.1291)",
+            "KD-DSE (full) 0.6843\u00b10.0348 (0.7378) 0.1011\u00b10.0364 (0.0495)",
+            "The experiments run on gem5 v25.1.0.1 [14] and McPAT v1.3 [15], where gem5 statistics feed the McPAT templates that produce power and area.",
+            "Each run uses a budget of 18 configurations"
+          ]
+        },
+        {
+          "statement": "On mmbench across 20 independent runs under an 18-simulation budget, MicroEvo achieves a mean hypervolume of 0.6529.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'On mmbench, KD-DSE outperforms the state-of-the-art MicroEvo [8] with '",
+          "quotes": [
+            "On mmbench, KD-DSE outperforms the state-of-the-art MicroEvo [8] with both higher hypervolume (HV, 0.6843 vs. 0.6529)",
+            "MicroEvo [8] 0.6529\u00b10.0351 (0.7154)",
+            "The experiments run on gem5 v25.1.0.1 [14] and McPAT v1.3 [15], where gem5 statistics feed the McPAT templates that produce power and area.",
+            "Each run uses a budget of 18 configurations"
+          ]
+        },
+        {
+          "statement": "On mmbench across 20 independent runs under an 18-simulation budget, MicroEvo achieves a mean ADRS of 0.1291.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'On mmbench, KD-DSE outperforms the state-of-the-art MicroEvo [8] with '",
+          "quotes": [
+            "On mmbench, KD-DSE outperforms the state-of-the-art MicroEvo [8] with both higher hypervolume (HV, 0.6843 vs. 0.6529) and lower average distance to the reference set (ADRS, 0.1011 vs. 0.1291)",
+            "MicroEvo [8] 0.6529\u00b10.0351 (0.7154) 0.1291\u00b10.0329 (0.0660)",
+            "The experiments run on gem5 v25.1.0.1 [14] and McPAT v1.3 [15], where gem5 statistics feed the McPAT templates that produce power and area.",
+            "Each run uses a budget of 18 configurations"
+          ]
+        },
+        {
+          "statement": "On mmbench across 20 independent runs under an 18-simulation budget, KD-DSE (no KB) achieves a mean hypervolume of 0.6489.",
+          "reason": "unit conversion refused: relative_deviation is dimensionless; unit '' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit e",
+          "quotes": [
+            "KD-DSE (no KB) 0.6489\u00b10.0289 (0.7021)",
+            "Removing the KB drops the mean HV from 0.6843 to 0.6489 and raises the mean ADRS from 0.1011 to 0.1482",
+            "The experiments run on gem5 v25.1.0.1 [14] and McPAT v1.3 [15], where gem5 statistics feed the McPAT templates that produce power and area.",
+            "All evaluations run on a blocked mmbench [9] with a 128 \u00d7 128 matrix and a block size of 32."
+          ]
+        },
+        {
+          "statement": "On mmbench across 20 independent runs under an 18-simulation budget, KD-DSE (no KB) achieves a mean ADRS of 0.1482.",
+          "reason": "unit conversion refused: relative_deviation is dimensionless; unit '' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit e",
+          "quotes": [
+            "KD-DSE (no KB) 0.6489\u00b10.0289 (0.7021) 0.1482\u00b10.0410 (0.0730)",
+            "Removing the KB drops the mean HV from 0.6843 to 0.6489 and raises the mean ADRS from 0.1011 to 0.1482",
+            "The experiments run on gem5 v25.1.0.1 [14] and McPAT v1.3 [15], where gem5 statistics feed the McPAT templates that produce power and area.",
+            "All evaluations run on a blocked mmbench [9] with a 128 \u00d7 128 matrix and a block size of 32."
+          ]
+        },
+        {
+          "statement": "On mmbench across 20 independent runs under an 18-simulation budget, NSGA-II achieves a mean hypervolume of 0.6032.",
+          "reason": "unit conversion refused: relative_deviation is dimensionless; unit '' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit e",
+          "quotes": [
+            "NSGA-II [3] 0.6032\u00b10.0411 (0.6696)",
+            "The experiments run on gem5 v25.1.0.1 [14] and McPAT v1.3 [15], where gem5 statistics feed the McPAT templates that produce power and area.",
+            "All evaluations run on a blocked mmbench [9] with a 128 \u00d7 128 matrix and a block size of 32.",
+            "Each run uses a budget of 18 configurations"
+          ]
+        },
+        {
+          "statement": "On mmbench across 20 independent runs under an 18-simulation budget, NSGA-II achieves a mean ADRS of 0.1853.",
+          "reason": "unit conversion refused: relative_deviation is dimensionless; unit '' is not one of ['%', 'dimensionless', 'fraction', 'percent', 'x']. Recording it as a bare number would hide a unit e",
+          "quotes": [
+            "NSGA-II [3] 0.6032\u00b10.0411 (0.6696) 0.1853\u00b10.0450 (0.1024)",
+            "The experiments run on gem5 v25.1.0.1 [14] and McPAT v1.3 [15], where gem5 statistics feed the McPAT templates that produce power and area.",
+            "All evaluations run on a blocked mmbench [9] with a 128 \u00d7 128 matrix and a block size of 32.",
+            "Each run uses a budget of 18 configurations"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261117-0120",
+      "candidate": "CAND-20261118-0107",
       "decision": "out_of_scope",
-      "reason": "The paper investigates fundamental condensed matter physics and topological states of matter in a bulk crystal (Nd4Sb3) rather than semiconductor devices, materials for electronics, or related semiconductor technologies.",
-      "chars": 96926,
+      "reason": "The paper focuses on molecular communication using yeast cells and biological signaling pathways, which is out of scope for semiconductor research.",
+      "chars": 48822,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261117-0119",
+      "candidate": "CAND-20261118-0106",
       "decision": "out_of_scope",
-      "reason": "The paper focuses on multi-modal integrated sensing and communication (ISAC) data generation and wireless communications rather than semiconductor devices, materials, or manufacturing.",
-      "chars": 27663,
+      "reason": "The paper studies the magnetic history and transformation hysteresis of shape memory alloys, which is in the domain of materials physics and not semiconductor research.",
+      "chars": 33454,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261117-0118",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on fiber optics and ultrafast laser propagation in multicore fibers, which is out of scope for semiconductor research.",
-      "chars": 32784,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261117-0117",
-      "decision": "read",
-      "reason": "",
-      "chars": 34213,
-      "claims": [
-        "CLM-PROC-0070",
-        "CLM-PROC-0071"
-      ],
-      "rejected": [
-        {
-          "statement": "For 47 experimental thin-film samples, Unified-FiLM achieved a sample-averaged mean absolute error of 0.030 for extinction coefficient.",
-          "reason": "the value 0.03 does not appear in any of the claim's quotes",
-          "quotes": [
-            "Experimental validation on 47 thin-film samples across diverse substrates yielded sample-averaged mean absolute errors, relative to conventional manual analysis, of 0.047 for refractive index, 0.030 for extinction coefficient, and 1.52 nm f",
-            "A single Unified-FiLM model achieved rapid (<2 s) and accurate analysis of 47 experimental thin-film samples",
-            "For all 47 samples, the average prediction errors of Unified-FiLM were k_ave_MAE=0.030, n_ave_MAE=0.047, \u0394d_b,ave=1.52 nm, and \u0394d_s,ave=0.67 nm",
-            "Experimental validation on 47 thin-film samples across diverse substrates"
-          ]
-        },
-        {
-          "statement": "Generating all three training datasets totaling 165 million samples took 64 h 21 min.",
-          "reason": "the value 64.35 does not appear in any of the claim's quotes",
-          "quotes": [
-            "Generation of all three training datasets (165 million samples in total) using an Intel Core i9-14900KF CPU required 64 h 21 min.",
-            "using an Intel Core i9-14900KF CPU required 64 h 21 min.",
-            "Generation of all three training datasets (165 million samples in total)"
-          ]
-        },
-        {
-          "statement": "Training the Unified-FiLM model required 72 h 14 min.",
-          "reason": "the value 72.2333 does not appear in any of the claim's quotes",
-          "quotes": [
-            "Training was performed with the Adam optimizer on an NVIDIA GeForce RTX 4090 GPU (24 GB) and required 72 h 14 min for Unified-FiLM.",
-            "on an NVIDIA GeForce RTX 4090 GPU (24 GB)",
-            "required 72 h 14 min for Unified-FiLM.",
-            "Training was performed with the Adam optimizer"
-          ]
-        },
-        {
-          "statement": "In simulation across trained substrates, Unified-FiLM achieved an average bulk thickness error of 1.35 nm.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Applying Eq. (3) to the simulated thin films on the trained substrates'",
-          "quotes": [
-            "Applying Eq. (3) to the simulated thin films on the trained substrates separately for db and ds yielded \u0394d_b,ave=1.35 nm and \u0394d_s,ave=0.55 nm, respectively.",
-            "These results confirm the high generalization performance of Unified-FiLM across diverse substrate optical constants, thin-film materials, and thickness conditions using a single model.",
-            "Applying Eq. (3) to the simulated thin films on the trained substrates separately for db and ds yielded \u0394d_b,ave=1.35 nm",
-            "simulated thin films on the trained substrates"
-          ]
-        },
-        {
-          "statement": "In simulation across trained substrates, Unified-FiLM achieved an average surface roughness thickness error of 0.55 nm.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Applying Eq. (3) to the simulated thin films on the trained substrates'",
-          "quotes": [
-            "Applying Eq. (3) to the simulated thin films on the trained substrates separately for db and ds yielded \u0394d_b,ave=1.35 nm and \u0394d_s,ave=0.55 nm, respectively.",
-            "These results confirm the high generalization performance of Unified-FiLM across diverse substrate optical constants, thin-film materials, and thickness conditions using a single model.",
-            "and \u0394d_s,ave=0.55 nm, respectively.",
-            "simulated thin films on the trained substrates"
-          ]
-        },
-        {
-          "statement": "Unified-FiLM achieved a sample-averaged bulk thickness error of 1.52 nm across 47 experimental thin-film samples.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'For all 47 samples, the average prediction errors of Unified-FiLM were'",
-          "quotes": [
-            "For all 47 samples, the average prediction errors of Unified-FiLM were k_ave_MAE=0.030, n_ave_MAE=0.047, \u0394d_b,ave=1.52 nm, and \u0394d_s,ave=0.67 nm, which are comparable to those of the conventional base model specialized for SiO\u2082(2 nm)/Si subs",
-            "the average prediction errors of Unified-FiLM were k_ave_MAE=0.030, n_ave_MAE=0.047, \u0394d_b,ave=1.52 nm",
-            "\u0394d_b,ave=1.52 nm",
-            "For all 47 samples"
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261117-0116",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on the mathematical analysis of loss surfaces in deep neural networks, which is a general machine learning topic rather than semiconductor research.",
-      "chars": 41057,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261117-0115",
-      "decision": "out_of_scope",
-      "reason": "This paper is about solid-state physics and magnetic phase transitions in a bulk polar insulator (Fe2Mo3O8), which is out of scope for semiconductor research.",
-      "chars": 50234,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261117-0114",
+      "candidate": "CAND-20261118-0105",
       "decision": "too_long",
-      "reason": "131,201 characters exceeds the 120,000 budget; not truncated",
-      "chars": 131201,
+      "reason": "188,774 characters exceeds the 120,000 budget; not truncated",
+      "chars": 188774,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261117-0113",
+      "candidate": "CAND-20261118-0104",
+      "decision": "out_of_scope",
+      "reason": "The paper is about pure condensed matter physics and electronic structure calculations of rare earth ions, which is outside the scope of semiconductor research.",
+      "chars": 48150,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0103",
       "decision": "no_claims",
-      "reason": "the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader may do better",
-      "chars": 31001,
+      "reason": "the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader may do better",
+      "chars": 61562,
       "claims": [],
       "rejected": [
         {
-          "statement": "The annular gap width G was fixed at 30 nm for the coaxial nanoantenna platform.",
+          "statement": "The Candelta co-design achieves a speedup of 1.28x to 1.80x over a dense INT8 accelerator of the same area across three evaluated JEPA world models.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'with the same area.'",
+          "quotes": [
+            "On three JEPA world models, our co-design is 1.28\u20131.80\u00d7 faster than a dense accelerator",
+            "with the same area.",
+            "A cycle-level simulator of each array replays planner traces at 1 GHz.",
+            "dense accelerator"
+          ]
+        },
+        {
+          "statement": "The Candelta co-design uses 38% to 52% less energy than a dense accelerator of the same area across three evaluated JEPA world models.",
           "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
           "quotes": [
-            "the annular gap width was fixed at \ud835\udc3a= 30 nm (Figure 1a).",
-            "In this study, we present a comprehensive theoretical framework evaluating IFE-driven static magnetic field generation across a diverse library of plasmonic materials, including gold, silver, copper, aluminum, and titanium nitride."
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261117-0112",
-      "decision": "read",
-      "reason": "",
-      "chars": 33278,
-      "claims": [
-        "CLM-PHOT-0153",
-        "CLM-PHOT-0154",
-        "CLM-PHOT-0155"
-      ],
-      "rejected": [
-        {
-          "statement": "Under an out-of-plane asymmetry parameter of 0.28 and an in-plane asymmetry parameter of 0.75, the Rabi splitting energy valley is 3.16 meV.",
-          "reason": "the statement contains the number 0.28, which none of its quotes contain",
-          "quotes": [
-            "corresponding to a Rabi splitting energy valley of 3.16 meV.",
-            "All numerical simulations were performed using the commercial software COMSOL Multiphysics, which is based on the finite element method (FEM).",
-            "at \u03b1 = 0.75, the central wavelength of strong coupling is located at 1642.5 nm, corresponding to a Rabi splitting energy valley of 3.16 meV.",
-            "Under \u03b2 = 0.28:"
+            "our co-design is 1.28\u20131.80\u00d7 faster than a dense accelerator and uses 38\u201352% less energy",
+            "Energy and area come from post-synthesis of each design in TSMC 28 nm with Cadence Genus and power analysis with simulated switching activity in Synopsys PrimeTime PX.",
+            "dense accelerator",
+            "our co-design"
           ]
         },
         {
-          "statement": "The maximum Rabi splitting energy of the system approaches 7 meV under different in-plane asymmetry parameter values.",
+          "statement": "The Candelta co-design achieves a 1.22x to 1.58x speedup over the Pragmatic bit-sparse design at equal area.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'with the same area.'",
+          "quotes": [
+            "it is 1.22\u20131.58\u00d7 faster than prior bit-sparse design",
+            "with the same area.",
+            "A cycle-level simulator of each array replays planner traces at 1 GHz.",
+            "Pragmatic, the strongest prior bit-sparse design"
+          ]
+        },
+        {
+          "statement": "On LeWM, the Candelta co-design uses 15.6x less energy per planning event than Jetson Thor.",
           "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
           "quotes": [
-            "Calculation results indicate that the maximum Rabi splitting energy of this system approaches 7 meV under different \u03b1 values.",
-            "All numerical simulations were performed using the commercial software COMSOL Multiphysics, which is based on the finite element method (FEM).",
-            "Under \u03b2 = 0.28:"
+            "On LeWM, it uses 15.6\u00d7 less energy per planning event than Jetson Thor.",
+            "A cycle-level simulator of each array replays planner traces at 1 GHz.",
+            "Jetson Thor.",
+            "On LeWM,"
+          ]
+        },
+        {
+          "statement": "The Candelta accelerator operates at a clock frequency of 1 GHz.",
+          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
+          "quotes": [
+            "Each PE has 4 lanes (16,384 in total, at 1 GHz).",
+            "A cycle-level simulator of each array replays planner traces at 1 GHz.",
+            "Candelta accelerator"
+          ]
+        },
+        {
+          "statement": "The evaluated ASICs occupy a total area of 127.9 mm2.",
+          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
+          "quotes": [
+            "Total area (mm2) 127.9 127.9 127.9",
+            "Energy and area come from post-synthesis of each design in TSMC 28 nm with Cadence Genus and power analysis with simulated switching activity in Synopsys PrimeTime PX.",
+            "Dense Pragmatic Candelta"
+          ]
+        },
+        {
+          "statement": "The Candelta accelerator consumes an average power of 3.23 W over one LeWM Cube planning event.",
+          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Power (W) 4.15 3.20 3.23'",
+          "quotes": [
+            "Power (W) 4.15 3.20 3.23",
+            "Energy and area come from post-synthesis of each design in TSMC 28 nm with Cadence Genus and power analysis with simulated switching activity in Synopsys PrimeTime PX.",
+            "Candelta",
+            "average over one LeWM Cube planning event."
+          ]
+        },
+        {
+          "statement": "At equal multiplier count, the Candelta accelerator is 3.8x to 5.8x faster than the dense array.",
+          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
+          "quotes": [
+            "Candelta is 3.8\u00d7 to 5.8\u00d7 faster than the equal-multiplier array.",
+            "A cycle-level simulator of each array replays planner traces at 1 GHz.",
+            "dense array with the same multiplier count (64 \u00d7 32 = 2,048 INT8 MACs; 8 bit-serial lanes count as one MAC).",
+            "Candelta accelerator"
           ]
         }
       ]
     },
     {
-      "candidate": "CAND-20261117-0111",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on sodium-ion battery anode materials and pore filling in hard carbon, which falls under energy storage and electrochemistry rather than semiconductor research.",
-      "chars": 42540,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261117-0110",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on quantum sensing applications of spin defects in hexagonal boron nitride using optical microcavities, which falls under quantum information hardware rather than semiconductor research.",
-      "chars": 64805,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261117-0109",
-      "decision": "read",
-      "reason": "",
-      "chars": 66629,
-      "claims": [
-        "CLM-ARCH-0242",
-        "CLM-ARCH-0243"
-      ],
-      "rejected": [
-        {
-          "statement": "At the 128-token operating point, QAIRT/W4A16 on the smartphone NPU reaches a prompt prefill throughput of 1,473 tokens/s.",
-          "reason": "the statement contains the number 6, which none of its quotes contain",
-          "quotes": [
-            "At the 128-token operating point, QAIRT/W4A16 reaches 1,473 prompt tokens/s but only 17.9 decoded tokens/s, an 82.3\u00d7 ratio.",
-            "Figure 2: Prefill\u2013decode measurements for Qwen3-4B-Instruct-2507.",
-            "QAIRT/W4A16 reaches 1,473 prompt tokens/s",
-            "1,473 prompt tokens/s"
-          ]
-        },
-        {
-          "statement": "Under the A11y-only QAIRT/W4A16 setup, DroidPrefill-A11y achieves an average per-step inference latency of 4.6 s.",
-          "reason": "the statement contains the number 1, which none of its quotes contain",
-          "quotes": [
-            "The resulting inference latency decreases from 24.2 s to 4.6 s per step, an 80.8% reduction and a 5.2\u00d7 speedup.",
-            "DroidPrefill-A11y Qwen3-4B-Instruct QAIRT W4A16 23.0 3.6 1830.4 26.7 4.6",
-            "Under the A11y-only QAIRT/W4A16 setting"
-          ]
-        },
-        {
-          "statement": "Under the A11y-only QAIRT/W4A16 setting, T3A+ has an average per-step inference latency of 24.2 s.",
-          "reason": "the statement contains the number 1, which none of its quotes contain",
-          "quotes": [
-            "The resulting inference latency decreases from 24.2 s to 4.6 s per step, an 80.8% reduction and a 5.2\u00d7 speedup.",
-            "T3A+ Qwen3-4B-Instruct QAIRT W4A16 10.7 0.0 4023.0 318.6 24.2",
-            "Under the A11y-only QAIRT/W4A16 setting"
-          ]
-        },
-        {
-          "statement": "For physical smartphone deployment running representative RealMobile tasks, DroidPrefill achieves an average end-to-end step latency of 5.0 s.",
-          "reason": "anchor quote not found verbatim in the paper (or shorter than 25 characters): 'Across real-device tasks, DroidPrefill achieves an average end-to-end '",
-          "quotes": [
-            "Across real-device tasks, DroidPrefill achieves an average end-to-end step latency of 5.0 s, including both model inference and physical-device interaction overhead.",
-            "DroidPrefill achieves an average end-to-end step latency of 5.0 s",
-            "representative tasks from RealMobile [4]",
-            "deploy the complete pipeline on a physical smartphone"
-          ]
-        }
-      ]
-    },
-    {
-      "candidate": "CAND-20261117-0108",
-      "decision": "out_of_scope",
-      "reason": "The paper focuses on neural reconstruction of thermofluid fields and flames in combustion engineering, which is out of scope for semiconductor research.",
-      "chars": 73715,
-      "claims": [],
-      "rejected": []
-    },
-    {
-      "candidate": "CAND-20261117-0107",
+      "candidate": "CAND-20261118-0102",
       "decision": "too_long",
-      "reason": "179,824 characters exceeds the 120,000 budget; not truncated",
-      "chars": 179824,
+      "reason": "141,960 characters exceeds the 120,000 budget; not truncated",
+      "chars": 141960,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261117-0106",
+      "candidate": "CAND-20261118-0101",
+      "decision": "out_of_scope",
+      "reason": "The paper presents a theoretical and computational methodology for calculating combined magnetic and structural transition states using density-functional theory, which belongs to condensed-matter physics rather than semiconductor research.",
+      "chars": 52196,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0100",
+      "decision": "out_of_scope",
+      "reason": "This paper is about pure theoretical physics and topological invariants in chiral systems, which is out of scope for semiconductor research.",
+      "chars": 66323,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0099",
       "decision": "read",
       "reason": "",
-      "chars": 30855,
+      "chars": 72221,
       "claims": [
-        "CLM-MAT-0361",
-        "CLM-MAT-0362",
-        "CLM-MAT-0363"
+        "CLM-MAT-0368",
+        "CLM-MAT-0369"
+      ],
+      "rejected": [
+        {
+          "statement": "The calculated minimum qKI band gap for silicon is 1.32 eV.",
+          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
+          "quotes": [
+            "Silicon 1.32 1.17 1.30 1.2 [66] 3.55 3.35 3.48 3.5 [71] \u22120.056",
+            "Silicon",
+            "qKI",
+            "Eg (eV)"
+          ]
+        },
+        {
+          "statement": "The calculated minimum qKI band gap for ZnO is 3.6 eV.",
+          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
+          "quotes": [
+            "ZnO 3.6 2.32 3.42 3.6 [72] 3.43 2.16 3.26 3.5 [73] \u22120.16",
+            "ZnO",
+            "qKI",
+            "Eg (eV)"
+          ]
+        },
+        {
+          "statement": "The calculated minimum qKI band gap for hBN is 7.10 eV.",
+          "reason": "the value 7.1 does not appear in any of the claim's quotes",
+          "quotes": [
+            "hBN 7.10 6.15 6.74 [74] 6.3 [75] 6.78 5.51 6.10 6.3 [76] \u22120.22 [77]",
+            "hBN",
+            "qKI",
+            "Eg (eV)"
+          ]
+        },
+        {
+          "statement": "The calculated minimum qKI band gap for diamond is 7.0 eV.",
+          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
+          "quotes": [
+            "Diamond 7.0 5.58 5.90 5.8 [67] 8.13 6.98 7.30 8.0 [78] \u22120.36",
+            "Diamond",
+            "qKI",
+            "Eg (eV)"
+          ]
+        },
+        {
+          "statement": "The calculated minimum qKI band gap for TiO2 is 4.07 eV.",
+          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
+          "quotes": [
+            "TiO2 4.07 3.21 3.73 3.4 [67] 4.73 3.91 4.43 4.4 [79] \u22120.337",
+            "TiO2",
+            "qKI",
+            "Eg (eV)"
+          ]
+        },
+        {
+          "statement": "At the qKI level of theory, the indirect band gap for CrI3 is 1.92 eV.",
+          "reason": "a claim with a number needs at least one verified condition saying what it is a value of (component, variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had its own quote containing its value",
+          "quotes": [
+            "At the qKI level of theory, we obtain an indirect \u0393 \u2192 T band gap of Eg = 1.92 eV",
+            "band structure of CrI3",
+            "At the qKI level of theory",
+            "indirect \u0393 \u2192 T band gap"
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261118-0098",
+      "decision": "no_claims",
+      "reason": "evidence type not established by a verifiable quote (or 'mixed'); no claims extracted, a human reader is needed",
+      "chars": 16779,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0097",
+      "decision": "read",
+      "reason": "",
+      "chars": 71881,
+      "claims": [
+        "CLM-MAT-0370",
+        "CLM-MAT-0371",
+        "CLM-MAT-0372",
+        "CLM-MAT-0373",
+        "CLM-MAT-0374",
+        "CLM-MAT-0375",
+        "CLM-MAT-0376",
+        "CLM-MAT-0377"
       ],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261117-0105",
-      "decision": "out_of_scope",
-      "reason": "The paper studies the solubility and diffusion of hydrogen isotopes and helium in molten FLiBe salt for nuclear reactor applications, which is out of the scope of semiconductor research.",
-      "chars": 67604,
+      "candidate": "CAND-20261118-0096",
+      "decision": "too_long",
+      "reason": "151,009 characters exceeds the 120,000 budget; not truncated",
+      "chars": 151009,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261117-0104",
+      "candidate": "CAND-20261118-0095",
       "decision": "out_of_scope",
-      "reason": "The paper studies recursive state estimation and information flow in hierarchical networks from a control systems and social learning perspective, which is unrelated to semiconductor technology.",
-      "chars": 40808,
+      "reason": "The paper focuses on fundamental condensed matter physics and lattice dynamics (anharmonicity and thermal expansion in ScF3) rather than semiconductor technology.",
+      "chars": 79949,
       "claims": [],
       "rejected": []
     },
     {
-      "candidate": "CAND-20261117-0103",
+      "candidate": "CAND-20261118-0094",
       "decision": "out_of_scope",
-      "reason": "The paper focuses on a hybrid database system for quantum data management, which is out of scope as quantum computing hardware and software are excluded.",
-      "chars": 73619,
+      "reason": "The paper studies automated-truck penetration and human driver behavior in traffic on motorway ramps, which is unrelated to semiconductor research.",
+      "chars": 113278,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0093",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on signal processing, diffusion models, and channel estimation for MIMO communication systems, which are outside the scope of semiconductor research.",
+      "chars": 53489,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0092",
+      "decision": "out_of_scope",
+      "reason": "The paper presents an adaptive filtering algorithm for graph signal processing and is unrelated to semiconductor research.",
+      "chars": 64149,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0091",
+      "decision": "too_long",
+      "reason": "127,563 characters exceeds the 120,000 budget; not truncated",
+      "chars": 127563,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0090",
+      "decision": "no_claims",
+      "reason": "the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader may do better",
+      "chars": 56338,
+      "claims": [],
+      "rejected": [
+        {
+          "statement": "For the undoped ZnO film deposited at 2.0 x 10-2 mbar, the measured free carrier density is 8.76 x 1018 cm-3.",
+          "reason": "the statement contains the number 2.0, which none of its quotes contain",
+          "quotes": [
+            "The measured free electron density of ne = 8.8 \u00d7 1018 cm-3",
+            "0.0 0.00 / 0.00 8.76 \uf0b4 1018 1,06 3.96 \uf0b4 10-1 12.2 \uf0b4 103",
+            "The electrical transport characterization of the pristine samples was performed at RT in the van der Pauw configuration by means of sheet resistance and Hall effect measurements in an ECOPIA HMS-7000.",
+            "Pure ZnO"
+          ]
+        },
+        {
+          "statement": "For the 2.5 wt.% Yb2O3 doped ZnO film deposited at 2.0 x 10-2 mbar, the measured carrier density is 9.13 x 1019 cm-3.",
+          "reason": "the statement contains the number 2.0, which none of its quotes contain",
+          "quotes": [
+            "The free carrier density increases by one order of magnitude (from ne = 8.76 \uf0b4 1018 cm-3 to ne = 9.13 \uf0b4 1019 cm-3) for a doping level of just 2.5 wt.% in the target.",
+            "2.5 1.05 / NA 9.13 \uf0b4 1019 5.89 6.04 \uf0b4 10-2 1.84 \uf0b4 102",
+            "The electrical transport characterization of the pristine samples was performed at RT in the van der Pauw configuration by means of sheet resistance and Hall effect measurements in an ECOPIA HMS-7000.",
+            "The most relevant electrical parameters measured in 335 nm-thick films deposited on soda-lime glass substrates at 2 \uf0b4 10-2 mbar are also included."
+          ]
+        },
+        {
+          "statement": "For the 5.0 wt.% Yb2O3 doped ZnO film deposited at an optimized O2 pressure of 7 x 10-3 mbar, the measured carrier density reaches 1.94 x 1020 cm-3.",
+          "reason": "the statement contains the number 7, which none of its quotes contain",
+          "quotes": [
+            "5.0 1.94 \uf0b4 1020 14.8 2.17 \uf0b4 10-3 0.61 \uf0b4 102",
+            "The electrical transport characterization of the pristine samples was performed at RT in the van der Pauw configuration by means of sheet resistance and Hall effect measurements in an ECOPIA HMS-7000.",
+            "Films were deposited at a dynamic O2 pressure of 7 \u00d7 10-3 mbar in all cases and with a thickness ~ 350 nm.",
+            "Table 2. Electrical parameters of ZnO:Yb2O3 films grown on glass substrates using the indicated targets"
+          ]
+        },
+        {
+          "statement": "For the 10.0 wt.% Yb2O3 doped ZnO film deposited at 7 x 10-3 mbar O2 pressure, the measured carrier density is 3.55 x 1020 cm-3.",
+          "reason": "the statement contains the number 7, which none of its quotes contain",
+          "quotes": [
+            "10.0 3.55 \uf0b4 1020 9.9 1.79 \uf0b4 10-3 0.50 \uf0b4 102",
+            "The electrical transport characterization of the pristine samples was performed at RT in the van der Pauw configuration by means of sheet resistance and Hall effect measurements in an ECOPIA HMS-7000.",
+            "Films were deposited at a dynamic O2 pressure of 7 \u00d7 10-3 mbar in all cases and with a thickness ~ 350 nm.",
+            "Table 2. Electrical parameters of ZnO:Yb2O3 films grown on glass substrates using the indicated targets"
+          ]
+        },
+        {
+          "statement": "For processed areas on sapphire irradiated at 500 mJ/cm2, the sheet resistance parallel to the LIPSS direction is measured to be 920 \u03a9/\u25a1.",
+          "reason": "unit conversion refused: sheet_resistance: could not parse 920.0 '\u03a9\u00b7\u25a1-1': Cannot add or subtract units in a unit expression",
+          "quotes": [
+            "In between these two laser fluence, at 500 mJ/cm2, the sheet resistance values achieved are R\uf06f\uf07c\uf07c = 920 \u03a9\u00b7\u25a1-1 in the parallel direction and R\uf06f\uf05e = 7.5 k\u03a9\u00b7\u25a1-1 in the perpendicular one, providing an anisotropy factor \uf078 ~ 8.",
+            "To quantify the electrical anisotropy of the processed areas, sheet resistance measurements were performed using a 4-Point-Probe OssilaTM device following the criterium stablished in [4].",
+            "the sheet resistance values achieved are R\uf06f\uf07c\uf07c = 920 \u03a9\u00b7\u25a1-1 in the parallel direction",
+            "The resistivity of the laser processed films on sapphire was measured in large areas (6 \uf0b4 6 mm2) for different fluences in the studied range."
+          ]
+        },
+        {
+          "statement": "For processed areas on sapphire irradiated at 500 mJ/cm2, the sheet resistance perpendicular to the LIPSS direction is measured to be 7.5 k\u03a9/\u25a1.",
+          "reason": "unit conversion refused: sheet_resistance: could not parse 7.5 'k\u03a9\u00b7\u25a1-1': Cannot add or subtract units in a unit expression",
+          "quotes": [
+            "In between these two laser fluence, at 500 mJ/cm2, the sheet resistance values achieved are R\uf06f\uf07c\uf07c = 920 \u03a9\u00b7\u25a1-1 in the parallel direction and R\uf06f\uf05e = 7.5 k\u03a9\u00b7\u25a1-1 in the perpendicular one, providing an anisotropy factor \uf078 ~ 8.",
+            "To quantify the electrical anisotropy of the processed areas, sheet resistance measurements were performed using a 4-Point-Probe OssilaTM device following the criterium stablished in [4].",
+            "R\uf06f\uf05e = 7.5 k\u03a9\u00b7\u25a1-1 in the perpendicular one",
+            "The resistivity of the laser processed films on sapphire was measured in large areas (6 \uf0b4 6 mm2) for different fluences in the studied range."
+          ]
+        }
+      ]
+    },
+    {
+      "candidate": "CAND-20261118-0089",
+      "decision": "out_of_scope",
+      "reason": "The paper focuses on signal processing and direction-of-arrival estimation for GNSS antenna arrays, which is outside the scope of semiconductor device physics, manufacturing, or chip design.",
+      "chars": 54278,
+      "claims": [],
+      "rejected": []
+    },
+    {
+      "candidate": "CAND-20261118-0088",
+      "decision": "out_of_scope",
+      "reason": "The paper describes a quantum differential interference contrast microscope used for optical imaging of biological and material specimens, which falls outside semiconductor research.",
+      "chars": 35124,
       "claims": [],
       "rejected": []
     }
   ],
   "counts": {
-    "read": 8,
-    "no_claims": 6,
     "out_of_scope": 23,
-    "too_long": 3
+    "no_claims": 7,
+    "read": 6,
+    "too_long": 4
   },
-  "claims_accepted": 21,
-  "claims_rejected": 44,
+  "claims_accepted": 20,
+  "claims_rejected": 58,
   "tokens": {
-    "input": 237938,
-    "output": 31738
+    "input": 268426,
+    "output": 38489
   },
   "stop_reason": "paper_cap",
-  "seconds": 408.8,
-  "cost_usd": 0.278751,
+  "seconds": 520.8,
+  "cost_usd": 0.327556,
   "budget": {
     "monthly_cap_usd": 10.0,
-    "spent_month_usd": 3.964577,
-    "spent_today_usd": 0.278751,
-    "allowance_today_usd": 0.451012,
-    "remaining_today_usd": 0.172261,
-    "run_usd": 0.278751,
-    "run_calls": 51,
+    "spent_month_usd": 4.292133,
+    "spent_today_usd": 0.327556,
+    "allowance_today_usd": 0.464263,
+    "remaining_today_usd": 0.136707,
+    "run_usd": 0.327556,
+    "run_calls": 49,
     "run_unknown_calls": 0,
     "price_table_retrieved": "2026-09-21",
-    "price_table_age_days": 57
+    "price_table_age_days": 58
   },
   "errors": 0
 }

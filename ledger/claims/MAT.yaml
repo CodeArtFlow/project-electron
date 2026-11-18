@@ -9961,3 +9961,336 @@ claims:
     verified_quotes: 3
   conditions:
     system: twisted BN trilayer
+- id: CLM-MAT-0364
+  topic: MAT
+  statement: At 35 GPa pressure, the enthalpy of C2/m GaAs is calculated to be lower than that of Imm2
+    GaAs by approximately 5 meV per formula unit using r2SCAN.
+  sources:
+  - SRC-00378
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MAT-0365
+  topic: MAT
+  statement: For AlP with LDA optimized lattice parameter (5.435 Å), the computed unclamped dielectric
+    constant using finite field is 10.48.
+  sources:
+  - SRC-00380
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    method: Finite field (This work, Opt.)
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 10.48
+      unit: dimensionless
+    si_base:
+      value: 10.48
+      unit: dimensionless
+    display:
+      value: 1048.0
+      unit: percent
+    conditions:
+      method: Finite field (This work, Opt.)
+- id: CLM-MAT-0366
+  topic: MAT
+  statement: For AlAs with LDA optimized lattice parameter (5.638 Å), the computed ion-clamped dielectric
+    constant using finite field is 9.45.
+  sources:
+  - SRC-00380
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    method: Finite field (This work, Opt.)
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 9.45
+      unit: dimensionless
+    si_base:
+      value: 9.45
+      unit: dimensionless
+    display:
+      value: 944.9999999999999
+      unit: percent
+    conditions:
+      method: Finite field (This work, Opt.)
+- id: CLM-MAT-0367
+  topic: MAT
+  statement: For AlSb with LDA optimized lattice parameter (6.121 Å), the computed ion-clamped dielectric
+    constant using finite field is 11.73.
+  sources:
+  - SRC-00380
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    method: Finite field (This work, Opt.)
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 11.73
+      unit: dimensionless
+    si_base:
+      value: 11.73
+      unit: dimensionless
+    display:
+      value: 1173.0
+      unit: percent
+    conditions:
+      method: Finite field (This work, Opt.)
+- id: CLM-MAT-0368
+  topic: MAT
+  statement: For the benchmark set of semiconductors, BSE@qKI reproduces experimental band gaps with a
+    mean absolute relative error of 13%.
+  sources:
+  - SRC-00381
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    method: BSE@qKI
+    property: band gaps
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 13.0
+      unit: '%'
+    si_base:
+      value: 0.13
+      unit: dimensionless
+    display:
+      value: 13.0
+      unit: percent
+    conditions:
+      method: BSE@qKI
+      property: band gaps
+- id: CLM-MAT-0369
+  topic: MAT
+  statement: For the benchmark set of semiconductors, BSE@qKI reproduces experimental first exciton energies
+    with a mean absolute relative error of 4%.
+  sources:
+  - SRC-00381
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    method: BSE@qKI
+    property: first exciton energies
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 4.0
+      unit: '%'
+    si_base:
+      value: 0.04
+      unit: dimensionless
+    display:
+      value: 4.0
+      unit: percent
+    conditions:
+      method: BSE@qKI
+      property: first exciton energies
+- id: CLM-MAT-0370
+  topic: MAT
+  statement: An apparent activation energy of 17.54 kJ mol-1 was obtained for PEA2PbBr4.
+  sources:
+  - SRC-00382
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: PEA2PbBr4
+    etching_solution: acetonitrile/chlorobenzene composition (100/400 μL)
+- id: CLM-MAT-0371
+  topic: MAT
+  statement: An apparent activation energy of 18.94 kJ mol-1 was obtained for BA2PbBr4.
+  sources:
+  - SRC-00382
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: BA2PbBr4
+    etching_solution: acetonitrile/chlorobenzene composition (100/400 μL)
+- id: CLM-MAT-0372
+  topic: MAT
+  statement: After 2 min of etching, the experimentally measured depth of the cavity is 23.4 nm.
+  sources:
+  - SRC-00382
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: PEA2PbBr4
+- id: CLM-MAT-0373
+  topic: MAT
+  statement: After 2 min of etching, the simulated cavity depth is 22.3 nm.
+  sources:
+  - SRC-00382
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+- id: CLM-MAT-0374
+  topic: MAT
+  statement: After 4 min of etching, the experimentally measured depth of the cavity is 37.1 nm.
+  sources:
+  - SRC-00382
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: PEA2PbBr4
+- id: CLM-MAT-0375
+  topic: MAT
+  statement: After 4 min of etching, the simulated cavity depth is 34.2 nm.
+  sources:
+  - SRC-00382
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+- id: CLM-MAT-0376
+  topic: MAT
+  statement: After 6 min of etching, the experimentally measured depth of the cavity is 52.0 nm.
+  sources:
+  - SRC-00382
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: PEA2PbBr4
+- id: CLM-MAT-0377
+  topic: MAT
+  statement: After 11 min of etching, the experimentally measured depth of the cavity is 67.4 nm.
+  sources:
+  - SRC-00382
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: PEA2PbBr4

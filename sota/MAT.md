@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-17.
+Topic code `MAT`. Last reviewed 2026-11-18.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -1161,6 +1161,42 @@ Topic code `MAT`. Last reviewed 2026-11-17.
   - `CLM-MAT-0363` · system twisted BN trilayer · grade B · credibility unknown · simulated · as of 2026-11-16
   - sources: SRC-00376
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- At 35 GPa pressure, the enthalpy of C2/m GaAs is calculated to be lower than that of Imm2 GaAs by approximately 5 meV per formula unit using r2SCAN.
+  - `CLM-MAT-0364` · grade B · credibility unknown · simulated · as of 2026-11-17
+  - sources: SRC-00378
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- An apparent activation energy of 17.54 kJ mol-1 was obtained for PEA2PbBr4.
+  - `CLM-MAT-0370` · material PEA2PbBr4, etching_solution acetonitrile/chlorobenzene composition (100/400 μL) · grade B · credibility unknown · measured · as of 2026-11-17
+  - sources: SRC-00382
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- An apparent activation energy of 18.94 kJ mol-1 was obtained for BA2PbBr4.
+  - `CLM-MAT-0371` · material BA2PbBr4, etching_solution acetonitrile/chlorobenzene composition (100/400 μL) · grade B · credibility unknown · measured · as of 2026-11-17
+  - sources: SRC-00382
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- After 2 min of etching, the experimentally measured depth of the cavity is 23.4 nm.
+  - `CLM-MAT-0372` · material PEA2PbBr4 · grade B · credibility unknown · measured · as of 2026-11-17
+  - sources: SRC-00382
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- After 2 min of etching, the simulated cavity depth is 22.3 nm.
+  - `CLM-MAT-0373` · grade B · credibility unknown · simulated · as of 2026-11-17
+  - sources: SRC-00382
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- After 4 min of etching, the experimentally measured depth of the cavity is 37.1 nm.
+  - `CLM-MAT-0374` · material PEA2PbBr4 · grade B · credibility unknown · measured · as of 2026-11-17
+  - sources: SRC-00382
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- After 4 min of etching, the simulated cavity depth is 34.2 nm.
+  - `CLM-MAT-0375` · grade B · credibility unknown · simulated · as of 2026-11-17
+  - sources: SRC-00382
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- After 6 min of etching, the experimentally measured depth of the cavity is 52.0 nm.
+  - `CLM-MAT-0376` · material PEA2PbBr4 · grade B · credibility unknown · measured · as of 2026-11-17
+  - sources: SRC-00382
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- After 11 min of etching, the experimentally measured depth of the cavity is 67.4 nm.
+  - `CLM-MAT-0377` · material PEA2PbBr4 · grade B · credibility unknown · measured · as of 2026-11-17
+  - sources: SRC-00382
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1251,6 +1287,29 @@ Topic code `MAT`. Last reviewed 2026-11-17.
   - `CLM-MAT-0252` · band NNN, coupling Λ A, correlation_length ξ ¯kF = 4 · grade B · credibility unknown · simulated · as of 2026-10-30
   - sources: SRC-00274
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **1048 percent** — For AlP with LDA optimized lattice parameter (5.435 Å), the computed unclamped dielectric constant using finite field is 10.48.
+  - `CLM-MAT-0365` · method Finite field (This work, Opt.) · grade B · credibility unknown · simulated · as of 2026-11-17
+  - sources: SRC-00380
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0140, CFL-0141 — see the open register
+- **945 percent** — For AlAs with LDA optimized lattice parameter (5.638 Å), the computed ion-clamped dielectric constant using finite field is 9.45.
+  - `CLM-MAT-0366` · method Finite field (This work, Opt.) · grade B · credibility unknown · simulated · as of 2026-11-17
+  - sources: SRC-00380
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0140, CFL-0142 — see the open register
+- **1173 percent** — For AlSb with LDA optimized lattice parameter (6.121 Å), the computed ion-clamped dielectric constant using finite field is 11.73.
+  - `CLM-MAT-0367` · method Finite field (This work, Opt.) · grade B · credibility unknown · simulated · as of 2026-11-17
+  - sources: SRC-00380
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0141, CFL-0142 — see the open register
+- **13 percent** — For the benchmark set of semiconductors, BSE@qKI reproduces experimental band gaps with a mean absolute relative error of 13%.
+  - `CLM-MAT-0368` · method BSE@qKI, property band gaps · grade B · credibility unknown · simulated · as of 2026-11-17
+  - sources: SRC-00381
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **4 percent** — For the benchmark set of semiconductors, BSE@qKI reproduces experimental first exciton energies with a mean absolute relative error of 4%.
+  - `CLM-MAT-0369` · method BSE@qKI, property first exciton energies · grade B · credibility unknown · simulated · as of 2026-11-17
+  - sources: SRC-00381
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### resistance
 
@@ -1692,9 +1751,18 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0107` — energy: _unexamined; classification pending_
   - claims: CLM-MAT-0294, CLM-MAT-0295
   - missing data: `not yet named`
+- `CFL-0140` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-MAT-0365, CLM-MAT-0366
+  - missing data: `not yet named`
+- `CFL-0141` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-MAT-0365, CLM-MAT-0367
+  - missing data: `not yet named`
+- `CFL-0142` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-MAT-0366, CLM-MAT-0367
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 363
-- grades: {'B': 363}
-- distinct sources: 131
+- claims: 377
+- grades: {'B': 377}
+- distinct sources: 135

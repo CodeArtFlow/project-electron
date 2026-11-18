@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-17.
+Topic code `PHOT`. Last reviewed 2026-11-18.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -201,6 +201,10 @@ Topic code `PHOT`. Last reviewed 2026-11-17.
 - **≈456 nm** — Focused ion beam cross-section scanning electron microscopy yields an estimated bonding gap width of 456 nm for a SESAM bonded to a glass substrate.
   - `CLM-PHOT-0133` · substrate glass substrate · grade B · credibility unknown · measured · as of 2026-11-05
   - sources: SRC-00310
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **4000 nm** — The modeled slab waveguides in the simulated array have a width of 4 µm.
+  - `CLM-PHOT-0156` · component slab waveguides · grade B · credibility unknown · simulated · as of 2026-11-17
+  - sources: SRC-00379
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
@@ -705,6 +709,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 155
-- grades: {'B': 148, 'A': 7}
-- distinct sources: 56
+- claims: 156
+- grades: {'B': 149, 'A': 7}
+- distinct sources: 57

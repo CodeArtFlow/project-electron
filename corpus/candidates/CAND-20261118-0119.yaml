@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.22313v1
 doi: null
-title: Supercell periodicity biases octahedral tilting and energetics in high-entropy
-  perovskite oxides
+title: Supercell periodicity biases octahedral tilting and energetics in high-entropy perovskite oxides
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-17'
@@ -30,6 +29,83 @@ id: CAND-20261118-0119
 harvested_date: '2026-11-18'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-18'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: In CHGNet structural relaxations of ~600-atom cells, the mean energy difference ΔE per
+      atom between N625 and C600 for A1 is +5.87 meV atom−1.
+    reason: the statement contains the number 25, which none of its quotes contain
+    quotes:
+    - A1 12.17 10.46 0.67 0.29 21.16 19.10 +5.87 1.16 1.37
+    - For the HEPOs, values are means over 100 configurations per composition and cell for CHGNet-relaxed
+      structures.
+    - ΔE is the energy difference per atom between the cells (N625 − C600).
+  - statement: In CHGNet calculations of ~600-atom cells, the mean energy difference ΔE per atom between
+      N625 and C600 for B2 is +7.34 meV atom−1.
+    reason: the statement contains the number 25, which none of its quotes contain
+    quotes:
+    - B2 11.98 10.17 0.83 0.32 19.66 16.58 +7.34 0.81 0.50
+    - For the HEPOs, values are means over 100 configurations per composition and cell for CHGNet-relaxed
+      structures.
+    - ΔE is the energy difference per atom between the cells (N625 − C600).
+  - statement: For CaTiO3 in ~600-atom cells relaxed with CHGNet, the energy difference per atom ΔE between
+      N625 and C600 is +20.24 meV atom−1.
+    reason: the statement contains the number 25, which none of its quotes contain
+    quotes:
+    - CaTiO3 15.65 13.25 0.87 0.31 25.87 22.67 +20.24 — —
+    - Values for CaTiO3 and BaZrO3 are for one structure per cell.
+    - ΔE is the energy difference per atom between the cells (N625 − C600).
+    - For the HEPOs, values are means over 100 configurations per composition and cell for CHGNet-relaxed
+      structures.
+  - statement: In CHGNet calculations of ~600-atom cells, the mean oxygen vacancy formation energy Ev
+      − μO for B2 in C600 is 9.446 eV.
+    reason: the statement contains the number 600, which none of its quotes contain
+    quotes:
+    - B2 9.446 9.088 −0.358 ± 0.021 −0.072 ± 0.005
+    - Values are Ev − μO (eV) calculated with CHGNet.
+    - Ev − μO (eV) C600 N625
+    - Oxygen vacancy formation energies in the ~600-atom cells.
+  - statement: In CHGNet calculations of ~600-atom cells, the mean oxygen vacancy formation energy Ev
+      − μO for B2 in N625 is 9.088 eV.
+    reason: the statement contains the number 600, which none of its quotes contain
+    quotes:
+    - B2 9.446 9.088 −0.358 ± 0.021 −0.072 ± 0.005
+    - Values are Ev − μO (eV) calculated with CHGNet.
+    - Ev − μO (eV) C600 N625
+    - Oxygen vacancy formation energies in the ~600-atom cells.
+  - statement: In DFT calculations at ~200 atoms, the mean absolute error (MAE) between CHGNet and DFT
+      for tilt coherence F in commensurate cells is 0.014.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The mean
+      absolute errors (MAEs) between CHGNet and DFT were 0.014 and '''
+    quotes:
+    - The mean absolute errors (MAEs) between CHGNet and DFT were 0.014 and 0.030 for F in the commensurate
+      and non-commensurate cells, respectively
+    - To validate the CHGNet results, we relaxed one configuration per composition and cell with DFT for
+      the 13 compositions at ~200 atoms and compared the results with those of CHGNet for the same configurations
+      (Fig. S2).
+    - in the commensurate and non-commensurate cells, respectively
+    - 0.014 and 0.030 for F in the commensurate and non-commensurate cells, respectively
+  - statement: In DFT calculations at ~200 atoms, the mean absolute error (MAE) for ΔE between CHGNet
+      and DFT is 1.34 meV atom−1.
+    reason: 'unit conversion refused: energy: could not parse 1.34 ''meV atom−1'': ''atom−1'' is not defined
+      in the unit registry'
+    quotes:
+    - ΔE ranged from 0.51 to 16.9 meV atom−1 with DFT and from 0.12 to 13.7 meV atom−1 with CHGNet, with
+      an MAE of 1.34 meV atom−1.
+    - To validate the CHGNet results, we relaxed one configuration per composition and cell with DFT for
+      the 13 compositions at ~200 atoms and compared the results with those of CHGNet for the same configurations
+      (Fig. S2).
+    - The mean absolute errors (MAEs) between CHGNet and DFT
+    - the 13 compositions at ~200 atoms
+  tokens:
+    input: 22604
+    output: 3317
+  fetched_chars: 67749

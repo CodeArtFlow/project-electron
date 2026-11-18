@@ -4387,3 +4387,36 @@ claims:
       unit: um
     conditions:
       in_plane_asymmetry_parameter: '0.75'
+- id: CLM-PHOT-0156
+  topic: PHOT
+  statement: The modeled slab waveguides in the simulated array have a width of 4 µm.
+  sources:
+  - SRC-00379
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    component: slab waveguides
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 4.0
+      unit: µm
+    si_base:
+      value: 4.0e-06
+      unit: m
+    display:
+      value: 3999.9999999999995
+      unit: nm
+    conditions:
+      component: slab waveguides

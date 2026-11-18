@@ -1,0 +1,98 @@
+id: SRC-00380
+title: Assessment of electric-field-induced forces for bulk solids within the projector-augmented wave
+  method
+doi: null
+arxiv_id: 2611.22400v1
+url: https://arxiv.org/abs/2611.22400v1
+venue_id: arxiv_api
+authors:
+- name: Peitao Liu
+  affiliation: null
+  corresponding: null
+- name: Martijn Marsman
+  affiliation: null
+  corresponding: null
+- name: Georg Kresse
+  affiliation: null
+  corresponding: null
+- name: Cesare Franchini
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-17'
+retrieved_date: '2026-11-18'
+access: full_text
+read_scope: Automated reading. The full PDF text (41,268 characters, 9 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.22400v1 on
+  2026-11-18. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“TABLE II. Computed lattice parameters a, Born effective charges Z∗, ion-clamped (ϵ∞) and unclamped
+  (ϵ0) dielectric constants, ion-clamped quadratic dielectric susceptibilityχ(2) xyz (in pm/V), and ion-clamped
+  (c0 xyz) and unclamped (cxyz) proper piezoelectric constants (inµC/cm2) for AlX (X=P, As, and Sb) semiconductors.”
+
+  “Finite field (This work, Opt.) 5.435 2.21 8.34 10.48 43 −67.77 4.77”
+
+  “Finite field (This work, Opt.)”
+
+  “Finite field (This work, Opt.) 5.638 2.13 9.45 11.40 74 −65.80 −1.81”
+
+  “Finite field (This work, Opt.) 6.121 1.81 11.73 13.00 193 −52.29 −4.95”'
+method_summary: '“In this work, the field-induced forces in Eq. (14) are coupled to the ionic relaxation
+  procedure. At each ionic step, VASP converges the electronic state at the applied field, evaluates the
+  forces, and passes them to the ionic optimizer to update the atomic positions while maintaining the
+  field.”
+
+  “For AlX (X=P, As, and Sb), the local density approximation (LDA) [58] in the parametrization of Ceperley
+  and Alder [59] was used. We employed a plane-wave cutoff of 500 eV and a Γ-centered 16×16×16 k-point
+  grid”
+
+  “For AgNbO3, the Perdew-Burke-Ernzerhof (PBE) [64] approximation was employed for the exchange-correlation
+  functional.”'
+limitations: “except for the overestimation of the dielectric constants by LDA due to its underestimation
+  of the band gap”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16813
+    output: 2819
+  claims_accepted: 3
+  claims_rejected: 3
+  rejected:
+  - statement: For AlP with LDA optimized lattice parameter (5.435 Å), the calculated ion-clamped dielectric
+      constant using finite field within the PAW method in VASP is 8.34.
+    reason: '[qualifier_dropped] the statement is a bound but quantity.bound is ''exact''. Record the
+      qualifier the source used - UnitEngine.record(..., bound=..., approximate=...).'
+    quotes:
+    - TABLE II. Computed lattice parameters a, Born effective charges Z∗, ion-clamped (ϵ∞) and unclamped
+      (ϵ0) dielectric constants, ion-clamped quadratic dielectric susceptibilityχ(2) xyz (in pm/V), and
+      ion-clamped (c0 xyz) and unclamped (cxyz) p
+    - Finite field (This work, Opt.) 5.435 2.21 8.34 10.48 43 −67.77 4.77
+    - AlP
+    - '5.435'
+  - statement: For AgNbO3, when an electric field of 7 MV/cm is applied along the b axis, the calculated
+      polarization abruptly increases to 53.8 µC/cm2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''As the electric
+      field is increased to the critical value of 7 MV/cm, t'''
+    quotes:
+    - As the electric field is increased to the critical value of 7 MV/cm, the polarization abruptly increases
+      to a large value of 53.8 µC/cm2, indicating the phase transition to the Pmc21 phase [Fig. 2(b)].
+    - AgNbO3
+    - 7 MV/cm
+  - statement: When the electric field is removed, AgNbO3 remains in the ferroelectric state with a calculated
+      polarization of 46.0 µC/cm2.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''µC/cm2'' is not one
+      of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a '
+    quotes:
+    - when the electric field is removed, the obtained ferroelectric Pmc21 phase does not relax back to
+      the original antiferroelectric Pbcm phase, but remains in the ferroelectric state with a slightly
+      reduced polarization of 46.0 µC/cm2.
+    - AgNbO3
+    - when the electric field is removed
+corrections: []

@@ -1276,3 +1276,183 @@ claims:
     modulator: MZM
     control_precision: 8 bits
     source_organization: Single-Laser Time-Serialized
+- id: CLM-EDA-0049
+  topic: EDA
+  statement: The standalone optimizer achieves a 7.3x speedup in overall mean runtime over the original
+    PVTSizing across four circuit benchmarks.
+  sources:
+  - SRC-00377
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    benchmark_scope: four circuit benchmarks
+    optimizer_variant: standalone optimizer
+    baseline: original PVTSizing
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 7.3
+      unit: x
+    si_base:
+      value: 7.3
+      unit: dimensionless
+    display:
+      value: 730.0
+      unit: percent
+    conditions:
+      benchmark_scope: four circuit benchmarks
+      optimizer_variant: standalone optimizer
+      baseline: original PVTSizing
+- id: CLM-EDA-0050
+  topic: EDA
+  statement: The best tested knowledge-injection configuration reduces mean runtime by 39.9% relative
+    to the standalone optimizer.
+  sources:
+  - SRC-00377
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    configuration: best tested knowledge-injection configuration
+    baseline: standalone optimizer
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 39.9
+      unit: '%'
+    si_base:
+      value: 0.399
+      unit: dimensionless
+    display:
+      value: 39.900000000000006
+      unit: percent
+    conditions:
+      configuration: best tested knowledge-injection configuration
+      baseline: standalone optimizer
+- id: CLM-EDA-0051
+  topic: EDA
+  statement: The best tested knowledge-injection configuration reduces simulation samples by 35.4% relative
+    to the standalone optimizer.
+  sources:
+  - SRC-00377
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    configuration: best tested knowledge-injection configuration
+    baseline: standalone optimizer
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 35.4
+      unit: '%'
+    si_base:
+      value: 0.354
+      unit: dimensionless
+    display:
+      value: 35.4
+      unit: percent
+    conditions:
+      configuration: best tested knowledge-injection configuration
+      baseline: standalone optimizer
+- id: CLM-EDA-0052
+  topic: EDA
+  statement: Compared to RobustAnalog, PVTSizing 2.0 reduces the overall mean sample count by 76.7%.
+  sources:
+  - SRC-00377
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    optimizer_variant: PVTSizing 2.0
+    baseline: RobustAnalog
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 76.7
+      unit: '%'
+    si_base:
+      value: 0.767
+      unit: dimensionless
+    display:
+      value: 76.7
+      unit: percent
+    conditions:
+      optimizer_variant: PVTSizing 2.0
+      baseline: RobustAnalog
+- id: CLM-EDA-0053
+  topic: EDA
+  statement: PVTSizing 2.0 achieves a 4.0x speedup compared with RobustAnalog across all four circuits.
+  sources:
+  - SRC-00377
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-17'
+  created: '2026-11-18'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    optimizer_variant: PVTSizing 2.0
+    baseline: RobustAnalog
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 4.0
+      unit: x
+    si_base:
+      value: 4.0
+      unit: dimensionless
+    display:
+      value: 400.0
+      unit: percent
+    conditions:
+      optimizer_variant: PVTSizing 2.0
+      baseline: RobustAnalog

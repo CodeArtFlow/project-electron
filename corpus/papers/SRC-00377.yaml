@@ -1,0 +1,120 @@
+id: SRC-00377
+title: 'PVTSizing 2.0: A Fast and Reliable Analog Circuit Sizing Operator for Agentic EDA Workflows'
+doi: null
+arxiv_id: 2611.22328v1
+url: https://arxiv.org/abs/2611.22328v1
+venue_id: arxiv_api
+authors:
+- name: Zichen Kong
+  affiliation: null
+  corresponding: null
+- name: Minghuan Song
+  affiliation: null
+  corresponding: null
+- name: Xiyuan Tang
+  affiliation: null
+  corresponding: null
+- name: Ziming Wei
+  affiliation: null
+  corresponding: null
+- name: Yi Zhong
+  affiliation: null
+  corresponding: null
+- name: Yuan Wang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-17'
+retrieved_date: '2026-11-18'
+access: full_text
+read_scope: Automated reading. The full PDF text (55,157 characters, 10 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.22328v1 on
+  2026-11-18. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Across four circuit benchmarks, the standalone optimizer completes all 40 runs and achieves
+  a 7.3× speedup in overall mean runtime over the original PVTSizing, with a comparable mean sample count.”
+
+  “Across four circuit benchmarks, the standalone optimizer completes all 40 runs and achieves a 7.3×
+  speedup in overall mean runtime over the original PVTSizing”
+
+  “the standalone optimizer completes all 40 runs and achieves a 7.3× speedup in overall mean runtime
+  over the original PVTSizing”
+
+  “achieves a 7.3× speedup in overall mean runtime over the original PVTSizing”
+
+  “The experiments were conducted on a server running CentOS 7.9, equipped with two 16-core Intel Xeon
+  Gold 6246R processors at 3.40 GHz and 256 GiB of memory.”
+
+  “In a separate study, the best tested knowledge-injection configuration further reduces mean runtime
+  by 39.9% and simulation samples by 35.4% relative to the standalone optimizer.”
+
+  “the best tested knowledge-injection configuration further reduces mean runtime by 39.9%”
+
+  “reduces mean runtime by 39.9% and simulation samples by 35.4% relative to the standalone optimizer.”
+
+  “the best tested knowledge-injection configuration further reduces mean runtime by 39.9% and simulation
+  samples by 35.4%”
+
+  “Compared with RobustAnalog, PVTSizing 2.0 achieves both fewer samples and shorter runtime across all
+  four circuits, reducing the overall mean sample count by 76.7% and achieving a 4.0× speedup.”
+
+  “Compared with RobustAnalog, PVTSizing 2.0 achieves both fewer samples and shorter runtime across all
+  four circuits, reducing the overall mean sample count by 76.7%”
+
+  “Compared with RobustAnalog, PVTSizing 2.0 achieves both fewer samples and shorter runtime across all
+  four circuits”'
+method_summary: '“The evaluation first examines the optimizer without knowledge injection, then the benefit
+  of adding advice.”
+
+  “Circuit testbenches were prepared in Cadence Virtuoso and simulated with Spectre, using up to eight
+  concurrent simulation workers per run.”'
+limitations: '“Although all three configurations reduce the recorded number of PVT iterations, fewer iterations
+  do not necessarily lead to lower search costs.”
+
+  “For confidential designs, the deployment environment may be decided before a model is selected. Circuit
+  and process information that cannot leave a controlled environment requires an adviser that can run
+  within that boundary.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 17278
+    output: 3151
+  claims_accepted: 5
+  claims_rejected: 3
+  rejected:
+  - statement: PVTSizing 2.0 with GPT-5.6 Terra reduces mean runtime by 18.8% on MS-OTA relative to the
+      standalone optimizer.
+    reason: the statement contains the number 2.0, which none of its quotes contain
+    quotes:
+    - GPT-5.6 Terra reduces mean runtime by 18.8% and samples by 17.1%, while GPT-6 Astra achieves larger
+      reductions of 39.9% and 35.4%, respectively.
+    - The experiments were conducted on a server running CentOS 7.9, equipped with two 16-core Intel Xeon
+      Gold 6246R processors at 3.40 GHz and 256 GiB of memory.
+    - GPT-5.6 Terra reduces mean runtime by 18.8% and samples by 17.1%
+    - TABLE V KNOWLEDGE INJECTION ON MS-OTA
+  - statement: PVTSizing 2.0 with GPT-5.6 Terra reduces samples by 17.1% on MS-OTA relative to the standalone
+      optimizer.
+    reason: the statement contains the number 2.0, which none of its quotes contain
+    quotes:
+    - GPT-5.6 Terra reduces mean runtime by 18.8% and samples by 17.1%, while GPT-6 Astra achieves larger
+      reductions of 39.9% and 35.4%, respectively.
+    - The experiments were conducted on a server running CentOS 7.9, equipped with two 16-core Intel Xeon
+      Gold 6246R processors at 3.40 GHz and 256 GiB of memory.
+    - GPT-5.6 Terra reduces mean runtime by 18.8% and samples by 17.1%
+    - TABLE V KNOWLEDGE INJECTION ON MS-OTA
+  - statement: The full PVTSizing 2.0 method achieves an expected time of 1.211 h on MS-OTA.
+    reason: the statement contains the number 2.0, which none of its quotes contain
+    quotes:
+    - Under this convention, the full optimizer has the lowest expected time, 1.211 h, compared with 4.280
+      h without loss-guided training and 3.719 h without local refinement.
+    - The experiments were conducted on a server running CentOS 7.9, equipped with two 16-core Intel Xeon
+      Gold 6246R processors at 3.40 GHz and 256 GiB of memory.
+    - Full method (PVTSizing 2.0)
+    - TABLE IV ABLATION OF THE OPTIMIZER COMPONENTS ON MS-OTA
+corrections: []

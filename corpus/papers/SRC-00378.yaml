@@ -1,0 +1,98 @@
+id: SRC-00378
+title: Mapping phase competition in GaAs under pressure and temperature
+doi: null
+arxiv_id: 2611.22332v1
+url: https://arxiv.org/abs/2611.22332v1
+venue_id: arxiv_api
+authors:
+- name: Sakshi Patel
+  affiliation: null
+  corresponding: null
+- name: Paras Patel
+  affiliation: null
+  corresponding: null
+- name: Prafulla K. Jha
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-17'
+retrieved_date: '2026-11-18'
+access: full_text
+read_scope: Automated reading. The full PDF text (58,969 characters, 32 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.22332v1 on
+  2026-11-18. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: “Independent relaxation of C2/m and Imm2 using r2SCAN preserves this ordering at 35 GPa, with
+  C2/m lower in enthalpy by approximately 5 meV per GaAs formula unit (See Fig. S1 in SM [25]).”
+method_summary: '“Here, we have used structure search algorithm combined with first-principles calculations
+  and identified high-pressure competitive phases.”
+
+  “The static enthalpy calculations with the PBEsol functional predict the transition sequence F ¯43m
+  → Cmcm → I¯4m2 → C2/m → Amm2, at approximately 12, 14, 34, and 69 GPa, respectively.”
+
+  “These calculations employ the PBEsol exchange-correlation functional and the projector augmented-wave
+  (PAW) method [23], as implemented in VASP [24].”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 27455
+    output: 2571
+  claims_accepted: 1
+  claims_rejected: 6
+  rejected:
+  - statement: At 0 GPa pressure, the relaxed lattice parameter of F-43m GaAs calculated using PBEsol
+      is 5.659 Å.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Phase (space group) Pressure (GPa) Lattice parameters (unit cell) Atom positions (Wyckoff)
+    - F ¯43m (216) PBEsol 0 a = b = c = 5.659 ˚A α = β = γ = 90◦
+    - F ¯43m (216) PBEsol
+    - '0'
+  - statement: The calculated PBEsol volume collapse at the zinc blende to Cmcm transition near 12 GPa
+      is approximately 17.5%.
+    reason: the statement contains the number 12, which none of its quotes contain
+    quotes:
+    - The initial zinc blende to Cmcm transition is accompanied by a volume reduction of approximately
+      17.5% and metallization within the PBEsol description.
+    - zinc blende to Cmcm transition
+    - PBEsol description
+  - statement: At 0 GPa pressure, the calculated PBEsol band gap of ZB GaAs is approximately 0.38 eV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''At 0 GPa,
+      the ZB phase exhibits a direct band gap, with both the valen'''
+    quotes:
+    - At 0 GPa, the ZB phase exhibits a direct band gap, with both the valence-band maximum and conduction-band
+      minimum located at Γ-point (See Fig. S4 of SM [25]). The calculated band gap is approximately 0.38
+      eV.
+    - The calculated band gap is approximately 0.38 eV.
+    - At 0 GPa
+    - ZB phase
+  - statement: At 0 GPa, the calculated PBEsol bulk modulus B for the F-43m phase of GaAs is 69.62 GPa.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Phase (space group) Pressure (GPa) Cij (GPa) B (GPa) E (GPa) G (GPa) ν
+    - F ¯43m (216) PBEsol 0 C11 = 109.61 C12 = 49.63 C44 = 54.11 69.62 106.36 42.70 0.25
+    - F ¯43m (216) PBEsol
+    - '0'
+  - statement: At 0 GPa, the calculated PBEsol Young's modulus E for the F-43m phase of GaAs is 106.36
+      GPa.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Phase (space group) Pressure (GPa) Cij (GPa) B (GPa) E (GPa) G (GPa) ν
+    - F ¯43m (216) PBEsol 0 C11 = 109.61 C12 = 49.63 C44 = 54.11 69.62 106.36 42.70 0.25
+    - F ¯43m (216) PBEsol
+    - '0'
+  - statement: At 0 GPa, the calculated PBEsol shear modulus G for the F-43m phase of GaAs is 42.70 GPa.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Phase (space group) Pressure (GPa) Cij (GPa) B (GPa) E (GPa) G (GPa) ν
+    - F ¯43m (216) PBEsol 0 C11 = 109.61 C12 = 49.63 C44 = 54.11 69.62 106.36 42.70 0.25
+    - F ¯43m (216) PBEsol
+    - '0'
+corrections: []

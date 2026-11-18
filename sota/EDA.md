@@ -1,6 +1,6 @@
 # EDA — state of the art
 
-Topic code `EDA`. Last reviewed 2026-11-17.
+Topic code `EDA`. Last reviewed 2026-11-18.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -214,6 +214,30 @@ Topic code `EDA`. Last reviewed 2026-11-17.
   - sources: SRC-00339
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0134, CFL-0135 — see the open register
+- **730 percent** — The standalone optimizer achieves a 7.3x speedup in overall mean runtime over the original PVTSizing across four circuit benchmarks.
+  - `CLM-EDA-0049` · benchmark_scope four circuit benchmarks, optimizer_variant standalone optimizer, baseline original PVTSizing · grade B · credibility unknown · measured · as of 2026-11-17
+  - sources: SRC-00377
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **39.9 percent** — The best tested knowledge-injection configuration reduces mean runtime by 39.9% relative to the standalone optimizer.
+  - `CLM-EDA-0050` · configuration best tested knowledge-injection configuration, baseline standalone optimizer · grade B · credibility unknown · measured · as of 2026-11-17
+  - sources: SRC-00377
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0138 — see the open register
+- **35.4 percent** — The best tested knowledge-injection configuration reduces simulation samples by 35.4% relative to the standalone optimizer.
+  - `CLM-EDA-0051` · configuration best tested knowledge-injection configuration, baseline standalone optimizer · grade B · credibility unknown · measured · as of 2026-11-17
+  - sources: SRC-00377
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0138 — see the open register
+- **76.7 percent** — Compared to RobustAnalog, PVTSizing 2.0 reduces the overall mean sample count by 76.7%.
+  - `CLM-EDA-0052` · optimizer_variant PVTSizing 2.0, baseline RobustAnalog · grade B · credibility unknown · measured · as of 2026-11-17
+  - sources: SRC-00377
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0139 — see the open register
+- **400 percent** — PVTSizing 2.0 achieves a 4.0x speedup compared with RobustAnalog across all four circuits.
+  - `CLM-EDA-0053` · optimizer_variant PVTSizing 2.0, baseline RobustAnalog · grade B · credibility unknown · measured · as of 2026-11-17
+  - sources: SRC-00377
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0139 — see the open register
 
 ### time
 
@@ -254,9 +278,15 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0135` — relative_deviation: _unexamined; classification pending_
   - claims: CLM-EDA-0044, CLM-EDA-0045
   - missing data: `not yet named`
+- `CFL-0138` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-EDA-0050, CLM-EDA-0051
+  - missing data: `not yet named`
+- `CFL-0139` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-EDA-0052, CLM-EDA-0053
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 48
-- grades: {'B': 48}
-- distinct sources: 13
+- claims: 53
+- grades: {'B': 53}
+- distinct sources: 14

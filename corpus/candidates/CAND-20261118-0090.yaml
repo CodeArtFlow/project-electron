@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.22573v1
 doi: null
-title: 'Targeted material doping to enable the formation and coherent propagation
-  of Laser Induced Periodic Surface Structures (LIPSS): the ZnO paradigm'
+title: 'Targeted material doping to enable the formation and coherent propagation of Laser Induced Periodic
+  Surface Structures (LIPSS): the ZnO paradigm'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-17'
@@ -31,6 +31,86 @@ id: CAND-20261118-0090
 harvested_date: '2026-11-18'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-18'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For the undoped ZnO film deposited at 2.0 x 10-2 mbar, the measured free carrier density
+      is 8.76 x 1018 cm-3.
+    reason: the statement contains the number 2.0, which none of its quotes contain
+    quotes:
+    - The measured free electron density of ne = 8.8 × 1018 cm-3
+    - 0.0 0.00 / 0.00 8.76  1018 1,06 3.96  10-1 12.2  103
+    - The electrical transport characterization of the pristine samples was performed at RT in the van
+      der Pauw configuration by means of sheet resistance and Hall effect measurements in an ECOPIA HMS-7000.
+    - Pure ZnO
+  - statement: For the 2.5 wt.% Yb2O3 doped ZnO film deposited at 2.0 x 10-2 mbar, the measured carrier
+      density is 9.13 x 1019 cm-3.
+    reason: the statement contains the number 2.0, which none of its quotes contain
+    quotes:
+    - The free carrier density increases by one order of magnitude (from ne = 8.76  1018 cm-3 to ne =
+      9.13  1019 cm-3) for a doping level of just 2.5 wt.% in the target.
+    - 2.5 1.05 / NA 9.13  1019 5.89 6.04  10-2 1.84  102
+    - The electrical transport characterization of the pristine samples was performed at RT in the van
+      der Pauw configuration by means of sheet resistance and Hall effect measurements in an ECOPIA HMS-7000.
+    - The most relevant electrical parameters measured in 335 nm-thick films deposited on soda-lime glass
+      substrates at 2  10-2 mbar are also included.
+  - statement: For the 5.0 wt.% Yb2O3 doped ZnO film deposited at an optimized O2 pressure of 7 x 10-3
+      mbar, the measured carrier density reaches 1.94 x 1020 cm-3.
+    reason: the statement contains the number 7, which none of its quotes contain
+    quotes:
+    - 5.0 1.94  1020 14.8 2.17  10-3 0.61  102
+    - The electrical transport characterization of the pristine samples was performed at RT in the van
+      der Pauw configuration by means of sheet resistance and Hall effect measurements in an ECOPIA HMS-7000.
+    - Films were deposited at a dynamic O2 pressure of 7 × 10-3 mbar in all cases and with a thickness
+      ~ 350 nm.
+    - Table 2. Electrical parameters of ZnO:Yb2O3 films grown on glass substrates using the indicated
+      targets
+  - statement: For the 10.0 wt.% Yb2O3 doped ZnO film deposited at 7 x 10-3 mbar O2 pressure, the measured
+      carrier density is 3.55 x 1020 cm-3.
+    reason: the statement contains the number 7, which none of its quotes contain
+    quotes:
+    - 10.0 3.55  1020 9.9 1.79  10-3 0.50  102
+    - The electrical transport characterization of the pristine samples was performed at RT in the van
+      der Pauw configuration by means of sheet resistance and Hall effect measurements in an ECOPIA HMS-7000.
+    - Films were deposited at a dynamic O2 pressure of 7 × 10-3 mbar in all cases and with a thickness
+      ~ 350 nm.
+    - Table 2. Electrical parameters of ZnO:Yb2O3 films grown on glass substrates using the indicated
+      targets
+  - statement: For processed areas on sapphire irradiated at 500 mJ/cm2, the sheet resistance parallel
+      to the LIPSS direction is measured to be 920 Ω/□.
+    reason: 'unit conversion refused: sheet_resistance: could not parse 920.0 ''Ω·□-1'': Cannot add or
+      subtract units in a unit expression'
+    quotes:
+    - In between these two laser fluence, at 500 mJ/cm2, the sheet resistance values achieved are R
+      = 920 Ω·□-1 in the parallel direction and R = 7.5 kΩ·□-1 in the perpendicular one, providing an
+      anisotropy factor  ~ 8.
+    - To quantify the electrical anisotropy of the processed areas, sheet resistance measurements were
+      performed using a 4-Point-Probe OssilaTM device following the criterium stablished in [4].
+    - the sheet resistance values achieved are R = 920 Ω·□-1 in the parallel direction
+    - The resistivity of the laser processed films on sapphire was measured in large areas (6  6 mm2)
+      for different fluences in the studied range.
+  - statement: For processed areas on sapphire irradiated at 500 mJ/cm2, the sheet resistance perpendicular
+      to the LIPSS direction is measured to be 7.5 kΩ/□.
+    reason: 'unit conversion refused: sheet_resistance: could not parse 7.5 ''kΩ·□-1'': Cannot add or
+      subtract units in a unit expression'
+    quotes:
+    - In between these two laser fluence, at 500 mJ/cm2, the sheet resistance values achieved are R
+      = 920 Ω·□-1 in the parallel direction and R = 7.5 kΩ·□-1 in the perpendicular one, providing an
+      anisotropy factor  ~ 8.
+    - To quantify the electrical anisotropy of the processed areas, sheet resistance measurements were
+      performed using a 4-Point-Probe OssilaTM device following the criterium stablished in [4].
+    - R = 7.5 kΩ·□-1 in the perpendicular one
+    - The resistivity of the laser processed films on sapphire was measured in large areas (6  6 mm2)
+      for different fluences in the studied range.
+  tokens:
+    input: 19596
+    output: 3342
+  fetched_chars: 56338

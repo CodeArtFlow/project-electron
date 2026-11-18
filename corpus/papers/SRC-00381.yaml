@@ -1,0 +1,115 @@
+id: SRC-00381
+title: Koopmans spectral functionals for excitons in materials
+doi: null
+arxiv_id: 2611.22524v1
+url: https://arxiv.org/abs/2611.22524v1
+venue_id: arxiv_api
+authors:
+- name: Miki Bonacci
+  affiliation: null
+  corresponding: null
+- name: Edward Linscott
+  affiliation: null
+  corresponding: null
+- name: Julian Geiger
+  affiliation: null
+  corresponding: null
+- name: Nicola Marzari
+  affiliation: null
+  corresponding: null
+- name: Nicola Colonna
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-17'
+retrieved_date: '2026-11-18'
+access: full_text
+read_scope: Automated reading. The full PDF text (72,221 characters, 20 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.22524v1 on
+  2026-11-18. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“For a set of benchmark semiconductors, BSE@qKI reproduces experimental band gaps and first
+  exciton energies with mean absolute relative errors of 13% and 4%, respectively”
+
+  “BSE@qKI reproduces experimental band gaps”
+
+  “reproduces experimental band gaps”
+
+  “BSE@qKI reproduces experimental band gaps and first exciton energies”
+
+  “first exciton energies with mean absolute relative errors”'
+method_summary: '“Here, we replace the GW step with quasiparticle energies from Koopmans-compliant spectral
+  functionals, an approach we call BSE@qKI, and implement it in an automated, reproducible AiiDA workflow.”
+
+  “All the BSE and G0W0 calculations reported in this work were performed with the Yambo code [51, 52].”
+
+  “All calculations employ PseudoDojo v0.4 pseudopotentials [65], within the local-density approximation
+  (LDA) for the exchange-correlation functional.”'
+limitations: “The first is the need for user-defined Wannier projections.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 22548
+    output: 2879
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: The calculated minimum qKI band gap for silicon is 1.32 eV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Silicon 1.32 1.17 1.30 1.2 [66] 3.55 3.35 3.48 3.5 [71] −0.056
+    - Silicon
+    - qKI
+    - Eg (eV)
+  - statement: The calculated minimum qKI band gap for ZnO is 3.6 eV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - ZnO 3.6 2.32 3.42 3.6 [72] 3.43 2.16 3.26 3.5 [73] −0.16
+    - ZnO
+    - qKI
+    - Eg (eV)
+  - statement: The calculated minimum qKI band gap for hBN is 7.10 eV.
+    reason: the value 7.1 does not appear in any of the claim's quotes
+    quotes:
+    - hBN 7.10 6.15 6.74 [74] 6.3 [75] 6.78 5.51 6.10 6.3 [76] −0.22 [77]
+    - hBN
+    - qKI
+    - Eg (eV)
+  - statement: The calculated minimum qKI band gap for diamond is 7.0 eV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Diamond 7.0 5.58 5.90 5.8 [67] 8.13 6.98 7.30 8.0 [78] −0.36
+    - Diamond
+    - qKI
+    - Eg (eV)
+  - statement: The calculated minimum qKI band gap for TiO2 is 4.07 eV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - TiO2 4.07 3.21 3.73 3.4 [67] 4.73 3.91 4.43 4.4 [79] −0.337
+    - TiO2
+    - qKI
+    - Eg (eV)
+  - statement: At the qKI level of theory, the indirect band gap for CrI3 is 1.92 eV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - At the qKI level of theory, we obtain an indirect Γ → T band gap of Eg = 1.92 eV
+    - band structure of CrI3
+    - At the qKI level of theory
+    - indirect Γ → T band gap
+corrections: []

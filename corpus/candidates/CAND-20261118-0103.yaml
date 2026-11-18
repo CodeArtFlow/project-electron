@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.22483v1
 doi: null
-title: 'Manufacturing Differential Sparsity: Planner-Hardware Co-Design for Efficient
-  World Model Planning'
+title: 'Manufacturing Differential Sparsity: Planner-Hardware Co-Design for Efficient World Model Planning'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-17'
@@ -26,6 +25,94 @@ id: CAND-20261118-0103
 harvested_date: '2026-11-18'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-18'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The Candelta co-design achieves a speedup of 1.28x to 1.80x over a dense INT8 accelerator
+      of the same area across three evaluated JEPA world models.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''with the
+      same area.'''
+    quotes:
+    - On three JEPA world models, our co-design is 1.28–1.80× faster than a dense accelerator
+    - with the same area.
+    - A cycle-level simulator of each array replays planner traces at 1 GHz.
+    - dense accelerator
+  - statement: The Candelta co-design uses 38% to 52% less energy than a dense accelerator of the same
+      area across three evaluated JEPA world models.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - our co-design is 1.28–1.80× faster than a dense accelerator and uses 38–52% less energy
+    - Energy and area come from post-synthesis of each design in TSMC 28 nm with Cadence Genus and power
+      analysis with simulated switching activity in Synopsys PrimeTime PX.
+    - dense accelerator
+    - our co-design
+  - statement: The Candelta co-design achieves a 1.22x to 1.58x speedup over the Pragmatic bit-sparse
+      design at equal area.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''with the
+      same area.'''
+    quotes:
+    - it is 1.22–1.58× faster than prior bit-sparse design
+    - with the same area.
+    - A cycle-level simulator of each array replays planner traces at 1 GHz.
+    - Pragmatic, the strongest prior bit-sparse design
+  - statement: On LeWM, the Candelta co-design uses 15.6x less energy per planning event than Jetson Thor.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - On LeWM, it uses 15.6× less energy per planning event than Jetson Thor.
+    - A cycle-level simulator of each array replays planner traces at 1 GHz.
+    - Jetson Thor.
+    - On LeWM,
+  - statement: The Candelta accelerator operates at a clock frequency of 1 GHz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Each PE has 4 lanes (16,384 in total, at 1 GHz).
+    - A cycle-level simulator of each array replays planner traces at 1 GHz.
+    - Candelta accelerator
+  - statement: The evaluated ASICs occupy a total area of 127.9 mm2.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Total area (mm2) 127.9 127.9 127.9
+    - Energy and area come from post-synthesis of each design in TSMC 28 nm with Cadence Genus and power
+      analysis with simulated switching activity in Synopsys PrimeTime PX.
+    - Dense Pragmatic Candelta
+  - statement: The Candelta accelerator consumes an average power of 3.23 W over one LeWM Cube planning
+      event.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Power (W)
+      4.15 3.20 3.23'''
+    quotes:
+    - Power (W) 4.15 3.20 3.23
+    - Energy and area come from post-synthesis of each design in TSMC 28 nm with Cadence Genus and power
+      analysis with simulated switching activity in Synopsys PrimeTime PX.
+    - Candelta
+    - average over one LeWM Cube planning event.
+  - statement: At equal multiplier count, the Candelta accelerator is 3.8x to 5.8x faster than the dense
+      array.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Candelta is 3.8× to 5.8× faster than the equal-multiplier array.
+    - A cycle-level simulator of each array replays planner traces at 1 GHz.
+    - dense array with the same multiplier count (64 × 32 = 2,048 INT8 MACs; 8 bit-serial lanes count
+      as one MAC).
+    - Candelta accelerator
+  tokens:
+    input: 20984
+    output: 2379
+  fetched_chars: 61562

@@ -22,6 +22,58 @@ id: CAND-20261118-0120
 harvested_date: '2026-11-18'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-18'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The linear optical parameters extracted from the fitting of the ITO sample lead to a fitted
+      ϵ∞ of 3.99, a plasma frequency ωp of 3.07 × 10^15 rad/s, and a colli
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Within this
+      limit, we fit the standard Drude model to the ITO permitti'''
+    quotes:
+    - Within this limit, we fit the standard Drude model to the ITO permittivity of [41] and find ϵ∞ =
+      3.99, ωp = 3.07 × 1015rad/s, γD = 1.29 × 1014s−1.
+    - The linear properties of the ITO film were determined through fitting of the linear permittivity
+      provided by [41].
+    - Within this limit, we fit the standard Drude model to the ITO permittivity of [41]
+  - statement: 'Using the Kane-band model of the conduction band energy profile for the ITO film, the
+      Fermi level EF is identified as 1.34 eV, the carrier density ne as 1.13 × '
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - The result identifies EF = 1.34 eV, ne = 1.13 × 1021cm−3 and mDrude e = 0.388me.
+    - 'Taking: E = ... we gradually increase the Fermi energy and evaluate the carrier density and average
+      effective mass using the definition from [76]'
+    - With the Drude properties known, we can then leverage the Kane-band model of the conduction band
+      energy profile to uniquely determine the Fermi-level of the material for a given scattering rate.
+    - with mKane e = 0.2me and C = 0.3497eV−1
+  - statement: For an ITO layer with thermo-optic nonlinearity under 1 TW/cm^2 incident intensity, adding
+      a Kerr nonlinearity with χ(3)b = 10^-19 m^2/V^2 results in a transmis
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - Despite that, we observe transmissivity (reflectivity) changes of only ∼ 1.65% (∼ 0.21%) with respect
+      to the case with only a thermo-optic nonlinearity, i.e., ∼ 5-fold (∼ 50-fold) smaller changes.
+    - When we include the effect of the Kerr nonlinearity in the ITO layer, a clear instantaneous change
+      is observed on the background of the thermo-optic nonlinearity (Fig. 4(b)).
+    - we set χ(3) b = 10−19m2/V2
+    - at the central probe frequency ωprobe for incident intensity of 1 TW/cm2
+  - statement: Under an incident intensity of 1 TW/cm^2, adding a Kerr nonlinearity coefficient of χ(3)b
+      = 10^-19 m^2/V^2 to the ITO layer yields a reflectivity change of appr
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - Despite that, we observe transmissivity (reflectivity) changes of only ∼ 1.65% (∼ 0.21%) with respect
+      to the case with only a thermo-optic nonlinearity, i.e., ∼ 5-fold (∼ 50-fold) smaller changes.
+    - When we include the effect of the Kerr nonlinearity in the ITO layer, a clear instantaneous change
+      is observed on the background of the thermo-optic nonlinearity (Fig. 4(b)).
+    - we set χ(3) b = 10−19m2/V2
+    - at the central probe frequency ωprobe for incident intensity of 1 TW/cm2
+  tokens:
+    input: 20025
+    output: 1993
+  fetched_chars: 65603

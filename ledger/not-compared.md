@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**21688 pair(s)** as of 2026-11-17.
+**23194 pair(s)** as of 2026-11-18.
 
 ## `area_die` (11 pair(s))
 
@@ -181,7 +181,7 @@ _and 1244 more_
 
 _and 769 more_
 
-## `length_device` (5696 pair(s))
+## `length_device` (5803 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -226,7 +226,7 @@ _and 769 more_
 | `CLM-DEV-0112` = 0.3158 nm | `CLM-PHOT-0004` = 7000 nm | 100% | stacking_configuration=vdWH-IV | parameter=signal-ground electrode spacing |
 | `CLM-DEV-0112` = 0.3158 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | stacking_configuration=vdWH-IV | substrate_material=glass cover slip, sample_type=flat surface |
 
-_and 5656 more_
+_and 5763 more_
 
 ## `power` (361 pair(s))
 
@@ -287,7 +287,7 @@ _and 321 more_
 |---|---|---|---|---|
 | `CLM-DEV-0064` = 6e-06 torr | `CLM-MAT-0296` = 3.75e+04 torr | 100% | temperature=room temperature | measurement=Tensile testing |
 
-## `relative_deviation` (10214 pair(s))
+## `relative_deviation` (11613 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -311,6 +311,7 @@ _and 321 more_
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0026` = 75.7 percent | 179% | sample=B1-1 | placement=conventional |
 | `CLM-EDA-0007` = 76 percent | `CLM-MAT-0111` = -60 percent | 179% | model=Non-cyclic + Node prediction model | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0251` = 47 percent | 178% | sample=B1-1 | band=NN, coupling=Λ A, correlation_length=ξ ¯kF = 4 |
+| `CLM-EDA-0052` = 76.7 percent | `CLM-MAT-0111` = -60 percent | 178% | optimizer_variant=PVTSizing 2.0, baseline=RobustAnalog | sample=B1-1 |
 | `CLM-ARCH-0049` = 46 percent | `CLM-MAT-0111` = -60 percent | 177% | mechanism=uniform iteration offsets | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0186` = 46 percent | 177% | sample=B1-1 | indium_composition=13.5%, geometry=fixed pristine-GaN geometry |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0188` = 46 percent | 177% | sample=B1-1 | indium_composition=22%, baseline=pristine GaN |
@@ -326,13 +327,12 @@ _and 321 more_
 | `CLM-ARCH-0101` = 89.4 percent | `CLM-MAT-0111` = -60 percent | 167% | correction_type=uncorrected | sample=B1-1 |
 | `CLM-EDA-0006` = 89.6 percent | `CLM-MAT-0111` = -60 percent | 167% | model=Non-cyclic Edge prediction model | sample=B1-1 |
 | `CLM-EDA-0044` = 40 percent | `CLM-MAT-0111` = -60 percent | 167% | design=AES | sample=B1-1 |
+| `CLM-EDA-0050` = 39.9 percent | `CLM-MAT-0111` = -60 percent | 166% | configuration=best tested knowledge-injection configuration, baseline=standalone optimizer | sample=B1-1 |
 | `CLM-ARCH-0099` = 91.8 percent | `CLM-MAT-0111` = -60 percent | 165% | training_method=CSI-based training | sample=B1-1 |
 | `CLM-ARCH-0041` = 93.08 percent | `CLM-MAT-0111` = -60 percent | 164% | frequency=7 GHz | sample=B1-1 |
 | `CLM-EDA-0045` = 93.3 percent | `CLM-MAT-0111` = -60 percent | 164% | design=AES | sample=B1-1 |
-| `CLM-ARCH-0096` = 93.6 percent | `CLM-MAT-0111` = -60 percent | 164% | classifier=XGBoost, evaluation_method=five-fold cross-validation | sample=B1-1 |
-| `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0059` = 94.4 percent | 164% | sample=B1-1 | route=Fourier route |
 
-_and 10174 more_
+_and 11573 more_
 
 ## `resistance` (2 pair(s))
 

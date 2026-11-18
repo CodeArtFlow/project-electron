@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.22411v1
 doi: null
-title: 'KD-DSE: A Knowledge-Driven LLM Framework for Fast Microarchitecture Design
-  Space Exploration'
+title: 'KD-DSE: A Knowledge-Driven LLM Framework for Fast Microarchitecture Design Space Exploration'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-17'
@@ -26,6 +25,108 @@ id: CAND-20261118-0108
 harvested_date: '2026-11-18'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-18'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: On mmbench across 20 independent runs under an 18-simulation budget, KD-DSE (full) achieves
+      a mean hypervolume of 0.6843.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''On mmbench,
+      KD-DSE outperforms the state-of-the-art MicroEvo [8] with '''
+    quotes:
+    - On mmbench, KD-DSE outperforms the state-of-the-art MicroEvo [8] with both higher hypervolume (HV,
+      0.6843 vs. 0.6529)
+    - KD-DSE (full) 0.6843±0.0348 (0.7378)
+    - The experiments run on gem5 v25.1.0.1 [14] and McPAT v1.3 [15], where gem5 statistics feed the McPAT
+      templates that produce power and area.
+    - Each run uses a budget of 18 configurations
+  - statement: On mmbench across 20 independent runs under an 18-simulation budget, KD-DSE (full) achieves
+      a mean ADRS of 0.1011.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''On mmbench,
+      KD-DSE outperforms the state-of-the-art MicroEvo [8] with '''
+    quotes:
+    - On mmbench, KD-DSE outperforms the state-of-the-art MicroEvo [8] with both higher hypervolume (HV,
+      0.6843 vs. 0.6529) and lower average distance to the reference set (ADRS, 0.1011 vs. 0.1291)
+    - KD-DSE (full) 0.6843±0.0348 (0.7378) 0.1011±0.0364 (0.0495)
+    - The experiments run on gem5 v25.1.0.1 [14] and McPAT v1.3 [15], where gem5 statistics feed the McPAT
+      templates that produce power and area.
+    - Each run uses a budget of 18 configurations
+  - statement: On mmbench across 20 independent runs under an 18-simulation budget, MicroEvo achieves
+      a mean hypervolume of 0.6529.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''On mmbench,
+      KD-DSE outperforms the state-of-the-art MicroEvo [8] with '''
+    quotes:
+    - On mmbench, KD-DSE outperforms the state-of-the-art MicroEvo [8] with both higher hypervolume (HV,
+      0.6843 vs. 0.6529)
+    - MicroEvo [8] 0.6529±0.0351 (0.7154)
+    - The experiments run on gem5 v25.1.0.1 [14] and McPAT v1.3 [15], where gem5 statistics feed the McPAT
+      templates that produce power and area.
+    - Each run uses a budget of 18 configurations
+  - statement: On mmbench across 20 independent runs under an 18-simulation budget, MicroEvo achieves
+      a mean ADRS of 0.1291.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''On mmbench,
+      KD-DSE outperforms the state-of-the-art MicroEvo [8] with '''
+    quotes:
+    - On mmbench, KD-DSE outperforms the state-of-the-art MicroEvo [8] with both higher hypervolume (HV,
+      0.6843 vs. 0.6529) and lower average distance to the reference set (ADRS, 0.1011 vs. 0.1291)
+    - MicroEvo [8] 0.6529±0.0351 (0.7154) 0.1291±0.0329 (0.0660)
+    - The experiments run on gem5 v25.1.0.1 [14] and McPAT v1.3 [15], where gem5 statistics feed the McPAT
+      templates that produce power and area.
+    - Each run uses a budget of 18 configurations
+  - statement: On mmbench across 20 independent runs under an 18-simulation budget, KD-DSE (no KB) achieves
+      a mean hypervolume of 0.6489.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit '''' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit e'
+    quotes:
+    - KD-DSE (no KB) 0.6489±0.0289 (0.7021)
+    - Removing the KB drops the mean HV from 0.6843 to 0.6489 and raises the mean ADRS from 0.1011 to
+      0.1482
+    - The experiments run on gem5 v25.1.0.1 [14] and McPAT v1.3 [15], where gem5 statistics feed the McPAT
+      templates that produce power and area.
+    - All evaluations run on a blocked mmbench [9] with a 128 × 128 matrix and a block size of 32.
+  - statement: On mmbench across 20 independent runs under an 18-simulation budget, KD-DSE (no KB) achieves
+      a mean ADRS of 0.1482.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit '''' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit e'
+    quotes:
+    - KD-DSE (no KB) 0.6489±0.0289 (0.7021) 0.1482±0.0410 (0.0730)
+    - Removing the KB drops the mean HV from 0.6843 to 0.6489 and raises the mean ADRS from 0.1011 to
+      0.1482
+    - The experiments run on gem5 v25.1.0.1 [14] and McPAT v1.3 [15], where gem5 statistics feed the McPAT
+      templates that produce power and area.
+    - All evaluations run on a blocked mmbench [9] with a 128 × 128 matrix and a block size of 32.
+  - statement: On mmbench across 20 independent runs under an 18-simulation budget, NSGA-II achieves a
+      mean hypervolume of 0.6032.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit '''' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit e'
+    quotes:
+    - NSGA-II [3] 0.6032±0.0411 (0.6696)
+    - The experiments run on gem5 v25.1.0.1 [14] and McPAT v1.3 [15], where gem5 statistics feed the McPAT
+      templates that produce power and area.
+    - All evaluations run on a blocked mmbench [9] with a 128 × 128 matrix and a block size of 32.
+    - Each run uses a budget of 18 configurations
+  - statement: On mmbench across 20 independent runs under an 18-simulation budget, NSGA-II achieves a
+      mean ADRS of 0.1853.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit '''' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit e'
+    quotes:
+    - NSGA-II [3] 0.6032±0.0411 (0.6696) 0.1853±0.0450 (0.1024)
+    - The experiments run on gem5 v25.1.0.1 [14] and McPAT v1.3 [15], where gem5 statistics feed the McPAT
+      templates that produce power and area.
+    - All evaluations run on a blocked mmbench [9] with a 128 × 128 matrix and a block size of 32.
+    - Each run uses a budget of 18 configurations
+  tokens:
+    input: 8008
+    output: 4466
+  fetched_chars: 21055

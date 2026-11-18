@@ -1,0 +1,103 @@
+id: SRC-00379
+title: Topological Timing of Bound States by Spacetime Mass Windings
+doi: null
+arxiv_id: 2611.22357v1
+url: https://arxiv.org/abs/2611.22357v1
+venue_id: arxiv_api
+authors:
+- name: Hamdi Barkaoui
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-17'
+retrieved_date: '2026-11-18'
+access: full_text
+read_scope: Automated reading. The full PDF text (49,107 characters, 20 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.22357v1 on
+  2026-11-18. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“We model a two-dimensional (𝑥, 𝑧) array of 60 slab waveguides of width 4 µm”
+
+  “array of 60 slab waveguides of width 4 µm”
+
+  “We solve Maxwell’s equations with the beam-envelope method of COMSOL Multiphysics”'
+method_summary: '“The amplitudes are evolved with an adaptive Runge-Kutta solver, and the power of a bound
+  state is obtained by projecting the evolving field onto it.”
+
+  “The full-wave simulations of Sec. 3 solve Maxwell’s equations for a two-dimensional array of slab waveguides
+  with the beam-envelope method of COMSOL Multiphysics.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 17874
+    output: 2289
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: In the passive waveguide array simulation, the mean loss rate is 0.025 mm−1.
+    reason: 'unit conversion refused: defect_density: could not parse 0.025 ''mm−1'': ''mm−1'' is not
+      defined in the unit registry'
+    quotes:
+    - The mean loss rate, 𝛤 = 0.025 𝑚𝑚−1, corresponds to 0.43 𝑑𝐵/𝑚𝑚 in a fully lossy guide
+    - The full-wave simulations of Sec. 3 solve Maxwell’s equations for a two-dimensional array of slab
+      waveguides with the beam-envelope method of COMSOL Multiphysics.
+  - statement: In a fully lossy guide within the passive array simulation, the loss rate is 0.43 dB/mm.
+    reason: 'unit conversion refused: defect_density: cannot convert 0.43 dB/mm to 1/m^2 - Cannot convert
+      from ''decibel / millimeter'' to ''1 / meter ** 2'' - In source units, offset unit used in multi'
+    quotes:
+    - The mean loss rate, 𝛤 = 0.025 𝑚𝑚−1, corresponds to 0.43 𝑑𝐵/𝑚𝑚 in a fully lossy guide
+    - The full-wave simulations of Sec. 3 solve Maxwell’s equations for a two-dimensional array of slab
+      waveguides with the beam-envelope method of COMSOL Multiphysics.
+    - 0.43 𝑑𝐵/𝑚𝑚 in a fully lossy guide
+  - statement: The passive waveguide array simulation models waveguides at a wavelength of 633 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - We consider an array of 60 single-mode slab waveguides with a weak index contrast typical of femtosecond
+      written glass waveguides, at a wavelength of 633 𝑛𝑚
+    - The full-wave simulations of Sec. 3 solve Maxwell’s equations for a two-dimensional array of slab
+      waveguides with the beam-envelope method of COMSOL Multiphysics.
+  - statement: The strong coupling between neighboring slab waveguides in the simulated array is 0.6 mm−1.
+    reason: 'unit conversion refused: defect_density: could not parse 0.6 ''mm−1'': ''mm−1'' is not defined
+      in the unit registry'
+    quotes:
+    - The gaps between neighboring guides (named A and B) alternate between two values, giving strong
+      and weak couplings of 0.6 𝑚𝑚−1 and 0.4 𝑚𝑚−1.
+    - The full-wave simulations of Sec. 3 solve Maxwell’s equations for a two-dimensional array of slab
+      waveguides with the beam-envelope method of COMSOL Multiphysics.
+    - giving strong and weak couplings of 0.6 𝑚𝑚−1 and 0.4 𝑚𝑚−1.
+  - statement: The weak coupling between neighboring slab waveguides in the simulated array is 0.4 mm−1.
+    reason: 'unit conversion refused: defect_density: could not parse 0.4 ''mm−1'': ''mm−1'' is not defined
+      in the unit registry'
+    quotes:
+    - The gaps between neighboring guides (named A and B) alternate between two values, giving strong
+      and weak couplings of 0.6 𝑚𝑚−1 and 0.4 𝑚𝑚−1.
+    - The full-wave simulations of Sec. 3 solve Maxwell’s equations for a two-dimensional array of slab
+      waveguides with the beam-envelope method of COMSOL Multiphysics.
+    - giving strong and weak couplings of 0.6 𝑚𝑚−1 and 0.4 𝑚𝑚−1.
+  - statement: The refractive index contrast Δn of the slab waveguides in the full-wave simulation is
+      1.2 × 10−3.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit '''' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit e'
+    quotes:
+    - with refractive index 𝑛clad + 𝛥𝑛, where 𝑛clad = 1.457 and 𝛥𝑛 = 1.2 × 10−3
+    - We solve Maxwell’s equations with the beam-envelope method of COMSOL Multiphysics
+    - where 𝑛clad = 1.457 and 𝛥𝑛 = 1.2 × 10−3
+  - statement: The simulated waveguide array sample length is 60 mm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - We use 𝑧𝑘 = 30 mm, 𝜏 = 6 mm, and a sample length 𝐿 = 60 mm.
+    - We solve Maxwell’s equations with the beam-envelope method of COMSOL Multiphysics
+    - sample length 𝐿 = 60 mm.
+corrections: []
