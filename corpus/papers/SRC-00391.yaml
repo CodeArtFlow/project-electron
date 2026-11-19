@@ -1,0 +1,113 @@
+id: SRC-00391
+title: 'HETEROVLM: Edge Multi-Request Vision-Language Model Serving on a Heterogeneous Versal SoC with
+  AI Engines and Programmable Logic'
+doi: null
+arxiv_id: 2611.23878v1
+url: https://arxiv.org/abs/2611.23878v1
+venue_id: arxiv_api
+authors:
+- name: Zhiheng Chen
+  affiliation: null
+  corresponding: null
+- name: Yu-An Chou
+  affiliation: null
+  corresponding: null
+- name: Yifan Zhang
+  affiliation: null
+  corresponding: null
+- name: Ye Qiao
+  affiliation: null
+  corresponding: null
+- name: Saptarshi Mitra
+  affiliation: null
+  corresponding: null
+- name: Sitao Huang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-18'
+retrieved_date: '2026-11-19'
+access: full_text
+read_scope: Automated reading. The full PDF text (44,566 characters, 7 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.23878v1 on
+  2026-11-19. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“HETEROVLM (PL GEMV engines) 66.5 15.0 3.56 53.6”
+
+  “We evaluate HETEROVLM on an AMD Versal VC1902 (Vitis 2022.1, TAPA [30]) at 240 MHz in the PL and 1.25
+  GHz in the AIE.”'
+method_summary: '“We evaluate HETEROVLM on an AMD Versal VC1902 (Vitis 2022.1, TAPA [30]) at 240 MHz in
+  the PL and 1.25 GHz in the AIE.”
+
+  “We serve LFM2.5-VL-3B with the integer arithmetic of Section III-E on four kinds of requests: ➊ a 177-token
+  camera question (one 512×288 image: 144 image and 33 text tokens), ➋ a 60-token text question, ➌ a 555-token
+  three-image question (three 512×288 images: 432 image and 123 text tokens) and ➍ a 4,088-token text
+  question.”'
+limitations: '“Decode follows the DDR bandwidth of the VC1902, so Versal AIE SoCs with HBM and AIE-ML
+  tiles would raise the decode rate and attention throughput.”
+
+  “Each bitstream serves one shape class, and the same flow builds a new bitstream from the descriptor
+  of any model outside that class, such as a larger model or one with another layer type.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16938
+    output: 3305
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: When idle on an AMD Versal VC1902, a 60-token text question gets its first token in 140
+      ms.
+    reason: the statement contains the number 902, which none of its quotes contain
+    quotes:
+    - When idle, a text question ➋ gets its first token in 140 ms, 133 ms in the prefill.
+    - We evaluate HETEROVLM on an AMD Versal VC1902 (Vitis 2022.1, TAPA [30]) at 240 MHz in the PL and
+      1.25 GHz in the AIE.
+    - a 60-token text question
+  - statement: When idle on an AMD Versal VC1902, a 177-token camera question gets its first token in
+      303 ms.
+    reason: the statement contains the number 902, which none of its quotes contain
+    quotes:
+    - A camera question ➊ gets it in 303 ms (130 ms encoder, 165 ms prefill), and a three-image question
+      ➌ in 838 ms.
+    - We evaluate HETEROVLM on an AMD Versal VC1902 (Vitis 2022.1, TAPA [30]) at 240 MHz in the PL and
+      1.25 GHz in the AIE.
+    - 'a 177-token camera question (one 512×288 image: 144 image and 33 text tokens)'
+  - statement: HETEROVLM decoding a single request on PL GEMV engines consumes 3.56 J per token.
+    reason: 'unit conversion refused: energy: could not parse 3.56 ''J/tok'': ''tok'' is not defined in
+      the unit registry'
+    quotes:
+    - HETEROVLM (PL GEMV engines) 66.5 15.0 3.56 53.6
+    - We evaluate HETEROVLM on an AMD Versal VC1902 (Vitis 2022.1, TAPA [30]) at 240 MHz in the PL and
+      1.25 GHz in the AIE.
+    - TABLE IV DECODE OF ONE REQUEST ON HETEROVLM, WITH ALL ON THE AIE, AND ON THE GPUS.
+  - statement: For LFM2.5-VL-1.6B on the same VC1902 build, a text question gets its first token in 63
+      ms.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - First token, text / camera 63 / 209 ms 106 / 269 ms
+    - We evaluate HETEROVLM on an AMD Versal VC1902 (Vitis 2022.1, TAPA [30]) at 240 MHz in the PL and
+      1.25 GHz in the AIE.
+    - TABLE VII TWO OTHER VLMS ON THE SAME BUILD. LFM2.5-VL-1.6B SmolVLM2-2.2B
+  - statement: For LFM2.5-VL-1.6B on the same VC1902 build, single-request PL decode takes 29.5 ms.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - PL decode, one request 29.5 ms 46.6 ms
+    - We evaluate HETEROVLM on an AMD Versal VC1902 (Vitis 2022.1, TAPA [30]) at 240 MHz in the PL and
+      1.25 GHz in the AIE.
+    - TABLE VII TWO OTHER VLMS ON THE SAME BUILD. LFM2.5-VL-1.6B SmolVLM2-2.2B
+  - statement: For SmolVLM2-2.2B on the same VC1902 build, a text question gets its first token in 106
+      ms.
+    reason: the statement contains the number 902, which none of its quotes contain
+    quotes:
+    - First token, text / camera 63 / 209 ms 106 / 269 ms
+    - We evaluate HETEROVLM on an AMD Versal VC1902 (Vitis 2022.1, TAPA [30]) at 240 MHz in the PL and
+      1.25 GHz in the AIE.
+    - TABLE VII TWO OTHER VLMS ON THE SAME BUILD. LFM2.5-VL-1.6B SmolVLM2-2.2B
+corrections: []

@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-18.
+Topic code `MAT`. Last reviewed 2026-11-19.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -463,6 +463,14 @@ Topic code `MAT`. Last reviewed 2026-11-18.
   - `CLM-MAT-0338` · growth_time 60 minutes, in_bep 1.53×10-7 mbar, sb_bep 2.43×10-7 mbar · grade B · credibility unknown · measured · as of 2026-11-12
   - sources: SRC-00342
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **≈1500 nm** — The average period of the periodic SHG signal oscillations along the c-axis of an exfoliated NbOCl2 flake is approximately 1.5 μm.
+  - `CLM-MAT-0391` · crystallographic_direction c-axis · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00395
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈131 nm** — An exfoliated NbOCl2 flake transferred onto a SiO2/Si substrate exhibits a uniform thickness of approximately 131 nm.
+  - `CLM-MAT-0392` · substrate SiO2/Si substrate · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00395
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -1197,6 +1205,34 @@ Topic code `MAT`. Last reviewed 2026-11-18.
   - `CLM-MAT-0377` · material PEA2PbBr4 · grade B · credibility unknown · measured · as of 2026-11-17
   - sources: SRC-00382
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- XCAPE recovered 71 of 77 benchmark structures from simulated powder X-ray diffraction patterns.
+  - `CLM-MAT-0378` · framework XCAPE · grade B · credibility unknown · simulated · as of 2026-11-18
+  - sources: SRC-00386
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- XCAPE recovered all 12 reference structures from experimental powder X-ray diffraction patterns.
+  - `CLM-MAT-0379` · framework XCAPE, dataset experimental PXRD patterns · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00386
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Excluding the six top-ranked source subsets on OQMD increases formation-energy MAE by 100 to 110 meV atom−1 across three regressors when using the pretrained crystal-graph encoder representation.
+  - `CLM-MAT-0380` · dataset OQMD, property formation energy, representation ϕPCG, training_set_size 10,000 · grade B · credibility unknown · simulated · as of 2026-11-18
+  - sources: SRC-00388
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- Excluding the six top-ranked source subsets on OQMD increases bandgap MAE by 42 to 85 meV across three regressors when using the pretrained crystal-graph encoder representation.
+  - `CLM-MAT-0381` · dataset OQMD, property bandgap, representation ϕPCG, training_set_size 10,000 · grade B · credibility unknown · simulated · as of 2026-11-18
+  - sources: SRC-00388
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- Excluding the six top-ranked source subsets on OQMD increases formation-energy MAE by 55 to 100 meV atom−1 across three regressors when using engineered descriptors.
+  - `CLM-MAT-0382` · dataset OQMD, property formation energy, representation ϕE, training_set_size 10,000 · grade B · credibility unknown · simulated · as of 2026-11-18
+  - sources: SRC-00388
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- Excluding the six top-ranked source subsets on OQMD increases bandgap MAE by 46 to 53 meV across three regressors when using engineered descriptors.
+  - `CLM-MAT-0383` · dataset OQMD, property bandgap, representation ϕE, training_set_size 10,000 · grade B · credibility unknown · simulated · as of 2026-11-18
+  - sources: SRC-00388
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- The conductivity anisotropy angle is evaluated to be approximately 0.013 for a valley polarization ratio of 4%.
+  - `CLM-MAT-0390` · symbol 𝜃ani · grade B · credibility unknown · simulated · as of 2026-11-18
+  - sources: SRC-00394
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1309,6 +1345,14 @@ Topic code `MAT`. Last reviewed 2026-11-18.
 - **4 percent** — For the benchmark set of semiconductors, BSE@qKI reproduces experimental first exciton energies with a mean absolute relative error of 4%.
   - `CLM-MAT-0369` · method BSE@qKI, property first exciton energies · grade B · credibility unknown · simulated · as of 2026-11-17
   - sources: SRC-00381
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≤ 4 percent** — The valley polarization ratio reached 4% with an abrupt transition near the LA phonon energy of 28 meV.
+  - `CLM-MAT-0389` · transition_region near the LA phonon energy of 28 meV · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00394
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ ≈0.26 percent** — Using the thin-film bending model, the maximum tensile strain at the apex of the bent NbOCl2 layer is estimated to be approximately 0.26%.
+  - `CLM-MAT-0393` · model thin-film bending model, material NbOCl2 · grade B · credibility unknown · simulated · as of 2026-11-18
+  - sources: SRC-00395
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### resistance
@@ -1533,6 +1577,26 @@ Topic code `MAT`. Last reviewed 2026-11-18.
   - `CLM-MAT-0323` · demagnetization_protocol AC demagnetization · grade B · credibility unknown · measured · as of 2026-11-10
   - sources: SRC-00330
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **6.7e+08 ns** — PFP-R2SCAN evaluated forces in 0.67 s for fcc Pt at the largest system size SevenNet-Omni could handle.
+  - `CLM-MAT-0384` · model PFP-R2SCAN, system Pt fcc, hardware single A100 GPU with 80 GB of memory · grade B · credibility unknown · simulated · as of 2026-11-18
+  - sources: SRC-00389
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **1.99e+09 ns** — SevenNet-Omni evaluated forces in 1.99 s for fcc Pt at its largest system size.
+  - `CLM-MAT-0385` · model SevenNet-Omni, system Pt fcc, hardware single A100 GPU with 80 GB of memory · grade B · credibility unknown · simulated · as of 2026-11-18
+  - sources: SRC-00389
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **4.6e+08 ns** — PFP-R2SCAN evaluated forces in 0.46 s for rocksalt LiH at the largest system size SevenNet-Omni could handle.
+  - `CLM-MAT-0386` · model PFP-R2SCAN, system LiH rocksalt, hardware single A100 GPU with 80 GB of memory · grade B · credibility unknown · simulated · as of 2026-11-18
+  - sources: SRC-00389
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **≤ ≈0.01 ns** — Near the band edge of Ge(001) at room temperature, the slow relaxation time reached approximately 10 ps.
+  - `CLM-MAT-0387` · material bulk Ge(001), temperature room temperature · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00394
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **0.0014 ns** — Near the band edge of bulk Ge(001) at room temperature, the fast relaxation time was 1.4 ps.
+  - `CLM-MAT-0388` · material bulk Ge(001), temperature room temperature · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00394
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -1763,6 +1827,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 377
-- grades: {'B': 377}
-- distinct sources: 135
+- claims: 393
+- grades: {'B': 393}
+- distinct sources: 140

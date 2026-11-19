@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-11-18.
+Topic code `PROC`. Last reviewed 2026-11-19.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -290,6 +290,10 @@ Topic code `PROC`. Last reviewed 2026-11-18.
   - `CLM-PROC-0070` · model Unified-FiLM, sample_set 47 thin-film samples · grade B · credibility unknown · measured · as of 2026-11-16
   - sources: SRC-00373
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **43 percent** — Typed Decision with Cosmos-Reason2 32B achieved a 43% navigation success rate in grain boundary navigation without noise.
+  - `CLM-PROC-0072` · decision_method Typed Decision, model Cosmos-Reason2 32B, task grain boundary, noise_condition without noise · grade B · credibility unknown · simulated · as of 2026-11-18
+  - sources: SRC-00385
+  - ⚙ automated extraction (gemini-3.6-flash; 8 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -415,6 +419,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 71
-- grades: {'B': 71}
-- distinct sources: 22
+- claims: 72
+- grades: {'B': 72}
+- distinct sources: 23

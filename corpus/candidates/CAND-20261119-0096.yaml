@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.23959v1
 doi: null
-title: Scattering features of a self-dual spectral singularity in coupled ring resonators
-  with balanced gain and loss
+title: Scattering features of a self-dual spectral singularity in coupled ring resonators with balanced
+  gain and loss
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-18'
@@ -22,6 +22,44 @@ id: CAND-20261119-0096
 harvested_date: '2026-11-19'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-19'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For a two-ring coupled system with through-coupling coefficient τ ≈ 0.858 and round-trip
+      attenuation factor αR ≈ 0.55 under right-incidence excitation, the simu
+    reason: the statement contains the number 0.858, which none of its quotes contain
+    quotes:
+    - Figure 5(c) shows the simulated electric-field magnitude near the CPAL resonance under excitation
+      from the right. The field is strongly enhanced within the rings, reaching values on the order of
+      107 V/m of the electric field.
+    - τ ≈ 0.858
+    - αR ≈ 0.55
+    - under excitation from the right
+  - statement: For a two-ring coupled system with τ = 0.89 and αR = 0.6875 under right incidence, full-wave
+      electromagnetic simulations show a transmission extinction waveleng
+    reason: the statement contains the number 0.89, which none of its quotes contain
+    quotes:
+    - The simulated extinction and reflectionless wavelengths are approximately 1.5571 µm and 1.55743
+      µm, respectively.
+    - τ = 0.89
+    - αR = 0.6875
+  - statement: For a two-ring coupled system with τ = 0.89 and αR = 0.6875 under right incidence, full-wave
+      electromagnetic simulations show a right-incidence reflectionless w
+    reason: the statement contains the number 0.89, which none of its quotes contain
+    quotes:
+    - The simulated extinction and reflectionless wavelengths are approximately 1.5571 µm and 1.55743
+      µm, respectively.
+    - τ = 0.89
+    - αR = 0.6875
+  tokens:
+    input: 16817
+    output: 1263
+  fetched_chars: 47142

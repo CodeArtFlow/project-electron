@@ -1,0 +1,122 @@
+id: SRC-00383
+title: 'Lodestone: Automated Semantic Discovery of Datacenter Hardware Specialization'
+doi: null
+arxiv_id: 2611.23663v1
+url: https://arxiv.org/abs/2611.23663v1
+venue_id: arxiv_api
+authors:
+- name: Peizhe Liu
+  affiliation: null
+  corresponding: null
+- name: Akanksha Jain
+  affiliation: null
+  corresponding: null
+- name: Gerasimos Gerogiannis
+  affiliation: null
+  corresponding: null
+- name: Vidushi Dadu
+  affiliation: null
+  corresponding: null
+- name: Parthasarathy Ranganathan
+  affiliation: null
+  corresponding: null
+- name: Jovan Stojkovic
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-18'
+retrieved_date: '2026-11-19'
+access: full_text
+read_scope: Automated reading. The full PDF text (95,927 characters, 15 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.23663v1 on
+  2026-11-19. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“These families in hardware speed up the workloads by 12.6% on average and by up to 80.2%.”
+
+  “From the discovered families, we simulate 30 of them in a cycle-accurate architectural simulator and
+  implement them in RTL.”
+
+  “We measure the end-to-end application performance with Scarab [55, 68], configured after an Emerald
+  Rapids core (Table 2).”
+
+  “The simulations show that these units speed up the workloads by 12.6% on average and by up to 80.2%,
+  while the area of an average unit is only 0.37% of a core.”'
+method_summary: '“From the discovered families, we simulate 30 of them in a cycle-accurate architectural
+  simulator and implement them in RTL.”
+
+  “We design and implement the hardware proposals in RTL and synthesize them with Yosys [100] using the
+  ASAP7 7 nm library [14, 96].”
+
+  “We measure the end-to-end application performance with Scarab [55, 68], configured after an Emerald
+  Rapids core (Table 2).”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 28215
+    output: 2698
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: The 30 hardware specialization families simulated in Scarab and implemented in RTL achieve
+      an average speedup of 12.6% across 20 workloads.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - These families in hardware speed up the workloads by 12.6% on average and by up to 80.2%.
+    - The simulations show that these units speed up the workloads by 12.6% on average and by up to 80.2%,
+      while the area of an average unit is only 0.37% of a core.
+    - From the discovered families, we simulate 30 of them in a cycle-accurate architectural simulator
+      and implement them in RTL.
+    - We evaluate Lodestone on 20 workloads across six datacenter workload categories.
+  - statement: The Hash Mixing unit synthesized in ASAP7 7 nm library occupies an area of 5,658 µm2.
+    reason: the value 5658 does not appear in any of the claim's quotes
+    quotes:
+    - The whole unit takes 5,658 𝜇m2.
+    - We design and implement the hardware proposals in RTL and synthesize them with Yosys [100] using
+      the ASAP7 7 nm library [14, 96].
+    - 'Figure 5: Hash Mixing unit for key-value stores.'
+  - statement: The Hash Probe unit synthesized in ASAP7 7 nm library occupies an area of 3,415 µm2.
+    reason: the value 3415 does not appear in any of the claim's quotes
+    quotes:
+    - All 13 members share the address and next-slot logic and differ only in their mode, and the whole
+      unit takes 3,415 𝜇m2.
+    - We design and implement the hardware proposals in RTL and synthesize them with Yosys [100] using
+      the ASAP7 7 nm library [14, 96].
+    - 'Figure 6: Hash Probe unit for databases.'
+  - statement: The Hash Slot Location unit synthesized in ASAP7 7 nm library occupies an area of 1,920
+      µm2.
+    reason: the value 1920 does not appear in any of the claim's quotes
+    quotes:
+    - The whole unit takes 1,920 𝜇m2.
+    - We design and implement the hardware proposals in RTL and synthesize them with Yosys [100] using
+      the ASAP7 7 nm library [14, 96].
+    - 'Figure 7: Hash Slot Location unit for web services.'
+  - statement: The Tree Descent unit synthesized in ASAP7 7 nm library occupies an area of 44,077 µm2.
+    reason: the value 44077 does not appear in any of the claim's quotes
+    quotes:
+    - The whole unit takes 44,077 𝜇m2, i.e., 0.55% of a core.
+    - We design and implement the hardware proposals in RTL and synthesize them with Yosys [100] using
+      the ASAP7 7 nm library [14, 96].
+    - 'Figure 8: Tree Descent unit for search.'
+  - statement: The SATD Scoring unit synthesized in ASAP7 7 nm library occupies an area of 48,001 µm2.
+    reason: the value 48001 does not appear in any of the claim's quotes
+    quotes:
+    - The whole unit takes 48,001 𝜇m2, i.e., 0.60% of a core.
+    - We design and implement the hardware proposals in RTL and synthesize them with Yosys [100] using
+      the ASAP7 7 nm library [14, 96].
+    - 'Figure 9: SATD Scoring unit for video transcoding.'
+  - statement: The Escape Length and Escape Copy units synthesized in ASAP7 7 nm library occupy areas
+      of 1,104 µm2 and 3,080 µm2, respectively.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - They take 1,104 and 3,080 𝜇m2, respectively.
+    - We design and implement the hardware proposals in RTL and synthesize them with Yosys [100] using
+      the ASAP7 7 nm library [14, 96].
+    - 'Figure 10: Escape Length unit (left) and Escape Copy unit (right) for AI agents.'
+corrections: []

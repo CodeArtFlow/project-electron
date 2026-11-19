@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.23905v1
 doi: null
-title: 'Inference-Time Scaling in Agentic Hardware Verification Workflows: A Multi-Strategy
-  Characterization Across Protocol Complexity'
+title: 'Inference-Time Scaling in Agentic Hardware Verification Workflows: A Multi-Strategy Characterization
+  Across Protocol Complexity'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-18'
@@ -22,6 +22,74 @@ id: CAND-20261119-0100
 harvested_date: '2026-11-19'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-19'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The zero-shot synthesis strategy S0 achieves a PVC score of 0.08 at a total inference cost
+      of $0.04.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''PVC'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a uni'
+    quotes:
+    - S0 Zero-shot No 0.08 0.0 2.7 K $0.04
+    - PVC, compile, and coverage measured in Mentor Questa; cost at Opus 4.8 rates.
+    - S0 Zero-shot
+    - AHB-TO-APB (PCI=14.2)
+  - statement: The raw-feedback iterative strategy S1 achieves a PVC score of 0.31 at a total inference
+      cost of $0.81.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''PVC'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a uni'
+    quotes:
+    - S1 Raw-feedback Yes 0.31 43.8 120 K $0.81
+    - PVC, compile, and coverage measured in Mentor Questa; cost at Opus 4.8 rates.
+    - S1 Raw-feedback
+    - AHB-TO-APB (PCI=14.2)
+  - statement: The structured inner-loop strategy S2 achieves a PVC score of 0.92 at a total inference
+      cost of $0.95.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''PVC'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a uni'
+    quotes:
+    - S2 Struct.-inner Yes 0.92 68.8 137 K $0.95
+    - PVC, compile, and coverage measured in Mentor Questa; cost at Opus 4.8 rates.
+    - S2 Struct.-inner
+    - AHB-TO-APB (PCI=14.2)
+  - statement: The full dual-loop agentic synthesis strategy S3 achieves a PVC score of 1.00 at a total
+      inference cost of $1.06.
+    reason: the value 1 does not appear in any of the claim's quotes
+    quotes:
+    - S3 Full dual Yes 1.00 100.0 153 K $1.06
+    - PVC, compile, and coverage measured in Mentor Questa; cost at Opus 4.8 rates.
+    - S3 Full dual
+    - AHB-TO-APB (PCI=14.2)
+  - statement: Strategy S3 reaches a PVC score of 0.95 on the AHB2APB target with a PCI of 14.2.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''PVC'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a uni'
+    quotes:
+    - AHB2APB 14.2 0.95 81.3 pass (5/5)
+    - 'TABLE V MULTI-PROTOCOL RESULTS: STRATEGY S3 (GROUNDED, n = 5)'
+    - AHB2APB
+    - '14.2'
+  - statement: Strategy S3 achieves a PVC score of 0.98 on the AXI-Lite target with a PCI of 22.6.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''PVC'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a uni'
+    quotes:
+    - AXI-Lite 22.6 0.98 91.1 pass (5/5)
+    - 'TABLE V MULTI-PROTOCOL RESULTS: STRATEGY S3 (GROUNDED, n = 5)'
+    - AXI-Lite
+    - '22.6'
+  tokens:
+    input: 8278
+    output: 2199
+  fetched_chars: 22744

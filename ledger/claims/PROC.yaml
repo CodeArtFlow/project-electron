@@ -2281,3 +2281,43 @@ claims:
     conditions:
       model: Unified-FiLM
       sample_set: 47 thin-film samples
+- id: CLM-PROC-0072
+  topic: PROC
+  statement: Typed Decision with Cosmos-Reason2 32B achieved a 43% navigation success rate in grain boundary
+    navigation without noise.
+  sources:
+  - SRC-00385
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 8
+  conditions:
+    decision_method: Typed Decision
+    model: Cosmos-Reason2 32B
+    task: grain boundary
+    noise_condition: without noise
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 43.0
+      unit: '%'
+    si_base:
+      value: 0.43
+      unit: dimensionless
+    display:
+      value: 43.0
+      unit: percent
+    conditions:
+      decision_method: Typed Decision
+      model: Cosmos-Reason2 32B
+      task: grain boundary
+      noise_condition: without noise

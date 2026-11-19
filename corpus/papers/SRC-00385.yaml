@@ -1,0 +1,140 @@
+id: SRC-00385
+title: Fast closed-loop STEM navigation using vision-language models with typed decisions
+doi: null
+arxiv_id: 2611.23698v1
+url: https://arxiv.org/abs/2611.23698v1
+venue_id: arxiv_api
+authors:
+- name: Shuichiro Ozawa
+  affiliation: null
+  corresponding: null
+- name: Izumi Takahara
+  affiliation: null
+  corresponding: null
+- name: Fumihiko Uesugi
+  affiliation: null
+  corresponding: null
+- name: Teruyasu Mizoguchi
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-18'
+retrieved_date: '2026-11-19'
+access: full_text
+read_scope: Automated reading. The full PDF text (69,912 characters, 23 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.23698v1 on
+  2026-11-19. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“for the best-performing model, Cosmos-Reason2 32B, in grain boundary navigation (43%).”
+
+  “With Cosmos-Reason2 32B, Typed Decision achieved the highest success rate (43%)”
+
+  “In the grain boundary task, by contrast, the success rate dropped from 43% without noise to 10% under
+  low noise and 2% under high noise.”
+
+  “dropped from 43% without noise”
+
+  “Using simulated HAADF-STEM images of monolayer MoS2, we set up two navigation tasks: one targeting
+  a W dopant and the other targeting a grain boundary (Fig. 1a).”'
+method_summary: '“Inference was performed with vLLM56 on a single NVIDIA RTX PRO 6000 Blackwell GPU, and
+  the sampling parameters for generation followed the default values of each model.”
+
+  “The decision latency was defined as the mean time per decision, measured by sending requests one at
+  a time.”
+
+  “Closed-loop navigation was evaluated for each combination of task, model, and decision method over
+  100 episodes, which combined 50 random seeds with two starting conditions (target inside or outside
+  the initial FOV).”'
+limitations: “However, our evaluation was performed in a simulated environment, and we did not examine
+  the effects of factors present in actual microscopes, such as specimen drift, instrument response delays,
+  and beam damage52.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 19471
+    output: 3898
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: Typed Decision with Cosmos-Reason2 32B achieved a decision latency of 0.21 s per decision
+      in closed-loop navigation.
+    reason: the quote says the number is approximate but approximate is false
+    quotes:
+    - Typed Decision showed the shortest decision latency for all models (0.13–0.21 s)
+    - Within Cosmos-Reason2, reducing the model size from 32B to 2B shortened the decision latency of
+      Typed Decision to about one-third (from 0.21 to 0.07 s)
+    - 'Using simulated HAADF-STEM images of monolayer MoS2, we set up two navigation tasks: one targeting
+      a W dopant and the other targeting a grain boundary (Fig. 1a).'
+  - statement: Typed Decision with Cosmos-Reason2 2B achieved a decision latency of 0.07 s per decision
+      in closed-loop navigation.
+    reason: the quote says the number is approximate but approximate is false
+    quotes:
+    - Within Cosmos-Reason2, reducing the model size from 32B to 2B shortened the decision latency of
+      Typed Decision to about one-third (from 0.21 to 0.07 s)
+    - 'Using simulated HAADF-STEM images of monolayer MoS2, we set up two navigation tasks: one targeting
+      a W dopant and the other targeting a grain boundary (Fig. 1a).'
+  - statement: Closed-loop navigation with Typed Decision using Cosmos-Reason2 32B achieved a 91% navigation
+      success rate for the W dopant task without noise.
+    reason: the statement contains the number 32, which none of its quotes contain
+    quotes:
+    - In the W dopant task, Typed Decision achieved the highest navigation success rate for all models
+      (66–91%).
+    - lowered the navigation success rate from 91% to 9% for the W dopant and from 43% to 1% for the grain
+      boundary
+    - In the W dopant task, the success rate remained high even under high noise (83%, compared with 91%
+      without noise).
+    - 'Using simulated HAADF-STEM images of monolayer MoS2, we set up two navigation tasks: one targeting
+      a W dopant and the other targeting a grain boundary (Fig. 1a).'
+  - statement: Closed-loop navigation with Typed Decision using Cosmos-Reason2 2B achieved a 9% navigation
+      success rate for the W dopant task.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - lowered the navigation success rate from 91% to 9% for the W dopant and from 43% to 1% for the grain
+      boundary
+    - 'Using simulated HAADF-STEM images of monolayer MoS2, we set up two navigation tasks: one targeting
+      a W dopant and the other targeting a grain boundary (Fig. 1a).'
+    - shortened the decision latency of Typed Decision to about one-third (from 0.21 to 0.07 s) but lowered
+      the navigation success rate from 91% to 9% for the W dopant
+    - Within Cosmos-Reason2, reducing the model size from 32B to 2B shortened the decision latency of
+      Typed Decision to about one-third (from 0.21 to 0.07 s) but lowered the navigation success rate
+      from 91% to 9% for the W dopant
+  - statement: Typed Decision with Cosmos-Reason2 2B achieved a 1% navigation success rate in grain boundary
+      navigation.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - lowered the navigation success rate from 91% to 9% for the W dopant and from 43% to 1% for the grain
+      boundary
+    - 'Using simulated HAADF-STEM images of monolayer MoS2, we set up two navigation tasks: one targeting
+      a W dopant and the other targeting a grain boundary (Fig. 1a).'
+    - shortened the decision latency of Typed Decision to about one-third (from 0.21 to 0.07 s) but lowered
+      the navigation success rate from 91% to 9% for the W dopant and from 43% to 1% for the grain boundary
+    - 'Within Cosmos-Reason2, reducing the model size from 32B to 2B shortened the decision latency of
+      Typed Decision to about one-third (from 0.21 to 0.07 s) but lowered the navigation success rate
+      from 91% to 9% for the W dopant and from 43% to '
+  - statement: Closed-loop navigation with Typed Decision using Cosmos-Reason2 32B achieved an 83% navigation
+      success rate in the W dopant task under high noise.
+    reason: the statement contains the number 32, which none of its quotes contain
+    quotes:
+    - In the W dopant task, the success rate remained high even under high noise (83%, compared with 91%
+      without noise).
+    - 'Using simulated HAADF-STEM images of monolayer MoS2, we set up two navigation tasks: one targeting
+      a W dopant and the other targeting a grain boundary (Fig. 1a).'
+    - We first examined the effect of shot noise as image-side variability... We therefore focused on
+      Typed Decision with Cosmos-Reason2 32B
+  - statement: Typed Decision with Cosmos-Reason2 32B achieved a 10% navigation success rate in the grain
+      boundary task under low noise.
+    reason: the statement contains the number 32, which none of its quotes contain
+    quotes:
+    - In the grain boundary task, by contrast, the success rate dropped from 43% without noise to 10%
+      under low noise and 2% under high noise.
+    - 'Using simulated HAADF-STEM images of monolayer MoS2, we set up two navigation tasks: one targeting
+      a W dopant and the other targeting a grain boundary (Fig. 1a).'
+    - We first examined the effect of shot noise as image-side variability... We therefore focused on
+      Typed Decision with Cosmos-Reason2 32B
+corrections: []

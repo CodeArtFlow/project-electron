@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-18.
+Topic code `ARCH`. Last reviewed 2026-11-19.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -195,6 +195,14 @@ Topic code `ARCH`. Last reviewed 2026-11-18.
 - **≈3.23 W** — The combined power of cUFS, TECU, and PIM components is approximately 3.23 W.
   - `CLM-ARCH-0235` · components cUFS, TECU, and PIM components · grade B · credibility unknown · simulated · as of 2026-11-13
   - sources: SRC-00366
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **53.6 W** — HETEROVLM decoding a single request on PL GEMV engines draws 53.6 W of power.
+  - `CLM-ARCH-0246` · engine PL GEMV engines · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00391
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.0054 W** — The ReRAM module consumes 5.4 mW of power.
+  - `CLM-ARCH-0249` · component ReRAM module · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00393
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### qualitative
@@ -623,6 +631,14 @@ Topic code `ARCH`. Last reviewed 2026-11-18.
   - `CLM-ARCH-0241` · baseline A100 architecture · grade B · credibility unknown · simulated · as of 2026-11-16
   - sources: SRC-00369
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The 30 hardware specialization families achieve up to an 80.2% speedup across the evaluated workloads.
+  - `CLM-ARCH-0244` · count_families 30, simulator Scarab · grade B · credibility unknown · simulated · as of 2026-11-18
+  - sources: SRC-00383
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Selecting optimal precision achieves a geometric-mean 3.4× TTS reduction at an identical energy target.
+  - `CLM-ARCH-0248` · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00392
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1031,6 +1047,14 @@ Topic code `ARCH`. Last reviewed 2026-11-18.
   - `CLM-ARCH-0240` · implementation hand-fused CUDA kernels, baseline released implementation · grade B · credibility unknown · measured · as of 2026-11-16
   - sources: SRC-00369
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **6.65e+07 ns** — HETEROVLM decoding a single request on PL GEMV engines takes 66.5 ms per token.
+  - `CLM-ARCH-0245` · engine PL GEMV engines · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00391
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **985 ns** — The fabricated four-chip 28 nm ASIC sustains per-sweep time at 0.985 µs for 27,648 spins.
+  - `CLM-ARCH-0247` · device fabricated four-chip 28 nm ASIC · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00392
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -1099,6 +1123,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 243
-- grades: {'B': 243}
-- distinct sources: 82
+- claims: 249
+- grades: {'B': 249}
+- distinct sources: 86

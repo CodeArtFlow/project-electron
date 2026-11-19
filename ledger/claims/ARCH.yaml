@@ -6978,3 +6978,172 @@ claims:
       unit: percent
     conditions:
       baseline: T3A+
+- id: CLM-ARCH-0244
+  topic: ARCH
+  statement: The 30 hardware specialization families achieve up to an 80.2% speedup across the evaluated
+    workloads.
+  sources:
+  - SRC-00383
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    count_families: '30'
+    simulator: Scarab
+- id: CLM-ARCH-0245
+  topic: ARCH
+  statement: HETEROVLM decoding a single request on PL GEMV engines takes 66.5 ms per token.
+  sources:
+  - SRC-00391
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    engine: PL GEMV engines
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 66.5
+      unit: ms
+    si_base:
+      value: 0.0665
+      unit: s
+    display:
+      value: 66499999.99999999
+      unit: ns
+    conditions:
+      engine: PL GEMV engines
+- id: CLM-ARCH-0246
+  topic: ARCH
+  statement: HETEROVLM decoding a single request on PL GEMV engines draws 53.6 W of power.
+  sources:
+  - SRC-00391
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    engine: PL GEMV engines
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 53.6
+      unit: W
+    si_base:
+      value: 53.6
+      unit: W
+    display:
+      value: 53.6
+      unit: W
+    conditions:
+      engine: PL GEMV engines
+- id: CLM-ARCH-0247
+  topic: ARCH
+  statement: The fabricated four-chip 28 nm ASIC sustains per-sweep time at 0.985 µs for 27,648 spins.
+  sources:
+  - SRC-00392
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device: fabricated four-chip 28 nm ASIC
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.985
+      unit: µs
+    si_base:
+      value: 9.849999999999999e-07
+      unit: s
+    display:
+      value: 984.9999999999998
+      unit: ns
+    conditions:
+      device: fabricated four-chip 28 nm ASIC
+- id: CLM-ARCH-0248
+  topic: ARCH
+  statement: Selecting optimal precision achieves a geometric-mean 3.4× TTS reduction at an identical
+    energy target.
+  sources:
+  - SRC-00392
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-ARCH-0249
+  topic: ARCH
+  statement: The ReRAM module consumes 5.4 mW of power.
+  sources:
+  - SRC-00393
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    component: ReRAM module
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 5.4
+      unit: mW
+    si_base:
+      value: 0.0054
+      unit: W
+    display:
+      value: 0.0054
+      unit: W
+    conditions:
+      component: ReRAM module

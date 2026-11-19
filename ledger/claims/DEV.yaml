@@ -3189,3 +3189,45 @@ claims:
       unit: percent
     conditions:
       component: hollow-core ARF
+- id: CLM-DEV-0115
+  topic: DEV
+  statement: NanoStack CFFET results in 3.1% higher RO frequency than FFET at iso-power at Vdd = 0.7 V
+    without BEOL loading.
+  sources:
+  - SRC-00387
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 7
+  conditions:
+    architecture: NanoStack CFFET
+    baseline: FFET
+    vdd: 0.7 V
+    loading: without BEOL loading
+    circuit: INVD2 based RO
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 3.1
+      unit: '%'
+    si_base:
+      value: 0.031000000000000003
+      unit: dimensionless
+    display:
+      value: 3.1000000000000005
+      unit: percent
+    conditions:
+      architecture: NanoStack CFFET
+      baseline: FFET
+      vdd: 0.7 V
+      loading: without BEOL loading
+      circuit: INVD2 based RO

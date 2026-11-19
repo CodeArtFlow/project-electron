@@ -4420,3 +4420,510 @@ claims:
       unit: nm
     conditions:
       component: slab waveguides
+- id: CLM-PHOT-0157
+  topic: PHOT
+  statement: The fabricated PSMFC achieves a spectral resolution of 0.05 nm.
+  sources:
+  - SRC-00384
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device: fabricated chip
+  quantity:
+    quantity: wavelength
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.05
+      unit: nm
+    si_base:
+      value: 5.000000000000001e-11
+      unit: m
+    display:
+      value: 5.000000000000001e-05
+      unit: um
+    conditions:
+      device: fabricated chip
+- id: CLM-PHOT-0158
+  topic: PHOT
+  statement: The fabricated PSMFC operates over a bandwidth exceeding 100 nm.
+  sources:
+  - SRC-00384
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device: fabricated chip
+  quantity:
+    quantity: wavelength
+    bound: lower_bound
+    approximate: false
+    as_published:
+      value: 100.0
+      unit: nm
+    si_base:
+      value: 1.0000000000000001e-07
+      unit: m
+    display:
+      value: 0.1
+      unit: um
+    conditions:
+      device: fabricated chip
+- id: CLM-PHOT-0159
+  topic: PHOT
+  statement: The maximum path-length difference in the intermediate waveguide array of the fabricated
+    device is approximately 420 µm.
+  sources:
+  - SRC-00384
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device: fabricated device
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 420.0
+      unit: µm
+    si_base:
+      value: 0.00041999999999999996
+      unit: m
+    display:
+      value: 419999.99999999994
+      unit: nm
+    conditions:
+      device: fabricated device
+- id: CLM-PHOT-0160
+  topic: PHOT
+  statement: The average path-length difference in the intermediate waveguide array of the fabricated
+    device is approximately 172 µm.
+  sources:
+  - SRC-00384
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device: fabricated device
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 172.0
+      unit: µm
+    si_base:
+      value: 0.00017199999999999998
+      unit: m
+    display:
+      value: 171999.99999999997
+      unit: nm
+    conditions:
+      device: fabricated device
+- id: CLM-PHOT-0161
+  topic: PHOT
+  statement: The overall chip size of the fabricated PSMFC is 2.94 mm × 9.5 mm.
+  sources:
+  - SRC-00384
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    component: overall chip
+  quantity:
+    quantity: length_die
+    bound: exact
+    approximate: false
+    as_published:
+      value: 2.94
+      unit: mm
+    si_base:
+      value: 0.00294
+      unit: m
+    display:
+      value: 2.94
+      unit: mm
+    conditions:
+      component: overall chip
+- id: CLM-PHOT-0162
+  topic: PHOT
+  statement: During active temperature stabilization, the chip temperature is held at 40 °C.
+  sources:
+  - SRC-00384
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device: chip
+  quantity:
+    quantity: temperature
+    bound: exact
+    approximate: false
+    as_published:
+      value: 40.0
+      unit: °C
+    si_base:
+      value: 313.15
+      unit: K
+    display:
+      value: 40.0
+      unit: degC
+    conditions:
+      device: chip
+- id: CLM-PHOT-0163
+  topic: PHOT
+  statement: Building on notes of an earlier session, the agent trained an optical classifier to 96.8%
+    test accuracy.
+  sources:
+  - SRC-00390
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    task: optical classifier
+    prior_knowledge: notes of an earlier session
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 96.8
+      unit: '%'
+    si_base:
+      value: 0.968
+      unit: dimensionless
+    display:
+      value: 96.8
+      unit: percent
+    conditions:
+      task: optical classifier
+      prior_knowledge: notes of an earlier session
+- id: CLM-PHOT-0164
+  topic: PHOT
+  statement: Backpropagation through a calibrated model achieved 96.3% test accuracy on the optical classifier
+    task.
+  sources:
+  - SRC-00390
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    method: backpropagation through a calibrated model
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 96.3
+      unit: '%'
+    si_base:
+      value: 0.963
+      unit: dimensionless
+    display:
+      value: 96.3
+      unit: percent
+    conditions:
+      method: backpropagation through a calibrated model
+- id: CLM-PHOT-0165
+  topic: PHOT
+  statement: The gradient-free methods achieved at most 52.5% test accuracy on the optical classifier
+    task.
+  sources:
+  - SRC-00390
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    method: gradient-free methods
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 52.5
+      unit: '%'
+    si_base:
+      value: 0.525
+      unit: dimensionless
+    display:
+      value: 52.5
+      unit: percent
+    conditions:
+      method: gradient-free methods
+- id: CLM-PHOT-0166
+  topic: PHOT
+  statement: The agent with task description alone achieved 91.1% test accuracy on the optical classifier.
+  sources:
+  - SRC-00390
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    prior_knowledge: task description alone
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 91.1
+      unit: '%'
+    si_base:
+      value: 0.9109999999999999
+      unit: dimensionless
+    display:
+      value: 91.1
+      unit: percent
+    conditions:
+      prior_knowledge: task description alone
+- id: CLM-PHOT-0167
+  topic: PHOT
+  statement: Exposure of the perovskite metasurface to HCl vapor tunes the BIC resonance by more than
+    40 nm in the visible spectral range.
+  sources:
+  - SRC-00396
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    gas_exposure: HCl vapor
+  quantity:
+    quantity: wavelength
+    bound: lower_bound
+    approximate: false
+    as_published:
+      value: 40.0
+      unit: nm
+    si_base:
+      value: 4.0e-08
+      unit: m
+    display:
+      value: 0.04
+      unit: um
+    conditions:
+      gas_exposure: HCl vapor
+- id: CLM-PHOT-0168
+  topic: PHOT
+  statement: An effective diffusion coefficient of 1.0 × 10−10 cm2 s−1 is extracted for Cl- transport
+    in the perovskite metasurface by fitting the optical response.
+  sources:
+  - SRC-00396
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-PHOT-0169
+  topic: PHOT
+  statement: The pristine MAPbBr3 metasurface exhibits polariton lasing at a pump fluence of 135 µJ/cm2.
+  sources:
+  - SRC-00396
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-PHOT-0170
+  topic: PHOT
+  statement: After 1.5 min of HCl vapor doping, the lasing wavelength blue shifts from 545.5 to 541.3
+    nm.
+  sources:
+  - SRC-00396
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    doping_duration: 1.5 min
+    doping_gas: HCl
+  quantity:
+    quantity: wavelength
+    bound: exact
+    approximate: false
+    as_published:
+      value: 541.3
+      unit: nm
+    si_base:
+      value: 5.413e-07
+      unit: m
+    display:
+      value: 0.5413
+      unit: um
+    conditions:
+      doping_duration: 1.5 min
+      doping_gas: HCl
+- id: CLM-PHOT-0171
+  topic: PHOT
+  statement: After 1.5 min of HCl exposure, the energy shift of the lasing wavelength corresponds to approximately
+    18 meV.
+  sources:
+  - SRC-00396
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    doping_duration: 1.5 min
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: true
+    as_published:
+      value: 18.0
+      unit: meV
+    si_base:
+      value: 2.8839179411999997e-21
+      unit: J
+    display:
+      value: 2.8839179411999995e-06
+      unit: fJ
+    conditions:
+      doping_duration: 1.5 min
+- id: CLM-PHOT-0172
+  topic: PHOT
+  statement: After 3 min of HCl exposure, the lasing peak shows a shift of approximately 7.6 nm.
+  sources:
+  - SRC-00396
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    doping_duration: 3 min
+  quantity:
+    quantity: wavelength
+    bound: exact
+    approximate: true
+    as_published:
+      value: 7.6
+      unit: nm
+    si_base:
+      value: 7.6e-09
+      unit: m
+    display:
+      value: 0.0076
+      unit: um
+    conditions:
+      doping_duration: 3 min

@@ -1,0 +1,65 @@
+id: SRC-00386
+title: Physics-Guided Crystal Structure Elucidation from Powder X-Ray Diffraction with Universal Machine-Learning
+  Interatomic Potentials
+doi: null
+arxiv_id: 2611.23760v1
+url: https://arxiv.org/abs/2611.23760v1
+venue_id: arxiv_api
+authors:
+- name: Yunsung Lim
+  affiliation: null
+  corresponding: null
+- name: Seungwoo Hwang
+  affiliation: null
+  corresponding: null
+- name: Seungwu Han
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-18'
+retrieved_date: '2026-11-19'
+access: full_text
+read_scope: Automated reading. The full PDF text (73,070 characters, 15 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.23760v1 on
+  2026-11-19. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The framework recovered 71 of 77 database-derived benchmark structures (92.2%) from simulated
+  PXRD patterns and all 12 reference structures from experimental PXRD patterns.”
+
+  “XCAPE (XRD-Constrained Accelerated Prediction Engine)”
+
+  “all 12 reference structures from experimental PXRD patterns”'
+method_summary: “To accelerate energetic evaluation and the repeated geometry optimizations required during
+  the search, we employ SevenNet-Omni [23, 24], a universal machine-learning interatomic potential (MLIP),
+  in place of computationally demanding DFT calculations [25, 26, 27, 16].”
+limitations: '“The current framework searches ordered structural models in which each Wyckoff site is
+  fully occupied by a single element and therefore does not explicitly represent partial occupancies or
+  substitutional disorder.”
+
+  “The PDF entries considered here provide peak positions and relative intensities but lack the full diffraction
+  profiles required for Rietveld refinement [49].”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 23393
+    output: 1135
+  claims_accepted: 2
+  claims_rejected: 1
+  rejected:
+  - statement: Density functional theory calculations revealed that 10 of 12 candidate structure assignments
+      lie within 10 meV/atom of the convex hull.
+    reason: 'unit conversion refused: energy: could not parse 10.0 ''meV/atom'': ''atom'' is not defined
+      in the unit registry'
+    quotes:
+    - Density functional theory (DFT) calculations showed that 10 of these 12 candidates lie within 10
+      meV/atom of the convex hull.
+    - 10 of these 12 candidates lie within 10 meV/atom of the convex hull
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (measured: 1, simulated:
+  1). This field records the majority (simulated); trust each claim''s own evidence_type over this one.'

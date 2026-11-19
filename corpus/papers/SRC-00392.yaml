@@ -1,0 +1,116 @@
+id: SRC-00392
+title: Accelerating Distributed Digital Ising Machines
+doi: null
+arxiv_id: 2611.23883v1
+url: https://arxiv.org/abs/2611.23883v1
+venue_id: arxiv_api
+authors:
+- name: Tong Wu
+  affiliation: null
+  corresponding: null
+- name: Ziyad Alswaidan
+  affiliation: null
+  corresponding: null
+- name: Shreya Mukherjee
+  affiliation: null
+  corresponding: null
+- name: Ting-Yu Lee
+  affiliation: null
+  corresponding: null
+- name: Daniel Xu
+  affiliation: null
+  corresponding: null
+- name: Atharva Raut
+  affiliation: null
+  corresponding: null
+- name: Harry Tye
+  affiliation: null
+  corresponding: null
+- name: Abhinav K. Puthran
+  affiliation: null
+  corresponding: null
+- name: Kemal Selcuk
+  affiliation: null
+  corresponding: null
+- name: Navid A. Aadit
+  affiliation: null
+  corresponding: null
+- name: Ken Mai
+  affiliation: null
+  corresponding: null
+- name: Prashanth Mohan
+  affiliation: null
+  corresponding: null
+- name: Kerem Y. Camsari
+  affiliation: null
+  corresponding: null
+- name: Tathagata Srimani
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-18'
+retrieved_date: '2026-11-19'
+access: full_text
+read_scope: Automated reading. The full PDF text (86,393 characters, 16 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.23883v1 on
+  2026-11-19. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“where the streaming schedule holds per-sweep time flat in chip count at 0.985 µs for 27,648
+  spins and 4.81 pJ per update”
+
+  “fabricated four-chip 28 nm ASIC [34], where the streaming schedule holds per-sweep time flat in chip
+  count at 0.985 µs for 27,648 spins and 4.81 pJ per update”
+
+  “Selecting the optimal precision is worth 1.2–4.2× speedup, yielding a geometric-mean 3.4× TTS reduction
+  at an identical energy target.”'
+method_summary: '“We compare platforms using spin-update throughput, Θ = N/tsweep, measured in attempted
+  updates, or flips per second (Eq. (3)).”
+
+  “We parameterize synchronization frequency by the synchronization interval F : the number of color steps
+  between global barriers, giving γ = χ/F synchronization points per sweep.”'
+limitations: “Alternative approaches, such as stochastic cellular automata and momentum annealing, relax
+  these constraints to achieve apparent parallelism. The former permits simultaneous updates of interacting
+  spins, while the latter introduces inertia that suppresses rapid spin changes. However, parallel spin
+  updates do not necessarily translate into faster convergence or time to solution, nor do they establish
+  equivalence to Gibbs sampling.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 28171
+    output: 2221
+  claims_accepted: 2
+  claims_rejected: 4
+  rejected:
+  - statement: The four-chip 28 nm ASIC sustains a throughput of 28.1 Gflips/s.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The streaming
+      dataflow is also implemented on a fabricated four-chip 2'''
+    quotes:
+    - The streaming dataflow is also implemented on a fabricated four-chip 28 nm ASIC sustaining 28.1
+      Gflips/s at 4.81 pJ/flip.
+  - statement: The four-chip 28 nm ASIC consumes an energy of 4.81 pJ/flip.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The streaming
+      dataflow is also implemented on a fabricated four-chip 2'''
+    quotes:
+    - The streaming dataflow is also implemented on a fabricated four-chip 28 nm ASIC sustaining 28.1
+      Gflips/s at 4.81 pJ/flip.
+  - statement: The calibrated cost model decomposes digital Ising sweep time into compute, memory, synchronization,
+      and inter-device communication terms with a mean error of 4
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''This work
+      presents a calibrated cost model that decomposes digital Isi'''
+    quotes:
+    - This work presents a calibrated cost model that decomposes digital Ising sweep time into compute,
+      memory, synchronization, and inter-device communication terms, validated with 4.8% mean error across
+      three GPU generations, FPGA and ASIC up t
+  - statement: At a 130 MHz clock frequency and a core supply of 0.9 V, the ASIC consumes 4.81 pJ per
+      update.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - Energy is 4.81 pJ per update measured at 130 MHz with a 0.9 V core supply and a 1.2 V I/O supply.
+    - measured at 130 MHz with a 0.9 V core supply and a 1.2 V I/O supply.
+corrections: []

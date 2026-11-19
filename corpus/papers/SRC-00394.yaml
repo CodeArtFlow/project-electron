@@ -1,0 +1,124 @@
+id: SRC-00394
+title: Ultrafast Successive Control and Electrical Detection of Long-Lived Valley Polarization in Room-Temperature
+  Germanium
+doi: null
+arxiv_id: 2611.23998v1
+url: https://arxiv.org/abs/2611.23998v1
+venue_id: arxiv_api
+authors:
+- name: Ami M. Shirai
+  affiliation: null
+  corresponding: null
+- name: Yuta Murotani
+  affiliation: null
+  corresponding: null
+- name: Shunta Aoki
+  affiliation: null
+  corresponding: null
+- name: Shunsuke A. Sato
+  affiliation: null
+  corresponding: null
+- name: Tomohiro Fujimoto
+  affiliation: null
+  corresponding: null
+- name: Kota Aikyo
+  affiliation: null
+  corresponding: null
+- name: Changsu Kim
+  affiliation: null
+  corresponding: null
+- name: Hidefumi Akiyama
+  affiliation: null
+  corresponding: null
+- name: Jun Yoshinobu
+  affiliation: null
+  corresponding: null
+- name: Toshiya Ideue
+  affiliation: null
+  corresponding: null
+- name: Ryusuke Matsunaga
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-18'
+retrieved_date: '2026-11-19'
+access: full_text
+read_scope: Automated reading. The full PDF text (43,067 characters, 19 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.23998v1 on
+  2026-11-19. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Near the band edge, the fast relaxation time was 1.4 ps, whereas the slow relaxation time
+  reached approximately 10 ps.”
+
+  “indirect bandgap edge of bulk Ge(001)”
+
+  “All experiments were performed at room temperature.”
+
+  “Intriguingly, the valley polarization ratio increased with the excess energy and reached 4% with an
+  abrupt transition near the LA phonon energy of 28 meV.”
+
+  “with an abrupt transition near the LA phonon energy of 28 meV.”
+
+  “We evaluated 𝜃ani ≈0.013 for 𝑃𝑣 =4% (Supplemental Material [29]).”
+
+  “We evaluated 𝜃ani ≈0.013 for 𝑃𝑣 =4%”'
+method_summary: '“First, we conducted time-resolved THz polarimetry by employing three optical pulses:
+  NIR pump, THz probe, and NIR gate pulses, with the pulse sequence shown in Fig. 2(a).”
+
+  “Two distinct relaxation components, fast and slow, were isolated using a double-exponential fit convolved
+  with a Gaussian instrument response function (see Supplemental Material [29]).”
+
+  “For comparison, we calculated the inverse of the L–L intervalley scattering rate of electrons 𝜏𝑒−1(ε)
+  and the hole-phonon scattering rate 𝜏ℎ −1(ε) based on the deformation potential theory [34]”
+
+  “Thus, as depicted in Fig. 3(a), we replaced the THz field with a static DC bias voltage along the positive
+  𝑥 direction, and measured the resulting transverse photovoltage along the 𝑦 direction in a Hall bar
+  configuration, with a lock-in amplifier referenced to the repetition rate of the pump pulses.”
+
+  “To confirm the underlying mechanism of MIR-induced valley polarization, we conducted Monte Carlo simulations
+  of electron scattering [23].”'
+limitations: “Note that this estimation is based on the Drude model, which is not accurate for describing
+  the intraband electron response in the MIR range.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 15090
+    output: 2438
+  claims_accepted: 4
+  claims_rejected: 3
+  rejected:
+  - statement: 'The single-exponential relaxation times obtained by Monte Carlo simulation and experiments
+      for MIR-induced valley polarization are approximately 3 ps and 4 ps, '
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - The relaxation times are approximately 3 and 4 ps for the simulation and experiments, respectively,
+      and are robust to the drive fluence in this range.
+    - for the simulation and experiments, respectively
+    - the electron system driven by the MIR pulses
+  - statement: The relaxation time obtained by Monte Carlo simulation of electron scattering driven by
+      MIR pulses is approximately 3 ps.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The relaxation times are approximately 3 and 4 ps for the simulation and experiments, respectively,
+      and are robust to the drive fluence in this range.
+    - Monte Carlo (MC) simulation of the valley polarization ratio 𝑃𝑣
+    - the electron system driven by the MIR pulses
+  - statement: Under the dual MIR pulse condition, the interval between the positive and negative peaks
+      for valley polarization reversal was approximately 0.8 ps.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The interval
+      between the positive and negative peaks for this reversal'''
+    quotes:
+    - The interval between the positive and negative peaks for this reversal was approximately 0.8 ps
+      and matched the pulse delay.
+    - applying dual MIR drive pulses with mutually orthogonal polarizations and a 0.87-ps interval.
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (measured: 3, simulated:
+  1). This field records the majority (measured); trust each claim''s own evidence_type over this one.'

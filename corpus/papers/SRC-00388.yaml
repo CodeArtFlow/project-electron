@@ -1,0 +1,66 @@
+id: SRC-00388
+title: Materials representations organize transferable supervision for chemical extrapolation
+doi: null
+arxiv_id: 2611.23837v1
+url: https://arxiv.org/abs/2611.23837v1
+venue_id: arxiv_api
+authors:
+- name: Enda Xiao
+  affiliation: null
+  corresponding: null
+- name: Terumasa Tadano
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-18'
+retrieved_date: '2026-11-19'
+access: full_text
+read_scope: Automated reading. The full PDF text (50,684 characters, 21 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.23837v1 on
+  2026-11-19. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“On OQMD, top-six exclusion increased MAE by approximately 100–110 meV atom−1 for formation
+  energy and 42–85 meV for bandgap across the three regressors, compared with changes of less than 5 meV
+  atom−1 and 2 meV for ranks 11–16 exclusion.”
+
+  “Changes in MAE (∆MAE) after source exclusion for formation-energy (a,c) and bandgap (b,d) prediction
+  on OQMD using the ϕPCG representation, relative to a baseline trained on samples from the full X-free
+  training pool.”
+
+  “All conditions use 10,000 training compounds.”
+
+  “On OQMD, top-six exclusion increased MAE by approximately 55–100 meV atom−1 for formation energy and
+  46–53 meV for bandgap across the three regressors, whereas exclusion of ranks 11–16 changed MAE by less
+  than 7 meV atom−1 and 2 meV, respectively.”
+
+  “∆MAE after source exclusion for formation-energy (left) and bandgap (right) prediction on OQMD using
+  the fixed ϕE representation.”
+
+  “Models were trained on 10,000 compounds sampled from each pool, so that conditions differed in chemical
+  coverage but not in training-set size.”'
+method_summary: '“Starting from a baseline pool of all X-free compounds, we removed the top two, four
+  or six source subsets or, as a control, six lower-ranked subsets (ranks 11–16). Models were trained
+  on 10,000 compounds sampled from each pool, so that conditions differed in chemical coverage but not
+  in training-set size.”
+
+  “For predictive evaluation, training sets of 50,000, 70,000 and 100,000 compounds were sampled from
+  the X-free training pools of JARVIS, MP and OQMD, respectively, and models were evaluated on the X-present
+  target compounds in each interval.”'
+limitations: “Within H, N, O and F, however, the scores did not follow the order of the errors in either
+  representation, indicating that representation-level measures alone cannot fully account for extrapolation
+  difficulty.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14877
+    output: 2711
+  claims_accepted: 4
+  claims_rejected: 0
+  rejected: []
+corrections: []

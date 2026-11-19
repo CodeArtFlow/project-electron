@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-18.
+Topic code `PHOT`. Last reviewed 2026-11-19.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -15,6 +15,13 @@ Topic code `PHOT`. Last reviewed 2026-11-18.
 - **118 mA** — The FIB-milled random laser diode exhibits a threshold current of 118 mA.
   - `CLM-PHOT-0150` · device_variant RLD · grade B · credibility unknown · measured · as of 2026-11-09
   - sources: SRC-00357
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+
+### energy
+
+- **≈2.88392e-06 fJ** — After 1.5 min of HCl exposure, the energy shift of the lasing wavelength corresponds to approximately 18 meV.
+  - `CLM-PHOT-0171` · doping_duration 1.5 min · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00396
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### frequency
@@ -205,6 +212,23 @@ Topic code `PHOT`. Last reviewed 2026-11-18.
 - **4000 nm** — The modeled slab waveguides in the simulated array have a width of 4 µm.
   - `CLM-PHOT-0156` · component slab waveguides · grade B · credibility unknown · simulated · as of 2026-11-17
   - sources: SRC-00379
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈420000 nm** — The maximum path-length difference in the intermediate waveguide array of the fabricated device is approximately 420 µm.
+  - `CLM-PHOT-0159` · device fabricated device · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00384
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0144 — see the open register
+- **≈172000 nm** — The average path-length difference in the intermediate waveguide array of the fabricated device is approximately 172 µm.
+  - `CLM-PHOT-0160` · device fabricated device · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00384
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0144 — see the open register
+
+### length die
+
+- **2.94 mm** — The overall chip size of the fabricated PSMFC is 2.94 mm × 9.5 mm.
+  - `CLM-PHOT-0161` · component overall chip · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00384
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
@@ -478,6 +502,14 @@ Topic code `PHOT`. Last reviewed 2026-11-18.
   - `CLM-PHOT-0144` · grade B · credibility unknown · simulated · as of 2026-11-12
   - sources: SRC-00348
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- An effective diffusion coefficient of 1.0 × 10−10 cm2 s−1 is extracted for Cl- transport in the perovskite metasurface by fitting the optical response.
+  - `CLM-PHOT-0168` · grade B · credibility unknown · simulated · as of 2026-11-18
+  - sources: SRC-00396
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The pristine MAPbBr3 metasurface exhibits polariton lasing at a pump fluence of 135 µJ/cm2.
+  - `CLM-PHOT-0169` · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00396
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -539,6 +571,22 @@ Topic code `PHOT`. Last reviewed 2026-11-18.
   - sources: SRC-00374
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0137 — see the open register
+- **96.8 percent** — Building on notes of an earlier session, the agent trained an optical classifier to 96.8% test accuracy.
+  - `CLM-PHOT-0163` · task optical classifier, prior_knowledge notes of an earlier session · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00390
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **96.3 percent** — Backpropagation through a calibrated model achieved 96.3% test accuracy on the optical classifier task.
+  - `CLM-PHOT-0164` · method backpropagation through a calibrated model · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00390
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ 52.5 percent** — The gradient-free methods achieved at most 52.5% test accuracy on the optical classifier task.
+  - `CLM-PHOT-0165` · method gradient-free methods · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00390
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **91.1 percent** — The agent with task description alone achieved 91.1% test accuracy on the optical classifier.
+  - `CLM-PHOT-0166` · prior_knowledge task description alone · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00390
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### sensitivity advantage ratio
 
@@ -557,6 +605,10 @@ Topic code `PHOT`. Last reviewed 2026-11-18.
 - **29 degC** — The peak SHG power reaches its maximum output at a temperature of 29 °C.
   - `CLM-PHOT-0085` · external_pump_power 300 μW · grade B · credibility unknown · measured · as of 2026-10-21
   - sources: SRC-00198
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **40 degC** — During active temperature stabilization, the chip temperature is held at 40 °C.
+  - `CLM-PHOT-0162` · device chip · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00384
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature delta
@@ -671,6 +723,28 @@ Topic code `PHOT`. Last reviewed 2026-11-18.
   - `CLM-PHOT-0155` · in_plane_asymmetry_parameter 0.75 · grade B · credibility unknown · simulated · as of 2026-11-16
   - sources: SRC-00374
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **5e-05 um** — The fabricated PSMFC achieves a spectral resolution of 0.05 nm.
+  - `CLM-PHOT-0157` · device fabricated chip · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00384
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0143 — see the open register
+- **≥ 0.1 um** — The fabricated PSMFC operates over a bandwidth exceeding 100 nm.
+  - `CLM-PHOT-0158` · device fabricated chip · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00384
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0143 — see the open register
+- **≥ 0.04 um** — Exposure of the perovskite metasurface to HCl vapor tunes the BIC resonance by more than 40 nm in the visible spectral range.
+  - `CLM-PHOT-0167` · gas_exposure HCl vapor · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00396
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.5413 um** — After 1.5 min of HCl vapor doping, the lasing wavelength blue shifts from 545.5 to 541.3 nm.
+  - `CLM-PHOT-0170` · doping_duration 1.5 min, doping_gas HCl · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00396
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈0.0076 um** — After 3 min of HCl exposure, the lasing peak shows a shift of approximately 7.6 nm.
+  - `CLM-PHOT-0172` · doping_duration 3 min · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00396
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -706,9 +780,15 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0137` — relative_deviation: _unexamined; classification pending_
   - claims: CLM-PHOT-0153, CLM-PHOT-0154
   - missing data: `not yet named`
+- `CFL-0143` — wavelength: _unexamined; classification pending_
+  - claims: CLM-PHOT-0157, CLM-PHOT-0158
+  - missing data: `not yet named`
+- `CFL-0144` — length_device: _unexamined; classification pending_
+  - claims: CLM-PHOT-0159, CLM-PHOT-0160
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 156
-- grades: {'B': 149, 'A': 7}
-- distinct sources: 57
+- claims: 172
+- grades: {'B': 165, 'A': 7}
+- distinct sources: 60

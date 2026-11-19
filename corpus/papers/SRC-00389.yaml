@@ -1,0 +1,114 @@
+id: SRC-00389
+title: 'Technical Note on Matlantis PFP v9: Extending the Element and Domain Coverage of the r2SCAN Training
+  Data'
+doi: null
+arxiv_id: 2611.23873v1
+url: https://arxiv.org/abs/2611.23873v1
+venue_id: arxiv_api
+authors:
+- name: Daiki Shintani
+  affiliation: null
+  corresponding: null
+- name: Shigeru Iwase
+  affiliation: null
+  corresponding: null
+- name: Jun Oshiki
+  affiliation: null
+  corresponding: null
+- name: Kohei Shinohara
+  affiliation: null
+  corresponding: null
+- name: Nontawat Charoenphakdee
+  affiliation: null
+  corresponding: null
+- name: Makoto Hiramatsu
+  affiliation: null
+  corresponding: null
+- name: Yuta Tsuboi
+  affiliation: null
+  corresponding: null
+- name: Yusuke Asano
+  affiliation: null
+  corresponding: null
+- name: Hirotaka Akita
+  affiliation: null
+  corresponding: null
+- name: Yong-Bin Zhuang
+  affiliation: null
+  corresponding: null
+- name: So Takamoto
+  affiliation: null
+  corresponding: null
+- name: Chikashi Shinagawa
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-18'
+retrieved_date: '2026-11-19'
+access: full_text
+read_scope: Automated reading. The full PDF text (31,539 characters, 11 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.23873v1 on
+  2026-11-19. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Pt fcc 103,823 19,683 0.67 1.99”
+
+  “Table 3: Maximum number of atoms and inference speed of PFP-R2SCAN and SevenNet-Omni”
+
+  “both on a single A100 GPU with 80 GB of memory.”
+
+  “Both models were run on a single GPU of the same type (A100 with 80 GB of memory), with the same benchmark
+  script.”
+
+  “LiH rocksalt 93,312 11,664 0.46 1.90”'
+method_summary: '“The benchmark is the database of adsorption energies compiled by Wellendorff et al.
+  [29].”
+
+  “Both models were run on a single GPU of the same type (A100 with 80 GB of memory), with the same benchmark
+  script.”'
+limitations: '“Although PFP v9 adds adsorption structures to the r2SCAN data, the validation in this technical
+  note covers only adsorption energies on clean low-index surfaces.”
+
+  “Grain boundaries, heterointerfaces, stepped or reconstructed surfaces, and point defects remain to
+  be validated, and the r2SCAN data should be extended to such configurations where the accuracy falls
+  short.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 11629
+    output: 2675
+  claims_accepted: 3
+  claims_rejected: 3
+  rejected:
+  - statement: PFP-R2SCAN evaluated forces in 0.41 s for a 12,288-atom liquid water system on a single
+      A100 GPU.
+    reason: the statement contains the number 00, which none of its quotes contain
+    quotes:
+    - for the 12,288-atom system, the time per evaluation is 0.41 s for PFP v9 and 1.68 s for SevenNet-Omni
+    - Both models were run on a single GPU of the same type (A100 with 80 GB of memory), with the same
+      benchmark script.
+    - 'Table 3: Maximum number of atoms and inference speed of PFP-R2SCAN and SevenNet-Omni'
+    - Liquid water 117,912 12,288 0.41 1.68
+  - statement: SevenNet-Omni evaluated forces in 1.68 s for a 12,288-atom liquid water system on a single
+      A100 GPU.
+    reason: the statement contains the number 00, which none of its quotes contain
+    quotes:
+    - for the 12,288-atom system, the time per evaluation is 0.41 s for PFP v9 and 1.68 s for SevenNet-Omni
+    - Both models were run on a single GPU of the same type (A100 with 80 GB of memory), with the same
+      benchmark script.
+    - 'Table 3: Maximum number of atoms and inference speed of PFP-R2SCAN and SevenNet-Omni'
+    - Liquid water 117,912 12,288 0.41 1.68
+  - statement: SevenNet-Omni evaluated forces in 1.90 s for rocksalt LiH at its largest system size.
+    reason: the value 1.9 does not appear in any of the claim's quotes
+    quotes:
+    - LiH rocksalt 93,312 11,664 0.46 1.90
+    - Both models were run on a single GPU of the same type (A100 with 80 GB of memory), with the same
+      benchmark script.
+    - 'Table 3: Maximum number of atoms and inference speed of PFP-R2SCAN and SevenNet-Omni'
+    - both on a single A100 GPU with 80 GB of memory.
+corrections: []

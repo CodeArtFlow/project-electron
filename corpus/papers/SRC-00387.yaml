@@ -1,0 +1,167 @@
+id: SRC-00387
+title: 'Breaking the Myth of Four-Tier Stacked Transistors for Logic: an Investigation from Process to
+  Device and Block-Level PPA'
+doi: null
+arxiv_id: 2611.23806v1
+url: https://arxiv.org/abs/2611.23806v1
+venue_id: arxiv_api
+authors:
+- name: Jianxiang Jin
+  affiliation: null
+  corresponding: null
+- name: Haoran Lu
+  affiliation: null
+  corresponding: null
+- name: Yihan Luo
+  affiliation: null
+  corresponding: null
+- name: Yanbang Chu
+  affiliation: null
+  corresponding: null
+- name: Yibo Zhang
+  affiliation: null
+  corresponding: null
+- name: Jingru Jiang
+  affiliation: null
+  corresponding: null
+- name: Yuji Cheng
+  affiliation: null
+  corresponding: null
+- name: Wanyue Peng
+  affiliation: null
+  corresponding: null
+- name: Xun Jiang
+  affiliation: null
+  corresponding: null
+- name: Feiyu Teng
+  affiliation: null
+  corresponding: null
+- name: Kairang Guo
+  affiliation: null
+  corresponding: null
+- name: Ming Li
+  affiliation: null
+  corresponding: null
+- name: Yibo Lin
+  affiliation: null
+  corresponding: null
+- name: Runsheng Wang
+  affiliation: null
+  corresponding: null
+- name: Heng Wu
+  affiliation: null
+  corresponding: null
+- name: Ru Huang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-18'
+retrieved_date: '2026-11-19'
+access: full_text
+read_scope: Automated reading. The full PDF text (26,947 characters, 4 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.23806v1 on
+  2026-11-19. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“At the INVD2 based RO level, NanoStack CFFET outperforms FFET by 3.1% at iso-power @ 0.7 V
+  without BEOL loading (Fig. 17(a)), owing to the improved source resistance and Miller capacitance (Fig.
+  1 7(b)).”
+
+  “BSIM -CMG compact models (CMs) [14] were fitted to TCAD IdVg, IdVd and CV curves.”'
+method_summary: '“Since this research mainly focused on the interconnect and layout, all N FETs/PFETs
+  were each assumed to have identical intrinsic device characteristics regardless of their tier position.”
+
+  “BSIM -CMG compact models (CMs) [14] were fitted to TCAD IdVg, IdVd and CV curves.”
+
+  “Circuit -level performance was evaluated with 15-stage INVD2 - and NAND2D1 -based ROs with fan -out
+  of 3.”
+
+  “Physical implementation (including dual-sided place-and-route) and PP A evaluation [16] were carried
+  out on an Ibex RISC-V core using matched FFET and CFFET libraries with identical BEOL rules and physical
+  -design settings (Fig 9(a) ); p ost-route core layouts are shown in Fig. 9(b).”'
+limitations: '“Inter-tier vertical access, however, still relies on MOL supervias and VHV routing for
+  M0 access to bottom transistors (Fig. 3), requiring highly selective dielectric etching at AR up to
+  ~40, which remains a key process concern and further induces layout complexity and parasitic penalties
+  in standard-cell design.”
+
+  “In the Ibex netlist, stitchable cells account for 20% of all standard cells; however, each stitching
+  pair saves only ~1-2 CPPs with the current CFFET cell design , bounding the projected block- level benefit
+  at ~3% .”
+
+  “However, the greatly increased process complexity requ ires further investigation rather than simple
+  stacking.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 11452
+    output: 4278
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: BS Power is 9.0% slower than Symmetric Power at Vdd = 0.7 V for 15-stage INVD2-based RO
+      without BEOL load.
+    reason: the statement contains the number 15, which none of its quotes contain
+    quotes:
+    - BS Power and Staggered Power are respectively 9.0% and 6.3% s lower @ Vdd = 0.7 V (Fig. 5(a)).
+    - BSIM -CMG compact models (CMs) [14] were fitted to TCAD IdVg, IdVd and CV curves.
+    - Circuit -level performance was evaluated with 15-stage INVD2 - and NAND2D1 -based ROs with fan -out
+      of 3.
+    - W/O BEOL
+  - statement: Staggered Power is 6.3% slower than Symmetric Power at Vdd = 0.7 V for 15-stage INVD2-based
+      RO without BEOL load.
+    reason: the statement contains the number 15, which none of its quotes contain
+    quotes:
+    - BS Power and Staggered Power are respectively 9.0% and 6.3% s lower @ Vdd = 0.7 V (Fig. 5(a)).
+    - BSIM -CMG compact models (CMs) [14] were fitted to TCAD IdVg, IdVd and CV curves.
+    - Circuit -level performance was evaluated with 15-stage INVD2 - and NAND2D1 -based ROs with fan -out
+      of 3.
+    - W/O BEOL
+  - statement: Symmetric Power CFFET lags FFET by 11.2% in RO frequency for INVD2.
+    reason: the value -11.2 does not appear in any of the claim's quotes
+    quotes:
+    - Among CFFET configurations , the best -performing Symmetric Power still lags FFET by 11.2% in RO
+      frequency due to the complex MOL parasitics.
+    - BSIM -CMG compact models (CMs) [14] were fitted to TCAD IdVg, IdVd and CV curves.
+    - Fig. 5 15-stage RO Power -Frequency curves of CFFET benchmarked with FFET. (a) INVD2.
+  - statement: CFFET reduces the routed Ibex RISC-V core area by 12.8% compared to FFET.
+    reason: the value -12.8 does not appear in any of the claim's quotes
+    quotes:
+    - At the block level, CFFET reduces the Ibex RISC-V core area by only 12.8% (far below the 40% nominal
+      cell-height reduction), while running 10.9% slower at iso-power.
+    - Physical implementation (including dual-sided place-and-route) and PP A evaluation [16] were carried
+      out on an Ibex RISC-V core using matched FFET and CFFET libraries with identical BEOL rules and
+      physical -design settings (Fig 9(a) ); p os
+    - Compared with FFET, CFFET reduces the routed core area by only 12.8%, closely matching the 13. 5%
+      instance -weighted cell-area reduction (Fig. 9(c) and 10(a)).
+  - statement: CFFET operates 10.9% slower than FFET at iso-power and 70% utilization on the Ibex RISC-V
+      core.
+    reason: the value -10.9 does not appear in any of the claim's quotes
+    quotes:
+    - At 70% utilization, CFFET operates 10.9% slower than FFET at iso -power (Fig. 10(b)).
+    - Physical implementation (including dual-sided place-and-route) and PP A evaluation [16] were carried
+      out on an Ibex RISC-V core using matched FFET and CFFET libraries with identical BEOL rules and
+      physical -design settings (Fig 9(a) ); p os
+  - statement: Tetris-like cell stitching recovers 7.4% area in a 1-bit ALU design.
+    reason: the value -7.4 does not appear in any of the claim's quotes
+    quotes:
+    - We further introduced a novel Tetris-like cell stitching to minimize the area overhead, which allows
+      non-rectangular cell design and recovers 7.4% area in a 1-bit ALU design.
+    - Physical implementation (including dual-sided place-and-route) and PP A evaluation [16] were carried
+      out on an Ibex RISC-V core using matched FFET and CFFET libraries with identical BEOL rules and
+      physical -design settings (Fig 9(a) ); p os
+  - statement: Both 2-tier SRAM and CFFET SRAM achieve an equivalent 31.4% area reduction versus FFET
+      SRAM under identical design rules.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - Both achieve d an equivalent 31.4% area reduction versus FFET SRAM under the same design rules (Fig.
+      14(b)).
+    - BSIM -CMG compact models (CMs) [14] were fitted to TCAD IdVg, IdVd and CV curves.
+    - 'Besides placing bit cells separately on FS/BS ( 2-tier SRAM, Fig. 1 3) [7], a n extremely compact
+      single-row CFFET bit cell design was proposed (Fig. 14(a)). Both achieve d an equivalent 31.4% area
+      reduction versus FFET SRAM under the same '
+corrections: []

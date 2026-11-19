@@ -10294,3 +10294,470 @@ claims:
     verified_quotes: 4
   conditions:
     material: PEA2PbBr4
+- id: CLM-MAT-0378
+  topic: MAT
+  statement: XCAPE recovered 71 of 77 benchmark structures from simulated powder X-ray diffraction patterns.
+  sources:
+  - SRC-00386
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    framework: XCAPE
+- id: CLM-MAT-0379
+  topic: MAT
+  statement: XCAPE recovered all 12 reference structures from experimental powder X-ray diffraction patterns.
+  sources:
+  - SRC-00386
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    framework: XCAPE
+    dataset: experimental PXRD patterns
+- id: CLM-MAT-0380
+  topic: MAT
+  statement: Excluding the six top-ranked source subsets on OQMD increases formation-energy MAE by 100
+    to 110 meV atom−1 across three regressors when using the pretrained crystal-graph encoder representation.
+  sources:
+  - SRC-00388
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    dataset: OQMD
+    property: formation energy
+    representation: ϕPCG
+    training_set_size: 10,000
+- id: CLM-MAT-0381
+  topic: MAT
+  statement: Excluding the six top-ranked source subsets on OQMD increases bandgap MAE by 42 to 85 meV
+    across three regressors when using the pretrained crystal-graph encoder representation.
+  sources:
+  - SRC-00388
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    dataset: OQMD
+    property: bandgap
+    representation: ϕPCG
+    training_set_size: 10,000
+- id: CLM-MAT-0382
+  topic: MAT
+  statement: Excluding the six top-ranked source subsets on OQMD increases formation-energy MAE by 55
+    to 100 meV atom−1 across three regressors when using engineered descriptors.
+  sources:
+  - SRC-00388
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    dataset: OQMD
+    property: formation energy
+    representation: ϕE
+    training_set_size: 10,000
+- id: CLM-MAT-0383
+  topic: MAT
+  statement: Excluding the six top-ranked source subsets on OQMD increases bandgap MAE by 46 to 53 meV
+    across three regressors when using engineered descriptors.
+  sources:
+  - SRC-00388
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    dataset: OQMD
+    property: bandgap
+    representation: ϕE
+    training_set_size: 10,000
+- id: CLM-MAT-0384
+  topic: MAT
+  statement: PFP-R2SCAN evaluated forces in 0.67 s for fcc Pt at the largest system size SevenNet-Omni
+    could handle.
+  sources:
+  - SRC-00389
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    model: PFP-R2SCAN
+    system: Pt fcc
+    hardware: single A100 GPU with 80 GB of memory
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.67
+      unit: s
+    si_base:
+      value: 0.67
+      unit: s
+    display:
+      value: 670000000.0
+      unit: ns
+    conditions:
+      model: PFP-R2SCAN
+      system: Pt fcc
+      hardware: single A100 GPU with 80 GB of memory
+- id: CLM-MAT-0385
+  topic: MAT
+  statement: SevenNet-Omni evaluated forces in 1.99 s for fcc Pt at its largest system size.
+  sources:
+  - SRC-00389
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    model: SevenNet-Omni
+    system: Pt fcc
+    hardware: single A100 GPU with 80 GB of memory
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.99
+      unit: s
+    si_base:
+      value: 1.99
+      unit: s
+    display:
+      value: 1989999999.9999998
+      unit: ns
+    conditions:
+      model: SevenNet-Omni
+      system: Pt fcc
+      hardware: single A100 GPU with 80 GB of memory
+- id: CLM-MAT-0386
+  topic: MAT
+  statement: PFP-R2SCAN evaluated forces in 0.46 s for rocksalt LiH at the largest system size SevenNet-Omni
+    could handle.
+  sources:
+  - SRC-00389
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    model: PFP-R2SCAN
+    system: LiH rocksalt
+    hardware: single A100 GPU with 80 GB of memory
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.46
+      unit: s
+    si_base:
+      value: 0.46
+      unit: s
+    display:
+      value: 459999999.99999994
+      unit: ns
+    conditions:
+      model: PFP-R2SCAN
+      system: LiH rocksalt
+      hardware: single A100 GPU with 80 GB of memory
+- id: CLM-MAT-0387
+  topic: MAT
+  statement: Near the band edge of Ge(001) at room temperature, the slow relaxation time reached approximately
+    10 ps.
+  sources:
+  - SRC-00394
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: bulk Ge(001)
+    temperature: room temperature
+  quantity:
+    quantity: time
+    bound: upper_bound
+    approximate: true
+    as_published:
+      value: 10.0
+      unit: ps
+    si_base:
+      value: 1.0e-11
+      unit: s
+    display:
+      value: 0.009999999999999998
+      unit: ns
+    conditions:
+      material: bulk Ge(001)
+      temperature: room temperature
+- id: CLM-MAT-0388
+  topic: MAT
+  statement: Near the band edge of bulk Ge(001) at room temperature, the fast relaxation time was 1.4
+    ps.
+  sources:
+  - SRC-00394
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: bulk Ge(001)
+    temperature: room temperature
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.4
+      unit: ps
+    si_base:
+      value: 1.3999999999999999e-12
+      unit: s
+    display:
+      value: 0.0013999999999999998
+      unit: ns
+    conditions:
+      material: bulk Ge(001)
+      temperature: room temperature
+- id: CLM-MAT-0389
+  topic: MAT
+  statement: The valley polarization ratio reached 4% with an abrupt transition near the LA phonon energy
+    of 28 meV.
+  sources:
+  - SRC-00394
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    transition_region: near the LA phonon energy of 28 meV
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 4.0
+      unit: '%'
+    si_base:
+      value: 0.04
+      unit: dimensionless
+    display:
+      value: 4.0
+      unit: percent
+    conditions:
+      transition_region: near the LA phonon energy of 28 meV
+- id: CLM-MAT-0390
+  topic: MAT
+  statement: The conductivity anisotropy angle is evaluated to be approximately 0.013 for a valley polarization
+    ratio of 4%.
+  sources:
+  - SRC-00394
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    symbol: 𝜃ani
+- id: CLM-MAT-0391
+  topic: MAT
+  statement: The average period of the periodic SHG signal oscillations along the c-axis of an exfoliated
+    NbOCl2 flake is approximately 1.5 μm.
+  sources:
+  - SRC-00395
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    crystallographic_direction: c-axis
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 1.5
+      unit: μm
+    si_base:
+      value: 1.5e-06
+      unit: m
+    display:
+      value: 1499.9999999999998
+      unit: nm
+    conditions:
+      crystallographic_direction: c-axis
+- id: CLM-MAT-0392
+  topic: MAT
+  statement: An exfoliated NbOCl2 flake transferred onto a SiO2/Si substrate exhibits a uniform thickness
+    of approximately 131 nm.
+  sources:
+  - SRC-00395
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    substrate: SiO2/Si substrate
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 131.0
+      unit: nm
+    si_base:
+      value: 1.31e-07
+      unit: m
+    display:
+      value: 130.99999999999997
+      unit: nm
+    conditions:
+      substrate: SiO2/Si substrate
+- id: CLM-MAT-0393
+  topic: MAT
+  statement: Using the thin-film bending model, the maximum tensile strain at the apex of the bent NbOCl2
+    layer is estimated to be approximately 0.26%.
+  sources:
+  - SRC-00395
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-19'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    model: thin-film bending model
+    material: NbOCl2
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: true
+    as_published:
+      value: 0.26
+      unit: '%'
+    si_base:
+      value: 0.0026000000000000003
+      unit: dimensionless
+    display:
+      value: 0.26
+      unit: percent
+    conditions:
+      model: thin-film bending model
+      material: NbOCl2

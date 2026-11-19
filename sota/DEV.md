@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-11-18.
+Topic code `DEV`. Last reviewed 2026-11-19.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -373,6 +373,10 @@ Topic code `DEV`. Last reviewed 2026-11-18.
   - `CLM-DEV-0114` · component hollow-core ARF · grade B · credibility unknown · measured · as of 2026-11-16
   - sources: SRC-00371
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **3.1 percent** — NanoStack CFFET results in 3.1% higher RO frequency than FFET at iso-power at Vdd = 0.7 V without BEOL loading.
+  - `CLM-DEV-0115` · architecture NanoStack CFFET, baseline FFET, vdd 0.7 V, loading without BEOL loading, circuit INVD2 based RO · grade B · credibility unknown · simulated · as of 2026-11-18
+  - sources: SRC-00387
+  - ⚙ automated extraction (gemini-3.6-flash; 7 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -554,6 +558,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 111
-- grades: {'B': 111}
-- distinct sources: 46
+- claims: 112
+- grades: {'B': 112}
+- distinct sources: 47

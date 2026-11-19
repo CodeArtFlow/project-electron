@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.23690v1
 doi: null
-title: A Probabilistic Behavioral RTL Simulation Framework for Probabilistic Compute
-  Fabrics
+title: A Probabilistic Behavioral RTL Simulation Framework for Probabilistic Compute Fabrics
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-18'
@@ -26,6 +25,63 @@ id: CAND-20261119-0118
 harvested_date: '2026-11-19'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-19'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The die size of the 28-nm CMOS test chip is 1.10 x 1.00 mm2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Die size
+      1.10 × 1.00 mm2'''
+    quotes:
+    - Die size 1.10 × 1.00 mm2
+    - 28-nm HPC+ CMOS
+    - 28-nm CMOS
+  - statement: The die size of the 16-nm FinFET test chip is 1.05 x 0.97 mm2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Die size
+      1.05 × 0.97 mm2'''
+    quotes:
+    - Die size 1.05 × 0.97 mm2
+    - 16-nm FinFET
+  - statement: The 28-nm CMOS chip core operating voltage is 0.9 V.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Core VDD
+      0.9 V'''
+    quotes:
+    - Core VDD 0.9 V
+    - 28-nm CMOS
+    - Core VDD
+  - statement: The 16-nm FinFET chip core operating voltage is 0.8 V.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Core VDD
+      0.8 V'''
+    quotes:
+    - Core VDD 0.8 V
+    - 16-nm FinFET
+    - Core VDD
+  - statement: The I/O VDD for both the 28-nm CMOS and 16-nm FinFET chips is 1.8 V.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''I/O VDD 1.8
+      V'''
+    quotes:
+    - I/O VDD 1.8 V
+    - I/O VDD
+  - statement: The simulated system clock frequency for the 28-nm CMOS chip model is 769 MHz.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''System clock
+      769 MHz (sim.)'''
+    quotes:
+    - System clock 769 MHz (sim.)
+    - 28-nm CMOS
+  - statement: The simulated system clock frequency for the 16-nm FinFET chip model is 667 MHz.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''System clock
+      667 MHz (sim.)'''
+    quotes:
+    - System clock 667 MHz (sim.)
+    - 16-nm FinFET
+  tokens:
+    input: 8308
+    output: 1737
+  fetched_chars: 23165

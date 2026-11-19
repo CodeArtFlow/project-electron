@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.23866v1
 doi: null
-title: Tuning spreading transport in GaN HEMTs with an AlN space layer under non-equilibrium
-  heating
+title: Tuning spreading transport in GaN HEMTs with an AlN space layer under non-equilibrium heating
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-18'
@@ -25,6 +24,97 @@ id: CAND-20261119-0106
 harvested_date: '2026-11-19'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-19'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Under equilibrium conditions in MD, the GaN reference structure's narrow-source spreading
+      resistance R*spread is 3.28, which accounts for approximately 76% of t
+    reason: 'unit conversion refused: resistance: cannot convert 3.28 dimensionless to ohm - Cannot convert
+      from ''dimensionless'' (dimensionless) to ''ohm'' ([mass] * [length] ** 2 / [time] ** 3 / [cur'
+    quotes:
+    - For the GaN reference, the narrow-source spreading resistance is R∗ spread = 3.28, more than three
+      times the one-dimensional resistance (R∗ 1D = 1.00) and accounting for approximately 76% of the
+      total (Fig. 2a).
+    - '(a) MD: the GaN reference is dominated by spreading (76%)'
+    - For the GaN reference
+    - Under an equilibrium source
+  - statement: Under equilibrium MD, inserting an AlGaN barrier raises R*1D to 4.63 and R*spread to 4.37.
+    reason: 'unit conversion refused: resistance: cannot convert 4.37 dimensionless to ohm - Cannot convert
+      from ''dimensionless'' (dimensionless) to ''ohm'' ([mass] * [length] ** 2 / [time] ** 3 / [cur'
+    quotes:
+    - Introducing the AlGaN barrier raises R∗ 1D to 4.63 and concurrently R∗ spread to 4.37, a 33% increase
+      relative to bare GaN.
+    - '(a) MD: the GaN reference is dominated by spreading (76%); the AlGaN barrier raises both components'
+    - AlGaN barrier
+    - '(a) MD: the GaN reference is dominated by spreading (76%)'
+  - statement: Inserting an AlN space layer lowers R*spread to 2.72 under equilibrium MD simulation.
+    reason: 'unit conversion refused: resistance: cannot convert 2.72 dimensionless to ohm - Cannot convert
+      from ''dimensionless'' (dimensionless) to ''ohm'' ([mass] * [length] ** 2 / [time] ** 3 / [cur'
+    quotes:
+    - Inserting the AlN layer opens a missing lateral route. R∗ spread falls to 2.72, a 38% reduction
+      relative to the AlGaN/GaN structure, whereas R∗ 1D remains essentially unchanged (4.63 to 5.10,
+      +10%).
+    - '(a) MD: the GaN reference is dominated by spreading (76%); the AlGaN barrier raises both components,
+      while inserting AlN lowers Rspread from 4.37 to 2.72 with negligible change in R1D.'
+    - Inserting the AlN layer
+    - '(a) MD: the GaN reference is dominated by spreading (76%)'
+  - statement: Under longitudinal-optical (LO) pumping in NEMD, the spreading resistance R*spread for
+      GaN increases to 5.18.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - R∗ spread increases from 3.28 to 5.18 for GaN, +58%; from 4.37 to 6.89 for AlGaN/GaN, +58%; and
+      from 2.72 to 4.98 for AlGaN/AlN/GaN, +83%.
+    - R∗ spread rises by 58–83% in NEMD
+    - 5.18 for GaN
+    - Replacing the equilibrium source with a localized LO-phonon pump
+  - statement: Under LO pumping in NEMD, R*spread for AlGaN/GaN increases to 6.89.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - R∗ spread increases from 3.28 to 5.18 for GaN, +58%; from 4.37 to 6.89 for AlGaN/GaN, +58%; and
+      from 2.72 to 4.98 for AlGaN/AlN/GaN, +83%.
+    - R∗ spread rises by 58–83% in NEMD
+    - 6.89 for AlGaN/GaN
+    - Replacing the equilibrium source with a localized LO-phonon pump
+  - statement: Under LO pumping in NEMD, R*spread for AlGaN/AlN/GaN increases to 4.98.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - R∗ spread increases from 3.28 to 5.18 for GaN, +58%; from 4.37 to 6.89 for AlGaN/GaN, +58%; and
+      from 2.72 to 4.98 for AlGaN/AlN/GaN, +83%.
+    - R∗ spread rises by 58–83% in NEMD
+    - 4.98 for AlGaN/AlN/GaN
+    - Replacing the equilibrium source with a localized LO-phonon pump
+  - statement: In full-band Monte Carlo simulations, Rspread rises from 7.05 to 8.47 for the bare-GaN
+      structure under LO pumping.
+    reason: 'unit conversion refused: resistance: cannot convert 8.47 dimensionless to ohm - Cannot convert
+      from ''dimensionless'' (dimensionless) to ''ohm'' ([mass] * [length] ** 2 / [time] ** 3 / [cur'
+    quotes:
+    - 'The full-band, spectrally resolved MC independently reproduces the non-equilibrium increase: Rspread
+      rises from 7.05 to 8.47 for the bare-GaN structure (s1), +20%; from 8.19 to 8.96 for AlGaN/GaN (s2),
+      +9%; and from 7.27 to 8.15 for AlGaN/A'
+    - The full-band, spectrally resolved MC independently reproduces the non-equilibrium increase
+    - bare-GaN structure (s1)
+    - The full-band, spectrally resolved MC
+  - statement: In NEMD simulations, the near-source optical excess decays exponentially with a conversion
+      length Lop->ac of 2.37 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - in NEMD the near-source optical excess decays exponentially with Lop→ac = 2.37 nm, while in the
+      full-band MC the characteristic length into the GaN bulk grows from 24 to 144 nm as N runs from
+      1 to 200
+    - in NEMD the near-source optical excess decays exponentially with Lop→ac = 2.37 nm
+    - in NEMD
+    - optical excess decays exponentially with Lop→ac = 2.37 nm
+  tokens:
+    input: 19670
+    output: 3422
+  fetched_chars: 71566

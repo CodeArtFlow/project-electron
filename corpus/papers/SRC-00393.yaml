@@ -1,0 +1,119 @@
+id: SRC-00393
+title: 'ReCIM-HD: A 40 nm On-Device Learning Accelerator with Hyperdimensional Computing via Importance-Based
+  Hybrid Digital-ReRAM CIM'
+doi: null
+arxiv_id: 2611.23973v1
+url: https://arxiv.org/abs/2611.23973v1
+venue_id: arxiv_api
+authors:
+- name: Keming Fan
+  affiliation: null
+  corresponding: null
+- name: Chang Eun Song
+  affiliation: null
+  corresponding: null
+- name: Soumil Jain
+  affiliation: null
+  corresponding: null
+- name: Weihong Xu
+  affiliation: null
+  corresponding: null
+- name: Gopabandhu Hota
+  affiliation: null
+  corresponding: null
+- name: Haichao Yang
+  affiliation: null
+  corresponding: null
+- name: Leo Liu
+  affiliation: null
+  corresponding: null
+- name: Meng-Fan Chang
+  affiliation: null
+  corresponding: null
+- name: Carlos H. Diaz
+  affiliation: null
+  corresponding: null
+- name: Gert Cauwenberghs
+  affiliation: null
+  corresponding: null
+- name: Tajana Rosing
+  affiliation: null
+  corresponding: null
+- name: Mingu Kang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-18'
+retrieved_date: '2026-11-19'
+access: full_text
+read_scope: Automated reading. The full PDF text (23,084 characters, 4 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.23973v1 on
+  2026-11-19. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“the ReRAM module consumes only 5.4 mW, accounting for 11% of the total chip power”
+
+  “the ReRAM module consumes only 5.4 mW”'
+method_summary: “We measure both ReRAM read operations for storage and CIM operations for in-memory vector-matrix
+  multiplication (VMM).”
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 10126
+    output: 2019
+  claims_accepted: 1
+  claims_rejected: 6
+  rejected:
+  - statement: ReCIM-HD achieves an energy efficiency of 44.17 TOPS/W in hybrid mode.
+    reason: '[missing_required_conditions] efficiency_compute requires precision, sparsity; missing precision,
+      sparsity'
+    quotes:
+    - Fabricated in 40 nm, ReCIM-HD achieves 44.17 TOPS/W (hybrid mode) and 75.8 TOPS/W (ReRAM CIM mode)
+    - Fabricated in 40 nm
+    - 44.17 TOPS/W (hybrid mode)
+  - statement: ReCIM-HD achieves an energy efficiency of 75.8 TOPS/W in ReRAM CIM mode.
+    reason: '[missing_required_conditions] efficiency_compute requires precision, sparsity; missing precision,
+      sparsity'
+    quotes:
+    - Fabricated in 40 nm, ReCIM-HD achieves 44.17 TOPS/W (hybrid mode) and 75.8 TOPS/W (ReRAM CIM mode)
+    - Fabricated in 40 nm
+    - 75.8 TOPS/W (ReRAM CIM mode)
+  - statement: ReCIM-HD achieves an energy efficiency up to 20.1× higher than the state-of-the-art accelerator.
+    reason: 'unit conversion refused: energy_advantage_ratio is dimensionless; unit ''×'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a u'
+    quotes:
+    - delivering up to 20.1× higher energy efficiency than the state-of-the-art accelerator.
+    - than the state-of-the-art accelerator.
+  - statement: The die area of ReCIM-HD is 5.1 mm2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Fabricated
+      in 40 nm CMOS with a die area of 5.1 mm2'''
+    quotes:
+    - Fabricated in 40 nm CMOS with a die area of 5.1 mm2
+    - 40 nm CMOS
+  - statement: Fully analog CIM implementation achieves 123.87× higher energy efficiency than fully digital
+      processing.
+    reason: 'unit conversion refused: energy_advantage_ratio is dimensionless; unit ''×'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a u'
+    quotes:
+    - While a fully analog CIM implementation achieves 123.87× higher energy efficiency than fully digital
+      processing
+    - fully analog CIM implementation
+    - than fully digital processing
+  - statement: With a protected ratio α = 10%, energy consumption is reduced by 9.32× relative to the
+      digital-only implementation.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''with only
+      α = 10%, it improves accuracy by 1.91–8.46% over the CIM-onl'''
+    quotes:
+    - with only α = 10%, it improves accuracy by 1.91–8.46% over the CIM-only design while still reducing
+      energy consumption by 9.32× relative to the digital-only implementation.
+    - α = 10%
+    - relative to the digital-only implementation.
+corrections: []

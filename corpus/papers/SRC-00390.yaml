@@ -1,0 +1,95 @@
+id: SRC-00390
+title: In Situ Training of Optical Neural Networks by Coding Agents
+doi: null
+arxiv_id: 2611.23875v1
+url: https://arxiv.org/abs/2611.23875v1
+venue_id: arxiv_api
+authors:
+- name: Ilker Oguz
+  affiliation: null
+  corresponding: null
+- name: Colin Christian
+  affiliation: null
+  corresponding: null
+- name: Christophe Moser
+  affiliation: null
+  corresponding: null
+- name: Demetri Psaltis
+  affiliation: null
+  corresponding: null
+- name: Gordon Wetzstein
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-18'
+retrieved_date: '2026-11-19'
+access: full_text
+read_scope: Automated reading. The full PDF text (43,158 characters, 14 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.23875v1 on
+  2026-11-19. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Building on the notes of an earlier session, the agent trained an optical classifier to 96.8%
+  test accuracy, against at most 52.5% for the gradient-free methods, and even exceeded backpropagation
+  through a calibrated model of the device (96.3%), at a fraction of its cost in data and training time.”
+
+  “the agent trained an optical classifier to 96.8% test accuracy”
+
+  “Building on the notes of an earlier session”
+
+  “and even exceeded backpropagation through a calibrated model of the device (96.3%), at a fraction of
+  its cost in data and training time.”
+
+  “backpropagation through a calibrated model of the device (96.3%)”
+
+  “against at most 52.5% for the gradient-free methods”
+
+  “In contrast, our agent reached 91.1% from the task description alone, and 96.8% when it was given the
+  notes and code of an earlier session, without any phase masks (Fig. 2b).”
+
+  “from the task description alone”'
+method_summary: “A CMOS camera (IDS Imaging Development Systems UI-3240CP-M-GL) records a 384 × 384-pixel
+  amplitude image.”
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 13092
+    output: 2426
+  claims_accepted: 4
+  claims_rejected: 4
+  rejected:
+  - statement: The agent given notes and code of an earlier session reached a test gain of 2.22 dB over
+      random start for the optical encoder.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Fable 5.2
+      + notes 2.22'''
+    quotes:
+    - Fable 5.2 + notes 2.22
+    - Test gain over random start (dB)
+  - statement: The agent with notes reached 16.1 dB test PSNR on the optical encoder task.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Given also
+      the notes and code of an earlier session, it reached 16.1 d'''
+    quotes:
+    - Given also the notes and code of an earlier session, it reached 16.1 dB, against 15.0 dB for PPO
+      and 13.8 dB for the random start (Fig. 3c,d).
+    - Given also the notes and code of an earlier session
+  - statement: Backpropagation through a calibrated model achieved 16.9 dB on the optical encoder experiment.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''dB'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - The best result obtained on this experiment, 16.9 dB, came from backpropagation through a calibrated
+      model of the device, and the agent came within 0.8 dB of it without any calibrated model.
+    - came from backpropagation through a calibrated model of the device
+  - statement: The laser illumination operated at a wavelength of 632.8 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''illuminated
+      by a continuous-wave helium–neon laser at a wavelength of '''
+    quotes:
+    - illuminated by a continuous-wave helium–neon laser at a wavelength of 632.8 nm.
+    - continuous-wave helium–neon laser at a wavelength of 632.8 nm
+corrections: []
