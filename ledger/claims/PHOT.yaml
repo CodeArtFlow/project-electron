@@ -4927,3 +4927,126 @@ claims:
       unit: um
     conditions:
       doping_duration: 3 min
+- id: CLM-PHOT-0173
+  topic: PHOT
+  statement: The serpentine micro-gradient pixel achieves a spectral resolution better than 100 pm over
+    a 100 nm spectral span.
+  sources:
+  - SRC-00399
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    footprint: 250-μm
+    configuration: serpentine configuration
+  quantity:
+    quantity: wavelength
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 100.0
+      unit: pm
+    si_base:
+      value: 1.0e-10
+      unit: m
+    display:
+      value: 0.0001
+      unit: um
+    conditions:
+      footprint: 250-μm
+      configuration: serpentine configuration
+- id: CLM-PHOT-0174
+  topic: PHOT
+  statement: The four-mode Hamiltonian theoretical calculation gives a quadratic radiative-loss coefficient
+    Im α = 2.18 × 10^-19 at the three-BIC merging point when using a U3 scan resolution of 10^-10.
+  sources:
+  - SRC-00405
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    parameter_scan_resolution: 10-10
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: true
+    as_published:
+      value: 2.18e-19
+      unit: dimensionless
+    si_base:
+      value: 2.18e-19
+      unit: dimensionless
+    display:
+      value: 2.18e-17
+      unit: percent
+    conditions:
+      parameter_scan_resolution: 10-10
+- id: CLM-PHOT-0175
+  topic: PHOT
+  statement: The four-mode Hamiltonian calculations yield a quartic radiative-loss coefficient Im β =
+    2.90 × 10^-10 at the merging point with a U3 scan resolution of 10^-10.
+  sources:
+  - SRC-00405
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    parameter_scan_resolution: 10-10
+- id: CLM-PHOT-0176
+  topic: PHOT
+  statement: The finite-element simulation of the rectangular PCS with f = 0.35 yields a fitted quadratic
+    expansion coefficient α1 = 4 × 10^-7 for the inverse Q factor.
+  sources:
+  - SRC-00405
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-PHOT-0177
+  topic: PHOT
+  statement: The finite-element simulation of the rectangular PCS with f = 0.35 gives a fitted quartic
+    coefficient β1 = -1.7 × 10^-3 for the inverse Q factor.
+  sources:
+  - SRC-00405
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2

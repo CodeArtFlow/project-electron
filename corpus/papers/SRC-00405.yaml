@@ -1,0 +1,83 @@
+id: SRC-00405
+title: Sign-Controlled BIC Merging and Flatband Formation in C2-symmetric Photonic Lattices
+doi: null
+arxiv_id: 2611.25805v1
+url: https://arxiv.org/abs/2611.25805v1
+venue_id: arxiv_api
+authors:
+- name: Jiayao Liu
+  affiliation: null
+  corresponding: null
+- name: Zhuoyang Li
+  affiliation: null
+  corresponding: null
+- name: Zimeng Zeng
+  affiliation: null
+  corresponding: null
+- name: Jinpeng Wang
+  affiliation: null
+  corresponding: null
+- name: Zelong He
+  affiliation: null
+  corresponding: null
+- name: Zhaona Wang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-20'
+access: full_text
+read_scope: Automated reading. The full PDF text (38,322 characters, 19 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.25805v1 on
+  2026-11-20. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“At the merging point, with a U3 scan resolution of 10-10, the quadratic radiative-loss coefficient
+  nearly vanishes (Im α = 2.18 × 10-19), while the quartic coefficient is also strongly suppressed (Im
+  β = 2.90 × 10-10).”
+
+  “with a U3 scan resolution of 10-10”
+
+  “Figure 2(a) shows the imaginary part of the eigenfrequency as a function of kx and U3.”
+
+  “To quantify the accompanying radiation suppression, we fit the simulated inverse Q factor to a sixth-order
+  momentum expansion of 1 2 4 6 1 1 1x x xQ k k k  − = + + with the extracted coefficients shown in
+  Fig. 3(c). At f = 0.35, near the BIC-merging transition, the quadratic coefficient nearly vanishes with
+  α1 = 4×10-7, while the quartic coefficient becomes small and negative (β1 = -1.7×10-3), reflecting competing
+  higher-order radiation contributions.”
+
+  “We validate the predicted band selection and BIC-merging mechanism using finite-element simulations
+  of a rectangular PCS with lattice periods ax = 270 nm and ay = 300 nm, thickness h = 150 nm and refractive
+  index nslab = 2.6.”
+
+  “At f = 0.35, near the BIC-merging transition, the quadratic coefficient nearly vanishes with α1 = 4×10-7,
+  while the quartic coefficient becomes small and negative (β1 = -1.7×10-3), reflecting competing higher-order
+  radiation contributions.”'
+method_summary: “We validate the predicted band selection and BIC-merging mechanism using finite-element
+  simulations of a rectangular PCS with lattice periods ax = 270 nm and ay = 300 nm, thickness h = 150
+  nm and refractive index nslab = 2.6.”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14141
+    output: 2438
+  claims_accepted: 4
+  claims_rejected: 1
+  rejected:
+  - statement: The fit of the FW-qBIC quality factor versus lattice angle θ to Qq-BIC ~ (90°-θ)^-2 achieves
+      an R^2 coefficient of 0.995.
+    reason: the quote says the number is approximate but approximate is false
+    quotes:
+    - Their quality factors follow the predicted angular dependence, Qq-BIC ~ (90°-θ)-2 , with a fit of
+      R2 = 0.995 (Fig. 3(e)).
+    - In oblique lattices, however, noncollinear far-field polarizations introduce an uncanceled radiation
+      channel, converting the off-Γ FW-BICs into FW quasi-BICs (FW-qBICs).
+    - fitted by Qq-BIC ~ (90°-θ)-2
+    - (e) Q factor of the FW-qBIC versus θ, fitted by Qq-BIC ~ (90°-θ)-2.
+corrections: []

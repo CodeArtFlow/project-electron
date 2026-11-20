@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-19.
+Topic code `PHOT`. Last reviewed 2026-11-20.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -510,6 +510,18 @@ Topic code `PHOT`. Last reviewed 2026-11-19.
   - `CLM-PHOT-0169` · grade B · credibility unknown · measured · as of 2026-11-18
   - sources: SRC-00396
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The four-mode Hamiltonian calculations yield a quartic radiative-loss coefficient Im β = 2.90 × 10^-10 at the merging point with a U3 scan resolution of 10^-10.
+  - `CLM-PHOT-0175` · parameter_scan_resolution 10-10 · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00405
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The finite-element simulation of the rectangular PCS with f = 0.35 yields a fitted quadratic expansion coefficient α1 = 4 × 10^-7 for the inverse Q factor.
+  - `CLM-PHOT-0176` · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00405
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The finite-element simulation of the rectangular PCS with f = 0.35 gives a fitted quartic coefficient β1 = -1.7 × 10^-3 for the inverse Q factor.
+  - `CLM-PHOT-0177` · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00405
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -586,6 +598,10 @@ Topic code `PHOT`. Last reviewed 2026-11-19.
 - **91.1 percent** — The agent with task description alone achieved 91.1% test accuracy on the optical classifier.
   - `CLM-PHOT-0166` · prior_knowledge task description alone · grade B · credibility unknown · measured · as of 2026-11-18
   - sources: SRC-00390
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈2.18e-17 percent** — The four-mode Hamiltonian theoretical calculation gives a quadratic radiative-loss coefficient Im α = 2.18 × 10^-19 at the three-BIC merging point when using a U3 scan resolution of 10^-10.
+  - `CLM-PHOT-0174` · parameter_scan_resolution 10-10 · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00405
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### sensitivity advantage ratio
@@ -745,6 +761,10 @@ Topic code `PHOT`. Last reviewed 2026-11-19.
   - `CLM-PHOT-0172` · doping_duration 3 min · grade B · credibility unknown · measured · as of 2026-11-18
   - sources: SRC-00396
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ 0.0001 um** — The serpentine micro-gradient pixel achieves a spectral resolution better than 100 pm over a 100 nm spectral span.
+  - `CLM-PHOT-0173` · footprint 250-μm, configuration serpentine configuration · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00399
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -789,6 +809,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 172
-- grades: {'B': 165, 'A': 7}
-- distinct sources: 60
+- claims: 177
+- grades: {'B': 170, 'A': 7}
+- distinct sources: 62

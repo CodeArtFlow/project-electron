@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.25739v1
 doi: null
-title: Thermally driven multiple sliding states and avalanche dynamics in rhombohedral
-  Pb(TaSe2)2 nanoflakes
+title: Thermally driven multiple sliding states and avalanche dynamics in rhombohedral Pb(TaSe2)2 nanoflakes
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-19'
@@ -29,6 +28,46 @@ id: CAND-20261120-0101
 harvested_date: '2026-11-20'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-20'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The thermal hysteresis width in a 25 nm thick Pb(TaSe2)2 nanoflake approaches a value of
+      300 K.
+    reason: the statement contains the number 25, which none of its quotes contain
+    quotes:
+    - In Fig. 1d, the width of thermal hysteresis (∆T ) increases as the thickness reduces, approaching
+      a value of 300 K and beyond in thin flakes
+    - The transport measurements were performed on a physical property measurement system (Quantum Design)
+      equipped with SR830 Lock-In Amplifier.
+    - Pb(TaSe2)2 nanoflakes
+    - 25nm
+  - statement: The established resistance state persists over a duration of 105 s.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - persist over a long duration (105 s), confirming their non-volatile nature.
+    - The transport measurements were performed on a physical property measurement system (Quantum Design)
+      equipped with SR830 Lock-In Amplifier.
+  - statement: The established resistance state is robust against DC bias currents up to 2 mA.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Supplementary Fig. 5 shows that the established resistance state is robust against substantial DC
+      bias currents (up to 2 mA)
+    - The transport measurements were performed on a physical property measurement system (Quantum Design)
+      equipped with SR830 Lock-In Amplifier.
+    - DC bias currents (up to 2 mA)
+  tokens:
+    input: 13319
+    output: 992
+  fetched_chars: 38651

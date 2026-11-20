@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-11-19.
+Topic code `DEV`. Last reviewed 2026-11-20.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -485,6 +485,10 @@ Topic code `DEV`. Last reviewed 2026-11-19.
   - `CLM-DEV-0111` · atom_count 10648 atoms, gpu NVIDIA RTX 3090 Ti GPU (24 GB), system Hg0.5Cd0.5Te cubic supercells · grade B · credibility unknown · simulated · as of 2026-11-13
   - sources: SRC-00359
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **≈1.2e+10 ns** — Using an AI surrogate model to perform 5000 Monte Carlo fittings takes approximately 12 seconds on a personal computer without parallelization.
+  - `CLM-DEV-0116` · method AI surrogate to perform 5000 MC fittings, parallelization without any parallelization · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00404
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -558,6 +562,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 112
-- grades: {'B': 112}
-- distinct sources: 47
+- claims: 113
+- grades: {'B': 113}
+- distinct sources: 48

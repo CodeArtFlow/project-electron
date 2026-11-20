@@ -1,6 +1,6 @@
 # Memory — state of the art
 
-Topic code `MEM`. Last reviewed 2026-11-19.
+Topic code `MEM`. Last reviewed 2026-11-20.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -136,6 +136,26 @@ Topic code `MEM`. Last reviewed 2026-11-19.
   - `CLM-MEM-0052` · device_to_device_variation included · grade B · credibility unknown · simulated · as of 2026-11-05
   - sources: SRC-00322
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- FlashX achieves up to 12.24%p improvement in task success over conventional inference.
+  - `CLM-MEM-0053` · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00398
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- FlashX reaches a search throughput of 5.46 GB/s.
+  - `CLM-MEM-0054` · frequency 200 MHz · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00398
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- FlashX's per-die hardware logic and ECC area is 0.264 mm2.
+  - `CLM-MEM-0055` · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00398
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- FlashX achieves 1.29 to 3.95x end-to-end speedup over SSD-based retrieval.
+  - `CLM-MEM-0056` · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00398
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- FlashX improves energy efficiency by 1.12 to 2.34x over SSD-based retrieval.
+  - `CLM-MEM-0057` · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00398
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -206,6 +226,10 @@ Topic code `MEM`. Last reviewed 2026-11-19.
   - `CLM-MEM-0045` · model ideal LIF neuron, dataset Fisher’s Iris flower dataset · grade B · credibility unknown · simulated · as of 2026-10-29
   - sources: SRC-00257
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **29.7 percent** — MRB-DRAM with four SRBs per bank achieves a 29.7% average single-core performance improvement over conventional DDR4.
+  - `CLM-MEM-0058` · configuration MRB-4 · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00401
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### resistance
 
@@ -241,6 +265,10 @@ Topic code `MEM`. Last reviewed 2026-11-19.
   - `CLM-MEM-0041` · gap_size 2 nm · grade B · credibility unknown · simulated · as of 2026-10-27
   - sources: SRC-00251
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈0.0155 ns** — For 1Td at bias Vb = 0.33 mV, the estimated switching time is approximately 15.5 ps.
+  - `CLM-MEM-0059` · material_phase 1Td, vb 0.33 mV, gamma 1.76×1011 s−1T−1, anisotropy_field 0.6 T · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00403
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -271,6 +299,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 52
-- grades: {'B': 52}
-- distinct sources: 19
+- claims: 59
+- grades: {'B': 59}
+- distinct sources: 22

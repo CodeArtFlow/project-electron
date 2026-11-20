@@ -1,0 +1,118 @@
+id: SRC-00399
+title: Seamless Gradient Pixels for Multidimensional Optical Information Interrogation
+doi: null
+arxiv_id: 2611.25598v1
+url: https://arxiv.org/abs/2611.25598v1
+venue_id: arxiv_api
+authors:
+- name: Zhenchao Liu
+  affiliation: null
+  corresponding: null
+- name: Bochang Wu
+  affiliation: null
+  corresponding: null
+- name: Houxin Fan
+  affiliation: null
+  corresponding: null
+- name: Tingbiao Guo
+  affiliation: null
+  corresponding: null
+- name: Hongtao Wang
+  affiliation: null
+  corresponding: null
+- name: Lei Chen
+  affiliation: null
+  corresponding: null
+- name: Cheng-Feng Pan
+  affiliation: null
+  corresponding: null
+- name: Shutao Zhang
+  affiliation: null
+  corresponding: null
+- name: Md Abdur Rahman
+  affiliation: null
+  corresponding: null
+- name: Wen Siang Lew
+  affiliation: null
+  corresponding: null
+- name: Hongyoon Kim
+  affiliation: null
+  corresponding: null
+- name: Heechang Yun
+  affiliation: null
+  corresponding: null
+- name: Junsuk Rho
+  affiliation: null
+  corresponding: null
+- name: Joel K. W. Yang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-20'
+access: full_text
+read_scope: Automated reading. The full PDF text (40,045 characters, 17 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.25598v1 on
+  2026-11-20. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“A 250-μm footprint of these meta-atoms achieves spectral resolution better than 100-pm over
+  a 100-nm spectral span based on a serpentine configuration.”
+
+  “based on a serpentine configuration”
+
+  “We experimentally validate this continuous encoding through spectral reconstruction using a serpentine
+  1D micro-gradient pixel (Figure 2d(i-iii)).”'
+method_summary: '“We used the ℓ1-regularized least squares (LASSO) with box constraints to reconstruct
+  the spectrum from the images (details in Supplementary Section 5).”
+
+  “We used a sinusoidal-based reconstruction algorithm to retrieve the optical parameters from the measured
+  images (details in Supplementary Section 12).”'
+limitations: “Future designs could use two sensing channels with distinct response sensitivities to disentangle
+  simultaneous variations in incident light and the local dielectric environment.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 13988
+    output: 1526
+  claims_accepted: 1
+  claims_rejected: 4
+  rejected:
+  - statement: The serpentine 1D micro-gradient pixel array has a footprint of 250 μm.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - A 250-μm footprint of these meta-atoms achieves spectral resolution better than 100-pm over a 100-nm
+      spectral span based on a serpentine configuration.
+    - We experimentally validate this continuous encoding through spectral reconstruction using a serpentine
+      1D micro-gradient pixel (Figure 2d(i-iii)).
+    - based on a serpentine configuration
+  - statement: Snapshot wavelength-polarization reconstruction yields a polarization angular accuracy
+      at approximately 0.3°.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''°'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - Snapshot wavelength-polarization reconstruction yields polarization angular accuracy at ~0.3°.
+  - statement: The span of the continuous scaling factor gradient array is 400 × 50 μm.
+    reason: 'unit conversion refused: area_die: cannot convert 400.0 μm to m^2 - Cannot convert from ''micrometer''
+      ([length]) to ''meter ** 2'' ([length] ** 2). A dimensional mismatch means the value w'
+    quotes:
+    - The span of the array is 400×50 μm.
+    - (ii) Measured NIR intensity distributions of a gradient pixel with continuous scaling factor encoding
+      (η1 to η2) under different monochromatic illumination (λ1=1507 nm, λ2=1537 nm, λ3=1559 nm).
+    - (η1 to η2)
+  - statement: The dual-gradient pixel achieves a polarization angle reconstruction error down to a minimum
+      of 0.29°.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''°'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - Polarization angle reconstruction spans 0-180°, with a minimum error of 0.29°.
+    - The reconstructed results exhibit good agreement with the ground truth in Figures 3f and 3g.
+    - Polarization angle reconstruction spans 0-180°
+corrections: []

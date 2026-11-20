@@ -2321,3 +2321,184 @@ claims:
       model: Cosmos-Reason2 32B
       task: grain boundary
       noise_condition: without noise
+- id: CLM-PROC-0073
+  topic: PROC
+  statement: The Yb:YAG Pharos laser operates at a fundamental wavelength of 1028 nm, corresponding to
+    an SHG wavelength of 514 nm.
+  sources:
+  - SRC-00402
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    laser_type: femtosecond Yb:YAG Pharos laser
+    shg_wavelength: 514 nm
+  quantity:
+    quantity: wavelength
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1028.0
+      unit: nm
+    si_base:
+      value: 1.0280000000000002e-06
+      unit: m
+    display:
+      value: 1.0280000000000002
+      unit: um
+    conditions:
+      laser_type: femtosecond Yb:YAG Pharos laser
+      shg_wavelength: 514 nm
+- id: CLM-PROC-0074
+  topic: PROC
+  statement: The fundamental beam laser repetition rate during the angle-resolved SHG measurements was
+    100 kHz.
+  sources:
+  - SRC-00402
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    pulse_duration: approximately 225 fs
+    beam_diameter: approximately 25 μm
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 100.0
+      unit: kHz
+    si_base:
+      value: 100000.0
+      unit: Hz
+    display:
+      value: 0.0001
+      unit: GHz
+    conditions:
+      pulse_duration: approximately 225 fs
+      beam_diameter: approximately 25 μm
+- id: CLM-PROC-0075
+  topic: PROC
+  statement: The nominal chamber temperature during ion-assisted electron-beam physical vapor deposition
+    of the Ta₂O₅ films was 160 °C.
+  sources:
+  - SRC-00402
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: Ta₂O₅
+    acceleration_voltage: 250 V
+  quantity:
+    quantity: temperature
+    bound: exact
+    approximate: false
+    as_published:
+      value: 160.0
+      unit: °C
+    si_base:
+      value: 433.15
+      unit: K
+    display:
+      value: 160.0
+      unit: degC
+    conditions:
+      material: Ta₂O₅
+      acceleration_voltage: 250 V
+- id: CLM-PROC-0076
+  topic: PROC
+  statement: The ion source was operated at an acceleration voltage of 250 V during deposition of the
+    Ta₂O₅ films.
+  sources:
+  - SRC-00402
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    material: Ta₂O₅
+    chamber_temperature: 160 °C
+  quantity:
+    quantity: voltage
+    bound: exact
+    approximate: false
+    as_published:
+      value: 250.0
+      unit: V
+    si_base:
+      value: 250.0
+      unit: V
+    display:
+      value: 250.0
+      unit: V
+    conditions:
+      material: Ta₂O₅
+      chamber_temperature: 160 °C
+- id: CLM-PROC-0077
+  topic: PROC
+  statement: The ion source current during the film deposition was 1.4 A.
+  sources:
+  - SRC-00402
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    material: Ta₂O₅
+    chamber_temperature: 160 °C
+    acceleration_voltage: 250 V
+  quantity:
+    quantity: current
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.4
+      unit: A
+    si_base:
+      value: 1.4
+      unit: A
+    display:
+      value: 1400.0
+      unit: mA
+    conditions:
+      material: Ta₂O₅
+      chamber_temperature: 160 °C
+      acceleration_voltage: 250 V

@@ -1,0 +1,109 @@
+id: SRC-00401
+title: Mitigating Row Buffer Contention Through Multiple Row Buffer (MRB) DRAM
+doi: null
+arxiv_id: 2611.25714v1
+url: https://arxiv.org/abs/2611.25714v1
+venue_id: arxiv_api
+authors:
+- name: K Chitra
+  affiliation: null
+  corresponding: null
+- name: Arjun Dey
+  affiliation: null
+  corresponding: null
+- name: Aryabartta Sahu
+  affiliation: null
+  corresponding: null
+- name: Minesh Patel
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-20'
+access: full_text
+read_scope: Automated reading. The full PDF text (24,441 characters, 4 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.25714v1 on
+  2026-11-20. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“In a single-core setup, MRB-4 (MRB-DRAM with 4 row buffers) achieves an average IPC improvement
+  of 29.7% over DDR4 as shown in Figure 2.”
+
+  “MRB-4 (MRB-DRAM with 4 row buffers)”
+
+  “We evaluate the performance of MRB-DRAM using Ramulator [1].”'
+method_summary: '“We evaluate the performance of MRB-DRAM using Ramulator [1].”
+
+  “For energy calculations, we use DRAMspec [12] and DRAMPower5 [13].”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 8724
+    output: 2040
+  claims_accepted: 1
+  claims_rejected: 6
+  rejected:
+  - statement: MRB-DRAM with four SRBs per bank achieves a 23.7% average weighted speedup improvement
+      over DDR4 in multicore environments.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - In multicore environments (Figure 3), MRB-4 achieves a 23.7% average weighted speedup improvement
+      over DDR4
+    - We evaluate the performance of MRB-DRAM using Ramulator [1].
+    - MRB-4
+    - In multicore environments
+  - statement: MRB-4 reduces ACTIVATE commands by 58.9% over DDR4 in single-core evaluation.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - MRB-4 reduces the number of ACTIVATE commands by 58.9% and improves row buffer hit rate by 121%
+      over DDR4.
+    - We evaluate the performance of MRB-DRAM using Ramulator [1].
+    - MRB-4
+    - over DDR4
+  - statement: MRB-4 improves row buffer hit rate by 121% over DDR4 in single-core evaluation.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - MRB-4 reduces the number of ACTIVATE commands by 58.9% and improves row buffer hit rate by 121%
+      over DDR4.
+    - We evaluate the performance of MRB-DRAM using Ramulator [1].
+    - MRB-4
+    - over DDR4
+  - statement: MRB-4 reduces DRAM dynamic energy consumption by 15.6% in single-core systems.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''MRB-4 reduces
+      DRAM dynamic energy consumption by 15.6% in single-core '''
+    quotes:
+    - MRB-4 reduces DRAM dynamic energy consumption by 15.6% in single-core systems and by 22% in multicore
+      systems.
+    - For energy calculations, we use DRAMspec [12] and DRAMPower5 [13].
+    - MRB-4
+    - in single-core systems
+  - statement: MRB-4 reduces DRAM dynamic energy consumption by 22% in multicore systems.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''MRB-4 reduces
+      DRAM dynamic energy consumption by 15.6% in single-core '''
+    quotes:
+    - MRB-4 reduces DRAM dynamic energy consumption by 15.6% in single-core systems and by 22% in multicore
+      systems.
+    - For energy calculations, we use DRAMspec [12] and DRAMPower5 [13].
+    - MRB-4
+    - in multicore systems
+  - statement: MRB-DRAM with four SRBs per bank incurs an estimated area overhead of approximately 2.03%.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Therefore, the total area overhead is 0.25×4+.025+1 = 2.025%, approximately 2.03%.
+    - We estimate the area overhead based on the techniques used in Seongil et al. [2]
+    - 0.25×4
+corrections: []

@@ -1514,3 +1514,158 @@ claims:
     verified_quotes: 3
   conditions:
     device_to_device_variation: included
+- id: CLM-MEM-0053
+  topic: MEM
+  statement: FlashX achieves up to 12.24%p improvement in task success over conventional inference.
+  sources:
+  - SRC-00398
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MEM-0054
+  topic: MEM
+  statement: FlashX reaches a search throughput of 5.46 GB/s.
+  sources:
+  - SRC-00398
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    frequency: 200 MHz
+- id: CLM-MEM-0055
+  topic: MEM
+  statement: FlashX's per-die hardware logic and ECC area is 0.264 mm2.
+  sources:
+  - SRC-00398
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MEM-0056
+  topic: MEM
+  statement: FlashX achieves 1.29 to 3.95x end-to-end speedup over SSD-based retrieval.
+  sources:
+  - SRC-00398
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MEM-0057
+  topic: MEM
+  statement: FlashX improves energy efficiency by 1.12 to 2.34x over SSD-based retrieval.
+  sources:
+  - SRC-00398
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MEM-0058
+  topic: MEM
+  statement: MRB-DRAM with four SRBs per bank achieves a 29.7% average single-core performance improvement
+    over conventional DDR4.
+  sources:
+  - SRC-00401
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    configuration: MRB-4
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 29.7
+      unit: '%'
+    si_base:
+      value: 0.297
+      unit: dimensionless
+    display:
+      value: 29.7
+      unit: percent
+    conditions:
+      configuration: MRB-4
+- id: CLM-MEM-0059
+  topic: MEM
+  statement: For 1Td at bias Vb = 0.33 mV, the estimated switching time is approximately 15.5 ps.
+  sources:
+  - SRC-00403
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    material_phase: 1Td
+    vb: 0.33 mV
+    gamma: 1.76×1011 s−1T−1
+    anisotropy_field: 0.6 T
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: true
+    as_published:
+      value: 15.5
+      unit: ps
+    si_base:
+      value: 1.5499999999999998e-11
+      unit: s
+    display:
+      value: 0.015499999999999996
+      unit: ns
+    conditions:
+      material_phase: 1Td
+      vb: 0.33 mV
+      gamma: 1.76×1011 s−1T−1
+      anisotropy_field: 0.6 T

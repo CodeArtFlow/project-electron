@@ -25,6 +25,95 @@ id: CAND-20261120-0087
 harvested_date: '2026-11-20'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-20'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Meta-RTL* reduces aggregate WNS violations by 7.8% across 20 development designs compared
+      to Dr. RTL.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - Compared with Dr. RTL, Meta-RTL∗ reduces aggregate WNS/TNS violations by 7.8%/11.0% across 20 development
+      designs
+    - Synopsys Design Compiler [32] is used for synthesis and timing analysis, and Cadence JasperGold
+      [33] for SEC.
+    - across 20 development designs
+    - Compared with Dr. RTL
+  - statement: Meta-RTL* reduces aggregate TNS violations by 11.0% across 20 development designs compared
+      to Dr. RTL.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - Compared with Dr. RTL, Meta-RTL∗ reduces aggregate WNS/TNS violations by 7.8%/11.0% across 20 development
+      designs
+    - Synopsys Design Compiler [32] is used for synthesis and timing analysis, and Cadence JasperGold
+      [33] for SEC.
+    - across 20 development designs
+    - Compared with Dr. RTL
+  - statement: Meta-RTL* achieves area reductions on 70% of the 20 development designs compared to Dr.
+      RTL.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - Compared with Dr. RTL, Meta-RTL∗ reduces aggregate WNS/TNS violations by 7.8%/11.0% across 20 development
+      designs, with area reductions on 70% of them.
+    - Synopsys Design Compiler [32] is used for synthesis and timing analysis, and Cadence JasperGold
+      [33] for SEC.
+    - across 20 development designs
+    - Compared with Dr. RTL
+  - statement: Meta-RTL* reduces aggregate WNS violations by 20.5% on 10 unseen IC-RTL designs.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - Without further evolution, Meta-RTL∗ transfers to 10 unseen IC-RTL designs, reducing aggregate WNS/TNS
+      violations by 20.5%/14.0% and total synthesized area by 12.6%.
+    - Synopsys Design Compiler [32] is used for synthesis and timing analysis, and Cadence JasperGold
+      [33] for SEC.
+    - 10 unseen IC-RTL designs
+    - Meta-RTL∗
+  - statement: Meta-RTL* reduces aggregate TNS violations by 14.0% on 10 unseen IC-RTL designs.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - Without further evolution, Meta-RTL∗ transfers to 10 unseen IC-RTL designs, reducing aggregate WNS/TNS
+      violations by 20.5%/14.0% and total synthesized area by 12.6%.
+    - Synopsys Design Compiler [32] is used for synthesis and timing analysis, and Cadence JasperGold
+      [33] for SEC.
+    - 10 unseen IC-RTL designs
+    - Meta-RTL∗
+  - statement: Meta-RTL* reduces total synthesized area by 12.6% on 10 unseen IC-RTL designs.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - Without further evolution, Meta-RTL∗ transfers to 10 unseen IC-RTL designs, reducing aggregate WNS/TNS
+      violations by 20.5%/14.0% and total synthesized area by 12.6%.
+    - Synopsys Design Compiler [32] is used for synthesis and timing analysis, and Cadence JasperGold
+      [33] for SEC.
+    - 10 unseen IC-RTL designs
+    - Meta-RTL∗
+  - statement: Meta-RTL* achieves a mean normalized timing-area utility Q of 0.2630 across the 20 Dr.
+      RTL development designs.
+    reason: the statement contains the number 20, which none of its quotes contain
+    quotes:
+    - Overall, Meta-RTL∗ achieves the highest mean normalized utility of 0.2630, compared with 0.1866
+      for Dr. RTL and 0.1511 for RTLScout, indicating the strongest aggregate timing–area performance.
+    - Synopsys Design Compiler [32] is used for synthesis and timing analysis, and Cadence JasperGold
+      [33] for SEC.
+    - Meta-RTL∗ achieves the highest mean normalized utility of 0.2630
+    - Table I compares Meta-RTL∗ with Dr. RTL and RTLScout on the 20 development designs.
+  - statement: Meta-RTL* achieves a mean normalized timing-area utility Q of 0.2660 on 10 unseen IC-RTL
+      designs.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - Overall, its mean utility reaches 0.2660, compared with 0.1388 for Dr. RTL, representing a 91.6%
+      relative improvement.
+    - Synopsys Design Compiler [32] is used for synthesis and timing analysis, and Cadence JasperGold
+      [33] for SEC.
+    - Meta-RTL∗
+    - To evaluate generalization, we compare Meta-RTL∗ with Dr. RTL on 10 unseen IC-RTL designs.
+  tokens:
+    input: 14682
+    output: 2355
+  fetched_chars: 41360

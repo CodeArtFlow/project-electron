@@ -1,0 +1,100 @@
+id: SRC-00398
+title: 'FlashX: Scaling Robotic Experience Reuse for Embodied Agents with CBA-Based NAND Flash'
+doi: null
+arxiv_id: 2611.25580v1
+url: https://arxiv.org/abs/2611.25580v1
+venue_id: arxiv_api
+authors:
+- name: Yuseon Choi
+  affiliation: null
+  corresponding: null
+- name: Sanghyeon Park
+  affiliation: null
+  corresponding: null
+- name: Eunjong Lee
+  affiliation: null
+  corresponding: null
+- name: Hanseo Lee
+  affiliation: null
+  corresponding: null
+- name: Sangjin Kim
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-20'
+access: full_text
+read_scope: Automated reading. The full PDF text (33,175 characters, 7 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.25580v1 on
+  2026-11-20. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“larger experience banks provide better-matched latent states, improving task success by up
+  to 12.24%p over conventional inference.”
+
+  “Evaluations across VLA and WAM workloads demonstrate up to 12.24%p and 7.43%p improvements in task
+  success under dense and compute-efficient configurations, respectively.”
+
+  “FlashX interleaves three CIF engines per plane to sustain pSLC sensing throughput, reaching 5.46 GB/s
+  (3.00× over Lincoln-TLC).”
+
+  “using identical FP16 CIF engines at 200 MHz”
+
+  “RTL simulation shows that processing a 16-KB page takes 6,167 cycles (30.8 µs), fitting within TLC
+  sensing (36 µs) but exceeding pSLC sensing (12 µs) by 2.6×.”
+
+  “Overall, FlashX adds 0.264 mm2 of logic and ECC per die, occupying only 0.75% of a 35 mm2 NAND die.”
+
+  “The design is verified against a software golden model and synthesized using Nangate45 [23] at 200
+  MHz.”
+
+  “Consequently, FlashX achieves 1.29–3.95× end-to-end speedup over SSD-based warm-starting, enabling
+  computational savings to translate into actual inference acceleration.”
+
+  “We model TLC/pSLC sensing, page-buffer occupancy, and interleaved CIF execution using RTL-measured
+  processing cycles.”
+
+  “FlashX further improves energy efficiency by 1.12–2.34× by eliminating external key traffic and reducing
+  system static energy during retrieval.”'
+method_summary: '“The design is verified against a software golden model and synthesized using Nangate45
+  [23] at 200 MHz.”
+
+  “We model TLC/pSLC sensing, page-buffer occupancy, and interleaved CIF execution using RTL-measured
+  processing cycles.”'
+limitations: '“However, these benefits may be limited when relevant experiences are scarce or current
+  observations differ substantially from stored experiences.”
+
+  “Furthermore, proprioception-based clustering exploits the fixed embodiment of a robot, requiring initial
+  calibration when applied to different robotic platforms.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 10420
+    output: 1639
+  claims_accepted: 5
+  claims_rejected: 2
+  rejected:
+  - statement: FlashX achieves up to 7.43%p improvement in task success under compute-efficient configurations.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Experience
+      scaling improves task success by up to 7.43%p even when com'''
+    quotes:
+    - Experience scaling improves task success by up to 7.43%p even when combined with these compute-efficient
+      techniques
+    - Evaluations across VLA and WAM workloads demonstrate up to 12.24%p and 7.43%p improvements in task
+      success under dense and compute-efficient configurations, respectively.
+    - INT8 2:4 compute-efficient configurations
+  - statement: FlashX achieves 44.9 GB/s/mm2 area efficiency.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Consequently,
+      FlashX achieves 44.9 GB/s/mm2 area efficiency, outperfor'''
+    quotes:
+    - Consequently, FlashX achieves 44.9 GB/s/mm2 area efficiency, outperforming Lincoln-TLC by 1.44×,
+      whereas the SRAM-buffered variant drops to 9.9 GB/s/mm2.
+    - The design is verified against a software golden model and synthesized using Nangate45 [23] at 200
+      MHz.
+    - using identical FP16 CIF engines at 200 MHz
+corrections: []

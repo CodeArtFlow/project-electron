@@ -1,6 +1,6 @@
 # EDA — state of the art
 
-Topic code `EDA`. Last reviewed 2026-11-19.
+Topic code `EDA`. Last reviewed 2026-11-20.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -133,6 +133,26 @@ Topic code `EDA`. Last reviewed 2026-11-19.
   - `CLM-EDA-0048` · experiment E4, benchmark MNIST MLP, modulator MZM, control_precision 8 bits, source_organization Single-Laser Time-Serialized · grade B · credibility unknown · simulated · as of 2026-11-12
   - sources: SRC-00345
   - ⚙ automated extraction (gemini-3.6-flash; 7 quote(s) verified verbatim against the paper)
+- GRODE-RTL improves pass@1 over source-level exploration by 16.7% on DeepSeek.
+  - `CLM-EDA-0054` · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00400
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- GRODE-RTL improves pass@1 over source-level exploration by 26.7% on GLM-5.2.
+  - `CLM-EDA-0055` · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00400
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- GRODE-RTL improves pass@1 over source-level exploration by 20.0% on MiniMax-M3.
+  - `CLM-EDA-0056` · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00400
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- GRODE-RTL achieves up to a +26.7 percentage point Pass@1 gain across three LLMs.
+  - `CLM-EDA-0057` · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00400
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- GRODE-RTL reaches a success rate of 63.3% across three LLMs.
+  - `CLM-EDA-0058` · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00400
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -287,6 +307,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 53
-- grades: {'B': 53}
-- distinct sources: 14
+- claims: 58
+- grades: {'B': 58}
+- distinct sources: 15

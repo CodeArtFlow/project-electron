@@ -1,10 +1,17 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-11-19.
+Topic code `PROC`. Last reviewed 2026-11-20.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
 ## Current position
+
+### current
+
+- **1400 mA** — The ion source current during the film deposition was 1.4 A.
+  - `CLM-PROC-0077` · material Ta₂O₅, chamber_temperature 160 °C, acceleration_voltage 250 V · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00402
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### energy
 
@@ -46,6 +53,10 @@ Topic code `PROC`. Last reviewed 2026-11-19.
   - `CLM-PROC-0041` · material 1T-TaS2 flake, flake_thickness 70 nm, wavefront_type slower mode · grade B · credibility unknown · measured · as of 2026-10-23
   - sources: SRC-00231
   - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- **0.0001 GHz** — The fundamental beam laser repetition rate during the angle-resolved SHG measurements was 100 kHz.
+  - `CLM-PROC-0074` · pulse_duration approximately 225 fs, beam_diameter approximately 25 μm · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00402
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### length device
 
@@ -301,6 +312,10 @@ Topic code `PROC`. Last reviewed 2026-11-19.
   - `CLM-PROC-0001` · thermal_model Debye model · grade B · credibility unknown · simulated · as of 2026-09-18
   - sources: SRC-00012
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- **160 degC** — The nominal chamber temperature during ion-assisted electron-beam physical vapor deposition of the Ta₂O₅ films was 160 °C.
+  - `CLM-PROC-0075` · material Ta₂O₅, acceleration_voltage 250 V · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00402
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### time
 
@@ -336,12 +351,23 @@ Topic code `PROC`. Last reviewed 2026-11-19.
   - sources: SRC-00373
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
+### voltage
+
+- **250 V** — The ion source was operated at an acceleration voltage of 250 V during deposition of the Ta₂O₅ films.
+  - `CLM-PROC-0076` · material Ta₂O₅, chamber_temperature 160 °C · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00402
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+
 ### wavelength
 
 - **≈0.000388 um** — At a landing energy of 10 eV, the de Broglie wavelength is approximately 3.88 Å.
   - `CLM-PROC-0039` · landing_energy 10 eV · grade B · credibility unknown · measured · as of 2026-10-23
   - sources: SRC-00231
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1.028 um** — The Yb:YAG Pharos laser operates at a fundamental wavelength of 1028 nm, corresponding to an SHG wavelength of 514 nm.
+  - `CLM-PROC-0073` · laser_type femtosecond Yb:YAG Pharos laser, shg_wavelength 514 nm · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00402
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -419,6 +445,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 72
-- grades: {'B': 72}
-- distinct sources: 23
+- claims: 77
+- grades: {'B': 77}
+- distinct sources: 24

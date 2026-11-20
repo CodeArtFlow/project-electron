@@ -10761,3 +10761,369 @@ claims:
     conditions:
       model: thin-film bending model
       material: NbOCl2
+- id: CLM-MAT-0394
+  topic: MAT
+  statement: Calculated using the PBE functional with spin-orbit coupling, the band gap of CsPbBr3 is
+    1.16 eV.
+  sources:
+  - SRC-00397
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    functional: PBE
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.16
+      unit: eV
+    si_base:
+      value: 1.8585248954399998e-19
+      unit: J
+    display:
+      value: 0.00018585248954399995
+      unit: fJ
+    conditions:
+      functional: PBE
+- id: CLM-MAT-0395
+  topic: MAT
+  statement: Calculated using the PBE functional with spin-orbit coupling, the band gap of CsSnI3 is 0.48
+    eV.
+  sources:
+  - SRC-00397
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    functional: PBE
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.48
+      unit: eV
+    si_base:
+      value: 7.690447843199999e-20
+      unit: J
+    display:
+      value: 7.690447843199997e-05
+      unit: fJ
+    conditions:
+      functional: PBE
+- id: CLM-MAT-0396
+  topic: MAT
+  statement: At a 21° relative twist, the helix array period revealed by DPC is approximately 15 nm.
+  sources:
+  - SRC-00406
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    twist_angle: 21°
+    material: lithium niobate
+    measurement_method: DPC
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 15.0
+      unit: nm
+    si_base:
+      value: 1.5000000000000002e-08
+      unit: m
+    display:
+      value: 15.0
+      unit: nm
+    conditions:
+      twist_angle: 21°
+      material: lithium niobate
+      measurement_method: DPC
+- id: CLM-MAT-0397
+  topic: MAT
+  statement: At a 21° relative twist, high-resolution TEM shows a conventional moiré period of approximately
+    0.8 nm.
+  sources:
+  - SRC-00406
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    twist_angle: 21°
+    material: lithium niobate
+    measurement_method: HRTEM
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 0.8
+      unit: nm
+    si_base:
+      value: 8.000000000000001e-10
+      unit: m
+    display:
+      value: 0.8
+      unit: nm
+    conditions:
+      twist_angle: 21°
+      material: lithium niobate
+      measurement_method: HRTEM
+- id: CLM-MAT-0398
+  topic: MAT
+  statement: Superposition of two LNO structures at a relative twist of 56° generates moiré periodicities
+    of approximately 5 nm.
+  sources:
+  - SRC-00406
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    twist_angle: 56°
+    material: LNO
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 5.0
+      unit: nm
+    si_base:
+      value: 5.0e-09
+      unit: m
+    display:
+      value: 4.999999999999999
+      unit: nm
+    conditions:
+      twist_angle: 56°
+      material: LNO
+- id: CLM-MAT-0399
+  topic: MAT
+  statement: For a residual misorientation angle deviation of 0.79° from the Σ7 CSL angle, the estimated
+    secondary dislocation network spacing is approximately 14 nm.
+  sources:
+  - SRC-00406
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    deviation_angle: 0.79°
+    burgers_vector: 0.195 nm
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 14.0
+      unit: nm
+    si_base:
+      value: 1.4000000000000001e-08
+      unit: m
+    display:
+      value: 14.0
+      unit: nm
+    conditions:
+      deviation_angle: 0.79°
+      burgers_vector: 0.195 nm
+- id: CLM-MAT-0400
+  topic: MAT
+  statement: Calculated local lattice rotation of either lattice in elastically twisted hexagonal cells
+    is approximately 2° to 3°.
+  sources:
+  - SRC-00406
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    method: 4D STEM strain analysis
+- id: CLM-MAT-0401
+  topic: MAT
+  statement: The extreme-ultraviolet light pulses have a photon energy of 26.5 eV.
+  sources:
+  - SRC-00407
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    light_source: extreme-ultraviolet light pulses
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 26.5
+      unit: eV
+    si_base:
+      value: 4.2457680801e-18
+      unit: J
+    display:
+      value: 0.004245768080099999
+      unit: fJ
+    conditions:
+      light_source: extreme-ultraviolet light pulses
+- id: CLM-MAT-0402
+  topic: MAT
+  statement: The extreme-ultraviolet light pulse duration is 20 fs.
+  sources:
+  - SRC-00407
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    light_source: extreme-ultraviolet light pulses
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 20.0
+      unit: fs
+    si_base:
+      value: 2.0000000000000003e-14
+      unit: s
+    display:
+      value: 2.0e-05
+      unit: ns
+    conditions:
+      light_source: extreme-ultraviolet light pulses
+- id: CLM-MAT-0403
+  topic: MAT
+  statement: The fiber laser operates at a power of 300 W.
+  sources:
+  - SRC-00407
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    laser: fiber laser (AFS Jena)
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 300.0
+      unit: W
+    si_base:
+      value: 300.0
+      unit: W
+    display:
+      value: 300.0
+      unit: W
+    conditions:
+      laser: fiber laser (AFS Jena)
+- id: CLM-MAT-0404
+  topic: MAT
+  statement: The fiber laser operates at a repetition rate of 500 kHz.
+  sources:
+  - SRC-00407
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    laser: fiber laser (AFS Jena)
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 500.0
+      unit: kHz
+    si_base:
+      value: 500000.0
+      unit: Hz
+    display:
+      value: 0.0005
+      unit: GHz
+    conditions:
+      laser: fiber laser (AFS Jena)

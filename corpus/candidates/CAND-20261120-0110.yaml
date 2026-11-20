@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.25617v1
 doi: null
-title: 'Splice-Core: Low-Order-Bit-Splicing GEMM for Highly Energy-Efficient AI Inference
-  Accelerators'
+title: 'Splice-Core: Low-Order-Bit-Splicing GEMM for Highly Energy-Efficient AI Inference Accelerators'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-19'
@@ -26,6 +25,84 @@ id: CAND-20261120-0110
 harvested_date: '2026-11-20'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-20'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: For 16x163 tiles synthesized at 400 MHz in Nangate45, Splice-BP has a cell area of 0.1141
+      mm2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''163'''
+    quotes:
+    - '163'
+    - Splice-BP 0.1141 7.16 49–50.5
+    - TABLE I INT4 POST-SYNTHESIS AREA, POWER, AND CYCLES AT 400 MHZ.
+    - synthesized using Cadence Genus 21.19 with the Nangate45 library.
+  - statement: For 32x323 tiles synthesized at 400 MHz in Nangate45, Splice-BP has a cell area of 0.4408
+      mm2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''323'''
+    quotes:
+    - '323'
+    - Splice-BP 0.4408 28.28 97–106.75
+    - TABLE I INT4 POST-SYNTHESIS AREA, POWER, AND CYCLES AT 400 MHZ.
+    - synthesized using Cadence Genus 21.19 with the Nangate45 library.
+  - statement: For 32x323 tiles synthesized at 400 MHz in Nangate45, Splice-LUT has a cell area of 0.4711
+      mm2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''323'''
+    quotes:
+    - '323'
+    - Splice-LUT 0.4711 44.22 65–74.75
+    - TABLE I INT4 POST-SYNTHESIS AREA, POWER, AND CYCLES AT 400 MHZ.
+    - synthesized using Cadence Genus 21.19 with the Nangate45 library.
+  - statement: For INT8 ResNet-50 convolution workloads on 323 tiles at 400 MHz, Splice-LUT has a cell
+      area of 0.5260 mm2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''ResNet-50
+      convolution'''
+    quotes:
+    - ResNet-50 convolution
+    - Splice-LUT 0.5260 64.20 78.33 12.57 334.65
+    - TABLE II INT8 POST-SYNTHESIS RESULTS FOR 323 TILES AT 400 MHZ.
+    - synthesized using Cadence Genus 21.19 with the Nangate45 library.
+  - statement: For INT8 ResNet-50 convolution workloads on 323 tiles at 400 MHz, Splice-LUT consumes 12.57
+      nJ of energy per tile.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''ResNet-50
+      convolution'''
+    quotes:
+    - ResNet-50 convolution
+    - Splice-LUT 0.5260 64.20 78.33 12.57 334.65
+    - TABLE II INT8 POST-SYNTHESIS RESULTS FOR 323 TILES AT 400 MHZ.
+    - synthesized using Cadence Genus 21.19 with the Nangate45 library.
+  - statement: For INT8 OLMoE top-8 expert projection workloads on 323 tiles at 400 MHz, Splice-LUT consumes
+      8.21 nJ of energy per tile.
+    reason: the statement contains the number 323, which none of its quotes contain
+    quotes:
+    - OLMoE top-8 expert projection
+    - Splice-LUT 0.5260 34.71 94.63 8.21 277.03
+    - TABLE II INT8 POST-SYNTHESIS RESULTS FOR 323 TILES AT 400 MHZ.
+    - synthesized using Cadence Genus 21.19 with the Nangate45 library.
+  - statement: At 1000 MHz clock frequency for Qwen MoE batch-1 decode with 163 tiles, Splice-BP has a
+      cell area of 0.14260 mm2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''1000'''
+    quotes:
+    - '1000'
+    - Splice-BP 0.14260 21.783 49.078 1.069 0
+    - TABLE IV INT4 SYNTHESIS AT TWO CLOCK TARGETS FOR QWEN MOE BATCH-1 DECODE (163 TILES).
+    - QWEN MOE BATCH-1 DECODE
+  - statement: At 1000 MHz clock frequency for Qwen MoE batch-1 decode with 163 tiles, Splice-LUT consumes
+      1.046 nJ of energy per tile.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''1000'''
+    quotes:
+    - '1000'
+    - Splice-LUT 0.15556 31.627 33.078 1.046 0
+    - TABLE IV INT4 SYNTHESIS AT TWO CLOCK TARGETS FOR QWEN MOE BATCH-1 DECODE (163 TILES).
+    - QWEN MOE BATCH-1 DECODE
+  tokens:
+    input: 15401
+    output: 3492
+  fetched_chars: 40964

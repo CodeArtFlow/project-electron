@@ -1,0 +1,89 @@
+id: SRC-00400
+title: 'GRODE-RTL: Source-Mapped Dependency Views for LLM-Based RTL Repair'
+doi: null
+arxiv_id: 2611.25661v1
+url: https://arxiv.org/abs/2611.25661v1
+venue_id: arxiv_api
+authors:
+- name: Jingyi Zhou
+  affiliation: null
+  corresponding: null
+- name: Yi Liu
+  affiliation: null
+  corresponding: null
+- name: Bin Sun
+  affiliation: null
+  corresponding: null
+- name: Hongji Zhang
+  affiliation: null
+  corresponding: null
+- name: Dongsheng Zuo
+  affiliation: null
+  corresponding: null
+- name: Qiang Xu
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-20'
+access: full_text
+read_scope: Automated reading. The full PDF text (60,552 characters, 19 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.25661v1 on
+  2026-11-20. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“GRODE- RTL improves pass@1 over source-level exploration by 16.7% on DeepSeek, by 26.7% on
+  GLM-5.2, and by 20.0% on MiniMax-M3”
+
+  “We evaluate GRODE-RTL across 30 formally validated non-local faults using three LLMs (DeepSeek-V4-Flash,
+  GLM-5.2, and MiniMax-M3) alongside a controlled five-configuration ablation study.”
+
+  “We demonstrate Pass@1 gains of up to +26.7 pp across three LLMs (reaching a 63.3% success rate)”'
+method_summary: '“Candidates are evaluated via Yosys 20-step bounded SAT equivalence checking against
+  the golden RTL oracle.”
+
+  “We evaluate 30 medium- and long-distance faults (23 designs) with source distance d (anchor declaration
+  to fault site) ranging from 50 to 782 lines (median: 104.5): 18 mid-distance (50 ≤ d ≤ 150) and 12 far-distance
+  (d > 150).”'
+limitations: “By bounding extraction at B, GRODE-RTL targets intra-stage combinational non-locality within
+  a single clock cycle, deferring multi-cycle temporal unrolling to future work.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 20035
+    output: 2510
+  claims_accepted: 5
+  claims_rejected: 3
+  rejected:
+  - statement: Compared to GRODE-RTL(w/o. compact), GRODE-RTL prunes view size by 47.0%.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - Furthermore, compared to GRODE-RTL(w/o. compact), GRODE-RTL prunes node count by 62.6% (9.8 vs.
+      26.2) and view size by 47.0% (2,398 vs. 4,524 chars)
+    - To isolate the sources of improvement, we conduct a controlled representation ablation on DeepSeek-V4-Flash
+      over the same 30 bugs (Table 2).
+    - GRODE-RTL(w/o. compact)
+    - GRODE-RTL
+  - statement: GRODE-RTL prunes node count by 62.6% compared to GRODE-RTL(w/o. compact).
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - Furthermore, compared to GRODE-RTL(w/o. compact), GRODE-RTL prunes node count by 62.6% (9.8 vs.
+      26.2) and view size by 47.0% (2,398 vs. 4,524 chars)
+    - To isolate the sources of improvement, we conduct a controlled representation ablation on DeepSeek-V4-Flash
+      over the same 30 bugs (Table 2).
+    - GRODE-RTL(w/o. compact)
+    - GRODE-RTL
+  - statement: GRODE-RTL reduces token consumption by 45.8% compared to SeqFeed.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - it achieves substantial token savings compared to SeqFeed (72,317 vs. 133,384 tokens, a 45.8% reduction
+    - To isolate the sources of improvement, we conduct a controlled representation ablation on DeepSeek-V4-Flash
+      over the same 30 bugs (Table 2).
+    - DeepSeek-V4-Flash
+    - SeqFeed
+corrections: []

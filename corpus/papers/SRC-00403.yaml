@@ -1,0 +1,85 @@
+id: SRC-00403
+title: Field-free deterministic spin-orbit torque magnetization switching using monolayer WTe2
+doi: null
+arxiv_id: 2611.25755v1
+url: https://arxiv.org/abs/2611.25755v1
+venue_id: arxiv_api
+authors:
+- name: Ganesh Hanchanahal
+  affiliation: null
+  corresponding: null
+- name: Arnav Jain
+  affiliation: null
+  corresponding: null
+- name: Shrushti Tapar
+  affiliation: null
+  corresponding: null
+- name: Saroj P Dash
+  affiliation: null
+  corresponding: null
+- name: Bhaskaran Muralidharan
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-20'
+access: full_text
+read_scope: Automated reading. The full PDF text (44,575 characters, 12 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.25755v1 on
+  2026-11-20. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“For γ = 1.76×1011 s−1T−1, magnetic moment µ = O(µB ) ∼ 9.274 × 10−24 J T−1, e = 1.6 × 10−19C
+  and ∆MCA = O(γHK ) ∼ 1011 s−1 (an anisotropy field HK ≈ 0.6 T), we get a value of t ∼ 15.5 ps for 1Td
+  at Vb = 0.33 mV.”
+
+  “we get a value of t ∼ 15.5 ps for 1Td at Vb = 0.33 mV.”
+
+  “For γ = 1.76×1011 s−1T−1, magnetic moment µ = O(µB ) ∼ 9.274 × 10−24 J T−1, e = 1.6 × 10−19C and ∆MCA
+  = O(γHK ) ∼ 1011 s−1 (an anisotropy field HK ≈ 0.6 T)”
+
+  “(an anisotropy field HK ≈ 0.6 T)”'
+method_summary: “Modelling the ferromagnet as an exchange-coupled macrospin within a non-equilibrium Green’s
+  function framework, we find that the x-ribbon geometry of the 1Td-WTe2 phase generates a significantly
+  larger current-induced spin polarization than the 1T′ phase, resulting in a larger damping-like torque
+  on the adjacent magnetic layer and faster switching.”
+limitations: '“However, we need to note that these Hamiltonians are only valid for small biases.”
+
+  “Note that our analysis uses the small-bias approximation, and hence cannot accurately predict the behaviour
+  at large bias voltage.”
+
+  “These estimates are order-of-magnitude only due to the qualitative nature of this study and lie within
+  the small-bias regime.”
+
+  “Our results rely on several simplifications that future work should relax. The FM is modelled as an
+  insulating macrospin coupled only through exchange, neglecting any current passing through it. Since
+  the edge-dominated torque depends on a clean bulk gap, edge disorder, thermal broadening and larger
+  device sizes should be examined before the width robustness of 1Td devices can be generalized.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14781
+    output: 2212
+  claims_accepted: 1
+  claims_rejected: 2
+  rejected:
+  - statement: At effective bias Veff = 10 in the x-ribbon orientation, the dimensionless switching time
+      teff for 1Td is 1.55.
+    reason: 'unit conversion refused: time: could not parse 1.55 ''teff'': ''teff'' is not defined in
+      the unit registry'
+    quotes:
+    - The switching time at Veff = 10 in the x-ribbon orientation for 1Td is teff = 1.55, while for 1T′
+      teff = 26.29, which is approximately 17 times that of 1Td.
+  - statement: At effective bias Veff = 10 in the x-ribbon orientation, the dimensionless switching time
+      teff for 1T′ is 26.29.
+    reason: 'unit conversion refused: time: could not parse 26.29 ''teff'': ''teff'' is not defined in
+      the unit registry'
+    quotes:
+    - The switching time at Veff = 10 in the x-ribbon orientation for 1Td is teff = 1.55, while for 1T′
+      teff = 26.29, which is approximately 17 times that of 1Td.
+corrections: []

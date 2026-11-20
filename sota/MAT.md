@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-19.
+Topic code `MAT`. Last reviewed 2026-11-20.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -194,6 +194,20 @@ Topic code `MAT`. Last reviewed 2026-11-19.
   - `CLM-MAT-0343` · temperature 400 mK, calibration_material Pb · grade B · credibility unknown · measured · as of 2026-11-12
   - sources: SRC-00346
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **0.000185852 fJ** — Calculated using the PBE functional with spin-orbit coupling, the band gap of CsPbBr3 is 1.16 eV.
+  - `CLM-MAT-0394` · functional PBE · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00397
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0145 — see the open register
+- **7.69045e-05 fJ** — Calculated using the PBE functional with spin-orbit coupling, the band gap of CsSnI3 is 0.48 eV.
+  - `CLM-MAT-0395` · functional PBE · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00397
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0145 — see the open register
+- **0.00424577 fJ** — The extreme-ultraviolet light pulses have a photon energy of 26.5 eV.
+  - `CLM-MAT-0401` · light_source extreme-ultraviolet light pulses · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00407
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### frequency
 
@@ -225,6 +239,10 @@ Topic code `MAT`. Last reviewed 2026-11-19.
   - `CLM-MAT-0349` · energy_range ~45.9 – 46.3 eV, edge Re O2 edge · grade B · credibility unknown · measured · as of 2026-11-09
   - sources: SRC-00358
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **0.0005 GHz** — The fiber laser operates at a repetition rate of 500 kHz.
+  - `CLM-MAT-0404` · laser fiber laser (AFS Jena) · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00407
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### length device
 
@@ -471,6 +489,22 @@ Topic code `MAT`. Last reviewed 2026-11-19.
   - `CLM-MAT-0392` · substrate SiO2/Si substrate · grade B · credibility unknown · measured · as of 2026-11-18
   - sources: SRC-00395
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈15 nm** — At a 21° relative twist, the helix array period revealed by DPC is approximately 15 nm.
+  - `CLM-MAT-0396` · twist_angle 21°, material lithium niobate, measurement_method DPC · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00406
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **≈0.8 nm** — At a 21° relative twist, high-resolution TEM shows a conventional moiré period of approximately 0.8 nm.
+  - `CLM-MAT-0397` · twist_angle 21°, material lithium niobate, measurement_method HRTEM · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00406
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **≈5 nm** — Superposition of two LNO structures at a relative twist of 56° generates moiré periodicities of approximately 5 nm.
+  - `CLM-MAT-0398` · twist_angle 56°, material LNO · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00406
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈14 nm** — For a residual misorientation angle deviation of 0.79° from the Σ7 CSL angle, the estimated secondary dislocation network spacing is approximately 14 nm.
+  - `CLM-MAT-0399` · deviation_angle 0.79°, burgers_vector 0.195 nm · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00406
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -491,6 +525,10 @@ Topic code `MAT`. Last reviewed 2026-11-19.
 - **≈5e-11 W** — The static power consumption of the drop-cast control device at 5 V operating bias is ~ 50 pW.
   - `CLM-MAT-0191` · device_type drop-cast control devices · grade B · credibility unknown · measured · as of 2026-10-22
   - sources: SRC-00209
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **300 W** — The fiber laser operates at a power of 300 W.
+  - `CLM-MAT-0403` · laser fiber laser (AFS Jena) · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00407
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power density
@@ -1233,6 +1271,10 @@ Topic code `MAT`. Last reviewed 2026-11-19.
   - `CLM-MAT-0390` · symbol 𝜃ani · grade B · credibility unknown · simulated · as of 2026-11-18
   - sources: SRC-00394
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Calculated local lattice rotation of either lattice in elastically twisted hexagonal cells is approximately 2° to 3°.
+  - `CLM-MAT-0400` · method 4D STEM strain analysis · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00406
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1597,6 +1639,10 @@ Topic code `MAT`. Last reviewed 2026-11-19.
   - `CLM-MAT-0388` · material bulk Ge(001), temperature room temperature · grade B · credibility unknown · measured · as of 2026-11-18
   - sources: SRC-00394
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **2e-05 ns** — The extreme-ultraviolet light pulse duration is 20 fs.
+  - `CLM-MAT-0402` · light_source extreme-ultraviolet light pulses · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00407
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -1824,9 +1870,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0142` — relative_deviation: _unexamined; classification pending_
   - claims: CLM-MAT-0366, CLM-MAT-0367
   - missing data: `not yet named`
+- `CFL-0145` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0394, CLM-MAT-0395
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 393
-- grades: {'B': 393}
-- distinct sources: 140
+- claims: 404
+- grades: {'B': 404}
+- distinct sources: 143

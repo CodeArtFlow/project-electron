@@ -1,0 +1,76 @@
+id: SRC-00407
+title: 'momipy: A time-resolved momentum microscopy data analysis workflow'
+doi: null
+arxiv_id: 2611.25888v1
+url: https://arxiv.org/abs/2611.25888v1
+venue_id: arxiv_api
+authors:
+- name: Paul Werner
+  affiliation: null
+  corresponding: null
+- name: Wiebke Bennecke
+  affiliation: null
+  corresponding: null
+- name: Jan Philipp Bange
+  affiliation: null
+  corresponding: null
+- name: Junde Liu
+  affiliation: null
+  corresponding: null
+- name: Daniel Steil
+  affiliation: null
+  corresponding: null
+- name: Marcel Reutzel
+  affiliation: null
+  corresponding: null
+- name: G. S. Matthijs Jansen
+  affiliation: null
+  corresponding: null
+- name: Stefan Mathias
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-20'
+access: full_text
+read_scope: Automated reading. The full PDF text (49,331 characters, 18 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.25888v1 on
+  2026-11-20. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“extreme-ultraviolet light pulses (26.5eV, 20fs, 𝑝-polarized)”
+
+  “The photoemission data presented for the exemplary workflow originates from [56].”
+
+  “driven by a 300W fiber laser (AFS Jena) operating at 500kHz”'
+method_summary: “In short, the multidimensional photoemission data are acquired with a time of flight
+  momentum microscope (ToF-MM, Surface Concept GmbH), and the extreme-ultraviolet light pulses (26.5eV,
+  20fs, 𝑝-polarized) are generated with a table-top high-harmonic-generation beamline driven by a 300W
+  fiber laser (AFS Jena) operating at 500kHz [10, 12].”
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16362
+    output: 1642
+  claims_accepted: 4
+  claims_rejected: 2
+  rejected:
+  - statement: The pump light photon energy is 1.9 eV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The pump
+      light (1.9eV, 40fs, 𝑠-polarized, 3 µJ/cm2 absorbed fluence, 9'''
+    quotes:
+    - The pump light (1.9eV, 40fs, 𝑠-polarized, 3 µJ/cm2 absorbed fluence, 9×1012 cm−2 exciton density)
+    - The photoemission data presented for the exemplary workflow originates from [56].
+  - statement: The pump light pulse duration is 40 fs.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The pump
+      light (1.9eV, 40fs, 𝑠-polarized, 3 µJ/cm2 absorbed fluence, 9'''
+    quotes:
+    - The pump light (1.9eV, 40fs, 𝑠-polarized, 3 µJ/cm2 absorbed fluence, 9×1012 cm−2 exciton density)
+    - The photoemission data presented for the exemplary workflow originates from [56].
+corrections: []

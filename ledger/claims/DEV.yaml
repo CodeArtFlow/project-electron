@@ -3231,3 +3231,39 @@ claims:
       vdd: 0.7 V
       loading: without BEOL loading
       circuit: INVD2 based RO
+- id: CLM-DEV-0116
+  topic: DEV
+  statement: Using an AI surrogate model to perform 5000 Monte Carlo fittings takes approximately 12 seconds
+    on a personal computer without parallelization.
+  sources:
+  - SRC-00404
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-20'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    method: AI surrogate to perform 5000 MC fittings
+    parallelization: without any parallelization
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: true
+    as_published:
+      value: 12.0
+      unit: seconds
+    si_base:
+      value: 12.0
+      unit: s
+    display:
+      value: 11999999999.999998
+      unit: ns
+    conditions:
+      method: AI surrogate to perform 5000 MC fittings
+      parallelization: without any parallelization
