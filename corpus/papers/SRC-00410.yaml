@@ -1,0 +1,130 @@
+id: SRC-00410
+title: 'Matching Architecture to Workload: Comparing RISC-V Parallel Accelerators for Energy-Efficient
+  Embedded Computing'
+doi: null
+arxiv_id: 2611.25947v1
+url: https://arxiv.org/abs/2611.25947v1
+venue_id: arxiv_api
+authors:
+- name: Luca Colombo
+  affiliation: null
+  corresponding: null
+- name: Luigi Ghionda
+  affiliation: null
+  corresponding: null
+- name: Amirhossein Kiamarzi
+  affiliation: null
+  corresponding: null
+- name: Yvan Tortorella
+  affiliation: null
+  corresponding: null
+- name: Riccardo Giunti
+  affiliation: null
+  corresponding: null
+- name: Niccolò Giuliani
+  affiliation: null
+  corresponding: null
+- name: Samuele Colmi
+  affiliation: null
+  corresponding: null
+- name: Angelo Garofalo
+  affiliation: null
+  corresponding: null
+- name: Giuseppe Tagliavini
+  affiliation: null
+  corresponding: null
+- name: Davide Rossi
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-21'
+access: full_text
+read_scope: Automated reading. The full PDF text (81,733 characters, 16 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.25947v1 on
+  2026-11-21. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“In the idle scenario Spatz consumes only 8.36mW, thanks to its far less complex design.”
+
+  “To ensure a fair comparison, all designs are taken through P&R targeting the same 500 MHz operating
+  frequency, which we selected as a balanced point between performance and power consumption.”
+
+  “Finally, the power estimation has been carried out with Synopsys PrimeTime 2025.06, using the TT 0.80V
+  25°C corner.”
+
+  “Under max load Spatz reaches a total power of 42mW, with the majority of consumption concentrated in
+  the vector unit, particularly in the vector register file (15%) and vector functional units (40%).”
+
+  “The latter is the Matrix Multiplication.”'
+method_summary: '“The physical implementation for the three designs has been conducted in GlobalFoundries
+  GF12 technology.”
+
+  “The synthesis flow has been implemented with Synopsys Design Compiler NXT v2025.06 in topographical
+  mode, using the SSPG 0.72V -40°C as the synthesis corner.”
+
+  “The Place and Route has been performed using Cadence Innovus v23.33, considering all worst-case corners.”
+
+  “The Post Layout simulations have been carried out using QuestaSim v2025.3.”
+
+  “Finally, the power estimation has been carried out with Synopsys PrimeTime 2025.06, using the TT 0.80V
+  25°C corner.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 27181
+    output: 2704
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: The PULP Cluster reaches a maximum operating frequency of 810 MHz as obtained by topographical
+      synthesis.
+    reason: the statement contains the number 810, which none of its quotes contain
+    quotes:
+    - Table 4 Maximum operating frequency and area, obtained by a topographical synthesis, for PULP Cluster,
+      Snitch Cluster, and Spatz.
+    - PULP Cluster 810 0.396
+    - obtained by a topographical synthesis
+  - statement: The Snitch Cluster reaches a maximum operating frequency of 827 MHz as obtained by topographical
+      synthesis.
+    reason: the statement contains the number 827, which none of its quotes contain
+    quotes:
+    - Table 4 Maximum operating frequency and area, obtained by a topographical synthesis, for PULP Cluster,
+      Snitch Cluster, and Spatz.
+    - Snitch Cluster 827 0.456
+    - obtained by a topographical synthesis
+  - statement: Spatz reaches a maximum operating frequency of 846 MHz as obtained by topographical synthesis.
+    reason: the statement contains the number 846, which none of its quotes contain
+    quotes:
+    - Table 4 Maximum operating frequency and area, obtained by a topographical synthesis, for PULP Cluster,
+      Snitch Cluster, and Spatz.
+    - Spatz 846 0.299
+    - obtained by a topographical synthesis
+  - statement: The PULP Cluster occupies an area of 0.396 mm2 as obtained by topographical synthesis.
+    reason: the statement contains the number 0.396, which none of its quotes contain
+    quotes:
+    - Table 4 Maximum operating frequency and area, obtained by a topographical synthesis, for PULP Cluster,
+      Snitch Cluster, and Spatz.
+    - PULP Cluster 810 0.396
+    - obtained by a topographical synthesis
+  - statement: The Snitch Cluster occupies an area of 0.456 mm2 as obtained by topographical synthesis.
+    reason: the statement contains the number 0.456, which none of its quotes contain
+    quotes:
+    - Table 4 Maximum operating frequency and area, obtained by a topographical synthesis, for PULP Cluster,
+      Snitch Cluster, and Spatz.
+    - Snitch Cluster 827 0.456
+    - obtained by a topographical synthesis
+  - statement: Spatz occupies an area of 0.299 mm2 as obtained by topographical synthesis.
+    reason: the statement contains the number 0.299, which none of its quotes contain
+    quotes:
+    - Table 4 Maximum operating frequency and area, obtained by a topographical synthesis, for PULP Cluster,
+      Snitch Cluster, and Spatz.
+    - Spatz 846 0.299
+    - obtained by a topographical synthesis
+corrections: []

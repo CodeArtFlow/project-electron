@@ -1,0 +1,90 @@
+id: SRC-00411
+title: 'Kameleo: In-Situ Activation-Precision Selection for Bit-Serial LLM Accelerators'
+doi: null
+arxiv_id: 2611.25971v1
+url: https://arxiv.org/abs/2611.25971v1
+venue_id: arxiv_api
+authors:
+- name: Robin Geens
+  affiliation: null
+  corresponding: null
+- name: Thomas Debelle
+  affiliation: null
+  corresponding: null
+- name: Marian Verhelst
+  affiliation: null
+  corresponding: null
+- name: Chao Fang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-21'
+access: full_text
+read_scope: Automated reading. The full PDF text (28,329 characters, 5 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.25971v1 on
+  2026-11-21. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The selection hardware adds only 3.7% to the accelerator area.”
+
+  “The hardware is written in SystemVerilog and synthesized with Cadence Genus on TSMC 16 nm at 250 MHz
+  and 0.75 V, like our ANDA implementation.”'
+method_summary: “The hardware is written in SystemVerilog and synthesized with Cadence Genus on TSMC 16
+  nm at 250 MHz and 0.75 V, like our ANDA implementation. Power is estimated from switching activity recorded
+  in VCD files during simulation.”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 10825
+    output: 1956
+  claims_accepted: 1
+  claims_rejected: 5
+  rejected:
+  - statement: The synthesized Kameleo accelerator area is 2.42 mm2 on TSMC 16 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Kameleo 2.42
+      (+3.7%)'''
+    quotes:
+    - Kameleo 2.42 (+3.7%)
+    - The hardware is written in SystemVerilog and synthesized with Cadence Genus on TSMC 16 nm at 250
+      MHz and 0.75 V, like our ANDA implementation.
+    - TSMC 16 nm
+    - 250 MHz
+  - statement: The synthesized ANDA baseline accelerator area is 2.33 mm2 on TSMC 16 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''ANDA 2.33'''
+    quotes:
+    - ANDA 2.33
+    - The hardware is written in SystemVerilog and synthesized with Cadence Genus on TSMC 16 nm at 250
+      MHz and 0.75 V, like our ANDA implementation.
+    - TSMC 16 nm
+    - 250 MHz
+  - statement: Kameleo MXU power during inference for a full-precision GEMM is 115.0 mW.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Kameleo inference
+      115.0 (+3.5%)'''
+    quotes:
+    - Kameleo inference 115.0 (+3.5%)
+    - Power is estimated from switching activity recorded in VCD files during simulation.
+    - TSMC 16 nm
+    - 250 MHz
+  - statement: Kameleo MXU power during selection passes is 166.7 mW.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Kameleo selection
+      166.7 (+50%)'''
+    quotes:
+    - Kameleo selection 166.7 (+50%)
+    - Power is estimated from switching activity recorded in VCD files during simulation.
+    - TSMC 16 nm
+    - 250 MHz
+  - statement: ANDA MXU power during inference for a full-precision GEMM is 111.1 mW.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''ANDA 111.1'''
+    quotes:
+    - ANDA 111.1
+    - Power is estimated from switching activity recorded in VCD files during simulation.
+    - TSMC 16 nm
+    - 250 MHz
+corrections: []

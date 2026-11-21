@@ -29,6 +29,92 @@ id: CAND-20261120-0057
 harvested_date: '2026-11-20'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-21'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Sample S1 demonstrated a 1-on-1 laser-induced damage threshold of 0.70 J/cm2 at 257 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''S1 0.26 99.55
+      0.19 0.70 0.41'''
+    quotes:
+    - S1 0.26 99.55 0.19 0.70 0.41
+    - The LIDT experiments were performed in a clean-room environment with an ISO class 6 cleanliness
+      level, ensuring minimal contamination and high-quality testing conditions.
+    - Sample identifier S1
+    - performed at 257 nm
+  - statement: Sample S1 demonstrated a 10^5-on-1 laser-induced damage threshold of 0.41 J/cm2 at 257
+      nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''S1 0.26 99.55
+      0.19 0.70 0.41'''
+    quotes:
+    - S1 0.26 99.55 0.19 0.70 0.41
+    - The LIDT experiments were performed in a clean-room environment with an ISO class 6 cleanliness
+      level, ensuring minimal contamination and high-quality testing conditions.
+    - Sample identifier S1
+    - performed at 257 nm
+  - statement: Sample S2 achieved a 1-on-1 laser-induced damage threshold of 0.73 J/cm2 at 257 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''S2 0.13 99.72
+      0.15 0.73 0.50'''
+    quotes:
+    - S2 0.13 99.72 0.15 0.73 0.50
+    - The LIDT experiments were performed in a clean-room environment with an ISO class 6 cleanliness
+      level, ensuring minimal contamination and high-quality testing conditions.
+    - Sample identifier S2
+    - performed at 257 nm
+  - statement: Sample S2 achieved a 10^5-on-1 laser-induced damage threshold of 0.50 J/cm2 at 257 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''S2 0.13 99.72
+      0.15 0.73 0.50'''
+    quotes:
+    - S2 0.13 99.72 0.15 0.73 0.50
+    - The LIDT experiments were performed in a clean-room environment with an ISO class 6 cleanliness
+      level, ensuring minimal contamination and high-quality testing conditions.
+    - Sample identifier S2
+    - performed at 257 nm
+  - statement: Sample S3 demonstrated a 1-on-1 laser-induced damage threshold of 0.63 J/cm2 at 257 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''S3 0.04 99.50
+      0.46 0.63 0.37'''
+    quotes:
+    - S3 0.04 99.50 0.46 0.63 0.37
+    - The LIDT experiments were performed in a clean-room environment with an ISO class 6 cleanliness
+      level, ensuring minimal contamination and high-quality testing conditions.
+    - Sample identifier S3
+    - performed at 257 nm
+  - statement: Sample S3 demonstrated a 10^5-on-1 laser-induced damage threshold of 0.37 J/cm2 at 257
+      nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''S3 0.04 99.50
+      0.46 0.63 0.37'''
+    quotes:
+    - S3 0.04 99.50 0.46 0.63 0.37
+    - The LIDT experiments were performed in a clean-room environment with an ISO class 6 cleanliness
+      level, ensuring minimal contamination and high-quality testing conditions.
+    - Sample identifier S3
+    - performed at 257 nm
+  - statement: Sample S6 exhibited a 1-on-1 laser-induced damage threshold of 0.29 J/cm2 at 257 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''S6 0.29 95.22
+      4.49 0.29 0.20'''
+    quotes:
+    - S6 0.29 95.22 4.49 0.29 0.20
+    - The LIDT experiments were performed in a clean-room environment with an ISO class 6 cleanliness
+      level, ensuring minimal contamination and high-quality testing conditions.
+    - Sample identifier S6
+    - performed at 257 nm
+  - statement: Sample S6 exhibited a 10^5-on-1 laser-induced damage threshold of 0.20 J/cm2 at 257 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''S6 0.29 95.22
+      4.49 0.29 0.20'''
+    quotes:
+    - S6 0.29 95.22 4.49 0.29 0.20
+    - The LIDT experiments were performed in a clean-room environment with an ISO class 6 cleanliness
+      level, ensuring minimal contamination and high-quality testing conditions.
+    - Sample identifier S6
+    - performed at 257 nm
+  tokens:
+    input: 11932
+    output: 2920
+  fetched_chars: 36977

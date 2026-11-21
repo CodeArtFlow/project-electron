@@ -1,0 +1,129 @@
+id: SRC-00414
+title: Sliding-ferroelectric control of dipolar and quadrupolar excitons in R-stacked WSe$_2$
+doi: null
+arxiv_id: 2611.26158v1
+url: https://arxiv.org/abs/2611.26158v1
+venue_id: arxiv_api
+authors:
+- name: Asmund Ottesen
+  affiliation: null
+  corresponding: null
+- name: Shun Feng
+  affiliation: null
+  corresponding: null
+- name: Edoardo Lopriore
+  affiliation: null
+  corresponding: null
+- name: Yaroslav Zhumagulov
+  affiliation: null
+  corresponding: null
+- name: Kenji Watanabe
+  affiliation: null
+  corresponding: null
+- name: Takashi Taniguchi
+  affiliation: null
+  corresponding: null
+- name: Oleg V. Yazyev
+  affiliation: null
+  corresponding: null
+- name: Andras Kis
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-21'
+access: full_text
+read_scope: Automated reading. The full PDF text (52,394 characters, 24 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.26158v1 on
+  2026-11-21. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Given an interlayer distance of 0.6 nm we estimate the interlayer potential 𝑃=69 mV.”
+
+  “interlayer distance of 0.6 nm”'
+method_summary: '“We perform photoluminescence spectroscopy (PL) to probe phonon-assisted momentum-indirect
+  interlayer transitions in our terraced few-layer R-WSe2, as seen in Figure 1e.”
+
+  “We probe the low-energy exciton ℎ𝐼𝑋KΛ with photoluminescence spectroscopy (PL) while sweeping the field
+  from negative to positive (forward) and positive to negative (backward).”
+
+  “We fit the energy shift within each polarization regime with the model 𝛥𝐸(𝐸𝑧)= −√𝑡0 2+(𝑒𝐸𝑧∙𝑑0)2 and
+  plot as continuous lines.”'
+limitations: “The setup is time-limited by the resolution of the SPAD which is 50 ps.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16421
+    output: 2597
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: In bilayer R-WSe2, the dipole moment extracted from the linear Stark shift of the hybrid
+      dipolar exciton (hIX_KΛ) is 0.3 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - We extract a dipole moment (∆𝐸=−𝐸𝑧𝑑) of 0.3±0.014 nm (Supplementary Note 5), which indicates a hybrid
+      dipolar exciton with a momentum-indirect transition featuring delocalization of one or more charges.
+    - bilayer R-WSe2
+    - hybrid dipolar exciton
+  - statement: For bilayer R-WSe2, the coercive field in the forward electric field sweep is 0.068 V/nm.
+    reason: 'unit conversion refused: voltage: cannot convert 0.068 V/nm to V - Cannot convert from ''volt
+      / nanometer'' ([mass] * [length] / [time] ** 3 / [current]) to ''volt'' ([mass] * [length] ** 2'
+    quotes:
+    - Notably, we observe an abrupt energy shift at 𝐸𝑐,𝑓 =0.068 V/nm followed by a Stark shift indicating
+      a flip in the dipole orientation.
+    - bilayer R-WSe2
+    - forward
+  - statement: For bilayer R-WSe2, the coercive field in the backward electric field sweep is -0.045 V/nm.
+    reason: 'unit conversion refused: voltage: cannot convert -0.045 V/nm to V - Cannot convert from ''volt
+      / nanometer'' ([mass] * [length] / [time] ** 3 / [current]) to ''volt'' ([mass] * [length] ** '
+    quotes:
+    - Eventually, we observe another abrupt energy shift and dipole orientation flip at 𝐸𝑐,𝑏 =−0.045 V/nm,switching
+      back to -P polarisation.
+    - bilayer R-WSe2
+    - backward
+  - statement: The energy separation between the two main intralayer exciton reflectance peaks (X_t, X_b)
+      in bilayer R-WSe2 is 14.9 meV.
+    reason: 'unit conversion refused: voltage: cannot convert 14.9 meV to V - Cannot convert from ''millielectron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [tim'
+    quotes:
+    - The 14.9 meV energy separation between the peaks is consistent with other reports49,50.
+    - bilayer R-WSe2
+    - reflectance spectra
+  - statement: The ferroelectric memory window size extracted from the difference between coercive fields
+      in bilayer R-WSe2 is 0.112 V/nm.
+    reason: 'unit conversion refused: voltage: cannot convert 0.112 V/nm to V - Cannot convert from ''volt
+      / nanometer'' ([mass] * [length] / [time] ** 3 / [current]) to ''volt'' ([mass] * [length] ** 2'
+    quotes:
+    - The difference between the coercive fields gives the memory window (∆𝐸𝑐), yielding a size of 0.112
+      V/nm.
+    - bilayer R-WSe2
+  - statement: The dipolar constituent d0 of quadrupolar excitons in trilayer R-WSe2, averaged between
+      -2P and +2P polarizations, is 0.28 nm.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - We obtain values of 𝑑0 = 0.28 ± 0.01 nm and 𝑡0=37.5±2.8 meV, averaged between polarisations −2𝑃
+      and +2𝑃.
+    - We then separately fit the bunched energy shifts with the hyperbolic function Δ𝐸(𝐸𝑧)= −√(𝑡0)2+(𝑒𝐸𝑧
+      ⋅ 𝑑0)2
+    - trilayer (3L) R-WSe2
+    - quadrupolar excitons
+  - statement: The coupling strength t0 of the anti-aligned dipole pair in trilayer R-WSe2, averaged between
+      -2P and +2P polarizations, is 37.5 meV.
+    reason: 'unit conversion refused: voltage: cannot convert 37.5 meV to V - Cannot convert from ''millielectron_volt''
+      ([mass] * [length] ** 2 / [time] ** 2) to ''volt'' ([mass] * [length] ** 2 / [tim'
+    quotes:
+    - We obtain values of 𝑑0 = 0.28 ± 0.01 nm and 𝑡0=37.5±2.8 meV, averaged between polarisations −2𝑃
+      and +2𝑃.
+    - We then separately fit the bunched energy shifts with the hyperbolic function Δ𝐸(𝐸𝑧)= −√(𝑡0)2+(𝑒𝐸𝑧
+      ⋅ 𝑑0)2
+    - trilayer (3L) R-WSe2
+    - quadrupolar excitons
+corrections: []

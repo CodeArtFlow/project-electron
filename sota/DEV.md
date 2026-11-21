@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-11-20.
+Topic code `DEV`. Last reviewed 2026-11-21.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -335,6 +335,10 @@ Topic code `DEV`. Last reviewed 2026-11-20.
   - `CLM-DEV-0110` · grade B · credibility unknown · simulated · as of 2026-11-13
   - sources: SRC-00359
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Precision measurements of the C3-symmetric QHARS device were conducted under an applied magnetic flux density of 9 T.
+  - `CLM-DEV-0118` · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00412
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -378,6 +382,13 @@ Topic code `DEV`. Last reviewed 2026-11-20.
   - sources: SRC-00387
   - ⚙ automated extraction (gemini-3.6-flash; 7 quote(s) verified verbatim against the paper)
 
+### resistance
+
+- **≈8604 ohm** — The full-array output value of the C3-symmetric experimental device is approximately 8604 Ω.
+  - `CLM-DEV-0119` · device experimental device · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00412
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+
 ### temperature
 
 - **25.35 degC** — All experiments were performed at a temperature of 298.5 K.
@@ -399,6 +410,10 @@ Topic code `DEV`. Last reviewed 2026-11-20.
 - **≈-257.65 degC** — The critical temperature Tc of NbN/I/FePt is approximately 15.5 K.
   - `CLM-DEV-0076` · sample NbN/I/FePt · grade B · credibility unknown · measured · as of 2026-10-22
   - sources: SRC-00204
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **-271.65 degC** — The experimental QHARS device was tested at a cryogenic temperature of 1.5 K.
+  - `CLM-DEV-0117` · device QHARS device · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00412
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature delta
@@ -508,6 +523,10 @@ Topic code `DEV`. Last reviewed 2026-11-20.
   - `CLM-DEV-0067` · device_architecture Gr/n-Si, illumination AM 1.5G, 100 mW cm⁻² · grade B · credibility unknown · measured · as of 2026-10-15
   - sources: SRC-00155
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈0.069 V** — The interlayer potential P in bilayer R-WSe2 is estimated to be 69 mV.
+  - `CLM-DEV-0120` · interlayer_distance 0.6 nm · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00414
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### wavelength
 
@@ -562,6 +581,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 113
-- grades: {'B': 113}
-- distinct sources: 48
+- claims: 117
+- grades: {'B': 117}
+- distinct sources: 50

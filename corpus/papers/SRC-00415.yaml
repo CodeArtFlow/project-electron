@@ -1,0 +1,135 @@
+id: SRC-00415
+title: 'Perfumer: A Large Language Model-based Agentic Framework Accelerating Structural Relaxation and
+  Electronic Band Prediction for First-Principle Calculation'
+doi: null
+arxiv_id: 2611.26349v1
+url: https://arxiv.org/abs/2611.26349v1
+venue_id: arxiv_api
+authors:
+- name: Zhiwei Li
+  affiliation: null
+  corresponding: null
+- name: Yuhao Zhou
+  affiliation: null
+  corresponding: null
+- name: Yikai Yang
+  affiliation: null
+  corresponding: null
+- name: Haonan Wang
+  affiliation: null
+  corresponding: null
+- name: Qing Ye
+  affiliation: null
+  corresponding: null
+- name: Jiancheng Lv
+  affiliation: null
+  corresponding: null
+- name: Kazunari Matsuda
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-21'
+access: full_text
+read_scope: Automated reading. The full PDF text (48,841 characters, 33 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.26349v1 on
+  2026-11-21. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Prediction and export for the full test set took 327.5 s in a single run on two cores of an
+  Intel Core i9-13900H CPU. The median prediction time was 96.9 ms per material.”
+
+  “two cores of an Intel Core i9-13900H CPU”'
+method_summary: '“On the test set of 2,607 material records spanning 85 elements, the Perfumer-band model
+  achieved a median per-material mean absolute error (MAE) of 0.157 eV.”
+
+  “Prediction and export for the full test set took 327.5 s in a single run on two cores of an Intel Core
+  i9-13900H CPU. The median prediction time was 96.9 ms per material.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 15494
+    output: 3418
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: Across 553 tested structures, pre-relaxation with Perfumer-relax model followed by QE refinement
+      achieved a 2.75-fold reduction in total wall time compared to Q
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''For the 553
+      tested structures, comprising 241 metallic and 207 non-met'''
+    quotes:
+    - Across tested structures, pre-relaxation with Perfumer-relax model followed by QE refinement yielded
+      a 2.75-fold overall speedup over QE alone.
+    - 'For the 553 tested structures, comprising 241 metallic and 207 non-metallic bulk crystals and 92
+      two-dimensional materials with randomly displaced atoms and 13 displaced 3 × 3 two-dimensional supercells,
+      the total wall time fell from 277.8 '
+    - 100 Perfumer-relax steps followed by QE refinement
+    - 553 tested structures
+  - statement: On 2,607 test material records, the Perfumer-band model achieved a median per-material
+      mean absolute error of 0.157 eV.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''eV'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - Trained on 125,153 self-curated band structures, Perfumer-band model reaches a median per-material
+      mean absolute error of 0.157 eV on 2,607 test materials, including lanthanide, actinide and magnetic
+      compounds, from held-out composition fam
+    - On the test set of 2,607 material records spanning 85 elements, the Perfumer-band model achieved
+      a median per-material mean absolute error (MAE) of 0.157 eV.
+    - Perfumer-band model
+    - 2,607 material records
+  - statement: For 394 test records containing lanthanides, the Perfumer-band model achieved a median
+      mean absolute error of 0.127 eV.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''eV'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - The median MAEs were 0.127 eV for the 394 records containing lanthanides, 0.223 eV for the 71 records
+      containing actinides and 0.200 eV for the 1,025 spin-polarized records.
+    - Perfumer-band model
+    - 394 records containing lanthanides
+  - statement: For 71 test records containing actinides, the Perfumer-band model achieved a median mean
+      absolute error of 0.223 eV.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''eV'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - The median MAEs were 0.127 eV for the 394 records containing lanthanides, 0.223 eV for the 71 records
+      containing actinides and 0.200 eV for the 1,025 spin-polarized records.
+    - Perfumer-band model
+    - 71 records containing actinides
+  - statement: For 1,025 spin-polarized test records, the Perfumer-band model achieved a median mean absolute
+      error of 0.200 eV.
+    reason: the value 0.2 does not appear in any of the claim's quotes
+    quotes:
+    - The median MAEs were 0.127 eV for the 394 records containing lanthanides, 0.223 eV for the 71 records
+      containing actinides and 0.200 eV for the 1,025 spin-polarized records.
+    - Perfumer-band model
+    - 1,025 spin-polarized records
+  - statement: For WSe2 band structure prediction, Perfumer-band model achieved a band energy mean absolute
+      error of 0.086 eV relative to the QE reference.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''eV'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - Perfumer-band model achieved a band energy MAE of 0.086 eV relative to the QE reference, compared
+      with 0.306 eV for Fable 5.2, corresponding to a 72.0% reduction in MAE.
+    - WSe2
+    - Perfumer-band model
+    - QE reference
+  - statement: The prediction time for WSe2 band structure was 0.043 s for the Perfumer-band model.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The prediction time was 0.043 s for the Perfumer-band model, compared with 91.3 s for QE and 319
+      s for Fable 5.2 (whole conversation time).
+    - WSe2
+    - Perfumer-band model
+corrections: []

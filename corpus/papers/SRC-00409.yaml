@@ -1,0 +1,88 @@
+id: SRC-00409
+title: 'CRAFT: Analog Circuit Design by Reasoning LLM Agents from Pre-Computed Lookup Tables'
+doi: null
+arxiv_id: 2611.25908v1
+url: https://arxiv.org/abs/2611.25908v1
+venue_id: arxiv_api
+authors:
+- name: Hyunjun Park
+  affiliation: null
+  corresponding: null
+- name: Seungyub Han
+  affiliation: null
+  corresponding: null
+- name: Jason Jaesung Lee
+  affiliation: null
+  corresponding: null
+- name: Kahyun Kim
+  affiliation: null
+  corresponding: null
+- name: Soohyun Kim
+  affiliation: null
+  corresponding: null
+- name: Inwoo Nam
+  affiliation: null
+  corresponding: null
+- name: Sunmin Kim
+  affiliation: null
+  corresponding: null
+- name: Wooyoung Choi
+  affiliation: null
+  corresponding: null
+- name: Junhyung Kim
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-21'
+access: full_text
+read_scope: Automated reading. The full PDF text (36,704 characters, 7 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.25908v1 on
+  2026-11-21. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“CRAFT† 6.4 ±6.2 2.9 ±4.6 142.3 ±103.9 100 %”
+
+  “† Claude Opus 5.5, three runs per circuit.”
+
+  “Evals: number of ngspice simulations.”'
+method_summary: “We test CRAFT on four circuits in a commercial 28 nm process; the largest is a 37-transistor
+  three-stage amplifier with 53 design variables, 20 specifications and 74 saturation constraints.”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 13390
+    output: 1486
+  claims_accepted: 1
+  claims_rejected: 3
+  rejected:
+  - statement: On Benchmark 4, CRAFT with Opus 5.5 and DeX achieves a median time to a passing design
+      of 28.2 minutes.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - reducing median time to a passing design from 57.7 to 28.2 minutes.
+    - every final design is verified independently in HSPICE.
+    - On that amplifier, with DeX in place of HSPICE and an identical request for both, the same agent
+      passes in 10 of 10 runs instead of 6 of 10 within an hour and is 2.0× faster at the median.
+    - With Claude Opus 5.5, CRAFT meets every specification and constraint in all 20 runs, five per circuit.
+  - statement: On Benchmark 4, using HSPICE in place of DeX results in a median time to a passing design
+      of 57.7 minutes.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - reducing median time to a passing design from 57.7 to 28.2 minutes.
+    - every final design is verified independently in HSPICE.
+    - On that amplifier, with DeX in place of HSPICE and an identical request for both, the same agent
+      passes in 10 of 10 runs instead of 6 of 10 within an hour and is 2.0× faster at the median.
+  - statement: With Opus 5.5, CRAFT achieves a 100% success rate by passing all 20 runs across the four
+      benchmark circuits.
+    reason: the statement contains the number 100, which none of its quotes contain
+    quotes:
+    - With Claude Opus 5.5, CRAFT meets every specification and constraint in all 20 runs, five per circuit.
+    - every final design is verified independently in HSPICE.
+corrections: []

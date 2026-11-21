@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.26307v1
 doi: null
-title: Scalable fault vulnerability analysis for ReRAM-based process-in-memory CNN
-  accelerators
+title: Scalable fault vulnerability analysis for ReRAM-based process-in-memory CNN accelerators
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-19'
@@ -25,6 +24,83 @@ id: CAND-20261120-0049
 harvested_date: '2026-11-20'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-21'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The overall SaL sensitivity of ResNet18 is on average 12x higher than its SaH sensitivity.
+    reason: the statement contains the number 8, which none of its quotes contain
+    quotes:
+    - As shown, the overall SaL sensitivity is 12×, on average, higher than SaH sensitivity in ResNet18
+      and about 6.6×, on average, higher in VGG19.
+    - We have developed our fault injection and sensitivity analyzer in Python using the PyTorch framework.
+      The MemTorch library is used to model ReRAM-based DNNs and evaluate performance metrics of faulty
+      and non-faulty CNNs. All ReRAM devices w
+    - ResNet18 Cifar10 89.42% 20 1 11,173,962 53.89
+  - statement: The overall SaL sensitivity of VGG19 is about 6.6x higher on average than its SaH sensitivity.
+    reason: the statement contains the number 9, which none of its quotes contain
+    quotes:
+    - As shown, the overall SaL sensitivity is 12×, on average, higher than SaH sensitivity in ResNet18
+      and about 6.6×, on average, higher in VGG19.
+    - We have developed our fault injection and sensitivity analyzer in Python using the PyTorch framework.
+      The MemTorch library is used to model ReRAM-based DNNs and evaluate performance metrics of faulty
+      and non-faulty CNNs. All ReRAM devices w
+    - VGG19 Cifar10 88.40% 16 1 20,040,522 83.64
+  - statement: The gradient-based sensitivity analysis for LeNet5 takes 1.510 seconds.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''1.510 4.696
+      1069.844'''
+    quotes:
+    - 'Table 3: Time required for gradient-based sensitivity analysis.'
+    - LeNet5 SimpleNet AlexNet VGG19 ResNet19 InceptionV3
+    - 1.510 4.696 1069.844
+    - running on an Intel Core i7, 3.2 GHz processor with a NVIDIA GeForce GTX 2080Ti GPU.
+  - statement: The gradient-based sensitivity analysis for SimpleNet requires 4.696 seconds.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''1.510 4.696
+      1069.844'''
+    quotes:
+    - 'Table 3: Time required for gradient-based sensitivity analysis.'
+    - LeNet5 SimpleNet AlexNet VGG19 ResNet19 InceptionV3
+    - 1.510 4.696 1069.844
+    - running on an Intel Core i7, 3.2 GHz processor with a NVIDIA GeForce GTX 2080Ti GPU.
+  - statement: Gradient-based sensitivity analysis for InceptionV3 takes approximately 142056.613 seconds.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''142056.613'''
+    quotes:
+    - 'Table 3: Time required for gradient-based sensitivity analysis.'
+    - LeNet5 SimpleNet AlexNet VGG19 ResNet19 InceptionV3
+    - '142056.613'
+    - ≈39 h, 27 min
+  - statement: Exhaustive fault-injection analysis is approximately 8.9 x 10^4 times slower than gradient-based
+      sensitivity analysis for SimpleNet.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - Consequently, exhaustive fault-injection analysis is on the order of 104 − 105 times slower than
+      gradient-based sensitivity analysis (about 8.9 × 104 times slower for SimpleNet and about 1.3 ×
+      104 times slower for LeNet5 ), which makes sens
+    - running on an Intel Core i7, 3.2 GHz processor with a NVIDIA GeForce GTX 2080Ti GPU.
+    - about 8.9 × 104 times slower for SimpleNet
+  - statement: Exhaustive fault-injection analysis is about 1.3 x 10^4 times slower than gradient-based
+      sensitivity analysis for LeNet5.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - Consequently, exhaustive fault-injection analysis is on the order of 104 − 105 times slower than
+      gradient-based sensitivity analysis (about 8.9 × 104 times slower for SimpleNet and about 1.3 ×
+      104 times slower for LeNet5 ), which makes sens
+    - running on an Intel Core i7, 3.2 GHz processor with a NVIDIA GeForce GTX 2080Ti GPU.
+    - about 1.3 × 104 times slower for LeNet5
+  - statement: The baseline Top-1 accuracy of InceptionV3 trained on CIFAR10 is 93.35%.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - 'Table 1: Specifications of the CNN Models Under Study.'
+    - InceptionV3 Cifar10 93.35% 83 1 21,638,954 82.55
+    - We have developed our fault injection and sensitivity analyzer in Python using the PyTorch framework.
+  tokens:
+    input: 35341
+    output: 2948
+  fetched_chars: 100760

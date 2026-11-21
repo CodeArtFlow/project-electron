@@ -3267,3 +3267,120 @@ claims:
     conditions:
       method: AI surrogate to perform 5000 MC fittings
       parallelization: without any parallelization
+- id: CLM-DEV-0117
+  topic: DEV
+  statement: The experimental QHARS device was tested at a cryogenic temperature of 1.5 K.
+  sources:
+  - SRC-00412
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device: QHARS device
+  quantity:
+    quantity: temperature
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.5
+      unit: K
+    si_base:
+      value: 1.5
+      unit: K
+    display:
+      value: -271.65
+      unit: degC
+    conditions:
+      device: QHARS device
+- id: CLM-DEV-0118
+  topic: DEV
+  statement: Precision measurements of the C3-symmetric QHARS device were conducted under an applied magnetic
+    flux density of 9 T.
+  sources:
+  - SRC-00412
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-DEV-0119
+  topic: DEV
+  statement: The full-array output value of the C3-symmetric experimental device is approximately 8604
+    Ω.
+  sources:
+  - SRC-00412
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device: experimental device
+  quantity:
+    quantity: resistance
+    bound: exact
+    approximate: true
+    as_published:
+      value: 8604.0
+      unit: Ω
+    si_base:
+      value: 8604.0
+      unit: ohm
+    display:
+      value: 8604.0
+      unit: ohm
+    conditions:
+      device: experimental device
+- id: CLM-DEV-0120
+  topic: DEV
+  statement: The interlayer potential P in bilayer R-WSe2 is estimated to be 69 mV.
+  sources:
+  - SRC-00414
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    interlayer_distance: 0.6 nm
+  quantity:
+    quantity: voltage
+    bound: exact
+    approximate: true
+    as_published:
+      value: 69.0
+      unit: mV
+    si_base:
+      value: 0.069
+      unit: V
+    display:
+      value: 0.069
+      unit: V
+    conditions:
+      interlayer_distance: 0.6 nm

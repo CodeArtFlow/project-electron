@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-20.
+Topic code `ARCH`. Last reviewed 2026-11-21.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -204,6 +204,16 @@ Topic code `ARCH`. Last reviewed 2026-11-20.
   - `CLM-ARCH-0249` · component ReRAM module · grade B · credibility unknown · measured · as of 2026-11-18
   - sources: SRC-00393
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.00836 W** — In the idle scenario at 500 MHz, Spatz consumes 8.36 mW.
+  - `CLM-ARCH-0250` · architecture Spatz, operating_state idle scenario, fclk 500 MHz · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00410
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0146 — see the open register
+- **0.042 W** — Under max load (Matrix Multiplication) at 500 MHz, Spatz reaches a total power of 42 mW.
+  - `CLM-ARCH-0251` · architecture Spatz, benchmark Matrix Multiplication, fclk 500 MHz · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00410
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0146 — see the open register
 
 ### qualitative
 
@@ -638,6 +648,10 @@ Topic code `ARCH`. Last reviewed 2026-11-20.
 - Selecting optimal precision achieves a geometric-mean 3.4× TTS reduction at an identical energy target.
   - `CLM-ARCH-0248` · grade B · credibility unknown · measured · as of 2026-11-18
   - sources: SRC-00392
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The Kameleo selection hardware adds 3.7% to the accelerator area.
+  - `CLM-ARCH-0252` · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00411
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
@@ -1120,9 +1134,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0132` — relative_deviation: _unexamined; classification pending_
   - claims: CLM-ARCH-0215, CLM-ARCH-0219
   - missing data: `not yet named`
+- `CFL-0146` — power: _unexamined; classification pending_
+  - claims: CLM-ARCH-0250, CLM-ARCH-0251
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 249
-- grades: {'B': 249}
-- distinct sources: 86
+- claims: 252
+- grades: {'B': 252}
+- distinct sources: 88

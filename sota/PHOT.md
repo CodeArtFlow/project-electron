@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-20.
+Topic code `PHOT`. Last reviewed 2026-11-21.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -522,6 +522,34 @@ Topic code `PHOT`. Last reviewed 2026-11-20.
   - `CLM-PHOT-0177` · grade B · credibility unknown · simulated · as of 2026-11-19
   - sources: SRC-00405
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The random configuration exhibits a mean normalized power drop from -8.9 dB at adjacent ports to -23.6 dB at diametrically opposed ports.
+  - `CLM-PHOT-0178` · topology random · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00413
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The Isotropic Ring topology raises the mean Shannon entropy of the response from 1.95 to 3.48 bits.
+  - `CLM-PHOT-0179` · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00413
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The random configuration yields a mean Shannon entropy of 1.95 bits.
+  - `CLM-PHOT-0180` · topology random configuration · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00413
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Combining the Isotropic Ring topology with spectral readout yields 1107 bits per challenge.
+  - `CLM-PHOT-0181` · routing isotropic routing, readout_mode spectral readout, block_size_w 4 · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00413
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The inter-challenge Hamming distance for spectral readout with w = 4 reaches 49.8%.
+  - `CLM-PHOT-0182` · readout_mode spectral, block_size_w 4 · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00413
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The inter-chip Hamming distance for spectral readout with w = 4 reaches 50.0%.
+  - `CLM-PHOT-0183` · readout_mode spectral, block_size_w 4 · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00413
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The intra-chip Hamming distance for spectral readout with w = 4 is 4.9% on average.
+  - `CLM-PHOT-0184` · readout_mode spectral, block_size_w 4 · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00413
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -809,6 +837,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 177
-- grades: {'B': 170, 'A': 7}
-- distinct sources: 62
+- claims: 184
+- grades: {'B': 177, 'A': 7}
+- distinct sources: 63

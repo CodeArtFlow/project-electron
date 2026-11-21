@@ -24,6 +24,92 @@ id: CAND-20261120-0081
 harvested_date: '2026-11-20'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-21'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At a temperature of 300 K, the ab-initio-derived model predicts that the thermal conductivity
+      of single-crystal AlN is 308.13 W/(m K) within the relaxation-time
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''300 K RTA
+      308.13'''
+    quotes:
+    - 300 K RTA 308.13
+    - 'Tab. S6 – Scalar thermal conductivity (κ = 1 3 P α καα) calculated within the relaxation-time approximation
+      (RTA) and by iteratively solving the BTE for the materials considered in this work (AlN, Al0.5Ga0.5N,
+      and Al0.15Ga0.85N) at 300 and '
+    - AlN
+    - 300 K
+  - statement: At 300 K, the iterative solution of the BTE yields a thermal conductivity of 332.69 W/(m
+      K) for bulk single-crystal AlN.
+    reason: 'unit conversion refused: thermal_conductivity: cannot convert 332.69 W/mK to W/(m*K) - Cannot
+      convert from ''watt / millikelvin'' ([mass] * [length] ** 2 / [time] ** 3 / [temperature]) to'
+    quotes:
+    - 300 K RTA 308.13 22.82 12.25 full 332.69
+    - 'Tab. S6 – Scalar thermal conductivity (κ = 1 3 P α καα) calculated within the relaxation-time approximation
+      (RTA) and by iteratively solving the BTE for the materials considered in this work (AlN, Al0.5Ga0.5N,
+      and Al0.15Ga0.85N) at 300 and '
+    - AlN
+    - 300 K
+  - statement: The ab-initio-derived model predicts that a film thickness of 5.64 µm is required for an
+      Al0.5Ga0.5N thin film to reach 90% of its bulk thermal conductivity.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''90% max.
+      = 5.64 μm'''
+    quotes:
+    - 90% max. = 5.64 μm
+    - Figure 9 – Thermal conductivity as a function of layer thickness for the Al0.5Ga0.5N thin film (sample
+      id744), calculated using the ab-initio-derived model (Sec. 2.6).
+    - Al0.5Ga0.5N
+    - AbI model
+  - statement: According to the ab-initio-derived model, the film thickness of Al0.15Ga0.85N must reach
+      8.31 µm to achieve 90% of its bulk thermal conductivity.
+    reason: the statement contains the number 15, which none of its quotes contain
+    quotes:
+    - According to the ab-initio-derived model, the film thickness must reach 8.31 µm for the thermal
+      conductivity to attain 90% of its bulk value.
+    - Figure 11 – Thermal conductivity as a function of layer thickness for the Al0.15Ga0.85N thin film,
+      calculated using the ab-initio-derived model (Sec. 2.6).
+    - Al0.15Ga0.85N
+    - ab-initio-derived model
+  - statement: Fitting the Debye-approximation model considering only grain-boundary scattering to the
+      AlN transition layer data yields an effective average grain size of 1.69
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The fitted grain sizes are 1.69 nm, 7.50 nm, and 2.90 nm for the Debye-approximation model, the
+      acoustic band model, and the ab-initio-derived model, respectively, as summarized in Tab. 3.
+    - The top row shows the measured temperature-dependent thermal conductivity of the aluminium nitride
+      transition layer (red error bars), together with the fitted models (blue lines).
+    - AlN transition layer
+    - Debye-approximation model
+  - statement: Fitting the acoustic band model considering only grain-boundary scattering to the AlN transition
+      layer yields an effective average grain size of 7.50 nm.
+    reason: the value 7.5 does not appear in any of the claim's quotes
+    quotes:
+    - The fitted grain sizes are 1.69 nm, 7.50 nm, and 2.90 nm for the Debye-approximation model, the
+      acoustic band model, and the ab-initio-derived model, respectively, as summarized in Tab. 3.
+    - The top row shows the measured temperature-dependent thermal conductivity of the aluminium nitride
+      transition layer (red error bars), together with the fitted models (blue lines).
+    - AlN transition layer
+    - acoustic band model
+  - statement: Fitting the ab-initio-derived model considering only grain-boundary scattering to the AlN
+      transition layer yields an average grain size of 2.90 nm.
+    reason: the value 2.9 does not appear in any of the claim's quotes
+    quotes:
+    - The fitted grain sizes are 1.69 nm, 7.50 nm, and 2.90 nm for the Debye-approximation model, the
+      acoustic band model, and the ab-initio-derived model, respectively, as summarized in Tab. 3.
+    - The top row shows the measured temperature-dependent thermal conductivity of the aluminium nitride
+      transition layer (red error bars), together with the fitted models (blue lines).
+    - AlN transition layer
+    - ab-initio-derived model
+  tokens:
+    input: 36207
+    output: 2936
+  fetched_chars: 117308

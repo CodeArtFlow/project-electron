@@ -1,0 +1,97 @@
+id: SRC-00413
+title: Photonic processors that carry their own unclonable fingerprint
+doi: null
+arxiv_id: 2611.26079v1
+url: https://arxiv.org/abs/2611.26079v1
+venue_id: arxiv_api
+authors:
+- name: Oxel Arnal Martínez
+  affiliation: null
+  corresponding: null
+- name: Pablo Martínez-Carrasco Romero
+  affiliation: null
+  corresponding: null
+- name: David Álvarez Outerelo
+  affiliation: null
+  corresponding: null
+- name: Francisco Javier Fraile-Peláez
+  affiliation: null
+  corresponding: null
+- name: José Capmany Francoy
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-21'
+access: full_text
+read_scope: Automated reading. The full PDF text (54,557 characters, 18 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.26079v1 on
+  2026-11-21. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“where the mean normalized power drops from −8.9 dB at adjacent ports to −23.6 dB at diametrically
+  opposed ports.”
+
+  “The random configuration exhibits a pronounced power decay with distance”
+
+  “raising the mean Shannon entropy of the response from 1.95 to 3.48 bits by reprogramming alone.”
+
+  “The random configuration yields a widely scattered entropy distribution with a mean of 1.95 bits (standard
+  deviation of 0.89 bits), remaining far below the theoretical limit of log2(27) = 4.75 bits.”
+
+  “The random configuration yields a widely scattered entropy distribution with a mean of 1.95 bits (standard
+  deviation of 0.89 bits)”
+
+  “Combining isotropic routing with spectral readout yields 1107 bits per challenge”
+
+  “We therefore use w = 4, the smallest block size for which adjacent bits are essentially uncorrelated
+  (correlation of 0.04), which yields 41 bits per output port and 1107 bits per challenge”
+
+  “The inter-configuration HD within the first device reaches 49.8%”
+
+  “Key space expansion through spectral binarization.”
+
+  “Distributions of the intra-chip, inter-challenge and inter-chip HD for w = 4 (1107 bits per challenge).”
+
+  “and the inter-chip HD for identical challenges reaches 50.0%.”
+
+  “The intra-chip HD is 4.9% on average, with a maximum of 22.1%, well separated from the minimum inter-chip
+  HD of 43.0%.”
+
+  “Combining an entropy-optimized mesh topology with a spectral readout”'
+method_summary: '“For the experimental demonstration, we used a Smartlight processor (iPronics Programmable
+  Photonics, Fig. 2i), that contains a silicon-on-insulator hexagonal mesh of 72 TBUs with 28 optical
+  ports along its perimeter, driven by a continuous-wave laser operating at 1550 nm (see Methods).”
+
+  “Under the Isotropic Ring topology, routing proceeds from every input port to the spatial center of
+  the mesh through a fixed path of TBUs set to the cross or bar state.”
+
+  “For each challenge, we measured the optical power of the 27 monitored output ports at M = 168 wavelengths
+  between 1550.000 and 1550.501 nm, with a step of 3 pm.”'
+limitations: '“By sacrificing the entropy contribution of this small, fixed subset (8 to 12 of the 72
+  TBUs; see Methods), the Isotropic Ring routes the signal through a substantially larger number of dynamic
+  MZIs than the random baseline, producing a net gain in the entropy available in the response.”
+
+  “The spectral operator, however, relies on every output port carrying enough power for its spectrum
+  to be resolved above the detection noise.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16158
+    output: 2165
+  claims_accepted: 7
+  claims_rejected: 1
+  rejected:
+  - statement: Under full compensation (alpha = 1), the Hamming distance between the target device and
+      the emulating processor decreases to 29.1%.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - The HD decreases smoothly from 44.5% in the uncompensated case to 29.1% under full compensation,
+      which is still about ten times the intra-chip HD.
+    - under full compensation
+corrections: []

@@ -7147,3 +7147,93 @@ claims:
       unit: W
     conditions:
       component: ReRAM module
+- id: CLM-ARCH-0250
+  topic: ARCH
+  statement: In the idle scenario at 500 MHz, Spatz consumes 8.36 mW.
+  sources:
+  - SRC-00410
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    architecture: Spatz
+    operating_state: idle scenario
+    fclk: 500 MHz
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 8.36
+      unit: mW
+    si_base:
+      value: 0.00836
+      unit: W
+    display:
+      value: 0.00836
+      unit: W
+    conditions:
+      architecture: Spatz
+      operating_state: idle scenario
+      fclk: 500 MHz
+- id: CLM-ARCH-0251
+  topic: ARCH
+  statement: Under max load (Matrix Multiplication) at 500 MHz, Spatz reaches a total power of 42 mW.
+  sources:
+  - SRC-00410
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    architecture: Spatz
+    benchmark: Matrix Multiplication
+    fclk: 500 MHz
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 42.0
+      unit: mW
+    si_base:
+      value: 0.042
+      unit: W
+    display:
+      value: 0.042
+      unit: W
+    conditions:
+      architecture: Spatz
+      benchmark: Matrix Multiplication
+      fclk: 500 MHz
+- id: CLM-ARCH-0252
+  topic: ARCH
+  statement: The Kameleo selection hardware adds 3.7% to the accelerator area.
+  sources:
+  - SRC-00411
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2

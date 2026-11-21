@@ -1536,3 +1536,39 @@ claims:
     model: gemini-3.6-flash
     prompt_version: reader-v5
     verified_quotes: 2
+- id: CLM-EDA-0059
+  topic: EDA
+  statement: On the Hard split of AMS-SizingBench, CRAFT with Claude Opus 5.5 achieves a mean runtime
+    of 142.3 seconds.
+  sources:
+  - SRC-00409
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    agent_model: Claude Opus 5.5
+    method: CRAFT
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 142.3
+      unit: s
+    si_base:
+      value: 142.3
+      unit: s
+    display:
+      value: 142300000000.0
+      unit: ns
+    conditions:
+      agent_model: Claude Opus 5.5
+      method: CRAFT

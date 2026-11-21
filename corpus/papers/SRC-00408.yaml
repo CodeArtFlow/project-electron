@@ -1,0 +1,75 @@
+id: SRC-00408
+title: 'Ab-initio study of magnetic interaction in RNiO2: role of rare-earth size and epitaxial strain'
+doi: null
+arxiv_id: 2611.25907v1
+url: https://arxiv.org/abs/2611.25907v1
+venue_id: arxiv_api
+authors:
+- name: Ramasamy Murugesan
+  affiliation: null
+  corresponding: null
+- name: Shiyu Deng
+  affiliation: null
+  corresponding: null
+- name: Marie-Bernadette Lepetit
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-21'
+access: full_text
+read_scope: Automated reading. The full PDF text (46,264 characters, 10 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.25907v1 on
+  2026-11-21. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Table I: In-plane magnetic exchange interaction Jin (in meV) obtained from ab-initio calculations
+  for the RNiO2 family.”
+
+  “NdNiO2 -51.9 -45.0 -61.8 -91.5”
+
+  “In-plane magnetic exchange interaction Jin”
+
+  “PrNiO2 -50.7 -46.1 -65.9 -96.5”
+
+  “Table II: Out-of-plane magnetic exchange interaction Jout (in meV) obtained from ab-initio calculations
+  for the RNiO2 family.”
+
+  “NdNiO2 -16.24 -10.99 -15.65 -20.27”
+
+  “Out-of-plane magnetic exchange interaction Jout”
+
+  “LuNiO2 -63.5 -36.2 -39.2 -57.8”'
+method_summary: '“Density functional theory calculations are first employed to optimize the crystal structures,
+  while CAS+DDCI correlated wave-function calculations were used for the determination of the magnetic
+  exchanges.”
+
+  “The geometric structure of RNiO2 was obtained through DFT-based structural optimization using the CRYSTAL23
+  code [27].”'
+limitations: “Since charge ordering can significantly affect magnetic exchange interactions, its absence
+  in the computed structure may be responsible for the discrepancies between the calculated and experimental
+  exchange couplings.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 15619
+    output: 3265
+  claims_accepted: 7
+  claims_rejected: 1
+  rejected:
+  - statement: The calculated in-plane magnetic exchange interaction Jin for LaNiO2 thin films on a SrTiO3
+      substrate is -72.4 meV.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''LaNiO2 -48.3
+      - -72.4 -106.0'''
+    quotes:
+    - 'Table I: In-plane magnetic exchange interaction Jin (in meV) obtained from ab-initio calculations
+      for the RNiO2 family.'
+    - LaNiO2 -48.3 - -72.4 -106.0
+    - LaNiO2
+    - SrTiO3
+corrections: []

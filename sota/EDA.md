@@ -1,6 +1,6 @@
 # EDA — state of the art
 
-Topic code `EDA`. Last reviewed 2026-11-20.
+Topic code `EDA`. Last reviewed 2026-11-21.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -269,6 +269,10 @@ Topic code `EDA`. Last reviewed 2026-11-20.
   - `CLM-EDA-0012` · tool JasperGold, module L1 Bus Interface module · grade B · credibility unknown · measured · as of 2026-10-23
   - sources: SRC-00235
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **1.423e+11 ns** — On the Hard split of AMS-SizingBench, CRAFT with Claude Opus 5.5 achieves a mean runtime of 142.3 seconds.
+  - `CLM-EDA-0059` · agent_model Claude Opus 5.5, method CRAFT · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00409
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -307,6 +311,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 58
-- grades: {'B': 58}
-- distinct sources: 15
+- claims: 59
+- grades: {'B': 59}
+- distinct sources: 16

@@ -5050,3 +5050,134 @@ claims:
     model: gemini-3.6-flash
     prompt_version: reader-v5
     verified_quotes: 2
+- id: CLM-PHOT-0178
+  topic: PHOT
+  statement: The random configuration exhibits a mean normalized power drop from -8.9 dB at adjacent ports
+    to -23.6 dB at diametrically opposed ports.
+  sources:
+  - SRC-00413
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    topology: random
+- id: CLM-PHOT-0179
+  topic: PHOT
+  statement: The Isotropic Ring topology raises the mean Shannon entropy of the response from 1.95 to
+    3.48 bits.
+  sources:
+  - SRC-00413
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-PHOT-0180
+  topic: PHOT
+  statement: The random configuration yields a mean Shannon entropy of 1.95 bits.
+  sources:
+  - SRC-00413
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    topology: random configuration
+- id: CLM-PHOT-0181
+  topic: PHOT
+  statement: Combining the Isotropic Ring topology with spectral readout yields 1107 bits per challenge.
+  sources:
+  - SRC-00413
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    routing: isotropic routing
+    readout_mode: spectral readout
+    block_size_w: '4'
+- id: CLM-PHOT-0182
+  topic: PHOT
+  statement: The inter-challenge Hamming distance for spectral readout with w = 4 reaches 49.8%.
+  sources:
+  - SRC-00413
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    readout_mode: spectral
+    block_size_w: '4'
+- id: CLM-PHOT-0183
+  topic: PHOT
+  statement: The inter-chip Hamming distance for spectral readout with w = 4 reaches 50.0%.
+  sources:
+  - SRC-00413
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    readout_mode: spectral
+    block_size_w: '4'
+- id: CLM-PHOT-0184
+  topic: PHOT
+  statement: The intra-chip Hamming distance for spectral readout with w = 4 is 4.9% on average.
+  sources:
+  - SRC-00413
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-21'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    readout_mode: spectral
+    block_size_w: '4'

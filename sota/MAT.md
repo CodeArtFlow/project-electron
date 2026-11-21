@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-20.
+Topic code `MAT`. Last reviewed 2026-11-21.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -208,6 +208,41 @@ Topic code `MAT`. Last reviewed 2026-11-20.
   - `CLM-MAT-0401` · light_source extreme-ultraviolet light pulses · grade B · credibility unknown · measured · as of 2026-11-19
   - sources: SRC-00407
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **-8.3153e-06 fJ** — The calculated in-plane magnetic exchange interaction Jin for pristine bulk NdNiO2 in the P4/mmm phase is -51.9 meV.
+  - `CLM-MAT-0405` · direction In-plane · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00408
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0147, CFL-0148, CFL-0149, CFL-0150 — see the open register
+- **-9.90145e-06 fJ** — The calculated in-plane magnetic exchange interaction Jin for NdNiO2 thin films strained on a SrTiO3 substrate is -61.8 meV.
+  - `CLM-MAT-0406` · direction In-plane · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00408
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0147, CFL-0151, CFL-0152, CFL-0153 — see the open register
+- **-1.05583e-05 fJ** — The calculated in-plane magnetic exchange interaction Jin for PrNiO2 thin films on a SrTiO3 substrate is -65.9 meV.
+  - `CLM-MAT-0407` · direction In-plane · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00408
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0148, CFL-0151, CFL-0154, CFL-0155 — see the open register
+- **-2.50741e-06 fJ** — The calculated out-of-plane magnetic exchange interaction Jout for NdNiO2 thin films on a SrTiO3 substrate is -15.65 meV.
+  - `CLM-MAT-0408` · direction Out-of-plane · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00408
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0156 — see the open register
+- **-1.46599e-05 fJ** — The calculated in-plane magnetic exchange interaction Jin for NdNiO2 thin films on a LaAlO3 substrate is -91.5 meV.
+  - `CLM-MAT-0409` · direction In-plane · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00408
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0149, CFL-0152, CFL-0154, CFL-0157 — see the open register
+- **-3.24761e-06 fJ** — The calculated out-of-plane magnetic exchange interaction Jout for NdNiO2 thin films on a LaAlO3 substrate is -20.27 meV.
+  - `CLM-MAT-0410` · direction Out-of-plane · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00408
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0156 — see the open register
+- **-5.79988e-06 fJ** — The calculated in-plane magnetic exchange interaction Jin for LuNiO2 in the bulk I4/mcm phase is -36.2 meV.
+  - `CLM-MAT-0411` · direction In-plane · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00408
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0150, CFL-0153, CFL-0155, CFL-0157 — see the open register
 
 ### frequency
 
@@ -1643,6 +1678,10 @@ Topic code `MAT`. Last reviewed 2026-11-20.
   - `CLM-MAT-0402` · light_source extreme-ultraviolet light pulses · grade B · credibility unknown · measured · as of 2026-11-19
   - sources: SRC-00407
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **9.69e+07 ns** — The Perfumer-band model takes a median prediction time of 96.9 ms per material when tested on two cores of an Intel Core i9-13900H CPU.
+  - `CLM-MAT-0412` · hardware two cores of an Intel Core i9-13900H CPU · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00415
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -1873,9 +1912,42 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0145` — energy: _unexamined; classification pending_
   - claims: CLM-MAT-0394, CLM-MAT-0395
   - missing data: `not yet named`
+- `CFL-0147` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0405, CLM-MAT-0406
+  - missing data: `not yet named`
+- `CFL-0148` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0405, CLM-MAT-0407
+  - missing data: `not yet named`
+- `CFL-0149` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0405, CLM-MAT-0409
+  - missing data: `not yet named`
+- `CFL-0150` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0405, CLM-MAT-0411
+  - missing data: `not yet named`
+- `CFL-0151` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0406, CLM-MAT-0407
+  - missing data: `not yet named`
+- `CFL-0152` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0406, CLM-MAT-0409
+  - missing data: `not yet named`
+- `CFL-0153` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0406, CLM-MAT-0411
+  - missing data: `not yet named`
+- `CFL-0154` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0407, CLM-MAT-0409
+  - missing data: `not yet named`
+- `CFL-0155` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0407, CLM-MAT-0411
+  - missing data: `not yet named`
+- `CFL-0156` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0408, CLM-MAT-0410
+  - missing data: `not yet named`
+- `CFL-0157` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0409, CLM-MAT-0411
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 404
-- grades: {'B': 404}
-- distinct sources: 143
+- claims: 412
+- grades: {'B': 412}
+- distinct sources: 145

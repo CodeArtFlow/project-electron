@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.26010v1
 doi: null
-title: 'Lattice dynamics study of (Bi1-xSbx)2Te3 compounds: Comparative compositional
-  study of force constants and Grüneisen parameters'
+title: 'Lattice dynamics study of (Bi1-xSbx)2Te3 compounds: Comparative compositional study of force constants
+  and Grüneisen parameters'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-19'
@@ -24,6 +24,78 @@ id: CAND-20261120-0072
 harvested_date: '2026-11-20'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-21'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Under ambient conditions, the A1 1g Raman mode frequency for BST-0.7 is 66.5 cm-1.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''ω0 A1 1g
+      61.3 63.3 66.5 68 70.6'''
+    quotes:
+    - ω0 A1 1g 61.3 63.3 66.5 68 70.6
+    - Raman studies were performed using a custom-made confocal micro-Raman system with the 660 nm line
+      of a solid-state laser for excitation in the back-scattering geometry.
+    - BST-0.7
+    - A1 1g
+  - statement: Under ambient conditions, the E2 g Raman mode frequency for BST-0.7 is 107.8 cm-1.
+    reason: the statement contains the number 0.7, which none of its quotes contain
+    quotes:
+    - ω0 E2 g 101.1 103.2 107.8 110.6 114.2
+    - Raman studies were performed using a custom-made confocal micro-Raman system with the 660 nm line
+      of a solid-state laser for excitation in the back-scattering geometry.
+    - BST-0.7
+    - E2 g
+  - statement: Under ambient conditions, the A2 1g Raman mode frequency for BST-0.7 is 159.2 cm-1.
+    reason: the statement contains the number 0.7, which none of its quotes contain
+    quotes:
+    - ω0 A2 1g 132.1 144.1 159.2 162.7 166.4
+    - Raman studies were performed using a custom-made confocal micro-Raman system with the 660 nm line
+      of a solid-state laser for excitation in the back-scattering geometry.
+    - BST-0.7
+    - A2 1g
+  - statement: For BST-0.7, the pressure slope of the A1 1g Raman mode frequency is 4.87 cm-1/GPa.
+    reason: the statement contains the number 0.7, which none of its quotes contain
+    quotes:
+    - ∂ω/∂P A1 1g 3.71 3.57 4.87 4.29 4.42
+    - Raman studies were performed using a custom-made confocal micro-Raman system with the 660 nm line
+      of a solid-state laser for excitation in the back-scattering geometry.
+    - BST-0.7
+    - A1 1g
+  - statement: For BST-0.7, the isothermal Grüneisen parameter for the A1 1g mode is 3.19.
+    reason: the statement contains the number 0.7, which none of its quotes contain
+    quotes:
+    - γT A1 1g 2.72 2.59 3.19 2.70 2.50
+    - From the Raman spectroscopy measurements under high-pressure conditions, the corresponding Gr¨uneisen
+      parameters for the three observed Raman-active modes (A1 1g, E2 g , A2 1g) as a function of composition
+      were determined
+    - BST-0.7
+    - A1 1g
+  - statement: For BST-0.7, the isothermal Grüneisen parameter for the E2 g mode is 1.83.
+    reason: the statement contains the number 0.7, which none of its quotes contain
+    quotes:
+    - γT E2 g 1.55 1.48 1.83 1.47 1.00
+    - From the Raman spectroscopy measurements under high-pressure conditions, the corresponding Gr¨uneisen
+      parameters for the three observed Raman-active modes (A1 1g, E2 g , A2 1g) as a function of composition
+      were determined
+    - BST-0.7
+    - E2 g
+  - statement: For BST-0.7, the isothermal Grüneisen parameter for the A2 1g mode is 0.74.
+    reason: the statement contains the number 0.7, which none of its quotes contain
+    quotes:
+    - γT A2 1g 0.99 1.06 0.74 0.98 0.66
+    - From the Raman spectroscopy measurements under high-pressure conditions, the corresponding Gr¨uneisen
+      parameters for the three observed Raman-active modes (A1 1g, E2 g , A2 1g) as a function of composition
+      were determined
+    - BST-0.7
+    - A2 1g
+  tokens:
+    input: 12427
+    output: 2378
+  fetched_chars: 37202
