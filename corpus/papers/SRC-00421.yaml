@@ -1,0 +1,77 @@
+id: SRC-00421
+title: Magnon high-harmonic generation by nonlinearities of spin torque driven by phonon-mediated crossing
+  of many-body energy levels of bright and dark excitons
+doi: null
+arxiv_id: 2611.26589v1
+url: https://arxiv.org/abs/2611.26589v1
+venue_id: arxiv_api
+authors:
+- name: Jalil Varela-Manjarres
+  affiliation: null
+  corresponding: null
+- name: Federico Garcia-Gaitan
+  affiliation: null
+  corresponding: null
+- name: Branislav K. Nikolic
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (48,321 characters, 10 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.26589v1 on
+  2026-11-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“We set αG = 8.77 × 10−3 as the intrinsic Gilbert damping [18, 21, 22].”
+
+  “We assume that low laser fluence [Fig. 2(a)–(d)] generates exciton population nf = 3.4 × 10−4 fed with
+  P = 10−4 in Eq. (4)”'
+method_summary: “By viewing magnons as the system and the other three quasiparticles as a quantum many-body
+  bath, we derive an extended Landau-Lifshitz-Gilbert (eLLG) equation.”
+limitations: '“Note that σ can be interpreted as the spread of phonon modes around k = 0, so we restrict
+  it to a small value σ = 1 meV to correspond to excitons with small momentum that are typically excited
+  by fsLP.”
+
+  “For the exciton sector, we consider only the B and D excitons within XB manifold of CrSBr at energy
+  ≃ 1.8 eV [47].”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 19412
+    output: 1635
+  claims_accepted: 2
+  claims_rejected: 3
+  rejected:
+  - statement: The high laser fluence condition generates an exciton population nf of 6.6 × 10^-4.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''high fluence
+      [Fig. 2(e)–(h)] generates nf = 6.6 × 10−4 with P = 7.7 × '''
+    quotes:
+    - high fluence [Fig. 2(e)–(h)] generates nf = 6.6 × 10−4 with P = 7.7 × 10−6.
+    - high fluence
+    - P = 7.7 × 10−6
+  - statement: Under low fluence, the modeling obtains a fundamental frequency ω0 of 21.9 GHz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - For the chosen parameters in eLLG Eq. (1), we obtain ω0 of 21.9 GHz and 17.0 GHz at low and high
+      fluence, respectively.
+    - low
+    - ω0
+  - statement: Under high fluence, the modeling obtains a fundamental frequency ω0 of 17.0 GHz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - For the chosen parameters in eLLG Eq. (1), we obtain ω0 of 21.9 GHz and 17.0 GHz at low and high
+      fluence, respectively.
+    - high fluence
+    - ω0
+corrections: []

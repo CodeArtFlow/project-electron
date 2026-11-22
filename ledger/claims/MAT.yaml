@@ -11399,3 +11399,186 @@ claims:
       unit: ns
     conditions:
       hardware: two cores of an Intel Core i9-13900H CPU
+- id: CLM-MAT-0413
+  topic: MAT
+  statement: The tight-binding hopping energy parameter for the square lattice model is -1 eV.
+  sources:
+  - SRC-00418
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    system: square lattice
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: -1.0
+      unit: eV
+    si_base:
+      value: -1.602176634e-19
+      unit: J
+    display:
+      value: -0.00016021766339999996
+      unit: fJ
+    conditions:
+      system: square lattice
+- id: CLM-MAT-0414
+  topic: MAT
+  statement: The tight-binding nearest-neighbor hopping energy parameter for graphene is -2.7 eV.
+  sources:
+  - SRC-00418
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    system: graphene
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: -2.7
+      unit: eV
+    si_base:
+      value: -4.3258769118e-19
+      unit: J
+    display:
+      value: -0.00043258769117999996
+      unit: fJ
+    conditions:
+      system: graphene
+- id: CLM-MAT-0415
+  topic: MAT
+  statement: The localization length in the amorphous graphene sample is approximately 1.1 nm.
+  sources:
+  - SRC-00418
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    parameter_name: ξloc
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: true
+    as_published:
+      value: 1.1
+      unit: nm
+    si_base:
+      value: 1.1000000000000001e-09
+      unit: m
+    display:
+      value: 1.1
+      unit: nm
+    conditions:
+      parameter_name: ξloc
+- id: CLM-MAT-0416
+  topic: MAT
+  statement: The intrinsic Gilbert damping parameter αG is set to 8.77 × 10^-3 in the extended LLG equation.
+  sources:
+  - SRC-00421
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MAT-0417
+  topic: MAT
+  statement: The low laser fluence condition generates an exciton population nf of 3.4 × 10^-4.
+  sources:
+  - SRC-00421
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-MAT-0418
+  topic: MAT
+  statement: The periodic area of the Σ5(310)[001] grain boundary in SrTiO3 is 48.41 Å2.
+  sources:
+  - SRC-00422
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    grain_boundary_plane: Σ5(310)[001]
+    material: SrTiO3
+  quantity:
+    quantity: area_die
+    bound: exact
+    approximate: false
+    as_published:
+      value: 48.41
+      unit: Å2
+    si_base:
+      value: 4.841e-19
+      unit: m^2
+    display:
+      value: 4.841e-13
+      unit: mm^2
+    conditions:
+      grain_boundary_plane: Σ5(310)[001]
+      material: SrTiO3
+- id: CLM-MAT-0419
+  topic: MAT
+  statement: WannDiffuse finite-difference calculation predicts a Ba Born effective charge of 2.758 e
+    for cubic BaTiO3.
+  sources:
+  - SRC-00423
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2

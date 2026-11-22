@@ -1,0 +1,103 @@
+id: SRC-00416
+title: 'MaskPE: One Mask, Two Roles: Weight Placement and MAC Gating in Systolic Arrays'
+doi: null
+arxiv_id: 2611.26432v1
+url: https://arxiv.org/abs/2611.26432v1
+venue_id: arxiv_api
+authors:
+- name: Shu-Lin Shih
+  affiliation: null
+  corresponding: null
+- name: Chandra Sekhar Mummidi
+  affiliation: null
+  corresponding: null
+- name: Aamir Gujral Elhaissouni
+  affiliation: null
+  corresponding: null
+- name: Sandip Kundu
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (36,198 characters, 7 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.26432v1 on
+  2026-11-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: “We implement MaskPE in Nangate45 with a target frequency of 400 MHz (2.5 ns clock period).”
+method_summary: '“We implement MaskPE as a 32 × 32 weight-stationary systolic array with INT8 multiplication
+  and INT32 accumulation.”
+
+  “All architectures are described in RTL and synthesized using Yosys/ABC [18] with the Nangate45 standard-cell
+  library.”
+
+  “Weight-SRAM area uses FakeRAM45 memory macros [21], while memory energy is estimated from recorded
+  accesses using Accelergy [22] energy coefficients.”'
+limitations: “At zero sparsity, the additional sparse-weight storage and control overhead increases energy
+  by 2.6%.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 11719
+    output: 3022
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: At 50% sparsity, MaskPE reduces compressed weight storage by 34.9%, including metadata
+      overhead.
+    reason: the value -34.9 does not appear in any of the claim's quotes
+    quotes:
+    - At 50% sparsity, MaskPE reduces compressed weight storage by 34.9%, including metadata overhead.
+  - statement: At 50% sparsity, MaskPE reduces logic-plus-weight-SRAM area by 15.04%.
+    reason: the value -15.04 does not appear in any of the claim's quotes
+    quotes:
+    - At 50% sparsity, MaskPE reduces weight storage by 34.9%, logic-plus-weight-SRAM area by 15.04%,
+      and post-CTS logic-plus-modeled-weight-memory energy by 12.5–14.4% across samples of seven LLM projections.
+  - statement: Across samples of seven LLM projections at 50% sparsity, MaskPE achieves lower execution
+      energy ranging from 12.5% to 14.4%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''gate-level
+      simulations demonstrate 12.5–14.4% lower execution energy a'''
+    quotes:
+    - gate-level simulations demonstrate 12.5–14.4% lower execution energy across samples of seven LLM
+      projections.
+    - At 50% sparsity, MaskPE reduces weight storage by 34.9%, logic-plus-weight-SRAM area by 15.04%,
+      and post-CTS logic-plus-modeled-weight-memory energy by 12.5–14.4% across samples of seven LLM projections.
+  - statement: Under bandwidth constraints, compressed-weight delivery in MaskPE achieves up to 1.53x
+      speedup over conventional dense WS.
+    reason: 'unit conversion refused: energy_advantage_ratio is dimensionless; unit ''×'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a u'
+    quotes:
+    - Fig. 10 shows that compressed weight streams reduce delivery time under bandwidth constraints, achieving
+      up to 1.53× speedup over dense WS.
+    - achieving up to 1.53× speedup over dense WS.
+  - statement: At 0% weight sparsity, MaskPE increases energy by 2.6% compared to conventional dense WS.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - At zero sparsity, the additional sparse-weight storage and control overhead increases energy by
+      2.6%.
+    - Fig. 11 shows how the overall energy benefit relative to conventional dense WS depends on weight
+      sparsity. At zero sparsity, the additional sparse-weight storage and control overhead increases
+      energy by 2.6%.
+  - statement: At 90% weight sparsity, MaskPE yields a 29.1% energy reduction relative to conventional
+      dense WS.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''yielding
+      a 12.7% energy reduction at the evaluated 50% sparsity and 29'''
+    quotes:
+    - yielding a 12.7% energy reduction at the evaluated 50% sparsity and 29.1% at 90% sparsity.
+    - Fig. 11 shows how the overall energy benefit relative to conventional dense WS depends on weight
+      sparsity.
+  - statement: At 50% sparsity, reusing the positional bitmap for clock gating reduces pre-CTS PE-array
+      energy by 5.1%.
+    reason: the value -5.1 does not appear in any of the claim's quotes
+    quotes:
+    - At 50% sparsity, bitmap reuse reduces pre-CTS PE-array energy by 5.1% without altering the systolic
+      schedule.
+corrections: []

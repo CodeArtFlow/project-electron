@@ -1,0 +1,80 @@
+id: SRC-00424
+title: 'PULSAR-V: I/O-Aware Post-Update Attestation for RISC-V'
+doi: null
+arxiv_id: 2611.24135v1
+url: https://arxiv.org/abs/2611.24135v1
+venue_id: arxiv_api
+authors:
+- name: Niccolò Lentini
+  affiliation: null
+  corresponding: null
+- name: Stefano Di Carlo
+  affiliation: null
+  corresponding: null
+- name: Alessandro Savino
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-18'
+retrieved_date: '2026-11-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (41,724 characters, 7 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.24135v1 on
+  2026-11-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The gate and its commit latch cost 436 look-up tables (LUTs), 4.6 % of the SoC”
+
+  “Table I reports results from the routed design.”
+
+  “evidence collection takes 43.1 k cycles independent of image size, 41× less than re-hashing 16 KiB.”
+
+  “PULSAR-V, a post-update attestation architecture”
+
+  “41× less than re-hashing 16 KiB.”
+
+  “re-measuring 16 KiB costs 1 755 080 cycles: 40.7× the constant 43 093 of the isolation evidence, and
+  7.6× signing.”
+
+  “Software SHA-256 runs at ≈107 cycles/byte on this core”
+
+  “The alternative, measured on the same board, is more expensive.”
+
+  “attested device is a CV32E40S soft core (RV32IMC, firmware entirely in M-mode) at 25 MHz”
+
+  “attested device is a CV32E40S soft core”'
+method_summary: No method quote was verified. The method is not established by this record.
+limitations: '“The artifact mediates one master per configuration, and its IOPU table covers only the
+  active slot: the shim, not the gate, keeps the external master off the journal.”
+
+  “The reset counter survives core resets, but not power cycles, so a deployable one requires non-volatile
+  backing, and the reset escape is simulated only.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 13730
+    output: 1711
+  claims_accepted: 5
+  claims_rejected: 2
+  rejected:
+  - statement: The gate and its commit latch consume 436 LUTs.
+    reason: 'unit conversion refused: area_die: could not parse 436.0 ''LUTs'': ''LUTs'' is not defined
+      in the unit registry'
+    quotes:
+    - The gate and its commit latch cost 436 look-up tables (LUTs), 4.6 % of the SoC
+    - Table I reports results from the routed design.
+    - prototyped on a ZCU102 field-programmable gate array (FPGA)
+    - The gate and its commit latch cost 436 look-up tables (LUTs)
+  - statement: The overall SoC implementation consumes 9 398 LUTs.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''4.6 % of
+      the 9 398-LUT SoC'''
+    quotes:
+    - 4.6 % of the 9 398-LUT SoC
+    - Table I reports results from the routed design.
+    - 3.4 % of the XCZU9EG
+corrections: []

@@ -1,0 +1,82 @@
+id: SRC-00420
+title: 'Verify the Verifier: Specification-Grounded LLM Cross-Checking for Bugs That Escape UVM Scoreboards'
+doi: null
+arxiv_id: 2611.26588v1
+url: https://arxiv.org/abs/2611.26588v1
+venue_id: arxiv_api
+authors:
+- name: Ana E. Sanchez Villalobos
+  affiliation: null
+  corresponding: null
+- name: Michael D. Quinn
+  affiliation: null
+  corresponding: null
+- name: Aakash Tyagi
+  affiliation: null
+  corresponding: null
+- name: Minh D. Luu
+  affiliation: null
+  corresponding: null
+- name: David Kebo Houngninou
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (44,198 characters, 7 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.26588v1 on
+  2026-11-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Of 564 bugs inserted into four OpenTitan IPs, 68 are candidate scoreboard escapes: non-equivalent,
+  exercised by the tests, yet passing.”
+
+  “Of 564 bugs inserted into four OpenTitan IPs”
+
+  “The framework confirmed 41 as scoreboard escapes with assertions failing on the buggy design and proven
+  on the original.”
+
+  “68 are candidate scoreboard escapes”
+
+  “The ACC reported the effect of the injected bug for 55 of 68 candidate escapes, and for 41 of these,
+  the framework produced a qualified detection.”
+
+  “This specification-only baseline detected 11 of the 68 candidate escapes, compared with 41 for the
+  full framework.”
+
+  “This specification-only baseline detected 11 of the 68 candidate escapes”
+
+  “11 of the 68 candidate escapes”
+
+  “To check this, we ran the ACC with the same prompt, specification and attempt limit on the traces of
+  the four unmodified designs, which contain no injected bug. It reported 9 anomalies (PWM 1, PATTGEN
+  6, SPI Host 1, CSRNG 1).”
+
+  “Per mutant, the framework took a median of 9.6 minutes, mostly simulation time, and about 620k input
+  and 18k output tokens of LLM usage.”'
+method_summary: '“Each selected test is then re-run at its original seed with waveform dumping enabled
+  for the target module, so that the ACC sees exactly the behavior the passing regression produced.”
+
+  “For each assertion, JasperGold also checks a cover property on its antecedent, which identifies vacuous
+  proofs.”'
+limitations: '“Activating a non-activated mutant would require new stimulus, which is outside the scope
+  of this work: the framework inspects the regression tests the team already runs.”
+
+  “The 13 mutants the ACC did not observe share one pattern: its report was taken by a contradiction that
+  the unmodified reference also shows, such as the command-ready flag of CSRNG or the disabled channel
+  of PATTGEN.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 12386
+    output: 1545
+  claims_accepted: 6
+  claims_rejected: 0
+  rejected: []
+corrections: []

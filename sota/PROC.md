@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-11-21.
+Topic code `PROC`. Last reviewed 2026-11-22.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -350,6 +350,10 @@ Topic code `PROC`. Last reviewed 2026-11-21.
   - `CLM-PROC-0071` · model Unified-FiLM, sample_set 47 thin-film samples · grade B · credibility unknown · measured · as of 2026-11-16
   - sources: SRC-00373
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **7.682e+10 ns** — On the Au particles dataset, the VR algorithm achieves a time to convergence of 76.82 s.
+  - `CLM-PROC-0078` · dataset Au particles, algorithm VR · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00425
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -445,6 +449,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 77
-- grades: {'B': 77}
-- distinct sources: 24
+- claims: 78
+- grades: {'B': 78}
+- distinct sources: 25

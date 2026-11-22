@@ -1,0 +1,85 @@
+id: SRC-00422
+title: Uncovering the Structural, Electronic, and Electrostatic Landscapes of SrTiO$_3$ Grain Boundaries
+  via Grand Canonical Monte Carlo with a Machine-Learning Interatomic Potential
+doi: null
+arxiv_id: 2611.24097v1
+url: https://arxiv.org/abs/2611.24097v1
+venue_id: arxiv_api
+authors:
+- name: Xing He
+  affiliation: null
+  corresponding: null
+- name: Kairi Masuda
+  affiliation: null
+  corresponding: null
+- name: Aaron M. Schankler
+  affiliation: null
+  corresponding: null
+- name: Songsong Zhou
+  affiliation: null
+  corresponding: null
+- name: Andrew M. Rappe
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-18'
+retrieved_date: '2026-11-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (64,512 characters, 38 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.24097v1 on
+  2026-11-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The periodic area of the Σ5(310)[001] GB is √ 10 × 3.91262Å2 = 48.41Å2 with small variations
+  among the relaxed GB structures.”
+
+  “Electronic structures of Σ5(310)[001] SrTiO3 GBs.”'
+method_summary: '“Here, we combine the Grand Canonical Monte Carlo (GCMC) method with a universal machine-learning
+  interatomic potential to explore the coupled compositional and structural phase space of Σ5(310)[001]
+  SrTiO3 grain boundaries.”
+
+  “For the uMLIP energy evaluation and structural relaxation, we employed the Equiformer V2 86M model46
+  (eqV2-M), whose architecture is based on the Transformer model.”
+
+  “To assesstheaccuracyoftheuniversalpotential, weconductedDFTcalculationsbyVASPfor these 280 structures
+  (details in Supplemental Material) and compared the resulting energies and atomic forces with those
+  predicted by eqV2-M.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 19697
+    output: 1537
+  claims_accepted: 1
+  claims_rejected: 2
+  rejected:
+  - statement: The comparison between the universal potential eqV2-M and DFT calculations for the 280
+      unique compositions of Σ5(310)[001] SrTiO3 grain boundaries yields a mean
+    reason: the statement contains the number 280, which none of its quotes contain
+    quotes:
+    - Figure 3 compares the DFT free energies per unit area and individual atomic forces with the corresponding
+      eqV2-M predictions. The two methods show good agreement with MAE 24.71 meV/Å2 for free energy and
+      0.05 eV/Å for force, respectively.
+    - Figure 3 compares the DFT free energies per unit area and individual atomic forces with the corresponding
+      eqV2-M predictions.
+    - This procedure yielded 280 unique compositions for the Σ5(310)[001] SrTiO3 GBs.
+  - statement: The comparison between the eqV2-M potential and DFT atomic force predictions for the sampled
+      grain boundary structures shows a mean absolute error of 0.05 eV/Å.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''eV/Å'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a un'
+    quotes:
+    - The two methods show good agreement with MAE 24.71 meV/Å2 for free energy and 0.05 eV/Å for force,
+      respectively.
+    - Figure 3 compares the DFT free energies per unit area and individual atomic forces with the corresponding
+      eqV2-M predictions.
+    - Figure 3 compares the DFT free energies per unit area and individual atomic forces with the corresponding
+      eqV2-M predictions. The two methods show good agreement with MAE 24.71 meV/Å2 for free energy and
+      0.05 eV/Å for force, respectively.
+    - This procedure yielded 280 unique compositions for the Σ5(310)[001] SrTiO3 GBs.
+corrections: []

@@ -28,6 +28,57 @@ id: CAND-20261120-0034
 harvested_date: '2026-11-20'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-22'
+  reason: the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: BLOOM achieves a frequency of 88.37MHz in synthesis targeting SkyWater 130nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - a frequency of 88.37MHz in synthesis targeting the SkyWater 130nm PDK [31].
+    - Our best design, BLOOM
+    - SkyWater 130nm PDK [31].
+  - statement: The baseline BOOM configuration achieves a frequency of 69.85MHz in SkyWater 130nm.
+    reason: the statement contains the number 130, which none of its quotes contain
+    quotes:
+    - the baseline frequency 69.85MHz
+    - the baseline frequency 69.85MHz, and the BLOOM frequency 88.37MHZ (critical path 11.32ns) in SkyWater
+      130nm.
+    - SkyWater 130nm
+  - statement: BLOOM has a critical path of 11.32ns in SkyWater 130nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''critical
+      path 11.32ns'''
+    quotes:
+    - critical path 11.32ns
+    - and the BLOOM frequency 88.37MHZ (critical path 11.32ns) in SkyWater 130nm.
+    - BLOOM frequency 88.37MHZ (critical path 11.32ns)
+    - SkyWater 130nm
+  - statement: In a modern 16nm process, the baseline SoC design runs at 1.02 GHz.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - In a modern 16nm process, this baseline SoC design is 4.75mm2 and runs at 1.02 GHz.
+    - baseline SoC design
+    - 16nm process
+  - statement: In a modern 16nm process, the baseline SoC design has an area of 4.75mm2.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - In a modern 16nm process, this baseline SoC design is 4.75mm2 and runs at 1.02 GHz.
+    - baseline SoC design
+    - 16nm process
+  tokens:
+    input: 25409
+    output: 1617
+  fetched_chars: 81839

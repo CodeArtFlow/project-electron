@@ -1,0 +1,93 @@
+id: SRC-00419
+title: 'From power to spectrum: an off-the-shelf photodiode turned into a spectrometer by its bias alone'
+doi: null
+arxiv_id: 2611.26532v1
+url: https://arxiv.org/abs/2611.26532v1
+venue_id: arxiv_api
+authors:
+- name: Roi Yozevitch
+  affiliation: null
+  corresponding: null
+- name: Shmuel Sternklar
+  affiliation: null
+  corresponding: null
+- name: Ziv Glasser
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (37,923 characters, 15 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.26532v1 on
+  2026-11-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Single lines are located to 0.40 nm across the full 80 nm band”
+
+  “unmodified InGaAs PIN photodiode”
+
+  “Table 2. Wavelength accuracy (mean absolute error, nm) on wavelengths or line combinations not used
+  for calibration.”
+
+  “two simultaneous lines to 0.32 nm”
+
+  “Averaging eight acquisitions of the same line improves the single-line accuracy to 0.23 nm.”
+
+  “the three-slot model identifies the number of lines in 98.0% of single-line spectra”
+
+  “Table 3. Reconstruction without prior knowledge of the number of lines, on configurations not used
+  for calibration”
+
+  “99.9% of pairs and triples (Table 3”'
+method_summary: '“Light from up to three tunable lasers (1530–1610 nm) is combined in fiber; a fraction
+  is monitored on an optical spectrum analyzer. A function generator applies the sinusoidal bias between
+  3 and 10 V. The photodiode is terminated in 100 Ω; a bias tee separates the DC photocurrent, recorded
+  directly, from the AC component, which is amplified by a low-noise amplifier (1 kHz–1.8 GHz) and digitized
+  by an oscilloscope as 8000 samples over one bias period, triggered by the function generator.”
+
+  “Each dark-subtracted waveform is compressed onto 10–20 principal components, computed from calibration
+  waveforms only, and a fully connected neural network maps them, together with the DC photocurrent, to
+  the line wavelengths; a second network classifies the power of each line.”'
+limitations: '“Consistent with the line coupling of Sec. 4.2, a linear inversion with a dictionary of
+  measured single-line waveforms recovers single lines but not multi-line spectra (Table 3), confirming
+  that the coupled response must be learned from calibration spectra of the same kind as those to be measured.”
+
+  “On a new day the accuracy is set by slow day-to-day drift rather than by noise”
+
+  “for three lines, recorded on fewer days, it remains above 1 nm, and calibration over more days, together
+  with temperature stabilization of the photodiode and monitoring of the bias waveform, is the direct
+  route to improving it.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 12624
+    output: 2134
+  claims_accepted: 5
+  claims_rejected: 2
+  rejected:
+  - statement: Three simultaneous lines are located with a mean absolute wavelength error of 0.27 nm when
+      using combined representations.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''three lines
+      to 0.27 nm'''
+    quotes:
+    - three lines to 0.27 nm
+    - Table 2. Wavelength accuracy (mean absolute error, nm) on wavelengths or line combinations not used
+      for calibration.
+    - unmodified InGaAs PIN photodiode
+    - three lines
+  - statement: Fine scan waveform change per picometre relative to noise supports a single-shot resolution
+      bound of 28 to 58 pm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''fine scans
+      across 1550–1551 nm in 0.01 and 0.001 nm steps (Fig. 8) sho'''
+    quotes:
+    - fine scans across 1550–1551 nm in 0.01 and 0.001 nm steps (Fig. 8) show that the waveform change
+      per picometre relative to the noise supports a single-shot resolution of 28–58 pm.
+    - 1550–1551 nm
+    - 0.01 and 0.001 nm steps
+corrections: []

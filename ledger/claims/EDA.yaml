@@ -1572,3 +1572,107 @@ claims:
     conditions:
       agent_model: Claude Opus 5.5
       method: CRAFT
+- id: CLM-EDA-0060
+  topic: EDA
+  statement: Out of 564 inserted bugs in four OpenTitan IPs, 68 are candidate scoreboard escapes.
+  sources:
+  - SRC-00420
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    inserted_bugs: '564'
+- id: CLM-EDA-0061
+  topic: EDA
+  statement: The framework confirmed 41 candidate bugs as scoreboard escapes.
+  sources:
+  - SRC-00420
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    candidate_scoreboard_escapes: '68'
+- id: CLM-EDA-0062
+  topic: EDA
+  statement: The Anomaly Cross-Checker observed the injected bug in 55 of the 68 candidate escapes.
+  sources:
+  - SRC-00420
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-EDA-0063
+  topic: EDA
+  statement: The specification-only baseline detected 11 of the 68 candidate escapes.
+  sources:
+  - SRC-00420
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    baseline_type: specification-only baseline
+    candidate_escapes: '68'
+- id: CLM-EDA-0064
+  topic: EDA
+  statement: On unmodified reference designs, the Anomaly Cross-Checker reported 9 anomalies across four
+    IPs.
+  sources:
+  - SRC-00420
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-EDA-0065
+  topic: EDA
+  statement: A median framework run per mutant took 9.6 minutes.
+  sources:
+  - SRC-00420
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2

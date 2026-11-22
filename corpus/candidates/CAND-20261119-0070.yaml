@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.24234v1
 doi: null
-title: Hardware Acceleration of Vision-Language-Action Models with Weight Precision
-  Rising over the Flow Steps
+title: Hardware Acceleration of Vision-Language-Action Models with Weight Precision Rising over the Flow
+  Steps
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-18'
@@ -26,6 +26,90 @@ id: CAND-20261119-0070
 harvested_date: '2026-11-19'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-22'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The RTL implementation of the accelerator runs one inference of the GR00T N1.6 action head
+      in 8.02 ms using the [2,3,3,4] per-step precision schedule.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - Simulated with LPDDR5X timing, our RTL implementation runs the GR00T N1.6 action head in 8.02 ms
+      per inference with 2, 3, 3 and 4 bits in its four flow steps.
+    - our RTL implementation
+    - GR00T N1.6 action head
+    - 2, 3, 3 and 4 bits in its four flow steps
+  - statement: The accelerator achieves a 1.7x speedup over Jetson AGX Thor running NVFP4 for the GR00T
+      N1.6 action head.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - With a copy per width and 50% of Thor’s memory bandwidth, the accelerator runs this schedule 1.7×
+      faster than Thor in NVFP4, at 9.1× less energy and equal closed-loop success.
+    - Simulated with LPDDR5X timing, our RTL implementation runs the GR00T N1.6 action head in 8.02 ms
+      per inference with 2, 3, 3 and 4 bits in its four flow steps.
+    - Thor
+    - NVFP4
+  - statement: The accelerator consumes 9.1x less energy per inference compared to Jetson AGX Thor running
+      NVFP4 for the GR00T N1.6 action head.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - With a copy per width and 50% of Thor’s memory bandwidth, the accelerator runs this schedule 1.7×
+      faster than Thor in NVFP4, at 9.1× less energy and equal closed-loop success.
+    - Simulated with LPDDR5X timing, our RTL implementation runs the GR00T N1.6 action head in 8.02 ms
+      per inference with 2, 3, 3 and 4 bits in its four flow steps.
+    - Thor
+    - NVFP4
+  - statement: The accelerator synthesized in TSMC 7 nm occupies an area of 3.3 mm².
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - a copy per width, 3.3 mm² at 7 nm
+    - Every block of the accelerator was synthesized with Cadence Genus in TSMC 7 nm at 1 GHz.
+    - 7 nm
+  - statement: The energy per inference of GR00T N1.6 at [2,3,3,4] on the accelerator is 78 mJ.
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - 0 500 1000 1500(c) mJ 1632 951 716 543 253 102 78 9.1× vs NVFP4
+    - We simulated the same netlists and clock trees at gate level with FlashReplay in Cadence Joules.
+      The simulation replays the VCDs of a LIBERO inference at [2,3,3,4] and of System 2 from the RTL,
+      at the typical corner of 0.75 V and 25 ◦C.
+    - GR00T N1.6
+    - '[2,3,3,4]'
+  - statement: The RTL implementation runs [2,3,3,4] on GR00T N1.5 in 5.16 ms per inference.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - As Figure 10a shows, the same RTL runs [2,3,3,4] on GR00T N1.5 in 5.16 ms per inference
+    - The accelerator was written in Chisel [6], parameterized in the sizes of its array, token buffers,
+      FIFOs and ports, and simulated in Verilator [76].
+    - GR00T N1.5
+    - '[2,3,3,4]'
+  - statement: The RTL implementation runs [2,5] on π0.5 at two flow steps in 2.70 ms per inference.
+    reason: the value 2.7 does not appear in any of the claim's quotes
+    quotes:
+    - and [2,5] on 𝜋0.5 at two flow steps in 2.70 ms.
+    - The accelerator was written in Chisel [6], parameterized in the sizes of its array, token buffers,
+      FIFOs and ports, and simulated in Verilator [76].
+    - 𝜋0.5
+    - '[2,5]'
+  - statement: Measured on Jetson AGX Thor using custom CUDA kernels, the GR00T N1.6 action head takes
+      13.3 ms per inference with the [2,3,3,4] precision schedule.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - Figure 4a shows that on our kernels, [2,3,3,4] takes 13.3 ms per GR00T N1.6 inference, against 31.5
+      ms for the released BF16 action head.
+    - First, the attention and the normalization run between the linear layers while no weights stream
+      from DRAM. Second, the linear layers process narrow weights more slowly than the DRAM delivers them.
+    - Jetson AGX Thor
+    - GR00T N1.6
+  tokens:
+    input: 33464
+    output: 3081
+  fetched_chars: 99783

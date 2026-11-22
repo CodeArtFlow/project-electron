@@ -1,0 +1,108 @@
+id: SRC-00425
+title: Stochastic Optimisation for Scalable Ptychographic Image Reconstruction
+doi: null
+arxiv_id: 2611.24232v1
+url: https://arxiv.org/abs/2611.24232v1
+venue_id: arxiv_api
+authors:
+- name: Alan W. Muriithi
+  affiliation: null
+  corresponding: null
+- name: Jared Tanner
+  affiliation: null
+  corresponding: null
+- name: Jaroslav M. Fowkes
+  affiliation: null
+  corresponding: null
+- name: Benedikt J. Daurer
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-18'
+retrieved_date: '2026-11-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (91,436 characters, 38 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.24232v1 on
+  2026-11-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Au particles 5.63 10.07 770.18 76.82 26.13 2.42”
+
+  “Table 6: Reconstruction statistics for full experimental datasets comparing ML and VR.”
+
+  “The terminal loss is evaluated at the point of convergence defined by the loss-plateau criterion.”'
+method_summary: '“Reconstructions using the VR algorithm were carried out in PyTorch using complex64 tensors.”
+
+  “All reconstructions were performed on a Linux-based high-performance computing cluster equipped with
+  a 48-core CPU, 1.5 TB of system memory, and a single NVIDIA H100 GPU with 94 GB of device memory.”'
+limitations: “Neither F nor K ′ was tuned to the GPU used, so the reported memory and runtimes reflect
+  these configurations rather than the minimum achievable by either algorithm.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 26679
+    output: 2724
+  claims_accepted: 1
+  claims_rejected: 6
+  rejected:
+  - statement: For an experimental dataset of 200,000 diffraction patterns, the VR algorithm requires
+      65% of the peak GPU memory of the maximum-likelihood algorithm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''For an experimental
+      dataset of 200,000 diffraction patterns of 128 × 1'''
+    quotes:
+    - For an experimental dataset of 200,000 diffraction patterns of 128 × 128 pixels, VR is demonstrated
+      to require 65% of the peak GPU memory and 22% of the reconstruction time of the established maximum-likelihood
+      (ML) algorithm.
+    - maximum-likelihood (ML) algorithm
+    - VR is demonstrated to require
+  - statement: For an experimental dataset of 200,000 diffraction patterns, the VR algorithm requires
+      22% of the reconstruction time of the maximum-likelihood algorithm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''For an experimental
+      dataset of 200,000 diffraction patterns of 128 × 1'''
+    quotes:
+    - For an experimental dataset of 200,000 diffraction patterns of 128 × 128 pixels, VR is demonstrated
+      to require 65% of the peak GPU memory and 22% of the reconstruction time of the established maximum-likelihood
+      (ML) algorithm.
+    - maximum-likelihood (ML) algorithm
+    - VR is demonstrated to require
+  - statement: On the cropped butterfly scale dataset, the VR algorithm achieves a peak GPU memory usage
+      of 5.20 GB.
+    reason: the value 5.2 does not appear in any of the claim's quotes
+    quotes:
+    - Peak GPU memory consumption is reduced from 47.45 GB (ML) to 5.20 GB (VR), a factor of nine relative
+      to ML and of six relative to DM.
+    - 'Table 5: Reconstruction statistics for the cropped butterfly dataset.'
+    - 5.20 GB (VR)
+    - butterfly scale (small) datasets respectively. F = 6000 for every synthetic dataset. The corresponding
+      VR mini-batch sizes were K ′ = 4096, 16, 1024 and 64.
+  - statement: On the Nanoprobe test target dataset, the VR algorithm achieves a peak GPU memory usage
+      of 18.76 GB.
+    reason: 'unit conversion refused: area_die: cannot convert 18.76 GB to m^2 - Cannot convert from ''gigabyte''
+      (dimensionless) to ''meter ** 2'' ([length] ** 2). A dimensional mismatch means the valu'
+    quotes:
+    - Nanoprobe test target 5.90 19.76 744.23 165.29 28.87 18.76
+    - Peak GPU memory is the memory attributed to the reconstruction process, over a window that spans
+      data loading.
+    - 'Table 6: Reconstruction statistics for full experimental datasets comparing ML and VR.'
+  - statement: For the synthetic dataset of 1.02 x 10^6 diffraction patterns, the VR algorithm achieves
+      a measured time to convergence of 1906.0 s.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - 1.02 × 106 N/A N/A N/A N/A 4.706 4.587 (−2.5%) 405 1906.0
+    - 5.3 Scaling Results
+    - 'Table 8: Time per pass over the data for the synthetic datasets: one full-batch iteration for ML
+      and one epoch for VR.'
+  - statement: For the synthetic dataset of 1.02 x 10^6 diffraction patterns, the VR algorithm achieves
+      a measured peak GPU memory of 88.94 GB.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - 1.02 × 106 N/A 141.92 88.94 87.33 (−1.8%)
+    - 5.3 Scaling Results
+    - 'Table 9: Peak GPU memory of the synthetic reconstructions, measured per process by NVML over a
+      window that spans data loading and the reconstruction, against the byte counts of Eqs. 20 and 22.'
+corrections: []

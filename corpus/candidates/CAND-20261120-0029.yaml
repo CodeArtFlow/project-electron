@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.26567v1
 doi: null
-title: Efficient and Variation-Tolerant Tree Inference via Compact and Scalable Mapping
-  in Analog CAMs
+title: Efficient and Variation-Tolerant Tree Inference via Compact and Scalable Mapping in Analog CAMs
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-19'
@@ -30,6 +29,102 @@ id: CAND-20261120-0029
 harvested_date: '2026-11-20'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-22'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: ACTIVAR limits accuracy degradation to 3.7% on the MNIST dataset under realistic hardware
+      noise conditions.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Under realistic hardware noise conditions, ACTIVAR limits accuracy degradation to just 3.7% on the
+      MNIST dataset, whereas baseline models suffer a catastrophic 49.6% drop.
+    - To evaluate the proposed ACTIVAR design under realistic hardware conditions, we employ a simulation
+      framework that incorporates device variation, input voltage noise, and soft decision boundaries.
+    - MNIST dataset
+    - ACTIVAR
+  - statement: Baseline CART models mapped directly onto analog CAM arrays suffer a 49.6% accuracy drop
+      on the MNIST dataset under realistic hardware noise conditions.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Under realistic hardware noise conditions, ACTIVAR limits accuracy degradation to just 3.7% on the
+      MNIST dataset, whereas baseline models suffer a catastrophic 49.6% drop.
+    - To evaluate the proposed ACTIVAR design under realistic hardware conditions, we employ a simulation
+      framework that incorporates device variation, input voltage noise, and soft decision boundaries.
+    - MNIST dataset
+    - baseline models
+  - statement: The crossbar array consumes 0.095 fJ/search/cell during inference.
+    reason: 'unit conversion refused: energy: could not parse 0.095 ''fJ/search/cell'': ''search'' is
+      not defined in the unit registry'
+    quotes:
+    - The crossbar array imposes a constant computational overhead of 0.095 fJ/search/cell, independent
+      of array size.
+    - We evaluated the energy consumption and operational delay of our analog content-addressable memory
+      system using the calibrated FeFET models in conjunction with 45-nm Predictive Technology Model (PTM)
+      models for MOSFETs[32].
+    - The crossbar array
+  - statement: The 4T driver reduces the soft boundary to 4.2% of the full memory window.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - The results confirm that our design reduces the soft boundary to just 4.2% of the full memory window
+      (0.05V out of 1.2V range), representing a significant improvement in boundary sharpness compared
+      to conventional analog CAM implementations
+    - our design
+    - 1.2V range
+  - statement: The inference delay of the 8x3 array configuration is 1.37 ns.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - As demonstrated in Figure 10(c), the system delay exhibits a gradual increase with array size, rising
+      from 1.37 ns for the smallest configuration to 1.62 ns for the largest 256×8 array.
+    - We evaluated the energy consumption and operational delay of our analog content-addressable memory
+      system using the calibrated FeFET models in conjunction with 45-nm Predictive Technology Model (PTM)
+      models for MOSFETs[32].
+    - smallest configuration
+  - statement: The inference delay of the 256x8 array configuration is 1.62 ns.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - As demonstrated in Figure 10(c), the system delay exhibits a gradual increase with array size, rising
+      from 1.37 ns for the smallest configuration to 1.62 ns for the largest 256×8 array.
+    - We evaluated the energy consumption and operational delay of our analog content-addressable memory
+      system using the calibrated FeFET models in conjunction with 45-nm Predictive Technology Model (PTM)
+      models for MOSFETs[32].
+    - 256×8 array
+  - statement: The smallest array configuration consumes 0.847 fJ/search/cell.
+    reason: 'unit conversion refused: energy: could not parse 0.847 ''fJ/search/cell'': ''search'' is
+      not defined in the unit registry'
+    quotes:
+    - As a result, the energy efficiency per search per cell improves by 6.7×, dropping from 0.847 fJ/search/cell
+      in the smallest design to 0.126 fJ/search/cell in the largest array.
+    - We evaluated the energy consumption and operational delay of our analog content-addressable memory
+      system using the calibrated FeFET models in conjunction with 45-nm Predictive Technology Model (PTM)
+      models for MOSFETs[32].
+    - smallest design
+  - statement: The largest array configuration consumes 0.126 fJ/search/cell.
+    reason: 'unit conversion refused: energy: could not parse 0.126 ''fJ/search/cell'': ''search'' is
+      not defined in the unit registry'
+    quotes:
+    - As a result, the energy efficiency per search per cell improves by 6.7×, dropping from 0.847 fJ/search/cell
+      in the smallest design to 0.126 fJ/search/cell in the largest array.
+    - We evaluated the energy consumption and operational delay of our analog content-addressable memory
+      system using the calibrated FeFET models in conjunction with 45-nm Predictive Technology Model (PTM)
+      models for MOSFETs[32].
+    - largest array
+  tokens:
+    input: 21222
+    output: 2542
+  fetched_chars: 66497

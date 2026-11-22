@@ -7237,3 +7237,214 @@ claims:
     model: gemini-3.6-flash
     prompt_version: reader-v5
     verified_quotes: 2
+- id: CLM-ARCH-0253
+  topic: ARCH
+  statement: MaskPE physical implementation targets a clock period of 2.5 ns.
+  sources:
+  - SRC-00416
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    process: Nangate45
+    architecture: MaskPE
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 2.5
+      unit: ns
+    si_base:
+      value: 2.5e-09
+      unit: s
+    display:
+      value: 2.4999999999999996
+      unit: ns
+    conditions:
+      process: Nangate45
+      architecture: MaskPE
+- id: CLM-ARCH-0254
+  topic: ARCH
+  statement: The 4-SM GPU target completes a 1024 x 1024 GEMM workload in 4.24 seconds when simulated
+    using FoldSim.
+  sources:
+  - SRC-00417
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    target_design: 4-SM GPU
+    workload: 1024 × 1024 GEMM
+    simulator: FoldSim
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 4.24
+      unit: seconds
+    si_base:
+      value: 4.24
+      unit: s
+    display:
+      value: 4239999999.9999995
+      unit: ns
+    conditions:
+      target_design: 4-SM GPU
+      workload: 1024 × 1024 GEMM
+      simulator: FoldSim
+- id: CLM-ARCH-0255
+  topic: ARCH
+  statement: Software RTL simulation completes a 1024 x 1024 GEMM on a 4-SM GPU target in 26 hours.
+  sources:
+  - SRC-00417
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-19'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    target_design: 4-SM GPU
+    workload: 1024 × 1024 GEMM
+    simulator_type: software RTL simulation
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 26.0
+      unit: hours
+    si_base:
+      value: 93600.0
+      unit: s
+    display:
+      value: 93599999999999.98
+      unit: ns
+    conditions:
+      target_design: 4-SM GPU
+      workload: 1024 × 1024 GEMM
+      simulator_type: software RTL simulation
+- id: CLM-ARCH-0256
+  topic: ARCH
+  statement: The gate and its commit latch account for 4.6% of the SoC logic.
+  sources:
+  - SRC-00424
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-ARCH-0257
+  topic: ARCH
+  statement: Evidence collection takes 43.1 k cycles.
+  sources:
+  - SRC-00424
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    architecture: PULSAR-V
+- id: CLM-ARCH-0258
+  topic: ARCH
+  statement: Evidence collection requires 41x fewer cycles than re-hashing 16 KiB of memory.
+  sources:
+  - SRC-00424
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-ARCH-0259
+  topic: ARCH
+  statement: Re-hashing a 16 KiB image at attestation costs 1 755 080 cycles.
+  sources:
+  - SRC-00424
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    algorithm: Software SHA-256
+- id: CLM-ARCH-0260
+  topic: ARCH
+  statement: The synthesized SoC operates with a clock frequency of 25 MHz.
+  sources:
+  - SRC-00424
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    core: CV32E40S soft core
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 25.0
+      unit: MHz
+    si_base:
+      value: 25000000.0
+      unit: Hz
+    display:
+      value: 0.025
+      unit: GHz
+    conditions:
+      core: CV32E40S soft core

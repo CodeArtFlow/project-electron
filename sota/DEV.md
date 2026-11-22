@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-11-21.
+Topic code `DEV`. Last reviewed 2026-11-22.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -339,6 +339,26 @@ Topic code `DEV`. Last reviewed 2026-11-21.
   - `CLM-DEV-0118` · grade B · credibility unknown · measured · as of 2026-11-19
   - sources: SRC-00412
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Single lines are located with a mean absolute wavelength error of 0.40 nm across the band when using the combined representations.
+  - `CLM-DEV-0121` · device unmodified InGaAs PIN photodiode · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00419
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Two simultaneous lines are located with a mean absolute wavelength error of 0.32 nm when using combined representations.
+  - `CLM-DEV-0122` · device unmodified InGaAs PIN photodiode · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00419
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Averaging eight acquisitions of the same single line improves its wavelength accuracy to 0.23 nm.
+  - `CLM-DEV-0123` · device unmodified InGaAs PIN photodiode · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00419
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Without prior knowledge of line count, the three-slot model correctly identifies the number of lines in 98.0% of single-line spectra.
+  - `CLM-DEV-0124` · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00419
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Without prior knowledge of line count, the three-slot model identifies the number of lines in 99.9% of two-line and three-line spectra.
+  - `CLM-DEV-0125` · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00419
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -581,6 +601,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 117
-- grades: {'B': 117}
-- distinct sources: 50
+- claims: 122
+- grades: {'B': 122}
+- distinct sources: 51

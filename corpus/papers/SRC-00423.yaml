@@ -1,0 +1,118 @@
+id: SRC-00423
+title: A Universal Diffusion Model for the Quantum Position Operator
+doi: null
+arxiv_id: 2611.24130v1
+url: https://arxiv.org/abs/2611.24130v1
+venue_id: arxiv_api
+authors:
+- name: Ransell D'Souza
+  affiliation: null
+  corresponding: null
+- name: Austin Zadoks
+  affiliation: null
+  corresponding: null
+- name: Riccardo Dal Molin
+  affiliation: null
+  corresponding: null
+- name: Nataliia Manko
+  affiliation: null
+  corresponding: null
+- name: Junfeng Qiao
+  affiliation: null
+  corresponding: null
+- name: Nicola Marzari
+  affiliation: null
+  corresponding: null
+- name: Antimo Marrazzo
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-18'
+retrieved_date: '2026-11-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (69,672 characters, 15 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.24130v1 on
+  2026-11-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“WannDiffuse (FD) 2.758 7.136 −5.706 −2.094”
+
+  “We predict the Born effective charges and piezoelectric tensors of cubic and tetragonal BaTiO3.”'
+method_summary: '“Here we introduce WannDiffuse, a universal diffusion model for the quantum position
+  operator based on predicting the centres and real-space localization of MLWFs.”
+
+  “Our framework combines E(3)-equivariant graph neural networks based on NequIP [36, 37] with a generative
+  diffusion process [38–42] to predict WCCs and spreads directly from atomic configurations.”
+
+  “DFT calculations for liquid water, amorphous Silicon and Barium titanate were performed using Quantum
+  ESPRESSO [69–71] in conjunction with the SSSP Efficiency pseudopotential library (version 1.3, PBEsol
+  functional) [72–78].”'
+limitations: “Of these, we retained 2907 structures for which all semicore states were fully Wannierized,
+  since the diffusion model requires a constant number of WCCs per chemical species.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 22358
+    output: 2244
+  claims_accepted: 1
+  claims_rejected: 5
+  rejected:
+  - statement: WannDiffuse trained on a 50-structure dataset predicts a spontaneous polarization of 0.288
+      C m^-2 for tetragonal BaTiO3 using finite-difference calculations.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The predicted
+      spontaneous polarisation of tetragonal BaTiO3, ∆P = 0.28'''
+    quotes:
+    - The predicted spontaneous polarisation of tetragonal BaTiO3, ∆P = 0.288 C m−2, is in close agreement
+      with experimental measurements (0.26 C m−2) [58, 59] and previous first-principles calculations
+      [55–57].
+    - To evaluate whether WannDiffuse can capture the response of a polar functional material, we train
+      a separate model for barium titanate (BaTiO3) using 50 initial structures sampled over 50 diffusion
+      timesteps (see Methods).
+    - tetragonal BaTiO3
+    - spontaneous polarisation of tetragonal BaTiO3, ∆P = 0.288 C m−2
+  - statement: The universal WannDiffuse model achieves a root-mean-square error of 0.09 Å for predicted
+      Wannier charge centres across a 100-material validation set.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Quantitatively,
+      the RMSE over the complete validation set is 0.09 Å fo'''
+    quotes:
+    - Quantitatively, the RMSE over the complete validation set is 0.09 Å for WCCs and 0.02 Å2 for spreads,
+      demonstrating the overall accuracy of the model across both target properties.
+    - To assess generalization beyond the structural environments encountered during training, we validate
+      the model on 100 previously unseen insulating materials.
+    - complete validation set
+    - 0.09 Å for WCCs
+  - statement: The universal WannDiffuse model achieves a root-mean-square error of 0.02 Å^2 for predicted
+      Wannier spreads across a 100-material validation set.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Quantitatively,
+      the RMSE over the complete validation set is 0.09 Å fo'''
+    quotes:
+    - Quantitatively, the RMSE over the complete validation set is 0.09 Å for WCCs and 0.02 Å2 for spreads,
+      demonstrating the overall accuracy of the model across both target properties.
+    - To assess generalization beyond the structural environments encountered during training, we validate
+      the model on 100 previously unseen insulating materials.
+    - complete validation set
+    - 0.02 Å2 for spreads
+  - statement: A WannDiffuse model trained with Mo- and S-containing materials while excluding monolayer
+      MoS2 achieves an RMSE error of 1.63 x 10^-2 Å on monolayer MoS2 WCC pr
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''In contrast,
+      a model trained on Mo- and S-containing materials while e'''
+    quotes:
+    - In contrast, a model trained on Mo- and S-containing materials while excluding monolayer MoS2 itself
+      achieves an RMSE error of only 1.63 × 10−2 Å and reproduces the WCC arrangement with high accuracy.
+    - monolayer MoS2
+    - Mo- and S-containing materials while excluding monolayer MoS2
+  - statement: WannDiffuse finite-difference calculation predicts a clamped-ion e31 coefficient of 0.2361
+      C m^-2 for tetragonal BaTiO3.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - WannDiffuse (FD) 0.2361 −0.400 0.15341
+    - Beyond static polarization, WannDiffuse also reproduces the clamped-ion piezoelectric response of
+      tetragonal BaTiO3.
+    - e31
+    - tetragonal BaTiO3
+corrections: []

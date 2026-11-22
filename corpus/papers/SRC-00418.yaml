@@ -1,0 +1,109 @@
+id: SRC-00418
+title: Emergent Orbital Hall Currents in Disordered and Amorphous Materials
+doi: null
+arxiv_id: 2611.26502v1
+url: https://arxiv.org/abs/2611.26502v1
+venue_id: arxiv_api
+authors:
+- name: Jorge Martinez Romeral
+  affiliation: null
+  corresponding: null
+- name: Thomas Galvani
+  affiliation: null
+  corresponding: null
+- name: Onurcan Kaya
+  affiliation: null
+  corresponding: null
+- name: Stephan Roche
+  affiliation: null
+  corresponding: null
+- name: Aron W. Cummings
+  affiliation: null
+  corresponding: null
+- name: Luis M. Canonico
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (38,206 characters, 8 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.26502v1 on
+  2026-11-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“For the square lattice and graphene we let γij = −1 eV and −2.7 eV, respectively.”
+
+  “All exhibit strong structural disorder, with localization lengths of ξloc ≃ 4, 5.7, 7.4 nm for polycrystalline
+  samples and 1.1 nm for the amorphous sample [42].”
+
+  “localization lengths of ξloc ≃ 4, 5.7, 7.4 nm for polycrystalline samples and 1.1 nm for the amorphous
+  sample”'
+method_summary: '“Our methodology centers around the time evolution of the electronic density matrix,
+  ˆρ(t), in the presence of an external perturbation, by solving the quantum Liouville equation, iℏ∂t
+  ˆρ(t) = h ˆH(t), ˆρ(t) i [36].”
+
+  “To evaluate the trace in Eq. (1), we use the stochastic approximation [42, 50, 53]. For functions of
+  the Hamiltonian, such as ˆU (t1, t0) and the Green’s functions entering the ˆLγ operator [34], instead
+  of diagonalizing ˆH we employ the kernel polynomial method (KPM) and expand them as a series of Chebyshev
+  polynomials [42, 50, 53].”'
+limitations: “This constant value coincides with a dephasing time, τφ, that is inherent to our numerical
+  approach and arises from the fact that the Chebyshev expansion is cut off at a finite number of polynomials,
+  M.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 13398
+    output: 2483
+  claims_accepted: 3
+  claims_rejected: 5
+  rejected:
+  - statement: In the numerical simulations of graphene with Anderson disorder, the Chebyshev expansion
+      cutoff dephasing time is approximately 21 fs.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Here we have
+      τφ ≈ 21 fs.'''
+    quotes:
+    - Here we have τφ ≈ 21 fs.
+    - τφ ≈ 21 fs
+    - The rise and decay times for graphene are shown as the red squares in the bottom panel of Fig. 3.
+  - statement: The simulated polycrystalline graphene sample has an average grain diameter of 24 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - 'We considered four geometries in total: three polycrystalline samples with average grain diameters
+      of 24, 20, and 14 nm, and one amorphous sample.'
+    - three polycrystalline samples with average grain diameters of 24, 20, and 14 nm
+  - statement: The simulated polycrystalline graphene sample has an average grain diameter of 20 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - 'We considered four geometries in total: three polycrystalline samples with average grain diameters
+      of 24, 20, and 14 nm, and one amorphous sample.'
+    - three polycrystalline samples with average grain diameters of 24, 20, and 14 nm
+  - statement: The simulated polycrystalline graphene sample has an average grain diameter of 14 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - 'We considered four geometries in total: three polycrystalline samples with average grain diameters
+      of 24, 20, and 14 nm, and one amorphous sample.'
+    - three polycrystalline samples with average grain diameters of 24, 20, and 14 nm
+  - statement: The orbital Hall conductivity in the amorphous sample maintains an approximately constant
+      long-time behavior up to a simulation time of 2 ps.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Finally, we note that the approximately constant long-time behavior of σLz yx (t) is observed up
+      to a simulation time of 2 ps in the amorphous sample, which highlights the robustness of the orbital
+      Hall response despite the strong charge lo
+    - in the amorphous sample
+    - simulation time of 2 ps
+corrections: []

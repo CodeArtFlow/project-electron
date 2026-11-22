@@ -26,6 +26,69 @@ id: CAND-20261119-0063
 harvested_date: '2026-11-19'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-22'
+  reason: the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Laser 1 feedback delay time τ1 is measured to be 82.25 ns.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The four lasers we employed are ultra–low-threshold quantum-well distributed feedback (QW-DFB),
+      subjected to optical delays, τi, of 82.25 ns, 82.60 ns, 82.71 ns, and 82.88 ns, and are labeled
+      as lasers 1 to 4 according to increasing delay.
+    - The feedback delay time for each laser was obtained from the first peak of the intensity autocorrelation
+      function, with the laser subject to its own optical feedback while the other lasers were turned
+      off.
+    - and are labeled as lasers 1 to 4 according to increasing delay.
+  - statement: Laser 2 feedback delay time τ2 is measured to be 82.60 ns.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - The four lasers we employed are ultra–low-threshold quantum-well distributed feedback (QW-DFB),
+      subjected to optical delays, τi, of 82.25 ns, 82.60 ns, 82.71 ns, and 82.88 ns, and are labeled
+      as lasers 1 to 4 according to increasing delay.
+    - The feedback delay time for each laser was obtained from the first peak of the intensity autocorrelation
+      function, with the laser subject to its own optical feedback while the other lasers were turned
+      off.
+    - and are labeled as lasers 1 to 4 according to increasing delay.
+  - statement: Laser 3 feedback delay time τ3 is measured to be 82.71 ns.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - The four lasers we employed are ultra–low-threshold quantum-well distributed feedback (QW-DFB),
+      subjected to optical delays, τi, of 82.25 ns, 82.60 ns, 82.71 ns, and 82.88 ns, and are labeled
+      as lasers 1 to 4 according to increasing delay.
+    - The feedback delay time for each laser was obtained from the first peak of the intensity autocorrelation
+      function, with the laser subject to its own optical feedback while the other lasers were turned
+      off.
+    - and are labeled as lasers 1 to 4 according to increasing delay.
+  - statement: Laser 4 feedback delay time τ4 is measured to be 82.88 ns.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The four lasers we employed are ultra–low-threshold quantum-well distributed feedback (QW-DFB),
+      subjected to optical delays, τi, of 82.25 ns, 82.60 ns, 82.71 ns, and 82.88 ns, and are labeled
+      as lasers 1 to 4 according to increasing delay.
+    - The feedback delay time for each laser was obtained from the first peak of the intensity autocorrelation
+      function, with the laser subject to its own optical feedback while the other lasers were turned
+      off.
+    - and are labeled as lasers 1 to 4 according to increasing delay.
+  - statement: The optical wavelength λ0 used in the simulations is 1554 nm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - λ0 Optical wavelength 1554 nm
+    - Table 2. Parameters used in the simulations for all lasers.
+  tokens:
+    input: 7721
+    output: 1558
+  fetched_chars: 21968

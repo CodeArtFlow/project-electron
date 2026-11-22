@@ -1,0 +1,64 @@
+{
+  "arxiv_id": "2611.24135v1",
+  "claims": {
+    "CLM-ARCH-0256": {
+      "evidence_spans": [
+        "The gate and its commit latch cost 436 look-up tables (LUTs), 4.6 % of the SoC",
+        "Table I reports results from the routed design."
+      ],
+      "statement": "The gate and its commit latch account for 4.6% of the SoC logic.",
+      "terms": []
+    },
+    "CLM-ARCH-0257": {
+      "evidence_spans": [
+        "evidence collection takes 43.1 k cycles independent of image size, 41× less than re-hashing 16 KiB.",
+        "PULSAR-V, a post-update attestation architecture",
+        "Table I reports results from the routed design."
+      ],
+      "statement": "Evidence collection takes 43.1 k cycles.",
+      "terms": []
+    },
+    "CLM-ARCH-0258": {
+      "evidence_spans": [
+        "41× less than re-hashing 16 KiB.",
+        "Table I reports results from the routed design."
+      ],
+      "statement": "Evidence collection requires 41x fewer cycles than re-hashing 16 KiB of memory.",
+      "terms": []
+    },
+    "CLM-ARCH-0259": {
+      "evidence_spans": [
+        "re-measuring 16 KiB costs 1 755 080 cycles: 40.7× the constant 43 093 of the isolation evidence, and 7.6× signing.",
+        "Software SHA-256 runs at ≈107 cycles/byte on this core",
+        "The alternative, measured on the same board, is more expensive."
+      ],
+      "statement": "Re-hashing a 16 KiB image at attestation costs 1 755 080 cycles.",
+      "terms": []
+    },
+    "CLM-ARCH-0260": {
+      "evidence_spans": [
+        "attested device is a CV32E40S soft core (RV32IMC, firmware entirely in M-mode) at 25 MHz",
+        "attested device is a CV32E40S soft core",
+        "Table I reports results from the routed design."
+      ],
+      "statement": "The synthesized SoC operates with a clock frequency of 25 MHz.",
+      "terms": [
+        "SoC"
+      ]
+    }
+  },
+  "extra_quotes": [
+    "The artifact mediates one master per configuration, and its IOPU table covers only the active slot: the shim, not the gate, keeps the external master off the journal.",
+    "The reset counter survives core resets, but not power cycles, so a deployable one requires non-volatile backing, and the reset escape is simulated only."
+  ],
+  "generated": "2026-11-22",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00424",
+  "text_chars": 41724,
+  "text_sha256": "da943dc1226e8e7b7c5170bad6757848af6f2428f4399034b6f9b82ba6980432"
+}

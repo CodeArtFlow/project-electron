@@ -1,6 +1,6 @@
 # EDA — state of the art
 
-Topic code `EDA`. Last reviewed 2026-11-21.
+Topic code `EDA`. Last reviewed 2026-11-22.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -152,6 +152,30 @@ Topic code `EDA`. Last reviewed 2026-11-21.
 - GRODE-RTL reaches a success rate of 63.3% across three LLMs.
   - `CLM-EDA-0058` · grade B · credibility unknown · measured · as of 2026-11-19
   - sources: SRC-00400
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Out of 564 inserted bugs in four OpenTitan IPs, 68 are candidate scoreboard escapes.
+  - `CLM-EDA-0060` · inserted_bugs 564 · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00420
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The framework confirmed 41 candidate bugs as scoreboard escapes.
+  - `CLM-EDA-0061` · candidate_scoreboard_escapes 68 · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00420
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The Anomaly Cross-Checker observed the injected bug in 55 of the 68 candidate escapes.
+  - `CLM-EDA-0062` · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00420
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The specification-only baseline detected 11 of the 68 candidate escapes.
+  - `CLM-EDA-0063` · baseline_type specification-only baseline, candidate_escapes 68 · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00420
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- On unmodified reference designs, the Anomaly Cross-Checker reported 9 anomalies across four IPs.
+  - `CLM-EDA-0064` · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00420
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- A median framework run per mutant took 9.6 minutes.
+  - `CLM-EDA-0065` · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00420
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
@@ -311,6 +335,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 59
-- grades: {'B': 59}
-- distinct sources: 16
+- claims: 65
+- grades: {'B': 65}
+- distinct sources: 17

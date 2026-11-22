@@ -1,0 +1,78 @@
+{
+  "arxiv_id": "2611.26588v1",
+  "claims": {
+    "CLM-EDA-0060": {
+      "evidence_spans": [
+        "Of 564 bugs inserted into four OpenTitan IPs, 68 are candidate scoreboard escapes: non-equivalent, exercised by the tests, yet passing.",
+        "Of 564 bugs inserted into four OpenTitan IPs",
+        "Of 564 bugs inserted into four OpenTitan IPs, 68 are candidate scoreboard escapes: non-equivalent, exercised by the tests, yet passing."
+      ],
+      "statement": "Out of 564 inserted bugs in four OpenTitan IPs, 68 are candidate scoreboard escapes.",
+      "terms": []
+    },
+    "CLM-EDA-0061": {
+      "evidence_spans": [
+        "The framework confirmed 41 as scoreboard escapes with assertions failing on the buggy design and proven on the original.",
+        "68 are candidate scoreboard escapes",
+        "The framework confirmed 41 as scoreboard escapes with assertions failing on the buggy design and proven on the original."
+      ],
+      "statement": "The framework confirmed 41 candidate bugs as scoreboard escapes.",
+      "terms": []
+    },
+    "CLM-EDA-0062": {
+      "evidence_spans": [
+        "The ACC reported the effect of the injected bug for 55 of 68 candidate escapes, and for 41 of these, the framework produced a qualified detection.",
+        "The ACC reported the effect of the injected bug for 55 of 68 candidate escapes, and for 41 of these, the framework produced a qualified detection."
+      ],
+      "statement": "The Anomaly Cross-Checker observed the injected bug in 55 of the 68 candidate escapes.",
+      "terms": [
+        "Cross-Checker"
+      ]
+    },
+    "CLM-EDA-0063": {
+      "evidence_spans": [
+        "This specification-only baseline detected 11 of the 68 candidate escapes, compared with 41 for the full framework.",
+        "This specification-only baseline detected 11 of the 68 candidate escapes",
+        "11 of the 68 candidate escapes",
+        "This specification-only baseline detected 11 of the 68 candidate escapes, compared with 41 for the full framework."
+      ],
+      "statement": "The specification-only baseline detected 11 of the 68 candidate escapes.",
+      "terms": []
+    },
+    "CLM-EDA-0064": {
+      "evidence_spans": [
+        "To check this, we ran the ACC with the same prompt, specification and attempt limit on the traces of the four unmodified designs, which contain no injected bug. It reported 9 anomalies (PWM 1, PATTGEN 6, SPI Host 1, CSRNG 1).",
+        "To check this, we ran the ACC with the same prompt, specification and attempt limit on the traces of the four unmodified designs, which contain no injected bug. It reported 9 anomalies (PWM 1, PATTGEN 6, SPI Host 1, CSRNG 1)."
+      ],
+      "statement": "On unmodified reference designs, the Anomaly Cross-Checker reported 9 anomalies across four IPs.",
+      "terms": [
+        "Cross-Checker",
+        "IPs"
+      ]
+    },
+    "CLM-EDA-0065": {
+      "evidence_spans": [
+        "Per mutant, the framework took a median of 9.6 minutes, mostly simulation time, and about 620k input and 18k output tokens of LLM usage.",
+        "Per mutant, the framework took a median of 9.6 minutes, mostly simulation time, and about 620k input and 18k output tokens of LLM usage."
+      ],
+      "statement": "A median framework run per mutant took 9.6 minutes.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "Each selected test is then re-run at its original seed with waveform dumping enabled for the target module, so that the ACC sees exactly the behavior the passing regression produced.",
+    "For each assertion, JasperGold also checks a cover property on its antecedent, which identifies vacuous proofs.",
+    "Activating a non-activated mutant would require new stimulus, which is outside the scope of this work: the framework inspects the regression tests the team already runs.",
+    "The 13 mutants the ACC did not observe share one pattern: its report was taken by a contradiction that the unmodified reference also shows, such as the command-ready flag of CSRNG or the disabled channel of PATTGEN."
+  ],
+  "generated": "2026-11-22",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00420",
+  "text_chars": 44198,
+  "text_sha256": "60e94a106cf094d0103b6f3437045c76cc6fa54afd4e9441ee58b8e40c37c912"
+}

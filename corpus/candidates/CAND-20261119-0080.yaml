@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.24129v1
 doi: null
-title: Properties of [111]-oriented ferroelectric superlattices based on oxides with
-  a perovskite structure
+title: Properties of [111]-oriented ferroelectric superlattices based on oxides with a perovskite structure
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-18'
@@ -22,6 +21,55 @@ id: CAND-20261119-0080
 harvested_date: '2026-11-19'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-22'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: In [111]-oriented BaTiO3/SrTiO3 superlattices, the experimentally observed remanent polarization
+      (2Pr) is 0.027 C/m2.
+    reason: 'unit conversion refused: current: cannot convert 0.027 C/m2 to A - Cannot convert from ''coulomb
+      / meter ** 2'' ([current] * [time] / [length] ** 2) to ''ampere'' ([current]). A dimensional'
+    quotes:
+    - However, the remanent polarization (2Pr = 0.027 C/m2) in these SLs is noticeably lower.
+    - The most thoroughly studied [111]-oriented SL is BaTiO3/SrTiO3 [3–5].
+    - (2Pr = 0.027 C/m2)
+  - statement: The calculated plane-wave cutoff energy for superlattices containing Ta and Hf atoms is
+      40 Ha (1088 eV).
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - The plane-wave cutoﬀ energy was 40 Ha (1088 eV) for SLs containing Ta and Hf atoms, and 30 Ha (816
+      eV) for other SLs.
+    - The calculations were performed from ﬁrst principles within the density functional theory, with
+      pseudopotentials and wave functions expanded in a plane-wave basis, as implemented in the ABINIT
+      software package [13].
+    - for SLs containing Ta and Hf atoms
+  - statement: The calculated plane-wave cutoff energy for superlattices not containing Ta and Hf atoms
+      is 30 Ha (816 eV).
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - The plane-wave cutoﬀ energy was 40 Ha (1088 eV) for SLs containing Ta and Hf atoms, and 30 Ha (816
+      eV) for other SLs.
+    - The calculations were performed from ﬁrst principles within the density functional theory, with
+      pseudopotentials and wave functions expanded in a plane-wave basis, as implemented in the ABINIT
+      software package [13].
+    - and 30 Ha (816 eV) for other SLs.
+  - statement: The effective Born charge of the Sn atom in the BaTiO3/BaSnO3 superlattice is 4.601.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Furthermore,
+      it should be noted that the eﬀective Born charge of the S'''
+    quotes:
+    - Furthermore, it should be noted that the eﬀective Born charge of the Sn atom (Z ∗ = 4.601) is only
+      slightly higher than its nominal ionic charge, unlike the case for Ti, Zr, Nb, and Ta atoms.
+    - In the BaTiO3/BaSnO3 superlattice, the ferroelectricity was absent even at a layer-thickness ratio
+      of 3:1.
+    - eﬀective Born charge of the Sn atom (Z ∗ = 4.601)
+  tokens:
+    input: 11548
+    output: 1449
+  fetched_chars: 29041

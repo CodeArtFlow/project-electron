@@ -1,0 +1,65 @@
+{
+  "arxiv_id": "2611.26532v1",
+  "claims": {
+    "CLM-DEV-0121": {
+      "evidence_spans": [
+        "Single lines are located to 0.40 nm across the full 80 nm band",
+        "unmodified InGaAs PIN photodiode",
+        "Table 2. Wavelength accuracy (mean absolute error, nm) on wavelengths or line combinations not used for calibration."
+      ],
+      "statement": "Single lines are located with a mean absolute wavelength error of 0.40 nm across the band when using the combined representations.",
+      "terms": []
+    },
+    "CLM-DEV-0122": {
+      "evidence_spans": [
+        "two simultaneous lines to 0.32 nm",
+        "unmodified InGaAs PIN photodiode",
+        "Table 2. Wavelength accuracy (mean absolute error, nm) on wavelengths or line combinations not used for calibration."
+      ],
+      "statement": "Two simultaneous lines are located with a mean absolute wavelength error of 0.32 nm when using combined representations.",
+      "terms": []
+    },
+    "CLM-DEV-0123": {
+      "evidence_spans": [
+        "Averaging eight acquisitions of the same line improves the single-line accuracy to 0.23 nm.",
+        "unmodified InGaAs PIN photodiode",
+        "Averaging eight acquisitions of the same line improves the single-line accuracy to 0.23 nm."
+      ],
+      "statement": "Averaging eight acquisitions of the same single line improves its wavelength accuracy to 0.23 nm.",
+      "terms": []
+    },
+    "CLM-DEV-0124": {
+      "evidence_spans": [
+        "the three-slot model identifies the number of lines in 98.0% of single-line spectra",
+        "Table 3. Reconstruction without prior knowledge of the number of lines, on configurations not used for calibration"
+      ],
+      "statement": "Without prior knowledge of line count, the three-slot model correctly identifies the number of lines in 98.0% of single-line spectra.",
+      "terms": []
+    },
+    "CLM-DEV-0125": {
+      "evidence_spans": [
+        "99.9% of pairs and triples (Table 3",
+        "Table 3. Reconstruction without prior knowledge of the number of lines, on configurations not used for calibration"
+      ],
+      "statement": "Without prior knowledge of line count, the three-slot model identifies the number of lines in 99.9% of two-line and three-line spectra.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "Light from up to three tunable lasers (1530–1610 nm) is combined in fiber; a fraction is monitored on an optical spectrum analyzer. A function generator applies the sinusoidal bias between 3 and 10 V. The photodiode is terminated in 100 Ω; a bias tee separates the DC photocurrent, recorded directly, from the AC component, which is amplified by a low-noise amplifier (1 kHz–1.8 GHz) and digitized by an oscilloscope as 8000 samples over one bias period, triggered by the function generator.",
+    "Each dark-subtracted waveform is compressed onto 10–20 principal components, computed from calibration waveforms only, and a fully connected neural network maps them, together with the DC photocurrent, to the line wavelengths; a second network classifies the power of each line.",
+    "Consistent with the line coupling of Sec. 4.2, a linear inversion with a dictionary of measured single-line waveforms recovers single lines but not multi-line spectra (Table 3), confirming that the coupled response must be learned from calibration spectra of the same kind as those to be measured.",
+    "On a new day the accuracy is set by slow day-to-day drift rather than by noise",
+    "for three lines, recorded on fewer days, it remains above 1 nm, and calibration over more days, together with temperature stabilization of the photodiode and monitoring of the bias waveform, is the direct route to improving it."
+  ],
+  "generated": "2026-11-22",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00419",
+  "text_chars": 37923,
+  "text_sha256": "d635a1ab8b527d0a1dfd472c9f2124c762b48d88254a9b6dcf4138476fa521c8"
+}

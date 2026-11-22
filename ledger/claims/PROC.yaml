@@ -2502,3 +2502,38 @@ claims:
       material: Ta₂O₅
       chamber_temperature: 160 °C
       acceleration_voltage: 250 V
+- id: CLM-PROC-0078
+  topic: PROC
+  statement: On the Au particles dataset, the VR algorithm achieves a time to convergence of 76.82 s.
+  sources:
+  - SRC-00425
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-18'
+  created: '2026-11-22'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    dataset: Au particles
+    algorithm: VR
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 76.82
+      unit: s
+    si_base:
+      value: 76.82
+      unit: s
+    display:
+      value: 76819999999.99998
+      unit: ns
+    conditions:
+      dataset: Au particles
+      algorithm: VR

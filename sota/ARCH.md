@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-21.
+Topic code `ARCH`. Last reviewed 2026-11-22.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -120,6 +120,10 @@ Topic code `ARCH`. Last reviewed 2026-11-21.
 - **0.001 GHz** — The clock frequency of the comparator is 1 MHz.
   - `CLM-ARCH-0176` · component comparator · grade B · credibility unknown · simulated · as of 2026-10-29
   - sources: SRC-00262
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.025 GHz** — The synthesized SoC operates with a clock frequency of 25 MHz.
+  - `CLM-ARCH-0260` · core CV32E40S soft core · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00424
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
@@ -649,6 +653,22 @@ Topic code `ARCH`. Last reviewed 2026-11-21.
   - `CLM-ARCH-0248` · grade B · credibility unknown · measured · as of 2026-11-18
   - sources: SRC-00392
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The gate and its commit latch account for 4.6% of the SoC logic.
+  - `CLM-ARCH-0256` · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00424
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Evidence collection takes 43.1 k cycles.
+  - `CLM-ARCH-0257` · architecture PULSAR-V · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00424
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Evidence collection requires 41x fewer cycles than re-hashing 16 KiB of memory.
+  - `CLM-ARCH-0258` · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00424
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- Re-hashing a 16 KiB image at attestation costs 1 755 080 cycles.
+  - `CLM-ARCH-0259` · algorithm Software SHA-256 · grade B · credibility unknown · measured · as of 2026-11-18
+  - sources: SRC-00424
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 - The Kameleo selection hardware adds 3.7% to the accelerator area.
   - `CLM-ARCH-0252` · grade B · credibility unknown · simulated · as of 2026-11-19
   - sources: SRC-00411
@@ -1069,6 +1089,20 @@ Topic code `ARCH`. Last reviewed 2026-11-21.
   - `CLM-ARCH-0247` · device fabricated four-chip 28 nm ASIC · grade B · credibility unknown · measured · as of 2026-11-18
   - sources: SRC-00392
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **2.5 ns** — MaskPE physical implementation targets a clock period of 2.5 ns.
+  - `CLM-ARCH-0253` · process Nangate45, architecture MaskPE · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00416
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **4.24e+09 ns** — The 4-SM GPU target completes a 1024 x 1024 GEMM workload in 4.24 seconds when simulated using FoldSim.
+  - `CLM-ARCH-0254` · target_design 4-SM GPU, workload 1024 × 1024 GEMM, simulator FoldSim · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00417
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0158 — see the open register
+- **9.36e+13 ns** — Software RTL simulation completes a 1024 x 1024 GEMM on a 4-SM GPU target in 26 hours.
+  - `CLM-ARCH-0255` · target_design 4-SM GPU, workload 1024 × 1024 GEMM, simulator_type software RTL simulation · grade B · credibility unknown · measured · as of 2026-11-19
+  - sources: SRC-00417
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0158 — see the open register
 
 ## Live contradictions in this layer
 
@@ -1137,9 +1171,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0146` — power: _unexamined; classification pending_
   - claims: CLM-ARCH-0250, CLM-ARCH-0251
   - missing data: `not yet named`
+- `CFL-0158` — time: _unexamined; classification pending_
+  - claims: CLM-ARCH-0254, CLM-ARCH-0255
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 252
-- grades: {'B': 252}
-- distinct sources: 88
+- claims: 260
+- grades: {'B': 260}
+- distinct sources: 91

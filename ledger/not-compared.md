@@ -4,13 +4,23 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**27331 pair(s)** as of 2026-11-21.
+**27955 pair(s)** as of 2026-11-22.
 
-## `area_die` (11 pair(s))
+## `area_die` (21 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-ARCH-0050` = 0.81 mm^2 | `CLM-MAT-0418` = 4.841e-13 mm^2 | 100% | process=TSMC 16nm FinFET technology, component=core area | grain_boundary_plane=Σ5(310)[001], material=SrTiO3 |
 | `CLM-ARCH-0110` = 0.0003 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 100% | component=Address Translation Module, location=RCD, process=TSMC 90nm, frequency=2.4GHz | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
+| `CLM-ARCH-0110` = 0.0003 mm^2 | `CLM-MAT-0418` = 4.841e-13 mm^2 | 100% | component=Address Translation Module, location=RCD, process=TSMC 90nm, frequency=2.4GHz | grain_boundary_plane=Σ5(310)[001], material=SrTiO3 |
+| `CLM-ARCH-0111` = 0.151 mm^2 | `CLM-MAT-0418` = 4.841e-13 mm^2 | 100% | component=Rank Chunk List, location=RCD, process=TSMC 90nm, frequency=2.4GHz | grain_boundary_plane=Σ5(310)[001], material=SrTiO3 |
+| `CLM-ARCH-0112` = 0.032 mm^2 | `CLM-MAT-0418` = 4.841e-13 mm^2 | 100% | component=PIM Chunk List, location=DRAM chip | grain_boundary_plane=Σ5(310)[001], material=SrTiO3 |
+| `CLM-ARCH-0113` = 0.134 mm^2 | `CLM-MAT-0418` = 4.841e-13 mm^2 | 100% | component=Row Migration Table, location=DRAM chip | grain_boundary_plane=Σ5(310)[001], material=SrTiO3 |
+| `CLM-ARCH-0146` = 3.43 mm^2 | `CLM-MAT-0418` = 4.841e-13 mm^2 | 100% | component=FIGFLEX, process=NanGate 15 nm technology, fclk=1 GHz, activation_format=FP16 | grain_boundary_plane=Σ5(310)[001], material=SrTiO3 |
+| `CLM-ARCH-0147` = 3.97 mm^2 | `CLM-MAT-0418` = 4.841e-13 mm^2 | 100% | component=AxCore, process=NanGate 15 nm technology, fclk=1 GHz, activation_format=FP16 | grain_boundary_plane=Σ5(310)[001], material=SrTiO3 |
+| `CLM-ARCH-0148` = 4.68 mm^2 | `CLM-MAT-0418` = 4.841e-13 mm^2 | 100% | component=FIGLUT, process=NanGate 15 nm technology, fclk=1 GHz, activation_format=FP16 | grain_boundary_plane=Σ5(310)[001], material=SrTiO3 |
+| `CLM-ARCH-0158` = 0.008701 mm^2 | `CLM-MAT-0418` = 4.841e-13 mm^2 | 100% | process=45 nm, fclk=100 MHz, lanes=784-lane, precision=INT8 | grain_boundary_plane=Σ5(310)[001], material=SrTiO3 |
+| `CLM-DEV-0071` = 8 mm^2 | `CLM-MAT-0418` = 4.841e-13 mm^2 | 100% | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) | grain_boundary_plane=Σ5(310)[001], material=SrTiO3 |
 | `CLM-ARCH-0158` = 0.008701 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 100% | process=45 nm, fclk=100 MHz, lanes=784-lane, precision=INT8 | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
 | `CLM-ARCH-0112` = 0.032 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 100% | component=PIM Chunk List, location=DRAM chip | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
 | `CLM-ARCH-0113` = 0.134 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 98% | component=Row Migration Table, location=DRAM chip | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
@@ -69,27 +79,35 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 
 _and 6 more_
 
-## `energy` (1895 pair(s))
+## `energy` (2023 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
+| `CLM-MAT-0328` = 1000 meV | `CLM-MAT-0413` = -1000 meV | 200% | kekule_distortion_strength=0.2 | system=square lattice |
+| `CLM-MAT-0275` = 995 meV | `CLM-MAT-0413` = -1000 meV | 200% | desorption_state=molecular | system=square lattice |
 | `CLM-MAT-0409` = -91.5 meV | `CLM-PROC-0031` = 91 meV | 199% | direction=In-plane | error_metric=root-mean-square deviation per formula unit |
 | `CLM-MAT-0086` = 52.4 meV | `CLM-MAT-0405` = -51.9 meV | 199% | material=CrGeCN4, method=PBE+SOC | direction=In-plane |
 | `CLM-MAT-0113` = 15.9 meV | `CLM-MAT-0408` = -15.65 meV | 198% | method=three-band nearest-neighbor exciton-geometric calculation | direction=Out-of-plane |
 | `CLM-MAT-0306` = 89.9 meV | `CLM-MAT-0409` = -91.5 meV | 198% | polarization_state=P↑ | direction=In-plane |
 | `CLM-MAT-0085` = 53.3 meV | `CLM-MAT-0405` = -51.9 meV | 197% | material=CrSiCN4, method=PBE+SOC | direction=In-plane |
 | `CLM-MAT-0048` = 185 meV | `CLM-MEM-0040` = -180 meV | 197% | material=LiFePO4 | method=DFT |
+| `CLM-MAT-0277` = 2789 meV | `CLM-MAT-0414` = -2700 meV | 197% | desorption_state=molecular | system=graphene |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0406` = -61.8 meV | 197% | mechanism=surface polar phonon, substrate=SiO2 | direction=In-plane |
+| `CLM-MAT-0291` = 2800 meV | `CLM-MAT-0414` = -2700 meV | 196% | trap_type=isolated bi-Ed | system=graphene |
 | `CLM-MAT-0078` = 4810 meV | `CLM-MAT-0172` = -5090 meV | 194% | defect_complex=VAl(ON)3, model=DFT | material=MLBP |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0407` = -65.9 meV | 191% | mechanism=surface polar phonon, substrate=SiO2 | direction=In-plane |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0331` = 5630 meV | 190% | material=MLBP | phase=m-phase, temperature=300 K |
+| `CLM-MAT-0276` = 2994 meV | `CLM-MAT-0414` = -2700 meV | 190% | desorption_state=molecular | system=graphene |
 | `CLM-MAT-0002` = 200 meV | `CLM-MEM-0040` = -180 meV | 190% | mechanism=optical phonon | method=DFT |
 | `CLM-MAT-0200` = 200 meV | `CLM-MEM-0040` = -180 meV | 190% | band=2.3 eV emission, impurity_content=<0.1 ppm | method=DFT |
+| `CLM-MAT-0290` = 3000 meV | `CLM-MAT-0414` = -2700 meV | 190% | trap_type=isolated bi-Si3 | system=graphene |
 | `CLM-MAT-0050` = 102 meV | `CLM-MAT-0409` = -91.5 meV | 190% | material=Li6PS5Cl | direction=In-plane |
+| `CLM-MAT-0294` = 1120 meV | `CLM-MAT-0413` = -1000 meV | 189% | fit_function=Eq. ( 13), experimental_data_source=Ref. [ 6] | system=square lattice |
 | `CLM-MAT-0410` = -20.27 meV | `CLM-PHOT-0171` = 18 meV | 189% | direction=Out-of-plane | doping_duration=1.5 min |
 | `CLM-MAT-0408` = -15.65 meV | `CLM-PHOT-0171` = 18 meV | 187% | direction=Out-of-plane | doping_duration=1.5 min |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0405` = -51.9 meV | 187% | mechanism=surface polar phonon, substrate=SiO2 | direction=In-plane |
 | `CLM-MAT-0085` = 53.3 meV | `CLM-MAT-0406` = -61.8 meV | 186% | material=CrSiCN4, method=PBE+SOC | direction=In-plane |
+| `CLM-MAT-0394` = 1160 meV | `CLM-MAT-0413` = -1000 meV | 186% | functional=PBE | system=square lattice |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0274` = 5922 meV | 186% | material=MLBP | desorption_state=atomic |
 | `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0172` = -5090 meV | 185% | defect_complex=VAl(ON)3 | material=MLBP |
 | `CLM-MAT-0086` = 52.4 meV | `CLM-MAT-0406` = -61.8 meV | 185% | material=CrGeCN4, method=PBE+SOC | direction=In-plane |
@@ -97,24 +115,16 @@ _and 6 more_
 | `CLM-MAT-0085` = 53.3 meV | `CLM-MAT-0407` = -65.9 meV | 181% | material=CrSiCN4, method=PBE+SOC | direction=In-plane |
 | `CLM-MAT-0086` = 52.4 meV | `CLM-MAT-0407` = -65.9 meV | 180% | material=CrGeCN4, method=PBE+SOC | direction=In-plane |
 | `CLM-MAT-0113` = 15.9 meV | `CLM-MAT-0410` = -20.27 meV | 178% | method=three-band nearest-neighbor exciton-geometric calculation | direction=Out-of-plane |
+| `CLM-MAT-0329` = 1310 meV | `CLM-MAT-0413` = -1000 meV | 176% | kekule_distortion_strength=0.3 | system=square lattice |
+| `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0414` = -2700 meV | 175% | synthesis_condition=Nitrogen-rich | system=graphene |
+| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0413` = -1000 meV | 175% | synthesis_condition=Nitrogen-rich | system=square lattice |
+| `CLM-MAT-0327` = 740 meV | `CLM-MAT-0413` = -1000 meV | 174% | kekule_distortion_strength=0.1 | system=square lattice |
+| `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0414` = -2700 meV | 173% | synthesis_condition=Nitrogen-rich | system=graphene |
 | `CLM-MAT-0306` = 89.9 meV | `CLM-MAT-0407` = -65.9 meV | 173% | polarization_state=P↑ | direction=In-plane |
 | `CLM-MAT-0407` = -65.9 meV | `CLM-PROC-0031` = 91 meV | 172% | direction=In-plane | error_metric=root-mean-square deviation per formula unit |
 | `CLM-MAT-0313` = 130 meV | `CLM-MEM-0040` = -180 meV | 172% | material=SmNiO3 | method=DFT |
-| `CLM-MAT-0313` = 130 meV | `CLM-MAT-0409` = -91.5 meV | 170% | material=SmNiO3 | direction=In-plane |
-| `CLM-MAT-0086` = 52.4 meV | `CLM-MAT-0411` = -36.2 meV | 169% | material=CrGeCN4, method=PBE+SOC | direction=In-plane |
-| `CLM-MAT-0306` = 89.9 meV | `CLM-MAT-0406` = -61.8 meV | 169% | polarization_state=P↑ | direction=In-plane |
-| `CLM-MAT-0085` = 53.3 meV | `CLM-MAT-0411` = -36.2 meV | 168% | material=CrSiCN4, method=PBE+SOC | direction=In-plane |
-| `CLM-MAT-0406` = -61.8 meV | `CLM-PROC-0031` = 91 meV | 168% | direction=In-plane | error_metric=root-mean-square deviation per formula unit |
-| `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0409` = -91.5 meV | 165% | mechanism=surface polar phonon, substrate=SiO2 | direction=In-plane |
-| `CLM-MAT-0050` = 102 meV | `CLM-MAT-0407` = -65.9 meV | 165% | material=Li6PS5Cl | direction=In-plane |
-| `CLM-MAT-0316` = 290 meV | `CLM-MEM-0040` = -180 meV | 162% | material=Ge, k_point=Γ point | method=DFT |
-| `CLM-MAT-0049` = 296 meV | `CLM-MEM-0040` = -180 meV | 161% | material=LiFePO4 | method=DFT |
-| `CLM-MAT-0050` = 102 meV | `CLM-MAT-0406` = -61.8 meV | 161% | material=Li6PS5Cl | direction=In-plane |
-| `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0411` = -36.2 meV | 161% | mechanism=surface polar phonon, substrate=SiO2 | direction=In-plane |
-| `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0290` = 3000 meV | 159% | material=MLBP | trap_type=isolated bi-Si3 |
-| `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0276` = 2994 meV | 159% | material=MLBP | desorption_state=molecular |
 
-_and 1855 more_
+_and 1983 more_
 
 ## `energy_advantage_ratio` (19 pair(s))
 
@@ -140,7 +150,7 @@ _and 1855 more_
 | `CLM-ARCH-0022` = 169.1 x | `CLM-PROC-0062` = 417 x | 59% | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch | surrogate_model=deterministic U-Net |
 | `CLM-ARCH-0022` = 169.1 x | `CLM-PROC-0058` = 73 x | 57% | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch | surrogate_model=VP-DDBM, baseline_model=phase-field solver |
 
-## `frequency` (894 pair(s))
+## `frequency` (938 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -185,9 +195,9 @@ _and 1855 more_
 | `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0061` = 7.48 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | corner_radius=1.4 mm |
 | `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0125` = 6 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | pump_detuning=27 MHz |
 
-_and 854 more_
+_and 898 more_
 
-## `length_device` (6638 pair(s))
+## `length_device` (6754 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -232,7 +242,7 @@ _and 854 more_
 | `CLM-DEV-0112` = 0.3158 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | stacking_configuration=vdWH-IV | component=lens |
 | `CLM-DEV-0112` = 0.3158 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | stacking_configuration=vdWH-IV | material=GaN, growth_method=ammonothermal |
 
-_and 6598 more_
+_and 6714 more_
 
 ## `power` (501 pair(s))
 
@@ -461,7 +471,7 @@ _and 12 more_
 |---|---|---|---|---|
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0007` = 3100 W/(m*K) | 99% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | temperature=room-temperature, sample_13c_concentration=~0.00024% |
 
-## `time` (3216 pair(s))
+## `time` (3542 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -478,6 +488,8 @@ _and 12 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0221` = 1.15e+10 ns | 100% | device_type=FTJ, architecture=Naive | prover=VeriLoRA, input_length_range=64–2048, operation=opening the weights |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0222` = 1.24e+10 ns | 100% | device_type=FTJ, architecture=Naive | prover=VeriLoRA, input_length_range=64–2048, operation=opening the weights |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0245` = 6.65e+07 ns | 100% | device_type=FTJ, architecture=Naive | engine=PL GEMV engines |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0254` = 4.24e+09 ns | 100% | device_type=FTJ, architecture=Naive | target_design=4-SM GPU, workload=1024 × 1024 GEMM, simulator=FoldSim |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0255` = 9.36e+13 ns | 100% | device_type=FTJ, architecture=Naive | target_design=4-SM GPU, workload=1024 × 1024 GEMM, simulator_type=software RTL simulation |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-DEV-0066` = 6e+10 ns | 100% | device_type=FTJ, architecture=Naive | software=MATLAB Deep Learning Toolbox |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-DEV-0089` = 0.007 ns | 100% | device_type=FTJ, architecture=Naive | sample=SESAM |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-DEV-0111` = 4.16e+12 ns | 100% | device_type=FTJ, architecture=Naive | atom_count=10648 atoms, gpu=NVIDIA RTX 3090 Ti GPU (24 GB), system=Hg0.5Cd0.5Te cubic supercells |
@@ -503,10 +515,8 @@ _and 12 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0386` = 4.6e+08 ns | 100% | device_type=FTJ, architecture=Naive | model=PFP-R2SCAN, system=LiH rocksalt, hardware=single A100 GPU with 80 GB of memory |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0388` = 0.0014 ns | 100% | device_type=FTJ, architecture=Naive | material=bulk Ge(001), temperature=room temperature |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0402` = 2e-05 ns | 100% | device_type=FTJ, architecture=Naive | light_source=extreme-ultraviolet light pulses |
-| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0412` = 9.69e+07 ns | 100% | device_type=FTJ, architecture=Naive | hardware=two cores of an Intel Core i9-13900H CPU |
-| `CLM-ARCH-0012` = 153.5 ns | `CLM-PHOT-0025` = 4e+06 ns | 100% | device_type=FTJ, architecture=Naive | illumination=random speckle illumination |
 
-_and 3176 more_
+_and 3502 more_
 
 ## `voltage` (134 pair(s))
 

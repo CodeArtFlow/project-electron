@@ -1,0 +1,115 @@
+id: SRC-00417
+title: 'FoldSim: Scaling Cycle-Exact RTL Simulation with Hierarchical Folding and Static Scheduling'
+doi: null
+arxiv_id: 2611.26472v1
+url: https://arxiv.org/abs/2611.26472v1
+venue_id: arxiv_api
+authors:
+- name: Chengxuan Wang
+  affiliation: null
+  corresponding: null
+- name: Nikhil Rout
+  affiliation: null
+  corresponding: null
+- name: Yang-gon Kim
+  affiliation: null
+  corresponding: null
+- name: Jacob Leigh
+  affiliation: null
+  corresponding: null
+- name: Yufan Du
+  affiliation: null
+  corresponding: null
+- name: Blaise Tine
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-19'
+retrieved_date: '2026-11-22'
+access: full_text
+read_scope: Automated reading. The full PDF text (73,406 characters, 13 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.26472v1 on
+  2026-11-22. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“while a 4-SM GPU completes a 1024 × 1024 GEMM in 4.24 seconds, versus 26 hours in software
+  RTL simulation.”
+
+  “We present FoldSim, an automated framework that enables cycle- exact simulation of large RTL designs
+  on a single FPGA through hierarchical folding.”
+
+  “The full, 4-SM, and 8-SM GPUs and both datacenters are measured on the FPGA.”
+
+  “versus 26 hours in software RTL simulation.”'
+method_summary: '“On one AMD Alveo V80, FoldSim runs an 8-SM GPU and a 1,024- node Rocket datacenter with
+  4,096 processor cores.”
+
+  “All designs target an AMD Alveo V80 with 2.57 M LUTs and 32 GB HBM, using Vivado 2025.2, CIRCT [19,
+  31], and SLASH, AMD Research’s open-source FPGA shell and runtime [32].”
+
+  “The full, 4-SM, and 8-SM GPUs and both datacenters are measured on the FPGA.”'
+limitations: '“A design larger than one SLR must therefore be split, and the split decides which links
+  between classes cross between dies.”
+
+  “The only structure it cannot order is a combinational loop through the ports of folded modules, where
+  an output depends on itself within the same cycle; the compiler detects and rejects such designs.”
+
+  “GDDR6 timing has been tested in simulation and synthesis but is not yet enabled through the deployed
+  FPGA runtime.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 24080
+    output: 3030
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: The 1,024-node Rocket datacenter design retains approximately 1.9 GB of state in HBM under
+      FoldSim.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - The datacenter keeps about 1.9 GB of state in HBM
+    - The full, 4-SM, and 8-SM GPUs and both datacenters are measured on the FPGA.
+    - On one AMD Alveo V80, FoldSim runs an 8-SM GPU and a 1,024- node Rocket datacenter with 4,096 processor
+      cores.
+  - statement: The 4-SM GPU target routed FoldSim kernel utilizes 856 k LUTs on an AMD Alveo V80.
+    reason: the value 856000 does not appear in any of the claim's quotes
+    quotes:
+    - 4-SM GPU 856 k (298 k) 916 k 1,038 0 246 5.3 h
+    - The full, 4-SM, and 8-SM GPUs and both datacenters are measured on the FPGA.
+    - All designs target an AMD Alveo V80 with 2.57 M LUTs and 32 GB HBM
+  - statement: The 8-SM GPU target routed FoldSim kernel utilizes 930 k LUTs on an AMD Alveo V80.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - 8-SM GPU 930 k (358 k) 952 k 716 305 246 5.8 h
+    - The full, 4-SM, and 8-SM GPUs and both datacenters are measured on the FPGA.
+    - All designs target an AMD Alveo V80 with 2.57 M LUTs and 32 GB HBM
+  - statement: The 1,024-node Rocket datacenter target routed FoldSim kernel utilizes 865 k LUTs on an
+      AMD Alveo V80.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - 1,024 nodes 865 k (72 k) 532 k 1,005 782 32 5.8 h
+    - The full, 4-SM, and 8-SM GPUs and both datacenters are measured on the FPGA.
+    - All designs target an AMD Alveo V80 with 2.57 M LUTs and 32 GB HBM
+  - statement: FoldSim achieves a target cycle latency of 93.7 ns on the Full GPU target.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''FoldSim 93.7
+      ns'''
+    quotes:
+    - FoldSim 93.7 ns
+    - The full, 4-SM, and 8-SM GPUs and both datacenters are measured on the FPGA.
+    - Full GPU
+  - statement: FoldSim simulates a 1,024-node Rocket datacenter at a throughput of 16.3 k target cycles
+      per second on a single V80 FPGA.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''16.3 13.4
+      16.3'''
+    quotes:
+    - 16.3 13.4 16.3
+    - The full, 4-SM, and 8-SM GPUs and both datacenters are measured on the FPGA.
+    - (b) The 1,024-node datacenter against FireSim’s data.
+    - '1'
+corrections: []

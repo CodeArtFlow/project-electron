@@ -1,10 +1,17 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-21.
+Topic code `MAT`. Last reviewed 2026-11-22.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
 ## Current position
+
+### area die
+
+- **4.841e-13 mm^2** — The periodic area of the Σ5(310)[001] grain boundary in SrTiO3 is 48.41 Å2.
+  - `CLM-MAT-0418` · grain_boundary_plane Σ5(310)[001], material SrTiO3 · grade B · credibility unknown · simulated · as of 2026-11-18
+  - sources: SRC-00422
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### current
 
@@ -243,6 +250,14 @@ Topic code `MAT`. Last reviewed 2026-11-21.
   - sources: SRC-00408
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0150, CFL-0153, CFL-0155, CFL-0157 — see the open register
+- **-0.000160218 fJ** — The tight-binding hopping energy parameter for the square lattice model is -1 eV.
+  - `CLM-MAT-0413` · system square lattice · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00418
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **-0.000432588 fJ** — The tight-binding nearest-neighbor hopping energy parameter for graphene is -2.7 eV.
+  - `CLM-MAT-0414` · system graphene · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00418
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### frequency
 
@@ -540,6 +555,10 @@ Topic code `MAT`. Last reviewed 2026-11-21.
   - `CLM-MAT-0399` · deviation_angle 0.79°, burgers_vector 0.195 nm · grade B · credibility unknown · simulated · as of 2026-11-19
   - sources: SRC-00406
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈1.1 nm** — The localization length in the amorphous graphene sample is approximately 1.1 nm.
+  - `CLM-MAT-0415` · parameter_name ξloc · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00418
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -1306,10 +1325,22 @@ Topic code `MAT`. Last reviewed 2026-11-21.
   - `CLM-MAT-0390` · symbol 𝜃ani · grade B · credibility unknown · simulated · as of 2026-11-18
   - sources: SRC-00394
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- WannDiffuse finite-difference calculation predicts a Ba Born effective charge of 2.758 e for cubic BaTiO3.
+  - `CLM-MAT-0419` · grade B · credibility unknown · simulated · as of 2026-11-18
+  - sources: SRC-00423
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 - Calculated local lattice rotation of either lattice in elastically twisted hexagonal cells is approximately 2° to 3°.
   - `CLM-MAT-0400` · method 4D STEM strain analysis · grade B · credibility unknown · measured · as of 2026-11-19
   - sources: SRC-00406
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The intrinsic Gilbert damping parameter αG is set to 8.77 × 10^-3 in the extended LLG equation.
+  - `CLM-MAT-0416` · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00421
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The low laser fluence condition generates an exciton population nf of 3.4 × 10^-4.
+  - `CLM-MAT-0417` · grade B · credibility unknown · simulated · as of 2026-11-19
+  - sources: SRC-00421
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1948,6 +1979,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 412
-- grades: {'B': 412}
-- distinct sources: 145
+- claims: 419
+- grades: {'B': 419}
+- distinct sources: 149
