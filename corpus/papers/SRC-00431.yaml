@@ -1,0 +1,89 @@
+id: SRC-00431
+title: 'Stratum: A Hardware-Software Co-Design Framework for SNN Inference on RISC-V'
+doi: null
+arxiv_id: 2611.27277v1
+url: https://arxiv.org/abs/2611.27277v1
+venue_id: arxiv_api
+authors:
+- name: Wajahat Riaz
+  affiliation: null
+  corresponding: null
+- name: Muhammad Adeel Pasha
+  affiliation: null
+  corresponding: null
+- name: Shahid Masud
+  affiliation: null
+  corresponding: null
+- name: Muhammad Ali Siddiqi
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-20'
+retrieved_date: '2026-11-23'
+access: full_text
+read_scope: Automated reading. The full PDF text (21,505 characters, 5 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.27277v1 on
+  2026-11-23. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Our spike-gated lowering reduces simulated inference time by 64× (453.2 ms to 7.04 ms)”
+
+  “We demonstrate Stratum on a two-layer N-MNIST network with three controlled comparisons: (i) dense
+  vs. spike-gated lowering of snn.linear”
+
+  “For reference, the dense lowering passes the same functional check and measures 453.176 ms (906,352,779
+  cycles) on the first test image.”
+
+  “and our spike-major layout cuts it by a further 37.2% (to 4.42 ms) at 4 MiB L2, with the predicted
+  class unchanged.”
+
+  “The layout speedup grows from 1.59× to 1.88× when L2 shrinks to 1 MiB.”'
+method_summary: “The default gem5 configuration models an out-of-order RISC-V core (RiscvO3CPU) operating
+  at 2 GHz, with decode, rename, dispatch, and commit widths of 4, an issue width of 8, a 128-entry reorder
+  buffer, 128 integer and 128 floating-point physical registers, and a tournament branch predictor.”
+limitations: '“The active-spike scan is the largest stage, at 38.6% of marked cycles (3.79 M), ahead of
+  the gather at 29.3% (2.88 M), the first LIF layer at 22.6% (2.22 M), and fc2 with its LIF layer at 9.5%
+  (0.94 M).”
+
+  “Since the scan cost depends on the input width rather than on the number of active spikes, much of
+  the inference cost will not shrink as spike activity falls.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 8032
+    output: 3093
+  claims_accepted: 3
+  claims_rejected: 4
+  rejected:
+  - statement: With spike-gated lowering on the first test image at 4 MiB L2, the output-outer layout
+      takes 7.038 ms.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - Output-outer 7.038 14,076,427 1.157 16.29
+    - TABLE I WEIGHT-LAYOUT COMPARISON ON THE FIRST TEST IMAGE AT 4 MIB L2 WITH SPIKE-GATED LOWERING.
+  - statement: With spike-gated lowering on the first test image at 4 MiB L2, the spike-major layout takes
+      4.423 ms.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - Spike-major 4.423 8,846,746 1.692 14.97
+    - TABLE I WEIGHT-LAYOUT COMPARISON ON THE FIRST TEST IMAGE AT 4 MIB L2 WITH SPIKE-GATED LOWERING.
+  - statement: At 1 MiB L2 capacity, simulated inference time for output-outer layout on the first test
+      image is 8.315 ms.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''1 MiB 8.315
+      4.424 1.88×'''
+    quotes:
+    - 1 MiB 8.315 4.424 1.88×
+    - TABLE II SIMULATED INFERENCE TIME VS. L2 CAPACITY ON THE FIRST TEST IMAGE.
+  - statement: At 1 MiB L2 capacity, simulated inference time for spike-major layout on the first test
+      image is 4.424 ms.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''1 MiB 8.315
+      4.424 1.88×'''
+    quotes:
+    - 1 MiB 8.315 4.424 1.88×
+    - TABLE II SIMULATED INFERENCE TIME VS. L2 CAPACITY ON THE FIRST TEST IMAGE.
+corrections: []

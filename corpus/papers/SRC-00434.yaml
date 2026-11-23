@@ -1,0 +1,143 @@
+id: SRC-00434
+title: 'Cruella: A Unified Microscaling and Floating-Point Dot-Product Unit for LLM Inference on FPGAs'
+doi: null
+arxiv_id: 2611.27323v1
+url: https://arxiv.org/abs/2611.27323v1
+venue_id: arxiv_api
+authors:
+- name: Jinho Yang
+  affiliation: null
+  corresponding: null
+- name: Taehyeong Kim
+  affiliation: null
+  corresponding: null
+- name: Mincheol Cha
+  affiliation: null
+  corresponding: null
+- name: Hyeoncheol Kim
+  affiliation: null
+  corresponding: null
+- name: Donggeun Kim
+  affiliation: null
+  corresponding: null
+- name: Nahye Kim
+  affiliation: null
+  corresponding: null
+- name: Yujin Lee
+  affiliation: null
+  corresponding: null
+- name: Ryeowook Ko
+  affiliation: null
+  corresponding: null
+- name: Woong Gyu Park
+  affiliation: null
+  corresponding: null
+- name: Jiwoong Park
+  affiliation: null
+  corresponding: null
+- name: Junsoo Kim
+  affiliation: null
+  corresponding: null
+- name: Tae-Hyoung Kim
+  affiliation: null
+  corresponding: null
+- name: Yongjun Park
+  affiliation: null
+  corresponding: null
+- name: Seongmin Hong
+  affiliation: null
+  corresponding: null
+- name: Joo-Young Kim
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-20'
+retrieved_date: '2026-11-23'
+access: full_text
+read_scope: Automated reading. The full PDF text (118,928 characters, 32 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.27323v1 on
+  2026-11-23. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“First, per-group pre-alignment keeps this pipeline at the BF16 width and changes perplexity
+  by at most 0.7%.”
+
+  “Pre-alignment changes perplexity by at most 0.7%, which stays below the cost of the 4-bit weights themselves
+  on every dense model.”
+
+  “For the model accuracy, a PyTorch emulator applies the bit-exact alignment of each of these designs
+  and accumulates in FP32, and the exact baseline skips the alignment.”
+
+  “Overall, the UDPU adds the FP-FP mode to an MX datapath at no DSP cost and 17.5% more LUTs.”
+
+  “We place and route every unit of Sections 7.2 and 7.3 out of context with the build flow of Section
+  6.”'
+method_summary: '“Every board measurement runs on one U55C board, where the platform of Section 5.1 runs
+  single-batch decoding and prefills a prompt token by token.”
+
+  “The phase proportions come from VCS simulations of the RTL of the deployed bitstream, which run one
+  output token at chosen positions through one and two decoder layers and then through the LM head and
+  sampling.”
+
+  “We place and route every unit of Sections 7.2 and 7.3 out of context with the build flow of Section
+  6.”'
+limitations: “However, we scope these results to single-batch decoding with a BF16 KV cache, so an MX-FP
+  mode for MXFP8 keys and values under batched serving remains future work.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 38911
+    output: 2402
+  claims_accepted: 2
+  claims_rejected: 5
+  rejected:
+  - statement: Across three open-weight LLMs, the FP-FP mode takes between 56% and 77% of the datapath
+      time during decoding.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Across three open-weight LLMs, the FP-FP mode takes 56%-77% of the time the datapath spends on a
+      decode token, as Section 3.2 shows.
+    - In the RTL simulation of Section 7.1, this time proportion is 56%-77% over the three models up to
+      8K and reaches 83% at 16K, as Figure 5(b) shows.
+    - FP-FP mode takes 56%-77% of the time the datapath spends on a decode token
+    - Across three open-weight LLMs, the FP-FP mode takes 56%-77% of the time the datapath spends on a
+      decode token
+  - statement: On an Alveo U55C board, the UDPU requires 23% fewer DSP slices than separate MXFP4 and
+      BF16 units of equal throughput.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - On an Alveo U55C, the UDPU needs 23% fewer DSP slices and 36% fewer LUTs than separate MXFP4 and
+      BF16 units of equal throughput.
+    - We place and route every unit of Sections 7.2 and 7.3 out of context with the build flow of Section
+      6.
+  - statement: On an Alveo U55C board, the UDPU uses 36% fewer LUTs than separate MXFP4 and BF16 units
+      of equal throughput.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - On an Alveo U55C, the UDPU needs 23% fewer DSP slices and 36% fewer LUTs than separate MXFP4 and
+      BF16 units of equal throughput.
+    - We place and route every unit of Sections 7.2 and 7.3 out of context with the build flow of Section
+      6.
+  - statement: On the Alveo U55C board, MXFP4 weights speed up decoding by 1.15x to 1.87x over BF16 weights.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - On this board, MXFP4 weights speed up decoding by 1.15×-1.87× over BF16 weights, and an NVIDIA A40
+      GPU decodes faster but spends 0.92×-2.01× the board’s energy per token.
+    - Every board measurement runs on one U55C board, where the platform of Section 5.1 runs single-batch
+      decoding and prefills a prompt token by token.
+    - On this board, MXFP4 weights speed up decoding by 1.15×-1.87× over BF16 weights
+  - statement: An NVIDIA A40 GPU spends 0.92x to 2.01x the energy per token of the Alveo U55C board during
+      decoding.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - On this board, MXFP4 weights speed up decoding by 1.15×-1.87× over BF16 weights, and an NVIDIA A40
+      GPU decodes faster but spends 0.92×-2.01× the board’s energy per token.
+    - Every board measurement runs on one U55C board, where the platform of Section 5.1 runs single-batch
+      decoding and prefills a prompt token by token.
+    - an NVIDIA A40 GPU decodes faster but spends 0.92×-2.01× the board’s energy per token.
+corrections: []

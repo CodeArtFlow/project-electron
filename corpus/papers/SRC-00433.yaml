@@ -1,0 +1,106 @@
+id: SRC-00433
+title: 'PepDeTech: Anonymous Occupancy Monitoring on a Battery-Powered 2.3k-Zone dToF LiDAR Node with
+  On-Chip Processing and Bluetooth LE Reporting'
+doi: null
+arxiv_id: 2611.27304v1
+url: https://arxiv.org/abs/2611.27304v1
+venue_id: arxiv_api
+authors:
+- name: Victor Luder
+  affiliation: null
+  corresponding: null
+- name: Félicien Ndozi
+  affiliation: null
+  corresponding: null
+- name: Michele Magno
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-20'
+retrieved_date: '2026-11-23'
+access: full_text
+read_scope: Automated reading. The full PDF text (29,760 characters, 6 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.27304v1 on
+  2026-11-23. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“At a 30 s interval the node draws only 3.1 mW”
+
+  “At 30 s, A1 draws 3.1 mW and runs 60 d”
+
+  “The node was characterised with a POWER PROFILER KIT II (Nordic Semiconductor) at 3.7 V.”
+
+  “At 30 s, A1 draws 3.1 mW and runs 60 d, whereas A2 and A3 draw 12.6 mW and run 15 d.”'
+method_summary: '“The node was characterised with a POWER PROFILER KIT II (Nordic Semiconductor) at 3.7
+  V.”
+
+  “After calibration in each room (S1–S3 in Table II), up to five participants were present in the field
+  of view while an observer entered the true count. All algorithms ran on every frame, so all results
+  stem from identical data and parameters.”'
+limitations: “Its main limit is the field of view, since at a distance of 5 m the LiDAR covers only 5.1
+  m × 3.8 m, limiting its detection range. In rooms such as offices, large light-absorbing surfaces (black
+  chairs, screens) fragment people and may reduce accuracy.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 10879
+    output: 2479
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: Across all three scenarios, background subtraction A1 achieves a per-frame exact-count
+      accuracy of 53.0 %.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''53.0 % exact
+      count accuracy'''
+    quotes:
+    - 53.0 % exact count accuracy
+    - All scenarios Exact count (weighted average) (%) 53.0
+    - After calibration in each room (S1–S3 in Table II), up to five participants were present in the
+      field of view while an observer entered the true count.
+    - A1
+  - statement: Across all scenarios, algorithm A1 achieves a ±1-person accuracy of 83.6 %.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''All scenarios\nWithin
+      ±1 person (weighted average) (%) 83.6'''
+    quotes:
+    - within ±1 person accuracy of 83.6 %
+    - All scenarios Within ±1 person (weighted average) (%) 83.6
+    - After calibration in each room (S1–S3 in Table II), up to five participants were present in the
+      field of view while an observer entered the true count.
+    - A1
+  - statement: In free-running mode, the node draws 154.6 mW.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Free running
+      154.6 mW / 28.7 h'''
+    quotes:
+    - Free running 154.6 mW / 28.7 h
+    - 154 mW and 28.7 h when set in free-running mode at the maximum frame rate of 2.5 frames per second.
+    - The node was characterised with a POWER PROFILER KIT II (Nordic Semiconductor) at 3.7 V.
+    - Free running
+  - statement: The sleep state power consumption with the sensor off is 0.282 mW.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Sleep, sensor
+      off — 0.282'''
+    quotes:
+    - Sleep, sensor off — 0.282
+    - sleep floor
+    - The node was characterised with a POWER PROFILER KIT II (Nordic Semiconductor) at 3.7 V.
+    - Sleep, sensor off
+  - statement: Ranging and reading out one frame draws 160.1 mW of power.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''One frame
+      0.436 160.1'''
+    quotes:
+    - One frame 0.436 160.1
+    - The node was characterised with a POWER PROFILER KIT II (Nordic Semiconductor) at 3.7 V.
+    - One frame
+    - 20 ms exposure setting
+  - statement: The duration of one frame measurement is 0.436 s.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''One frame
+      0.436 160.1'''
+    quotes:
+    - One frame 0.436 160.1
+    - The node was characterised with a POWER PROFILER KIT II (Nordic Semiconductor) at 3.7 V.
+    - One frame
+corrections: []

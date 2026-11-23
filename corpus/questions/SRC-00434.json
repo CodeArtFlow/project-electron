@@ -1,0 +1,39 @@
+{
+  "arxiv_id": "2611.27323v1",
+  "claims": {
+    "CLM-ARCH-0271": {
+      "evidence_spans": [
+        "First, per-group pre-alignment keeps this pipeline at the BF16 width and changes perplexity by at most 0.7%.",
+        "First, per-group pre-alignment keeps this pipeline at the BF16 width and changes perplexity by at most 0.7%.",
+        "Pre-alignment changes perplexity by at most 0.7%, which stays below the cost of the 4-bit weights themselves on every dense model.",
+        "For the model accuracy, a PyTorch emulator applies the bit-exact alignment of each of these designs and accumulates in FP32, and the exact baseline skips the alignment."
+      ],
+      "statement": "Per-group pre-alignment changes perplexity by at most 0.7%.",
+      "terms": []
+    },
+    "CLM-ARCH-0272": {
+      "evidence_spans": [
+        "Overall, the UDPU adds the FP-FP mode to an MX datapath at no DSP cost and 17.5% more LUTs.",
+        "We place and route every unit of Sections 7.2 and 7.3 out of context with the build flow of Section 6."
+      ],
+      "statement": "The UDPU adds the FP-FP mode to an MX datapath with 17.5% more LUTs.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "Every board measurement runs on one U55C board, where the platform of Section 5.1 runs single-batch decoding and prefills a prompt token by token.",
+    "The phase proportions come from VCS simulations of the RTL of the deployed bitstream, which run one output token at chosen positions through one and two decoder layers and then through the LM head and sampling.",
+    "We place and route every unit of Sections 7.2 and 7.3 out of context with the build flow of Section 6.",
+    "However, we scope these results to single-batch decoding with a BF16 KV cache, so an MX-FP mode for MXFP8 keys and values under batched serving remains future work."
+  ],
+  "generated": "2026-11-23",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00434",
+  "text_chars": 118928,
+  "text_sha256": "20d6a1259bdd59363f44f54b15a752366b99812d99909eff930d872c9123618f"
+}

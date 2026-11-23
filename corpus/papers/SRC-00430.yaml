@@ -1,0 +1,67 @@
+id: SRC-00430
+title: Tailoring Phonon Transport in Bi-based Quaternary Half-Heusler alloys for Thermoelectric Applications
+doi: null
+arxiv_id: 2611.27234v1
+url: https://arxiv.org/abs/2611.27234v1
+venue_id: arxiv_api
+authors:
+- name: Supriya Ghosal
+  affiliation: null
+  corresponding: null
+- name: Sayan Paul
+  affiliation: null
+  corresponding: null
+- name: Swapan K. Pati
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-20'
+retrieved_date: '2026-11-23'
+access: full_text
+read_scope: Automated reading. The full PDF text (45,556 characters, 10 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.27234v1 on
+  2026-11-23. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: “As shown in FIG. 7c and 7d, κl is reduced to ∼58% and ∼63% for ZrHfRh2Bi2 and Zr2RhIrBi2, respectively
+  at 300 K.”
+method_summary: '“We performed first-principles density functional theory (DFT) calculations within the
+  Vienna Ab initio Simulation Package (VASP)[35, 36] using the pseudopotentials derived from projected
+  augmented wave (PAW) method[37, 38] to describe the interactions between the core and valance electrons.”
+
+  “The lattice thermal conductivity (κl) is calculated based on Wigner formalism proposed by Simoncelli
+  et al. [49, 50], implemented in the Phono3py package [45, 51].”
+
+  “The electronic transport properties, including the electrical conductivity (σ), Seebeck coefficient
+  (S), and electronic thermal conductivity (κe), are evaluated by solving the Boltzmann transport equation
+  (BTE) within the Onsager transport formalism, as implemented in the AMSET code[46].”'
+limitations: “We discarded the semimetallic compounds ZrHfIr2Bi2 and Hf2RhIrBi2 for further thermoelectric
+  properties calculations due to the limitations of our computational methodology.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16519
+    output: 2716
+  claims_accepted: 2
+  claims_rejected: 2
+  rejected:
+  - statement: The maximum thermoelectric power conversion efficiency (η) for p-type ZrHfRh2Bi2 is approximately
+      16.3% between a heat source temperature of 1000 K and a heat s
+    reason: 'unit conversion refused: efficiency_compute: cannot convert 16.3 % to 1/J - Cannot convert
+      from ''percent'' (dimensionless) to ''1 / joule'' ([time] ** 2 / [mass] / [length] ** 2). A dimens'
+    quotes:
+    - Assuming a cold-side temperature (Tc) of 300 K and a hot-side temperature (Th) of 1000 K, the maximum
+      conversion efficiencies are ∼16.3% for p-type ZrHfRh2Bi2 and 14.3% for p-type Zr2RhIrBi2 (FIG. 6e).
+  - statement: The maximum thermoelectric power conversion efficiency (η) for p-type Zr2RhIrBi2 is 14.3%
+      with a heat source temperature of 1000 K and a heat sink temperature o
+    reason: 'unit conversion refused: efficiency_compute: cannot convert 14.3 % to 1/J - Cannot convert
+      from ''percent'' (dimensionless) to ''1 / joule'' ([time] ** 2 / [mass] / [length] ** 2). A dimens'
+    quotes:
+    - Assuming a cold-side temperature (Tc) of 300 K and a hot-side temperature (Th) of 1000 K, the maximum
+      conversion efficiencies are ∼16.3% for p-type ZrHfRh2Bi2 and 14.3% for p-type Zr2RhIrBi2 (FIG. 6e).
+corrections: []

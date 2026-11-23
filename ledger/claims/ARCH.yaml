@@ -7448,3 +7448,293 @@ claims:
       unit: GHz
     conditions:
       core: CV32E40S soft core
+- id: CLM-ARCH-0261
+  topic: ARCH
+  statement: PIVOT filters out 99.3–99.7% of probed vectors on real UPMEM hardware.
+  sources:
+  - SRC-00427
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-20'
+  created: '2026-11-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    hardware: real UPMEM hardware
+- id: CLM-ARCH-0262
+  topic: ARCH
+  statement: PIVOT achieves up to 18.8x the QPS of the CPU baseline.
+  sources:
+  - SRC-00427
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-20'
+  created: '2026-11-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    baseline: CPU
+    hardware: real UPMEM hardware
+- id: CLM-ARCH-0263
+  topic: ARCH
+  statement: PIVOT achieves up to 10.2x the QPS of prior PIM baselines.
+  sources:
+  - SRC-00427
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-20'
+  created: '2026-11-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    baseline: prior PIM baselines
+    hardware: real UPMEM hardware
+- id: CLM-ARCH-0264
+  topic: ARCH
+  statement: Pipelining reduces end-to-end time by 29.8% on DEEP1B.
+  sources:
+  - SRC-00427
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-20'
+  created: '2026-11-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    optimization: Pipelining
+    dataset: DEEP1B
+- id: CLM-ARCH-0265
+  topic: ARCH
+  statement: Pipelining reduces end-to-end time by 37.2% on SIFT1B.
+  sources:
+  - SRC-00427
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-20'
+  created: '2026-11-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    optimization: Pipelining
+    dataset: SIFT1B
+- id: CLM-ARCH-0266
+  topic: ARCH
+  statement: Spike-gated lowering reduces simulated inference time from 453.2 ms to 7.04 ms (a 64x reduction)
+    compared to dense lowering.
+  sources:
+  - SRC-00431
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-20'
+  created: '2026-11-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    workload: two-layer N-MNIST network
+    lowering: spike-gated
+    baseline_lowering: dense
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 7.04
+      unit: ms
+    si_base:
+      value: 0.00704
+      unit: s
+    display:
+      value: 7039999.999999999
+      unit: ns
+    conditions:
+      workload: two-layer N-MNIST network
+      lowering: spike-gated
+      baseline_lowering: dense
+- id: CLM-ARCH-0267
+  topic: ARCH
+  statement: The spike-major weight layout cuts simulated inference time by 37.2% to 4.42 ms at 4 MiB
+    L2 cache capacity with spike-gating enabled.
+  sources:
+  - SRC-00431
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-20'
+  created: '2026-11-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    weight_layout: spike-major
+    l2_cache_capacity: 4 MiB
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: true
+    as_published:
+      value: 4.42
+      unit: ms
+    si_base:
+      value: 0.00442
+      unit: s
+    display:
+      value: 4420000.0
+      unit: ns
+    conditions:
+      weight_layout: spike-major
+      l2_cache_capacity: 4 MiB
+- id: CLM-ARCH-0268
+  topic: ARCH
+  statement: The layout speedup increases from 1.59x to 1.88x when the L2 cache size shrinks to 1 MiB.
+  sources:
+  - SRC-00431
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-20'
+  created: '2026-11-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    l2_cache_capacity: 1 MiB
+    baseline_l2_cache_capacity: 4 MiB
+- id: CLM-ARCH-0269
+  topic: ARCH
+  statement: At a 30 s measurement interval, background subtraction A1 draws an average power of 3.1 mW.
+  sources:
+  - SRC-00433
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-20'
+  created: '2026-11-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    measurement_interval: 30 s
+    supply_voltage: 3.7 V
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 3.1
+      unit: mW
+    si_base:
+      value: 0.0031000000000000003
+      unit: W
+    display:
+      value: 0.0031000000000000003
+      unit: W
+    conditions:
+      measurement_interval: 30 s
+      supply_voltage: 3.7 V
+- id: CLM-ARCH-0270
+  topic: ARCH
+  statement: Algorithms A2 and A3 draw an average power of 12.6 mW at a 30 s measurement interval.
+  sources:
+  - SRC-00433
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-20'
+  created: '2026-11-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    supply_voltage: 3.7 V
+  quantity:
+    quantity: power
+    bound: exact
+    approximate: false
+    as_published:
+      value: 12.6
+      unit: mW
+    si_base:
+      value: 0.0126
+      unit: W
+    display:
+      value: 0.0126
+      unit: W
+    conditions:
+      supply_voltage: 3.7 V
+- id: CLM-ARCH-0271
+  topic: ARCH
+  statement: Per-group pre-alignment changes perplexity by at most 0.7%.
+  sources:
+  - SRC-00434
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-20'
+  created: '2026-11-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    mechanism: per-group pre-alignment
+    scope: every dense model
+- id: CLM-ARCH-0272
+  topic: ARCH
+  statement: The UDPU adds the FP-FP mode to an MX datapath with 17.5% more LUTs.
+  sources:
+  - SRC-00434
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-20'
+  created: '2026-11-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2

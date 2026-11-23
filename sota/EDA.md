@@ -1,6 +1,6 @@
 # EDA — state of the art
 
-Topic code `EDA`. Last reviewed 2026-11-22.
+Topic code `EDA`. Last reviewed 2026-11-23.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -177,6 +177,30 @@ Topic code `EDA`. Last reviewed 2026-11-22.
   - `CLM-EDA-0065` · grade B · credibility unknown · simulated · as of 2026-11-19
   - sources: SRC-00420
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- DIFFSCOPE reduces residual variance during initial mapping by 73.6×.
+  - `CLM-EDA-0066` · grade B · credibility unknown · simulated · as of 2026-11-20
+  - sources: SRC-00428
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- DIFFSCOPE cuts total evaluation work by 44.9% across 43 design families.
+  - `CLM-EDA-0067` · benchmark_scope 43 design families · grade B · credibility unknown · simulated · as of 2026-11-20
+  - sources: SRC-00428
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- DIFFSCOPE achieves a speedup of 1.81× over total evaluation work across 43 design families.
+  - `CLM-EDA-0068` · benchmark_scope 43 design families · grade B · credibility unknown · simulated · as of 2026-11-20
+  - sources: SRC-00428
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- DIFFSCOPE reaches a 2.18× speedup on Large-tier designs.
+  - `CLM-EDA-0069` · design_tier L-tier · grade B · credibility unknown · simulated · as of 2026-11-20
+  - sources: SRC-00428
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- On mgc superblue12, GRADPlace yields 3,889 DRVs after detailed routing.
+  - `CLM-EDA-0072` · benchmark_case mgc superblue12 · grade B · credibility unknown · measured · as of 2026-11-20
+  - sources: SRC-00432
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- On mgc superblue12, Xplace-route results in 23,568 DRVs after detailed routing.
+  - `CLM-EDA-0073` · benchmark_case mgc superblue12 · grade B · credibility unknown · measured · as of 2026-11-20
+  - sources: SRC-00432
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -297,6 +321,16 @@ Topic code `EDA`. Last reviewed 2026-11-22.
   - `CLM-EDA-0059` · agent_model Claude Opus 5.5, method CRAFT · grade B · credibility unknown · simulated · as of 2026-11-19
   - sources: SRC-00409
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **1.53e+11 ns** — On the mgc des perf 1 benchmark case using GRADPlace, the placement time is 153 s.
+  - `CLM-EDA-0070` · benchmark_case mgc des perf 1 · grade B · credibility unknown · measured · as of 2026-11-20
+  - sources: SRC-00432
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0159 — see the open register
+- **9.52e+11 ns** — On the mgc des perf 1 benchmark case using GRADPlace, the routing time is 952 s.
+  - `CLM-EDA-0071` · benchmark_case mgc des perf 1 · grade B · credibility unknown · measured · as of 2026-11-20
+  - sources: SRC-00432
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0159 — see the open register
 
 ## Live contradictions in this layer
 
@@ -332,9 +366,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0139` — relative_deviation: _unexamined; classification pending_
   - claims: CLM-EDA-0052, CLM-EDA-0053
   - missing data: `not yet named`
+- `CFL-0159` — time: _unexamined; classification pending_
+  - claims: CLM-EDA-0070, CLM-EDA-0071
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 65
-- grades: {'B': 65}
-- distinct sources: 17
+- claims: 73
+- grades: {'B': 73}
+- distinct sources: 19

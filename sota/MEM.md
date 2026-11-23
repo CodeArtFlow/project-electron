@@ -1,6 +1,6 @@
 # Memory — state of the art
 
-Topic code `MEM`. Last reviewed 2026-11-22.
+Topic code `MEM`. Last reviewed 2026-11-23.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -156,6 +156,10 @@ Topic code `MEM`. Last reviewed 2026-11-22.
   - `CLM-MEM-0057` · grade B · credibility unknown · simulated · as of 2026-11-19
   - sources: SRC-00398
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The hybrid-bonded 3D-NAND-Flash-based analog in-memory-compute macro achieves a weight density of 4.8M weights/mm2.
+  - `CLM-MEM-0060` · process 14nm logic die onto a 3D NAND Flash memory wafer · grade B · credibility unknown · measured · as of 2026-11-20
+  - sources: SRC-00436
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -299,6 +303,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 59
-- grades: {'B': 59}
-- distinct sources: 22
+- claims: 60
+- grades: {'B': 60}
+- distinct sources: 23

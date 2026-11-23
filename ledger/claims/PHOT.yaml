@@ -5181,3 +5181,41 @@ claims:
   conditions:
     readout_mode: spectral
     block_size_w: '4'
+- id: CLM-PHOT-0185
+  topic: PHOT
+  statement: In-situ training of the object arm through a ground-glass diffuser using a measured transmission
+    matrix achieves a focusing enhancement of 100.
+  sources:
+  - SRC-00435
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-20'
+  created: '2026-11-23'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    component: object arm
+    medium: ground-glass diffuser
+    model: measured TM
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 100.0
+      unit: dimensionless
+    si_base:
+      value: 100.0
+      unit: dimensionless
+    display:
+      value: 10000.0
+      unit: percent
+    conditions:
+      component: object arm
+      medium: ground-glass diffuser
+      model: measured TM

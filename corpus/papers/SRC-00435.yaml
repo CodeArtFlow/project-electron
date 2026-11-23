@@ -1,0 +1,131 @@
+id: SRC-00435
+title: Single-shot holographic gradients for training wavefronts through disorder
+doi: null
+arxiv_id: 2611.27439v1
+url: https://arxiv.org/abs/2611.27439v1
+venue_id: arxiv_api
+authors:
+- name: Kerem Ekec
+  affiliation: null
+  corresponding: null
+- name: Bahadır Utku Kesgin
+  affiliation: null
+  corresponding: null
+- name: Uğur Teğin
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-20'
+retrieved_date: '2026-11-23'
+access: full_text
+read_scope: Automated reading. The full PDF text (94,865 characters, 38 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.27439v1 on
+  2026-11-23. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The enhancement reaches 97, on par with 100 for the TM (Fig. 2c,d); both loops reach the same
+  value, so the model does not limit the focus.”
+
+  “In situ training of the object arm”
+
+  “Through a ground-glass diffuser, the framework matches a measured TM in focusing and imaging”
+
+  “Focusing with the physical model and the measured TM.”'
+method_summary: '“All experiments were performed on a two-arm off-axis interferometer whose arms are written
+  side by side on a single phase-only SLM, illuminated by a laser at 1,030 nm (Fig. 1b).”
+
+  “We isolated this term by Fourier filtering [46] and divided it by the measured reference envelope,
+  which yields the complex object field ˆO, amplitude and phase, from a single frame.”'
+limitations: '“In the reference arm, the linear diffuser makes the processor a linear classifier, and
+  even the full detected intensity is only a polynomial of degree two in the input, which is not a universal
+  approximator [61].”
+
+  “Finally, the encryption was tested only against reads without the keys; until a formal security analysis,
+  including known-plaintext attacks [62], is available, we regard it as a physical two-key scheme rather
+  than a proven cryptosystem.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 28408
+    output: 3433
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: In-situ training of the object arm through a ground-glass diffuser using a 10-probe physical
+      model achieves a focusing enhancement of 97.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - The enhancement reaches 97, on par with 100 for the TM (Fig. 2c,d); both loops reach the same value,
+      so the model does not limit the focus.
+    - In situ training of the object arm
+    - Through a ground-glass diffuser, the framework matches a measured TM in focusing and imaging
+    - Focusing with the physical model and the measured TM.
+  - statement: In-situ training of the object arm forms a yin-yang image through a ground-glass diffuser
+      at 17.2 dB PSNR using a physical model.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''dB'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - Moving from a single focus to images, we form a yin-yang and a clock tower at 17.2 and 16.7 dB PSNR,
+      on par with the TM (18.1 and 17.1 dB), from ten probes per session instead of the 3,072 patterns
+      of the TM (Fig. 2e,f; Supplementary Note 3
+    - we form a yin-yang and a clock tower at 17.2 and 16.7 dB PSNR
+    - from ten probes per session instead of the 3,072 patterns of the TM
+    - Through a ground-glass diffuser, the framework matches a measured TM in focusing and imaging
+  - statement: In-situ training of the object arm forms a clock tower image through a ground-glass diffuser
+      at 16.7 dB PSNR using a physical model.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''dB'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - Moving from a single focus to images, we form a yin-yang and a clock tower at 17.2 and 16.7 dB PSNR,
+      on par with the TM (18.1 and 17.1 dB), from ten probes per session instead of the 3,072 patterns
+      of the TM (Fig. 2e,f; Supplementary Note 3
+    - we form a yin-yang and a clock tower at 17.2 and 16.7 dB PSNR
+    - from ten probes per session instead of the 3,072 patterns of the TM
+    - Through a ground-glass diffuser, the framework matches a measured TM in focusing and imaging
+  - statement: Refitting the model during controlled diffuser drift recovers the formed grating to 17.6
+      dB PSNR.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''dB'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - Under controlled drift, refreshing the adjoint recovers a grating to 17.6 dB, against 9.1 dB for
+      a frozen model and 19.5 dB without drift, and training succeeds through a thick diffuser.
+    - Under controlled drift, refreshing the adjoint recovers a grating to 17.6 dB, against 9.1 dB for
+      a frozen model and 19.5 dB without drift
+    - refreshed model recovers a grating to 17.6 dB
+  - statement: A frozen model under controlled diffuser drift reaches a grating PSNR of 9.1 dB.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''dB'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - Under controlled drift, refreshing the adjoint recovers a grating to 17.6 dB, against 9.1 dB for
+      a frozen model and 19.5 dB without drift, and training succeeds through a thick diffuser.
+    - against 9.1 dB for a frozen model
+    - recovers a grating to 17.6 dB, against 9.1 dB for a frozen model
+  - statement: Focusing light through a thick diffuser using a two-screen physical model fitted from 200
+      probe fields achieves an enhancement of 207.
+    reason: the statement contains the number 200, which none of its quotes contain
+    quotes:
+    - Training through this coarse two-screen adjoint focuses light through the thick diffuser with an
+      enhancement of 207 and forms EMNIST letters at 17 to 20 dB PSNR (Fig. 4f,g).
+    - focuses light through the thick diffuser with an enhancement of 207
+    - a two-screen model fitted from 200 probe fields trains light through a thick diffuser
+  - statement: Optical decryption using two keys on the bench achieves a content bit error rate of at
+      most 0.014 for QR codes.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''With both
+      keys, the bench decrypts each QR code [54] from one frame wi'''
+    quotes:
+    - With both keys, the bench decrypts each QR code [54] from one frame with a bit error rate of at
+      most 0.014 and every code is read, whereas reads with a flat reference, a wrong key or the intensity
+      alone stay at chance and are never read (Fi
+    - With both keys, the bench decrypts each QR code [54] from one frame with a bit error rate of at
+      most 0.014
+    - decrypts each QR code [54] from one frame with a bit error rate of at most 0.014
+corrections: []

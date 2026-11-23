@@ -1,6 +1,6 @@
 # Devices — state of the art
 
-Topic code `DEV`. Last reviewed 2026-11-22.
+Topic code `DEV`. Last reviewed 2026-11-23.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -554,6 +554,14 @@ Topic code `DEV`. Last reviewed 2026-11-22.
   - `CLM-DEV-0074` · power 2 mW · grade B · credibility unknown · measured · as of 2026-10-16
   - sources: SRC-00183
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.167 um** — At a spin-wave frequency of 5.2 GHz, micromagnetic simulations show a spin-wave wavelength of 167 nm.
+  - `CLM-DEV-0126` · frequency 5.2 GHz · grade B · credibility unknown · simulated · as of 2026-11-20
+  - sources: SRC-00426
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.1 um** — At a spin-wave frequency of 7.845 GHz, micromagnetic simulations confirm a spin-wave wavelength of 100 nm.
+  - `CLM-DEV-0127` · frequency 7.845 GHz · grade B · credibility unknown · simulated · as of 2026-11-20
+  - sources: SRC-00426
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -601,6 +609,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 122
-- grades: {'B': 122}
-- distinct sources: 51
+- claims: 124
+- grades: {'B': 124}
+- distinct sources: 52

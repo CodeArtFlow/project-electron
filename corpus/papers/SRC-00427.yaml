@@ -1,0 +1,77 @@
+id: SRC-00427
+title: 'Rethinking ANNS on Commodity PIM: PIM-Native Vector Search with Cooperative Filtering'
+doi: null
+arxiv_id: 2611.27010v1
+url: https://arxiv.org/abs/2611.27010v1
+venue_id: arxiv_api
+authors:
+- name: Dawei Guo
+  affiliation: null
+  corresponding: null
+- name: Yizou Chen
+  affiliation: null
+  corresponding: null
+- name: Fan Yang
+  affiliation: null
+  corresponding: null
+- name: Hui Li
+  affiliation: null
+  corresponding: null
+- name: Ming-Chang Yang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-20'
+retrieved_date: '2026-11-23'
+access: full_text
+read_scope: Automated reading. The full PDF text (79,510 characters, 14 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.27010v1 on
+  2026-11-23. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Evaluations on real UPMEM hardware show that PIVOT filters out 99.3–99.7% of probed vectors
+  and achieves up to 18.8× and 10.2× the QPS of CPU and prior PIM baselines, respectively.”
+
+  “Pipelining reduces end-to-end time by 29.8% on DEEP1B and 37.2% on SIFT1B by overlapping CPU preparation
+  and reranking with PIM filtering.”'
+method_summary: '“Evaluations on real UPMEM hardware show that PIVOT filters out 99.3–99.7% of probed
+  vectors and achieves up to 18.8× and 10.2× the QPS of CPU and prior PIM baselines, respectively.”
+
+  “We conduct all experiments on a dual-socket server with two Intel Xeon Silver 4216 CPUs at 2.10 GHz,
+  251 GiB of DDR4 memory, and 20 UPMEM DIMMs containing 2,543 operational DPUs at 400 MHz.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 25973
+    output: 2946
+  claims_accepted: 5
+  claims_rejected: 3
+  rejected:
+  - statement: FastFloat accelerates lower-bound reconstruction, improving QPS by 2.57x to 2.75x over
+      general software-emulated floating point.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''FastFloat
+      accelerates lower-bound reconstruction in the PIM-native ker'''
+    quotes:
+    - FastFloat accelerates lower-bound reconstruction in the PIM-native kernel, improving QPS by 2.57–2.75×
+      over general software-emulated floating point.
+  - statement: Kernel specialization improves QPS by 1.49x to 1.50x.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Kernel specialization
+      improves QPS by 1.49–1.50× by eliminating runtim'''
+    quotes:
+    - Kernel specialization improves QPS by 1.49–1.50× by eliminating runtime control flow, generic loops,
+      and variable buffer management.
+  - statement: PIVOT reaches 4.38x the QPS of the CPU baseline at Recall@100 above 0.95 on MS MARCO10M.
+    reason: the statement contains the number 0, which none of its quotes contain
+    quotes:
+    - As recall and nprobe increase, vector scanning becomes dominant and PIVOT progressively outperforms
+      the CPU baseline, reaching 4.38× the QPS at Recall@100 above 0.95.
+    - Figure 15 evaluates PIVOT on high-dimensional embeddings.
+    - Fig. 15. High-dimensional performance. End-to-end throughput–recall tradeoff on the 1,024-dimensional
+      MS MARCO10M dataset.
+corrections: []

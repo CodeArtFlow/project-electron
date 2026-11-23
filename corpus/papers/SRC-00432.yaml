@@ -1,0 +1,81 @@
+id: SRC-00432
+title: 'GRADPlace: Geometry-Based Routing-Augmented Differentiable Placement for Routability Optimization'
+doi: null
+arxiv_id: 2611.27287v1
+url: https://arxiv.org/abs/2611.27287v1
+venue_id: arxiv_api
+authors:
+- name: Xurong Shen
+  affiliation: null
+  corresponding: null
+- name: Xueyan Zhao
+  affiliation: null
+  corresponding: null
+- name: Zhipeng Huang
+  affiliation: null
+  corresponding: null
+- name: Chaoyu Xing
+  affiliation: null
+  corresponding: null
+- name: Biwei Xie
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-20'
+retrieved_date: '2026-11-23'
+access: full_text
+read_scope: Automated reading. The full PDF text (36,285 characters, 7 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.27287v1 on
+  2026-11-23. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“mgc des perf 1 112.6 1,429,056 566,581 10,652 30 568 1,458,591 577,516 11,809 18 905 1,470,315
+  553,937 2,202 153 952”
+
+  “All runs use deterministic execution with random seed 3000 on AMD EPYC 9654 CPUs and one NVIDIA RTX
+  6000 Ada GPU.”
+
+  “mgc superblue12 1286.9 49,383,559 12,779,668 15,113 260 6,796 43,581,188 10,404,590 23,568 184 7,108
+  44,554,200 9,827,110 3,889 2,895 3,985”'
+method_summary: '“We evaluate GRADPlace on all 20 designs of the ISPD 2015 benchmark suite [27] using
+  detailed-routing wirelength (DR WL), via count, design-rule violations after detailed routing (#DRVs),
+  and placement and routing runtimes.”
+
+  “All runs use deterministic execution with random seed 3000 on AMD EPYC 9654 CPUs and one NVIDIA RTX
+  6000 Ada GPU.”'
+limitations: “Current limitations include H/V-only candidate patterns, fixed weighting schedules, single-seed
+  runs, and evaluation on one benchmark family and routing flow; future work will explore multi-bend candidates,
+  adaptive schedules, and timing-coupled objectives.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14518
+    output: 3069
+  claims_accepted: 4
+  claims_rejected: 2
+  rejected:
+  - statement: On the mgc des perf 1 benchmark case, GRADPlace achieves a detailed-routing wirelength
+      of 1,470,315 µm.
+    reason: the value 1.47032e+06 does not appear in any of the claim's quotes
+    quotes:
+    - mgc des perf 1 112.6 1,429,056 566,581 10,652 30 568 1,458,591 577,516 11,809 18 905 1,470,315 553,937
+      2,202 153 952
+    - All runs use deterministic execution with random seed 3000 on AMD EPYC 9654 CPUs and one NVIDIA
+      RTX 6000 Ada GPU.
+    - GRADPlace
+    - DR WL (µm)
+  - statement: On mgc superblue12, DREAMPlace+GGR results in 19,517 DRVs.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - On mgc superblue12, Fig. 5 shows far sparser violation clusters under GRADPlace, which has 3,889
+      DRVs against 23,568 for Xplace-route and 19,517 for DREAMPlace+GGR.
+    - All runs use deterministic execution with random seed 3000 on AMD EPYC 9654 CPUs and one NVIDIA
+      RTX 6000 Ada GPU.
+    - DREAMPlace+GGR
+    - DRVs
+corrections: []

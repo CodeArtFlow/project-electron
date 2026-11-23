@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-22.
+Topic code `ARCH`. Last reviewed 2026-11-23.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -218,6 +218,14 @@ Topic code `ARCH`. Last reviewed 2026-11-22.
   - sources: SRC-00410
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0146 — see the open register
+- **0.0031 W** — At a 30 s measurement interval, background subtraction A1 draws an average power of 3.1 mW.
+  - `CLM-ARCH-0269` · measurement_interval 30 s, supply_voltage 3.7 V · grade B · credibility unknown · measured · as of 2026-11-20
+  - sources: SRC-00433
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **0.0126 W** — Algorithms A2 and A3 draw an average power of 12.6 mW at a 30 s measurement interval.
+  - `CLM-ARCH-0270` · supply_voltage 3.7 V · grade B · credibility unknown · measured · as of 2026-11-20
+  - sources: SRC-00433
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### qualitative
 
@@ -673,6 +681,38 @@ Topic code `ARCH`. Last reviewed 2026-11-22.
   - `CLM-ARCH-0252` · grade B · credibility unknown · simulated · as of 2026-11-19
   - sources: SRC-00411
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- PIVOT filters out 99.3–99.7% of probed vectors on real UPMEM hardware.
+  - `CLM-ARCH-0261` · hardware real UPMEM hardware · grade B · credibility unknown · measured · as of 2026-11-20
+  - sources: SRC-00427
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- PIVOT achieves up to 18.8x the QPS of the CPU baseline.
+  - `CLM-ARCH-0262` · baseline CPU, hardware real UPMEM hardware · grade B · credibility unknown · measured · as of 2026-11-20
+  - sources: SRC-00427
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- PIVOT achieves up to 10.2x the QPS of prior PIM baselines.
+  - `CLM-ARCH-0263` · baseline prior PIM baselines, hardware real UPMEM hardware · grade B · credibility unknown · measured · as of 2026-11-20
+  - sources: SRC-00427
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Pipelining reduces end-to-end time by 29.8% on DEEP1B.
+  - `CLM-ARCH-0264` · optimization Pipelining, dataset DEEP1B · grade B · credibility unknown · measured · as of 2026-11-20
+  - sources: SRC-00427
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Pipelining reduces end-to-end time by 37.2% on SIFT1B.
+  - `CLM-ARCH-0265` · optimization Pipelining, dataset SIFT1B · grade B · credibility unknown · measured · as of 2026-11-20
+  - sources: SRC-00427
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The layout speedup increases from 1.59x to 1.88x when the L2 cache size shrinks to 1 MiB.
+  - `CLM-ARCH-0268` · l2_cache_capacity 1 MiB, baseline_l2_cache_capacity 4 MiB · grade B · credibility unknown · simulated · as of 2026-11-20
+  - sources: SRC-00431
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Per-group pre-alignment changes perplexity by at most 0.7%.
+  - `CLM-ARCH-0271` · mechanism per-group pre-alignment, scope every dense model · grade B · credibility unknown · simulated · as of 2026-11-20
+  - sources: SRC-00434
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The UDPU adds the FP-FP mode to an MX datapath with 17.5% more LUTs.
+  - `CLM-ARCH-0272` · grade B · credibility unknown · simulated · as of 2026-11-20
+  - sources: SRC-00434
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1103,6 +1143,14 @@ Topic code `ARCH`. Last reviewed 2026-11-22.
   - sources: SRC-00417
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0158 — see the open register
+- **7.04e+06 ns** — Spike-gated lowering reduces simulated inference time from 453.2 ms to 7.04 ms (a 64x reduction) compared to dense lowering.
+  - `CLM-ARCH-0266` · workload two-layer N-MNIST network, lowering spike-gated, baseline_lowering dense · grade B · credibility unknown · simulated · as of 2026-11-20
+  - sources: SRC-00431
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **≈4.42e+06 ns** — The spike-major weight layout cuts simulated inference time by 37.2% to 4.42 ms at 4 MiB L2 cache capacity with spike-gating enabled.
+  - `CLM-ARCH-0267` · weight_layout spike-major, l2_cache_capacity 4 MiB · grade B · credibility unknown · simulated · as of 2026-11-20
+  - sources: SRC-00431
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -1177,6 +1225,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 260
-- grades: {'B': 260}
-- distinct sources: 91
+- claims: 272
+- grades: {'B': 272}
+- distinct sources: 95

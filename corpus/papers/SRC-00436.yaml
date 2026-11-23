@@ -1,0 +1,189 @@
+id: SRC-00436
+title: '3D-NAND-CIM: A Hybrid-Bonded 3D-NAND-Flash-based Analog In-Memory-Compute macro offering 4.8M
+  weights/mm$^2$'
+doi: null
+arxiv_id: 2611.27479v1
+url: https://arxiv.org/abs/2611.27479v1
+venue_id: arxiv_api
+authors:
+- name: Pritish Narayanan
+  affiliation: null
+  corresponding: null
+- name: Athanasios Vasilopoulos
+  affiliation: null
+  corresponding: null
+- name: Geoffrey W. Burr
+  affiliation: null
+  corresponding: null
+- name: Manuel Le Gallo
+  affiliation: null
+  corresponding: null
+- name: Bill Filipiak
+  affiliation: null
+  corresponding: null
+- name: Hernan Castro
+  affiliation: null
+  corresponding: null
+- name: Jeremy Binfet
+  affiliation: null
+  corresponding: null
+- name: Jeremy Hirst
+  affiliation: null
+  corresponding: null
+- name: Henry Utomo
+  affiliation: null
+  corresponding: null
+- name: Kunal Parekh
+  affiliation: null
+  corresponding: null
+- name: Bharat Bhushan
+  affiliation: null
+  corresponding: null
+- name: Rajasekhar Venigalla
+  affiliation: null
+  corresponding: null
+- name: Kyle Kirby
+  affiliation: null
+  corresponding: null
+- name: Urs Egger
+  affiliation: null
+  corresponding: null
+- name: Jose Luquin
+  affiliation: null
+  corresponding: null
+- name: Vara Prasad Jonnalagadda
+  affiliation: null
+  corresponding: null
+- name: Athanasios Siampakos
+  affiliation: null
+  corresponding: null
+- name: Theodore Antonakopoulos
+  affiliation: null
+  corresponding: null
+- name: Kohji Hosokawa
+  affiliation: null
+  corresponding: null
+- name: Masatoshi Ishii
+  affiliation: null
+  corresponding: null
+- name: Yasuteru Kohda
+  affiliation: null
+  corresponding: null
+- name: Seiji Munetoh
+  affiliation: null
+  corresponding: null
+- name: Abhairaj Singh
+  affiliation: null
+  corresponding: null
+- name: Alexander Friz
+  affiliation: null
+  corresponding: null
+- name: Julian Büchel
+  affiliation: null
+  corresponding: null
+- name: Iason Chalas
+  affiliation: null
+  corresponding: null
+- name: Charles Mackin
+  affiliation: null
+  corresponding: null
+- name: Akul Malhotra
+  affiliation: null
+  corresponding: null
+- name: Akira Goda
+  affiliation: null
+  corresponding: null
+- name: Duane Mills
+  affiliation: null
+  corresponding: null
+- name: Gregory Atwood
+  affiliation: null
+  corresponding: null
+- name: Mark Helm
+  affiliation: null
+  corresponding: null
+- name: Jeffrey Burns
+  affiliation: null
+  corresponding: null
+- name: Vijay Narayanan
+  affiliation: null
+  corresponding: null
+- name: Hsinyu Tsai
+  affiliation: null
+  corresponding: null
+- name: Abu Sebastian
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-20'
+retrieved_date: '2026-11-23'
+access: full_text
+read_scope: Automated reading. The full PDF text (20,625 characters, 5 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.27479v1 on
+  2026-11-23. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“We describe an analog-in-memory-compute macro hybrid-bonding a 14nm logic die onto a 3D NAND
+  Flash memory wafer, achieving weight density of 4.8M weights/mm2.”
+
+  “14nm logic die onto a 3D NAND Flash memory wafer”'
+method_summary: '“Testing comprises two steps: NAND device programming and Matrix-Vector-Multiplication
+  (MVM) operations (Fig. 2).”'
+limitations: “This area is significantly smaller than the test vehicle used here (enlarged by circuit
+  and pad-cage reuse), but significantly larger than the actual area of the NAND Flash devices.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 8866
+    output: 2003
+  claims_accepted: 1
+  claims_rejected: 5
+  rejected:
+  - statement: At an MVM integration time of 360ns, the macro achieves an energy efficiency of 4.2 TOPS/W.
+    reason: '[missing_required_conditions] efficiency_compute requires precision, sparsity; missing precision,
+      sparsity'
+    quotes:
+    - With a fairly short MVM time of 360ns, an energy efficiency of 4.2 TOPS/W and area efficiency of
+      0.58 TOPS/mm2 is achieved at a MVM error equivalent to x8w3 (3-bit) weight precision.
+    - With a fairly short MVM time of 360ns,
+    - MVM error equivalent to x8w3 (3-bit) weight precision.
+  - statement: At an MVM integration time of 360ns, the macro achieves a peak computing performance density
+      of 2.92 TOPS.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Integration
+      time 360ns'''
+    quotes:
+    - Integration time 360ns
+    - Peak TOPS (x8w3) 2.92
+    - Peak TOPS (x8w3)
+  - statement: The effective macro area is estimated at 5 mm2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Eff. macro
+      area 5 mm2'''
+    quotes:
+    - Eff. macro area 5 mm2
+    - area is estimated by the area needed for ADC, input-driver, SRAM and LC circuits (5mm2).
+  - statement: On-chip execution of weight layers for WideResNet-16-8 on CIFAR-10 achieves a test accuracy
+      of 95.96%.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - When executing all MVM operations of the weight layers deployed on the NAND tiers on-chip during
+      inference, and the remaining operations in software, we achieved a test accuracy of 95.96% (76.57%),
+      compared to the software baseline of 96.39
+    - CIFAR-10 (-100) dataset
+    - WideResNet-16-8 Convolutional Neural Network
+    - On-chip, Conv0 in HW
+  - statement: On-chip execution of weight layers for WideResNet-16-8 on CIFAR-100 achieves a test accuracy
+      of 76.57%.
+    reason: the statement contains the number 100, which none of its quotes contain
+    quotes:
+    - When executing all MVM operations of the weight layers deployed on the NAND tiers on-chip during
+      inference, and the remaining operations in software, we achieved a test accuracy of 95.96% (76.57%),
+      compared to the software baseline of 96.39
+    - CIFAR-10 (-100) dataset
+    - WideResNet-16-8 Convolutional Neural Network
+    - On-chip, Conv0 in HW
+corrections: []

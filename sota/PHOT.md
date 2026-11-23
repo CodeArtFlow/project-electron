@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-22.
+Topic code `PHOT`. Last reviewed 2026-11-23.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -631,6 +631,10 @@ Topic code `PHOT`. Last reviewed 2026-11-22.
   - `CLM-PHOT-0174` · parameter_scan_resolution 10-10 · grade B · credibility unknown · simulated · as of 2026-11-19
   - sources: SRC-00405
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **10000 percent** — In-situ training of the object arm through a ground-glass diffuser using a measured transmission matrix achieves a focusing enhancement of 100.
+  - `CLM-PHOT-0185` · component object arm, medium ground-glass diffuser, model measured TM · grade B · credibility unknown · measured · as of 2026-11-20
+  - sources: SRC-00435
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### sensitivity advantage ratio
 
@@ -837,6 +841,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 184
-- grades: {'B': 177, 'A': 7}
-- distinct sources: 63
+- claims: 185
+- grades: {'B': 178, 'A': 7}
+- distinct sources: 64

@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-22.
+Topic code `MAT`. Last reviewed 2026-11-23.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -1462,6 +1462,38 @@ Topic code `MAT`. Last reviewed 2026-11-22.
   - `CLM-MAT-0393` · model thin-film bending model, material NbOCl2 · grade B · credibility unknown · simulated · as of 2026-11-18
   - sources: SRC-00395
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **150 percent** — For numerical simulation of an exponential trap distribution with an Urbach energy of 103 meV under dominant monomolecular recombination, the extracted power-law exponent is 1.5.
+  - `CLM-MAT-0420` · trap_distribution exponential trap distribution, recombination_regime k1n > k2np · grade B · credibility unknown · simulated · as of 2026-11-20
+  - sources: SRC-00429
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0160, CFL-0161, CFL-0162 — see the open register
+- **200 percent** — For numerical simulation of an exponential trap distribution with EU = 51.8 meV under dominant monomolecular recombination, the extracted power-law exponent is 2.
+  - `CLM-MAT-0421` · trap_distribution exponential trap distribution, recombination_regime k1n > k2np · grade B · credibility unknown · simulated · as of 2026-11-20
+  - sources: SRC-00429
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0160, CFL-0163, CFL-0164 — see the open register
+- **275 percent** — For numerical simulation of an exponential trap distribution with an Urbach energy of 29.4 meV under dominant monomolecular recombination, the extracted power-law exponent is 2.75.
+  - `CLM-MAT-0422` · trap_distribution exponential trap distribution, recombination_regime k1n > k2np · grade B · credibility unknown · simulated · as of 2026-11-20
+  - sources: SRC-00429
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0161, CFL-0163, CFL-0165 — see the open register
+- **300 percent** — For numerical simulation of an exponential trap distribution with EU = 25.8 meV under dominant monomolecular recombination, the extracted power-law exponent is 3.
+  - `CLM-MAT-0423` · trap_distribution exponential trap distribution, recombination_regime k1n > k2np · grade B · credibility unknown · simulated · as of 2026-11-20
+  - sources: SRC-00429
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0162, CFL-0164, CFL-0165 — see the open register
+- **200 percent** — For numerical simulation of an exponential trap distribution with EU = 25.8 meV in the bimolecular recombination regime (k2np > k1n), the transient has an extracted power-law exponent of 2.
+  - `CLM-MAT-0424` · trap_distribution exponential trap distribution, urbach_energy 25.8 meV, recombination_regime k2np > k1n · grade B · credibility unknown · simulated · as of 2026-11-20
+  - sources: SRC-00429
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **≈58 percent** — The overall lattice thermal conductivity (κl) of ZrHfRh2Bi2 is reduced to approximately 58% at 300 K under grain-boundary scattering.
+  - `CLM-MAT-0425` · compound ZrHfRh2Bi2, temperature 300 K · grade B · credibility unknown · simulated · as of 2026-11-20
+  - sources: SRC-00430
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **≈63 percent** — The overall lattice thermal conductivity (κl) of Zr2RhIrBi2 is reduced to approximately 63% at 300 K under grain-boundary scattering.
+  - `CLM-MAT-0426` · compound Zr2RhIrBi2, temperature 300 K · grade B · credibility unknown · simulated · as of 2026-11-20
+  - sources: SRC-00430
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### resistance
 
@@ -1976,9 +2008,27 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0157` — energy: _unexamined; classification pending_
   - claims: CLM-MAT-0409, CLM-MAT-0411
   - missing data: `not yet named`
+- `CFL-0160` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-MAT-0420, CLM-MAT-0421
+  - missing data: `not yet named`
+- `CFL-0161` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-MAT-0420, CLM-MAT-0422
+  - missing data: `not yet named`
+- `CFL-0162` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-MAT-0420, CLM-MAT-0423
+  - missing data: `not yet named`
+- `CFL-0163` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-MAT-0421, CLM-MAT-0422
+  - missing data: `not yet named`
+- `CFL-0164` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-MAT-0421, CLM-MAT-0423
+  - missing data: `not yet named`
+- `CFL-0165` — relative_deviation: _unexamined; classification pending_
+  - claims: CLM-MAT-0422, CLM-MAT-0423
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 419
-- grades: {'B': 419}
-- distinct sources: 149
+- claims: 426
+- grades: {'B': 426}
+- distinct sources: 151

@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**27955 pair(s)** as of 2026-11-22.
+**29799 pair(s)** as of 2026-11-23.
 
 ## `area_die` (21 pair(s))
 
@@ -244,7 +244,7 @@ _and 898 more_
 
 _and 6714 more_
 
-## `power` (501 pair(s))
+## `power` (570 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -289,7 +289,7 @@ _and 6714 more_
 | `CLM-ARCH-0114` = 3.55 mW | `CLM-MAT-0191` = 5e-08 mW | 100% | component=PIM Chunk List, location=DRAM chip | device_type=drop-cast control devices |
 | `CLM-ARCH-0114` = 3.55 mW | `CLM-MAT-0403` = 3e+05 mW | 100% | component=PIM Chunk List, location=DRAM chip | laser=fiber laser (AFS Jena) |
 
-_and 461 more_
+_and 530 more_
 
 ## `power_density` (1 pair(s))
 
@@ -303,7 +303,7 @@ _and 461 more_
 |---|---|---|---|---|
 | `CLM-DEV-0064` = 6e-06 torr | `CLM-MAT-0296` = 3.75e+04 torr | 100% | temperature=room temperature | measurement=Tensile testing |
 
-## `relative_deviation` (12947 pair(s))
+## `relative_deviation` (14302 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -312,7 +312,9 @@ _and 461 more_
 | `CLM-MAT-0111` = -60 percent | `CLM-PROC-0044` = 59.9 percent | 200% | sample=B1-1 | voltage=8 VAg/AgCl, material=1 μm n-type GaN |
 | `CLM-ARCH-0198` = 60.3 percent | `CLM-MAT-0111` = -60 percent | 200% | baseline_utilization=42.4% | sample=B1-1 |
 | `CLM-ARCH-0223` = 58 percent | `CLM-MAT-0111` = -60 percent | 197% | mode=greedy | sample=B1-1 |
+| `CLM-MAT-0111` = -60 percent | `CLM-MAT-0425` = 58 percent | 197% | sample=B1-1 | compound=ZrHfRh2Bi2, temperature=300 K |
 | `CLM-ARCH-0170` = 62.3 percent | `CLM-MAT-0111` = -60 percent | 196% | frequency=80 MHz, model=ConvSNN | sample=B1-1 |
+| `CLM-MAT-0111` = -60 percent | `CLM-MAT-0426` = 63 percent | 195% | sample=B1-1 | compound=Zr2RhIrBi2, temperature=300 K |
 | `CLM-ARCH-0089` = 64.2 percent | `CLM-MAT-0111` = -60 percent | 193% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0112` = 66.8 percent | 190% | sample=B1-1 | baseline=pure two-dimensional Coulomb reference, benchmark_protocol=high-field-calibrated |
 | `CLM-ARCH-0090` = 67.5 percent | `CLM-MAT-0111` = -60 percent | 189% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
@@ -345,10 +347,8 @@ _and 461 more_
 | `CLM-EDA-0006` = 89.6 percent | `CLM-MAT-0111` = -60 percent | 167% | model=Non-cyclic Edge prediction model | sample=B1-1 |
 | `CLM-EDA-0044` = 40 percent | `CLM-MAT-0111` = -60 percent | 167% | design=AES | sample=B1-1 |
 | `CLM-EDA-0050` = 39.9 percent | `CLM-MAT-0111` = -60 percent | 166% | configuration=best tested knowledge-injection configuration, baseline=standalone optimizer | sample=B1-1 |
-| `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0166` = 91.1 percent | 166% | sample=B1-1 | prior_knowledge=task description alone |
-| `CLM-ARCH-0099` = 91.8 percent | `CLM-MAT-0111` = -60 percent | 165% | training_method=CSI-based training | sample=B1-1 |
 
-_and 12907 more_
+_and 14262 more_
 
 ## `resistance` (5 pair(s))
 
@@ -471,7 +471,7 @@ _and 12 more_
 |---|---|---|---|---|
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0007` = 3100 W/(m*K) | 99% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | temperature=room-temperature, sample_13c_concentration=~0.00024% |
 
-## `time` (3542 pair(s))
+## `time` (3896 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -490,6 +490,8 @@ _and 12 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0245` = 6.65e+07 ns | 100% | device_type=FTJ, architecture=Naive | engine=PL GEMV engines |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0254` = 4.24e+09 ns | 100% | device_type=FTJ, architecture=Naive | target_design=4-SM GPU, workload=1024 × 1024 GEMM, simulator=FoldSim |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0255` = 9.36e+13 ns | 100% | device_type=FTJ, architecture=Naive | target_design=4-SM GPU, workload=1024 × 1024 GEMM, simulator_type=software RTL simulation |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0266` = 7.04e+06 ns | 100% | device_type=FTJ, architecture=Naive | workload=two-layer N-MNIST network, lowering=spike-gated, baseline_lowering=dense |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-ARCH-0267` = 4.42e+06 ns | 100% | device_type=FTJ, architecture=Naive | weight_layout=spike-major, l2_cache_capacity=4 MiB |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-DEV-0066` = 6e+10 ns | 100% | device_type=FTJ, architecture=Naive | software=MATLAB Deep Learning Toolbox |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-DEV-0089` = 0.007 ns | 100% | device_type=FTJ, architecture=Naive | sample=SESAM |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-DEV-0111` = 4.16e+12 ns | 100% | device_type=FTJ, architecture=Naive | atom_count=10648 atoms, gpu=NVIDIA RTX 3090 Ti GPU (24 GB), system=Hg0.5Cd0.5Te cubic supercells |
@@ -497,6 +499,8 @@ _and 12 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0011` = 1.35e+08 ns | 100% | device_type=FTJ, architecture=Naive | tool=JasperGold, module=cache coherence module |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0012` = 1.273e+09 ns | 100% | device_type=FTJ, architecture=Naive | tool=JasperGold, module=L1 Bus Interface module |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0059` = 1.423e+11 ns | 100% | device_type=FTJ, architecture=Naive | agent_model=Claude Opus 5.5, method=CRAFT |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0070` = 1.53e+11 ns | 100% | device_type=FTJ, architecture=Naive | benchmark_case=mgc des perf 1 |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0071` = 9.52e+11 ns | 100% | device_type=FTJ, architecture=Naive | benchmark_case=mgc des perf 1 |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0119` = 0.00029 ns | 100% | device_type=FTJ, architecture=Naive | material=MAPbBr3, measurement_method=Time-resolved optical Kerr-effect measurements |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0120` = 0.0007 ns | 100% | device_type=FTJ, architecture=Naive | measurement_method=Time-resolved optical Kerr-effect measurements |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0123` = 0.00015 ns | 100% | device_type=FTJ, architecture=Naive | measurement_method=Multidimensional coherent spectroscopy |
@@ -511,12 +515,8 @@ _and 12 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0323` = 2.592e+14 ns | 100% | device_type=FTJ, architecture=Naive | demagnetization_protocol=AC demagnetization |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0348` = 0.0008 ns | 100% | device_type=FTJ, architecture=Naive | edge=Re O2 edge, energy_range=~44–45 eV |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0384` = 6.7e+08 ns | 100% | device_type=FTJ, architecture=Naive | model=PFP-R2SCAN, system=Pt fcc, hardware=single A100 GPU with 80 GB of memory |
-| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0385` = 1.99e+09 ns | 100% | device_type=FTJ, architecture=Naive | model=SevenNet-Omni, system=Pt fcc, hardware=single A100 GPU with 80 GB of memory |
-| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0386` = 4.6e+08 ns | 100% | device_type=FTJ, architecture=Naive | model=PFP-R2SCAN, system=LiH rocksalt, hardware=single A100 GPU with 80 GB of memory |
-| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0388` = 0.0014 ns | 100% | device_type=FTJ, architecture=Naive | material=bulk Ge(001), temperature=room temperature |
-| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0402` = 2e-05 ns | 100% | device_type=FTJ, architecture=Naive | light_source=extreme-ultraviolet light pulses |
 
-_and 3502 more_
+_and 3856 more_
 
 ## `voltage` (134 pair(s))
 
@@ -565,11 +565,13 @@ _and 3502 more_
 
 _and 94 more_
 
-## `wavelength` (457 pair(s))
+## `wavelength` (523 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-DEV-0074` = 0.488 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | power=2 mW | mo_coupling_coefficient=0 |
+| `CLM-DEV-0126` = 0.167 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | frequency=5.2 GHz | mo_coupling_coefficient=0 |
+| `CLM-DEV-0127` = 0.1 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | frequency=7.845 GHz | mo_coupling_coefficient=0 |
 | `CLM-LITHO-0003` = 1.035 um | `CLM-PHOT-0157` = 5e-05 um | 100% | component=near-infrared laser pulse | device=fabricated chip |
 | `CLM-MAT-0152` = 0.4 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | repetition_rate=1 kHz, pulse_duration=100 fs | mo_coupling_coefficient=0 |
 | `CLM-MAT-0166` = 0.679 um | `CLM-PHOT-0099` = 2.03e+04 um | 100% | material=MoS₂, excitation_wavelength=532 nm | mo_coupling_coefficient=0 |
@@ -607,7 +609,5 @@ _and 94 more_
 | `CLM-PHOT-0099` = 2.03e+04 um | `CLM-PROC-0039` = 0.000388 um | 100% | mo_coupling_coefficient=0 | landing_energy=10 eV |
 | `CLM-PHOT-0155` = 1.643 um | `CLM-PHOT-0157` = 5e-05 um | 100% | in_plane_asymmetry_parameter=0.75 | device=fabricated chip |
 | `CLM-PHOT-0157` = 5e-05 um | `CLM-PROC-0073` = 1.028 um | 100% | device=fabricated chip | laser_type=femtosecond Yb:YAG Pharos laser, shg_wavelength=514 nm |
-| `CLM-DEV-0074` = 0.488 um | `CLM-PHOT-0157` = 5e-05 um | 100% | power=2 mW | device=fabricated chip |
-| `CLM-LITHO-0003` = 1.035 um | `CLM-MAT-0357` = 0.0001541 um | 100% | component=near-infrared laser pulse | source=Cu-Anode, equipment=Bruker D8 equipped with a monochromator |
 
-_and 417 more_
+_and 483 more_

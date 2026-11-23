@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.27311v1
 doi: null
-title: Composite Dielectric-Loaded Metallic Metagratings for Dual-Polarized Transmissive
-  Beam Manipulation
+title: Composite Dielectric-Loaded Metallic Metagratings for Dual-Polarized Transmissive Beam Manipulation
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-20'
@@ -25,6 +24,80 @@ id: CAND-20261123-0078
 harvested_date: '2026-11-23'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-23'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The full-wave simulation of the single-layer all-metallic metagrating yields a peak anomalous
+      refraction efficiency exceeding 97% into the (-1, 0)-order mode fo
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Excellent agreement is observed across the entire frequency range, with both approaches predicting
+      a peak efficiency exceeding 97% at the design frequency of f = 20 GHz, validating the accuracy of
+      the analytical framework for this configura
+    - Analytical mode-matching predictions (blue dashed line with markers) and full-wave simulation results
+      (blue solid line) show excellent agreement, with a peak efficiency of 97% into the (−1, 0)-order
+      mode at 20 GHz.
+    - at the design frequency of f = 20 GHz
+    - Single-Layer All-Metallic MG for TM-Polarized Anomalous Refraction
+  - statement: The full-wave simulated TE-polarized coupling efficiency for the double-layer all-metallic
+      metagrating peaks at approximately 92% at 20 GHz.
+    reason: 'unit conversion refused: efficiency_compute: cannot convert 92.0 % to 1/J - Cannot convert
+      from ''percent'' (dimensionless) to ''1 / joule'' ([time] ** 2 / [mass] / [length] ** 2). A dimens'
+    quotes:
+    - As can be clearly seen, the two curves agree very well, revealing that the optimal operating point
+      indeed coincides with the design frequency 20 GHz, with the coupling efficiency peaking at approximately
+      92%
+    - Analytical predictions (dashed line) are compared with full-wave simulation results (solid line).
+    - design frequency 20 GHz
+    - TE-polarized anomalous refraction efficiency ηTE −1,0 of the double-layer all-metallic MG
+  - statement: The experimental measurement of the dielectric-loaded polarization beam splitter demonstrates
+      a peak TE-polarized anomalous refraction coupling efficiency of 77
+    reason: 'unit conversion refused: efficiency_compute: cannot convert 77.0 % to 1/J - Cannot convert
+      from ''percent'' (dimensionless) to ''1 / joule'' ([time] ** 2 / [mass] / [length] ** 2). A dimens'
+    quotes:
+    - For TE-polarized field excitation, the measured fraction of TE-polarized power coupled to the (−1,
+      0)-order mode (red circle markers) reveals a peak efficiency of ηTE −1,0 = 77% at 19.775 GHz
+    - at 19.775 GHz
+    - For TE-polarized field excitation
+    - coupled to the (−1, 0)-order mode
+  - statement: The experimental measurement of the dielectric-loaded polarization beam splitter achieves
+      a direct transmission coupling efficiency of about 91% for TM polariza
+    reason: the statement contains the number 19.775, which none of its quotes contain
+    quotes:
+    - For the TM polarization, the recorded direct transmission coupling efficiency ηTM 0,0 (blue circle
+      markers) experiences the same frequency shift, peaking at a higher value of about 91%.
+    - at 19.775 GHz
+    - For the TM polarization
+    - direct transmission coupling efficiency ηTM 0,0
+  - statement: The experimental measurement of the dual-polarized dielectric-loaded metagrating shows
+      a peak TM-polarized anomalous refraction efficiency of 87% at 19.775 GHz.
+    reason: 'unit conversion refused: efficiency_compute: cannot convert 87.0 % to 1/J - Cannot convert
+      from ''percent'' (dimensionless) to ''1 / joule'' ([time] ** 2 / [mass] / [length] ** 2). A dimens'
+    quotes:
+    - with anomalous refraction efficiencies peaking at 19.775 GHz with values of 87% and 85% for TM-
+      (blue) and TE- (red) polarized incident fields, respectively.
+    - peaking at 19.775 GHz
+    - for TM- (blue) and TE- (red) polarized incident fields
+    - coupling efficiencies into the (−1, 0)-order FB mode in transmission
+  - statement: The experimental measurement of the dual-polarized dielectric-loaded metagrating demonstrates
+      a TE-polarized anomalous refraction efficiency of 85% at 19.775 GH
+    reason: 'unit conversion refused: efficiency_compute: cannot convert 85.0 % to 1/J - Cannot convert
+      from ''percent'' (dimensionless) to ''1 / joule'' ([time] ** 2 / [mass] / [length] ** 2). A dimens'
+    quotes:
+    - with anomalous refraction efficiencies peaking at 19.775 GHz with values of 87% and 85% for TM-
+      (blue) and TE- (red) polarized incident fields, respectively.
+    - peaking at 19.775 GHz
+    - for TM- (blue) and TE- (red) polarized incident fields
+    - coupling efficiencies into the (−1, 0)-order FB mode in transmission
+  tokens:
+    input: 32302
+    output: 3037
+  fetched_chars: 105381
