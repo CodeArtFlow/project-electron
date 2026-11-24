@@ -197,3 +197,81 @@ claims:
       unit: nm
     conditions:
       component: lens
+- id: CLM-LITHO-0007
+  topic: LITHO
+  statement: For the 144-solve benchmark with 578 × 578 layer matrices, SPECTRA-RCWA computes the value
+    in 0.217 s on one RTX 5090 graphics card in single precision.
+  sources:
+  - SRC-00446
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    benchmark_solves: 144 solves
+    layer_matrix_size: 578 × 578
+    hardware: RTX 5090
+    precision: single precision
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.217
+      unit: s
+    si_base:
+      value: 0.217
+      unit: s
+    display:
+      value: 216999999.99999997
+      unit: ns
+    conditions:
+      benchmark_solves: 144 solves
+      layer_matrix_size: 578 × 578
+      hardware: RTX 5090
+      precision: single precision
+- id: CLM-LITHO-0008
+  topic: LITHO
+  statement: The optimization of a freeform metagrating finished 440 iterations in 3.4 min on a desktop
+    processor.
+  sources:
+  - SRC-00446
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    iterations: 440 iterations
+    hardware: desktop processor
+    precision: double precision
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 3.4
+      unit: min
+    si_base:
+      value: 204.0
+      unit: s
+    display:
+      value: 203999999999.99997
+      unit: ns
+    conditions:
+      iterations: 440 iterations
+      hardware: desktop processor
+      precision: double precision

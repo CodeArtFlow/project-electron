@@ -1,0 +1,72 @@
+id: SRC-00437
+title: Designing Incoherent Multispectral Diffractive Optical Networks for Satellite Image Classification
+doi: null
+arxiv_id: 2611.30079v1
+url: https://arxiv.org/abs/2611.30079v1
+venue_id: arxiv_api
+authors:
+- name: Xilin Yang
+  affiliation: null
+  corresponding: null
+- name: Md Sadman Sakib Rahman
+  affiliation: null
+  corresponding: null
+- name: Ryan Lee
+  affiliation: null
+  corresponding: null
+- name: Aydogan Ozcan
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-23'
+retrieved_date: '2026-11-24'
+access: full_text
+read_scope: Automated reading. The full PDF text (42,564 characters, 21 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.30079v1 on
+  2026-11-24. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Using this approach, we numerically demonstrate a six-spectral-channel diffractive classifier
+  for tri-class satellite-scene recognition, achieving a blind-testing accuracy of 79.8% for artificial
+  surface, water body, and vegetated land images, closely approaching the 81.8% accuracy of its surrogate.”
+
+  “EuroSAT satellite-image dataset”
+
+  “We further demonstrate a more compact three-spectral-channel design that numerically achieves 72.7%
+  blind-testing accuracy, compared with 75.1% for its corresponding surrogate model.”
+
+  “corresponding surrogate model”
+
+  “diffractive optical processor”'
+method_summary: “The diffractive network consists of multiple phase-only diffractive layers separated
+  by free-space propagation distances and is optimized in silico using a scalar diffraction model.”
+limitations: “First, the present study focuses on numerical design and blind testing under simulated spatially
+  incoherent illumination. Experimental implementations will require further consideration of fabrication
+  accuracy, alignment tolerance, material absorption, detector noise, and the stability of the optical
+  system under practical satellite operating conditions.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 12422
+    output: 1454
+  claims_accepted: 3
+  claims_rejected: 1
+  rejected:
+  - statement: The six-spectral-channel diffractive optical processor numerically achieves a blind-testing
+      accuracy of 79.8% for tri-class satellite-scene recognition.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - Using this approach, we numerically demonstrate a six-spectral-channel diffractive classifier for
+      tri-class satellite-scene recognition, achieving a blind-testing accuracy of 79.8% for artificial
+      surface, water body, and vegetated land imag
+    - Using this approach, we numerically demonstrate a six-spectral-channel diffractive classifier for
+      tri-class satellite-scene recognition, meachieving a blind-testing accuracy of 79.8% for artificial
+      surface, water body, and vegetated land im
+    - six-spectral-channel diffractive classifier
+    - EuroSAT satellite-image dataset
+corrections: []

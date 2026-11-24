@@ -1,6 +1,6 @@
 # Lithography — state of the art
 
-Topic code `LITHO`. Last reviewed 2026-11-23.
+Topic code `LITHO`. Last reviewed 2026-11-24.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -35,6 +35,17 @@ Topic code `LITHO`. Last reviewed 2026-11-23.
   - sources: SRC-00189
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
+### time
+
+- **2.17e+08 ns** — For the 144-solve benchmark with 578 × 578 layer matrices, SPECTRA-RCWA computes the value in 0.217 s on one RTX 5090 graphics card in single precision.
+  - `CLM-LITHO-0007` · benchmark_solves 144 solves, layer_matrix_size 578 × 578, hardware RTX 5090, precision single precision · grade B · credibility unknown · measured · as of 2026-11-23
+  - sources: SRC-00446
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- **2.04e+11 ns** — The optimization of a freeform metagrating finished 440 iterations in 3.4 min on a desktop processor.
+  - `CLM-LITHO-0008` · iterations 440 iterations, hardware desktop processor, precision double precision · grade B · credibility unknown · measured · as of 2026-11-23
+  - sources: SRC-00446
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+
 ### wavelength
 
 - **1.035 um** — The central vacuum wavelength of the driving laser pulse was 1.035 μm.
@@ -48,6 +59,6 @@ _None._
 
 ## Evidence base
 
-- claims: 6
-- grades: {'B': 6}
-- distinct sources: 2
+- claims: 8
+- grades: {'B': 8}
+- distinct sources: 3

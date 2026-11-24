@@ -1,0 +1,93 @@
+id: SRC-00441
+title: 'EdgeALM: An Efficient and Unified Edge Accelerator for Large Audio Language Models via Full-Stack
+  Hardware-Software Co-Design and Agent-Driven Recursive Optimization'
+doi: null
+arxiv_id: 2611.30216v1
+url: https://arxiv.org/abs/2611.30216v1
+venue_id: arxiv_api
+authors:
+- name: Chenglin Yang
+  affiliation: null
+  corresponding: null
+- name: Feifan Xu
+  affiliation: null
+  corresponding: null
+- name: Xingyuan Li
+  affiliation: null
+  corresponding: null
+- name: Xinpeng Xing
+  affiliation: null
+  corresponding: null
+- name: Dihu Chen
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-23'
+retrieved_date: '2026-11-24'
+access: full_text
+read_scope: Automated reading. The full PDF text (82,575 characters, 14 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.30216v1 on
+  2026-11-24. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Both heads: 2.41 GB → 1.21 GB (↓49.8%)”
+
+  “on Kimi-Audio, for example, the BF16 text and audio heads of the LLM backbone together occupy 2.41
+  GB.”
+
+  “EdgeALM Freeze-Omni Full-duplex 0.96 ✓ 2.97 26.84”
+
+  “Mini-Omni Half-duplex 0.58 ✓ 2.21 26.37”'
+method_summary: “The proposed EdgeALM is implemented on a single Alveo U50 in an ordinary desktop PC”
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 25431
+    output: 2760
+  claims_accepted: 3
+  claims_rejected: 5
+  rejected:
+  - statement: EdgeALM achieves an audio-to-text decode throughput of up to 169.5 tokens/s on Mini-Omni-0.5B.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''It achieves
+      high-throughput audio-to-text inference at up to 169.5 tok'''
+    quotes:
+    - It achieves high-throughput audio-to-text inference at up to 169.5 tokens/s
+    - 169.5 tokens/s
+    - Mini-Omni-0.5B(0.6B)
+    - Alveo U50 FPGA in a Desktop PC
+  - statement: EdgeALM operates at an average board power consumption of 26 W.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - with 94% bandwidth utilization and 26 W power consumption on average.
+    - Alveo U50 FPGA
+  - statement: EdgeALM achieves an average HBM bandwidth utilization of 94%.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - with 94% bandwidth utilization and 26 W power consumption on average.
+    - Alveo U50 FPGA
+  - statement: EdgeALM running Freeze-Omni under full-duplex mode achieves a real-time factor for streaming
+      (RTFS) of 0.96.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''RTFS'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a un'
+    quotes:
+    - EdgeALM Freeze-Omni Full-duplex 0.96 ✓ 2.97 26.84
+  - statement: EdgeALM running Mini-Omni under half-duplex mode achieves a real-time factor for streaming
+      (RTFS) of 0.58.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''RTFS'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a un'
+    quotes:
+    - Mini-Omni Half-duplex 0.58 ✓ 2.21 26.37
+    - Platform Model Duplex RTFS Real-time? First-response latency (s) Power (W)
+corrections: []

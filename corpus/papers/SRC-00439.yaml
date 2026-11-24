@@ -1,0 +1,112 @@
+id: SRC-00439
+title: 'Making Protocol Effects Explicit: LLM-to-Packet Simulation for Superpod Interconnect Exploration'
+doi: null
+arxiv_id: 2611.30191v1
+url: https://arxiv.org/abs/2611.30191v1
+venue_id: arxiv_api
+authors:
+- name: Yu Zhu
+  affiliation: null
+  corresponding: null
+- name: Xinhao Yang
+  affiliation: null
+  corresponding: null
+- name: Zhaoshi Li
+  affiliation: null
+  corresponding: null
+- name: Baodong Wu
+  affiliation: null
+  corresponding: null
+- name: Boxun Li
+  affiliation: null
+  corresponding: null
+- name: Wenxue Li
+  affiliation: null
+  corresponding: null
+- name: Guohao Dai
+  affiliation: null
+  corresponding: null
+- name: Hongyang Jia
+  affiliation: null
+  corresponding: null
+- name: Shuwen Deng
+  affiliation: null
+  corresponding: null
+- name: Huazhong Yang
+  affiliation: null
+  corresponding: null
+- name: Yuan Xie
+  affiliation: null
+  corresponding: null
+- name: Zhenhua Zhu
+  affiliation: null
+  corresponding: null
+- name: Yu Wang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-23'
+retrieved_date: '2026-11-24'
+access: full_text
+read_scope: Automated reading. The full PDF text (87,979 characters, 15 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.30191v1 on
+  2026-11-24. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The surrogate reduces the mean absolute percentage error (MAPE) from 55.7% of latency-bandwidth
+  models to 11.8%, and reduces evaluation time from 2.38∼75.70 s to 20.5 µs per operation.”
+
+  “To enable faster superpod evaluation for further interconnect exploration, we derive a surrogate model
+  that combines OTP parameters with analytical models of PEX mechanisms.”
+
+  “and reduces evaluation time from 2.38∼75.70 s to 20.5 µs per operation.”'
+method_summary: '“To make protocol effects explicit, ProtoBridge introduces two abstraction layers over
+  ns-3 to evaluate different scale-up protocols using a common simulation substrate: (1) an operation-to-packet
+  (OTP) layer that captures protocol-specific packet exchanges and dependencies, and (2) a packet-execution
+  (PEX) layer that applies shared packet-level mechanisms to the ns-3 event system.”'
+limitations: '“The high simulation time also hinders efficient end-to-end superpod evaluation and design
+  exploration.”
+
+  “Large errors occur at medium data sizes, which are caused by the NCCL software overhead not modeled
+  at the protocol layer.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 29115
+    output: 2573
+  claims_accepted: 2
+  claims_rejected: 4
+  rejected:
+  - statement: ProtoBridge gets an average latency error of 17.8% on H200 NVLink4.
+    reason: the statement contains the number 00, which none of its quotes contain
+    quotes:
+    - ProtoBridge achieves average latency error of 17.8% on H200 NVLink4 and 10.3% on C500 MetaXLink.
+    - We compare ProtoBridge's results on H200 and C500 with real hardware profiling, and on NVL72 with
+      open-source data [37].
+  - statement: ProtoBridge achieves an average latency error of 10.3% on C500 MetaXLink.
+    reason: the statement contains the number 00, which none of its quotes contain
+    quotes:
+    - ProtoBridge achieves average latency error of 17.8% on H200 NVLink4 and 10.3% on C500 MetaXLink.
+    - We compare ProtoBridge's results on H200 and C500 with real hardware profiling, and on NVL72 with
+      open-source data [37].
+  - statement: ProtoBridge achieves an absolute percentage error of 1.76% on NVL72 across various communication
+      operations.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - ProtoBridge achieves mean absolute percentage error (MAPE) of 17.8%, 10.3%, and 1.76% on H200 NVLink4,
+      C500 MetaXLink, and NVL72 across various communication operations, respectively.
+    - We compare ProtoBridge's results on H200 and C500 with real hardware profiling, and on NVL72 with
+      open-source data [37].
+  - statement: ProtoBridge achieves a mean absolute percentage error of 2.77% on UB.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - ProtoBridge’s mean MAPE is 17.76% on H200, 10.33% on C500, 1.76% on NVL72, and 2.77% on UB, while
+      the best ASTRA-sim backend reaches 52.01%, 28.85%, 15.62%, and 18.49%, respectively.
+    - For UB, the official ns-3-UB simulator [14] supplies the UB results, adding a third scale-up protocol
+      family and an eight-by-eight two-dimensional full-mesh topology.
+corrections: []

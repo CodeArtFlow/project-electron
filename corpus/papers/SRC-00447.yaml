@@ -1,0 +1,71 @@
+id: SRC-00447
+title: Strain-Induced Tetragonal-to-Cubic Transition in MAPbI$_3$ from Machine-Learned Molecular Dynamics
+doi: null
+arxiv_id: 2611.30348v1
+url: https://arxiv.org/abs/2611.30348v1
+venue_id: arxiv_api
+authors:
+- name: Daan Holleman
+  affiliation: null
+  corresponding: null
+- name: Luuk Klein Nagelvoort
+  affiliation: null
+  corresponding: null
+- name: Monica Morales-Masis
+  affiliation: null
+  corresponding: null
+- name: Linn Leppert
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-23'
+retrieved_date: '2026-11-24'
+access: full_text
+read_scope: Automated reading. The full PDF text (46,819 characters, 21 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.30348v1 on
+  2026-11-24. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“At 0.5% tensile strain, the calculated blue shift is 12 meV, smaller than the experimental
+  difference of 50 meV from photoluminescence [24, 27].”
+
+  “We restrict this analysis to the bulk model”'
+method_summary: '“Here, we use MD simulations based on machine-learned force fields trained on-the-fly
+  on first-principles DFT calculations to model epitaxially strained MAPbI3 at 300 K.”
+
+  “All calculations are performed using the Vienna Ab-initio Simulation Package (VASP) [46– 48]. We use
+  the strongly constrained and appropriately normed (SCAN) meta-generalized gradient approximation [49]
+  in the MD simulations”
+
+  “All MD simulations are performed at 300 K using the Langevin thermostat in an N pT ensemble.”'
+limitations: “First, we neglect spin-orbit coupling and many-body corrections, which can modify the strain
+  dependence of the band gap, particularly through the Pb-p-derived conduction band. Second, the 2 × 2
+  × 2 supercell limits the configurational averaging of band gaps, and larger supercells may change the
+  magnitude of the shift. Third, our unstrained reference, defined by c/a = 1.009, may not correspond
+  exactly to the state of the reference films in experiment.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 15512
+    output: 1104
+  claims_accepted: 1
+  claims_rejected: 1
+  rejected:
+  - statement: Molecular dynamics calculations predict a tensile strain of approximately 0.5% for the
+      tetragonal-to-cubic phase transition in MAPbI3.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Our calculations predict a tetragonal-to-cubic phase transition at ∼0.5% tensile strain, marked
+      by a c/a ratio of unity and the loss of the a0a0c− octahedral tilting pattern of the tetragonal
+      phase in agreement with ex- periments on epitaxi
+    - MAPbI3
+    - at 300 K
+    - tensile strain
+corrections: []

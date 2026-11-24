@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.30043v1
 doi: null
-title: Domain advantage in two-dimensional quantum-device design with multi-modal
-  agentic harness
+title: Domain advantage in two-dimensional quantum-device design with multi-modal agentic harness
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-23'
@@ -29,6 +28,51 @@ id: CAND-20261124-0133
 harvested_date: '2026-11-24'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-24'
+  reason: the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: An agent using GPT-5.6-sol with QlayBot passes 81.5% of the benchmark tasks.
+    reason: the statement contains the number 5.6, which none of its quotes contain
+    quotes:
+    - With greater computational effort, an agent using QlayBot passes 81.5% of the benchmark tasks, compared
+      with 24.1% when it uses conventional tools.
+    - an agent using QlayBot passes 81.5% of the benchmark tasks
+    - GPT-5.6-sol using QlayBot
+  - statement: An agent using GPT-5.6-sol with conventional tools passes 24.1% of the benchmark tasks.
+    reason: the statement contains the number 5.6, which none of its quotes contain
+    quotes:
+    - With greater computational effort, an agent using QlayBot passes 81.5% of the benchmark tasks, compared
+      with 24.1% when it uses conventional tools.
+    - compared with 24.1% when it uses conventional tools
+    - Codex (GPT-5.6-sol)
+  - statement: Under conventional Codex, GPT-5.6-sol takes an average of 12.7 minutes per task.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''For the runs
+      producing the reported submissions, conventional GPT-5.6-'''
+    quotes:
+    - For the runs producing the reported submissions, conventional GPT-5.6-sol averages 12.7 minutes
+      and $1.71 per task.
+    - conventional GPT-5.6-sol averages 12.7 minutes
+  - statement: GPT-5.6-sol with QlayBot takes an average of 63.3 minutes per task.
+    reason: the statement contains the number 5.6, which none of its quotes contain
+    quotes:
+    - With QlayBot the corresponding means are 63.3 minutes and $12.11.
+    - With QlayBot the corresponding means are 63.3 minutes
+    - GPT-5.6-sol using QlayBot
+  - statement: In the QH06 design, the inferred graphene contour area is 5.3 times the reference area.
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - Its area was 5.3 times the reference area.
+    - In the QH06 end-to-end design
+    - an agent using Claude Opus 5 inferred a graphene contour
+  tokens:
+    input: 17941
+    output: 1615
+  fetched_chars: 60518

@@ -1,0 +1,97 @@
+id: SRC-00446
+title: 'SPECTRA-RCWA: A Spectral Propagation Engine for Coupled-Wave Theory with Recursive Admittance'
+doi: null
+arxiv_id: 2611.30305v1
+url: https://arxiv.org/abs/2611.30305v1
+venue_id: arxiv_api
+authors:
+- name: Hyoseok Park
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-23'
+retrieved_date: '2026-11-24'
+access: full_text
+read_scope: Automated reading. The full PDF text (66,287 characters, 21 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.30305v1 on
+  2026-11-24. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“SPECTRA-RCWA returns the value in 0.217 s and the value with its gradient in 0.252 s, or 1.75
+  ms per solve (Figure 5a and Table 1).”
+
+  “For 144 solves with 578 × 578 layer matrices, the value and the gradient take 0.25 s on one graphics
+  card, 218 times less than with a differentiable eigendecomposition code.”
+
+  “All graphics-processor codes ran in single precision on one RTX 5090 card.”
+
+  “A freeform metagrating designed in 3.4 min on a desktop processor deflects both polarisations by 65◦
+  with a band-averaged efficiency of 75%.”
+
+  “The optimisation ran in double precision on a desktop processor and finished its 440 iterations in
+  3.4 min, 0.45 s per iteration.”'
+method_summary: '“We measure accuracy and speed against S4, torcwa, a batched eigendecomposition code
+  and TorchRDIT, and we use the solver to design a freeform metagrating on a desktop processor.”
+
+  “Graphics-processor measurements were taken on an RTX 5090 card (32 GB) with PyTorch 2.10.0; each time
+  is the fastest of at least three evaluations after a warm-up call.”
+
+  “The computations of Figures 2, 3a,b, 4a,b and 6 ran on an Intel i7-12700 desktop processor.”'
+limitations: “Memory is the single resource that limits the batch, and a larger objective is split into
+  chunks that fit.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 24149
+    output: 3759
+  claims_accepted: 2
+  claims_rejected: 5
+  rejected:
+  - statement: For the 144-solve benchmark with 578 × 578 layer matrices, SPECTRA-RCWA computes the value
+      and gradient in 0.252 s on one RTX 5090 graphics card in single preci
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - SPECTRA-RCWA returns the value in 0.217 s and the value with its gradient in 0.252 s, or 1.75 ms
+      per solve (Figure 5a and Table 1).
+    - For 144 solves with 578 × 578 layer matrices, the value and the gradient take 0.25 s on one graphics
+      card, 218 times less than with a differentiable eigendecomposition code.
+    - All graphics-processor codes ran in single precision on one RTX 5090 card.
+  - statement: The peak memory of SPECTRA-RCWA during the 144-solve benchmark evaluation is 6.6 GiB.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''peak memory
+      (GiB) 4.8 4.2 6.6'''
+    quotes:
+    - Table 1. One evaluation of the benchmark (144 solves, both polarisations, 578× 578 layer matrices)
+    - peak memory (GiB) 4.8 4.2 6.6
+    - All graphics-processor codes ran in single precision on one RTX 5090 card.
+  - statement: SPECTRA-RCWA's single-precision gradient error stays within 3.8 × 10−5 for a layer with
+      an order at cutoff.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Its single-precision gradient stays within 4 × 10−5 of a double-precision reference at a cutoff,
+      where eigendecomposition gradients are wrong by order one.
+    - On the graphics processor, the single-precision gradient of SPECTRA-RCWA differs from the double-precision
+      reference by 2.7 × 10−6 for a grey design layer, 8.2 × 10−6 for a binary one and 3.8 × 10−5 for
+      a layer with an order at cutoff.
+  - statement: For a layer thickness of 0.25 µm with 144 solves and 578 × 578 layer matrices on an RTX
+      5090 card, SPECTRA-RCWA returns the value and gradient in 0.23 s.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - For a layer of 0.25 µm, SPECTRA-RCWA returns the value and the gradient in 0.23 s, and TorchRDIT
+      at the series order of its paper, with errors of the same order, in 10.9 s (Figure 4c).
+    - We ran both on one RTX 5090 card for 144 solves with 578 × 578 layer matrices, the size of the benchmark
+      of the next section, on a grey pattern of index 2.0.
+  - statement: For a 1 µm thick layer, TorchRDIT with 0.25 µm slices takes 19.4 s whereas SPECTRA-RCWA
+      takes 0.30 s for the value and gradient.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''At 1 µm the
+      one-slice series is wrong by more than 100, and with slice'''
+    quotes:
+    - At 1 µm the one-slice series is wrong by more than 100, and with slices of 0.25 µm TorchRDIT takes
+      19.4 s against 0.30 s, 65 times longer.
+corrections: []

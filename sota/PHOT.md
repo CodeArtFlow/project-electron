@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-23.
+Topic code `PHOT`. Last reviewed 2026-11-24.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -100,6 +100,26 @@ Topic code `PHOT`. Last reviewed 2026-11-23.
 - **≈5 GHz** — The realistic metacrystal based on split-ring metaatoms exhibits a Dirac-point frequency of approximately 5 GHz in the microwave regime.
   - `CLM-PHOT-0152` · regime microwave regime · grade B · credibility unknown · simulated · as of 2026-11-13
   - sources: SRC-00365
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.004 GHz** — Li et al. experimentally demonstrated THz modulation in YAG:Ce over the frequency range of 0.2 to 1.8 THz, achieving a modulation speed of 4 MHz under a pumping laser power of 0.2 W/cm2.
+  - `CLM-PHOT-0189` · material YAG: Ce, frequency_range 0.2 to 1.8 THz, power_density 0.2 W/cm2 · grade B · credibility unknown · measured · as of 2026-11-23
+  - sources: SRC-00440
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **≈0.11 GHz** — Liang et al. demonstrated a monolithically integrated graphene-based modulator producing a 3dB electrical modulation bandwidth of about 110 MHz.
+  - `CLM-PHOT-0190` · device_type integrated graphene-based THz modulator combined with surface emitting concentric-circular-grating QCL · grade B · credibility unknown · measured · as of 2026-11-23
+  - sources: SRC-00440
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1.2 GHz** — Deng et al. showed a modulation speed of 1.2 GHz in Sb gratings on a semi-insulating GaAs substrate.
+  - `CLM-PHOT-0191` · material_structure Sb gratings on a semi-insulating GaAs substrate · grade B · credibility unknown · measured · as of 2026-11-23
+  - sources: SRC-00440
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.000137 GHz** — Single crystal lithium L-ascorbate dihydrate exhibits a piezoelectric resonance frequency peaking at 137 kHz for a 1.94 mm thick [010] plate.
+  - `CLM-PHOT-0193` · material lithium L-ascorbate dihydrate, thickness 1.94 mm, orientation [010] plate · grade B · credibility unknown · measured · as of 2026-11-23
+  - sources: SRC-00440
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **2.12e-05 GHz** — Simulated surface-contour displacement of a multilayered thin film system is shown at a frequency of 21.2 kHz.
+  - `CLM-PHOT-0195` · device_structure ion-sliced single crystal z-cut LN (504 nm thick) deposited on platinized silica grown on an LN substrate (500 μ m thick) · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00440
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### length device
@@ -223,6 +243,10 @@ Topic code `PHOT`. Last reviewed 2026-11-23.
   - sources: SRC-00384
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0144 — see the open register
+- **0.108 nm** — In a multilayer Z-cut LiNbO3 thin film excited by an AC field, a maximal out-of-plane surface displacement of 108 pm was observed at 20.7 kHz.
+  - `CLM-PHOT-0194` · material multilayer Z-cut LiNbO3 thin film, fclk 20.7 kHz · grade B · credibility unknown · measured · as of 2026-11-23
+  - sources: SRC-00440
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### length die
 
@@ -550,6 +574,38 @@ Topic code `PHOT`. Last reviewed 2026-11-23.
   - `CLM-PHOT-0184` · readout_mode spectral, block_size_w 4 · grade B · credibility unknown · measured · as of 2026-11-19
   - sources: SRC-00413
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The six-spectral-channel surrogate model numerically achieves a blind-testing accuracy of 81.8% on the EuroSAT satellite-image tri-class dataset.
+  - `CLM-PHOT-0186` · dataset EuroSAT · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00437
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The three-spectral-channel surrogate model numerically achieves a blind-testing accuracy of 75.1%.
+  - `CLM-PHOT-0187` · model_type surrogate model · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00437
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The three-spectral-channel diffractive optical processor numerically achieves a blind-testing accuracy of 72.7%.
+  - `CLM-PHOT-0188` · model_type diffractive optical processor · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00437
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The single-wavelength implementation achieves an experimental convolution correlation coefficient of 0.987.
+  - `CLM-PHOT-0196` · implementation_type single-wavelength implementation · grade B · credibility unknown · measured · as of 2026-11-23
+  - sources: SRC-00443
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The maximum forward power reduction across the distributed FBG sections is approximately 20%.
+  - `CLM-PHOT-0197` · implementation_type distributed FBG sections · grade B · credibility unknown · measured · as of 2026-11-23
+  - sources: SRC-00443
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The mean structural similarity index measure for reconstructed MNIST images in the forward branch is 0.9930.
+  - `CLM-PHOT-0198` · grade B · credibility unknown · measured · as of 2026-11-23
+  - sources: SRC-00443
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The mean squared error for recovered MIT-BIH heartbeat waveforms in the forward branch is 0.005826.
+  - `CLM-PHOT-0199` · dataset MIT-BIH heartbeat waveforms · grade B · credibility unknown · measured · as of 2026-11-23
+  - sources: SRC-00443
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- A four-channel WDM implementation achieves an experimental classification accuracy of 92.25% on a four-class Fashion-MNIST task.
+  - `CLM-PHOT-0200` · implementation_type four-channel wavelength division multiplexing implementation, dataset four-class Fashion-MNIST task · grade B · credibility unknown · measured · as of 2026-11-23
+  - sources: SRC-00443
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -635,6 +691,10 @@ Topic code `PHOT`. Last reviewed 2026-11-23.
   - `CLM-PHOT-0185` · component object arm, medium ground-glass diffuser, model measured TM · grade B · credibility unknown · measured · as of 2026-11-20
   - sources: SRC-00435
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **60 percent** — An optically excited metamaterial modulator fabricated on a thin polyimide layer achieved a 60% modulation depth in the frequency range of 1.1-1.8 THz.
+  - `CLM-PHOT-0192` · frequency_range 1.1-1.8 THz · grade B · credibility unknown · measured · as of 2026-11-23
+  - sources: SRC-00440
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### sensitivity advantage ratio
 
@@ -841,6 +901,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 185
-- grades: {'B': 178, 'A': 7}
-- distinct sources: 64
+- claims: 200
+- grades: {'B': 193, 'A': 7}
+- distinct sources: 67

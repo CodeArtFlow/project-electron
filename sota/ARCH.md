@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-23.
+Topic code `ARCH`. Last reviewed 2026-11-24.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -1000,6 +1000,14 @@ Topic code `ARCH`. Last reviewed 2026-11-23.
   - `CLM-ARCH-0243` · baseline T3A+ · grade B · credibility unknown · measured · as of 2026-11-16
   - sources: SRC-00375
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **11.8 percent** — The latency surrogate model achieves a mean absolute percentage error of 11.8%.
+  - `CLM-ARCH-0273` · model surrogate model · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00439
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **49.8 percent** — Modality-conditioned vocabulary pruning reduces the combined weight footprint of the text and audio output heads from 2.41 GB to 1.21 GB.
+  - `CLM-ARCH-0275` · model Kimi-Audio · grade B · credibility unknown · measured · as of 2026-11-23
+  - sources: SRC-00441
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### sensitivity advantage ratio
 
@@ -1151,6 +1159,18 @@ Topic code `ARCH`. Last reviewed 2026-11-23.
   - `CLM-ARCH-0267` · weight_layout spike-major, l2_cache_capacity 4 MiB · grade B · credibility unknown · simulated · as of 2026-11-20
   - sources: SRC-00431
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **20500 ns** — The surrogate model evaluates an operation in 20.5 µs.
+  - `CLM-ARCH-0274` · evaluation_unit per operation, model surrogate · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00439
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **2.97e+09 ns** — EdgeALM running Freeze-Omni under full-duplex mode achieves a first-response latency of 2.97 seconds.
+  - `CLM-ARCH-0276` · platform EdgeALM, model Freeze-Omni, mode Full-duplex · grade B · credibility unknown · measured · as of 2026-11-23
+  - sources: SRC-00441
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **2.21e+09 ns** — EdgeALM running Mini-Omni under half-duplex mode achieves a first-response latency of 2.21 seconds.
+  - `CLM-ARCH-0277` · model Mini-Omni, mode Half-duplex · grade B · credibility unknown · measured · as of 2026-11-23
+  - sources: SRC-00441
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -1225,6 +1245,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 272
-- grades: {'B': 272}
-- distinct sources: 95
+- claims: 277
+- grades: {'B': 277}
+- distinct sources: 97

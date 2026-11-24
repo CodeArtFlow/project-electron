@@ -7738,3 +7738,179 @@ claims:
     model: gemini-3.6-flash
     prompt_version: reader-v5
     verified_quotes: 2
+- id: CLM-ARCH-0273
+  topic: ARCH
+  statement: The latency surrogate model achieves a mean absolute percentage error of 11.8%.
+  sources:
+  - SRC-00439
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    model: surrogate model
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 11.8
+      unit: '%'
+    si_base:
+      value: 0.11800000000000001
+      unit: dimensionless
+    display:
+      value: 11.8
+      unit: percent
+    conditions:
+      model: surrogate model
+- id: CLM-ARCH-0274
+  topic: ARCH
+  statement: The surrogate model evaluates an operation in 20.5 µs.
+  sources:
+  - SRC-00439
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    evaluation_unit: per operation
+    model: surrogate
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 20.5
+      unit: µs
+    si_base:
+      value: 2.05e-05
+      unit: s
+    display:
+      value: 20499.999999999996
+      unit: ns
+    conditions:
+      evaluation_unit: per operation
+      model: surrogate
+- id: CLM-ARCH-0275
+  topic: ARCH
+  statement: Modality-conditioned vocabulary pruning reduces the combined weight footprint of the text
+    and audio output heads from 2.41 GB to 1.21 GB.
+  sources:
+  - SRC-00441
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    model: Kimi-Audio
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 49.8
+      unit: '%'
+    si_base:
+      value: 0.498
+      unit: dimensionless
+    display:
+      value: 49.8
+      unit: percent
+    conditions:
+      model: Kimi-Audio
+- id: CLM-ARCH-0276
+  topic: ARCH
+  statement: EdgeALM running Freeze-Omni under full-duplex mode achieves a first-response latency of 2.97
+    seconds.
+  sources:
+  - SRC-00441
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    platform: EdgeALM
+    model: Freeze-Omni
+    mode: Full-duplex
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 2.97
+      unit: s
+    si_base:
+      value: 2.97
+      unit: s
+    display:
+      value: 2970000000.0
+      unit: ns
+    conditions:
+      platform: EdgeALM
+      model: Freeze-Omni
+      mode: Full-duplex
+- id: CLM-ARCH-0277
+  topic: ARCH
+  statement: EdgeALM running Mini-Omni under half-duplex mode achieves a first-response latency of 2.21
+    seconds.
+  sources:
+  - SRC-00441
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    model: Mini-Omni
+    mode: Half-duplex
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 2.21
+      unit: s
+    si_base:
+      value: 2.21
+      unit: s
+    display:
+      value: 2209999999.9999995
+      unit: ns
+    conditions:
+      model: Mini-Omni
+      mode: Half-duplex

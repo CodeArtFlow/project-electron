@@ -5219,3 +5219,406 @@ claims:
       component: object arm
       medium: ground-glass diffuser
       model: measured TM
+- id: CLM-PHOT-0186
+  topic: PHOT
+  statement: The six-spectral-channel surrogate model numerically achieves a blind-testing accuracy of
+    81.8% on the EuroSAT satellite-image tri-class dataset.
+  sources:
+  - SRC-00437
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    dataset: EuroSAT
+- id: CLM-PHOT-0187
+  topic: PHOT
+  statement: The three-spectral-channel surrogate model numerically achieves a blind-testing accuracy
+    of 75.1%.
+  sources:
+  - SRC-00437
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    model_type: surrogate model
+- id: CLM-PHOT-0188
+  topic: PHOT
+  statement: The three-spectral-channel diffractive optical processor numerically achieves a blind-testing
+    accuracy of 72.7%.
+  sources:
+  - SRC-00437
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    model_type: diffractive optical processor
+- id: CLM-PHOT-0189
+  topic: PHOT
+  statement: Li et al. experimentally demonstrated THz modulation in YAG:Ce over the frequency range of
+    0.2 to 1.8 THz, achieving a modulation speed of 4 MHz under a pumping laser power of 0.2 W/cm2.
+  sources:
+  - SRC-00440
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    material: 'YAG: Ce'
+    frequency_range: 0.2 to 1.8 THz
+    power_density: 0.2 W/cm2
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 4.0
+      unit: MHz
+    si_base:
+      value: 4000000.0
+      unit: Hz
+    display:
+      value: 0.004
+      unit: GHz
+    conditions:
+      material: 'YAG: Ce'
+      frequency_range: 0.2 to 1.8 THz
+      power_density: 0.2 W/cm2
+- id: CLM-PHOT-0190
+  topic: PHOT
+  statement: Liang et al. demonstrated a monolithically integrated graphene-based modulator producing
+    a 3dB electrical modulation bandwidth of about 110 MHz.
+  sources:
+  - SRC-00440
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device_type: integrated graphene-based THz modulator combined with surface emitting concentric-circular-grating
+      QCL
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: true
+    as_published:
+      value: 110.0
+      unit: MHz
+    si_base:
+      value: 110000000.0
+      unit: Hz
+    display:
+      value: 0.11
+      unit: GHz
+    conditions:
+      device_type: integrated graphene-based THz modulator combined with surface emitting concentric-circular-grating
+        QCL
+- id: CLM-PHOT-0191
+  topic: PHOT
+  statement: Deng et al. showed a modulation speed of 1.2 GHz in Sb gratings on a semi-insulating GaAs
+    substrate.
+  sources:
+  - SRC-00440
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    material_structure: Sb gratings on a semi-insulating GaAs substrate
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 1.2
+      unit: GHz
+    si_base:
+      value: 1200000000.0
+      unit: Hz
+    display:
+      value: 1.2000000000000002
+      unit: GHz
+    conditions:
+      material_structure: Sb gratings on a semi-insulating GaAs substrate
+- id: CLM-PHOT-0192
+  topic: PHOT
+  statement: An optically excited metamaterial modulator fabricated on a thin polyimide layer achieved
+    a 60% modulation depth in the frequency range of 1.1-1.8 THz.
+  sources:
+  - SRC-00440
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    frequency_range: 1.1-1.8 THz
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 60.0
+      unit: '%'
+    si_base:
+      value: 0.6
+      unit: dimensionless
+    display:
+      value: 60.0
+      unit: percent
+    conditions:
+      frequency_range: 1.1-1.8 THz
+- id: CLM-PHOT-0193
+  topic: PHOT
+  statement: Single crystal lithium L-ascorbate dihydrate exhibits a piezoelectric resonance frequency
+    peaking at 137 kHz for a 1.94 mm thick [010] plate.
+  sources:
+  - SRC-00440
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    material: lithium L-ascorbate dihydrate
+    thickness: 1.94 mm
+    orientation: '[010] plate'
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 137.0
+      unit: kHz
+    si_base:
+      value: 137000.0
+      unit: Hz
+    display:
+      value: 0.000137
+      unit: GHz
+    conditions:
+      material: lithium L-ascorbate dihydrate
+      thickness: 1.94 mm
+      orientation: '[010] plate'
+- id: CLM-PHOT-0194
+  topic: PHOT
+  statement: In a multilayer Z-cut LiNbO3 thin film excited by an AC field, a maximal out-of-plane surface
+    displacement of 108 pm was observed at 20.7 kHz.
+  sources:
+  - SRC-00440
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    material: multilayer Z-cut LiNbO3 thin film
+    fclk: 20.7 kHz
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 108.0
+      unit: pm
+    si_base:
+      value: 1.08e-10
+      unit: m
+    display:
+      value: 0.10799999999999998
+      unit: nm
+    conditions:
+      material: multilayer Z-cut LiNbO3 thin film
+      fclk: 20.7 kHz
+- id: CLM-PHOT-0195
+  topic: PHOT
+  statement: Simulated surface-contour displacement of a multilayered thin film system is shown at a frequency
+    of 21.2 kHz.
+  sources:
+  - SRC-00440
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    device_structure: ion-sliced single crystal z-cut LN (504 nm thick) deposited on platinized silica
+      grown on an LN substrate (500 μ m thick)
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 21.2
+      unit: kHz
+    si_base:
+      value: 21200.0
+      unit: Hz
+    display:
+      value: 2.12e-05
+      unit: GHz
+    conditions:
+      device_structure: ion-sliced single crystal z-cut LN (504 nm thick) deposited on platinized silica
+        grown on an LN substrate (500 μ m thick)
+- id: CLM-PHOT-0196
+  topic: PHOT
+  statement: The single-wavelength implementation achieves an experimental convolution correlation coefficient
+    of 0.987.
+  sources:
+  - SRC-00443
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    implementation_type: single-wavelength implementation
+- id: CLM-PHOT-0197
+  topic: PHOT
+  statement: The maximum forward power reduction across the distributed FBG sections is approximately
+    20%.
+  sources:
+  - SRC-00443
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    implementation_type: distributed FBG sections
+- id: CLM-PHOT-0198
+  topic: PHOT
+  statement: The mean structural similarity index measure for reconstructed MNIST images in the forward
+    branch is 0.9930.
+  sources:
+  - SRC-00443
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-PHOT-0199
+  topic: PHOT
+  statement: The mean squared error for recovered MIT-BIH heartbeat waveforms in the forward branch is
+    0.005826.
+  sources:
+  - SRC-00443
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    dataset: MIT-BIH heartbeat waveforms
+- id: CLM-PHOT-0200
+  topic: PHOT
+  statement: A four-channel WDM implementation achieves an experimental classification accuracy of 92.25%
+    on a four-class Fashion-MNIST task.
+  sources:
+  - SRC-00443
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-23'
+  created: '2026-11-24'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    implementation_type: four-channel wavelength division multiplexing implementation
+    dataset: four-class Fashion-MNIST task

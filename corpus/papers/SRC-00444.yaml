@@ -1,0 +1,76 @@
+id: SRC-00444
+title: Apparent thermal conductivity governed by interface-injected phonon spectra
+doi: null
+arxiv_id: 2611.30276v1
+url: https://arxiv.org/abs/2611.30276v1
+venue_id: arxiv_api
+authors:
+- name: D. G. Jeong
+  affiliation: null
+  corresponding: null
+- name: Terumasa Tadano
+  affiliation: null
+  corresponding: null
+- name: J. S. Lee
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-23'
+retrieved_date: '2026-11-24'
+access: full_text
+read_scope: Automated reading. The full PDF text (42,127 characters, 28 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.30276v1 on
+  2026-11-24. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Profiles #1, #2, and #3 yield app values of about 93, 140, and 360 W m-1 K-1, respectively.”
+
+  “For an Al (70 nm)/Si structure”
+
+  “For an Al (70 nm)/Si structure, Fourier fits of synthetic TDTR phase signals give app of Si from about
+  93 to 360 W m-1 K-1 for different interfacial transmission spectra, and app correlates with the heat-flux-weighted
+   of the transmitted phonons.”'
+method_summary: '“In this work, we employ the phonon Boltzmann transport equation (pBTE) to calculate
+  temperature depth profiles in semi-infinite Si with varying spectral distributions of surface heat generation,
+  which represents the spectrum of phonons injected across the transducer/substrate interface, and examine
+  how this distribution influences app.”
+
+  “We further simulate TDTR phase signals for an Al/Si structure with systematically varied interfacial
+  phonon transmission spectra and fit them using a conventional multilayer Fourier model with app as
+  one of the free parameters.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 13270
+    output: 2355
+  claims_accepted: 3
+  claims_rejected: 2
+  rejected:
+  - statement: First-principles calculation within the single-mode relaxation-time approximation gives
+      room-temperature lattice thermal conductivity of 149 W m−1 K−1 for Si.
+    reason: 'unit conversion refused: thermal_conductivity: could not parse 149.0 ''W m−1 K−1'': ''m−1''
+      is not defined in the unit registry'
+    quotes:
+    - Within the single-mode relaxation-time approximation (RTA), the resulting room-temperature lattice
+      thermal conductivities are 149 W m−1 K−1 for Si, in good agreement with experiment (~157 W m−1 K−1,
+      Ref. [2]), and 13.4 W m−1 K−1 for Al.
+    - 149 W m−1 K−1 for Si
+    - room-temperature lattice thermal conductivities
+    - Within the single-mode relaxation-time approximation (RTA)
+  - statement: First-principles calculation within the single-mode relaxation-time approximation gives
+      room-temperature lattice thermal conductivity of 13.4 W m−1 K−1 for Al.
+    reason: the quote says the number is approximate but approximate is false
+    quotes:
+    - Within the single-mode relaxation-time approximation (RTA), the resulting room-temperature lattice
+      thermal conductivities are 149 W m−1 K−1 for Si, in good agreement with experiment (~157 W m−1 K−1,
+      Ref. [2]), and 13.4 W m−1 K−1 for Al.
+    - 13.4 W m−1 K−1 for Al.
+    - room-temperature lattice thermal conductivities
+    - Within the single-mode relaxation-time approximation (RTA)
+corrections: []

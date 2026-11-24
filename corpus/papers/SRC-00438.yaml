@@ -1,0 +1,108 @@
+id: SRC-00438
+title: A Unified Energy-Density Framework for Moiré Interface Energetics and Mechanics
+doi: null
+arxiv_id: 2611.30152v1
+url: https://arxiv.org/abs/2611.30152v1
+venue_id: arxiv_api
+authors:
+- name: Zhangke Lei
+  affiliation: null
+  corresponding: null
+- name: Weidong Yan
+  affiliation: null
+  corresponding: null
+- name: Zhicheng Feng
+  affiliation: null
+  corresponding: null
+- name: Wengen Ouyang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-23'
+retrieved_date: '2026-11-24'
+access: full_text
+read_scope: Automated reading. The full PDF text (91,413 characters, 37 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.30152v1 on
+  2026-11-24. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“our framework derives the phenomenological corrugation amplitude from the KC potential with
+  𝑉𝑉1(3.35) = 17.8863 meV ⋅ Å2 and 𝑎𝑎𝑠𝑠 = 5.248 Å2 , gives 𝑈𝑈0(3.35) = 5.845 meV/Å2”
+
+  “In the limit 𝜃𝜃 → 0, the Bessel function term converges to 0.5 and we obtain the shear modulus for
+  bilayer graphene in AB stacking, with a value of 4.54GPa, which is close to previous work, around 4.5GPa
+  [57-59].”
+
+  “we obtain the shear modulus for bilayer graphene in AB stacking”
+
+  “Substituting the numerical values and taking 𝜃𝜃 → 0 yields a maximum stress of approximately 0.54 GPa
+  for AB stacking.”
+
+  “yields a maximum stress of approximately 0.54 GPa for AB stacking.”
+
+  “The equivalent bulk modulus along the z-direction is determined to be 34.63 GPa and a zero‑pressure
+  derivative of 10.23.”
+
+  “The fitting result of this formula for the 50‑layer graphite is presented in Fig. 13.”
+
+  “The equivalent bulk modulus along the z-direction is determined to be 34.63 GPa”'
+method_summary: '“Here, we develop a unified energy-density framework for rigid van der Waals interfaces
+  by expressing registry-dependent pair potentials and atomic densities in reciprocal space.”
+
+  “Evaluating the tangent response at the equilibrium registry gives the shear modulus:”'
+limitations: '“While layer relaxation, elastic reconstruction, dislocation nucleation, thermal fluctuations,
+  and dissipative friction lie beyond the strict rigid-lattice limit, they ultimately build upon the underlying
+  rigid-interface interaction landscape.”
+
+  “The present calculation characterizes the rigid, coherent sliding response associated with the interlayer
+  registry barrier.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 33678
+    output: 3107
+  claims_accepted: 4
+  claims_rejected: 4
+  rejected:
+  - statement: The first-order reciprocal Fourier potential parameter V0(3.35) for single carbon atom
+      interaction with graphene using the KC-z potential at z = 3.35 Å is -94.7
+    reason: 'unit conversion refused: energy: cannot convert -94.732 meV ⋅ Å2 to J - Cannot convert from
+      ''millielectron_volt * angstrom ** 2'' ([mass] * [length] ** 4 / [time] ** 2) to ''joule'' ([mass'
+    quotes:
+    - Using the fitted KC parameters and fixing the interlayer spacing at the more commonly used experimental
+      value of 3.35 Å [45,46], we obtain 𝑉𝑉0(3.35) = −94.732 meV ⋅ Å2 and 𝑉𝑉1(3.35) = 17.886 meV ⋅ Å2
+      .
+    - fixing the interlayer spacing at the more commonly used experimental value of 3.35 Å
+    - Using the fitted KC parameters
+  - statement: The first-order reciprocal Fourier potential parameter V1(3.35) for single carbon atom
+      interaction with graphene using the KC-z potential at z = 3.35 Å is 17.88
+    reason: 'unit conversion refused: energy: cannot convert 17.886 meV ⋅ Å2 to J - Cannot convert from
+      ''millielectron_volt * angstrom ** 2'' ([mass] * [length] ** 4 / [time] ** 2) to ''joule'' ([mass]'
+    quotes:
+    - Using the fitted KC parameters and fixing the interlayer spacing at the more commonly used experimental
+      value of 3.35 Å [45,46], we obtain 𝑉𝑉0(3.35) = −94.732 meV ⋅ Å2 and 𝑉𝑉1(3.35) = 17.886 meV ⋅ Å2
+      .
+    - fixing the interlayer spacing at the more commonly used experimental value of 3.35 Å
+    - Using the fitted KC parameters
+  - statement: Twisting a circular 2D ice flake of radius 100 Å on graphene from θ = 0° to θ = 4° reduces
+      the energy corrugation from 1.2 meV/H2O to 0.02 meV/H2O.
+    reason: 'unit conversion refused: energy: could not parse 0.02 ''meV/H2O'': ''O'' is not defined in
+      the unit registry'
+    quotes:
+    - Specifically, this twist lowers the barrier by a factor of 60, from 1.2 to 0.02 meV/H2O.
+    - from 1.2 to 0.02 meV/H2O
+    - The corrugation is about 1.2 meV/H 2O at 𝜃𝜃 = 0°
+    - reduces to only 0.02 meV/H2O at 𝜃𝜃 = 4°
+  - statement: The calculated elastic constant C33 for bulk AB-stacked graphite is around 31.5 GPa.
+    reason: the statement contains the number 3, which none of its quotes contain
+    quotes:
+    - From the linear regime at the onset of compression in the right panel of Fig. 13, the 𝐶𝐶33 value
+      of bulk graphite of AB stacking is determined to be around 31.5 GPa, compared with the reported
+      experimental value of 38.7±7 GPa [46] and sligh
+    - bulk graphite of AB stacking
+corrections: []

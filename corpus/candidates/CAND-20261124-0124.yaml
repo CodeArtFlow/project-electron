@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.30121v1
 doi: null
-title: Indentation-induced polar domain reconfiguration in the charge-density-wave
-  semiconductor EuTe4
+title: Indentation-induced polar domain reconfiguration in the charge-density-wave semiconductor EuTe4
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-23'
@@ -31,6 +30,77 @@ id: CAND-20261124-0124
 harvested_date: '2026-11-24'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-24'
+  reason: the verifier rejected all 5 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: In the absence of strain, first-principles calculations yield an enthalpy difference ΔH
+      of -0.0164 eV/f.u. between the CDW and non-CDW phases of EuTe4.
+    reason: 'unit conversion refused: energy: could not parse -0.0164 ''eV/f.u.'': unknown operator ''.'''
+    quotes:
+    - First-principles calculations yield a relative energy difference (enthalpy difference) of ΔH ≡ HCDW−Hnon
+      ~ −0.0164 eV/f.u. in the absence of strain, indicating that the CDW structure with Te trimers is
+      energetically favoured over the undist
+    - First-principles calculations yield a relative energy difference (enthalpy difference) of ΔH ≡ HCDW−Hnon
+      ~ −0.0164 eV/f.u. in the absence of strain
+    - Strain (stress) free 0 0 -0.0164
+  - statement: Under an applied a-axis stress of -2.0 kbar and b-axis stress of 2.0 kbar (a-axis compression),
+      the calculated enthalpy difference ΔH between the CDW and non-CD
+    reason: the statement contains the number 2.0, which none of its quotes contain
+    quotes:
+    - In contrast, compressive strain along the a axis, equivalently tensile strain along the b axis,
+      reduces the magnitude of ΔH to −0.0145 eV/f.u., indicating destabilization of the CDW state relative
+      to the non-CDW structure.
+    - To examine this effect, we performed first-principles calculations under two types of anisotropic
+      strain, effectively corresponding to tensile or compressive deformation along the a axis.
+    - In the CDW phase of EuTe4, the Te displacement along the a axis makes the crystallographic a and
+      b axes inequivalent
+    - a-axis compression -2.0 2.0 -0.0145
+  - statement: Under an applied a-axis stress of 2.0 kbar and b-axis stress of -2.0 kbar (a-axis tension),
+      the calculated enthalpy difference ΔH between the CDW and non-CDW ph
+    reason: the statement contains the number 2.0, which none of its quotes contain
+    quotes:
+    - Tensile strain along the a axis makes ΔH more negative, changing it from −0.0164 to −0.0175 eV/f.u.,
+      indicating stabilization of the CDW state.
+    - To examine this effect, we performed first-principles calculations under two types of anisotropic
+      strain, effectively corresponding to tensile or compressive deformation along the a axis.
+    - In the CDW phase of EuTe4, the Te displacement along the a axis makes the crystallographic a and
+      b axes inequivalent
+    - a-axis tension 2.0 -2.0 -0.0175
+  - statement: Statistical analysis of 29 wedge-shaped reconfigured regions in EuTe4 yields a mean width
+      of ~1 µm.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - its mean width is ~1 µm and its mean length is ~7 µm, as determined from the statistical analysis
+      of 29 wedge-shaped regions described in Supplementary Fig. S5.
+    - Following indentation (Fig. 3c), a wedge-shaped region nucleates from the contact point with optical
+      contrast distinct from the surrounding matrix; its mean width is ~1 µm and its mean length is ~7
+      µm, as determined from the statistical ana
+    - Here we demonstrate mechanically induced polar-domain reconfiguration in the charge-density-wave
+      (CDW) semiconductor EuTe4 at room temperature
+    - as determined from the statistical analysis of 29 wedge-shaped regions described in Supplementary
+      Fig. S5.
+  - statement: Statistical analysis of 29 wedge-shaped reconfigured regions in EuTe4 yields a mean length
+      of ~7 µm.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - its mean width is ~1 µm and its mean length is ~7 µm, as determined from the statistical analysis
+      of 29 wedge-shaped regions described in Supplementary Fig. S5.
+    - Following indentation (Fig. 3c), a wedge-shaped region nucleates from the contact point with optical
+      contrast distinct from the surrounding matrix; its mean width is ~1 µm and its mean length is ~7
+      µm, as determined from the statistical ana
+    - Here we demonstrate mechanically induced polar-domain reconfiguration in the charge-density-wave
+      (CDW) semiconductor EuTe4 at room temperature
+    - as determined from the statistical analysis of 29 wedge-shaped regions described in Supplementary
+      Fig. S5.
+  tokens:
+    input: 13611
+    output: 2406
+  fetched_chars: 44128

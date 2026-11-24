@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-23.
+Topic code `MAT`. Last reviewed 2026-11-24.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -257,6 +257,10 @@ Topic code `MAT`. Last reviewed 2026-11-23.
 - **-0.000432588 fJ** — The tight-binding nearest-neighbor hopping energy parameter for graphene is -2.7 eV.
   - `CLM-MAT-0414` · system graphene · grade B · credibility unknown · simulated · as of 2026-11-19
   - sources: SRC-00418
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1.92261e-06 fJ** — Molecular dynamics simulations of the bulk model with ensemble averaging yield a band gap blue shift of 12 meV at 0.5% tensile strain.
+  - `CLM-MAT-0443` · model bulk model · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00447
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### frequency
@@ -1341,6 +1345,58 @@ Topic code `MAT`. Last reviewed 2026-11-23.
   - `CLM-MAT-0417` · grade B · credibility unknown · simulated · as of 2026-11-19
   - sources: SRC-00421
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The derived microscopic corrugation amplitude U0 at z = 3.35 Å is 5.845 meV/Å².
+  - `CLM-MAT-0427` · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00438
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The calculated interlayer shear modulus for bilayer graphene in AB stacking in the limit θ → 0 is 4.54 GPa.
+  - `CLM-MAT-0428` · stacking AB stacking · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00438
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The calculated maximum interlayer shear stress for AB stacking as θ → 0 is approximately 0.54 GPa.
+  - `CLM-MAT-0429` · stacking AB stacking · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00438
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The calculated equivalent bulk modulus along the z-direction for 50-layer graphite is 34.63 GPa.
+  - `CLM-MAT-0430` · layers 50, direction z-direction · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00438
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The final DICE student potential for Al2O3 was developed using 140 target DFT reference configurations.
+  - `CLM-MAT-0431` · material Al2O3 · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00442
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The final DICE student potential for YSZ was developed using 195 target DFT reference configurations.
+  - `CLM-MAT-0432` · material YSZ · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00442
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The final DICE student potential for MIL-120(Al) was developed using 494 target DFT reference configurations.
+  - `CLM-MAT-0433` · material MIL-120(Al) · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00442
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Compared with directly fine-tuned students, the DICE-distilled student reduces independent-test force-component RMSE by 47.6% for Al2O3.
+  - `CLM-MAT-0434` · material Al2O3 · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00442
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Compared with directly fine-tuned students, the DICE-distilled student reduces independent-test force-component RMSE by 21.9% for YSZ.
+  - `CLM-MAT-0435` · material YSZ · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00442
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Compared with directly fine-tuned students, the DICE-distilled student reduces independent-test force-component RMSE by 18.8% for MIL-120(Al).
+  - `CLM-MAT-0436` · material MIL-120(Al) · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00442
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- On matched alpha-Al2O3 displacement configurations, the DICE-distilled student reduces the mean absolute phonon-frequency error against DFT by approximately 79% relative to the directly fine-tuned student.
+  - `CLM-MAT-0437` · material α-Al2O3 · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00442
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- At a probe energy of 1.5 eV in GaAs, the magnitude of the Kerr rotation per unit orbital moment is approximately 5 times larger than that per unit spin moment.
+  - `CLM-MAT-0441` · probe_energy 1.5 eV · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00445
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- At a probe energy of 3.0 eV in Si, the magnitude of the Kerr rotation per unit orbital moment is approximately 13 times larger than that per unit spin moment.
+  - `CLM-MAT-0442` · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00445
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1630,6 +1686,21 @@ Topic code `MAT`. Last reviewed 2026-11-23.
   - `CLM-MAT-0007` · temperature room-temperature, sample_13c_concentration ~0.00024% · grade B · credibility unknown · measured · as of 2026-09-21
   - sources: SRC-00015
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈93 W/(m*K)** — Fourier fits of synthetic TDTR phase signals for Profile #1 yield an apparent thermal conductivity app of Si of about 93 W m-1 K-1.
+  - `CLM-MAT-0438` · structure Al (70 nm)/Si structure · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00444
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0166, CFL-0167 — see the open register
+- **≈140 W/(m*K)** — Fourier fits of synthetic TDTR phase signals for Profile #2 yield an apparent thermal conductivity app of Si of about 140 W m-1 K-1.
+  - `CLM-MAT-0439` · structure Al (70 nm)/Si structure · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00444
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0166, CFL-0168 — see the open register
+- **≈360 W/(m*K)** — Fourier fits of synthetic TDTR phase signals for Profile #3 yield an apparent thermal conductivity app of Si of about 360 W m-1 K-1.
+  - `CLM-MAT-0440` · structure Al (70 nm)/Si structure · grade B · credibility unknown · simulated · as of 2026-11-23
+  - sources: SRC-00444
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0167, CFL-0168 — see the open register
 
 ### time
 
@@ -2026,9 +2097,18 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0165` — relative_deviation: _unexamined; classification pending_
   - claims: CLM-MAT-0422, CLM-MAT-0423
   - missing data: `not yet named`
+- `CFL-0166` — thermal_conductivity: _unexamined; classification pending_
+  - claims: CLM-MAT-0438, CLM-MAT-0439
+  - missing data: `not yet named`
+- `CFL-0167` — thermal_conductivity: _unexamined; classification pending_
+  - claims: CLM-MAT-0438, CLM-MAT-0440
+  - missing data: `not yet named`
+- `CFL-0168` — thermal_conductivity: _unexamined; classification pending_
+  - claims: CLM-MAT-0439, CLM-MAT-0440
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 426
-- grades: {'B': 426}
-- distinct sources: 151
+- claims: 443
+- grades: {'B': 443}
+- distinct sources: 156
