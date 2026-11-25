@@ -1,9 +1,8 @@
 source: arxiv
 arxiv_id: 2611.32146v1
 doi: null
-title: 'Emission regimes and characteristic energy scales in reverse-biased 4H-SiC
-  Schottky barriers: unified field-emission formulas and energy-dependent tunneling
-  effective mass'
+title: 'Emission regimes and characteristic energy scales in reverse-biased 4H-SiC Schottky barriers:
+  unified field-emission formulas and energy-dependent tunneling effective mass'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-24'
@@ -23,6 +22,72 @@ id: CAND-20261125-0132
 harvested_date: '2026-11-25'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-25'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The Richardson constant AR used in the calculations is 144 A cm^-2 K^-2.
+    reason: 'unit conversion refused: current_drive: could not parse 144.0 ''A cm−2K−2'': ''cm−2'' is
+      not defined in the unit registry'
+    quotes:
+    - For 4H-SiC, the valley degeneracy gv = 3 and the density-of-states mass parallel to the interface
+      mdos = √0.57 × 0.28 m020) give AR = 144 A cm−2K−2.
+    - In this paper, we examine reverse transport in 4H-SiC Schottky barriers theoretically, using a current
+      integral based on Fermi–Dirac supply and WKB transmission.
+  - statement: The critical field Fc at 300 K is 1.475 MV/cm for a barrier height of 1.00 eV and tunneling
+      mass of 0.31 m0.
+    reason: 'unit conversion refused: voltage: cannot convert 1.475 MV/cm to V - Cannot convert from ''megavolt
+      / centimeter'' ([mass] * [length] / [time] ** 3 / [current]) to ''volt'' ([mass] * [length'
+    quotes:
+    - For 300 K, ΦB = 1.00 eV, and mtun = 0.31m0, Fc = 1.475 MV/cm.
+    - In this paper, we examine reverse transport in 4H-SiC Schottky barriers theoretically, using a current
+      integral based on Fermi–Dirac supply and WKB transmission.
+  - statement: The TE/TFE boundary occurs at an interface field of approximately 0.085 MV/cm at 300 K
+      for mtun = 0.31 m0.
+    reason: 'unit conversion refused: voltage: cannot convert 0.085 MV/cm to V - Cannot convert from ''megavolt
+      / centimeter'' ([mass] * [length] / [time] ** 3 / [current]) to ''volt'' ([mass] * [length'
+    quotes:
+    - The TE/TFE boundary, where the TE and tunneling currents are equal, is therefore EA ≈ 0.80 kBT ,
+      which corresponds to Fs ≈ 0.085 MV/cm at 300 K for mtun = 0.31m0.
+    - In this paper, we examine reverse transport in 4H-SiC Schottky barriers theoretically, using a current
+      integral based on Fermi–Dirac supply and WKB transmission.
+  - statement: Fitting the Ti/4H-SiC SBD reverse characteristics with model (c) gives a root-mean-square
+      error of 0.109 dex and an extracted barrier height of 0.964 eV.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - (c) WKB+mtun(E) 0.952 / 0.101 0.964 / 0.109 0.976 / 0.159
+    - Applied to Ti/4H-SiC data (30–160 ◦C, 50–950 V), an energy-dependent tunneling mass from the complex
+      band structure reduces the residual from 0.17 to 0.11–0.12 dex
+    - (c) WKB+mtun(E)
+    - 5.0 × 1015
+  - statement: Fitting the Ti/4H-SiC SBD reverse characteristics with model (d) gives a root-mean-square
+      error of 0.120 dex and an extracted barrier height of 0.999 eV.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - (d) WKB+BL+mtun(E) 0.988 / 0.162 0.999 / 0.120 1.011 / 0.114
+    - Applied to Ti/4H-SiC data (30–160 ◦C, 50–950 V), an energy-dependent tunneling mass from the complex
+      band structure reduces the residual from 0.17 to 0.11–0.12 dex
+    - (d) WKB+BL+mtun(E)
+    - 5.0 × 1015
+  - statement: Optimizing a constant mass together with barrier height gives a fitted mass of 0.265 m0
+      and an RMSE of 0.078 dex.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''dex'' is not one of
+      [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would
+      hide a uni'
+    quotes:
+    - For reference, optimizing a constant mass together with the barrier height (triangular barrier without
+      image force) gives mtun = 0.265m0, ΦB = 0.969 eV, and an RMSE of 0.078 dex.
+    - As an application, we reanalyzed the reverse characteristics of a Ti/4H-SiC SBD at 30–160 ◦C and
+      50–950 V.
+    - gives mtun = 0.265m0, ΦB = 0.969 eV, and an RMSE of 0.078 dex.
+  tokens:
+    input: 34256
+    output: 2756
+  fetched_chars: 99814

@@ -1,0 +1,80 @@
+id: SRC-00450
+title: Network-Guided Automated Synthesis of MAC Units for Neural Network Inference
+doi: null
+arxiv_id: 2611.31986v1
+url: https://arxiv.org/abs/2611.31986v1
+venue_id: arxiv_api
+authors:
+- name: Zhouyang Wu
+  affiliation: null
+  corresponding: null
+- name: Hongyang Pan
+  affiliation: null
+  corresponding: null
+- name: Chuyu Wang
+  affiliation: null
+  corresponding: null
+- name: Ji Zhuang
+  affiliation: null
+  corresponding: null
+- name: Keren Zhu
+  affiliation: null
+  corresponding: null
+- name: Xin Zhao
+  affiliation: null
+  corresponding: null
+- name: Xuan Zeng
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-24'
+retrieved_date: '2026-11-25'
+access: full_text
+read_scope: Automated reading. The full PDF text (35,210 characters, 8 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.31986v1 on
+  2026-11-25. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Evaluations across five neural networks on ImageNet-1K demonstrate that under post-training
+  quantization (PTQ), NAMSI achieves 54.2%–60.4% reductions in post-synthesis MAC ADP compared with FP32
+  while retaining at least 99% of full-precision Top-1 accuracy, surpassing baseline approaches in both
+  hardware efficiency and accuracy preservation.”
+
+  “Evaluations across five neural networks on ImageNet-1K demonstrate that under post-training quantization
+  (PTQ), NAMSI achieves 54.2%–60.4% reductions in post-synthesis MAC ADP compared with FP32”
+
+  “based on the 7-nm ASAP7 PDK [27] at Tclk = 2,000 ps.”
+
+  “Synopsys Design Compiler synthesizes the RTL and checks timing against Tclk.”'
+method_summary: “For CosMac-generated MAC RTL, logic synthesis and physical implementation are performed
+  using Synopsys Design Compiler and Synopsys IC Compiler II (ICC2), respectively, based on the 7-nm ASAP7
+  PDK [27] at Tclk = 2,000 ps.”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 12097
+    output: 1162
+  claims_accepted: 1
+  claims_rejected: 2
+  rejected:
+  - statement: NAMSI completes end-to-end search within 3.9 h for VGG16-BN.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''9.2 h 8.9
+      h 3.9 h 6.6 h 7.4 h'''
+    quotes:
+    - 9.2 h 8.9 h 3.9 h 6.6 h 7.4 h
+    - R18 R34 VGG RegNet MNetV20
+    - All experiments run in PyTorch 2.5.1 with CUDA 12.1 on Linux servers.
+  - statement: NAMSI completes end-to-end search within 9.2 h for ResNet-18.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''9.2 h 8.9
+      h 3.9 h 6.6 h 7.4 h'''
+    quotes:
+    - 9.2 h 8.9 h 3.9 h 6.6 h 7.4 h
+    - R18 R34 VGG RegNet MNetV20
+    - All experiments run in PyTorch 2.5.1 with CUDA 12.1 on Linux servers.
+corrections: []

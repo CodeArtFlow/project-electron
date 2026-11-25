@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**31095 pair(s)** as of 2026-11-24.
+**32365 pair(s)** as of 2026-11-25.
 
 ## `area_die` (21 pair(s))
 
@@ -79,7 +79,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 
 _and 6 more_
 
-## `energy` (2087 pair(s))
+## `energy` (2288 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -101,6 +101,7 @@ _and 6 more_
 | `CLM-MAT-0002` = 200 meV | `CLM-MEM-0040` = -180 meV | 190% | mechanism=optical phonon | method=DFT |
 | `CLM-MAT-0200` = 200 meV | `CLM-MEM-0040` = -180 meV | 190% | band=2.3 eV emission, impurity_content=<0.1 ppm | method=DFT |
 | `CLM-MAT-0290` = 3000 meV | `CLM-MAT-0414` = -2700 meV | 190% | trap_type=isolated bi-Si3 | system=graphene |
+| `CLM-MAT-0409` = -91.5 meV | `CLM-MAT-0444` = 101.9 meV | 190% | direction=In-plane | parameter=intrinsic (bare) ZO-phonon energy E0 |
 | `CLM-MAT-0050` = 102 meV | `CLM-MAT-0409` = -91.5 meV | 190% | material=Li6PS5Cl | direction=In-plane |
 | `CLM-MAT-0294` = 1120 meV | `CLM-MAT-0413` = -1000 meV | 189% | fit_function=Eq. ( 13), experimental_data_source=Ref. [ 6] | system=square lattice |
 | `CLM-MAT-0410` = -20.27 meV | `CLM-PHOT-0171` = 18 meV | 189% | direction=Out-of-plane | doping_duration=1.5 min |
@@ -122,9 +123,8 @@ _and 6 more_
 | `CLM-MAT-0327` = 740 meV | `CLM-MAT-0413` = -1000 meV | 174% | kekule_distortion_strength=0.1 | system=square lattice |
 | `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0414` = -2700 meV | 173% | synthesis_condition=Nitrogen-rich | system=graphene |
 | `CLM-MAT-0306` = 89.9 meV | `CLM-MAT-0407` = -65.9 meV | 173% | polarization_state=P↑ | direction=In-plane |
-| `CLM-MAT-0407` = -65.9 meV | `CLM-PROC-0031` = 91 meV | 172% | direction=In-plane | error_metric=root-mean-square deviation per formula unit |
 
-_and 2047 more_
+_and 2248 more_
 
 ## `energy_advantage_ratio` (19 pair(s))
 
@@ -150,7 +150,7 @@ _and 2047 more_
 | `CLM-ARCH-0022` = 169.1 x | `CLM-PROC-0062` = 417 x | 59% | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch | surrogate_model=deterministic U-Net |
 | `CLM-ARCH-0022` = 169.1 x | `CLM-PROC-0058` = 73 x | 57% | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch | surrogate_model=VP-DDBM, baseline_model=phase-field solver |
 
-## `frequency` (1161 pair(s))
+## `frequency` (1211 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -195,9 +195,9 @@ _and 2047 more_
 | `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0061` = 7.48 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | corner_radius=1.4 mm |
 | `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0125` = 6 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | pump_detuning=27 MHz |
 
-_and 1121 more_
+_and 1171 more_
 
-## `length_device` (6850 pair(s))
+## `length_device` (7074 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -211,16 +211,20 @@ _and 1121 more_
 | `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0131` = 5e+05 nm | 100% | parameter=ts | channel_type=elementary channel |
 | `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0159` = 4.2e+05 nm | 100% | parameter=ts | device=fabricated device |
 | `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0160` = 1.72e+05 nm | 100% | parameter=ts | device=fabricated device |
+| `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0201` = 1e+11 nm | 100% | parameter=ts | fiber_type=standard single-mode fiber (SMF) |
 | `CLM-DEV-0068` = 100 nm | `CLM-LITHO-0005` = 3e+06 nm | 100% | material=PEDOT:PSS | beam_profile=Gaussian |
 | `CLM-DEV-0068` = 100 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | material=PEDOT:PSS | component=lens |
 | `CLM-DEV-0068` = 100 nm | `CLM-MAT-0138` = 0.005 nm | 100% | material=PEDOT:PSS | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-DEV-0068` = 100 nm | `CLM-MAT-0140` = 0.005 nm | 100% | material=PEDOT:PSS | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-DEV-0068` = 100 nm | `CLM-PHOT-0201` = 1e+11 nm | 100% | material=PEDOT:PSS | fiber_type=standard single-mode fiber (SMF) |
 | `CLM-DEV-0084` = 22.17 nm | `CLM-LITHO-0005` = 3e+06 nm | 100% | rkky_coupling=-0.2 mJ/m² | beam_profile=Gaussian |
 | `CLM-DEV-0084` = 22.17 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | rkky_coupling=-0.2 mJ/m² | component=lens |
 | `CLM-DEV-0084` = 22.17 nm | `CLM-PHOT-0131` = 5e+05 nm | 100% | rkky_coupling=-0.2 mJ/m² | channel_type=elementary channel |
+| `CLM-DEV-0084` = 22.17 nm | `CLM-PHOT-0201` = 1e+11 nm | 100% | rkky_coupling=-0.2 mJ/m² | fiber_type=standard single-mode fiber (SMF) |
 | `CLM-DEV-0085` = 22.21 nm | `CLM-LITHO-0005` = 3e+06 nm | 100% | rkky_coupling=-0.2 mJ/m² | beam_profile=Gaussian |
 | `CLM-DEV-0085` = 22.21 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | rkky_coupling=-0.2 mJ/m² | component=lens |
 | `CLM-DEV-0085` = 22.21 nm | `CLM-PHOT-0131` = 5e+05 nm | 100% | rkky_coupling=-0.2 mJ/m² | channel_type=elementary channel |
+| `CLM-DEV-0085` = 22.21 nm | `CLM-PHOT-0201` = 1e+11 nm | 100% | rkky_coupling=-0.2 mJ/m² | fiber_type=standard single-mode fiber (SMF) |
 | `CLM-DEV-0092` = 280.6 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | cell_size=1 µm | component=lens |
 | `CLM-DEV-0092` = 280.6 nm | `CLM-MAT-0135` = 0.013 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-DEV-0092` = 280.6 nm | `CLM-MAT-0136` = 0.006 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
@@ -228,6 +232,7 @@ _and 1121 more_
 | `CLM-DEV-0092` = 280.6 nm | `CLM-MAT-0138` = 0.005 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-DEV-0092` = 280.6 nm | `CLM-MAT-0139` = 0.007 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-DEV-0092` = 280.6 nm | `CLM-MAT-0140` = 0.005 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-DEV-0092` = 280.6 nm | `CLM-PHOT-0201` = 1e+11 nm | 100% | cell_size=1 µm | fiber_type=standard single-mode fiber (SMF) |
 | `CLM-DEV-0093` = 502.3 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | cell_size=1 µm | component=lens |
 | `CLM-DEV-0093` = 502.3 nm | `CLM-MAT-0135` = 0.013 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-DEV-0093` = 502.3 nm | `CLM-MAT-0136` = 0.006 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
@@ -236,13 +241,8 @@ _and 1121 more_
 | `CLM-DEV-0093` = 502.3 nm | `CLM-MAT-0139` = 0.007 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-DEV-0093` = 502.3 nm | `CLM-MAT-0140` = 0.005 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-DEV-0093` = 502.3 nm | `CLM-PHOT-0057` = 0.024 nm | 100% | cell_size=1 µm | measurement_duration=exceeding 15.5 hours |
-| `CLM-DEV-0093` = 502.3 nm | `CLM-PROC-0049` = 0.0229 nm | 100% | cell_size=1 µm | sample=twisted bilayer graphene-hBN |
-| `CLM-DEV-0093` = 502.3 nm | `CLM-PROC-0050` = 0.0244 nm | 100% | cell_size=1 µm | sample=twisted bilayer graphene-hBN |
-| `CLM-DEV-0112` = 0.3158 nm | `CLM-LITHO-0005` = 3e+06 nm | 100% | stacking_configuration=vdWH-IV | beam_profile=Gaussian |
-| `CLM-DEV-0112` = 0.3158 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | stacking_configuration=vdWH-IV | component=lens |
-| `CLM-DEV-0112` = 0.3158 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | stacking_configuration=vdWH-IV | material=GaN, growth_method=ammonothermal |
 
-_and 6810 more_
+_and 7034 more_
 
 ## `power` (570 pair(s))
 
@@ -303,7 +303,7 @@ _and 530 more_
 |---|---|---|---|---|
 | `CLM-DEV-0064` = 6e-06 torr | `CLM-MAT-0296` = 3.75e+04 torr | 100% | temperature=room temperature | measurement=Tensile testing |
 
-## `relative_deviation` (14790 pair(s))
+## `relative_deviation` (15108 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -318,6 +318,7 @@ _and 530 more_
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0426` = 63 percent | 195% | sample=B1-1 | compound=Zr2RhIrBi2, temperature=300 K |
 | `CLM-ARCH-0089` = 64.2 percent | `CLM-MAT-0111` = -60 percent | 193% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0112` = 66.8 percent | 190% | sample=B1-1 | baseline=pure two-dimensional Coulomb reference, benchmark_protocol=high-field-calibrated |
+| `CLM-MAT-0111` = -60 percent | `CLM-PROC-0080` = 53.66 percent | 189% | sample=B1-1 | method=Joint-endpoint watershed selection (WS / joint), test_set=confirmation set of 25 images from 9 additional source papers |
 | `CLM-ARCH-0090` = 67.5 percent | `CLM-MAT-0111` = -60 percent | 189% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
 | `CLM-ARCH-0224` = 53 percent | `CLM-MAT-0111` = -60 percent | 188% | mode=greedy | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0252` = 53 percent | 188% | sample=B1-1 | band=NNN, coupling=Λ A, correlation_length=ξ ¯kF = 4 |
@@ -346,9 +347,8 @@ _and 530 more_
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0006` = 88 percent | 168% | sample=B1-1 | dataset=MNIST, setup=experimental system |
 | `CLM-EDA-0043` = 88.1 percent | `CLM-MAT-0111` = -60 percent | 168% | design=AES | sample=B1-1 |
 | `CLM-ARCH-0101` = 89.4 percent | `CLM-MAT-0111` = -60 percent | 167% | correction_type=uncorrected | sample=B1-1 |
-| `CLM-EDA-0006` = 89.6 percent | `CLM-MAT-0111` = -60 percent | 167% | model=Non-cyclic Edge prediction model | sample=B1-1 |
 
-_and 14750 more_
+_and 15068 more_
 
 ## `resistance` (5 pair(s))
 
@@ -477,7 +477,13 @@ _and 12 more_
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0439` = 140 W/(m*K) | 84% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | structure=Al (70 nm)/Si structure |
 | `CLM-MAT-0006` = 22 W/(m*K) | `CLM-MAT-0438` = 93 W/(m*K) | 76% | material=𝛽-Ga2O3 substrate, orientation=(010), direction=cross-plane | structure=Al (70 nm)/Si structure |
 
-## `time` (4315 pair(s))
+## `throughput_tool` (1 pair(s))
+
+| Claim A | Claim B | Gap | A's conditions | B's conditions |
+|---|---|---|---|---|
+| `CLM-ARCH-0280` = 6.48e+10 wph | `CLM-PHOT-0027` = 8.64e+15 wph | 100% | data_type=metric packets | modulation_format=60-Gbaud PAM4, link_type=single-link WDM transmission |
+
+## `time` (4791 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -509,6 +515,11 @@ _and 12 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0059` = 1.423e+11 ns | 100% | device_type=FTJ, architecture=Naive | agent_model=Claude Opus 5.5, method=CRAFT |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0070` = 1.53e+11 ns | 100% | device_type=FTJ, architecture=Naive | benchmark_case=mgc des perf 1 |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0071` = 9.52e+11 ns | 100% | device_type=FTJ, architecture=Naive | benchmark_case=mgc des perf 1 |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0075` = 1.709e+10 ns | 100% | device_type=FTJ, architecture=Naive | method=CycleWalker |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0076` = 4.363e+10 ns | 100% | device_type=FTJ, architecture=Naive | method=CycleWalker |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0077` = 1.752e+10 ns | 100% | device_type=FTJ, architecture=Naive | method=CycleWalker |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0078` = 4.576e+11 ns | 100% | device_type=FTJ, architecture=Naive | method=CycleWalker |
+| `CLM-ARCH-0012` = 153.5 ns | `CLM-EDA-0079` = 3.79e+08 ns | 100% | device_type=FTJ, architecture=Naive | path_budget=64 |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-LITHO-0007` = 2.17e+08 ns | 100% | device_type=FTJ, architecture=Naive | benchmark_solves=144 solves, layer_matrix_size=578 × 578, hardware=RTX 5090, precision=single precision |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-LITHO-0008` = 2.04e+11 ns | 100% | device_type=FTJ, architecture=Naive | iterations=440 iterations, hardware=desktop processor, precision=double precision |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0119` = 0.00029 ns | 100% | device_type=FTJ, architecture=Naive | material=MAPbBr3, measurement_method=Time-resolved optical Kerr-effect measurements |
@@ -516,13 +527,8 @@ _and 12 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0123` = 0.00015 ns | 100% | device_type=FTJ, architecture=Naive | measurement_method=Multidimensional coherent spectroscopy |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0127` = 0.0003 ns | 100% | device_type=FTJ, architecture=Naive | feature=XA |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0170` = 0.002 ns | 100% | device_type=FTJ, architecture=Naive | state=bright exciton |
-| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0197` = 0.000603 ns | 100% | device_type=FTJ, architecture=Naive | material=SnSe, excitation_helicity=σ+ |
-| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0230` = 0.00015 ns | 100% | device_type=FTJ, architecture=Naive | parameter=overall temporal resolution |
-| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0237` = 8.5e+09 ns | 100% | device_type=FTJ, architecture=Naive | spacer_cation=FPEA |
-| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0238` = 3.5e+09 ns | 100% | device_type=FTJ, architecture=Naive | spacer_cation=FBZA |
-| `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0318` = 1.116e+14 ns | 100% | device_type=FTJ, architecture=Naive | method=Random sampling, dataset=600,000-sample Moir´e dataset |
 
-_and 4275 more_
+_and 4751 more_
 
 ## `voltage` (134 pair(s))
 

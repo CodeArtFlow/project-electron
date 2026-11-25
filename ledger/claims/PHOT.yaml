@@ -5622,3 +5622,37 @@ claims:
   conditions:
     implementation_type: four-channel wavelength division multiplexing implementation
     dataset: four-class Fashion-MNIST task
+- id: CLM-PHOT-0201
+  topic: PHOT
+  statement: The passive single-mode fiber cavity used in the Ikeda-map simulation has a length of 100
+    m.
+  sources:
+  - SRC-00452
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-24'
+  created: '2026-11-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    fiber_type: standard single-mode fiber (SMF)
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 100.0
+      unit: m
+    si_base:
+      value: 100.0
+      unit: m
+    display:
+      value: 99999999999.99998
+      unit: nm
+    conditions:
+      fiber_type: standard single-mode fiber (SMF)

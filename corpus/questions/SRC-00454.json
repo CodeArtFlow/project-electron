@@ -1,0 +1,29 @@
+{
+  "arxiv_id": "2611.32264v1",
+  "claims": {
+    "CLM-MEM-0061": {
+      "evidence_spans": [
+        "Experimental results show that, at 128 sessions per generation on four added HBF sites, Mayfly finishes 34% sooner than parking the same KV on HBF and 23% sooner than reading it from HBF whenever HBM is full",
+        "reading it from HBF whenever HBM is full",
+        "Experimental results show that, at 128 sessions per generation on four added HBF sites, Mayfly finishes 34% sooner than parking the same KV on HBF and 23% sooner than reading it from HBF whenever HBM is full"
+      ],
+      "statement": "At 128 sessions per generation on four added HBF sites, Mayfly finishes 23% sooner than reading KV from HBF whenever HBM is full.",
+      "terms": []
+    }
+  },
+  "extra_quotes": [
+    "We evaluate Mayfly on real agent traces and recorded RSI runs in a discrete-event simulator whose GPU model is calibrated against an H200 and whose HBF path is modelled.",
+    "A discrete-event simulator re-implements vLLM’s block pool, scheduler and preemption, with step time and energy fitted on H200 replays, one of which spills KV to host DRAM (within 0.5%); on a held-out replay with a 20 GB KV pool, it is within 0.9% of the measured run time, 1.6% of the energy and 5% of the preemptions.",
+    "The specification leaves energy and array timing open, so we take 20 and 100 pJ/bit for reads and writes and 20 𝜇s page reads from the high end of prior estimates [13, 28, 58, 65]."
+  ],
+  "generated": "2026-11-25",
+  "packet_version": "paper-packet-v2",
+  "reader": {
+    "model": "gemini-3.6-flash",
+    "prompt_version": "reader-v5"
+  },
+  "rubric_version": "paper-rubric-v2",
+  "source": "SRC-00454",
+  "text_chars": 83454,
+  "text_sha256": "de5f3e363fc8c0e1b96aa2c2752f067052387f679d56cf8fab60e2a4f6b792d2"
+}

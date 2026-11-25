@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.32223v1
 doi: null
-title: 'Beyond Autoregression: Diffusion Language Model is All Analog In-Memory Computing
-  Need'
+title: 'Beyond Autoregression: Diffusion Language Model is All Analog In-Memory Computing Need'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-24'
@@ -28,6 +27,90 @@ id: CAND-20261125-0127
 harvested_date: '2026-11-25'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-25'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: On the 16-chip eFlash AIMC cluster hybrid measurement at noise level 0.15, LLaDA-8B using
+      64 denoising steps achieves a GSM8K accuracy of 0.227.
+    reason: the statement contains the number 16, which none of its quotes contain
+    quotes:
+    - LLaDA-8B 64 0.381 0.227 −40.4% 0.73 410
+    - Furthermore, on a 16-chip 28nm eFlash AIMC cluster, hybrid on-board measurements show DLMs tolerate
+      1.4–3× larger weight noise
+    - LLaDA-8B
+    - '64'
+  - statement: On the 16-chip AIMC cluster hybrid measurement at noise level 0.15 with 64 denoising steps,
+      LLaDA-8B generation latency is 0.73 s.
+    reason: the statement contains the number 16, which none of its quotes contain
+    quotes:
+    - LLaDA-8B 64 0.381 0.227 −40.4% 0.73 410
+    - Furthermore, on a 16-chip 28nm eFlash AIMC cluster, hybrid on-board measurements show DLMs tolerate
+      1.4–3× larger weight noise
+    - LLaDA-8B
+    - '64'
+  - statement: Under hybrid on-chip measurement at noise level 0.15 with 64 denoising steps, LLaDA-8B
+      consumes 410 mJ of energy per generation.
+    reason: the statement contains the number 0.15, which none of its quotes contain
+    quotes:
+    - LLaDA-8B 64 0.381 0.227 −40.4% 0.73 410
+    - Furthermore, on a 16-chip 28nm eFlash AIMC cluster, hybrid on-board measurements show DLMs tolerate
+      1.4–3× larger weight noise
+    - LLaDA-8B
+    - '64'
+  - statement: On the 16-chip AIMC cluster hybrid measurement at noise level 0.15 with 512 denoising steps,
+      LLaDA-8B generation latency is 5.58 s.
+    reason: the statement contains the number 16, which none of its quotes contain
+    quotes:
+    - 512 0.741 0.712 −3.9% 5.58 3150
+    - Furthermore, on a 16-chip 28nm eFlash AIMC cluster, hybrid on-board measurements show DLMs tolerate
+      1.4–3× larger weight noise
+    - LLaDA-8B
+    - '512'
+  - statement: On the 16-chip eFlash AIMC cluster hybrid measurement at noise level 0.15 with 512 denoising
+      steps, LLaDA-8B consumes 3150 mJ per generation.
+    reason: the statement contains the number 16, which none of its quotes contain
+    quotes:
+    - 512 0.741 0.712 −3.9% 5.58 3150
+    - Furthermore, on a 16-chip 28nm eFlash AIMC cluster, hybrid on-board measurements show DLMs tolerate
+      1.4–3× larger weight noise
+    - LLaDA-8B
+    - '512'
+  - statement: For MDLM-125M with 32 steps on the 16-chip AIMC cluster at noise level 0.15, on-chip generation
+      latency is 0.06 s.
+    reason: the statement contains the number 16, which none of its quotes contain
+    quotes:
+    - MDLM-125M 32 3.251 3.297 +1.42% 0.06 28
+    - Furthermore, on a 16-chip 28nm eFlash AIMC cluster, hybrid on-board measurements show DLMs tolerate
+      1.4–3× larger weight noise
+    - MDLM-125M
+    - '32'
+  - statement: Under hybrid measurement at noise level 0.15 with 32 steps, MDLM-125M consumes 28 mJ per
+      generation.
+    reason: the statement contains the number 0.15, which none of its quotes contain
+    quotes:
+    - MDLM-125M 32 3.251 3.297 +1.42% 0.06 28
+    - Furthermore, on a 16-chip 28nm eFlash AIMC cluster, hybrid on-board measurements show DLMs tolerate
+      1.4–3× larger weight noise
+    - MDLM-125M
+    - '32'
+  - statement: Under hybrid measurement at noise level 0.15 with 256 steps, MDLM-125M consumes 211 mJ
+      per generation.
+    reason: the statement contains the number 0.15, which none of its quotes contain
+    quotes:
+    - 256 3.236 3.242 +0.19% 0.43 211
+    - Furthermore, on a 16-chip 28nm eFlash AIMC cluster, hybrid on-board measurements show DLMs tolerate
+      1.4–3× larger weight noise
+    - MDLM-125M
+    - '256'
+  tokens:
+    input: 13114
+    output: 3091
+  fetched_chars: 35947

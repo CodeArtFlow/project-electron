@@ -1,6 +1,6 @@
 # Process — state of the art
 
-Topic code `PROC`. Last reviewed 2026-11-24.
+Topic code `PROC`. Last reviewed 2026-11-25.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -203,6 +203,10 @@ Topic code `PROC`. Last reviewed 2026-11-24.
   - `CLM-PROC-0068` · sample chip pins, objective_magnification 4 · grade B · credibility unknown · measured · as of 2026-11-09
   - sources: SRC-00326
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- Across 154 reviewed microscopy cases, two domain experts corrected geometries in 152 cases.
+  - `CLM-PROC-0079` · queue_size 154 reviewed microscopy cases · grade B · credibility unknown · measured · as of 2026-11-24
+  - sources: SRC-00456
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -305,6 +309,10 @@ Topic code `PROC`. Last reviewed 2026-11-24.
   - `CLM-PROC-0072` · decision_method Typed Decision, model Cosmos-Reason2 32B, task grain boundary, noise_condition without noise · grade B · credibility unknown · simulated · as of 2026-11-18
   - sources: SRC-00385
   - ⚙ automated extraction (gemini-3.6-flash; 8 quote(s) verified verbatim against the paper)
+- **53.66 percent** — Joint-endpoint watershed selection achieved an instance F1 of 53.66% on the confirmation set of 25 nanoparticle images.
+  - `CLM-PROC-0080` · method Joint-endpoint watershed selection (WS / joint), test_set confirmation set of 25 images from 9 additional source papers · grade B · credibility unknown · simulated · as of 2026-11-24
+  - sources: SRC-00456
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### temperature
 
@@ -449,6 +457,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 78
-- grades: {'B': 78}
-- distinct sources: 25
+- claims: 80
+- grades: {'B': 80}
+- distinct sources: 26

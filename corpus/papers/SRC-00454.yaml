@@ -1,0 +1,136 @@
+id: SRC-00454
+title: 'Mayfly: Lifecycle-Aware High-Bandwidth Flash for Recursive Self-Improvement'
+doi: null
+arxiv_id: 2611.32264v1
+url: https://arxiv.org/abs/2611.32264v1
+venue_id: arxiv_api
+authors:
+- name: Chunlin Tian
+  affiliation: null
+  corresponding: null
+- name: Mingjia Fan
+  affiliation: null
+  corresponding: null
+- name: Feng Yu
+  affiliation: null
+  corresponding: null
+- name: Qingyun Zou
+  affiliation: null
+  corresponding: null
+- name: Wenju Zhao
+  affiliation: null
+  corresponding: null
+- name: Weng-Fai Wong
+  affiliation: null
+  corresponding: null
+- name: Bingsheng He
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-24'
+retrieved_date: '2026-11-25'
+access: full_text
+read_scope: Automated reading. The full PDF text (83,454 characters, 13 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.32264v1 on
+  2026-11-25. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Experimental results show that, at 128 sessions per generation on four added HBF sites, Mayfly
+  finishes 34% sooner than parking the same KV on HBF and 23% sooner than reading it from HBF whenever
+  HBM is full”
+
+  “reading it from HBF whenever HBM is full”'
+method_summary: '“We evaluate Mayfly on real agent traces and recorded RSI runs in a discrete-event simulator
+  whose GPU model is calibrated against an H200 and whose HBF path is modelled.”
+
+  “A discrete-event simulator re-implements vLLM’s block pool, scheduler and preemption, with step time
+  and energy fitted on H200 replays, one of which spills KV to host DRAM (within 0.5%); on a held-out
+  replay with a 20 GB KV pool, it is within 0.9% of the measured run time, 1.6% of the energy and 5% of
+  the preemptions.”'
+limitations: “The specification leaves energy and array timing open, so we take 20 and 100 pJ/bit for
+  reads and writes and 20 𝜇s page reads from the high end of prior estimates [13, 28, 58, 65].”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 29146
+    output: 2913
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: At 128 sessions per generation on four added HBF sites, Mayfly finishes 34% sooner than
+      HBF-Park.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Experimental results show that, at 128 sessions per generation on four added HBF sites, Mayfly finishes
+      34% sooner than parking the same KV on HBF and 23% sooner than reading it from HBF whenever HBM
+      is full
+    - 128 sessions per generation
+    - four added HBF sites
+    - parking the same KV on HBF
+  - statement: At 256 sessions per generation on eight added HBF sites, Mayfly's gain over parking grows
+      to 55%.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - its gain over parking grows with concurrency, to 55% at 256 sessions on eight sites.
+    - 256 sessions
+    - eight sites
+    - parking
+  - statement: At 128 sessions per generation on four added HBF sites, Mayfly achieves a 1.9x lower median
+      time to first token compared to parking the same KV on HBF.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''×'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - With the same four added HBF sites, at 128 sessions per generation, Mayfly finishes 34% sooner than
+      parking the same KV on HBF, with a 1.9× lower median time to first token
+    - 128 sessions per generation
+    - four added HBF sites
+    - parking the same KV on HBF
+  - statement: At 256 sessions per generation on eight HBF sites, Mayfly achieves a 2.6x lower median
+      time to first token compared to parking.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''×'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - at 256 sessions, on eight sites, it finishes 55% sooner than parking, with a 2.6× lower median time
+      to first token.
+    - 256 sessions
+    - eight sites
+    - parking
+  - statement: RSI's KV parked on HBF is read back 23 to 28 times per byte written.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''times per byte written''
+      is not one of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare
+      numb'
+    quotes:
+    - Even parked on HBF, RSI’s KV is read back 23–28 times per byte written, against 0.20–0.88 in serving
+      KV pools.
+    - parked on HBF
+    - RSI’s KV
+  - statement: With write control, a stack lasts 1.7 to 2.8x as long as with a 30-min expiry or release
+      when the tier is full.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''×'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - Session ends make it last 1.7–2.8× as long as a 30-min expiry or release when the tier is full.
+    - Session ends
+    - a 30-min expiry or release when the tier is full
+  - statement: Keeping one copy per block makes a stack last 9 to 37x as many generations as when each
+      return to HBM drops its copy.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''×'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - The kept copy makes a stack last 9–37× as many generations as releasing it at each return to HBM.
+    - The kept copy
+    - releasing it at each return to HBM
+corrections: []

@@ -1,0 +1,85 @@
+id: SRC-00451
+title: 'Walk the Cycle: An Efficient Stochastic Solver for Periodic Thermal Analysis of 2.5D/3D ICs'
+doi: null
+arxiv_id: 2611.32082v1
+url: https://arxiv.org/abs/2611.32082v1
+venue_id: arxiv_api
+authors:
+- name: Shengnan Cai
+  affiliation: null
+  corresponding: null
+- name: Qibo Xue
+  affiliation: null
+  corresponding: null
+- name: Tianshu Hou
+  affiliation: null
+  corresponding: null
+- name: Tianxiang Zhu
+  affiliation: null
+  corresponding: null
+- name: Zixiao Wang
+  affiliation: null
+  corresponding: null
+- name: Yibo Lin
+  affiliation: null
+  corresponding: null
+- name: Runsheng Wang
+  affiliation: null
+  corresponding: null
+- name: Bei Yu
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-24'
+retrieved_date: '2026-11-25'
+access: full_text
+read_scope: Automated reading. The full PDF text (37,628 characters, 8 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.32082v1 on
+  2026-11-25. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“3DIC-NonAligned 0.2 tPIRW 0.190 ± 0.008 24576 806.97 1.00 FastRW 0.213 ± 0.006 8192 134.17
+  6.01 FasterRW 0.193 ± 0.059 1260 99.62 8.10 CycleWalker 0.215 ± 0.006 9 17.09 47.22”
+
+  “CycleWalker 0.215 ± 0.006 9 17.09 47.22”
+
+  “All four methods share one CUDA implementation and one host (Intel Core i5-12500H, NVIDIA RTX 3050
+  Ti Laptop GPU); references are generated offline and excluded from all timings.”
+
+  “GPU-HBM-Burst 0.2 tPIRW 0.186 ± 0.004 12288 3309.53 1.00 FastRW 0.210 ± 0.004 3072 258.76 12.79 FasterRW
+  0.210 ± 0.029 128 116.50 28.41 CycleWalker 0.218 ± 0.003 16 43.63 75.85”
+
+  “CycleWalker 0.218 ± 0.003 16 43.63 75.85”
+
+  “3DIC-FastCycle 0.2 tPIRW 0.191 ± 0.011 24576 746.63 1.00 FastRW 0.200 ± 0.004 12288 178.74 4.18 FasterRW
+  0.204 ± 0.018 1536 108.19 6.90 CycleWalker 0.214 ± 0.008 32 17.52 42.62”
+
+  “CycleWalker 0.214 ± 0.008 32 17.52 42.62”
+
+  “Periodic prior 0.0130 – 1266.86 1.00 CycleWalker 0.0126 ± 0.0003 5120 457.61 2.77”
+
+  “CycleWalker 0.0126 ± 0.0003 5120 457.61 2.77”
+
+  “GPU time (s) 1.990 0.379 5.25×”
+
+  “timing five-seed medians at N = 64”'
+method_summary: '“Experiments on periodic 2.5D/3D IC benchmarks show that, at equal accuracy, CycleWalker
+  achieves up to 75.85× speedup over the transient random-walk solver.”
+
+  “All four methods share one CUDA implementation and one host (Intel Core i5-12500H, NVIDIA RTX 3050
+  Ti Laptop GPU); references are generated offline and excluded from all timings.”'
+limitations: “A coarse graph alone is not enough, since it misses local detail near interfaces and TSVs.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 13897
+    output: 2386
+  claims_accepted: 5
+  claims_rejected: 0
+  rejected: []
+corrections: []

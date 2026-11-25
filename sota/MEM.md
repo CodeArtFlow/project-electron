@@ -1,6 +1,6 @@
 # Memory — state of the art
 
-Topic code `MEM`. Last reviewed 2026-11-24.
+Topic code `MEM`. Last reviewed 2026-11-25.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -234,6 +234,10 @@ Topic code `MEM`. Last reviewed 2026-11-24.
   - `CLM-MEM-0058` · configuration MRB-4 · grade B · credibility unknown · simulated · as of 2026-11-19
   - sources: SRC-00401
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **23 percent** — At 128 sessions per generation on four added HBF sites, Mayfly finishes 23% sooner than reading KV from HBF whenever HBM is full.
+  - `CLM-MEM-0061` · baseline reading it from HBF whenever HBM is full · grade B · credibility unknown · simulated · as of 2026-11-24
+  - sources: SRC-00454
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### resistance
 
@@ -303,6 +307,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 60
-- grades: {'B': 60}
-- distinct sources: 23
+- claims: 61
+- grades: {'B': 61}
+- distinct sources: 24

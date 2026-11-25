@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.32265v1
 doi: null
-title: First-principles phase diagram of monolayer CrS$_2$ polymorphs under biaxial
-  strain and its sensitivity to the Hubbard U parameter
+title: First-principles phase diagram of monolayer CrS$_2$ polymorphs under biaxial strain and its sensitivity
+  to the Hubbard U parameter
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-24'
@@ -24,6 +24,82 @@ id: CAND-20261125-0123
 harvested_date: '2026-11-25'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-25'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At U = 0 eV, monolayer 1H-CrS2 is calculated to have a direct band gap of approximately
+      1.27 eV.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - At U=0, the system is a NM semiconductor with a direct band gap of approximately 1.27 eV at the
+      K- point (Figure 3(a,e)).
+    - Monolayer CrS2 lies squarely in this regime
+    - 1H phase
+    - At U=0
+  - statement: At U = 1 eV, the band gap of 1H-CrS2 reduces to approximately 0.97 eV.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - This transition is accompanied by a reduction in the band gap to approximately 0.97 eV and a notable
+      shift of the conduction and valencebandextremaawayfromhigh-symmetrypoints— indicative of symmetry
+      breaking, zone folding, and new d-orbital
+    - Upon increasing U to 1 eV, AFM ordering sets in
+    - Monolayer CrS2 lies squarely in this regime
+    - 1H phase
+  - statement: At U = 2.4 eV, the band gap of 1H-CrS2 closes.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - At U=2.4 eV the gap closes and the system becomes an AFM metal (Figure 3(c,g)), with valence and
+      conduction bands overlapping at different k-points.
+    - At U=2.4 eV the gap closes and the system becomes an AFM metal (Figure 3(c,g))
+    - Monolayer CrS2 lies squarely in this regime
+    - 1H phase
+  - statement: In SIESTA calculations, J1 extremizes near U ≈ 1.2 eV, reaching -28 meV.
+    reason: '[qualifier_dropped] the statement says the value is approximate but quantity.approximate
+      is false. Record the qualifier the source used - UnitEngine.record(..., bound=..., approximate=...).'
+    quotes:
+    - In SIESTA, J1 extremises near U ≈ 1.2 eV and J ′ 1 near U ≈ 1.5 eV, reaching −28 and −49 meV respectively
+      (negative J denotes AFM coupling in the convention of Eq. 1, as plotted in Figure 7), to be compared
+      with −36 and −60 meV at U ≈ 2.0 a
+    - In SIESTA, J1 extremises near U ≈ 1.2 eV
+    - In SIESTA
+    - J1 extremises near U ≈ 1.2 eV
+  - statement: In SIESTA calculations, J'1 extremizes near U ≈ 1.5 eV, reaching -49 meV.
+    reason: '[qualifier_dropped] the statement says the value is approximate but quantity.approximate
+      is false. Record the qualifier the source used - UnitEngine.record(..., bound=..., approximate=...).'
+    quotes:
+    - In SIESTA, J1 extremises near U ≈ 1.2 eV and J ′ 1 near U ≈ 1.5 eV, reaching −28 and −49 meV respectively
+      (negative J denotes AFM coupling in the convention of Eq. 1, as plotted in Figure 7), to be compared
+      with −36 and −60 meV at U ≈ 2.0 a
+    - In SIESTA, J1 extremises near U ≈ 1.2 eV and J ′ 1 near U ≈ 1.5 eV
+    - In SIESTA
+    - J ′ 1 near U ≈ 1.5 eV
+  - statement: In ABINIT calculations, J1 reaches -36 meV at U ≈ 2.0 eV.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - to be compared with −36 and −60 meV at U ≈ 2.0 and 2.4 eV in the ABINIT calculations
+    - in the ABINIT calculations
+    - In SIESTA, J1 extremises near U ≈ 1.2 eV and J ′ 1 near U ≈ 1.5 eV, reaching −28 and −49 meV respectively
+      (negative J denotes AFM coupling in the convention of Eq. 1, as plotted in Figure 7), to be compared
+      with −36 and −60 meV at U ≈ 2.0 a
+    - at U ≈ 2.0
+  - statement: In ABINIT calculations, J'1 reaches -60 meV at U ≈ 2.4 eV.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - to be compared with −36 and −60 meV at U ≈ 2.0 and 2.4 eV in the ABINIT calculations
+    - in the ABINIT calculations
+    - In SIESTA, J1 extremises near U ≈ 1.2 eV and J ′ 1 near U ≈ 1.5 eV, reaching −28 and −49 meV respectively
+      (negative J denotes AFM coupling in the convention of Eq. 1, as plotted in Figure 7), to be compared
+      with −36 and −60 meV at U ≈ 2.0 a
+    - 2.4 eV in the ABINIT calculations
+  tokens:
+    input: 16884
+    output: 2873
+  fetched_chars: 54130

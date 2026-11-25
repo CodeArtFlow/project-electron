@@ -7914,3 +7914,93 @@ claims:
     conditions:
       model: Mini-Omni
       mode: Half-duplex
+- id: CLM-ARCH-0278
+  topic: ARCH
+  statement: NAMSI achieves a MAC ADP reduction of 54.2% to 60.4% relative to FP32 across five neural
+    networks on ImageNet-1K under post-training quantization.
+  sources:
+  - SRC-00450
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-24'
+  created: '2026-11-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    benchmark: ImageNet-1K
+    process: 7-nm ASAP7 PDK
+    t_clk: 2,000 ps
+- id: CLM-ARCH-0279
+  topic: ARCH
+  statement: The system clock frequency operating the hardware design on the GateMate M1A1 FPGA is 40
+    MHz.
+  sources:
+  - SRC-00455
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-24'
+  created: '2026-11-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    device: GateMate M1A1 FPGA
+    limitation_cause: controller designed into FPGA for the W5500 Ethernet
+  quantity:
+    quantity: frequency
+    bound: exact
+    approximate: false
+    as_published:
+      value: 40.0
+      unit: MHz
+    si_base:
+      value: 40000000.0
+      unit: Hz
+    display:
+      value: 0.04
+      unit: GHz
+    conditions:
+      device: GateMate M1A1 FPGA
+      limitation_cause: controller designed into FPGA for the W5500 Ethernet
+- id: CLM-ARCH-0280
+  topic: ARCH
+  statement: The metric packet throughput reaches approximately 18 Mbit/s.
+  sources:
+  - SRC-00455
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-24'
+  created: '2026-11-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    data_type: metric packets
+  quantity:
+    quantity: throughput_tool
+    bound: exact
+    approximate: true
+    as_published:
+      value: 18.0
+      unit: Mbit/s
+    si_base:
+      value: 18000000.0
+      unit: 1/s
+    display:
+      value: 64800000000.0
+      unit: wph
+    conditions:
+      data_type: metric packets

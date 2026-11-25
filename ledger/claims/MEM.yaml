@@ -1688,3 +1688,37 @@ claims:
     verified_quotes: 3
   conditions:
     process: 14nm logic die onto a 3D NAND Flash memory wafer
+- id: CLM-MEM-0061
+  topic: MEM
+  statement: At 128 sessions per generation on four added HBF sites, Mayfly finishes 23% sooner than reading
+    KV from HBF whenever HBM is full.
+  sources:
+  - SRC-00454
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-24'
+  created: '2026-11-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: reading it from HBF whenever HBM is full
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 23.0
+      unit: '%'
+    si_base:
+      value: 0.23
+      unit: dimensionless
+    display:
+      value: 23.0
+      unit: percent
+    conditions:
+      baseline: reading it from HBF whenever HBM is full

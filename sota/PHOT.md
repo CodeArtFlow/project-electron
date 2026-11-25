@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-24.
+Topic code `PHOT`. Last reviewed 2026-11-25.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -247,6 +247,10 @@ Topic code `PHOT`. Last reviewed 2026-11-24.
   - `CLM-PHOT-0194` · material multilayer Z-cut LiNbO3 thin film, fclk 20.7 kHz · grade B · credibility unknown · measured · as of 2026-11-23
   - sources: SRC-00440
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **1e+11 nm** — The passive single-mode fiber cavity used in the Ikeda-map simulation has a length of 100 m.
+  - `CLM-PHOT-0201` · fiber_type standard single-mode fiber (SMF) · grade B · credibility unknown · simulated · as of 2026-11-24
+  - sources: SRC-00452
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### length die
 
@@ -901,6 +905,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 200
-- grades: {'B': 193, 'A': 7}
-- distinct sources: 67
+- claims: 201
+- grades: {'B': 194, 'A': 7}
+- distinct sources: 68

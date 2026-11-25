@@ -1848,3 +1848,193 @@ claims:
     verified_quotes: 3
   conditions:
     benchmark_case: mgc superblue12
+- id: CLM-EDA-0074
+  topic: EDA
+  statement: AgentDRC improves overall pass@5 on L2 by 13.8% over the best baseline.
+  sources:
+  - SRC-00448
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-24'
+  created: '2026-11-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    method: AgentDRC
+    metric: pass@5 improvement
+    baseline: best baseline based on GPT5-mini
+- id: CLM-EDA-0075
+  topic: EDA
+  statement: At an error target of 0.2 K on the 3DIC-NonAligned test case, CycleWalker achieves a speedup
+    of 47.22x over tPIRW with an execution time of 17.09 s.
+  sources:
+  - SRC-00451
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-24'
+  created: '2026-11-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    method: CycleWalker
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 17.09
+      unit: s
+    si_base:
+      value: 17.09
+      unit: s
+    display:
+      value: 17089999999.999998
+      unit: ns
+    conditions:
+      method: CycleWalker
+- id: CLM-EDA-0076
+  topic: EDA
+  statement: On the GPU-HBM-Burst test case with a nominal error target of 0.2 K, CycleWalker achieves
+    a speedup of 75.85x over tPIRW.
+  sources:
+  - SRC-00451
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-24'
+  created: '2026-11-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    method: CycleWalker
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 43.63
+      unit: s
+    si_base:
+      value: 43.63
+      unit: s
+    display:
+      value: 43630000000.0
+      unit: ns
+    conditions:
+      method: CycleWalker
+- id: CLM-EDA-0077
+  topic: EDA
+  statement: For the 3DIC-FastCycle benchmark at an error target of 0.2 K, CycleWalker achieves a solver
+    execution time of 17.52 s, yielding a 42.62x speedup over tPIRW.
+  sources:
+  - SRC-00451
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-24'
+  created: '2026-11-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    method: CycleWalker
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 17.52
+      unit: s
+    si_base:
+      value: 17.52
+      unit: s
+    display:
+      value: 17519999999.999996
+      unit: ns
+    conditions:
+      method: CycleWalker
+- id: CLM-EDA-0078
+  topic: EDA
+  statement: When matching the deterministic prior's MAE of 0.0130 K on GPU-HBM-Burst, CycleWalker runs
+    in 457.61 s with 5120 paths per query, achieving a 2.77x speedup over the periodic prior.
+  sources:
+  - SRC-00451
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-24'
+  created: '2026-11-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    method: CycleWalker
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 457.61
+      unit: s
+    si_base:
+      value: 457.61
+      unit: s
+    display:
+      value: 457609999999.99994
+      unit: ns
+    conditions:
+      method: CycleWalker
+- id: CLM-EDA-0079
+  topic: EDA
+  statement: Using subgrid TSV homogenization reduces GPU execution time to 0.379 s compared to 1.990
+    s for the explicitly resolved TSV mesh.
+  sources:
+  - SRC-00451
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-24'
+  created: '2026-11-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    path_budget: '64'
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.379
+      unit: s
+    si_base:
+      value: 0.379
+      unit: s
+    display:
+      value: 378999999.99999994
+      unit: ns
+    conditions:
+      path_budget: '64'

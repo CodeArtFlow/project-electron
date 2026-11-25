@@ -2537,3 +2537,57 @@ claims:
     conditions:
       dataset: Au particles
       algorithm: VR
+- id: CLM-PROC-0079
+  topic: PROC
+  statement: Across 154 reviewed microscopy cases, two domain experts corrected geometries in 152 cases.
+  sources:
+  - SRC-00456
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-24'
+  created: '2026-11-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    queue_size: 154 reviewed microscopy cases
+- id: CLM-PROC-0080
+  topic: PROC
+  statement: Joint-endpoint watershed selection achieved an instance F1 of 53.66% on the confirmation
+    set of 25 nanoparticle images.
+  sources:
+  - SRC-00456
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-24'
+  created: '2026-11-25'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    method: Joint-endpoint watershed selection (WS / joint)
+    test_set: confirmation set of 25 images from 9 additional source papers
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 53.66
+      unit: '%'
+    si_base:
+      value: 0.5366
+      unit: dimensionless
+    display:
+      value: 53.66
+      unit: percent
+    conditions:
+      method: Joint-endpoint watershed selection (WS / joint)
+      test_set: confirmation set of 25 images from 9 additional source papers

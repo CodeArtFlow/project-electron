@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-24.
+Topic code `ARCH`. Last reviewed 2026-11-25.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -125,6 +125,10 @@ Topic code `ARCH`. Last reviewed 2026-11-24.
   - `CLM-ARCH-0260` · core CV32E40S soft core · grade B · credibility unknown · measured · as of 2026-11-18
   - sources: SRC-00424
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.04 GHz** — The system clock frequency operating the hardware design on the GateMate M1A1 FPGA is 40 MHz.
+  - `CLM-ARCH-0279` · device GateMate M1A1 FPGA, limitation_cause controller designed into FPGA for the W5500 Ethernet · grade B · credibility unknown · measured · as of 2026-11-24
+  - sources: SRC-00455
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -713,6 +717,10 @@ Topic code `ARCH`. Last reviewed 2026-11-24.
   - `CLM-ARCH-0272` · grade B · credibility unknown · simulated · as of 2026-11-20
   - sources: SRC-00434
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- NAMSI achieves a MAC ADP reduction of 54.2% to 60.4% relative to FP32 across five neural networks on ImageNet-1K under post-training quantization.
+  - `CLM-ARCH-0278` · benchmark ImageNet-1K, process 7-nm ASAP7 PDK, t_clk 2,000 ps · grade B · credibility unknown · simulated · as of 2026-11-24
+  - sources: SRC-00450
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1027,6 +1035,13 @@ Topic code `ARCH`. Last reviewed 2026-11-24.
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0125, CFL-0126 — see the open register
 
+### throughput tool
+
+- **≈6.48e+10 wph** — The metric packet throughput reaches approximately 18 Mbit/s.
+  - `CLM-ARCH-0280` · data_type metric packets · grade B · credibility unknown · measured · as of 2026-11-24
+  - sources: SRC-00455
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+
 ### time
 
 - **153.53 ns** — The total latency for the FTJ device using the Naive architecture is 153.53 ns.
@@ -1245,6 +1260,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 277
-- grades: {'B': 277}
-- distinct sources: 97
+- claims: 280
+- grades: {'B': 280}
+- distinct sources: 99

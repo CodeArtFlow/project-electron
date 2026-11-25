@@ -1,0 +1,113 @@
+id: SRC-00452
+title: Competing Symmetry Breakings and Spontaneous Parity Restoration in Desynchronously Pumped Kerr
+  Resonators
+doi: null
+arxiv_id: 2611.32087v1
+url: https://arxiv.org/abs/2611.32087v1
+venue_id: arxiv_api
+authors:
+- name: Jun Ji
+  affiliation: null
+  corresponding: null
+- name: Zhibin Ren
+  affiliation: null
+  corresponding: null
+- name: Benli Yu
+  affiliation: null
+  corresponding: null
+- name: Zhiqiang Wang
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-24'
+retrieved_date: '2026-11-25'
+access: full_text
+read_scope: Automated reading. The full PDF text (44,602 characters, 10 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.32087v1 on
+  2026-11-25. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“In our simulations, the cavity consists of a L = 100 m standard single-mode fiber (SMF)”
+
+  “standard single-mode fiber (SMF)”'
+method_summary: '“Using collective-coordinate perturbation theory, we map the effective Ginzburg-Landau
+  potential landscape and show that kinematic drift weakens local driving until a saddle-node bifurcation
+  eliminates the temporal confining barrier.”
+
+  “Corroborated by full Ikeda-map simulations across the phase boundary”
+
+  “To rigorously validate our theoretical predictions beyond the mean-field limit, we numerically investigate
+  the complete spatiotemporal evolution using an iterative round-trip Ikeda map (Supplementary Material).”
+
+  “Equations (B1) and (B2) are integrated numerically using the standard split-step Fourier method.”'
+limitations: '“While this analytical framework elegantly unveils the topological origins of the symmetry
+  breaking dynamics, it inherently relies on the mean-field approximation.”
+
+  “the slight upward offset of the analytical curve arising because κc evaluates the force balance at
+  the bifurcation boundary τth rather than the slightly inner saddle-node point (τSN < τth), alongside
+  finite-loss effects beyond the mean-field limit.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16801
+    output: 2435
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: At a fixed desynchronization of 0.15 ps/km, peak power of 0.09 W, and detuning of 0.2,
+      the vector cavity soliton settles at a temporal position of 12.89 ps.
+    reason: the statement contains the number 0.09, which none of its quotes contain
+    quotes:
+    - showing that both the stable CS position (Tc = 12.89 ps, corresponding to τc ≈ 3.25 in Fig. 1(c))
+      and the resulting symmetry-breaking states are in excellent agreement with preceding analytical
+      predictions.
+    - To rigorously validate our theoretical predictions beyond the mean-field limit, we numerically investigate
+      the complete spatiotemporal evolution using an iterative round-trip Ikeda map (Supplementary Material).
+    - When a finite desynchronization κ = 0.15 ps/km is introduced
+    - cavity detuning δx,y = 0.2
+  - statement: For a cavity detuning of 0.2 and pump peak power of 0.09 W, the critical desynchronization
+      threshold for the abrupt HSB-to-TSB phase transition is 0.107 ps/km.
+    reason: the statement contains the number 0.2, which none of its quotes contain
+    quotes:
+    - revealing two distinct regimes separated by a critical threshold κc = 0.107 ps/km.
+    - To quantitatively characterize these symmetry-breaking dynamics, Fig. 4(a) presents the simulation
+      results of the steady-state temporal intensity evolution of Ex (left) and Ey (right) as a function
+      of κ.
+    - 'Parameters: δx,y = 0.2'
+    - P0 = 0.09 W
+  - statement: The fiber used in the Ikeda-map simulation has a group-velocity dispersion coefficient
+      of -22 ps2/km.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''with β2 =
+      −22 ps2/km'''
+    quotes:
+    - with β2 = −22 ps2/km
+    - In our simulations, the cavity consists of a L = 100 m standard single-mode fiber (SMF)
+    - standard single-mode fiber (SMF)
+  - statement: The fiber used in the simulation has a Kerr nonlinearity coefficient of 1.2 W-1km-1.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''γ = 1.2 W−1km−1'''
+    quotes:
+    - γ = 1.2 W−1km−1
+    - In our simulations, the cavity consists of a L = 100 m standard single-mode fiber (SMF)
+    - standard single-mode fiber (SMF)
+  - statement: The total roundtrip power loss of the cavity model is 0.28.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''α = 0.28'''
+    quotes:
+    - α = 0.28
+    - In our simulations, the cavity consists of a L = 100 m standard single-mode fiber (SMF)
+  - statement: The pump pulse duration used in the numerical simulations is 15 ps.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''and τ0 =
+      15 ps.'''
+    quotes:
+    - and τ0 = 15 ps.
+    - In our simulations, the cavity consists of a L = 100 m standard single-mode fiber (SMF)
+  - statement: The power coupling ratio of the input coupler is 0.05.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''θ = 0.05'''
+    quotes:
+    - θ = 0.05
+    - In our simulations, the cavity consists of a L = 100 m standard single-mode fiber (SMF)
+corrections: []

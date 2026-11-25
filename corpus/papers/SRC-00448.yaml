@@ -1,0 +1,92 @@
+id: SRC-00448
+title: 'AgentDRC: Multi-Agent Algorithms for Spatially-Aware Automated DRC Correction'
+doi: null
+arxiv_id: 2611.31876v1
+url: https://arxiv.org/abs/2611.31876v1
+venue_id: arxiv_api
+authors:
+- name: Pengju Liu
+  affiliation: null
+  corresponding: null
+- name: Nuo Xu
+  affiliation: null
+  corresponding: null
+- name: Winso Chen
+  affiliation: null
+  corresponding: null
+- name: Peijun Li
+  affiliation: null
+  corresponding: null
+- name: ' Yang'
+  affiliation: null
+  corresponding: null
+- name: ' Zhao'
+  affiliation: null
+  corresponding: null
+- name: Yu Cao
+  affiliation: null
+  corresponding: null
+- name: Caiwen Ding
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-24'
+retrieved_date: '2026-11-25'
+access: full_text
+read_scope: Automated reading. The full PDF text (51,993 characters, 9 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.31876v1 on
+  2026-11-25. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Experiments show that AgentDRC achieves up to 30.4% pass@1 and 55.7% pass@5 on challenging
+  violations, with 13.8% pass@5 improvement over the best baseline.”
+
+  “On a challenging DRC benchmark, it achieves 13.8%, 9.3% and 8.6% improvements in pass@5 compared with
+  the best baseline based on GPT5-mini, Gemini-2.0 and DeepSeek-V3.1, respectively.”'
+method_summary: “We use the open-source OpenROAD [1] flow to generate layouts from Verilog designs and
+  KLayout [12] for layout operations. All experiments are conducted under the ASAP7 [6].”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 17246
+    output: 2430
+  claims_accepted: 1
+  claims_rejected: 4
+  rejected:
+  - statement: AgentDRC with GPT5-mini achieves a 30.4% pass@1 score overall on the L2 benchmark.
+    reason: the statement contains the number 1, which none of its quotes contain
+    quotes:
+    - AgentDRC (GPT) ✓ T+V 39.0 68.9 22.0 42.7 6.67 33.3 30.4 55.7
+    - 'Table 2: Comparison of AgentDRC against various baseline models on L2.'
+  - statement: AgentDRC with GPT5-mini achieves a 55.7% pass@5 score overall on the L2 benchmark.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - AgentDRC (GPT) ✓ T+V 39.0 68.9 22.0 42.7 6.67 33.3 30.4 55.7
+    - 'Table 2: Comparison of AgentDRC against various baseline models on L2.'
+  - statement: The average API cost per run for AgentDRC with GPT5-mini is $0.041 at a maximum iteration
+      limit of 4.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''$0.041'''
+    quotes:
+    - $0.041
+    - The API cost grows roughly linearly with the iteration cap, ranging from $0.041 at 4 iterations
+      to $0.093 at 10 iterations, which remains affordable across all settings.
+    - We vary the iteration limit from 4 to 10 under AgentDRC with GPT5-mini (Fig. 7), where one iteration
+      is a complete pass through the full agent pipeline—observation, context selection, spatial-aware
+      verification, and tool execution.
+  - statement: The average API cost per run for AgentDRC with GPT5-mini is $0.093 at a maximum iteration
+      limit of 10.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''$0.093'''
+    quotes:
+    - $0.093
+    - The API cost grows roughly linearly with the iteration cap, ranging from $0.041 at 4 iterations
+      to $0.093 at 10 iterations, which remains affordable across all settings.
+    - We vary the iteration limit from 4 to 10 under AgentDRC with GPT5-mini (Fig. 7), where one iteration
+      is a complete pass through the full agent pipeline—observation, context selection, spatial-aware
+      verification, and tool execution.
+corrections: []

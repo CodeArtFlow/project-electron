@@ -1,6 +1,6 @@
 # EDA — state of the art
 
-Topic code `EDA`. Last reviewed 2026-11-24.
+Topic code `EDA`. Last reviewed 2026-11-25.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -201,6 +201,10 @@ Topic code `EDA`. Last reviewed 2026-11-24.
   - `CLM-EDA-0073` · benchmark_case mgc superblue12 · grade B · credibility unknown · measured · as of 2026-11-20
   - sources: SRC-00432
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- AgentDRC improves overall pass@5 on L2 by 13.8% over the best baseline.
+  - `CLM-EDA-0074` · method AgentDRC, metric pass@5 improvement, baseline best baseline based on GPT5-mini · grade B · credibility unknown · simulated · as of 2026-11-24
+  - sources: SRC-00448
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -331,6 +335,30 @@ Topic code `EDA`. Last reviewed 2026-11-24.
   - sources: SRC-00432
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
   - **live contradiction:** CFL-0159 — see the open register
+- **1.709e+10 ns** — At an error target of 0.2 K on the 3DIC-NonAligned test case, CycleWalker achieves a speedup of 47.22x over tPIRW with an execution time of 17.09 s.
+  - `CLM-EDA-0075` · method CycleWalker · grade B · credibility unknown · measured · as of 2026-11-24
+  - sources: SRC-00451
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0169, CFL-0170 — see the open register
+- **4.363e+10 ns** — On the GPU-HBM-Burst test case with a nominal error target of 0.2 K, CycleWalker achieves a speedup of 75.85x over tPIRW.
+  - `CLM-EDA-0076` · method CycleWalker · grade B · credibility unknown · measured · as of 2026-11-24
+  - sources: SRC-00451
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0169, CFL-0171, CFL-0172 — see the open register
+- **1.752e+10 ns** — For the 3DIC-FastCycle benchmark at an error target of 0.2 K, CycleWalker achieves a solver execution time of 17.52 s, yielding a 42.62x speedup over tPIRW.
+  - `CLM-EDA-0077` · method CycleWalker · grade B · credibility unknown · measured · as of 2026-11-24
+  - sources: SRC-00451
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0171, CFL-0173 — see the open register
+- **4.5761e+11 ns** — When matching the deterministic prior's MAE of 0.0130 K on GPU-HBM-Burst, CycleWalker runs in 457.61 s with 5120 paths per query, achieving a 2.77x speedup over the periodic prior.
+  - `CLM-EDA-0078` · method CycleWalker · grade B · credibility unknown · measured · as of 2026-11-24
+  - sources: SRC-00451
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0170, CFL-0172, CFL-0173 — see the open register
+- **3.79e+08 ns** — Using subgrid TSV homogenization reduces GPU execution time to 0.379 s compared to 1.990 s for the explicitly resolved TSV mesh.
+  - `CLM-EDA-0079` · path_budget 64 · grade B · credibility unknown · measured · as of 2026-11-24
+  - sources: SRC-00451
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -369,9 +397,24 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0159` — time: _unexamined; classification pending_
   - claims: CLM-EDA-0070, CLM-EDA-0071
   - missing data: `not yet named`
+- `CFL-0169` — time: _unexamined; classification pending_
+  - claims: CLM-EDA-0075, CLM-EDA-0076
+  - missing data: `not yet named`
+- `CFL-0170` — time: _unexamined; classification pending_
+  - claims: CLM-EDA-0075, CLM-EDA-0078
+  - missing data: `not yet named`
+- `CFL-0171` — time: _unexamined; classification pending_
+  - claims: CLM-EDA-0076, CLM-EDA-0077
+  - missing data: `not yet named`
+- `CFL-0172` — time: _unexamined; classification pending_
+  - claims: CLM-EDA-0076, CLM-EDA-0078
+  - missing data: `not yet named`
+- `CFL-0173` — time: _unexamined; classification pending_
+  - claims: CLM-EDA-0077, CLM-EDA-0078
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 73
-- grades: {'B': 73}
-- distinct sources: 19
+- claims: 79
+- grades: {'B': 79}
+- distinct sources: 21

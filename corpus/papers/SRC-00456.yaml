@@ -1,0 +1,120 @@
+id: SRC-00456
+title: A recursive self-improvement framework for electron microscopy analysis
+doi: null
+arxiv_id: 2611.32325v1
+url: https://arxiv.org/abs/2611.32325v1
+venue_id: arxiv_api
+authors:
+- name: Yaotian Yang
+  affiliation: null
+  corresponding: null
+- name: Sijia Tao
+  affiliation: null
+  corresponding: null
+- name: Yuping Zhang
+  affiliation: null
+  corresponding: null
+- name: Jiangjie Qiu
+  affiliation: null
+  corresponding: null
+- name: Qinghua Zhang
+  affiliation: null
+  corresponding: null
+- name: Xiao Chen
+  affiliation: null
+  corresponding: null
+- name: Fei Wei
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-24'
+retrieved_date: '2026-11-25'
+access: full_text
+read_scope: Automated reading. The full PDF text (54,802 characters, 18 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.32325v1 on
+  2026-11-25. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Across 154 reviewed microscopy cases, two domain experts corrected geometries in 152 cases—100
+  point-defect cases containing 808 labelled sites, 51 interface cases and one disordered-region case”
+
+  “Across 154 reviewed microscopy cases”
+
+  “Joint-endpoint watershed selection (WS / joint) achieved 75.77% foreground IoU and 42.24% foreground
+  boundary F1, with an instance F1 of 53.66%”
+
+  “Joint-endpoint watershed selection (WS / joint)”
+
+  “confirmation set of 25 images from 9 additional source papers”'
+method_summary: '“The student was a U-Net-like encoder–decoder with base channel width 16 and 119,378
+  parameters; evidence and reliability heads without corresponding objectives were frozen.”
+
+  “For plane 𝑖, let 𝐺𝑖 denote expert-positive pixels. Pixels with positive scores within valid candidate
+  support were ranked in stable descending order, selecting at most 𝐾𝑖 = 0.10𝐻𝑖𝑊𝑖 pixels to form 𝑄𝑖.”'
+limitations: “One potential limitation is that the initial physical operators, crystallographic prior
+  templates and task-admission protocols still require domain knowledge to construct and specify.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 17075
+    output: 2481
+  claims_accepted: 2
+  claims_rejected: 5
+  rejected:
+  - statement: The compact student model achieved 64.31% Point F1 on 107 unseen WSe2 images when trained
+      on 151 non-WSe2 cases.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Trained on the same 151 non-𝑊𝑆𝑒2 cases (Methods), this compact student achieved 64.31% Point F1
+      on 107 unseen 𝑊𝑆𝑒2 images
+    - 151 non-𝑊𝑆𝑒2 cases
+    - 107 unseen 𝑊𝑆𝑒2 images
+    - this compact student
+  - statement: On 53 WSe2 confirmation images, the RSI-retained program achieved 78.71% Point F1.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - On the 53 confirmation images (Fig. 2b, top), the RSI-retained program achieved 78.71% Point F1,
+      outperforming the original physical branch (71.95%), frozen student (64.65%), fixed 50:50 quota
+      fusion (68.82%) and same-label physics-only cal
+    - On the 53 confirmation images (Fig. 2b, top), the RSI-retained program achieved 78.71% Point F1
+    - 53 confirmation images
+    - RSI-retained program
+  - statement: The 18-branch reference system achieved an equal-source interface coverage of 67.95% across
+      three interface sources.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''culminating
+      in an 18-branch frozen reference system at 67.95% (76.49%,'''
+    quotes:
+    - culminating in an 18-branch frozen reference system at 67.95% (76.49%, 63.17% and 64.19%; Fig. 2c,
+      right) that anchored the final stage of automated framework-level evolution.
+    - culminating in an 18-branch frozen reference system at 67.95%
+    - 18-branch frozen reference system
+    - three interface sources (ZrO2, Al orientation I and Al orientation II)
+  - statement: The best retained system state in the domain-residual route achieved an overall interface
+      coverage of 72.11% under a fixed 10% area budget.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - the best retained system from this route reached 𝐽 = 72.11%, an overall gain of 4.16 pp.
+    - the best retained system from this route reached 𝐽 = 72.11%
+    - domain–residual route
+    - fixed 10% image-area budget
+  - statement: Targeted agent-driven refinement on the diagnostic G14 image increased instance F1 from
+      33.33% to 87.80%.
+    reason: the statement contains the number 4, which none of its quotes contain
+    quotes:
+    - Instance F1 rose to 87.80% (18 one-to-one matches among 22 predictions), and internal-seam boundary
+      F1 reached 72.01%.
+    - Instance F1 rose to 87.80%
+    - diagnostic G14 image
+    - instance F1, 33.33%
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (measured: 1, simulated:
+  1). This field records the majority (measured); trust each claim''s own evidence_type over this one.'

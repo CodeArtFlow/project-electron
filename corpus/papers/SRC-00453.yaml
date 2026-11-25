@@ -1,0 +1,103 @@
+id: SRC-00453
+title: Towards determination of intrinsic spin properties in MAPbI$_3$ crystals using spin noise spectroscopy
+doi: null
+arxiv_id: 2611.32115v1
+url: https://arxiv.org/abs/2611.32115v1
+venue_id: arxiv_api
+authors:
+- name: M. Vladimirova
+  affiliation: null
+  corresponding: null
+- name: S. Cronenberger
+  affiliation: null
+  corresponding: null
+- name: L. Doyenette
+  affiliation: null
+  corresponding: null
+- name: D. R. Yakovlev
+  affiliation: null
+  corresponding: null
+- name: B. Turedi
+  affiliation: null
+  corresponding: null
+- name: M. V. Kovalenko
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-24'
+retrieved_date: '2026-11-25'
+access: full_text
+read_scope: Automated reading. The full PDF text (51,034 characters, 11 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.32115v1 on
+  2026-11-25. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“We investigate a single crystal of MAPbI3 with a thickness of 15.9 µm, prepared using the
+  inverse temper- ature crystallization technique [20–22].”
+
+  “Here gh =−0.39 and ge = 2.64 are hole and electron g-factors, respectively”
+
+  “ge = 2.64 are hole and electron g-factors, respectively”
+
+  “Ep = 1.622 eV,P = 210 W/cm2,T = 3.5 K.”
+
+  “Figure 3 shows the magnetic field dependence of these Larmor frequencies.”
+
+  “gh =−0.39 and ge = 2.64 are hole and electron g-factors, respectively”
+
+  “Activation energy for the electron spinEea = 3.4± 0.5 meV”
+
+  “The resulting values of γa, γ0, Ea and aloc are summa- rized in Table I”'
+method_summary: '“Spin noise spectroscopy in back- and forward-scattering geometries is used to study
+  the spin dy- namics of charge carriers in a MAPbI3 (MA = methylammonium) single crystal.”
+
+  “The experiments are based on the homodyne detection of SN [15, 23–28].”'
+limitations: '“Because at B = 0 it is impossible to reliably separate different carrier contributions,
+  and since no significant variation of FWHM with magnetic field is observed, for the analysis presented
+  in the set of data shown in Fig. 3 we useσ0 defined by Eq. (2).”
+
+  “However, the experimental data do not allow us to tease apart the two mechanisms.”
+
+  “It appears to be difficult to analyze these results more quantitatively, because the absorption coefficient
+  varies by a factor of about 100 in the considered energy range [40] and because the form of all distributions
+  functions is not known.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16229
+    output: 2129
+  claims_accepted: 4
+  claims_rejected: 3
+  rejected:
+  - statement: The activation energy Ea for weakly localized holes (h1) is measured to be 2.3 meV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Ea (meV) 3.4± 0.5 2.3± 0.9 4.9± 0.7
+    - The resulting values of γa, γ0, Ea and aloc are summa- rized in Table I
+    - Table I. Evaluated parameters of MAPbI3 crystal... electron hole 1 hole 2
+  - statement: The activation energy Ea for strongly localized holes (h2) is measured to be 4.9 meV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Ea (meV) 3.4± 0.5 2.3± 0.9 4.9± 0.7
+    - The resulting values of γa, γ0, Ea and aloc are summa- rized in Table I
+    - Table I. Evaluated parameters of MAPbI3 crystal... electron hole 1 hole 2
+  - statement: The upper bound of the spin diffusion coefficient D in the MAPbI3 crystal is estimated
+      to be approximately 0.5 x 10^-3 cm^2/s.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Thus, we
+      can estimate the diffusion coefficient: D = h2c2 16πn2E2p ∆FW'''
+    quotes:
+    - 'Thus, we can estimate the diffusion coefficient: D = h2c2 16πn2E2p ∆FWHM ≈ 0.5× 10−3cm2/s,'
+    - The small variation of the linewidth between the two geometries gives an upper bound for diffusion
+      coefficients, D < 0.5× 10−3 cm2/s
+    - Spin noise spectroscopy in back- and forward-scattering geometries is used to study the spin dy-
+      namics of charge carriers in a MAPbI3 (MA = methylammonium) single crystal.
+corrections: []

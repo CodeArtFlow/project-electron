@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-24.
+Topic code `MAT`. Last reviewed 2026-11-25.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -261,6 +261,18 @@ Topic code `MAT`. Last reviewed 2026-11-24.
 - **1.92261e-06 fJ** — Molecular dynamics simulations of the bulk model with ensemble averaging yield a band gap blue shift of 12 meV at 0.5% tensile strain.
   - `CLM-MAT-0443` · model bulk model · grade B · credibility unknown · simulated · as of 2026-11-23
   - sources: SRC-00447
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1.6331e-05 fJ** — The theoretical model uses an intrinsic ZO-phonon energy E0 of 101.93 meV for hBN.
+  - `CLM-MAT-0444` · parameter intrinsic (bare) ZO-phonon energy E0 · grade B · credibility unknown · simulated · as of 2026-11-24
+  - sources: SRC-00449
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1.92261e-08 fJ** — The theoretical model uses an intrinsic broadening γ0 of 0.12 meV for the hBN ZO phonon.
+  - `CLM-MAT-0445` · parameter intrinsic broadening γ0 · grade B · credibility unknown · simulated · as of 2026-11-24
+  - sources: SRC-00449
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈5.4474e-07 fJ** — The activation energy Ea for electron spin is measured to be 3.4 meV.
+  - `CLM-MAT-0449` · carrier_type electron · grade B · credibility unknown · measured · as of 2026-11-24
+  - sources: SRC-00453
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### frequency
@@ -562,6 +574,10 @@ Topic code `MAT`. Last reviewed 2026-11-24.
 - **≈1.1 nm** — The localization length in the amorphous graphene sample is approximately 1.1 nm.
   - `CLM-MAT-0415` · parameter_name ξloc · grade B · credibility unknown · simulated · as of 2026-11-19
   - sources: SRC-00418
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **15900 nm** — The investigated MAPbI3 single crystal has a thickness of 15.9 µm.
+  - `CLM-MAT-0446` · material MAPbI3 · grade B · credibility unknown · measured · as of 2026-11-24
+  - sources: SRC-00453
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
@@ -1397,6 +1413,14 @@ Topic code `MAT`. Last reviewed 2026-11-24.
   - `CLM-MAT-0442` · grade B · credibility unknown · simulated · as of 2026-11-23
   - sources: SRC-00445
   - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The electron g-factor ge in the MAPbI3 single crystal is measured to be 2.64.
+  - `CLM-MAT-0447` · carrier_type electron, temperature 3.5 K, probe_energy 1.622 eV · grade B · credibility unknown · measured · as of 2026-11-24
+  - sources: SRC-00453
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- The hole g-factor gh in the MAPbI3 single crystal is measured to be -0.39.
+  - `CLM-MAT-0448` · carrier_type hole, temperature 3.5 K, probe_energy 1.622 eV · grade B · credibility unknown · measured · as of 2026-11-24
+  - sources: SRC-00453
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -2109,6 +2133,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 443
-- grades: {'B': 443}
-- distinct sources: 156
+- claims: 449
+- grades: {'B': 449}
+- distinct sources: 158

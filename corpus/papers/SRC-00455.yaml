@@ -1,0 +1,118 @@
+id: SRC-00455
+title: On the Design of a Slow Control Interlock System for the European GateMate FPGA
+doi: null
+arxiv_id: 2611.32275v1
+url: https://arxiv.org/abs/2611.32275v1
+venue_id: arxiv_api
+authors:
+- name: Vitalii Burtsev
+  affiliation: null
+  corresponding: null
+- name: Daniele Passaretti
+  affiliation: null
+  corresponding: null
+- name: Daniel Anders
+  affiliation: null
+  corresponding: null
+- name: Christof Pfannenmueller
+  affiliation: null
+  corresponding: null
+- name: Fabian Lurz
+  affiliation: null
+  corresponding: null
+- name: Thilo Pionteck
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-24'
+retrieved_date: '2026-11-25'
+access: full_text
+read_scope: Automated reading. The full PDF text (37,874 characters, 7 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.32275v1 on
+  2026-11-25. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The hardware design was successfully implemented on the GateMate M1A1 FPGA, which operates
+  at a system clock frequency of 40 MHz, constrained by the controller designed into FPGA for the W5500
+  Ethernet.”
+
+  “implemented on the GateMate M1A1 FPGA”
+
+  “constrained by the controller designed into FPGA for the W5500 Ethernet.”
+
+  “In practice, data rate of metric packets achieves approximately 18 Mbit/s, which is not a bottleneck
+  for our application.”
+
+  “data rate of metric packets achieves approximately 18 Mbit/s”'
+method_summary: '“Experimental results show that the SMU architecture utilizes only 37,6% of LUTs, 9,4%
+  of FFs, and 35,9% of BRAM.”
+
+  “Furthermore, this low resource utilization allow to achieve 40,48 ms reconfiguration time, using OSS-CAD-Suite
+  including gmpack v1.13.”
+
+  “To measure it, the bitstream packed by GMpack 1.13 has been uploaded to the SPI flash memory on the
+  GateMate M1A1 evaluation board and FPGA reconfiguration times were measured with the SIGLENT SDS2104X
+  oscilloscope [24], starting at the de-assertion of the RESET signal until the rising edge of CFG_DONE
+  signal.”'
+limitations: “In our design the main bottleneck was the number of BRAM available in the GateMate FPGA.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 11531
+    output: 2826
+  claims_accepted: 2
+  claims_rejected: 6
+  rejected:
+  - statement: The SMU architecture utilizes 37.6% of LUTs on the GateMate M1A1 FPGA.
+    reason: the statement contains the number 37.6, which none of its quotes contain
+    quotes:
+    - Experimental results show that the SMU architecture utilizes only 37,6% of LUTs, 9,4% of FFs, and
+      35,9% of BRAM.
+    - the SMU architecture utilizes only 37,6% of LUTs, 9,4% of FFs, and 35,9% of BRAM.
+    - assessed on the 28-nm GateMate M1A1 FPGA
+  - statement: The SMU architecture utilizes 9.4% of Flip-Flops (FFs) on the GateMate M1A1 FPGA.
+    reason: the statement contains the number 9.4, which none of its quotes contain
+    quotes:
+    - Experimental results show that the SMU architecture utilizes only 37,6% of LUTs, 9,4% of FFs, and
+      35,9% of BRAM.
+    - the SMU architecture utilizes only 37,6% of LUTs, 9,4% of FFs, and 35,9% of BRAM.
+    - assessed on the 28-nm GateMate M1A1 FPGA
+  - statement: The SMU architecture utilizes 35.9% of BRAM on the GateMate M1A1 FPGA.
+    reason: the statement contains the number 35.9, which none of its quotes contain
+    quotes:
+    - Experimental results show that the SMU architecture utilizes only 37,6% of LUTs, 9,4% of FFs, and
+      35,9% of BRAM.
+    - the SMU architecture utilizes only 37,6% of LUTs, 9,4% of FFs, and 35,9% of BRAM.
+    - assessed on the 28-nm GateMate M1A1 FPGA
+  - statement: The FPGA reconfiguration time achieved is 40.48 ms using OSS-CAD-Suite with gmpack v1.13
+      and Quad-SPI mode.
+    reason: the statement contains the number 13, which none of its quotes contain
+    quotes:
+    - Furthermore, this low resource utilization allow to achieve 40,48 ms reconfiguration time, using
+      OSS-CAD-Suite including gmpack v1.13.
+    - We observed a reconfiguration time of 40.48 ms setting Quad-SPI, achieving an improvement of a factor
+      of 5 compared to an initial implementation, where GMpack 1.2 was used and only SPI single mode was
+      available.
+    - using OSS-CAD-Suite including gmpack v1.13.
+    - We observed a reconfiguration time of 40.48 ms setting Quad-SPI
+  - statement: A single module can process up to 100000 metric packets per second.
+    reason: the statement contains the number 100000, which none of its quotes contain
+    quotes:
+    - In fact, a single module can process up to 100.000 metric packets per second using the proposed
+      application protocol.
+    - using the proposed application protocol.
+  - statement: The mean round-trip time (RTT) measured for Metric Packets is 165 µs.
+    reason: the quote says the number is approximate but approximate is false
+    quotes:
+    - The histogram in Fig. 6 shows a multi-modal latency distribution, with 62,53% of samples clustered
+      around 164 µs, close to the mean RTT of 165 µs and a standard deviation of 5 µs.
+    - A total of 65.536 RTT samples were collected from the FPGA-based SMU operating at a system clock
+      frequency of 40 MHz.
+    - operating at a system clock frequency of 40 MHz.
+    - A total of 65.536 RTT samples were collected
+corrections: []
