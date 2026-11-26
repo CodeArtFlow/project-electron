@@ -1,0 +1,134 @@
+id: SRC-00462
+title: 'PerovAgent: Autonomous Ligand Design for Halide Perovskite Nanocrystals'
+doi: null
+arxiv_id: 2611.33913v1
+url: https://arxiv.org/abs/2611.33913v1
+venue_id: arxiv_api
+authors:
+- name: Seungjun Cha
+  affiliation: null
+  corresponding: null
+- name: Yoo Jae Jeong
+  affiliation: null
+  corresponding: null
+- name: Amanda Conde Del Moral
+  affiliation: null
+  corresponding: null
+- name: Juan-Pablo Correa-Baena
+  affiliation: null
+  corresponding: null
+- name: Seth R. Marder
+  affiliation: null
+  corresponding: null
+- name: David S. Ginger
+  affiliation: null
+  corresponding: null
+- name: Victor Fung
+  affiliation: null
+  corresponding: null
+- name: Guoxiang Hu
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-25'
+retrieved_date: '2026-11-26'
+access: full_text
+read_scope: Automated reading. The full PDF text (96,690 characters, 38 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.33913v1 on
+  2026-11-26. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The mean campaign-best binding energy improved from −3.59 eV after the initial iteration to
+  −4.64 eV near the end of the search (Figure 2b).”
+
+  “The mean campaign-best binding energy improved from −3.59 eV after the initial iteration”
+
+  “Ligand binding energies and coordination geometries are evaluated using a pretrained MLIP with dispersion
+  corrections”
+
+  “Ligand binding energies and coordination geometries are evaluated using a pretrained MLIP with dispersion
+  corrections, and the resulting feedback is incorporated into subsequent decisions through in-context
+  learning.”
+
+  “The mean campaign-best binding energy improved from −3.59 eV after the initial iteration to −4.64 eV
+  near the end of the search”
+
+  “These lineages contained two to ten successive child generations (mean, 6.7) and achieved a median
+  binding-energy improvement of 0.78 eV from the initial candidate to the final winner.”
+
+  “achieved a median binding-energy improvement of 0.78 eV”
+
+  “from the initial candidate to the final winner”
+
+  “Opening the cyclohexane ring of cyclohexanesulfonic acid while preserving the sulfonic acid head group
+  was predicted to strengthen binding by relieving conformational constraints at the surface. The resulting
+  molecule indeed bound more strongly, from −3.13 to −3.46 eV.”
+
+  “Opening the cyclohexane ring of cyclohexanesulfonic acid while preserving the sulfonic acid head group”
+
+  “The mean improvement was 0.195 eV from alkyl to alkenyl and 0.459 eV from alkenyl to alkynyl, indicating
+  that the alkynyl preference was reproduced across diverse molecular backbones.”
+
+  “Across all halogen-free phosphonate ligands sampled in the ten campaigns”
+
+  “The mean improvement was 0.195 eV from alkyl to alkenyl”
+
+  “MLIP-calculated binding energies of all halogen-free phosphonate ligands”'
+method_summary: '“Ligand binding energies and coordination geometries are evaluated using a pretrained
+  MLIP with dispersion corrections, and the resulting feedback is incorporated into subsequent decisions
+  through in-context learning.”
+
+  “A recurrent alkynyl-phosphonate principle was further examined using density functional theory, which
+  reproduced the predicted energetic preference.”'
+limitations: “The effects of varying ligand coverage and lateral ligand-ligand interactions were not systematically
+  examined.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 24386
+    output: 3189
+  claims_accepted: 5
+  claims_rejected: 3
+  rejected:
+  - statement: Replacing a methyl hydrogen of methylphosphonic acid with an amino group weakened binding
+      from -3.89 eV to -3.20 eV.
+    reason: the value -3.2 does not appear in any of the claim's quotes
+    quotes:
+    - In contrast, replacing a methyl hydrogen of methylphosphonic acid with an amino group was predicted
+      to introduce an additional surface interaction and strengthen binding, but instead weakened binding
+      from −3.89 to −3.20 eV.
+    - Ligand binding energies and coordination geometries are evaluated using a pretrained MLIP with dispersion
+      corrections, and the resulting feedback is incorporated into subsequent decisions through in-context
+      learning.
+    - replacing a methyl hydrogen of methylphosphonic acid with an amino group
+    - from −3.89 to −3.20 eV
+  - statement: During a Test round in Run 1, the five matched molecular pairs yielded a mean binding energy
+      improvement of 0.562 eV for the alkynyl ligand over its alkenyl ana
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''In all five
+      pairs, the dispersion-corrected MLIP predicted stronger bi'''
+    quotes:
+    - In all five pairs, the dispersion-corrected MLIP predicted stronger binding for the alkynyl ligand
+      than for its alkenyl analog, with a mean improvement of 0.562 ± 0.17 eV.
+    - During a Test round in Run 1
+    - comparing alkynyl and alkenyl linkers directly bonded to phosphorus while preserving the phosphonate
+      anchor and heavy-atom count
+    - the dispersion-corrected MLIP predicted stronger binding
+  - statement: In Run 3, matched pairs comparing alkynyl and alkyl linkers demonstrated a mean binding-energy
+      improvement of 0.694 eV for the alkynyl analog.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''All five
+      matched pairs again favored the alkynyl analog, with a mean b'''
+    quotes:
+    - All five matched pairs again favored the alkynyl analog, with a mean binding-energy improvement
+      of 0.694 ± 0.25 eV, and the agent independently invoked the same reduced steric obstruction rationale.
+    - Ligand binding energies and coordination geometries are evaluated using a pretrained MLIP with dispersion
+      corrections, and the resulting feedback is incorporated into subsequent decisions through in-context
+      learning.
+    - the same principle was independently formulated and prospectively tested in Run 3 using alkyl rather
+      than alkenyl controls
+    - comparing alkynyl and alkyl linkers directly bonded to phosphorus
+corrections: []

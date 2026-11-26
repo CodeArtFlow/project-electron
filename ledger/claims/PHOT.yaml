@@ -5656,3 +5656,43 @@ claims:
       unit: nm
     conditions:
       fiber_type: standard single-mode fiber (SMF)
+- id: CLM-PHOT-0202
+  topic: PHOT
+  statement: Fitting the relaxing component after 1000 pulses yields an effective relaxation time of approximately
+    2.5 min.
+  sources:
+  - SRC-00464
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 6
+  conditions:
+    pulse_count: 1000 pulses
+    pulse_voltage: +6 V
+    pulse_width: 250 ms
+    pulse_frequency: 2 Hz
+  quantity:
+    quantity: time
+    bound: exact
+    approximate: true
+    as_published:
+      value: 2.5
+      unit: min
+    si_base:
+      value: 150.0
+      unit: s
+    display:
+      value: 149999999999.99997
+      unit: ns
+    conditions:
+      pulse_count: 1000 pulses
+      pulse_voltage: +6 V
+      pulse_width: 250 ms
+      pulse_frequency: 2 Hz

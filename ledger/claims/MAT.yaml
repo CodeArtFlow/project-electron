@@ -12386,3 +12386,413 @@ claims:
       unit: fJ
     conditions:
       carrier_type: electron
+- id: CLM-MAT-0450
+  topic: MAT
+  statement: The RMS surface roughness of the as-grown heterostructure is 0.43 nm.
+  sources:
+  - SRC-00460
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    measurement_area: 3 × 3 μm²
+  quantity:
+    quantity: length_device
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.43
+      unit: nm
+    si_base:
+      value: 4.3e-10
+      unit: m
+    display:
+      value: 0.42999999999999994
+      unit: nm
+    conditions:
+      measurement_area: 3 × 3 μm²
+- id: CLM-MAT-0451
+  topic: MAT
+  statement: Phono3GPU on the RTX PRO 6000 Blackwell achieves total wall times that are 2 to 6 times shorter
+    compared to a GPU plug-in for phono3py.
+  sources:
+  - SRC-00461
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    hardware: RTX PRO 6000 Blackwell
+    baseline: GPU plug-in for phono3py
+- id: CLM-MAT-0452
+  topic: MAT
+  statement: PerovAgent achieved a mean campaign-best binding energy of -3.59 eV after the initial iteration.
+  sources:
+  - SRC-00462
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    metric: mean campaign-best binding energy
+    evaluation_method: pretrained MLIP with dispersion corrections
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: -3.59
+      unit: eV
+    si_base:
+      value: -5.751814116059999e-19
+      unit: J
+    display:
+      value: -0.0005751814116059998
+      unit: fJ
+    conditions:
+      metric: mean campaign-best binding energy
+      evaluation_method: pretrained MLIP with dispersion corrections
+- id: CLM-MAT-0453
+  topic: MAT
+  statement: PerovAgent reached a mean campaign-best binding energy of -4.64 eV near the end of the search
+    across ten independent campaigns.
+  sources:
+  - SRC-00462
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    metric: mean campaign-best binding energy
+    evaluation_method: pretrained MLIP with dispersion corrections
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: -4.64
+      unit: eV
+    si_base:
+      value: -7.434099581759999e-19
+      unit: J
+    display:
+      value: -0.0007434099581759998
+      unit: fJ
+    conditions:
+      metric: mean campaign-best binding energy
+      evaluation_method: pretrained MLIP with dispersion corrections
+- id: CLM-MAT-0454
+  topic: MAT
+  statement: The multi-step modification lineages achieved a median binding-energy improvement of 0.78
+    eV from the initial candidate to the final winner.
+  sources:
+  - SRC-00462
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    metric: median binding-energy improvement
+    comparison: from the initial candidate to the final winner
+    evaluation_method: pretrained MLIP with dispersion corrections
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.78
+      unit: eV
+    si_base:
+      value: 1.24969777452e-19
+      unit: J
+    display:
+      value: 0.00012496977745199997
+      unit: fJ
+    conditions:
+      metric: median binding-energy improvement
+      comparison: from the initial candidate to the final winner
+      evaluation_method: pretrained MLIP with dispersion corrections
+- id: CLM-MAT-0455
+  topic: MAT
+  statement: Opening the cyclohexane ring of cyclohexanesulfonic acid strengthened ligand binding from
+    -3.13 eV to -3.46 eV.
+  sources:
+  - SRC-00462
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    modification: Opening the cyclohexane ring of cyclohexanesulfonic acid
+    evaluation_method: pretrained MLIP with dispersion corrections
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: -3.46
+      unit: eV
+    si_base:
+      value: -5.54353115364e-19
+      unit: J
+    display:
+      value: -0.0005543531153639999
+      unit: fJ
+    conditions:
+      modification: Opening the cyclohexane ring of cyclohexanesulfonic acid
+      evaluation_method: pretrained MLIP with dispersion corrections
+- id: CLM-MAT-0456
+  topic: MAT
+  statement: Across halogen-free phosphonate ligands, the mean binding-energy improvement was 0.195 eV
+    from alkyl to alkenyl linkages adjacent to phosphorus.
+  sources:
+  - SRC-00462
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    ligand_class: halogen-free phosphonate ligands
+    transition: alkyl to alkenyl
+    evaluation_method: MLIP-calculated
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.195
+      unit: eV
+    si_base:
+      value: 3.1242444363e-20
+      unit: J
+    display:
+      value: 3.124244436299999e-05
+      unit: fJ
+    conditions:
+      ligand_class: halogen-free phosphonate ligands
+      transition: alkyl to alkenyl
+      evaluation_method: MLIP-calculated
+- id: CLM-MAT-0457
+  topic: MAT
+  statement: The STS measured electron Schottky barrier of Bi on monolayer MoS2 is 0.006 eV.
+  sources:
+  - SRC-00463
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    contact_metal: Bi
+    material: monolayer MoS2
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.006
+      unit: eV
+    si_base:
+      value: 9.613059804e-22
+      unit: J
+    display:
+      value: 9.613059803999998e-07
+      unit: fJ
+    conditions:
+      contact_metal: Bi
+      material: monolayer MoS2
+- id: CLM-MAT-0458
+  topic: MAT
+  statement: The STS measured electron Schottky barrier of Au on monolayer MoS2 is 0.58 eV.
+  sources:
+  - SRC-00463
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    contact_metal: Au
+    material: monolayer MoS2
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.58
+      unit: eV
+    si_base:
+      value: 9.292624477199999e-20
+      unit: J
+    display:
+      value: 9.292624477199998e-05
+      unit: fJ
+    conditions:
+      contact_metal: Au
+      material: monolayer MoS2
+- id: CLM-MAT-0459
+  topic: MAT
+  statement: The STS measured electron Schottky barrier of Pd on monolayer MoS2 is 0.77 eV.
+  sources:
+  - SRC-00463
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    contact_metal: Pd
+    material: monolayer MoS2
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.77
+      unit: eV
+    si_base:
+      value: 1.23367600818e-19
+      unit: J
+    display:
+      value: 0.00012336760081799997
+      unit: fJ
+    conditions:
+      contact_metal: Pd
+      material: monolayer MoS2
+- id: CLM-MAT-0460
+  topic: MAT
+  statement: The UPS measured work function of Pd on monolayer WSe2 is 5.24 eV.
+  sources:
+  - SRC-00463
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    contact_metal: Pd
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 5.24
+      unit: eV
+    si_base:
+      value: 8.39540556216e-19
+      unit: J
+    display:
+      value: 0.0008395405562159999
+      unit: fJ
+    conditions:
+      contact_metal: Pd
+- id: CLM-MAT-0461
+  topic: MAT
+  statement: The DFT calculated electron Schottky barrier of Pt on monolayer MoS2 with D3 exchange functionals
+    is 0.69 eV.
+  sources:
+  - SRC-00463
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    contact_metal: Pt
+    functional: D3
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.69
+      unit: eV
+    si_base:
+      value: 1.1055018774599999e-19
+      unit: J
+    display:
+      value: 0.00011055018774599997
+      unit: fJ
+    conditions:
+      contact_metal: Pt
+      functional: D3

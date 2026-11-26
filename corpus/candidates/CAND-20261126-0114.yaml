@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.33973v1
 doi: null
-title: 'Kolpona: An Agentic Framework with Gradient-Free Neuron Programming for RTL
-  Generation'
+title: 'Kolpona: An Agentic Framework with Gradient-Free Neuron Programming for RTL Generation'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-25'
@@ -26,6 +25,23 @@ id: CAND-20261126-0114
 harvested_date: '2026-11-26'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-26'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Overwriting non-programmed neurons for Qwen3.5-4B changes 191,952 weights.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - In 48 of these weights the new value rounds to the old one, so 191,952 weights change.
+    - The edits of Qwen3.5-4B occupy 25 neurons with 192,000 weights, listed in Appendix A.
+  tokens:
+    input: 23058
+    output: 662
+  fetched_chars: 64640

@@ -1,0 +1,108 @@
+id: SRC-00459
+title: 'GPS: Guiding Phase-Level Prefetcher Selection with Data-Driven Method'
+doi: null
+arxiv_id: 2611.33859v1
+url: https://arxiv.org/abs/2611.33859v1
+venue_id: arxiv_api
+authors:
+- name: Buqing Xu
+  affiliation: null
+  corresponding: null
+- name: Mengming Li
+  affiliation: null
+  corresponding: null
+- name: Qijun Zhang
+  affiliation: null
+  corresponding: null
+- name: Ziyan Guo
+  affiliation: null
+  corresponding: null
+- name: Zhiyao Xie
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-25'
+retrieved_date: '2026-11-26'
+access: full_text
+read_scope: Automated reading. The full PDF text (80,293 characters, 14 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.33859v1 on
+  2026-11-26. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“As shown in Figure 1, this direct substitution improves performance by 2.2% over the original
+  I-POP.”
+
+  “we evaluate a variant named I-POP (ML variant), which replaces the linear formulation in I-POP with
+  a nonlinear machine learning (ML) model (i.e., a multilayer perceptron (MLP) [17])”
+
+  “this direct substitution improves performance by 2.2% over the original I-POP.”
+
+  “We utilize gem5 [10] to evaluate GPS.”'
+method_summary: “We utilize gem5 [10] to evaluate GPS. PEBS is the intended profiling interface for real
+  deployment, whereas gem5 is our experimental platform for architectural evaluation and dataset collection.”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 24140
+    output: 2350
+  claims_accepted: 1
+  claims_rejected: 6
+  rejected:
+  - statement: GPS reduces the performance gap to the IPC-best baseline to 2.6%.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - In contrast, GPS largely overcomes these limitations and reduces the performance gap to only 2.6%.
+    - We utilize gem5 [10] to evaluate GPS.
+    - To quantify the benefit of our method, we compare existing prefetcher selection methods against
+      an IPC-best baseline
+  - statement: Alecto underperforms the IPC-best baseline by 13.6%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''As shown
+      in Figure 1, Alecto [36] and I-POP [39] underperform the IPC-'''
+    quotes:
+    - As shown in Figure 1, Alecto [36] and I-POP [39] underperform the IPC-best baseline by 13.6% and
+      14.2%, respectively, highlighting the limitations of incomplete input features and rigid mapping
+      algorithms in existing methods.
+    - We utilize gem5 [10] to evaluate GPS.
+    - Alecto [36] and I-POP [39] underperform the IPC-best baseline by 13.6% and 14.2%, respectively
+  - statement: I-POP underperforms the IPC-best baseline by 14.2%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''As shown
+      in Figure 1, Alecto [36] and I-POP [39] underperform the IPC-'''
+    quotes:
+    - As shown in Figure 1, Alecto [36] and I-POP [39] underperform the IPC-best baseline by 13.6% and
+      14.2%, respectively, highlighting the limitations of incomplete input features and rigid mapping
+      algorithms in existing methods.
+    - We utilize gem5 [10] to evaluate GPS.
+    - Alecto [36] and I-POP [39] underperform the IPC-best baseline by 13.6% and 14.2%, respectively
+  - statement: GPS outperforms I-POP in geometric-mean IPC by 12.14% on the SPEC CPU2006 benchmark suite.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''GPS outperforms
+      the state-of-the-art prefetcher selection method I-POP'''
+    quotes:
+    - GPS outperforms the state-of-the-art prefetcher selection method I-POP by 12.14%, 8.34%, and 14.17%
+      in geometric-mean IPC, respectively.
+    - We utilize gem5 [10] to evaluate GPS.
+    - We evaluate GPS on SPEC CPU2006, SPEC CPU2017, and GAP benchmark suites.
+  - statement: GPS outperforms I-POP in geometric-mean IPC by 8.34% on the SPEC CPU2017 benchmark suite.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''GPS outperforms
+      the state-of-the-art prefetcher selection method I-POP'''
+    quotes:
+    - GPS outperforms the state-of-the-art prefetcher selection method I-POP by 12.14%, 8.34%, and 14.17%
+      in geometric-mean IPC, respectively.
+    - We utilize gem5 [10] to evaluate GPS.
+    - We evaluate GPS on SPEC CPU2006, SPEC CPU2017, and GAP benchmark suites.
+  - statement: GPS outperforms I-POP in geometric-mean IPC by 14.17% on the GAP benchmark suite.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''GPS outperforms
+      the state-of-the-art prefetcher selection method I-POP'''
+    quotes:
+    - GPS outperforms the state-of-the-art prefetcher selection method I-POP by 12.14%, 8.34%, and 14.17%
+      in geometric-mean IPC, respectively.
+    - We utilize gem5 [10] to evaluate GPS.
+    - We evaluate GPS on SPEC CPU2006, SPEC CPU2017, and GAP benchmark suites.
+corrections: []

@@ -1,0 +1,87 @@
+id: SRC-00457
+title: 'From Entropy Source to Stochastic Bit-Stream: Low-Cost Converters for True-Random Stochastic Computing'
+doi: null
+arxiv_id: 2611.33686v1
+url: https://arxiv.org/abs/2611.33686v1
+venue_id: arxiv_api
+authors:
+- name: Mehran Moghadam
+  affiliation: null
+  corresponding: null
+- name: Abu Masum
+  affiliation: null
+  corresponding: null
+- name: M. Hassan Najafi
+  affiliation: null
+  corresponding: null
+- name: Sercan Aygun
+  affiliation: null
+  corresponding: null
+- name: Di Wu
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-25'
+retrieved_date: '2026-11-26'
+access: full_text
+read_scope: Automated reading. The full PDF text (55,052 characters, 9 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.33686v1 on
+  2026-11-26. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“② Counter Logic 382 1568 0.39 0.61 148”
+
+  “synthesized them with the Synopsys Design Compiler v2024.09-SP4 using the 45nm FreePDK gate library
+  [36].”
+
+  “synthesized at the same 8-bit data precision”
+
+  “We described all designs in Verilog and synthesized them with the Synopsys Design Compiler v2024.09-SP4
+  using the 45nm FreePDK gate library [36].”
+
+  “LFSR + Comparator 233 949 0.37 0.35 86.2”
+
+  “Sobol + Comparator [13] 850 1307 0.45 0.59 382”
+
+  “Sobol (FSM-based) [37] 281 720 0.36 0.26 101”
+
+  “energy of 0.02 pJ and 0.03 pJ per cycle.”'
+method_summary: “We described all designs in Verilog and synthesized them with the Synopsys Design Compiler
+  v2024.09-SP4 using the 45nm FreePDK gate library [36].”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 22437
+    output: 3126
+  claims_accepted: 6
+  claims_rejected: 2
+  rejected:
+  - statement: The block extraction generator consumes 72 µm2 of area.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The block-extraction
+      and majority-logic converters are the two smalles'''
+    quotes:
+    - The block-extraction and majority-logic converters are the two smallest designs at 72 µm2 and 61
+      µm2
+    - We described all designs in Verilog and synthesized them with the Synopsys Design Compiler v2024.09-SP4
+      using the 45nm FreePDK gate library [36].
+    - synthesized them with the Synopsys Design Compiler v2024.09-SP4 using the 45nm FreePDK gate library
+      [36].
+    - synthesized at the same 8-bit data precision
+  - statement: The majority logic generator occupies an area of 61 µm2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The block-extraction
+      and majority-logic converters are the two smalles'''
+    quotes:
+    - The block-extraction and majority-logic converters are the two smallest designs at 72 µm2 and 61
+      µm2
+    - We described all designs in Verilog and synthesized them with the Synopsys Design Compiler v2024.09-SP4
+      using the 45nm FreePDK gate library [36].
+    - synthesized them with the Synopsys Design Compiler v2024.09-SP4 using the 45nm FreePDK gate library
+      [36].
+    - synthesized at the same 8-bit data precision
+corrections: []

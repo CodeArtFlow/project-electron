@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-25.
+Topic code `ARCH`. Last reviewed 2026-11-26.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -44,6 +44,22 @@ Topic code `ARCH`. Last reviewed 2026-11-25.
   - `CLM-ARCH-0158` · process 45 nm, fclk 100 MHz, lanes 784-lane, precision INT8 · grade B · credibility unknown · simulated · as of 2026-10-23
   - sources: SRC-00230
   - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- **0.000382 mm^2** — The counter logic generator occupies an area of 382 µm2.
+  - `CLM-ARCH-0281` · process 45nm FreePDK, precision 8-bit, converter_type Counter Logic · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00457
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **0.000233 mm^2** — The LFSR + Comparator design consumes 233 µm2 of area.
+  - `CLM-ARCH-0282` · process 45nm FreePDK, precision 8-bit, converter_type LFSR + Comparator · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00457
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **0.00085 mm^2** — The comparator-based Sobol design occupies an area of 850 µm2.
+  - `CLM-ARCH-0283` · process 45nm FreePDK, precision 8-bit, converter_type Sobol + Comparator [13] · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00457
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **0.000281 mm^2** — The FSM-based Sobol design occupies an area of 281 µm2.
+  - `CLM-ARCH-0284` · process 45nm FreePDK, precision 8-bit, converter_type Sobol (FSM-based) [37] · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00457
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### energy
 
@@ -59,6 +75,16 @@ Topic code `ARCH`. Last reviewed 2026-11-25.
   - `CLM-ARCH-0207` · model Gemma-7B, macros_per_die 8 · grade B · credibility unknown · simulated · as of 2026-11-05
   - sources: SRC-00320
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **20 fJ** — The block extraction design exhibits energy of 0.02 pJ per cycle.
+  - `CLM-ARCH-0285` · process 45nm FreePDK, precision 8-bit · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00457
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0174 — see the open register
+- **30 fJ** — The majority logic design exhibits energy of 0.03 pJ per cycle.
+  - `CLM-ARCH-0286` · process 45nm FreePDK, precision 8-bit · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00457
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0174 — see the open register
 
 ### energy advantage ratio
 
@@ -721,6 +747,14 @@ Topic code `ARCH`. Last reviewed 2026-11-25.
   - `CLM-ARCH-0278` · benchmark ImageNet-1K, process 7-nm ASAP7 PDK, t_clk 2,000 ps · grade B · credibility unknown · simulated · as of 2026-11-24
   - sources: SRC-00450
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- Split-Comm achieves a 1.45x speedup for partial-prefill when N=512.
+  - `CLM-ARCH-0287` · stage partial-prefill · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00458
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- Interleaved token assignment achieves a 1.34x speedup for MCM during decoding.
+  - `CLM-ARCH-0288` · assignment_type interleaved token assignment, stage decoding · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00458
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1016,6 +1050,14 @@ Topic code `ARCH`. Last reviewed 2026-11-25.
   - `CLM-ARCH-0275` · model Kimi-Audio · grade B · credibility unknown · measured · as of 2026-11-23
   - sources: SRC-00441
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≤ 549 percent** — Split-Comm reduces KV cache memory access by up to 5.49x when N = 256 in sparse attention.
+  - `CLM-ARCH-0289` · mechanism Split-Comm · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00458
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **2.2 percent** — Replacing the linear formulation in I-POP with a multilayer perceptron improves performance by 2.2% over the original I-POP.
+  - `CLM-ARCH-0290` · variant I-POP (ML variant), baseline original I-POP · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00459
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### sensitivity advantage ratio
 
@@ -1257,9 +1299,12 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0158` — time: _unexamined; classification pending_
   - claims: CLM-ARCH-0254, CLM-ARCH-0255
   - missing data: `not yet named`
+- `CFL-0174` — energy: _unexamined; classification pending_
+  - claims: CLM-ARCH-0285, CLM-ARCH-0286
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 280
-- grades: {'B': 280}
-- distinct sources: 99
+- claims: 290
+- grades: {'B': 290}
+- distinct sources: 102

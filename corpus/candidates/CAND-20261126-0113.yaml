@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.33981v1
 doi: null
-title: 'MixMoMo: Accelerating Extra--Large MoE Inference with Mixed--Precision GPU--NPU
-  Execution on Mobile Devices'
+title: 'MixMoMo: Accelerating Extra--Large MoE Inference with Mixed--Precision GPU--NPU Execution on Mobile
+  Devices'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-25'
@@ -28,6 +28,105 @@ id: CAND-20261126-0113
 harvested_date: '2026-11-26'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-26'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: Across three MoE models and five benchmarks on two mobile platforms, MixMoMo achieves an
+      average decoding speedup of 3.72x over uniform Q4 0.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''×'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - Across three MoE models and five benchmarks on two mobile platforms, MixMoMo achieves average decoding
+      speedups of 3.72× over uniform Q4 0 and 1.53× over the strongest mixed-precision MoE baseline.
+    - 3.72× over uniform Q4 0
+    - MixMoMo achieves average decoding speedups of 3.72×
+  - statement: Across three MoE models and five benchmarks on two mobile platforms, MixMoMo achieves an
+      average decoding speedup of 1.53x over the strongest mixed-precision Mo
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''×'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit '
+    quotes:
+    - Across three MoE models and five benchmarks on two mobile platforms, MixMoMo achieves average decoding
+      speedups of 3.72× over uniform Q4 0 and 1.53× over the strongest mixed-precision MoE baseline.
+    - 1.53× over the strongest mixed-precision MoE baseline
+    - MixMoMo achieves average decoding speedups of 3.72× over uniform Q4 0 and 1.53× over the strongest
+      mixed-precision MoE baseline.
+  - statement: MixMoMo achieves an accuracy of 84.48% on the GSM8K benchmark.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''MixMoMo 84.48
+      92.00 75.87'''
+    quotes:
+    - Method GSM8K Acc. (%) ↑ HumanEval Pass@1 (%) ↑ MMLU-Pro Acc. (%) ↑
+    - MixMoMo 84.48 92.00 75.87
+    - Method GSM8K Acc. (%) ↑ HumanEval Pass@1 (%) ↑ MMLU-Pro Acc. (%) ↑ FP16 84.53 92.12 76.35 Uniform
+      Q4 0 80.46 87.94 71.48 EdgeMoE 81.45 88.43 72.65 MoE-APEX 82.23 90.93 72.23 DyMoE 82.98 90.72 73.46
+      MxMoE 83.19 91.06 74.92 MixMoMo 84.48 92.0
+    - Model accuracy is assessed on Qwen3-Next-80B-A3B using GSM8K and MMLU-Pro accuracy and HumanEval
+      Pass@1.
+  - statement: MixMoMo achieves a Pass@1 score of 92.00% on the HumanEval benchmark.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''MixMoMo 84.48
+      92.00 75.87'''
+    quotes:
+    - Method GSM8K Acc. (%) ↑ HumanEval Pass@1 (%) ↑ MMLU-Pro Acc. (%) ↑
+    - MixMoMo 84.48 92.00 75.87
+    - Method GSM8K Acc. (%) ↑ HumanEval Pass@1 (%) ↑ MMLU-Pro Acc. (%) ↑ FP16 84.53 92.12 76.35 Uniform
+      Q4 0 80.46 87.94 71.48 EdgeMoE 81.45 88.43 72.65 MoE-APEX 82.23 90.93 72.23 DyMoE 82.98 90.72 73.46
+      MxMoE 83.19 91.06 74.92 MixMoMo 84.48 92.0
+    - Model accuracy is assessed on Qwen3-Next-80B-A3B using GSM8K and MMLU-Pro accuracy and HumanEval
+      Pass@1.
+  - statement: MixMoMo achieves an accuracy of 75.87% on the MMLU-Pro benchmark.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''MixMoMo 84.48
+      92.00 75.87'''
+    quotes:
+    - Method GSM8K Acc. (%) ↑ HumanEval Pass@1 (%) ↑ MMLU-Pro Acc. (%) ↑
+    - MixMoMo 84.48 92.00 75.87
+    - Method GSM8K Acc. (%) ↑ HumanEval Pass@1 (%) ↑ MMLU-Pro Acc. (%) ↑ FP16 84.53 92.12 76.35 Uniform
+      Q4 0 80.46 87.94 71.48 EdgeMoE 81.45 88.43 72.65 MoE-APEX 82.23 90.93 72.23 DyMoE 82.98 90.72 73.46
+      MxMoE 83.19 91.06 74.92 MixMoMo 84.48 92.0
+    - Model accuracy is assessed on Qwen3-Next-80B-A3B using GSM8K and MMLU-Pro accuracy and HumanEval
+      Pass@1.
+  - statement: For Qwen3-Next-80B-A3B, MixMoMo achieves an average decoding speedup of 3.61x over Uniform
+      Q4 0.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The average
+      speedups over Uniform Q4 0 are 3.61×, 4.06×, and 3.49× for'''
+    quotes:
+    - The average speedups over Uniform Q4 0 are 3.61×, 4.06×, and 3.49× for Qwen3-Next-80B-A3B, Kimi-Linear-48B-A3B,
+      and Qwen3.6-35B-A3B, respectively.
+    - for Qwen3-Next-80B-A3B, Kimi-Linear-48B-A3B, and Qwen3.6-35B-A3B, respectively.
+    - The average speedups over Uniform Q4 0 are 3.61×, 4.06×, and 3.49×
+    - We compare the TPOT of MixMoMo against Uniform Q4 0 and existing mixed-precision baselines across
+      three MoE models and five benchmarks on both Snapdragon platforms.
+  - statement: For Kimi-Linear-48B-A3B, MixMoMo achieves an average decoding speedup of 4.06x over Uniform
+      Q4 0.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The average
+      speedups over Uniform Q4 0 are 3.61×, 4.06×, and 3.49× for'''
+    quotes:
+    - The average speedups over Uniform Q4 0 are 3.61×, 4.06×, and 3.49× for Qwen3-Next-80B-A3B, Kimi-Linear-48B-A3B,
+      and Qwen3.6-35B-A3B, respectively.
+    - for Qwen3-Next-80B-A3B, Kimi-Linear-48B-A3B, and Qwen3.6-35B-A3B, respectively.
+    - The average speedups over Uniform Q4 0 are 3.61×, 4.06×, and 3.49×
+    - We compare the TPOT of MixMoMo against Uniform Q4 0 and existing mixed-precision baselines across
+      three MoE models and five benchmarks on both Snapdragon platforms.
+  - statement: For Qwen3.6-35B-A3B, MixMoMo achieves an average decoding speedup of 3.49x over Uniform
+      Q4 0.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The average
+      speedups over Uniform Q4 0 are 3.61×, 4.06×, and 3.49× for'''
+    quotes:
+    - The average speedups over Uniform Q4 0 are 3.61×, 4.06×, and 3.49× for Qwen3-Next-80B-A3B, Kimi-Linear-48B-A3B,
+      and Qwen3.6-35B-A3B, respectively.
+    - for Qwen3-Next-80B-A3B, Kimi-Linear-48B-A3B, and Qwen3.6-35B-A3B, respectively.
+    - The average speedups over Uniform Q4 0 are 3.61×, 4.06×, and 3.49×
+    - We compare the TPOT of MixMoMo against Uniform Q4 0 and existing mixed-precision baselines across
+      three MoE models and five benchmarks on both Snapdragon platforms.
+  tokens:
+    input: 14988
+    output: 4129
+  fetched_chars: 45503

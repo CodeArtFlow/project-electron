@@ -1,0 +1,62 @@
+id: SRC-00458
+title: 'L2C2: Enhancing Large-scale Chiplets for Agent Long-Context LLM Inference with Sparse and Distributed
+  Attention'
+doi: null
+arxiv_id: 2611.33691v1
+url: https://arxiv.org/abs/2611.33691v1
+venue_id: arxiv_api
+authors:
+- name: Kangbo Bai
+  affiliation: null
+  corresponding: null
+- name: Zhonghua Mu
+  affiliation: null
+  corresponding: null
+- name: Hongze Zhou
+  affiliation: null
+  corresponding: null
+- name: Tianyu Jia
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-25'
+retrieved_date: '2026-11-26'
+access: full_text
+read_scope: Automated reading. The full PDF text (51,975 characters, 9 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.33691v1 on
+  2026-11-26. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“When N = 512—which is near the average partial-prefill length in practical applications—it
+  achieves a 1.45× speedup.”
+
+  “average partial-prefill length”
+
+  “It can be observed that interleaved token assignment achieves a significant 1.34× speedup for MCM.”
+
+  “interleaved token assignment achieves a significant 1.34× speedup for MCM.”
+
+  “Fig. 14(b) illustrates the end-to-end decoding performance improvement”
+
+  “It can be seen that in SpAt, Split-Comm reduces KV cache memory access by up to a notable 5.49× when
+  N = 256”
+
+  “Split-Comm reduces KV cache memory access”'
+method_summary: “We evaluate the performance using the distributed system simulator ASTRA-sim [23], which
+  integrates the NS3 [18] network simulator. We also use Ramulator 2.0 [10] to model memory access, and
+  Timeloop [19] for tiling optimization.”
+limitations: No limitation statement was found in the text read.
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16037
+    output: 1059
+  claims_accepted: 3
+  claims_rejected: 0
+  rejected: []
+corrections: []

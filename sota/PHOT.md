@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-25.
+Topic code `PHOT`. Last reviewed 2026-11-26.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -759,6 +759,10 @@ Topic code `PHOT`. Last reviewed 2026-11-25.
   - `CLM-PHOT-0073` · material ITO film · grade B · credibility unknown · simulated · as of 2026-10-14
   - sources: SRC-00144
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈1.5e+11 ns** — Fitting the relaxing component after 1000 pulses yields an effective relaxation time of approximately 2.5 min.
+  - `CLM-PHOT-0202` · pulse_count 1000 pulses, pulse_voltage +6 V, pulse_width 250 ms, pulse_frequency 2 Hz · grade B · credibility unknown · measured · as of 2026-11-25
+  - sources: SRC-00464
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
 
 ### wavelength
 
@@ -905,6 +909,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 201
-- grades: {'B': 194, 'A': 7}
-- distinct sources: 68
+- claims: 202
+- grades: {'B': 195, 'A': 7}
+- distinct sources: 69

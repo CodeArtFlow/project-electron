@@ -1,0 +1,129 @@
+id: SRC-00461
+title: 'Phono3GPU: GPU-Accelerated Linear Tetrahedron Integration for Phonon Thermal Transport'
+doi: null
+arxiv_id: 2611.33912v1
+url: https://arxiv.org/abs/2611.33912v1
+venue_id: arxiv_api
+authors:
+- name: Jinhyeong Jo
+  affiliation: null
+  corresponding: null
+- name: Sungwoo Kang
+  affiliation: null
+  corresponding: null
+- name: Byungju Lee
+  affiliation: null
+  corresponding: null
+- name: Jung-Hoon Lee
+  affiliation: null
+  corresponding: null
+- name: Seugchul Kim
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-25'
+retrieved_date: '2026-11-26'
+access: full_text
+read_scope: Automated reading. The full PDF text (87,126 characters, 38 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.33912v1 on
+  2026-11-26. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“and by 2 to 6 times relative to a recent GPU plug-in for phono3py.”
+
+  “RTX PRO 6000 Blackwell for the same calculations.”
+
+  “GPU plug-in for phono3py [19]”
+
+  “Phono3GPU is implemented in PyTorch [20], accepts force constants in phono3py format, and generates
+  output files compatible with phono3py.”'
+method_summary: “Phono3GPU is implemented in PyTorch [20], accepts force constants in phono3py format,
+  and generates output files compatible with phono3py.”
+limitations: “The present work does not include a direct comparison with other methods at low temperatures,
+  which remains to be examined.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 27706
+    output: 3059
+  claims_accepted: 1
+  claims_rejected: 7
+  rejected:
+  - statement: Phono3GPU running on an RTX PRO 6000 Blackwell achieves a maximum speedup of 41 times for
+      total wall time compared to a 32-thread CPU reference implementation a
+    reason: the statement contains the number 32, which none of its quotes contain
+    quotes:
+    - Across benchmark crystals, Phono3GPU accelerates total calculations by up to 41 times relative to
+      a CPU implementation, with larger gains for complex unit cells
+    - This trend became more pronounced on the RTX PRO 6000 Blackwell, where the corresponding speedups
+      reached 2.7 to 4.6, 17 to 41, and 34 to 37 times, respectively (Fig. 2b).
+    - Phono3GPU is implemented in PyTorch [20], accepts force constants in phono3py format, and generates
+      output files compatible with phono3py.
+    - RTX PRO 6000 Blackwell
+  - statement: For perfect Si, the thermal conductivity calculated at 300 K with natural isotope scattering
+      using the Prophet potential is 124.2 W m^-1K^-1.
+    reason: the statement contains the number 300, which none of its quotes contain
+    quotes:
+    - The thermal conductivity of perfect Si was calculated to be 124.2 W m−1K−1, decreasing to 8.2 W
+      m−1K−1 with a single vacancy and 58.1 W m−1K−1 with one Ge substitution.
+    - Phono3GPU is implemented in PyTorch [20], accepts force constants in phono3py format, and generates
+      output files compatible with phono3py.
+    - perfect Si
+    - at 300 K
+  - statement: The overall total thermal conductivity of a 64-site Si supercell with one vacancy at 300
+      K with natural isotopes is 8.2 W m^-1K^-1.
+    reason: the statement contains the number 64, which none of its quotes contain
+    quotes:
+    - The thermal conductivity of perfect Si was calculated to be 124.2 W m−1K−1, decreasing to 8.2 W
+      m−1K−1 with a single vacancy and 58.1 W m−1K−1 with one Ge substitution.
+    - Phono3GPU is implemented in PyTorch [20], accepts force constants in phono3py format, and generates
+      output files compatible with phono3py.
+    - with a single vacancy
+    - at 300 K
+  - statement: The overall total thermal conductivity of a 64-site Si supercell with one Ge substitution
+      at 300 K with natural isotopes is 58.1 W m^-1K^-1.
+    reason: the statement contains the number 64, which none of its quotes contain
+    quotes:
+    - The thermal conductivity of perfect Si was calculated to be 124.2 W m−1K−1, decreasing to 8.2 W
+      m−1K−1 with a single vacancy and 58.1 W m−1K−1 with one Ge substitution.
+    - Phono3GPU is implemented in PyTorch [20], accepts force constants in phono3py format, and generates
+      output files compatible with phono3py.
+    - and 58.1 W m−1K−1 with one Ge substitution.
+    - at 300 K
+  - statement: The calculated total thermal conductivity of a 312-atom Si/diamond (001) superlattice parallel
+      to the interfaces at 300 K is 13.5 W m^-1K−1.
+    reason: the statement contains the number 312, which none of its quotes contain
+    quotes:
+    - For the Si/diamond superlattice, the thermal conductivity at 300 K was 13.5 W m−1K−1 parallel to
+      the interfaces and only 0.40 W m−1K−1 across them.
+    - Phono3GPU is implemented in PyTorch [20], accepts force constants in phono3py format, and generates
+      output files compatible with phono3py.
+    - Si/diamond superlattice
+    - at 300 K
+  - statement: The total thermal conductivity across the interfaces of a 312-atom Si/diamond (001) superlattice
+      at 300 K is 0.40 W m^-1K^-1.
+    reason: the statement contains the number 312, which none of its quotes contain
+    quotes:
+    - For the Si/diamond superlattice, the thermal conductivity at 300 K was 13.5 W m−1K−1 parallel to
+      the interfaces and only 0.40 W m−1K−1 across them.
+    - Phono3GPU is implemented in PyTorch [20], accepts force constants in phono3py format, and generates
+      output files compatible with phono3py.
+    - Si/diamond superlattice
+    - at 300 K
+  - statement: The bulk diamond thermal conductivity at 300 K with natural isotopes calculated using the
+      Prophet potential within RTA is 1755 W m^-1K^-1.
+    reason: 'unit conversion refused: thermal_conductivity: could not parse 1755.0 ''W m−1K−1'': ''m−1''
+      is not defined in the unit registry'
+    quotes:
+    - For reference, the same potential gives a bulk diamond conductivity of 1755 W m−1K−1 within the
+      RTA and 2241 W m−1K−1 from the direct solution of the linearised BTE at 300 K with natural isotopes.
+    - Phono3GPU is implemented in PyTorch [20], accepts force constants in phono3py format, and generates
+      output files compatible with phono3py.
+    - bulk diamond
+    - within the RTA
+corrections: []

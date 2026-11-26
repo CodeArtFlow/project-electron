@@ -4,9 +4,9 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**32365 pair(s)** as of 2026-11-25.
+**33611 pair(s)** as of 2026-11-26.
 
-## `area_die` (21 pair(s))
+## `area_die` (37 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -20,11 +20,27 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-ARCH-0147` = 3.97 mm^2 | `CLM-MAT-0418` = 4.841e-13 mm^2 | 100% | component=AxCore, process=NanGate 15 nm technology, fclk=1 GHz, activation_format=FP16 | grain_boundary_plane=Σ5(310)[001], material=SrTiO3 |
 | `CLM-ARCH-0148` = 4.68 mm^2 | `CLM-MAT-0418` = 4.841e-13 mm^2 | 100% | component=FIGLUT, process=NanGate 15 nm technology, fclk=1 GHz, activation_format=FP16 | grain_boundary_plane=Σ5(310)[001], material=SrTiO3 |
 | `CLM-ARCH-0158` = 0.008701 mm^2 | `CLM-MAT-0418` = 4.841e-13 mm^2 | 100% | process=45 nm, fclk=100 MHz, lanes=784-lane, precision=INT8 | grain_boundary_plane=Σ5(310)[001], material=SrTiO3 |
+| `CLM-ARCH-0281` = 0.000382 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 100% | process=45nm FreePDK, precision=8-bit, converter_type=Counter Logic | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
+| `CLM-ARCH-0281` = 0.000382 mm^2 | `CLM-MAT-0418` = 4.841e-13 mm^2 | 100% | process=45nm FreePDK, precision=8-bit, converter_type=Counter Logic | grain_boundary_plane=Σ5(310)[001], material=SrTiO3 |
+| `CLM-ARCH-0282` = 0.000233 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 100% | process=45nm FreePDK, precision=8-bit, converter_type=LFSR + Comparator | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
+| `CLM-ARCH-0282` = 0.000233 mm^2 | `CLM-MAT-0418` = 4.841e-13 mm^2 | 100% | process=45nm FreePDK, precision=8-bit, converter_type=LFSR + Comparator | grain_boundary_plane=Σ5(310)[001], material=SrTiO3 |
+| `CLM-ARCH-0283` = 0.00085 mm^2 | `CLM-MAT-0418` = 4.841e-13 mm^2 | 100% | process=45nm FreePDK, precision=8-bit, converter_type=Sobol + Comparator [13] | grain_boundary_plane=Σ5(310)[001], material=SrTiO3 |
+| `CLM-ARCH-0284` = 0.000281 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 100% | process=45nm FreePDK, precision=8-bit, converter_type=Sobol (FSM-based) [37] | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
+| `CLM-ARCH-0284` = 0.000281 mm^2 | `CLM-MAT-0418` = 4.841e-13 mm^2 | 100% | process=45nm FreePDK, precision=8-bit, converter_type=Sobol (FSM-based) [37] | grain_boundary_plane=Σ5(310)[001], material=SrTiO3 |
 | `CLM-DEV-0071` = 8 mm^2 | `CLM-MAT-0418` = 4.841e-13 mm^2 | 100% | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) | grain_boundary_plane=Σ5(310)[001], material=SrTiO3 |
+| `CLM-ARCH-0283` = 0.00085 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 100% | process=45nm FreePDK, precision=8-bit, converter_type=Sobol + Comparator [13] | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
 | `CLM-ARCH-0158` = 0.008701 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 100% | process=45 nm, fclk=100 MHz, lanes=784-lane, precision=INT8 | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
+| `CLM-ARCH-0113` = 0.134 mm^2 | `CLM-ARCH-0282` = 0.000233 mm^2 | 100% | component=Row Migration Table, location=DRAM chip | process=45nm FreePDK, precision=8-bit, converter_type=LFSR + Comparator |
+| `CLM-ARCH-0113` = 0.134 mm^2 | `CLM-ARCH-0284` = 0.000281 mm^2 | 100% | component=Row Migration Table, location=DRAM chip | process=45nm FreePDK, precision=8-bit, converter_type=Sobol (FSM-based) [37] |
+| `CLM-ARCH-0113` = 0.134 mm^2 | `CLM-ARCH-0281` = 0.000382 mm^2 | 100% | component=Row Migration Table, location=DRAM chip | process=45nm FreePDK, precision=8-bit, converter_type=Counter Logic |
 | `CLM-ARCH-0112` = 0.032 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 100% | component=PIM Chunk List, location=DRAM chip | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
+| `CLM-ARCH-0113` = 0.134 mm^2 | `CLM-ARCH-0283` = 0.00085 mm^2 | 99% | component=Row Migration Table, location=DRAM chip | process=45nm FreePDK, precision=8-bit, converter_type=Sobol + Comparator [13] |
+| `CLM-ARCH-0112` = 0.032 mm^2 | `CLM-ARCH-0282` = 0.000233 mm^2 | 99% | component=PIM Chunk List, location=DRAM chip | process=45nm FreePDK, precision=8-bit, converter_type=LFSR + Comparator |
+| `CLM-ARCH-0112` = 0.032 mm^2 | `CLM-ARCH-0284` = 0.000281 mm^2 | 99% | component=PIM Chunk List, location=DRAM chip | process=45nm FreePDK, precision=8-bit, converter_type=Sobol (FSM-based) [37] |
+| `CLM-ARCH-0112` = 0.032 mm^2 | `CLM-ARCH-0281` = 0.000382 mm^2 | 99% | component=PIM Chunk List, location=DRAM chip | process=45nm FreePDK, precision=8-bit, converter_type=Counter Logic |
 | `CLM-ARCH-0113` = 0.134 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 98% | component=Row Migration Table, location=DRAM chip | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
 | `CLM-ARCH-0111` = 0.151 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 98% | component=Rank Chunk List, location=RCD, process=TSMC 90nm, frequency=2.4GHz | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
+| `CLM-ARCH-0112` = 0.032 mm^2 | `CLM-ARCH-0283` = 0.00085 mm^2 | 97% | component=PIM Chunk List, location=DRAM chip | process=45nm FreePDK, precision=8-bit, converter_type=Sobol + Comparator [13] |
 | `CLM-ARCH-0113` = 0.134 mm^2 | `CLM-ARCH-0158` = 0.008701 mm^2 | 94% | component=Row Migration Table, location=DRAM chip | process=45 nm, fclk=100 MHz, lanes=784-lane, precision=INT8 |
 | `CLM-ARCH-0050` = 0.81 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 90% | process=TSMC 16nm FinFET technology, component=core area | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
 | `CLM-ARCH-0112` = 0.032 mm^2 | `CLM-ARCH-0158` = 0.008701 mm^2 | 73% | component=PIM Chunk List, location=DRAM chip | process=45 nm, fclk=100 MHz, lanes=784-lane, precision=INT8 |
@@ -79,7 +95,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 
 _and 6 more_
 
-## `energy` (2288 pair(s))
+## `energy` (3135 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -91,10 +107,14 @@ _and 6 more_
 | `CLM-MAT-0306` = 89.9 meV | `CLM-MAT-0409` = -91.5 meV | 198% | polarization_state=P↑ | direction=In-plane |
 | `CLM-MAT-0085` = 53.3 meV | `CLM-MAT-0405` = -51.9 meV | 197% | material=CrSiCN4, method=PBE+SOC | direction=In-plane |
 | `CLM-MAT-0048` = 185 meV | `CLM-MEM-0040` = -180 meV | 197% | material=LiFePO4 | method=DFT |
+| `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0460` = 5240 meV | 197% | material=MLBP | contact_metal=Pd |
 | `CLM-MAT-0277` = 2789 meV | `CLM-MAT-0414` = -2700 meV | 197% | desorption_state=molecular | system=graphene |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0406` = -61.8 meV | 197% | mechanism=surface polar phonon, substrate=SiO2 | direction=In-plane |
+| `CLM-MAT-0078` = 4810 meV | `CLM-MAT-0453` = -4640 meV | 196% | defect_complex=VAl(ON)3, model=DFT | metric=mean campaign-best binding energy, evaluation_method=pretrained MLIP with dispersion corrections |
 | `CLM-MAT-0291` = 2800 meV | `CLM-MAT-0414` = -2700 meV | 196% | trap_type=isolated bi-Ed | system=graphene |
 | `CLM-MAT-0078` = 4810 meV | `CLM-MAT-0172` = -5090 meV | 194% | defect_complex=VAl(ON)3, model=DFT | material=MLBP |
+| `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0453` = -4640 meV | 193% | defect_complex=VAl(ON)3 | metric=mean campaign-best binding energy, evaluation_method=pretrained MLIP with dispersion corrections |
+| `CLM-MAT-0456` = 195 meV | `CLM-MEM-0040` = -180 meV | 192% | ligand_class=halogen-free phosphonate ligands, transition=alkyl to alkenyl, evaluation_method=MLIP-calculated | method=DFT |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0407` = -65.9 meV | 191% | mechanism=surface polar phonon, substrate=SiO2 | direction=In-plane |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0331` = 5630 meV | 190% | material=MLBP | phase=m-phase, temperature=300 K |
 | `CLM-MAT-0276` = 2994 meV | `CLM-MAT-0414` = -2700 meV | 190% | desorption_state=molecular | system=graphene |
@@ -105,26 +125,22 @@ _and 6 more_
 | `CLM-MAT-0050` = 102 meV | `CLM-MAT-0409` = -91.5 meV | 190% | material=Li6PS5Cl | direction=In-plane |
 | `CLM-MAT-0294` = 1120 meV | `CLM-MAT-0413` = -1000 meV | 189% | fit_function=Eq. ( 13), experimental_data_source=Ref. [ 6] | system=square lattice |
 | `CLM-MAT-0410` = -20.27 meV | `CLM-PHOT-0171` = 18 meV | 189% | direction=Out-of-plane | doping_duration=1.5 min |
+| `CLM-MAT-0453` = -4640 meV | `CLM-MAT-0460` = 5240 meV | 189% | metric=mean campaign-best binding energy, evaluation_method=pretrained MLIP with dispersion corrections | contact_metal=Pd |
 | `CLM-MAT-0408` = -15.65 meV | `CLM-PHOT-0171` = 18 meV | 187% | direction=Out-of-plane | doping_duration=1.5 min |
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0405` = -51.9 meV | 187% | mechanism=surface polar phonon, substrate=SiO2 | direction=In-plane |
+| `CLM-MAT-0290` = 3000 meV | `CLM-MAT-0455` = -3460 meV | 187% | trap_type=isolated bi-Si3 | modification=Opening the cyclohexane ring of cyclohexanesulfonic acid, evaluation_method=pretrained MLIP with dispersion corrections |
+| `CLM-MAT-0276` = 2994 meV | `CLM-MAT-0455` = -3460 meV | 187% | desorption_state=molecular | modification=Opening the cyclohexane ring of cyclohexanesulfonic acid, evaluation_method=pretrained MLIP with dispersion corrections |
 | `CLM-MAT-0085` = 53.3 meV | `CLM-MAT-0406` = -61.8 meV | 186% | material=CrSiCN4, method=PBE+SOC | direction=In-plane |
 | `CLM-MAT-0394` = 1160 meV | `CLM-MAT-0413` = -1000 meV | 186% | functional=PBE | system=square lattice |
 | `CLM-MAT-0172` = -5090 meV | `CLM-MAT-0274` = 5922 meV | 186% | material=MLBP | desorption_state=atomic |
 | `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0172` = -5090 meV | 185% | defect_complex=VAl(ON)3 | material=MLBP |
 | `CLM-MAT-0086` = 52.4 meV | `CLM-MAT-0406` = -61.8 meV | 185% | material=CrGeCN4, method=PBE+SOC | direction=In-plane |
-| `CLM-MAT-0104` = 220 meV | `CLM-MEM-0040` = -180 meV | 182% | measurement=RIXS, absorption_edge=Fe L3 edge | method=DFT |
-| `CLM-MAT-0085` = 53.3 meV | `CLM-MAT-0407` = -65.9 meV | 181% | material=CrSiCN4, method=PBE+SOC | direction=In-plane |
-| `CLM-MAT-0086` = 52.4 meV | `CLM-MAT-0407` = -65.9 meV | 180% | material=CrGeCN4, method=PBE+SOC | direction=In-plane |
-| `CLM-MAT-0113` = 15.9 meV | `CLM-MAT-0410` = -20.27 meV | 178% | method=three-band nearest-neighbor exciton-geometric calculation | direction=Out-of-plane |
-| `CLM-MAT-0408` = -15.65 meV | `CLM-MAT-0443` = 12 meV | 177% | direction=Out-of-plane | model=bulk model |
-| `CLM-MAT-0329` = 1310 meV | `CLM-MAT-0413` = -1000 meV | 176% | kekule_distortion_strength=0.3 | system=square lattice |
-| `CLM-MAT-0016` = 2020 meV | `CLM-MAT-0414` = -2700 meV | 175% | synthesis_condition=Nitrogen-rich | system=graphene |
-| `CLM-MAT-0013` = 1340 meV | `CLM-MAT-0413` = -1000 meV | 175% | synthesis_condition=Nitrogen-rich | system=square lattice |
-| `CLM-MAT-0327` = 740 meV | `CLM-MAT-0413` = -1000 meV | 174% | kekule_distortion_strength=0.1 | system=square lattice |
-| `CLM-MAT-0015` = 1980 meV | `CLM-MAT-0414` = -2700 meV | 173% | synthesis_condition=Nitrogen-rich | system=graphene |
-| `CLM-MAT-0306` = 89.9 meV | `CLM-MAT-0407` = -65.9 meV | 173% | polarization_state=P↑ | direction=In-plane |
+| `CLM-MAT-0290` = 3000 meV | `CLM-MAT-0452` = -3590 meV | 184% | trap_type=isolated bi-Si3 | metric=mean campaign-best binding energy, evaluation_method=pretrained MLIP with dispersion corrections |
+| `CLM-MAT-0276` = 2994 meV | `CLM-MAT-0452` = -3590 meV | 183% | desorption_state=molecular | metric=mean campaign-best binding energy, evaluation_method=pretrained MLIP with dispersion corrections |
+| `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0452` = -3590 meV | 183% | defect_complex=VAl(ON)3 | metric=mean campaign-best binding energy, evaluation_method=pretrained MLIP with dispersion corrections |
+| `CLM-MAT-0331` = 5630 meV | `CLM-MAT-0453` = -4640 meV | 182% | phase=m-phase, temperature=300 K | metric=mean campaign-best binding energy, evaluation_method=pretrained MLIP with dispersion corrections |
 
-_and 2248 more_
+_and 3095 more_
 
 ## `energy_advantage_ratio` (19 pair(s))
 
@@ -197,7 +213,7 @@ _and 2248 more_
 
 _and 1171 more_
 
-## `length_device` (7074 pair(s))
+## `length_device` (7198 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -242,7 +258,7 @@ _and 1171 more_
 | `CLM-DEV-0093` = 502.3 nm | `CLM-MAT-0140` = 0.005 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
 | `CLM-DEV-0093` = 502.3 nm | `CLM-PHOT-0057` = 0.024 nm | 100% | cell_size=1 µm | measurement_duration=exceeding 15.5 hours |
 
-_and 7034 more_
+_and 7158 more_
 
 ## `power` (570 pair(s))
 
@@ -303,7 +319,7 @@ _and 530 more_
 |---|---|---|---|---|
 | `CLM-DEV-0064` = 6e-06 torr | `CLM-MAT-0296` = 3.75e+04 torr | 100% | temperature=room temperature | measurement=Tensile testing |
 
-## `relative_deviation` (15108 pair(s))
+## `relative_deviation` (15267 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -348,7 +364,7 @@ _and 530 more_
 | `CLM-EDA-0043` = 88.1 percent | `CLM-MAT-0111` = -60 percent | 168% | design=AES | sample=B1-1 |
 | `CLM-ARCH-0101` = 89.4 percent | `CLM-MAT-0111` = -60 percent | 167% | correction_type=uncorrected | sample=B1-1 |
 
-_and 15068 more_
+_and 15227 more_
 
 ## `resistance` (5 pair(s))
 
@@ -483,7 +499,7 @@ _and 12 more_
 |---|---|---|---|---|
 | `CLM-ARCH-0280` = 6.48e+10 wph | `CLM-PHOT-0027` = 8.64e+15 wph | 100% | data_type=metric packets | modulation_format=60-Gbaud PAM4, link_type=single-link WDM transmission |
 
-## `time` (4791 pair(s))
+## `time` (4891 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -528,7 +544,7 @@ _and 12 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0127` = 0.0003 ns | 100% | device_type=FTJ, architecture=Naive | feature=XA |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0170` = 0.002 ns | 100% | device_type=FTJ, architecture=Naive | state=bright exciton |
 
-_and 4751 more_
+_and 4851 more_
 
 ## `voltage` (134 pair(s))
 

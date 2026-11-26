@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.33746v1
 doi: null
-title: Carrier relaxation confines the Bogdanov--Takens degeneracy of an optically
-  injected semiconductor laser
+title: Carrier relaxation confines the Bogdanov--Takens degeneracy of an optically injected semiconductor
+  laser
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-25'
@@ -24,6 +24,44 @@ id: CAND-20261126-0134
 harvested_date: '2026-11-26'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-26'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At every Bogdanov–Takens point, no BT point exists for relaxation damping Γ < 1/4 regardless
+      of B, α, K, and ω.
+    reason: the value 0.25 does not appear in any of the claim's quotes
+    quotes:
+    - so that no BT point exists for Γ < 1/4, whatever B, the linewidth enhancement factor, the injection
+      strength and the detuning;
+    - Theorem 2 (Relaxation barrier). Let B ≥ 0 and Γ ≥ B/2. At every locked state of (1), e2 ≥ 1 − 16
+      Γ2. (20) Moreover, for every B ≥ 0 (without restriction on Γ), α, K and ω, a BT point requires Γ
+      ≥ 1 4 . (21)
+    - no BT point exists for Γ < 1/4
+  - statement: For B = 0, Γ = 1/2, α = 2, the defined BT1 point is located at inversion n* = 0.53753419530643666.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''BT1'''
+    quotes:
+    - BT1
+    - n∗ 0.53753419530643666
+    - 'Table 1: The two BT points at B = 0, Γ = 1 2 , α = 2. All quantities were computed with 60-digit
+      arithmetic from the defining equations;'
+    - B = 0
+  - statement: For B = 0, Γ = 1/2, α = 2, the defined BT2 point occurs at an injection strength K* = 0.34875000481079985.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''BT2'''
+    quotes:
+    - BT2
+    - K∗ 0.34875000481079985
+    - 'Table 1: The two BT points at B = 0, Γ = 1 2 , α = 2. All quantities were computed with 60-digit
+      arithmetic from the defining equations;'
+    - B = 0
+  tokens:
+    input: 25581
+    output: 1367
+  fetched_chars: 66965

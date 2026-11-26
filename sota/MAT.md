@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-25.
+Topic code `MAT`. Last reviewed 2026-11-26.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -274,6 +274,52 @@ Topic code `MAT`. Last reviewed 2026-11-25.
   - `CLM-MAT-0449` · carrier_type electron · grade B · credibility unknown · measured · as of 2026-11-24
   - sources: SRC-00453
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **-0.000575181 fJ** — PerovAgent achieved a mean campaign-best binding energy of -3.59 eV after the initial iteration.
+  - `CLM-MAT-0452` · metric mean campaign-best binding energy, evaluation_method pretrained MLIP with dispersion corrections · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00462
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0175 — see the open register
+- **-0.00074341 fJ** — PerovAgent reached a mean campaign-best binding energy of -4.64 eV near the end of the search across ten independent campaigns.
+  - `CLM-MAT-0453` · metric mean campaign-best binding energy, evaluation_method pretrained MLIP with dispersion corrections · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00462
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0175, CFL-0176 — see the open register
+- **0.00012497 fJ** — The multi-step modification lineages achieved a median binding-energy improvement of 0.78 eV from the initial candidate to the final winner.
+  - `CLM-MAT-0454` · metric median binding-energy improvement, comparison from the initial candidate to the final winner, evaluation_method pretrained MLIP with dispersion corrections · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00462
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0177 — see the open register
+- **-0.000554353 fJ** — Opening the cyclohexane ring of cyclohexanesulfonic acid strengthened ligand binding from -3.13 eV to -3.46 eV.
+  - `CLM-MAT-0455` · modification Opening the cyclohexane ring of cyclohexanesulfonic acid, evaluation_method pretrained MLIP with dispersion corrections · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00462
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0176, CFL-0177 — see the open register
+- **3.12424e-05 fJ** — Across halogen-free phosphonate ligands, the mean binding-energy improvement was 0.195 eV from alkyl to alkenyl linkages adjacent to phosphorus.
+  - `CLM-MAT-0456` · ligand_class halogen-free phosphonate ligands, transition alkyl to alkenyl, evaluation_method MLIP-calculated · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00462
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **9.61306e-07 fJ** — The STS measured electron Schottky barrier of Bi on monolayer MoS2 is 0.006 eV.
+  - `CLM-MAT-0457` · contact_metal Bi, material monolayer MoS2 · grade B · credibility unknown · measured · as of 2026-11-25
+  - sources: SRC-00463
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **9.29262e-05 fJ** — The STS measured electron Schottky barrier of Au on monolayer MoS2 is 0.58 eV.
+  - `CLM-MAT-0458` · contact_metal Au, material monolayer MoS2 · grade B · credibility unknown · measured · as of 2026-11-25
+  - sources: SRC-00463
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **0.000123368 fJ** — The STS measured electron Schottky barrier of Pd on monolayer MoS2 is 0.77 eV.
+  - `CLM-MAT-0459` · contact_metal Pd, material monolayer MoS2 · grade B · credibility unknown · measured · as of 2026-11-25
+  - sources: SRC-00463
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0178 — see the open register
+- **0.000839541 fJ** — The UPS measured work function of Pd on monolayer WSe2 is 5.24 eV.
+  - `CLM-MAT-0460` · contact_metal Pd · grade B · credibility unknown · measured · as of 2026-11-25
+  - sources: SRC-00463
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0178 — see the open register
+- **0.00011055 fJ** — The DFT calculated electron Schottky barrier of Pt on monolayer MoS2 with D3 exchange functionals is 0.69 eV.
+  - `CLM-MAT-0461` · contact_metal Pt, functional D3 · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00463
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### frequency
 
@@ -578,6 +624,10 @@ Topic code `MAT`. Last reviewed 2026-11-25.
 - **15900 nm** — The investigated MAPbI3 single crystal has a thickness of 15.9 µm.
   - `CLM-MAT-0446` · material MAPbI3 · grade B · credibility unknown · measured · as of 2026-11-24
   - sources: SRC-00453
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.43 nm** — The RMS surface roughness of the as-grown heterostructure is 0.43 nm.
+  - `CLM-MAT-0450` · measurement_area 3 × 3 μm² · grade B · credibility unknown · measured · as of 2026-11-25
+  - sources: SRC-00460
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
@@ -1421,6 +1471,10 @@ Topic code `MAT`. Last reviewed 2026-11-25.
   - `CLM-MAT-0448` · carrier_type hole, temperature 3.5 K, probe_energy 1.622 eV · grade B · credibility unknown · measured · as of 2026-11-24
   - sources: SRC-00453
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- Phono3GPU on the RTX PRO 6000 Blackwell achieves total wall times that are 2 to 6 times shorter compared to a GPU plug-in for phono3py.
+  - `CLM-MAT-0451` · hardware RTX PRO 6000 Blackwell, baseline GPU plug-in for phono3py · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00461
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -2130,9 +2184,21 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0168` — thermal_conductivity: _unexamined; classification pending_
   - claims: CLM-MAT-0439, CLM-MAT-0440
   - missing data: `not yet named`
+- `CFL-0175` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0452, CLM-MAT-0453
+  - missing data: `not yet named`
+- `CFL-0176` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0453, CLM-MAT-0455
+  - missing data: `not yet named`
+- `CFL-0177` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0454, CLM-MAT-0455
+  - missing data: `not yet named`
+- `CFL-0178` — energy: _unexamined; classification pending_
+  - claims: CLM-MAT-0459, CLM-MAT-0460
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 449
-- grades: {'B': 449}
-- distinct sources: 158
+- claims: 461
+- grades: {'B': 461}
+- distinct sources: 162

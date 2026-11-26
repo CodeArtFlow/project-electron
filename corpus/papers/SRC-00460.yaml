@@ -1,0 +1,97 @@
+id: SRC-00460
+title: 'Self-Assembled Triangular Sc-rich Nanodomains: The Orign of Anomalous Alloy Scattering in ScAlN/GaN
+  Heterostructures'
+doi: null
+arxiv_id: 2611.33868v1
+url: https://arxiv.org/abs/2611.33868v1
+venue_id: arxiv_api
+authors:
+- name: Yuhao Yin
+  affiliation: null
+  corresponding: null
+- name: Shizhao Fan
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-25'
+retrieved_date: '2026-11-26'
+access: full_text
+read_scope: Automated reading. The full PDF text (50,418 characters, 24 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.33868v1 on
+  2026-11-26. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The 3×3 μm2 AFM micrograph (Fig. 1i) exhibits terrace-like surface undulations with a RMS
+  roughness of only 0.43 nm”
+
+  “(i) AFM height map acquired over a 3 × 3 μm² scan window for the as-grown surface”
+
+  “The surface morphology of the as-grown heterostructures was characterized using atomic force microscopy
+  (AFM, Bruker, USA)”'
+method_summary: '“ScAlN/GaN heterostructures were epitaxially grown on 4H-SiC substrates using a self-customed
+  plasma-assisted molecular beam epitaxy (PA-MBE) system.”
+
+  “Temperature-dependent Hall measurements were performed from 2 to 300 K using the van der Pauw configuration.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 14999
+    output: 2353
+  claims_accepted: 1
+  claims_rejected: 6
+  rejected:
+  - statement: Sample A achieves a low-temperature Hall mobility of 1800 cm2·V-1·s-1 at 10 K.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - As shown in Fig. 2a, the electron mobility increases from 922 cm² V⁻¹ s⁻¹ at 298 K to approximately
+      1800 cm² V⁻¹ s⁻¹ at 10 K.
+    - Temperature-dependent Hall measurements were performed on Sample A from 10 to 298 K.
+    - performed on Sample A
+    - at 10 K
+  - statement: Sample B achieves a low-temperature Hall mobility of 11995 cm2·V-1·s-1 at 10 K.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''10 33.0 11995
+      1.60×10\n13'''
+    quotes:
+    - 10 33.0 11995 1.60×10 13
+    - Temperature-dependent Hall measurements of Sample B (Fig. 6) yield a mobility plateau of 11,995
+      cm2·V-1·s-1
+    - Table I. Summary of the temperature-dependent Hall transport data for Samples A and B
+  - statement: Sample B exhibits a room-temperature Hall mobility of 1290 cm2/V·s at 298 K.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''298 176.6
+      1290 2.75×10\n13'''
+    quotes:
+    - 298 176.6 1290 2.75×10 13
+    - At 298 K, Sample B exhibits an apparent Hall mobility of 1290 cm2·V-1·s-1 and a sheet carrier density
+      of 2.75×1013 cm-2.
+    - Table I. Summary of the temperature-dependent Hall transport data for Samples A and B
+  - statement: Sample A shows a room-temperature Hall mobility of 922 cm2/V·s at 298 K.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''298 283 922
+      2.39×10\n13'''
+    quotes:
+    - 298 283 922 2.39×10 13
+    - As shown in Fig. 2a, the electron mobility increases from 922 cm² V⁻¹ s⁻¹ at 298 K to approximately
+      1800 cm² V⁻¹ s⁻¹ at 10 K.
+    - Table I. Summary of the temperature-dependent Hall transport data for Samples A and B
+  - statement: Sample B has a measured total threading dislocation density of 4.41×108 cm-2 by HRXRD.
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - B 4.58×107 4.36×108 4.41×108 2.31×108 2.84×108
+    - The crystalline quality and structural properties were investigated using high-resolution X-ray
+      diffraction (HRXRD, PANalytical X'Pert³ MRD, Malvern Panalytical)
+    - TDD by HRXRD (cm-2)
+  - statement: The room-temperature 2DEG mobility of Sample B is projected to be 1860-2070 cm2·V-1·s-1
+      after accounting for parallel conduction.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Using a two-channel
+      conduction model and a realistic mobility range of'''
+    quotes:
+    - Using a two-channel conduction model and a realistic mobility range of 200-500 cm2·V-1·s-1 for electrons
+      in the buffer, the room-temperature 2DEG mobility is projected to be 1860-2070 cm2·V-1·s-1.
+    - the room-temperature 2DEG mobility is projected to be 1860-2070 cm2·V-1·s-1.
+    - Temperature-dependent Hall measurements of Sample B (Fig. 6)
+corrections: []

@@ -8004,3 +8004,327 @@ claims:
       unit: wph
     conditions:
       data_type: metric packets
+- id: CLM-ARCH-0281
+  topic: ARCH
+  statement: The counter logic generator occupies an area of 382 µm2.
+  sources:
+  - SRC-00457
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    process: 45nm FreePDK
+    precision: 8-bit
+    converter_type: Counter Logic
+  quantity:
+    quantity: area_die
+    bound: exact
+    approximate: false
+    as_published:
+      value: 382.0
+      unit: µm2
+    si_base:
+      value: 3.8199999999999997e-10
+      unit: m^2
+    display:
+      value: 0.00038199999999999996
+      unit: mm^2
+    conditions:
+      process: 45nm FreePDK
+      precision: 8-bit
+      converter_type: Counter Logic
+- id: CLM-ARCH-0282
+  topic: ARCH
+  statement: The LFSR + Comparator design consumes 233 µm2 of area.
+  sources:
+  - SRC-00457
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    process: 45nm FreePDK
+    precision: 8-bit
+    converter_type: LFSR + Comparator
+  quantity:
+    quantity: area_die
+    bound: exact
+    approximate: false
+    as_published:
+      value: 233.0
+      unit: µm2
+    si_base:
+      value: 2.3299999999999997e-10
+      unit: m^2
+    display:
+      value: 0.00023299999999999997
+      unit: mm^2
+    conditions:
+      process: 45nm FreePDK
+      precision: 8-bit
+      converter_type: LFSR + Comparator
+- id: CLM-ARCH-0283
+  topic: ARCH
+  statement: The comparator-based Sobol design occupies an area of 850 µm2.
+  sources:
+  - SRC-00457
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    process: 45nm FreePDK
+    precision: 8-bit
+    converter_type: Sobol + Comparator [13]
+  quantity:
+    quantity: area_die
+    bound: exact
+    approximate: false
+    as_published:
+      value: 850.0
+      unit: µm2
+    si_base:
+      value: 8.5e-10
+      unit: m^2
+    display:
+      value: 0.00085
+      unit: mm^2
+    conditions:
+      process: 45nm FreePDK
+      precision: 8-bit
+      converter_type: Sobol + Comparator [13]
+- id: CLM-ARCH-0284
+  topic: ARCH
+  statement: The FSM-based Sobol design occupies an area of 281 µm2.
+  sources:
+  - SRC-00457
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 5
+  conditions:
+    process: 45nm FreePDK
+    precision: 8-bit
+    converter_type: Sobol (FSM-based) [37]
+  quantity:
+    quantity: area_die
+    bound: exact
+    approximate: false
+    as_published:
+      value: 281.0
+      unit: µm2
+    si_base:
+      value: 2.81e-10
+      unit: m^2
+    display:
+      value: 0.000281
+      unit: mm^2
+    conditions:
+      process: 45nm FreePDK
+      precision: 8-bit
+      converter_type: Sobol (FSM-based) [37]
+- id: CLM-ARCH-0285
+  topic: ARCH
+  statement: The block extraction design exhibits energy of 0.02 pJ per cycle.
+  sources:
+  - SRC-00457
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    process: 45nm FreePDK
+    precision: 8-bit
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.02
+      unit: pJ
+    si_base:
+      value: 2.0e-14
+      unit: J
+    display:
+      value: 19.999999999999996
+      unit: fJ
+    conditions:
+      process: 45nm FreePDK
+      precision: 8-bit
+- id: CLM-ARCH-0286
+  topic: ARCH
+  statement: The majority logic design exhibits energy of 0.03 pJ per cycle.
+  sources:
+  - SRC-00457
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    process: 45nm FreePDK
+    precision: 8-bit
+  quantity:
+    quantity: energy
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.03
+      unit: pJ
+    si_base:
+      value: 3.0e-14
+      unit: J
+    display:
+      value: 29.999999999999993
+      unit: fJ
+    conditions:
+      process: 45nm FreePDK
+      precision: 8-bit
+- id: CLM-ARCH-0287
+  topic: ARCH
+  statement: Split-Comm achieves a 1.45x speedup for partial-prefill when N=512.
+  sources:
+  - SRC-00458
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    stage: partial-prefill
+- id: CLM-ARCH-0288
+  topic: ARCH
+  statement: Interleaved token assignment achieves a 1.34x speedup for MCM during decoding.
+  sources:
+  - SRC-00458
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    assignment_type: interleaved token assignment
+    stage: decoding
+- id: CLM-ARCH-0289
+  topic: ARCH
+  statement: Split-Comm reduces KV cache memory access by up to 5.49x when N = 256 in sparse attention.
+  sources:
+  - SRC-00458
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    mechanism: Split-Comm
+  quantity:
+    quantity: relative_deviation
+    bound: upper_bound
+    approximate: false
+    as_published:
+      value: 5.49
+      unit: x
+    si_base:
+      value: 5.49
+      unit: dimensionless
+    display:
+      value: 549.0
+      unit: percent
+    conditions:
+      mechanism: Split-Comm
+- id: CLM-ARCH-0290
+  topic: ARCH
+  statement: Replacing the linear formulation in I-POP with a multilayer perceptron improves performance
+    by 2.2% over the original I-POP.
+  sources:
+  - SRC-00459
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-26'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    variant: I-POP (ML variant)
+    baseline: original I-POP
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 2.2
+      unit: '%'
+    si_base:
+      value: 0.022000000000000002
+      unit: dimensionless
+    display:
+      value: 2.2
+      unit: percent
+    conditions:
+      variant: I-POP (ML variant)
+      baseline: original I-POP

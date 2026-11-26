@@ -1,0 +1,136 @@
+id: SRC-00463
+title: 'Revisiting the Schottky-Mott Relation for Metal/ Transition Metal Dichalcogenide Interfaces: The
+  Role of Interface Dipoles'
+doi: null
+arxiv_id: 2611.33929v1
+url: https://arxiv.org/abs/2611.33929v1
+venue_id: arxiv_api
+authors:
+- name: Chih-Piao Chuu
+  affiliation: null
+  corresponding: null
+- name: Shu-Jui Chang
+  affiliation: null
+  corresponding: null
+- name: Yu-Miin Sheu
+  affiliation: null
+  corresponding: null
+- name: Zih-Syuan Huang
+  affiliation: null
+  corresponding: null
+- name: Wei-Tung Liu
+  affiliation: null
+  corresponding: null
+- name: Po-Wei Chen
+  affiliation: null
+  corresponding: null
+- name: Sui-An Chou
+  affiliation: null
+  corresponding: null
+- name: Yu-Tung Lin
+  affiliation: null
+  corresponding: null
+- name: Chih-I Wu
+  affiliation: null
+  corresponding: null
+- name: Wen-Hao Chang
+  affiliation: null
+  corresponding: null
+- name: Chun-Liang Lin
+  affiliation: null
+  corresponding: null
+- name: H. -S. Philip Wong
+  affiliation: null
+  corresponding: null
+- name: Iuliana P. Radu
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-25'
+retrieved_date: '2026-11-26'
+access: full_text
+read_scope: Automated reading. The full PDF text (55,778 characters, 40 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.33929v1 on
+  2026-11-26. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“Table 3. UPS measured effective work function (eWF), work function (WF), and STS measured
+  electron Schottky barrier (ФSTS) of monolayer MoS2 and WSe2 in Figures 4 (a)–(c).”
+
+  “Bi 4.42 4.12 0.006 4.13 4.13 0.25”
+
+  “Scanning Tunneling Spectroscopy (STS) measurements were conducted at a constant current of 300 pA and
+  a temperature of 300 K.”
+
+  “Au 4.67 5.46 0.58 4.38 5.20 1.19”
+
+  “Pd 5.01 5.26 0.77 4.46 5.24 1.26”
+
+  “X-ray photoelectron spectroscopy (XPS) and ultraviolet photoelectron spectroscopy (UPS) measurements
+  were performed using a PHI spectrometer.”
+
+  “Table 1. Calculated interlayer distance dint, effective work function (eWF) and electron Schottky barrier
+  ФB of metal-monolayer TMD superlattices structure by D3 exchange functionals in Figure 1.”
+
+  “Pt 4/3 2.42 4.92 0.69 4/3 2.42 4.71 0.83 4/3 2.45 4.37 0.88”
+
+  “by D3 exchange functionals in Figure 1.”
+
+  “Calculated interlayer distance dint, effective work function (eWF) and electron Schottky barrier ФB
+  of metal-monolayer TMD superlattices structure by D3 exchange functionals in Figure 1.”'
+method_summary: '“Through the synergistic application of first-principles calculations and experimental
+  validation via ultraviolet photoelectron spectroscopy (UPS) and scanning tunneling spectroscopy (STS)”
+
+  “X-ray photoelectron spectroscopy (XPS) and ultraviolet photoelectron spectroscopy (UPS) measurements
+  were performed using a PHI spectrometer.”
+
+  “Scanning Tunneling Spectroscopy (STS) measurements were conducted at a constant current of 300 pA and
+  a temperature of 300 K.”
+
+  “The first-principles calculations for the metal/MoS2 and metal/WSe2 were performed by the Vienna Ab
+  initio Simulation Package (VASP)”'
+limitations: “The residues of photo-resistance at interface could cause interface contamination or charge
+  accumulation and therefore alter the interface dipole and eWF.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 21317
+    output: 3374
+  claims_accepted: 5
+  claims_rejected: 3
+  rejected:
+  - statement: The STS measured electron Schottky barrier of Pt on monolayer MoS2 is 0.70 eV.
+    reason: the value 0.7 does not appear in any of the claim's quotes
+    quotes:
+    - Table 3. UPS measured effective work function (eWF), work function (WF), and STS measured electron
+      Schottky barrier (ФSTS) of monolayer MoS2 and WSe2 in Figures 4 (a)–(c).
+    - Pt 4.96 5.23 0.70 4.74 5.20 1.03
+    - Scanning Tunneling Spectroscopy (STS) measurements were conducted at a constant current of 300 pA
+      and a temperature of 300 K.
+  - statement: The calculated binding energy of bilayer MoS2 with optb86-vdW functionals is 25.5 meV/Å2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''MoS2 3.17
+      R1/R1 3.05 25.5 3.0'''
+    quotes:
+    - Table 2. Physical quantities of monolayer MoS2 with different overlayers shown in Figure 3, superlattice
+      (MoS2/overlayer), lattice constant a, binding energy Eb at interlayer distance dint calculated by
+      optb86-vdW functionals, and power n o
+    - MoS2 3.17 R1/R1 3.05 25.5 3.0
+    - calculated by optb86-vdW functionals
+  - statement: The calculated binding energy of Ni on monolayer MoS2 with optb86-vdW functionals is 98.6
+      meV/Å2.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Ni 3.51 R12/R19
+      2.03 98.6 3.2'''
+    quotes:
+    - Table 2. Physical quantities of monolayer MoS2 with different overlayers shown in Figure 3, superlattice
+      (MoS2/overlayer), lattice constant a, binding energy Eb at interlayer distance dint calculated by
+      optb86-vdW functionals, and power n o
+    - Ni 3.51 R12/R19 2.03 98.6 3.2
+    - calculated by optb86-vdW functionals
+corrections: []
+evidence_type_note: 'This paper''s accepted claims are not all one evidence type (measured: 4, simulated:
+  1). This field records the majority (measured); trust each claim''s own evidence_type over this one.'
