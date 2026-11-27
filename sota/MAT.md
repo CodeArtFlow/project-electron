@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-26.
+Topic code `MAT`. Last reviewed 2026-11-27.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -320,6 +320,18 @@ Topic code `MAT`. Last reviewed 2026-11-26.
   - `CLM-MAT-0461` · contact_metal Pt, functional D3 · grade B · credibility unknown · simulated · as of 2026-11-25
   - sources: SRC-00463
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **0.0640871 fJ** — The plane-wave cutoff energy was set to 400 eV in DFT calculations.
+  - `CLM-MAT-0468` · parameter_type plane-wave cutoff energy · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00467
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈2.40326e-06 fJ** — The on-site SOC strength for Nb p orbitals in NbSi2 is approximately 15 meV.
+  - `CLM-MAT-0471` · orbital Nb p orbitals · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00467
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈2.16294e-05 fJ** — Our first-principles calculations indicate that face-centered cubic AgBr has a binding energy of approximately 135 meV for its lowest-energy bright exciton.
+  - `CLM-MAT-0472` · excitation lowest-energy bright exciton · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00469
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### frequency
 
@@ -355,6 +367,18 @@ Topic code `MAT`. Last reviewed 2026-11-26.
   - `CLM-MAT-0404` · laser fiber laser (AFS Jena) · grade B · credibility unknown · measured · as of 2026-11-19
   - sources: SRC-00407
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **53840 GHz** — In F43m BeO, the calculated mass-scaled transverse optical phonon frequency is 53.84 THz.
+  - `CLM-MAT-0462` · material BeO, space_group F43m, functional PBEsol · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00465
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **15080 GHz** — In Fd3m silicon (Si), the calculated transverse optical phonon frequency is 15.08 THz.
+  - `CLM-MAT-0463` · material Si, space_group Fd3m, functional PBEsol · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00465
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- **39220 GHz** — In Fd3m diamond (C), the calculated transverse optical phonon frequency is 39.22 THz.
+  - `CLM-MAT-0464` · material C, space_group Fd3m, functional PBEsol · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00465
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### length device
 
@@ -629,6 +653,26 @@ Topic code `MAT`. Last reviewed 2026-11-26.
   - `CLM-MAT-0450` · measurement_area 3 × 3 μm² · grade B · credibility unknown · measured · as of 2026-11-25
   - sources: SRC-00460
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **0.48177 nm** — The optimized lattice parameter a of conventional unit cell NbSi2 is 4.8177 Å.
+  - `CLM-MAT-0466` · material NbSi2, parameter a · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00467
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0179 — see the open register
+- **0.66233 nm** — The optimized lattice parameter c of conventional unit cell NbSi2 is 6.6233 Å.
+  - `CLM-MAT-0467` · material NbSi2 · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00467
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0179 — see the open register
+- **0.265 nm** — The in-plane distance between Si atoms belonging to different chains of the same double helix in NbSi2 is 2.65 Å.
+  - `CLM-MAT-0469` · atom_pair Si atoms · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00467
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0180 — see the open register
+- **0.285 nm** — The distance between Si atoms belonging to two different double helices in NbSi2 is 2.85 Å.
+  - `CLM-MAT-0470` · location between two different double helices, atom_pair Si atoms · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00467
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0180 — see the open register
 
 ### power
 
@@ -672,6 +716,10 @@ Topic code `MAT`. Last reviewed 2026-11-26.
   - `CLM-MAT-0296` · measurement Tensile testing · grade B · credibility unknown · measured · as of 2026-11-04
   - sources: SRC-00297
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈1.50012e+10 mTorr** — In hydrostatic pressure scan of rocksalt PbSe, the direct band gap at L narrows to a minimum near 2 GPa.
+  - `CLM-MAT-0465` · material PbSe, functional r2SCAN · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00465
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### qualitative
 
@@ -1738,6 +1786,20 @@ Topic code `MAT`. Last reviewed 2026-11-26.
   - `CLM-MAT-0356` · material Pr1−xCaxMnO3 (PCMO) · grade B · credibility unknown · measured · as of 2026-11-13
   - sources: SRC-00367
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **1258.75 degC** — DFT using the PBE functional predicts a critical temperature of 1531.9 K for the InxGa1-xN miscibility gap.
+  - `CLM-MAT-0474` · method DFT, system InxGa1-xN · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00470
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0181 — see the open register
+- **1166.85 degC** — The MatterSim-5M model predicts a critical temperature of 1440.0 K for the InxGa1-xN miscibility gap.
+  - `CLM-MAT-0475` · model MatterSim-5M, system InxGa1-xN · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00470
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+  - **live contradiction:** CFL-0181 — see the open register
+- **1016.85 degC** — PET-OMATPES-L with phonons predicts a critical temperature of 1290 K for Nb1-xVx.
+  - `CLM-MAT-0476` · model PET-OMATPES-L · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00470
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### temperature delta
 
@@ -1894,6 +1956,10 @@ Topic code `MAT`. Last reviewed 2026-11-26.
   - `CLM-MAT-0412` · hardware two cores of an Intel Core i9-13900H CPU · grade B · credibility unknown · measured · as of 2026-11-19
   - sources: SRC-00415
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **7.4e+10 ns** — The MatterSim-5M model completes the calculation for all InxGa1-xN clusters in 74.0 s on a single CPU core of a standard workstation.
+  - `CLM-MAT-0473` · model MatterSim-5M, system InxGa1-xN · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00470
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### voltage
 
@@ -2196,9 +2262,18 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 - `CFL-0178` — energy: _unexamined; classification pending_
   - claims: CLM-MAT-0459, CLM-MAT-0460
   - missing data: `not yet named`
+- `CFL-0179` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0466, CLM-MAT-0467
+  - missing data: `not yet named`
+- `CFL-0180` — length_device: _unexamined; classification pending_
+  - claims: CLM-MAT-0469, CLM-MAT-0470
+  - missing data: `not yet named`
+- `CFL-0181` — temperature: _unexamined; classification pending_
+  - claims: CLM-MAT-0474, CLM-MAT-0475
+  - missing data: `not yet named`
 
 ## Evidence base
 
-- claims: 461
-- grades: {'B': 461}
-- distinct sources: 162
+- claims: 476
+- grades: {'B': 476}
+- distinct sources: 166

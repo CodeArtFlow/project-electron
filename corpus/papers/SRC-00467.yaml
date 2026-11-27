@@ -1,0 +1,92 @@
+id: SRC-00467
+title: Electronic topological modes in hexagonal NbSi$_{2}$ with a double helix
+doi: null
+arxiv_id: 2611.34356v1
+url: https://arxiv.org/abs/2611.34356v1
+venue_id: arxiv_api
+authors:
+- name: Issam Mahraj
+  affiliation: null
+  corresponding: null
+- name: Andrzej Ptok
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-25'
+retrieved_date: '2026-11-27'
+access: full_text
+read_scope: Automated reading. The full PDF text (47,518 characters, 13 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.34356v1 on
+  2026-11-27. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The optimized lattice parameters are a = 4.8177 ˚A and c = 6.6233 ˚A, which are in good agreement
+  with the experimental values of a = 4.819 ˚A and c = 6.592 ˚A [44].”
+
+  “NbSi2 crystal can crystallize in one of two enantiomorphic structures”
+
+  “The optimized lattice parameters are a = 4.8177 ˚A”
+
+  “The plane-wave cutoff energy was set to 400 eV.”
+
+  “The first-principles (DFT) calculations were performed using the projector augmented-wave (PAW) potentials
+  [28] implemented in the Vienna Ab initio Simulation Package (Vasp) code [29–31].”
+
+  “Similarly, the in-plane distance between Si atoms belonging to different chains of the same double
+  helix is 2.65 ˚A, while the corresponding distance between two different double helices is 2.85 ˚A.”
+
+  “the in-plane distance between Si atoms belonging to different chains of the same double helix is 2.65
+  ˚A”
+
+  “The structural parameters, including lattice constants and atomic positions, were optimized in the
+  conventional unit cell using a 12 × 12 × 8 k-point mesh within the Monkhorst–Pack scheme [33].”
+
+  “the corresponding distance between two different double helices is 2.85 ˚A.”
+
+  “the in-plane distance between Si atoms”
+
+  “Indeed, the SOC-induced splitting is appreciable only for the Nb p orbitals, with an on-site SOC strength
+  of approximately 15 meV.”
+
+  “appreciable only for the Nb p orbitals, with an on-site SOC strength of approximately 15 meV.”
+
+  “Fig. 2(a) shows the electronic band structure in the absence and presence of the SOC.”'
+method_summary: '“The first-principles (DFT) calculations were performed using the projector augmented-wave
+  (PAW) potentials [28] implemented in the Vienna Ab initio Simulation Package (Vasp) code [29–31].”
+
+  “The tight-binding model in a Wannier-orbital basis [34–36] constructed from the exact DFT electronic
+  band structure calculations using the Wannier90 software [37–39].”'
+limitations: “Due to the relatively small magnitude of SOC, the investigation of Weyl points is quite
+  challenging.”
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 16901
+    output: 2684
+  claims_accepted: 6
+  claims_rejected: 2
+  rejected:
+  - statement: The distance between Si atoms within a single chain in NbSi2 is approximately 2.58 Å.
+    reason: the quote says 'up to'/'within'/'at most' before the number but bound is not upper_bound
+    quotes:
+    - In this crystal structure, the distance between Si atoms within a single chain is approximately
+      2.58 ˚A, while the bond angle (i.e., the angle between two neighboring bonds) is approximately 150.14◦.
+    - The structural parameters, including lattice constants and atomic positions, were optimized in the
+      conventional unit cell using a 12 × 12 × 8 k-point mesh within the Monkhorst–Pack scheme [33].
+    - the distance between Si atoms within a single chain is approximately 2.58 ˚A
+    - distance between Si atoms within a single chain
+  - statement: The thickness of the 54-atom slab model for NbSi2 is approximately 37.5 Å.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''The results
+      were obtained for a slab geometry consisting of 54 atoms ('''
+    quotes:
+    - The results were obtained for a slab geometry consisting of 54 atoms (18 formula units), corresponding
+      to a slab thickness of approximately 37.5 ˚A.
+    - DFT-based investigation of the real-space localization of the edge modes in the presence of SOC.
+    - a slab geometry consisting of 54 atoms (18 formula units), corresponding to a slab thickness of
+      approximately 37.5 ˚A.
+corrections: []

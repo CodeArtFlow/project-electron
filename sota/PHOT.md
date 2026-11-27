@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-26.
+Topic code `PHOT`. Last reviewed 2026-11-27.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -610,6 +610,14 @@ Topic code `PHOT`. Last reviewed 2026-11-26.
   - `CLM-PHOT-0200` · implementation_type four-channel wavelength division multiplexing implementation, dataset four-class Fashion-MNIST task · grade B · credibility unknown · measured · as of 2026-11-23
   - sources: SRC-00443
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The constructed cavity achieves a finesse of approximately 17.
+  - `CLM-PHOT-0207` · grade B · credibility unknown · measured · as of 2026-11-25
+  - sources: SRC-00471
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
+- The cavity exhibits a resonance linewidth of approximately 200 MHz.
+  - `CLM-PHOT-0208` · grade B · credibility unknown · measured · as of 2026-11-25
+  - sources: SRC-00471
+  - ⚙ automated extraction (gemini-3.6-flash; 2 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -698,6 +706,22 @@ Topic code `PHOT`. Last reviewed 2026-11-26.
 - **60 percent** — An optically excited metamaterial modulator fabricated on a thin polyimide layer achieved a 60% modulation depth in the frequency range of 1.1-1.8 THz.
   - `CLM-PHOT-0192` · frequency_range 1.1-1.8 THz · grade B · credibility unknown · measured · as of 2026-11-23
   - sources: SRC-00440
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **99.87 percent** — On 400 settings held out from training, the digital twin trained on single-input powers reproduces measured powers with a Bhattacharyya fidelity of 0.9987.
+  - `CLM-PHOT-0203` · eval_dataset 400 settings held out from training, metric Bhattacharyya fidelity FB · grade B · credibility unknown · measured · as of 2026-11-25
+  - sources: SRC-00468
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **99.79 percent** — Intensity-only programs from random starts on ten 4x4 Haar-random targets reach a measured mean intensity fidelity of 0.9979.
+  - `CLM-PHOT-0204` · target_type ten Haar-random 4 × 4 targets, metric measured mean FB · grade B · credibility unknown · measured · as of 2026-11-25
+  - sources: SRC-00468
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **99.85 percent** — Phase-aware programs from random starts on ten 4x4 Haar-random targets reach a measured mean intensity fidelity of 0.9985.
+  - `CLM-PHOT-0205` · target_type ten Haar-random 4 × 4 targets, metric measured mean FB · grade B · credibility unknown · measured · as of 2026-11-25
+  - sources: SRC-00468
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **99.6 percent** — With the phase term, the measured mean phase fidelity against the target reaches 0.996 for ten 4x4 Haar-random targets.
+  - `CLM-PHOT-0206` · target_type ten Haar-random 4 × 4 targets · grade B · credibility unknown · measured · as of 2026-11-25
+  - sources: SRC-00468
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### sensitivity advantage ratio
@@ -909,6 +933,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 202
-- grades: {'B': 195, 'A': 7}
-- distinct sources: 69
+- claims: 208
+- grades: {'B': 201, 'A': 7}
+- distinct sources: 71

@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**33611 pair(s)** as of 2026-11-26.
+**35410 pair(s)** as of 2026-11-27.
 
 ## `area_die` (37 pair(s))
 
@@ -95,7 +95,7 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 
 _and 6 more_
 
-## `energy` (3135 pair(s))
+## `energy` (3380 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -112,6 +112,7 @@ _and 6 more_
 | `CLM-MAT-0001` = 59.8 meV | `CLM-MAT-0406` = -61.8 meV | 197% | mechanism=surface polar phonon, substrate=SiO2 | direction=In-plane |
 | `CLM-MAT-0078` = 4810 meV | `CLM-MAT-0453` = -4640 meV | 196% | defect_complex=VAl(ON)3, model=DFT | metric=mean campaign-best binding energy, evaluation_method=pretrained MLIP with dispersion corrections |
 | `CLM-MAT-0291` = 2800 meV | `CLM-MAT-0414` = -2700 meV | 196% | trap_type=isolated bi-Ed | system=graphene |
+| `CLM-MAT-0408` = -15.65 meV | `CLM-MAT-0471` = 15 meV | 196% | direction=Out-of-plane | orbital=Nb p orbitals |
 | `CLM-MAT-0078` = 4810 meV | `CLM-MAT-0172` = -5090 meV | 194% | defect_complex=VAl(ON)3, model=DFT | material=MLBP |
 | `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0453` = -4640 meV | 193% | defect_complex=VAl(ON)3 | metric=mean campaign-best binding energy, evaluation_method=pretrained MLIP with dispersion corrections |
 | `CLM-MAT-0456` = 195 meV | `CLM-MEM-0040` = -180 meV | 192% | ligand_class=halogen-free phosphonate ligands, transition=alkyl to alkenyl, evaluation_method=MLIP-calculated | method=DFT |
@@ -138,9 +139,8 @@ _and 6 more_
 | `CLM-MAT-0290` = 3000 meV | `CLM-MAT-0452` = -3590 meV | 184% | trap_type=isolated bi-Si3 | metric=mean campaign-best binding energy, evaluation_method=pretrained MLIP with dispersion corrections |
 | `CLM-MAT-0276` = 2994 meV | `CLM-MAT-0452` = -3590 meV | 183% | desorption_state=molecular | metric=mean campaign-best binding energy, evaluation_method=pretrained MLIP with dispersion corrections |
 | `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0452` = -3590 meV | 183% | defect_complex=VAl(ON)3 | metric=mean campaign-best binding energy, evaluation_method=pretrained MLIP with dispersion corrections |
-| `CLM-MAT-0331` = 5630 meV | `CLM-MAT-0453` = -4640 meV | 182% | phase=m-phase, temperature=300 K | metric=mean campaign-best binding energy, evaluation_method=pretrained MLIP with dispersion corrections |
 
-_and 3095 more_
+_and 3340 more_
 
 ## `energy_advantage_ratio` (19 pair(s))
 
@@ -166,7 +166,7 @@ _and 3095 more_
 | `CLM-ARCH-0022` = 169.1 x | `CLM-PROC-0062` = 417 x | 59% | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch | surrogate_model=deterministic U-Net |
 | `CLM-ARCH-0022` = 169.1 x | `CLM-PROC-0058` = 73 x | 57% | platform=projected IMAX configuration, metric_scope=modeled end-to-end energy per batch | surrogate_model=VP-DDBM, baseline_model=phase-field solver |
 
-## `frequency` (1211 pair(s))
+## `frequency` (1343 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -211,54 +211,54 @@ _and 3095 more_
 | `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0061` = 7.48 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | corner_radius=1.4 mm |
 | `CLM-MAT-0299` = -7240 GHz | `CLM-PHOT-0125` = 6 GHz | 100% | material=NbOI2, cell_type=4-atoms cell, mode=Peierls mode δ | pump_detuning=27 MHz |
 
-_and 1171 more_
+_and 1303 more_
 
-## `length_device` (7198 pair(s))
+## `length_device` (7767 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
-| `CLM-DEV-0053` = 1.61 nm | `CLM-LITHO-0005` = 3e+06 nm | 100% | parameter=ts | beam_profile=Gaussian |
-| `CLM-DEV-0053` = 1.61 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | parameter=ts | component=lens |
-| `CLM-DEV-0053` = 1.61 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | parameter=ts | material=GaN, growth_method=ammonothermal |
-| `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0042` = 1.6e+05 nm | 100% | parameter=ts | substrate_material=glass cover slip, sample_type=flat surface |
-| `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0065` = 4e+05 nm | 100% | parameter=ts | chip_thickness=4-mm |
-| `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0115` = 3.3e+04 nm | 100% | parameter=ts | dimension=width |
-| `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0116` = 1.47e+05 nm | 100% | parameter=ts | dimension=length |
-| `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0131` = 5e+05 nm | 100% | parameter=ts | channel_type=elementary channel |
-| `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0159` = 4.2e+05 nm | 100% | parameter=ts | device=fabricated device |
-| `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0160` = 1.72e+05 nm | 100% | parameter=ts | device=fabricated device |
-| `CLM-DEV-0053` = 1.61 nm | `CLM-PHOT-0201` = 1e+11 nm | 100% | parameter=ts | fiber_type=standard single-mode fiber (SMF) |
-| `CLM-DEV-0068` = 100 nm | `CLM-LITHO-0005` = 3e+06 nm | 100% | material=PEDOT:PSS | beam_profile=Gaussian |
-| `CLM-DEV-0068` = 100 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | material=PEDOT:PSS | component=lens |
-| `CLM-DEV-0068` = 100 nm | `CLM-MAT-0138` = 0.005 nm | 100% | material=PEDOT:PSS | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-DEV-0068` = 100 nm | `CLM-MAT-0140` = 0.005 nm | 100% | material=PEDOT:PSS | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-DEV-0068` = 100 nm | `CLM-PHOT-0201` = 1e+11 nm | 100% | material=PEDOT:PSS | fiber_type=standard single-mode fiber (SMF) |
-| `CLM-DEV-0084` = 22.17 nm | `CLM-LITHO-0005` = 3e+06 nm | 100% | rkky_coupling=-0.2 mJ/m² | beam_profile=Gaussian |
-| `CLM-DEV-0084` = 22.17 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | rkky_coupling=-0.2 mJ/m² | component=lens |
-| `CLM-DEV-0084` = 22.17 nm | `CLM-PHOT-0131` = 5e+05 nm | 100% | rkky_coupling=-0.2 mJ/m² | channel_type=elementary channel |
-| `CLM-DEV-0084` = 22.17 nm | `CLM-PHOT-0201` = 1e+11 nm | 100% | rkky_coupling=-0.2 mJ/m² | fiber_type=standard single-mode fiber (SMF) |
-| `CLM-DEV-0085` = 22.21 nm | `CLM-LITHO-0005` = 3e+06 nm | 100% | rkky_coupling=-0.2 mJ/m² | beam_profile=Gaussian |
-| `CLM-DEV-0085` = 22.21 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | rkky_coupling=-0.2 mJ/m² | component=lens |
-| `CLM-DEV-0085` = 22.21 nm | `CLM-PHOT-0131` = 5e+05 nm | 100% | rkky_coupling=-0.2 mJ/m² | channel_type=elementary channel |
-| `CLM-DEV-0085` = 22.21 nm | `CLM-PHOT-0201` = 1e+11 nm | 100% | rkky_coupling=-0.2 mJ/m² | fiber_type=standard single-mode fiber (SMF) |
-| `CLM-DEV-0092` = 280.6 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | cell_size=1 µm | component=lens |
-| `CLM-DEV-0092` = 280.6 nm | `CLM-MAT-0135` = 0.013 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-DEV-0092` = 280.6 nm | `CLM-MAT-0136` = 0.006 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-DEV-0092` = 280.6 nm | `CLM-MAT-0137` = 0.011 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-DEV-0092` = 280.6 nm | `CLM-MAT-0138` = 0.005 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-DEV-0092` = 280.6 nm | `CLM-MAT-0139` = 0.007 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-DEV-0092` = 280.6 nm | `CLM-MAT-0140` = 0.005 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-DEV-0092` = 280.6 nm | `CLM-PHOT-0201` = 1e+11 nm | 100% | cell_size=1 µm | fiber_type=standard single-mode fiber (SMF) |
-| `CLM-DEV-0093` = 502.3 nm | `CLM-LITHO-0006` = 2e+08 nm | 100% | cell_size=1 µm | component=lens |
-| `CLM-DEV-0093` = 502.3 nm | `CLM-MAT-0135` = 0.013 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-DEV-0093` = 502.3 nm | `CLM-MAT-0136` = 0.006 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-DEV-0093` = 502.3 nm | `CLM-MAT-0137` = 0.011 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-DEV-0093` = 502.3 nm | `CLM-MAT-0138` = 0.005 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-DEV-0093` = 502.3 nm | `CLM-MAT-0139` = 0.007 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-DEV-0093` = 502.3 nm | `CLM-MAT-0140` = 0.005 nm | 100% | cell_size=1 µm | superlattice_layer_n=3, superlattice_layer_m=5 |
-| `CLM-DEV-0093` = 502.3 nm | `CLM-PHOT-0057` = 0.024 nm | 100% | cell_size=1 µm | measurement_duration=exceeding 15.5 hours |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-DEV-0053` = 1.61 nm | 100% | component=fiber delay line | parameter=ts |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-DEV-0068` = 100 nm | 100% | component=fiber delay line | material=PEDOT:PSS |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-DEV-0084` = 22.17 nm | 100% | component=fiber delay line | rkky_coupling=-0.2 mJ/m² |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-DEV-0085` = 22.21 nm | 100% | component=fiber delay line | rkky_coupling=-0.2 mJ/m² |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-DEV-0092` = 280.6 nm | 100% | component=fiber delay line | cell_size=1 µm |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-DEV-0093` = 502.3 nm | 100% | component=fiber delay line | cell_size=1 µm |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-DEV-0112` = 0.3158 nm | 100% | component=fiber delay line | stacking_configuration=vdWH-IV |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-DEV-0113` = 0.6427 nm | 100% | component=fiber delay line | stacking_configuration=vdWH-IV |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-LITHO-0001` = 500 nm | 100% | component=fiber delay line | material=crystalline silicon membrane |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-LITHO-0005` = 3e+06 nm | 100% | component=fiber delay line | beam_profile=Gaussian |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0017` = 0.284 nm | 100% | component=fiber delay line | material=Sb monolayer on SiC(0001) |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0018` = 0.327 nm | 100% | component=fiber delay line | material=Sb monolayer on SiC(0001) |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0020` = 6.4 nm | 100% | component=fiber delay line | regime=partially-reconstructed |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0023` = 3.5 nm | 100% | component=fiber delay line | state=X2sA |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0024` = 6.4 nm | 100% | component=fiber delay line | state=X2sA |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0029` = 0.5291 nm | 100% | component=fiber delay line | material=bulk CeN |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0037` = 14.6 nm | 100% | component=fiber delay line | material=TiN, property=GL coherence length |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0039` = 42.9 nm | 100% | component=fiber delay line | measurement=neutron reflectivity, material=TiN |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0040` = 0.5 nm | 100% | component=fiber delay line | fermi_velocity=7×105 ms−1, model=Drude model |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0052` = 23 nm | 100% | component=fiber delay line | characterization_method=AFM |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0060` = 101.7 nm | 100% | component=fiber delay line | sample=Sample A |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0063` = 10.7 nm | 100% | component=fiber delay line | device=D1 |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0068` = 14.5 nm | 100% | component=fiber delay line | method=estimated from the carrier density at the SDP |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0076` = 3.4e+05 nm | 100% | component=fiber delay line | material=GaN, growth_method=ammonothermal |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0081` = 0.98 nm | 100% | component=fiber delay line | material=CrSb |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0097` = 1.915 nm | 100% | component=fiber delay line | feature=alternating stacking of PEDOT and PSS |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0098` = 2.172 nm | 100% | component=fiber delay line | feature=alternating stacking of PEDOT and PSS |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0118` = 8.5 nm | 100% | component=fiber delay line | region=separated by a single hBN spacer layer |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0132` = 800 nm | 100% | component=fiber delay line | sample_alias=CoB/Pt, imaging_mode=Fresnel imaging, sample_tilt=25 o |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0133` = 41 nm | 100% | component=fiber delay line | sample_alias=CoB/Pt, imaging_mode=DPC |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0134` = 0.558 nm | 100% | component=fiber delay line | method=LDA-relaxed |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0135` = 0.013 nm | 100% | component=fiber delay line | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0136` = 0.006 nm | 100% | component=fiber delay line | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0137` = 0.011 nm | 100% | component=fiber delay line | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0138` = 0.005 nm | 100% | component=fiber delay line | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0139` = 0.007 nm | 100% | component=fiber delay line | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0140` = 0.005 nm | 100% | component=fiber delay line | superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0141` = 0.3947 nm | 100% | component=fiber delay line | layer_type=SrTiO3 layers, superlattice_layer_n=3, superlattice_layer_m=5 |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0143` = 1.136 nm | 100% | component=fiber delay line | structure=hydrogen-passivated zigzag graphene nanoribbon with six zigzag chains |
+| `CLM-ARCH-0291` = 5e+12 nm | `CLM-MAT-0151` = 2200 nm | 100% | component=fiber delay line | laser_fluence=5 mJ/cm2, location=center of the laser track, direction=Y-direction |
 
-_and 7158 more_
+_and 7727 more_
 
 ## `power` (570 pair(s))
 
@@ -313,13 +313,14 @@ _and 530 more_
 |---|---|---|---|---|
 | `CLM-DEV-0079` = 3.1e-05 W/mm^2 | `CLM-MAT-0026` = 4.8e-07 W/mm^2 | 98% | structure=long-base p+-n device, n_base_width=300 𝜇𝜇m, framework=extended theory | environment=ambient |
 
-## `pressure` (1 pair(s))
+## `pressure` (2 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-DEV-0064` = 6e-06 torr | `CLM-MAT-0296` = 3.75e+04 torr | 100% | temperature=room temperature | measurement=Tensile testing |
+| `CLM-DEV-0064` = 6e-06 torr | `CLM-MAT-0465` = 1.5e+07 torr | 100% | temperature=room temperature | material=PbSe, functional=r2SCAN |
 
-## `relative_deviation` (15267 pair(s))
+## `relative_deviation` (15929 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -364,7 +365,7 @@ _and 530 more_
 | `CLM-EDA-0043` = 88.1 percent | `CLM-MAT-0111` = -60 percent | 168% | design=AES | sample=B1-1 |
 | `CLM-ARCH-0101` = 89.4 percent | `CLM-MAT-0111` = -60 percent | 167% | correction_type=uncorrected | sample=B1-1 |
 
-_and 15227 more_
+_and 15889 more_
 
 ## `resistance` (5 pair(s))
 
@@ -387,7 +388,7 @@ _and 15227 more_
 | `CLM-ARCH-0212` = 4.95 dimensionless | `CLM-PHOT-0017` = 13.5 dimensionless | 63% | scope=across all three attention mechanisms and batch sizes | target_gas=NO2, comparison=dual-narrowband thermal emitter vs conventional blackbody source |
 | `CLM-ARCH-0212` = 4.95 dimensionless | `CLM-PHOT-0016` = 12.2 dimensionless | 59% | scope=across all three attention mechanisms and batch sizes | target_gas=CH4, comparison=dual-narrowband thermal emitter vs conventional blackbody source |
 
-## `temperature` (507 pair(s))
+## `temperature` (608 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -432,7 +433,7 @@ _and 15227 more_
 | `CLM-DEV-0035` = -204.1 degC | `CLM-MAT-0093` = 76.85 degC | 138% | relaxation_temperature=TLIESST | magnetic_field=0.05 T |
 | `CLM-DEV-0033` = 84.85 degC | `CLM-MAT-0325` = -233.1 degC | 136% | time_after_cooling_onset=10 s | material=GdN |
 
-_and 467 more_
+_and 568 more_
 
 ## `temperature_delta` (52 pair(s))
 
@@ -499,7 +500,7 @@ _and 12 more_
 |---|---|---|---|---|
 | `CLM-ARCH-0280` = 6.48e+10 wph | `CLM-PHOT-0027` = 8.64e+15 wph | 100% | data_type=metric packets | modulation_format=60-Gbaud PAM4, link_type=single-link WDM transmission |
 
-## `time` (4891 pair(s))
+## `time` (4980 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -544,7 +545,7 @@ _and 12 more_
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0127` = 0.0003 ns | 100% | device_type=FTJ, architecture=Naive | feature=XA |
 | `CLM-ARCH-0012` = 153.5 ns | `CLM-MAT-0170` = 0.002 ns | 100% | device_type=FTJ, architecture=Naive | state=bright exciton |
 
-_and 4851 more_
+_and 4940 more_
 
 ## `voltage` (134 pair(s))
 

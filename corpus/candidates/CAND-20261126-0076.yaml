@@ -29,6 +29,29 @@ id: CAND-20261126-0076
 harvested_date: '2026-11-26'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-27'
+  reason: the verifier rejected all 1 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The maximum delta in gate CD between on-NS and off-NS at 200 nm depth from top of the gate
+      in the device region is measured to be 1.24 nm.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''nm'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - Maximum delta in gate CD is found to be 1.24 nm, recorded in the device region between on-NS and
+      off-NS at 200 nm depth from top of the gate.
+    - delta in gate CD between on-NS and off-NS
+    - recorded in the device region
+    - 200 nm depth from top of the gate
+  tokens:
+    input: 4791
+    output: 632
+  fetched_chars: 12301

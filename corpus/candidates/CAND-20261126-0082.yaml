@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.34472v1
 doi: null
-title: 'DiversePlace: Diversity-Seeking Curriculum Reinforcement Learning for Macro
-  Placement'
+title: 'DiversePlace: Diversity-Seeking Curriculum Reinforcement Learning for Macro Placement'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-25'
@@ -26,6 +25,81 @@ id: CAND-20261126-0082
 harvested_date: '2026-11-26'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-27'
+  reason: the verifier rejected all 8 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: DiversePlace achieves a mean best-observed HPWL of 6.01 x 10^5 at 1K global episodes on
+      the adaptec1 benchmark.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - DiversePlace (1K) 6.01±0.09 (0.45h)
+    - DiversePlace (1K)
+    - adaptec1
+  - statement: DiversePlace achieves a mean runtime of 0.45 hours at 1K global episodes on the adaptec1
+      benchmark.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - DiversePlace (1K) 6.01±0.09 (0.45h)
+    - DiversePlace (1K)
+    - adaptec1
+  - statement: DiversePlace achieves a mean best-observed HPWL of 5.91 x 10^5 at 10K global episodes on
+      the adaptec1 benchmark.
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - DiversePlace (10K) 5.91±0.05
+    - DiversePlace (10K)
+    - adaptec1
+  - statement: EfficientPlace achieves a mean best-observed HPWL of 6.03 x 10^5 at 1K global episodes
+      on the adaptec1 benchmark.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - EfficientPlace (1K) 6.03±0.12 (0.82h)
+    - EfficientPlace (1K)
+    - adaptec1
+  - statement: DiversePlace achieves a top-5 archive full-placement diversity score of 3.98 on the adaptec1
+      benchmark.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Dfull k 5
+      3.98 / 2.13'''
+    quotes:
+    - Dfull k 5 3.98 / 2.13
+    - Each cell reports DiversePlace / EfficientPlace
+    - adaptec1
+    - Dfull k 5
+  - statement: DiversePlace achieves a top-5 archive HPWL mean of 5.96 x 10^5 on the adaptec1 benchmark.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''HPWL 5 5.96
+      / 6.00'''
+    quotes:
+    - HPWL 5 5.96 / 6.00
+    - Each cell reports DiversePlace / EfficientPlace
+    - adaptec1
+    - HPWL 5
+  - statement: DiversePlace achieves a full-flow completion rate of 98.33% for candidates on ariane133
+      across seeds 0, 1, and 2.
+    reason: the statement contains the number 33, which none of its quotes contain
+    quotes:
+    - Full-flow completion 52/60 (86.67%) 59/60 (98.33%)
+    - Archive statistic EfficientPlace DiversePlace
+    - Archive utility on ariane133 across seeds 0, 1, and 2
+    - Full-flow completion
+  - statement: EfficientPlace achieves a full-flow completion rate of 86.67% for candidates on ariane133
+      across seeds 0, 1, and 2.
+    reason: the statement contains the number 33, which none of its quotes contain
+    quotes:
+    - Full-flow completion 52/60 (86.67%) 59/60 (98.33%)
+    - Archive statistic EfficientPlace DiversePlace
+    - Archive utility on ariane133 across seeds 0, 1, and 2
+    - Full-flow completion
+  tokens:
+    input: 23458
+    output: 2811
+  fetched_chars: 69338

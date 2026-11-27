@@ -1,0 +1,100 @@
+id: SRC-00466
+title: Coefficient-Range Mitigation on an 8-Bit Coherent Ising Machine
+doi: null
+arxiv_id: 2611.34168v1
+url: https://arxiv.org/abs/2611.34168v1
+venue_id: arxiv_api
+authors:
+- name: Manuel Radons
+  affiliation: null
+  corresponding: null
+- name: Lars Simon
+  affiliation: null
+  corresponding: null
+- name: Raoul Heese
+  affiliation: null
+  corresponding: null
+- name: Kensuke Inaba
+  affiliation: null
+  corresponding: null
+- name: Toshimori Honjo
+  affiliation: null
+  corresponding: null
+- name: Hiroki Takesue
+  affiliation: null
+  corresponding: null
+- name: Andreas Wilke
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-25'
+retrieved_date: '2026-11-27'
+access: full_text
+read_scope: Automated reading. The full PDF text (104,946 characters, 42 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.34168v1 on
+  2026-11-27. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“fiber delay line of approximately 5 km.”
+
+  “The cavity contains a PSA, two fiber couplers, an optical BPF, a PS, and a fiber delay line of approximately
+  5 km.”
+
+  “For gka1b, the baseline objective is 132.30 ± 3.83.”
+
+  “The setting f = 0 leaves the model unchanged before 8-bit scaling and rounding and therefore constitutes
+  the baseline.”
+
+  “Figure 4 shows the mean best objective values, Eq. (35), and sample standard deviations, Eq. (36),
+  obtained on the three GKA instances for the interaction-extension fractions from Eq. (31).”
+
+  “The known optimum of nug5 is 50.”'
+method_summary: '“The experiments in this work are performed on an opto-electronic measurement-feedback
+  CIM, schematically shown in Fig. 1.”
+
+  “The finalized Ising model is embedded into the NCIM = 50 256 spins of the CIM by placing as many independent
+  copies as possible on the diagonal of the hardware coupling matrix.”
+
+  “The coupling coefficients Jij ∈ R are programmable as 8-bit signed integers with the range R := {−127,
+  −126, . . . , 0, . . . , 126, 127} ⊂ Z.”'
+limitations: No limitation statement was found in the text read.
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 31323
+    output: 1863
+  claims_accepted: 3
+  claims_rejected: 3
+  rejected:
+  - statement: The computational DOPOs in the optical cavity's signal sequence have a pulse count of 50
+      256.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''NCIM := 50
+      256 (4)'''
+    quotes:
+    - NCIM := 50 256 (4)
+    - odd-numbered pulses serve as computational DOPOs representing the spins of the Ising problem.
+  - statement: For the Max-Cut instance gka1b, interaction extension fractions of 0.025, 0.05, 0.1, and
+      0.2 each produce a CIM mean best objective value of 133.
+    reason: '[compound_statement] statement appears to join two falsifiable assertions - split it'
+    quotes:
+    - For f ∈ {0.025, 0.05, 0.1, 0.2}, all 30 repetitions attain the best-known value of 133, resulting
+      in a mean of 133 and a sample standard deviation of zero.
+    - Figure 4 shows the mean best objective values, Eq. (35), and sample standard deviations, Eq. (36),
+      obtained on the three GKA instances for the interaction-extension fractions from Eq. (31).
+    - For gka1b, the baseline objective is 132.30 ± 3.83.
+  - statement: For nug5, the baseline unperturbed quadratic assignment configuration at λ = 30 and ϵ =
+      0 reaches a mean feasibility rate of 21.13%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''21.13% at
+      (30, 0).'''
+    quotes:
+    - the largest mean feasibility rate in the complete parameter grid is obtained for the unperturbed
+      formulation at (λ, ϵ) = (30, 0)
+    - 21.13% at (30, 0).
+    - Figure 12 reports the mean feasibility rate of the generated candidate solutions.
+    - We use the five-facility quadratic assignment instance nug5 from QAPLIB [17].
+corrections: []

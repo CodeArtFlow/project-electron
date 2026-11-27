@@ -1,0 +1,107 @@
+id: SRC-00470
+title: 'EGQCA Code: automated high-throughput thermodynamic modeling of solid solutions'
+doi: null
+arxiv_id: 2611.34551v1
+url: https://arxiv.org/abs/2611.34551v1
+venue_id: arxiv_api
+authors:
+- name: Dominik Spath
+  affiliation: null
+  corresponding: null
+- name: Luka Wibmer
+  affiliation: null
+  corresponding: null
+- name: Kieran Bozier
+  affiliation: null
+  corresponding: null
+- name: Ralf Meyer
+  affiliation: null
+  corresponding: null
+- name: Eva Kogler
+  affiliation: null
+  corresponding: null
+- name: Efisio Madeddu
+  affiliation: null
+  corresponding: null
+- name: Chris Pickard
+  affiliation: null
+  corresponding: null
+- name: Markus Aichhorn
+  affiliation: null
+  corresponding: null
+- name: Simone Di Cataldo
+  affiliation: null
+  corresponding: null
+- name: Luiz T. F. Eleno
+  affiliation: null
+  corresponding: null
+- name: Christoph Heil
+  affiliation: null
+  corresponding: null
+- name: Pedro N. Ferreira
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-25'
+retrieved_date: '2026-11-27'
+access: full_text
+read_scope: Automated reading. The full PDF text (91,299 characters, 20 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.34551v1 on
+  2026-11-27. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“MatterSim-5M completes the calculation in just 74.0 s on a single CPU core of a standard workstation,
+  compared to 1863.6 core-hours for the full DFT workflow, including convergence tests and structural
+  relaxation.”
+
+  “To demonstrate this capability, we return to the InxGa1−xN system discussed above.”
+
+  “The predicted critical temperatures are T DFT cm = 1531.9 K and T MS cm = 1440.0 K for DFT and MatterSim-5M,
+  respectively.”
+
+  “Figure 6. Miscibility gap and free energy at T = 900 K of InxGa1−xN.”
+
+  “The resulting prediction of Tcm = 1290 K differs from experiment by approximately 20 %.”
+
+  “Figures 7a and 7b compare the miscibility gaps calculated with PET-OMATPES-L against the DFT results,
+  without and with vibrational contributions, respectively.”'
+method_summary: “MatterSim-5M completes the calculation in just 74.0 s on a single CPU core of a standard
+  workstation, compared to 1863.6 core-hours for the full DFT workflow, including convergence tests and
+  structural relaxation.”
+limitations: '“The current implementation is limited to quasi-binary systems A1−xBxC.”
+
+  “For this layered system, the uMLIP predictions deviate substantially from both experiment and the DFT
+  reference, with considerable differences also observed among the individual models.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 31504
+    output: 1831
+  claims_accepted: 4
+  claims_rejected: 2
+  rejected:
+  - statement: The full DFT workflow for the InxGa1-xN clusters requires 1863.6 core-hours.
+    reason: 'unit conversion refused: time: could not parse 1863.6 ''core-hours'': Cannot add or subtract
+      units in a unit expression'
+    quotes:
+    - MatterSim-5M completes the calculation in just 74.0 s on a single CPU core of a standard workstation,
+      compared to 1863.6 core-hours for the full DFT workflow, including convergence tests and structural
+      relaxation.
+    - To demonstrate this capability, we return to the InxGa1−xN system discussed above.
+  - statement: The total mean relative error in lattice parameters across all benchmarked materials is
+      below 1%.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - All three models are in close agreement with the experimental data, achieving a total mean relative
+      error (MRE) below 1%, averaged over all systems.
+    - As a first test case, we computed in a high-throughput manner the lattice parameters of several
+      known intermetallic solid solutions using the foundational models MACE-MPA-0-medium, MatterSim-v1.0.0-5M
+      and PET-OMATPES-L, and compared the res
+corrections: []

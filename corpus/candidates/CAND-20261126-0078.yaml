@@ -27,6 +27,55 @@ id: CAND-20261126-0078
 harvested_date: '2026-11-26'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-27'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The linear spectrum HWHM of the quantized spin-wave modes measured on the YIG micro-disk
+      is 2 MHz.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''the linear
+      spec-trum of the quantized spin-wave modes is resolved with'''
+    quotes:
+    - the linear spec-trum of the quantized spin-wave modes is resolved with a HWHM of 2 MHz
+    - A Lorentzian fit of the linear peak yields η/(2π) = 2 MHz.
+    - normally magnetized yttrium iron garnet (YIG) microdisk
+    - When the power is further reduced to P = −7 dBm (black dots), the FMR line is still detected, demonstrating
+      that the Kerr coupling allows ac-cess to the linear response. A Lorentzian fit of the linear peak
+      yields η/(2π) = 2 MHz.
+  - statement: The onset of bistability occurs at an FMR drive power of -3 dBm, corresponding to a calibrated
+      microwave field amplitude of 2.4 µT at the disk position.
+    reason: 'unit conversion refused: current_drive: cannot convert 2.4 µT to A/m - Cannot convert from
+      ''microtesla'' ([mass] / [time] ** 2 / [current]) to ''ampere / meter'' ([current] / [length]).
+      A '
+    quotes:
+    - this occurs at P = −3 dBm (grey dots).
+    - 'We use the onset of bistability to calibrate h1 at the disk position: at P = −3 dBm, we find µ0h1,FMR
+      = 2.4µT.'
+    - at P = −3 dBm, we find µ0h1,FMR = 2.4µT.
+  - statement: At a drive power of +15 dBm, the fitted HWHM parameter η*/(2π) is 9.2 MHz.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - The fit yields β = 8.7 and η ∗/(2π) = 9.2 MHz
+    - At high power (+15 dBm), the response depends on the sweep direction, the hallmark of foldover12,29.
+      The data are well fitted (solid lines) by a Duffing curve... The fit yields β = 8.7 and η ∗/(2π)
+      = 9.2 MHz
+    - At high power (+15 dBm), the response depends on the sweep direction, the hallmark of foldover12,29.
+    - bias field µ0H0 = 0.185 T.
+  - statement: The microwave field strength used to drive the ESR is 0.1 mT.
+    reason: 'unit conversion refused: current_drive: cannot convert 0.1 mT to A/m - Cannot convert from
+      ''millitesla'' ([mass] / [time] ** 2 / [current]) to ''ampere / meter'' ([current] / [length]).
+      A '
+    quotes:
+    - a field of µ0h1,ESR = 0.1mT is used to drive the ESR.
+    - By comparison, a field of µ0h1,ESR = 0.1mT is used to drive the ESR.
+  tokens:
+    input: 11045
+    output: 1430
+  fetched_chars: 29472

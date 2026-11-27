@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-26.
+Topic code `ARCH`. Last reviewed 2026-11-27.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -155,6 +155,13 @@ Topic code `ARCH`. Last reviewed 2026-11-26.
   - `CLM-ARCH-0279` · device GateMate M1A1 FPGA, limitation_cause controller designed into FPGA for the W5500 Ethernet · grade B · credibility unknown · measured · as of 2026-11-24
   - sources: SRC-00455
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+
+### length device
+
+- **≈5e+12 nm** — The opto-electronic measurement-feedback CIM optical cavity incorporates a fiber delay line length of approximately 5 km.
+  - `CLM-ARCH-0291` · component fiber delay line · grade B · credibility unknown · measured · as of 2026-11-25
+  - sources: SRC-00466
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### power
 
@@ -755,6 +762,14 @@ Topic code `ARCH`. Last reviewed 2026-11-26.
   - `CLM-ARCH-0288` · assignment_type interleaved token assignment, stage decoding · grade B · credibility unknown · simulated · as of 2026-11-25
   - sources: SRC-00458
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- For the weighted Max-Cut problem on instance gka1b, the baseline mean best objective value achieved by the CIM without interaction extension is 132.30.
+  - `CLM-ARCH-0292` · instance gka1b, extension_fraction 0 · grade B · credibility unknown · measured · as of 2026-11-25
+  - sources: SRC-00466
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The quadratic assignment instance nug5 has a known optimum value of 50.
+  - `CLM-ARCH-0293` · instance nug5 · grade B · credibility unknown · measured · as of 2026-11-25
+  - sources: SRC-00466
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1305,6 +1320,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 290
-- grades: {'B': 290}
-- distinct sources: 102
+- claims: 293
+- grades: {'B': 293}
+- distinct sources: 103

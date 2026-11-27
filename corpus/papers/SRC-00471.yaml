@@ -1,0 +1,88 @@
+id: SRC-00471
+title: Tunable Terahertz Bandpass Filter based on the Photonic Emulation of a 2DEG Interferometer through
+  the Geometric Phase of Light
+doi: null
+arxiv_id: 2611.34593v1
+url: https://arxiv.org/abs/2611.34593v1
+venue_id: arxiv_api
+authors:
+- name: Victor I. Iwanaga
+  affiliation: null
+  corresponding: null
+- name: Hiroaki Shirasaka
+  affiliation: null
+  corresponding: null
+- name: Shin'ichiro Hayashi
+  affiliation: null
+  corresponding: null
+- name: Katsuhiko Miyamoto
+  affiliation: null
+  corresponding: null
+- name: Yoshiharu Urata
+  affiliation: null
+  corresponding: null
+- name: Kouji Nawata
+  affiliation: null
+  corresponding: null
+- name: Jun-ichi Shikata
+  affiliation: null
+  corresponding: null
+- name: Norihiko Sekine
+  affiliation: null
+  corresponding: null
+- name: Seigo Ohno
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-25'
+retrieved_date: '2026-11-27'
+access: full_text
+read_scope: Automated reading. The full PDF text (33,811 characters, 9 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.34593v1 on
+  2026-11-27. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“From the fit parameters, we determine a cavity finesse of F = π √ F 2 ≈ 17.”
+
+  “This corresponds to a FWHM resonance linewidth of ∆fFWHM ≈ 200 MHz, relevant for potential bandpass
+  filtering applications.”'
+method_summary: '“From the fit parameters, we determine a cavity finesse of F = π √ F 2 ≈ 17.”
+
+  “The corresponding quality factor is given by Q = mF ≈ 1.5 × 103, where m = 2L/λ ≈ 90 is the longitudinal
+  mode order for a cavity length of L = 45 mm at an operating wavelength of approximately 1 mm.”
+
+  “This corresponds to a FWHM resonance linewidth of ∆fFWHM ≈ 200 MHz, relevant for potential bandpass
+  filtering applications.”'
+limitations: '“First, in addition to the fundamental axial modes, fainter diagonal trajectories corresponding
+  to higher-order transverse modes are visible.”
+
+  “Second, the transmitted intensity fluctuates along the axial mode trajectories, producing regions of
+  high and low intensity due to differential transmission along the fast and slow axes of our 3D-printed
+  QWPs.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 11930
+    output: 1380
+  claims_accepted: 2
+  claims_rejected: 2
+  rejected:
+  - statement: The constructed cavity achieves a quality factor of approximately 1.5 x 10^3.
+    reason: the statement contains the number 10, which none of its quotes contain
+    quotes:
+    - The corresponding quality factor is given by Q = mF ≈ 1.5 × 103, where m = 2L/λ ≈ 90 is the longitudinal
+      mode order for a cavity length of L = 45 mm at an operating wavelength of approximately 1 mm.
+    - cavity length of L = 45 mm
+    - operating wavelength of approximately 1 mm
+  - statement: The assembled cavity spacing is approximately 45 mm, giving a free spectral range of 3.33
+      GHz.
+    reason: '[qualifier_dropped] the statement says the value is approximate but quantity.approximate
+      is false. Record the qualifier the source used - UnitEngine.record(..., bound=..., approximate=...).'
+    quotes:
+    - The cavity spacing is approximately L = 45 mm, leading to a free spectral range of FSR = 3.33 GHz.
+corrections: []

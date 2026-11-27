@@ -1,0 +1,108 @@
+id: SRC-00468
+title: Unveiling gauge-invariant on-chip phases from light intensity
+doi: null
+arxiv_id: 2611.34384v1
+url: https://arxiv.org/abs/2611.34384v1
+venue_id: arxiv_api
+authors:
+- name: Huiwen Li
+  affiliation: null
+  corresponding: null
+- name: Andrea Cataldo
+  affiliation: null
+  corresponding: null
+- name: Rohan Yadgirkar
+  affiliation: null
+  corresponding: null
+- name: Jun Gao
+  affiliation: null
+  corresponding: null
+- name: Ali W. Elshaari
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-25'
+retrieved_date: '2026-11-27'
+access: full_text
+read_scope: Automated reading. The full PDF text (94,707 characters, 38 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.34384v1 on
+  2026-11-27. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“On 400 settings held out from training, the twin reproduces the measured powers with a Bhattacharyya
+  fidelity FB = (∑ j √ pj ˆpj )2 = 0.9987.”
+
+  “On 400 settings held out from training”
+
+  “Bhattacharyya fidelity FB = (∑ j √ pj ˆpj )2 = 0.9987”
+
+  “for the Haar-random targets, the measured mean FB is 0.9979 without and 0.9985 with the phase term
+  [Fig. 4(b)].”
+
+  “ten Haar-random 4 × 4 targets on ports 1–4”
+
+  “the measured mean FB is 0.9979”
+
+  “the measured mean FB is 0.9979 without and 0.9985 with the phase term”
+
+  “with the phase term, Fφ = 0.996, and the mean phase error after alignment falls from 0.41 to 0.038
+  rad.”'
+method_summary: '“We train the twin on powers alone [Fig. 1(b)]. For each of 4000 settings, all heater
+  currents are set at random, light enters one input k of the chip, and the 12 output powers p are recorded.”
+
+  “To measure φnorm ik of a block, we generate two coherent beams on the chip and fit their interference
+  fringes (Fig. 3; equations in Methods).”
+
+  “Light from a laser at 1550 nm passes a polarisation controller and a 1 × 12 optical switch that selects
+  the input port of the chip; a second 1 × 12 switch selects the output port read by a power meter. Current
+  drivers set the heater currents, and a temperature controller stabilises the chip”'
+limitations: '“The remaining measured–twin difference, about 4×10−3 in output infidelity, is 81 times
+  larger than the repeatability of the measurement and is not explained by thermal crosstalk between heaters
+  (Supplementary Note 9); it reflects the accuracy of the model, which more training data or a richer
+  description of the couplers and routing may improve.”
+
+  “The on-chip protocols need free layers in front of the block, which limits the measured blocks to 10
+  × 10 for the bridge chain and 7 × 7 for the fixed reference on this processor, and the measurements
+  cover ten Haar-random and three complex Hadamard targets in the paired comparison and two targets per
+  size in the placement sweep.”'
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 31713
+    output: 2978
+  claims_accepted: 4
+  claims_rejected: 3
+  rejected:
+  - statement: Without the phase term, the measured mean phase fidelity against the target is 0.690 for
+      ten 4x4 Haar-random targets.
+    reason: the value 0.69 does not appear in any of the claim's quotes
+    quotes:
+    - Without the phase term, the measured mean phase fidelity against the target is Fφ = 0.690, and only
+      one of the ten programs lies close to the target phase;
+    - Without the phase term
+    - ten Haar-random 4 × 4 targets on ports 1–4
+    - the measured mean phase fidelity against the target is Fφ = 0.690
+  - statement: Phase-aware programming reduces the direction-of-arrival error of an on-chip Butler matrix
+      from 29 degrees to 2.0 degrees.
+    reason: the quote says 'up to'/'within'/'at most' before the number but bound is not upper_bound
+    quotes:
+    - Within |ϑ| ≤ 60◦, this gives a mean DOA error of 2.0◦ with the phase term and 29◦ without it, close
+      to the twin’s prediction of 28.5◦ for the intensity-only programs.
+    - Within |ϑ| ≤ 60◦
+    - with the phase term
+    - gives a mean DOA error of 2.0◦
+  - statement: The electrical power required for a 2π phase shift on the chip heaters is 2.46 mW.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Here P2π = 2.46 mW is the electrical power for a 2π phase shift, obtained from a calibration of
+      the chip in which the output power was recorded while the heater power was swept.
+    - for a 2π phase shift
+    - electrical power for a 2π phase shift
+corrections: []

@@ -5696,3 +5696,177 @@ claims:
       pulse_voltage: +6 V
       pulse_width: 250 ms
       pulse_frequency: 2 Hz
+- id: CLM-PHOT-0203
+  topic: PHOT
+  statement: On 400 settings held out from training, the digital twin trained on single-input powers reproduces
+    measured powers with a Bhattacharyya fidelity of 0.9987.
+  sources:
+  - SRC-00468
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-27'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    eval_dataset: 400 settings held out from training
+    metric: Bhattacharyya fidelity FB
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.9987
+      unit: dimensionless
+    si_base:
+      value: 0.9987
+      unit: dimensionless
+    display:
+      value: 99.87
+      unit: percent
+    conditions:
+      eval_dataset: 400 settings held out from training
+      metric: Bhattacharyya fidelity FB
+- id: CLM-PHOT-0204
+  topic: PHOT
+  statement: Intensity-only programs from random starts on ten 4x4 Haar-random targets reach a measured
+    mean intensity fidelity of 0.9979.
+  sources:
+  - SRC-00468
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-27'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    target_type: ten Haar-random 4 × 4 targets
+    metric: measured mean FB
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.9979
+      unit: dimensionless
+    si_base:
+      value: 0.9979
+      unit: dimensionless
+    display:
+      value: 99.79
+      unit: percent
+    conditions:
+      target_type: ten Haar-random 4 × 4 targets
+      metric: measured mean FB
+- id: CLM-PHOT-0205
+  topic: PHOT
+  statement: Phase-aware programs from random starts on ten 4x4 Haar-random targets reach a measured mean
+    intensity fidelity of 0.9985.
+  sources:
+  - SRC-00468
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-27'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 4
+  conditions:
+    target_type: ten Haar-random 4 × 4 targets
+    metric: measured mean FB
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.9985
+      unit: dimensionless
+    si_base:
+      value: 0.9985
+      unit: dimensionless
+    display:
+      value: 99.85000000000001
+      unit: percent
+    conditions:
+      target_type: ten Haar-random 4 × 4 targets
+      metric: measured mean FB
+- id: CLM-PHOT-0206
+  topic: PHOT
+  statement: With the phase term, the measured mean phase fidelity against the target reaches 0.996 for
+    ten 4x4 Haar-random targets.
+  sources:
+  - SRC-00468
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-27'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    target_type: ten Haar-random 4 × 4 targets
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 0.996
+      unit: dimensionless
+    si_base:
+      value: 0.996
+      unit: dimensionless
+    display:
+      value: 99.6
+      unit: percent
+    conditions:
+      target_type: ten Haar-random 4 × 4 targets
+- id: CLM-PHOT-0207
+  topic: PHOT
+  statement: The constructed cavity achieves a finesse of approximately 17.
+  sources:
+  - SRC-00471
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-27'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
+- id: CLM-PHOT-0208
+  topic: PHOT
+  statement: The cavity exhibits a resonance linewidth of approximately 200 MHz.
+  sources:
+  - SRC-00471
+  grade: B
+  credibility: unknown
+  evidence_type: measured
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-27'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 2
