@@ -8400,3 +8400,55 @@ claims:
     verified_quotes: 3
   conditions:
     instance: nug5
+- id: CLM-ARCH-0294
+  topic: ARCH
+  statement: The peak bandwidth of the DDR4 DRAM configuration is 51.2 GB/s.
+  sources:
+  - SRC-00472
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-25'
+  created: '2026-11-28'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    memory_type: DRAM DDR4, 2 × 64-bit channels
+- id: CLM-ARCH-0295
+  topic: ARCH
+  statement: The mean absolute percentage error in execution cycles relative to gem5 for GIPSim with one
+    worker is 7.52%.
+  sources:
+  - SRC-00474
+  grade: B
+  credibility: unknown
+  evidence_type: simulated
+  status: active
+  as_of: '2026-11-24'
+  created: '2026-11-28'
+  extraction:
+    method: automated-extractive
+    model: gemini-3.6-flash
+    prompt_version: reader-v5
+    verified_quotes: 3
+  conditions:
+    baseline: gem5
+  quantity:
+    quantity: relative_deviation
+    bound: exact
+    approximate: false
+    as_published:
+      value: 7.52
+      unit: '%'
+    si_base:
+      value: 0.0752
+      unit: dimensionless
+    display:
+      value: 7.5200000000000005
+      unit: percent
+    conditions:
+      baseline: gem5

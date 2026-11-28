@@ -1,8 +1,7 @@
 source: arxiv
 arxiv_id: 2611.34919v1
 doi: null
-title: Voltage-Enhanced Photorefractive Hysteresis in Thin-Film Lithium Niobate Photonic-Crystal
-  Cavities
+title: Voltage-Enhanced Photorefractive Hysteresis in Thin-Film Lithium Niobate Photonic-Crystal Cavities
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-25'
@@ -26,6 +25,46 @@ id: CAND-20261126-0046
 harvested_date: '2026-11-26'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-28'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: At a central wavelength near 1541.59 nm, a linear fit to the low-power voltage sweep of
+      the photonic-crystal cavity gives an effective quasi-static tuning magni
+    reason: 'unit conversion refused: frequency: could not parse 1.92 ''GHz V−1'': ''V−1'' is not defined
+      in the unit registry'
+    quotes:
+    - At the central wavelength λ0 ≈ 1541.59 nm, a linear fit to the low-power voltage sweep gives an
+      effective quasi-static tuning magnitude |dν/dV | = 1.92 ± 0.06 GHz V−1 (|dλ/dV | ≈ (15.2 ± 0.5)
+      pm V−1) [11].
+  - statement: 'For cavity C1 at an applied voltage of +24 V, an estimated cavity-arm input power of −11.8
+      dBm, and a scan speed of 1 nm s−1, the measured hysteresis gap is 81 '
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''pm'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - At +24 V and an estimated cavity-arm input power of −11.8 dBm, the measured gap is 81, 81, 86, and
+      88 pm at 1, 10, 50, and 200 nm s−1, respectively.
+    - We repeated the power- and voltage-dependent measurements on cavity C1 at four additional scan speeds
+      (1, 10, 50, and 200 nm s−1).
+  - statement: For cavity C1 at an applied voltage of +24 V, an estimated cavity-arm input power of −11.8
+      dBm, and a scan speed of 200 nm s−1, the measured hysteresis gap is 8
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''pm'' is not one of [''%'',
+      ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare number would hide a
+      unit'
+    quotes:
+    - At +24 V and an estimated cavity-arm input power of −11.8 dBm, the measured gap is 81, 81, 86, and
+      88 pm at 1, 10, 50, and 200 nm s−1, respectively.
+    - We repeated the power- and voltage-dependent measurements on cavity C1 at four additional scan speeds
+      (1, 10, 50, and 200 nm s−1).
+  tokens:
+    input: 31148
+    output: 2006
+  fetched_chars: 106533

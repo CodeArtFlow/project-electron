@@ -1,6 +1,6 @@
 # Photonics — state of the art
 
-Topic code `PHOT`. Last reviewed 2026-11-27.
+Topic code `PHOT`. Last reviewed 2026-11-28.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -16,6 +16,10 @@ Topic code `PHOT`. Last reviewed 2026-11-27.
   - `CLM-PHOT-0150` · device_variant RLD · grade B · credibility unknown · measured · as of 2026-11-09
   - sources: SRC-00357
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **≈1e-05 mA** — Under an incident laser fluence of 0.1 µJ/cm2, dc currents around 10 nA were measured for both radial and azimuthal modes.
+  - `CLM-PHOT-0210` · incident_laser_fluence 0.1 µJ/cm2, mode radial and azimuthal modes · grade B · credibility unknown · measured · as of 2026-11-24
+  - sources: SRC-00476
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### energy
 
@@ -889,6 +893,10 @@ Topic code `PHOT`. Last reviewed 2026-11-27.
   - `CLM-PHOT-0173` · footprint 250-μm, configuration serpentine configuration · grade B · credibility unknown · measured · as of 2026-11-19
   - sources: SRC-00399
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **0.8 um** — The resonant continuous-wave photocurrent excitation was performed at an 800 nm wavelength on a triangular metasurface.
+  - `CLM-PHOT-0209` · excitation_mode resonant continuous-wave excitation · grade B · credibility unknown · measured · as of 2026-11-24
+  - sources: SRC-00476
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ## Live contradictions in this layer
 
@@ -933,6 +941,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 208
-- grades: {'B': 201, 'A': 7}
-- distinct sources: 71
+- claims: 210
+- grades: {'B': 203, 'A': 7}
+- distinct sources: 72

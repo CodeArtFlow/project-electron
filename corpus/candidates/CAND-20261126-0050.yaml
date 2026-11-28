@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.34847v1
 doi: null
-title: 'Measuring a buried Bi$_2$Te$_3$ epitaxial film through a protective Te cap:
-  an exact three-layer terahertz analysis'
+title: 'Measuring a buried Bi$_2$Te$_3$ epitaxial film through a protective Te cap: an exact three-layer
+  terahertz analysis'
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-25'
@@ -28,6 +28,74 @@ id: CAND-20261126-0050
 harvested_date: '2026-11-26'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-28'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The relative error of the transfer function obtained using the cascaded Fabry-Pérot construction
+      relative to the exact transfer matrix peaks at 40.27% for a syn
+    reason: the statement contains the number 5, which none of its quotes contain
+    quotes:
+    - peaking at 40.27 % in all three cases.
+    - We test this on a synthetic stack chosen to be representative of the present samples rather than
+      fitted to them.
+    - It consists of a 30 nm film on 500 µm of GaAs (N = 3.595, value from Ref. 1) under a Te cap of 5,
+      10 or 20 nm.
+    - Te cap of 5, 10 or 20 nm.
+  - statement: The amplitude transmission of the 25 nm Te cap on GaAs witness referenced to the bare substrate
+      is 1.00 ± 0.04 between 0.2 and 1.5 THz.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - A Te-on-GaAs witness shows the cap to be optically indistinguishable from bare substrate, transmitting
+      1.00 ± 0.04 of the substrate amplitude between 0.2 and 1.5 THz
+    - Transmission THz-TDS was performed at 294 K through a 2.5 mm aperture in a dry-nitrogen purge, scanning
+      40 ps in 33 fs steps.
+    - the cap-on-substrate witness (A637)
+    - The 25 nm cap transmits | ˜T | = 1.00 ± 0.04 over the whole band.
+  - statement: The median real sheet conductance over 0.5–1.2 THz for the 90 nm capped Bi2Te3 film is
+      13.70 mS.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - A639 90 13.70 5.07(41) 39.1(5) 0.539(1) 0.215(6)
+    - Transmission THz-TDS was performed at 294 K through a 2.5 mm aperture in a dry-nitrogen purge, scanning
+      40 ps in 33 fs steps.
+    - A639 capped 90
+    - ¯Gs is the median Re Gs over 0.5–1.2 THz.
+  - statement: The median real sheet conductance over 0.5–1.2 THz for the 90 nm uncapped Bi2Te3 film is
+      1.95 mS.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - A638 90 1.95 0.80(5) 4.1(1) 0.357(2) 0.620(13)
+    - Transmission THz-TDS was performed at 294 K through a 2.5 mm aperture in a dry-nitrogen purge, scanning
+      40 ps in 33 fs steps.
+    - A638 uncapped 90
+    - ¯Gs is the median Re Gs over 0.5–1.2 THz.
+  - statement: The error in real sheet conductance incurred by ignoring the Te cap is estimated to be
+      3.6% for the 90 nm Bi2Te3 film.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''3.6 % d =
+      90 nm,'''
+    quotes:
+    - 3.6 % d = 90 nm,
+    - Taking the floor of 0.5 mS as the scale of Re ˜σcδ, together with the film conductances ¯Gs of Table
+      II, gives for the error in Re Gs made by ignoring the cap altogether
+    - This measurement can be inserted directly into Eq. (13).
+  - statement: The error in real sheet conductance incurred by ignoring the Te cap is estimated to be
+      48% for the 25 nm Bi2Te3 film.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''48 % d =
+      25 nm,'''
+    quotes:
+    - 48 % d = 25 nm,
+    - Taking the floor of 0.5 mS as the scale of Re ˜σcδ, together with the film conductances ¯Gs of Table
+      II, gives for the error in Re Gs made by ignoring the cap altogether
+    - This measurement can be inserted directly into Eq. (13).
+  tokens:
+    input: 15969
+    output: 2429
+  fetched_chars: 43397

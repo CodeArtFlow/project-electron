@@ -1,6 +1,6 @@
 # Materials — state of the art
 
-Topic code `MAT`. Last reviewed 2026-11-27.
+Topic code `MAT`. Last reviewed 2026-11-28.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -332,6 +332,10 @@ Topic code `MAT`. Last reviewed 2026-11-27.
   - `CLM-MAT-0472` · excitation lowest-energy bright exciton · grade B · credibility unknown · simulated · as of 2026-11-25
   - sources: SRC-00469
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **4.48609e-07 fJ** — The fitted coupling strength t1B between IX1 and XB is 2.8 meV.
+  - `CLM-MAT-0477` · coupling_parameter t1B, exciton_pair IX1 and XB · grade B · credibility unknown · measured · as of 2026-11-25
+  - sources: SRC-00473
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### frequency
 
@@ -1519,9 +1523,29 @@ Topic code `MAT`. Last reviewed 2026-11-27.
   - `CLM-MAT-0448` · carrier_type hole, temperature 3.5 K, probe_energy 1.622 eV · grade B · credibility unknown · measured · as of 2026-11-24
   - sources: SRC-00453
   - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
+- In t(2+1)LG-CW with a twist angle of 12.5°, the cross-circular σ+σ− Raman intensity of the C2,1 phonon at an excitation energy of 2.28 eV is approximately 30 times larger than that at 2.41 eV.
+  - `CLM-MAT-0482` · material_stack t(2+1)LG-CW, phonon_mode C2,1, excitation_energy_1 2.28 eV, excitation_energy_2 2.41 eV · grade B · credibility unknown · measured · as of 2026-11-24
+  - sources: SRC-00475
+  - ⚙ automated extraction (gemini-3.6-flash; 6 quote(s) verified verbatim against the paper)
+- At an excitation energy of 2.47 eV, increasing the twist angle from 11.0° to 13.2° in t(2+1)LG-CW changes the degree of circular polarization (DoCP) of the C2,1 phonon from -0.90 to 0.54.
+  - `CLM-MAT-0483` · material_stack t(2+1)LG-CW, excitation_energy 2.47 eV, phonon_mode C2,1 · grade B · credibility unknown · measured · as of 2026-11-24
+  - sources: SRC-00475
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 - Phono3GPU on the RTX PRO 6000 Blackwell achieves total wall times that are 2 to 6 times shorter compared to a GPU plug-in for phono3py.
   - `CLM-MAT-0451` · hardware RTX PRO 6000 Blackwell, baseline GPU plug-in for phono3py · grade B · credibility unknown · simulated · as of 2026-11-25
   - sources: SRC-00461
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The g-factor of IX1 at moderate detuning is measured to be -9.4 ± 0.3 under an out-of-plane magnetic field of 9 T.
+  - `CLM-MAT-0478` · magnetic_field 9 T, exciton_label IX1 · grade B · credibility unknown · measured · as of 2026-11-25
+  - sources: SRC-00473
+  - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- The g-factor of bright excitons is measured to be -4.5 ± 0.2 under an out-of-plane magnetic field of 9 T.
+  - `CLM-MAT-0479` · magnetic_field 9 T · grade B · credibility unknown · measured · as of 2026-11-25
+  - sources: SRC-00473
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The g-factor of IX2 is measured to be -5.7 ± 0.3 under an out-of-plane magnetic field of 9 T.
+  - `CLM-MAT-0480` · magnetic_field 9 T, exciton_label IX2 · grade B · credibility unknown · measured · as of 2026-11-25
+  - sources: SRC-00473
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
 
 ### relative deviation
@@ -1676,6 +1700,10 @@ Topic code `MAT`. Last reviewed 2026-11-27.
   - `CLM-MAT-0426` · compound Zr2RhIrBi2, temperature 300 K · grade B · credibility unknown · simulated · as of 2026-11-20
   - sources: SRC-00430
   - ⚙ automated extraction (gemini-3.6-flash; 4 quote(s) verified verbatim against the paper)
+- **-17 percent** — At an excitation energy of 2.33 eV, the degree of circular polarization (DoCP) of the G phonon in t(2+1)LG with a twist angle of 12.5° is -0.17.
+  - `CLM-MAT-0481` · excitation_energy 2.33 eV, phonon_mode G, material_stack t(2+1)LG · grade B · credibility unknown · measured · as of 2026-11-24
+  - sources: SRC-00475
+  - ⚙ automated extraction (gemini-3.6-flash; 5 quote(s) verified verbatim against the paper)
 
 ### resistance
 
@@ -2274,6 +2302,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 476
-- grades: {'B': 476}
-- distinct sources: 166
+- claims: 483
+- grades: {'B': 483}
+- distinct sources: 168

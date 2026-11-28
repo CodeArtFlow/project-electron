@@ -4,7 +4,7 @@
 
 Pairs of claims that measure the same quantity in the same unit and disagree numerically, but share **no subject context**: no condition, named on both with an equal value, that says what was measured (operating points such as temperature do not count; see `reference/comparability.yaml`). They were not compared, so no conflict was opened. They are listed so that is visible. A pair here is a reason to look at the two claims' conditions, not a finding.
 
-**35410 pair(s)** as of 2026-11-27.
+**35872 pair(s)** as of 2026-11-28.
 
 ## `area_die` (37 pair(s))
 
@@ -48,23 +48,33 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-ARCH-0147` = 3.97 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 50% | component=AxCore, process=NanGate 15 nm technology, fclk=1 GHz, activation_format=FP16 | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
 | `CLM-ARCH-0148` = 4.68 mm^2 | `CLM-DEV-0071` = 8 mm^2 | 42% | component=FIGLUT, process=NanGate 15 nm technology, fclk=1 GHz, activation_format=FP16 | device_stack=ITO (150 nm) / ZnMgO (300 nm) / Se (500 nm) / MoO 3 (20 nm) / Au (80 nm) |
 
-## `current` (46 pair(s))
+## `current` (57 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
 | `CLM-DEV-0028` = 0.6 mA | `CLM-MAT-0069` = 2e-06 mA | 100% | process_step=current ramp-down | temperature=10 mK |
+| `CLM-DEV-0028` = 0.6 mA | `CLM-PHOT-0210` = 1e-05 mA | 100% | process_step=current ramp-down | incident_laser_fluence=0.1 µJ/cm2, mode=radial and azimuthal modes |
+| `CLM-DEV-0036` = 0.558 mA | `CLM-PHOT-0210` = 1e-05 mA | 100% | temperature=2 K, state=after light irradiation | incident_laser_fluence=0.1 µJ/cm2, mode=radial and azimuthal modes |
 | `CLM-DEV-0057` = 30 mA | `CLM-MAT-0069` = 2e-06 mA | 100% | switching_regime=small switching current | temperature=10 mK |
+| `CLM-DEV-0057` = 30 mA | `CLM-PHOT-0210` = 1e-05 mA | 100% | switching_regime=small switching current | incident_laser_fluence=0.1 µJ/cm2, mode=radial and azimuthal modes |
 | `CLM-DEV-0058` = 40 mA | `CLM-MAT-0069` = 2e-06 mA | 100% | switching_regime=large switching current | temperature=10 mK |
+| `CLM-DEV-0058` = 40 mA | `CLM-PHOT-0210` = 1e-05 mA | 100% | switching_regime=large switching current | incident_laser_fluence=0.1 µJ/cm2, mode=radial and azimuthal modes |
+| `CLM-DEV-0075` = 1.5 mA | `CLM-PHOT-0210` = 1e-05 mA | 100% | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° | incident_laser_fluence=0.1 µJ/cm2, mode=radial and azimuthal modes |
+| `CLM-DEV-0077` = 4 mA | `CLM-PHOT-0210` = 1e-05 mA | 100% | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° | incident_laser_fluence=0.1 µJ/cm2, mode=radial and azimuthal modes |
 | `CLM-EDA-0018` = 0.02 mA | `CLM-PROC-0077` = 1400 mA | 100% | circuit=BMR, corner=tt | material=Ta₂O₅, chamber_temperature=160 °C, acceleration_voltage=250 V |
 | `CLM-MAT-0069` = 2e-06 mA | `CLM-PHOT-0149` = 90 mA | 100% | temperature=10 mK | device_variant=original LD |
 | `CLM-MAT-0069` = 2e-06 mA | `CLM-PHOT-0150` = 118 mA | 100% | temperature=10 mK | device_variant=RLD |
 | `CLM-MAT-0069` = 2e-06 mA | `CLM-PROC-0077` = 1400 mA | 100% | temperature=10 mK | material=Ta₂O₅, chamber_temperature=160 °C, acceleration_voltage=250 V |
+| `CLM-PHOT-0149` = 90 mA | `CLM-PHOT-0210` = 1e-05 mA | 100% | device_variant=original LD | incident_laser_fluence=0.1 µJ/cm2, mode=radial and azimuthal modes |
+| `CLM-PHOT-0150` = 118 mA | `CLM-PHOT-0210` = 1e-05 mA | 100% | device_variant=RLD | incident_laser_fluence=0.1 µJ/cm2, mode=radial and azimuthal modes |
+| `CLM-PHOT-0210` = 1e-05 mA | `CLM-PROC-0077` = 1400 mA | 100% | incident_laser_fluence=0.1 µJ/cm2, mode=radial and azimuthal modes | material=Ta₂O₅, chamber_temperature=160 °C, acceleration_voltage=250 V |
 | `CLM-EDA-0018` = 0.02 mA | `CLM-MAT-0069` = 2e-06 mA | 100% | circuit=BMR, corner=tt | temperature=10 mK |
 | `CLM-EDA-0018` = 0.02 mA | `CLM-PHOT-0149` = 90 mA | 100% | circuit=BMR, corner=tt | device_variant=original LD |
 | `CLM-EDA-0018` = 0.02 mA | `CLM-PHOT-0150` = 118 mA | 100% | circuit=BMR, corner=tt | device_variant=RLD |
 | `CLM-DEV-0028` = 0.6 mA | `CLM-PROC-0077` = 1400 mA | 100% | process_step=current ramp-down | material=Ta₂O₅, chamber_temperature=160 °C, acceleration_voltage=250 V |
 | `CLM-DEV-0036` = 0.558 mA | `CLM-PROC-0077` = 1400 mA | 100% | temperature=2 K, state=after light irradiation | material=Ta₂O₅, chamber_temperature=160 °C, acceleration_voltage=250 V |
 | `CLM-DEV-0058` = 40 mA | `CLM-EDA-0018` = 0.02 mA | 100% | switching_regime=large switching current | circuit=BMR, corner=tt |
+| `CLM-EDA-0018` = 0.02 mA | `CLM-PHOT-0210` = 1e-05 mA | 100% | circuit=BMR, corner=tt | incident_laser_fluence=0.1 µJ/cm2, mode=radial and azimuthal modes |
 | `CLM-DEV-0057` = 30 mA | `CLM-EDA-0018` = 0.02 mA | 100% | switching_regime=small switching current | circuit=BMR, corner=tt |
 | `CLM-DEV-0075` = 1.5 mA | `CLM-PROC-0077` = 1400 mA | 100% | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° | material=Ta₂O₅, chamber_temperature=160 °C, acceleration_voltage=250 V |
 | `CLM-DEV-0077` = 4 mA | `CLM-PROC-0077` = 1400 mA | 100% | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° | material=Ta₂O₅, chamber_temperature=160 °C, acceleration_voltage=250 V |
@@ -82,20 +92,10 @@ Pairs of claims that measure the same quantity in the same unit and disagree num
 | `CLM-DEV-0028` = 0.6 mA | `CLM-DEV-0057` = 30 mA | 98% | process_step=current ramp-down | switching_regime=small switching current |
 | `CLM-DEV-0057` = 30 mA | `CLM-PROC-0077` = 1400 mA | 98% | switching_regime=small switching current | material=Ta₂O₅, chamber_temperature=160 °C, acceleration_voltage=250 V |
 | `CLM-DEV-0058` = 40 mA | `CLM-PROC-0077` = 1400 mA | 97% | switching_regime=large switching current | material=Ta₂O₅, chamber_temperature=160 °C, acceleration_voltage=250 V |
-| `CLM-DEV-0028` = 0.6 mA | `CLM-EDA-0018` = 0.02 mA | 97% | process_step=current ramp-down | circuit=BMR, corner=tt |
-| `CLM-DEV-0077` = 4 mA | `CLM-PHOT-0150` = 118 mA | 97% | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° | device_variant=RLD |
-| `CLM-DEV-0036` = 0.558 mA | `CLM-EDA-0018` = 0.02 mA | 96% | temperature=2 K, state=after light irradiation | circuit=BMR, corner=tt |
-| `CLM-DEV-0058` = 40 mA | `CLM-DEV-0075` = 1.5 mA | 96% | switching_regime=large switching current | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° |
-| `CLM-DEV-0077` = 4 mA | `CLM-PHOT-0149` = 90 mA | 96% | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° | device_variant=original LD |
-| `CLM-DEV-0057` = 30 mA | `CLM-DEV-0075` = 1.5 mA | 95% | switching_regime=small switching current | sample=NbN/FePt, temperature=4.5 K, stripe_orientation_angle=90° |
-| `CLM-PHOT-0149` = 90 mA | `CLM-PROC-0077` = 1400 mA | 94% | device_variant=original LD | material=Ta₂O₅, chamber_temperature=160 °C, acceleration_voltage=250 V |
-| `CLM-PHOT-0150` = 118 mA | `CLM-PROC-0077` = 1400 mA | 92% | device_variant=RLD | material=Ta₂O₅, chamber_temperature=160 °C, acceleration_voltage=250 V |
-| `CLM-DEV-0058` = 40 mA | `CLM-DEV-0077` = 4 mA | 90% | switching_regime=large switching current | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° |
-| `CLM-DEV-0057` = 30 mA | `CLM-DEV-0077` = 4 mA | 87% | switching_regime=small switching current | sample=NbN/AlN/FePt, temperature=4.5 K, stripe_orientation=θ = 90° |
 
-_and 6 more_
+_and 17 more_
 
-## `energy` (3380 pair(s))
+## `energy` (3464 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -140,7 +140,7 @@ _and 6 more_
 | `CLM-MAT-0276` = 2994 meV | `CLM-MAT-0452` = -3590 meV | 183% | desorption_state=molecular | metric=mean campaign-best binding energy, evaluation_method=pretrained MLIP with dispersion corrections |
 | `CLM-MAT-0077` = 4330 meV | `CLM-MAT-0452` = -3590 meV | 183% | defect_complex=VAl(ON)3 | metric=mean campaign-best binding energy, evaluation_method=pretrained MLIP with dispersion corrections |
 
-_and 3340 more_
+_and 3424 more_
 
 ## `energy_advantage_ratio` (19 pair(s))
 
@@ -320,7 +320,7 @@ _and 530 more_
 | `CLM-DEV-0064` = 6e-06 torr | `CLM-MAT-0296` = 3.75e+04 torr | 100% | temperature=room temperature | measurement=Tensile testing |
 | `CLM-DEV-0064` = 6e-06 torr | `CLM-MAT-0465` = 1.5e+07 torr | 100% | temperature=room temperature | material=PbSe, functional=r2SCAN |
 
-## `relative_deviation` (15929 pair(s))
+## `relative_deviation` (16265 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -329,43 +329,43 @@ _and 530 more_
 | `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0192` = 60 percent | 200% | sample=B1-1 | frequency_range=1.1-1.8 THz |
 | `CLM-MAT-0111` = -60 percent | `CLM-PROC-0044` = 59.9 percent | 200% | sample=B1-1 | voltage=8 VAg/AgCl, material=1 μm n-type GaN |
 | `CLM-ARCH-0198` = 60.3 percent | `CLM-MAT-0111` = -60 percent | 200% | baseline_utilization=42.4% | sample=B1-1 |
+| `CLM-EDA-0036` = 16.9 percent | `CLM-MAT-0481` = -17 percent | 199% | framework=Dr. RTL, design_count=20 human-written RTL designs | excitation_energy=2.33 eV, phonon_mode=G, material_stack=t(2+1)LG |
 | `CLM-ARCH-0223` = 58 percent | `CLM-MAT-0111` = -60 percent | 197% | mode=greedy | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0425` = 58 percent | 197% | sample=B1-1 | compound=ZrHfRh2Bi2, temperature=300 K |
 | `CLM-ARCH-0170` = 62.3 percent | `CLM-MAT-0111` = -60 percent | 196% | frequency=80 MHz, model=ConvSNN | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0426` = 63 percent | 195% | sample=B1-1 | compound=Zr2RhIrBi2, temperature=300 K |
+| `CLM-ARCH-0083` = 18 percent | `CLM-MAT-0481` = -17 percent | 194% | platform=Arrow, application=OpenVINO GenAI | excitation_energy=2.33 eV, phonon_mode=G, material_stack=t(2+1)LG |
+| `CLM-ARCH-0136` = 18 percent | `CLM-MAT-0481` = -17 percent | 194% | baseline=Adam5000 | excitation_energy=2.33 eV, phonon_mode=G, material_stack=t(2+1)LG |
+| `CLM-ARCH-0081` = 16 percent | `CLM-MAT-0481` = -17 percent | 194% | platform=Orin, workload=L2-optimized GEMM, cache_policy=UC | excitation_energy=2.33 eV, phonon_mode=G, material_stack=t(2+1)LG |
+| `CLM-ARCH-0082` = 16 percent | `CLM-MAT-0481` = -17 percent | 194% | platform=Arrow, application=OpenCV, variant=Cv+Opt | excitation_energy=2.33 eV, phonon_mode=G, material_stack=t(2+1)LG |
 | `CLM-ARCH-0089` = 64.2 percent | `CLM-MAT-0111` = -60 percent | 193% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
+| `CLM-MAT-0481` = -17 percent | `CLM-PROC-0043` = 15.5 percent | 191% | excitation_energy=2.33 eV, phonon_mode=G, material_stack=t(2+1)LG | voltage=8 VAg/AgCl, material=1 μm n-type GaN |
+| `CLM-EDA-0040` = 18.7 percent | `CLM-MAT-0481` = -17 percent | 191% | method=open-source algorithm discovery | excitation_energy=2.33 eV, phonon_mode=G, material_stack=t(2+1)LG |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0112` = 66.8 percent | 190% | sample=B1-1 | baseline=pure two-dimensional Coulomb reference, benchmark_protocol=high-field-calibrated |
 | `CLM-MAT-0111` = -60 percent | `CLM-PROC-0080` = 53.66 percent | 189% | sample=B1-1 | method=Joint-endpoint watershed selection (WS / joint), test_set=confirmation set of 25 images from 9 additional source papers |
+| `CLM-MAT-0481` = -17 percent | `CLM-MEM-0027` = 15.2 percent | 189% | excitation_energy=2.33 eV, phonon_mode=G, material_stack=t(2+1)LG | placement=TileDRAM |
 | `CLM-ARCH-0090` = 67.5 percent | `CLM-MAT-0111` = -60 percent | 189% | baseline=naive MX implementation baseline, technique=OBSR | sample=B1-1 |
 | `CLM-ARCH-0224` = 53 percent | `CLM-MAT-0111` = -60 percent | 188% | mode=greedy | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0252` = 53 percent | 188% | sample=B1-1 | band=NNN, coupling=Λ A, correlation_length=ξ ¯kF = 4 |
+| `CLM-MAT-0481` = -17 percent | `CLM-PHOT-0101` = 14.7 percent | 186% | excitation_energy=2.33 eV, phonon_mode=G, material_stack=t(2+1)LG | circuit_design=Design B |
 | `CLM-ARCH-0187` = 70 percent | `CLM-MAT-0111` = -60 percent | 186% | workload=elementwise graph, technique=Symbolic dynamic compilation | sample=B1-1 |
 | `CLM-ARCH-0174` = 71.3 percent | `CLM-MAT-0111` = -60 percent | 184% | system=ARM2GC, benchmark_set=nine benchmarks | sample=B1-1 |
+| `CLM-ARCH-0044` = 14.3 percent | `CLM-MAT-0481` = -17 percent | 184% | process=IHP 130 nm, channel_count=8 | excitation_energy=2.33 eV, phonon_mode=G, material_stack=t(2+1)LG |
 | `CLM-ARCH-0097` = 72 percent | `CLM-MAT-0111` = -60 percent | 183% | training_dataset=CloudLab, evaluation_dataset=Lambda | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0039` = 49.85 percent | 183% | sample=B1-1 | platform=Jetson Orin Nano, threshold=550, verification_stage=Single function verification |
 | `CLM-ARCH-0275` = 49.8 percent | `CLM-MAT-0111` = -60 percent | 183% | model=Kimi-Audio | sample=B1-1 |
+| `CLM-ARCH-0086` = 14 percent | `CLM-MAT-0481` = -17 percent | 182% | platform=Orin, application=Demand Layering, variant=DL+Opt | excitation_energy=2.33 eV, phonon_mode=G, material_stack=t(2+1)LG |
 | `CLM-ARCH-0210` = 48.24 percent | `CLM-MAT-0111` = -60 percent | 180% | metric=matrix-input storage | sample=B1-1 |
+| `CLM-EDA-0035` = 21.3 percent | `CLM-MAT-0481` = -17 percent | 180% | framework=Dr. RTL, design_count=20 human-written RTL designs | excitation_energy=2.33 eV, phonon_mode=G, material_stack=t(2+1)LG |
 | `CLM-ARCH-0229` = 75.23 percent | `CLM-MAT-0111` = -60 percent | 180% | model=Qwen MoE | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MEM-0026` = 75.7 percent | 179% | sample=B1-1 | placement=conventional |
 | `CLM-EDA-0007` = 76 percent | `CLM-MAT-0111` = -60 percent | 179% | model=Non-cyclic + Node prediction model | sample=B1-1 |
 | `CLM-MAT-0111` = -60 percent | `CLM-MAT-0251` = 47 percent | 178% | sample=B1-1 | band=NN, coupling=Λ A, correlation_length=ξ ¯kF = 4 |
+| `CLM-MAT-0248` = 13.3 percent | `CLM-MAT-0481` = -17 percent | 178% | band=NN, coupling=Λ A, correlation_length=ξ ¯kF = 4 | excitation_energy=2.33 eV, phonon_mode=G, material_stack=t(2+1)LG |
 | `CLM-EDA-0052` = 76.7 percent | `CLM-MAT-0111` = -60 percent | 178% | optimizer_variant=PVTSizing 2.0, baseline=RobustAnalog | sample=B1-1 |
-| `CLM-ARCH-0049` = 46 percent | `CLM-MAT-0111` = -60 percent | 177% | mechanism=uniform iteration offsets | sample=B1-1 |
-| `CLM-MAT-0111` = -60 percent | `CLM-MAT-0186` = 46 percent | 177% | sample=B1-1 | indium_composition=13.5%, geometry=fixed pristine-GaN geometry |
-| `CLM-MAT-0111` = -60 percent | `CLM-MAT-0188` = 46 percent | 177% | sample=B1-1 | indium_composition=22%, baseline=pristine GaN |
-| `CLM-MAT-0111` = -60 percent | `CLM-MEM-0031` = 79.2 percent | 176% | sample=B1-1 | workload=six full-trace streams, hardware_configuration=six 3D DRAM organizations, method=TileDRAM |
-| `CLM-ARCH-0228` = 82.32 percent | `CLM-MAT-0111` = -60 percent | 173% | model=Mamba-1.4B | sample=B1-1 |
-| `CLM-DEV-0114` = 83 percent | `CLM-MAT-0111` = -60 percent | 172% | component=hollow-core ARF | sample=B1-1 |
-| `CLM-MAT-0111` = -60 percent | `CLM-PROC-0072` = 43 percent | 172% | sample=B1-1 | decision_method=Typed Decision, model=Cosmos-Reason2 32B, task=grain boundary, noise_condition=without noise |
-| `CLM-MAT-0111` = -60 percent | `CLM-MEM-0032` = 84.9 percent | 171% | sample=B1-1 | memory_technology=filamentary memristor |
-| `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0005` = 85 percent | 171% | sample=B1-1 | dataset=Iris test set |
-| `CLM-EDA-0005` = 86.4 percent | `CLM-MAT-0111` = -60 percent | 169% | model=Cyclic Edge prediction model | sample=B1-1 |
-| `CLM-MAT-0111` = -60 percent | `CLM-MEM-0021` = 87.5 percent | 169% | sample=B1-1 | device_technology=printed Ag/ZnO/Au ECM memristors |
-| `CLM-MAT-0111` = -60 percent | `CLM-PHOT-0006` = 88 percent | 168% | sample=B1-1 | dataset=MNIST, setup=experimental system |
-| `CLM-EDA-0043` = 88.1 percent | `CLM-MAT-0111` = -60 percent | 168% | design=AES | sample=B1-1 |
-| `CLM-ARCH-0101` = 89.4 percent | `CLM-MAT-0111` = -60 percent | 167% | correction_type=uncorrected | sample=B1-1 |
+| `CLM-MAT-0481` = -17 percent | `CLM-PROC-0026` = 13.2 percent | 178% | excitation_energy=2.33 eV, phonon_mode=G, material_stack=t(2+1)LG | material=WS2 |
 
-_and 15889 more_
+_and 16225 more_
 
 ## `resistance` (5 pair(s))
 
@@ -594,7 +594,7 @@ _and 4940 more_
 
 _and 94 more_
 
-## `wavelength` (523 pair(s))
+## `wavelength` (554 pair(s))
 
 | Claim A | Claim B | Gap | A's conditions | B's conditions |
 |---|---|---|---|---|
@@ -634,9 +634,9 @@ _and 94 more_
 | `CLM-PHOT-0099` = 2.03e+04 um | `CLM-PHOT-0170` = 0.5413 um | 100% | mo_coupling_coefficient=0 | doping_duration=1.5 min, doping_gas=HCl |
 | `CLM-PHOT-0099` = 2.03e+04 um | `CLM-PHOT-0172` = 0.0076 um | 100% | mo_coupling_coefficient=0 | doping_duration=3 min |
 | `CLM-PHOT-0099` = 2.03e+04 um | `CLM-PHOT-0173` = 0.0001 um | 100% | mo_coupling_coefficient=0 | footprint=250-μm, configuration=serpentine configuration |
+| `CLM-PHOT-0099` = 2.03e+04 um | `CLM-PHOT-0209` = 0.8 um | 100% | mo_coupling_coefficient=0 | excitation_mode=resonant continuous-wave excitation |
 | `CLM-PHOT-0099` = 2.03e+04 um | `CLM-PKG-0003` = 0.001 um | 100% | mo_coupling_coefficient=0 | injection_current=9 mA, sample_type=D-DLAT sample |
 | `CLM-PHOT-0099` = 2.03e+04 um | `CLM-PROC-0039` = 0.000388 um | 100% | mo_coupling_coefficient=0 | landing_energy=10 eV |
 | `CLM-PHOT-0155` = 1.643 um | `CLM-PHOT-0157` = 5e-05 um | 100% | in_plane_asymmetry_parameter=0.75 | device=fabricated chip |
-| `CLM-PHOT-0157` = 5e-05 um | `CLM-PROC-0073` = 1.028 um | 100% | device=fabricated chip | laser_type=femtosecond Yb:YAG Pharos laser, shg_wavelength=514 nm |
 
-_and 483 more_
+_and 514 more_

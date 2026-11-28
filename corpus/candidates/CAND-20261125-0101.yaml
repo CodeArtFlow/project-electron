@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.32541v1
 doi: null
-title: Dynamic tuning of anisotropy-induced quasi-bound-states-in-the-continuum in
-  liquid-crystal integrated dielectric metasurfaces
+title: Dynamic tuning of anisotropy-induced quasi-bound-states-in-the-continuum in liquid-crystal integrated
+  dielectric metasurfaces
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-24'
@@ -29,6 +29,46 @@ id: CAND-20261125-0101
 harvested_date: '2026-11-25'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-28'
+  reason: the verifier rejected all 3 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The silicon nanocylinders of the fabricated metasurface have a radius of 179 nm, a height
+      of 166 nm, and a period of 520 nm.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'measured')
+    quotes:
+    - The resulting nanocyclinders have a radius of r = 179 nm and a height of h = 166 nm. The period
+      is a = 520 nm.
+    - Scanning electron microscopy (SEM) image of the fabricated sample is shown in Fig. 1 (d).
+    - The resulting nanocyclinders have a radius of r = 179 nm
+  - statement: The thickness of the liquid crystal cell was measured to be 8 µm.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - The cell thickness was measured to be 8 µm using linear-optical spectroscopy and fitting of the
+      observed Fabry-Perot fringes before LC infiltration.
+    - using linear-optical spectroscopy and fitting of the observed Fabry-Perot fringes before LC infiltration.
+  - statement: In experiments, the maximum resonance depth averaged over all three modes is obtained by
+      applying a voltage of 25 V across the LC cell.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - In our experiments, the coupling of the qBICs to the radiation continuum is first maximized by the
+      application of 25 V across the LC cell at room temperature.
+    - Overall, an applied voltage of 25 V yields the deepest resonance depths averaged over all three
+      modes (dashed vertical line in Fig. 4 (e,f)) and is chosen for our central experiments in the following.
+    - at room temperature.
+    - across the LC cell
+  tokens:
+    input: 24175
+    output: 1066
+  fetched_chars: 72206

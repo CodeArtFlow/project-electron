@@ -1,8 +1,8 @@
 source: arxiv
 arxiv_id: 2611.32611v1
 doi: null
-title: Modulations of the photoswitching performances of azobenzene-based molecular
-  devices by the π-conjugated spacers
+title: Modulations of the photoswitching performances of azobenzene-based molecular devices by the π-conjugated
+  spacers
 venue_id: arxiv_api
 venue_name: arXiv
 published_date: '2026-11-24'
@@ -33,6 +33,70 @@ id: CAND-20261125-0095
 harvested_date: '2026-11-25'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-28'
+  reason: the verifier rejected all 6 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: 'For batch #2, the TSAu-S-AZ1/tip molecular junction exhibits a mean pristine current I0
+      of 0.16 nA at an average voltage of +/- 0.75 V.'
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''AZ 1 -9.80±0.43
+      0.16'''
+    quotes:
+    - AZ 1 -9.80±0.43 0.16
+    - The SAMs were contacted by the PtIr Wp of a C-AFM to acquire hundreds of I-V curves with the azobenzene
+      in the trans and cis isomers.
+    - 'Table 1. Values of the mean current ... batch #2'
+    - AZ 1
+  - statement: 'For batch #2, the TSAu-S-AZ1/tip molecular junction exhibits a mean zero-bias pristine
+      conductance G0 of 0.15 nS.'
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - AZ1 0.15 251 2.5 1673 100* 1673
+    - The SAMs were contacted by the PtIr Wp of a C-AFM to acquire hundreds of I-V curves
+    - 'Table 2. Mean values of the zero-bias conductance ... batch #2'
+    - AZ1
+  - statement: DFT-NEGF calculations predict a zero-bias transmission ratio Rcis/trans of 5 for the AZ1
+      molecular junction.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - AZ1 -0.83 -0.69 1.48x10-3 2.99x10-4 5 1.92 1.74
+    - The energy-dependent electron transmission funcWon T(ε) is calculated by DFT combined with NEGF
+    - AZ1
+    - Table 3. Values of HOMO level energy with respect to the Fermi level have been extracted from the
+      calculated transmission spectra
+  - statement: 'For batch #2, the mean cis-state current Icis of the TSAu-S-AZ4/tip junction at +/- 0.75
+      V is 282 nA.'
+    reason: the statement contains the number 2, which none of its quotes contain
+    quotes:
+    - AZ 4 -10.00±0.41 0.1 -6.55±0.13 282
+    - The SAMs were contacted by the PtIr Wp of a C-AFM to acquire hundreds of I-V curves
+    - 'Table 1. Values of the mean current ... batch #2'
+    - AZ 4
+  - statement: Calculated HOMO-LUMO gap for the cis conformation of AZ1 is 1.92 eV.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - AZ1 -0.83 -0.69 1.48x10-3 2.99x10-4 5 1.92 1.74
+    - Calculated HOMO-LUMO gap.
+    - AZ1
+    - HOMO-LUMO gapcis (eV)
+  - statement: The maximum optical absorption wavelength λmax measured for AZ2 in dichloromethane solution
+      is 405 nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''AZ2 405 2.27'''
+    quotes:
+    - AZ2 405 2.27
+    - UV-Vis absorp’on spectra of AZ1, AZ2, AZ3, and AZ4 in the trans-state, recorded at RT in DCM solu’ons.
+    - AZ2
+    - in DCM solu’ons
+  tokens:
+    input: 34769
+    output: 2432
+  fetched_chars: 92677

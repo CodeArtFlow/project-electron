@@ -1,0 +1,103 @@
+id: SRC-00474
+title: Scaling Architectural Simulation to Giga Instructions Per Second
+doi: null
+arxiv_id: 2611.32397v1
+url: https://arxiv.org/abs/2611.32397v1
+venue_id: arxiv_api
+authors:
+- name: Zhouyi Shen
+  affiliation: null
+  corresponding: null
+- name: Hao Tang
+  affiliation: null
+  corresponding: null
+- name: Ruike Liu
+  affiliation: null
+  corresponding: null
+- name: Jingwei Sun
+  affiliation: null
+  corresponding: null
+- name: Guangzhong Sun
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-24'
+retrieved_date: '2026-11-28'
+access: full_text
+read_scope: Automated reading. The full PDF text (70,724 characters, 13 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.32397v1 on
+  2026-11-28. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The corresponding mean absolute percentage errors in execution cycles relative to gem5 are
+  7.52% and 7.43%, respectively.”
+
+  “We evaluate GIPSim using QEMU traces of application and operating system execution on multi-core x86-64,
+  AArch64, and RV64GC systems.”'
+method_summary: '“We evaluate GIPSim using QEMU traces of application and operating system execution on
+  multi-core x86-64, AArch64, and RV64GC systems.”
+
+  “The host platform is a dual-socket Intel Xeon Platinum 8558P server with 96 physical cores, two NUMA
+  nodes, and 256 GiB memory.”'
+limitations: '“The benefit is limited when evaluating different workloads under a fixed configuration,
+  since each workload requires a separate trace, incurring storage requirements and disk I/O overhead.”
+
+  “The current decomposition therefore targets data-race-free programs without false sharing.”
+
+  “The current model omits this component when accurate target sleep durations are unavailable.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 22379
+    output: 2196
+  claims_accepted: 1
+  claims_rejected: 4
+  rejected:
+  - statement: GIPSim achieves an average single-node simulation throughput of 13.8 MIPS with one worker
+      across 48 workload-hardware pairs.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''GIPSim achieves
+      an average single-node simulation throughput of 13.8 m'''
+    quotes:
+    - GIPSim achieves an average single-node simulation throughput of 13.8 million instructions per second
+      (MIPS) with one worker and 1,010 MIPS with 96 workers, peaking at 1,421 MIPS.
+    - We evaluate GIPSim using QEMU traces of application and operating system execution on multi-core
+      x86-64, AArch64, and RV64GC systems.
+    - GIPSim achieves an average single-node simulation throughput of 13.8 million instructions per second
+      (MIPS) with one worker
+    - Across 48 workload–hardware pairs, average throughput on a single host node increases from 13.8
+      MIPS with one worker
+  - statement: GIPSim achieves an average single-node simulation throughput of 1,010 MIPS with 96 workers
+      across 48 workload-hardware pairs.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''GIPSim achieves
+      an average single-node simulation throughput of 13.8 m'''
+    quotes:
+    - GIPSim achieves an average single-node simulation throughput of 13.8 million instructions per second
+      (MIPS) with one worker and 1,010 MIPS with 96 workers, peaking at 1,421 MIPS.
+    - We evaluate GIPSim using QEMU traces of application and operating system execution on multi-core
+      x86-64, AArch64, and RV64GC systems.
+    - 1,010 MIPS with 96 workers
+    - Across 48 workload–hardware pairs, average throughput on a single host node increases from 13.8
+      MIPS with one worker to 1,010 MIPS with 96 workers.
+  - statement: GIPSim achieves a peak simulation throughput of 1,421 MIPS.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''GIPSim achieves
+      an average single-node simulation throughput of 13.8 m'''
+    quotes:
+    - GIPSim achieves an average single-node simulation throughput of 13.8 million instructions per second
+      (MIPS) with one worker and 1,010 MIPS with 96 workers, peaking at 1,421 MIPS.
+    - We evaluate GIPSim using QEMU traces of application and operating system execution on multi-core
+      x86-64, AArch64, and RV64GC systems.
+  - statement: The mean absolute percentage error in execution cycles relative to gem5 for GIPSim with
+      96 workers is 7.43%.
+    reason: the statement contains the number 96, which none of its quotes contain
+    quotes:
+    - The corresponding mean absolute percentage errors in execution cycles relative to gem5 are 7.52%
+      and 7.43%, respectively.
+    - We evaluate GIPSim using QEMU traces of application and operating system execution on multi-core
+      x86-64, AArch64, and RV64GC systems.
+    - 1,010 MIPS with 96 workers
+corrections: []

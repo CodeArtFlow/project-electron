@@ -22,6 +22,65 @@ id: CAND-20261125-0092
 harvested_date: '2026-11-25'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-28'
+  reason: the verifier rejected all 4 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The optimized nominal output voltage reaches approximately 4.8 times the initial value
+      for the two-dimensional pressure sensor.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''times the initial value''
+      is not one of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare
+      num'
+    quotes:
+    - The optimized nominal output voltages reach approximately 4.8 times the initial value for the pressure
+      sensor and 2.5-3.4 times the initial values for the bending sensors.
+    - In Section 5, two-dimensional pressure and bending sensors and a three-dimensional thin-film device
+      are investigated numerically.
+    - The optimized nominal output voltages reach approximately 4.8 times the initial value for the pressure
+      sensor
+  - statement: The optimized nominal output voltage reaches approximately 4.75 times the initial value
+      for the nominal realization of the trapezoidal pressure sensor.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''times the initial value''
+      is not one of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare
+      num'
+    quotes:
+    - It reaches 260.9 mV in the final design, approximately 4.75 times the initial value.
+    - In Section 5, two-dimensional pressure and bending sensors and a three-dimensional thin-film device
+      are investigated numerically.
+    - Consider the two-dimensional trapezoidal pressure sensor under plane-strain conditions, as shown
+      in Fig. 2(a).
+    - The open-circuit voltage of the nominal realization increases from an initial value of 54.9 mV to
+      235.7 mV at step 130.
+  - statement: The source charge in the final design of the pressure sensor is 3.57 times its initial
+      value.
+    reason: 'unit conversion refused: relative_deviation is dimensionless; unit ''times its initial value''
+      is not one of [''%'', ''dimensionless'', ''fraction'', ''percent'', ''x'']. Recording it as a bare
+      num'
+    quotes:
+    - Fig. 4(b) shows that the source charge Qsrc in the final design is 3.57 times its initial value,
+      while the capacitance Cp decreases to 75.0% of its initial value.
+    - In Section 5, two-dimensional pressure and bending sensors and a three-dimensional thin-film device
+      are investigated numerically.
+    - Consider the two-dimensional trapezoidal pressure sensor under plane-strain conditions, as shown
+      in Fig. 2(a).
+  - statement: In configuration E2 of the bending sensor, the final voltage reaches 321.4 mV, which is
+      38.8% higher than the voltage achieved in configuration E1.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Starting
+      from the same nominal voltages, E2 reaches a final voltage of'''
+    quotes:
+    - Starting from the same nominal voltages, E2 reaches a final voltage of 321.4 mV, which is 38.8%
+      higher than the 231.6 mV achieved by E1.
+    - In Section 5, two-dimensional pressure and bending sensors and a three-dimensional thin-film device
+      are investigated numerically.
+    - Consider the two-dimensional beam-type bending sensor in Fig. 6 with the plane-strain assumption.
+  tokens:
+    input: 32996
+    output: 1709
+  fetched_chars: 102887

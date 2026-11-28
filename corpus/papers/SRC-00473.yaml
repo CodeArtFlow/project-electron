@@ -1,0 +1,113 @@
+id: SRC-00473
+title: Brightening spin- and parity-forbidden interlayer excitons through rhombohedral stacking
+doi: null
+arxiv_id: 2611.34900v1
+url: https://arxiv.org/abs/2611.34900v1
+venue_id: arxiv_api
+authors:
+- name: Haodong Hu
+  affiliation: null
+  corresponding: null
+- name: Chih-En Hsu
+  affiliation: null
+  corresponding: null
+- name: Kenji Watanabe
+  affiliation: null
+  corresponding: null
+- name: Takashi Taniguchi
+  affiliation: null
+  corresponding: null
+- name: Hung-Chung Hsueh
+  affiliation: null
+  corresponding: null
+- name: Zhenglu Li
+  affiliation: null
+  corresponding: null
+- name: Ziliang Ye
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-25'
+retrieved_date: '2026-11-28'
+access: full_text
+read_scope: Automated reading. The full PDF text (33,336 characters, 13 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.34900v1 on
+  2026-11-28. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“The coupling strength between IX1 and XB, 𝑡1𝐵, is fitted to be 2.8 meV.”
+
+  “To quantify the hybridization strengths, we fit the 2D dRC spectra with a three-level model including
+  the couplings between IX1 and the two intralayer excitons”
+
+  “Experimentally, we found that IX1 at moderate detuning has a g-factor of −9.4±0.3, a value larger than
+  that of bright excitons (−4.5±0.2) by about 4, consistent with the expectation for the additional spin
+  contribution (Fig. 4a).”
+
+  “under an out-of-plane magnetic field (𝐵=9 𝑇)”
+
+  “IX1 at moderate detuning has a g-factor of −9.4±0.3”
+
+  “To further support the IX assignment, we perform helicity-resolved RC measurements under an out-of-plane
+  magnetic field (𝐵=9 𝑇) .”
+
+  “a value larger than that of bright excitons (−4.5±0.2) by about 4”
+
+  “In the meantime, IX2 also exhibits an enhanced g-factor compared to the bright excitons (𝑔=−5.7±0.3),
+  agreeing with the recent theory about the Zeeman splitting of a non-s Rydberg state [47]”
+
+  “IX2 also exhibits an enhanced g-factor compared to the bright excitons (𝑔=−5.7±0.3)”'
+method_summary: “The IXs and their hybridizations are also observed in our first-principles GW-BSE calculations
+  of the absorbance of a bilayer 3R-MoS2 (Fig. 1d)”
+limitations: “Tuning them into resonance with the intralayer excitons requires electric fields beyond
+  the accessible range in our experiments.”
+evidence_type: measured
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 11865
+    output: 2594
+  claims_accepted: 4
+  claims_rejected: 4
+  rejected:
+  - statement: The positive-dipole interlayer exciton IX1 has an out-of-plane dipole moment of 0.66 e·nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''These evidence
+      suggest that the dispersive features are associated wit'''
+    quotes:
+    - By fitting their energy-field slopes, we find they have out-of-plane dipole moments of 0.66 and
+      0.65 𝑒⋅𝑛𝑚, respectively.
+    - These evidence suggest that the dispersive features are associated with positive-dipole IXs (IX1
+      & IX2)
+    - dRC spectra measured at 1.6 K as a function of the out-of-plane electric field.
+    - positive-dipole IXs (IX1 & IX2)
+  - statement: The positive-dipole interlayer exciton IX2 has an out-of-plane dipole moment of 0.65 e·nm.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''These evidence
+      suggest that the dispersive features are associated wit'''
+    quotes:
+    - By fitting their energy-field slopes, we find they have out-of-plane dipole moments of 0.66 and
+      0.65 𝑒⋅𝑛𝑚, respectively.
+    - These evidence suggest that the dispersive features are associated with positive-dipole IXs (IX1
+      & IX2)
+    - dRC spectra measured at 1.6 K as a function of the out-of-plane electric field.
+    - positive-dipole IXs (IX1 & IX2)
+  - statement: The absolute fitted coupling strength |t2B| between IX2 and intralayer exciton XB is 2.7
+      meV.
+    reason: the quote says the number is approximate but approximate is false
+    quotes:
+    - Through the same three-level model fitting, we obtain two nearly identical coupling strengths, |𝑡2𝐵|
+      = 2.7 𝑚𝑒𝑉 and |𝑡2𝑇| = 2.6 𝑚𝑒𝑉.
+    - '|𝑡2𝐵| = 2.7 𝑚𝑒𝑉'
+  - statement: The absolute fitted coupling strength |t2T| between IX2 and intralayer exciton XT is 2.6
+      meV.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Through the same three-level model fitting, we obtain two nearly identical coupling strengths, |𝑡2𝐵|
+      = 2.7 𝑚𝑒𝑉 and |𝑡2𝑇| = 2.6 𝑚𝑒𝑉.
+    - '|𝑡2𝑇| = 2.6 𝑚𝑒𝑉'
+corrections: []

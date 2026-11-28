@@ -23,6 +23,75 @@ id: CAND-20261125-0109
 harvested_date: '2026-11-25'
 status: unread
 access: metadata_only
-_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no
-  `reported`, `method_summary` or `limitations`. The `harvest` skill reads it and
-  writes corpus/papers/SRC-nnnnn.yaml. Do not cite this file.
+_note: CANDIDATE, not a source record. Nothing has read this yet, so it carries no `reported`, `method_summary`
+  or `limitations`. The `harvest` skill reads it and writes corpus/papers/SRC-nnnnn.yaml. Do not cite
+  this file.
+read_decision:
+  decision: no_claims
+  date: '2026-11-28'
+  reason: the verifier rejected all 7 claim(s) the model proposed; a stronger model or a human reader
+    may do better
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  rejected:
+  - statement: The mean pass@1 across seven evaluated LLMs is 45.14 percentage points lower on CPU-Eval
+      than on VerilogEval v2 Spec-to-RTL.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''Across seven
+      state-of-the-art LLMs, mean pass@1 is 45.14 percentage po'''
+    quotes:
+    - Across seven state-of-the-art LLMs, mean pass@1 is 45.14 percentage points lower on CPU-Eval than
+      on VerilogEval v2 Spec-to-RTL, exposing capability differences obscured by VerilogEval's high pass
+      rates.
+    - CPU-Eval
+    - VerilogEval v2 Spec-to-RTL
+    - pass@1
+  - statement: Claude Opus 5 achieves a pass@1 of 92.69% on VerilogEval v2 S2R.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Claude Opus 5 achieves 92.69% pass@1 on VerilogEval v2 S2R
+    - Claude Opus 5
+    - VerilogEval v2 S2R
+    - pass@1
+  - statement: Claude Opus 5 achieves a pass@1 of 62.86% on CPU-Eval overall.
+    reason: a claim with a number needs at least one verified condition saying what it is a value of (component,
+      variant, configuration, material, mechanism, calculation, benchmark); none was given, or none had
+      its own quote containing its value
+    quotes:
+    - Claude Opus 5 achieves 92.69% pass@1 on VerilogEval v2 S2R but only 62.86% on CPU-Eval
+    - Claude Opus 5
+    - CPU-Eval
+    - pass@1
+  - statement: The overall mean pass@1 across all seven LLMs on the full CPU-Eval benchmark is 31.35%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''TABLE IV'''
+    quotes:
+    - TABLE IV
+    - All CPU-Eval
+    - '31.35'
+    - k = 1
+  - statement: The mean pass@10 across seven LLMs on CPU-Eval overall is 46.69%.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''TABLE IV'''
+    quotes:
+    - TABLE IV
+    - All CPU-Eval
+    - '46.69'
+    - k = 10
+  - statement: GPT-5.6 Sol achieves a pass@1 of 62.86% on the overall CPU-Eval benchmark.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''TABLE IV'''
+    quotes:
+    - TABLE IV
+    - All CPU-Eval
+    - '62.86'
+    - GPT-5.6 Sol
+  - statement: GPT-5.6 Sol achieves a pass@10 of 82.89% on CPU-Eval overall.
+    reason: 'anchor quote not found verbatim in the paper (or shorter than 25 characters): ''TABLE IV'''
+    quotes:
+    - TABLE IV
+    - All CPU-Eval
+    - '82.89'
+    - GPT-5.6 Sol
+  tokens:
+    input: 15427
+    output: 2321
+  fetched_chars: 40306

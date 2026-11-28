@@ -1,0 +1,87 @@
+id: SRC-00472
+title: A Differential Computing Accelerator for LLM Inference Leveraging Bit-Slice Transition Sparsity
+doi: null
+arxiv_id: 2611.34630v1
+url: https://arxiv.org/abs/2611.34630v1
+venue_id: arxiv_api
+authors:
+- name: Yifan Wang
+  affiliation: null
+  corresponding: null
+- name: Zetao Guo
+  affiliation: null
+  corresponding: null
+- name: You Xiao
+  affiliation: null
+  corresponding: null
+- name: Wendi Sun
+  affiliation: null
+  corresponding: null
+- name: Song Chen
+  affiliation: null
+  corresponding: null
+authors_note: 'Names from the arXiv listing. Affiliations and the corresponding author were not read,
+  so they are not recorded: assess-source fills them from the paper.'
+published_date: '2026-11-25'
+retrieved_date: '2026-11-28'
+access: full_text
+read_scope: Automated reading. The full PDF text (86,716 characters, 15 pages) was fetched from arxiv.org
+  and ALL of it was given to the model; no figure or table image was seen. Every quote below was verified
+  to appear verbatim in that text.
+oa_evidence: 'arXiv preprint. The PDF was retrieved in full from https://arxiv.org/pdf/2611.34630v1 on
+  2026-11-28. arXiv is an open repository (registry: arxiv_api, verified).'
+reported: '“DRAM DDR4, 2 × 64-bit channels, 51.2 GB/s (peak)”
+
+  “DRAM DDR4, 2 × 64-bit channels”
+
+  “DRAMSim3 [29] with a DDR4 configuration is used to model off-chip memory latency and energy consumption.”'
+method_summary: '“We implement the RTL design of ISTS in Verilog, including the compute core, VPU, and
+  global controller, and reproduce the baseline PEs following their original designs. All ISTS and baseline
+  PEs are synthesized using Synopsys Design Compiler with a 28-nm technology library at 500 MHz for fair
+  comparison.”
+
+  “DRAMSim3 [29] with a DDR4 configuration is used to model off-chip memory latency and energy consumption.”'
+limitations: '“While these designs skip ineffectual bits to save compute, their execution gains diminish
+  as bit density increases.”
+
+  “TA’s monotonic reuse relation induces a partial order among TransRows, naturally represented as a Hasse
+  graph. Organizing these relations into reuse trees introduces sequential dependencies along each path
+  and may cause workload imbalance across trees, requiring scoreboard based scheduling and balanced forest
+  mapping, which increase control complexity and scheduling overhead.”'
+evidence_type: simulated
+grade: B
+extraction:
+  method: automated-extractive
+  model: gemini-3.6-flash
+  prompt_version: reader-v5
+  tokens:
+    input: 31380
+    output: 1492
+  claims_accepted: 1
+  claims_rejected: 3
+  rejected:
+  - statement: The overall core area of the synthesized 28-nm ISTS design is 0.510 mm².
+    reason: the statement contains the number 28, which none of its quotes contain
+    quotes:
+    - ISTS PE (261.7 µm2) 1024 0.510 456 KB SE (1708.4 µm2) 32 Decoder (86.4 µm2) 32 Encoder (590.2 µm2)
+      32 MUX Array (104767.5 µm2) 1 L1 Buffer (60495.1 µm2) 1
+    - All ISTS and baseline PEs are synthesized using Synopsys Design Compiler with a 28-nm technology
+      library at 500 MHz for fair comparison.
+    - using a 28 nm process.
+    - Core
+  - statement: The average baseline OPT-1.3B WikiText-2 perplexity under FP16 is 13.350.
+    reason: the statement contains the number 6, which none of its quotes contain
+    quotes:
+    - Model OPT-1.3B L-2-7B L-2-13B L-3-8B Qwen2.5-7B FP16 13.350 5.310 4.810 6.140 6.850
+    - All pretrained checkpoints are obtained from Hugging Face [52] and evaluated using PyTorch [38].
+    - OPT-1.3B
+    - FP16
+  - statement: The total on-chip buffer area for the ISTS hardware architecture is 456 KB.
+    reason: this claim's own evidence_type was not established by a verifiable quote (got 'simulated')
+    quotes:
+    - ISTS PE (261.7 µm2) 1024 0.510 456 KB
+    - The on-chip SRAM buffers are modeled with CACTI 7.0 [3] to estimate access latency, bandwidth, and
+      energy.
+    - Buffer
+    - ISTS
+corrections: []

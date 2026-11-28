@@ -1,6 +1,6 @@
 # Architecture — state of the art
 
-Topic code `ARCH`. Last reviewed 2026-11-27.
+Topic code `ARCH`. Last reviewed 2026-11-28.
 
 > Derived from the claim ledger. Every statement traces to a claim; nothing here is composed freehand.
 
@@ -770,6 +770,10 @@ Topic code `ARCH`. Last reviewed 2026-11-27.
   - `CLM-ARCH-0293` · instance nug5 · grade B · credibility unknown · measured · as of 2026-11-25
   - sources: SRC-00466
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- The peak bandwidth of the DDR4 DRAM configuration is 51.2 GB/s.
+  - `CLM-ARCH-0294` · memory_type DRAM DDR4, 2 × 64-bit channels · grade B · credibility unknown · simulated · as of 2026-11-25
+  - sources: SRC-00472
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 
 ### relative deviation
 
@@ -1065,6 +1069,10 @@ Topic code `ARCH`. Last reviewed 2026-11-27.
   - `CLM-ARCH-0275` · model Kimi-Audio · grade B · credibility unknown · measured · as of 2026-11-23
   - sources: SRC-00441
   - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
+- **7.52 percent** — The mean absolute percentage error in execution cycles relative to gem5 for GIPSim with one worker is 7.52%.
+  - `CLM-ARCH-0295` · baseline gem5 · grade B · credibility unknown · simulated · as of 2026-11-24
+  - sources: SRC-00474
+  - ⚙ automated extraction (gemini-3.6-flash; 3 quote(s) verified verbatim against the paper)
 - **≤ 549 percent** — Split-Comm reduces KV cache memory access by up to 5.49x when N = 256 in sparse attention.
   - `CLM-ARCH-0289` · mechanism Split-Comm · grade B · credibility unknown · simulated · as of 2026-11-25
   - sources: SRC-00458
@@ -1320,6 +1328,6 @@ Shown here, not in an appendix: a reader of this page must see the disagreement 
 
 ## Evidence base
 
-- claims: 293
-- grades: {'B': 293}
-- distinct sources: 103
+- claims: 295
+- grades: {'B': 295}
+- distinct sources: 105
